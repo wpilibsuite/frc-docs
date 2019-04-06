@@ -1,5 +1,9 @@
+[![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)](https://frc-docs.readthedocs.io/en/latest/?badge=latest)
+
 # frc-docs
 Better FRC documentation using ReadTheDocs
+
+Located at https://frc-docs.readthedocs.io/en/latest/
 
 ## Guidelines
 - Should be written in Markdown
