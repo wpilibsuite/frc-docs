@@ -19,7 +19,7 @@ Double click on the installer to run it. If you see any Security
 warnings, click Run (Windows 7) or More Info->Run Anyway (Windows 8+).
 #### Installation Type
 
-.. figure:: /images/Install_Guides/Windows/InstallationType.png
+.. figure:: images/windows/InstallationType.png
    :alt: 
 
 Choose whether to install for All Users on the machine or the Current
@@ -40,7 +40,7 @@ other machines without internet connections, after the download
 completes, you can click Open Downloaded File to be taken to the zip
 file on the file system to copy along with the Offline Installer.
 
-.. figure:: /images/Install_Guides/Windows/DownloadVSCode.png
+.. figure:: images/windows/DownloadVSCode.png
    :alt: 
 
 Execute Install
@@ -50,7 +50,7 @@ Make sure all checkboxes are checked (unless you have already installed
 2019 WPILib software on this machine and the software unchecked them
 automatically), then click Execute Install.
 
-.. figure:: /images/Install_Guides/Windows/ExecuteInstall.png
+.. figure:: images/windows/ExecuteInstall.png
    :alt: 
 
 Finished
@@ -61,7 +61,7 @@ WPILib version of VSCode. If you are using any 3rd party libraries, you
 will still need to install those separately before using them in robot
 code.
 
-.. figure:: /images/Install_Guides/Windows/Finished.png
+.. figure:: images/windows/Finished.png
    :alt: 
 
 What's installed?
@@ -95,7 +95,7 @@ The Offline Installer also installs a Desktop Shortcut to the WPILib
 copy of VSCode and sets up a command shortcut so this copy of VSCode can
 be opened from the command line using the command "frccode2019"
 
-.. figure:: /images/Install_Guides/Windows/DesktopIcon.png
+.. figure:: images/windows/DesktopIcon.png
    :alt: 
 
 Both of these reference the specific year as the WPIlib C++tools will

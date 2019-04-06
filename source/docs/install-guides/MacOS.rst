@@ -21,7 +21,7 @@ The downloaded file will be "VSCode-darwin-stable.zip" (1)
 Once downloaded, double-click on the zip file to expand it and copy the
 new file: "Visual Studio Code" to the Applications folder (2).
 
-.. figure:: /images/Install_Guides/Mac/VisualStudioCode.png
+.. figure:: images/mac/VisualStudioCode.png
    :alt: 
 
 Download the WPILib release and move the directory
@@ -31,7 +31,7 @@ Download the software release by navigating to this page:
 https://github.com/wpilibsuite/allwpilib/releases and downloading the
 Mac release.
 
-.. figure:: /images/Install_Guides/Mac/MacReleasePage.png
+.. figure:: images/mac/MacReleasePage.png
    :alt: 
 
 Unzip and untar the file by looking at the file in the explorer and
@@ -39,13 +39,13 @@ double-clicking on it, once or twice to unzip (remove the .gz extension)
 and again to untar it (remove the .tar extension). When finished it
 should like like the folder shown below.
 
-.. figure:: /images/Install_Guides/Mac/UntarredRelease.png
+.. figure:: images/mac/UntarredRelease.png
    :alt: 
 
 Using Finder (or command line) copy the contents of the folder to a new
 folder in your home directory, ~/frc2019 as shown below.
 
-.. figure:: /images/Install_Guides/Mac/MovedFiles.png
+.. figure:: images/mac/MovedFiles.png
    :alt: 
 
 Run the ``ToolsUpdater.py`` script
@@ -60,7 +60,7 @@ and change directory to ~/frc2019/tools and run the script
 This should populate the tools directory with all of the WPILib tools
 (Shuffleboard, Robot Builder, PathWeaver, etc.)
 
-.. figure:: /images/Install_Guides/Mac/ToolsUpdater.png
+.. figure:: images/mac/ToolsUpdater.png
    :alt: 
 
 Installing the extensions for WPILib development
@@ -72,10 +72,10 @@ shortcut Cmd-Shift-P to bring up the list of commands available. Start
 typing "Install from VSIX into the search box. Choose that command. In
 the file selection box select Cpp.vsix.
 
-.. figure:: /images/Install_Guides/Mac/InstallFromVSIX.png
+.. figure:: images/mac/InstallFromVSIX.png
    :alt: 
 
-.. figure:: /images/Install_Guides/Mac/CppVSIX.png
+.. figure:: images/mac/CppVSIX.png
    :alt: 
 
 You should see a message confirming the install and asking to reload
@@ -100,7 +100,7 @@ Code at where it is. To do this:
 3) Begin typing Set VS Code Java Home to FRC Home and select that item
    from the dropdown
 
-.. figure:: /images/Install_Guides/Mac/JDKHome.png
+.. figure:: images/mac/JDKHome.png
    :alt: 
 
 
