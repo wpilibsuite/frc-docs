@@ -10,6 +10,7 @@ Welcome to FIRST Robotics Documention
    :maxdepth: 1
    :caption: Software
    
+   docs/system-overview/new-for-2019
    docs/install-guides/Windows
    docs/install-guides/MacOS
    

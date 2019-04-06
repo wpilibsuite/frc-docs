@@ -17,7 +17,6 @@ not sure, open the Control Panel -> System to check.
 
 Double click on the installer to run it. If you see any Security
 warnings, click Run (Windows 7) or More Info->Run Anyway (Windows 8+).
-#### Installation Type
 
 .. figure:: images/windows/InstallationType.png
    :alt: 
