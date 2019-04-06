@@ -11,6 +11,8 @@ Welcome to FIRST Robotics Documention
    :caption: Software
    
    docs/system-overview/new-for-2019
+   docs/system-overview/known-issues
+   docs/system-overview/offline-installation-preperations
    docs/install-guides/Windows
    docs/install-guides/MacOS
    
