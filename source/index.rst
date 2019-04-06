@@ -10,11 +10,11 @@ Welcome to FIRST Robotics Documention
    :maxdepth: 1
    :caption: Software
    
-   Install_Guides/Windows
-   Install_Guides/MacOS
+   docs/Install_Guides/Windows
+   docs/Install_Guides/MacOS
    
 .. toctree::
    :maxdepth: 1
    :caption: Electrical
    
-   Pneumatics/pneumatics
+   docs/Pneumatics/pneumatics
