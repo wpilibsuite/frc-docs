@@ -13,6 +13,7 @@ Welcome to FIRST Robotics Documention
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/offline-installation-preperations
+   docs/system-overview/control-system-hardware
    docs/install-guides/Windows
    docs/install-guides/MacOS
    
