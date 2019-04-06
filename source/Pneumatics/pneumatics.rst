@@ -46,23 +46,21 @@ construct a Solenoid object, simply pass the desired port number
 set the value of the solenoid call set(true) to enable or set(false) to
 disable the solenoid output.
 
-C++
+.. tabs::
 
-::
+    .. code-tab:: c++
 
-    frc::Solenoid exampleSolenoid {1};
+        frc::Solenoid exampleSolenoid {1};
 
-    exampleSolenoid.Set(true);
-    exampleSolenoid.Set(false);
+        exampleSolenoid.Set(true);
+        exampleSolenoid.Set(false);
 
-Java
+    .. code-tab:: java
 
-::
+        Solenoid exampleSolenoid = new Solenoid(1);
 
-    Solenoid exampleSolenoid = new Solenoid(1);
-
-    exampleSolenoid.set(true);
-    exampleSolenoid.set(false);
+        exampleSolenoid.set(true);
+        exampleSolenoid.set(false);
 
 Double Solenoids in WPILib
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +75,7 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
 
 .. tabs::
 
-   .. code-tab:: C++
+   .. code-tab:: c++
    
         frc::DoubleSolenoid exampleDouble {1, 2};
         frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
@@ -86,7 +84,7 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
 
-   .. code-tab:: Java
+   .. code-tab:: java
 
         import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
