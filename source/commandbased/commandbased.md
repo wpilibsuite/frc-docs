@@ -83,7 +83,7 @@ if(aButton.get()) {
 
 ## Subsystems and commands
 
-![image of subsystems and commands](source/images/commandbased/commandflowchart.png)
+![image of subsystems and commands](images/subsystemscommands.png)
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
