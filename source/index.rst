@@ -7,14 +7,7 @@ Welcome to FIRST Robotics Documention
 ========================================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   :maxdepth: 1
+   
+   Install_Guides/Windows
+   Install_Guides/MacOS
