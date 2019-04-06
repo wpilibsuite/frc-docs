@@ -11,3 +11,4 @@ Welcome to FIRST Robotics Documention
    
    Install_Guides/Windows
    Install_Guides/MacOS
+   pneumatics/pneumatics
