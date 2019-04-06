@@ -7,18 +7,20 @@ Welcome to FIRST Robotics Documention
 ========================================================
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Software
+   :maxdepth: 2
+   :titlesonly:
+   :caption: Software - Getting Started
    
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/offline-installation-preperations
-   docs/system-overview/control-system-hardware
    docs/install-guides/Windows
    docs/install-guides/MacOS
    
 .. toctree::
-   :maxdepth: 1
-   :caption: Electrical
+   :maxdepth: 2
+   :titlesonly:
+   :caption: Electrical - Getting Started
    
+   docs/system-overview/control-system-hardware
    docs/pneumatics/pneumatics
