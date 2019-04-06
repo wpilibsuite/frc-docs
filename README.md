@@ -1,4 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)](https://frc-docs.readthedocs.io/en/latest/?badge=latest)
+[![Build status](https://ci.appveyor.com/api/projects/status/e7ug1ljr73rbcho8?svg=true)](https://ci.appveyor.com/project/Daltz333/frc-docs)
 
 # frc-docs
 Better FRC documentation using ReadTheDocs
