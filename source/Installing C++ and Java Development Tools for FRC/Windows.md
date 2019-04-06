@@ -7,7 +7,7 @@ Download the appropriate installer for your Windows installation (32 bit or 64 b
 Double click on the installer to run it. If you see any Security warnings, click Run (Windows 7) or More Info->Run Anyway (Windows 8+).
 #### Installation Type
 
-![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/IntstallationType.png)
+![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Windows/IntstallationType.png)
 
 
 Choose whether to install for All Users on the machine or the Current User. The All Users option requires Admin privileges, but installs in a way that is accessible to all user accounts, the Current User install is only accessible from the account it is installed from.
@@ -17,17 +17,17 @@ If you select All Users, you will need to accept the security prompt that appear
 #### Download VSCode
 For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click Select/Download VSCode to either Download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click Open Downloaded File to be taken to the zip file on the file system to copy along with the Offline Installer.
 
-![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/DownloadVSCode.png)
+![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Windows/DownloadVSCode.png)
 
 #### Execute Install
 Make sure all checkboxes are checked (unless you have already installed 2019 WPILib software on this machine and the software unchecked them automatically), then click Execute Install.
 
-![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/ExecuteInstall.png)
+![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Windows/ExecuteInstall.png)
 
 #### Finished
 When the installer completes, you will now be able to open and use the WPILib version of VSCode. If you are using any 3rd party libraries, you will still need to install those separately before using them in robot code.
 
-![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Finished.png)
+![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Windows/Finished.png)
 
 
 #### What's installed?
@@ -46,8 +46,6 @@ The Offline Installer installs the following components:
 
 The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command "frccode2019"
 
- ![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/DesktopIcon.png)
-
-
+ ![](../images/Installing&#32;C++&#32;and&#32;Java&#32;Development&#32;Tools&#32;For&#32;FRC/Windows/DesktopIcon.png)
 
 Both of these reference the specific year as the WPIlib C++\Java tools will now support side-by-side installs of multiple environments from different seasons.
