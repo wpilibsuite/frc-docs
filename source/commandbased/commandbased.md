@@ -471,7 +471,7 @@ new SequentialCommandGroup(
 
 This creates a sequential command group that *contains* a parallel command group.  The resulting control flow looks something like this:
 
-![command group with concurrency](https://media.screensteps.com/images/Wpilib/241892/1/rendered/47DD42D1-0EF3-467A-91E1-26EF7EB92618.png?AWSAccessKeyId=AKIAJRW37ULKKSXWY73Q&Expires=1554575116&Signature=2bxScjmYX6eE%2FIlxhhzHVIrzoUU%3D)
+![command group with concurrency](source/images/commandbased/commandgroupchart.png)
 
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one.  Notice also that this entire, more-complex structure, could be again embedded in another structure.  Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
