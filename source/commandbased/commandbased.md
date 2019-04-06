@@ -101,7 +101,7 @@ Subsystems also can be associated with "default commands" that will be automatic
 
 TODO: replace this graphic with one that isn't wrong
 
-![scheduler control flow diagram](https://media.screensteps.com/images/Wpilib/241892/1/rendered/10c3a71e-3789-4c88-b60d-4bb11c517109.png?AWSAccessKeyId=AKIAJRW37ULKKSXWY73Q&Expires=1554406576&Signature=sOHzcI9Pdeh48SQImzwE6ORrE%2Fc%3D)
+![scheduler control flow diagram](images/commandflowchart.png)
 
 When a command is scheduled, its `initialize()` method is called once.  Its `execute()` method is then called once per call to `CommandScheduler.getInstance().run()`.  A command is un-scheduled and has its `end(boolean interrupted)` method called when either its `isFinished()` method returns true, or else it is interrupted (either by another command with which it shares a required subsystem, or by being canceled).
 
@@ -471,7 +471,7 @@ new SequentialCommandGroup(
 
 This creates a sequential command group that *contains* a parallel command group.  The resulting control flow looks something like this:
 
-![command group with concurrency](source/images/commandbased/commandgroupchart.png?raw=true)
+![command group with concurrency](images/commandgroupchart.png)
 
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one.  Notice also that this entire, more-complex structure, could be again embedded in another structure.  Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
