@@ -10,17 +10,18 @@ Welcome to FIRST Robotics Documentation
    :maxdepth: 2
    :titlesonly:
    :caption: Software - Getting Started
-   
+
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/offline-installation-preperations
    docs/install-guides/Windows
    docs/install-guides/MacOS
-   
+   docs/install-guides/Linux
+
 .. toctree::
    :maxdepth: 2
    :titlesonly:
    :caption: Electrical - Getting Started
-   
+
    docs/system-overview/control-system-hardware
    docs/pneumatics/pneumatics
