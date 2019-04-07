@@ -811,6 +811,26 @@ User-defined subsystems should go in this package.
 
 User-defined commands should go in this package.
 
+# Convenience features
+
+While the previously-described methodologies will work fine for writing command-based robot code, the command-based libraries contain several convenience features for more-advanced users that can greatly reduce the verbosity/complexity of command-based code.  It is highly recommended that users familiarize themselves with these features to maximize the value they get out of the command-based libraries.
+
+## Inline command definitions
+
+While users are able to create commands by explicitly writing command classes (either by subclassing `SendableCommandBase` or implementing `Command`), for many commands (such as those that simply call a single subsystem method) this involves a lot of wasteful boilerplate code.  To help alleviate this, many of the prewritten commands included in the command-based library may be *inlined* - that is, the command body can be defined in a single line of code at command construction.
+
+### Passing subroutines as parameters
+
+In order to inline a command definition, users require some way to specify what code the commands will run as constructor parameters.  Fortunately, both Java and C++ offer users the ability to pass subroutines as parameters.
+
+#### Method references (Java)
+
+In Java, a reference to a subroutine that can be passed as a parameter is called a method reference.  The general syntax for a method reference is `object::method`.  Note that no method parameters are included, since the method *itself* is the parameter.  The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed.  For further information on method references, see [the official Oracle documentation](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html).
+
+#### Lambda expressions (Java)
+
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere.  To avoid this, Java also supports a feature called "lambda expressions."  A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*.  For specifics on how to write lambda expressions, see [this tutorial](http://tutorials.jenkov.com/java/lambda-expressions.html)
+
 # PID control through PIDSubsystems and PIDCommands
 
 One of the most common control algorithms used in FRC is the [PID controller](https://en.wikipedia.org/wiki/PID_controller).  WPILib offers its own `PIDController` class to help teams implement this functionality on their robots (TODO: link).  To further help teams integrate PID control into a command-based robot project, the command-based library includes several convenience wrappers for the `PIDController` object.  There are two basic wrappers: PIDSubsystems, which integrate the PID controller into a subsystem, and PIDCommands, which integrate the PID controller into a command.  Morevoer, each wrapper comes in one of two varieties: synchronous, which run from the main robot loop, and asynchronous, which run in their own thread.  While the asynchronous versions offer more functionality and potentially tigher control, new/inexperienced users are encouraged to use the synchronous versions to avoid having to deal with thread safety issues.
