@@ -16,6 +16,7 @@ Welcome to FIRST Robotics Documentation
    docs/install-guides/Windows
    docs/install-guides/MacOS
    docs/install-guides/Linux
+   docs/install-guides/FRC-Update-Suite
 
 .. toctree::
    :maxdepth: 1
