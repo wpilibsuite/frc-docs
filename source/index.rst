@@ -24,4 +24,3 @@ Welcome to FIRST Robotics Documentation
    :caption: Electrical - Getting Started
 
    docs/system-overview/control-system-hardware
-   docs/pneumatics/pneumatics
