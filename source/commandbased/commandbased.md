@@ -61,9 +61,21 @@
     + [PrintCommand](#printcommand)
     + [ScheduleCommand](#schedulecommand)
     + [BlockingScheduleCommand](#blockingschedulecommand)
-    + [Waitcommand](#waitcommand)
+    + [WaitCommand](#waitcommand)
     + [WaitUntilCommand](#waituntilcommand)
     + [PerpetualCommand](#perpetualcommand)
+  * [Command decorator methods](#command-decorator-methods)
+    + [withTimeout](#withtimeout)
+    + [interruptOn](#interrupton)
+    + [whenFinished](#whenfinished)
+    + [beforeStarting](#beforestarting)
+    + [andThen](#andthen)
+    + [alongWith](#alongwith)
+    + [raceWith](#racewith)
+    + [deadlineWith](#deadlinewith)
+    + [perpetually](#perpetually)
+    + [Composing decorators](#composing-decorators)
+  * [Static factory methods for command groups](#static-factory-methods-for-command-groups)
 - [PID control through PIDSubsystems and PIDCommands](#pid-control-through-pidsubsystems-and-pidcommands)
   * [PIDSubsystems](#pidsubsystems)
     + [Creating a PIDSubsystem](#creating-a-pidsubsystem)
@@ -997,14 +1009,16 @@ new ScheduleCommand(commandToSchedule)
 
 This is also often useful for "forking off" from commandgroups, when it is required that the command group flow depend on the "forked off" command.
 
-### Waitcommand
+### WaitCommand
 
-The `WaitCommand` class does nothing, and ends after a specified period of time elapses after its initial scheduling
+The `WaitCommand` class does nothing, and ends after a specified period of time elapses after its initial scheduling:
 
 ```java
 // Ends 5 seconds after being scheduled
 new WaitCommand(5)
 ```
+
+This is often useful as a component of a command group.
 
 ### WaitUntilCommand
 
@@ -1027,6 +1041,121 @@ The `PerpetualCommand` class runs a given command with its end condition removed
 ```java
 // Will run commandToRunForever perpetually, even if its isFinished() method returns true
 new PerpetualCommand(commandToRunForever)
+```
+
+## Command decorator methods
+
+The `Command` interface contains a number of defaulted "decorator" methods which can be used to add additional functionality to existing commands.  A "decorator" method is a method that takes an object (in this case, a command) and returns an object of the same type (i.e. a command) with some additional functionality added to it.  A list of the included decorator methods with brief examples is included below - for rigorous documentation, see the javadoc (TODO: link).
+
+### withTimeout
+
+The `withTimeout()` decorator adds a timeout to a command.  The decorated command will be interrupted if the timeout expires:
+
+```java
+// Will time out 5 seconds after being scheduled, and be interrupted
+command.withTimeout(5)
+```
+
+### interruptOn
+
+The `interruptOn()` decorator adds a condition on which the command will be interrupted:
+
+```java
+// Will be interrupted if m_limitSwitch.get() returns true
+command.interruptOn(m_limitswitch::get)
+```
+
+### whenFinished
+
+The `whenFinished()` decorator adds a method to be executed after the command ends:
+
+```java
+// Will print "hello" after ending
+command.whenFinished(() -> System.out.println("hello"))
+```
+
+### beforeStarting
+
+The `beforeStarting()` decorator adds a method to be executed before the command starts:
+
+```java
+// Will print "hello" before starting
+command.beforeStarting(() -> System.out.println("hello"))
+```
+
+### andThen
+
+The `andThen()` decorator returns a sequential command group containing the command, followed by the list of commands passed as arguments:
+
+```java
+// Will be the sequence fooCommand -> barCommand -> bazCommand
+fooCommand.andThen(barCommand, bazCommand)
+```
+
+### alongWith
+
+The `alongWith()` decorator returns a parallel command group containing the command, along with all the other commands passed in as arguments:
+
+```java
+// Will be a parallel command group containing fooCommand, barCommand, and bazCommand
+fooCommand.alongWith(barCommand, bazCommand)
+```
+
+### raceWith
+
+The `raceWith()` decorator returns a parallel command race containing the command, along with all the other commands passed in as arguments:
+
+```java
+// Will be a parallel command race containing fooCommand, barCommand, and bazCommand
+fooCommand.raceWith(barCommand, bazCommand)
+```
+
+### deadlineWith
+
+The `deadlineWith()` decorator returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
+
+```java
+// Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
+fooCommand.deadlineWith(barCommand, bazCommand)
+```
+
+### perpetually
+
+The `perpetually()` decorator removes the end condition of a command, so that it runs forever.
+
+```java
+// Will run forever unless externally interrupted, regardless of command.isFinished()
+command.perpetually()
+```
+
+### Composing decorators
+
+Remember that decorators, like all command groups, can be composed!  This allows very powerful and concise inline expressions:
+
+```java
+// Will run fooCommand, and then a race between barCommand and bazCommand
+fooCommand.andThen(barCommand.raceWith(bazCommand()))
+```
+
+## Static factory methods for command groups
+
+If users do not wish to use the `andThen`, `alongWith`, `raceWith`, and `deadlineWith` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the `CommandGroupBase` class contains several four static factory methods for declaring command groups: `sequence()`, `parallel()`, `race()`, and `deadline()`.  When used from within a command group subclass or in combination with `import static`, these become extremely concise and greatly aid in command composition:
+
+```java
+public class ExampleSequence extends SequentialCommandGroup {
+
+  // Will run a FooCommand, and then a race between a BarCommand and a BazCommand
+  public ExampleSequence() {
+    addCommands(
+        new FooCommand(),
+        race(
+            new BarCommand(),
+            new BazCommand()
+        )
+    );
+  }
+  
+}
 ```
 
 # PID control through PIDSubsystems and PIDCommands
