@@ -16,7 +16,10 @@ Download the WPILib release
 
 Download the latest Linux release from https://github.com/wpilibsuite/allwpilib/releases Right-click on the downloaded archive, click "Extract Here"
 
-|WPILib GitHub| |Extract WPILib|
+.. figure:: images/linux/wpi-github.png
+    :alt: WPILib GitHub
+.. figure:: images/linux/extract-wpilib.png
+    :alt: Extract WPILib
 
 Moving to FRC2019
 ^^^^^^^^^^^^^^^^^
@@ -41,7 +44,11 @@ Installing the extensions for WPILib VS Code
 4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix
 5. Repeat for JavaLang.vsix, JavaDeps.vsix, JavaDebug.vsix, and WPILib.vsix in that order
 
-|Install from VSIX| |VSIX Files|
+.. figure:: images/linux/install-vsix.pgn
+    :alt: Install VSIX
+
+.. figure:: images/linux/vsix-files.png
+    :alt: VSIX Files
 
 Setting up VSCode to use Java 11
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,11 +57,3 @@ The WPILib installation includes a JDK, however you need to point VS Code at whe
 
 .. figure:: images/linux/java-11.png
    :alt: Java 11
-
-.. |WPILib GitHub| image:: images/linux/wpi-github.png
-.. |Extract WPILib| image:: images/linux/extract-wpilib.png
-.. |Install from VSIX| image:: images/linux/install-vsix.png
-.. |VSIX Files| image:: images/linux/vsix-files.png
-
-
-   Install VS-Code
