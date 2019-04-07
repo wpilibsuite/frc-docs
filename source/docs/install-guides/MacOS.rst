@@ -1,13 +1,13 @@
 MacOS Offline Install Guide
 ===========================
 
-    The tools (except the Driver Station and the roboRIO Imaging Tool)
-    will run natively on a Mac.
+The tools (except the Driver Station and the roboRIO Imaging Tool)
+will run natively on a Mac.
 
-    Note: if you have the alpha release of VSCode for FRC installed, you
-    should uninstall it before proceeding or create a new VSCode
-    install. Failing to do this will have both versions installed at the
-    same time causing things to not operate properly.
+.. note:: Note: if you have the alpha release of VSCode for FRC installed, you\
+ should uninstall it before proceeding or create a new VSCode\
+ install. Failing to do this will have both versions installed at the\
+ same time causing things to not operate properly.\
 
 Getting Visual Studio Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
