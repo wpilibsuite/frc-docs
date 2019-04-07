@@ -31,3 +31,9 @@ Welcome to FIRST Robotics Documentation
    docs/hardware/status-lights-ref
    docs/hardware/can-addressing
    docs/hardware/preemptive-troubleshooting
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Robot Networking
+   
+   docs/networking/ip-networking
