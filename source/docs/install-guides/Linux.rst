@@ -44,7 +44,7 @@ Installing the extensions for WPILib VS Code
 4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix
 5. Repeat for JavaLang.vsix, JavaDeps.vsix, JavaDebug.vsix, and WPILib.vsix in that order
 
-.. figure:: images/linux/install-vsix.pgn
+.. figure:: images/linux/install-vsix.png
     :alt: Install VSIX
 
 .. figure:: images/linux/vsix-files.png
