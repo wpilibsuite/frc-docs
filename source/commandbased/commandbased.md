@@ -354,7 +354,7 @@ public class GrabHatch extends SendableCommandBase {
 }
 ```
 
-Notice that the hatch subsystem used by the command is passed into the command through the command's constructor.  This is a pattern called [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection), and allows users to avoid declaring their subsystems as global variables.  This is widely accepted as a best-practice - the reasoning behind this will be discussed in a later section (TODO: link to the section once it's written).
+Notice that the hatch subsystem used by the command is passed into the command through the command's constructor.  This is a pattern called [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection), and allows users to avoid declaring their subsystems as global variables.  This is widely accepted as a best-practice - the reasoning behind this is discussed in a [later section](#structuring-a-command-based-robot).
 
 Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as `isFinished()` simply returns true).  This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make [commands like this](#instantcommand) even more succinctly.
 
