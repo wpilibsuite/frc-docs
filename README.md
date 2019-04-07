@@ -7,8 +7,9 @@ Better FRC documentation using ReadTheDocs
 Located at https://frc-docs.readthedocs.io/en/latest/
 
 ## Guidelines
-- Should be written in Markdown
+- Should be written in ReStructuredText
 - Images should be contained locally without any external sources
+- List of TODOs are available [here](https://github.com/Daltz333/frc-docs/issues/10)
 
 ## Documentation Structure
 See the link here http://www.sphinx-doc.org/en/1.5/tutorial.html
