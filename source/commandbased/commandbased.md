@@ -356,7 +356,7 @@ public class GrabHatch extends SendableCommandBase {
 
 Notice that the hatch subsystem used by the command is passed into the command through the command's constructor.  This is a pattern called [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection), and allows users to avoid declaring their subsystems as global variables.  This is widely accepted as a best-practice - the reasoning behind this will be discussed in a later section (TODO: link to the section once it's written).
 
-Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as `isFinished()` simply returns true).  This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make commands like this even more succinctly (TODO: link to section on this).
+Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as `isFinished()` simply returns true).  This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make [commands like this](#instantcommand) even more succinctly.
 
 What about a more complicated case?  Below is a drive command, from the same example project:
 
@@ -393,7 +393,7 @@ public class DefaultDrive extends SendableCommandBase {
 }
 ```
 
-Notice that this command does not override `isFinished()`, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make this kind of command easier to write, too!) (TODO: add link to relevant section).
+Notice that this command does not override `isFinished()`, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make [this kind of command](#runcommand) easier to write, too!).
 
 # Command groups
 
@@ -484,7 +484,7 @@ Command complexAuto = new SequentialCommandGroup(
     new DriveDistance(kAutoBackupDistanceInches, -kAutoDriveSpeed, m_robotDrive));
 ```
 
-This is called an *inline* command definition (TODO: link to section), and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
+This is called an [inline](#inline-command-definitions) command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
 
 ## Recursive composition of command groups
 
@@ -804,7 +804,7 @@ Notice that subsystems are declared as private fields in `RobotContainer`.  This
   }
 ```
 
-As mentioned before, the `RobotContainer()` constructor is where most of the declarative setup for the robot should take place, including button bindings, configuring autonomous selectors, etc.  If the constructor gets too "busy," users are encouraged to migrate code into separate subroutines (such as the `configureButtonBindings()` method included by default) which are called from the constructor.  Note that one of the example autonomous commands has been *inlined* (TODO: link to section on inlining) for convenience.  Note also that, since subsystems are declared as private fields, they must be explicitly passed to commands.
+As mentioned before, the `RobotContainer()` constructor is where most of the declarative setup for the robot should take place, including button bindings, configuring autonomous selectors, etc.  If the constructor gets too "busy," users are encouraged to migrate code into separate subroutines (such as the `configureButtonBindings()` method included by default) which are called from the constructor.  Note that one of the example autonomous commands has been [inlined](#inline-command-definitions) for convenience.  Note also that, since subsystems are declared as private fields, they must be explicitly passed to commands.
 
 ```java
 /**
@@ -1328,7 +1328,7 @@ public class ExamplePIDCommand extends SynchronousPIDCommand {
 }
 ```
 
-However, as with many of the other command classes in the command-based library, users may want to save code by defining a PIDCommand inline (TODO: link):
+However, as with many of the other command classes in the command-based library, users may want to save code by defining a PIDCommand [inline](#inline-command-definitions):
 
 ```java
 new PIDCommand(new PIDController(0, 0, 0), //Creates a PIDController with all gains set to 0
@@ -1384,7 +1384,7 @@ public class TurnToAngle extends SynchronousPIDCommand {
 }
 ```
 
-And, for an inlined example (TODO: link):
+And, for an [inlined](#inline-command-definitions) example:
 
 ```java
 // Stabilize robot to drive straight with gyro when left bumper is held
