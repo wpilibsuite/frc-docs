@@ -1,0 +1,3 @@
+sphinx_rtd_theme
+sphinx
+sphinx-tabs==1.1.10

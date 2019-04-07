@@ -1,1 +1,5 @@
 build/
+source/_build/
+.vscode/
+temp.md
+temp.rst
