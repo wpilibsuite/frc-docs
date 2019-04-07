@@ -27,6 +27,7 @@ Welcome to FIRST Robotics Documentation
    docs/hardware/how-to-wire-a-robot
    docs/hardware/wiring-best-practices
    docs/hardware/solenoids
+   docs/hardware/wiring-pneumatics
    docs/hardware/status-lights-ref
    docs/hardware/can-addressing
    docs/hardware/preemptive-troubleshooting
