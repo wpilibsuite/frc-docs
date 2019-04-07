@@ -20,12 +20,14 @@ RoboRIO
     :width: 300
 
 Power
+~~~~~~~~~~
 
 - Green - Power is good
 - Amber - Brownout protection tripped, outputs disabled
 - Red - Power fault, check user rails for short circuit
 
 Status
+~~~~~~~~~~
 
 - On while the controller is booting, then should turn off
 - 2 blinks - Software error, reimage roboRIO
@@ -34,10 +36,12 @@ Status
 - Constant flash or stays solid on - Unrecoverable error
 
 Radio
+~~~~~~~~~~
 
 - Not currently implemented
 
 Comm
+~~~~~~~~~~
 
 - Off - No Communication
 - Red Solid - Communication with DS, but no user code
@@ -45,6 +49,7 @@ Comm
 - Green Solid - Good communication with DS
 
 Mode
+~~~~~~~~~~
 
 - Off - Outputs disabled (robot in Disabled, brown-out, etc.)
 - Amber/Orange - Autonomous Enabled
@@ -52,8 +57,9 @@ Mode
 - Red - Test Enabled
 
 RSL
+~~~~~~~~~~
 
-See above
+- See above
 
 
 OpenMesh Radio
@@ -63,16 +69,19 @@ OpenMesh Radio
     :width: 300
 
 Power
+~~~~~~~~~~
 
 - Blue - On or Powering Up
 - Blue Blinking - Powering Up
 
 Eth Link
+~~~~~~~~~~
 
 - Blue - Link Up
 - Blue Blinking - Link Up + Traffic Present
 
 WiFi
+~~~~~~~~~~
 
 - Off - Bridge Mode Unlinked or Non-FRC Firmware
 - Red - AP Mode Unlinked
@@ -101,9 +110,15 @@ Pneumatics Control Module
 
 Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
-Comp - This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
+Comp 
+~~~~~~~~~~
 
-Status - The status LED indicates device status as indicated by the two tables above. For more information on resolving PCM faults see the PCM User Manual. Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
+This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
+
+Status
+~~~~~~~~~~
+
+The status LED indicates device status as indicated by the two tables above. For more information on resolving PCM faults see the PCM User Manual. Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
 
 Digilent DMC-60
 ---------
@@ -153,10 +168,12 @@ The LED is used to indicate the direction and percentage of throttle and state o
 The LED will blink orange any time the Talon is in the disabled state. This will happen if the PWM input signal is lost, or in FRC, when the robot is disabled. If the Talon is in the enabled state and the throttle is within the 4% dead band, the LED will remain solid orange.
 
 Flashing Red/Green indicate ready for calibration. Several green flashes indicates successful calibration, and red several times indicates unsuccessful calibration.
+
 Victor speed controllers
-Victor speed controllers
+---------
 
 LED Indicator Status:
+~~~~~~~~~~
 
 - Green - full forward
 - Orange - neutral / brake
@@ -175,6 +192,7 @@ Victor-SP speed controllers
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
 
 Status
+~~~~~~~~~~
 
 The Status LEDs are used to indicate the direction and percentage of throttle and state of calibration. The LEDs may be one of three colors; red, orange or green. Solid green LEDs indicate positive output voltage equal to the input voltage of the Victor-SP. Solid Red LEDs indicate an output voltage that is equal to the input voltage multiplied by -1(input voltage = 12 volts, output equals -12 volts). The LEDs will blink in the corresponding color for any throttle less than 100% (red indicates negative polarity, green indicates positive). The rate at which the LEDs blink is proportional to the percent throttle. The faster the LEDs blink the closer the output is to 100% in either polarity.
 
