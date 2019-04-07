@@ -7,8 +7,7 @@ Welcome to FIRST Robotics Documentation
 ========================================================
 
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
    :caption: Software - Getting Started
 
    docs/system-overview/new-for-2019
@@ -19,8 +18,7 @@ Welcome to FIRST Robotics Documentation
    docs/install-guides/Linux
 
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
    :caption: Electrical - Getting Started
 
    docs/system-overview/control-system-hardware
