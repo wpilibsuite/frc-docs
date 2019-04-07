@@ -1,9 +1,10 @@
 Wiring Best Practices
 ========
 
-The article Wiring the FRC Control System walks through the details of what connects where to wire up the FRC Control System, this article provides some additional "Best Practices" that may increase reliability and make maintenance easier.
-Vibration/Shock
+.. hint:: The article Wiring the FRC Control System walks through the details of what connects where to wire up the FRC Control System, this article provides some additional "Best Practices" that may increase reliability and make maintenance easier.
 
+Vibration/Shock. 
+-------
 An FRC Robot is an incredibly rough environment when it comes to vibrations and shock loads. While many of the FRC specific electronics are extensively tested for mechanical robustness in these conditions, a few components, such as the radio, are not specifically designed for use on a mobile platform. Taking steps to reduce the shock and vibration these components are exposed to may help reduce failures. Some suggestions that may reduce mechanical failures:
 
 Vibration isolation
