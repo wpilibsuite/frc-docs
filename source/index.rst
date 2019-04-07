@@ -24,3 +24,9 @@ Welcome to FIRST Robotics Documentation
    :caption: Electrical - Getting Started
 
    docs/system-overview/control-system-hardware
+   docs/hardware/how-to-wire-a-robot
+   docs/hardware/wiring-best-practices
+   docs/hardware/solenoids
+   docs/hardware/status-lights-ref
+   docs/hardware/can-addressing
+   docs/hardware/preemptive-troubleshooting
