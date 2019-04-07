@@ -45,6 +45,25 @@
   * [Constants.java](#constantsjava)
   * [Subsystems](#subsystems-1)
   * [Commands](#commands-1)
+- [Convenience features](#convenience-features)
+  * [Inline command definitions](#inline-command-definitions)
+    + [Passing subroutines as parameters](#passing-subroutines-as-parameters)
+      - [Method references (Java)](#method-references--java-)
+      - [Lambda expressions (Java)](#lambda-expressions--java-)
+    + [Inlined command example](#inlined-command-example)
+  * [Included pre-made command classes](#included-pre-made-command-classes)
+    + [ConditionalCommand](#conditionalcommand)
+    + [SelectCommand](#selectcommand)
+    + [InstantCommand](#instantcommand)
+    + [RunCommand](#runcommand)
+    + [StartEndCommand](#startendcommand)
+    + [FunctionalCommand](#functionalcommand)
+    + [PrintCommand](#printcommand)
+    + [ScheduleCommand](#schedulecommand)
+    + [BlockingScheduleCommand](#blockingschedulecommand)
+    + [Waitcommand](#waitcommand)
+    + [WaitUntilCommand](#waituntilcommand)
+    + [PerpetualCommand](#perpetualcommand)
 - [PID control through PIDSubsystems and PIDCommands](#pid-control-through-pidsubsystems-and-pidcommands)
   * [PIDSubsystems](#pidsubsystems)
     + [Creating a PIDSubsystem](#creating-a-pidsubsystem)
@@ -54,7 +73,6 @@
     + [Using a PIDCommand](#using-a-pidcommand)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 # What is "command-based" programming?
 
@@ -830,6 +848,186 @@ In Java, a reference to a subroutine that can be passed as a parameter is called
 #### Lambda expressions (Java)
 
 While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere.  To avoid this, Java also supports a feature called "lambda expressions."  A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*.  For specifics on how to write lambda expressions, see [this tutorial](http://tutorials.jenkov.com/java/lambda-expressions.html)
+
+### Inlined command example
+
+So, what does an inlined command definition look like in practice?
+
+The `InstantCommand` class provides an example of a type of command that benefits greatly from inlining.  Consider the following from the HatchBotInlined example in the examples directory:
+
+```java
+// Grab the hatch when the 'A' button is pressed.
+driverController.getButton(Button.kA.value)
+    .whenPressed(new InstantCommand(m_hatchSubsystem::grabHatch, m_hatchSubsystem));
+// Release the hatch when the 'B' button is pressed.
+driverController.getButton(Button.kB.value)
+    .whenPressed(new InstantCommand(m_hatchSubsystem::releaseHatch, m_hatchSubsystem));
+```
+
+Instead of wastefully writing separate `GrabHatch` and `ReleaseHatch` commands which call only one method before ending, both can be accomplished with a simple inline definition by passing appropriate subsystem method.
+
+## Included pre-made command classes
+
+The command-based library includes a variety of pre-written commands for commonly-encountered use cases.  Many of these commands are intended to be used "out-of-the-box" via [inlining](#Inline-command-definitions), however they may be subclassed, as well.  A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the javadoc (TODO: link).
+
+### ConditionalCommand
+
+The `ConditionalCommand` class runs one of two commands when executed, depending on a user-specified true-or-false condition:
+
+```java
+// Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
+new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
+```
+
+### SelectCommand
+
+The `SelectCommand` class is a generalization of the `ConditionalCommand` class, runs one of a selection of commands based on the value of a user-specified selector:
+
+```java
+// The enum used as keys for selecting the command to run.
+private enum CommandSelector {
+  one, two, three
+}
+
+// An example selector method for the selectcommand.  Returns the selector that will select
+// which command to run.  Can base this choice on logical conditions evaluated at runtime.
+private CommandSelector select() {
+  return CommandSelector.one;
+}
+
+// An example selectcommand.  Will select from the three commands based on the value returned
+// by the selector method at runtime.  Note that selectcommand takes a generic type, so the
+// selector does not have to be an enum; it could be any desired type (string, integer,
+// boolean, double...)
+private Command exampleSelectCommand =
+    new SelectCommand<CommandSelector>(
+        // Maps selector values to commands
+        Map.ofEntries(
+            entry(CommandSelector.one, new PrintCommand("Command one was selected!")),
+            entry(CommandSelector.two, new PrintCommand("Command two was selected!")),
+            entry(CommandSelector.three, new PrintCommand("Command three was selected!"))
+        ),
+        this::select
+    );
+```
+
+### InstantCommand
+
+The `InstantCommand` class executes a single action on initialization, and then ends immediately:
+
+```java
+// Actuates the hatch subsystem to grab the hatch
+new InstantCommand(m_hatchSubsystem::grabHatch, m_hatchSubsystem)
+```
+
+### RunCommand
+
+The `RunCommand` class runs a specified method repeatedly in its `execute()` block.  It does not have end conditions by default; users can either subclass it, or decorate it (TODO: link) to add them.
+
+```java
+// A split-stick arcade command, with forward/backward controlled by the left
+// hand, and turning controlled by the right.
+new RunCommand(() -> m_robotDrive.arcadeDrive(
+    driverController.getY(GenericHID.Hand.kLeft),
+    driverController.getX(GenericHID.Hand.kRight)),
+    m_robotDrive)
+```
+
+### StartEndCommand
+
+The `StartEndCommand` class executes an action when starting, and a second one when ending.  It does not have end conditions by default; users can either subclass it, or decorate (TODO: link) an inlined command to add them.
+
+```java
+new StartEndCommand(
+    // Start driving forward at the start of the command
+    () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
+    // Stop driving at the end of the command
+    () -> m_robotDrive.arcadeDrive(0, 0),
+    // Requires the drive subsystem
+    m_robotDrive
+)
+```
+
+### FunctionalCommand
+
+The `FunctionalCommand` class allows all four `Command` methods to be passed in as method references or lambdas:
+
+```java
+new FunctionalCommand(
+  // Reset encoders on command start
+  m_robotDrive::resetEncoders,
+  // Start driving forward at the start of the command
+  () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
+  // Stop driving at the end of the command
+  () -> m_robotDrive.arcadeDrive(0, 0),
+  // End the command when the robot's driven distance exceeds the desired value
+  () -> m_robotDrive.getAverageEncoderDistance() >= kAutoDriveDistanceInches,
+  // Require the drive subsystem
+  m_robotDrive
+)
+```
+
+### PrintCommand
+
+The `PrintCommand` class prints a given string.
+
+```java
+new PrintCommand("This message will be printed!)
+```
+
+### ScheduleCommand
+
+The `ScheduleCommand` class schedules a specified command, and ends instantly:
+
+```java
+// Schedules commandToSchedule when run
+new ScheduleCommand(commandToSchedule)
+```
+
+It is often useful for "forking off" from command groups.
+
+### BlockingScheduleCommand
+
+The `BlockingScheduleCommand` class schedules a specified command, and does not end until that command ends:
+
+```java
+// Schedules commandToSchedule when run, does not end until commandToSchedule` is no longer scheduled
+new ScheduleCommand(commandToSchedule)
+```
+
+This is also often useful for "forking off" from commandgroups, when it is required that the command group flow depend on the "forked off" command.
+
+### Waitcommand
+
+The `WaitCommand` class does nothing, and ends after a specified period of time elapses after its initial scheduling
+
+```java
+// Ends 5 seconds after being scheduled
+new WaitCommand(5)
+```
+
+### WaitUntilCommand
+
+The `WaitUntilCommand` class does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
+
+```java
+// Ends after the 60-second mark of the current match
+new WaitUntilCommand(60)
+```
+
+```java
+// Ends after m_limitSwitch.get() returns true
+new WaitUntilCommand(m_limitSwitch::get)
+```
+
+### PerpetualCommand
+
+The `PerpetualCommand` class runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
+
+```java
+// Will run commandToRunForever perpetually, even if its isFinished() method returns true
+new PerpetualCommand(commandToRunForever)
+```
 
 # PID control through PIDSubsystems and PIDCommands
 
