@@ -13,7 +13,8 @@ Welcome to FIRST Robotics Documentation
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/control-system-software
-   docs/system-overview/offline-installation-preperations
+   docs/install-guides/imaging-your-classmate
+  docs/system-overview/offline-installation-preperations
    docs/install-guides/windows
    docs/install-guides/macos
    docs/install-guides/linux
