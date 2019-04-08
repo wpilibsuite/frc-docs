@@ -13,14 +13,14 @@ Welcome to FIRST Robotics Documentation
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/control-system-software
-   docs/install-guides/imaging-your-classmate
-  docs/system-overview/offline-installation-preperations
-   docs/install-guides/windows
-   docs/install-guides/macos
-   docs/install-guides/linux
-   docs/install-guides/frc-update-suite
+   docs/system-overview/offline-installation-preperations
+   docs/setup-guides/windows
+   docs/setup-guides/macos
+   docs/setup-guides/linux
+   docs/setup-guides/frc-update-suite
    docs/system-overview/3rd-party-libraries
-   docs/install-guides/imaging-your-roborio
+   docs/setup-guides/imaging-your-roborio
+   docs/setup-guides/imaging-your-classmate
 
 .. toctree::
    :maxdepth: 1
