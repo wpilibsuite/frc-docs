@@ -165,19 +165,22 @@ Devices should disable immediately when receiving the Disable message
 
 Requirements for FRC CAN Nodes
 ------------------------------
+Requirements for FRC CAN Nodes
+------------------------------
 
-For CAN Nodes to be accepted for use in the FRC System, they must: -
-Communicate using Arbitration IDs which match the prescribed FRC format:
-- A valid, issued CAN Device Type (per Table 1 - CAN Device Types) - A
-valid, issued Manufacturer ID (per Table 2 - CAN Manufacturer Codes) -
-API Class(es) and Index(s) assigned and documented by the device
-manufacturer - A user selectable device number if multiple units of the
-device type are intended to co-exist on the same network. - Support the
-minimum Broadcast message requirements as detailed in the Broadcast
-Messages section. - If controlling actuators, utilize a scheme to assure
-that the robot is issuing commands, is enabled, and is still present -
-Provide software library support for LabVIEW, C++, and Java or arrange
-with FIRST or FIRSTs Control System Partners to provide such interfaces.
+For CAN Nodes to be accepted for use in the FRC System, they must:
+
+-  Communicate using Arbitration IDs which match the prescribed FRC
+   format:
+   
+   -  A valid, issued CAN Device Type (per Table 1 - CAN Device Types)
+   -  A valid, issued Manufacturer ID (per Table 2 - CAN Manufacturer Codes)
+   -  API Class(es) and Index(s) assigned and documented by the device manufacturer
+   -  A user selectable device number if multiple units of the device type are intended to co-exist on the same network.
+   
+-  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
+-  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
+-  Provide software library support for LabVIEW, C++, and Java or arrange with FIRST or FIRSTs Control System Partners to provide such interfaces.
 
 .. |image0| image:: images/can-id-example.png
 
