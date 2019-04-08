@@ -24,7 +24,9 @@ Port Savers
 -----------
 
 For any connections on the Robot or Driver station that may be frequently plugged and unplugged (such as DS joysticks, DS Ethernet, roboRIO USB tether, and Ethernet tether) using a "Port Saver" or "pigtail" can substantially reduce the potential for damaging the port. This type of device can serve double duty, both reducing the number of cycles that the port on the electronic device sees, as well as relocating the connection to a more convenient location. Make sure to secure the port saver (see the next item) to avoid port damage.
+
 Wire Management and Strain Relief
+---------------------------------
 
 One of the most critical components to robot reliability and maintenance is good wire management and strain relief. Good wire management is comprised of a few components:
 
