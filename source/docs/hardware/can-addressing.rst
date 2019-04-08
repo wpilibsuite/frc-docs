@@ -165,9 +165,6 @@ Devices should disable immediately when receiving the Disable message
 
 Requirements for FRC CAN Nodes
 ------------------------------
-Requirements for FRC CAN Nodes
-------------------------------
-
 For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Communicate using Arbitration IDs which match the prescribed FRC
