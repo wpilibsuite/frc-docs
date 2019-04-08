@@ -20,7 +20,8 @@ Welcome to FIRST Robotics Documentation
    docs/install-guides/FRC-Update-Suite
    docs/system-overview/3rd-party-libraries
    docs/install-guides/FRC-Update-Suite
-
+   docs/install-guides/Imaging-Your-roboRIO
+   
 .. toctree::
    :maxdepth: 1
    :caption: Electrical - Getting Started
@@ -33,9 +34,9 @@ Welcome to FIRST Robotics Documentation
    docs/hardware/status-lights-ref
    docs/hardware/can-addressing
    docs/hardware/preemptive-troubleshooting
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
-   
+
    docs/networking/ip-networking
