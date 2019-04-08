@@ -12,10 +12,12 @@ Welcome to FIRST Robotics Documentation
 
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
+   docs/system-overview/control-system-software
    docs/system-overview/offline-installation-preperations
    docs/install-guides/Windows
    docs/install-guides/MacOS
    docs/install-guides/Linux
+   docs/system-overview/3rd-party-libraries
    docs/install-guides/FRC-Update-Suite
 
 .. toctree::
@@ -23,4 +25,16 @@ Welcome to FIRST Robotics Documentation
    :caption: Electrical - Getting Started
 
    docs/system-overview/control-system-hardware
-   docs/pneumatics/pneumatics
+   docs/hardware/how-to-wire-a-robot
+   docs/hardware/wiring-best-practices
+   docs/hardware/solenoids
+   docs/hardware/wiring-pneumatics
+   docs/hardware/status-lights-ref
+   docs/hardware/can-addressing
+   docs/hardware/preemptive-troubleshooting
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Robot Networking
+   
+   docs/networking/ip-networking

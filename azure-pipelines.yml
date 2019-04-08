@@ -1,0 +1,32 @@
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+pool:
+  vmImage: 'ubuntu-16.04' # other options: 'macOS-10.13', 'vs2017-win2016'
+
+trigger:
+- master
+
+pr:
+- master
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+    architecture: 'x64'
+    
+- script: python -m pip install --upgrade pip setuptools wheel
+  displayName: 'Install and upgrade pip'
+
+- script: pip install -r source/requirements.txt
+  displayName: 'Install Requirements'
+
+- script: make html
+  displayName: 'Compile Docs'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: build/ 
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: 'build.zip' 
+    replaceExistingArchive: true 
