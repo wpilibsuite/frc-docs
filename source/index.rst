@@ -40,3 +40,9 @@ Welcome to FIRST Robotics Documentation
    :caption: Robot Networking
 
    docs/networking/ip-networking
+   
+.. toctree::
+	:maxdepth: 1
+	:caption: Software Guides
+	
+	docs/commandbased/commandbased
