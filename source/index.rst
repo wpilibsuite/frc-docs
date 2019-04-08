@@ -17,8 +17,8 @@ Welcome to FIRST Robotics Documentation
    docs/install-guides/Windows
    docs/install-guides/MacOS
    docs/install-guides/Linux
-   docs/system-overview/3rd-party-libraries
    docs/install-guides/FRC-Update-Suite
+   docs/system-overview/3rd-party-libraries
 
 .. toctree::
    :maxdepth: 1
