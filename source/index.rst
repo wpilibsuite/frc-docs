@@ -13,12 +13,14 @@ Welcome to FIRST Robotics Documentation
    docs/system-overview/new-for-2019
    docs/system-overview/known-issues
    docs/system-overview/control-system-software
-   docs/system-overview/offline-installation-preperations
-   docs/install-guides/Windows
-   docs/install-guides/MacOS
-   docs/install-guides/Linux
-   docs/install-guides/FRC-Update-Suite
+   docs/install-guides/imaging-your-classmate
+  docs/system-overview/offline-installation-preperations
+   docs/install-guides/windows
+   docs/install-guides/macos
+   docs/install-guides/linux
+   docs/install-guides/frc-update-suite
    docs/system-overview/3rd-party-libraries
+   docs/install-guides/imaging-your-roborio
 
 .. toctree::
    :maxdepth: 1
@@ -32,9 +34,9 @@ Welcome to FIRST Robotics Documentation
    docs/hardware/status-lights-ref
    docs/hardware/can-addressing
    docs/hardware/preemptive-troubleshooting
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
-   
+
    docs/networking/ip-networking
