@@ -1453,7 +1453,7 @@ does not end until that command ends:
 
 .. code-block:: java
 
-   // Schedules commandToSchedule when run, does not end until commandToSchedule` is no longer scheduled
+   // Schedules commandToSchedule when run, does not end until commandToSchedule is no longer scheduled
    new ScheduleCommand(commandToSchedule)
 
 This is also often useful for “forking off” from commandgroups, when it

@@ -29,10 +29,17 @@ Welcome to FIRST Robotics Documentation
    docs/software/actuators/solenoids
 
 .. toctree::
-	:maxdepth: 1
-	:caption: Software - Command-Based
+   :maxdepth: 1
+   :caption: Software - Command-Based
 	
-	docs/software/commandbased/commandbased
+   docs/software/commandbased/what-is-command-based
+   docs/software/commandbased/subsystems
+   docs/software/commandbased/commandbased
+   docs/software/commandbased/command-groups
+   docs/software/commandbased/binding-commands-to-triggers
+   docs/software/commandbased/structuring-command-based-project
+   docs/software/commandbased/convenience-features
+   docs/software/commandbased/pid-subsystems-commands
 
 .. toctree::
    :maxdepth: 1
