@@ -10,7 +10,7 @@ How to wire an FRC Robot
 Gather Materials
 -------------------------------
 
-.. image:: images/image0.jpg
+.. image:: images/how-to-wire-a-robot/image0.jpg
    :width: 600
 
 Locate the following control system components and tools
@@ -59,14 +59,14 @@ chosen chassis configuration.
 Layout the Core Control System Components
 ---------------------------------------------------
 
-.. image:: images/image1.jpg
+.. image:: images/how-to-wire-a-robot/image1.jpg
    :width: 600
 
 
 Layout the components on the board. One layout that should work is shown
-in the images above.
+in the images/how-to-wire-a-robot above.
 
-.. image:: images/image2.png
+.. image:: images/how-to-wire-a-robot/image2.png
    :width: 600
 
 
@@ -83,7 +83,7 @@ secure devices to the board.
 Attach Battery Connector to PDP
 -------------------------------
 
-.. image:: images/image3.jpg
+.. image:: images/how-to-wire-a-robot/image3.jpg
    :width: 600
 
 Requires: Battery Connector, 6AWG terminal lugs, 1/16" Allen, 5mm Allen,
@@ -99,7 +99,7 @@ Attach terminal lugs to battery connector:
 Wire Breaker to PDP
 ---------------------------------------------------
 
-.. image:: images/image4.jpg
+.. image:: images/how-to-wire-a-robot/image4.jpg
    :width: 600
 
 
@@ -119,7 +119,7 @@ terminal of the PDP.
 Insulate PDP connections
 ---------------------------------------------------
 
-.. image:: images/image5.jpg
+.. image:: images/how-to-wire-a-robot/image5.jpg
    :width: 600
 
 Requires: 1/16" Allen, Electrical tape
@@ -157,9 +157,9 @@ Wago connector.
 Motor Controller Power
 ---------------------------------------------------
 
-.. image:: images/image6.jpg
+.. image:: images/how-to-wire-a-robot/image6.jpg
    :width: 600
-.. image:: images/image7.jpg
+.. image:: images/how-to-wire-a-robot/image7.jpg
    :width: 600
 
 Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG wire, 10
@@ -212,7 +212,7 @@ secure:
 roboRIO Power
 ---------------------------------------------------
 
-.. image:: images/image8.jpg
+.. image:: images/how-to-wire-a-robot/image8.jpg
    :width: 600
 
 Requires: 10A/20A mini fuses, Wire stripper, very small flat
@@ -227,7 +227,7 @@ screwdriver, 18AWG Red and Black
 Voltage Regulator Module Power
 ---------------------------------------------------
 
-.. image:: images/image11.jpg
+.. image:: images/how-to-wire-a-robot/image11.jpg
    :width: 600
 
 Requires: Wire stripper, small flat screwdriver (optional), 18AWG red
@@ -242,7 +242,7 @@ and black wire:
 Pneumatics Control Module Power (Optional)
 ---------------------------------------------------
 
-.. image:: images/image12.jpg
+.. image:: images/how-to-wire-a-robot/image12.jpg
    :width: 600
 
 Requires: Wire stripper, small flat screwdriver (optional), 18AWG red
@@ -262,7 +262,7 @@ Radio Power and Ethernet
 
 .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the female end of the cable using an additional Ethernet cable as shown in the next step.
 
-.. image:: images/image13.jpg
+.. image:: images/how-to-wire-a-robot/image13.jpg
    :width: 600
 
 Requires: Small flat screwdriver (optional), Rev radio PoE cable
@@ -273,7 +273,7 @@ Requires: Small flat screwdriver (optional), Rev radio PoE cable
 RoboRIO to Radio Ethernet
 ---------------------------------------------------
 
-.. image:: images/image14.jpg
+.. image:: images/how-to-wire-a-robot/image14.jpg
    :width: 600
 
 Requires: Ethernet cable
@@ -282,7 +282,7 @@ Connect an Ethernet cable from the female RJ45 (Ethernet) port of the
 Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
 RoboRIO to PCM CAN RoboRIO to PCM CANZoom: RoboRIO to PCM CAN
 
-.. image:: images/image15.jpg
+.. image:: images/how-to-wire-a-robot/image15.jpg
    :width: 600
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green
@@ -301,7 +301,7 @@ next step).
 PCM to PDP CAN
 ---------------------------------------------------
 
-.. image:: images/image16.jpg
+.. image:: images/how-to-wire-a-robot/image16.jpg
    :width: 600
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green
@@ -328,7 +328,7 @@ resistor at the end of your CAN bus chain.
 PWM Cables
 ---------------------------------------------------
 
-.. image:: images/image17.jpg
+.. image:: images/how-to-wire-a-robot/image17.jpg
    :width: 600
 
 Requires: 4x PWM cables (if using non-integrated wire controllers), 2x
@@ -346,7 +346,7 @@ Option 2 (Y-cable):
 Robot Signal Light
 ---------------------------------------------------
 
-.. image:: images/image18.jpg
+.. image:: images/how-to-wire-a-robot/image18.jpg
    :width: 600
 
 Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18AWG red
@@ -366,7 +366,7 @@ visible location as the robot is being constructed) Circuit Breakers
 Circuit Breakers
 ---------------------------------------------------
 
-.. image:: images/image19.jpg
+.. image:: images/how-to-wire-a-robot/image19.jpg
    :width: 600
 
 Requires: 4x 40A circuit breakers
@@ -383,7 +383,7 @@ the robot chassis before continuing.
 Motor Power
 ------------------------------------------------------------------------------------------------------
 
-.. image:: images/image20.jpg
+.. image:: images/how-to-wire-a-robot/image20.jpg
    :width: 600
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire
@@ -396,7 +396,7 @@ For each CIM motor:
 For integrated wire controllers (including Victor SPX):
 
 1. Strip the white and green wires from the controller
-2. Connect the motor wires to the controller output wires (it is recommended to connect the red wire to the white M+ output). The images above show examples using quick disconnect terminals.
+2. Connect the motor wires to the controller output wires (it is recommended to connect the red wire to the white M+ output). The images/how-to-wire-a-robot above show examples using quick disconnect terminals.
 
 For Sparks or other non-integrated-wire controllers:
 
@@ -406,7 +406,7 @@ For Sparks or other non-integrated-wire controllers:
 STOP
 ---------------------------------------------------
 
-.. image:: images/image21.png
+.. image:: images/how-to-wire-a-robot/image21.png
    :width: 600
 
 .. danger:: STOP!!
@@ -430,7 +430,7 @@ from becoming dangerous.
 Manage Wires
 ---------------------------------------------------
 
-.. image:: images/image22.jpg
+.. image:: images/how-to-wire-a-robot/image22.jpg
    :width: 600
 
 Requires: Zip ties

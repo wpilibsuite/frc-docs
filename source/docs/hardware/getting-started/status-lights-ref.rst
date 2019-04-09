@@ -6,7 +6,7 @@ Many of the components of the FRC Control System have indicator lights that can 
 Robot Signal Light (RSL)
 ---------------------------------------
 
-.. image:: images/rslLight.png
+.. image:: images/status-lights/rslLight.png
     :width: 300
 
 - Solid ON - Robot On and Disabled
@@ -16,7 +16,7 @@ Robot Signal Light (RSL)
 RoboRIO
 ---------
 
-.. image:: images/rioLight.png
+.. image:: images/status-lights/rioLight.png
     :width: 300
 
 Power
@@ -65,7 +65,7 @@ RSL
 OpenMesh Radio
 ---------------------------
 
-.. image:: images/radioLight.png
+.. image:: images/status-lights/radioLight.png
     :width: 300
 
 Power
@@ -91,13 +91,13 @@ WiFi
 Power Distribution Panel
 ------------------------------------
 
-.. image:: images/pdpLight.png
+.. image:: images/status-lights/pdpLight.png
     :width: 300
 
 Voltage Regulator Module
 ---------------------------
 
-.. image:: images/vrmLight.png
+.. image:: images/status-lights/vrmLight.png
     :width: 300
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
@@ -105,7 +105,7 @@ The status LEDs on the VRM indicate the state of the two power supplies. If the 
 Pneumatics Control Module
 ---------------------------
 
-.. image:: images/pcmLight.png
+.. image:: images/status-lights/pcmLight.png
     :width: 300
 
 Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
@@ -123,7 +123,7 @@ The status LED indicates device status as indicated by the two tables above. For
 Digilent DMC-60
 ---------------------------
 
-.. image:: images/digilentLight.png
+.. image:: images/status-lights/digilentLight.png
     :width: 300
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
@@ -131,7 +131,7 @@ When the center LED is off the device is operating in coast mode. When the cente
 Jaguar speed controllers
 ---------------------------
 
-.. image:: images/jagLight.png
+.. image:: images/status-lights/jagLight.png
     :width: 300
 
 image here
@@ -139,13 +139,13 @@ image here
 Mindsensors SD 540
 ------------------
 
-.. image:: images/sd540Light.png
+.. image:: images/status-lights/sd540Light.png
     :width: 300
 
 REV Robotics Servo Power Module
 ------------------------------------
 
-.. image:: images/servoLight.png
+.. image:: images/status-lights/servoLight.png
     :width: 300
 
 - 6V Power LED off, dim or flickering with power applied = Over-current shutdown
@@ -153,13 +153,13 @@ REV Robotics Servo Power Module
 REV Robotics SPARK
 ---------------------------------
 
-.. image:: images/sparkLight.png
+.. image:: images/status-lights/sparkLight.png
     :width: 300
 
 Talon speed controllers
 ---------------------------------
 
-.. image:: images/ogTalonLight.png
+.. image:: images/status-lights/ogTalonLight.png
     :width: 300
 
 
@@ -186,7 +186,7 @@ LED Indicator Status:
 Victor-SP speed controllers
 ---------------------------------
 
-.. image:: images/victorSPLight.png
+.. image:: images/status-lights/victorSPLight.png
     :width: 300
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
@@ -203,17 +203,17 @@ Flashing Red/Green indicate ready for calibration. Several green flashes indicat
 Talon-SRX speed controllers
 ------------------------------------
 
-.. image:: images/talonSRXLight.png
+.. image:: images/status-lights/talonSRXLight.png
     :width: 300
 
 Spike relay configured as a motor, light, or solenoid switch
 ---------------------------------------------------------------
 
-.. image:: images/spikeRelay1Light.png
+.. image:: images/status-lights/spikeRelay1Light.png
     :width: 300
 
 Spike relay configured as for one or two solenoids
 ------------------------------------------------------
 
-.. image:: images/spikeRelay2Light.png
+.. image:: images/status-lights/spikeRelay2Light.png
     :width: 300

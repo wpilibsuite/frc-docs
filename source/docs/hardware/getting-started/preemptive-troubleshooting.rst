@@ -8,7 +8,7 @@ Robot Preemptive Troubleshooting
 Check battery connections
 ------------------------------
 
-.. image:: images/preCheckBatt.png
+.. image:: images/preemptive-troubleshooting/preCheckBatt.png
    :width: 400
 
 The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
@@ -20,7 +20,7 @@ Apply considerable force onto the battery cable at 90 degrees to try to move the
 Secure the battery to robot connection
 ------------------------------------------------------------------
 
-.. image:: images/preCheckConnecc.png
+.. image:: images/preemptive-troubleshooting/preCheckConnecc.png
    :width: 400
 
 In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
@@ -28,7 +28,7 @@ In almost every event we see at least one robot where a not properly secured bat
 120 Amp circuit breaker
 ------------------------------------
 
-.. image:: images/preCheckBreaker.png
+.. image:: images/preemptive-troubleshooting/preCheckBreaker.png
    :width: 400
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
@@ -38,7 +38,7 @@ Because the metal is just molded into the case, every once in awhile you will br
 Power Distribution Panel (PDP)
 ------------------------------------
 
-.. image:: images/preCheckPDP.png
+.. image:: images/preemptive-troubleshooting/preCheckPDP.png
    :width: 700
 
 Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case.    Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
@@ -46,7 +46,7 @@ Make sure that split washers were placed under the PDP screws, but it is not eas
 Tug test everything
 ------------------------------------
 
-.. image:: images/preCheckTug.png
+.. image:: images/preemptive-troubleshooting/preCheckTug.png
    :width: 700
 
 The Weidmuller contacts for power, compressor output, roboRIO power connector, and radio power are important to verify by tugging on the connections as shown.  Make sure that none of the connections pull out.
@@ -58,7 +58,7 @@ Spade connectors can also fail due to improper crimps, so tug-test those as well
 Blade fuses
 ------------------------------------
 
-.. image:: images/preCheckFuse.png
+.. image:: images/preemptive-troubleshooting/preCheckFuse.png
    :width: 600
 
 If you can remove the blade fuses by hand then they are not in completely. Make sure that they are completely seated in the PDP so that they don't pop out during robot operation.
@@ -112,7 +112,7 @@ We often see problems with the Drivers Station. You should:
 Handy tools
 ------------------------------------
 
-.. image:: images/preCheckTools.png
+.. image:: images/preemptive-troubleshooting/preCheckTools.png
    :width: 400
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.

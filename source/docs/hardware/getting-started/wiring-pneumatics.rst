@@ -58,7 +58,7 @@ sure to wire with the proper polarity.
 Solenoid Voltage Jumper
 ------------------------
 
-.. image:: images/pcm01.jpg
+.. image:: images/wiring-pneumatics/pcm01.jpg
    :width: 400
 
 The PCM is capable of powering either 12V or 24V solenoids,
