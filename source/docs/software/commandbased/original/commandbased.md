@@ -1,93 +1,91 @@
-# Command-Based Library Screensteps: Markdown Edition
+# Command-Based Library Screensteps
 
-- [Command-Based Library Screensteps: Markdown Edition](#command-based-library-screensteps-markdown-edition)
-- [What is "command-based" programming?](#what-is-%22command-based%22-programming)
-  - [Subsystems and commands](#subsystems-and-commands)
-  - [How commands are run](#how-commands-are-run)
-  - [Command groups](#command-groups)
-- [Subsystems](#subsystems)
-  - [Creating a subsystem](#creating-a-subsystem)
-  - [Simple subsystem example](#simple-subsystem-example)
-  - [Setting default commands](#setting-default-commands)
-- [Commands](#commands)
-  - [Creating commands](#creating-commands)
-  - [The structure of a command](#the-structure-of-a-command)
-    - [Initialization](#initialization)
-    - [Execution](#execution)
-    - [Ending](#ending)
-    - [Specifying end conditions](#specifying-end-conditions)
-  - [Simple command example](#simple-command-example)
-- [Command groups](#command-groups-1)
-  - [Types of command groups](#types-of-command-groups)
-    - [SequentialCommandGroup](#sequentialcommandgroup)
-    - [ParallelCommandGroup](#parallelcommandgroup)
-    - [ParallelRaceGroup](#parallelracegroup)
-    - [ParallelDeadlineGroup](#paralleldeadlinegroup)
-  - [Creating command groups](#creating-command-groups)
-  - [Recursive composition of command groups](#recursive-composition-of-command-groups)
-  - [Command groups and requirements](#command-groups-and-requirements)
-  - [Restrictions on command group components](#restrictions-on-command-group-components)
-- [Binding commands to triggers](#binding-commands-to-triggers)
-  - [Trigger/Button bindings](#triggerbutton-bindings)
-    - [whenActive/whenPressed](#whenactivewhenpressed)
-    - [whileActiveContinuous/whileHeld](#whileactivecontinuouswhileheld)
-    - [whileActiveOnce/whenHeld](#whileactiveoncewhenheld)
-    - [whenInactive/whenReleased](#wheninactivewhenreleased)
-    - [toggleWhenActive/toggleWhenPressed](#togglewhenactivetogglewhenpressed)
-    - [cancelWhenActive/cancelWhenPressed](#cancelwhenactivecancelwhenpressed)
-  - [Binding a command to a joystick button](#binding-a-command-to-a-joystick-button)
-    - [Creating a JoystickButton](#creating-a-joystickbutton)
-    - [Binding a command to a JoystickButton](#binding-a-command-to-a-joystickbutton)
-  - [Composing triggers](#composing-triggers)
-  - [Creating your own custom trigger](#creating-your-own-custom-trigger)
-- [Structuring a command-based robot project](#structuring-a-command-based-robot-project)
-  - [Robot.java](#robotjava)
-  - [RobotContainer.java](#robotcontainerjava)
-  - [Constants.java](#constantsjava)
-  - [Subsystems](#subsystems-1)
-  - [Commands](#commands-1)
-- [Convenience features](#convenience-features)
-  - [Inline command definitions](#inline-command-definitions)
-    - [Passing subroutines as parameters](#passing-subroutines-as-parameters)
-      - [Method references (Java)](#method-references-java)
-      - [Lambda expressions (Java)](#lambda-expressions-java)
-    - [Inlined command example](#inlined-command-example)
-  - [Included pre-made command classes](#included-pre-made-command-classes)
-    - [ConditionalCommand](#conditionalcommand)
-    - [SelectCommand](#selectcommand)
-    - [InstantCommand](#instantcommand)
-    - [RunCommand](#runcommand)
-    - [StartEndCommand](#startendcommand)
-    - [FunctionalCommand](#functionalcommand)
-    - [PrintCommand](#printcommand)
-    - [ScheduleCommand](#schedulecommand)
-    - [BlockingScheduleCommand](#blockingschedulecommand)
-    - [WaitCommand](#waitcommand)
-    - [WaitUntilCommand](#waituntilcommand)
-    - [PerpetualCommand](#perpetualcommand)
-  - [Command decorator methods](#command-decorator-methods)
-    - [withTimeout](#withtimeout)
-    - [interruptOn](#interrupton)
-    - [whenFinished](#whenfinished)
-    - [beforeStarting](#beforestarting)
-    - [andThen](#andthen)
-    - [alongWith](#alongwith)
-    - [raceWith](#racewith)
-    - [deadlineWith](#deadlinewith)
-    - [perpetually](#perpetually)
-    - [Composing decorators](#composing-decorators)
-  - [Static factory methods for command groups](#static-factory-methods-for-command-groups)
-- [PID control through PIDSubsystems and PIDCommands](#pid-control-through-pidsubsystems-and-pidcommands)
-  - [PIDSubsystems](#pidsubsystems)
-    - [Creating a PIDSubsystem](#creating-a-pidsubsystem)
-    - [Using a PIDSubsystem](#using-a-pidsubsystem)
-  - [PIDCommands](#pidcommands)
-    - [Creating a PIDCommand](#creating-a-pidcommand)
-    - [Using a PIDCommand](#using-a-pidcommand)
+- [Command-Based Library Screensteps](#command-based-library-screensteps)
+  - [What is "command-based" programming?](#what-is-%22command-based%22-programming)
+    - [Subsystems and commands](#subsystems-and-commands)
+    - [How commands are run](#how-commands-are-run)
+    - [Command groups](#command-groups)
+  - [Subsystems](#subsystems)
+    - [Creating a subsystem](#creating-a-subsystem)
+    - [Simple subsystem example](#simple-subsystem-example)
+    - [Setting default commands](#setting-default-commands)
+  - [Commands](#commands)
+    - [Creating commands](#creating-commands)
+    - [The structure of a command](#the-structure-of-a-command)
+      - [Initialization](#initialization)
+      - [Execution](#execution)
+      - [Ending](#ending)
+      - [Specifying end conditions](#specifying-end-conditions)
+    - [Simple command example](#simple-command-example)
+  - [Command groups](#command-groups-1)
+    - [Types of command groups](#types-of-command-groups)
+      - [SequentialCommandGroup](#sequentialcommandgroup)
+      - [ParallelCommandGroup](#parallelcommandgroup)
+      - [ParallelRaceGroup](#parallelracegroup)
+      - [ParallelDeadlineGroup](#paralleldeadlinegroup)
+    - [Creating command groups](#creating-command-groups)
+    - [Recursive composition of command groups](#recursive-composition-of-command-groups)
+    - [Command groups and requirements](#command-groups-and-requirements)
+    - [Restrictions on command group components](#restrictions-on-command-group-components)
+  - [Binding commands to triggers](#binding-commands-to-triggers)
+    - [Trigger/Button bindings](#triggerbutton-bindings)
+      - [whenActive/whenPressed](#whenactivewhenpressed)
+      - [whileActiveContinuous/whileHeld](#whileactivecontinuouswhileheld)
+      - [whileActiveOnce/whenHeld](#whileactiveoncewhenheld)
+      - [whenInactive/whenReleased](#wheninactivewhenreleased)
+      - [toggleWhenActive/toggleWhenPressed](#togglewhenactivetogglewhenpressed)
+      - [cancelWhenActive/cancelWhenPressed](#cancelwhenactivecancelwhenpressed)
+    - [Binding a command to a joystick button](#binding-a-command-to-a-joystick-button)
+      - [Creating a JoystickButton](#creating-a-joystickbutton)
+      - [Binding a command to a JoystickButton](#binding-a-command-to-a-joystickbutton)
+    - [Composing triggers](#composing-triggers)
+    - [Creating your own custom trigger](#creating-your-own-custom-trigger)
+  - [Structuring a command-based robot project](#structuring-a-command-based-robot-project)
+    - [Robot.java](#robotjava)
+    - [RobotContainer.java](#robotcontainerjava)
+    - [Constants.java](#constantsjava)
+    - [Subsystems](#subsystems-1)
+    - [Commands](#commands-1)
+  - [Convenience features](#convenience-features)
+    - [Inline command definitions](#inline-command-definitions)
+      - [Passing subroutines as parameters](#passing-subroutines-as-parameters)
+        - [Method references (Java)](#method-references-java)
+        - [Lambda expressions (Java)](#lambda-expressions-java)
+      - [Inlined command example](#inlined-command-example)
+    - [Included pre-made command classes](#included-pre-made-command-classes)
+      - [ConditionalCommand](#conditionalcommand)
+      - [SelectCommand](#selectcommand)
+      - [InstantCommand](#instantcommand)
+      - [RunCommand](#runcommand)
+      - [StartEndCommand](#startendcommand)
+      - [FunctionalCommand](#functionalcommand)
+      - [PrintCommand](#printcommand)
+      - [ScheduleCommand](#schedulecommand)
+      - [BlockingScheduleCommand](#blockingschedulecommand)
+      - [WaitCommand](#waitcommand)
+      - [WaitUntilCommand](#waituntilcommand)
+      - [PerpetualCommand](#perpetualcommand)
+    - [Command decorator methods](#command-decorator-methods)
+      - [withTimeout](#withtimeout)
+      - [interruptOn](#interrupton)
+      - [whenFinished](#whenfinished)
+      - [beforeStarting](#beforestarting)
+      - [andThen](#andthen)
+      - [alongWith](#alongwith)
+      - [raceWith](#racewith)
+      - [deadlineWith](#deadlinewith)
+      - [perpetually](#perpetually)
+      - [Composing decorators](#composing-decorators)
+    - [Static factory methods for command groups](#static-factory-methods-for-command-groups)
+  - [PID control through PIDSubsystems and PIDCommands](#pid-control-through-pidsubsystems-and-pidcommands)
+    - [PIDSubsystems](#pidsubsystems)
+      - [Creating a PIDSubsystem](#creating-a-pidsubsystem)
+      - [Using a PIDSubsystem](#using-a-pidsubsystem)
+    - [PIDCommands](#pidcommands)
+      - [Creating a PIDCommand](#creating-a-pidcommand)
+      - [Using a PIDCommand](#using-a-pidcommand)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-# What is "command-based" programming?
+## What is "command-based" programming?
 
 WPILib supports a robot programming methodology called "command-based" programming.  In general, "command-based" can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
 
@@ -112,7 +110,7 @@ if(aButton.get()) {
 }
 ```
 
-## Subsystems and commands
+### Subsystems and commands
 
 ![image of subsystems and commands](images/subsystemscommands.png)
 
@@ -122,7 +120,7 @@ The command-based pattern is based around two core abstractions: **commands**, a
 
 **Commands** define high-level robot actions or behaviors that utilize the methods defined by the subsystems.  A command is a simple [state machine](https://en.wikipedia.org/wiki/Finite-state_machine) that is either initializing, executing, ending, or idle.  Users write code specifying which action should be taken in each state.  Simple commands can be composed into "command groups" to accomplish more-complicated tasks.  Commands, including command groups, implement the `Command` interface.
 
-## How commands are run
+### How commands are run
 
 Commands are run by the `CommandScheduler`, a singleton class that is at the core of the command-based library.  The `CommandScheduler` is in charge of polling buttons for new commands to schedule, checking the resources required by those commands to avoid conflicts, executing currently-scheduled commands, and removing commands that have finished or been interrupted.  The scheduler's `run()` method may be called from any place in the user's code; it is generally recommended to call it from the `robotPeriodic()` method of the `Robot` class, which is run at a default frequency of 50Hz (once every 20ms).
 
@@ -136,11 +134,11 @@ TODO: replace this graphic with one that isn't wrong
 
 When a command is scheduled, its `initialize()` method is called once.  Its `execute()` method is then called once per call to `CommandScheduler.getInstance().run()`.  A command is un-scheduled and has its `end(boolean interrupted)` method called when either its `isFinished()` method returns true, or else it is interrupted (either by another command with which it shares a required subsystem, or by being canceled).
 
-## Command groups
+### Command groups
 
 It is often desirable to build complex commands from simple pieces.  This is achievable by [composing](https://en.wikipedia.org/wiki/Object_composition) commands into "command groups."  A command group is a command that contains multiple commands within it, which run either in parallel or in sequence.  The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired.  As command groups themselves implement the `Command` interface, they are [recursively composeable](https://en.wikipedia.org/wiki/Object_composition#Recursive_composition) - one can include command groups *within* other command groups.  This provides an extremely powerful way of building complex robot actions with a simple library.
 
-# Subsystems
+## Subsystems
 
 Subsystems are the basic unit of robot organization in the command-based paradigm.  A subsystem is an abstraction for a collection of robot hardware that *operates together as a unit*.  Subsystems [encapsulate](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)) this hardware, "hiding" it from the rest of the robot code (e.g. commands) and restricting access to it except through the subsystem's public methods. Restricting the access in this way provides a single convenient place for code that might otherwise be duplicated in multiple places (such as scaling motor outputs or checking limit switches) if the subsystem internals were exposed.  It also allows changes to the specific details of how the subsystem works (the "implementation") to be isolated from the rest of robot code, making it far easier to make substantial changes if/when the design constraints change.
 
@@ -148,7 +146,7 @@ Subsystems also serve as the backbone of the `CommandScheduler`'s resource manag
 
 Subsystems can be associated with "default commands" that will be automatically scheduled when no other command is currently using the subsystem.  This is useful for continuous "background" actions such as controlling the robot drive, or keeping an arm held at a setpoint.  Similar functionality can be achieved in the subsystem's `periodic()` method, which is run once per run of the scheduler; teams should try to be consistent within their codebase about which functionality is achieved through either of these methods.
 
-## Creating a subsystem
+### Creating a subsystem
 
 The recommended method to create a subsystem for most users is to subclass the abstract `SendableSubsystemBase` class:
 
@@ -176,7 +174,7 @@ public class ExampleSubsystem implements Subsystem {
 }
 ```
 
-## Simple subsystem example
+### Simple subsystem example
 
 What might a functional subsystem look like in practice?  Below is a simple pneumatically-actuated hatch mechanism from the HatchBot example project (TODO: link to it):
 
@@ -215,7 +213,7 @@ public class HatchSubsystem extends SendableSubsystemBase {
 
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared `private`), and instead publicly exposes two higher-level, descriptive robot actions: `grabHatch()` and `releaseHatch()`.  It is extremely important that "implementation details" such as the double solenoid be "hidden" in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state.  It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-## Setting default commands
+### Setting default commands
 
 Setting a default command for a subsystem is very easy; one simply calls `Scheduler.getInstance().setDefaultCommand()`, or, more simply,  the `setDefaultCommand()` method of the `Subsystem` interface:
 
@@ -227,11 +225,11 @@ Scheduler.getInstance().setDefaultCommand(driveSubsystem, defaultDriveCommand);
 driveSubsystem.setDefaultCommand(defaultDriveCommand);
 ```
 
-# Commands
+## Commands
 
 Commands are simple state machines that perform high-level robot functions using the methods defined by subsystems.  Commands can be either idle, in which they do nothing, or scheduled, in which the scheduler will execute a specific set of the command's code depending on the state of the command.  The `CommandScheduler` recognizes scheduled commands as being in one of three states: initializing, executing, or ending.  Commands specify what is done in each of these states through the `initialize()`, `execute()` and `end()` methods.
 
-## Creating commands
+### Creating commands
 
 Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract `SendableCommandBase` class:
 
@@ -264,11 +262,11 @@ public class ExampleCommand implements Command {
 }
 ```
 
-## The structure of a command
+### The structure of a command
 
 While subsystems are fairly freeform, and may generally look like whatever the user wishes them to, commands are quite a bit more constrained.  Command code must specify what the command will do in each of its possible states.  This is done by overriding the `initialize()`, `execute()`, and `end()` methods.  Additionally, a command must be able to tell the scheduler when (if ever) it has finished execution - this is done by overriding the `isFinished()` method.  All of these methods are defaulted to reduce clutter in user code: `initialize()`, `execute()`, and `end()` are defaulted to simply do nothing, while `isFinishsed()` is defaulted to return false (resulting in a command that never ends).
 
-### Initialization
+#### Initialization
 
 ```java
 @Override
@@ -279,7 +277,7 @@ public void initialize() {
 
 The `initialize()` method is run exactly once per time a command is scheduled, as part of the scheduler's `schedule()` method.  The scheduler's `run()` method does not need to be called for the `initialize()` method to run.  The initialize block should be used to place the command in a known starting state for execution.  It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
 
-### Execution
+#### Execution
 
 ```java
 @Override
@@ -290,7 +288,7 @@ public void execute() {
 
 The `execute()` method is called repeatedly while the command is scheduled, whenever the scheduler's `run()` method is called (this is generally done in the main robot periodic method, which runs every 20ms by default).  The execute block should be used for any task that needs to be done continually while the command is scheduled, such as updating motor outputs to match joystick inputs, or using the ouput of a control loop.
 
-### Ending
+#### Ending
 
 ```java
 @Override
@@ -305,7 +303,7 @@ public void end(boolean interrupted) {
 
 The `end()` method of the command is called once when the command ends, whether it finishes normally (i.e. `isFinished()` returned true) or it was interrupted (either by another command or by being explicitly canceled).  The method argument specifies the manner in which the command ended; users can use this to differentiate the behavior of their command end accordingly.  The end block should be used to "wrap up" command state in a neat way, such as setting motors back to zero or reverting a solenoid actuator to a "default" state.
 
-### Specifying end conditions
+#### Specifying end conditions
 
 ```java
 @Override
@@ -318,7 +316,7 @@ public boolean isFinished() {
 
 Just like `execute()`, the `isFinished()` method of the command is called repeatedly, whenever the scheduler's `run()` method is called.  As soon as it returns true, the command's `end()` method is called and it is un-scheduled.  The `isFinished()` method is called *after* the `execute()` method, so the command *will* execute once on the same iteration that it is un-scheduled.
 
-## Simple command example
+### Simple command example
 
 What might a functional command look like in practice?  As before, below is a simple command from the HatchBot example project that uses the `HatchSubsystem` introduced in the previous section:
 
@@ -396,7 +394,7 @@ public class DefaultDrive extends SendableCommandBase {
 
 Notice that this command does not override `isFinished()`, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make [this kind of command](#runcommand) easier to write, too!).
 
-# Command groups
+## Command groups
 
 Individual commands are capable of accomplishing a large variety of robot tasks, but the simple three-state format can quickly become cumbersome when more advanced functionality requiring extended sequences of robot tasks or coordination of multiple robot subsystems is required.  In order to accomplish this, users are encouraged to use the powerful command group functionality included in the command-based library.
 
@@ -404,39 +402,39 @@ As the name suggests, command groups are combinations of multiple commands.  The
 
 Most importantly, however, command groups *are themselves commands* - they implement the `Command` interface.  This allows command groups to be [recursively composed](https://en.wikipedia.org/wiki/Object_composition#Recursive_composition) - that is, a command group may contain *other command groups* as components.
 
-## Types of command groups
+### Types of command groups
 
 The command-based library supports four basic types of command groups: `SequentialCommandGroup`, `ParallelCommandGroup`, `ParallelRaceGroup`, and `ParallelDeadlineGroup`.  Each of these command groups combines multiple commands into a composite command - however, they do so in different ways:
 
-### SequentialCommandGroup
+#### SequentialCommandGroup
 ```java
 SequentialCommandGroup(Command... commands)
 ```
 
 A `SequentialCommandGroup` runs a list of commands in sequence - the first command will be executed, then the second, then the third, and so on until the list finishes.  The sequential group finishes after the last command in the sequence finishes.  It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
-### ParallelCommandGroup
+#### ParallelCommandGroup
 ```
 ParallelCommandGroup(Command... commands)
 ```
 
 A `ParallelCommandGroup` runs a set of commands concurrently - all commands will execute at the same time.  The parallel group will end when all commands have finished.
 
-### ParallelRaceGroup
+#### ParallelRaceGroup
 ```
 ParallelRaceGroup(Command... commands)
 ```
 
 A `ParallelRaceGroup` is much like a `ParallelCommandgroup`, in that it runs a set of commands concurrently.  However, the race group ends as soon as any command in the group ends - all other commands are interrupted at that point.
 
-### ParallelDeadlineGroup
+#### ParallelDeadlineGroup
 ```
 ParallelDeadlineGroup(Command deadline, Command... commands)
 ```
 
 A `ParallelDeadlineGroup` also runs a set of commands concurrently.  However, the deadline group ends when a *specific* command (the "deadline") ends, interrupting all other commands in the group that are still running at that point.
 
-## Creating command groups
+### Creating command groups
 
 Users have several options for creating command groups.  One way - similar to the previous incarnation of the command-based library - is to subclass one of the command group classes.  Consider the following from the Hatch Bot example project (TODO: link):
 
@@ -487,7 +485,7 @@ Command complexAuto = new SequentialCommandGroup(
 
 This is called an [inline](#inline-command-definitions) command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
 
-## Recursive composition of command groups
+### Recursive composition of command groups
 
 As mentioned earlier, command groups are [recursively composeable](https://en.wikipedia.org/wiki/Object_composition#Recursive_composition) - since command groups are themselves commands, they may be included as components of other command groups.  This is an extremely powerful feature of command groups, and allows users to build very complex robot actions from simple pieces.  For example, consider the following code:
 
@@ -506,7 +504,7 @@ This creates a sequential command group that *contains* a parallel command group
 
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one.  Notice also that this entire, more-complex structure, could be again embedded in another structure.  Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
-## Command groups and requirements
+### Command groups and requirements
 
 As command groups are commands, they also must declare their requirements.  However, users are not required to specify requirements manually for command groups - requirements are automatically inferred from the commands included.  As a rule, *command groups include the union of all of the subsystems required by their component commands.*  Thus, the `ComplexAuto` shown previously will require both the drive subsystem and the hatch subsystem of the robot.
 
@@ -514,7 +512,7 @@ Additionally, requirements are enforced within all three types of parallel group
 
 Some advanced users may find this overly-restrictive - for said users, the library offers a `ScheduleCommand` class that can be used to independently "branch off" from command groups to provide finer granularity in requirement management (TODO: link).
 
-## Restrictions on command group components
+### Restrictions on command group components
 
 Since command group components are run through their encapsulating command groups, errors could occur if those same command instances were independently scheduled at the same time as the group - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior.
 
@@ -522,7 +520,7 @@ For this reason, command instances that have been added to a command group canno
 
 Advanced users who wish to re-use a command instance and are *certain* that it is safe to do so may bypass this restriction with the `clearGroupedCommand()` method in the `CommandGroupBase` class (TODO: link).
 
-# Binding commands to triggers
+## Binding commands to triggers
 
 Apart from autonomous commands, which are scheduled at the start of the autonomous period, and default commands, which are automatically scheduled whenever their subsystem is not currently in-use, the most common way to run a command is by binding it to a triggering event, such as a button being pressed by a human operator.  The command-based paradigm makes this extremely easy to do.
 
@@ -530,11 +528,11 @@ As mentioned earlier, command-based is a [declarative](https://en.wikipedia.org/
 
 Command binding is done through the `Trigger` class and its various `Button` subclasses (TODO: link).
 
-## Trigger/Button bindings
+### Trigger/Button bindings
 
 There are a number of bindings available for the `Trigger` class.  All of these bindings will automatically schedule a command when a certain trigger activation event occurs - however, each binding has different specific behavior.  `Button` and its subclasses have bindings with identical behaviors, but slightly different names that better-match a button rather than an arbitrary triggering event.
 
-### whenActive/whenPressed
+#### whenActive/whenPressed
 
 ```java
 trigger.whenActive(Command command)
@@ -546,7 +544,7 @@ button.whenPressed(Command command)
 
 This binding schedules a command when a trigger changes from inactive to active (or, accordingly, when a button changes is initially pressed).  The command will be scheduled on the iteration when the state changes, and will not be scheduled again unless the trigger becomes inactive and then active again (or the button is released and then re-pressed).
 
-### whileActiveContinuous/whileHeld
+#### whileActiveContinuous/whileHeld
 
 ```java
 trigger.whileActiveContinuous(Command command)
@@ -558,7 +556,7 @@ button.whileHeld(Command command)
 
 This binding schedules a command repeatedly while a trigger is active (or, accordingly, while a button is held), and cancels it when the trigger becomes inactive (or when the button is released).  Note that scheduling an already-running command has no effect; but if the command finishes while the trigger is still active, it will be re-scheduled.
 
-### whileActiveOnce/whenHeld
+#### whileActiveOnce/whenHeld
 
 ```java
 trigger.whileActiveOnce(Command command)
@@ -570,7 +568,7 @@ button.whenHeld(Command command)
 
 This binding schedules a command when a trigger changes from inactive to active (or, accordingly, when a button is initially pressed) and cancels it when the trigger becomes inactive again (or the button is released).  The command will *not* be re-scheduled if it finishes while the trigger is still active.
 
-### whenInactive/whenReleased
+#### whenInactive/whenReleased
 
 ```java
 trigger.whenInactive(Command command)
@@ -582,7 +580,7 @@ button.whenReleased(Command command)
 
 This binding schedules a command when a trigger changes from active to inactive (or, accordingly, when a button is initially released).  The command will be scheduled on the iteration when the state changes, and will not be re-scheduled unless the trigger becomes active and then inactive again (or the button is pressed and then re-released).
 
-### toggleWhenActive/toggleWhenPressed
+#### toggleWhenActive/toggleWhenPressed
 
 ```java
 trigger.toggleWhenActive(Command command)
@@ -594,7 +592,7 @@ button.toggleWhenPressed(Command command)
 
 This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and cancelling it under the same condition if the command is currently running.  Note that while this functionality is supported, toggles are *not* a highly-recommended option for user control, as they require the driver to mentally keep track of the robot state.
 
-### cancelWhenActive/cancelWhenPressed
+#### cancelWhenActive/cancelWhenPressed
 
 ```java
 trigger.cancelWhenActive(Command command)
@@ -606,11 +604,11 @@ button.cancelWhenPressed(Command command)
 
 This binding cancels a command when a trigger changes from inactive to active (or, accordingly, when a button is initially pressed).  the command is canceled on the iteration when the state changes, and will not be canceled again unless the trigger becomes inactive and then active again (or the button is released and re-pressed).  Note that cancelling a command that is not currently running has no effect.
 
-## Binding a command to a joystick button
+### Binding a command to a joystick button
 
 The most-common way to trigger a command is to bind a command to a button on a joystick or other HID (human interface device).  To do this, users should use the `JoystickButton` class.
 
-### Creating a JoystickButton
+#### Creating a JoystickButton
 
 There are two ways to create a `JoystickButton`.  For both, one must first create an instance of one of the subclasses of `GenericHID`:
 
@@ -634,7 +632,7 @@ driverController.getButton(XboxController.Button.kX.value) // Returns the Joysti
                                                            // corresponding to the `X` button of driverController
 ```
 
-### Binding a command to a JoystickButton
+#### Binding a command to a JoystickButton
 
 Putting it all together, it is very simple to bind a button to a JoystickButton:
 
@@ -660,7 +658,7 @@ driverController.getButton(XboxController.Button.kX.value)
 
 Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization.  The library handles everything else.
 
-## Composing triggers
+### Composing triggers
 
 The `Trigger` class (including its `Button` subclasses) can be composed to create composite triggers through the `and()`, `or()`, and `negate()` methods.  For example:
 
@@ -673,7 +671,7 @@ driverController.getButton(XboxController.Button.kX.value)
 
 Note that these methods return a `Trigger`, not a `Button`, so the `Trigger` binding method names must be used even when buttons are composed.
 
-## Creating your own custom trigger
+### Creating your own custom trigger
 
 While binding to HID buttons is by far the most common use case, advanced users may occasionally want to bind commands to arbitrary triggering events.  This can be easily done by simply writing your own subclass of trigger:
 
@@ -687,7 +685,7 @@ public class ExampleTrigger extends Trigger {
 }
 ```
 
-# Structuring a command-based robot project
+## Structuring a command-based robot project
 
 While users are free to use the command-based libraries however they like (and advanced users are encouraged to do so), new users may want some guidance on how to structure a basic command-based robot project.
 
@@ -704,7 +702,7 @@ The root directory will also contain two sub-packages:
 `Subsystems` contains all user-defined subsystem classes.
 `Commands` contains all user-defined command classes.
 
-## Robot.java
+### Robot.java
 
 As `Robot.java` is responsible for the program's control flow, and command-based is an imperative paradigm designed to minimize the amount of attention the user has to pay to explicit program control flow, the `Robot.java` class of a command-based project should be mostly empty.  However, there are a few important things that must be included (TODO: link to class on github):
 
@@ -777,7 +775,7 @@ Finally, notice that the `teleopInit()` method cancels any still-running autonom
 
 Advanced users are free to add additional code to the various init and periodic methods as they see fit; however, it should be noted that including large amounts of imperative robot code in `Robot.java` is contrary to the declarative design philosophy of the command-based paradigm, and can result in confusingly-structured/disorganized code.
 
-## RobotContainer.java
+### RobotContainer.java
 
 This class is where most of the setup for your command-based robot will take place.  In this class, you will define your robot's subsystems and commands, bind those commands to triggering events (such as buttons), and specify which command you will run in your autonomous routine.  There are a few aspects of this class new users may want explanations for (TODO: link to class on github):
 
@@ -820,7 +818,7 @@ As mentioned before, the `RobotContainer()` constructor is where most of the dec
 
 Finally, the `getAutonomousCommand()` method provides a convenient way for users to send their selected autonomous command to the main `Robot.java` class (which needs access to it to schedule it when autonomous starts).
 
-## Constants.java
+### Constants.java
 
 The `Constants.java` class is where globally-accessible robot constants (such as speeds, unit conversion factors, PID gains, and sensor/motor ports) can be stored.  It is recommended that users separate these constants into individual inner clases corresponding to subsystems or robot modes, to keep variable names shorter.  All constants declared in `Constants.java` should be declared as `public static final` so that they are globally accessible and cannot be changed (TODO: link to the class on github).
 
@@ -834,35 +832,35 @@ import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants
 
 This can be seen in many of the examples used in this ScreenSteps guide, as well as in the command-based example projects.
 
-## Subsystems
+### Subsystems
 
 User-defined subsystems should go in this package.
 
-## Commands
+### Commands
 
 User-defined commands should go in this package.
 
-# Convenience features
+## Convenience features
 
 While the previously-described methodologies will work fine for writing command-based robot code, the command-based libraries contain several convenience features for more-advanced users that can greatly reduce the verbosity/complexity of command-based code.  It is highly recommended that users familiarize themselves with these features to maximize the value they get out of the command-based libraries.
 
-## Inline command definitions
+### Inline command definitions
 
 While users are able to create commands by explicitly writing command classes (either by subclassing `SendableCommandBase` or implementing `Command`), for many commands (such as those that simply call a single subsystem method) this involves a lot of wasteful boilerplate code.  To help alleviate this, many of the prewritten commands included in the command-based library may be *inlined* - that is, the command body can be defined in a single line of code at command construction.
 
-### Passing subroutines as parameters
+#### Passing subroutines as parameters
 
 In order to inline a command definition, users require some way to specify what code the commands will run as constructor parameters.  Fortunately, both Java and C++ offer users the ability to pass subroutines as parameters.
 
-#### Method references (Java)
+##### Method references (Java)
 
 In Java, a reference to a subroutine that can be passed as a parameter is called a method reference.  The general syntax for a method reference is `object::method`.  Note that no method parameters are included, since the method *itself* is the parameter.  The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed.  For further information on method references, see [the official Oracle documentation](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html).
 
-#### Lambda expressions (Java)
+##### Lambda expressions (Java)
 
 While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere.  To avoid this, Java also supports a feature called "lambda expressions."  A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*.  For specifics on how to write lambda expressions, see [this tutorial](http://tutorials.jenkov.com/java/lambda-expressions.html)
 
-### Inlined command example
+#### Inlined command example
 
 So, what does an inlined command definition look like in practice?
 
@@ -879,11 +877,11 @@ driverController.getButton(Button.kB.value)
 
 Instead of wastefully writing separate `GrabHatch` and `ReleaseHatch` commands which call only one method before ending, both can be accomplished with a simple inline definition by passing appropriate subsystem method.
 
-## Included pre-made command classes
+### Included pre-made command classes
 
 The command-based library includes a variety of pre-written commands for commonly-encountered use cases.  Many of these commands are intended to be used "out-of-the-box" via [inlining](#Inline-command-definitions), however they may be subclassed, as well.  A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the javadoc (TODO: link).
 
-### ConditionalCommand
+#### ConditionalCommand
 
 The `ConditionalCommand` class runs one of two commands when executed, depending on a user-specified true-or-false condition:
 
@@ -892,7 +890,7 @@ The `ConditionalCommand` class runs one of two commands when executed, depending
 new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
 ```
 
-### SelectCommand
+#### SelectCommand
 
 The `SelectCommand` class is a generalization of the `ConditionalCommand` class, runs one of a selection of commands based on the value of a user-specified selector:
 
@@ -924,7 +922,7 @@ private Command exampleSelectCommand =
     );
 ```
 
-### InstantCommand
+#### InstantCommand
 
 The `InstantCommand` class executes a single action on initialization, and then ends immediately:
 
@@ -933,7 +931,7 @@ The `InstantCommand` class executes a single action on initialization, and then 
 new InstantCommand(m_hatchSubsystem::grabHatch, m_hatchSubsystem)
 ```
 
-### RunCommand
+#### RunCommand
 
 The `RunCommand` class runs a specified method repeatedly in its `execute()` block.  It does not have end conditions by default; users can either subclass it, or decorate it (TODO: link) to add them.
 
@@ -946,7 +944,7 @@ new RunCommand(() -> m_robotDrive.arcadeDrive(
     m_robotDrive)
 ```
 
-### StartEndCommand
+#### StartEndCommand
 
 The `StartEndCommand` class executes an action when starting, and a second one when ending.  It does not have end conditions by default; users can either subclass it, or decorate (TODO: link) an inlined command to add them.
 
@@ -961,7 +959,7 @@ new StartEndCommand(
 )
 ```
 
-### FunctionalCommand
+#### FunctionalCommand
 
 The `FunctionalCommand` class allows all four `Command` methods to be passed in as method references or lambdas:
 
@@ -980,7 +978,7 @@ new FunctionalCommand(
 )
 ```
 
-### PrintCommand
+#### PrintCommand
 
 The `PrintCommand` class prints a given string.
 
@@ -988,7 +986,7 @@ The `PrintCommand` class prints a given string.
 new PrintCommand("This message will be printed!)
 ```
 
-### ScheduleCommand
+#### ScheduleCommand
 
 The `ScheduleCommand` class schedules a specified command, and ends instantly:
 
@@ -999,7 +997,7 @@ new ScheduleCommand(commandToSchedule)
 
 It is often useful for "forking off" from command groups.
 
-### BlockingScheduleCommand
+#### BlockingScheduleCommand
 
 The `BlockingScheduleCommand` class schedules a specified command, and does not end until that command ends:
 
@@ -1010,7 +1008,7 @@ new ScheduleCommand(commandToSchedule)
 
 This is also often useful for "forking off" from commandgroups, when it is required that the command group flow depend on the "forked off" command.
 
-### WaitCommand
+#### WaitCommand
 
 The `WaitCommand` class does nothing, and ends after a specified period of time elapses after its initial scheduling:
 
@@ -1021,7 +1019,7 @@ new WaitCommand(5)
 
 This is often useful as a component of a command group.
 
-### WaitUntilCommand
+#### WaitUntilCommand
 
 The `WaitUntilCommand` class does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
 
@@ -1035,7 +1033,7 @@ new WaitUntilCommand(60)
 new WaitUntilCommand(m_limitSwitch::get)
 ```
 
-### PerpetualCommand
+#### PerpetualCommand
 
 The `PerpetualCommand` class runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
 
@@ -1044,11 +1042,11 @@ The `PerpetualCommand` class runs a given command with its end condition removed
 new PerpetualCommand(commandToRunForever)
 ```
 
-## Command decorator methods
+### Command decorator methods
 
 The `Command` interface contains a number of defaulted "decorator" methods which can be used to add additional functionality to existing commands.  A "decorator" method is a method that takes an object (in this case, a command) and returns an object of the same type (i.e. a command) with some additional functionality added to it.  A list of the included decorator methods with brief examples is included below - for rigorous documentation, see the javadoc (TODO: link).
 
-### withTimeout
+#### withTimeout
 
 The `withTimeout()` decorator adds a timeout to a command.  The decorated command will be interrupted if the timeout expires:
 
@@ -1057,7 +1055,7 @@ The `withTimeout()` decorator adds a timeout to a command.  The decorated comman
 command.withTimeout(5)
 ```
 
-### interruptOn
+#### interruptOn
 
 The `interruptOn()` decorator adds a condition on which the command will be interrupted:
 
@@ -1066,7 +1064,7 @@ The `interruptOn()` decorator adds a condition on which the command will be inte
 command.interruptOn(m_limitswitch::get)
 ```
 
-### whenFinished
+#### whenFinished
 
 The `whenFinished()` decorator adds a method to be executed after the command ends:
 
@@ -1075,7 +1073,7 @@ The `whenFinished()` decorator adds a method to be executed after the command en
 command.whenFinished(() -> System.out.println("hello"))
 ```
 
-### beforeStarting
+#### beforeStarting
 
 The `beforeStarting()` decorator adds a method to be executed before the command starts:
 
@@ -1084,7 +1082,7 @@ The `beforeStarting()` decorator adds a method to be executed before the command
 command.beforeStarting(() -> System.out.println("hello"))
 ```
 
-### andThen
+#### andThen
 
 The `andThen()` decorator returns a sequential command group containing the command, followed by the list of commands passed as arguments:
 
@@ -1093,7 +1091,7 @@ The `andThen()` decorator returns a sequential command group containing the comm
 fooCommand.andThen(barCommand, bazCommand)
 ```
 
-### alongWith
+#### alongWith
 
 The `alongWith()` decorator returns a parallel command group containing the command, along with all the other commands passed in as arguments:
 
@@ -1102,7 +1100,7 @@ The `alongWith()` decorator returns a parallel command group containing the comm
 fooCommand.alongWith(barCommand, bazCommand)
 ```
 
-### raceWith
+#### raceWith
 
 The `raceWith()` decorator returns a parallel command race containing the command, along with all the other commands passed in as arguments:
 
@@ -1111,7 +1109,7 @@ The `raceWith()` decorator returns a parallel command race containing the comman
 fooCommand.raceWith(barCommand, bazCommand)
 ```
 
-### deadlineWith
+#### deadlineWith
 
 The `deadlineWith()` decorator returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
 
@@ -1120,7 +1118,7 @@ The `deadlineWith()` decorator returns a parallel deadline group containing the 
 fooCommand.deadlineWith(barCommand, bazCommand)
 ```
 
-### perpetually
+#### perpetually
 
 The `perpetually()` decorator removes the end condition of a command, so that it runs forever.
 
@@ -1129,7 +1127,7 @@ The `perpetually()` decorator removes the end condition of a command, so that it
 command.perpetually()
 ```
 
-### Composing decorators
+#### Composing decorators
 
 Remember that decorators, like all command groups, can be composed!  This allows very powerful and concise inline expressions:
 
@@ -1138,7 +1136,7 @@ Remember that decorators, like all command groups, can be composed!  This allows
 fooCommand.andThen(barCommand.raceWith(bazCommand()))
 ```
 
-## Static factory methods for command groups
+### Static factory methods for command groups
 
 If users do not wish to use the `andThen`, `alongWith`, `raceWith`, and `deadlineWith` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the `CommandGroupBase` class contains several four static factory methods for declaring command groups: `sequence()`, `parallel()`, `race()`, and `deadline()`.  When used from within a command group subclass or in combination with `import static`, these become extremely concise and greatly aid in command composition:
 
@@ -1159,11 +1157,11 @@ public class ExampleSequence extends SequentialCommandGroup {
 }
 ```
 
-# PID control through PIDSubsystems and PIDCommands
+## PID control through PIDSubsystems and PIDCommands
 
 One of the most common control algorithms used in FRC is the [PID controller](https://en.wikipedia.org/wiki/PID_controller).  WPILib offers its own `PIDController` class to help teams implement this functionality on their robots (TODO: link).  To further help teams integrate PID control into a command-based robot project, the command-based library includes several convenience wrappers for the `PIDController` object.  There are two basic wrappers: PIDSubsystems, which integrate the PID controller into a subsystem, and PIDCommands, which integrate the PID controller into a command.  Morevoer, each wrapper comes in one of two varieties: synchronous, which run from the main robot loop, and asynchronous, which run in their own thread.  While the asynchronous versions offer more functionality and potentially tigher control, new/inexperienced users are encouraged to use the synchronous versions to avoid having to deal with thread safety issues.
 
-## PIDSubsystems
+### PIDSubsystems
 
 ```java
 SynchronousPIDSubsystem(PIDController controller)
@@ -1175,7 +1173,7 @@ AsynchronousPIDSubsystem(PIDController controller)
 
 The PIDSubsystem classes allow users to conveniently create a subsystem with a built-in PIDController.
 
-### Creating a PIDSubsystem
+#### Creating a PIDSubsystem
 
 To create a PIDSubsystem, users should subclass one of the two PIDSubsystem classes:
 
@@ -1209,7 +1207,7 @@ public class ExamplePIDSubsystem extends SynchronousPIDSubsystem {
 
 Additional settings can be applied to the `PIDController` (TODO: link) by calling the `getController` method from the constructor.
 
-### Using a PIDSubsystem
+#### Using a PIDSubsystem
 
 
 What does a PIDSubsystem look like when used in practice?  The following examples are taken from the FrisbeeBot example project (TODO: link):
@@ -1289,7 +1287,7 @@ driverController.getButton(Button.kB.value)
     .whenPressed(new InstantCommand(m_shooter::disable, m_shooter));
 ```
 
-## PIDCommands
+### PIDCommands
 
 ```java
 SynchronousPIDCommand(PIDController controller,
@@ -1309,7 +1307,7 @@ AsynchronousPIDCommand(PIDController controller,
 
 The PIDCommand classes allow users to easily create commands with a built-in PIDController.
 
-### Creating a PIDCommand
+#### Creating a PIDCommand
 
 As with PIDSubsystem, users can create a PIDCommmand by subclassing one of the two PIDCommand classes.
 
@@ -1339,7 +1337,7 @@ new PIDCommand(new PIDController(0, 0, 0), //Creates a PIDController with all ga
     requiredSubsystem /*PIDCommands should declare their requirements*/);
 ```
 
-### Using a PIDCommand
+#### Using a PIDCommand
 
 What does a PIDCommand look like when used in practice?  The following examples are from the GyroDriveCommands example project (TODO: link):
 

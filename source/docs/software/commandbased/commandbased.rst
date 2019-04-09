@@ -1,4 +1,4 @@
-Command-Based Library Screensteps: Markdown Edition
+Command-Based Library Screensteps
 ===================================================
 
 What is “command-based” programming?
