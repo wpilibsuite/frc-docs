@@ -32,7 +32,7 @@ Welcome to FIRST Robotics Documentation
 	:maxdepth: 1
 	:caption: Software - Command-Based
 	
-	docs/commandbased/commandbased
+	docs/software/commandbased/commandbased
 
 .. toctree::
    :maxdepth: 1
