@@ -144,6 +144,6 @@ Libraries** from the **Manage Vendor Libraries** menu, check the box for
 any libraries to uninstall and click OK. These libraries will be removed
 as dependencies from the project.
 
-.. |image0| image:: images/adding-offline-library.png
-.. |image1| image:: images/library-installer-steptwo.png
+.. |image0| image:: images/3rd-party-libraries/adding-offline-library.png
+.. |image1| image:: images/3rd-party-libraries/library-installer-steptwo.png
 

@@ -269,7 +269,7 @@ Axis M1013/M1011/206 Ethernet Camera
 |image16|
 
 The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for
-capturing images for vision processing and/or sending video back to the
+capturing images/control-system-hardware for vision processing and/or sending video back to the
 Driver Station laptop. The camera should be wired to a 5V power output
 on the Voltage Regulator Module and an open ethernet port on the robot
 radio. For more information, see Configuring an Axis Camera and the Axis
@@ -344,7 +344,7 @@ The power supply for an FRC robot is a single 12V 18Ah battery. The
 batteries used for FRC are sealed lead acid batteries capable of meeting
 the high current demands of an FRC robot. For more information, see the
 Datasheets for the `MK
-ES17-12 <http://www.mkbattery.com/images/ES17-12.pdf>`__ and E\ `nersys
+ES17-12 <http://www.mkbattery.com/images/control-system-hardware/ES17-12.pdf>`__ and E\ `nersys
 NP18-12 <http://www.enersys.com/WorkArea/DownloadAsset.aspx?id=488>`__.
 Note that other battery part numbers may be legal, consult the FRC
 Manual for a complete list.
@@ -359,26 +359,26 @@ and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK
 MAX courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos
 courtesy of FIRST. All other photos courtesy of AndyMark Inc.
 
-.. |image0| image:: images/roborio.png
-.. |image1| image:: images/power-distribution-panel.png
-.. |image2| image:: images/pneumatics-control-module.png
-.. |image3| image:: images/voltage-regulator-module.png
-.. |image4| image:: images/dmc-60c-motor-controller.png
-.. |image5| image:: images/jaguar-motor-controller.png
-.. |image6| image:: images/sdb540-motor-controller.png
-.. |image7| image:: images/spark-motor-controller.png
-.. |image8| image:: images/spark-max-motor-controller.png
-.. |image9| image:: images/talon-motor-controller.png
-.. |image10| image:: images/talonsrx-motor-controller.png
-.. |image11| image:: images/victor-888-motor-controller.png
-.. |image12| image:: images/victor-sp-motor-controller.png
-.. |image13| image:: images/victor-spx-motor-controller.png
-.. |image14| image:: images/spike-relay.png
-.. |image15| image:: images/servo-power-module.png
-.. |image16| image:: images/axis-camera.png
-.. |image17| image:: images/microsoft-lifecam.png
-.. |image18| image:: images/openmesh-radio.png
-.. |image19| image:: images/circuit-breaker.png
-.. |image20| image:: images/snap-action-circuit-breaker.png
-.. |image21| image:: images/robot-battery.png
+.. |image0| image:: images/control-system-hardware/roborio.png
+.. |image1| image:: images/control-system-hardware/power-distribution-panel.png
+.. |image2| image:: images/control-system-hardware/pneumatics-control-module.png
+.. |image3| image:: images/control-system-hardware/voltage-regulator-module.png
+.. |image4| image:: images/control-system-hardware/dmc-60c-motor-controller.png
+.. |image5| image:: images/control-system-hardware/jaguar-motor-controller.png
+.. |image6| image:: images/control-system-hardware/sdb540-motor-controller.png
+.. |image7| image:: images/control-system-hardware/spark-motor-controller.png
+.. |image8| image:: images/control-system-hardware/spark-max-motor-controller.png
+.. |image9| image:: images/control-system-hardware/talon-motor-controller.png
+.. |image10| image:: images/control-system-hardware/talonsrx-motor-controller.png
+.. |image11| image:: images/control-system-hardware/victor-888-motor-controller.png
+.. |image12| image:: images/control-system-hardware/victor-sp-motor-controller.png
+.. |image13| image:: images/control-system-hardware/victor-spx-motor-controller.png
+.. |image14| image:: images/control-system-hardware/spike-relay.png
+.. |image15| image:: images/control-system-hardware/servo-power-module.png
+.. |image16| image:: images/control-system-hardware/axis-camera.png
+.. |image17| image:: images/control-system-hardware/microsoft-lifecam.png
+.. |image18| image:: images/control-system-hardware/openmesh-radio.png
+.. |image19| image:: images/control-system-hardware/circuit-breaker.png
+.. |image20| image:: images/control-system-hardware/snap-action-circuit-breaker.png
+.. |image21| image:: images/control-system-hardware/robot-battery.png
 
