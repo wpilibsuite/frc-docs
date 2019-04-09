@@ -256,7 +256,7 @@ examples are from the GyroDriveCommands example project (TODO: link):
      }
    }
 
-And, for an `inlined <inline-commands>`__ example:
+And, for an :ref:`inlined <inline-commands>` example:
 
 .. code-block:: java
 

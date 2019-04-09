@@ -34,7 +34,6 @@ Welcome to FIRST Robotics Documentation
 	
    docs/software/commandbased/what-is-command-based
    docs/software/commandbased/subsystems
-   docs/software/commandbased/commandbased
    docs/software/commandbased/command-groups
    docs/software/commandbased/binding-commands-to-triggers
    docs/software/commandbased/structuring-command-based-project
