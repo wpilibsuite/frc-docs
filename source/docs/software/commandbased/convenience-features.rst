@@ -82,7 +82,7 @@ Included pre-made command classes
 
 The command-based library includes a variety of pre-written commands for
 commonly-encountered use cases. Many of these commands are intended to
-be used “out-of-the-box” via `inlining <inline-commands>`__,
+be used “out-of-the-box” via :ref:`inlining <inlined-commands>`,
 however they may be subclassed, as well. A list of the included pre-made
 commands can be found below, along with brief examples of each - for
 more rigorous documentation, see the javadoc (TODO: link).

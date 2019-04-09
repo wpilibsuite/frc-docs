@@ -175,7 +175,7 @@ constructor gets too “busy,” users are encouraged to migrate code into
 separate subroutines (such as the ``configureButtonBindings()`` method
 included by default) which are called from the constructor. Note that
 one of the example autonomous commands has been
-`inlined <#inline-command-definitions>`__ for convenience. Note also
+:ref:`inlined <inlined-commands>` for convenience. Note also
 that, since subsystems are declared as private fields, they must be
 explicitly passed to commands.
 
@@ -223,14 +223,10 @@ referenced directly as if they had been defined in that class, e.g.:
 This can be seen in many of the examples used in this ScreenSteps guide,
 as well as in the command-based example projects.
 
-.. _subsystems-1:
-
 Subsystems
 ----------
 
 User-defined subsystems should go in this package.
-
-.. _commands-1:
 
 Commands
 --------

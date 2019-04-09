@@ -139,7 +139,7 @@ constructor. Thus, the following two pieces of code are equivalent:
        new ReleaseHatch(m_hatchSubsystem),
        new DriveDistance(kAutoBackupDistanceInches, -kAutoDriveSpeed, m_robotDrive));
 
-This is called an `inline <#inline-command-definitions>`__ command
+This is called an :ref:`inline <inlined-commands>` command
 definition, and is very handy for circumstances where command groups are
 not likely to be reused, and writing an entire class for them would be
 wasteful.

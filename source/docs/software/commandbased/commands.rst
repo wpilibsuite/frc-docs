@@ -192,14 +192,14 @@ command through the command’s constructor. This is a pattern called
 injection <https://en.wikipedia.org/wiki/Dependency_injection>`__, and
 allows users to avoid declaring their subsystems as global variables.
 This is widely accepted as a best-practice - the reasoning behind this
-is discussed in a `later
-section <structuring>`__.
+is discussed in a :ref:`later
+section <structuring>`.
 
 Notice also that the above command calls the subsystem method once from
 initialize, and then immediately ends (as ``isFinished()`` simply
 returns true). This is typical for commands that toggle the states of
 subsystems, and in fact the command-based library includes code to make
-`commands like this <instant-command>`__ even more succinctly.
+:ref:`commands like this <instant-command>` even more succinctly.
 
 What about a more complicated case? Below is a drive command, from the
 same example project:
@@ -240,5 +240,5 @@ same example project:
 Notice that this command does not override ``isFinished()``, and thus
 will never end; this is the norm for commands that are intended to be
 used as default commands (and, as can be guessed, the library includes
-tools to make `this kind of command <run-command>`__ easier to write,
+tools to make :ref:`this kind of command <run-command>` easier to write,
 too!).
