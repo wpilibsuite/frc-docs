@@ -29,6 +29,12 @@ Welcome to FIRST Robotics Documentation
    docs/software/actuators/solenoids
 
 .. toctree::
+	:maxdepth: 1
+	:caption: Software - Command-Based
+	
+	docs/commandbased/commandbased
+
+.. toctree::
    :maxdepth: 1
    :caption: Hardware - Getting Started
 
@@ -45,9 +51,3 @@ Welcome to FIRST Robotics Documentation
    :caption: Robot Networking
 
    docs/networking/ip-networking
-   
-.. toctree::
-	:maxdepth: 1
-	:caption: Software Guides
-	
-	docs/commandbased/commandbased
