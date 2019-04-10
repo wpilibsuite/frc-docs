@@ -10,30 +10,47 @@ Welcome to FIRST Robotics Documentation
    :maxdepth: 1
    :caption: Software - Getting Started
 
-   docs/system-overview/new-for-2019
-   docs/system-overview/known-issues
-   docs/system-overview/control-system-software
-   docs/system-overview/offline-installation-preperations
-   docs/setup-guides/windows
-   docs/setup-guides/macos
-   docs/setup-guides/linux
-   docs/setup-guides/frc-update-suite
-   docs/system-overview/3rd-party-libraries
-   docs/setup-guides/imaging-your-roborio
-   docs/setup-guides/imaging-your-classmate
+   docs/software/getting-started/new-for-2019
+   docs/software/getting-started/known-issues
+   docs/software/getting-started/control-system-software
+   docs/software/getting-started/offline-installation-preperations
+   docs/software/getting-started/windows-setup
+   docs/software/getting-started/macos-setup
+   docs/software/getting-started/linux-setup
+   docs/software/getting-started/frc-update-suite
+   docs/software/getting-started/3rd-party-libraries
+   docs/software/getting-started/imaging-your-roborio
+   docs/software/getting-started/imaging-your-classmate
 
 .. toctree::
    :maxdepth: 1
-   :caption: Electrical - Getting Started
+   :caption: Software - Actuators
 
-   docs/system-overview/control-system-hardware
-   docs/hardware/how-to-wire-a-robot
-   docs/hardware/wiring-best-practices
-   docs/hardware/solenoids
-   docs/hardware/wiring-pneumatics
-   docs/hardware/status-lights-ref
-   docs/hardware/can-addressing
-   docs/hardware/preemptive-troubleshooting
+   docs/software/actuators/solenoids
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software - Command-Based
+	
+   docs/software/commandbased/what-is-command-based
+   docs/software/commandbased/subsystems
+   docs/software/commandbased/command-groups
+   docs/software/commandbased/binding-commands-to-triggers
+   docs/software/commandbased/structuring-command-based-project
+   docs/software/commandbased/convenience-features
+   docs/software/commandbased/pid-subsystems-commands
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Hardware - Getting Started
+
+   docs/hardware/getting-started/control-system-hardware
+   docs/hardware/getting-started/how-to-wire-a-robot
+   docs/hardware/getting-started/wiring-best-practices
+   docs/hardware/getting-started/wiring-pneumatics
+   docs/hardware/getting-started/status-lights-ref
+   docs/hardware/getting-started/can-addressing
+   docs/hardware/getting-started/preemptive-troubleshooting
 
 .. toctree::
    :maxdepth: 1

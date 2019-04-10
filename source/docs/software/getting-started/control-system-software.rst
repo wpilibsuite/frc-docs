@@ -269,19 +269,19 @@ The FRC Bridge Configuration Utility is installed by a standalone
 installer, instructions on installing and using the FRC Bridge
 Configuration Utility to configure your radio can be found here.
 
-.. |image0| image:: images/labview-frc.png
-.. |image1| image:: images/robot-simulator.png
-.. |image2| image:: images/visual-studio-code.png
-.. |image3| image:: images/frc-driver-station.png
-.. |image4| image:: images/frc-labview-dashboard.png
-.. |image5| image:: images/smartdashboard.png
-.. |image6| image:: images/livewindow-smartdashboard.png
-.. |image7| image:: images/shuffleboard.png
-.. |image8| image:: images/frc-roborio-imaging-tool.png
-.. |image9| image:: images/ctre-toolsuite.png
-.. |image10| image:: images/axis-camera-setup.png
-.. |image11| image:: images/frc-log-viewer.png
-.. |image12| image:: images/robot-builder.png
-.. |image13| image:: images/outline-viewer.png
-.. |image14| image:: images/frc-radio-configuration-utility.png
+.. |image0| image:: images/control-system-software/labview-frc.png
+.. |image1| image:: images/control-system-software/robot-simulator.png
+.. |image2| image:: images/control-system-software/visual-studio-code.png
+.. |image3| image:: images/control-system-software/frc-driver-station.png
+.. |image4| image:: images/control-system-software/frc-labview-dashboard.png
+.. |image5| image:: images/control-system-software/smartdashboard.png
+.. |image6| image:: images/control-system-software/livewindow-smartdashboard.png
+.. |image7| image:: images/control-system-software/shuffleboard.png
+.. |image8| image:: images/control-system-software/frc-roborio-imaging-tool.png
+.. |image9| image:: images/control-system-software/ctre-toolsuite.png
+.. |image10| image:: images/control-system-software/axis-camera-setup.png
+.. |image11| image:: images/control-system-software/frc-log-viewer.png
+.. |image12| image:: images/control-system-software/robot-builder.png
+.. |image13| image:: images/control-system-software/outline-viewer.png
+.. |image14| image:: images/control-system-software/frc-radio-configuration-utility.png
 
