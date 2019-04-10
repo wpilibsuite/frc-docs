@@ -15,16 +15,16 @@ Source code and documentation
 
 WPILib is an open-source library - the entirety of its source code is available online on the WPILib Github Page:
 
-`Official WPILib github <https://github.com/wpilibsuite/allwpilib>`__
+ - `Official WPILib github <https://github.com/wpilibsuite/allwpilib>`__
 
 The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
-`Java source code <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibj/src/main/java/edu/wpi/first/wpilibj>`__
+ - `Java source code <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibj/src/main/java/edu/wpi/first/wpilibj>`__
 
-`C++ source code <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibc/src/main/native/cpp>`__
+ - `C++ source code <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibc/src/main/native/cpp>`__
 
 While users are strongly encouraged to read the source code to resolve detailed questions about library functionality, more-concise documentation can be found on the official documentation pages for WPILibJ and WPILibC:
 
-`Java documentation <http://first.wpi.edu/FRC/roborio/release/docs/java/>`__
+ - `Java documentation <http://first.wpi.edu/FRC/roborio/release/docs/java/>`__
 
-`C++ documentation <http://first.wpi.edu/FRC/roborio/release/docs/cpp/>`__
+ - `C++ documentation <http://first.wpi.edu/FRC/roborio/release/docs/cpp/>`__
