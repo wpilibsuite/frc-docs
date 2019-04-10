@@ -24,6 +24,12 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software - WPILib Overview
+
+   docs/software/wpilib-overview/what-is-wpilib
+
+.. toctree::
+   :maxdepth: 1
    :caption: Software - Actuators
 
    docs/software/actuators/solenoids
