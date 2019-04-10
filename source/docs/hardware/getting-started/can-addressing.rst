@@ -179,5 +179,5 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
 -  Provide software library support for LabVIEW, C++, and Java or arrange with FIRST or FIRSTs Control System Partners to provide such interfaces.
 
-.. |image0| image:: images/can-id-example.png
+.. |image0| image:: images/how-to-wire-a-robot/can-id-example.png
 

@@ -24,6 +24,12 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software - WPILib Overview
+
+   docs/software/wpilib-overview/what-is-wpilib
+
+.. toctree::
+   :maxdepth: 1
    :caption: Software - Actuators
 
    docs/software/actuators/solenoids
@@ -34,6 +40,7 @@ Welcome to FIRST Robotics Documentation
 	
    docs/software/commandbased/what-is-command-based
    docs/software/commandbased/subsystems
+   docs/software/commandbased/commands
    docs/software/commandbased/command-groups
    docs/software/commandbased/binding-commands-to-triggers
    docs/software/commandbased/structuring-command-based-project
