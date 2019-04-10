@@ -15,7 +15,7 @@ Source code and documentation
 
 WPILib is an open-source library - the entirety of its source code is available online on the WPILib Github Page:
 
-`https://github.com/wpilibsuite/allwpilib`__
+`Official WPILib github <https://github.com/wpilibsuite/allwpilib>`__
 
 The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
