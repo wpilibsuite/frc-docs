@@ -47,6 +47,7 @@ Welcome to FIRST Robotics Documentation
     docs/software/vision-processing/strategies-for-vision-processing
     docs/software/vision-processing/cameraserver-class
     docs/software/vision-processing/target-info-and-retroreflection
+    docs/software/vision-processing/identifying-and-processing-the-targets
 
 .. toctree::
    :maxdepth: 1
