@@ -49,6 +49,7 @@ Welcome to FIRST Robotics Documentation
     docs/software/vision-processing/target-info-and-retroreflection
     docs/software/vision-processing/identifying-and-processing-the-targets
     docs/software/vision-processing/configuring-an-axis-camera
+    docs/software/vision-processing/using-the-microsoft-lifecam
 
 .. toctree::
    :maxdepth: 1
