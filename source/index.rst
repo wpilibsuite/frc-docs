@@ -31,19 +31,26 @@ Welcome to FIRST Robotics Documentation
 .. toctree::
    :maxdepth: 1
    :caption: Software - RoboRIO
-    
+
    docs/software/roborio-info/roborio-web-dashboard
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Software - Actuators
 
    docs/software/actuators/solenoids
-    
+
+ .. toctree::
+    :maxdepth: 1
+    :caption: Software - Vision
+
+    docs/software/vision-processing/strategies-for-vision-processing
+    docs/software/vision-processing/cameraserver-class
+
 .. toctree::
    :maxdepth: 1
    :caption: Software - Command-Based
-	
+
    docs/software/commandbased/what-is-command-based
    docs/software/commandbased/subsystems
    docs/software/commandbased/commands
