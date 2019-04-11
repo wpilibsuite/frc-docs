@@ -30,10 +30,16 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software - RoboRIO
+    
+   docs/software/roborio-info/roborio-web-dashboard
+   
+.. toctree::
+   :maxdepth: 1
    :caption: Software - Actuators
 
    docs/software/actuators/solenoids
-
+    
 .. toctree::
    :maxdepth: 1
    :caption: Software - Command-Based
