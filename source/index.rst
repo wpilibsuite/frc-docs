@@ -51,6 +51,7 @@ Welcome to FIRST Robotics Documentation
     docs/software/vision-processing/configuring-an-axis-camera
     docs/software/vision-processing/using-the-microsoft-lifecam
     docs/software/vision-processing/camera-settings
+    docs/software/vision-processing/calibration
 
 .. toctree::
    :maxdepth: 1
