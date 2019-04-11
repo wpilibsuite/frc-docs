@@ -54,6 +54,7 @@ Welcome to FIRST Robotics Documentation
     docs/software/vision-processing/calibration
     docs/software/vision-processing/axis-m1013-camera-compatibility
     docs/software/vision-processing/using-the-axis-camera-at-single-network-events
+    docs/software/vision-processing/using-the-cameraserver-on-the-roborio
 
 .. toctree::
    :maxdepth: 1
