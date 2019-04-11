@@ -50,6 +50,7 @@ Welcome to FIRST Robotics Documentation
     docs/software/vision-processing/identifying-and-processing-the-targets
     docs/software/vision-processing/configuring-an-axis-camera
     docs/software/vision-processing/using-the-microsoft-lifecam
+    docs/software/vision-processing/camera-settings
 
 .. toctree::
    :maxdepth: 1
