@@ -13,23 +13,27 @@ Note: The roboRIO web dashboard was been re-written for 2019. All CAN
 configuration functionality has been removed. Configuration of CAN
 devices should be done with software provided by the device vendor. For
 CTRE devices previously serviced using the webdashboard, the appropriate
-software is `CTRE Phoenix Tuner`_.
+software is `CTRE Phoenix
+Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
 
 Opening the WebDash
 -------------------
 
-|image0|
+.. figure:: images/roborio-page-home.png
+   :alt: 
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
 "roboRIO-####-FRC.local where #### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
-mDNS and roboRIO networking: `RoboRIO Networking`_
+mDNS and roboRIO networking: `RoboRIO
+Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__
 
 System Configuration Tab
 ------------------------
 
-|image1|
+.. figure:: images/system-configuration-tab.png
+   :alt: 
 
 The home screen of the web dashboard is the System Configuration tab
 which has 5 main sections:
@@ -50,7 +54,8 @@ which has 5 main sections:
 Startup Settings
 ~~~~~~~~~~~~~~~~
 
-|image2|
+.. figure:: images/startup-settings.png
+   :alt: 
 
 -  Force Safe Mode - Forces the controller into Safe Mode. This can be
    used with troubleshooting imaging issues, but it is recommended to
@@ -62,11 +67,25 @@ Startup Settings
    you are using this port to talk to a serial device (note that this
    port uses RS232 levels and and should not be connected to many
    microcontrollers which use TTL levels). **Default is checked.**
--  Disable RT Startup App - Checking this box disables code fro
+-  Disable RT Startup App - Checking this box disables code from running
+   at startup. This may be used for troubleshooting if you find the
+   roboRIO is unresponsive to new program download. Default is unchecked
+-  Disable FPGA Startup App - **This box should not be checked.**
+-  Enable Secure Shell Server (sshd) - **It is recommended to leave this
+   box checked.** This setting enables SSH which is a way to remotely
+   access a console on the roboRIO. Unchecking this box will prevent C++
+   and Java teams from loading code onto the roboRIO.
+-  LabVIEW Project Access -\*\* It is recommended to leave this box
+   checked.\*\* This setting allows LabVIEW projects to access the
+   roboRIO.
 
-.. _CTRE Phoenix Tuner: https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner
-.. _RoboRIO Networking: https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html
+Network Configuration
+---------------------
 
-.. |image0| image:: images/roborio-page-home.png
-.. |image1| image:: images/system-configuration-tab.png
-.. |image2| image:: images/startup-settings.png
+.. figure:: images/network-configuration.png
+   :alt: 
+
+This page shows the configuration of the roboRIO's network adapters.
+**It is not recommended to change any settings on this page.** For more
+information on roboRIO networking see this article: `RoboRIO
+Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__
