@@ -42,6 +42,7 @@ The steps to getting the values and, in this program, printing them are:
 Writing a C++ program to access the keys
 ----------------------------------------
 .. image::images/reading-array-values-published-by-networktables/writing-a-cpp-program-to-access-the-keys.png
+
 The steps to getting the values and, in this program, printing them are:
 
 1.  Declare the table variable that will hold the instance of the subtable that have the values. It is a shared pointer where the
@@ -56,6 +57,7 @@ The steps to getting the values and, in this program, printing them are:
 Program output
 --------------
 .. image::images/reading-array-values-published-by-networktables/program-output.png
+
 In this case the program is only looking at the array of areas, but in a real example all the values would more likely be used.
 Using the Riolog in eclipse or the DriverStation log you can see the values as they are retrieved. This program is using a sample
 static image so they areas don't change, but you can imagine with a camera on your robot, the values would be changing constantly.
