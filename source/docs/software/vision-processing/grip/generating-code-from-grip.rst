@@ -49,9 +49,9 @@ Getting the Results
 Users are able to the outputs of every step in the pipeline. The outputs of these operations would be accessible through
 their respective accessors.  For example:
 
-=============== =========================== =========================
+=============== =========================== ==========================
 Operation       Java/C++ getter             Python variable
-=============== =========================== =========================
+=============== =========================== ==========================
 RGB Threshold   ``getRgbThresholdOutput``   ``rgb_threshold_output``
 Blur            ``getBlurOutput``           ``blur_output``
 CV Erode        ``getCvErodeOutput``        ``mcv_erode_output``
