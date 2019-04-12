@@ -56,3 +56,7 @@ html_theme_options = {
 	'collapse_navigation': False,
 	'sticky_navigation': False
 }
+
+user_options = {
+        ('warning-is-error', True),
+}
