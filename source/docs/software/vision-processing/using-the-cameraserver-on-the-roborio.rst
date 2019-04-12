@@ -8,6 +8,7 @@ the images, create a CameraServer Stream Viewer widget using the "View", then "A
 unprocessed and just forwarded from the camera to the dashboard.
 
 .. image::images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
+
 ::
 
     package org.usfirst.frc.team190.robot;
@@ -21,6 +22,7 @@ unprocessed and just forwarded from the camera to the dashboard.
             CameraServer.getInstance().startAutomaticCapture();
         }
     }
+
 ::
 
     #include "WPILib.h"
@@ -75,6 +77,7 @@ write targeting information onto the image being sent to the dashboard.::
                 }).start();
         }
     }
+
 ::
 
     #include "WPILib.h"
