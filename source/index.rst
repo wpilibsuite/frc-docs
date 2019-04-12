@@ -40,7 +40,7 @@ Welcome to FIRST Robotics Documentation
 
    docs/software/actuators/solenoids
 
- .. toctree::
+.. toctree::
    :maxdepth: 1
    :caption: Software - Vision
 
