@@ -44,7 +44,7 @@ Welcome to FIRST Robotics Documentation
    :maxdepth: 1
    :caption: Software - Vision
 
-   docs/software/vision-processing/strategies-for-vision-processing
+   docs/software/vision-processing/strategies-for-vision-programming
    docs/software/vision-processing/cameraserver-class
    docs/software/vision-processing/2017-vision-examples
    docs/software/vision-processing/target-info-and-retroreflection
