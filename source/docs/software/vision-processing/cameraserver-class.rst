@@ -94,16 +94,16 @@ User code (such as that used in a FRC robot program) can act as either a source 
 a camera) or as a sink (receiving a frame for processing) via OpenCV source and sink objects.  Thus an image processing
 pipeline that gets images from a camera and serves the processed images out looks like the below graph:
 
-*UsbCamera (VideoSource) --> (cscore internal) --> CvSink (VideoSink)
+UsbCamera (VideoSource) --> (cscore internal) --> CvSink (VideoSink)
  --> (your OpenCV processing code) --> CvSource (VideoSource)
- --> (cscore internal) --> MjpegServer (VideoSink)*
+ --> (cscore internal) --> MjpegServer (VideoSink)
 
 Because sources can have multiple sinks connected, the pipeline may branch.  For example, the original camera image can
 also be served by connecting the UsbCamera source to a second MjpegServer sink in addition to the CvSink, resulting in
 the below graph:
 
-*UsbCamera --> CvSink --> (your code) --> CvSource --> MjpegServer [2]
-          \-> MjpegServer [1]*
+UsbCamera --> CvSink --> (your code) --> CvSource --> MjpegServer [2]
+          \-> MjpegServer [1]
 
 When a new image is captured by the camera, both the CvSink and the MjpegServer [1] receive it.
 
