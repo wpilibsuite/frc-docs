@@ -56,6 +56,7 @@ In this first part of the program you can see all the import statements for the 
 -   **RobotDrive** encapsulates the 4 motors on this robot and allows simplified driving.
 -   **imgLock** is a variable to synchronize access to the data being simultaneously updated with each image acquisition pass
     and the code that's processing the coordinates and steering the robot.
+
 ::
 
     @Override
