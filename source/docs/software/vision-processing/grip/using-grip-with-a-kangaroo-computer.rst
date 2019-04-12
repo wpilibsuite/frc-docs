@@ -22,7 +22,7 @@ of our software should work without modification. Be sure to read the caveats at
 Scott Taylor and FRC 1735. His explanation goes beyond what is shown here, detailing how to get the GRIP program to auto-start
 on boot and many other details.
 
-    `Grip Plus Kangaroo<grip-plus-kangaroo.pdf>`_
+    `Grip Plus Kangaroo <grip-plus-kangaroo.pdf>`_
 
 Setup
 -----
