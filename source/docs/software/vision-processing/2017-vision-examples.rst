@@ -30,7 +30,7 @@ In the formulas below, 1 followed by a letter refers to a coordinate of the boun
 larger of the two (e.g. 1L = 1st contour left edge) and 2 with a letter is the 2nd contour. (H=Height, L = Left, T = Top,
 B = Bottom, W = Width)
 
--   Group Height = 1H /((2B - 1T) *.4) Top height should be 40% of total height (4in / 10 in.)
+-   Group Height = 1H /((2B - 1T) \*.4) Top height should be 40% of total height (4in / 10 in.)
 -   dTop = (2T - 1T) /((2B - 1T) * .6) Top of bottom stripe to top of top stripe should be 60% of total height (6in / 10 in.)
 -   LEdge = ((1L - 2L) / 1W) + 1       The distance between the left edge of contour 1 and the left edge of contour 2 should
     be small relative to the width of the 1st contour (then we add 1 to make the ratio centered on 1
@@ -41,7 +41,7 @@ Each of these ratios is then turned into a 0-100 score by calculating: 100 - (10
 
 3.  To determine distance, measure pixels from top of top bounding box to bottom of bottom bounding box
 
-    distance = Target height in ft. (10/12) * YRes / (2*PixelHeight*tan(viewAngle of camera))
+    distance = Target height in ft. (10/12) * YRes / (2\*PixelHeight\*tan(viewAngle of camera))
 
     The LabVIEW example uses height as the edges of the round target are the most prone to noise in detection (as the angle
     points further from the camera   the color looks less green). The downside of this is that the pixel height of the
