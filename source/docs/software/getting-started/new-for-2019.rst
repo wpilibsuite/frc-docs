@@ -1,7 +1,7 @@
 New for 2019!
 =============
 
-This article describes the major changes to the Control System software for FRC 2019
+.. note:: This article describes the major changes to the Control System software for FRC 2019
 
 Major Changes
 -------------
@@ -32,12 +32,14 @@ VS Code IDE (C++/Java)
 
 For the 2019 season, FRC is moving from Eclipse to VS Code as the officially supported IDE for C++/Java development. This setup is easier for us to develop the extensions for and we expect it to be more streamlined and functional for the majority of teams. If VS Code doesn't seem to be your thing, the accompanying switch to GradleRIO should make it easier to use alternate IDEs as well (though this is not officially supported).
 
-You can find information about the new IDE in the **Setting up the Development Environment** and **Creating and Running Robot Programs** sections of the C++ and Java manuals, including information about how to import old Eclipse projects into the new VSCode/GradleRIO system
+You can find information about the new IDE in the Offline Installation Guides. They can be found in the sidebar.
+
+|image0|
 
 Vendor Libraries
 ----------------
 
--  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see here: 3rd Party Libraries
+-  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see here_:
 
 RoboRIO WebDashboard
 --------------------
@@ -145,3 +147,7 @@ Outline Viewer
 --------------
 
 -  Requires Java 11 to run.
+
+.. |image0| image:: images/new-for-2019/offline-install.png
+
+.. _here: 
