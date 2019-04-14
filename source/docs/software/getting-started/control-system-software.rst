@@ -284,4 +284,3 @@ Configuration Utility to configure your radio can be found here.
 .. |image12| image:: images/control-system-software/robot-builder.png
 .. |image13| image:: images/control-system-software/outline-viewer.png
 .. |image14| image:: images/control-system-software/frc-radio-configuration-utility.png
-
