@@ -107,29 +107,37 @@ UsbCamera --> CvSink --> (your code) --> CvSource --> MjpegServer [2]
 
 When a new image is captured by the camera, both the CvSink and the MjpegServer [1] receive it.
 
-The above graph is what the following CameraServer snippet creates: ::
+The above graph is what the following CameraServer snippet creates:
 
-    // Creates UsbCamera and MjpegServer [1] and connects them
-    CameraServer.getInstance().startAutomaticCapture()
+.. tabs::
 
-    // Creates the CvSink and connects it to the UsbCamera CvSink cvSink = CameraServer.getInstance().getVideo()
-    // Creates the CvSource and MjpegServer [2] and connects them CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+    .. code-tab:: java
+
+        // Creates UsbCamera and MjpegServer [1] and connects them
+        CameraServer.getInstance().startAutomaticCapture()
+
+        // Creates the CvSink and connects it to the UsbCamera CvSink cvSink = CameraServer.getInstance().getVideo()
+        // Creates the CvSource and MjpegServer [2] and connects them CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes).
 CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically
 selecting port numbers.  CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they
-go out of scope. ::
+go out of scope.
 
-    UsbCamera usbCamera = new UsbCamera("USB Camera 0", 0);
+.. tabs::
 
-    MjpegServer mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
-    mjpegServer1.setSource(usbCamera); CvSink cvSink = new CvSink("opencv_USB Camera 0");
+    .. code-tab:: java
 
-    cvSink.setSource(usbCamera);
-    CvSource outputStream = new CvSource("Blur", PixelFormat.kMJPEG, 640, 480, 30);
+        UsbCamera usbCamera = new UsbCamera("USB Camera 0", 0);
 
-    MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
-    mjpegServer2.setSource(outputStream);
+        MjpegServer mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
+        mjpegServer1.setSource(usbCamera); CvSink cvSink = new CvSink("opencv_USB Camera 0");
+
+        cvSink.setSource(usbCamera);
+        CvSource outputStream = new CvSource("Blur", PixelFormat.kMJPEG, 640, 480, 30);
+
+        MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
+        mjpegServer2.setSource(outputStream);
 
 Reference Counting
 ^^^^^^^^^^^^^^^^^^
