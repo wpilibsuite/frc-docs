@@ -211,7 +211,7 @@ The ``PrintCommand`` class prints a given string.
 
 .. code-block:: java
 
-   new PrintCommand("This message will be printed!)
+   new PrintCommand("This message will be printed!")
 
 ScheduleCommand
 ~~~~~~~~~~~~~~~

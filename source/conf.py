@@ -60,6 +60,6 @@ html_theme_options = {
 	'sticky_navigation': False
 }
 
-user_options = {
+user_options = [
         ('warning-is-error', True),
-}
+]
