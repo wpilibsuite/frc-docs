@@ -94,6 +94,7 @@ well as a callback that we use to handle the output of the pipeline. In this exa
 in order to find its center, then saves that value in the variable centerX. Note the synchronized block around the assignment:
 this makes sure the main robot thread will always have the most up-to-date value of the variable, as long as it also uses
 **synchronized** blocks to read the variable.
+
 .. tabs::
 
     .. code-tab:: java
