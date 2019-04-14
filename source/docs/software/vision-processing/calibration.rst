@@ -113,7 +113,7 @@ equation from above....
 Depending on what you use to calculate the arctangent, your answer may be in radians, make sure to convert back to degrees
 if entering directly into the sample code as the view angle.
 
-    Note: The code uses View Angle and we just calculated Θ. Make sure to multiply Θ by 2 if replacing the constants in
-    the code.Multiplying our result by 2 yields 45.3 degrees. This image is from a M1013 camera, so our value is a bit
-    off from the previously measured 29.1 but given that the 18ft. was a very rough measurement this shows that we are
+.. note:: The code uses View Angle and we just calculated Θ. Make sure to multiply Θ by 2 if replacing the constants in\
+    the code.Multiplying our result by 2 yields 45.3 degrees. This image is from a M1013 camera, so our value is a bit\
+    off from the previously measured 29.1 but given that the 18ft. was a very rough measurement this shows that we are\
     in the ballpark and likely performed the calculation correctly.
