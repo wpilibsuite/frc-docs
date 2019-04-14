@@ -51,9 +51,9 @@ size up. If the robot or target is moving, it is quite important to minimize ima
 to the delay between the target location and perceived location. If both robot and target are stationary, processing time
 is typically less important.
 
-    Note: When requesting images using LabVIEW (either the Dashboard or Robot Code), the resolution and Frame Rate settings
-    of the camera will be ignored. The LabVIEW code specifies the framerate and resolution as part of the stream request
-    (this does not change the settings stored in the camera, it overrides that setting for the specific stream). The
+.. note:: When requesting images using LabVIEW (either the Dashboard or Robot Code), the resolution and Frame Rate settings\
+    of the camera will be ignored. The LabVIEW code specifies the framerate and resolution as part of the stream request\
+    (this does not change the settings stored in the camera, it overrides that setting for the specific stream). The\
     SmartDashboard and robot code in C++ or Java will use the resolution and framerate stored in the camera.
 
 Frame Rate
