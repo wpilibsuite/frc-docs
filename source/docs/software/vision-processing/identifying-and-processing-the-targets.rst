@@ -21,7 +21,7 @@ The image shown below is the starting image for the example described here. The 
 available in FIRST Choice. combined with an additional ring light of a different size. Additional sample images are provided
 with the vision code examples.
 
-.. image::images/identifying-and-processing-the-targets/original-image.png
+.. figure:: images/identifying-and-processing-the-targets/original-image.png
 
 What is HSL/HSV?
 ----------------
@@ -51,7 +51,7 @@ by the masking step.
 Notice that in addition to the target, other bright parts of the image (overhead light and tower lighting) are also caught
 by the masking step.
 
-.. image::images/identifying-and-processing-the-targets/masking.png
+.. figure:: images/identifying-and-processing-the-targets/masking.png
 
 Particle Analysis
 -----------------
@@ -88,7 +88,7 @@ a representation of the pixel distribution in the particle. The ideal score for 
 
 X/Y Profiles
 ^^^^^^^^^^^^
-.. image::images/identifying-and-processing-the-targets/xy-profiles.png
+.. figure:: images/identifying-and-processing-the-targets/xy-profiles.png
 
 The edge score describes whether the particle matches the appropriate profile in both the X and Y directions. As shown,
 it is calculated using the row and column averages across the bounding box extracted from the original image and comparing
@@ -114,7 +114,7 @@ The resulting coordinates are close to what you may want, but the Y axis is inve
 multiplying the point by [1,-1] (Note: this is not done in the sample code). This coordinate system is useful because
 it has a centered origin and the scale is similar to joystick outputs and RobotDrive inputs.
 
-.. image::images/identifying-and-processing-the-targets/position.png
+.. figure:: images/identifying-and-processing-the-targets/position.png
 
 Distance
 ^^^^^^^^
@@ -134,7 +134,7 @@ therefore 2Θ. This year's code uses the vertical field-of-view and it is theref
 calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically
 determined values for each camera type are included in the code as a reference).
 
-.. image::images/identifying-and-processing-the-targets/distance.png
+.. figure:: images/identifying-and-processing-the-targets/distance.png
 
 Distance Continued
 ^^^^^^^^^^^^^^^^^^

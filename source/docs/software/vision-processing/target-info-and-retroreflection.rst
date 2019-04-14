@@ -5,7 +5,7 @@ targets. Note that for official dimensions and drawings of all field components,
 
 Targets
 -------
-.. image::images/target-info-and-retroreflection/targets.png
+.. figure:: images/target-info-and-retroreflection/targets.png
 
 Each Target consists of a 1' 8" wide, 1' tall U-shape made of 2" wide retroreflective material (3M 8830 Silver Marking Film).
 The targets are located immediately adjacent to the bottom of each high goal. When properly lit, the retroreflective tape
@@ -13,7 +13,7 @@ produces a bright and/or color-saturated marker.
 
 Retroreflectivity vs. Reflectivity
 ----------------------------------
-.. image::images/target-info-and-retroreflection/retroreflectivity-vs-reflectivity.png
+.. figure:: images/target-info-and-retroreflection/retroreflectivity-vs-reflectivity.png
 
 Highly reflective materials are generally mirrored so that light “bounces off” at a supplementary angle. As shown above-left,
 the blue and red angles sum to 180 degrees. An equivalent explanation is that the light reflects about the surface normal
@@ -31,7 +31,7 @@ on how retro-reflection is accomplished.
 
 Examples of Retroreflection
 ---------------------------
-.. image::images/target-info-and-retroreflection/examples-of-retroreflection.png
+.. figure:: images/target-info-and-retroreflection/examples-of-retroreflection.png
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles,
 and pedestrians.
@@ -63,7 +63,7 @@ backpacks, shoes, etc.
 
 Lighting
 --------
-.. image::images/target-info-and-retroreflection/lighting.jpg
+.. figure:: images/target-info-and-retroreflection/lighting.jpg
 
 We have seen that the retro-reflective tape will not shine unless a light source is directed at it, and the light source
 must pass very near the camera lens or the observer’s eyes. While there are a number of ways to accomplish this, a very
@@ -79,4 +79,4 @@ are available from the supplier, SuperBrightLEDs.com
 Sample Images
 -------------
 Sample Images are located with the code examples for each language (packaged with LabVIEW, in a separate ZIP in the
-same location as the C++/Java samples). 
+same location as the C++/Java samples).

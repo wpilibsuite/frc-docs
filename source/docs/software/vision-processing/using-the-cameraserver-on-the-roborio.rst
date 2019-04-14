@@ -7,34 +7,36 @@ that is connected to the roboRIO. In this mode, the camera will capture frames a
 the images, create a CameraServer Stream Viewer widget using the "View", then "Add" menu in the dashboard. The images are
 unprocessed and just forwarded from the camera to the dashboard.
 
-.. image::images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
+.. figure:: images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
 
-::
+.. tabs::
 
-    package org.usfirst.frc.team190.robot;
+    .. code-tab:: java
 
-    import edu.wpi.first.wpilibj.CameraServer;
-    import edu.wpi.first.wpilibj.IterativeRobot;
+        package org.usfirst.frc.team190.robot;
 
-    public class Robot extends IterativeRobot {
+        import edu.wpi.first.wpilibj.CameraServer;
+        import edu.wpi.first.wpilibj.IterativeRobot;
 
-        public void robotInit() {
-            CameraServer.getInstance().startAutomaticCapture();
+        public class Robot extends IterativeRobot {
+
+            public void robotInit() {
+                CameraServer.getInstance().startAutomaticCapture();
+            }
         }
-    }
 
-::
+    .. code-tab:: c++
 
-    #include "WPILib.h"
-    class Robot: public IterativeRobot
-    {
-    private:
-        void RobotInit()
+        #include "WPILib.h"
+        class Robot: public IterativeRobot
         {
-            CameraServer::GetInstance()->StartAutomaticCapture();
-        }
-    };
-    START_ROBOT_CLASS(Robot)
+        private:
+            void RobotInit()
+            {
+                CameraServer::GetInstance()->StartAutomaticCapture();
+            }
+        };
+        START_ROBOT_CLASS(Robot)
 
 
 Advanced camera server program
@@ -43,70 +45,74 @@ In the following example a thread created in robotInit() gets the Camera Server 
 individually processed, in this case converting a color image (BGR) to gray scale using the OpenCV cvtColor() method. The
 resultant images are then passed to the output stream and sent to the dashboard. You can replace the cvtColor operation with
 any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to
-write targeting information onto the image being sent to the dashboard.::
+write targeting information onto the image being sent to the dashboard.
 
-    package org.usfirst.frc.team190.robot;
+.. tabs::
 
-    import org.opencv.core.Mat;
-    import org.opencv.imgproc.Imgproc;
+    .. code-tab:: java
 
-    import edu.wpi.cscore.CvSink;
-    import edu.wpi.cscore.CvSource;
-    import edu.wpi.cscore.UsbCamera;
-    import edu.wpi.first.wpilibj.CameraServer;
-    import edu.wpi.first.wpilibj.IterativeRobot;
+        package org.usfirst.frc.team190.robot;
 
-    public class Robot extends IterativeRobot {
+        import org.opencv.core.Mat;
+        import org.opencv.imgproc.Imgproc;
 
-        public void robotInit() {
-                new Thread(() -> {
-                    UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-                    camera.setResolution(640, 480);
+        import edu.wpi.cscore.CvSink;
+        import edu.wpi.cscore.CvSource;
+        import edu.wpi.cscore.UsbCamera;
+        import edu.wpi.first.wpilibj.CameraServer;
+        import edu.wpi.first.wpilibj.IterativeRobot;
 
-                    CvSink cvSink = CameraServer.getInstance().getVideo();
-                    CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+        public class Robot extends IterativeRobot {
 
-                    Mat source = new Mat();
-                    Mat output = new Mat();
+            public void robotInit() {
+                    new Thread(() -> {
+                        UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+                        camera.setResolution(640, 480);
 
-                    while(!Thread.interrupted()) {
-                        cvSink.grabFrame(source);
-                        Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-                        outputStream.putFrame(output);
-                    }
-                }).start();
-        }
-    }
+                        CvSink cvSink = CameraServer.getInstance().getVideo();
+                        CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
 
-::
+                        Mat source = new Mat();
+                        Mat output = new Mat();
 
-    #include "WPILib.h"
-    #include <opencv2/imgproc/imgproc.hpp>
-    #include <opencv2/core/core.hpp>
-    class Robot: public IterativeRobot
-    {
-    private:
-        static void VisionThread()
-        {
-            cs::UsbCamera camera = CameraServer::GetInstance()->StartAutomaticCapture();
-            camera.SetResolution(640, 480);
-            cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
-            cs::CvSource outputStreamStd = CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
-            cv::Mat source;
-            cv::Mat output;
-            while(true) {
-                cvSink.GrabFrame(source);
-                cvtColor(source, output, cv::COLOR_BGR2GRAY);
-                outputStreamStd.PutFrame(output);
+                        while(!Thread.interrupted()) {
+                            cvSink.grabFrame(source);
+                            Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+                            outputStream.putFrame(output);
+                        }
+                    }).start();
             }
         }
-        void RobotInit()
+
+    .. code-tab:: c++
+
+        #include "WPILib.h"
+        #include <opencv2/imgproc/imgproc.hpp>
+        #include <opencv2/core/core.hpp>
+        class Robot: public IterativeRobot
         {
-            std::thread visionThread(VisionThread);
-            visionThread.detach();
-        }
-    };
-    START_ROBOT_CLASS(Robot)
+        private:
+            static void VisionThread()
+            {
+                cs::UsbCamera camera = CameraServer::GetInstance()->StartAutomaticCapture();
+                camera.SetResolution(640, 480);
+                cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
+                cs::CvSource outputStreamStd = CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
+                cv::Mat source;
+                cv::Mat output;
+                while(true) {
+                    cvSink.GrabFrame(source);
+                    cvtColor(source, output, cv::COLOR_BGR2GRAY);
+                    outputStreamStd.PutFrame(output);
+                }
+            }
+            void RobotInit()
+            {
+                std::thread visionThread(VisionThread);
+                visionThread.detach();
+            }
+        };
+        START_ROBOT_CLASS(Robot)
 
 Notice that in these examples, the PutVideo method writes the video to a named stream. To view that stream on the
 SmartDashboard set the properties on the CameraServerStreamViewer to refer the the named stream. In this case that is

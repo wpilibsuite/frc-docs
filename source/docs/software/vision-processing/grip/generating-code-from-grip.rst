@@ -15,7 +15,7 @@ Generating Code
 To generate code, go to ``Tools > Generate Code``. This will bring up a save dialog that lets you create a C++, Java, or Python
 class that performs the steps in the GRIP pipeline.
 
-.. image::images/generating-code-from-grip/generating-code.png
+.. figure:: images/generating-code-from-grip/generating-code.png
 
 If generating code to be used in a pre-existing project, choose a relevant directory to save the pipeline to.
 

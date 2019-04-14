@@ -10,19 +10,19 @@ In addition to the instructions on this page, see the documentation on the GitHu
 The image is fairly large so have a fast internet connection when downloading it. Always use the most recent release from the top
 of the list of releases.
 
-.. image::images/installing-the-image-to-your-microsd-card/getting-the-frc-raspberry-pi-image.png
+.. figure:: images/installing-the-image-to-your-microsd-card/getting-the-frc-raspberry-pi-image.png
 
 Copy the image to your MicroSD card
 -----------------------------------
 Download and install Etcher (https://www.balena.io/etcher/) to image the micro SD card. The micro SD card needs to be at least
 4 GB. Note: a micro SD to USB dongle such as https://www.amazon.com/gp/product/B0779V61XB works well for writing to micro SD cards.
 
-.. image::images/installing-the-image-to-your-microsd-card/copy-the-image-to-your-microsd-card.png
+.. figure:: images/installing-the-image-to-your-microsd-card/copy-the-image-to-your-microsd-card.png
 
 Flash the MicroSD card with the image using Etcher by selecting the zip file as the source, your SD card as the destination and
 click "Flash". Expect the process to take about 3 minutes on a fairly fast laptop.
 
-.. image::images/installing-the-image-to-your-microsd-card/flash-etcher.png
+.. figure:: images/installing-the-image-to-your-microsd-card/flash-etcher.png
 
 Testing the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^

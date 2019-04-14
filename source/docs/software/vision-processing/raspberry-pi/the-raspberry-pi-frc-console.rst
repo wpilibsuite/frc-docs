@@ -24,11 +24,11 @@ Status of the network connection to the rPI
 There is a label in the top right corner of the console that indicates if the rPi is currently connected. It will change from
 Connected to Disconnected if there is no longer a network connection to the rPi.
 
-.. image::images/the-raspberry-pi-frc-console/the-raspberry-pi-frc-console.png
+.. figure:: images/the-raspberry-pi-frc-console/the-raspberry-pi-frc-console.png
 
 System status
 -------------
-.. image::images/the-raspberry-pi-frc-console/system-status.png
+.. figure:: images/the-raspberry-pi-frc-console/system-status.png
 
 The system status shows what the CPU on the rPI is doing at any time. There are two columns of status values, on being a 1 second
 average and the other a 5 second average. Shown is:
@@ -40,7 +40,7 @@ average and the other a 5 second average. Shown is:
 
 Vision Status
 -------------
-.. image::images/the-raspberry-pi-frc-console/vision-status.png
+.. figure:: images/the-raspberry-pi-frc-console/vision-status.png
 
 Allows monitoring of the task which is running the camera code in the rPI, either one of the default programs or your own
 program in Java, C++, or Python. You can also enable and view the console output to see messages coming from the background
@@ -56,14 +56,14 @@ The rPI network settings have options to connect to the PI:
 -   DHCP with Static Fallback - DHCP with Static Fallback - the PI will try to get an IP address via DHCP, but if it can't find a
     DHCP server, it will use the provided static IP address and parameters
 
-.. image::images/the-raspberry-pi-frc-console/network-settings.png
+.. figure:: images/the-raspberry-pi-frc-console/network-settings.png
 
 The picture above is showing the settings for both DHCP and Static IP Addressing. The mDNS name for the rPi should always work
 regardless of the options selected above.
 
 Vision Settings
 ---------------
-.. image::images/the-raspberry-pi-frc-console/vision-settings-1.png
+.. figure:: images/the-raspberry-pi-frc-console/vision-settings-1.png
 
 The Vision Settings are to set the parameters for each camera and whether the rPI should be a NetworkTables client or server.
 There can only be one server on the network and the roboRIO is always a server. Therefor when connected to a roboRIO, the rPI
@@ -73,7 +73,7 @@ as a server then it should be set to Server (Client switch is off).
 To view and manipulate all the camera settings click on the camera in question. In this case the camera is called "Camera rPi
 Camera 0" and clicking on the name reveals the current camera view and the associated settings.
 
-.. image::images/the-raspberry-pi-frc-console/vision-settings-2.png
+.. figure:: images/the-raspberry-pi-frc-console/vision-settings-2.png
 
 Manipulating the camera settings is reflected in the current camera view. The bottom of the page shows all the possible camera
 modes (combinations of Width, Height, and frame rates) that are supported by this camera.
@@ -85,7 +85,7 @@ the values persist click on the "Load Source Config From Camera" button and the 
 settings fields. Then click "Save" at the bottom of the page. Note: you must set the file system Writeable in order to save the
 settings. *The Writeable button is at the top of the page.*
 
-.. image::images/the-raspberry-pi-frc-console/vision-settings-3.png
+.. figure:: images/the-raspberry-pi-frc-console/vision-settings-3.png
 
 There are some commonly used camera settings values shown in the camera settings (above). These values Brightness, White Balance,
 and Exposure are loaded into the camera before the user JSON file is applied. So if a user JSON file contains those settings they
@@ -109,7 +109,7 @@ of programming workflows:
     built program back to the rPi
 -   Do everything yourself using completely custom applications and scripts (probably based on one of the samples)
 
-.. image::images/the-raspberry-pi-frc-console/application-1.png
+.. figure:: images/the-raspberry-pi-frc-console/application-1.png
 
 The running application can be changed by selecting one of the choices in the drop-down menu. The choices are:
 
@@ -121,7 +121,7 @@ The running application can be changed by selecting one of the choices in the dr
 -   Java, C++, or Python uploaded program. Java programs require a .jar file with the compiled program and C++ programs require
     an rPi executable to be uploaded to the rPI.
 
-.. image::images/the-raspberry-pi-frc-console/application-2.png
+.. figure:: images/the-raspberry-pi-frc-console/application-2.png
 
 When selecting one of the Upload options, a file chooser is presented where the jar, executable or Python program can be
 selected and uploaded to the rPi. In the following picture an Uploaded Java jar is chosen and the "Choose File" button will
@@ -131,4 +131,4 @@ Note: in order to Save a new file onto the rPi, the file system has to be set wr
 left of the web page. After saving the new file, set the file system back to "Read-Only" so that it is protected against
 accidental changes.
 
-.. image::images/the-raspberry-pi-frc-console/application-3.png
+.. figure:: images/the-raspberry-pi-frc-console/application-3.png

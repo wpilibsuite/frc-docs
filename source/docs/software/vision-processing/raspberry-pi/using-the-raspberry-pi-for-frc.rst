@@ -17,7 +17,7 @@ One of the most popular coprocessor choices is the Raspberry PI because:
     -   Pi touch screen display - MicroSD port for loading your operating system and storing data
     -   Upgraded switched Micro USB power source (now supports up to 2.5 Amps.
 
-.. image::images/using-the-raspberry-pi-for-frc/raspberry-pi.png
+.. figure:: images/using-the-raspberry-pi-for-frc/raspberry-pi.png
 
 Pre-built Raspberry PI image
 ----------------------------

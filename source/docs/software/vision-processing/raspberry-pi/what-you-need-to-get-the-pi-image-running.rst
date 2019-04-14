@@ -10,6 +10,6 @@ To start using the Raspberry PI as a video or image coprocessor you need the fol
 -   A laptop that can write the MicroSD card, either using a USB dongle (preferred) or a SD to MicroSD adapter that ships with
     most MicroSD cards
 
-.. image::images/what-you-need-to-get-the-pi-image-running/usb-dongle.png
+.. figure:: images/what-you-need-to-get-the-pi-image-running/usb-dongle.png
 
 Shown is an inexpensive USB dongle that will write the FRC image to the  MicroSD card.

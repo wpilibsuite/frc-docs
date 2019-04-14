@@ -20,32 +20,34 @@ writing your robot program. When writing your own program be aware of the follow
 
 Iterative program definitions
 -----------------------------
-::
+.. tabs::
 
-    package org.usfirst.frc.team190.robot;
+    .. code-tab:: java
 
-    import org.usfirst.frc.team190.grip.MyVisionPipeline;
+        package org.usfirst.frc.team190.robot;
 
-    import org.opencv.core.Rect;
-    import org.opencv.imgproc.Imgproc;
+        import org.usfirst.frc.team190.grip.MyVisionPipeline;
 
-    import edu.wpi.cscore.UsbCamera;
-    import edu.wpi.first.wpilibj.CameraServer;
-    import edu.wpi.first.wpilibj.IterativeRobot;
-    import edu.wpi.first.wpilibj.RobotDrive;
-    import edu.wpi.first.wpilibj.vision.VisionRunner;
-    import edu.wpi.first.wpilibj.vision.VisionThread;
+        import org.opencv.core.Rect;
+        import org.opencv.imgproc.Imgproc;
 
-    public class Robot extends IterativeRobot {
+        import edu.wpi.cscore.UsbCamera;
+        import edu.wpi.first.wpilibj.CameraServer;
+        import edu.wpi.first.wpilibj.IterativeRobot;
+        import edu.wpi.first.wpilibj.RobotDrive;
+        import edu.wpi.first.wpilibj.vision.VisionRunner;
+        import edu.wpi.first.wpilibj.vision.VisionThread;
 
-    	private static final int IMG_WIDTH = 320;
-    	private static final int IMG_HEIGHT = 240;
+        public class Robot extends IterativeRobot {
 
-    	private VisionThread visionThread;
-    	private double centerX = 0.0;
-    	private RobotDrive drive;
+        	private static final int IMG_WIDTH = 320;
+        	private static final int IMG_HEIGHT = 240;
 
-    	private final Object imgLock = new Object();
+        	private VisionThread visionThread;
+        	private double centerX = 0.0;
+        	private RobotDrive drive;
+
+        	private final Object imgLock = new Object();
 
 In this first part of the program you can see all the import statements for the WPILib classes used for this program.
 
@@ -57,25 +59,27 @@ In this first part of the program you can see all the import statements for the 
 -   **imgLock** is a variable to synchronize access to the data being simultaneously updated with each image acquisition pass
     and the code that's processing the coordinates and steering the robot.
 
-::
+.. tabs::
 
-    @Override
-    public void robotInit() {
-        UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-        camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
+    .. code-tab:: java
 
-        visionThread = new VisionThread(camera, new MyVisionPipeline(), pipeline -> {
-            if (!pipeline.filterContoursOutput().isEmpty()) {
-                Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
-                synchronized (imgLock) {
-                    centerX = r.x + (r.width / 2);
+        @Override
+        public void robotInit() {
+            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
+
+            visionThread = new VisionThread(camera, new MyVisionPipeline(), pipeline -> {
+                if (!pipeline.filterContoursOutput().isEmpty()) {
+                    Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
+                    synchronized (imgLock) {
+                        centerX = r.x + (r.width / 2);
+                    }
                 }
-            }
-        });
-        visionThread.start();
+            });
+            visionThread.start();
 
-        drive = new RobotDrive(1, 2);
-    }
+            drive = new RobotDrive(1, 2);
+        }
 
 The **robotInit()** method is called once when the program starts up. It creates a **CameraServer** instance that begins
 capturing images at the requested resolution (IMG_WIDTH by IMG_HEIGHT).
@@ -90,17 +94,20 @@ well as a callback that we use to handle the output of the pipeline. In this exa
 in order to find its center, then saves that value in the variable centerX. Note the synchronized block around the assignment:
 this makes sure the main robot thread will always have the most up-to-date value of the variable, as long as it also uses
 **synchronized** blocks to read the variable.
-::
 
-    @Override
-    public void autonomousPeriodic() {
-        double centerX;
-        synchronized (imgLock) {
-            centerX = this.centerX;
+.. tabs::
+
+    .. code-tab:: java
+
+        @Override
+        public void autonomousPeriodic() {
+            double centerX;
+            synchronized (imgLock) {
+                centerX = this.centerX;
+            }
+            double turn = centerX - (IMG_WIDTH / 2);
+            drive.arcadeDrive(-0.6, turn * 0.005);
         }
-        double turn = centerX - (IMG_WIDTH / 2);
-        drive.arcadeDrive(-0.6, turn * 0.005);
-    }
 
 This, the final part of the program, is called repeatedly during the **autonomous period** of the match. It gets the **centerX**
 pixel value of the target and **subtracts half the image width** to change it to a value that is **zero when the rectangle is

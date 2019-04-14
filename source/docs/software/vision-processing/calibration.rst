@@ -8,7 +8,7 @@ Vision Assistant.
 
 Enable Snapshots
 ----------------
-.. image::images/calibration/enable-snapshots.png
+.. figure:: images/calibration/enable-snapshots.png
 
 To capture snapshots from the Axis camera, you must first enable the Snapshot button. Open a web-browser and browse to
 camera's address (10.TE.AM.11), enter the Username/Password combo FRC/FRC if prompted, then click Setup->Live View
@@ -16,7 +16,7 @@ Config->Layout. Click on the checkbox to Show snapshot button then click Save.
 
 Check Camera Settings
 ---------------------
-.. image::images/calibration/check-camera-settings.png
+.. figure:: images/calibration/check-camera-settings.png
 
 Depending on how you are capturing the image stream in your program, it may be possible to stream a different
 resolution, framerate and/or compression than what is saved in the camera and used in the Live View. Before performing
@@ -25,7 +25,7 @@ the settings in the camera, click on the Video and Image header on the left side
 
 Capture Images
 --------------
-.. image::images/calibration/capture-images.png
+.. figure:: images/calibration/capture-images.png
 
 Click the Live View button to return to the Live View page and you should now see a Snapshot button. Clicking this button
 opens a pop-up window with a static image capture. Right-click on this image, select Save Image as and select your desired
@@ -33,20 +33,20 @@ location and file name, then save the image.
 
 Load Image(s) in Vision Assistant
 ---------------------------------
-.. image::images/calibration/load-images-in-vision-assistant.png
+.. figure:: images/calibration/load-images-in-vision-assistant.png
 
 Open the NI Vision Assistant and select the Browse Images option. Select the Open Images icon in the top left of the
 Toolbar, then locate your images. Repeat as necessary to load all desired images.
 
 Color Threshold
 ---------------
-.. image::images/calibration/color-threshold.png
+.. figure:: images/calibration/color-threshold.png
 
 Click Process Images in the top right, then select the color tab on the bottom right and click the Color Threshold icon.
 
 HSV Calibration
 ^^^^^^^^^^^^^^^
-.. image::images/calibration/hsv-calibration.png
+.. figure:: images/calibration/hsv-calibration.png
 
 Change the Color Model dropdown to HSV. Next tune the window on each of the three values to cover as much of the target
 as possible while filtering everything else. If using a green light, you may want to use the values in the sample code as
@@ -74,7 +74,7 @@ tanΘ = Tft*FOVpixel/(Tpixel*d)
 
 Taking Measurements
 ^^^^^^^^^^^^^^^^^^^
-.. image::images/calibration/taking-measurements.png
+.. figure:: images/calibration/taking-measurements.png
 
 One way to take the required measurements is to use the same images of the retro-reflective tape that were used for the
 color calibration above. We can use Vision Assistant to provide the height of the detected blob in pixels. By measuring
@@ -85,7 +85,7 @@ To measure the particles in the image, click the Binary tab, then click the Part
 
 Selecting Measurements
 ^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/calibration/selecting-measurements.png
+.. figure:: images/calibration/selecting-measurements.png
 
 Click on the Select Measurements button. In this case, we are only interested in the bounding box height. Click on the
 button with the X to deselect all measurements, then locate the Bounding Rect Height measurement and check the box. Click
@@ -93,7 +93,7 @@ OK to save.
 
 Measuring the Particle
 ^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/calibration/measuring-the-particle.png
+.. figure:: images/calibration/measuring-the-particle.png
 
 The measurements for each particle will now be displayed in the window at the bottom of the screen. If your image has
 multiple particles, you can click in each box to have Vision Assistant highlight the particle so you can make sure you
@@ -113,7 +113,7 @@ equation from above....
 Depending on what you use to calculate the arctangent, your answer may be in radians, make sure to convert back to degrees
 if entering directly into the sample code as the view angle.
 
-    Note: The code uses View Angle and we just calculated Θ. Make sure to multiply Θ by 2 if replacing the constants in
-    the code.Multiplying our result by 2 yields 45.3 degrees. This image is from a M1013 camera, so our value is a bit
-    off from the previously measured 29.1 but given that the 18ft. was a very rough measurement this shows that we are
+.. note:: The code uses View Angle and we just calculated Θ. Make sure to multiply Θ by 2 if replacing the constants in\
+    the code.Multiplying our result by 2 yields 45.3 degrees. This image is from a M1013 camera, so our value is a bit\
+    off from the previously measured 29.1 but given that the 18ft. was a very rough measurement this shows that we are\
     in the ballpark and likely performed the calculation correctly.

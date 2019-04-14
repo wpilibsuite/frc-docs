@@ -11,7 +11,7 @@ which of the returned values are interesting through further processing.
 
 Verify the network table keys being published
 ---------------------------------------------
-.. image::images/reading-array-values-published-by-networktables/verify-the-network-table-keys-being-published.png
+.. figure:: images/reading-array-values-published-by-networktables/verify-the-network-table-keys-being-published.png
 
 You can verify the names of the network table keys used for publishing the values by using the Network Table Viewer application.
 It is a java program in your user directory in the wpilib/tools folder. The application is started by selecting the "WPILib" menu
@@ -28,7 +28,7 @@ that is evaluating which direction to aim the robot in a command or a control lo
 
 Writing a Java program to access the keys
 -----------------------------------------
-.. image::images/reading-array-values-published-by-networktables/writing-a-java-program-to-access-the-keys.png
+.. figure:: images/reading-array-values-published-by-networktables/writing-a-java-program-to-access-the-keys.png
 
 The steps to getting the values and, in this program, printing them are:
 
@@ -41,7 +41,7 @@ The steps to getting the values and, in this program, printing them are:
 
 Writing a C++ program to access the keys
 ----------------------------------------
-.. image::images/reading-array-values-published-by-networktables/writing-a-cpp-program-to-access-the-keys.png
+.. figure:: images/reading-array-values-published-by-networktables/writing-a-cpp-program-to-access-the-keys.png
 
 The steps to getting the values and, in this program, printing them are:
 
@@ -56,7 +56,7 @@ The steps to getting the values and, in this program, printing them are:
 
 Program output
 --------------
-.. image::images/reading-array-values-published-by-networktables/program-output.png
+.. figure:: images/reading-array-values-published-by-networktables/program-output.png
 
 In this case the program is only looking at the array of areas, but in a real example all the values would more likely be used.
 Using the Riolog in eclipse or the DriverStation log you can see the values as they are retrieved. This program is using a sample

@@ -1,7 +1,7 @@
 Configuring an Axis Camera
 ==========================
-    Three different Axis camera models are supported by the FRC software, the Axis 206, Axis M1011 and Axis M1013. This
-    document provides instructions on how to configure one of these cameras for FRC use. To follow the instructions in
+.. note:: Three different Axis camera models are supported by the FRC software, the Axis 206, Axis M1011 and Axis M1013. This\
+    document provides instructions on how to configure one of these cameras for FRC use. To follow the instructions in\
     this document, you must have installed the NI FRC Update Suite and Configured your radio
 
 Connect the camera
@@ -12,14 +12,14 @@ cable or via a wireless connection.
 
 Axis Camera Setup Tool
 ----------------------
-.. image::images/configuring-an-axis-camera/axis-camera-setup-tool.png
+.. figure:: images/configuring-an-axis-camera/axis-camera-setup-tool.png
 
 Browse to **C:\Program Files (x86)\National Instruments\LabVIEW 2014\project\Axis Camera Tool** and double-click on
 **AxisCameraSetup.exe** to start the Axis Camera Setup Tool.
 
 Tool Overview
 ^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/tool-overview.png
+.. figure:: images/configuring-an-axis-camera/tool-overview.png
 
 The camera should be automatically detected and the green indicator light should be lit. If it is not, make sure the
 camera is powered on (the ring on the camera face should be green) and connected to your computer. If the indicator
@@ -29,14 +29,14 @@ the form 10.TE.AM.XX where TEAM is your 4 digit team number.
 
 Setup the Camera
 ^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/setup-the-camera.png
+.. figure:: images/configuring-an-axis-camera/setup-the-camera.png
 
 To configure the camera, press Apply. This will configure many of the necessary/recommended settings for using the camera
 for FRC. Currently the tool does not properly configure the DNS name of the camera in many cases.
 
 Camera Webpage
 ^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/camera-webpage.png
+.. figure:: images/configuring-an-axis-camera/camera-webpage.png
 
 To set the network settings, open a web browser and enter the address shown next to Camera found at in the tool (in the
 example above this is 10.0.40.20) in the address bar and press enter. You should see a Configure Root Password page, set
@@ -44,13 +44,13 @@ this password to whatever you would like, but admin is recommended.
 
 Setup Page
 ^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/setup-page.png
+.. figure:: images/configuring-an-axis-camera/setup-page.png
 
 Click Setup to go to the setup page.
 
 Configure Basic Network Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-basic-network-settings.png
+.. figure:: images/configuring-an-axis-camera/configure-basic-network-settings.png
 
 To configure the network settings of the camera, click the arrow to expand the System Options pane, then click the arrow
 to expand Network, then expand TCP/IP and select Basic. Set the camera to obtain an IP address via DHCP by selecting the
@@ -61,7 +61,7 @@ Click Save.
 
 Configure Advanced Network Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-advanced-network-settings.png
+.. figure:: images/configuring-an-axis-camera/configure-advanced-network-settings.png
 
 Next click Advanced under TCP/IP. Set the Host Name Configuration to "Use the host name:" and set the value to
 "axis-camera" as shown. If you plan to use multiple cameras on your robot, select a unique host name for each. You
@@ -71,7 +71,7 @@ Click Save.
 
 Manual Camera Configuration
 ---------------------------
-.. image::images/configuring-an-axis-camera/manual-camera-configuration.png
+.. figure:: images/configuring-an-axis-camera/manual-camera-configuration.png
 
 It is recommended to use the Setup Axis Camera Tool to configure the Axis Camera. If you need to configure the camera
 manually, connect the camera directly to the computer, configure your computer to have a static IP of 192.168.0.5, then
@@ -85,13 +85,13 @@ to factory settings and should be accessible via the 192.168.0.5 address.
 
 Setup Page
 ^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/setup-page.png
+.. figure:: images/configuring-an-axis-camera/setup-page.png
 
 Click Setup to go to the setup page.
 
 Configure Users
 ^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-users.png
+.. figure:: images/configuring-an-axis-camera/configure-users.png
 
 On the left side click Users to open the users page. Click Add then enter the Username FRC Password FRC and click the
 Administrator bubble, then click OK. If using the SmartDashboard, check the Enable anonymous viewer login box. Then click
@@ -99,7 +99,7 @@ Save.
 
 Configure Image Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-image-settings.png
+.. figure:: images/configuring-an-axis-camera/configure-image-settings.png
 
 Click Video & Image on the left side to open the image settings page. Set the Resolution and Compression to the desired
 values (recommended 320x240, 30). To limit the framerate to under 30 FPS, select the Limited to bubble under Maximum
@@ -108,7 +108,7 @@ desired. Click Save when finished.
 
 Configure Basic Network Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-basic-network-settings.png
+.. figure:: images/configuring-an-axis-camera/configure-basic-network-settings.png
 
 To configure the network settings of the camera, click the arrow to expand the System Options pane, then click the arrow
 to expand Network, then expand TCP/IP and select Basic. Set the camera to obtain an IP address via DHCP by selecting the
@@ -119,7 +119,7 @@ Click Save.
 
 Configure Advanced Network Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/configuring-an-axis-camera/configure-advanced-network-settings.png
+.. figure:: images/configuring-an-axis-camera/configure-advanced-network-settings.png
 
 Next click Advanced under TCP/IP. Set the Host Name Configuration to "Use the host name:" and set the value to
 "axis-camera" as shown. If you plan to use multiple cameras on your robot, select a unique host name for each. You

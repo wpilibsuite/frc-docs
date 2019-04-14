@@ -6,7 +6,7 @@ browser to view camera images and experiment with camera settings.
 
 Changing Camera Settings
 ------------------------
-.. image::images/camera-settings/changing-camera-settings.png
+.. figure:: images/camera-settings/changing-camera-settings.png
 
 To change the camera settings on any of the supported Axis cameras (206, M1011, M1013), browse to the camera's webpage by
 entering it's address (usually 10.TE.AM.11) in a web browser. Click Setup near the top right corner of the page. On the
@@ -22,7 +22,7 @@ needed on your robot.
 
 Compression
 -----------
-.. image::images/camera-settings/compression.png
+.. figure:: images/camera-settings/compression.png
 
 The Axis camera returns images in BMP, JPEG, or MJPG format. BMP images are quite large and take more time to transmit to
 the cRIO and laptop. Therefore the WPILib implementations typically use MJPG motion JPEG. The compression setting ranges
@@ -34,7 +34,7 @@ camera affects bandwidth if performing processing on the Driver Station computer
 
 Resolution
 ----------
-.. image::images/camera-settings/resolution.png
+.. figure:: images/camera-settings/resolution.png
 
 Image sizes shared by the supported cameras are 160x120, 320x240, and 640x480. The M1011 and 1013 have additional sizes,
 but they aren’t built into WPILib. The largest image size has four times as many pixels that are one-fourth the size of
@@ -51,14 +51,14 @@ size up. If the robot or target is moving, it is quite important to minimize ima
 to the delay between the target location and perceived location. If both robot and target are stationary, processing time
 is typically less important.
 
-    Note: When requesting images using LabVIEW (either the Dashboard or Robot Code), the resolution and Frame Rate settings
-    of the camera will be ignored. The LabVIEW code specifies the framerate and resolution as part of the stream request
-    (this does not change the settings stored in the camera, it overrides that setting for the specific stream). The
+.. note:: When requesting images using LabVIEW (either the Dashboard or Robot Code), the resolution and Frame Rate settings\
+    of the camera will be ignored. The LabVIEW code specifies the framerate and resolution as part of the stream request\
+    (this does not change the settings stored in the camera, it overrides that setting for the specific stream). The\
     SmartDashboard and robot code in C++ or Java will use the resolution and framerate stored in the camera.
 
 Frame Rate
 ----------
-.. image::images/camera-settings/frame-rate.png
+.. figure:: images/camera-settings/frame-rate.png
 
 The Axis Cameras have a max framerate of 30 frames per second. If desired, a limit can be set lower to reduce bandwidth
 consumption.
@@ -72,7 +72,7 @@ technique for increasing the frame rate or lowering the CPU usage.
 
 White Balance
 -------------
-.. image::images/camera-settings/white-balance.png
+.. figure:: images/camera-settings/white-balance.png
 
 If the color of the light shine is being used to identify the marker, be sure to control the camera settings that affect
 the image coloring. The most important setting is white balance. It controls how the camera blends the component colors
@@ -88,7 +88,7 @@ seconds or so), and switch the white balance to hold.
 
 Exposure
 --------
-.. image::images/camera-settings/exposure.png
+.. figure:: images/camera-settings/exposure.png
 
 The brightness or exposure of the image also has an impact on the colors being reported. The issue is that as overall
 brightness increases, color saturation will start to drop. Lets look at an example to see how this occurs. A saturated
@@ -112,4 +112,4 @@ exposure settings of the M1011 and 206 and you will usually want to un-check thi
 value sliders until your image looks as desired. The Exposure Priority should generally be set to Motion. This will
 prioritize framerate over image quality. Note that even with these settings the M1013 camera still performs some auto
 exposure compensation so it is recommended to check calibration frequently to minimize any impact lighting changes may
-have on image processing. See the article on Calibration for more details. 
+have on image processing. See the article on Calibration for more details.

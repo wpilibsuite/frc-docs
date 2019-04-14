@@ -26,7 +26,7 @@ on boot and many other details.
 
 Setup
 -----
-.. image::images/using-grip-with-a-kangaroo-computer/setup.png
+.. figure:: images/using-grip-with-a-kangaroo-computer/setup.png
 
 The nice thing about this setup is that you just need to plug in a monitor, keyboard, mouse and (in this case) the Microsoft web
 camera and you are good to go with programming the GRIP pipeline. When you are finished, disconnect the keyboard, mouse and monitor
@@ -38,7 +38,7 @@ The USB hub is connected to the camera and mouse.
 
 Sample GRIP program
 -------------------
-.. image::images/using-grip-with-a-kangaroo-computer/sample-grip-program.png
+.. figure:: images/using-grip-with-a-kangaroo-computer/sample-grip-program.png
 
 Attached is the sample program running on the Kangaroo detecting the red heart on the little foam robot in the image (left panel).
 It is doing a HSV threshold to only get that red color then finding contours, and then filtering the contours using the size and
@@ -46,7 +46,7 @@ solidity. At the end of the pipeline, the values are being published to NetworkT
 
 Viewing Contours Report in NetworkTables
 ----------------------------------------
-.. image::images/using-grip-with-a-kangaroo-computer/viewing-contours-report-in-networktables.png
+.. figure:: images/using-grip-with-a-kangaroo-computer/viewing-contours-report-in-networktables.png
 
 This is the output from the OutlineViewer (<username>/WPILib/tools/OutlineViewer.jar), running on a different computer as a server
 (since there is no roboRIO on the network in this example) and the values being reported back for the single contour that the
