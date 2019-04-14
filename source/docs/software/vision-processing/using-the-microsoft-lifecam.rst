@@ -18,7 +18,7 @@ To stream the camera back to the Dashboard using LabVIEW, no additional code is 
 compression done by the camera, fewer options but lower roboRIO CPU usage) or USB SW (image compressed by roboRIO, more
 options, but higher roboRIO CPU usage) and the image should begin streaming back.
 
-    Note: The camera should be plugged in before your LabVIEW code starts running to work properly. If you just plugged in
+.. note:: The camera should be plugged in before your LabVIEW code starts running to work properly. If you just plugged in\
     the camera rebooting the roboRIO is a quick way to make sure it is recognized properly.
 
 The default LabVIEW templates and the image processing examples are already set up for the USB camera if you want to do

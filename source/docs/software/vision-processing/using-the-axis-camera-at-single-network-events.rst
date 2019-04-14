@@ -46,7 +46,7 @@ necessary). In the box, enter the mDNS name of your camera with a ".local" suffi
 is replaced with your team number). In this example I have used a sample name for team 9999. Then click File->Save or Ctrl+S
 to save the VI.
 
-    Note: You may also wish to make a minor modification to the Front Panel to verify that you are running the right dashboard
+.. note:: You may also wish to make a minor modification to the Front Panel to verify that you are running the right dashboard\
     later.
 
 Building the Dashboard

@@ -1,13 +1,13 @@
 Introduction to GRIP
 ====================
-    GRIP is a tool for developing computer vision algorithms interactively rather than through trial and error coding.
-    After developing your algorithm you may run GRIP in headless mode on your roboRIO, on a Driver Station Laptop, or on
-    a coprocessor connected to your robot network. With Grip you choose vision operations to create a graphical pipeline
-    that represents the sequence of operations that are performed to complete the vision algorithm.
+GRIP is a tool for developing computer vision algorithms interactively rather than through trial and error coding.
+After developing your algorithm you may run GRIP in headless mode on your roboRIO, on a Driver Station Laptop, or on
+a coprocessor connected to your robot network. With Grip you choose vision operations to create a graphical pipeline
+that represents the sequence of operations that are performed to complete the vision algorithm.
 
-    GRIP is based on OpenCV, one of the most popular computer vision software libraries used for research, robotics, and
-    vision algorithm implementations. The operations that are available in GRIP are almost a 1 to 1 match with the
-    operations available if you were hand coding the same algorithm with some text-based programming language.
+GRIP is based on OpenCV, one of the most popular computer vision software libraries used for research, robotics, and
+vision algorithm implementations. The operations that are available in GRIP are almost a 1 to 1 match with the
+operations available if you were hand coding the same algorithm with some text-based programming language.
 
 The GRIP user interface
 -----------------------

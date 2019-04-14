@@ -1,7 +1,7 @@
 Configuring an Axis Camera
 ==========================
-    Three different Axis camera models are supported by the FRC software, the Axis 206, Axis M1011 and Axis M1013. This
-    document provides instructions on how to configure one of these cameras for FRC use. To follow the instructions in
+.. note:: Three different Axis camera models are supported by the FRC software, the Axis 206, Axis M1011 and Axis M1013. This\
+    document provides instructions on how to configure one of these cameras for FRC use. To follow the instructions in\
     this document, you must have installed the NI FRC Update Suite and Configured your radio
 
 Connect the camera
