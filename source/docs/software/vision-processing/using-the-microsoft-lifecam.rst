@@ -6,13 +6,13 @@ the provided software.
 
 Connecting the camera to the roboRIO
 ------------------------------------
-.. image::images/using-the-microsoft-lifecam/connecting-the-camera-to-the-roborio.jpg
+.. figure::images/using-the-microsoft-lifecam/connecting-the-camera-to-the-roborio.jpg
 
 The camera can be connected to either of the roboRIO USB ports.
 
 Using the camera - LabVIEW
 --------------------------
-.. image::images/using-the-microsoft-lifecam/using-the-camera-labview.png
+.. figure::images/using-the-microsoft-lifecam/using-the-camera-labview.png
 
 To stream the camera back to the Dashboard using LabVIEW, no additional code is necessary. Simply select USB HW (image
 compression done by the camera, fewer options but lower roboRIO CPU usage) or USB SW (image compressed by roboRIO, more
@@ -35,7 +35,7 @@ This class will allow images to be streamed back to either the SmartDashboard "U
 
 Determining the Camera name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/using-the-microsoft-lifecam/determining-the-camera-name.png
+.. figure::images/using-the-microsoft-lifecam/determining-the-camera-name.png
 
 Unlike the LabVIEW code which attempts to determine the camera name of the camera you want to use, the C++\Java code
 requires you to specify the camera name. To determine the name of the desired camera, you will need to use the roboRIO
@@ -45,7 +45,7 @@ server or IMAQDx open (in the image above, the camera name is cam0).
 
 Using the SmartDashboard USB Camera Viewer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/using-the-microsoft-lifecam/using-the-smartdashboard-usb-camera-viewer.png
+.. figure::images/using-the-microsoft-lifecam/using-the-smartdashboard-usb-camera-viewer.png
 
 To view the camera stream from the LabVIEW dashboard, set the camera dropdown to USB HW. To view the stream from the
 SmartDashboard you will need to add a USB Webcam Viewer widget to your layout. For more information on the SmartDashboard
