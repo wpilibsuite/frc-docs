@@ -7,7 +7,7 @@ that is connected to the roboRIO. In this mode, the camera will capture frames a
 the images, create a CameraServer Stream Viewer widget using the "View", then "Add" menu in the dashboard. The images are
 unprocessed and just forwarded from the camera to the dashboard.
 
-.. figure::images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
+.. figure:: images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
 
 ::
 
