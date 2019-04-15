@@ -172,7 +172,7 @@ C++ Configurations (C++ Only)
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-|C++ Configurations|
+|CPP Configurations|
 
 .. |Command Palette| image:: images/creating-robot-program/command-pallete.png
 .. |WPILib Commands| image:: images/creating-robot-program/wpilib-commands.png
@@ -180,4 +180,4 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 .. |New Project Creator| image:: images/creating-robot-program/new-project-creator.png
 .. |New Project Configured| image:: images/creating-robot-program/new-project-creator-configured.png
 .. |Opened Robot Project| image:: images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image: images/creating-robot-program/cpp-configurations.png
+.. |CPP Configurations| image: images/creating-robot-program/cpp-configurations.png
