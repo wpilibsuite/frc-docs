@@ -27,6 +27,10 @@ Welcome to FIRST Robotics Documentation
    :caption: Software - WPILib Overview
 
    docs/software/wpilib-overview/what-is-wpilib
+   docs/software/wpilib-overview/vscode-basics
+   docs/software/wpilib-overview/wpilib-commands-vscode
+   docs/software/wpilib-overview/creating-robot-program
+   docs/software/wpilib-overview/deploying-robot-code
 
 .. toctree::
    :maxdepth: 1

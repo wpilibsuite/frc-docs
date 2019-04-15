@@ -114,3 +114,70 @@ Source:
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/RobotBase.cpp>`__
 
 The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method.
+
+Not Using a Base Class
+~~~~~~~~~~~~~~~~~~~
+
+If desired, users can omit a base class entirely and simply write their program in a :code:`main()` method, as they would for any other program.  This is *highly* discouraged - users should not "reinvent the wheel" when writing their robot code - but it is supported for those who wish to have absolute control over their program flow.
+
+.. warning:: Users should *not* modify the :code:`main()` method of a robot program unless they are absolutely sure of what they are doing.
+
+Creating a New WPILib Project
+-----------------------------
+
+Once we've decided on a base class, we can create our new robot project.  Bring up the VSCode command palette with Control+Shift+P:
+
+|Command Pallete|
+
+Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VSCode commands:
+
+|WPILib Commands|
+
+Now, select the "Create a new project" command:
+
+|Create New Project|
+
+This will bring up the "New Project Creator Window:"
+
+|New Project Creator|
+
+The elements of the New Project Creator Window are explained below:
+
+1. **Project Type**: The kind of project we wish to create.  This can be an example project, or one of the project templates provided by WPILib.  Templates exist for each of the robot base classes.  Additionally, a template exists for :ref:`Command-based <what-is-command-based>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
+2. **Language**: This is the language (C++ or Java) that will be used for this project.
+3. **Template Type**: If this is a template project, this specifies the type of template that will be used.
+4. **Project Location**: This determines the folder in which the robot project will be located.
+5. **Create New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+6. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+
+Once all the above have been configured, click "Generate Project" and the robot project will be created.
+
+.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+
+|New Project Configured|
+
+Opening The New Project
+-----------------------
+
+After successfully creating your project, Visual Studio Code will give the option of opening the project as shown below. We can choose to do that now or later by typing Ctrl-O (Command+O on mac) and select the folder where We saved our project.
+
+Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
+
+TODO: Replace this image with an up-to-date one (also, ew light theme)
+|Opened Robot Project|
+
+C++ Configurations (C++ Only)
+-----------------------------
+
+For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+
+|C++ Configurations|
+
+.. |Command Palette| image:: images/creating-robot-program/command-pallete.png
+.. |WPILib Commands| image:: images/creating-robot-program/wpilib-commands.png
+.. |Create New Project| image:: images/creating-robot-program/create-new-project.png
+.. |New Project Creator| image:: images/creating-robot-program/new-project-creator.png
+.. |New Project Configured| image:: images/creating-robot-program/new-project-creator-configured.png
+.. |Opened Robot Project| image:: images/creating-robot-program/opened-robot-project.png
+.. |C++ Configurations| image: images/creating-robot-program/cpp-configurations.png
