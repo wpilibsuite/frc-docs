@@ -127,7 +127,7 @@ Creating a New WPILib Project
 
 Once we've decided on a base class, we can create our new robot project.  Bring up the VSCode command palette with Control+Shift+P:
 
-|Command Pallete|
+|Command Palette|
 
 Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VSCode commands:
 
