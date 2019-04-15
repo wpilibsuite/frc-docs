@@ -174,7 +174,7 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 
 |CPP Configurations|
 
-.. |Command Palette| image:: images/creating-robot-program/command-pallete.png
+.. |Command Palette| image:: images/creating-robot-program/command-palette.png
 .. |WPILib Commands| image:: images/creating-robot-program/wpilib-commands.png
 .. |Create New Project| image:: images/creating-robot-program/create-new-project.png
 .. |New Project Creator| image:: images/creating-robot-program/new-project-creator.png
