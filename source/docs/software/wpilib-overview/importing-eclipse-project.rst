@@ -15,7 +15,7 @@ Press Ctrl+Shift+P and type "WPILib" or click the WPILib icon to locate the WPIL
 
 You'll be presented with the WPILib Eclipse Project Upgrade window. This is similar to the process of creating a new project and the window and the steps are shown below.  This window contains the following elements:
 
-1. **Eclipse Project Selection** - Selects the Eclipse project to be imported.  Users should select the build.properties file in the root directory of the eclipse project.
+1. **Eclipse Project Selection**: Selects the Eclipse project to be imported.  Users should select the build.properties file in the root directory of the eclipse project.
 2. **Project Location**: This determines the folder in which the robot project will be located.
 3. **Create New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
 4. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
