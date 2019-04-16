@@ -1,7 +1,9 @@
 Third-Party CAN Devices
 =======================
 
-A number of FRC vendors offer their own CAN peripherals.  As CAN devices offer expansive feature-sets, vendor CAN devices require similarly expansive code libraries to operate.  As a result, these libraries are not maintained as an official part of WPILib, but are instead maintained by the vendors themselves.  A list of common third-party CAN devices from various vendors, along with links to corresponding external documentation, is provided below:
+A number of FRC vendors offer their own CAN peripherals.  As CAN devices offer expansive feature-sets, vendor CAN devices require similarly expansive code libraries to operate.  As a result, these libraries are not maintained as an official part of WPILib, but are instead maintained by the vendors themselves.  For a guide to installing third-party libraries, see :ref:`3rd Party Libraries <third-party-libraries>`
+
+A list of common third-party CAN devices from various vendors, along with links to corresponding external documentation, is provided below:
 
 Cross-the-Road Electronics
 --------------------------
