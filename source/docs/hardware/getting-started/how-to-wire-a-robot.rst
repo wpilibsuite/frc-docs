@@ -280,7 +280,14 @@ Requires: Ethernet cable
 
 Connect an Ethernet cable from the female RJ45 (Ethernet) port of the
 Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
-RoboRIO to PCM CAN RoboRIO to PCM CANZoom: RoboRIO to PCM CAN
+
+.. _can-device-wiring:
+
+CAN Devices
+-----------
+
+RoboRIO to PCM CAN
+~~~~~~~~~~~~~~~~~~
 
 .. image:: images/how-to-wire-a-robot/image15.jpg
    :width: 600
@@ -299,7 +306,7 @@ next step).
 4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
 PCM to PDP CAN
----------------------------------------------------
+~~~~~~~~~~~~~~
 
 .. image:: images/how-to-wire-a-robot/image16.jpg
    :width: 600
@@ -324,6 +331,11 @@ and place any additional CAN nodes between the roboRIO and the PDP
 the middle of the bus (utilizing both pairs of PDP CAN terminals) move
 the jumper to the “OFF” position and place your own 120 ohm terminating
 resistor at the end of your CAN bus chain. 
+
+Other CAN Devices
+~~~~~~~~~~~~~~~~~
+
+TODO: Add motor controller example here?
 
 PWM Cables
 ---------------------------------------------------

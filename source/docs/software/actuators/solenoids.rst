@@ -1,3 +1,5 @@
+.. _operating-pneumatic-cylinders:
+
 Operating pneumatic cylinders
 =============================
 

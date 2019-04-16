@@ -46,6 +46,15 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software - CAN Devices
+
+   docs/software/can-devices/using-can-devices
+   docs/software/can-devices/pneumatics-control-module
+   docs/software/can-devices/power-distribution-panel
+   docs/software/can-devices/third-party-devices
+
+.. toctree::
+   :maxdepth: 1
    :caption: Software - Vision
 
    docs/software/vision-processing/strategies-for-vision-programming
