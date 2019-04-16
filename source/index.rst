@@ -31,6 +31,9 @@ Welcome to FIRST Robotics Documentation
    docs/software/wpilib-overview/wpilib-commands-vscode
    docs/software/wpilib-overview/creating-robot-program
    docs/software/wpilib-overview/deploying-robot-code
+   docs/software/wpilib-overview/viewing-console-output
+   docs/software/wpilib-overview/debugging-robot-program
+   docs/software/wpilib-overview/importing-eclipse-project
 
 .. toctree::
    :maxdepth: 1
