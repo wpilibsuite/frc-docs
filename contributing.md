@@ -4,6 +4,8 @@
 
 ***IMPORTANT: Currently we are in the process of migrating documentation from the official screensteps. Please hold off on writing new articles unless they are a migration from [screensteps](http://wpilib.screenstepslive.com/s/currentCS)***
 
+***ALSO NOTE: FIRST retains all rights to documentation and images provided. This disclaimer is in the event that FIRST decides to make this project official***
+
 The goal of frc-docs is to have a [FIRST](https://firstinspires.org) Robotics Competition documentation into a community led model.
 
 This community-led model's goals are:
@@ -16,8 +18,8 @@ This community-led model's goals are:
 - Pages must be in [reStructuredText format](https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst). Pull-requests using Markdown ***will not*** be accepted!.
 - Images must be located under /source/docs/page-category/images/[images go here].
 - Sections containing notes, or important remarks must be prefaced with the `.. note::` or `.. warning::` tag.
-- Contributions must target the `develop` branch. Pull-requests targeting master will be rejected.
-- Contributions must pass the build-bot unless otherwise stated.
+- Contributions must target the `develop` branch. Contributions targeting `master` will be rejected.
+- Contributions must pass the azure build bot, otherwise will be rejected.
 
 ## FAQ
 ### Why Sphinx?
