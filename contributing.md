@@ -19,6 +19,7 @@ This community-led model's goals are:
 - Images must be located under /source/docs/page-category/images/[images go here].
 - Sections containing notes, or important remarks must be prefaced with the `.. note::` or `.. warning::` tag.
 - Contributions must target the `develop` branch. Contributions targeting `master` will be rejected.
+- Contributions must pass the azure build bot, otherwise will be rejected.
 
 ## FAQ
 ### Why Sphinx?
