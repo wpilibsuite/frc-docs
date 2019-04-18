@@ -42,6 +42,7 @@ Welcome to FIRST Robotics Documentation
    docs/software/roborio-info/roborio-web-dashboard
    docs/software/roborio-info/roborio-ftp
    docs/software/roborio-info/roborio-ssh
+   docs/software/roborio-info/roborio-brownouts
 
 .. toctree::
    :maxdepth: 1
