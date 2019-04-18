@@ -107,18 +107,6 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Software - Shuffleboard - Getting Started
-   
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-widgets
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-lists
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tabs
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-preferences
-   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq
-   
-.. toctree::
-   :maxdepth: 1
    :caption: Software - Command-Based
 
    docs/software/commandbased/what-is-command-based
@@ -130,6 +118,28 @@ Welcome to FIRST Robotics Documentation
    docs/software/commandbased/convenience-features
    docs/software/commandbased/pid-subsystems-commands
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Shuffleboard - Getting Started
+   
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-widgets
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-lists
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tabs
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-preferences
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq
+   
+   
+.. toctree:: 
+   :maxdepth: 1
+   :caption: Shuffleboard - Layouts with Code
+   
+   docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs
+   docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data
+   docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data
+   docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets
+   
 .. toctree::
    :maxdepth: 1
    :caption: Hardware - Getting Started
