@@ -107,9 +107,10 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Software - Tools - Shuffleboard
+   :caption: Software - Shuffleboard - Getting Started
    
-   docs/software/wpilib-tools/shuffleboard/shuffleboard-tour
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data
    
 .. toctree::
    :maxdepth: 1
