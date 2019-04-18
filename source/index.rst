@@ -111,6 +111,11 @@ Welcome to FIRST Robotics Documentation
    
    docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour
    docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-widgets
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-lists
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tabs
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-preferences
+   docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq
    
 .. toctree::
    :maxdepth: 1
