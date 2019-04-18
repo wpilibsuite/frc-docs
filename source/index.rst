@@ -6,6 +6,12 @@
 Welcome to FIRST Robotics Documentation
 ========================================================
 
+.. toctree:: 
+   :maxdepth: 1
+   :caption: Introduction to Programming
+   Introduction to Java <http://dslab.us/wp-content/uploads/book/pdf/java/HeadFisrt_JAVA.pdf>
+   Introduction to C++ <https://file.tavsys.net/books/cpp/Programming_%20Principles%20and%20Practice%20Using%20C%2B%2B%2C%202nd%20Ed.%2C%20Stroustrup%20%28distr%29.pdf>
+   
 .. toctree::
    :maxdepth: 1
    :caption: Software - Getting Started
@@ -43,7 +49,8 @@ Welcome to FIRST Robotics Documentation
    docs/software/roborio-info/roborio-ftp
    docs/software/roborio-info/roborio-ssh
    docs/software/roborio-info/roborio-brownouts
-
+   Additional Help <http://www.ni.com/en-us/innovations/white-papers/15/imaging-the-roborio-and-common-troubleshooting-techniques.html>
+   
 .. toctree::
    :maxdepth: 1
    :caption: Software - Actuators
