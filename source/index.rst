@@ -40,6 +40,7 @@ Welcome to FIRST Robotics Documentation
    :caption: Software - RoboRIO
 
    docs/software/roborio-info/roborio-web-dashboard
+   docs/software/roborio-info/roborio-ftp
 
 .. toctree::
    :maxdepth: 1
