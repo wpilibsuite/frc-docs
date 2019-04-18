@@ -4,6 +4,8 @@
 
 ***IMPORTANT: Currently we are in the process of migrating documentation from the official screensteps. Please hold off on writing new articles unless they are a migration from [screensteps](http://wpilib.screenstepslive.com/s/currentCS)***
 
+***ALSO NOTE: FIRST retains all rights to documentation and images provided. This disclaimer is in the event that FIRST decides to make this project official***
+
 The goal of frc-docs is to have a [FIRST](https://firstinspires.org) Robotics Competition documentation into a community led model.
 
 This community-led model's goals are:
