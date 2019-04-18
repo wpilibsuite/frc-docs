@@ -102,7 +102,7 @@ present in version 19.1.0. Teams should install the new version, then
 re-program their radio (their is no need to re-flash the firmware).
 
 Install the Software
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 Double click on FRC\_Radio\_Configuration\_VERSION.exe to launch the
 installer. Follow the prompts to complete the installation.
@@ -113,7 +113,7 @@ is not already present. The WinPCap installer contains a checkbox
 leave this box checked.
 
 Launch the Software
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Use the Start menu or desktop shortcut to launch the program.
 
@@ -136,7 +136,7 @@ bridge over a wireless connection.
 3. Click "OK"
 
 Open Mesh Firmware Note
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 For the FRC Radio Configuration Utility to program the OM5P-AN and
 OM5P-AC radio, the radio must be running an FRC specific build of the
@@ -150,7 +150,7 @@ Note: Radios used in 2018 will need to be updated to 2019 firmware
 before configuring.
 
 Loading FRC Firmware to OpenMesh Radio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you need to load the FRC firmware (or reset the radio), you can do so
 using the FRC Radio Configuration Utility.
@@ -177,7 +177,7 @@ setting the Locale setting to "en\_us" as described on `this
 page <http://https://www.java.com/en/download/help/locale.xml>`__.
 
 Select a Bridge Model and Operating Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Select which radio you are configuring using the drop-down list.
 2. Select which operating mode you want to configure. For most cases,
@@ -186,7 +186,7 @@ Select a Bridge Model and Operating Mode
    is less congested in many environments.
 
 Select Options
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 2019 FRC Control SystemGetting StartedGetting Started with the Control
 System Getting Started: Step-By-StepProgramming your radio Programming
@@ -246,7 +246,7 @@ Bulk (All other traffic). (disabled if BW limit is disabled) DHCP server
 enabled. Serves out 10.TE.AM.11 - 10.TE.AM.111 on the wired side,
 10.TE.AM.130 - 10.TE.AM.230 on the wireless side, subnet mask of
 255.255.255.0, broadcast address 10.TE.AM.255 DNS server enabled. DNS
-server IP and domain suffix (.lan) are served as part of the DHCP. At
+server IP and domain suffix (.lan) are served as part of the DHCP. AtF
 home only:
 
 SSID may have a "Robot Name" appended to the team number to distinguish
@@ -360,7 +360,7 @@ firewall. This means that you will not be able to deploy code wirelessly
 with this option enabled.
 
 Prepare and Start the Configuration Process
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow the on-screen instructions for preparing your wireless bridge,
 entering the settings the bridge will be configured with, and starting
@@ -368,7 +368,7 @@ the configuration process. These on-screen instructions update to match
 the bridge model and operating mode chosen.
 
 Configuration Progress
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 Throughout the configuration process, the window will indicate:
 
@@ -377,7 +377,7 @@ Throughout the configuration process, the window will indicate:
 3. All steps executed so far
 
 Configuration Completed
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the configuration is complete:
 
@@ -385,7 +385,7 @@ Once the configuration is complete:
 2. Press "OK" on the main window to return to the settings screen
 
 Configuration Errors
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 If an error occurs during the configuration process, follow the
 instructions in the error message to correct the problem.
