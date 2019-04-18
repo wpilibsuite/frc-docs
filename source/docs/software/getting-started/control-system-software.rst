@@ -1,13 +1,13 @@
 FRC Software Component Overview
 ===============================
 
-*The FRC control system consists of a wide variety of mandatory and
+The FRC control system consists of a wide variety of mandatory and
 optional software components. These elements are designed to assist you
 in the design, development, and debugging of your robot code as well as
 assist with control robot operation and to provide feedback when
 troubleshooting. For each software component this document will provide
 a brief overview of its purpose, a link to the package download, if
-appropriate, and a link to further documentation where available.*
+appropriate, and a link to further documentation where available.
 
 Operating System Compatibility
 ------------------------------
@@ -70,7 +70,7 @@ program in C++ (for FRC) consists of a number of header (.h) and
 implementation (.cpp) files where as a program in Java consists of .java
 files contained in one or more packages. A guide to getting started with
 C++ for FRC, including the installation and configuration of Visual
-Studio Code can be found here. A guide to getting started with Java for
+Studio Code can be found `here <offline-installation-preperations.html>`__. A guide to getting started with Java for
 FRC, including the installation and configuration of the Visual Studio
 Code can be found here.
 

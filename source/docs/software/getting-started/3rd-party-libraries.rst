@@ -10,7 +10,7 @@ hardware. See this blog for more details.
 Libraries
 ---------
 
-.. warning:: Note: These are not links to directly plug in to the VS Code -> Install New Libraries (online) feature. Click\
+.. warning:: These are not links to directly plug in to the VS Code -> Install New Libraries (online) feature. Click\
  these links to visit the vendor site to see whether they offer online installers, offline installers, or both. \
  
  Most vendors have not yet published final releases for 2019, keep an eye on the vendor pages for 2019 software releases.

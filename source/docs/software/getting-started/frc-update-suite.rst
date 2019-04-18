@@ -1,7 +1,7 @@
 Installing the FRC Update Suite
 ===============================
 
-*The FRC Update Suite contains the following software components:
+The FRC Update Suite contains the following software components:
 LabVIEW Update, FRC Driver Station, and FRC Utilities. If an FRC
 LabVIEW installation is found, the LabVIEW Update will be installed
 or updated, otherwise this step will be skipped. The FRC Driver
@@ -9,9 +9,9 @@ Station and FRC Utilities will always be installed or updated. The
 LabVIEW runtime components required for the driver station and
 utilities is included in this package. **No components from the
 LabVIEW Merged Suite are required for running either the Driver
-Station or Utilities.***
+Station or Utilities.**
 
-.. note:: Note: The Driver Station will only work on Windows 7, Windows 8,\
+.. note:: The Driver Station will only work on Windows 7, Windows 8,\
  Windows 8.1, and Windows 10. It will not work on Windows XP.
 
 Uninstall Old Versions (Recommended)

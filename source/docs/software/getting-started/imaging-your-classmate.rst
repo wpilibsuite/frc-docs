@@ -1,9 +1,8 @@
 Imaging your Classmate (Veteran Image Download)
 ===============================================
-
-    This document describes the procedure for creating a bootable USB drive to restore the 2017 FRC image on a Classmate computer.
-    Note that Veteran teams are not required to re-image their Classmates. If you do not wish to re-image your Classmate then you
-    can start with the appropriate document for C++\Java, LabVIEW, or DS only.
+This document describes the procedure for creating a bootable USB drive to restore the 2017 FRC image on a Classmate computer.
+Note that Veteran teams are not required to re-image their Classmates. If you do not wish to re-image your Classmate then you
+can start with the appropriate document for C++\Java, LabVIEW, or DS only.
 
 Prerequisites
 -------------
@@ -15,13 +14,13 @@ Prerequisites
 
 Download the Computer Image
 ---------------------------
-.. image::images/imaging-your-classmate/download-the-computer-image.png
+.. image:: images/imaging-your-classmate/download-the-computer-image.png
 
-Download the image from the FIRST FRC Driver Station System Image Portal(https://frc-events.firstinspires.org/services/DSImages/2019). There are several computer images available,
+Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/2019>`__. There are several computer images available,
 one for each model. On the download site, select the option that matches your computer by clicking the button below the image. Due to the limited size of hard drive in the E09,
 it is supported with a DS/Utilities image only and does not have the IDEs for LabVIEW or C++/Java installed. All other images have the LabVIEW base installation already present.
 
-**NOTE: These images only install the prerequisite core FRC software, it is still necessary to install the FRC specific updates. See the Update Software step for more information.**
+.. note:: These images only install the prerequisite core FRC software, it is still necessary to install the FRC specific updates. See the Update Software step for more information.
 
 Preparation
 -----------
@@ -30,7 +29,7 @@ Preparation
 
 RMPrep
 ------
-.. image::images/imaging-your-classmate/rmprep.png
+.. image:: images/imaging-your-classmate/rmprep.png
 
 Start/Run RMprepUSB
 
@@ -38,74 +37,74 @@ Select USB Drive
 
 Set Partition Size
 ^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/set-partition-size.png
+.. image:: images/imaging-your-classmate/set-partition-size.png
 
 Set Partition Size to MAX
 
 Set Volume Label
 ^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/set-volume-label.png
+.. image:: images/imaging-your-classmate/set-volume-label.png
 
 Set Volume Label to Generic
 
 Set Bootloader Option
 ^^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/set-bootloader-option.png
+.. image:: images/imaging-your-classmate/set-bootloader-option.png
 
 Select Bootloader Option “WinPE v2/WinPE v3/Vista/Win7 bootable”
 
 Select Filesystem
 ^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/select-filesystem.png
+.. image:: images/imaging-your-classmate/select-filesystem.png
 
 Select NTFS Filesystem
 
 Copy OS Files Option
 ^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/copy-os-files-option.png
+.. image:: images/imaging-your-classmate/copy-os-files-option.png
 
 Ensure the “Copy OS files after Format” box is checked
 
 Locate Image
 ^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/locate-image.png
+.. image:: images/imaging-your-classmate/locate-image.png
 
 Select the “Choose Folder/File” button
 
 Copy Files Dialog
 ^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/copy-files-dialog.png
+.. image:: images/imaging-your-classmate/copy-files-dialog.png
 
 Choose “No” and select your .7z image
 
 Prepare Drive
 ^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/prepare-drive.png
+.. image:: images/imaging-your-classmate/prepare-drive.png
 
 All configuration settings are now complete. Select “Prepare Drive” to begin the process
 
 Confirmation Dialog 1
 ^^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/confirmation-dialog-1.png
+.. image:: images/imaging-your-classmate/confirmation-dialog-1.png
 
 Click “OK” to execute the command on the selected USB Flash drive. A Command Prompt will open showing the progress
 
 Confirmation Dialog 2
 ^^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/confirmation-dialog-2.png
+.. image:: images/imaging-your-classmate/confirmation-dialog-2.png
 
 Click “OK” to format the USB drive
 
-    **NOTE: ALL DATA ON THE DRIVE WILL BE ERASED!**
+.. danger:: **ALL DATA ON THE DRIVE WILL BE ERASED!**
 
 Decryption
 ^^^^^^^^^^
-    **Note: If you are using an encrypted version of the image downloaded before kickoff you will
-    be prompted to enter the decryption key found at the end of the Kickoff video.**
+.. note:: If you are using an encrypted version of the image downloaded before kickoff you will
+ be prompted to enter the decryption key found at the end of the Kickoff video.
 
 Copy Complete
 ^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/copy-complete.png
+.. image::  images/imaging-your-classmate/copy-complete.png
 
 Once formatting is complete, the restoration files will be extracted and copied to the USB drive. This process should
 take ~15 minutes when connected to a USB 2.0 port.  When all files have been copied, this message will appear, press
@@ -113,7 +112,7 @@ OK to continue.
 
 Eject Drive
 ^^^^^^^^^^^
-.. image::images/imaging-your-classmate/eject-drive.png
+.. image:: images/imaging-your-classmate/eject-drive.png
 
 Press the “Eject Drive” button to safely remove the USB drive. The USB drive is now ready to be used to restore the image onto the PC.
 
@@ -124,7 +123,7 @@ ______________
 
 Boot to USB
 ___________
-.. image::images/imaging-your-classmate/boot-to-usb.
+.. image:: images/imaging-your-classmate/boot-to-usb.jpg
 
 **Classmate:**
 
@@ -141,7 +140,7 @@ ___________
 
 Image the Classmate
 ___________________
-.. image::images/imaging-your-classmate/image-the-classmate.png
+.. image::  images/imaging-your-classmate/image-the-classmate.png
 
 1. To confirm that you want to reimage the Classmate, type “1” and press ENTER.
 2. Then, type “Y” and press ENTER. The Classmate will begin re-imaging. The installation will take 15-30 minutes.
@@ -153,7 +152,7 @@ ___________________________
 The first time the Classmate is turned on, there are some unique steps, listed below, that you’ll need to take. The
 initial boot may take several minutes; make sure you do not cycle power during the process.
 
-Please note that these steps are only required during original startup.
+.. note:: These steps are only required during original startup.
 
 Enter Setup
 ^^^^^^^^^^^
@@ -177,7 +176,7 @@ Navigate through the Microsoft Security Essentials Setup Wizard. Once it is comp
 
 Acer ES1: Fix Wireless Driver
 _____________________________
-.. image::images/imaging-your-classmate/fix-wireless-driver.png
+.. image::  images/imaging-your-classmate/fix-wireless-driver.png
 
 **Acer ES1 PC only!**
 
@@ -187,19 +186,19 @@ Device Manager by clicking start, typing "Device Manager" in the box and clickin
 
 Open Wireless Device Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/open-wireless-device-properties.png
+.. image::  images/imaging-your-classmate/open-wireless-device-properties.png
 
 Click on the arrow next to Network Adapters to expand it and locate the Wireless Network Adapter. Right click the adapter and select Properties.
 
 Uninstall-Driver
 ^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/uninstall-driver.png
+.. image::  images/imaging-your-classmate/uninstall-driver.png
 
 Click on the Driver tab, then click the Uninstall button. Click Yes at any prompts.
 
 Scan for New Hardware
 ^^^^^^^^^^^^^^^^^^^^^
-.. image::images/imaging-your-classmate/scan-for-new-hardware.png
+.. image::  images/imaging-your-classmate/scan-for-new-hardware.png
 
 Right click on the top entry of the tree and click "Scan for hardware changes". The wireless adapter should automatically be re-detected and the correct driver should be installed.
 
@@ -210,7 +209,7 @@ will need to be installed. LabVIEW teams should continue with Installing the FRC
 
 Errors during Imaging Process
 _____________________________
-.. image::images/imaging-your-classmate/errors-during-imaging-process.png
+.. image::  images/imaging-your-classmate/errors-during-imaging-process.png
 
 If an error is detected during the imaging process, the following screen will appear. Note that the screenshot below
 shows the error screen for the Driver Station-only image for the E09. The specific image filename shown will vary depending
@@ -243,7 +242,7 @@ Staring with Download the Classmate Image create a new copy of the imaging stick
 
 Checking BIOS Settings
 ______________________
-.. image::images/imaging-your-classmate/checking-bios-settings.jpg
+.. image::  images/imaging-your-classmate/checking-bios-settings.jpg
 
 If you are having difficulty booting to USB, check the BIOS settings to insure they are correct. To do this:
 
