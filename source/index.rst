@@ -107,6 +107,12 @@ Welcome to FIRST Robotics Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software - Tools - Shuffleboard
+   
+   docs/software/wpilib-tools/shuffleboard/shuffleboard-tour
+   
+.. toctree::
+   :maxdepth: 1
    :caption: Software - Command-Based
 
    docs/software/commandbased/what-is-command-based
