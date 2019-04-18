@@ -127,8 +127,7 @@ Launch the Software
 Use the Start menu or desktop shortcut to launch the program.
 
 | Note: If you need to locate the program it is installed to C:Files
-(x86)Radio Configuration Utility. For 32-bit machines the path is
-C:FilesRadio Configuration Utility\
+(x86)Radio Configuration Utility. For 32-bit machines the path is C:FilesRadio Configuration Utility\
 
 Allow the Program to Make Changes, If Prompted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
