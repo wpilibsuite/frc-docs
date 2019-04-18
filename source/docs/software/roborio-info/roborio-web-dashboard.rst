@@ -9,12 +9,12 @@ not use SilverLight. Users may encounter issues using IE (compatibility)
 or Edge (mDNS site access). Alternate browsers such as Google Chrome or
 Mozilla Firefox are recommended for the best experience.
 
-Note: The roboRIO web dashboard was been re-written for 2019. All CAN
-configuration functionality has been removed. Configuration of CAN
-devices should be done with software provided by the device vendor. For
-CTRE devices previously serviced using the webdashboard, the appropriate
-software is `CTRE Phoenix
-Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
+.. note:: The roboRIO web dashboard was been re-written for 2019. All CAN
+ configuration functionality has been removed. Configuration of CAN
+ devices should be done with software provided by the device vendor. For
+ CTRE devices previously serviced using the webdashboard, the appropriate
+ software is `CTRE Phoenix
+ Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
 
 Opening the WebDash
 -------------------
