@@ -132,6 +132,7 @@ NetworkTables Introduction
    :maxdepth: 1
    
    docs/software/networktables/networktables-intro
+   docs/software/networktables/listening-for-change
    
 Shuffleboard Getting Started
 ============================
