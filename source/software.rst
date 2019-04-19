@@ -131,6 +131,8 @@ NetworkTables Introduction
 .. toctree:: 
    :maxdepth: 1
    
+   docs/software/networktables/networktables-intro
+   
 Shuffleboard Getting Started
 ============================
 

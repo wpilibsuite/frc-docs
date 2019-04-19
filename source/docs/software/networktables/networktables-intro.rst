@@ -107,6 +107,7 @@ The NetworkTables classes are instantiated automatically when your program start
 			y += 1.0;
 		  }
 		}
+		
     .. code-tab:: c++
 	
 		#include "TimedRobot.h"
