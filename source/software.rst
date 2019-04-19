@@ -162,10 +162,3 @@ Shuffleboard Layouts with Code
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets
 
-Robot Networking
-================
- 
-.. toctree::
-   :maxdepth: 1
-
-   docs/networking/ip-networking

@@ -10,10 +10,16 @@ Welcome to FIRST Robotics Documentation
    :maxdepth: 2
    :caption: WPILib Software
    
-   software.rst
+   software
    
 .. toctree::
    :maxdepth: 2
    :caption: WPILib Hardware
    
-   hardware.rst
+   hardware
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Robot Networking
+   
+   networking
