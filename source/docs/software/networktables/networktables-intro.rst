@@ -64,81 +64,83 @@ Writing a simple NetworkTable program
 The NetworkTables classes are instantiated automatically when your program starts. To access the instance of NetworkTables do call methods to read and write the getDefault() method can be used to get the default instance.
 
 .. tabs::
-    
-	.. code-tab:: java
-	
-		package edu.wpi.first.wpilibj.templates;
+   
+   .. code-tab:: java
+   
+      package edu.wpi.first.wpilibj.templates;
 
-		import edu.wpi.first.wpilij.TimedRobot;
-		import edu.wpi.first.networktables.NetworkTable;
-		import edu.wpi.first.networktables.NetworkTableEntry;
-		import edu.wpi.first.networktables.NetworkTableInstance;
+      import edu.wpi.first.wpilij.TimedRobot;
+      import edu.wpi.first.networktables.NetworkTable;
+      import edu.wpi.first.networktables.NetworkTableEntry;
+      import edu.wpi.first.networktables.NetworkTableInstance;
 
-		public class EasyNetworkTableExample extends TimedRobot {
-		  NetworkTableEntry xEntry;
-		  NetworkTableEntry yEntry;
+      public class EasyNetworkTableExample extends TimedRobot {
+         NetworkTableEntry xEntry;
+         NetworkTableEntry yEntry;
 
-		  public void robotInit() {
-			//Get the default instance of NetworkTables that was created automatically
-			//when your program starts
-			NetworkTableInstance inst = NetworkTableInstance.getDefault();
+         public void robotInit() {
+            //Get the default instance of NetworkTables that was created automatically
+             //when your program starts
+             NetworkTableInstance inst = NetworkTableInstance.getDefault();
 
-			//Get the table within that instance that contains the data. There can
-			//be as many tables as you like and exist to make it easier to organize
-			//your data. In this case, it's a table called datatable.
-			NetworkTable table = inst.getTable("datatable");
+             //Get the table within that instance that contains the data. There can
+             //be as many tables as you like and exist to make it easier to organize
+             //your data. In this case, it's a table called datatable.
+             NetworkTable table = inst.getTable("datatable");
 
-			//Get the entries within that table that correspond to the X and Y values
-			//for some operation in your program.
-			xEntry = table.getEntry("X");
-			yEntry = table.getEntry("Y");
-		  }
+             //Get the entries within that table that correspond to the X and Y values
+             //for some operation in your program.
+             xEntry = table.getEntry("X");
+             yEntry = table.getEntry("Y");
+             }
 
-		  double x = 0;
-		  double y = 0;
+             double x = 0;
+             double y = 0;
 
-		  public void teleopPeriodic() {
-			//Using the entry objects, set the value to a double that is constantly
-			//increasing. The keys are actually "/datatable/X" and "/datatable/Y".
-			//If they don't already exist, the key/value pair is added.
-			xEntry.setDouble(x);
-			yEntry.setDouble(y);
-			x += 0.05;
-			y += 1.0;
-		  }
-		}
-		
-    .. code-tab:: c++
-	
-		#include "TimedRobot.h"
-		#include "networktables/NetworkTable.h"
-		#include "networktables/NetworkTableEntry.h"
-		#include "networktables/NetworkTableInstance.h"
+             public void teleopPeriodic() {
+             //Using the entry objects, set the value to a double that is constantly
+             //increasing. The keys are actually "/datatable/X" and "/datatable/Y".
+             //If they don't already exist, the key/value pair is added.
+             xEntry.setDouble(x);
+             yEntry.setDouble(y);
+             x += 0.05;
+             y += 1.0;
+             }
+         }
+      }
+		 
+   .. code-tab:: c++
+      
+      #include "TimedRobot.h"
+      #include "networktables/NetworkTable.h"
+      #include "networktables/NetworkTableEntry.h"
+      #include "networktables/NetworkTableInstance.h"
 
-		class EasyNetworkExample : public frc::TimedRobot {
-			public:
-			nt::NetworkTableEntry xEntry;
-			nt::NetworkTableEntry xEntry;
-			
-			void RobotInit() {
-				auto inst = nt::NetworkTableInstance::GetDefault();
-				auto table = inst.GetTable("datatable");
-				xEntry = table->GetEntry("X");
-				yEntry = table->GetEntry("Y");
-			}
-			
-			double x = 0;
-			double y = 0;
-			
-			void TeleopPeriodic() {
-				xEntry.SetDouble(x);
-				xEntry.SetDouble(Y);
-				x += 0.05;
-				y += 0.05;
-			}
-		}
+      class EasyNetworkExample : public frc::TimedRobot {
+         public:
+         nt::NetworkTableEntry xEntry;
+         nt::NetworkTableEntry xEntry;
+       
+         void RobotInit() {
+            auto inst = nt::NetworkTableInstance::GetDefault();
+            auto table = inst.GetTable("datatable");
+            xEntry = table->GetEntry("X");
+            yEntry = table->GetEntry("Y");
+         }
 
-		START_ROBOT_CLASS(EasyNetworkExample)
+         double x = 0;
+         double y = 0;
+
+         void TeleopPeriodic() {
+            xEntry.SetDouble(x);
+            xEntry.SetDouble(Y);
+            x += 0.05;
+            y += 0.05;
+         }
+      }
+
+      START_ROBOT_CLASS(EasyNetworkExample)
+
 
 The values for X and Y can be easily viewed using the OutlineViewer program that shows the NetworkTables hierarchy and all the values associated with each key.
 
