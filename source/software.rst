@@ -126,13 +126,16 @@ Command-Based Programming
    docs/software/commandbased/convenience-features
    docs/software/commandbased/pid-subsystems-commands
 
-NetworkTables Introduction
-==========================
+NetworkTables
+=============
 .. toctree:: 
    :maxdepth: 1
    
    docs/software/networktables/networktables-intro
    docs/software/networktables/listening-for-change
+   docs/software/networktables/client-side-program
+   docs/software/networktables/multiple-instances
+   docs/software/networktables/listening-for-subtable-creation
    
 Shuffleboard Getting Started
 ============================
