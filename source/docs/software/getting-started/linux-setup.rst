@@ -52,8 +52,8 @@ Installing the extensions for WPILib VS Code
 
 Setting up VSCode to use Java 11
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this: 
+
  1. Open VS Code 
  2. Press **Ctrl-Shift-P** and type **WPILib** or click on the WPILib icon in the top right to open the WPILib Command Palette 
  3. Begin typing **Set VS Code Java Home to FRC Home** and select that item from the dropdown.
