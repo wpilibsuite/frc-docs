@@ -34,6 +34,8 @@ WPILib Overview
    docs/software/wpilib-overview/vscode-basics
    docs/software/wpilib-overview/wpilib-commands-vscode
    docs/software/wpilib-overview/creating-robot-program
+   docs/software/wpilib-overview/creating-benchtop-test-program-cpp-java
+   docs/software/wpilib-overview/creating-benchtop-test-program-labview
    docs/software/wpilib-overview/deploying-robot-code
    docs/software/wpilib-overview/viewing-console-output
    docs/software/wpilib-overview/debugging-robot-program

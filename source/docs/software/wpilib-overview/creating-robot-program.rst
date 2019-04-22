@@ -1,3 +1,5 @@
+.. _creating_a_robot_program:
+
 Creating a Robot Program
 ========================
 
