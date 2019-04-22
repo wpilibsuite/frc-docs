@@ -1,3 +1,5 @@
+.. _installing_FRC_update_suite:
+
 Installing the FRC Update Suite
 ===============================
 
