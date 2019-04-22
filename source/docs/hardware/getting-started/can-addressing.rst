@@ -38,8 +38,8 @@ Reserved                  12-30
 Firmware Update           31
 ========================= =====
 
-Manufactor
-~~~~~~~~~~
+Manufacturer
+~~~~~~~~~~~~
 
 This is an 8-bit value indicating the manufacturer of the CAN device.
 Currently assigned values can be found in the table below. If you wish
@@ -47,7 +47,7 @@ to have a manufacturer ID assigned from the ``Reserved``\ pool, please
 submit a request to FIRST.
 
 =============== =====
-Manufactor     
+Manufacturer     
 =============== =====
 Broadcast       0
 NI              1
@@ -144,21 +144,21 @@ type and manufacturer fields to 0. The API Class for broadcast messages
 is 0. The currently defined broadcast messages are shown in the table
 below:
 
-=========================== ==
-API Index                  
-=========================== ==
-Enable Control              0
-Disable Control             1
-Set Setpoint                2
-P Constant                  3
-I Constant                  4
-D Constant                  5
-Set Reference               6
-Trusted Enable              7
-Trusted Set No Ack          8
-Trusted Set Setpoint No Ack 10
-Set Setpoint No Ack         11
-=========================== ==
+================= ==
+Description         
+================= ==
+Disable	          0
+System Halt	      1
+System Reset      2
+Device Assign     3
+Device Query	  4
+Heartbeat         5
+Sync              6
+Update            7
+Firmware Version  8
+Enumerate         9
+System Resume     10
+================= ==
 
 Devices should disable immediately when receiving the Disable message
 (arbID 0), implementation of other broadcast messages is optional.
