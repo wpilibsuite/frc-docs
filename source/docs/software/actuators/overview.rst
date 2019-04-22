@@ -6,16 +6,7 @@ through speed controllers, solenoids and pneumatics, and
 their interface with C++ and Java WPILib.
 
 
-FRC Legal Relay Modules
-~~~~~~~~~~~~~~~
 
-- Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
-- Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
-
-FRC Legal Pneumatics controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Pneumatics Control Module (P/N: am-2858, 217-4243)    
 
 
 Speed controllers
@@ -64,3 +55,14 @@ Pneumatics
 ------------------
 
 fish
+
+FRC Legal Relay Modules
+~~~~~~~~~~~~~~~
+
+- Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
+- Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
+
+FRC Legal Pneumatics controllers
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Pneumatics Control Module (P/N: am-2858, 217-4243)    
