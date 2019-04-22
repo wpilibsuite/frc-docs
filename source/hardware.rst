@@ -1,4 +1,4 @@
-Getting Started
+Hardware - Getting Started
 ===============
 
 .. toctree::
