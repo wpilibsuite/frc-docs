@@ -162,3 +162,16 @@ Shuffleboard Layouts with Code
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets
 
+Autonomous Path Planning
+========================
+
+.. toctree::
+   :maxdepth: 1
+   
+   docs/software/wpilib-tools/path-planning/introduction
+   docs/software/wpilib-tools/path-planning/creating-pathweaver-project
+   docs/software/wpilib-tools/path-planning/drawing-pathweaver-path
+   docs/software/wpilib-tools/path-planning/creating-path-groups
+   docs/software/wpilib-tools/path-planning/pathweaver-limits
+   docs/software/wpilib-tools/path-planning/integrating-robot-program
+   docs/software/wpilib-tools/path-planning/adding-field-images

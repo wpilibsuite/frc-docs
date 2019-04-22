@@ -1,3 +1,6 @@
+Robot Networking
+================
+
 .. toctree::
    :maxdepth: 1
 
