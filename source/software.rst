@@ -5,7 +5,7 @@
    Introduction to C++ <https://file.tavsys.net/books/cpp/Programming_%20Principles%20and%20Practice%20Using%20C%2B%2B%2C%202nd%20Ed.%2C%20Stroustrup%20%28distr%29.pdf>
    
 Software - Getting Started
-===============
+==========================
 
 .. toctree::
    :maxdepth: 1
