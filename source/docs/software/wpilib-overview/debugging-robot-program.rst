@@ -64,6 +64,7 @@ Press Ctrl+Shift+P and type WPILib or click on the WPILib Menu item to open the 
 The debugger will automatically pause at the first breakpoint it encounters.  The user can then tell the debugger when to proceed to the next breakpoint.
 
 Debugging with Console
+----------------------
 Another way to debug your program is to use System.out.println statements in your code and receive them using the RioLog in VSCode. 
 
 .. |Setting a Breakpoint| image:: images/debugging-robot-program/setting-a-breakpoint.png
