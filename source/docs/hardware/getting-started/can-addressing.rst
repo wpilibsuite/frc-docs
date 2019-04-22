@@ -39,7 +39,7 @@ Firmware Update           31
 ========================= =====
 
 Manufacturer
-~~~~~~~~~~
+~~~~~~~~~~~~
 
 This is an 8-bit value indicating the manufacturer of the CAN device.
 Currently assigned values can be found in the table below. If you wish
