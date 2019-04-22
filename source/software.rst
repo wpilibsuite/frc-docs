@@ -23,6 +23,7 @@ Software - Getting Started
    docs/software/getting-started/imaging-your-roborio
    docs/software/getting-started/imaging-your-classmate
    docs/software/getting-started/driver-station
+   docs/software/getting-started/running-benchtop-test
 
 WPILib Overview
 ===============

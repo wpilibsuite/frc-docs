@@ -1,3 +1,5 @@
+.. _creating_benchtop_test_cpp_java:
+
 Creating your Benchtop Test Program (C++/Java)
 ==============================================
 
