@@ -55,6 +55,7 @@ Using PWM Speed Controllers
 -----------------------------
 
 PWM speed controllers can be controlled in the same was as a CAN speed controller.
+For a more detailed background on _how_ they work, see How does PWM Work? (TODO LINK)
 Simply use the appropriate speed controller class provided by WPI
 and supply it the port the speed controller(s) are plugged into on the RoboRIO.
 All approved motor controllers have WPI classes provided for them.
