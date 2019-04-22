@@ -14,6 +14,7 @@ Software - Getting Started
    docs/software/getting-started/known-issues
    docs/software/getting-started/control-system-software
    docs/software/getting-started/offline-installation-preperations
+   docs/software/getting-started/labview-setup
    docs/software/getting-started/windows-setup
    docs/software/getting-started/macos-setup
    docs/software/getting-started/linux-setup
