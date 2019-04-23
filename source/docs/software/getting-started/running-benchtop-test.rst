@@ -10,17 +10,40 @@ You should create and download a Benchtop Test Program as described for your pro
 
 :ref:`LabVIEW <creating_benchtop_test_labview>`
 
+Tethered Operation
+------------------
+
+Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the the program was successfully deployed and that the driver station and roboRIO are properly configured.
+
 The roboRIO should be powered on and connected to the PC over Ethernet or USB. The Driver Station software should be configured with your team number as described in :ref:`this article <driver_station>`.
+
+Wireless Operation
+------------------
+
+Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your benchtop testing program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
+
+Configuring the Access Point
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See the article :ref:`Programming your radio <radio-programming>` for details on configuring the robot radio for use as an access point.
+
+After configuring the access point, connect the driver station wirelessly to the robot. The SSID will be your team number (as entered in the Bridge Configuration Utility). If you set a key when using the Bridge Configuration Utility you will need to enter it to conenct to the network. Make sure the computer network adapter is set to DHCP ("Obtain an IP address automatically").
 
 Confirm Connectivity
 --------------------
 
-.. image:: images/run-benchtop-test/confirm-connectivity.png
+.. figure:: images/run-benchtop-test/confirm-connectivity-tethered.png
+    
+    Tethered
 
-Using the Driver Station software, click Diagnostics and confirm that the Enet Link and Robot leds are green.
+.. figure:: images/run-benchtop-test/confirm-connectivity-wireless.png
+    
+    Wireless
 
-Tethered Operation
-------------------
+Using the Driver Station software, click Diagnostics and confirm that the Enet Link (or Robot Radio led, if operating wirelessly) and Robot leds are green.
+
+Operate the Robot
+-----------------
 
 .. image:: images/run-benchtop-test/run-robot.png
 
