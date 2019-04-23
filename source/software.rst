@@ -14,6 +14,7 @@ Software - Getting Started
    docs/software/getting-started/known-issues
    docs/software/getting-started/control-system-software
    docs/software/getting-started/offline-installation-preperations
+   docs/software/getting-started/labview-setup
    docs/software/getting-started/windows-setup
    docs/software/getting-started/macos-setup
    docs/software/getting-started/linux-setup
@@ -21,6 +22,8 @@ Software - Getting Started
    docs/software/getting-started/3rd-party-libraries
    docs/software/getting-started/imaging-your-roborio
    docs/software/getting-started/imaging-your-classmate
+   docs/software/getting-started/radio-programming
+   docs/software/getting-started/driver-station
 
 WPILib Overview
 ===============
@@ -36,6 +39,17 @@ WPILib Overview
    docs/software/wpilib-overview/viewing-console-output
    docs/software/wpilib-overview/debugging-robot-program
    docs/software/wpilib-overview/importing-eclipse-project
+
+
+Getting Started with a Benchtop Robot
+=====================================
+.. toctree::
+    :maxdepth: 1
+
+    docs/software/getting-started-with-benchtop/creating-benchtop-test-program-labview
+    docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java
+    docs/software/getting-started-with-benchtop/running-benchtop-test
+
 
 RoboRIO
 =======
