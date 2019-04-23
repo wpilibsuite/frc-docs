@@ -22,6 +22,7 @@ Software - Getting Started
    docs/software/getting-started/3rd-party-libraries
    docs/software/getting-started/imaging-your-roborio
    docs/software/getting-started/imaging-your-classmate
+   docs/software/getting-started/radio-programming
    docs/software/getting-started/driver-station
    docs/software/getting-started/running-benchtop-test
 
