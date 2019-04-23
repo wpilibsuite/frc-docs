@@ -1,5 +1,5 @@
-Running your Benchtop Test Program - Tethered
-=============================================
+Running your Benchtop Test Program
+==================================
 
 Overview
 --------

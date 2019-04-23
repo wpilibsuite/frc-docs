@@ -24,7 +24,6 @@ Software - Getting Started
    docs/software/getting-started/imaging-your-classmate
    docs/software/getting-started/radio-programming
    docs/software/getting-started/driver-station
-   docs/software/getting-started/running-benchtop-test
 
 WPILib Overview
 ===============
@@ -36,12 +35,21 @@ WPILib Overview
    docs/software/wpilib-overview/vscode-basics
    docs/software/wpilib-overview/wpilib-commands-vscode
    docs/software/wpilib-overview/creating-robot-program
-   docs/software/wpilib-overview/creating-benchtop-test-program-cpp-java
-   docs/software/wpilib-overview/creating-benchtop-test-program-labview
    docs/software/wpilib-overview/deploying-robot-code
    docs/software/wpilib-overview/viewing-console-output
    docs/software/wpilib-overview/debugging-robot-program
    docs/software/wpilib-overview/importing-eclipse-project
+
+
+Getting Started with a Benchtop Robot
+=====================================
+.. toctree::
+    :maxdepth: 1
+
+    docs/software/getting-started-with-benchtop/creating-benchtop-test-program-labview
+    docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java
+    docs/software/getting-started-with-benchtop/running-benchtop-test
+
 
 RoboRIO
 =======
