@@ -1,3 +1,5 @@
+.. _ip-networking:
+
 IP Networking
 =============
 
