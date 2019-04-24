@@ -1,3 +1,5 @@
+.. _roborio-web-dashboard:
+
 RoboRIO Web Dashboard
 =====================
 

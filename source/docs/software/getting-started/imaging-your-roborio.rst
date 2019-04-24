@@ -1,3 +1,5 @@
+.. _imaging-your-roborio:
+
 Imaging your RoboRIO
 ====================
 
