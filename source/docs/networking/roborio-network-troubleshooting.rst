@@ -1,3 +1,5 @@
+.. _roborio-network-troubleshooting:
+
 RoboRIO Network Troubleshooting
 ===============================
 
