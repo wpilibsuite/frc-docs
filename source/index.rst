@@ -23,3 +23,10 @@ Welcome to FIRST Robotics Documentation
    :caption: Robot Networking
    
    networking
+
+.. toctree::
+   :maxdepth: 2
+   :caption: KOP Item Resources
+
+   kop-item-resources
+
