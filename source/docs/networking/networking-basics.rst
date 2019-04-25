@@ -17,7 +17,7 @@ An IP address is a unique string of numbers, separated by periods that
 identifies each device on a network. Each IP address is divided up
 into 4 sections (octets) ranging from 0-255.
 
-.. images/networking-basics/ip-address-parts.png
+.. image:: images/networking-basics/ip-address-parts.png
 
 As shown above, this means that each IP address is a 32-bit address
 meaning there are 232 addresses, or just over 4,000,000,00 addresses
