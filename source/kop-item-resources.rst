@@ -14,6 +14,7 @@ Mechanical
 
    docs/kop-item-resources/mechanical/linear-motion
    docs/kop-item-resources/mechanical/linear-bushings
+   docs/kop-item-resources/mechanical/triangle-bearings
 
 Motors
 ======
