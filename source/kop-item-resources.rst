@@ -13,6 +13,7 @@ Mechanical
    :maxdepth: 1
 
    docs/kop-item-resources/mechanical/linear-motion
+   docs/kop-item-resources/mechanical/linear-bushings
 
 Motors
 ======
