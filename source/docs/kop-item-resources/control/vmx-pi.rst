@@ -184,10 +184,10 @@ examples which demonstrate how to write software that access some of
 the CAN bus devices typically found on a FRC robot.
 
 .. note:: In addition to monitoring a CAN bus, VMX-pi is also capable
-of transmitting CAN bus control commands.  However, VMX-pi’s control
-functionality is not historically legal for use to control CAN
-actuators used in FRC competitions (please consult the “Robot” section
-of the FRC Game Manual for details).
+   of transmitting CAN bus control commands.  However, VMX-pi’s
+   control functionality is not historically legal for use to control
+   CAN actuators used in FRC competitions (please consult the “Robot”
+   section of the FRC Game Manual for details).
 
 Assembly with Raspberry Pi
 --------------------------
@@ -316,7 +316,7 @@ robot applications when using VMX-pi as a robot controller.
 Learning More
 -------------
 
-.. images:: images/vmx-pi/navx-ui.jpg
+.. image:: images/vmx-pi/navx-ui.jpg
 
 To learn more about how the VMX-pi navX-technology IMU works, you can
 use `navXUI
