@@ -12,6 +12,8 @@ Mechanical
 .. toctree:: 
    :maxdepth: 1
 
+   docs/kop-item-resources/mechanical/linear-motion
+
 Motors
 ======
 
