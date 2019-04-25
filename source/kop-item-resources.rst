@@ -22,6 +22,8 @@ Motors
 .. toctree::
    :maxdepth: 1
 
+   docs/kop-item-resources/motors/bosch-seat-motor
+   
 Pneumatics
 ==========
 
