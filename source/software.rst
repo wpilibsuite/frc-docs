@@ -68,7 +68,7 @@ Actuators
 .. toctree::
    :maxdepth: 1
 
-   docs/software/actuators/solenoids
+   docs/software/actuators/pneumatics
 
 CAN Devices
 ===========
