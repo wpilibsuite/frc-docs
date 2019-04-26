@@ -175,7 +175,7 @@ rule, so clockwise rotation around the Z axis is positive.
 Using the DifferentialDrive class to control Differential Drive (WCD) robots
 ------------------------------------------------------------------------------------------------
 
-.. note:: WPILib provides seperate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
+.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
 DifferentialDrive is a method provided for the control of
 "skid-steer" or "West Coast" drivetrains, such as the Kit of
@@ -267,7 +267,7 @@ Drive Modes
 
 As stated above, the DifferentialDrive class contains three
 default methods for controlling skid-steer or WCD robots.
-Note that you can create your own methods of controling the
+Note that you can create your own methods of controlling the
 robot's driving and have them call tankDrive() with the
 derived inputs for left and right motors.
 
