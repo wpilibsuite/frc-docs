@@ -1,5 +1,5 @@
 Using Motor Controllers in Code
-==============================
+============================================================
 
 Motor controllers come in two main flavors: CAN and PWM. A
 CAN controller can send more detailed statis information
