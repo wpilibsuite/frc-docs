@@ -70,7 +70,7 @@ Actuators
 
    docs/software/actuators/overview
    docs/software/actuators/pneumatics
-   docs/software/actuators/using-speed-contollers
+   docs/software/actuators/using-speed-controllers
    docs/software/actuators/pwm-controllers
    docs/software/actuators/wpi-drive-classes
    docs/software/actuators/servos
