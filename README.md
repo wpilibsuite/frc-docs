@@ -6,10 +6,15 @@ Better FRC documentation using ReadTheDocs
 
 Located at https://frc-docs.readthedocs.io/en/latest/
 
-## Guidelines
-- Should be written in ReStructuredText
-- Images should be contained locally without any external sources
-- List of TODOs are available [here](https://github.com/Daltz333/frc-docs/issues/10)
+## Contribution Guides
+- See [Contributing](contributing.md) for more information
 
-## Documentation Structure
+## Local Build Environment
+- Requires Python 3.5 or greater
+- `git clone https://github.com/Daltz333/frc-docs.git`
+- `cd frc-docs`
+- `pip install -r source/requirements.txt`
+- `make html`
+
+## ReStructuredText Tutorial
 See the link here http://www.sphinx-doc.org/en/1.5/tutorial.html

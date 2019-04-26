@@ -1,4 +1,6 @@
-Operating pneumatics
+.. _operating-pneumatic-cylinders:
+
+Operating pneumatic cylinders
 =============================
 
 Using the FRC Control System to control Pneumatics
@@ -93,9 +95,6 @@ Module and Power Distribution Panel.
 Single Solenoids in WPILib
 --------------------------
 
-Using a single acting solenoid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Single solenoids in WPILib are controlled using the Solenoid class. To
 construct a Solenoid object, simply pass the desired port number
 (assumes Node ID 0) or Node ID and port number to the constructor. To
@@ -119,7 +118,7 @@ disable the solenoid output.
         exampleSolenoid.set(false);
 
 Double Solenoids in WPILib
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Double solenoids are controlled by the DoubleSolenoid class in WPILib.
 These are constructed similarly to the single solenoid but there are now
