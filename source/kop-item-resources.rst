@@ -23,7 +23,8 @@ Motors
    :maxdepth: 1
 
    docs/kop-item-resources/motors/bosch-seat-motor
-   
+   docs/kop-item-resources/motors/nidec-dynamo-bldc
+
 Pneumatics
 ==========
 
