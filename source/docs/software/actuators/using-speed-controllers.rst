@@ -96,6 +96,8 @@ used in either CAN or PWM mode, please refer to the SparkMAX `software resorces 
 and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_  
 
 
+CTRE Motor Controllers
+----------------------
 
 Please refer to the third party CTR documentation on the
 Phoenix software for more detailed information. The documentation
