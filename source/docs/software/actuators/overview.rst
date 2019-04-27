@@ -28,7 +28,7 @@ the power delivered to each "phase" of the motor.
 
 .. warning::
     Connecting a BRUSHLESS motor controller straight to power, such
-    as in the manor described above, will desroy the motor!
+    as in the manner described above, will destroy the motor!
 
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
