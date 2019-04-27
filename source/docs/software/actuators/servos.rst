@@ -1,5 +1,5 @@
 Repeatable Low Power Movement - Controlling Servos with WPILib
-========================================================================
+==============================================================
 
 Servo motors are a type of motor which integrates positional
 feedback into the motor in order to allow a single motor to

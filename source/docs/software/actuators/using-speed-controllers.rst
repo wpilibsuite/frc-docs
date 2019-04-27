@@ -1,5 +1,5 @@
 Using Motor Controllers in Code
-============================================================
+================================
 
 Motor controllers come in two main flavors: CAN and PWM. A
 CAN controller can send more detailed statis information
@@ -8,10 +8,10 @@ set to a value. For information on using these motors with
 the WPI drivetrain classes, see TODO LINK.
 
 Using CAN Speed Controllers
------------------------------
+---------------------------
 
 Cross The Road Electronics CAN Speed Controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To use a CAN Speed controller from CTRE, simply instantiate
 it using the built in WPI classes. For more information on
@@ -52,7 +52,7 @@ For example,
       // idk c++
 
 Using PWM Speed Controllers
------------------------------
+---------------------------
 
 PWM speed controllers can be controlled in the same was as a CAN speed controller.
 For a more detailed background on _how_ they work, see How does PWM Work? (TODO LINK)
@@ -89,7 +89,7 @@ All approved motor controllers have WPI classes provided for them.
       // idk c++
 
 REV Robotics SparkMAX
------------------------------
+---------------------
 
 For information regarding the SparkMAX CAN Speed Controller, which can be
 used in either CAN or PWM mode, please refer to the SparkMAX `software resorces <http://www.revrobotics.com/sparkmax-software/>`_

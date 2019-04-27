@@ -10,7 +10,7 @@ their interface with C++ and Java WPILib.
 
 
 Speed controllers
-------------------------
+-----------------
 
 A speed controller is responsible on your robot for making motors move.
 For brushed DC motors such as CIMs or 775s, the speed controller regulates
@@ -31,7 +31,7 @@ the power delivered to each "phase" of the motor.
     as in the manor described above, will desroy the motor!
 
 FRC Legal Motor Controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Speed controllers come in lots of shapes, sizes and feature sets. This
 is the full list of FRC Legal speed controllers as of April 2019:
@@ -52,17 +52,17 @@ is the full list of FRC Legal speed controllers as of April 2019:
 
 
 Pneumatics
-------------------
+----------
 
-fish
+soon^tm
 
 FRC Legal Relay Modules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
 - Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
 
 FRC Legal Pneumatics controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Pneumatics Control Module (P/N: am-2858, 217-4243)    

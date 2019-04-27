@@ -5,10 +5,10 @@ WPILib includes many classes to help make your robot get
 driving faster.
 
 Standard drivetrains
-------------------------
+--------------------
 
 Differential Drive Robots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/diffdrive.jpg
    :width: 600
@@ -24,7 +24,7 @@ These drivetrains are not capable of sideways translational
 movement.
 
 Mecanum Drive
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 .. image:: images/mecanumdrive.jpg
    :width: 600
@@ -55,12 +55,12 @@ direction, movements can be combined resulting in
 translation in any direction and rotation, simultaneously.
 
 Drive Class Conventions
-------------------------
+-----------------------
 
 .. note:: This article describes conventions and defaults used by the WPILib Drive classes (DifferentialDrive, MecanumDrive, and KilloughDrive). For further details on using these classes, see the subsequent articles.
 
 Motor Inversion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 By default, the class inverts the motor outputs for the
 right side of the drivetrain. Generally this will mean that
@@ -69,7 +69,7 @@ SpeedController objects. To disable this behavior, use the
 setRightSideInverted() method.
 
 Squaring Inputs & Input Deadband
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When driving robots, it is often desirable to manipulate the
 joystick inputs such that the robot has finer control at low
@@ -92,7 +92,7 @@ small values to the drivetrain. To change the deadband, use
 the setDeadband() method.
 
 Motor Safety
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Motor Safety is a mechanism in WPILib that takes the concept of a
 watchdog and breaks it out into one watchdog (Motor Safety timer)
@@ -159,7 +159,7 @@ default (and minimum useful) value is 100ms.
 
 
 Axis Conventions
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 .. image:: images/axisconventions.jpg
    :width: 600
@@ -173,7 +173,7 @@ rule, so clockwise rotation around the Z axis is positive.
 .. warning:: This convention is different than the convention for joysticks which typically have -Y as Up (commonly mapped to throttle) and +X as Right. Pay close attention to the examples below if you want help with typical Joystick->Drive mapping.
 
 Using the DifferentialDrive class to control Differential Drive (WCD) robots
-------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 .. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
@@ -201,7 +201,7 @@ as so:
         DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
 Multi-Motor DifferentialDrive with SpeedControllerGroups
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Many FRC drivetrains have more than 1 motor on each side. In
 order to use these with DifferentialDrive, the motors on
@@ -255,7 +255,7 @@ contructor (it takes an arbitrary number of inputs).
             DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
 Drive Modes
-~~~~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. note::
     The DifferentialDrive class contains three different
