@@ -21,4 +21,4 @@ So if WPILib handles all this scaling, why would you ever need to calibrate your
 (TODO Link)
 
 For examples on how to use these speed controllers in your code, see
-Using Motor Controllers in Code/Using PWM Speed Controllers
+:doc:`Using Motor Controllers in Code/Using PWM Speed Controllers <using-speed-controllers>`
