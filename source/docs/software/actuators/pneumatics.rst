@@ -16,6 +16,11 @@ for regulating the robot's pressure using a pressure switch and a
 compressor and switching solenoids on and off. The PCM communicates
 with the RoboRIO over CAN. For more information, see `FRC Control System Hardware Overview`
 
+PCM Module Numbers
+------------------
+
+PCM Modules are identified by their Node ID. The default Node ID for PCMs is 0. If using a single PCM on the bus it is recommended to leave it at the default Node ID. 
+
 Generating and Storing Pressure
 -------------------------------
 
