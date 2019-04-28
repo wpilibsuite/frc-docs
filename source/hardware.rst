@@ -13,6 +13,7 @@ Hardware - Getting Started
    docs/hardware/getting-started/preemptive-troubleshooting
 
 Sensors
+=======
 
 .. toctree::
    :maxdepth: 1
