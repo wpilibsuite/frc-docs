@@ -1,13 +1,13 @@
+.. _actuator-overview:
+
 Actuator Overview
 ==================
-
 This section discusses the control of motors and pneumatics
 through speed controllers, solenoids and pneumatics, and
 their interface with C++ and Java WPILib.
 
 Speed controllers
 -----------------
-
 A speed controller is responsible on your robot for making motors move.
 For brushed DC motors such as CIMs or 775s, the speed controller regulates
 the voltage that the motor recieves, much like a light bulb. For
@@ -27,7 +27,6 @@ the power delivered to each "phase" of the motor.
 
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Speed controllers come in lots of shapes, sizes and feature sets. This
 is the full list of FRC Legal speed controllers as of April 2019:
 
@@ -44,23 +43,18 @@ is the full list of FRC Legal speed controllers as of April 2019:
 - Victor SP Motor Controller (P/N: 217-9090, am-2855, 14-868380)
 - Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)
 
-
-
 Pneumatics
 ----------
-
 Pneumatics are a quick and easy way to make something that's in one
 state or another using compressed air. For information on operating
 pneumatics, see :ref:`operating-pneumatic-cylinders` 
 
 
 FRC Legal Relay Modules
-^^^^^^^^^^^^^^^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^^^^^^^
 - Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
 - Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 - Pneumatics Control Module (P/N: am-2858, 217-4243)    

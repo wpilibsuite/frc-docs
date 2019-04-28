@@ -5,7 +5,6 @@ Operating pneumatic cylinders
 
 Using the FRC Control System to control Pneumatics
 ---------------------------------------------------
-
 .. note:: The Pneumatics Control Module (PCM) is a CAN-based device that
     provides complete control over the compressor and up to 8 solenoids per
     module. The PCM is integrated into WPILib through a series of classes
@@ -26,14 +25,12 @@ with the RoboRIO over CAN. For more information, see `FRC Control System Hardwar
 
 PCM Module Numbers
 ------------------
-
 PCM Modules are identified by their Node ID. The default Node ID for
 PCMs is 0. If using a single PCM on the bus it is recommended to leave
 it at the default Node ID. 
 
 Generating and Storing Pressure
 -------------------------------
-
 In FRC, pressure is created using a pneumatic compressor and stored
 in pneumatic tanks. The compressor doesn't necessarily have to be
 on the robot, but must be powered by the robot's PCM(s). The
@@ -81,7 +78,6 @@ all be queried from the Compressor object.
 
 Solenoid control
 ----------------
-
 FRC teams use solenoids to preform a variety of tasks, from shifting
 gearboxes to operating robot mechanisms. A solenoid is a valve used to
 electronically switch a pressurized air line "on" or "off". For more
@@ -140,7 +136,6 @@ disable the solenoid output.
 
 Double Solenoids in WPILib
 --------------------------
-
 Double solenoids are controlled by the DoubleSolenoid class in WPILib.
 These are constructed similarly to the single solenoid but there are now
 two port numbers to pass to the constructor, a forward channel (first)
@@ -174,7 +169,3 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
         exampleDouble.set(kOff);
         exampleDouble.set(kForward);
         exampleDouble.set(kReverse);
-
-   
-
-

@@ -11,7 +11,6 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. image:: images/diffdrive.jpg
    :width: 600
 
@@ -27,7 +26,6 @@ movement.
 
 Mecanum Drive
 ^^^^^^^^^^^^^
-
 .. image:: images/mecanumdrive.jpg
    :width: 600
 
@@ -58,12 +56,10 @@ translation in any direction and rotation, simultaneously.
 
 Drive Class Conventions
 -----------------------
-
 .. note:: This article describes conventions and defaults used by the WPILib Drive classes (DifferentialDrive, MecanumDrive, and KilloughDrive). For further details on using these classes, see the subsequent articles.
 
 Motor Inversion
 ^^^^^^^^^^^^^^^
-
 By default, the class inverts the motor outputs for the
 right side of the drivetrain. Generally this will mean that
 no inversion needs to be done on the individual
@@ -72,7 +68,6 @@ setRightSideInverted() method.
 
 Squaring Inputs & Input Deadband
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 When driving robots, it is often desirable to manipulate the
 joystick inputs such that the robot has finer control at low
 speeds while still using the full output range. One way to
@@ -95,7 +90,6 @@ the setDeadband() method.
 
 Motor Safety
 ^^^^^^^^^^^^
-
 Motor Safety is a mechanism in WPILib that takes the concept of a
 watchdog and breaks it out into one watchdog (Motor Safety timer)
 for each individual actuator. Note that this protection mechanism
@@ -162,7 +156,6 @@ default (and minimum useful) value is 100ms.
 
 Axis Conventions
 ^^^^^^^^^^^^^^^^
-
 .. image:: images/axisconventions.jpg
    :width: 600
 
@@ -176,7 +169,6 @@ rule, so clockwise rotation around the Z axis is positive.
 
 Using the DifferentialDrive class to control Differential Drive (WCD) robots
 ----------------------------------------------------------------------------
-
 .. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
 DifferentialDrive is a method provided for the control of
@@ -204,7 +196,6 @@ as so:
 
 Multi-Motor DifferentialDrive with SpeedControllerGroups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Many FRC drivetrains have more than 1 motor on each side. In
 order to use these with DifferentialDrive, the motors on
 each side have to be collected into a single
@@ -258,7 +249,6 @@ contructor (it takes an arbitrary number of inputs).
 
 Drive Modes
 ^^^^^^^^^^^
-
 .. note::
     The DifferentialDrive class contains three different
     default modes of driving your robot's motors.
@@ -319,4 +309,3 @@ Joystick construction.
             myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
             myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.GetButton(1));
         }
-

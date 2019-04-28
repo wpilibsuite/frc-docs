@@ -2,7 +2,6 @@
 
 PWM Speed Controllers in Depth
 ==============================
-
 .. hint:: 
     WPILib has extensive support for motor control. There are a number
     of classes that represent different types of speed controllers and
@@ -15,7 +14,6 @@ PWM Speed Controllers in Depth
 
 PWM Controllers, brief theory of operation
 ------------------------------------------
-
 The acronym PWM stands for Pulse Width Modulation. For motor
 controllers, PWM can refer to both the input signal and the method the
 controller uses to control motor speed. To control the speed of the
@@ -36,7 +34,6 @@ hobby RC controller timing of 1ms to 2ms.
 
 Raw vs Scaled output values
 ---------------------------
-
 In general, all of the motor controller classes in WPILib take a scaled
 -1.0 to 1.0 value as the output to an actuator. The PWM module in the
 FPGA on the roboRIO is capable of generating PWM signals with periods of
