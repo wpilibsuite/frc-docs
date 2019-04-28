@@ -25,6 +25,10 @@ Page references must then be added to the ``document-reference-list.txt`` file l
    This is a title
    ===============
    
+Text
+----
+All text content should be on the same line, if you need readability, use the word-wrap function of your editor.
+
 Whitespace
 ----------
 
