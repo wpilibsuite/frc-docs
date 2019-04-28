@@ -70,6 +70,15 @@ Actuators
 
    docs/software/actuators/solenoids
 
+Sensors
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   docs/software/sensors/sensor-overview-software
+   docs/software/sensors/accelerometers
+
 CAN Devices
 ===========
 
