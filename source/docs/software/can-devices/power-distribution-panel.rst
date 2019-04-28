@@ -12,7 +12,7 @@ To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (
 
     .. code-tab:: c++
 
-        frc::PowerDistributionPanel examplePDP {1};
+        PowerDistributionPanel examplePDP{1};
 
     .. code-tab:: java
 
