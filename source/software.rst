@@ -75,6 +75,15 @@ Actuators
    docs/software/actuators/wpi-drive-classes
    docs/software/actuators/servos
 
+Sensors
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   docs/software/sensors/sensor-overview-software
+   docs/software/sensors/accelerometers
+
 CAN Devices
 ===========
 

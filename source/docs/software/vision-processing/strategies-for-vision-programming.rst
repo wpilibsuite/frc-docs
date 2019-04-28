@@ -1,3 +1,5 @@
+.. _strategies-for-vision-programming:
+
 Strategies for vision programming
 =================================
 Using computer vision is a great way of making your robot be responsive to the elements on the field and
