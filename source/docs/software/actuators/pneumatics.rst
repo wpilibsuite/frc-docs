@@ -6,7 +6,15 @@ Operating pneumatic cylinders
 Using the FRC Control System to control Pneumatics
 ---------------------------------------------------
 
-.. note:: The Pneumatics Control Module (PCM) is a CAN-based device that provides complete control over the compressor and up to 8 solenoids per module. The PCM is integrated into WPILib through a series of classes that make it simple to use. The closed loop control of the Compressor and Pressure switch is handled by the PCM hardware and the Solenoids are handled by the upgraded Solenoid class that now controls the solenoid channels on the PCM. An additional PCM module can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the Solenoid and Compressor classes.
+.. note:: The Pneumatics Control Module (PCM) is a CAN-based device that
+provides complete control over the compressor and up to 8 solenoids per
+module. The PCM is integrated into WPILib through a series of classes
+that make it simple to use. The closed loop control of the Compressor
+and Pressure switch is handled by the PCM hardware and the Solenoids are
+handled by the upgraded Solenoid class that now controls the solenoid
+channels on the PCM. An additional PCM module can be used where the
+modules corresponding solenoids are differentiated by the module number
+in the constructors of the Solenoid and Compressor classes.
 
 .. image:: images/pcm.jpg
     :width: 400
@@ -19,7 +27,9 @@ with the RoboRIO over CAN. For more information, see `FRC Control System Hardwar
 PCM Module Numbers
 ------------------
 
-PCM Modules are identified by their Node ID. The default Node ID for PCMs is 0. If using a single PCM on the bus it is recommended to leave it at the default Node ID. 
+PCM Modules are identified by their Node ID. The default Node ID for
+PCMs is 0. If using a single PCM on the bus it is recommended to leave
+it at the default Node ID. 
 
 Generating and Storing Pressure
 -------------------------------
@@ -37,7 +47,12 @@ Using a Compressor, users can query the status of the compressor. The state
 (currently on or off), pressure switch state, and compressor current can
 all be queried from the Compressor object.
 
-.. note:: The Pneumatics Control Module from Cross the Road Electronics allows for integrated closed loop control of a compressor. Creating any instance of a Solenoid or Double Solenoid object will enable the Compressor control on the corresponding PCM. The Compressor object is only needed if you want to have greater control over the compressor or query compressor status.
+.. note:: The Pneumatics Control Module from Cross the Road Electronics
+allows for integrated closed loop control of a compressor. Creating any
+instance of a Solenoid or Double Solenoid object will enable the
+Compressor control on the corresponding PCM. The Compressor object is
+only needed if you want to have greater control over the compressor or
+query compressor status.
 
 .. tabs::
 
@@ -93,10 +108,10 @@ PCM Modules are identified by their CAN Device ID. The default CAN ID
 for PCMs is 0. If using a single PCM on the bus it is recommended to
 leave it at the default CAN ID. This ID can be changed with the Phoenix
 Tuner application, in addition to other debug information. Phoenix Tuner
-can be downloaded `from GitHub. <https://github.com/CrossTheRoadElec/Phoenix-Releases>`_ 
-For more information about
-setting PCM CAN IDs see Updating and Configuring Pneumatics Control
-Module and Power Distribution Panel.
+can be downloaded `from GitHub.
+<https://github.com/CrossTheRoadElec/Phoenix-Releases>`_ For more
+information about setting PCM CAN IDs see Updating and Configuring
+Pneumatics Control Module and Power Distribution Panel.
 
 Single Solenoids in WPILib
 --------------------------
