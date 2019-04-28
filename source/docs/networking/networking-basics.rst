@@ -3,10 +3,6 @@
 Networking Basics
 =================
 
-.. contents::
-   :local:
-   :depth: 4
-
 IP Addressing Background
 ------------------------
 
