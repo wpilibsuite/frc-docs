@@ -212,29 +212,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
         class : PIDSource {
 
-            BuiltInAccelerometer accelerometer{};
-
-            public:
-                PIDSourceType GetPIDSourceType() {
-                    return PIDSourceType::kRate;
-                }
-
-                double PIDGet() {
-                    return accelerometer.GetX();
-                }
-
-                void SetPIDSourceType(PIDSourceType pidSource) {
-                }
-        } accelerometerSource;
-
-        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-
-        LinearDigitalFilter xAccelFilter{accelerometerSource, 10};
-
-        void Robot::RobotPeriodic() {
-            // Get the filtered X acceleration
-            double filteredXAccel = xAccelFilter.PIDGet();
-        }
+            TODO: C++ example
 
     .. code-tab:: java
 
