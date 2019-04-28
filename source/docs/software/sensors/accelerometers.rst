@@ -157,7 +157,7 @@ Using accelerometers in code
 
 It is recommended to use accelerometers in FRC for any application which needs a rough measurement of the current acceleration.  This can include detecting collisions with other robots or field elements, so that vulnerable mechanisms can be automatically retracted.  They may also be used to determine when the robot is passing over rough terrain for an autonomous routine (such as traversing the defenses in FIRST Stronghold).
 
-For detecting collisions, it is often more robust to measure the jerk than the acceleration.  The jerk is the derivate (or rate of change) of acceleration, and indicates how rapidly the forces on the robot are changing - the sudden impulse from a collision causes a sharp spike in the jerk.  Jerk can be determined by simply taking the difference of subsequent acceleration measurements:
+For detecting collisions, it is often more robust to measure the jerk than the acceleration.  The jerk is the derivative (or rate of change) of acceleration, and indicates how rapidly the forces on the robot are changing - the sudden impulse from a collision causes a sharp spike in the jerk.  Jerk can be determined by simply taking the difference of subsequent acceleration measurements, and dividing by the time between them:
 
 .. tabs::
 
@@ -204,7 +204,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the LinearDigitalFilter class to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearDigitalFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html> `__) to reduce the noise:
 
 .. tabs::
 
