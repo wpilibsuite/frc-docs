@@ -59,7 +59,7 @@ process is presented below.
 
 
 How are these addresses assigned?
---------------------------------
+---------------------------------
 
 We’ve covered the basics of what IP addresses are, and which IP
 addresses we will use for the FRC competition,so now we need to
