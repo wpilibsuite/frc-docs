@@ -87,9 +87,10 @@ on the solenoid breakout.
 PCM Modules are identified by their CAN Device ID. The default CAN ID
 for PCMs is 0. If using a single PCM on the bus it is recommended to
 leave it at the default CAN ID. This ID can be changed with the Phoenix
-Tuner application, in addition to other debug information. (TODO Link
-Phoenix tuner atricle) TODO FIX THIS LINK: For more information about
-setting PCM Node IDs see Updating and Configuring Pneumatics Control
+Tuner application, in addition to other debug information. Phoenix Tuner
+can be downloaded `from GitHub. <https://github.com/CrossTheRoadElec/Phoenix-Releases>`_ 
+For more information about
+setting PCM CAN IDs see Updating and Configuring Pneumatics Control
 Module and Power Distribution Panel.
 
 Single Solenoids in WPILib
@@ -97,7 +98,7 @@ Single Solenoids in WPILib
 
 Single solenoids in WPILib are controlled using the Solenoid class. To
 construct a Solenoid object, simply pass the desired port number
-(assumes Node ID 0) or Node ID and port number to the constructor. To
+(assumes CAN ID 0) or CAN ID and port number to the constructor. To
 set the value of the solenoid call set(true) to enable or set(false) to
 disable the solenoid output.
 
