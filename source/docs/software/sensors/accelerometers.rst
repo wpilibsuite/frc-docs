@@ -96,7 +96,7 @@ The :code:`ADXL345_I2C` object (`Java <https://first.wpi.edu/FRC/roborio/release
 ADXL345_SPI
 ~~~~~~~~~~~
 
-The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html> `__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
+The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
 
 .. tabs::
 
@@ -115,7 +115,7 @@ The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release
 ADXL362
 ~~~~~~~
 
-The :code:`ADXL362` object (Java, C++) provides support for the ADXL362 accelerometer over the SPI communications bus.
+The :code:`ADXL362` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
 .. tabs::
 
