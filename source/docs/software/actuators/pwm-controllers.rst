@@ -62,9 +62,6 @@ one direction) and drive the controller all the way to each extreme,
 calibrating the controllers is still recommended. In general, the
 calibration procedure for each controller involves putting the
 controller into calibration mode then driving the input signal to each
-extreme, then back to the midpoint. Precise details for each controller
-can be found in the `Using Motor Controllers in Code`_ article..
-
-For examples on how to use these speed controllers in your code, see
-:doc:`Using Motor Controllers in Code/Using PWM Speed Controllers
-<using-speed-controllers>`
+extreme, then back to the midpoint. For examples on how to use these
+speed controllers in your code, see :doc:`Using Motor Controllers in
+Code/Using PWM Speed Controllers <using-speed-controllers>`

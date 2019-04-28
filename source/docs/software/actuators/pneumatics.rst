@@ -48,11 +48,11 @@ Using a Compressor, users can query the status of the compressor. The state
 all be queried from the Compressor object.
 
 .. note:: The Pneumatics Control Module from Cross the Road Electronics
-allows for integrated closed loop control of a compressor. Creating any
-instance of a Solenoid or Double Solenoid object will enable the
-Compressor control on the corresponding PCM. The Compressor object is
-only needed if you want to have greater control over the compressor or
-query compressor status.
+    allows for integrated closed loop control of a compressor. Creating any
+    instance of a Solenoid or Double Solenoid object will enable the
+    Compressor control on the corresponding PCM. The Compressor object is
+    only needed if you want to have greater control over the compressor or
+    query compressor status.
 
 .. tabs::
 
