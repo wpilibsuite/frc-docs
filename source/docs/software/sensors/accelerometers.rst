@@ -210,9 +210,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
     .. code-tab:: c++
 
-        class : PIDSource {
-
-            TODO: C++ example
+        TODO: C++ example
 
     .. code-tab:: java
 
