@@ -163,46 +163,46 @@ For detecting collisions, it is often more robust to measure the jerk than the a
 
     .. code-tab:: c++
 
-    double prevXAccel = 0;
-    double prevYAccel = 0;
+        double prevXAccel = 0;
+        double prevYAccel = 0;
 
-    BuiltInAccelerometer accelerometer{};
+        BuiltInAccelerometer accelerometer{};
 
-    void Robot::RobotPeriodic() {
-        // Gets the current accelerations in the X and Y directions
-        double xAccel = accelerometer.GetX();
-        double yAccel = accelerometer.GetY();
+        void Robot::RobotPeriodic() {
+            // Gets the current accelerations in the X and Y directions
+            double xAccel = accelerometer.GetX();
+            double yAccel = accelerometer.GetY();
 
-        // Calculates the jerk in the X and Y directions
-        // Divides by .02 because default loop timing is 20ms
-        double xJerk = (xAccel - prevXAccel)/.02;
-        double yJerk = (yAccel - prevYAccel)/.02;
+            // Calculates the jerk in the X and Y directions
+            // Divides by .02 because default loop timing is 20ms
+            double xJerk = (xAccel - prevXAccel)/.02;
+            double yJerk = (yAccel - prevYAccel)/.02;
 
-        prevXAccel = xAccel;
-        prevYAccel = yAccel;
-    }
+            prevXAccel = xAccel;
+            prevYAccel = yAccel;
+        }
 
     .. code-tab:: java
 
-    double prevXAccel = 0;
-    double prevYAccel = 0;
+        double prevXAccel = 0;
+        double prevYAccel = 0;
 
-    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
 
-    @Override
-    public void robotPeriodic() {
-        // Gets the current accelerations in the X and Y directions
-        double xAccel = accelerometer.getX();
-        double yAccel = accelerometer.getY();
+        @Override
+        public void robotPeriodic() {
+            // Gets the current accelerations in the X and Y directions
+            double xAccel = accelerometer.getX();
+            double yAccel = accelerometer.getY();
 
-        // Calculates the jerk in the X and Y directions
-        // Divides by .02 because default loop timing is 20ms
-        double xJerk = (xAccel - prevXAccel)/.02;
-        double yJerk = (yAccel - prevYAccel)/.02;
+            // Calculates the jerk in the X and Y directions
+            // Divides by .02 because default loop timing is 20ms
+            double xJerk = (xAccel - prevXAccel)/.02;
+            double yJerk = (yAccel - prevYAccel)/.02;
 
-        prevXAccel = xAccel;
-        prevYAccel = yAccel;
-    }
+            prevXAccel = xAccel;
+            prevYAccel = yAccel;
+        }
 
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the LinearDigitalFilter class to reduce the noise:
 
@@ -210,58 +210,58 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
     .. code-tab:: c++
 
-    class : PIDSource {
+        class : PIDSource {
 
-        BuiltInAccelerometer accelerometer{};
+            BuiltInAccelerometer accelerometer{};
 
-        public:
-            PIDSourceType GetPIDSourceType() {
-                return PIDSourceType::kRate;
-            }
+            public:
+                PIDSourceType GetPIDSourceType() {
+                    return PIDSourceType::kRate;
+                }
 
-            double PIDGet() {
-                return accelerometer.GetX();
-            }
+                double PIDGet() {
+                    return accelerometer.GetX();
+                }
 
-            void SetPIDSourceType(PIDSourceType pidSource) {
-            }
-    } accelerometerSource
+                void SetPIDSourceType(PIDSourceType pidSource) {
+                }
+        } accelerometerSource;
 
-    // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
 
-    LinearDigitalFilter xAccelFilter{accelerometerSource, 10};
+        LinearDigitalFilter xAccelFilter{accelerometerSource, 10};
 
-    void Robot::RobotPeriodic() {
-        // Get the filtered X acceleration
-        double filteredXAccel = xAccelFilter.PIDGet();
-    }
+        void Robot::RobotPeriodic() {
+            // Get the filtered X acceleration
+            double filteredXAccel = xAccelFilter.PIDGet();
+        }
 
     .. code-tab:: java
 
-    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
 
-    // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
 
-    LinearDigitalFilter xAccelFilter = LinearDigitalFilter.movingAverage(
-        new PIDSource() {
-            @Override
-            public PIDSourceType getPIDSourceType() {
-                return PIDSourceType.kRate;
-            }
+        LinearDigitalFilter xAccelFilter = LinearDigitalFilter.movingAverage(
+            new PIDSource() {
+                @Override
+                public PIDSourceType getPIDSourceType() {
+                    return PIDSourceType.kRate;
+                }
 
-            @Override
-            public double pidGet() {
-                return accelerometer.getX();
-            }
+                @Override
+                public double pidGet() {
+                    return accelerometer.getX();
+                }
 
-            @Override
-            public void setPIDSourceType(PIDSourceType pidSource) {
-            }
-        },
-        10);
+                @Override
+                public void setPIDSourceType(PIDSourceType pidSource) {
+                }
+            },
+            10);
 
-    @Override
-    public void robotPeriodic() {
-        // Get the filtered X acceleration
-        double filteredXAccel = xAccelFilter.pidGet();
-    }
+        @Override
+        public void robotPeriodic() {
+            // Get the filtered X acceleration
+            double filteredXAccel = xAccelFilter.pidGet();
+        }
