@@ -6,6 +6,8 @@ Better FRC documentation using ReadTheDocs
 
 Located at https://frc-docs.readthedocs.io/en/latest/
 
+An experimental, more up-to-date version can be found at https://frc-docs.readthedocs.io/en/develop
+
 ## Contribution Guides
 - See [Contributing](contributing.md) for more information
 
