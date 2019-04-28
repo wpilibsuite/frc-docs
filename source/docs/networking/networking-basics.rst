@@ -3,11 +3,8 @@
 Networking Basics
 =================
 
-IP Addressing Background
-------------------------
-
 What is an IP Address?
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 An IP address is a unique string of numbers, separated by periods that
 identifies each device on a network. Each IP address is divided up
@@ -28,7 +25,7 @@ efficient as possible with giving out IP addresses. This brings us to
 public vs. private addresses.
 
 Public vs Private IP Addresses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 To be efficient with using IP Addresses, the idea of “Reserved IP
 Ranges” was implemented. In short, this means that there are ranges of
@@ -62,7 +59,7 @@ process is presented below.
 
 
 How are these addresses assigned?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 We’ve covered the basics of what IP addresses are, and which IP
 addresses we will use for the FRC competition,so now we need to
@@ -73,7 +70,7 @@ that every device receives an address without overlapping. This can be
 done Dynamically (automatic), or Statically (manual).
 
 Dynamically
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 Dynamically assigning IP addresses means that we are letting a device
 on the network manage the IP address assignments. This is done through
@@ -87,7 +84,7 @@ that there are times we do not know the exact IP address of each
 device.
 
 What is a DHCP server?
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 
 A DHCP server is a device that runs the DHCP service to monitor the
 network for new devices to configure. In larger businesses, this could
@@ -101,7 +98,7 @@ have a DHCP server assigning IP addresses to your network devices,
 it’s as simple as finding the closest home router, and plugging it in.
 
 Statically
-~~~~~~~~~~
+^^^^^^^^^^
 
 Dynamically assigning IP addresses means that we are manually telling
 each device on the network which IP address we want it to have. This
@@ -116,7 +113,7 @@ other network settings (such as subnet mask and default gateway)
 correctly on each device.
 
 What is link-local?
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 If a device does not have an IP address, then it cannot communicate on
 a network. This can become an issue if we have a device that is set to
@@ -141,88 +138,7 @@ did not assign addresses.
 IP Addressing for FRC
 ---------------------
 
-For the FRC devices, the recommendation is to use dynamic addressing.
-As an alternate, static addressing can be used if there is additional
-software or hardware that does not support mDNS (explained below). If
-static addressing is used, take care to not set any IP addresses in
-the range potentially used by the field.
-
-In either configuration, the wireless radio will be statically set to
-10.TE.AM.1 by the radio configuration utility. This should not change.
-
-On the Field
-^^^^^^^^^^^^
-
-Dynamic Addressing (recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The field network will be running the DHCP service to assign IP
-addresses for the team devices. These addresses will be assigned in
-the ranges of 10.TE.AM.20  10.TE.AM.255. A more complete description
-is listed below
-
--	Robot Radio Static 10.TE.AM.1 assigned by radio configuration utility
--	roboRIO DHCP in the 10.TE.AM.20  10.TE.AM.255 range
--	Driver Station DHCP in the 10.TE.AM.20  10.TE.AM.255 range
--	IP Camera DHCP in the 10.TE.AM.20  10.TE.AM.255 range
--	Other devices DHCP in the 10.TE.AM.20  10.TE.AM.255 range
-
-.. note:: It is not required to know the specific address assigned to
-   each device due to the mDNS protocol described in a later section
-
-Static Addressing
-~~~~~~~~~~~~~~~~~
-
-It is also an option statically assign IP addresses to accommodate
-devices or software which do not support mDNS. When doing so you want
-to make sure to avoid addresses that will be in use when the robot is
-on the field network.
-
-Addresses to avoid:
-
-The addresses listed below should not be used in order to prevent
-conflict with the field wireless.
-
-- Robot Radio Static 10.TE.AM.1 assigned by radio configuration utility
-- Field Access Point Static 10.TE.AM.4 assigned by FRC
-- Field DHCP Range 10.TE.AM.20  10.TE.AM.255
-
-Acceptable addresses:
-
-The addresses listed below are recommendations of acceptable addresses
-for a static setup.
-
-- roboRIO Static 10.TE.AM.2	Subnet Mask of 255.255.255.0
-- Driver Station Static 10.TE.AM.5	Subnet Mask of 255.0.0.0
-- IP Camera/Other Static 10.TE.AM.6  10.TE.AM.19  Subnet Mask of 255.255.255.0
-
-In the Pits
-^^^^^^^^^^^
-
-Dynamic Addressing (recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Since the robot will not be connected to the field, there will not be
-a DHCP server present by default in the pits. Most devices should fall
-back to a link-local address if they are set to DHCP and there is no
-server present.
-
-If there are still connection issues in the link-local configuration,
-a team can simulate the field DHCP server by using another router to
-assign the addresses. The router should be configured with an IP
-address of 10.TE.AM.4 and assign IP addresses in the range of
-10.TE.AM.20  10.TE.AM.255.
-
-.. caution:: If a team is going to use a wireless router in the pits
-   as a DHCP server, the wireless functionality must be disabled.
-
-Static Addressing
-~~~~~~~~~~~~~~~~~
-
-In a static addressing configuration, the configuration should be the
-same in the pits as it is on the field. Any programming computers will
-need to have an IP Address set in the 10.TE.AM.xx range with a subnet
-of 255.255.255.0
+See the 'IP Networking Article <ip-networking.html>'__ for more information.
 
 Mixing Dynamic and Static Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
