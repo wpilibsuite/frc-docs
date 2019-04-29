@@ -1,7 +1,7 @@
 Accelerometers - Software
 =========================
 
-.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see :ref:`accelerometers-hardware`.
+.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see ```:ref:`accelerometers hardware <accelerometers-hardware>````.
 
 Accelerometers generally come in two types: single-axis and 3-axis.  A single-axis accelerometer measures acceleration along one spatial dimension; a 3-axis accelerometer measures acceleration along all three spatial dimensions at once.
 

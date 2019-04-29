@@ -23,3 +23,9 @@ Welcome to FIRST Robotics Documentation
    :caption: Robot Networking
    
    networking
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Contributing
+   
+   contributing
