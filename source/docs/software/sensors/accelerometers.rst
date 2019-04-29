@@ -150,6 +150,11 @@ The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio
         // Range defaults to +- 8 G's
         BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
 
+Third-party accelerometers
+--------------------------
+
+While WPILib provides native support for a number of accelerometers that are available in the kit of parts or through FIRST Choice, there are a few popular AHRS (Attitude and Heading Reference System) devices commonly used in FRC that include accelerometers.  These are generally controlled through vendor libraries, though if they have a simple analog output they can be used with the `AnalogAccelerometer`_ class.
+
 Using accelerometers in code
 ----------------------------
 
