@@ -11,3 +11,11 @@ Hardware - Getting Started
    docs/hardware/getting-started/status-lights-ref
    docs/hardware/getting-started/can-addressing
    docs/hardware/getting-started/preemptive-troubleshooting
+
+Sensors
+=======
+
+.. toctree::
+   :maxdepth: 1
+   
+   docs/hardware/sensors/sensor-overview-hardware

@@ -30,3 +30,9 @@ Welcome to FIRST Robotics Documentation
 
    kop-item-resources
 
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Contributing
+   
+   contributing

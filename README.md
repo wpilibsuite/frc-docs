@@ -7,7 +7,7 @@ Better FRC documentation using ReadTheDocs
 Located at https://frc-docs.readthedocs.io/en/latest/
 
 ## Contribution Guides
-- See [Contributing](contributing.md) for more information
+- See [Contributing](source/contributing.rst) for more information
 
 ## Local Build Environment
 - Requires Python 3.5 or greater
