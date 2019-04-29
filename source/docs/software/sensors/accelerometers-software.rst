@@ -1,7 +1,9 @@
 Accelerometers - Software
 =========================
 
-.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see ```:ref:`accelerometers hardware <accelerometers-hardware>````.
+.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see :ref:`accelerometers-hardware`.
+
+An accelerometer is a device that measures acceleration.
 
 Accelerometers generally come in two types: single-axis and 3-axis.  A single-axis accelerometer measures acceleration along one spatial dimension; a 3-axis accelerometer measures acceleration along all three spatial dimensions at once.
 
@@ -24,7 +26,7 @@ The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/
     .. code-tab:: c++
 
         // Creates an analog accelerometer on analog input 0
-        AnalogAccelerometer accelerometer{0};
+        frc::AnalogAccelerometer accelerometer{0};
 
         // Sets the sensitivity of the accelerometer to 1 volt per G
         accelerometer.SetSensitivity(1);
@@ -77,7 +79,7 @@ The :code:`Accelerometer` interface contains getters for the acceleration along 
 ADXL345_I2C
 ~~~~~~~~~~~
 
-The :code:`ADXL345_I2C` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__I2C.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
+The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__I2C.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tabs::
 
@@ -85,7 +87,7 @@ The :code:`ADXL345_I2C` object (`Java <https://first.wpi.edu/FRC/roborio/release
 
         // Creates an ADXL345 accelerometer object on the MXP I2C port
         // with a measurement range from -8 to 8 G's
-        ADXL345_I2C accelerometer{I2C::Port::kMXP, Accelerometer::Range::kRange_8G};
+        frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -96,7 +98,7 @@ The :code:`ADXL345_I2C` object (`Java <https://first.wpi.edu/FRC/roborio/release
 ADXL345_SPI
 ~~~~~~~~~~~
 
-The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
+The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
 
 .. tabs::
 
@@ -104,7 +106,7 @@ The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release
 
         // Creates an ADXL345 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
-        ADXL345_SPI accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
+        frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -115,7 +117,7 @@ The :code:`ADXL345_SPI` object (`Java <https://first.wpi.edu/FRC/roborio/release
 ADXL362
 ~~~~~~~
 
-The :code:`ADXL362` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
+The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
 .. tabs::
 
@@ -123,7 +125,7 @@ The :code:`ADXL362` object (`Java <https://first.wpi.edu/FRC/roborio/release/doc
 
         // Creates an ADXL362 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
-        ADXL362 accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
+        frc::ADXL362 accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -142,13 +144,13 @@ The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio
 
         // Creates an object for the built-in accelerometer
         // Range defaults to +- 8 G's
-        BuiltInAccelerometer accelerometer{};
+        frc::BuiltInAccelerometer accelerometer{};
 
     .. code-tab:: java
 
         // Creates an object for the built-in accelerometer
         // Range defaults to +- 8 G's
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+        Accelerometer accelerometer = new BuiltInAccelerometer();
 
 Third-party accelerometers
 --------------------------
@@ -171,7 +173,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
         double prevXAccel = 0;
         double prevYAccel = 0;
 
-        BuiltInAccelerometer accelerometer{};
+        frc::BuiltInAccelerometer accelerometer{};
 
         void Robot::RobotPeriodic() {
             // Gets the current accelerations in the X and Y directions
@@ -192,7 +194,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
         double prevXAccel = 0;
         double prevYAccel = 0;
 
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+        Accelerometer accelerometer = new BuiltInAccelerometer();
 
         @Override
         public void robotPeriodic() {
@@ -219,7 +221,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
     .. code-tab:: java
 
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+        Accelerometer accelerometer = new BuiltInAccelerometer();
 
         // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
 
