@@ -82,7 +82,8 @@ Sensors
    :maxdepth: 1
 
    docs/software/sensors/sensor-overview-software
-   docs/software/sensors/accelerometers
+   docs/software/sensors/accelerometers-software
+   docs/software/sensors/gyros-software
 
 CAN Devices
 ===========
