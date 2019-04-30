@@ -122,7 +122,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
         void frc::Robot::AutonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
-            double error = -gyro.GetRate()
+            double error = -gyro.GetRate();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
             drive.TankDrive(.5 + kP * error, .5 - kP * error);
@@ -151,7 +151,7 @@ The following example shows how to stabilize heading using a simple P loop close
         @Override
         public void autonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
-            double error = -gyro.getRate()
+            double error = -gyro.getRate();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
             drive.tankDrive(.5 + kP * error, .5 - kP * error);
@@ -267,7 +267,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
         void frc::Robot::AutonomousPeriodic() {
             // Find the heading error; setpoint is 90
-            double error = 90 - gyro.GetAngle()
+            double error = 90 - gyro.GetAngle();
 
             // Turns the robot to face the desired direction
             drive.TankDrive(kP * error, kP * error);
