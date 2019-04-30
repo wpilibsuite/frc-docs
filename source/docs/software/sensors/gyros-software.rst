@@ -193,7 +193,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
         void frc::Robot::AutonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
-            double error = heading - gyro.GetAngle()
+            double error = heading - gyro.GetAngle();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
             drive.TankDrive(.5 + kP * error, .5 - kP * error);
