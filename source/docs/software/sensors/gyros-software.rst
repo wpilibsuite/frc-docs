@@ -8,14 +8,14 @@ A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to 
 The Gyro interface
 ------------------
 
-All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (Java, C++).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
+All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
 ADXRS450_Gyro
 ~~~~~~~~~~~~~
 
-The :code:`ADXRS450_Gyro` class (Java, C++) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXRS450__Gyro.html>`__) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. tabs::
 
@@ -32,7 +32,7 @@ The :code:`ADXRS450_Gyro` class (Java, C++) provides support for the Analog Devi
 AnalogGyro
 ~~~~~~~~~~
 
-The :code:`AnalogGyro` class (Java, C++) provides support for any single-axis gyro with an analog output.
+The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogGyro.html>`__) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`s may only be used on analog ports 0 and 1.
 
@@ -59,6 +59,32 @@ Using gyros in code
 .. note:: As gyros measure rate rather than position, position is inferred by integrating (adding up) the rate signal to get the total change in angle.  Thus, gyro angle measurements are always relative to some arbitrary zero angle (determined by the angle of the gyro when either the robot was turned on or a zeroing method was called), and are also subject to accumulated errors (called "drift") that increase in magnitude the longer the gyro is used.  The amount of drift varies with the type of gyro.
 
 Gyros are extremely useful in FRC for both measuring and controlling robot heading.  Since FRC matches are generally short, total gyro drift over the course of an FRC match tends to be manageably small (on the order of a couple of degrees for a good-quality gyro).  Morever, not all useful gyro applications require the absolute heading measurement to remain accurate over the course of the entire match.
+
+Displaying the robot heading on the dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Shuffleboard (TODO: link) includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
+
+.. tabs::
+
+    .. code-tab:: c++
+
+        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+
+        void frc::Robot::RobotInit() {
+            // Places a compass indicator for the gyro heading on the dashboard
+            frc::Shuffleboard.GetTab("Example tab").Add(gyro);
+        }
+
+    .. code-tab:: java
+
+        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+
+        public void robotInit() {
+            // Places a compass indicator for the gyro heading on the dashboard
+            // Explicit down-cast required because Gyro does not extend Sendable
+            Shuffleboard.getTab("Example tab").add((Sendable) gyro);
+        }
 
 Stabilizing heading while driving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -166,7 +192,7 @@ The following example shows how to stabilize heading using a simple P loop close
         }
 
         void frc::Robot::AutonomousPeriodic() {
-            // Find the heading error
+            // Setpoint is implicitly 0, since we don't want the heading to change
             double error = heading - gyro.GetAngle()
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
@@ -185,7 +211,7 @@ The following example shows how to stabilize heading using a simple P loop close
         double heading;
 
         // Initialize motor controllers and drive
-        Spark left1 new Spark(0);
+        Spark left1 = new Spark(0);
         Spark left2 = new Spark(1);
 
         Spark right1 = new Spark(2);
@@ -211,3 +237,71 @@ The following example shows how to stabilize heading using a simple P loop close
         }
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the heading for heading stabilization, PD loops are particularly effective.
+
+Turning to a set heading
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Another common and highly-useful application for a gyro is turning a robot to face a specified direction.  This can be a component of an autonomous driving routine, or can be used during teleoperated control to help align a robot with field elements.
+
+Much like with heading stabilization, this is often accomplished with a PID loop - unlike with stabilization, however, the loop can only be closed on the heading.  The following example code will turn the robot to face 90 degrees with a simple P loop:
+
+.. tabs::
+
+    .. code-tab:: c++
+
+        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+
+        // The gain for a simple P loop
+        double kP = 1;
+
+        // Initialize motor controllers and drive
+        frc::Spark left1{0};
+        frc::Spark left2{1};
+        frc::Spark right1{2};
+        frc::Spark right2{3};
+
+        frc::SpeedControllerGroup leftMotors{left1, left2};
+        frc::SpeedControllerGroup rightMotors{right1, right2};
+
+        frc::DifferentialDrive drive{leftMotors, rightMotors};
+
+        void frc::Robot::AutonomousPeriodic() {
+            // Find the heading error; setpoint is 90
+            double error = 90 - gyro.GetAngle()
+
+            // Turns the robot to face the desired direction
+            drive.TankDrive(kP * error, kP * error);
+        }
+    
+        
+    .. code-tab:: java
+
+        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+
+        // The gain for a simple P loop
+        double kP = 1;
+
+        // Initialize motor controllers and drive
+        Spark left1 = new Spark(0);
+        Spark left2 = new Spark(1);
+
+        Spark right1 = new Spark(2);
+        Spark right2 = new Spark(3);
+
+        SpeedControllerGroup leftMotors = new SpeedControllerGroup(left1, left2);
+        SpeedControllerGroup rightMotors = new SpeedControllerGroup(right1, right2);
+
+        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+
+        @Override
+        public void autonomousPeriodic() {
+            // Find the heading error; setpoint is 90
+            double error = 90 - gyro.getAngle();
+
+            // Turns the robot to face the desired direction
+            drive.tankDrive(kP * error, kP * error);
+        }
+
+As before, more-advanced implementations can use more-complicated control loops.
+
+.. note:: Turn-to-angle loops can be tricky to tune correctly due to static friction in the drivetrain, especially if a simple P loop is used.  There are a number of ways to account for this; one of the most common/effective is to add a "minimum output" to the output of the control loop.  Another effective strategy is to cascade to well-tuned velocity controllers on each side of the drive.
