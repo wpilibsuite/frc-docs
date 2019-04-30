@@ -84,6 +84,7 @@ Sensors
    docs/software/sensors/sensor-overview-software
    docs/software/sensors/accelerometers-software
    docs/software/sensors/gyros-software
+   docs/software/sensors/ultrasonics-software
 
 CAN Devices
 ===========

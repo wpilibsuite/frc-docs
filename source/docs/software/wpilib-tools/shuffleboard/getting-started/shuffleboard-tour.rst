@@ -1,3 +1,5 @@
+.. _tour-of-shuffleboard:
+
 Tour of Shuffleboard
 ====================
 

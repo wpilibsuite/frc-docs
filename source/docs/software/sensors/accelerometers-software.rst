@@ -1,3 +1,5 @@
+.. _accelerometers-software:
+
 Accelerometers - Software
 =========================
 

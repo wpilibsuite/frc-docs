@@ -1,3 +1,5 @@
+.. _gyros-software:
+
 Gyroscopes - Software
 =====================
 
@@ -63,7 +65,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 Displaying the robot heading on the dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shuffleboard (TODO: link) includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
+:ref:`Shuffleboard <tour-of-shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
 .. tabs::
 
@@ -188,11 +190,11 @@ The following example shows how to stabilize heading using a simple P loop close
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
         void frc::Robot::AutonomousInit() {
+            // Set setpoint to current heading at start of auto
             heading = gyro.GetAngle();
         }
 
         void frc::Robot::AutonomousPeriodic() {
-            // Setpoint is implicitly 0, since we don't want the heading to change
             double error = heading - gyro.GetAngle();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
@@ -224,12 +226,12 @@ The following example shows how to stabilize heading using a simple P loop close
 
         @Override
         public void autonomousInit() {
+            // Set setpoint to current heading at start of auto
             heading = gyro.getAngle();
         }
 
         @Override
         public void autonomousPeriodic() {
-            // Setpoint is implicitly 0, since we don't want the heading to change
             double error = heading - gyro.getAngle();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
