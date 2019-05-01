@@ -42,19 +42,51 @@ In two-pulse mode, the :code:`Counter` will count for every edge/pulse on the sp
 
     .. code-tab:: java
 
-    // Create a new Counter object in two-pulse mode
-    Counter counter = new Counter(Counter.Mode.k2Pulse);
+        // Create a new Counter object in two-pulse mode
+        Counter counter = new Counter(Counter.Mode.k2Pulse);
 
-    @Override
-    public void robotInit() {
-        // Set up the input channels for the counter
-        counter.setUpSource(1);
-        counter.setDownSource(2);
+        @Override
+        public void robotInit() {
+            // Set up the input channels for the counter
+            counter.setUpSource(1);
+            counter.setDownSource(2);
 
-        // Set the encoding type to 2X
-        counter.setUpSourceEdge(true, true);
-        counter.setDownSourceEdge(true, true);
-    }
+            // Set the encoding type to 2X
+            counter.setUpSourceEdge(true, true);
+            counter.setDownSourceEdge(true, true);
+        }
 
+Semi-period mode
+~~~~~~~~~~~~~~~~
+
+In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
+
+.. tabs::
+
+    .. code-tab:: c++
+
+        // Create a new Counter object in two-pulse mode
+        frc::Counter counter{frc::Counter::Mode::kSemiPeriod};
+
+        void frc::Robot::RobotInit() {
+            // Set up the input channel for the counter
+            counter.SetUpSource(1);
+
+            // Set the encoder to count pulse duration from rising edge to falling edge
+            counter.SetSemiPeriodMode(true);
+
+    .. code-tab:: java
+
+        // Create a new Counter object in two-pulse mode
+        Counter counter = new Counter(Counter.Mode.kSemiPeriod);
+
+        @Override
+        public void robotInit() {
+            // Set up the input channel for the counter
+            counter.setUpSource(1);
+
+            // Set the encoder to count pulse duration from rising edge to falling edge
+            counter.setSemiPeriodMode(true);;
+        }
 
 .. |Counters| image:: images/counters/counters.png
