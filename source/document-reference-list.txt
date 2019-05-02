@@ -5,6 +5,8 @@ Ultrasonics - "ultrasonics-software"
 Encoders - "encoders-software"
 Gyros - "gyros-software"
 
+Smartdashboard Intro - "smartdashboard-intro"
+
 Hardware
 ========
 Accelerometers - "accelerometers-hardware"

@@ -195,6 +195,14 @@ Shuffleboard Layouts with Code
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data
    docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets
 
+SmartDashboard
+==============
+
+.. toctree::
+   :maxdepth: 1
+   
+   docs/software/wpilib-tools/smartdashboard/smartdashboard-intro
+
 Autonomous Path Planning
 ========================
 
