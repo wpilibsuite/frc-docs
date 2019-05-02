@@ -3,7 +3,7 @@
 Encoders - Software
 ===================
 
-.. note:: This section covers encodeers in software.  For a hardware guide to encoders, see :ref:`encoders-hardware`.
+.. note:: This section covers encoders in software.  For a hardware guide to encoders, see :ref:`encoders-hardware`.
 
 |Encoding Direction|
 
