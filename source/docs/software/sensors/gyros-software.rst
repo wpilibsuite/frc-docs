@@ -88,6 +88,8 @@ Displaying the robot heading on the dashboard
             Shuffleboard.getTab("Example tab").add((Sendable) gyro);
         }
 
+.. _stabilizing-heading-while-driving:
+
 Stabilizing heading while driving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

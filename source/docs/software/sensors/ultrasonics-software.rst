@@ -67,7 +67,7 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
         // Creates a ping-response Ultrasonic object on DIO 1 and 2.
         frc::Ultrasonic ultrasonic{1, 2};
 
-         // Initialize motor controllers and drive
+        // Initialize motor controllers and drive
         frc::Spark left1{0};
         frc::Spark left2{1};
         frc::Spark right1{2};
