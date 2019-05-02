@@ -19,3 +19,7 @@ Sensors
    :maxdepth: 1
    
    docs/hardware/sensors/sensor-overview-hardware
+   docs/hardware/sensors/accelerometers-hardware
+   docs/hardware/sensors/gyros-hardware
+   docs/hardware/sensors/ultrasonics-hardware
+   docs/hardware/sensors/encoders-hardware
