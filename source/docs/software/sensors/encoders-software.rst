@@ -71,7 +71,7 @@ Configuring encoder parameters
 
 .. note:: The number of pulses used in the distance-per-pulse calculation does *not* depend on the :ref:`decoding type <decoding-type>` - each "pulse" should always be considered to be a full cycle (four edges).
 
-The :code:`Encoder` class offers a number of configuration methods
+The :code:`Encoder` class offers a number of configuration methods:
 
 .. tabs::
 
@@ -123,7 +123,7 @@ Distance
 
 .. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last `reset <Resetting an encoder>`_.
 
-The total distance traveled by the encoder can be obtained with the :code:`getDistance()` method:
+Users can obtain the total distance traveled by the encoder with the :code:`getDistance()` method:
 
 .. tabs::
 
@@ -142,7 +142,7 @@ Rate
 
 .. note:: Units of time for the :code:`Encoder` class are *always* in seconds.
 
-The current rate of change of the encoder can be obtained with the :code:`getRate()` method:
+Users can obtain the current rate of change of the encoder with the :code:`getRate()` method:
 
 .. tabs::
 
