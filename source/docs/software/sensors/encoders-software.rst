@@ -11,7 +11,7 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft). 
 
 |Encoder Modules|
 
-The FPGA handles encoders either through a counter module or an encoder module, depending on the `Decoding type`_ - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
+The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <decoding-type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
 
 The Encoder class
 -----------------
@@ -36,6 +36,8 @@ An encoder can be instantiated as follows:
         // Initializes an encoder on DIO pins 0 and 1
         // Defaults to 4X decoding and non-inverted
         Encoder encoder = new Encoder(0, 1);
+
+.. _decoding-type:
 
 Decoding type
 ^^^^^^^^^^^^^
@@ -67,7 +69,7 @@ Configuring encoder parameters
 
 .. note:: The :code:`Encoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
-.. note:: The number of pulses used in the distance-per-pulse calculation does *not* depend on the `decoding type <Decoding type>`_ - each "pulse" should always be considered to be a full cycle (four edges).
+.. note:: The number of pulses used in the distance-per-pulse calculation does *not* depend on the :ref:`decoding type <decoding-type>` - each "pulse" should always be considered to be a full cycle (four edges).
 
 The :code:`Encoder` class offers a number of configuration methods
 
