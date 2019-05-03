@@ -406,7 +406,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
 
 .. tabs::
 
-    ..code-tab:: c++
+    .. code-tab:: c++
 
         frc::Encoder encoder{0,1};
 
@@ -426,7 +426,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
             }
         }
 
-    ..code-tab:: java
+    .. code-tab:: java
 
         Encoder encoder = new Encoder(0, 1);
 
