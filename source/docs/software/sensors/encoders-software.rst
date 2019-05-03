@@ -121,7 +121,7 @@ The :code:`Encoder` class provides a wealth of information to the user about the
 Distance
 ^^^^^^^^
 
-.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last `reset <Resetting an encoder>`_.
+.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <resetting-an-encoder>`.
 
 Users can obtain the total distance traveled by the encoder with the :code:`getDistance()` method:
 
@@ -207,10 +207,12 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
         // Gets the current period of the encoder
         encoder.getPeriod();
 
+.. _resetting-an-encoder:
+
 Resetting an encoder
 ~~~~~~~~~~~~~~~~~~~~
 
-To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a `homing <Homing an encodered mechanism>`_ routine:
+To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <homing-an-encodered-mechanism>` routine:
 
 .. tabs::
 
@@ -394,6 +396,55 @@ PID Control
 ~~~~~~~~~~~
 
 Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).  For more information on PID control, see :ref:`PID Control <pid-control>`.
+
+.. _homing-an-encodered-mechanism:
+
+Homing an encodered mechanism
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
+
+.. tabs::
+
+    ..code-tab:: c++
+
+        frc::Encoder encoder{0,1};
+
+        frc::Spark spark{0};
+
+        // Limit switch on DIO 2
+        frc::DigitalInput limit{2};
+
+        void frc::Robot::AutonomousPeriodic() {
+            // Runs the motor backwards at half speed until the limit switch is pressed
+            // then turn off the motor and reset the encoder
+            if(!limit.Get()) {
+                spark.Set(-.5);
+            } else {
+                spark.Set(0);
+                encoder.Reset();
+            }
+        }
+
+    ..code-tab:: java
+
+        Encoder encoder = new Encoder(0, 1);
+
+        Spark spark = new Spark(0);
+
+        // Limit switch on DIO 2
+        DigitalInput limit = new DigitalInput(2);
+
+        public void autonomousPeriodic() {
+            // Runs the motor backwards at half speed until the limit switch is pressed
+            // then turn off the motor and reset the encoder
+            if(!limit.get()) {
+                spark.set(-.5);
+            } else {
+                spark.set(0);
+                encoder.reset();
+            }
+        }
 
 .. |Encoding Direction| image:: images/encoders-software/encoding-direction.png
 .. |Encoder Modules| image:: images/encoders-software/encoder-modules.png
