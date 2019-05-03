@@ -3,7 +3,7 @@ Counters
 
 |Counters|
 
-The :code:`Counter` class (Java, C++) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <encoders-software>` and :ref:`Ultrasonic <ultrasonics-software>`), but is also quite useful on its own.
+The :code:`Counter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <encoders-software>` and :ref:`Ultrasonic <ultrasonics-software>`), but is also quite useful on its own.
 
 .. note:: There are a total of 8 counter units in the RoboRIO FPGA, meaning no more than 8 :code:`Counter` objects may be instantiated at any one time, including those contained as resources in other WPILib objects.  For detailed information on when a :code:`Counter` may be used by another object, refer to the official API documentation.
 
