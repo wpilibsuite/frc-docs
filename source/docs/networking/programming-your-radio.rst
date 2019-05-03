@@ -5,7 +5,8 @@ This guide will show you how to use the FRC Radio Configuration Utility
 software to configure your robot's wireless bridge for use outside of
 FRC events.
 
-Before you begin using the software:
+Before you begin using the software
+-----------------------------------
 
 Disable WiFi connections on your computer, as it may prevent the
 configuration utility from properly communicating with the bridge Make
@@ -14,14 +15,17 @@ the wireless bridge. \*\*Note that for the OM5P-AN and AC bridge, it is
 recommended to use a particular Ethernet port. See the on screen image
 and instructions for more information.
 
-**The OM5P-AN and AC use the same power plug as the D-Link DAP1522,
-however they are 12V radios. Wire the radio to the 12V 2A terminals on
-the VRM (center-pin positive).**
+.. note:: 
+    The OM5P-AN and AC use the same power plug as the D-Link DAP1522,
+    however they are 12V radios. Wire the radio to the 12V 2A terminals on
+    the VRM (center-pin positive).
 
-**Note: Teams will need to update firmware on both OM5P-AN and OM5P-AC
-radios in order for the programming utility to program them, or for them
-to be used at events. This must be done before you attempt to program
-them.**
+.. note:: 
+    Teams will need to update firmware on both OM5P-AN and OM5P-AC
+    radios in order for the programming utility to program them, or for them
+    to be used at events. This must be done before you attempt to program
+    them.
+
 Pre-Requisites
 --------------
 
@@ -34,6 +38,7 @@ configure the network settings on your machine. The program should
 request the necessary privileges automatically (may require a password
 if run from a non-Administrator account), but if you are having trouble,
 try running it from an Administrator account.
+
 Application Notes
 -----------------
 
@@ -45,6 +50,7 @@ clients is not recommended.
 
 The Utility has been tested on Windows 7, 8 and 10. It may work on other
 operating systems, but has not been tested.
+
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -80,7 +86,10 @@ At home only:
 -  Firewall option may be enabled to mimic the field firewall rules
    (open ports may be found in the Game Manual)
 
-**Note: It is not possible to modify the configuration manually**
+.. note:: 
+    It is not possible to modify the configuration manually
+
+
 Download the Software
 ---------------------
 
@@ -99,6 +108,7 @@ the OM5PAC firmware with restricted channels for use in Israel.\*\*
 Version 19.1.1 corrects an issue with applying the Bandwidth Limit
 present in version 19.1.0. Teams should install the new version, then
 re-program their radio (their is no need to re-flash the firmware).
+
 Install the Software
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -112,6 +122,7 @@ Part of the installation prompts will include installing WinPCap if it
 is not already present. The WinPCap installer contains a checkbox
 (checked by default) to start the WinPCap driver on boot. You should
 leave this box checked.
+
 Launch the Software
 ^^^^^^^^^^^^^^^^^^^
 
@@ -120,10 +131,11 @@ Launch the Software
    
 Use the Start menu or desktop shortcut to launch the program.
 
-| Note: If you need to locate the program it is installed to C:Files
-(x86)Radio Configuration Utility. For 32-bit machines the path is C:FilesRadio Configuration Utility\
-Allow the Program to Make Changes, If Prompted
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note:: 
+    If you need to locate the program it is installed to C:Files
+    (x86)Radio Configuration Utility. For 32-bit machines the path is C:FilesRadio Configuration Utility\
+    Allow the Program to Make Changes, If Prompted
+
 
 .. image:: images/pyr4.png
    :width: 600
@@ -131,6 +143,7 @@ Allow the Program to Make Changes, If Prompted
 If the your computer is running Windows Vista or Windows 7, a prompt may appear
 about allowing the configuration utility to make changes to the
 computer. Click "Yes" if the prompt appears.  
+
 Select the Network Interface 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -147,6 +160,7 @@ bridge over a wireless connection.
    available interfaces
 2. Select the interface you want to use from the drop-down list
 3. Click "OK"
+
 Open Mesh Firmware Note
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -160,6 +174,7 @@ step.
 
 Note: Radios used in 2018 will need to be updated to 2019 firmware
 before configuring.
+
 Loading FRC Firmware to OpenMesh Radio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -189,6 +204,7 @@ If you experience issues loading firmware or programming on a foreign
 language OS, try using an English OS, such as on the KOP provided PC or
 setting the Locale setting to "en\_us" as described on `this
 page <http://https://www.java.com/en/download/help/locale.xml>`__.
+
 Select a Bridge Model and Operating Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -200,6 +216,7 @@ Select a Bridge Model and Operating Mode
    the default selection of 2.4GHz Access Point will be sufficient. If
    your computers support it, the 5GHz AP mode is recommended, as 5GHz
    is less congested in many environments.
+
 Select Options
 ^^^^^^^^^^^^^^
 
@@ -228,6 +245,7 @@ options have no effect on D-Link radios**
 The "Firewall" option configures the radio to emulate the field
 firewall. This means that you will not be able to deploy code wirelessly
 with this option enabled.
+
 Prepare and Start the Configuration Process
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -238,6 +256,7 @@ Follow the on-screen instructions for preparing your wireless bridge,
 entering the settings the bridge will be configured with, and starting
 the configuration process. These on-screen instructions update to match
 the bridge model and operating mode chosen.
+
 Configuration Progress
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -249,6 +268,7 @@ Throughout the configuration process, the window will indicate:
 1. The step currently being executed
 2. The overall progress of the configuration process
 3. All steps executed so far
+
 Configuration Completed
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -259,6 +279,7 @@ Once the configuration is complete:
 
 1. Press "OK" on the dialog window
 2. Press "OK" on the main window to return to the settings screen
+
 Configuration Errors
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -268,7 +289,8 @@ Configuration Errors
 If an error occurs during the configuration process, follow the
 instructions in the error message to correct the problem.
 
- Troubleshooting: Disabling Network Adapters 
+Troubleshooting: Disabling Network Adapters
+-------------------------------------------
 
 If you get an error message
 about "NPF adapter" when attempting to load firmware, you need to
