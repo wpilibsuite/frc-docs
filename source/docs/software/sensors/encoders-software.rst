@@ -254,14 +254,14 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::RobotInit() {
+        void Robot::RobotInit() {
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
             encoder.SetDistancePerPulse(1./256.);
         }
 
-        void frc::Robot:AutonomousPeriodic() {
+        void Robot:AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.GetDistance < 5) {
                 drive.TankDrive(.5, .5);
@@ -334,7 +334,7 @@ Encoders can be used to ensure that a robot drives straight in a manner quite si
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::AutonomousInit() {
+        void Robot::AutonomousInit() {
             // Configures the encoders' distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
@@ -342,7 +342,7 @@ Encoders can be used to ensure that a robot drives straight in a manner quite si
             rightEncoder.SetDistancePerPulse(1./256.);
         }
 
-        void frc::Robot::AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             // Assuming no wheel slip, the difference in encoder distances is proportional to the heading error
             double error = leftEncoder.GetDistance() - rightEncoder.GetDistance();
 
@@ -415,7 +415,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
         // Limit switch on DIO 2
         frc::DigitalInput limit{2};
 
-        void frc::Robot::AutonomousPeriodic() {
+        void RobotonomousPeriodic() {
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.Get()) {

@@ -78,12 +78,12 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::RobotInit() {
+        void Robot::RobotInit() {
             // Start the ultrasonic in automatic mode
             ultrasonic.SetAutomaticMode(true);
         }
 
-        void frc::Robot:AutonomousPeriodic() {
+        void Robot:AutonomousPeriodic() {
             if(ultrasonic.GetRangeInches() > 12) {
                 drive.TankDrive(.5, .5);
             }
@@ -135,7 +135,7 @@ Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <tour-
         // Creates a ping-response Ultrasonic object on DIO 1 and 2.
         frc::Ultrasonic ultrasonic{1, 2};
 
-        void frc::Robot::RobotInit() {
+        void Robot::RobotInit() {
             // Places the ultrasonic on the dashboard
             frc::Shuffleboard.GetTab("Example tab").Add(ultrasonic);
         }
