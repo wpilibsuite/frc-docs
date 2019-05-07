@@ -73,7 +73,7 @@ Displaying the robot heading on the dashboard
 
         frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
 
-        void frc::Robot::RobotInit() {
+        void Robot::RobotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
             frc::Shuffleboard.GetTab("Example tab").Add(gyro);
         }
@@ -124,7 +124,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
             double error = -gyro.GetRate();
 
@@ -191,12 +191,12 @@ The following example shows how to stabilize heading using a simple P loop close
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::AutonomousInit() {
+        void Robot::AutonomousInit() {
             // Set setpoint to current heading at start of auto
             heading = gyro.GetAngle();
         }
 
-        void frc::Robot::AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             double error = heading - gyro.GetAngle();
 
             // Drives forward continuously at half speed, using the gyro to stabilize the heading
@@ -269,7 +269,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void frc::Robot::AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             // Find the heading error; setpoint is 90
             double error = 90 - gyro.GetAngle();
 
