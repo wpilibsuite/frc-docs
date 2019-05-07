@@ -37,6 +37,18 @@ is as simple as adding it's entry using the putData() method.
         // put a class which implements Sendable on SmartDashboard
         SmartDashboard.putData(m_SendableClass)
 
+Interacting with Sendable classes
+---------------------------------
+
+Sendable classes are published via NetworkTables for users
+to view using WPILIb through programs such as OutlineViewer,
+ShuffleBoard and SmartDashboard. These programs allow users
+to not only view the current state, such as solenoid state,
+motor output, or PIDSubsystem/PIDCommand's current PID
+constants, but to actually modify or send data the other
+direction to the RoboRIO to do things like manually start
+and stop commands. 
+
 Creating a new Sendable class
 -----------------------------
 
