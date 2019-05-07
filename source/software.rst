@@ -169,6 +169,7 @@ NetworkTables
    docs/software/networktables/client-side-program
    docs/software/networktables/multiple-instances
    docs/software/networktables/listening-for-subtable-creation
+   docs/software/networktables/creating-Sendable-classes
    
 Shuffleboard Getting Started
 ============================
