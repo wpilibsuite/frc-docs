@@ -196,6 +196,8 @@ SmartDashboard
    :maxdepth: 1
    
    docs/software/wpilib-tools/smartdashboard/smartdashboard-intro
+   docs/software/wpilib-tools/smartdashboard/displaying-expressions
+   docs/software/wpilib-tools/smartdashboard/changing-display-properties
 
 Autonomous Path Planning
 ========================

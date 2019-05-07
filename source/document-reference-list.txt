@@ -6,6 +6,8 @@ Encoders - "encoders-software"
 Gyros - "gyros-software"
 
 Smartdashboard Intro - "smartdashboard-intro"
+Smartdashboard Expressions - "smartdashboard-displaying-expressions"
+Smartdashboard Changing Display Properties - "smartdashboard-changing-display-properties"
 
 Hardware
 ========
