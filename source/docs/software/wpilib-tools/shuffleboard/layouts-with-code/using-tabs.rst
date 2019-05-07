@@ -43,5 +43,5 @@ Tabs created from a robot program differ in a few important ways from normal tab
 
 - Not saved in the Shuffleboard save file 
 - No support for autopopulation 
-- users are expected to specify the tab contents in their robot program 
+- Users are expected to specify the tab contents in their robot program 
 - Have a special color to differentiate from normal tabs
