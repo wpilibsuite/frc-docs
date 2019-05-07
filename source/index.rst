@@ -7,6 +7,12 @@ Welcome to FIRST Robotics Documentation
 ========================================================
 
 .. toctree::
+   :maxdepth: 1
+   
+   WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
+   
+.. toctree::
    :maxdepth: 2
    :caption: WPILib Software
    
