@@ -3,6 +3,8 @@
    
    Introduction to Java <http://dslab.us/wp-content/uploads/book/pdf/java/HeadFisrt_JAVA.pdf>
    Introduction to C++ <https://file.tavsys.net/books/cpp/Programming_%20Principles%20and%20Practice%20Using%20C%2B%2B%2C%202nd%20Ed.%2C%20Stroustrup%20%28distr%29.pdf>
+   WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
    
 Software - Getting Started
 ==========================
