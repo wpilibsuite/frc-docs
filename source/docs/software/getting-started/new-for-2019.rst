@@ -39,7 +39,7 @@ You can find information about the new IDE in the Offline Installation Guides. T
 Vendor Libraries
 ----------------
 
--  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see here_:
+-  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see `here <3rd-party-libraries.html>`__:
 
 RoboRIO WebDashboard
 --------------------
@@ -48,7 +48,7 @@ RoboRIO WebDashboard
 -  No longer supports CAN device status/configuration
 -  Recommended to be used in non-IE browser
 
-More information here
+More information `here <../../software/roborio-info/roborio-web-dashboard.html>`__
 
 RoboRIO Imaging Tool
 --------------------
@@ -56,7 +56,7 @@ RoboRIO Imaging Tool
 -  Reworked UI
 -  Added firmware update capability
 
-More information here
+More information `here <imaging-your-roborio.html>`__
 
 CAN Device Configuration
 ------------------------
@@ -64,7 +64,7 @@ CAN Device Configuration
 -  Removed from WebDashboard
 -  Provided by vendor specific tools.
 
-See this article for updated PDP/PCM configuration instructions
+See `this article <../../software/can-devices/using-can-devices.html>`__ for updated PDP/PCM configuration instructions
 
 WPILib C++/Java
 -----------------------------
@@ -128,7 +128,7 @@ Find more documentation on Pathweaver here
 Raspberry Pi Image for Cameras
 ------------------------------
 
-A pre-made Raspberry Pi Image for camera streaming/image processing has been developed to lower the barrier to entry to off-board vision processing. This image contains all of the libraries required to implement FRC compatible camera streaming, as well as a helpful web dashboard, read only file system configuration to handle robot power off and more. Learn more in the new manual here.
+A pre-made Raspberry Pi Image for camera streaming/image processing has been developed to lower the barrier to entry to off-board vision processing. This image contains all of the libraries required to implement FRC compatible camera streaming, as well as a helpful web dashboard, read only file system configuration to handle robot power off and more. Learn more in the new manual `here <../../software/vision-processing/raspberry-pi/using-the-raspberry-pi-for-frc.html>`__.
 
 SmartDashboard
 --------------
@@ -149,5 +149,3 @@ Outline Viewer
 -  Requires Java 11 to run.
 
 .. |image0| image:: images/new-for-2019/offline-install.png
-
-.. _here: 

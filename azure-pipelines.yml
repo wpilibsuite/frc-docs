@@ -4,9 +4,11 @@ pool:
 
 trigger:
 - master
+- develop
 
 pr:
 - master
+- develop
 
 steps:
 - task: UsePythonVersion@0
