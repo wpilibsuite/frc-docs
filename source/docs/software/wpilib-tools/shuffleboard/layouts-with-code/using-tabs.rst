@@ -39,4 +39,9 @@ This method can be used to select any tab in Shuffleboard, not just ones created
 Caveats
 -------
 
-Tabs created from a robot program differ in a few important ways from normal tabs created from the dashboard: - Not saved in the Shuffleboard save file - No support for autopopulation - users are expected to specify the tab contents in their robot program - Have a special color to differentiate from normal tabs
+Tabs created from a robot program differ in a few important ways from normal tabs created from the dashboard:
+
+- Not saved in the Shuffleboard save file 
+- No support for autopopulation 
+- users are expected to specify the tab contents in their robot program 
+- Have a special color to differentiate from normal tabs
