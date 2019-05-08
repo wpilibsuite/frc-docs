@@ -41,8 +41,19 @@ The Radio Configuration Utility programs a number of configuration settings into
 - Bridge the wired ports so they may be used interchangeably
 - The LED configuration noted in the graphic above.
 - 4Mb/s bandwidth limit on the outbound side of the wireless interface (may be disabled for home use)
-- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (All other traffic). (disabled if BW limit is disabled)
-- DHCP server enabled. Serves out 10.TE.AM.11 - 10.TE.AM.111 on the wired side, 10.TE.AM.130 - 10.TE.AM.230 on the wireless side, subnet mask of 255.255.255.0, broadcast address 10.TE.AM.255
+- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are:
+
+  - Robot Control and Status (UDP 1110, 1115, 1150)
+  - Robot TCP & Network Tables (TCP 1735, 1740)
+  - Bulk (All other traffic). (disabled if BW limit is disabled)
+
+- DHCP server enabled. Serves out: 
+
+  - 10.TE.AM.11 - 10.TE.AM.111 on the wired side
+  - 10.TE.AM.130 - 10.TE.AM.230 on the wireless side
+  - Subnet mask of 255.255.255.0
+  - Broadcast address 10.TE.AM.255
+
 - DNS server enabled. DNS server IP and domain suffix (.lan) are served as part of the DHCP.
 
 At home only:
