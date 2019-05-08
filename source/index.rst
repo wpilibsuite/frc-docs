@@ -3,9 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. meta::
-   :og\:image: https://raw.githubusercontent.com/Daltz333/frc-docs/develop/assets/frc-docs-banner.png
-
 Welcome to FIRST Robotics Documentation
 ========================================================
 
