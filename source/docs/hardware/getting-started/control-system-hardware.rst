@@ -1,104 +1,53 @@
 FRC Control System Hardware Overview
 ====================================
 
-The goal of this document is to provide a brief overview of the hardware
-components that make up the FRC Control System. Each component will
-contain a brief description of the component function, a brief listing
-of critical connections, and a link to more documentation if available.
-Note that for complete wiring instructions/diagrams, please see the
-Wiring the FRC Control System document.
+The goal of this document is to provide a brief overview of the hardware components that make up the FRC Control System. Each component will contain a brief description of the component function.
+
+.. note:: Note that for complete wiring instructions/diagrams, please see the Wiring the FRC Control System document.
 
 National Instruments roboRIO
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-|image0|
+.. image:: images/control-system-hardware/roborio.png
 
-The NI-roboRIO is the main robot controller used for FRC. The roboRIO
-includes a dual-core ARM Cortex™-A9 processor and FPGA which runs both
-trusted elements for control and safety as well as team-generated code.
-Integrated controller I/O includes a variety of communication protocols
-(Ethernet, USB, CAN, SPI, I2C, and serial) as well as PWM, servo,
-digital I/O, and analog I/O channels used to connect to robot
-peripherals for sensing and control.The roboRIO should connect to the
-dedicated 12V port on the Power Distribution Panel for power. Wired
-communication is available via USB or Ethernet. Detailed information on
-the roboRIO can be found in the `roboRIO User
-Manual <http://www.ni.com/pdf/manuals/374474a.pdf>`__.
+The NI-roboRIO is the main robot controller used for FRC. The roboRIO includes a dual-core ARM Cortex™-A9 processor and FPGA which runs both trusted elements for control and safety as well as team-generated code. Integrated controller I/O includes a variety of communication protocols (Ethernet, USB, CAN, SPI, I2C, and serial) as well as PWM, servo, digital I/O, and analog I/O channels used to connect to robot peripherals for sensing and control.The roboRIO should connect to the dedicated 12V port on the Power Distribution Panel for power. Wired communication is available via USB or Ethernet. Detailed information on the roboRIO can be found in the `roboRIO User Manual <http://www.ni.com/pdf/manuals/374474a.pdf>`__.
 
 Power Distribution Panel
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-|image1|
+.. image:: images/control-system-hardware/power-distribution-panel.png
 
-The Power Distribution Panel (PDP) is designed to distribute power from
-a 12VDC battery to various robot components through auto-resetting
-circuit breakers and a small number of special function fused
-connections. The PDP provides 8 output pairs rated for 40A continuous
-current and 8 pairs rated for 30A continuous current. The PDP provides
-dedicated 12V connectors for the roboRIO, as well as connectors for the
-Voltage Regulator Module and Pneumatics Control Module. It also includes
-a CAN interface for logging current, temperature, and battery voltage.
-For more detailed information, see the[ PDP User
-Manual](http://www.ctr-electronics.com/control-system/pdp.html#product_tabs_technical_resources
-" PDP User Manual").
+The Power Distribution Panel (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <http://www.ctr-electronics.com/control-system/pdp.html#product_tabs_technical_resources>`__
 
 Pneumatics Control Module
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
-|image2|
+.. image:: images/control-system-hardware/pneumatics-control-module.png
 
-The PCM is a device that contains all of the inputs and outputs required
-to operate 12V or 24V pneumatic solenoids and the on board compressor.
-The PCM is enabled/disabled by the roboRIO over the CAN interface. The
-PCM contains an input for the pressure sensor and will control the
-compressor automatically when the robot is enabled and a solenoid has
-been created in the code. The device also collects diagnostic
-information such as solenoid states, pressure switch state, and
-compressor state. The module includes diagnostic LED’s for both CAN and
-the individual solenoid channels. For more information see the `PCM User
-Manual <http://www.ctr-electronics.com/control-system/pcm.html#product_tabs_technical_resources>`__.
+The PCM is a device that contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM is enabled/disabled by the roboRIO over the CAN interface. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. The device also collects diagnostic information such as solenoid states, pressure switch state, and compressor state. The module includes diagnostic LED’s for both CAN and the individual solenoid channels. For more information see the `PCM User Manual <http://www.ctr-electronics.com/control-system/pcm.html#product_tabs_technical_resources>`__.
 
 Voltage Regulator Module
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-|image3|
+.. image:: images/control-system-hardware/voltage-regulator-module.png
 
-The VRM is an independent module that is powered by 12 volts. The device
-is wired to a dedicated connector on the PDP. The module has multiple
-regulated 12V and 5V outputs. The purpose of the VRM is to provide
-regulated power for the robot radio, custom circuits, and IP vision
-cameras. **Note: The two connector pairs associated with each label have
-a combined rating of what the label indicates (e.g. 5V/500mA total for
-both pairs not for each pair). The 12V/2A limit is a peak rating, the
-supply should not be loaded with more than 1.5A continuous current
-draw.**\ For more information, see the `VRM User
-Manual <http://www.ctr-electronics.com/control-system/vrm.html#product_tabs_technical_resources>`__.
+The VRM is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras.
+
+.. warning:: The two connector pairs associated with each label have a combined rating of what the label indicates (e.g. 5V/500mA total for both pairs not for each pair). The 12V/2A limit is a peak rating, the supply should not be loaded with more than 1.5A continuous current draw. For more information, see the `VRM User Manual <http://www.ctr-electronics.com/control-system/vrm.html#product_tabs_technical_resources>`__.
 
 Motor Controllers
-~~~~~~~~~~~~~~~~~
+-----------------
 
-There are a variety of different motor controllers which work with the
-FRC Control System and are approved for use. These devices are used to
-provide variable voltage control of the brushed DC motors used in FRC.
-They are listed here in alphabetical order.
+There are a variety of different motor controllers which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed DC motors used in FRC. They are listed here in alphabetical order.
 
 DMC-60 and DMC-60C Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image4|
+.. image:: images/control-system-hardware/dmc-60c-motor-controller.png
 
-The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features
-integrated thermal sensing and protection including current-foldback to
-prevent overheating and damage, and four multi-color LEDs to indicate
-speed, direction, and status for easier debugging. For more information,
-see the DMC-60 reference manual:
-https://reference.digilentinc.com/dmc-60/reference-manual
+The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features integrated thermal sensing and protection including current-foldback to prevent overheating and damage, and four multi-color LEDs to indicate speed, direction, and status for easier debugging. For more information, see the `DMC-60 reference manual <https://reference.digilentinc.com/dmc-60/reference-manual>`__
 
-The DMC-60C adds CAN smart controller capabilities to the DMC-60
-controller. This enables closed loop control features and other
-intelligent control options. For more information see the DMC-60C
-Product Page:
-https://store.digilentinc.com/dmc60c-digital-motor-controller-approved-for-first-robotics/
+The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. This enables closed loop control features and other intelligent control options. For more information see the `DMC-60C Product Page <https://store.digilentinc.com/dmc60c-digital-motor-controller-approved-for-first-robotics/>`__
 
 Jaguar Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -183,10 +132,9 @@ closed loop control on the device. For more information see the `Talon
 SRX User
 Manual <http://www.ctr-electronics.com/talon-srx.html#product_tabs_technical_resources>`__.
 
-**Note: CAN Talon SRX has been removed from WPILib. See
-this**\ `blog <http://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__\ **for
-more info and find the CTRE Toolsuite installer here:**
-http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources
+.. note:: CAN Talon SRX has been removed from WPILib. See
+this `blog <http://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for
+more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__
 
 Victor 888 Motor Controller / Victor 884 Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -237,7 +185,7 @@ more info and find the CTRE Toolsuite installer here:**
 http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources
 
 Spike H-Bridge Relay
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 |image14|
 
@@ -252,7 +200,7 @@ Panel. For more information, see the `Spike User’s
 Guide <http://content.vexrobotics.com/docs/spike-blue-guide-sep05.pdf>`__.
 
 Servo Power Module
-~~~~~~~~~~~~~~~~~~
+------------------
 
 |image15|
 
@@ -264,7 +212,7 @@ from the roboRIO. For more information, see the `Servo Power Module
 webpage <http://www.revrobotics.com/rev-11-1144/>`__.
 
 Axis M1013/M1011/206 Ethernet Camera
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 |image16|
 
@@ -276,7 +224,7 @@ radio. For more information, see Configuring an Axis Camera and the Axis
 206, Axis M1011, Axis M1013 pages.
 
 Microsoft Lifecam HD3000
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 |image17|
 
@@ -289,7 +237,7 @@ For more information about using the camera with the roboRIO, see the
 Vision Processing section if this documentation.
 
 OpenMesh OM5P-AN or OM5P-AC Radio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 |image18|
 
@@ -309,7 +257,7 @@ The OM5P-AC is slightly heavier, has more cooling grates, and has a
 rough surface texture compared to the OM5P-AN.
 
 120A Circuit Breaker
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 |image19|
 
@@ -321,7 +269,7 @@ information, please see the `Cooper Bussmann 18X Series Datasheet (PN:
 185120F) <http://www.cooperindustries.com/content/dam/public/bussmann/Transportation/Circuit%20Protection/resources/datasheets/BUS_Tns_DS_18X_CIRCUITBREAKER.pdf>`__
 
 Snap Action Circuit Breakers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 |image20|
 
@@ -336,7 +284,7 @@ series <http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__ and
 `VB3 Series <http://www.snapaction.net/pdf/vb3.pdf>`__.
 
 Robot Battery
-~~~~~~~~~~~~~
+-------------
 
 |image21|
 
@@ -350,7 +298,7 @@ Note that other battery part numbers may be legal, consult the FRC
 Manual for a complete list.
 
 Image Credits
-~~~~~~~~~~~~~
+-------------
 
 Image of roboRIO courtesy of National Instruments. Image of DMC-60
 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of
@@ -359,11 +307,6 @@ and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK
 MAX courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos
 courtesy of FIRST. All other photos courtesy of AndyMark Inc.
 
-.. |image0| image:: images/control-system-hardware/roborio.png
-.. |image1| image:: images/control-system-hardware/power-distribution-panel.png
-.. |image2| image:: images/control-system-hardware/pneumatics-control-module.png
-.. |image3| image:: images/control-system-hardware/voltage-regulator-module.png
-.. |image4| image:: images/control-system-hardware/dmc-60c-motor-controller.png
 .. |image5| image:: images/control-system-hardware/jaguar-motor-controller.png
 .. |image6| image:: images/control-system-hardware/sdb540-motor-controller.png
 .. |image7| image:: images/control-system-hardware/spark-motor-controller.png

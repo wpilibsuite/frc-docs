@@ -29,7 +29,8 @@ author = 'FIRST Community'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinx.ext.imgmath'
+    'sphinx.ext.imgmath',
+    'sphinx.ext.autosectionlabel'
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,7 +60,3 @@ html_theme_options = {
 	'collapse_navigation': False,
 	'sticky_navigation': False
 }
-
-user_options = [
-        ('warning-is-error', True),
-]

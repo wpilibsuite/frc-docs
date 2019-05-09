@@ -12,7 +12,7 @@ FRC CAN nodes assign arbitration IDs based on a pre-defined scheme that
 breaks the ID into 5 components:
 
 Device Type
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 This is a 5-bit value describing the type of device being addressed. A
 table of currently assigned device types can be found below. If you wish
@@ -39,7 +39,7 @@ Firmware Update           31
 ========================= =====
 
 Manufacturer
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 This is an 8-bit value indicating the manufacturer of the CAN device.
 Currently assigned values can be found in the table below. If you wish
@@ -62,7 +62,7 @@ Reserved        9-255
 =============== =====
 
 API/Message Identifier
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 The API or Message Identifier is a 10-bit value that identifies a
 particular command or message type. These identifiers are unique for
@@ -75,7 +75,7 @@ The Message identifier is further broken down into 2 sub-fields: the
 6-bit API Class and the 4-bit API Index.
 
 API Class
-~~~~~~~~~
+^^^^^^^^^
 
 The API Class is a 6-bit identifier for an API grouping. Similar
 messages are grouped into a single API Class. An example of the API
@@ -96,7 +96,7 @@ Ack                       8
 ========================= =
 
 API Index
-~~~~~~~~~
+^^^^^^^^^
 
 The API Index is a 4-bit identifier for a particular message within an
 API Class. An example of the API Index values for the Jaguar Motor
@@ -119,7 +119,7 @@ Set Setpoint No Ack         11
 =========================== ==
 
 Device Number
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Device Number is a 6-bit quantity indicating the number of the device of
 a particular type. Devices should default to device ID 0 to match other
