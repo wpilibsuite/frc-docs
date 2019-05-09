@@ -13,8 +13,8 @@ OutlineViewer, ShuffleBoard and SmartDashboard. Base WPI
 classes such as Command and Subsystem, as well as actuator
 classes such as DoubleSolenoid, implement the Sendable
 interface. The WPI documentation of the Sendable interface,
-as well as a full list of WPI classes which implement Sendable,
-can be found on the WPI docs for Sendable(`Java
+as well as a full list of WPI classes which implement
+Sendable, can be found on the WPI docs for Sendable(`Java
 <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`_,
 `C++
 <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`_).
@@ -22,20 +22,25 @@ can be found on the WPI docs for Sendable(`Java
 Putting a Sendable on NetworkTables
 -----------------------------------
 
-Adding the current state of a Sendable class to NetworkTables
-is as simple as adding it's entry using the putData() method.
+Adding the current state of a Sendable class to
+NetworkTables is as simple as adding it's entry using the
+putData() method.
 
 .. tabs::
 
     .. code-tab:: c++
 
-        // put a class which implements Sendable on SmartDashboard
-        frc::SmartDashboard::PutData(m_SendableClass)	
+        frc::SmartDashboard::PutData("my sendable", m_SendableClass)
+
+        frc::ShuffleboardTab& m_tab = frc::Shuffleboard::GetTab("tabName");
+        m_tab.Add("Motor", m_sendableClass);
 
     .. code-tab:: java
 
-        // put a class which implements Sendable on SmartDashboard
-        SmartDashboard.putData(m_SendableClass)
+        SmartDashboard.putData("my sendable", sendable)
+
+        ShuffleboardTab m_tab = Shuffleboard.getTab("name")
+        m_tab.add(["my sendable",] sendable);
 
 Interacting with Sendable classes
 ---------------------------------
@@ -49,20 +54,101 @@ constants, but to actually modify or send data the other
 direction to the RoboRIO to do things like manually start
 and stop commands. 
 
-Creating a new Sendable class
------------------------------
+What is SendableBuilder?
+------------------------
 
-To create a new Sendable class, one must create an implementation of the
-initSendable() method of the Sendable interface. Teams may, using the
-injected SendableBuilder(`Java
-<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`_
+SendableBuilder (`Java
+<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`_,
 `C++
-<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`_
-),
-add properties such as Booleans, Doubles/DoubleArrays and even treat the
-class as an actuator. The following is an example implementation from
-WPILib's DifferentialDrive class, which implements Sendable. For more
-information on the DifferentialDrive class, see :ref:`wpi_differential_drive`.
+<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`_),
+implemented in SendableBuilderImpl, that handles
+NetworkTable interaction with an instance of a Sendable
+class. Through the SendableBuilder instance passed in the
+:code:`initSendable` method of the Sendable interface,
+Sendable subclasses can quickly publish the relevant
+information to NetworkTables. The :code:`initSendable`
+method is called when a user puts the Sendable on
+SmartDashboard or ShuffleBoard, by calling the code shown
+above. Users may add properties to the SendableBuilder
+passed into the :code:`initSendable` method, much like the
+old SmartDashboard methods used to put primatives onto
+SmartDashboard. The full list of properties which can be
+published to and retrieved from SmartDashboard can be found
+on the linked SendableBuilder documentation, and includes:
+
+- Boolean values
+- Boolean arrays
+- Double values
+- Double arrays
+- Bytes values
+- String values
+- String arrays
+- NetworkTableValues
+
+SendableBuilder can also be used to set the actuator flag on
+or off, add functions to run to set the Sendable into a safe
+state, set the type of the Sendable displayed on
+SmartDashboard, or functions to run to update the network
+table for things other than properties.
+
+Creating a new Sendable class with SendableBuilder
+--------------------------------------------------
+
+To expose information about a class to users over
+NetworkTables, one must create an implementation of the
+initSendable() method of the Sendable interface. The
+properties added to Sendable classes can include just a
+getter, or both a getter and a setter. This example shows a
+Double property which can both be viewed and modified on
+NetworkTables. Note that both a getter and setter are not
+required - a :code:`null` setter simply means the value
+can't be changed over NetworkTables. This might be desired
+in some situations where information should only be
+displayed, but not modified.
+
+.. tabs::
+
+    .. code-tab:: c++
+
+        void DifferentialDrive::InitSendable(SendableBuilder& builder) {
+
+            builder.AddDoubleProperty("Intake Speed",
+                                    [=]() { return
+                                    intakeMotor.Get(); },
+                                    [=](double value) {
+                                    intakeMotor.Set(value);
+                                    });
+
+        }
+
+    .. code-tab:: java
+
+        @Override
+        public void initSendable(SendableBuilder builder) {
+
+            builder.addDoubleProperty("Intake Speed",
+                intakeMotor::get, intakeMotor::set);
+
+        }
+
+The following example is an example implementation from
+WPILib's DifferentialDrive class, which implements Sendable.
+The properties added to the builder in this example expose
+many features of DifferentialDrive to modification through
+NetworkTables. In this example, the instance of
+DifferentialDrive is treated as an actuator of type
+"DifferentialDrive", which means that Test mode can be used
+to control the drive's outputs, and the name
+DifferentialDrive will be displayed to the user. When Test
+mode is enabled or disabled, the actuator will be set to a
+safe state by calling the :code:`stopMotor` method, which
+will stop the motors. Finally, a getter and setter for the
+left motor speed and right motor speed allows the user both
+to view the current output of both motors, as well as set
+them to an arbitrary output. For more information on the
+DifferentialDrive class, see :ref:`wpi_differential_drive`.
+For more information on using lambdas and functional
+interfaces in code, see TODO LINK.
 
 .. tabs::
 
@@ -73,14 +159,17 @@ information on the DifferentialDrive class, see :ref:`wpi_differential_drive`.
             builder.SetActuator(true);
             builder.SetSafeState([=] { StopMotor(); });
             builder.AddDoubleProperty("Left Motor Speed",
-                                    [=]() { return m_leftMotor.Get(); },
-                                    [=](double value) { m_leftMotor.Set(value); });
+                                    [=]() { return
+                                    m_leftMotor.Get(); },
+                                    [=](double value) {
+                                    m_leftMotor.Set(value);
+                                    });
             builder.AddDoubleProperty(
-                "Right Motor Speed",
-                [=]() { return m_rightMotor.Get() * m_rightSideInvertMultiplier; },
-                [=](double value) {
-                m_rightMotor.Set(value * m_rightSideInvertMultiplier);
-                });
+                "Right Motor Speed", [=]() { return
+                m_rightMotor.Get() *
+                m_rightSideInvertMultiplier; }, [=](double
+                value) {m_rightMotor.Set(value *
+                m_rightSideInvertMultiplier);});
         }
 
     .. code-tab:: java
@@ -90,9 +179,12 @@ information on the DifferentialDrive class, see :ref:`wpi_differential_drive`.
             builder.setSmartDashboardType("DifferentialDrive");
             builder.setActuator(true);
             builder.setSafeState(this::stopMotor);
-            builder.addDoubleProperty("Left Motor Speed", m_leftMotor::get, m_leftMotor::set);
+            builder.addDoubleProperty("Left Motor Speed",
+            m_leftMotor::get, m_leftMotor::set);
             builder.addDoubleProperty(
-                "Right Motor Speed",
-                () -> m_rightMotor.get() * m_rightSideInvertMultiplier,
-                x -> m_rightMotor.set(x * m_rightSideInvertMultiplier));
+                "Right Motor Speed", () ->
+                m_rightMotor.get() *
+                m_rightSideInvertMultiplier, x ->
+                m_rightMotor.set(x *
+                m_rightSideInvertMultiplier));
         }
