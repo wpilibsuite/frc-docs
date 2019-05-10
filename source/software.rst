@@ -81,6 +81,7 @@ Sensors
    docs/software/sensors/ultrasonics-software
    docs/software/sensors/counters
    docs/software/sensors/encoders-software
+   docs/software/sensors/analog-inputs-software
    docs/software/sensors/analog-potentiometers-software
 
 CAN Devices
