@@ -14,7 +14,7 @@ classes such as Command and Subsystem, as well as actuator
 classes such as DoubleSolenoid, implement the Sendable
 interface. The WPI documentation of the Sendable interface,
 as well as a full list of WPI classes which implement
-Sendable, can be found on the WPI docs for Sendable(`Java
+Sendable, can be found on the WPI docs for Sendable (`Java
 <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`_,
 `C++
 <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`_).
@@ -61,7 +61,7 @@ SendableBuilder (`Java
 <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`_,
 `C++
 <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`_),
-implemented in SendableBuilderImpl, that handles
+implemented in SendableBuilderImpl, handles
 NetworkTable interaction with an instance of a Sendable
 class. Through the SendableBuilder instance passed in the
 :code:`initSendable` method of the Sendable interface,
@@ -141,17 +141,16 @@ The following example is an example implementation from
 WPILib's DifferentialDrive class, which implements Sendable.
 The properties added to the builder in this example expose
 many features of DifferentialDrive to modification through
-NetworkTables. In this example, the instance of
-DifferentialDrive is treated as an actuator of type
-"DifferentialDrive", which means that Test mode can be used
-to control the drive's outputs, and the name
-DifferentialDrive will be displayed to the user. When Test
-mode is enabled or disabled, the actuator will be set to a
-safe state by calling the :code:`stopMotor` method, which
-will stop the motors. Finally, a getter and setter for the
-left motor speed and right motor speed allows the user both
-to view the current output of both motors, as well as set
-them to an arbitrary output. For more information on the
+NetworkTables. The instance of DifferentialDrive is treated
+as an actuator of type "DifferentialDrive", which means that
+Test mode can be used to control the drive's outputs, and
+the name DifferentialDrive will be displayed to the user.
+When Test mode is enabled or disabled, the actuator will be
+set to a safe state by calling the :code:`stopMotor` method,
+which will stop the motors. Finally, a getter and setter for
+the left motor speed and right motor speed allows the user
+both to view the current output of both motors, as well as
+set them to an arbitrary output. For more information on the
 DifferentialDrive class, see :ref:`wpi_differential_drive`.
 For more information on using lambdas and functional
 interfaces in code, see TODO LINK.
