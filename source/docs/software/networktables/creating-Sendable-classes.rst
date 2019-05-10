@@ -89,7 +89,10 @@ SendableBuilder can also be used to set the actuator flag on
 or off, add functions to run to set the Sendable into a safe
 state, set the type of the Sendable displayed on
 SmartDashboard, or functions to run to update the network
-table for things other than properties.
+table for things other than properties. If a Sendable is
+configured as an actuator, users will be able to control it
+directly through ShuffleBoard, SmartDashboard or
+OutlineViewer when the robot is enabled in Test mode.
 
 Creating a new Sendable class with SendableBuilder
 --------------------------------------------------
@@ -104,7 +107,10 @@ NetworkTables. Note that both a getter and setter are not
 required - a :code:`null` setter simply means the value
 can't be changed over NetworkTables. This might be desired
 in some situations where information should only be
-displayed, but not modified.
+displayed, but not modified. If the Sendable is configured
+as an actuator, the setter will be called when the robot is
+enabled in Test mode when users change it's values to test
+robot functions.
 
 .. tabs::
 
