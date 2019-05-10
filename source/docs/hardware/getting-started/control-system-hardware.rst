@@ -114,7 +114,7 @@ Victor SPX
 
 The Victor SPX motor controller is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the roboRIO PWM connectors or a CAN bus chain. When controlled over the CAN bus, the device has a number of the closed loop features also present in the Talon SRX. The case is sealed to prevent debris from entering the controller. For more information, see the `Victor SPX Webpage <https://www.vexrobotics.com/217-9191.html>`__.
 
-.. note:: Victor SPX CAN control is not supported from WPILib. See `this blog <http://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__\ for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/>`__hro.html#product_tabs_technical_resources
+.. note:: Victor SPX CAN control is not supported from WPILib. See `this blog <http://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__
 
 Spike H-Bridge Relay
 --------------------

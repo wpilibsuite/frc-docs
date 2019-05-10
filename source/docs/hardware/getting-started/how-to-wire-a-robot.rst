@@ -196,8 +196,7 @@ Pneumatics Control Module Power (Optional)
 
 Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and black wire
 
-.. note:: The PCM is an optional component used for controlling pneumatics
-on the robot.
+.. note:: The PCM is an optional component used for controlling pneumatics on the robot.
 
 1. Strip ~5/16" on the end of the red and black 18AWG wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
@@ -258,13 +257,7 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-.. important The PDP ships with the CAN bus terminating resistor jumper in the
-“ON” position. It is recommended to leave the jumper in this position
-and place any additional CAN nodes between the roboRIO and the PDP
-(leaving the PDP as the end of the bus). If you wish to place the PDP in
-the middle of the bus (utilizing both pairs of PDP CAN terminals) move
-the jumper to the “OFF” position and place your own 120 ohm terminating
-resistor at the end of your CAN bus chain. 
+.. important The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain. 
 
 Other CAN Devices
 ^^^^^^^^^^^^^^^^^

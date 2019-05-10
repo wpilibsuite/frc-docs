@@ -30,8 +30,13 @@ author = 'FIRST Community'
 extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.imgmath',
+    'sphinx.ext.todo',
     'sphinx.ext.autosectionlabel'
 ]
+
+# Prefix the auto label with the document filename
+autosectionlabel_prefix_document = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
