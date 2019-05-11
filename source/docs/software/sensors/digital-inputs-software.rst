@@ -21,7 +21,7 @@ A :code:`DigitalInput` can be initialized as follows:
         // Initializes a DigitalInput on DIO 0
         frc::DigitalInput input{0};
 
-    .. code-tab:: Java
+    .. code-tab:: java
 
         // Initializes a DigitalInput on DIO 0
         DigitalInput input = new DigitalInput(0);

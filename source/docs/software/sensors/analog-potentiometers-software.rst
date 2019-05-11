@@ -79,11 +79,11 @@ The scaled value can be read by simply calling the :code:`get` method:
 
     .. code-tab:: c++
 
-    pot.Get();
+        pot.Get();
 
     .. code-tab:: java
 
-    pot.get();
+        pot.get();
 
 Using AnalogPotentiometers in code
 ----------------------------------
