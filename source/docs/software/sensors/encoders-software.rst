@@ -415,7 +415,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
         // Limit switch on DIO 2
         frc::DigitalInput limit{2};
 
-        void RobotonomousPeriodic() {
+        void AutonomousPeriodic() {
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.Get()) {
