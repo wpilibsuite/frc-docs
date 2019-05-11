@@ -43,7 +43,6 @@ Customizing the underlying AnalogInput
 
 If the user would like to apply custom settings to the underlying :code:`AnalogInput` used by the :code:`AnalogPotentiometer`, an alternative constructor may be used in which the :code:`AnalogInput` is injected:
 
-
 .. tabs::
 
     .. code-tab:: c++
