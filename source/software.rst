@@ -83,6 +83,7 @@ Sensors
    docs/software/sensors/encoders-software
    docs/software/sensors/analog-inputs-software
    docs/software/sensors/analog-potentiometers-software
+   docs/software/sensor/digital-inputs-software
 
 CAN Devices
 ===========

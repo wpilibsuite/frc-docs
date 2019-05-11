@@ -14,7 +14,7 @@ The AnalogInput class
 
 .. note:: It is often more convenient to use the :ref:`AnalogPotentiometer <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
-Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (Java, C++).
+Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__).
 
 Initializing an AnalogInput
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,5 +221,12 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
         // Read the values from the AccumulatorResult
         long count = result.count;
         long value = result.value;
+
+Using analog inputs in code
+---------------------------
+
+The :code:`AnalogInput` class can be used to write code for a wide variety of sensors (including potentiometers, accelerometers, gyroscopes, ultrasonics, and more) that return their data as an analog voltage.  However, if possible it is almost always more convenient to use one of the other existing WPILib classes that handles the lower-level code (reading the analog voltages and converting them to meaningful units) for you.  Users should only directly use :code:`AnalogInput` as a "last resort."
+
+Accordingly, for examples of how to effectively use analog sensors in code, users should refer to the other pages of this chapter that deal with more-specific classes.
 
 .. |Oversampling and Averaging| image:: images/analog-inputs-software/oversampling-averaging.png
