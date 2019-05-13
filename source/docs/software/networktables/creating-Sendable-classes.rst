@@ -15,9 +15,9 @@ classes such as DoubleSolenoid, implement the Sendable
 interface. The WPI documentation of the Sendable interface,
 as well as a full list of WPI classes which implement
 Sendable, can be found on the WPI docs for Sendable (`Java
-<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`_,
+<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`__,
 `C++
-<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`_).
+<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`__).
 
 Putting a Sendable on NetworkTables
 -----------------------------------
@@ -58,9 +58,9 @@ What is SendableBuilder?
 ------------------------
 
 SendableBuilder (`Java
-<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`_,
+<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`__,
 `C++
-<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`_),
+<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`__),
 implemented in SendableBuilderImpl, handles
 NetworkTable interaction with an instance of a Sendable
 class. Through the SendableBuilder instance passed in the

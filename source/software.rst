@@ -43,6 +43,7 @@ Getting Started with a Benchtop Robot
     docs/software/getting-started-with-benchtop/creating-benchtop-test-program-labview
     docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java
     docs/software/getting-started-with-benchtop/running-benchtop-test
+    docs/software/wpilib-overview/using-test-mode
 
 
 RoboRIO
