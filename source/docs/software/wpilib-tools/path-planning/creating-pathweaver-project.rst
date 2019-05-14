@@ -1,17 +1,20 @@
 Creating a Pathweaver Project
 =============================
+
 PathWeaver is the tool used to draw the paths for a robot to follow. The paths for a single program are stored in a PathWeaver project.
 
 Starting Pathweaver
 -------------------
+
 PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the VSCode interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on"PathWeaver" as shown below.
 
 .. image:: images/pathweaver-1.png
 
 .. image:: images/pathweaver-2.png
 
-Creating a PathWeaver project 
------------------------------
+Creating the project
+--------------------
+
 To create a PathWeave project, click on "Create project" then fill out the project creation form. Notice that hovering ove any of the fields in the form will display more information about what is required.
 
 .. image:: images/pathweaver-3.png

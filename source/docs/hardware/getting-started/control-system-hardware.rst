@@ -135,6 +135,8 @@ Axis M1013/M1011/206 Ethernet Camera
 
 .. image:: images/control-system-hardware/axis-camera.png
 
+.. todo:: Add reference to pages
+
 The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for
 capturing images/control-system-hardware for vision processing and/or sending video back to the
 Driver Station laptop. The camera should be wired to a 5V power output
@@ -179,9 +181,9 @@ Robot Battery
 
 .. image:: images/control-system-hardware/robot-battery.png
 
-The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the Datasheets for the `MK ES17-12 <http://www.mkbattery.com/images/control-system-hardware/ES17-12.pdf>`__ and E\ `nersys P18-12 <http://www.enersys.com/WorkArea/DownloadAsset.aspx?id=488>`__.
+The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the Datasheets for the `MK ES17-12 <http://www.mkbattery.com/images/control-system-hardware/ES17-12.pdf>`__ and `Enersys P18-12 <http://www.enersys.com/WorkArea/DownloadAsset.aspx?id=488>`__.
 
-.. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system`__ for a complete list.
+.. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
 
 Image Credits
 -------------

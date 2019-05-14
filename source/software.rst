@@ -62,12 +62,12 @@ Actuators
 .. toctree::
    :maxdepth: 1
 
-   docs/software/actuators/overview
-   docs/software/actuators/pneumatics
+   docs/software/actuators/actuators-software-overview
+   docs/software/actuators/pneumatics-software
    docs/software/actuators/using-speed-controllers
-   docs/software/actuators/pwm-controllers
+   docs/software/actuators/pwm-controllers-software
    docs/software/actuators/wpi-drive-classes
-   docs/software/actuators/servos
+   docs/software/actuators/servos-software
 
 Sensors
 =======
