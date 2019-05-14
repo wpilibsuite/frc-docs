@@ -60,8 +60,7 @@ Link-local addresses give us a standard set of addresses that we can “fall-bac
 
 IP Addressing for FRC
 ---------------------
-
-See the :ref:`IP Networking Article <ip-networking>` for more information.
+See the :ref:`ip-networking:IP Networking` for more information.
 
 Mixing Dynamic and Static Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
