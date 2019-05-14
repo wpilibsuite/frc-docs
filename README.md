@@ -6,12 +6,14 @@ Better FRC documentation using ReadTheDocs
 
 Located at https://frc-docs.readthedocs.io/en/latest/
 
+An experimental, more up-to-date version can be found at https://frc-docs.readthedocs.io/en/develop
+
 ## Contribution Guides
 - See [Contributing](source/contributing.rst) for more information
 
 ## Local Build Environment
 - Requires Python 3.5 or greater
-- `git clone https://github.com/Daltz333/frc-docs.git`
+- `git clone https://github.com/wpilibsuite/frc-docs.git`
 - `cd frc-docs`
 - `pip install -r source/requirements.txt`
 - `make html`
