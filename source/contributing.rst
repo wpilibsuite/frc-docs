@@ -14,9 +14,9 @@ The goal of frc-docs is to have a FIRST Robotics Competition documentation into 
 
 This community-led model's goals are:
 
-    - Community-led documentation. Documentation sources are hosted publicly and the community are able to make contributions
-    - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
-    - Relevant. Documentation should be focused on the FIRST Robotics Competition.
+- Community-led documentation. Documentation sources are hosted publicly and the community are able to make contributions
+- Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
+- Relevant. Documentation should be focused on the FIRST Robotics Competition.
 
 Please see :ref:`Style Guide` for information on styling your documentation. 
 
