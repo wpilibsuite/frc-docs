@@ -18,7 +18,7 @@ This community-led model's goals are:
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
 - Relevant. Documentation should be focused on the FIRST Robotics Competition.
 
-Please see :ref:`Style Guide` for information on styling your documentation. 
+Please see :ref:`contributing:Style Guide` for information on styling your documentation. 
 
 Style Guide
 -----------
@@ -35,16 +35,9 @@ Suffix filenames with the ``.rst`` extention.
 Page References
 ^^^^^^^^^^^^^^^
 
-Pages must have a reference target title at the top of the page, before **all** content.
+Pages references will be auto-generated based on the page filename and section title. 
 
-Page references must then be added to the ``document-reference-list.txt`` file located at ``source/``
-
-.. code-block:: none
-   
-   .. _contributing:
-   
-   This is a title
-   ===============
+For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
    
 Text
 ^^^^
