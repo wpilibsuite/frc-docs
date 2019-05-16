@@ -8,11 +8,11 @@ This guide will show you how to use the FRC Radio Configuration Utility software
 Before you begin using the software:
 
 1. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
-2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge. *Note that for the OM5P-AN and AC bridge, it is recommended to use a particular Ethernet port. See the on screen image and instructions for more information.*
+2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge. 
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
-.. note:: Teams will need to update firmware on both OM5P-AN and OM5P-AC radios in order for the programming utility to program them, or for them to be used at events. This must be done before you attempt to program them.
+.. note:: Teams will need to update firmware on both OM5P-AN and OM5P-AC radios in order for the programming utility to program them, or for them to be used at events. This must be done before you attempt to program them. Also note that for the OM5P-AN and AC bridge, it is recommended to use a particular Ethernet port. See the on screen image and instructions for more information.
 
 Pre-Requisites
 --------------
@@ -41,8 +41,19 @@ The Radio Configuration Utility programs a number of configuration settings into
 - Bridge the wired ports so they may be used interchangeably
 - The LED configuration noted in the graphic above.
 - 4Mb/s bandwidth limit on the outbound side of the wireless interface (may be disabled for home use)
-- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (All other traffic). (disabled if BW limit is disabled)
-- DHCP server enabled. Serves out 10.TE.AM.11 - 10.TE.AM.111 on the wired side, 10.TE.AM.130 - 10.TE.AM.230 on the wireless side, subnet mask of 255.255.255.0, broadcast address 10.TE.AM.255
+- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are:
+
+  - Robot Control and Status (UDP 1110, 1115, 1150)
+  - Robot TCP & Network Tables (TCP 1735, 1740)
+  - Bulk (All other traffic). (disabled if BW limit is disabled)
+
+- DHCP server enabled. Serves out: 
+
+  - 10.TE.AM.11 - 10.TE.AM.111 on the wired side
+  - 10.TE.AM.130 - 10.TE.AM.230 on the wireless side
+  - Subnet mask of 255.255.255.0
+  - Broadcast address 10.TE.AM.255
+
 - DNS server enabled. DNS server IP and domain suffix (.lan) are served as part of the DHCP.
 
 At home only:

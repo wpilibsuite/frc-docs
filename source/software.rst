@@ -1,9 +1,3 @@
-.. toctree:: 
-   :maxdepth: 1
-   
-   Introduction to Java <http://dslab.us/wp-content/uploads/book/pdf/java/HeadFisrt_JAVA.pdf>
-   Introduction to C++ <https://file.tavsys.net/books/cpp/Programming_%20Principles%20and%20Practice%20Using%20C%2B%2B%2C%202nd%20Ed.%2C%20Stroustrup%20%28distr%29.pdf>
-   
 Software - Getting Started
 ==========================
 
@@ -87,7 +81,9 @@ Sensors
    docs/software/sensors/ultrasonics-software
    docs/software/sensors/counters
    docs/software/sensors/encoders-software
+   docs/software/sensors/analog-inputs-software
    docs/software/sensors/analog-potentiometers-software
+   docs/software/sensors/digital-inputs-software
 
 CAN Devices
 ===========
@@ -202,6 +198,8 @@ SmartDashboard
    :maxdepth: 1
    
    docs/software/wpilib-tools/smartdashboard/smartdashboard-intro
+   docs/software/wpilib-tools/smartdashboard/displaying-expressions
+   docs/software/wpilib-tools/smartdashboard/changing-display-properties
 
 Autonomous Path Planning
 ========================
