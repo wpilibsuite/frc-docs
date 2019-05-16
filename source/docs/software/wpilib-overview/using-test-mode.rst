@@ -32,8 +32,6 @@ your subsystems to SmartDashboard with the .. code-block::
 putData(subsystem) and .. code-block:: PutData(subsystem)
 methods.
 
-
-
 .. tabs::
 
     .. code-tab:: c++

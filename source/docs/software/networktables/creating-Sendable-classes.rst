@@ -1,4 +1,4 @@
-.. _creating-Sendable-classes:
+.. _creating-sendable-classes:
 
 
 Using the Sendable interface
@@ -7,24 +7,13 @@ Using the Sendable interface
 What is Sendable?
 -----------------
 
-Sendable is the base class that allows something to be sent
-over NetworkTables for debugging through programs such as
-OutlineViewer, ShuffleBoard and SmartDashboard. Base WPI
-classes such as Command and Subsystem, as well as actuator
-classes such as DoubleSolenoid, implement the Sendable
-interface. The WPI documentation of the Sendable interface,
-as well as a full list of WPI classes which implement
-Sendable, can be found on the WPI docs for Sendable (`Java
-<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`__,
-`C++
+Sendable is the base class that allows something to be sent over NetworkTables for debugging through programs such as OutlineViewer, ShuffleBoard and SmartDashboard. Base WPI classes such as Command and Subsystem, as well as actuator classes such as DoubleSolenoid, implement the Sendable interface. The WPI documentation of the Sendable interface, as well as a full list of WPI classes which implement Sendable, can be found on the WPI docs for Sendable (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`__, `C++
 <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`__).
 
 Putting a Sendable on NetworkTables
 -----------------------------------
 
-Adding the current state of a Sendable class to
-NetworkTables is as simple as adding it's entry using the
-putData() method.
+Adding the current state of a Sendable class to NetworkTables is as simple as adding it's entry using the putData() method.
 
 .. tabs::
 
@@ -45,36 +34,12 @@ putData() method.
 Interacting with Sendable classes
 ---------------------------------
 
-Sendable classes are published via NetworkTables for users
-to view using WPILIb through programs such as OutlineViewer,
-ShuffleBoard and SmartDashboard. These programs allow users
-to not only view the current state, such as solenoid state,
-motor output, or PIDSubsystem/PIDCommand's current PID
-constants, but to actually modify or send data the other
-direction to the RoboRIO to do things like manually start
-and stop commands. 
+Sendable classes are published via NetworkTables for users to view using WPILIb through programs such as OutlineViewer, ShuffleBoard and SmartDashboard. These programs allow users to not only view the current state, such as solenoid states, motor output, or PIDSubsystem/PIDCommand's current PID constants, but to actually modify or send data the other direction to the RoboRIO to do things like manually start and stop commands. 
 
 What is SendableBuilder?
 ------------------------
 
-SendableBuilder (`Java
-<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`__,
-`C++
-<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`__),
-implemented in SendableBuilderImpl, handles
-NetworkTable interaction with an instance of a Sendable
-class. Through the SendableBuilder instance passed in the
-:code:`initSendable` method of the Sendable interface,
-Sendable subclasses can quickly publish the relevant
-information to NetworkTables. The :code:`initSendable`
-method is called when a user puts the Sendable on
-SmartDashboard or ShuffleBoard, by calling the code shown
-above. Users may add properties to the SendableBuilder
-passed into the :code:`initSendable` method, much like the
-old SmartDashboard methods used to put primatives onto
-SmartDashboard. The full list of properties which can be
-published to and retrieved from SmartDashboard can be found
-on the linked SendableBuilder documentation, and includes:
+SendableBuilder (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/smartdashboard/SendableBuilder.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SendableBuilder.html>`__), implemented in SendableBuilderImpl, handles NetworkTable interaction with an instance of a Sendable class. Through the SendableBuilder instance passed in the :code:`initSendable` method of the Sendable interface, Sendable subclasses can quickly publish the relevant information to NetworkTables. The :code:`initSendable` method is called when a user puts the Sendable on SmartDashboard or ShuffleBoard, by calling the code shown above. Users may add properties to the SendableBuilder passed into the :code:`initSendable` method, much like the old SmartDashboard methods used to put primatives onto SmartDashboard. The full list of properties which can be published to and retrieved from SmartDashboard can be found on the linked SendableBuilder documentation, and includes:
 
 - Boolean values
 - Boolean arrays
@@ -85,32 +50,12 @@ on the linked SendableBuilder documentation, and includes:
 - String arrays
 - NetworkTableValues
 
-SendableBuilder can also be used to set the actuator flag on
-or off, add functions to run to set the Sendable into a safe
-state, set the type of the Sendable displayed on
-SmartDashboard, or functions to run to update the network
-table for things other than properties. If a Sendable is
-configured as an actuator, users will be able to control it
-directly through ShuffleBoard, SmartDashboard or
-OutlineViewer when the robot is enabled in Test mode.
+SendableBuilder can also be used to set the actuator flag on or off, add functions to run to set the Sendable into a safe state, set the type of the Sendable displayed on SmartDashboard, or functions to run to update the network table for things other than properties. If a Sendable is configured as an actuator, users will be able to control it directly through ShuffleBoard, SmartDashboard or OutlineViewer when the robot is enabled in Test mode.
 
 Creating a new Sendable class with SendableBuilder
 --------------------------------------------------
 
-To expose information about a class to users over
-NetworkTables, one must create an implementation of the
-initSendable() method of the Sendable interface. The
-properties added to Sendable classes can include just a
-getter, or both a getter and a setter. This example shows a
-Double property which can both be viewed and modified on
-NetworkTables. Note that both a getter and setter are not
-required - a :code:`null` setter simply means the value
-can't be changed over NetworkTables. This might be desired
-in some situations where information should only be
-displayed, but not modified. If the Sendable is configured
-as an actuator, the setter will be called when the robot is
-enabled in Test mode when users change it's values to test
-robot functions.
+To expose information about a class to users over NetworkTables, one must create an implementation of the initSendable() method of the Sendable interface. The properties added to Sendable classes can include just a getter, or both a getter and a setter. This example shows a Double property which can both be viewed and modified on NetworkTables. Note that both a getter and setter are not required - a :code:`null` setter simply means the value can't be changed over NetworkTables. This might be desired in some situations where information should only be displayed, but not modified. If the Sendable is configured as an actuator, the setter will be called when the robot is enabled in Test mode when users change it's values to test robot functions.
 
 .. tabs::
 
@@ -137,23 +82,7 @@ robot functions.
 
         }
 
-The following example is an example implementation from
-WPILib's DifferentialDrive class, which implements Sendable.
-The properties added to the builder in this example expose
-many features of DifferentialDrive to modification through
-NetworkTables. The instance of DifferentialDrive is treated
-as an actuator of type "DifferentialDrive", which means that
-Test mode can be used to control the drive's outputs, and
-the name DifferentialDrive will be displayed to the user.
-When Test mode is enabled or disabled, the actuator will be
-set to a safe state by calling the :code:`stopMotor` method,
-which will stop the motors. Finally, a getter and setter for
-the left motor speed and right motor speed allows the user
-both to view the current output of both motors, as well as
-set them to an arbitrary output. For more information on the
-DifferentialDrive class, see :ref:`wpi_differential_drive`.
-For more information on using lambdas and functional
-interfaces in code, see TODO LINK.
+The following example is an example implementation from WPILib's DifferentialDrive class, which implements Sendable. The properties added to the builder in this example expose many features of DifferentialDrive to modification through NetworkTables. The instance of DifferentialDrive is treated as an actuator of type "DifferentialDrive", which means that Test mode can be used to control the drive's outputs, and the name DifferentialDrive will be displayed to the user. When Test mode is enabled or disabled, the actuator will be set to a safe state by calling the :code:`stopMotor` method, which will stop the motors. Finally, a getter and setter for the left motor speed and right motor speed allows the user both to view the current output of both motors, as well as set them to an arbitrary output. For more information on the DifferentialDrive class, see :ref:`wpi_differential_drive`.
 
 .. tabs::
 
