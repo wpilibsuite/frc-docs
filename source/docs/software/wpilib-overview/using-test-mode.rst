@@ -94,8 +94,10 @@ whatever testing commands or LiveWindow updates are desired
 for testing. The LiveWindow updating is built into the
 IterativeRobot template so there is very little that is
 necessary to do in the program to get LiveWindow updates.
-Note: this works even if you are using the IterativeRobot
+
+.. note:: This works even if you are using the IterativeRobot
 template and not doing Command-based programming.
+
 
 In this example the sensors are registered with the
 LiveWindow and during the testPeriodic method, simply update
