@@ -14,10 +14,13 @@ Software - Getting Started
    docs/software/getting-started/linux-setup
    docs/software/getting-started/frc-update-suite
    docs/software/getting-started/3rd-party-libraries
+   docs/software/getting-started/configuring-pdp-pcm
    docs/software/getting-started/imaging-your-roborio
    docs/software/getting-started/imaging-your-classmate
    docs/software/getting-started/radio-programming
    docs/software/getting-started/driver-station
+   docs/software/getting-started/driver-station-best-practices
+
 
 WPILib Overview
 ===============
