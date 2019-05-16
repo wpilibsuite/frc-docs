@@ -26,9 +26,9 @@ Welcome to FIRST Robotics Documentation
    :caption: WPILib Hardware
    
    hardware
-   
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Robot Networking
    
    networking
