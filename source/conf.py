@@ -41,6 +41,9 @@ todo_emit_warnings = True
 # TODO Directives are not shown in output
 todo_include_todos = False
 
+# Autosection labels prefix document path and filename
+autosectionlabel_prefix_document = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
