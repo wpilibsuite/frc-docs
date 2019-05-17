@@ -30,8 +30,17 @@ author = 'FIRST Community'
 extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.imgmath',
+    'sphinx.ext.todo',
     'sphinx.ext.graphviz',
+    'sphinx.ext.autosectionlabel'
 ]
+
+# TODO Directives omit a warning
+todo_emit_warnings = True
+
+# TODO Directives are not shown in output
+todo_include_todos = False
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
