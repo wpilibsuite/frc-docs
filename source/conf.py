@@ -29,7 +29,8 @@ author = 'FIRST Community'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinx.ext.imgmath'
+    'sphinx.ext.imgmath',
+    'sphinx.ext.graphviz',
 ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
