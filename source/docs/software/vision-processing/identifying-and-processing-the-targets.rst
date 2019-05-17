@@ -10,21 +10,21 @@ Additional Options
 
 This document walks through the approach used by the example code provided in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options teams should be aware of the following alternatives that allow for vision processing on the Driver Station PC or an on-board PC:
 
-1.  `RoboRealm <http://www.roborealm.com/>`_
-2.  SmartDashboard Camera Extension (programmed in Java, works with any robot language)
-3.  `GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_
+1. `RoboRealm <http://www.roborealm.com/>`__
+2. SmartDashboard Camera Extension (programmed in Java, works with any robot language)
+3. `GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_
 
 Original Image
 --------------
 
-The image shown below is the starting image for the example described here. The image was taken using the green ring light available in FIRST Choice. combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
+The image shown below is the starting image for the example described here. The image was taken using the green ring light available in FIRST Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
 
 .. figure:: images/identifying-and-processing-the-targets/original-image.png
 
 What is HSL/HSV?
 ----------------
 
-The Hue or tone of the color is commonly seen on the artist’s color wheel and contains the colors of the rainbow Red, Orange, Yellow, Green, Blue, Indigo, and Violet. The hue is specified using a radial angle on the wheel, but in imaging the circle typically contains only 256 units, starting with red at zero, cycling through the rainbow, and wrapping back to red at the upper end. Saturation of a color specifies amount of color, or the ratio of the hue color to a shade of gray.  Higher ratio means more colorful, less gray. Zero saturation has no hue and is completely gray. Luminance or Value indicates the shade of gray that the hue is blended with. Black is 0 and white is 255.
+The Hue or tone of the color is commonly seen on the artist’s color wheel and contains the colors of the rainbow Red, Orange, Yellow, Green, Blue, Indigo, and Violet. The hue is specified using a radial angle on the wheel, but in imaging the circle typically contains only 256 units, starting with red at zero, cycling through the rainbow, and wrapping back to red at the upper end. Saturation of a color specifies amount of color, or the ratio of the hue color to a shade of gray. Higher ratio means more colorful, less gray. Zero saturation has no hue and is completely gray. Luminance or Value indicates the shade of gray that the hue is blended with. Black is 0 and white is 255.
 
 The example code uses the HSV color space to specify the color of the target. The primary reason is that it readily allows for using the brightness of the targets relative to the rest of the image as a filtering criteria by using the Value (HSV) or Luminance (HSL) component. Another reason to use the HSV color system is that the thresholding operation used in the example runs more efficiently on the roboRIO when done in the HSV color space.
 
@@ -50,14 +50,14 @@ The Area score is calculated by comparing the area of the particle compared to t
 Aspect Ratio
 ^^^^^^^^^^^^
 
-The aspect ratio score is based on (Particle Width / Particle Height). The width and height of the particle are determined using something called the "equivalent rectangle". The equivalent rectangle is the rectangle with side lengths :math:`x` and :math:`y` where :math:`2x+2y` equals the particle perimeter and :math:`x \cdot y` equals the particle area. The equivalent rectangle is used for the aspect ratio calculation as it is less affected by skewing of the rectangle than using the bounding box.  When using the bounding box rectangle for aspect ratio, as the rectangle is skewed the height increases and the width decreases.
+The aspect ratio score is based on (Particle Width / Particle Height). The width and height of the particle are determined using something called the "equivalent rectangle". The equivalent rectangle is the rectangle with side lengths :math:`x` and :math:`y` where :math:`2x+2y` equals the particle perimeter and :math:`x \cdot y` equals the particle area. The equivalent rectangle is used for the aspect ratio calculation as it is less affected by skewing of the rectangle than using the bounding box. When using the bounding box rectangle for aspect ratio, as the rectangle is skewed the height increases and the width decreases.
 
 The target is 20" wide by 12" tall, for a ratio of 1.6. The detected aspect ratio is compared to this ideal ratio. The aspect ratio score is normalized to return 100 when the ratio matches the target ratio and drops linearly as the ratio varies below or above.
 
 Moment
 ^^^^^^
 
-The moment measurement calculates the particles moment of inertia about it's center of mass. This measurement provides a representation of the pixel distribution in the particle. The ideal score for this test is ~0.28. See: `Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_
+The moment measurement calculates the particles moment of inertia about it's center of mass. This measurement provides a representation of the pixel distribution in the particle. The ideal score for this test is ~0.28. See: `Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__
 
 X/Y Profiles
 ^^^^^^^^^^^^
@@ -91,7 +91,7 @@ The target distance is computed with knowledge about the target size and the cam
 
 .. math:: \tan \theta = \frac{w}{d}
 
-The datasheets for the cameras can be found at the following URLs: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`_, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`_, `Lifecam HD3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`_.  These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. This year's code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
+The datasheets for the cameras can be found at the following links: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`__, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`__, `LifeCam HD-3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`__. These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. The 2016 code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
 
 .. figure:: images/identifying-and-processing-the-targets/distance.png
 
