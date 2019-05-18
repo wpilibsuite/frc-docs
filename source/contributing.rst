@@ -49,9 +49,9 @@ Use the following case for these terms:
 - roboRIO (not RoboRIO, roboRio, or RoboRio)
 - LabVIEW (not labview or LabView)
 
-Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`__.
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`_.
 
-Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`__.
+Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
 
 Use literals for filenames, function, and variable names.
 
@@ -95,7 +95,7 @@ All code blocks should have a language specified.
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``none``.
 
-Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`__ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
+Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
 Links
 ^^^^^
@@ -104,7 +104,7 @@ Links should be in the following format
 
 .. code-block:: none
    
-   Hi there, `this is a link <http://example.com>`__ and it's pretty cool!
+   Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
 
 Images
 ^^^^^^
