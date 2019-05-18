@@ -44,6 +44,17 @@ Text
 
 All text content should be on the same line, if you need readability, use the word-wrap function of your editor.
 
+Use the following case for these terms:
+
+- roboRIO (not RoboRIO, roboRio, or RoboRio)
+- LabVIEW (not labview or LabView)
+
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`__.
+
+Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`__.
+
+Use literals for filenames, function, and variable names.
+
 Whitespace
 ^^^^^^^^^^
 
@@ -52,12 +63,17 @@ Indentation
 
 Indentation should *always* match the previous level of indentation *unless* you are creating a new content block.
 
-Indetation of content directives as new line `.. toctree::``  should be `3` spaces.
+Indentation of content directives as new line ``.. toctree::``  should be `3` spaces.
 
 Blank Lines
 ~~~~~~~~~~~
 
 There should be ``1`` blank lines seperating basic text blocks and section titles. There *should* be ``1`` blank line seperating text blocks *and* content directives.
+
+Interior Whitespace
+~~~~~~~~~~~~~~~~~~~
+
+Use one space between sentences.
 
 Headings
 ^^^^^^^^
@@ -70,12 +86,16 @@ Headings should be in the following strucutre
 4. ``~`` for document sub-sub-sections
 5. If you need to use any lower levels of structure, you're doing things wrong.
 
+Use title case for headings.
+
 Code blocks
 ^^^^^^^^^^^
 
 All code blocks should have a language specified.
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``none``.
+
+Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`__ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
 Links
 ^^^^^
