@@ -6,14 +6,14 @@ The Microsoft Lifecam HD-3000 is a USB webcam that was tested with the roboRIO a
 Connecting the Camera to the roboRIO
 ------------------------------------
 
-.. figure:: images/using-the-microsoft-lifecam/connecting-the-camera-to-the-roborio.jpg
+.. image:: images/using-the-microsoft-lifecam/connecting-the-camera-to-the-roborio.jpg
 
 The camera can be connected to either of the roboRIO USB ports.
 
 Using the Camera - LabVIEW
 --------------------------
 
-.. figure:: images/using-the-microsoft-lifecam/using-the-camera-labview.png
+.. image:: images/using-the-microsoft-lifecam/using-the-camera-labview.png
 
 To stream the camera back to the Dashboard using LabVIEW, no additional code is necessary. Simply select USB HW (image compression done by the camera, fewer options but lower roboRIO CPU usage) or USB SW (image compressed by roboRIO, more options, but higher roboRIO CPU usage) and the image should begin streaming back.
 

@@ -21,21 +21,21 @@ To view the camera stream in the LabVIEW Dashboard, you will need to build a cus
 Creating a Dashboard Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/creating-a-dashboard-project.png
+.. image:: images/using-the-axis-camera-at-single-network-events/creating-a-dashboard-project.png
 
 From the LabVIEW Splash screen, select "FRC Dashboard Project". Name the project as desired, then click Finish.
 
 Locating Loop 2 - Camera IP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/locating-loop-2-camera-ip.png
+.. image:: images/using-the-axis-camera-at-single-network-events/locating-loop-2-camera-ip.png
 
 Double click on ``Dashboard Main.vi`` in the project explorer to open it and press Ctrl+e to see the block diagram. Scroll down to the loop with the comment that says Loop 2 and locate the "Camera IP" input.
 
 Editing the Camera IP
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/editing-the-camera-ip.png
+.. image:: images/using-the-axis-camera-at-single-network-events/editing-the-camera-ip.png
 
 Delete the Camera IP node, right click on the broken wire and click Create Constant (connect the constant to the wire if necessary). In the box, enter the mDNS name of your camera with a ``.local`` suffix (e.g. ``axis-cameraTEAM.local`` where ``TEAM`` is replaced with your team number). The example above shows a sample name for team 9999. Then click File->Save or Ctrl+S to save the VI.
 
@@ -44,14 +44,14 @@ Delete the Camera IP node, right click on the broken wire and click Create Const
 Building the Dashboard
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/building-the-dashboard.png
+.. image:: images/using-the-axis-camera-at-single-network-events/building-the-dashboard.png
 
 To build the new dashboard, expand Build Specifications in the Project Explorer, right click on FRC_Dashboard and select Build.
 
 Setting the Driver Station to Launch the Modified Dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/setting-the-driver-station.png
+.. image:: images/using-the-axis-camera-at-single-network-events/setting-the-driver-station.png
 
 On the Setup tab of the Driver Station, change to dropdown box to LabVIEW to launch your new Dashboard.
 
@@ -63,6 +63,6 @@ If you wish to access the renamed camera from your robot code, you will have to 
 Modifying LabVIEW Robot Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: images/using-the-axis-camera-at-single-network-events/modifying-labview-robot-code.png
+.. image:: images/using-the-axis-camera-at-single-network-events/modifying-labview-robot-code.png
 
 In the Project Explorer, locate ``Vision Processing.VI`` and double click to open it. Then press Ctrl+e to open the Block Diagram. Locate the string ``axis-camera.local`` near the left of the image and replace with ``axis-cameraTEAM.local``. Also make sure the constant is set to ``False`` to use the Axis camera instead of USB.

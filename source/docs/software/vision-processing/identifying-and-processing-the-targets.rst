@@ -19,7 +19,7 @@ Original Image
 
 The image shown below is the starting image for the example described here. The image was taken using the green ring light available in FIRST Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
 
-.. figure:: images/identifying-and-processing-the-targets/original-image.png
+.. image:: images/identifying-and-processing-the-targets/original-image.png
 
 What is HSL/HSV?
 ----------------
@@ -35,7 +35,7 @@ In this initial step, pixel values are compared to constant color or brightness 
 
 Notice that in addition to the target, other bright parts of the image (overhead light and tower lighting) are also caught by the masking step.
 
-.. figure:: images/identifying-and-processing-the-targets/masking.png
+.. image:: images/identifying-and-processing-the-targets/masking.png
 
 Particle Analysis
 -----------------
@@ -62,7 +62,7 @@ The moment measurement calculates the particles moment of inertia about it's cen
 X/Y Profiles
 ^^^^^^^^^^^^
 
-.. figure:: images/identifying-and-processing-the-targets/xy-profiles.png
+.. image:: images/identifying-and-processing-the-targets/xy-profiles.png
 
 The edge score describes whether the particle matches the appropriate profile in both the X and Y directions. As shown, it is calculated using the row and column averages across the bounding box extracted from the original image and comparing that to a profile mask. The score ranges from 0 to 100 based on the number of values within the row or column averages that are between the upper and lower limit values.
 
@@ -82,7 +82,7 @@ The resulting coordinates are close to what you may want, but the Y axis is inve
 
 .. math:: A_{x,y} = \left(P_{x,y} - \frac{\textit{resolution}_{x,y}}{2}\right) / \frac{\textit{resolution}_{x,y}}{2}
 
-.. figure:: images/identifying-and-processing-the-targets/position.png
+.. image:: images/identifying-and-processing-the-targets/position.png
 
 Distance
 ^^^^^^^^
@@ -93,7 +93,7 @@ The target distance is computed with knowledge about the target size and the cam
 
 The datasheets for the cameras can be found at the following links: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`_, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`_, `LifeCam HD-3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`_. These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. The 2016 code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
 
-.. figure:: images/identifying-and-processing-the-targets/distance.png
+.. image:: images/identifying-and-processing-the-targets/distance.png
 
 Distance Continued
 ^^^^^^^^^^^^^^^^^^
