@@ -10,7 +10,7 @@ Additional Options
 
 This document walks through the approach used by the example code provided in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options teams should be aware of the following alternatives that allow for vision processing on the Driver Station PC or an on-board PC:
 
-1. `RoboRealm <http://www.roborealm.com/>`__
+1. `RoboRealm <http://www.roborealm.com/>`_
 2. SmartDashboard Camera Extension (programmed in Java, works with any robot language)
 3. `GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_
 
@@ -57,7 +57,7 @@ The target is 20" wide by 12" tall, for a ratio of 1.6. The detected aspect rati
 Moment
 ^^^^^^
 
-The moment measurement calculates the particles moment of inertia about it's center of mass. This measurement provides a representation of the pixel distribution in the particle. The ideal score for this test is ~0.28. See: `Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__
+The moment measurement calculates the particles moment of inertia about it's center of mass. This measurement provides a representation of the pixel distribution in the particle. The ideal score for this test is ~0.28. See: `Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_
 
 X/Y Profiles
 ^^^^^^^^^^^^
@@ -91,7 +91,7 @@ The target distance is computed with knowledge about the target size and the cam
 
 .. math:: \tan \theta = \frac{w}{d}
 
-The datasheets for the cameras can be found at the following links: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`__, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`__, `LifeCam HD-3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`__. These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. The 2016 code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
+The datasheets for the cameras can be found at the following links: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`_, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`_, `LifeCam HD-3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`_. These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. The 2016 code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
 
 .. figure:: images/identifying-and-processing-the-targets/distance.png
 

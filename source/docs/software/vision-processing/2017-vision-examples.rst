@@ -9,7 +9,7 @@ The 2017 LabVIEW Vision Example is included with the other LabVIEW examples. Fro
 C++/Java
 --------
 
-We have provided a GRIP project and the description below, as well as the example images, bundled into a ZIP that `can be found on TeamForge <https://usfirst.collab.net/sf/frs/do/viewRelease/projects.wpilib/frs.sample_programs.2017_c_java_vision_sample>`__.
+We have provided a GRIP project and the description below, as well as the example images, bundled into a ZIP that `can be found on TeamForge <https://usfirst.collab.net/sf/frs/do/viewRelease/projects.wpilib/frs.sample_programs.2017_c_java_vision_sample>`_.
 
 See :doc:`grip/using-generated-code-in-a-robot-program` for details about integrating GRIP generated code in your robot program.
 
@@ -53,4 +53,4 @@ The LabVIEW example uses height as the edges of the round target are the most pr
 - Try using width instead
 - Empirically measure height at various distances and create a lookup table or regression function
 - Mount the camera to a servo, center the target vertically in the image and use servo angle for distance calculation (you'll have to work out the proper trig yourself or find a math teacher to help!)
-- Correct for the perspective distortion using OpenCV. To do this you will need to `calibrate your camera with OpenCV <https://docs.opencv.org/3.4.6/d4/d94/tutorial_camera_calibration.html>`__. This will result in a distortion matrix and camera matrix. You will take these two matrices and use them with the undistortPoints function to map the points you want to measure for the distance calculation to the "correct" coordinates (this is much less CPU intensive than undistorting the whole image)
+- Correct for the perspective distortion using OpenCV. To do this you will need to `calibrate your camera with OpenCV <https://docs.opencv.org/3.4.6/d4/d94/tutorial_camera_calibration.html>`_. This will result in a distortion matrix and camera matrix. You will take these two matrices and use them with the undistortPoints function to map the points you want to measure for the distance calculation to the "correct" coordinates (this is much less CPU intensive than undistorting the whole image)
