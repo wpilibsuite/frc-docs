@@ -15,8 +15,8 @@ Cross-the-Road Electronics
 
 Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries:
 
-Motor Controllers
-^^^^^^^^^^^^^^^^^
+CTRE Motor Controllers
+^^^^^^^^^^^^^^^^^^^^^^
 
 - **Talon SRX**
 
@@ -46,8 +46,8 @@ REV Robotics
 
 REV Robotics currently offers the SPARK MAX motor controller, which has a simiilar feature-set to the Talon SRX.
 
-Motor Controllers
-^^^^^^^^^^^^^^^^^
+REV Motor Controllers
+^^^^^^^^^^^^^^^^^^^^^
 
 - **SPARK MAX**
 
