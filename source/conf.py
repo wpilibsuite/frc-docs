@@ -68,12 +68,6 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
 
-# Sidebar logo
-html_logo = "assets/FIRST_Vertical_RGB.png"
-
-# URL favicon
-html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
-
 html_theme_options = {
 	'collapse_navigation': False,
 	'sticky_navigation': False
