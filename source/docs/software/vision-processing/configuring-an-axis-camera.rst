@@ -71,29 +71,29 @@ It is recommended to use the Setup Axis Camera Tool to configure the Axis Camera
 
 If you do not see the camera webpage come up, you may need to reset the camera to factory defaults. To do this, remove power from the camera, hold the reset button while applying power to the camera and continue holding it until the lights on the camera face turn on, then release the reset button and wait for the lights to turn green. The camera is now reset to factory settings and should be accessible via the ``192.168.0.90`` address.
 
-Setup Page
-^^^^^^^^^^
+Manual - Setup Page
+^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/configuring-an-axis-camera/setup-page.png
 
 Click Setup to go to the setup page.
 
-Configure Users
-^^^^^^^^^^^^^^^
+Manual - Configure Users
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/configuring-an-axis-camera/configure-users.png
 
 On the left side click Users to open the users page. Click Add then enter the Username FRC Password FRC and click the Administrator bubble, then click OK. If using the SmartDashboard, check the Enable anonymous viewer login box. Then click Save.
 
-Configure Image Settings
-^^^^^^^^^^^^^^^^^^^^^^^^
+Manual - Configure Image Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/configuring-an-axis-camera/configure-image-settings.png
 
 Click Video & Image on the left side to open the image settings page. Set the Resolution and Compression to the desired values (recommended 320x240, 30). To limit the framerate to under 30 FPS, select the Limited to bubble under Maximum frame rate and enter the desired rate in the box. Color, Brightness and Sharpness may also be set on this screen if desired. Click Save when finished.
 
-Configure Basic Network Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Manual - Configure Basic Network Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/configuring-an-axis-camera/configure-basic-network-settings.png
 
@@ -101,8 +101,8 @@ To configure the network settings of the camera, click the arrow to expand the S
 
 Click Save.
 
-Configure Advanced Network Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Manual - Configure Advanced Network Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/configuring-an-axis-camera/configure-advanced-network-settings.png
 
