@@ -6,6 +6,8 @@
 Welcome to FIRST Robotics Documentation
 ========================================================
 
+Welcome to the FIRST Robotics Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`contributing`.
+
 .. toctree::
    :maxdepth: 1
    :caption: Software Introduction

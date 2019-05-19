@@ -1,5 +1,3 @@
-.. _smartdashboard-intro:
-
 SmartDashboard Introduction
 ===========================
 
@@ -56,4 +54,4 @@ Adding Widgets to the SmartDashboard
 
 .. image:: images/smartdashboard-intro-6.png
 
-Widgets are automatically added to the SmartDashboard for each "key" sent by the robot code. For instructions on adding robot code to write to the SmartDashboard see :ref:`Displaying Expressions from Within the Robot Program <smartdashboard-expressions>`.
+Widgets are automatically added to the SmartDashboard for each "key" sent by the robot code. For instructions on adding robot code to write to the SmartDashboard see :doc:`Displaying Expressions from Within the Robot Program <displaying-expressions>`.
