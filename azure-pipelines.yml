@@ -22,7 +22,7 @@ steps:
 - script: pip install -r source/requirements.txt
   displayName: 'Install Requirements'
 
-- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-full
+- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive latexmk
   displayName: 'Install LaTeX'
 
 - script: make html
