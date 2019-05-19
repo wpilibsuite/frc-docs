@@ -23,7 +23,7 @@ steps:
   displayName: 'Install Requirements'
 
 - script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-full
-    displayName: 'Install LaTeX'
+  displayName: 'Install LaTeX'
 
 - script: make html
   displayName: 'Compile Docs'
