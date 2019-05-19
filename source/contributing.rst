@@ -7,12 +7,12 @@ Welcome to the contributiong guidelines for the frc-docs project. If you are unf
 
 .. important:: Currently we are in the process of migrating documentation from the official screensteps. Please hold off on writing new articles unless they are a migration from screensteps. FIRST retains all rights to documentation and images provided. Credit for article will be in the `Github commit history. <https://github.com/wpilibsuite/frc-docs/graphs/commit-activity>`_
 
-Project Goals
--------------
+Mission Statement
+-----------------
 
-The goal of frc-docs is to have a FIRST Robotics Competition documentation into a community led model.
+The WPILib Mission is to enable FIRST Robotics teams to focus on writing game-specific software rather than focusing on hardware details - "raise the floor, don't lower the ceiling". We work to enable teams with limited programming knowledge and/or mentor experience to be as successful as possible, while not hampering the abilities of teams with more advanced programming capabilities. We support Kit of Parts control system components directly in the library. We also strive to keep parity between major features of each language (Java, C++, and NI's LabVIEW), so that teams aren't at a disadvantage for choosing a specific programming language.
 
-This community-led model's goals are:
+These docs serve to provide a learning ground for all FIRST Robotics Competition teams. Contributions to the project must follow these core principles.
 
 - Community-led documentation. Documentation sources are hosted publicly and the community are able to make contributions
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
