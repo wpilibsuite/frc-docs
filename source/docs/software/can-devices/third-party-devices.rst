@@ -16,7 +16,7 @@ Cross-the-Road Electronics
 Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries:
 
 Motor Controllers
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 - **Talon SRX**
 
@@ -28,8 +28,8 @@ Motor Controllers
     - API Documentation (`Java <http://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__, `C++ <http://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__)
     - `Technical Manual <http://www.ctr-electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>`__
 
-Sensors
-~~~~~~~
+CTRE Sensors
+^^^^^^^^^^^^
 
 - **Pigeon IMU**
 
@@ -47,7 +47,7 @@ REV Robotics
 REV Robotics currently offers the SPARK MAX motor controller, which has a simiilar feature-set to the Talon SRX.
 
 Motor Controllers
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 - **SPARK MAX**
 
