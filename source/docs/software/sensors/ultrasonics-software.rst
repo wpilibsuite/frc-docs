@@ -48,7 +48,7 @@ It is highly recommended to use ping-response ultrasonics in "automatic mode," a
 Analog ultrasonics
 ------------------
 
-Some ultrasonic sensors simply return an analog voltage corresponding to the measured distance.  These sensors can may simply be used with the :ref:`AnalogPotentiometer <analog-potentiometers-software>` class.
+Some ultrasonic sensors simply return an analog voltage corresponding to the measured distance.  These sensors can may simply be used with the :doc:`AnalogPotentiometer <analog-potentiometers-software>` class.
 
 Third-party ultrasonics
 -----------------------

@@ -3,11 +3,11 @@
 Digital Inputs - Software
 =========================
 
-.. note:: This section covers digital inputs in software.  For a hardware guide to digital inputs, see :ref:`digital-inputs-hardware`.
+.. note:: This section covers digital inputs in software.  For a hardware guide to digital inputs, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`.
 
 The RoboRIO's FPGA supports up to 26 digital inputs.  10 of these are made available through the built-in DIO ports on the RIO itself, while the other 16 are available through the MXP breakout port.
 
-Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "high" due to internal pull-up resistors (for more information, see :ref:`digital-inputs-hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/DigitalInput.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1DigitalInput.html>`__).
+Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "high" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/DigitalInput.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1DigitalInput.html>`__).
 
 The DigitalInput class
 ----------------------
@@ -81,7 +81,7 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
 Setting the trigger points
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: For details on the scaling of "raw" :code:`AnalogInput` values, see :ref:`analog-inputs-software`.
+.. note:: For details on the scaling of "raw" :code:`AnalogInput` values, see :doc:`analog-inputs-software`.
 
 To convert the analog signal to a digital one, it is necessary to specify at what values the trigger will enable and disable.  These values may be different to avoid "dithering" around the transition point:
 

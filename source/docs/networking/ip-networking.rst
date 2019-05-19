@@ -1,18 +1,12 @@
-.. _ip-networking:
-
 IP Networking
 =============
 
-.. note:: This document describes the IP configuration used at
- events, both on the fields and in the pits, potential issues
- and workaround configurations.
+.. note:: This document describes the IP configuration used at events, both on the fields and in the pits, potential issues and workaround configurations.
 
 TE.AM IP Notation
 -----------------
 
-The notation TE.AM is used as part of IPs in numerous places in this
-document. This notation refers to splitting your four digit team number
-into two digit pairs for the IP address octets.
+The notation TE.AM is used as part of IPs in numerous places in this document. This notation refers to splitting your four digit team number into two digit pairs for the IP address octets.
 
 Example: 10.TE.AM.2
 
@@ -27,16 +21,13 @@ Team 3456 - 10.34.56.2
 On the Field
 ------------
 
-This section describes networking when connected to the Field Network
-for match play
+This section describes networking when connected to the Field Network for match play
 
-DHCP (typical configuration)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+On the Field DHCP Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Field Network runs a DHCP server with pools for each team that will
-hand our addresses in the range of 10.TE.AM.20 and up with subnet masks
-of 255.0.0.0
-
+The Field Network runs a DHCP server with pools for each team that will hand our addresses in the range of 10.TE.AM.20 and up with subnet masks
+ 
 -  OpenMesh OM5P-AN or OM5P-AC radio - Static 10.TE.AM.1 programmed by
    Kiosk
 -  roboRIO - DHCP 10.TE.AM.2 assigned by the Robot Radio
@@ -45,17 +36,10 @@ of 255.0.0.0
 -  IP camera (if used) - DHCP 10.TE.AM.Y assigned by Robot Radio
 -  Other devices (if used) - DHCP 10.TE.AM.Z assigned by Robot Radio
 
-Static (workaround configuration)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+On the Field Static Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is also possible to configure static IPs on your devices to
-accommodate devices or software which do not support mDNS. When doing so
-you want to make sure to avoid addresses that will be in use when the
-robot is on the field network. These addresses are 10.TE.AM.1 and
-10.TE.AM.4 for the OpenMesh radio and the field access point and
-anything 10.TE.AM.20 and up which may be assigned to a device still
-configured for DHCP. The roboRIO network configuration can be set from
-the webdashboard.
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are 10.TE.AM.1 and 10.TE.AM.4 for the OpenMesh radio and the field access point and anything 10.TE.AM.20 and up which may be assigned to a device still configured for DHCP. The roboRIO network configuration can be set from the webdashboard.
 
 -  OpenMesh radio - Static 10.TE.AM.1 programmed by Kiosk
 -  roboRIO - Static 10.TE.AM.2 would be a reasonable choice, subnet mask
@@ -70,13 +54,10 @@ the webdashboard.
 In the Pits
 -----------
 
-**New for 2018: There is now a DHCP server running on the wired side of
-the Robot Radio in the event configuration.**
+..note:: New for 2018: There is now a DHCP server running on the wired side of the Robot Radio in the event configuration.**
 
-.. _dhcp-typical-configuration-1:
-
-DHCP (typical configuration)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In the Pits DHCP Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  OpenMesh radio - Static 10.TE.AM.1 programmed by Kiosk.
 -  roboRIO - 10.TE.AM.2, assigned by Robot Radio
@@ -85,13 +66,7 @@ DHCP (typical configuration)
 -  IP camera (if used) - DHCP, 10.TE.AM.Y, assigned by Robot Radio
 -  Other devices (if used) - DHCP, 10.TE.AM.Z, assigned by Robot Radio
 
-.. _static-workaround-configuration-1:
+In the Pits Static Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Static (workaround configuration)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-It is also possible to configure static IPs on your devices to
-accommodate devices or software which do not support mDNS. When doing so
-you want to make sure to avoid addresses that will be in use when the
-robot is on the field network. These addresses are 10.TE.AM.1 and
-10.TE.AM.4 for the OpenMesh radio
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are 10.TE.AM.1 and 10.TE.AM.4 for the OpenMesh radio

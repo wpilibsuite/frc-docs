@@ -395,7 +395,7 @@ More-advanced implementations can use more-complicated control loops.  Closing a
 PID Control
 ~~~~~~~~~~~
 
-Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).  For more information on PID control, see :ref:`PID Control <pid-control>`.
+Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).  For more information on PID control, see ref:`docs/software/advanced-programming/common-control-algorithms:Common Control Algorithms`.
 
 .. _homing-an-encodered-mechanism:
 
