@@ -1,6 +1,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'ubuntu-16.04'
 
 trigger:
 - master
@@ -21,6 +21,9 @@ steps:
 
 - script: pip install -r source/requirements.txt
   displayName: 'Install Requirements'
+
+- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-full
+    displayName: 'Install LaTeX'
 
 - script: make html
   displayName: 'Compile Docs'
