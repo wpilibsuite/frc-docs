@@ -14,6 +14,23 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# -- Download AllWPILib ------------------------------------------------------
+
+import os
+
+path  = "WPILib" 
+
+# Requires git be installed on the client computer
+clone = "git clone https://github.com/wpilibsuite/allwpilib.git " + path
+
+if (os.path.exists("WPILib")):
+	print("WPILib already downloaded")
+else:
+	print("WPILib Directory Created")
+	os.mkdir("WPILib")
+
+	print("Downloading WPILib Repository")
+	os.system(clone)
 
 # -- Project information -----------------------------------------------------
 
