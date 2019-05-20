@@ -79,7 +79,7 @@ The :code:`Accelerometer` interface contains getters for the acceleration along 
         accelerometer.setRange(Accelerometer.Range.k8G);
 
 ADXL345_I2C
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__I2C.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
@@ -98,7 +98,7 @@ The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/
         Accelerometer accelerometer = new ADXL345_I2C(I2C.Port.kMXP, Accelerometer.Range.k8G);
 
 ADXL345_SPI
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
 
@@ -117,7 +117,7 @@ The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/
         Accelerometer accelerometer = new ADXL345_SPI(SPI.Port.kMXP, Accelerometer.Range.k8G);
 
 ADXL362
-~~~~~~~
+^^^^^^^
 
 The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
@@ -136,7 +136,7 @@ The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
         Accelerometer accelerometer = new ADXL362(SPI.Port.kMXP, Accelerometer.Range.k8G);
 
 BuiltInAccelerometer
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1BuiltInAccelerometer.html>`__) provides access to the RoboRIO's own built-in accelerometer:
 

@@ -17,7 +17,7 @@ The AnalogInput class
 Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__).
 
 Initializing an AnalogInput
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An :code:`AnalogInput` may be initialized as follows:
 
@@ -34,16 +34,16 @@ An :code:`AnalogInput` may be initialized as follows:
         AnalogInput analog = new AnalogInput(0);
 
 Oversampling and Averaging
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |Oversampling and Averaging|
 
 The FPGA's analog input modules supports both oversampling and averaging.  These behaviors are highly similar, but differ in a few important ways.  Both may be used at the same time.
 
 Oversampling
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
-When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2^{n}`:
+When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2~{n}`:
 
 .. tabs::
 
@@ -62,7 +62,7 @@ When oversampling is enabled, the FPGA will add multiple consecutive samples tog
         analog.setOversampleBits(4);
 
 Averaging
-^^^^^^^^^
+~~~~~~~~~
 
 Averaging behaves much like oversampling, except the accumulated values are divided by the number of samples so that the scaling of the returned values does not change.  This is often more-convenient, but occasionally the additional roundoff error introduced by the rounding is undesirable.
 
@@ -83,12 +83,12 @@ Averaging behaves much like oversampling, except the accumulated values are divi
 .. note:: When oversampling and averaging are used at the same time, the oversampling is applied *first,* and then the oversampled values are averaged.  Thus, 2-bit oversampling and 2-bit averaging used at the same time will increase the scale of the returned values by approximately a factor of 2, and decrease the update rate by approximately a factor of 4.
 
 Reading values from an AnalogInput
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Values can be read from an AnalogInput with one of four different methods:
 
 getValue
-^^^^^^^^
+~~~~~~~~
 
 The :code:`getValue` method returns the raw instantaneous measured value from the analog input, without applying any calibration and ignoring oversampling and averaging settings.  The returned value is an integer.
 
@@ -103,7 +103,7 @@ The :code:`getValue` method returns the raw instantaneous measured value from th
         analog.getValue();
 
 getVoltage
-^^^^^^^^^^
+~~~~~~~~~~
 
 The :code:`getVoltage` method returns the instantaneous measured voltage from the analog input.  Oversampling and averaging settings are ignored, but the value is rescaled to represent a voltage.  The returned value is a double.
 
@@ -118,7 +118,7 @@ The :code:`getVoltage` method returns the instantaneous measured voltage from th
         analog.getVoltage();
 
 getAverageValue
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The :code:`getAverageValue` method returns the averaged value from the analog input.  The value is not rescaled, but oversampling and averaging are both applied.  The returned value is an integer.
 
@@ -133,7 +133,7 @@ The :code:`getAverageValue` method returns the averaged value from the analog in
         analog.getAverageValue();
 
 getAverageVoltage
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The :code:`getAverageVoltage` method returns the averaged voltage from the analog input.  Rescaling, oversampling, and averaging are all applied.  The returned value is a double.
 
@@ -148,7 +148,7 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
         analog.getAverageVoltage();
 
 Accumulator
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. note:: The accumulator methods do not currently support returning a value in units of volts - the returned value will always be an integer (specifically, a :code:`long`). 
 
@@ -195,7 +195,7 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
         analog.resetAccumulator();
 
 Obtaining synchronized count and value
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes, it is necessarily to obtain matched measurements of the count and the value.  This can be done using the :code:`getAccumulatorOutput` method:
 

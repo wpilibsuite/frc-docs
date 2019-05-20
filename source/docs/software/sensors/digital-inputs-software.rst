@@ -27,7 +27,7 @@ A :code:`DigitalInput` can be initialized as follows:
         DigitalInput input = new DigitalInput(0);
 
 Reading the value of the DigitalInput
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
@@ -79,7 +79,7 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
         AnalogTrigger trigger1 = new AnalogTrigger(input);
 
 Setting the trigger points
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: For details on the scaling of "raw" :code:`AnalogInput` values, see :doc:`analog-inputs-software`.
 
@@ -109,7 +109,7 @@ Using DigitalInputs in code
 As almost all switches on the robot will be used through a :code:`DigitalInput`, this class is extremely important for effective robot control.
 
 Limiting the motion of a mechanism
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nearly all motorized mechanisms (such as arms and elevators) in FRC should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
 
@@ -149,6 +149,6 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC should be gi
         }
 
 Homing an encodered mechanism
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Limit switches are very important for being able to "home" an encodered mechanism.  For an example of this, see :ref:`homing-an-encodered-mechanism`.

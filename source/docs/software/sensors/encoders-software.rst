@@ -19,7 +19,7 @@ The Encoder class
 WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
 
 Initializing an encoder
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 An encoder can be instantiated as follows:
 
@@ -40,7 +40,7 @@ An encoder can be instantiated as follows:
 .. _decoding-type:
 
 Decoding type
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The WPILib :code:`Encoder` class can decode encoder signals in three different modes:
 
@@ -65,7 +65,7 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
         Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
 
 Configuring encoder parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`Encoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
@@ -114,12 +114,12 @@ The :code:`Encoder` class offers a number of configuration methods:
         encoder.setSamplesToAverage(5);
 
 Reading information from encoders
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The :code:`Encoder` class provides a wealth of information to the user about the motion of the encoder.
 
 Distance
-^^^^^^^^
+~~~~~~~~
 
 .. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <resetting-an-encoder>`.
 
@@ -138,7 +138,7 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
         encoder.setDistancePerPulse(4./256.);
 
 Rate
-^^^^
+~~~~
 
 .. note:: Units of time for the :code:`Encoder` class are *always* in seconds.
 
@@ -157,7 +157,7 @@ Users can obtain the current rate of change of the encoder with the :code:`getRa
         encoder.getRate();
 
 Stopped
-^^^^^^^
+~~~~~~~
 
 Users can obtain whether the encoder is stationary with the :code:`getStopped()` method:
 
@@ -174,7 +174,7 @@ Users can obtain whether the encoder is stationary with the :code:`getStopped()`
         encoder.getStopped();
 
 Direction
-^^^^^^^^^
+~~~~~~~~~
 
 Users can obtain the direction in which the encoder last moved with the :code:`getDirection()` method:
 
@@ -191,7 +191,7 @@ Users can obtain the direction in which the encoder last moved with the :code:`g
         encoder.getDirection();
 
 Period
-^^^^^^
+~~~~~~
 
 Users can obtain the period of the encoder pulses (in seconds) with the :code:`getPeriod()` method:
 
@@ -210,7 +210,7 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 .. _resetting-an-encoder:
 
 Resetting an encoder
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <homing-an-encodered-mechanism>` routine:
 
@@ -232,7 +232,7 @@ Using encoders in code
 Encoders are some of the most useful sensors in FRC; they are very nearly a requirement to make a robot capable of nontrivially-automated actuations and movement.  The potential applications of encoders in robot code are too numerous to summarize fully here, but a few basic examples are provided below:
 
 Driving to a distance
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is very useful for robot autonomy:
 
@@ -306,7 +306,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         }
         
 Stabilizing heading
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 .. warning:: Like with all control loops, users should be careful to ensure that the sensor direction and the turning direction are consistent.  If they are not, the loop will be unstable and the robot will turn wildly.
 
@@ -393,14 +393,14 @@ Encoders can be used to ensure that a robot drives straight in a manner quite si
 More-advanced implementations can use more-complicated control loops.  Closing a control loop on the encoder difference is roughly analogous to closing it on the heading error, and so PD loops are particularly effective.
 
 PID Control
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).  For more information on PID control, see ref:`docs/software/advanced-programming/common-control-algorithms:Common Control Algorithms`.
 
 .. _homing-an-encodered-mechanism:
 
 Homing an encodered mechanism
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
 

@@ -13,7 +13,7 @@ Configuring a counter
 The :code:`Counter` class can be configured in a number of ways to provide differing functionalities.
 
 Counter Modes
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The :code:`Counter` object may be configured to operate in one of four different modes:
 
@@ -25,7 +25,7 @@ The :code:`Counter` object may be configured to operate in one of four different
 .. note:: In all modes except semi-period mode, the counter can be configured to increment either once per edge (2X decoding), or once per pulse (1X decoding).  By default, ??? will be used (TODO: figure this out).
 
 Two-pulse mode
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the specified "up channel," and down for every edge/pulse on the specified "down channel."  A counter can be initialized in two-pulse with the following code:
 
@@ -64,7 +64,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
 .. _semi-period-mode:
 
 Semi-period mode
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
 
@@ -111,7 +111,7 @@ To get the pulse width, call the :code:`getPeriod()` method:
         counter.GetPeriod();
 
 Pulse-length mode
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 In pulse-length mode, the counter will count either up or down depending on the length of the pulse (TODO: determine whether it counts up or down when the pulse is above the threshold; not documented...).  This is useful for some gear tooth sensors which encode direction in this manner.  A counter can be initialized in this mode as follows:
 
@@ -150,7 +150,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
         }
 
 External direction mode
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In external direction mode, the counter counts either up or down depending on the level on the second channel (TODO: does it count up if the pin is high or low?  not documented...).  A counter can be initialized in this mode as follows:
 
@@ -187,7 +187,7 @@ In external direction mode, the counter counts either up or down depending on th
 .. _configuring-counter-parameters:
 
 Configuring counter parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`Counter` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
@@ -241,7 +241,7 @@ Reading information from counters
 Regardless of mode, there is some information that the :code:`Counter` class always exposes to users:
 
 Count
-~~~~~
+^^^^^
 
 Users can obtain the current count with the :code:`get()` method:
 
@@ -258,7 +258,7 @@ Users can obtain the current count with the :code:`get()` method:
         counter.get();
 
 Distance
-~~~~~~~~
+^^^^^^^^
 
 .. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <resetting-a-counter>`.
 
@@ -277,7 +277,7 @@ If the :ref:`distance per pulse <configuring-counter-parameters>` has been confi
         counter.getDistance();
 
 Rate
-^^^^
+~~~~
 
 .. note:: Units of time for the :code:`Counter` class are *always* in seconds.
 
@@ -296,7 +296,7 @@ Users can obtain the current rate of change of the counter with the :code:`getRa
         counter.getRate();
 
 Stopped
-~~~~~~~
+^^^^^^^
 
 Users can obtain whether the counter is stationary with the :code:`getStopped()` method:
 
@@ -313,7 +313,7 @@ Users can obtain whether the counter is stationary with the :code:`getStopped()`
         counter.getStopped();
 
 Direction
-^^^^^^^^^
+~~~~~~~~~
 
 Users can obtain the direction in which the counter last moved with the :code:`getDirection()` method:
 
@@ -330,7 +330,7 @@ Users can obtain the direction in which the counter last moved with the :code:`g
         counter.getDirection();
 
 Period
-~~~~~~
+^^^^^^
 
 .. note:: In :ref:`semi-period mode <semi-period-mode>`, this method returns the duration of the pulse, not of the period.
 

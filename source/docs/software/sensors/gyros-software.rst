@@ -15,7 +15,7 @@ All natively-supported gyro objects in WPILib implement the :code:`Gyro` interfa
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
 ADXRS450_Gyro
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXRS450__Gyro.html>`__) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
@@ -32,7 +32,7 @@ The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/FRC/roborio/releas
         Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
 
 AnalogGyro
-~~~~~~~~~~
+^^^^^^^^^^
 
 The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogGyro.html>`__) provides support for any single-axis gyro with an analog output.
 
@@ -63,7 +63,7 @@ Using gyros in code
 Gyros are extremely useful in FRC for both measuring and controlling robot heading.  Since FRC matches are generally short, total gyro drift over the course of an FRC match tends to be manageably small (on the order of a couple of degrees for a good-quality gyro).  Morever, not all useful gyro applications require the absolute heading measurement to remain accurate over the course of the entire match.
 
 Displaying the robot heading on the dashboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :ref:`Shuffleboard <tour-of-shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
@@ -91,7 +91,7 @@ Displaying the robot heading on the dashboard
 .. _stabilizing-heading-while-driving:
 
 Stabilizing heading while driving
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A very common use for a gyro is to stabilize robot heading while driving, so that the robot drives straight.  This is especially important for holonomic drives such as mecanum and swerve, but is extremely useful for tank drives as well.
 
@@ -100,7 +100,7 @@ This is typically achieved by closing a PID controller on either the turn rate o
 .. warning:: Like with all control loops, users should be careful to ensure that the sensor direction and the turning direction are consistent.  If they are not, the loop will be unstable and the robot will turn wildly.
 
 Example: Tank drive stabilization using turn rate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example shows how to stabilize heading using a simple P loop closed on the turn rate.  Since a robot that is not turning should have a turn rate of zero, the setpoint for the loop is implicitly zero, making this method very simple.
 
@@ -164,7 +164,7 @@ The following example shows how to stabilize heading using a simple P loop close
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 
 Example: Tank drive stabilization using heading
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example shows how to stabilize heading using a simple P loop closed on the heading.  Unlike in the turn rate example, we will need to set the setpoint to the current heading before starting motion, making this method slightly more-complicated.
 
@@ -243,7 +243,7 @@ The following example shows how to stabilize heading using a simple P loop close
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the heading for heading stabilization, PD loops are particularly effective.
 
 Turning to a set heading
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Another common and highly-useful application for a gyro is turning a robot to face a specified direction.  This can be a component of an autonomous driving routine, or can be used during teleoperated control to help align a robot with field elements.
 

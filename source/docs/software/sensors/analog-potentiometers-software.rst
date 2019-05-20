@@ -35,7 +35,7 @@ An AnalogPotentiometer can be initialized as follows:
         AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
 
 Customizing the underlying AnalogInput
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: If the user changes the scaling of the :code:`AnalogInput` with oversampling, this must be reflected in the scale setting passed to the :code:`AnalogPotentiometer`.
 
@@ -68,7 +68,7 @@ If the user would like to apply custom settings to the underlying :code:`AnalogI
         AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
 
 Reading values from the AnalogPotentiometer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The scaled value can be read by simply calling the :code:`get` method:
 
