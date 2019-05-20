@@ -22,9 +22,11 @@ path  = "WPILib"
 
 # Requires git be installed on the client computer
 clone = "git clone https://github.com/wpilibsuite/allwpilib.git " + path
+pull = "git pull"
 
 if (os.path.exists("WPILib")):
 	print("WPILib already downloaded")
+	os.system(pull)
 else:
 	print("WPILib Directory Created")
 	os.mkdir("WPILib")
