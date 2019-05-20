@@ -1,13 +1,11 @@
-.. _analog-potentiometers-software:
-
 Analog Potentiometers - Software
 ================================
 
-.. note:: This section covers analog potentiometers in software.  For a hardware guide to analog potentiometers, see :ref:`analog-potentiometers-hardware`.
+.. note:: This section covers analog potentiometers in software.  For a hardware guide to analog potentiometers, see :ref:`docs/hardware/sensors/analog-potentiometers-hardware:Analog Potentiometers - Hardware`.
 
 Potentiometers are variable resistors that allow information about position to be converted into an analog voltage signal.  This signal can be read by the RoboRIO to control whatever device is attached to the potentiometer.
 
-While it is possible to read information from a potentiometer directly with an :ref:`AnalogInput <analog-inputs-software>`, WPILib provides an :code:`AnalogPotentiometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogPotentiometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogPotentiometer.html>`__) that handles re-scaling the values into meaningful units for the user.  It is strongly encouraged to use this class.
+While it is possible to read information from a potentiometer directly with an :doc:`analog-inputs-software`, WPILib provides an :code:`AnalogPotentiometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogPotentiometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogPotentiometer.html>`__) that handles re-scaling the values into meaningful units for the user.  It is strongly encouraged to use this class.
 
 In fact, the :code:`AnalogPotentiometer` name is something of a misnomer - this class should be used for the vast majority of sensors that return their signal as a simple, linearly-scaled analog voltage.
 
@@ -87,6 +85,6 @@ The scaled value can be read by simply calling the :code:`get` method:
 Using AnalogPotentiometers in code
 ----------------------------------
 
-Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :ref:`encoder <encoders-software>`.  If it is an ultrasonic sensor, it can be used similarly to other :ref:`ultrasonic sensors <ultrasonics-software>`.
+Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :doc:`encoder <encoders-software>`.  If it is an ultrasonic sensor, it can be used similarly to other :doc:`ultrasonics <ultrasonics-software>`.
 
 It is very important to keep in mind that actual, physical potentiometers generally have a limited range of motion.  Safeguards should be present in both the physical mechanism and the code to ensure that the mechanism does not break the sensor by traveling past its maximum throw.

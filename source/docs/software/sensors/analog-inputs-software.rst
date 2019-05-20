@@ -3,7 +3,7 @@
 Analog Inputs
 =============
 
-.. note:: This section covers analog inputs in software.  For a hardware guide to analog inputs, see :ref:`analog-inputs-hardware`.
+.. note:: This section covers analog inputs in software.  For a hardware guide to analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog Inputs - Hardware`.
 
 The RoboRIO's FPGA supports up to 8 analog input channels that can be used to read the value of an analog voltage from a sensor.  Analog inputs may be used for any sensor that outputs a simple voltage.
 
@@ -12,7 +12,7 @@ Analog inputs from the FPGA by default return a 12-bit integer proportional to t
 The AnalogInput class
 ---------------------
 
-.. note:: It is often more convenient to use the :ref:`AnalogPotentiometer <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
+.. note:: It is often more convenient to use the :doc:`Analog Potentiometers <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
 Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__).
 
