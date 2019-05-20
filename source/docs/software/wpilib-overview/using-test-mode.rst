@@ -65,4 +65,4 @@ In this example the sensors are registered with the LiveWindow and during the te
 PID Tuning in Test mode
 -----------------------
 
-Tuning PID loops is often a challenging prospect with frequent recompiles of the program to get the correct values. When using the command based programming model, subclassing PIDSubsystem or PIDCommand in your PID commands allows the adjustment of PID constants with immediate feedback of the results. See more information about PID Tuning using the SmartDashboard in this section from the SmartDashboard manual.
+Tuning PID loops is often a challenging prospect with frequent recompiles of the program to get the correct values. When using the command based programming model, subclassing PIDSubsystem or PIDCommand in your PID commands allows the adjustment of PID constants with immediate feedback of the results.
