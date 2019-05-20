@@ -1,5 +1,3 @@
-.. _smartdashboard-displaying-expressions:
-
 Displaying Expressions from a Robot Program
 ===========================================
 

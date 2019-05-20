@@ -7,12 +7,12 @@ Welcome to the contributiong guidelines for the frc-docs project. If you are unf
 
 .. important:: Currently we are in the process of migrating documentation from the official screensteps. Please hold off on writing new articles unless they are a migration from screensteps. FIRST retains all rights to documentation and images provided. Credit for article will be in the `Github commit history. <https://github.com/wpilibsuite/frc-docs/graphs/commit-activity>`_
 
-Project Goals
--------------
+Mission Statement
+-----------------
 
-The goal of frc-docs is to have a FIRST Robotics Competition documentation into a community led model.
+The WPILib Mission is to enable FIRST Robotics teams to focus on writing game-specific software rather than focusing on hardware details - "raise the floor, don't lower the ceiling". We work to enable teams with limited programming knowledge and/or mentor experience to be as successful as possible, while not hampering the abilities of teams with more advanced programming capabilities. We support Kit of Parts control system components directly in the library. We also strive to keep parity between major features of each language (Java, C++, and NI's LabVIEW), so that teams aren't at a disadvantage for choosing a specific programming language.
 
-This community-led model's goals are:
+These docs serve to provide a learning ground for all FIRST Robotics Competition teams. Contributions to the project must follow these core principles.
 
 - Community-led documentation. Documentation sources are hosted publicly and the community are able to make contributions
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
@@ -44,6 +44,17 @@ Text
 
 All text content should be on the same line, if you need readability, use the word-wrap function of your editor.
 
+Use the following case for these terms:
+
+- roboRIO (not RoboRIO, roboRio, or RoboRio)
+- LabVIEW (not labview or LabView)
+
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`_.
+
+Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
+
+Use literals for filenames, function, and variable names.
+
 Whitespace
 ^^^^^^^^^^
 
@@ -52,12 +63,17 @@ Indentation
 
 Indentation should *always* match the previous level of indentation *unless* you are creating a new content block.
 
-Indetation of content directives as new line `.. toctree::``  should be `3` spaces.
+Indentation of content directives as new line ``.. toctree::``  should be `3` spaces.
 
 Blank Lines
 ~~~~~~~~~~~
 
 There should be ``1`` blank lines seperating basic text blocks and section titles. There *should* be ``1`` blank line seperating text blocks *and* content directives.
+
+Interior Whitespace
+~~~~~~~~~~~~~~~~~~~
+
+Use one space between sentences.
 
 Headings
 ^^^^^^^^
@@ -70,12 +86,16 @@ Headings should be in the following strucutre
 4. ``~`` for document sub-sub-sections
 5. If you need to use any lower levels of structure, you're doing things wrong.
 
+Use title case for headings.
+
 Code blocks
 ^^^^^^^^^^^
 
 All code blocks should have a language specified.
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``none``.
+
+Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
 Links
 ^^^^^
@@ -84,7 +104,7 @@ Links should be in the following format
 
 .. code-block:: none
    
-   Hi there, `this is a link <http://example.com>`__ and it's pretty cool!
+   Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
 
 Images
 ^^^^^^
