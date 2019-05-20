@@ -22,9 +22,12 @@ steps:
 - script: pip install -r source/requirements.txt
   displayName: 'Install Requirements'
 
-- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive latexmk
+- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk dvipng
   displayName: 'Install LaTeX'
 
+- script: sudo apt-get install -qy --force-yes graphviz
+  displayName: 'Install GraphViz'
+  
 - script: make html
   displayName: 'Compile Docs'
 
