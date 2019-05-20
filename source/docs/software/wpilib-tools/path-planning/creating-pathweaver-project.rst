@@ -10,8 +10,8 @@ PathWeaver is started by clicking on the ellipsis icon in the top right of the c
 
 .. image:: images/pathweaver-2.png
 
-Creating a PathWeaver project 
------------------------------
+Creating the project
+--------------------
 To create a PathWeave project, click on "Create project" then fill out the project creation form. Notice that hovering ove any of the fields in the form will display more information about what is required.
 
 .. image:: images/pathweaver-3.png
@@ -47,4 +47,3 @@ The PathWeaver user interface consists of:
 4. The individual paths that a robot will follow, The paths may be grouped together as a Path Group in order to better visualize the total robot movement in a multi-path sequence.
 5. The drawn paths are used to create the set of wheel velocities the robot will use when following your path. There is one velocity generated for every unit of time as described in the Time Base parameter of your project.
 6. Allows the PathWeaver project properties to be edited (includes Project directory, time step, field drawing, etc.) as described at the beginning of this article.
-

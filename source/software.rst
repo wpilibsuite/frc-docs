@@ -214,3 +214,18 @@ Autonomous Path Planning
    docs/software/wpilib-tools/path-planning/pathweaver-limits
    docs/software/wpilib-tools/path-planning/integrating-robot-program
    docs/software/wpilib-tools/path-planning/adding-field-images
+
+Basic Programming
+=================
+
+.. toctree::
+   :maxdepth: 1
+
+
+Advanced Programming
+====================
+
+.. toctree::
+   :maxdepth: 1
+
+   docs/software/advanced-programming/common-control-algorithms
