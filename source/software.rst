@@ -21,7 +21,6 @@ Software - Getting Started
    docs/software/getting-started/driver-station
    docs/software/getting-started/driver-station-best-practices
 
-
 WPILib Overview
 ===============
 
