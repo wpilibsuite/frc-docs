@@ -3,7 +3,7 @@ Counters
 
 |Counters|
 
-The :code:`Counter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <encoders-software>` and :ref:`Ultrasonic <ultrasonics-software>`), but is also quite useful on its own.
+The :code:`Counter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
 
 .. note:: There are a total of 8 counter units in the RoboRIO FPGA, meaning no more than 8 :code:`Counter` objects may be instantiated at any one time, including those contained as resources in other WPILib objects.  For detailed information on when a :code:`Counter` may be used by another object, refer to the official API documentation.
 
@@ -13,7 +13,7 @@ Configuring a counter
 The :code:`Counter` class can be configured in a number of ways to provide differing functionalities.
 
 Counter Modes
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The :code:`Counter` object may be configured to operate in one of four different modes:
 
@@ -25,25 +25,11 @@ The :code:`Counter` object may be configured to operate in one of four different
 .. note:: In all modes except semi-period mode, the counter can be configured to increment either once per edge (2X decoding), or once per pulse (1X decoding).  By default, ??? will be used (TODO: figure this out).
 
 Two-pulse mode
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the specified "up channel," and down for every edge/pulse on the specified "down channel."  A counter can be initialized in two-pulse with the following code:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Create a new Counter object in two-pulse mode
-        frc::Counter counter{frc::Counter::Mode::k2Pulse};
-
-        void Robot::RobotInit() {
-            // Set up the input channels for the counter
-            counter.SetUpSource(1);
-            counter.SetDownSource(2);
-
-            // Set the decoding type to 2X
-            counter.SetUpSourceEdge(true, true);
-            counter.SetDownSourceEdge(true, true);
 
     .. code-tab:: java
 
@@ -61,26 +47,26 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
             counter.setDownSourceEdge(true, true);
         }
 
-.. _semi-period-mode:
+    .. code-tab:: c++
+
+        // Create a new Counter object in two-pulse mode
+        frc::Counter counter{frc::Counter::Mode::k2Pulse};
+
+        void Robot::RobotInit() {
+            // Set up the input channels for the counter
+            counter.SetUpSource(1);
+            counter.SetDownSource(2);
+
+            // Set the decoding type to 2X
+            counter.SetUpSourceEdge(true, true);
+            counter.SetDownSourceEdge(true, true);
 
 Semi-period mode
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Create a new Counter object in two-pulse mode
-        frc::Counter counter{frc::Counter::Mode::kSemiperiod};
-
-        void Robott() {
-            // Set up the input channel for the counter
-            counter.SetUpSource(1);
-
-            // Set the encoder to count pulse duration from rising edge to falling edge
-            counter.SetSemiPeriodMode(true);
 
     .. code-tab:: java
 
@@ -96,41 +82,38 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
             counter.setSemiPeriodMode(true);
         }
 
+    .. code-tab:: c++
+
+        // Create a new Counter object in two-pulse mode
+        frc::Counter counter{frc::Counter::Mode::kSemiperiod};
+
+        void Robott() {
+            // Set up the input channel for the counter
+            counter.SetUpSource(1);
+
+            // Set the encoder to count pulse duration from rising edge to falling edge
+            counter.SetSemiPeriodMode(true);
+
 To get the pulse width, call the :code:`getPeriod()` method:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Return the measured pulse width in seconds
-        counter.getPeriod();
 
     .. code-tab:: java
 
         // Return the measured pulse width in seconds
         counter.GetPeriod();
 
+    .. code-tab:: c++
+
+        // Return the measured pulse width in seconds
+        counter.getPeriod();
+
 Pulse-length mode
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 In pulse-length mode, the counter will count either up or down depending on the length of the pulse (TODO: determine whether it counts up or down when the pulse is above the threshold; not documented...).  This is useful for some gear tooth sensors which encode direction in this manner.  A counter can be initialized in this mode as follows:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Create a new Counter object in two-pulse mode
-        frc::Counter counter{frc::Counter::Mode::kPulseLength};
-
-        void Robot::RobotInit() {
-            // Set up the input channel for the counter
-            counter.SetUpSource(1);
-
-            // Set the decoding type to 2X
-            counter.SetUpSourceEdge(true, true);
-
-            // Set the counter to count down if the pulses are longer than .05 seconds
-            counter.setPulseLengthMode(.05)
 
     .. code-tab:: java
 
@@ -149,25 +132,27 @@ In pulse-length mode, the counter will count either up or down depending on the 
             counter.SetPulseLengthMode(.05)
         }
 
+    .. code-tab:: c++
+
+        // Create a new Counter object in two-pulse mode
+        frc::Counter counter{frc::Counter::Mode::kPulseLength};
+
+        void Robot::RobotInit() {
+            // Set up the input channel for the counter
+            counter.SetUpSource(1);
+
+            // Set the decoding type to 2X
+            counter.SetUpSourceEdge(true, true);
+
+            // Set the counter to count down if the pulses are longer than .05 seconds
+            counter.setPulseLengthMode(.05)
+
 External direction mode
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In external direction mode, the counter counts either up or down depending on the level on the second channel (TODO: does it count up if the pin is high or low?  not documented...).  A counter can be initialized in this mode as follows:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Create a new Counter object in two-pulse mode
-        frc::Counter counter{frc::Counter::Mode::kExternalDirection};
-
-        void RobototInit() {
-            // Set up the input channels for the counter
-            counter.SetUpSource(1);
-            counter.SetDownSource(2);
-
-            // Set the decoding type to 2X
-            counter.SetUpSourceEdge(true, true);
 
     .. code-tab:: java
 
@@ -184,10 +169,21 @@ In external direction mode, the counter counts either up or down depending on th
             counter.setUpSourceEdge(true, true);
         }
 
-.. _configuring-counter-parameters:
+    .. code-tab:: c++
+
+        // Create a new Counter object in two-pulse mode
+        frc::Counter counter{frc::Counter::Mode::kExternalDirection};
+
+        void RobototInit() {
+            // Set up the input channels for the counter
+            counter.SetUpSource(1);
+            counter.SetDownSource(2);
+
+            // Set the decoding type to 2X
+            counter.SetUpSourceEdge(true, true);
 
 Configuring counter parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`Counter` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
@@ -196,25 +192,6 @@ Configuring counter parameters
 Apart from the mode-specific configurations, the :code:`Counter` class offers a number of additional configuration methods:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Configures the counter to return a distance of 4 for every 256 pulses
-        // Also changes the units of getRate
-        counter.SetDistancePerPulse(4./256.);
-
-        // Configures the counter to consider itself stopped after .1 seconds
-        counter.SetMaxPeriod(.1);
-
-        // Configures the counter to consider itself stopped when its rate is below 10
-        counter.SetMinRate(10);
-
-        // Reverses the direction of the counter
-        counter.SetReverseDirection(true);
-
-        // Configures an counter to average its period measurement over 5 samples
-        // Can be between 1 and 127 samples
-        counter.SetSamplesToAverage(5);
 
     .. code-tab:: java
 
@@ -235,30 +212,49 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
         // Can be between 1 and 127 samples
         counter.setSamplesToAverage(5);
 
+    .. code-tab:: c++
+
+        // Configures the counter to return a distance of 4 for every 256 pulses
+        // Also changes the units of getRate
+        counter.SetDistancePerPulse(4./256.);
+
+        // Configures the counter to consider itself stopped after .1 seconds
+        counter.SetMaxPeriod(.1);
+
+        // Configures the counter to consider itself stopped when its rate is below 10
+        counter.SetMinRate(10);
+
+        // Reverses the direction of the counter
+        counter.SetReverseDirection(true);
+
+        // Configures an counter to average its period measurement over 5 samples
+        // Can be between 1 and 127 samples
+        counter.SetSamplesToAverage(5);
+
 Reading information from counters
 ---------------------------------
 
 Regardless of mode, there is some information that the :code:`Counter` class always exposes to users:
 
 Count
-~~~~~
+^^^^^
 
 Users can obtain the current count with the :code:`get()` method:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // returns the current count
-        counter.Get();
 
     .. code-tab:: java
 
         // returns the current count
         counter.get();
 
+    .. code-tab:: c++
+
+        // returns the current count
+        counter.Get();
+
 Distance
-~~~~~~~~
+^^^^^^^^
 
 .. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <resetting-a-counter>`.
 
@@ -266,18 +262,18 @@ If the :ref:`distance per pulse <configuring-counter-parameters>` has been confi
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // returns the current distance
-        counter.GetDistance();
-
     .. code-tab:: java
 
         // returns the current distance
         counter.getDistance();
 
+    .. code-tab:: c++
+
+        // returns the current distance
+        counter.GetDistance();
+
 Rate
-^^^^
+~~~~
 
 .. note:: Units of time for the :code:`Counter` class are *always* in seconds.
 
@@ -285,52 +281,52 @@ Users can obtain the current rate of change of the counter with the :code:`getRa
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Gets the current rate of the counter
-        counter.GetRate();
-
     .. code-tab:: java
 
         // Gets the current rate of the counter
         counter.getRate();
 
+    .. code-tab:: c++
+
+        // Gets the current rate of the counter
+        counter.GetRate();
+
 Stopped
-~~~~~~~
+^^^^^^^
 
 Users can obtain whether the counter is stationary with the :code:`getStopped()` method:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Gets whether the counter is stopped
-        counter.GetStopped();
 
     .. code-tab:: java
 
         // Gets whether the counter is stopped
         counter.getStopped();
 
+    .. code-tab:: c++
+
+        // Gets whether the counter is stopped
+        counter.GetStopped();
+
 Direction
-^^^^^^^^^
+~~~~~~~~~
 
 Users can obtain the direction in which the counter last moved with the :code:`getDirection()` method:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Gets the last direction in which the counter moved
-        counter.GetDirection();
 
     .. code-tab:: java
 
         // Gets the last direction in which the counter moved
         counter.getDirection();
 
+    .. code-tab:: c++
+
+        // Gets the last direction in which the counter moved
+        counter.GetDirection();
+
 Period
-~~~~~~
+^^^^^^
 
 .. note:: In :ref:`semi-period mode <semi-period-mode>`, this method returns the duration of the pulse, not of the period.
 
@@ -338,17 +334,15 @@ Users can obtain the duration (in seconds) of the most-recent period with the :c
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // returns the current period in seconds
-        counter.GetPeriod();
-
     .. code-tab:: java
 
         // returns the current period in seconds
         counter.getPeriod();
 
-.. _resetting-a-counter:
+    .. code-tab:: c++
+
+        // returns the current period in seconds
+        counter.GetPeriod();
 
 Resetting a counter
 -------------------
@@ -357,21 +351,19 @@ To reset a counter to a distance reading of zero, call the :code:`reset()` metho
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Resets the encoder to read a distance of zero
-        counter.Reset();
-
     .. code-tab:: java
 
         // Resets the encoder to read a distance of zero
         counter.reset();
 
+    .. code-tab:: c++
+
+        // Resets the encoder to read a distance of zero
+        counter.Reset();
+
 Using counters in code
 ----------------------
 
-Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`encoders-software`.
-
-
+Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`docs/software/sensors/encoders-software:Encoders - Software`.
 
 .. |Counters| image:: images/counters/counters.png

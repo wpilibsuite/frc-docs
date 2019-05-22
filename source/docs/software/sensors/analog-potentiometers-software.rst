@@ -18,14 +18,6 @@ An AnalogPotentiometer can be initialized as follows:
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Initializes an AnalogPotentiometer on analog port 0
-        // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-        // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-
-        frc::AnalogPotentiometer pot{0, 180, 30};
-
     .. code-tab:: java
 
         // Initializes an AnalogPotentiometer on analog port 0
@@ -34,26 +26,22 @@ An AnalogPotentiometer can be initialized as follows:
 
         AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
 
+    .. code-tab:: c++
+
+        // Initializes an AnalogPotentiometer on analog port 0
+        // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
+        // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
+
+        frc::AnalogPotentiometer pot{0, 180, 30};
+
 Customizing the underlying AnalogInput
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: If the user changes the scaling of the :code:`AnalogInput` with oversampling, this must be reflected in the scale setting passed to the :code:`AnalogPotentiometer`.
 
 If the user would like to apply custom settings to the underlying :code:`AnalogInput` used by the :code:`AnalogPotentiometer`, an alternative constructor may be used in which the :code:`AnalogInput` is injected:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Initializes an AnalogInput on port 0, and enables 2-bit averaging
-        frc::AnalogInput input{0};
-        input.SetAverageBits(2);
-
-        // Initializes an AnalogPotentiometer with the given AnalogInput
-        // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-        // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-
-        frc::AnalogPotentiometer pot{input, 180, 30};
 
     .. code-tab:: java
 
@@ -67,24 +55,36 @@ If the user would like to apply custom settings to the underlying :code:`AnalogI
 
         AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
 
+    .. code-tab:: c++
+
+        // Initializes an AnalogInput on port 0, and enables 2-bit averaging
+        frc::AnalogInput input{0};
+        input.SetAverageBits(2);
+
+        // Initializes an AnalogPotentiometer with the given AnalogInput
+        // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
+        // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
+
+        frc::AnalogPotentiometer pot{input, 180, 30};
+
 Reading values from the AnalogPotentiometer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The scaled value can be read by simply calling the :code:`get` method:
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        pot.Get();
-
     .. code-tab:: java
 
         pot.get();
 
+    .. code-tab:: c++
+
+        pot.Get();
+
 Using AnalogPotentiometers in code
 ----------------------------------
 
-Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :doc:`encoder <encoders-software>`.  If it is an ultrasonic sensor, it can be used similarly to other :doc:`ultrasonics <ultrasonics-software>`.
+Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :doc:`encoder <docs/software/sensors/encoders-software:Encoders - Software>`.  If it is an ultrasonic sensor, it can be used similarly to other :doc:`ultrasonics <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.
 
 It is very important to keep in mind that actual, physical potentiometers generally have a limited range of motion.  Safeguards should be present in both the physical mechanism and the code to ensure that the mechanism does not break the sensor by traveling past its maximum throw.

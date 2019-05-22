@@ -1,9 +1,7 @@
-.. _accelerometers-software:
-
 Accelerometers - Software
 =========================
 
-.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see :ref:`accelerometers-hardware`.
+.. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see :ref:`docs/hardware/sensors/accelerometers-hardware:Accelerometers - Hardware`.
 
 An accelerometer is a device that measures acceleration.
 
@@ -25,21 +23,6 @@ The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Creates an analog accelerometer on analog input 0
-        frc::AnalogAccelerometer accelerometer{0};
-
-        // Sets the sensitivity of the accelerometer to 1 volt per G
-        accelerometer.SetSensitivity(1);
-
-        // Sets the zero voltage of the accelerometer to 3 volts
-        accelerometer.SetZero(3);
-
-        // Gets the current acceleration
-        double accel = accelerometer.GetAcceleration();
-
-
     .. code-tab:: java
 
         // Creates an analog accelerometer on analog input 0
@@ -53,6 +36,20 @@ The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/
 
         // Gets the current acceleration
         double accel = accelerometer.getAcceleration();
+
+    .. code-tab:: c++
+
+        // Creates an analog accelerometer on analog input 0
+        frc::AnalogAccelerometer accelerometer{0};
+
+        // Sets the sensitivity of the accelerometer to 1 volt per G
+        accelerometer.SetSensitivity(1);
+
+        // Sets the zero voltage of the accelerometer to 3 volts
+        accelerometer.SetZero(3);
+
+        // Gets the current acceleration
+        double accel = accelerometer.GetAcceleration();
 
 If users have a 3-axis analog accelerometer, they can use three instances of this class, one for each axis.
 
@@ -68,28 +65,22 @@ The :code:`Accelerometer` interface contains getters for the acceleration along 
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Sets the accelerometer to measure between -8 and 8 G's
-        accelerometer.SetRange(Accelerometer::Range::kRange_8G);
-
     .. code-tab:: java
 
         // Sets the accelerometer to measure between -8 and 8 G's
         accelerometer.setRange(Accelerometer.Range.k8G);
 
+    .. code-tab:: c++
+
+        // Sets the accelerometer to measure between -8 and 8 G's
+        accelerometer.SetRange(Accelerometer::Range::kRange_8G);
+
 ADXL345_I2C
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__I2C.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Creates an ADXL345 accelerometer object on the MXP I2C port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -97,18 +88,18 @@ The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/
         // with a measurement range from -8 to 8 G's
         Accelerometer accelerometer = new ADXL345_I2C(I2C.Port.kMXP, Accelerometer.Range.k8G);
 
+    .. code-tab:: c++
+
+        // Creates an ADXL345 accelerometer object on the MXP I2C port
+        // with a measurement range from -8 to 8 G's
+        frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, Accelerometer::Range::kRange_8G};
+
 ADXL345_SPI
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Creates an ADXL345 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -116,18 +107,18 @@ The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/
         // with a measurement range from -8 to 8 G's
         Accelerometer accelerometer = new ADXL345_SPI(SPI.Port.kMXP, Accelerometer.Range.k8G);
 
+    .. code-tab:: c++
+
+        // Creates an ADXL345 accelerometer object on the MXP SPI port
+        // with a measurement range from -8 to 8 G's
+        frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
+
 ADXL362
-~~~~~~~
+^^^^^^^
 
 The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Creates an ADXL362 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL362 accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
 
     .. code-tab:: java
 
@@ -135,24 +126,30 @@ The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
         // with a measurement range from -8 to 8 G's
         Accelerometer accelerometer = new ADXL362(SPI.Port.kMXP, Accelerometer.Range.k8G);
 
+    .. code-tab:: c++
+
+        // Creates an ADXL362 accelerometer object on the MXP SPI port
+        // with a measurement range from -8 to 8 G's
+        frc::ADXL362 accelerometer{SPI::Port::kMXP, Accelerometer::Range::kRange_8G};
+
 BuiltInAccelerometer
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1BuiltInAccelerometer.html>`__) provides access to the RoboRIO's own built-in accelerometer:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Creates an object for the built-in accelerometer
-        // Range defaults to +- 8 G's
-        frc::BuiltInAccelerometer accelerometer{};
 
     .. code-tab:: java
 
         // Creates an object for the built-in accelerometer
         // Range defaults to +- 8 G's
         Accelerometer accelerometer = new BuiltInAccelerometer();
+
+    .. code-tab:: c++
+
+        // Creates an object for the built-in accelerometer
+        // Range defaults to +- 8 G's
+        frc::BuiltInAccelerometer accelerometer{};
 
 Third-party accelerometers
 --------------------------
@@ -169,27 +166,6 @@ It is recommended to use accelerometers in FRC for any application which needs a
 For detecting collisions, it is often more robust to measure the jerk than the acceleration.  The jerk is the derivative (or rate of change) of acceleration, and indicates how rapidly the forces on the robot are changing - the sudden impulse from a collision causes a sharp spike in the jerk.  Jerk can be determined by simply taking the difference of subsequent acceleration measurements, and dividing by the time between them:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        double prevXAccel = 0;
-        double prevYAccel = 0;
-
-        frc::BuiltInAccelerometer accelerometer{};
-
-        void Robot::RobotPeriodic() {
-            // Gets the current accelerations in the X and Y directions
-            double xAccel = accelerometer.GetX();
-            double yAccel = accelerometer.GetY();
-
-            // Calculates the jerk in the X and Y directions
-            // Divides by .02 because default loop timing is 20ms
-            double xJerk = (xAccel - prevXAccel)/.02;
-            double yJerk = (yAccel - prevYAccel)/.02;
-
-            prevXAccel = xAccel;
-            prevYAccel = yAccel;
-        }
 
     .. code-tab:: java
 
@@ -213,13 +189,30 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
+    .. code-tab:: c++
+
+        double prevXAccel = 0;
+        double prevYAccel = 0;
+
+        frc::BuiltInAccelerometer accelerometer{};
+
+        void Robot::RobotPeriodic() {
+            // Gets the current accelerations in the X and Y directions
+            double xAccel = accelerometer.GetX();
+            double yAccel = accelerometer.GetY();
+
+            // Calculates the jerk in the X and Y directions
+            // Divides by .02 because default loop timing is 20ms
+            double xJerk = (xAccel - prevXAccel)/.02;
+            double yJerk = (yAccel - prevYAccel)/.02;
+
+            prevXAccel = xAccel;
+            prevYAccel = yAccel;
+        }
+
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearDigitalFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__) to reduce the noise:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        TODO: C++ example
 
     .. code-tab:: java
 
@@ -250,3 +243,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
             // Get the filtered X acceleration
             double filteredXAccel = xAccelFilter.pidGet();
         }
+
+    .. code-tab:: c++
+
+        TODO: C++ example
