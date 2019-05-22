@@ -1,5 +1,3 @@
-.. _analog-inputs-software:
-
 Analog Inputs
 =============
 
@@ -47,19 +45,19 @@ When oversampling is enabled, the FPGA will add multiple consecutive samples tog
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
-        // Thus, the reported values will increase by about a factor of 16, and the update
-        // rate will decrease by a similar amount.
-        analog.SetOversampleBits(4);
-
     .. code-tab:: java
 
         // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
         // Thus, the reported values will increase by about a factor of 16, and the update
         // rate will decrease by a similar amount.
         analog.setOversampleBits(4);
+
+    .. code-tab:: c++
+
+        // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
+        // Thus, the reported values will increase by about a factor of 16, and the update
+        // rate will decrease by a similar amount.
+        analog.SetOversampleBits(4);
 
 Averaging
 ~~~~~~~~~
@@ -68,17 +66,17 @@ Averaging behaves much like oversampling, except the accumulated values are divi
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
-        // The update rate will decrease by a factor of 16.
-        analog.SetAverageBits(4);
-
     .. code-tab:: java
 
         // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
         // The update rate will decrease by a factor of 16.
         analog.setAverageBits(4);
+
+    .. code-tab:: c++
+
+        // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
+        // The update rate will decrease by a factor of 16.
+        analog.SetAverageBits(4);
 
 .. note:: When oversampling and averaging are used at the same time, the oversampling is applied *first,* and then the oversampled values are averaged.  Thus, 2-bit oversampling and 2-bit averaging used at the same time will increase the scale of the returned values by approximately a factor of 2, and decrease the update rate by approximately a factor of 4.
 
@@ -94,13 +92,13 @@ The :code:`getValue` method returns the raw instantaneous measured value from th
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        analog.GetValue();
-
     .. code-tab:: java
 
         analog.getValue();
+
+    .. code-tab:: c++
+
+        analog.GetValue();
 
 getVoltage
 ~~~~~~~~~~
@@ -109,13 +107,13 @@ The :code:`getVoltage` method returns the instantaneous measured voltage from th
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        analog.GetVoltage();
-
     .. code-tab:: java
 
         analog.getVoltage();
+
+    .. code-tab:: c++
+
+        analog.GetVoltage();
 
 getAverageValue
 ~~~~~~~~~~~~~~~
@@ -124,13 +122,13 @@ The :code:`getAverageValue` method returns the averaged value from the analog in
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        analog.GetAverageValue();
-
     .. code-tab:: java
 
         analog.getAverageValue();
+
+    .. code-tab:: c++
+
+        analog.GetAverageValue();
 
 getAverageVoltage
 ~~~~~~~~~~~~~~~~~
@@ -139,13 +137,13 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        analog.GetAverageVoltage();
-
     .. code-tab:: java
 
         analog.getAverageVoltage();
+
+    .. code-tab:: c++
+
+        analog.GetAverageVoltage();
 
 Accumulator
 ^^^^^^^^^^^
@@ -155,25 +153,6 @@ Accumulator
 Analog input channels 0 and 1 additionally support an accumulator, which integrates (adds up) the signal indefinitely, so that the returned value is the sum of all past measured values.  Oversampling and averaging are applied prior to accumulation.
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Sets the initial value of the accumulator to 0
-        // This is the "starting point" from which the value will change over time
-        analog.SetAccumulatorInitialValue(0);
-
-        // Sets the "center" of the accumulator to 0.  This value is subtracted from
-        // all measured values prior to accumulation.
-        analog.SetAccumulatorCenter(0);
-
-        // Returns the number of accumulated samples since the accumulator was last started/reset
-        analog.GetAccumulatorCount();
-
-        // Returns the value of the accumulator.  Return type is long.
-        analog.GetAccumulatorValue();
-
-        // Resets the accumulator to the initial value
-        analog.ResetAccumulator();
 
     .. code-tab:: java
 
@@ -194,21 +173,31 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
         // Resets the accumulator to the initial value
         analog.resetAccumulator();
 
+    .. code-tab:: c++
+
+        // Sets the initial value of the accumulator to 0
+        // This is the "starting point" from which the value will change over time
+        analog.SetAccumulatorInitialValue(0);
+
+        // Sets the "center" of the accumulator to 0.  This value is subtracted from
+        // all measured values prior to accumulation.
+        analog.SetAccumulatorCenter(0);
+
+        // Returns the number of accumulated samples since the accumulator was last started/reset
+        analog.GetAccumulatorCount();
+
+        // Returns the value of the accumulator.  Return type is long.
+        analog.GetAccumulatorValue();
+
+        // Resets the accumulator to the initial value
+        analog.ResetAccumulator();
+
 Obtaining synchronized count and value
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes, it is necessarily to obtain matched measurements of the count and the value.  This can be done using the :code:`getAccumulatorOutput` method:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // The count and value variables to fill
-        int_64t count;
-        int_64t value;
-
-        // Fill the count and value variables with the matched measurements
-        analog.GetAccumulatorOutput(count, value);
 
     .. code-tab:: java
 
@@ -221,6 +210,15 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
         // Read the values from the AccumulatorResult
         long count = result.count;
         long value = result.value;
+
+    .. code-tab:: c++
+
+        // The count and value variables to fill
+        int_64t count;
+        int_64t value;
+
+        // Fill the count and value variables with the matched measurements
+        analog.GetAccumulatorOutput(count, value);
 
 Using analog inputs in code
 ---------------------------

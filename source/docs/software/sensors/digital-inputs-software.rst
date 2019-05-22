@@ -1,5 +1,3 @@
-.. _digital-inputs-software:
-
 Digital Inputs - Software
 =========================
 
@@ -16,15 +14,15 @@ A :code:`DigitalInput` can be initialized as follows:
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Initializes a DigitalInput on DIO 0
-        frc::DigitalInput input{0};
-
     .. code-tab:: java
 
         // Initializes a DigitalInput on DIO 0
         DigitalInput input = new DigitalInput(0);
+
+    .. code-tab:: c++
+
+        // Initializes a DigitalInput on DIO 0
+        frc::DigitalInput input{0};
 
 Reading the value of the DigitalInput
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,15 +31,15 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Gets the value of the digital input.  Returns true if the circuit is open.
-        input.Get();
-
     .. code-tab:: java
 
         // Gets the value of the digital input.  Returns true if the circuit is open.
         input.get();
+
+    .. code-tab:: c++
+
+        // Gets the value of the digital input.  Returns true if the circuit is open.
+        input.Get();
 
 Creating a DigitalInput from an AnalogInput
 -------------------------------------------
@@ -53,18 +51,6 @@ Sometimes, it is desirable to use an analog input as a digital input.  This can 
 An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPotentiometer`, an :code:`AnalogInput` may be passed explicitly if the user wishes to customize the sampling settings:
 
 .. tabs::
-
-    .. code-tab:: c++
-
-        // Initializes an AnalogTrigger on port 0
-        frc::AnalogTrigger trigger0{0};
-
-        // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
-        frc::AnalogInput input{1};
-        input.SetAverageBits(2);
-
-        // Initializes an AnalogTrigger using the above input
-        frc::AnalogTrigger trigger1{input};
 
     .. code-tab:: java
 
@@ -78,6 +64,18 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
         // Initializes an AnalogTrigger using the above input
         AnalogTrigger trigger1 = new AnalogTrigger(input);
 
+    .. code-tab:: c++
+
+        // Initializes an AnalogTrigger on port 0
+        frc::AnalogTrigger trigger0{0};
+
+        // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
+        frc::AnalogInput input{1};
+        input.SetAverageBits(2);
+
+        // Initializes an AnalogTrigger using the above input
+        frc::AnalogTrigger trigger1{input};
+
 Setting the trigger points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -87,14 +85,6 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
-        trigger.SetLimitsRaw(1000, 3500);
-
-        // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
-        trigger.SetLimitsVoltage(1.5, 4);
-
     .. code-tab:: java
 
         // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
@@ -102,6 +92,14 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 
         // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
         trigger.setLimitsVoltage(1.5, 4);
+
+    .. code-tab:: c++
+
+        // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
+        trigger.SetLimitsRaw(1000, 3500);
+
+        // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
+        trigger.SetLimitsVoltage(1.5, 4);
 
 Using DigitalInputs in code
 ---------------------------
@@ -114,6 +112,22 @@ Limiting the motion of a mechanism
 Nearly all motorized mechanisms (such as arms and elevators) in FRC should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
 
 .. tabs::
+
+    .. code-tab:: java
+
+        Spark spark = new Spark(0);
+
+        // Limit switch on DIO 2
+        DigitalInput limit = new DigitalInput(2);
+
+        public void autonomousPeriodic() {
+            // Runs the motor forwards at half speed, unless the limit is pressed
+            if(!limit.get()) {
+                spark.set(.5);
+            } else {
+                spark.set(0);
+            }
+        }
 
     .. code-tab:: c++
 
@@ -132,23 +146,7 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC should be gi
             }
         }
 
-    .. code-tab:: java
-
-        Spark spark = new Spark(0);
-
-        // Limit switch on DIO 2
-        DigitalInput limit = new DigitalInput(2);
-
-        public void autonomousPeriodic() {
-            // Runs the motor forwards at half speed, unless the limit is pressed
-            if(!limit.get()) {
-                spark.set(.5);
-            } else {
-                spark.set(0);
-            }
-        }
-
 Homing an encodered mechanism
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Limit switches are very important for being able to "home" an encodered mechanism.  For an example of this, see :ref:`homing-an-encodered-mechanism`.
+Limit switches are very important for being able to "home" an encodered mechanism.  For an example of this, see :ref:`docs/software/sensors/encoders-software:Homing an encodered mechanism`.

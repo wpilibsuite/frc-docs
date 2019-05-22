@@ -1,5 +1,3 @@
-.. _tour-of-shuffleboard:
-
 Tour of Shuffleboard
 ====================
 
@@ -42,7 +40,7 @@ The easiest way to get data displayed on the dashboard is simply to use methods 
    .. code-tab:: java
    
         SmartDashboard.putNumber("Joystick X value", joystick1.getX());
-		
+
 to see a field displayed with the label "Joystick X value" and a value of the X value of the joystick. Each time this line of code is executed, a new joystick value will be sent to Shuffleboard. Remember: you must write the joystick value whenever you want to see an updated value. Executing this line once at the start of the program will only display the value once at the time the line of code was executed.
 
 .. figure:: images/joystick-value.png
