@@ -85,6 +85,6 @@ The scaled value can be read by simply calling the :code:`get` method:
 Using AnalogPotentiometers in code
 ----------------------------------
 
-Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :ref:`encoder <docs/software/sensors/encoders-software:Encoders - Software>`.  If it is an ultrasonic sensor, it can be used similarly to other :ref:`ultrasonics <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.
+Analog sensors can be used in code much in the way other sensors that measure the same thing can be.  If the analog sensor is a potentiometer measuring an arm angle, it can be used similarly to an :doc:`encoder <docs/software/sensors/encoders-software:Encoders - Software>`.  If it is an ultrasonic sensor, it can be used similarly to other :doc:`ultrasonics <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.
 
 It is very important to keep in mind that actual, physical potentiometers generally have a limited range of motion.  Safeguards should be present in both the physical mechanism and the code to ensure that the mechanism does not break the sensor by traveling past its maximum throw.
