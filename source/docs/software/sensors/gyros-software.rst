@@ -110,7 +110,7 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        Spark left1 new Spark(0);
+        Spark left1 = new Spark(0);
         Spark left2 = new Spark(1);
 
         Spark right1 = new Spark(2);
