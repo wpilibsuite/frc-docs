@@ -221,6 +221,8 @@ Basic Programming
 .. toctree::
    :maxdepth: 1
 
+   docs/software/basic-programming/git-getting-started.rst
+
 
 Advanced Programming
 ====================

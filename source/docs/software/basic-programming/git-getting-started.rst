@@ -1,0 +1,113 @@
+Git Version Control Introduction
+================================
+
+`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
+
+- Seperate testing environments into *branches*
+- Ability to navigate to a particular *commit* without removing history
+- Ability to manage *commits* in various ways, including combining them
+- Various other features, see `here <https://git-scm.com/about>`__
+
+Prerequisites
+-------------
+
+You have to download and install Git from the following links:
+
+- `Windows <https://git-scm.com/download/win>`_
+- `Mac OS X <https://git-scm.com/download/mac>`_
+- `Linux <https://git-scm.com/download/linux>`_
+
+.. note:: You may need to add Git to your path
+
+Git Vocabulary
+--------------
+
+Git is composed of several primary elements:
+
+- *Repository:* the actual local of your code, including a ``.git`` folder in the root directory
+- *Commits:* a particular saved state of the repository, this includes all files and additions
+- *Branches:* a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
+- *Push:* update the remote repository with your local changes
+- *Pull:* update your local repository with the remote changes
+- *Cloning:* retrieving a local copy of a repository to modify
+- *Forking:* duplicating a pre-existing repository to modify, and to compare against the original
+- *Merging:* combining various changes from different branches/commits/forks into a single history
+
+Repository
+----------
+
+A Git repository is a data structure containing the structure, history, and files of a project.
+
+Git repositories consist of:
+
+- A ``.git`` folder. This folder contains the various information about the repository. 
+- A ``.gitignore`` file. This file contains the files or directories that you do *not* want included when you commit.
+- Files and folders. This is the main content of the repository.
+
+Creating the repository
+^^^^^^^^^^^^^^^^^^^^^^^
+
+You can store the repository locally, or through the cloud. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+
+Creating a Github Account
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Go ahead and create a Github account by visiting the `website <https://github.com>`_ and following the own screen prompts.
+
+.. image:: images/image1.png
+
+Local Creation
+~~~~~~~~~~~~~~
+
+After creating and verifying your account, you'll want to visit the homepage. It'll look similar to the shown image.
+
+.. image:: images/image2.png
+
+Click the plus icon in the top right.
+
+.. image:: images/image3.png
+
+Then click *"New Repository"*
+
+.. image:: images/image4.png
+
+Fill out the appropriate information, and then click *"Create repository"*
+
+.. image:: images/image5.png
+
+You should see a screen similar to this
+
+.. image:: images/image6.png
+
+Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__
+
+.. image:: images/image7.png
+
+In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
+
+.. image:: images/image8.png
+
+Commits
+-------
+
+Github repository are primarily composed of commits. Commits are saved states or *versions* of code. 
+
+In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
+
+1. ``git add README.md``
+2. ``git commit -m "example commit"``
+3. ``git push``
+
+.. image:: images/image9.png
+
+Git Add
+^^^^^^^
+This command adds a selected file(s) to a commit. To commit every file/folder that isn't excluded via *gitignore*, type ``git add .``.
+
+Git Commit
+^^^^^^^^^^
+This command creates the commit and stores it locally. This saves the state and adds it to the repositories history.
+
+Git Push
+^^^^^^^^
+Upload (Push) your local changes to the remote (Cloud)
