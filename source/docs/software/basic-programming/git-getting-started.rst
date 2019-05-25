@@ -111,3 +111,26 @@ This command creates the commit and stores it locally. This saves the state and 
 Git Push
 ^^^^^^^^
 Upload (Push) your local changes to the remote (Cloud)
+
+Branches
+--------
+
+Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
+
+.. graphviz::
+
+   digraph branches {
+      "Example Repo" [ shape=cylinder]
+      FeatureA [ shape=ellipse]
+      FeatureB [ shape=ellipse]
+      FeatureC [ shape=ellipse]
+      "Example Repo" -> FeatureA
+      "Example Repo" -> FeatureB
+      "Example Repo" -> FeatureC
+      "Update File 1" [ shape=box]
+      FeatureA -> "Update File 1"
+      "Update File 2" [ shape=box]
+      FeatureB -> "Update File 2"
+      "Update File 3" [ shape=box]
+      FeatureC -> "Update File 3"
+   }
