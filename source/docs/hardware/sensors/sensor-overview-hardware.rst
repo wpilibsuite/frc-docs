@@ -54,3 +54,4 @@ In order for a sensor to be useful, it must be able to "talk" to the RoboRIO.  T
     * USB
 
 In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus is more complicated.
+.. note:: This section covers sensor hardware, not the use of sensors in code. For a software sensor guide, see :ref:`docs/software/sensors/sensor-overview-software:Sensor Overview - Software`.
