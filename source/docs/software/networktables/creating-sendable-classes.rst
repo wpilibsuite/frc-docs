@@ -50,36 +50,44 @@ SendableBuilder (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/
 - String arrays
 - NetworkTableValues
 
-SendableBuilder can also be used to set the actuator flag on or off, add functions to run to set the Sendable into a safe state, set the type of the Sendable displayed on SmartDashboard, or functions to run to update the network table for things other than properties. If a Sendable is configured as an actuator, users will be able to control it directly through Shuffleboard, SmartDashboard or OutlineViewer when the robot is enabled in Test mode.
-
-Setting the Sendable Type on Shuffleboard
------------------------------------------
-
-When creating a new Sendable class 
+The passed SendableBuilder is also used to set tye type of system being displayed using the :code:`setSmartDashboardType` method. This allows users to write custom widgets to display their custom data type. Existing implementations of this include :code:`Command` and WPI's :code:`DifferentialDrive` classes. SendableBuilder can also be used to set the actuator flag on or off, add functions to run to set the Sendable into a safe state, set the type of the Sendable displayed on SmartDashboard, or functions to run to update the network table for things other than properties. If a Sendable is configured as an actuator, users will be able to control it directly through Shuffleboard, SmartDashboard or OutlineViewer when the robot is enabled in Test mode.
 
 Adding Data to a Subsystem or other subclass of a Sendable
 ----------------------------------------------------------
 
-Many classes, such as :code-block:`Command` and :code-block:`Subsystem`, already implement Sendable. To add new data to the Sendable class, such as adding a motor or sensor to the already implemented SendableBuilder code, teams can simply override the supertype's :code-block:`initSendable` method. Note that teams must still call the :code-block:`super.initSendable` method to run the superclass' implementation. For example, Command's implementation of :code-block:`Sendable` includes code that will configure SmartDashboard or Shuffleboard to display it as a command, and allows users to start and stop the command through these dashboards.
+To expose information about a class to users over NetworkTables, one must create an implementation of the initSendable() method of the Sendable interface. The properties added to Sendable classes require a getter and setter for the property. Note that a :code:`null` setter simply means the value can't be changed over NetworkTables, and may be desired in situations where information should only be displayed, but not modified. If the Sendable is configured as an actuator, the setter will be called when the robot is enabled in Test mode when users change its values to test robot functions. Many of WPI's classes, such as :code:`Command` and :code:`Subsystem`, already implement Sendable. To add new data to a Sendable class, such as adding a motor or sensor specific to a Subsystem, teams can simply override the supertype's :code:`initSendable` method. Note that teams must still call the :code:`super.initSendable` method to run the superclass' implementation. For example, Command's implementation of :code:`Sendable` includes code that will configure SmartDashboard or Shuffleboard to display it as a command, and allows users to start and stop the command through these dashboards.
 
 .. tabs::
 
       .. code-tab:: c++
 
-         TODO
+        void MySubsystem::InitSendable(SendableBuilder& builder) {
+
+            builder.AddDoubleProperty(".intakeSpeed",
+                    [=]() { return
+                        myMotor.Get(); },
+                    [=](double value) {
+                        myMotor.Set(value);
+                });
+
+                Subsystem.InitSendable(builder);
+
+        }
 
     .. code-tab:: java
 
         public class MySubsystem extends Subsystem {
 
             Spark spark = new Spark(1);
+            Solenoid solenoid = new Solenoid(0);
 
             @Override
             public void initSendable(SendableBuilder builder) {
 
-               builder.addDoubleProperty(".leftSpeed", spark::get, (value) -> spark.set(value));
+               builder.addDoubleProperty(".intakeSpeed", spark::get, (value) -> spark.set(value));
 
-               // this call sets up Command specific configuration
+               // this call sets up Command specific configuration, including calling setSmartDashboardType("Subsystem")
+               // to let Shuffleboard know to treat this as such.
                super.initSendable(builder);
             }
 
@@ -88,31 +96,34 @@ Many classes, such as :code-block:`Command` and :code-block:`Subsystem`, already
 Creating a new Sendable class with SendableBuilder
 --------------------------------------------------
 
-To expose information about a class to users over NetworkTables, one must create an implementation of the initSendable() method of the Sendable interface. The properties added to Sendable classes can include just a getter, or both a getter and a setter. This example shows a Double property which can both be viewed and modified on NetworkTables. Note that both a getter and setter are not required - a :code:`null` setter simply means the value can't be changed over NetworkTables. This might be desired in some situations where information should only be displayed, but not modified. If the Sendable is configured as an actuator, the setter will be called when the robot is enabled in Test mode when users change its values to test robot functions.
+Creating an entirely new :code:`Sendable` class follows a similar pattern to the extending the implementation present in subclasses of WPI classes such as :code:`Command` and :code:`Subsystem` as presented above. The main difference is that when creating a new class, teams must explicitly define the Sendable's type. This allows teams to create custom wigets for Shuffleboard to display data. This example shows a data class which holds boolean and double values about an arm's state.
 
 .. tabs::
 
     .. code-tab:: c++
 
-        void DifferentialDrive::InitSendable(SendableBuilder& builder) {
-
-            builder.AddDoubleProperty("Intake Speed",
-                                    [=]() { return
-                                    intakeMotor.Get(); },
-                                    [=](double value) {
-                                    intakeMotor.Set(value);
-                                    });
-
-        }
+        TOOD
 
     .. code-tab:: java
 
-        @Override
-        public void initSendable(SendableBuilder builder) {
+        public class ArmState implement Sendable {
 
-            builder.addDoubleProperty("Intake Speed",
-                intakeMotor::get, intakeMotor::set);
+            final double armAngle;
+            final boolean intakeOpen;
+            
+            public ArmState(double angle, boolean intakeOpen) {
+                this.armAngle = angle;
+                this.intakeOpen = intakeOpen;
+            }
 
+            public void initSendable(SendableBuilder builder) {
+                
+                builder.setSmartDashboardType("ArmState");
+                builder.addDoubleProperty(".angle", () -> armAngle, null);
+                builder.addBooleanProperty(".isOpen", () -> intakeOpen, null);
+
+                super.initSendable(builder);
+            }
         }
 
 The following example is an example implementation from WPILib's DifferentialDrive class, which implements Sendable. The properties added to the builder in this example expose many features of DifferentialDrive to modification through NetworkTables. The instance of DifferentialDrive is treated as an actuator of type "DifferentialDrive", which means that Test mode can be used to control the drive's outputs, and the name DifferentialDrive will be displayed to the user. When Test mode is enabled or disabled, the actuator will be set to a safe state by calling the :code:`stopMotor` method, which will stop the motors. Finally, a getter and setter for the left motor speed and right motor speed allows the user both to view the current output of both motors, as well as set them to an arbitrary output. For more information on the DifferentialDrive class, see :ref:`wpi_differential_drive`.
