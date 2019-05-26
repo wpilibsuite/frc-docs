@@ -3,7 +3,7 @@
 Contributing to frc-docs
 ========================
 
-Welcome to the contributiong guidelines for the frc-docs project. If you are unfamiliar to writing in the reStructuredText format, please read up on it `here <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_.
+Welcome to the contributiong guidelines for the frc-docs project. If you are unfamiliar to writing in the reStructuredText format, please read up on it `here <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`__.
 
 .. important:: Currently we are in the process of migrating documentation from the official screensteps. Please pardon the constant housekeeping. FIRST retains all rights to documentation and images provided. Credit for article will be in the `Github commit history. <https://github.com/wpilibsuite/frc-docs/graphs/commit-activity>`_
 
