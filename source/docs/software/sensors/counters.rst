@@ -256,9 +256,9 @@ Users can obtain the current count with the :code:`get()` method:
 Distance
 ^^^^^^^^
 
-.. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <resetting-a-counter>`.
+.. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/sensors/counters:Resetting a Counter>`.
 
-If the :ref:`distance per pulse <configuring-counter-parameters>` has been configured, users can obtain the total distance traveled by the counted sensor with the :code:`getDistance()` method:
+If the :ref:`distance per pulse <docs/software/sensors/counters:Configuring counter parameters>` has been configured, users can obtain the total distance traveled by the counted sensor with the :code:`getDistance()` method:
 
 .. tabs::
 
@@ -328,7 +328,7 @@ Users can obtain the direction in which the counter last moved with the :code:`g
 Period
 ^^^^^^
 
-.. note:: In :ref:`semi-period mode <semi-period-mode>`, this method returns the duration of the pulse, not of the period.
+.. note:: In :ref:`semi-period mode <docs/software/sensors/counters:Semi-period mode>`, this method returns the duration of the pulse, not of the period.
 
 Users can obtain the duration (in seconds) of the most-recent period with the :code:`getPeriod()` method:
 
