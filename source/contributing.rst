@@ -3,7 +3,7 @@
 Contributing to frc-docs
 ========================
 
-Welcome to the contributiong guidelines for the frc-docs project. If you are unfamiliar to writing in the reStructuredText format, please read up on it `here <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`__.
+Welcome to the contributiong guidelines for the frc-docs project. If you are unfamiliar to writing in the reStructuredText format, please read up on it `here <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_.
 
 .. important:: Currently we are in the process of migrating documentation from the official screensteps. Please pardon the constant housekeeping. FIRST retains all rights to documentation and images provided. Credit for article will be in the `Github commit history. <https://github.com/wpilibsuite/frc-docs/graphs/commit-activity>`_
 
@@ -19,6 +19,12 @@ These docs serve to provide a learning ground for all FIRST Robotics Competition
 - Relevant. Documentation should be focused on the FIRST Robotics Competition.
 
 Please see :ref:`contributing:Style Guide` for information on styling your documentation. 
+
+Note on New Articles
+--------------------
+All new articles will undergo a review process before being merged into the repository. This review process will be done by members of the WPILib team. New Articles must be on official FIRST supported Software and Hardware. Documentation on unofficial libraries or sensors *will not* be accepted. This process may take some time to review, please be patient.
+
+Minor revisions and rewrites will be accepted at a more generous rate.
 
 Style Guide
 -----------
