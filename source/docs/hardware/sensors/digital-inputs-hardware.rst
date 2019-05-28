@@ -12,6 +12,8 @@ Connecting to the RoboRIO DIO ports
 
 .. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the device.
 
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This can severely damage the device.
+
 |Roborio DIO Ports|
 
 The RoboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the DIO ports - there is a constant 5V potential difference between the "power" and the "ground" pins [3] - the "power" pin corresponds to the "high" state (5V), and the "ground" to "low" (0V).  The signal pin is the pin on which the signal is actually measured (or, when used as an output, the pin that sends the signal).

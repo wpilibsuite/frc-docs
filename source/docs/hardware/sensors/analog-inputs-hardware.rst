@@ -5,12 +5,16 @@ An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal w
 
 In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the RoboRIO).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
 
+Analog inputs are typically (but not always!) used for sensors whose measurements vary continuously over a range, such as :doc:`ultrasonic rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-potentiometers-hardware>`, as they can communicate by outputting a voltage proportional to their measurements.
+
 Connecting to RoboRIO analog input ports
 ----------------------------------------
 
 .. note:: An additional four analog inputs are available via the "MXP" expansion port.  To use these, a breakout board of some sort that connects to the MXP is needed.
 
-.. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the device.
+.. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the sensor or the RIO.
+
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This can severely damage the device.
 
 |RoboRIO Analog Inputs|
 
@@ -38,5 +42,5 @@ TODO: add picture
 Footnotes
 ---------
 
-.. [1] A 12-bit resolution yields :math:`2^12`, or 4096 different values.  For a 5V range, that's an effective resolution of approximately 1.2 mV, or .0012V.
+.. [1] A 12-bit resolution yields :math:`2^12`, or 4096 different values.  For a 5V range, that's an effective resolution of approximately 1.2 mV, or .0012V.  The actual accuracy specification is plus-or-minus 50mV, so the discretization is not the limiting factor in the measurement accuracy.
 .. [2] All power pins are actually connected to a single rail, as are all ground pins - there is no need to use the power/ground pins corresponding to a given signal pin.
