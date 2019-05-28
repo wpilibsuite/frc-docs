@@ -27,12 +27,11 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 - Distance sensors
 
     * :doc:`Ultrasonic sensors <ultrasonics-hardware>`
-    * :doc:`Photoelectric distance sensors <ir-rangefinders>`
+    * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
     * :doc:`LIDAR <lidar>`
 
 - Shaft rotation sensors
 
-    * Gear tooth sensors
     * :doc:`Encoders <encoders-hardware>`
     * :doc:`Potentiometers <analog-potentiometers-hardware>`
 
@@ -54,4 +53,3 @@ In order for a sensor to be useful, it must be able to "talk" to the RoboRIO.  T
     * USB
 
 In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus is more complicated.
-.. note:: This section covers sensor hardware, not the use of sensors in code. For a software sensor guide, see :ref:`docs/software/sensors/sensor-overview-software:Sensor Overview - Software`.
