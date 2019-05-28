@@ -19,10 +19,14 @@ Sensors
    :maxdepth: 1
    
    docs/hardware/sensors/sensor-overview-hardware
-   docs/hardware/sensors/analog-inputs-hardware
+   docs/hardware/sensors/proximity-switches
    docs/hardware/sensors/analog-potentiometers-hardware
-   docs/hardware/sensors/digital-inputs-hardware
+   docs/hardware/sensors/encoders-hardware
+   docs/hardware/sensors/ultrasonics-hardware
+   docs/hardware/sensors/triangulating-rangefinders
+   docs/hardware/sensors/lidar
    docs/hardware/sensors/accelerometers-hardware
    docs/hardware/sensors/gyros-hardware
-   docs/hardware/sensors/ultrasonics-hardware
-   docs/hardware/sensors/encoders-hardware
+   docs/hardware/sensors/analog-inputs-hardware
+   docs/hardware/sensors/digital-inputs-hardware
+   docs/hardware/sensors/serial-buses
