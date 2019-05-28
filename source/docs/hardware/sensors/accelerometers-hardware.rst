@@ -28,4 +28,4 @@ TODO: add picture
 
 Multi-axis accelerometers measure acceleration along all multiple spacial axes.  The RoboRIO's built-in accelerometer is a three-axis accelerometer.
 
-Peripheral multi-axis accelerometers may simply output multiple analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.
+Peripheral multi-axis accelerometers may simply output multiple analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/sensors/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.
