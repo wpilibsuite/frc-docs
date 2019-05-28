@@ -12,16 +12,20 @@ Several popular FRC devices (known as "inertial measurement units," or "IMUs") c
 Types of accelerometers
 -----------------------
 
-There are two types of accelerometers commonly-used in FRC: single-axis accelerometers, and three-axis accelerometers.
+There are two types of accelerometers commonly-used in FRC: single-axis accelerometers, and multi-axis accelerometers.
 
 Single-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+TODO: add picture
+
 As per their name, single-axis accelerometers measure acceleration along a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Single-axis accelerometers generally output an analog voltage corresponding to the measured acceleration, and so connect to the RoboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
 
-Three-axis accelerometers
+Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Three-axis accelerometers measure acceleration along all three spacial axes (typically labeled x, y, and z).  The RoboRIO's built-in accelerometer is a three-axis accelerometer.
+TODO: add picture
 
-Peripheral three-axis accelerometers may simply output three analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.
+Multi-axis accelerometers measure acceleration along all multiple spacial axes.  The RoboRIO's built-in accelerometer is a three-axis accelerometer.
+
+Peripheral multi-axis accelerometers may simply output multiple analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.

@@ -1,6 +1,8 @@
 Analog Inputs - Hardware
 ========================
 
+.. note:: This section covers analog input hardware.  For a software guide to analog inputs, see :ref:`docs/software/sensors/analog-inputs-software:Analog Inputs - Software`.
+
 An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The RoboRIO's analog input ports allow the measurement of analog signals with values from 0V to 5V.
 
 In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the RoboRIO).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.

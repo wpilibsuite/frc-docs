@@ -1,6 +1,8 @@
 Analog Potentiometers - Hardware
 ================================
 
+.. note:: This section covers analog potentiometer hardware.  For a software guide to analog potentiometers, see :ref:`docs/software/sensors/analog-potentiometers-software:Analog Potentiometers - Software`.
+
 .. warning:: Potentiometers generally have a mechanically-limited travel range.  Users should be careful that their mechanisms do not turn their potentiometers past their maximum travel, as this will damage or destroy the potentiometer.
 
 Apart from :doc:`quadrature encoders <encoders-hardware>`, another common way of measuring rotation on FRC robots is with analog potentiometers.  A potentiometer is simply a variable resistor - as the shaft of the potentiometer turns, the resistance changes (usually linearly).  Placing this resistor in a `voltage divider <https://en.wikipedia.org/wiki/Voltage_divider>`__ allows the user to easily measure the resistance by measuring the voltage across the potentiometer, which can then be used to calculate the rotational position of the shaft.
@@ -23,7 +25,7 @@ Absolute encoders
 
 An "absolute encoder" is an encoder that measures the absolute position of the encoder shaft, rather than the incremental movement (as a :doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, absolute encoders are more similar to potentiometers than to incremental encoders.  Many absolute encoders offer a simple analog output - these can be used exactly in the same way as a potentiometer, except their wiring is not generally reversible.  Absolute encoders have the advantage of lacking a hard travel limit - the signal will simply reset when the shaft crosses the zero point.
 
-Absolute encoders that do not offer a simple analog output require more complicated communications with the RIO.
+Absolute encoders that do not offer a simple analog output require :doc:`more complicated communications with the RIO <serial-buses>`.
 
 
 .. |Potentiometer| image:: images/analog-potentiometers-hardware/potentiometer.jpg

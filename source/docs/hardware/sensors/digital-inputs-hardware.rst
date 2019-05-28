@@ -1,6 +1,8 @@
 Digital Inputs - Hardware
 =========================
 
+.. note:: This section covers digital input hardware.  For a software guide to digital inputs, see :ref:`docs/software/sensors/digital-inputs-software:Digital Inputs - Software`.
+
 A `digital signal <https://en.wikipedia.org/wiki/Digital_signal>`__ is a signal that can be in one of several discrete states.  In the vast majority of cases, the signal is the voltage in a wire, and there are only two states for a digital signal - high, or low (also denoted 1 and 0, or true and false, respectively).
 
 The RoboRIO's built-in digital input-output ports (or "DIO") ports function on 5V, so "high" corresponds to a signal of 5V, and "low" to a signal of 0V [1]_ [2]_.
