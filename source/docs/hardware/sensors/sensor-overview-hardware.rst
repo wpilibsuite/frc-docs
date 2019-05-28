@@ -37,7 +37,7 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 
 - :doc:`Accelerometers <accelerometers-hardware>`
 
-- :doc:`Gyroscopes <gyroscopes-hardware>`
+- :doc:`Gyroscopes <gyros-hardware>`
 
 Sensors by communication protocol
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,6 +50,7 @@ In order for a sensor to be useful, it must be able to "talk" to the RoboRIO.  T
 
     * SPI
     * I2C
+    * RS232
     * USB
 
 In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus is more complicated.
