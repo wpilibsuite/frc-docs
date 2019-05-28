@@ -27,12 +27,11 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 - Distance sensors
 
     * :doc:`Ultrasonic sensors <ultrasonics-hardware>`
-    * :doc:`Photoelectric distance sensors <ir-rangefinders>`
+    * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
     * :doc:`LIDAR <lidar>`
 
 - Shaft rotation sensors
 
-    * Gear tooth sensors
     * :doc:`Encoders <encoders-hardware>`
     * :doc:`Potentiometers <analog-potentiometers-hardware>`
 
