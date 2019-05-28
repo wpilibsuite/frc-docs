@@ -24,4 +24,4 @@ Three-axis accelerometers
 
 Three-axis accelerometers measure acceleration along all three spacial axes (typically labeled x, y, and z).  The RoboRIO's built-in accelerometer is a three-axis accelerometer.
 
-Peripheral three-axis may simply output three analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or else they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.
+Peripheral three-axis accelerometers may simply output three analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the RoboRIO's :doc:`serial buses <serial-buses>`.
