@@ -36,4 +36,4 @@ Absolute encoders that do not offer a simple analog output require :doc:`more co
 Footnotes
 ---------
 
-.. [1] The way this actually works is generally by having the shaft control the position of a contact along a resistive "wiper" of fixed length along which the current flows - the resistance to proportional to the length of wiper between the contact and the end of the wiper.
+.. [1] The way this actually works is generally by having the shaft control the position of a contact along a resistive "wiper" of fixed length along which the current flows - the resistance is proportional to the length of wiper between the contact and the end of the wiper.
