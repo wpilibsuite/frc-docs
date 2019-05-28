@@ -12,6 +12,7 @@ pr:
 
 steps:
 - task: UsePythonVersion@0
+  displayName: 'Select Python Version 3.6'
   inputs:
     versionSpec: '3.6'
     architecture: 'x64'
@@ -20,7 +21,7 @@ steps:
   displayName: 'Install and upgrade pip'
 
 - script: pip install -r source/requirements.txt
-  displayName: 'Install Requirements'
+  displayName: 'Install Python Requirements'
 
 - script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk dvipng
   displayName: 'Install LaTeX'
@@ -30,11 +31,3 @@ steps:
   
 - script: make html
   displayName: 'Compile Docs'
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: build/ 
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: 'build.zip' 
-    replaceExistingArchive: true 
