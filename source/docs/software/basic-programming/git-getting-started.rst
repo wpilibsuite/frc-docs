@@ -100,17 +100,35 @@ In the previous example, we created a file called README.md. Open that file in y
 
 .. image:: images/image9.png
 
+Git Pull
+^^^^^^^^
+
+.. note:: ``git fetch`` can be used when the user does not wish to automatically merge into the current working branch
+
+This command retrieves the history or commits from the remote repository. When the remote contains work you do not have, it will attempt to automatically merge. See :ref:`docs/software/basic-programming/git-getting-started:Merging`.
+
+Run: ``git pull``
+
 Git Add
 ^^^^^^^
-This command adds a selected file(s) to a commit. To commit every file/folder that isn't excluded via *gitignore*, type ``git add .``.
+
+This command adds a selected file(s) to a commit. To commit every file/folder that isn't excluded via *gitignore*.
+
+Run: ``git add .``.
 
 Git Commit
 ^^^^^^^^^^
+
 This command creates the commit and stores it locally. This saves the state and adds it to the repositories history.
+
+Run: ``git commit -m "type message here"``
 
 Git Push
 ^^^^^^^^
+
 Upload (Push) your local changes to the remote (Cloud)
+
+Run: ``git push``
 
 Branches
 --------
@@ -134,3 +152,99 @@ Branches are a similar to parallel worlds to Git. They start off the same, and t
       "Update File 3" [ shape=box]
       FeatureC -> "Update File 3"
    }
+
+In the above example, FeatureB was merged into FeatureA. This is what is called a merge. You are "merging" the changes from one branch into another.
+
+Creating a Branch
+^^^^^^^^^^^^^^^^^
+
+Run: ``git branch branch-name`` where branch-name is the name of the branch to create. The new branch history will be created from the current active branch.
+
+Entering a Branch
+^^^^^^^^^^^^^^^^^
+
+Once a branch is created, you have to then enter the branch. 
+
+Run: ``git checkout branch-name`` where branch-name is the branch that was previously created.
+
+Merging
+-------
+
+In scenarios where you want to copy one branches history into another, you can merge them. A merge is done by calling ``git merge branch-name`` with branch-name being the name of the branch to merge from. It is automatically merged in the current active branch. 
+
+It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
+
+.. graphviz::
+
+   digraph branches {
+      "Example Repo" [ shape=cylinder]
+      FeatureA [ shape=ellipse]
+      FeatureB [ shape=ellipse]
+      FeatureC [ shape=ellipse]
+      "Example Repo" -> FeatureA
+      "Example Repo" -> FeatureB
+      "Example Repo" -> FeatureC
+      "Update File 1" [ shape=box]
+      FeatureA -> "Update File 1"
+      "Update File 2" [ shape=box]
+      FeatureB -> "Update File 2"
+      "Update File 3" [ shape=box]
+      FeatureC -> "Update File 3"
+   }
+
+However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
+
+Resets
+------
+
+Sometimes history needs to be reset, or a commit needs to be undone. This can be done multiple ways. 
+
+Reverting the Commit
+^^^^^^^^^^^^^^^^^^^^
+
+.. note:: You cannot revert a merge, as git does not know which branch or origin it should choose.
+
+To revert history leading up to a commit run ``git revert commit-id``. The commit IDs can be shown using the ``git log`` command. 
+
+Resetting the Head
+^^^^^^^^^^^^^^^^^^
+
+.. warning:: Forcibly resetting the head is a dangerous command. It permanently erases all history past the target. You have been warned!
+
+Run: ``git reset --hard commit-id``. 
+
+Forks
+-----
+
+Forks can be treated similarly to branches. You can merge the upstream (original repository) into the origin (forked repository). 
+
+Updating a Fork
+^^^^^^^^^^^^^^^
+
+1. Add the upstream: ``git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git``
+2. Confirm it was added via: ``git remote -v``
+3. Pull changes from upstream: ``git fetch upstream``
+4. Merge the changes into head: ``git merge upstream/upstream-branch-name``
+
+Gitignore
+---------
+
+.. important:: It is extremely important that teams **do not** modify the .gitignore file that is included with their robot project. This can lead to offline deployment not working.
+
+A .gitignore file is commonly used as a list of files to not automatically commit with ``git add .``. Any files or directory listed in this file will **not** be commited. 
+
+Hiding a Folder
+^^^^^^^^^^^^^^^
+
+Simply add a new line containing the folder to hide, with a forward slash at the end
+
+EX: ``directory-to-exclude/``
+
+Hiding a File
+^^^^^^^^^^^^^
+
+Add a new line with the name of the file to hide, including any prepending directory relative to the root of the repository.
+
+EX: ``directory/file-to-hide.txt``
+
+EX: ``file-to-hide2.txt``
