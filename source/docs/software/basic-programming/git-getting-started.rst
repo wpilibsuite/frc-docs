@@ -17,14 +17,14 @@ You have to download and install Git from the following links:
 - `Mac OS X <https://git-scm.com/download/mac>`_
 - `Linux <https://git-scm.com/download/linux>`_
 
-.. note:: You may need to add Git to your path
+.. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path`>__
 
 Git Vocabulary
 --------------
 
 Git is composed of several primary elements:
 
-- *Repository:* the actual local of your code, including a ``.git`` folder in the root directory
+- *Repository:* the data structure of your code, including a ``.git`` folder in the root directory
 - *Commits:* a particular saved state of the repository, this includes all files and additions
 - *Branches:* a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
 - *Push:* update the remote repository with your local changes
@@ -38,7 +38,7 @@ Repository
 
 A Git repository is a data structure containing the structure, history, and files of a project.
 
-Git repositories consist of:
+Git repositories usually consist of:
 
 - A ``.git`` folder. This folder contains the various information about the repository. 
 - A ``.gitignore`` file. This file contains the files or directories that you do *not* want included when you commit.
@@ -47,7 +47,7 @@ Git repositories consist of:
 Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You can store the repository locally, or through the cloud. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
 Creating a Github Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,9 @@ You should see a screen similar to this
 
 .. image:: images/image6.png
 
-Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__
+.. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code. 
+
+Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial on powershell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems. 
 
 .. image:: images/image7.png
 
@@ -114,7 +116,8 @@ Git Add
 
 This command adds a selected file(s) to a commit. To commit every file/folder that isn't excluded via *gitignore*.
 
-Run: ``git add .``.
+Run: ``git add FILENAME.txt`` where FILENAME.txt is the name and extension of the file to add to a commit.
+Run: ``git add .`` will add every untracked, unexcluded file when ran in the root of the repository.
 
 Git Commit
 ^^^^^^^^^^
@@ -231,7 +234,9 @@ Gitignore
 
 .. important:: It is extremely important that teams **do not** modify the .gitignore file that is included with their robot project. This can lead to offline deployment not working.
 
-A .gitignore file is commonly used as a list of files to not automatically commit with ``git add .``. Any files or directory listed in this file will **not** be commited. 
+A .gitignore file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be commited. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
+
+Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__
 
 Hiding a Folder
 ^^^^^^^^^^^^^^^
@@ -248,3 +253,8 @@ Add a new line with the name of the file to hide, including any prepending direc
 EX: ``directory/file-to-hide.txt``
 
 EX: ``file-to-hide2.txt``
+
+Additional Information
+----------------------
+
+A much more in-depth tutorial can be found at the official `git <https://git-scm.com/docs/gittutorial>`__ website. 
