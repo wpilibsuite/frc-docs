@@ -17,21 +17,21 @@ You have to download and install Git from the following links:
 - `Mac OS X <https://git-scm.com/download/mac>`_
 - `Linux <https://git-scm.com/download/linux>`_
 
-.. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path`>__
+.. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path>`__
 
 Git Vocabulary
 --------------
 
 Git is composed of several primary elements:
 
-- *Repository:* the data structure of your code, including a ``.git`` folder in the root directory
-- *Commits:* a particular saved state of the repository, this includes all files and additions
-- *Branches:* a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
-- *Push:* update the remote repository with your local changes
-- *Pull:* update your local repository with the remote changes
-- *Cloning:* retrieving a local copy of a repository to modify
-- *Forking:* duplicating a pre-existing repository to modify, and to compare against the original
-- *Merging:* combining various changes from different branches/commits/forks into a single history
+- **Repository:** the data structure of your code, including a ``.git`` folder in the root directory
+- **Commits:** a particular saved state of the repository, this includes all files and additions
+- **Branches:** a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
+- **Push:** update the remote repository with your local changes
+- **Pull:** update your local repository with the remote changes
+- **Cloning:** retrieving a local copy of a repository to modify
+- **Forking:** duplicating a pre-existing repository to modify, and to compare against the original
+- **Merging:** combining various changes from different branches/commits/forks into a single history
 
 Repository
 ----------
