@@ -69,7 +69,7 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = []
 
 # Sidebar logo
-html_logo = "assets/FIRSTRobotics_IconVert_RGB.png"
+html_logo = "assets/FIRSTRobotics_IconVert_RGB_reverse.png"
 
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
