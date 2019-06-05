@@ -2,7 +2,7 @@ Shuffleboard
 ============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
    getting-started/index
    layouts-with-code/index
