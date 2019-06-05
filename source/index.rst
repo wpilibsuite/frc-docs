@@ -21,19 +21,36 @@ Welcome to the FIRST Robotics Documentation! This documentation is very much a w
    :maxdepth: 2
    :caption: WPILib Software
    
-   software
+   docs/software/getting-started/index
+   docs/software/wpilib-overview/index
+   docs/software/getting-started-with-benchtop/index
+   docs/software/roborio-info/index
+   docs/software/actuators/index
+   docs/software/sensors/index
+   docs/software/can-devices/index
+   docs/software/vision-processing/index
+   docs/software/commandbased/index
+   docs/software/networktables/index
+   docs/software/wpilib-tools/shuffleboard/index
+   docs/software/wpilib-tools/smartdashboard/index
+   docs/software/wpilib-tools/path-planning/index
+   docs/software/advanced-programming/index
    
 .. toctree::
    :maxdepth: 2
    :caption: WPILib Hardware
    
-   hardware
+   docs/hardware/getting-started/index
+   docs/hardware/sensors/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
    
-   networking
+   docs/networking/networking-basics
+   docs/networking/ip-networking
+   docs/networking/roborio-networking
+   docs/networking/roborio-network-troubleshooting
    
 .. toctree::
    :maxdepth: 2
