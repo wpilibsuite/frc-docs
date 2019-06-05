@@ -34,6 +34,7 @@ Welcome to the FIRST Robotics Documentation! This documentation is very much a w
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
    docs/software/wpilib-tools/path-planning/index
+   docs/software/basic-programming/index
    docs/software/advanced-programming/index
    
 .. toctree::

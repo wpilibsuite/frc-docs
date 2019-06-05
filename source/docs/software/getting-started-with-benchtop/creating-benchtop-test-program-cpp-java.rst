@@ -8,7 +8,7 @@ This article describes the Benchtop test example program
 Creating a Project
 ------------------
 
-Create a new Getting Started Example project. For more info about creating projects, see :ref:`Creating a robot program <creating_a_robot_program>`.
+Create a new Getting Started Example project. For more info about creating projects, see :ref:`docs/software/wpilib-overview/creating-robot-program:Creating a Robot Program`.
 
 Imports/Includes
 ----------------

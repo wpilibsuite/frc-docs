@@ -1,5 +1,6 @@
 Creating a client-side program
 ==============================
+
 If all you need to do is have your robot program communicate with GRIP or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build Network Tables programs for those (non-roboRIO) platforms.
 
 A basic client program looks like the following example.
