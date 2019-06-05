@@ -11,6 +11,8 @@ Git Version Control Introduction
 Prerequisites
 -------------
 
+.. important:: This tutorial uses the Windows operating system
+
 You have to download and install Git from the following links:
 
 - `Windows <https://git-scm.com/download/win>`_
@@ -22,16 +24,16 @@ You have to download and install Git from the following links:
 Git Vocabulary
 --------------
 
-Git is composed of several primary elements:
+Git revolves around several core commands:
 
 - **Repository:** the data structure of your code, including a ``.git`` folder in the root directory
-- **Commits:** a particular saved state of the repository, this includes all files and additions
-- **Branches:** a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
+- **Commit:** a particular saved state of the repository, this includes all files and additions
+- **Branch:** a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
 - **Push:** update the remote repository with your local changes
 - **Pull:** update your local repository with the remote changes
-- **Cloning:** retrieving a local copy of a repository to modify
-- **Forking:** duplicating a pre-existing repository to modify, and to compare against the original
-- **Merging:** combining various changes from different branches/commits/forks into a single history
+- **Clone:** retrieving a local copy of a repository to modify
+- **Fork:** duplicating a pre-existing repository to modify, and to compare against the original
+- **Merge:** combining various changes from different branches/commits/forks into a single history
 
 Repository
 ----------
@@ -48,6 +50,8 @@ Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+
+.. note:: There are various providers that can host repositories. `Gitlab <http://gitlab.com/>`_, `Bitbucket <https://bitbucket.org/`_, and `Cloudforge <http://www.cloudforge.com/>`_ are a few alternatives to Github
 
 Creating a Github Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +96,7 @@ In the below example, we created a file called ``README.md`` with the contents o
 Commits
 -------
 
-Github repository are primarily composed of commits. Commits are saved states or *versions* of code. 
+Repositories are primarily composed of commits. Commits are saved states or *versions* of code. 
 
 In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
 
