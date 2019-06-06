@@ -1,6 +1,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+resources:
+  containers:
+  - container: readthedocs
+    image: readthedocs/build:stable
+
 pool:
   vmImage: 'ubuntu-16.04'
+
+container: readthedocs
 
 trigger:
 - master
@@ -11,15 +19,6 @@ pr:
 - develop
 
 steps:
-- task: UsePythonVersion@0
-  displayName: 'Select Python Version 3.6'
-  inputs:
-    versionSpec: '3.6'
-    architecture: 'x64'
-    
-- script: python -m pip install --upgrade pip setuptools wheel
-  displayName: 'Install and upgrade pip'
-
 - script: pip install -r source/requirements.txt
   displayName: 'Install Python Requirements'
 
