@@ -3,7 +3,7 @@
 resources:
   containers:
   - container: readthedocs
-    image: readthedocs/build:stable
+    image: readthedocs/build:latest
 
 pool:
   vmImage: 'ubuntu-16.04'
