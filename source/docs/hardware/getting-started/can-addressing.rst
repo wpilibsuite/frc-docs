@@ -58,7 +58,7 @@ REV Robotics    5
 Grapple         6
 MindSensors     7
 Team Use        8
-Reserved        9
+Kauai Labs      9
 Copperforge     10
 Reserved        11-255
 =============== =====
