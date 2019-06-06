@@ -31,3 +31,15 @@ steps:
   
 - script: make html
   displayName: 'Compile Docs'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: build/ 
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/docs.zip'
+    replaceExistingArchive: true 
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'Docs'
