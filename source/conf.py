@@ -66,10 +66,10 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['_static']
 
 # Sidebar logo
-html_logo = "assets/FIRSTRobotics_IconVert_RGB_reverse.png"
+html_logo = "assets/wpilibDocsLogo.png"
 
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
@@ -82,3 +82,6 @@ html_theme_options = {
 user_options = [
         ('warning-is-error', True),
 ]
+
+def setup(app):
+  app.add_stylesheet('css/frc-rtd.css')
