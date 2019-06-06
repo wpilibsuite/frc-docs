@@ -61,20 +61,8 @@ background:#fcfcfc;
 background:#003974;
 }
 
-@media only screen and max-width 768px{
+@media screen and (max-width: 768px) {
 .header-bar {
-display:none;
-}
-}
-
-@media only screen and max-width 1040px{
-#archive-link {
-display:none;
-}
-}
-
-@media only screen and max-width 890px{
-#qa-link {
 display:none;
 }
 }
