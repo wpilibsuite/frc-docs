@@ -18,7 +18,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: WPILib Software
    
    docs/software/getting-started/index
@@ -38,7 +38,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/software/advanced-programming/index
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: WPILib Hardware
    :titlesonly:
    
