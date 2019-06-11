@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'FIRST Robotics Documentation'
-copyright = '2019, FIRST Community'
-author = 'FIRST Community'
+project = 'FIRST Robotics Competition'
+copyright = '2019, FIRST'
+author = 'WPILib'
 
 
 # -- General configuration ---------------------------------------------------
@@ -75,8 +75,9 @@ html_logo = "assets/wpilibDocsLogo.png"
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
 html_theme_options = {
-	'collapse_navigation': False,
-	'sticky_navigation': False
+	'collapse_navigation': True,
+	'sticky_navigation': False,
+	'titles_only': True
 }
 
 user_options = [
