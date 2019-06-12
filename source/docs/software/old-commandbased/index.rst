@@ -13,3 +13,4 @@
    creating-groups-commands
    running-commands-joystick-input
    running-commands-autonomous
+   convert-simple-auto-command-auto
