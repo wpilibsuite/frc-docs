@@ -1,12 +1,12 @@
-.. FIRST Robotics Documentation documentation master file, created by
+.. FIRST Robotics Competition documentation master file, created by
    sphinx-quickstart on Fri Apr  5 23:28:43 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to FIRST Robotics Documentation
-========================================================
+FIRST Robotics Competition Documentation
+========================================
 
-Welcome to the FIRST Robotics Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`contributing`.
+Welcome to the FIRST Robotics Competition Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`contributing`.
 
 .. toctree::
    :maxdepth: 1
@@ -21,22 +21,41 @@ Welcome to the FIRST Robotics Documentation! This documentation is very much a w
    :maxdepth: 2
    :caption: WPILib Software
    
-   software
+   docs/software/getting-started/index
+   docs/software/wpilib-overview/index
+   docs/software/getting-started-with-benchtop/index
+   docs/software/roborio-info/index
+   docs/software/actuators/index
+   docs/software/sensors/index
+   docs/software/can-devices/index
+   docs/software/vision-processing/index
+   docs/software/commandbased/index
+   docs/software/networktables/index
+   docs/software/wpilib-tools/shuffleboard/index
+   docs/software/wpilib-tools/smartdashboard/index
+   docs/software/wpilib-tools/path-planning/index
+   docs/software/basic-programming/index
+   docs/software/advanced-programming/index
    
 .. toctree::
    :maxdepth: 2
    :caption: WPILib Hardware
+   :titlesonly:
    
-   hardware
+   docs/hardware/getting-started/index
+   docs/hardware/sensors/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
    
-   networking
+   docs/networking/networking-basics
+   docs/networking/ip-networking
+   docs/networking/roborio-networking
+   docs/networking/roborio-network-troubleshooting
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contributing
    
    contributing
