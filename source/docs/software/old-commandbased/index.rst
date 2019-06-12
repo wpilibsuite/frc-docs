@@ -14,3 +14,7 @@
    running-commands-joystick-input
    running-commands-autonomous
    convert-simple-auto-command-auto
+   default-commands
+   synchronizing-two-commands
+   scheduling-commands
+   limit-switches-control-behavior
