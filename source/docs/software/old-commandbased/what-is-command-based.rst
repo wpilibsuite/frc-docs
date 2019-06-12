@@ -1,7 +1,7 @@
 What is Command-Based Programming?
 ==================================
 
-.. important:: This system of command-based programming has been deprecated in support of a new system. See :ref:`docs/software/commandbased/index`
+.. important:: This system of command-based programming has been deprecated in support of a new system. See :ref:`docs/software/commandbased/index:Command-Based Programming`
 
 WPILib supports a method of writing programs called "Command-based programming". Command-based programming is a design pattern to help you organize your robot programs. Some of the characteristics of robot programs that might be different from other desktop programs are:
 

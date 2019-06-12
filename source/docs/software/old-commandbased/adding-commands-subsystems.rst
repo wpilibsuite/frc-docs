@@ -6,21 +6,21 @@ Adding Commands and Subsystems to the Project
 Adding Subsystems to the Project
 --------------------------------
 
-.. images:: images/adding-commands-subsystems/image1.png
+.. image:: images/adding-commands-subsystems/image1.png
 
 To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem** or **PID Subsystem**. 
 
 Naming the Subsystem
 --------------------
 
-.. images:: images/adding-commands-subsystems/image2.png
+.. image:: images/adding-commands-subsystems/image2.png
 
 Fill in a name for the subsystem. This will become the resultant class name for the subsystem so the name has to be a valid class name for your language.
 
 Subsystem Created in Project
 ----------------------------
 
-.. images:: images/adding-commands-subsystems/image3.png
+.. image:: images/adding-commands-subsystems/image3.png
 
 .. todo:: Add link
 
@@ -29,7 +29,7 @@ You can see the new subsystem created in the Subsystems folder in the project. T
 Adding a Command to the Project
 -------------------------------
 
-.. images:: images/adding-commands-subsystems/image4.png
+.. image:: images/adding-commands-subsystems/image4.png
 
 A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command**, **Instant Command**, **TimedCommand** or **Trigger**:
 
@@ -41,14 +41,14 @@ A command can be created for the project using steps similar to creating a subsy
 Set the Command Name
 --------------------
 
-.. images:: images/adding-commands-subsystems/image5.png
+.. image:: images/adding-commands-subsystems/image5.png
 
 Enter the Command name into the dialog box. This will be the class name for the Command so it must be a valid class name for your language.
 
 Command Created in the Project
 ------------------------------
 
-.. images:: images/adding-commands-subsystems/image6.png
+.. image:: images/adding-commands-subsystems/image6.png
 
 .. todo:: add link
 
