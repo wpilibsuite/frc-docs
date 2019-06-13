@@ -33,7 +33,7 @@ steps:
   displayName: 'Install GraphViz'
   
 - script: make html
-  displayName: 'Compile Docs'
+  displayName: 'Compile HTML'
 
 - script: make latexpdf
   displayName: 'Compile PDF'
