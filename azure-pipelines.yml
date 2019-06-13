@@ -32,6 +32,12 @@ steps:
 - script: make html
   displayName: 'Compile Docs'
 
+- script: make latexpdf
+  displayName: 'Compile PDF'
+
+- script: make epub
+  displayName: 'Compile epub'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: build/ 
