@@ -23,7 +23,7 @@ steps:
 - script: pip install -r source/requirements.txt
   displayName: 'Install Python Requirements'
 
-- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk dvipng
+- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-fonts-extra texlive-latex-extra-doc texlive-pictures-doc texlive-publishers-doc texlive-lang-english texlive-full
   displayName: 'Install LaTeX'
 
 - script: sudo apt-get install -qy --force-yes graphviz
@@ -36,7 +36,7 @@ steps:
   displayName: 'Compile PDF'
 
 - script: make epub
-  displayName: 'Compile epub'
+  displayName: 'Compile EPUB'
 
 - task: ArchiveFiles@2
   inputs:
