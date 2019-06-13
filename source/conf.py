@@ -20,6 +20,7 @@
 project = 'FIRST Robotics Competition'
 copyright = '2019, FIRST'
 author = 'WPILib'
+version = '2019.4.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -86,3 +87,17 @@ user_options = [
 
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
+
+
+# -- Options for latex generation --------------------------------------------
+
+latex_engine = 'lualatex'
+
+latex_elements = {
+	'preamble': r'''
+	\usepackage{unicode-math}'''
+}
+
+suppress_warnings = ['epub.unknown_project_files']
+
+sphinx_tabs_valid_builders = ['epub']

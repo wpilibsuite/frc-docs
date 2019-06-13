@@ -18,13 +18,16 @@ steps:
     architecture: 'x64'
     
 - script: python -m pip install --upgrade pip setuptools wheel
-  displayName: 'Install and upgrade pip'
+  displayName: 'Install and Upgrade Pip'
 
 - script: pip install -r source/requirements.txt
   displayName: 'Install Python Requirements'
 
-- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-fonts-extra texlive-latex-extra-doc texlive-pictures-doc texlive-publishers-doc texlive-lang-english texlive-full
-  displayName: 'Install LaTeX'
+- script: sudo apt-get update
+  displayName: 'Update System Packages'
+
+- script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra texlive-math-extra dvipng
+  displayName: 'Install LateX'
 
 - script: sudo apt-get install -qy --force-yes graphviz
   displayName: 'Install GraphViz'
@@ -36,7 +39,7 @@ steps:
   displayName: 'Compile PDF'
 
 - script: make epub
-  displayName: 'Compile EPUB'
+  displayName: 'Compile epub'
 
 - task: ArchiveFiles@2
   inputs:
