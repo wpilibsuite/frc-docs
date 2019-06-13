@@ -39,7 +39,7 @@ steps:
   displayName: 'Compile PDF'
 
 - script: make epub
-  displayName: 'Compile epub'
+  displayName: 'Compile EPUB'
 
 - task: ArchiveFiles@2
   inputs:
