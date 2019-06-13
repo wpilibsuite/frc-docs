@@ -69,6 +69,6 @@ steps:
     replaceExistingArchive: true 
 
 - task: PublishBuildArtifacts@1
-  displayName: Publish Artifacts
+  displayName: 'Publish Artifacts'
   inputs:
     artifactName: 'Docs'
