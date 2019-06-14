@@ -95,7 +95,10 @@ latex_engine = 'pdflatex'
 
 latex_elements = {
 	'preamble': r'''
-	\usepackage[utf8]{inputenc}'''
+	\usepackage[utf8]{inputenc}
+	\usepackage{fdsymbol}
+	\usepackage{newunicodechar}
+	\newunicodechar{⌀}{\ensuremath{\diameter}}'''
 }
 
 suppress_warnings = ['epub.unknown_project_files']
