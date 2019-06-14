@@ -91,14 +91,22 @@ def setup(app):
 
 # -- Options for latex generation --------------------------------------------
 
-latex_engine = 'pdflatex'
+latex_engine = 'xelatex'
 
 latex_elements = {
-	'preamble': r'''
-	\usepackage[utf8]{inputenc}
-	\usepackage{fdsymbol}
-	\usepackage{newunicodechar}
-	\newunicodechar{⌀}{\ensuremath{\diameter}}'''
+    'fontpkg': r'''
+	\setmainfont{DejaVu Serif}
+	\setsansfont{DejaVu Sans}
+	\setmonofont{DejaVu Sans Mono}''',
+    'preamble': r'''
+	\usepackage[titles]{tocloft}
+	\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+	\setlength{\cftchapnumwidth}{0.75cm}
+	\setlength{\cftsecindent}{\cftchapnumwidth}
+	\setlength{\cftsecnumwidth}{1.25cm}
+	''',
+    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    'printindex': r'\footnotesize\raggedright\printindex',
 }
 
 suppress_warnings = ['epub.unknown_project_files']
