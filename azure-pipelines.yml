@@ -18,28 +18,57 @@ steps:
     architecture: 'x64'
     
 - script: python -m pip install --upgrade pip setuptools wheel
-  displayName: 'Install and upgrade pip'
+  displayName: 'Install and Upgrade Pip'
 
 - script: pip install -r source/requirements.txt
   displayName: 'Install Python Requirements'
 
-- script: sudo apt-get update && sudo apt-get install -qy --force-yes texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk dvipng
-  displayName: 'Install LaTeX'
+- script: sudo apt-get update
+  displayName: 'Update System Packages'
+
+- script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng
+  displayName: 'Install LateX'
 
 - script: sudo apt-get install -qy --force-yes graphviz
   displayName: 'Install GraphViz'
   
 - script: make html
-  displayName: 'Compile Docs'
+  displayName: 'Compile HTML'
+
+- script: make latexpdf
+  displayName: 'Compile PDF'
+
+- script: make epub
+  displayName: 'Compile EPUB'
 
 - task: ArchiveFiles@2
+  displayName: 'Archive HTML'
   inputs:
-    rootFolderOrFile: build/ 
+    rootFolderOrFile: build/html/
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+    replaceExistingArchive: true 
+
+- task: ArchiveFiles@2
+  displayName: 'Archive PDF'
+  inputs:
+    rootFolderOrFile: build/latex/firstroboticscompetition.pdf
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
+    replaceExistingArchive: true 
+
+- task: ArchiveFiles@2
+  displayName: 'Archive EPUB'
+  inputs:
+    rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub 
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-epub.zip'
     replaceExistingArchive: true 
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
   inputs:
     artifactName: 'Docs'
