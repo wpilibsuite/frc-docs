@@ -93,6 +93,11 @@ def setup(app):
 
 latex_engine = 'pdflatex'
 
+latex_elements = {
+	'preamble': r'''
+	\usepackage[utf8]{inputenc}'''
+}
+
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub']
