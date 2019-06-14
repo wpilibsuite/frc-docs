@@ -26,7 +26,7 @@ steps:
 - script: sudo apt-get update
   displayName: 'Update System Packages'
 
-- script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-fonts-extra dvipng
+- script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng
   displayName: 'Install LateX'
 
 - script: sudo apt-get install -qy --force-yes graphviz
