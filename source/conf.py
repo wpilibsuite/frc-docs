@@ -91,12 +91,7 @@ def setup(app):
 
 # -- Options for latex generation --------------------------------------------
 
-latex_engine = 'lualatex'
-
-latex_elements = {
-	'preamble': r'''
-	\usepackage{unicode-math}'''
-}
+latex_engine = 'pdflatex'
 
 suppress_warnings = ['epub.unknown_project_files']
 
