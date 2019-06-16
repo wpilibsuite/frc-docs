@@ -94,3 +94,4 @@ In addition to the ``whenPressed()`` condition showcased above, there are a few 
 - A command can be canceled when a button is pressed using ``cancelWhenPressed()``.
 
 Additionally commands can be triggered by arbitrary conditions of your choosing by using the Trigger class instead of Button. Triggers (and Buttons) are usually polled every 20ms or whenever the scheduler is called.
+

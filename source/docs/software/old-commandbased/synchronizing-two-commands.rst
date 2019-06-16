@@ -69,3 +69,4 @@ Waiting for a Command
 If there are two commands that need to complete before the following commands are scheduled, they can be put into a command group by themselves, adding both in parallel. Then that command group can be scheduled sequentially from an enclosing command group. When a command group is scheduled sequentially, the commands inside it will all finish before the next outer command is scheduled. In this way you can be sure that an action consisting of multiple parallel commands has completed before going on to the next command.
 
 In this example you can see that the addition of a command group "Move to Bridge" containing the **Set Virtual Setpoint** and **Drive to Bridge** commands forces both to complete before the next commands are scheduled.
+

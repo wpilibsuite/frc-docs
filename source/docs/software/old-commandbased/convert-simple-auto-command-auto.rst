@@ -349,3 +349,4 @@ Why bother re-writing the code as CommandBased? Writing the code in the CommandB
 - **Testability** - You can test each part using tools such as the ShuffleBoard to test parts of the autonomous. Once you put them together, you'll have more confidence that each piece works as desired.
 - **Parallelization** - If you wanted this code to aim and spin up the shooter at the same time, it's trivial with CommandBased programming. Just use ``AddParallel()`` instead of ``AddSequential()`` when adding the Aim command and now aiming and spinning up will happen simultaneously.
 - **Interruptibility** - Commands are interruptible, this provides the ability to exit a command early, a task that is much harder in the equivalent while loop based code.
+

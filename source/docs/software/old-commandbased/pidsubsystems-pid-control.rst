@@ -69,3 +69,4 @@ In this example you can see the basic elements of a PIDSubsystem for the wrist j
       double Wrist::ReturnPIDInput() { return m_pot.Get(); }
 
       void Wrist::UsePIDOutput(double d) { m_motor.Set(d); }
+

@@ -45,3 +45,4 @@ Setting the Default Command
       }
 
 All subsystems should contain a method called ``initDefaultCommand()`` which is where you will set the default command if desired. If you do not wish to have a default command, simply leave this method blank. If you do wish to set a default command, call setDefaultCommand from within this method, passing in the command to be set as the default.
+
