@@ -1,6 +1,8 @@
 PIDSubsystems for built-in PID Control
 ======================================
 
+.. important:: This documentation describes the use of the legacy command-based library, which has been deprecated. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
+
 .. note:: 
    If a mechanism uses a sensor for feedback then most often a PID controller will be used to control the motor speed or position. Examples of subsystems that might use PID control are: elevators with potentiometers to track the height, shooters with encoders to measure the speed, wrists with potentiometers to measure the joint angle, etc.
 
@@ -44,3 +46,30 @@ In this example you can see the basic elements of a PIDSubsystem for the wrist j
              motor.pidWrite(output); // this is where the computed output value fromthe PIDController is applied to the motor
          }
       }
+
+   .. code-tab:: cpp
+
+      #include "subsystems/Wrist.h"
+
+      #include <frc/smartdashboard/SmartDashboard.h>
+
+      Wrist::Wrist() : frc::PIDSubsystem("Wrist", kP_real, 0.0, 0.0) {
+      #ifdef SIMULATION  // Check for simulation and update PID values
+        GetPIDController()->SetPID(kP_simulation, 0, 0, 0);
+      #endif
+        SetAbsoluteTolerance(2.5);
+
+        // Let's show everything on the LiveWindow
+        AddChild("Motor", m_motor);
+        AddChild("Pot", m_pot);
+      }
+
+      void Wrist::InitDefaultCommand() {}
+
+      void Wrist::Log() {
+        // frc::SmartDashboard::PutData("Wrist Angle", &m_pot);
+      }
+
+      double Wrist::ReturnPIDInput() { return m_pot.Get(); }
+
+      void Wrist::UsePIDOutput(double d) { m_motor.Set(d); }
