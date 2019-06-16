@@ -6,6 +6,7 @@ Shuffleboard Getting Started
    
    shuffleboard-tour
    shuffleboard-displaying-data
+   shuffleboard-displaying-camera
    shuffleboard-widgets
    shuffleboard-lists
    shuffleboard-tabs
