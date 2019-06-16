@@ -58,10 +58,6 @@ In this example you can see the basic elements of a PIDSubsystem for the wrist j
         GetPIDController()->SetPID(kP_simulation, 0, 0, 0);
       #endif
         SetAbsoluteTolerance(2.5);
-
-        // Let's show everything on the LiveWindow
-        AddChild("Motor", m_motor);
-        AddChild("Pot", m_pot);
       }
 
       void Wrist::InitDefaultCommand() {}
