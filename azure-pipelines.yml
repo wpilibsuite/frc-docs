@@ -16,7 +16,7 @@ steps:
   inputs:
     versionSpec: '3.6'
     architecture: 'x64'
-    
+
 - script: python -m pip install --upgrade pip setuptools wheel
   displayName: 'Install and Upgrade Pip'
 
@@ -31,7 +31,10 @@ steps:
 
 - script: sudo apt-get install -qy --force-yes graphviz
   displayName: 'Install GraphViz'
-  
+
+- script: make lint
+  displayName: 'Lint Check'
+
 - script: make html
   displayName: 'Compile HTML'
 
@@ -48,7 +51,7 @@ steps:
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
-    replaceExistingArchive: true 
+    replaceExistingArchive: true
 
 - task: ArchiveFiles@2
   displayName: 'Archive PDF'
@@ -57,16 +60,16 @@ steps:
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
-    replaceExistingArchive: true 
+    replaceExistingArchive: true
 
 - task: ArchiveFiles@2
   displayName: 'Archive EPUB'
   inputs:
-    rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub 
+    rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/docs-epub.zip'
-    replaceExistingArchive: true 
+    replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
