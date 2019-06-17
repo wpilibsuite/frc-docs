@@ -29,6 +29,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/software/sensors/index
    docs/software/can-devices/index
    docs/software/vision-processing/index
+   docs/software/old-commandbased/index
    docs/software/commandbased/index
    docs/software/networktables/index
    docs/software/wpilib-tools/shuffleboard/index
