@@ -29,11 +29,11 @@ In Test mode (Test/Enabled in the driver station) subsystems may be displayed in
 
 .. image:: images/commands-subsystems-2.png
 
-.. todo:: Add RobotBuilder, and PIDSubsystem links
+.. todo:: Add RobotBuilder links
 
-More information on tuning PIDSubsystems can be found here: Testing and tuning PID loops. Using RobotBuilder will automatically generate the code to get the subsystem displayed in Test mode. The code that is necessary to have subsystems displayed is shown below where subsystem-name is a string containing the name of the subsystem:
+More information on tuning PIDSubsystems can be found :doc:`here <shuffleboard-tuning-pid>`. Using RobotBuilder will automatically generate the code to get the subsystem displayed in Test mode. The code that is necessary to have subsystems displayed is shown below where subsystem-name is a string containing the name of the subsystem:
 
-.. code-block: none
+.. code-block:: none
 
    setName(subsystem-name);
 
