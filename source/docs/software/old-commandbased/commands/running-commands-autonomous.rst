@@ -8,6 +8,7 @@ Running Commands during Autonomous
 .. tabs::
 
    .. code-tab:: java
+
       public class SodaDelivery extends CommandGroup {
 
           public  SodaDelivery() {
@@ -24,17 +25,17 @@ Running Commands during Autonomous
 
    .. code-tab:: cpp
    
-   #include "PlaceSoda.h"
+      #include "PlaceSoda.h"
 
-  PlaceSoda::PlaceSoda()
-  {
-    AddSequential(new PrepareToGrab());
-    AddSequential(new Grab());
-    AddSequential(new DriveToDistance(0.11));
-    AddSequential(new PlaceSoda());
-    AddSequential(new DriveToDistance(0.2));
-    AddSequential(new Stow());
-  }
+      PlaceSoda::PlaceSoda()
+      {
+          AddSequential(new PrepareToGrab());
+          AddSequential(new Grab());
+          AddSequential(new DriveToDistance(0.11));
+          AddSequential(new PlaceSoda());
+          AddSequential(new DriveToDistance(0.2));
+          AddSequential(new Stow());
+      }
 
 Our robot must do the following tasks during the autonomous period: pick up a soda can off the floor then drive a set distance from a table and deliver the can there. The process consists of:
 
