@@ -1,12 +1,12 @@
 Commands and Subsystems
 =======================
 
-When using the Command-based framework Shuffleboard makes it easier to understand what the robot is doing by displaying the state of various commands and subsystems in real-time. 
+When using the command-based framework Shuffleboard makes it easier to understand what the robot is doing by displaying the state of various commands and subsystems in real-time. 
 
 Displaying Subsystems
 ---------------------
 
-To see the status of a subsystem while the robot is operating in either automous or telop modes, that is what it's default command is and what command is currently using that subsystem send a subsystem instance to Shuffleboard:
+To see the status of a subsystem while the robot is operating in either autonomous or teloperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
 
 .. tabs::
 
@@ -18,16 +18,18 @@ To see the status of a subsystem while the robot is operating in either automous
 
       SmartDashboard::PutData(subsystem-pointer);
 
-Shuffleboard will display the subsystem name, the default command associated with this subsystem, and the currently running command. In this example the default command for the Elevator subsystem is called "AutonomousCommand" and it is also the current command that is using the Elevator subsystem.
+Shuffleboard will display the subsystem name, the default command associated with this subsystem, and the currently running command. In this example the default command for the Elevator subsystem is called ``AutonomousCommand`` and it is also the current command that is using the Elevator subsystem.
 
 .. image:: images/commands-subsystems-1.png
 
 Subsystems in Test Mode
 -----------------------
 
-In Test mode (Test/Enabled in the driver station) subsystems maybe displayed in the LiveWindow tab with the sensors and actuators of the subsystem. This is ideal for verifying of sensors are working and seeing the values that they are returning. In addition the actuators can be operated, for example motors can be operated using sliders to set the speed and direction. For PIDSubsystems the P, I, D, and F constants are displayed along with the setpoint and an enable control. This is useful for tuning PIDSubsystems by adjusting the constants, putting in a setpoint, and enabling the embedded PIDController. The the mechanisms response can be observed. Then the parameters can be changed, the PIDController re-enabled until a reasonable set of parameters is found.
+In Test mode (Test/Enabled in the driver station) subsystems may be displayed in the LiveWindow tab with the sensors and actuators of the subsystem. This is ideal for verifying of sensors are working by seeing the values that they are returning. In addition, actuators can be operated. For example, motors can be operated using sliders to set their commanded speed and direction. For PIDSubsystems the P, I, D, and F constants are displayed along with the setpoint and an enable control. This is useful for tuning PIDSubsystems by adjusting the constants, putting in a setpoint, and enabling the embedded PIDController. Then the mechanism's response can be observed. This cycle (change parameters, enable, and observe) can be repeated until a reasonable set of parameters is found.
 
 .. image:: images/commands-subsystems-2.png
+
+.. todo:: Add RobotBuilder, and PIDSubsystem links
 
 More information on tuning PIDSubsystems can be found here: Testing and tuning PID loops. Using RobotBuilder will automatically generate the code to get the subsystem displayed in Test mode. The code that is necessary to have subsystems displayed is shown below where subsystem-name is a string containing the name of the subsystem:
 
