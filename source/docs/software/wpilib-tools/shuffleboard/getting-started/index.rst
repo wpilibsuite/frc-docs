@@ -1,5 +1,5 @@
-Shuffleboard Getting Started
-============================
+Shuffleboard - Getting Started
+==============================
 
 .. toctree::
    :maxdepth: 1
