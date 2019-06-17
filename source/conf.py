@@ -37,7 +37,7 @@ extensions = [
 ]
 
 # TODO Directives omit a warning
-todo_emit_warnings = True
+todo_emit_warnings = False
 
 # TODO Directives are not shown in output
 todo_include_todos = False
