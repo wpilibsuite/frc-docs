@@ -24,11 +24,13 @@ Complex Operations
    .. code-tab:: cpp
 
       #include "PlaceSoda.h"
+      #include "Elevator.h"
+      #include "Wrist.h"
 
       PlaceSoda::PlaceSoda()
       {
-         AddSequential(new SetElevatorSetpoint(TABLE_HEIGHT));
-         AddSequential(new SetWristSetpoint(PICKUP));
+         AddSequential(new SetElevatorSetpoint(Elevator::TABLE_HEIGHT));
+         AddSequential(new SetWristSetpoint(Wrist::PICKUP));
          AddSequential(new OpenClaw());
       }
 
@@ -53,11 +55,13 @@ Running Commands in Parallel
    .. code-tab:: cpp
 
       #include "PrepareToGrab.h"
+      #include "Wrist.h"
+      #include "Elevator.h"
 
       PrepareToGrab::PrepareToGrab()
       {
-         AddParallel(new SetWristSetpoint(PICKUP));
-         AddParallel(new SetElevatorSetpoint(BOTTOM));
+         AddParallel(new SetWristSetpoint(Wrist::PICKUP));
+         AddParallel(new SetElevatorSetpoint(Elevator::BOTTOM));
          AddParallel(new OpenClaw());
       }
 
@@ -82,12 +86,14 @@ Mixing Parallel and Sequential Commands
    .. code-tab:: cpp
 
       #include "Grab.h"
+      #include "Elevator.h"
+      #include "Wrist.h"
 
       Grab::Grab()
       {
          AddSequential(new CloseClaw());
-         AddParallel(new SetElevatorSetpoint(STOW));
-         AddSequential(new SetWristSetpoint(STOW));
+         AddParallel(new SetElevatorSetpoint(Elevator::STOW));
+         AddSequential(new SetWristSetpoint(Wrist::STOW));
       }
 
 Often there are some parts of a command group that must complete before other parts run. In this example, a soda can is grabbed, then the elevator and wrist can move to their stowed positions. In this case, the wrist and elevator have to wait until the can is grabbed, then they can operate independently. The first command (1) ``CloseClaw`` grabs the soda and nothing else runs until it is finished since it is sequential, then the (2) elevator and (3) wrist move at the same time.

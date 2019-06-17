@@ -36,9 +36,6 @@ Creating a Subsystem
         public void initDefaultCommand() {
         }
 
-        public void log() {
-        }
-
         /**
          * Set the claw motor to move in the open direction.
          */
@@ -81,15 +78,27 @@ Creating a Subsystem
 
       void Claw::InitDefaultCommand() {}
 
+      /**
+       * Set the claw motor to move in the open direction.
+       */
       void Claw::Open() { m_motor.Set(-1); }
-
+      
+      /**
+       * Set the claw motor to move in the close direction.
+       */
       void Claw::Close() { m_motor.Set(1); }
 
+      /**
+       * Stops the claw motor from moving.
+       */
       void Claw::Stop() { m_motor.Set(0); }
 
+      /**
+       * Return true when the robot is grabbing an object hard enough to trigger
+       * the limit switch.
+       */
       bool Claw::IsGripping() { return m_contact.Get(); }
 
-      void Claw::Log() {}
 
 This is an example of a fairly straightforward subsystem that operates a claw on a robot. The claw mechanism has a single motor to open or close the claw and no sensors (not necessarily a good idea in practice, but works for the example). The idea is that the open and close operations are simply timed. There are three methods, open(), close(), and stop() that operate the claw motor. Notice that there is not specific code that actually checks if the claw is opened or closed. The open method gets the claw moving in the open direction and the close method gets the claw moving in the close direction. Use a command to control the timing of this operation to make sure that the claw opens and closes for a specific period of time.
 

@@ -60,7 +60,6 @@ To implement a command, a number of methods are overridden from the WPILib Comma
       // every subsequent time it is started . Any initialization code should be here.
       void MyCommandName::Initialize()
       {
-
       }
 
       /*
@@ -69,7 +68,6 @@ To implement a command, a number of methods are overridden from the WPILib Comma
        */
       void MyCommandName::Execute()
       {
-
       }
 
       bool MyCommandName::IsFinished()
@@ -79,13 +77,11 @@ To implement a command, a number of methods are overridden from the WPILib Comma
 
       void MyCommandName::End()
       {
-
       }
 
       // Make this return true when this Command no longer needs to run execute()
       void MyCommandName::Interrupted()
       {
-
       }
 
 Simple Command Example
@@ -142,7 +138,6 @@ This example illustrates a simple command that will drive the robot using tank d
       // Called just before this Command runs the first time
       void DriveWithJoysticks::Initialize()
       {
-
       }
 
           /*
@@ -152,7 +147,7 @@ This example illustrates a simple command that will drive the robot using tank d
            */
       void DriveWithJoysticks::Execute()
       {
-         Robot::drivetrain->Drive(Robot::oi->GetJoystick());
+         Robot::drivetrain->Drive(Robot::oi->GetLeftSpeed(), Robot::oi->GetRightSpeed());
       }
 
           /*

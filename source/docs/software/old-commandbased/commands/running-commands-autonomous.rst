@@ -8,30 +8,33 @@ Running Commands during Autonomous
 .. tabs::
 
    .. code-tab:: java
+      public class SodaDelivery extends CommandGroup {
 
-      public OI() {
-         button1.whenPressed(new PrepareToGrab());
-         button2.whenPressed(new Grab());
-         button3.whenPressed(new DriveToDistance(0.11));
-         button4.whenPressed(new PlaceSoda());
-         button6.whenPressed(new DriveToDistance(0.2));
-         button8.whenPressed(new Stow());
-
-         button7.whenPressed(new SodaDelivery());
+          public  SodaDelivery() {
+            addSequential(new PrepareToGrab());
+            addSequential(new Grab());
+            addSequential(new DriveToDistance(0.11));
+            addSequential(new PlaceSoda());
+            addSequential(new DriveToDistance(0.2));
+            addSequential(new Stow));
+          }
       }
 
+
+
    .. code-tab:: cpp
+   
+   #include "PlaceSoda.h"
 
-      button1->WhenPressed(new PrepareToGrab());
-      button2->WhenPressed(new Grab());
-      button3->WhenPressed(new DriveToDistance(0.11));
-      button4->WhenPressed(new PlaceSoda());
-      button6->WhenPressed(new DriveToDistance(0.2));
-      button8->WhenPressed(new Stow());
-
-      button7->WhenPressed(new SodaDelivery());
-
-
+  PlaceSoda::PlaceSoda()
+  {
+    AddSequential(new PrepareToGrab());
+    AddSequential(new Grab());
+    AddSequential(new DriveToDistance(0.11));
+    AddSequential(new PlaceSoda());
+    AddSequential(new DriveToDistance(0.2));
+    AddSequential(new Stow());
+  }
 
 Our robot must do the following tasks during the autonomous period: pick up a soda can off the floor then drive a set distance from a table and deliver the can there. The process consists of:
 
@@ -42,7 +45,7 @@ Our robot must do the following tasks during the autonomous period: pick up a so
 5. Back off to a distance from the rangefinder
 6. Re-stow the gripper
 
-To do these tasks there are 6 command groups that are executed sequentially as shown in this example.
+To do these tasks there are 6 commands that are executed sequentially as shown in this example (note that some of these, such as PlaceSoda are other command groups).
 
 Setting the Command to Run during Autonomous
 --------------------------------------------

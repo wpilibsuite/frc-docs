@@ -17,7 +17,7 @@ Commands and Subsystems
 
 .. image:: images/what-is-commandbased/image1.png
 
-Programs based on the WPILib library are organized around two fundamental concepts: **Subsystems** and **Commands**.
+Programs based on the WPILib Command Template are organized around two fundamental concepts: **Subsystems** and **Commands**.
 
 **Subsystems** - define the capabilities of each part of the robot and are subclasses of Subsystem.
 
@@ -36,7 +36,7 @@ Concurrency
 
 .. image:: images/what-is-commandbased/image3.png
 
-Sometimes it is desirable to have several operations happening concurrently. In the previous example you might want to set the wrist position while the elevator is moving up. In this case a command group can start a parallel command (or command group) running.
+Sometimes it is desirable to have several operations happening concurrently. In the previous example you might want to set the wrist position while the elevator is moving up. In this case, a command group can start a parallel command (or command group) running.
 
 How It Works - Scheduling Commands
 ----------------------------------
@@ -49,7 +49,7 @@ There are three main ways commands are scheduled:
 2. Automatically by the scheduler based on :doc:`button/trigger actions <../commands/running-commands-joystick-input>` specified in the code (typically defined in the OI class but checked by the Scheduler).
 3. Automatically when a previous command completes (:doc:`default commands <../commands/default-commands>` and :doc:`command groups  <../commands/creating-groups-commands>`).
 
-Each time the driver station gets new data, the periodic method of your robot program is called. It runs a Scheduler that checks the trigger conditions to see if any commands need to be scheduled or canceled.
+Each time the driver station gets new data, the periodic method of your robot program is called. It runs a Scheduler that checks the trigger conditions to see if any commands need to be scheduled or cancelled.
 
 When a command is scheduled, the Scheduler checks to make sure that no other commands are using the same subsystems that the new command requires. If one or more of the subsystems is currently in use, and the current command is interruptible, it will be interrupted and the new command will be scheduled. If the current command is not interruptible, the new command will fail to be scheduled.
 
