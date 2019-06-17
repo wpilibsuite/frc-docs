@@ -24,7 +24,7 @@ Subsystem Created in Project
 
 .. image:: images/adding-commands-subsystems/image3.png
 
-You can see the new subsystem created in the Subsystems folder in the project. To learn more about creating subsystems, see the :doc:`Simple Subsystems <simple-subsystems>` article.
+You can see the new subsystem created in the Subsystems folder in the project. To learn more about creating subsystems, see the :doc:`Simple Subsystems <../subsystems/simple-subsystems>` article.
 
 Adding a Command to the Project
 -------------------------------
@@ -50,4 +50,4 @@ Command Created in the Project
 
 .. image:: images/adding-commands-subsystems/image6.png
 
-You can see that the Command has been created in the Commands folder in the project in the Project Explorer window. To learn more about creating commands, see the :doc:`Creating Simple Commands article<creating-simple-commands>`.
+You can see that the Command has been created in the Commands folder in the project in the Project Explorer window. To learn more about creating commands, see the :doc:`Creating Simple Commands article<../commands/creating-simple-commands>`.

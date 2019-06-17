@@ -45,9 +45,9 @@ How It Works - Scheduling Commands
 
 There are three main ways commands are scheduled:
 
-1. Manually, by calling the ``start()`` method on the command (:doc:`used for autonomous <running-commands-autonomous>`)
-2. Automatically by the scheduler based on :doc:`button/trigger actions <running-commands-joystick-input>` specified in the code (typically defined in the OI class but checked by the Scheduler).
-3. Automatically when a previous command completes (:doc:`default commands <default-commands>` and :doc:`command groups  <creating-groups-commands>`).
+1. Manually, by calling the ``start()`` method on the command (:doc:`used for autonomous <../commands/running-commands-autonomous>`)
+2. Automatically by the scheduler based on :doc:`button/trigger actions <../commands/running-commands-joystick-input>` specified in the code (typically defined in the OI class but checked by the Scheduler).
+3. Automatically when a previous command completes (:doc:`default commands <../commands/default-commands>` and :doc:`command groups  <../commands/creating-groups-commands>`).
 
 Each time the driver station gets new data, the periodic method of your robot program is called. It runs a Scheduler that checks the trigger conditions to see if any commands need to be scheduled or canceled.
 
@@ -61,4 +61,4 @@ After checking for new commands, the scheduler proceeds through the list of acti
 Command Groups
 --------------
 
-More complex commands can be built up from simpler commands. For example, shooting a disc may be a long sequence of commands that are executed one after another. Maybe some of these commands in the sequence can be executed concurrently. Command groups are commands, but instead of having an isFinished and execute method, they have a list of other commands to execute. This allows more complex operations to be built up out of simpler operations, a basic principle in programming. Each of the individual smaller commands can be easily tested first, then the group can be tested. More information on command groups can be found in the :doc:`Creating groups of commands article <creating-groups-commands>`.
+More complex commands can be built up from simpler commands. For example, shooting a disc may be a long sequence of commands that are executed one after another. Maybe some of these commands in the sequence can be executed concurrently. Command groups are commands, but instead of having an isFinished and execute method, they have a list of other commands to execute. This allows more complex operations to be built up out of simpler operations, a basic principle in programming. Each of the individual smaller commands can be easily tested first, then the group can be tested. More information on command groups can be found in the :doc:`Creating groups of commands article <../commands/creating-groups-commands>`.
