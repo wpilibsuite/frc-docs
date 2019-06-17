@@ -14,7 +14,7 @@ Connecting to the RoboRIO DIO ports
 
 .. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the device.
 
-.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This can severely damage the device.
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behaviour.
 
 |Roborio DIO Ports|
 
