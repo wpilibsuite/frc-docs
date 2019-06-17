@@ -10,6 +10,8 @@ Shuffleboard - Getting Started
    shuffleboard-widgets
    shuffleboard-lists
    shuffleboard-tabs
+   shuffleboard-graphs
+   shuffleboard-recording
    shuffleboard-preferences
    shuffleboard-faq
    
