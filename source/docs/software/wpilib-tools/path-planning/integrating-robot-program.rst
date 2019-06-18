@@ -1,29 +1,29 @@
 Integrating path following into a robot program
 ===============================================
 
-.. warning:: 
+.. warning::
    **Known Issue**
-   
+
    PathWeaver currently has a known issue. The left and right paths are being swapped. This will be fixed in PathWeaver v2019.3.1. In the meantime, this can be corrected in the follower (what this article describes).  Once this update is published, the following fix will not be needed. The fix is as follows:
 
-   Replace: 
-   
+   Replace:
+
    .. code-block:: java
-   
+
       Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
       Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
 
    With:
 
    .. code-block:: java
-   
+
       Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
       Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
 
    Depending on the orientation of your gyro, you may also need to invert the desired heading with the following fix:
 
    .. code-block:: java
-   
+
      double desired_heading = -Pathfinder.r2d(m_left_follower.getHeading());
 
 Overview
@@ -35,9 +35,9 @@ Import Directives
 Each class in WPILib requires that an import declaration to help the compiler resolve the references to WPILib libraries and Pathfinder code included as a vendor library.
 
 .. tabs::
-   
+
    .. code-tab:: java
-      
+
       package frc.robot;
 
       import edu.wpi.first.wpilibj.AnalogGyro;
@@ -50,7 +50,7 @@ Each class in WPILib requires that an import declaration to help the compiler re
       import jaci.pathfinder.PathfinderFRC;
       import jaci.pathfinder.Trajectory;
       import jaci.pathfinder.followers.EncoderFollower
-      
+
 Start of program and constant declarations
 ------------------------------------------
 The program is based on the TimedRobot class - a class where the appropriate initialization and periodic methods for each state (disabled, autonomous, test, and teleop) that the program could be in. For example, the teleopPeriodic() method is called periodically, every 20mS by default, and the same is true for autonomous, test, and disabled.
@@ -60,7 +60,7 @@ Symbolic constants are used throughout the program to name each one to match its
 .. tabs::
 
    .. code-tab:: java
-   
+
       public class Robot extends TimedRobot {
         private static final int k_ticks_per_rev = 1024;
         private static final double k_wheel_diameter = 4.0 / 12.0;
@@ -77,8 +77,8 @@ Symbolic constants are used throughout the program to name each one to match its
         private static final int k_gyro_port = 0;
 
         private static final String k_path_name = "example";
-        
-Member variables used for the Robot class 
+
+Member variables used for the Robot class
 -----------------------------------------
 The Robot class (inherited from TimedRobot) contains the periodic methods. It also has a number of variables required for the Robot class.
 
@@ -95,9 +95,9 @@ The Robot class (inherited from TimedRobot) contains the periodic methods. It al
 
         private EncoderFollower m_left_follower;
         private EncoderFollower m_right_follower;
-     
+
         private Notifier m_follower_notifier;
-   
+
 
 
 **k_ticks_per_rev** - number of encoder counts per wheel revolution
@@ -114,13 +114,13 @@ The Robot class (inherited from TimedRobot) contains the periodic methods. It al
 
 **k_path_name** - name of this path
 
-Initialize the robot sensors and actuators 
+Initialize the robot sensors and actuators
 ------------------------------------------
 
 .. tabs::
 
    .. code-tab:: java
-   
+
          @Override
          public void robotInit() {
            m_left_motor = new Spark(k_left_channel);
@@ -129,7 +129,7 @@ Initialize the robot sensors and actuators
            m_right_encoder = new Encoder(k_right_encoder_port_a, k_right_encoder_port_b);
            m_gyro = new AnalogGyro(k_gyro_port);
          }
-   
+
 Initialize the EncoderFollower objects
 --------------------------------------
 At the start of the autonomous period we do the following operations:
@@ -142,7 +142,7 @@ At the start of the autonomous period we do the following operations:
 .. tabs::
 
    .. code-tab:: java
-   
+
            @Override
            public void autonomousInit() {
              Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
@@ -158,11 +158,11 @@ At the start of the autonomous period we do the following operations:
              m_right_follower.configureEncoder(m_right_encoder.get(), k_ticks_per_rev, k_wheel_diameter);
              // You must tune the PID values on the following line!
              m_right_follower.configurePIDVA(1.0, 0.0, 0.0, 1 / k_max_velocity, 0);
-             
+
              m_follower_notifier = new Notifier(this::followPath);
              m_follower_notifier.startPeriodic(left_trajectory.get(0).dt);
            }
-   
+
 Notifier method that actually drives the motors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Each delta time (value programmed into the notifier in the previous code segment) get the current wheel speeds for the left and the right side. Use the predicted heading at each point and the actual robot heading from the gyro sensor. The difference between the actual and predicted heading is the heading error that is factored into the motor speed setting to help ensure the robot tracks the path direction.
@@ -170,7 +170,7 @@ Each delta time (value programmed into the notifier in the previous code segment
 .. tabs::
 
    .. code-tab:: java
-   
+
            private void followPath() {
              if (m_left_follower.isFinished() || m_right_follower.isFinished()) {
                m_follower_notifier.stop();
@@ -192,7 +192,7 @@ Each delta time (value programmed into the notifier in the previous code segment
            @Override
            public void autonomousPeriodic() {
            }
-   
+
 Stop the motors at the start of the Teleop period
 -------------------------------------------------
 After the autonomous period ends and the teleop period begins, be sure to stop the notifier from running the followPath() method (above) and stop the motors in case they were still running.
@@ -200,7 +200,7 @@ After the autonomous period ends and the teleop period begins, be sure to stop t
 .. tabs::
 
    .. code-tab:: java
-   
+
          @Override
          public void teleopInit() {
            m_follower_notifier.stop();
@@ -208,4 +208,3 @@ After the autonomous period ends and the teleop period begins, be sure to stop t
            m_right_motor.set(0);
         }
       }
-   

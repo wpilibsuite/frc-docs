@@ -21,9 +21,9 @@ CommandGroup with Sequential and Parallel Commands
              addSequential(new DriveToBridge()); // 3
              addParallel(new ContinuousCollect());
              addSequential(new SetTipperState(BridgeTipper.DOWN_STATE));
-             
+
              // addParallel(new WaitThenShoot());
-             
+
              addSequential(new TurnToTargetLowPassFilterHybrid(4.0));
              addSequential(new FireSequence());
              addSequential(new MoveBallToShooter(true));

@@ -136,7 +136,7 @@ The Motor Safety interface of speed controllers can be interacted with by the us
         exampleJaguar->SetSafetyEnabled(false);
         exampleJaguar->SetExpiration(.1);
 
-        // TODO add examples of feed() 
+        // TODO add examples of feed()
 
     .. code-tab:: java
 
@@ -181,7 +181,7 @@ as so:
     .. code-tab:: c++
 
         class Robot {
-            public:   
+            public:
                 frc::Spark m_left{1};
                 frc::Spark m_right{2};
                 m_left->SetInverted(true); // if you want to invert motor outputs, you must do so here
@@ -295,7 +295,7 @@ Joystick construction.
 .. tabs::
 
     .. code-tab:: c++
-    
+
         void TeleopPeriodic() override {
             myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
                 myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());

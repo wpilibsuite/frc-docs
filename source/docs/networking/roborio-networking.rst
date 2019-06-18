@@ -46,7 +46,7 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
   - 10.0.0.0 - 10.255.255.255
   - 172.16.0.0 - 172.31.255.255
   - 192.168.0.0 - 192.168.255.255
-  - 169.254.0.0 - 169.254.255.255   
+  - 169.254.0.0 - 169.254.255.255
   - 224.0.0.251
 
 mDNS - Browser support
@@ -67,7 +67,7 @@ The :ref:`docs/software/getting-started/radio-programming:Programming your Radio
 roboRIO Ethernet Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important:: The roboRIO Ethernet interface should be set to DHCP. 
+.. important:: The roboRIO Ethernet interface should be set to DHCP.
 
 When connected to the OpenMesh bridge, the roboRIO will receive an IP from the bridge. When tethered directly to a PC, both devices will self-assign IPs.
 

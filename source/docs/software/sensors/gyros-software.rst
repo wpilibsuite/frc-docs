@@ -101,7 +101,7 @@ Example: Tank drive stabilization using turn rate
 The following example shows how to stabilize heading using a simple P loop closed on the turn rate.  Since a robot that is not turning should have a turn rate of zero, the setpoint for the loop is implicitly zero, making this method very simple.
 
 .. tabs::
-        
+
     .. code-tab:: java
 
         Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
@@ -164,7 +164,7 @@ Example: Tank drive stabilization using heading
 The following example shows how to stabilize heading using a simple P loop closed on the heading.  Unlike in the turn rate example, we will need to set the setpoint to the current heading before starting motion, making this method slightly more-complicated.
 
 .. tabs::
-      
+
     .. code-tab:: java
 
         Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
@@ -244,7 +244,7 @@ Another common and highly-useful application for a gyro is turning a robot to fa
 Much like with heading stabilization, this is often accomplished with a PID loop - unlike with stabilization, however, the loop can only be closed on the heading.  The following example code will turn the robot to face 90 degrees with a simple P loop:
 
 .. tabs::
-      
+
     .. code-tab:: java
 
         Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);

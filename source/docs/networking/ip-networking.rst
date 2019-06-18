@@ -27,7 +27,7 @@ On the Field DHCP Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Field Network runs a DHCP server with pools for each team that will hand our addresses in the range of 10.TE.AM.20 and up with subnet masks
- 
+
 -  OpenMesh OM5P-AN or OM5P-AC radio - Static 10.TE.AM.1 programmed by
    Kiosk
 -  roboRIO - DHCP 10.TE.AM.2 assigned by the Robot Radio

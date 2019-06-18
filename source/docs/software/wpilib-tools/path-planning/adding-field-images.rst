@@ -8,8 +8,8 @@ Games are loaded from the ``~/PathWeaver/Games`` on Linux and Mac or ``%USERPROF
 
 File Layout
 -----------
-.. code-block:: none
-   
+.. code-block::
+
    ~/PathWeaver
      /Games
        /Custom Game
@@ -19,7 +19,7 @@ File Layout
 
 JSON Format
 -----------
-.. code-block:: none
+.. code-block::
 
    {
      "game": "game name",
@@ -31,7 +31,7 @@ JSON Format
      "field-size": [width, length],
      "field-unit": "unit name"
    }
-   
+
 The path to the field image is relative to the JSON file. For simplicity, the image file should be in the same directory as the JSON file.
 
 The field corners are the X and Y coordinates of the top-left and bottom-right pixels defining the rectangular boundary of the playable area in the field image. Non-rectangular playing areas are not supported.

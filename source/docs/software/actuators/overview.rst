@@ -14,7 +14,7 @@ the voltage that the motor recieves, much like a light bulb. For
 brushless speed controllers such as the Spark MAX, the controller regulates
 the power delivered to each "phase" of the motor.
 
-.. .. hint:: 
+.. .. hint::
 ..     One can make a quick, non-competition-legal speed controller by
 ..     removing the motor from a cordless BRUSHED drill and attaching
 ..     PowerPoles or equivalents to the motor's leads. Make sure that
@@ -47,7 +47,7 @@ Pneumatics
 ----------
 Pneumatics are a quick and easy way to make something that's in one
 state or another using compressed air. For information on operating
-pneumatics, see :ref:`operating-pneumatic-cylinders` 
+pneumatics, see :ref:`operating-pneumatic-cylinders`
 
 
 FRC Legal Relay Modules
@@ -57,4 +57,4 @@ FRC Legal Relay Modules
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Pneumatics Control Module (P/N: am-2858, 217-4243)    
+- Pneumatics Control Module (P/N: am-2858, 217-4243)

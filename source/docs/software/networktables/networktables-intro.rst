@@ -64,9 +64,9 @@ Writing a simple NetworkTable program
 The NetworkTables classes are instantiated automatically when your program starts. To access the instance of NetworkTables do call methods to read and write the getDefault() method can be used to get the default instance.
 
 .. tabs::
-   
+
    .. code-tab:: java
-   
+
       package edu.wpi.first.wpilibj.templates;
 
       import edu.wpi.first.wpilij.TimedRobot;
@@ -108,9 +108,9 @@ The NetworkTables classes are instantiated automatically when your program start
              }
          }
       }
-		 
+
    .. code-tab:: c++
-      
+
       #include "TimedRobot.h"
       #include "networktables/NetworkTable.h"
       #include "networktables/NetworkTableEntry.h"
@@ -120,7 +120,7 @@ The NetworkTables classes are instantiated automatically when your program start
          public:
          nt::NetworkTableEntry xEntry;
          nt::NetworkTableEntry xEntry;
-       
+
          void RobotInit() {
             auto inst = nt::NetworkTableInstance::GetDefault();
             auto table = inst.GetTable("datatable");

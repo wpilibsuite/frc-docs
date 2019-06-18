@@ -1,9 +1,9 @@
 Shuffleboard Layouts with Code
 ==============================
 
-.. toctree:: 
+.. toctree::
    :maxdepth: 1
-   
+
    using-tabs
    sending-data
    retrieving-data

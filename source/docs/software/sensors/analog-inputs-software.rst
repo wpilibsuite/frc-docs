@@ -148,7 +148,7 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
 Accumulator
 ^^^^^^^^^^^
 
-.. note:: The accumulator methods do not currently support returning a value in units of volts - the returned value will always be an integer (specifically, a :code:`long`). 
+.. note:: The accumulator methods do not currently support returning a value in units of volts - the returned value will always be an integer (specifically, a :code:`long`).
 
 Analog input channels 0 and 1 additionally support an accumulator, which integrates (adds up) the signal indefinitely, so that the returned value is the sum of all past measured values.  Oversampling and averaging are applied prior to accumulation.
 

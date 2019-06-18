@@ -12,7 +12,7 @@ Shuffleboard is a dashboard for FRC based on newer technologies such as JavaFX t
 -  You can extend Shuffleboard by writing your own widgets that are specific to your team's requirements. Documentation on extending it are on the `Shuffleboard Github Wiki <https://github.com/wpilibsuite/shuffleboard/wiki>`__.
 
 .. figure:: images/shuffleboard-tabs.png
-   :alt: 
+   :alt:
 
 1. **Sources area:** Here are data sources from which you can choose values from NetworkTables or other sources to display by dragging a value into one of the tabs
 2. **Tab panes:** This is where you data is displayed from the robot or other sources. In this example it is Test-mode subsystems that are shown here in the LiveWindow tab. This area can show any number of tabbed windows, and each window has it's own set of properties like grid size and auto-populate.
@@ -22,7 +22,7 @@ Starting Shuffleboard
 ---------------------
 
 .. figure:: images/shuffleboard-driverstation.png
-   :alt: 
+   :alt:
 
 You can start Shuffleboard in one of three ways:
 
@@ -33,15 +33,15 @@ You can start Shuffleboard in one of three ways:
 Getting robot data onto the dashboard
 -------------------------------------
 
-The easiest way to get data displayed on the dashboard is simply to use methods in the SmartDashboard class. For example to write a number to Shuffleboard write: 
+The easiest way to get data displayed on the dashboard is simply to use methods in the SmartDashboard class. For example to write a number to Shuffleboard write:
 
 .. tabs::
-   
+
    .. code-tab:: java
-   
+
         SmartDashboard.putNumber("Joystick X value", joystick1.getX());
 
 to see a field displayed with the label "Joystick X value" and a value of the X value of the joystick. Each time this line of code is executed, a new joystick value will be sent to Shuffleboard. Remember: you must write the joystick value whenever you want to see an updated value. Executing this line once at the start of the program will only display the value once at the time the line of code was executed.
 
 .. figure:: images/joystick-value.png
-   :alt: 
+   :alt:

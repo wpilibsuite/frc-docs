@@ -3,7 +3,7 @@ Autonomous Path Planning
 
 .. toctree::
    :maxdepth: 1
-   
+
    introduction
    creating-pathweaver-project
    drawing-pathweaver-path

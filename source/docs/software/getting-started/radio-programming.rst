@@ -8,7 +8,7 @@ This guide will show you how to use the FRC Radio Configuration Utility software
 Before you begin using the software:
 
 1. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
-2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge. 
+2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge.
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
@@ -47,7 +47,7 @@ The Radio Configuration Utility programs a number of configuration settings into
   - Robot TCP & Network Tables (TCP 1735, 1740)
   - Bulk (All other traffic). (disabled if BW limit is disabled)
 
-- DHCP server enabled. Serves out: 
+- DHCP server enabled. Serves out:
 
   - 10.TE.AM.11 - 10.TE.AM.111 on the wired side
   - 10.TE.AM.130 - 10.TE.AM.230 on the wireless side

@@ -231,7 +231,7 @@ Driving to a distance
 Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is very useful for robot autonomy:
 
 .. tabs::
-      
+
     .. code-tab:: java
 
         // Creates an encoder on DIO ports 0 and 1
@@ -298,7 +298,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
                 drive.TankDrive(0, 0);
             }
         }
-        
+
 Stabilizing heading
 ^^^^^^^^^^^^^^^^^^^
 
@@ -307,7 +307,7 @@ Stabilizing heading
 Encoders can be used to ensure that a robot drives straight in a manner quite similar to :ref:`how it is done with a gyroscope <docs/software/sensors/gyros-software:Stabilizing heading while driving>`.  A simple implementation with a P loop is given below:
 
 .. tabs::
-        
+
     .. code-tab:: java
 
         // The encoders for the drive

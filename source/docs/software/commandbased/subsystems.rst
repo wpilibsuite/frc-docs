@@ -66,7 +66,7 @@ interface:
 
    public class ExampleSubsystem implements Subsystem {
      // Your subsystem code goes here!
-     
+
      public ExampleSubsystem() {
        register(); // Registers this subsystem with the scheduler so that its periodic method will be called.
      }

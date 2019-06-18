@@ -6,7 +6,7 @@ Imaging your RoboRIO
 .. warning:: Before imaging your RoboRIO, you must have completed installation of the
  FRC Update Suite. You also must have the RoboRIO power properly wired to
  the Power Distribution Panel.
- 
+
  **Make sure the power wires to the RoboRIO are secure and that the connector
  is secure firmly to the RoboRIO (4 total screws to check).**
 

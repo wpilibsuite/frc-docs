@@ -20,7 +20,7 @@ to have a new device type assigned from the ``Reserved`` pool, please
 submit a request to FIRST.
 
 ========================= =====
-Device Types             
+Device Types
 ========================= =====
 Broadcast Messages        0
 Robot Controller          1
@@ -47,7 +47,7 @@ to have a manufacturer ID assigned from the ``Reserved``\ pool, please
 submit a request to FIRST.
 
 =============== =====
-Manufacturer     
+Manufacturer
 =============== =====
 Broadcast       0
 NI              1
@@ -84,7 +84,7 @@ messages are grouped into a single API Class. An example of the API
 Classes for the Jaguar Motor Controller is shown in the table below.
 
 ========================= =
-API Class                
+API Class
 ========================= =
 Voltage Control Mode      0
 Speed Control Mode        1
@@ -105,7 +105,7 @@ API Class. An example of the API Index values for the Jaguar Motor
 Controller Speed Control API Class is shown in the table below.
 
 =========================== ==
-API Index                  
+API Index
 =========================== ==
 Enable Control              0
 Disable Control             1
@@ -147,7 +147,7 @@ is 0. The currently defined broadcast messages are shown in the table
 below:
 
 ================= ==
-Description         
+Description
 ================= ==
 Disable	          0
 System Halt	      1
@@ -171,15 +171,14 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Communicate using Arbitration IDs which match the prescribed FRC
    format:
-   
+
    -  A valid, issued CAN Device Type (per Table 1 - CAN Device Types)
    -  A valid, issued Manufacturer ID (per Table 2 - CAN Manufacturer Codes)
    -  API Class(es) and Index(s) assigned and documented by the device manufacturer
    -  A user selectable device number if multiple units of the device type are intended to co-exist on the same network.
-   
+
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
 -  Provide software library support for LabVIEW, C++, and Java or arrange with FIRST or FIRSTs Control System Partners to provide such interfaces.
 
 .. |image0| image:: images/how-to-wire-a-robot/can-id-example.png
-

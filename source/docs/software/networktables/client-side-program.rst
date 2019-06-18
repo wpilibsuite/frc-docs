@@ -6,7 +6,7 @@ If all you need to do is have your robot program communicate with GRIP or a dash
 A basic client program looks like the following example.
 
 .. tabs::
-   
+
    .. code-tab:: java
       package networktablesdesktopclient;
       import edu.wpi.first.networktables.NetworkTable;
@@ -38,7 +38,7 @@ A basic client program looks like the following example.
           }
         }
       }
-      
+
 In this example an instance of NetworkTables is created and a NetworkTableEntry if created to reference the values of "x" and "y" from a table called "datatable".
 
 Then this instance is started as a NetworkTable client with the team number (the roboRIO is always the server). Additionally, if the program is running on the Driver Station computer, by using the startDSClient() method, NetworkTables will get the robot IP address from the Driver Station.

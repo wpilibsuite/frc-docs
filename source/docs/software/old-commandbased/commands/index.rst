@@ -4,7 +4,7 @@
 
 .. toctree::
    :maxdepth: 1
-   
+
    creating-simple-commands
    creating-groups-commands
    running-commands-joystick-input

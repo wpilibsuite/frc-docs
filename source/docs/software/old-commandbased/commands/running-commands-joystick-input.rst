@@ -47,7 +47,7 @@ Create the Joystick object and JoystickButton Objects
                          button6 = new JoystickButton(joy, 6),
                          button7 = new JoystickButton(joy, 7),
                          button8 = new JoystickButton(joy, 8);
-         
+
       }
 
 In this example there is a Joystick object connected as Joystick 0. Then 8 buttons are defined on that joystick to control various aspects of the robot. This is especially useful for testing although generating buttons on SmartDashboard is another alternative for testing commands.

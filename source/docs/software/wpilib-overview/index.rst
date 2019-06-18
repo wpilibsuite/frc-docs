@@ -12,4 +12,3 @@ WPILib Overview
    viewing-console-output
    debugging-robot-program
    importing-eclipse-project
-   

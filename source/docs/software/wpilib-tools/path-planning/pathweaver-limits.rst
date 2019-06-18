@@ -3,7 +3,7 @@ What paths can and cannot do
 
 What kind of paths can PathFinder follow?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Paths and path groups work best when the robot generally drives in the same direction and multiple paths continue straight line driving. 
+Paths and path groups work best when the robot generally drives in the same direction and multiple paths continue straight line driving.
 
 Can Pathfinder generate paths where the robot drives in reverse?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

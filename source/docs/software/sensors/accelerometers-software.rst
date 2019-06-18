@@ -19,7 +19,7 @@ Three-axis accelerometers often require more complicated communications protocol
 AnalogAccelerometer
 -------------------
 
-The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogAccelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the RoboRIO's analog inputs. 
+The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogAccelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the RoboRIO's analog inputs.
 
 .. tabs::
 
@@ -97,7 +97,7 @@ The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/FRC/roborio/release/
 ADXL345_SPI
 ^^^^^^^^^^^
 
-The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.   
+The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXL345__SPI.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.
 
 .. tabs::
 

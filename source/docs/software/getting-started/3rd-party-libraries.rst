@@ -12,7 +12,7 @@ Libraries
 
 .. warning:: These are not links to directly plug in to the VS Code -> Install New Libraries (online) feature. Click\
  these links to visit the vendor site to see whether they offer online installers, offline installers, or both. \
- 
+
  Most vendors have not yet published final releases for 2019, keep an eye on the vendor pages for 2019 software releases.
 
 `Analog Devices ADIS16448
@@ -148,4 +148,3 @@ as dependencies from the project.
 
 .. |image0| image:: images/3rd-party-libraries/adding-offline-library.png
 .. |image1| image:: images/3rd-party-libraries/library-installer-steptwo.png
-

@@ -18,7 +18,7 @@ These docs serve to provide a learning ground for all FIRST Robotics Competition
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
 - Relevant. Documentation should be focused on the FIRST Robotics Competition.
 
-Please see :ref:`contributing:Style Guide` for information on styling your documentation. 
+Please see :ref:`contributing:Style Guide` for information on styling your documentation.
 
 Note on New Articles
 --------------------
@@ -41,10 +41,10 @@ Suffix filenames with the ``.rst`` extention.
 Page References
 ^^^^^^^^^^^^^^^
 
-Pages references will be auto-generated based on the page filename and section title. 
+Pages references will be auto-generated based on the page filename and section title.
 
 For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
-   
+
 Text
 ^^^^
 
@@ -108,8 +108,8 @@ Links
 
 Links should be in the following format
 
-.. code-block:: none
-   
+.. code-block::
+
    Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
 
 Images
@@ -117,16 +117,16 @@ Images
 
 Images should be created with ``1`` new line seperating content and directive.
 
-.. code-block:: none
-   
+.. code-block::
+
    .. image:: images/image-1.png
-   
+
 Image Files
 ~~~~~~~~~~~
 
 Image files should be stored in the document directory, sub-directory of ``images``
 
-They should follow the naming scheme of ``document-title-1.png`` so on and so forth. 
+They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is acceptable in situations where image motion is required.
 
@@ -138,25 +138,25 @@ There should be **no** local toctrees in any document. Ever. Additional toctrees
 1. ``software.rst``
 2. ``hardware.rst``
 3. ``networking.rst``
-4. ``index.rst`` additions to this are on an approval only basis. 
+4. ``index.rst`` additions to this are on an approval only basis.
 
 Examples
 ^^^^^^^^
-   
-.. code-block:: none
-   
+
+.. code-block::
+
    Title
    =====
    This is an example article
-   
+
    .. code-block:: java
-      
+
       System.out.println("Hello World");
-      
+
    Section
    -------
    This is a section!
-   
+
 Important Note!
 ---------------
 

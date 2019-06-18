@@ -42,7 +42,7 @@ A Git repository is a data structure containing the structure, history, and file
 
 Git repositories usually consist of:
 
-- A ``.git`` folder. This folder contains the various information about the repository. 
+- A ``.git`` folder. This folder contains the various information about the repository.
 - A ``.gitignore`` file. This file contains the files or directories that you do *not* want included when you commit.
 - Files and folders. This is the main content of the repository.
 
@@ -83,9 +83,9 @@ You should see a screen similar to this
 
 .. image:: images/image6.png
 
-.. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code. 
+.. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code.
 
-Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial on powershell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems. 
+Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial on powershell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
 .. image:: images/image7.png
 
@@ -96,7 +96,7 @@ In the below example, we created a file called ``README.md`` with the contents o
 Commits
 -------
 
-Repositories are primarily composed of commits. Commits are saved states or *versions* of code. 
+Repositories are primarily composed of commits. Commits are saved states or *versions* of code.
 
 In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
 
@@ -170,14 +170,14 @@ Run: ``git branch branch-name`` where branch-name is the name of the branch to c
 Entering a Branch
 ^^^^^^^^^^^^^^^^^
 
-Once a branch is created, you have to then enter the branch. 
+Once a branch is created, you have to then enter the branch.
 
 Run: ``git checkout branch-name`` where branch-name is the branch that was previously created.
 
 Merging
 -------
 
-In scenarios where you want to copy one branches history into another, you can merge them. A merge is done by calling ``git merge branch-name`` with branch-name being the name of the branch to merge from. It is automatically merged in the current active branch. 
+In scenarios where you want to copy one branches history into another, you can merge them. A merge is done by calling ``git merge branch-name`` with branch-name being the name of the branch to merge from. It is automatically merged in the current active branch.
 
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
@@ -204,26 +204,26 @@ However, in the above example, what if File 1 was modified by both branch Featur
 Resets
 ------
 
-Sometimes history needs to be reset, or a commit needs to be undone. This can be done multiple ways. 
+Sometimes history needs to be reset, or a commit needs to be undone. This can be done multiple ways.
 
 Reverting the Commit
 ^^^^^^^^^^^^^^^^^^^^
 
 .. note:: You cannot revert a merge, as git does not know which branch or origin it should choose.
 
-To revert history leading up to a commit run ``git revert commit-id``. The commit IDs can be shown using the ``git log`` command. 
+To revert history leading up to a commit run ``git revert commit-id``. The commit IDs can be shown using the ``git log`` command.
 
 Resetting the Head
 ^^^^^^^^^^^^^^^^^^
 
 .. warning:: Forcibly resetting the head is a dangerous command. It permanently erases all history past the target. You have been warned!
 
-Run: ``git reset --hard commit-id``. 
+Run: ``git reset --hard commit-id``.
 
 Forks
 -----
 
-Forks can be treated similarly to branches. You can merge the upstream (original repository) into the origin (forked repository). 
+Forks can be treated similarly to branches. You can merge the upstream (original repository) into the origin (forked repository).
 
 Updating a Fork
 ^^^^^^^^^^^^^^^
@@ -261,4 +261,4 @@ EX: ``file-to-hide2.txt``
 Additional Information
 ----------------------
 
-A much more in-depth tutorial can be found at the official `git <https://git-scm.com/docs/gittutorial>`__ website. 
+A much more in-depth tutorial can be found at the official `git <https://git-scm.com/docs/gittutorial>`__ website.

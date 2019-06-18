@@ -8,7 +8,7 @@ This article describes the basic format of a Command and walks through an exampl
 Basic Command Format
 --------------------
 
-To implement a command, a number of methods are overridden from the WPILib Command class. Most of the methods are boiler plate and can often be ignored, but are there for maximum flexibility when you need it. There a number of parts to this basic command class: 
+To implement a command, a number of methods are overridden from the WPILib Command class. Most of the methods are boiler plate and can often be ignored, but are there for maximum flexibility when you need it. There a number of parts to this basic command class:
 
 .. tabs::
 
@@ -26,7 +26,7 @@ To implement a command, a number of methods are overridden from the WPILib Comma
           }
 
           //    initialize() - This method sets up the command and is called immediately before the command is executed for the first time and every subsequent time it is started .
-          //  Any initialization code should be here. 
+          //  Any initialization code should be here.
           protected void initialize() {
           }
 
@@ -51,12 +51,12 @@ To implement a command, a number of methods are overridden from the WPILib Comma
           * 1.   Constructor - Might have parameters for this command such as target positions of devices. Should also set the name of the command for debugging purposes.
           *  This will be used if the status is viewed in the dashboard. And the command should require (reserve) any devices is might use.
           */
-      MyCommandName::MyCommandName() : CommandBase("MyCommandName") 
+      MyCommandName::MyCommandName() : CommandBase("MyCommandName")
       {
          Requires(Elevator);
       }
 
-      // initialize() - This method sets up the command and is called immediately before the command is executed for the first time and 
+      // initialize() - This method sets up the command and is called immediately before the command is executed for the first time and
       // every subsequent time it is started . Any initialization code should be here.
       void MyCommandName::Initialize()
       {

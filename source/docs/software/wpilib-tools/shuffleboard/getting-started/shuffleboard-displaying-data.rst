@@ -4,7 +4,7 @@ Displaying data from your robot
 Your robot can display data in regular operating modes like Teleop and Autonomous modes but you can also display the status and operate all the robot subsystems when the robot is switched to Test mode. By default you'll see two tabs when you start Shuffleboard, one for Teleop/Autonomous and another for Test mode. The currently selected tab is underlined as can be seen in the picture below.
 
 .. figure:: images/displaying-data-tabs.png
-   :alt: 
+   :alt:
 
 Often debugging or monitoring the status of a robot envolves writing a number of values to the console and watching them stream by. With Shuffleboard you can put values to a GUI that is automatically constructed based on your program. As values are updated, the corresponding GUI element changes value - there is no need to try to catch numbers streaming by on the screen.
 
@@ -14,7 +14,7 @@ Displaying values in normal operating mode (autonomous or teleop)
 .. tabs::
 
 	.. code-tab:: java
-	
+
 		protected void execute() {
 			SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
 			SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
@@ -27,7 +27,7 @@ Displaying values in normal operating mode (autonomous or teleop)
 		}
 
 .. figure:: images/display-code-result.png
-   :alt: 
+   :alt:
 
 You can write Boolean, Numeric, or String values to Shuffleboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required.
 
@@ -41,7 +41,7 @@ Changing the display type of data
 Depending on the data type of the values being sent to Shuffleboard you can often change the display format. In the previous example you can see that number values were displayed as either decimal numbers, a dial to better represent angles, and as a voltage view for the turret potentiometer. To set the display type right-click on the tile and select "Show as...". You can choose display types from the list in the popup menu.
 
 .. figure:: images/configuring-data.png
-   :alt: 
+   :alt:
 
 Displaying data in Test mode
 ----------------------------
@@ -52,7 +52,7 @@ Setting test mode
 ~~~~~~~~~~~~~~~~~
 
 .. figure:: images/driverstation-test-mode.png
-   :alt: 
+   :alt:
 
 Enable Test Mode in the Driver Station by clicking on the "Test" button and setting "Enable" on the robot. When doing this, Shuffleboard will display the status of any actuators and sensors used by your program organized by subsystem.
 
@@ -62,10 +62,9 @@ Getting data from the Sources view
 Normally network table data automatically appears on one of the tabs and you just rearrange and use that data. Sometimes you might want to recover a value that was accidentally deleted from the tab or display a value that is not part of the SmartDashboard/ NetworkTable key. For these cases the values can be dragged onto a pane from NetworkTable view under Sources on the left side of the window. Choose the value that you want to display and just drag it to the pane and it will be automatically created with the default type of widget for the data type.
 
 .. figure:: images/data-sources.png
-   :alt: 
+   :alt:
 
 .. note:: Sometimes the Sources view is not visible on the left - it is possible to drag the divider between the tabbed panes and the Sources so the sources is not visible. If this happens move the cursor over the left edge and look for a divider resizing cursor, then left click and drag out the view. In the two images below you can see where to click and drag, and when finished the divider is as shown in the second image.
 
 .. figure:: images/data-sources-2.png
-   :alt: 
-
+   :alt:
