@@ -7,7 +7,7 @@ SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 LINTER        = doc8
-LINTEROPTS    = --ignore D001
+LINTEROPTS    = --ignore D001 # D001 is linelength
 
 # Put it first so that "make" without argument is like "make help".
 help:
