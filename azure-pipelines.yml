@@ -23,6 +23,9 @@ steps:
 - script: pip install -r source/requirements.txt
   displayName: 'Install Python Requirements'
 
+- script: make lint
+  displayName: 'Lint Check'
+
 - script: sudo apt-get update
   displayName: 'Update System Packages'
 
@@ -31,9 +34,6 @@ steps:
 
 - script: sudo apt-get install -qy --force-yes graphviz
   displayName: 'Install GraphViz'
-
-- script: make lint
-  displayName: 'Lint Check'
 
 - script: make html
   displayName: 'Compile HTML'
