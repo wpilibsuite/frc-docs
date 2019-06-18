@@ -12,10 +12,10 @@ Call `withWidget` after `add` in the call chain:
 
    .. code-tab:: java
 
-	   Shuffleboard.getTab("Drive")
-		.add("Max Speed", 1)
-		.withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
-		.getEntry();
+       Shuffleboard.getTab("Drive")
+        .add("Max Speed", 1)
+        .withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
+        .getEntry();
 
 In this example, we configure the "Max Speed" widget to use a slider to modify the values instead of a basic text field.
 
@@ -29,11 +29,11 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
 
    .. code-tab:: java
 
-	   ShuffShuffleboard.getTab("Drive")
-		.add("Max Speed", 1)
-		.withWidget(BuiltInWidgets.kNumberSlider)
-		.withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
-		.getEntry();
+       ShuffShuffleboard.getTab("Drive")
+        .add("Max Speed", 1)
+        .withWidget(BuiltInWidgets.kNumberSlider)
+        .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
+        .getEntry();
 
 .. image:: images/widgets-2.png
 

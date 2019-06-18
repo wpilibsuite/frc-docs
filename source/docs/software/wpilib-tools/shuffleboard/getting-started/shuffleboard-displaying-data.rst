@@ -13,18 +13,18 @@ Displaying values in normal operating mode (autonomous or teleop)
 
 .. tabs::
 
-	.. code-tab:: java
+    .. code-tab:: java
 
-		protected void execute() {
-			SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
-			SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
-			SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
-			SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
-			SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
-			SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
-			SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
-			SmartDashboard.putNumber("RPM", shooter.getRPM());
-		}
+        protected void execute() {
+            SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
+            SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
+            SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
+            SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
+            SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
+            SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
+            SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
+            SmartDashboard.putNumber("RPM", shooter.getRPM());
+        }
 
 .. figure:: images/display-code-result.png
    :alt:
