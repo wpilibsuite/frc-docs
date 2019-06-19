@@ -27,21 +27,21 @@ These encoders vary in how they are mounted to the mechanism in question.  In ad
 Shafted encoders
 ^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with zipties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__.
 
 On-shaft encoders
 ^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 On-shaft encoders (such as the `AMT103-V <https://www.digikey.com/product-detail/en/cui-inc/AMT103-V/102-1308-ND/827016>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
 
 Magnetic encoders
 ^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <http://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 

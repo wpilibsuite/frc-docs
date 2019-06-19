@@ -75,9 +75,11 @@ interface:
 Simple subsystem example
 ------------------------
 
+.. todo:: link to Hatchbot after new command merge
+
 What might a functional subsystem look like in practice? Below is a
 simple pneumatically-actuated hatch mechanism from the HatchBot example
-project (TODO: link to it):
+project:
 
 .. code-block:: java
 

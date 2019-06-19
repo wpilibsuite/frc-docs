@@ -25,7 +25,7 @@ There are several types of proximity switches that are commonly-used in FRC:
 Mechanical proximity switches ("limit switches")
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 Mechanical proximity switches (more commonly known as "limit switches") are probably the most-commonly used proximity switch in FRC, due to their simplicity, ease-of-use, and low cost.  A limit switch is quite simply a switch attached to a mechanical arm.  The switch is activated when an object pushes against the switch arm, actuating the switch.
 
@@ -34,7 +34,7 @@ Limit switches vary in size, the geometry of the switch-arm, and in the amount o
 Magnetic proximity switches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 Magnetic proximity switches are activated when a magnet comes within a certain range of the sensor.  Accordingly, they are "no-contact" switches - they do not require contact with the object being sensed.
 
@@ -47,7 +47,7 @@ While magnetic proximity switches are often more reliable than their mechanical 
 Inductive proximity switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: add picture
+.. todo:: add picture
 
 Inductive proximity switches are activated when a conductor of any sort comes within a certain range of the sensor.  Like magnetic proximity switches, they are "no-contact" switches.
 
@@ -56,7 +56,7 @@ Inductive proximity switches are used for many of the same purposes as magnetic 
 Photoelectric proximity switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: add picture
+.. todo:: add picture
 
 Photoelectric proximity switches are the last type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold.
 

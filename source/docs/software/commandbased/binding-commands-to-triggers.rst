@@ -18,7 +18,9 @@ command as needed, behind-the-scenes. Users only need to worry about
 designing their desired UI setup - not about implementing it!
 
 Command binding is done through the ``Trigger`` class and its various
-``Button`` subclasses (TODO: link).
+``Button`` subclasses.
+
+.. todo:: Link to API docs after merge.
 
 Trigger/Button bindings
 -----------------------
@@ -129,8 +131,8 @@ cancelWhenActive/cancelWhenPressed
 
 This binding cancels a command when a trigger changes from inactive to
 active (or, accordingly, when a button is initially pressed). the
-command is canceled on the iteration when the state changes, and will
-not be canceled again unless the trigger becomes inactive and then
+command is cancelled on the iteration when the state changes, and will
+not be cancelled again unless the trigger becomes inactive and then
 active again (or the button is released and re-pressed). Note that
 cancelling a command that is not currently running has no effect.
 

@@ -108,7 +108,7 @@ automatically scheduled when no other command is currently using the
 subsystem. This is useful for continuous “background” actions such as
 controlling the robot drive, or keeping an arm held at a setpoint.
 
-TODO: replace this graphic with one that isn’t wrong
+.. todo:: replace this graphic with one that isn’t wrong
 
 .. figure:: images/commandflowchart.png
    :alt: scheduler control flow diagram

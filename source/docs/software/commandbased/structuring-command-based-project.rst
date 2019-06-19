@@ -7,8 +7,10 @@ While users are free to use the command-based libraries however they
 like (and advanced users are encouraged to do so), new users may want
 some guidance on how to structure a basic command-based robot project.
 
+.. todo:: Link below to example after merge.
+
 A standard template for a command-based robot project is included in the
-WPILib examples repository (TODO: link). This section will walk users
+WPILib examples repository. This section will walk users
 through the structure of this template.
 
 The root package generally will contain four classes:
@@ -32,8 +34,9 @@ As ``Robot.java`` is responsible for the program’s control flow, and
 command-based is an imperative paradigm designed to minimize the amount
 of attention the user has to pay to explicit program control flow, the
 ``Robot.java`` class of a command-based project should be mostly empty.
-However, there are a few important things that must be included (TODO:
-link to class on github):
+However, there are a few important things that must be included 
+
+.. todo:: Link to class on github after merge
 
 .. code-block:: java
 
@@ -128,8 +131,9 @@ This class is where most of the setup for your command-based robot will
 take place. In this class, you will define your robot’s subsystems and
 commands, bind those commands to triggering events (such as buttons),
 and specify which command you will run in your autonomous routine. There
-are a few aspects of this class new users may want explanations for
-(TODO: link to class on github):
+are a few aspects of this class new users may want explanations for:
+
+.. todo:: link to class on github after merge
 
 .. code-block:: java
 
@@ -204,11 +208,12 @@ sensor/motor ports) can be stored. It is recommended that users separate
 these constants into individual inner clases corresponding to subsystems
 or robot modes, to keep variable names shorter. All constants declared
 in ``Constants.java`` should be declared as ``public static final`` so
-that they are globally accessible and cannot be changed (TODO: link to
-the class on github).
+that they are globally accessible and cannot be changed.
+
+.. todo:: Link above to Constants.java and below to examples after merge
 
 For more illustrative examples of what a ``constants`` class should look
-like in practice, see the various example projects (TODO: link).
+like in practice, see the various example projects.
 
 It is recommended that the constants be used from other classes by
 statically importing the necessary inner class. An ``import static``

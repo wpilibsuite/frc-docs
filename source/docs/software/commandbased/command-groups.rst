@@ -86,10 +86,12 @@ still running at that point.
 Creating command groups
 -----------------------
 
+.. todo:: link to Hatchbot after new command merge
+
 Users have several options for creating command groups. One way -
 similar to the previous incarnation of the command-based library - is to
 subclass one of the command group classes. Consider the following from
-the Hatch Bot example project (TODO: link):
+the Hatch Bot example project:
 
 .. code-block:: java
 
@@ -192,10 +194,12 @@ Additionally, requirements are enforced within all three types of
 parallel groups - a parallel group may not contain multiple commands
 that require the same subsystem.
 
+.. todo:: Link to ScheduleCommand class API doc after merge
+
 Some advanced users may find this overly-restrictive - for said users,
 the library offers a ``ScheduleCommand`` class that can be used to
 independently “branch off” from command groups to provide finer
-granularity in requirement management (TODO: link).
+granularity in requirement management.
 
 Restrictions on command group components
 ----------------------------------------
@@ -215,4 +219,5 @@ group. Attempting to do so will throw an
 Advanced users who wish to re-use a command instance and are *certain*
 that it is safe to do so may bypass this restriction with the
 ``clearGroupedCommand()`` method in the ``CommandGroupBase`` class
-(TODO: link).
+
+.. todo:: Link to API docs after merge
