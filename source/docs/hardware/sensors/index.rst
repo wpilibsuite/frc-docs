@@ -8,7 +8,13 @@ Sensors
    analog-inputs-hardware
    analog-potentiometers-hardware
    digital-inputs-hardware
-   accelerometers-hardware
+   proximity-switches
+   encoders-hardware
    gyros-hardware
    ultrasonics-hardware
-   encoders-hardware
+   accelerometers-hardware
+   lidar
+   triangulating-rangefinders
+   serial-buses
+   
+   
