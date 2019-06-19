@@ -332,11 +332,6 @@ the middle of the bus (utilizing both pairs of PDP CAN terminals) move
 the jumper to the “OFF” position and place your own 120 ohm terminating
 resistor at the end of your CAN bus chain. 
 
-Other CAN Devices
-~~~~~~~~~~~~~~~~~
-
-TODO: Add motor controller example here?
-
 PWM Cables
 ---------------------------------------------------
 

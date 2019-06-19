@@ -29,14 +29,14 @@ Connecting a sensor to a single analog input port
 
 Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports.  They should be connected accordingly.
 
-TODO: add picture
+.. todo:: add picture
 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed.
 
-TODO: add picture
+.. todo:: add picture
 
 .. |RoboRIO Analog Inputs| image:: images/analog-inputs-hardware/roborio-analog-inputs.png
 .. |ground| unicode:: 0x23DA

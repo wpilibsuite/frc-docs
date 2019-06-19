@@ -13,7 +13,7 @@ There are two types of LIDAR sensors commonly used in current FRC: 1-dimensional
 1-Dimensional LIDAR
 ^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 A 1-dimensional (1D) LIDAR sensor works much like an ultrasonic sensor - it measures the distance to the nearest object more or less along a line in front of it.  1D LIDAR sensors can often be more-reliable than ultrasonics, as they have narrower "beam profiles" and are less susceptible to interference.
 
@@ -22,7 +22,7 @@ A 1-dimensional (1D) LIDAR sensor works much like an ultrasonic sensor - it meas
 2-Dimensional LIDAR
 ^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 A 2-dimensional (2D) LIDAR sensor measures distance in all directions in a plane.  Generally, this is accomplished (more-or-less) by simply placing a 1D LIDAR sensor on a turntable that spins at a constant rate.
 

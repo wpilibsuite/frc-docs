@@ -21,14 +21,14 @@ There are two types of accelerometers commonly-used in FRC: single-axis accelero
 Single-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 As per their name, single-axis accelerometers measure acceleration along a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Single-axis accelerometers generally output an analog voltage corresponding to the measured acceleration, and so connect to the RoboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
 
 Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO: add picture
+.. todo:: add picture
 
 Multi-axis accelerometers measure acceleration along all multiple spacial axes.  The RoboRIO's built-in accelerometer is a three-axis accelerometer.
 

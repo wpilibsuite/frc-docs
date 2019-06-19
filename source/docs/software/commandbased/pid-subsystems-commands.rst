@@ -3,17 +3,17 @@ PID control through PIDSubsystems and PIDCommands
 
 One of the most common control algorithms used in FRC is the `PID
 controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib
-offers its own ``PIDController`` class to help teams implement this
-functionality on their robots (TODO: link). To further help teams
+offers its own :code:`PIDController` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__) to help teams implement this
+functionality on their robots. To further help teams
 integrate PID control into a command-based robot project, the
 command-based library includes several convenience wrappers for the
 ``PIDController`` object. There are two basic wrappers: PIDSubsystems,
 which integrate the PID controller into a subsystem, and PIDCommands,
-which integrate the PID controller into a command. Morevoer, each
+which integrate the PID controller into a command. Moreover, each
 wrapper comes in one of two varieties: synchronous, which run from the
 main robot loop, and asynchronous, which run in their own thread. While
 the asynchronous versions offer more functionality and potentially
-tigher control, new/inexperienced users are encouraged to use the
+tighter control, new/inexperienced users are encouraged to use the
 synchronous versions to avoid having to deal with thread safety issues.
 
 PIDSubsystems
@@ -64,14 +64,16 @@ PIDSubsystem classes:
      }
    }
 
-Additional settings can be applied to the ``PIDController`` (TODO: link)
+Additional settings can be applied to the :code:`PIDController` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__)
 by calling the ``getController`` method from the constructor.
 
 Using a PIDSubsystem
 ~~~~~~~~~~~~~~~~~~~~
 
 What does a PIDSubsystem look like when used in practice? The following
-examples are taken from the FrisbeeBot example project (TODO: link):
+examples are taken from the FrisbeeBot example project:
+
+.. todo:: Link to FrisbeeBot example after merge
 
 .. code-block:: java
 
@@ -212,7 +214,9 @@ Using a PIDCommand
 ~~~~~~~~~~~~~~~~~~
 
 What does a PIDCommand look like when used in practice? The following
-examples are from the GyroDriveCommands example project (TODO: link):
+examples are from the GyroDriveCommands example project:
+
+.. todo:: Link to GyroDriveCommands example after merge
 
 .. code-block:: java
 

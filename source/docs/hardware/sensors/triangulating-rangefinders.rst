@@ -1,7 +1,7 @@
 Triangulating Rangefinders
 ==========================
 
-TODO: add image
+.. todo:: add image
 
 Triangulating rangefinders (often called "IR rangefinders," as they commonly function in the infrared wavelength band) are another common type of rangefinder used in FRC.
 
