@@ -1,5 +1,5 @@
-Analog Inputs
-=============
+Analog Inputs - Software
+========================
 
 .. note:: This section covers analog inputs in software.  For a hardware guide to analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog Inputs - Hardware`.
 
