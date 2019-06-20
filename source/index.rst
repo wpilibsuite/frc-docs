@@ -6,7 +6,7 @@
 FIRST Robotics Competition Documentation
 ========================================
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`contributing`.
+Welcome to the FIRST Robotics Competition Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`docs/contributing/contribution-guidelines`.
 
 .. toctree::
    :maxdepth: 1
@@ -59,6 +59,15 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    :maxdepth: 1
    :caption: Contributing
    
-   contributing
+   docs/contributing/contribution-guidelines
+   docs/contributing/style-guide
+   docs/contributing/build-instructions
+   docs/contributing/top-contributors
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Issues
+
+   Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
    
 .. todolist::
