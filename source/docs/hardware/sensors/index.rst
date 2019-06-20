@@ -12,7 +12,6 @@ Sensors
    encoders-hardware
    gyros-hardware
    ultrasonics-hardware
-   encoders-hardware
    accelerometers-hardware
    lidar
    triangulating-rangefinders
