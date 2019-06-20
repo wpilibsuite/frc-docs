@@ -58,7 +58,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
 .. toctree::
    :maxdepth: 1
    :caption: Contributing
-   
+
    docs/contributing/contribution-guidelines
    docs/contributing/style-guide
    docs/contributing/build-instructions
@@ -69,5 +69,5 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    :caption: Issues
 
    Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
-   
+
 .. todolist::
