@@ -82,7 +82,7 @@ Creating a Subsystem
        * Set the claw motor to move in the open direction.
        */
       void Claw::Open() { m_motor.Set(-1); }
-      
+
       /**
        * Set the claw motor to move in the close direction.
        */
@@ -106,7 +106,7 @@ Operating the Claw with a Command
 ---------------------------------
 
 .. tabs::
-   
+
    .. code-tab:: java
 
       package org.usfirst.frc.team1.robot.commands;

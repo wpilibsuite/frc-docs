@@ -1,9 +1,9 @@
 NetworkTables
 =============
 
-.. toctree:: 
+.. toctree::
    :maxdepth: 1
-   
+
    networktables-intro
    listening-for-change
    client-side-program

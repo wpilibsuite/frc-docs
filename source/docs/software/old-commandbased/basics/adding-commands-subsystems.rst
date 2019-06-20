@@ -10,7 +10,7 @@ Adding Subsystems to the Project
 
 .. image:: images/adding-commands-subsystems/image1.png
 
-To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem** or **PID Subsystem**. 
+To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem** or **PID Subsystem**.
 
 Naming the Subsystem
 --------------------

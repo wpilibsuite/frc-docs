@@ -19,7 +19,7 @@ Station or Utilities.**
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-|Uninstaller| 
+|Uninstaller|
 
 **LabVIEW teams have already completed this step, do not
 repeat it.** Before installing the new version of the NI Update it is
@@ -29,12 +29,12 @@ FRC 2019 only. Make sure to back up any team code located in the
 ``User:\LabVIEW\Data`` directory before un-installing. Then
 click **Start >> Control Panel >> Uninstall a Program.** Locate the
 entry labeled “**National Instruments Software**”, right-click on it and
-select **Uninstall/Change**. 
+select **Uninstall/Change**.
 
 Select Components to Uninstall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|Remove All| 
+|Remove All|
 
 Click **Remove All** and follow any prompts to remove all
 previous NI products.
@@ -59,7 +59,7 @@ necessary.
 Welcome
 -------
 
-|Welcome| 
+|Welcome|
 
 Right click on the downloaded zip file and select Extract All.
 If you downloaded the encrypted zip file, you will be prompted for the
@@ -72,7 +72,7 @@ appears. Click “Next” on the splash screen that appears.
 Product List
 ------------
 
-|Product List| 
+|Product List|
 
 Click “Next”. There is no need to de-select “LabVIEW
 Update” for C++ or Java teams, if you do not have the base LabVIEW
@@ -82,14 +82,14 @@ installation will be skipped automatically.
 Product Information
 -------------------
 
-|Product Information| 
+|Product Information|
 
 Un-check the box, then Click “Next”.
 
 User Information
 ----------------
 
-|User Information| 
+|User Information|
 
 Enter name and organization and the serial number
 from the Team Registration System (in the Password/Voucher code section)
@@ -98,14 +98,14 @@ then click **Next**
 License Agreements
 ------------------
 
-|License Agreements| 
+|License Agreements|
 
 Select “I accept…” then click “Next”
 
 License Agreements Page 2
 -------------------------
 
-|License Agreements Page 2| 
+|License Agreements Page 2|
 
 Select “I accept…” then click “Next” If you
 see a screen asking to disable Windows Fast Startup, leave it at the
@@ -131,7 +131,7 @@ Detail Progress
 Installation Summary
 --------------------
 
-|Installation Summary| 
+|Installation Summary|
 
 Make sure the box is checked to Run License
 Manager… then click Next or Finish
@@ -139,7 +139,7 @@ Manager… then click Next or Finish
 NI Activation Wizard
 --------------------
 
-|NI Activation Wizard| 
+|NI Activation Wizard|
 
 Log into your ni.com account. If you don’t have
 an account, select ‘Create account’ to create a free account.
@@ -147,7 +147,7 @@ an account, select ‘Create account’ to create a free account.
 NI Activation Wizard (2)
 ------------------------
 
-|NI Activation Wizard 2| 
+|NI Activation Wizard 2|
 
 The serial number you entered at the “User
 Information” screen should appear in all of the text boxes, if it
@@ -158,7 +158,7 @@ shown above about a valid license not being found. You can ignore this.
 NI Activation Wizard (3)
 ------------------------
 
-|NI Activation Wizard 3| 
+|NI Activation Wizard 3|
 
 If your products activate successfully, an
 “Activation Successful” message will appear. If the serial number was
@@ -169,14 +169,14 @@ and select “Try Again”. If everything activated successfully, click
 NI Activation Wizard (4)
 ------------------------
 
-|NI Activation Wizard 4| 
+|NI Activation Wizard 4|
 
 Click “Close”.
 
 NI Update Service
 -----------------
 
-|NI Update Service| 
+|NI Update Service|
 
 On occasion you may see alerts from the NI Update
 Service about patches to LabVIEW. It is not recommended to install these

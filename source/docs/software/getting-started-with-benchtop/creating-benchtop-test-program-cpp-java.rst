@@ -40,29 +40,29 @@ Defining the variables for our sample robot
 
     .. code-tab:: c++
 
-        class Robot : public frc::TimedRobot 
-        { 
-        public:  
-            Robot() {    
-                m_robotDrive.SetExpiration(0.1);    
-                m_timer.Start();  
+        class Robot : public frc::TimedRobot
+        {
+        public:
+            Robot() {
+                m_robotDrive.SetExpiration(0.1);
+                m_timer.Start();
             }
 
 
-        private:  
-        // Robot drive system  
-        frc::PWMVictorSPX m_left{0};  
-        frc::PWMVictorSPX m_right{1};  
+        private:
+        // Robot drive system
+        frc::PWMVictorSPX m_left{0};
+        frc::PWMVictorSPX m_right{1};
         frc::DifferentialDrive m_robotDrive{m_left, m_right};
-        frc::Joystick m_stick{0};  
-        frc::LiveWindow& m_lw = *frc::LiveWindow::GetInstance();  
+        frc::Joystick m_stick{0};
+        frc::LiveWindow& m_lw = *frc::LiveWindow::GetInstance();
         frc::Timer m_timer;
-    
+
     .. code-tab:: java
 
         public class Robot extends TimedRobot {
-        private final DifferentialDrive m_robotDrive = new DifferentialDrive(new PWMVictorSPX(0), new PWMVictorSPX(1));  
-        private final Joystick m_stick = new Joystick(0);  
+        private final DifferentialDrive m_robotDrive = new DifferentialDrive(new PWMVictorSPX(0), new PWMVictorSPX(1));
+        private final Joystick m_stick = new Joystick(0);
         private final Timer m_timer = new Timer();
 
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1. Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and time (m_timer). This section of the code does three things:
@@ -79,7 +79,7 @@ Robot Initialization
     .. code-tab:: c++
 
         void RobotInit() {}
-    
+
     .. code-tab:: java
 
           @Override
@@ -109,7 +109,7 @@ Simple Autonomous Example
                 m_robotDrive.ArcadeDrive(0.0, 0.0);
             }
         }
-    
+
     .. code-tab:: java
 
         @Override
@@ -135,14 +135,14 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 Joystick Control for teleoperation
 ----------------------------------
 
-.. tabs:: 
+.. tabs::
 
     .. code-tab:: c++
 
         void TeleopInit() override {}
         void TeleopPeriodic() override {
-            // Drive with arcade style (use right stick)    
-            m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());  
+            // Drive with arcade style (use right stick)
+            m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());
         }
 
     .. code-tab:: java
@@ -164,7 +164,7 @@ Test Mode
 .. tabs::
 
     .. code-tab:: c++
-        
+
         void TestPeriodic() override {}
 
     .. code-tab:: java

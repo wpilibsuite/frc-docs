@@ -33,11 +33,11 @@ Confirm Connectivity
 --------------------
 
 .. figure:: images/run-benchtop-test/confirm-connectivity-tethered.png
-    
+
     Tethered
 
 .. figure:: images/run-benchtop-test/confirm-connectivity-wireless.png
-    
+
     Wireless
 
 Using the Driver Station software, click Diagnostics and confirm that the Enet Link (or Robot Radio led, if operating wirelessly) and Robot leds are green.

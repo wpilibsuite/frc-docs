@@ -3,7 +3,7 @@
 Changing the display properties of a value
 ==========================================
 
-Each value displayed with SmartDashboard has a a set of properties that effect the way it's displayed. 
+Each value displayed with SmartDashboard has a a set of properties that effect the way it's displayed.
 
 Setting the SmartDashboard display into editing mode
 ----------------------------------------------------
@@ -15,7 +15,7 @@ The SmartDashboard has two modes it can operate in, display mode and edit mode. 
 Getting the properties editor of a widget
 -----------------------------------------
 
-.. image:: images/display-properties-2.png 
+.. image:: images/display-properties-2.png
 
 Once in edit mode, you can display and edit the properties for a widget. Right-click on the widget and select "Properties...".
 

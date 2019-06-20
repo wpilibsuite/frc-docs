@@ -10,7 +10,7 @@ To add a camera to your dashboard select "Sources" and view the "CameraServer" s
 
 .. image:: images/camera-stream-1.png
 
-Once the camera stream is added it will be displayed in the window. It can be resized and moved where you would like it. 
+Once the camera stream is added it will be displayed in the window. It can be resized and moved where you would like it.
 
 .. note:: Be aware that sending too much data from too high a resolution or too high a frame rate will cause high CPU usage on both the roboRIO and the laptop.
 

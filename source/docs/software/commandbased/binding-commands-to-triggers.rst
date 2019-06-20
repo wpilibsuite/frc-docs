@@ -167,7 +167,7 @@ the HID:
 
 .. code-block:: java
 
-   driverController.getButton(XboxController.Button.kX.value) // Returns the JoystickButton object 
+   driverController.getButton(XboxController.Button.kX.value) // Returns the JoystickButton object
                                                               // corresponding to the `X` button of driverController
 
 Binding a command to a JoystickButton

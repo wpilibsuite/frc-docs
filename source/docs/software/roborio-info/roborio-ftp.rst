@@ -7,7 +7,7 @@ SFTP
 ----
 SFTP is the recommended way to access the RoboRIO file system. Because you will be using the same account that your program will run under, files copied over should always have permissions compatible with your code.
 
-Software 
+Software
 ^^^^^^^^
 There are a number of freely available programs for SFTP. This article will discuss using FileZilla. You can either download and install FileZilla_ before proceeding or extrapolate the directions below to your SFTP client of choice.
 

@@ -11,7 +11,7 @@ The roboRIO uses a staged brownout protection scheme to attempt to preserve the 
 Stage 1 - Output Disable
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Voltage Trigger** 
+**Voltage Trigger**
 
 When the voltage drops below 6.8V, the controller will enter the brownout protection state. The following indicators will show that this condition has occurred:
 
@@ -34,7 +34,7 @@ The controller will take the following steps to attempt to preserve the battery 
 Stage 2 - User Voltage Rail Disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Voltage Trigger - 6.3V** 
+**Voltage Trigger - 6.3V**
 
 When the voltage drops below 6.3V, the User Voltage Rails are disabled. This includes the 5V pins (or 3.3V is the jumper has been set) in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank.
 
@@ -43,7 +43,7 @@ When the voltage drops below 6.3V, the User Voltage Rails are disabled. This inc
 Stage 3 - Device Blackout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Voltage Trigger - 4.5V** 
+**Voltage Trigger - 4.5V**
 
 Below 4.5V the device may blackout. The exact voltage may be lower than this and depends on the load on the device.
 
@@ -53,7 +53,7 @@ Avoiding Brownout - Proactive Current Draw Planning
 ---------------------------------------------------
 
 .. figure:: images/brownout-diagram.png
-   :alt: 
+   :alt:
 
 The key to avoiding a brownout condition is to proactively plan for the current draw of your robot. The best way to do this is to create some form of power budget. This can be a complex document that attempts to quantify both estimated current draw and time in an effort to most completely understand power usage and therefore battery state at the end of a match, or it can be a simple inventory of current usage. To do this:
 
@@ -74,6 +74,6 @@ Identifying Brownouts
 ---------------------
 
 .. figure:: images/identifying-brownouts.png
-   :alt: 
+   :alt:
 
 The easiest way to identify a brownout is by clicking on the CAN\\Power tab of the DS and checking the 12V fault count. Alternately, you can review the Driver Station Log after the fact using the Driver Station Log Viewer. The log will identify brownouts with a bright orange line, such as in the image above (note that these brownouts were induced with a benchtop supply and may not reflect the duration and behavior of brownouts on a typical FRC robot).

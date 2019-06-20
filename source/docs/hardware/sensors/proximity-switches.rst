@@ -1,7 +1,7 @@
 Proximity Switches - Hardware
 =============================
 
-.. note:: This section covers proximity switch hardware.  For a guide to using proximity switches in software, see :ref:`docs/software/sensors/digital-inputs-software:Digital Inputs - Software`.  
+.. note:: This section covers proximity switch hardware.  For a guide to using proximity switches in software, see :ref:`docs/software/sensors/digital-inputs-software:Digital Inputs - Software`.
 
 One of the most common sensing tasks on a robot is detecting when an object (be it a mechanism, game piece, or field element) is within a certain distance of a known point on the robot.  This type of sensing is accomplished by a "proximity switch."
 
