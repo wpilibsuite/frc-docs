@@ -27,7 +27,7 @@ PCM Module Numbers
 ------------------
 PCM Modules are identified by their Node ID. The default Node ID for
 PCMs is 0. If using a single PCM on the bus it is recommended to leave
-it at the default Node ID. 
+it at the default Node ID.
 
 Generating and Storing Pressure
 -------------------------------
@@ -39,7 +39,7 @@ and it is *not* recommended that teams change this setting. When
 closed loop control is enabled the PCM will automatically turn the
 compressor on when the pressure switch is closed (below the pressure threshold)
 and turn it off when the pressure switch is open (~120PSI). When closed
-loop control is disabled the compressor will not be turned on. 
+loop control is disabled the compressor will not be turned on.
 Using a Compressor, users can query the status of the compressor. The state
 (currently on or off), pressure switch state, and compressor current can
 all be queried from the Compressor object.
@@ -147,7 +147,7 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
 .. tabs::
 
    .. code-tab:: c++
-   
+
         frc::DoubleSolenoid exampleDouble {1, 2};
         frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
 

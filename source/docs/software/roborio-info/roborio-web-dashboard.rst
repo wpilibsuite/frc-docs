@@ -22,7 +22,7 @@ Opening the WebDash
 -------------------
 
 .. figure:: images/roborio-page-home.png
-   :alt: 
+   :alt:
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
@@ -35,7 +35,7 @@ System Configuration Tab
 ------------------------
 
 .. figure:: images/system-configuration-tab.png
-   :alt: 
+   :alt:
 
 The home screen of the web dashboard is the System Configuration tab
 which has 5 main sections:
@@ -57,7 +57,7 @@ Startup Settings
 ~~~~~~~~~~~~~~~~
 
 .. figure:: images/startup-settings.png
-   :alt: 
+   :alt:
 
 -  Force Safe Mode - Forces the controller into Safe Mode. This can be
    used with troubleshooting imaging issues, but it is recommended to
@@ -85,7 +85,7 @@ Network Configuration
 ---------------------
 
 .. figure:: images/network-configuration.png
-   :alt: 
+   :alt:
 
 This page shows the configuration of the roboRIO's network adapters.
 **It is not recommended to change any settings on this page.** For more

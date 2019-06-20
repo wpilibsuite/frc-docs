@@ -43,7 +43,7 @@ simply create their own class implementing the ``Command`` interface:
 
    public class ExampleCommand implements Command {
      // Your command code goes here!
-     
+
      // Must be overridden!
      @override
      public List<Subsystem> getRequirements() {
@@ -113,7 +113,7 @@ Ending
    public void end(boolean interrupted) {
      // Code here will be executed whenever the command ends, whether it finishes normally or is interrupted!
      if (interrupted) {
-       // Using the argument of the method allows users to do different actions depending on whether the command 
+       // Using the argument of the method allows users to do different actions depending on whether the command
        // finished normally or was interrupted!
      }
    }
@@ -161,15 +161,15 @@ is a simple command from the HatchBot example project that uses the
    import edu.wpi.first.wpilibj.experimental.command.SendableCommandBase;
 
    /**
-    * A simple command that grabs a hatch with the {@link HatchSubsystem}.  Written explicitly for 
-    * pedagogical purposes; actual code should inline a command this simple with 
+    * A simple command that grabs a hatch with the {@link HatchSubsystem}.  Written explicitly for
+    * pedagogical purposes; actual code should inline a command this simple with
     * {@link edu.wpi.first.wpilibj.experimental.command.InstantCommand}.
     */
    public class GrabHatch extends SendableCommandBase {
-     
+
      // The subsystem the command runs on
      private final HatchSubsystem m_hatchSubsystem;
-     
+
      public GrabHatch(HatchSubsystem subsystem) {
        m_hatchSubsystem = subsystem;
        addRequirements(m_hatchSubsystem);

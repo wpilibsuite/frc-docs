@@ -56,10 +56,10 @@ SPARK MAX
 ^^^^^^^^^
 For information regarding the SparkMAX CAN Speed Controller, which can be
 used in either CAN or PWM mode, please refer to the SparkMAX `software resorces <http://www.revrobotics.com/sparkmax-software/>`_
-and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_  
+and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_
 
 CTRE CAN Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Please refer to the third party CTR documentation on the
 Phoenix software for more detailed information. The documentation
-is availible `here. <https://phoenix-documentation.readthedocs.io/en/latest/>`_ 
+is availible `here. <https://phoenix-documentation.readthedocs.io/en/latest/>`_

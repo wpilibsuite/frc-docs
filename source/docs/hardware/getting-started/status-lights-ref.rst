@@ -107,7 +107,7 @@ Pneumatics Control Module (PCM)
 
 Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
-PCM Comp 
+PCM Comp
 ^^^^^^^^
 
 This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.

@@ -93,10 +93,10 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
 
     Different cameras report bandwidth usage differently. The library will tell you if you're hitting the limit; you'll get this error message:
 
-    .. code-block:: none
+    .. code-block:: text
 
         could not start streaming due to USB bandwidth limitations;
-       	try a lower resolution or a different pixel format
-       	(VIDIOC_STREAMON: No space left on device)
+        try a lower resolution or a different pixel format
+        (VIDIOC_STREAMON: No space left on device)
 
     If you're using Option 3 it will give you this error during ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.

@@ -34,7 +34,7 @@ As ``Robot.java`` is responsible for the program’s control flow, and
 command-based is an imperative paradigm designed to minimize the amount
 of attention the user has to pay to explicit program control flow, the
 ``Robot.java`` class of a command-based project should be mostly empty.
-However, there are a few important things that must be included 
+However, there are a few important things that must be included
 
 .. todo:: Link to class on github after merge
 

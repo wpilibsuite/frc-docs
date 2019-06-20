@@ -3,9 +3,9 @@ RoboRIO User Accounts and SSH
 
 .. note:: **This document contains advanced topics not required for typical FRC programming**
 
- The RoboRIO image contains a number of accounts, this article will highlight the two used 
- for FRC and provide some detail about their purpose. It will also describe how to connect 
- to the roboRIO over SSH. 
+ The RoboRIO image contains a number of accounts, this article will highlight the two used
+ for FRC and provide some detail about their purpose. It will also describe how to connect
+ to the roboRIO over SSH.
 
 RoboRIO User Accounts
 ---------------------
@@ -40,7 +40,7 @@ Open Putty (clicking OK at any security prompt). Then set the following settings
 
 2. Connection Type: SSH
 
-Other settings can be left at defaults. Click Open to open the connection. If you see a prompt about SSH keys, click OK. 
+Other settings can be left at defaults. Click Open to open the connection. If you see a prompt about SSH keys, click OK.
 
 If you are connected over USB you can use 172.22.11.2 as the hostname. If your roboRIO is set to a static IP you can use that IP as the hostname if connected over Ethernet/wireless.
 

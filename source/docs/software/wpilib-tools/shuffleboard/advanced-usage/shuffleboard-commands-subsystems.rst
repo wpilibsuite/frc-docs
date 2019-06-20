@@ -1,7 +1,7 @@
 Commands and Subsystems
 =======================
 
-When using the command-based framework Shuffleboard makes it easier to understand what the robot is doing by displaying the state of various commands and subsystems in real-time. 
+When using the command-based framework Shuffleboard makes it easier to understand what the robot is doing by displaying the state of various commands and subsystems in real-time.
 
 Displaying Subsystems
 ---------------------
@@ -33,7 +33,7 @@ In Test mode (Test/Enabled in the driver station) subsystems may be displayed in
 
 More information on tuning PIDSubsystems can be found :doc:`here <shuffleboard-tuning-pid>`. Using RobotBuilder will automatically generate the code to get the subsystem displayed in Test mode. The code that is necessary to have subsystems displayed is shown below where subsystem-name is a string containing the name of the subsystem:
 
-.. code-block:: none
+.. code-block:: java
 
    setName(subsystem-name);
 

@@ -24,13 +24,13 @@ Polling - Waiting for a Switch to Close
       import edu.wpi.first.wpilibj.Timer;
 
       public class RobotTemplate extends SampleRobot {
-         
+
          DigitalInput limitSwitch;
-         
+
          public void robotInit() {
             limitSwitch = new DigitalInput(1);
          }
-         
+
          public void operatorControl() {
             // more code here
             while (limitSwitch.get()) {

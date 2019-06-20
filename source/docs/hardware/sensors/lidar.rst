@@ -1,7 +1,7 @@
 LIDAR - Hardware
 ================
 
-LIDAR (light detection and ranging) sensors are a variety of rangefinder seeing increasing use in FRC.  
+LIDAR (light detection and ranging) sensors are a variety of rangefinder seeing increasing use in FRC.
 
 LIDAR sensors work quite similarly to :doc:`ultrasonics <ultrasonics-hardware>`, but use light instead of sound.  A laser is pulsed, and the sensor measures the time until the pulse bounces back.
 

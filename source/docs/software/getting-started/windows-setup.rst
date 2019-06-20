@@ -8,7 +8,7 @@ Offline Installer
  later) before proceeding with the install of VSCode for FRC. The NI\
  Update installer will automatically install the proper version of .NET.\
  The stand alone .NET installer is here:\
- https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows* 
+ https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows*
 
 Download the appropriate installer for your Windows installation (32 bit
 or 64 bit) `from
@@ -19,7 +19,7 @@ Double click on the installer to run it. If you see any Security
 warnings, click Run (Windows 7) or More Info->Run Anyway (Windows 8+).
 
 .. figure:: images/windows/InstallationType.png
-   :alt: 
+   :alt:
 
 Choose whether to install for All Users on the machine or the Current
 User. The All Users option requires Admin privileges, but installs in a
@@ -40,7 +40,7 @@ completes, you can click Open Downloaded File to be taken to the zip
 file on the file system to copy along with the Offline Installer.
 
 .. figure:: images/windows/DownloadVSCode.png
-   :alt: 
+   :alt:
 
 Execute Install
 ^^^^^^^^^^^^^^^
@@ -50,7 +50,7 @@ Make sure all checkboxes are checked (unless you have already installed
 automatically), then click Execute Install.
 
 .. figure:: images/windows/ExecuteInstall.png
-   :alt: 
+   :alt:
 
 Finished
 ^^^^^^^^
@@ -61,7 +61,7 @@ will still need to install those separately before using them in robot
 code.
 
 .. figure:: images/windows/Finished.png
-   :alt: 
+   :alt:
 
 What's installed?
 ^^^^^^^^^^^^^^^^^
@@ -95,7 +95,7 @@ copy of VSCode and sets up a command shortcut so this copy of VSCode can
 be opened from the command line using the command "frccode2019"
 
 .. figure:: images/windows/DesktopIcon.png
-   :alt: 
+   :alt:
 
 Both of these reference the specific year as the WPIlib C++tools will
 now support side-by-side installs of multiple environments from

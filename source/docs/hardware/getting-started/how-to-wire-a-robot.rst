@@ -54,7 +54,7 @@ Create the Base for the Control System
 For a benchtop test board, cut piece of 1/4” or 1/2" material (wood or
 plastic) approximately 24" x 16". For a Robot Quick Build control board
 see the supporting documentation for the proper size board for the
-chosen chassis configuration. 
+chosen chassis configuration.
 
 Layout the Core Control System Components
 ---------------------------------------------------
@@ -78,7 +78,7 @@ Note that in many FRC games robot-to-robot contact may be substantial
 and Dual Lock alone is unlikely to stand up as a fastener for many
 electronic components. Teams may wish to use nut and bolt fasteners or
 (as shown in the image above) cable ties, with or without Dual Lock to
-secure devices to the board. 
+secure devices to the board.
 
 Attach Battery Connector to PDP
 -------------------------------
@@ -330,7 +330,7 @@ and place any additional CAN nodes between the roboRIO and the PDP
 (leaving the PDP as the end of the bus). If you wish to place the PDP in
 the middle of the bus (utilizing both pairs of PDP CAN terminals) move
 the jumper to the “OFF” position and place your own 120 ohm terminating
-resistor at the end of your CAN bus chain. 
+resistor at the end of your CAN bus chain.
 
 PWM Cables
 ---------------------------------------------------
@@ -385,7 +385,7 @@ positive (red) terminal (see graphic above). All negative terminals on
 the board are directly connected internally.
 
 If working on a Robot Quick Build, stop here and insert the board into
-the robot chassis before continuing. 
+the robot chassis before continuing.
 
 Motor Power
 ------------------------------------------------------------------------------------------------------

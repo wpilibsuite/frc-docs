@@ -22,7 +22,7 @@ The robot heading can be changed by dragging the tangent vector (teal) line to t
 
 .. image:: images/pathweaver-8.png
 
-Adding additional waypoints to control the robot path 
+Adding additional waypoints to control the robot path
 -----------------------------------------------------
 Adding additional waypoints and changing their tangent vectors can affect the path that is followed. Additional waypoints can be added by dragging in the middle of the path. In this case, adding two additional waypoints for the first turn and another waypoint for the final turn will help the robot make the turns more smoothly without collisions.
 

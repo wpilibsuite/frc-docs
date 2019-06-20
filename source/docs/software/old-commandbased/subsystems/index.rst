@@ -4,6 +4,6 @@
 
 .. toctree::
    :maxdepth: 1
-   
+
    simple-subsystems
    pidsubsystems-pid-control

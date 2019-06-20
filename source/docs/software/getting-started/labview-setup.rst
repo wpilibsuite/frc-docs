@@ -3,8 +3,8 @@ Installing LabVIEW for FRC 2019 (LabVIEW only)
 
 .. image:: images/labview/ni_logo.png
 
-.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD. 
-    
+.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD.
+
     Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
 Uninstall Old Vesions (recommended)
@@ -173,6 +173,6 @@ NI Update Service
 
 .. image:: images/labview/ni_update.png
 
-On occasion you may see alerts from the NI Update Service about patches to LabVIEW. 
+On occasion you may see alerts from the NI Update Service about patches to LabVIEW.
 
 .. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (Frank's Blog, Team Updates or E-mail Blasts).

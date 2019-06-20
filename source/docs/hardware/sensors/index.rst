@@ -16,5 +16,3 @@ Sensors
    lidar
    triangulating-rangefinders
    serial-buses
-   
-   

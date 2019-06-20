@@ -34,7 +34,7 @@ To create a PathWeave project, click on "Create project" then fill out the proje
 
 **Wheel Base:** the distance between the left and right wheels of your robot.
 
-PathWeaver user interface 
+PathWeaver user interface
 -------------------------
 
 .. image:: images/pathweaver-4.png

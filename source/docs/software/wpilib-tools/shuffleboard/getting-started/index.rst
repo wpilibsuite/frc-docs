@@ -3,7 +3,7 @@ Shuffleboard - Getting Started
 
 .. toctree::
    :maxdepth: 1
-   
+
    shuffleboard-tour
    shuffleboard-displaying-data
    shuffleboard-displaying-camera
@@ -14,4 +14,3 @@ Shuffleboard - Getting Started
    shuffleboard-recording
    shuffleboard-preferences
    shuffleboard-faq
-   

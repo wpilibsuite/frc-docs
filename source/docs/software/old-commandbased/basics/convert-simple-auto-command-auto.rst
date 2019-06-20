@@ -49,7 +49,7 @@ Initial Autonomous Code
 
       // Spin up to Speed
       SetTargetSpeed(); // Initialization: prepares for the action to be performed
-      
+
       while (!FastEnough()) { // Condition: keeps the loop going while it is satisfied
          SpeedUp(); // Execution: repeatedly updates the code to try to make the condition false
          delay(); // Delay to prevent maxing CPU

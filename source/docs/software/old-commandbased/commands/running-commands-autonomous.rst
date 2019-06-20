@@ -24,7 +24,7 @@ Running Commands during Autonomous
 
 
    .. code-tab:: cpp
-   
+
       #include "PlaceSoda.h"
 
       PlaceSoda::PlaceSoda()
@@ -97,7 +97,7 @@ Setting the Command to Run during Autonomous
             oi = new OI();
 
          }
-         
+
 
          void AutonomousInit()
          {

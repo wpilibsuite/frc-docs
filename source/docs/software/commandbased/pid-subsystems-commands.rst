@@ -41,7 +41,7 @@ PIDSubsystem classes:
    import edu.wpi.first.wpilibj.experimental.controller.PIDController;
 
    public class ExamplePIDSubsystem extends SynchronousPIDSubsystem {
-     
+
      public ExamplePIDSubsystem() {
        // This would set the internal controller's gains (P, I, and D) to 0.
        super(new PIDController(0, 0, 0))
@@ -187,7 +187,7 @@ of the two PIDCommand classes.
    import edu.wpi.first.wpilibj.experimental.controller.PIDController;
 
    public class ExamplePIDCommand extends SynchronousPIDCommand {
-     
+
      public ExamplePIDCommand() {
        super(new PIDController(0, 0, 0), //Creates a PIDController with all gains set to 0
            () -> { /*This should return the measurement of the process variable*/ },
@@ -195,7 +195,7 @@ of the two PIDCommand classes.
            (output) -> { /*Code to use the output of the PID loop goes here*/ },
            requiredSubsystem /*PIDCommands should declare their requirements*/);
      }
-     
+
    }
 
 However, as with many of the other command classes in the command-based

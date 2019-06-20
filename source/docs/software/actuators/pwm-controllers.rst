@@ -2,7 +2,7 @@
 
 PWM Speed Controllers in Depth
 ==============================
-.. hint:: 
+.. hint::
     WPILib has extensive support for motor control. There are a number
     of classes that represent different types of speed controllers and
     servos.  There are currently two classes of speed controllers, PWM
