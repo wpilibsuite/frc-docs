@@ -108,7 +108,7 @@ Links
 
 Links should be in the following format
 
-.. code-block::
+.. code-block:: text
 
    Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
 
@@ -117,7 +117,7 @@ Images
 
 Images should be created with ``1`` new line seperating content and directive.
 
-.. code-block::
+.. code-block:: text
 
    .. image:: images/image-1.png
 
@@ -143,7 +143,7 @@ There should be **no** local toctrees in any document. Ever. Additional toctrees
 Examples
 ^^^^^^^^
 
-.. code-block::
+.. code-block:: text
 
    Title
    =====
@@ -183,4 +183,3 @@ FAQ
   - It involved unofficial FRC software
   - It contains unacceptable language
   - There was likely a comment regarding why on your Pull-Request. Please review it.
-

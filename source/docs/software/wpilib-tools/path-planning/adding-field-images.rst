@@ -8,7 +8,7 @@ Games are loaded from the ``~/PathWeaver/Games`` on Linux and Mac or ``%USERPROF
 
 File Layout
 -----------
-.. code-block::
+.. code-block:: text
 
    ~/PathWeaver
      /Games
@@ -19,7 +19,7 @@ File Layout
 
 JSON Format
 -----------
-.. code-block::
+.. code-block:: text
 
    {
      "game": "game name",

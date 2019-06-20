@@ -93,7 +93,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
 
     Different cameras report bandwidth usage differently. The library will tell you if you're hitting the limit; you'll get this error message:
 
-    .. code-block::
+    .. code-block:: text
 
         could not start streaming due to USB bandwidth limitations;
         try a lower resolution or a different pixel format
