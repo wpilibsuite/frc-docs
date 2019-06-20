@@ -135,8 +135,7 @@ The Motor Safety interface of speed controllers can be interacted with by the us
         exampleJaguar->SetSafetyEnabled(true);
         exampleJaguar->SetSafetyEnabled(false);
         exampleJaguar->SetExpiration(.1);
-
-        // TODO add examples of feed()
+        exampleJaguar->Feed();
 
     .. code-tab:: java
 

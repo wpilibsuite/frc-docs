@@ -85,7 +85,9 @@ commonly-encountered use cases. Many of these commands are intended to
 be used “out-of-the-box” via :ref:`inlining <inlined-commands>`,
 however they may be subclassed, as well. A list of the included pre-made
 commands can be found below, along with brief examples of each - for
-more rigorous documentation, see the javadoc (TODO: link).
+more rigorous documentation, see the javadoc.
+
+.. todo:: Link to javadoc after merge
 
 ConditionalCommand
 ~~~~~~~~~~~~~~~~~~
@@ -153,7 +155,7 @@ RunCommand
 
 The ``RunCommand`` class runs a specified method repeatedly in its
 ``execute()`` block. It does not have end conditions by default; users
-can either subclass it, or decorate it (TODO: link) to add them.
+can either subclass it, or :ref:'decorate <Command decorator methods>' it to add them.
 
 .. code-block:: java
 
@@ -169,7 +171,7 @@ StartEndCommand
 
 The ``StartEndCommand`` class executes an action when starting, and a
 second one when ending. It does not have end conditions by default;
-users can either subclass it, or decorate (TODO: link) an inlined
+users can either subclass it, or :ref:'decorate <Command decorator methods>' an inlined
 command to add them.
 
 .. code-block:: java
@@ -291,7 +293,9 @@ commands. A “decorator” method is a method that takes an object (in this
 case, a command) and returns an object of the same type (i.e. a command)
 with some additional functionality added to it. A list of the included
 decorator methods with brief examples is included below - for rigorous
-documentation, see the javadoc (TODO: link).
+documentation, see the javadoc.
+
+.. todo:: add link to javadoc after merge
 
 withTimeout
 ~~~~~~~~~~~

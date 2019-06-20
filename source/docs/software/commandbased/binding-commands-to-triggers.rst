@@ -18,7 +18,9 @@ command as needed, behind-the-scenes. Users only need to worry about
 designing their desired UI setup - not about implementing it!
 
 Command binding is done through the ``Trigger`` class and its various
-``Button`` subclasses (TODO: link).
+``Button`` subclasses.
+
+.. todo:: Link to API docs after merge.
 
 Trigger/Button bindings
 -----------------------

@@ -35,7 +35,9 @@ Reading the Bus Voltage
 
         examplePDP.getVoltage();
 
-Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout (TODO: link to page on brownout protection, or write one if none exists?), so that action can be taken to avoid brownout in a controlled manner.
+.. todo:: link to page on brownout protection after it's ported
+
+Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner.
 
 Reading the Temperature
 -----------------------

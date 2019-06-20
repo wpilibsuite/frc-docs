@@ -12,11 +12,11 @@ What sensors does WPILIB support?
 
 The RoboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ which allows accurate real-time measuring of a variety of sensor input.  WPILib, in turn, provides a number of classes for accessing this functionality.
 
-TODO: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
+.. todo:: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
 
 |Types of Sensors|
 
-WPILib provides native support for (TODO: make each of these links):
+WPILib provides native support for:
 
 - :ref:`Accelerometers <docs/software/sensors/accelerometers-software:Accelerometers - Software>`
 - :ref:`Gyroscopes <docs/software/sensors/gyros-software:Gyroscopes - Software>`

@@ -164,7 +164,8 @@ After successfully creating your project, Visual Studio Code will give the optio
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
-TODO: Replace this image with an up-to-date one (also, ew light theme)
+.. todo:: Replace this image with an up-to-date one (also, ew light theme)
+
 |Opened Robot Project|
 
 C++ Configurations (C++ Only)

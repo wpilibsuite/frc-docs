@@ -7,7 +7,9 @@ The closed loop control of the Compressor and Pressure switch is handled by the 
 
 An additional PCM module can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the Solenoid and Compressor classes.
 
-For more information on controlling the compressor, see Operating a Compressor for Pneumatics (TODO: link!).
+.. todo:: Link Operating a Compressor below
+
+For more information on controlling the compressor, see Operating a Compressor for Pneumatics.
 
 For more information on controlling solenoids, see :ref:`Operating Pneumatic Cylinders <operating-pneumatic-cylinders>`.
 

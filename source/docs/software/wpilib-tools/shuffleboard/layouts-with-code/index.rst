@@ -1,5 +1,5 @@
-Shuffleboard Layouts with Code
-==============================
+Shuffleboard - Layouts with Code
+================================
 
 .. toctree::
    :maxdepth: 1
