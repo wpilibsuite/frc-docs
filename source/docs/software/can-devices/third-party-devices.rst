@@ -44,7 +44,7 @@ CTRE Sensors
 REV Robotics
 ------------
 
-REV Robotics currently offers the SPARK MAX motor controller, which has a simiilar feature-set to the Talon SRX.
+REV Robotics currently offers the SPARK MAX motor controller, which has a similar feature-set to the Talon SRX.
 
 REV Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^

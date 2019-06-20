@@ -3,7 +3,7 @@ Serial Buses
 
 In addition to the :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, the RoboRIO also offers several methods of serial communication with peripheral devices.
 
-Both the digital and analog inputs are highly limited in the amount of data that can be send over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as interial measurement units (IMUs) or 2D LIDAR sensors.
+Both the digital and analog inputs are highly limited in the amount of data that can be send over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
 
 Types of supported serial buses
 -------------------------------
@@ -40,7 +40,7 @@ RS232
 
 |RoboRIO RS232| |RS232 Pinout|
 
-To communicate to periphral devices over RS232, each pin should be wired to its corresponding pin on the device.
+To communicate to peripheral devices over RS232, each pin should be wired to its corresponding pin on the device.
 
 The RS232 bus can also be used through the `MXP expansion port`_.
 

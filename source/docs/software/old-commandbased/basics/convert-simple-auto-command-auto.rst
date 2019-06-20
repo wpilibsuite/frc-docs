@@ -96,7 +96,7 @@ Rewriting it as Commands
            AddSequential(new Shoot());
       }
 
-The same code can be rewritten as a ``CommandGroup`` that groups the three actions, where each action is written as it's own command. First, the command group will be written, then the commands will be written to accomplish the three actions. This code is pretty straightforward. It does the three actions sequentially, that is one after the other. Line 3 aims the robot, then line 4 spins the shooterup and, finally, line 5 actually shoots the frisbee. The ``addSequential()`` method sets it so that these commands run one after the other.
+The same code can be rewritten as a ``CommandGroup`` that groups the three actions, where each action is written as it's own command. First, the command group will be written, then the commands will be written to accomplish the three actions. This code is pretty straightforward. It does the three actions sequentially, that is one after the other. Line 3 aims the robot, then line 4 spins the shooter up and, finally, line 5 actually shoots the frisbee. The ``addSequential()`` method sets it so that these commands run one after the other.
 
 The Aim Command
 ^^^^^^^^^^^^^^^

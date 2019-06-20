@@ -32,7 +32,7 @@ Selecting a tab
         Shuffleboard::SelectTab("Tab Title");
 
 
-This method lets a tab be selected by title. This is case-sensitive (so "Tab Title" and "Tab title" are two individual tabs), and only works if a tab with that title exists at the time the method is called, so calling ``slectTab("Example")``\ will only have an effect if a tab named "Example" has previously been defined.
+This method lets a tab be selected by title. This is case-sensitive (so "Tab Title" and "Tab title" are two individual tabs), and only works if a tab with that title exists at the time the method is called, so calling ``selectTab("Example")``\ will only have an effect if a tab named "Example" has previously been defined.
 
 This method can be used to select any tab in Shuffleboard, not just ones created by the robot program.
 

@@ -205,7 +205,7 @@ Constants.java
 The ``Constants.java`` class is where globally-accessible robot
 constants (such as speeds, unit conversion factors, PID gains, and
 sensor/motor ports) can be stored. It is recommended that users separate
-these constants into individual inner clases corresponding to subsystems
+these constants into individual inner classes corresponding to subsystems
 or robot modes, to keep variable names shorter. All constants declared
 in ``Constants.java`` should be declared as ``public static final`` so
 that they are globally accessible and cannot be changed.

@@ -87,7 +87,7 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kSemiperiod};
 
-        void Robott() {
+        void Robot() {
             // Set up the input channel for the counter
             counter.SetUpSource(1);
 
@@ -174,7 +174,7 @@ In external direction mode, the counter counts either up or down depending on th
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kExternalDirection};
 
-        void RobototInit() {
+        void RobotInit() {
             // Set up the input channels for the counter
             counter.SetUpSource(1);
             counter.SetDownSource(2);

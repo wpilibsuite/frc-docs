@@ -52,7 +52,7 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
 mDNS - Browser support
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Most web-browsers should be able to utilize the mDNS address to access the roboRIO webserver as long as an mDNS provider is installed. To access the webdashboard, the browser must also support Microsoft Silverlight. Internet Explorer is recommended.
+Most web-browsers should be able to utilize the mDNS address to access the roboRIO web server as long as an mDNS provider is installed. To access the webdashboard, the browser must also support Microsoft Silverlight. Internet Explorer is recommended.
 
 USB
 ---

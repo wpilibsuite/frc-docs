@@ -367,7 +367,7 @@ wire, very small flat screwdriver
 6. Connect the two-pin connector to the RSL port on the roboRIO. The black wire should be closest to the outside of the roboRIO.
 
 You may wish to temporarily secure the RSL to the control board using
-zipties or Dual Lock (it is recommended to move the RSL to a more
+cable ties or Dual Lock (it is recommended to move the RSL to a more
 visible location as the robot is being constructed) Circuit Breakers
 
 Circuit Breakers
@@ -449,5 +449,5 @@ Battery Connect BatteryZoom: Connect Battery
 Connect the battery to the robot side of the Andersen connector. Power
 on the robot by moving the lever on the top of the 120A main breaker
 into the ridge on the top of the housing. If stuff blinks, you
-probubly did it right. From here, you should connect to the RoboRIO
+probably did it right. From here, you should connect to the RoboRIO
 and try uploading your code!

@@ -42,7 +42,7 @@ Libraries <http://www.mindsensors.com/blog/how-to/how-to-use-sd540c-and-canlight
 `Rev Robotics <http://www.revrobotics.com/sparkmax-software/>`__ - SPARK
 MAX Library
 
-`Scanse Sweep <https://github.com/PeterJohnson/sweep-sdk/releases>`__ -
+`Scansense Sweep <https://github.com/PeterJohnson/sweep-sdk/releases>`__ -
 C/Java Libraries for Scansense Sweep LIDAR (packaged by
 Peter Johnson)
 
@@ -59,7 +59,7 @@ The Mechanism - LabVIEW
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 For LabVIEW teams, you may notice a few new Third Party items on various
-paletes (specifically, one in Actuators, one in Actuators->Motor Control
+palettes (specifically, one in Actuators, one in Actuators->Motor Control
 labeled “CAN Motor”, and one in “Sensors”). These correspond to folders
 in
 ``Program Files/National Instruments/LabVIEW 2016/vi.lib/Rock Robotics/WPI/Third Party``.
@@ -119,7 +119,7 @@ option to **Install new libraries (offline)**.
 
 Select the desired libraries to add to the project by checking the box
 next to each, then click OK. The JSON file will be copied to the
-**vendordeps** folder in the project, adding the libary as a dependency
+**vendordeps** folder in the project, adding the library as a dependency
 to the project.
 
 Checking for Updates (offline)

@@ -58,7 +58,7 @@ Using gyros in code
 
 .. note:: As gyros measure rate rather than position, position is inferred by integrating (adding up) the rate signal to get the total change in angle.  Thus, gyro angle measurements are always relative to some arbitrary zero angle (determined by the angle of the gyro when either the robot was turned on or a zeroing method was called), and are also subject to accumulated errors (called "drift") that increase in magnitude the longer the gyro is used.  The amount of drift varies with the type of gyro.
 
-Gyros are extremely useful in FRC for both measuring and controlling robot heading.  Since FRC matches are generally short, total gyro drift over the course of an FRC match tends to be manageably small (on the order of a couple of degrees for a good-quality gyro).  Morever, not all useful gyro applications require the absolute heading measurement to remain accurate over the course of the entire match.
+Gyros are extremely useful in FRC for both measuring and controlling robot heading.  Since FRC matches are generally short, total gyro drift over the course of an FRC match tends to be manageably small (on the order of a couple of degrees for a good-quality gyro).  Moreover, not all useful gyro applications require the absolute heading measurement to remain accurate over the course of the entire match.
 
 Displaying the robot heading on the dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

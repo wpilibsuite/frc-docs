@@ -10,7 +10,7 @@ Speed controllers
 -----------------
 A speed controller is responsible on your robot for making motors move.
 For brushed DC motors such as CIMs or 775s, the speed controller regulates
-the voltage that the motor recieves, much like a light bulb. For
+the voltage that the motor receives, much like a light bulb. For
 brushless speed controllers such as the Spark MAX, the controller regulates
 the power delivered to each "phase" of the motor.
 
