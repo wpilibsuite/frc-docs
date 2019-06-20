@@ -6,7 +6,7 @@ This document contains the various RST/Sphinx specific guidelines for the frc-do
 Filenames
 ---------
 
-Use only lowercase alphanumeric characters and ``-`` (minus) symbol. 
+Use only lowercase alphanumeric characters and ``-`` (minus) symbol.
 
 For documents that will have an identical software/hardware name, append "Hardware" or "Software" to the end of the document name. IE, ``ultrasonics-hardware.rst``
 
@@ -17,7 +17,7 @@ Suffix filenames with the ``.rst`` extention.
 Page References
 ---------------
 
-Pages references will be auto-generated based on the page filename and section title. 
+Pages references will be auto-generated based on the page filename and section title.
 
 For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
 
@@ -87,7 +87,7 @@ Links
 Links should be in the following format
 
 .. code-block:: text
-   
+
    Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
 
 Images
@@ -96,38 +96,38 @@ Images
 Images should be created with ``1`` new line seperating content and directive.
 
 .. code-block:: text
-   
+
    .. image:: images/image-1.png
-   
+
 Image Files
 ^^^^^^^^^^^
 
 Image files should be stored in the document directory, sub-directory of ``images``
 
-They should follow the naming scheme of ``document-title-1.png`` so on and so forth. 
+They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
 
 Table of Contents (TOC)
 -----------------------
 
-Each category should contain an ``index.rst``. This index file should contain a ``maxdepth`` of ``1``. Sub-categories are acceptable, with a ``maxdepth`` of 1. 
+Each category should contain an ``index.rst``. This index file should contain a ``maxdepth`` of ``1``. Sub-categories are acceptable, with a ``maxdepth`` of 1.
 
-The category ``index.rst`` file can then be added added to the root index file located at ``source/index.rst``. 
+The category ``index.rst`` file can then be added added to the root index file located at ``source/index.rst``.
 
 Examples
 --------
-   
+
 .. code-block:: text
 
    Title
    =====
    This is an example article
-   
+
    .. code-block:: java
-      
+
       System.out.println("Hello World");
-      
+
    Section
    -------
    This is a section!
