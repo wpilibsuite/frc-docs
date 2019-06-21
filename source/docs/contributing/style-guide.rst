@@ -10,7 +10,7 @@ Use only lowercase alphanumeric characters and ``-`` (minus) symbol.
 
 For documents that will have an identical software/hardware name, append "Hardware" or "Software" to the end of the document name. IE, ``ultrasonics-hardware.rst``
 
-Suffix filenames with the ``.rst`` extention.
+Suffix filenames with the ``.rst`` extension.
 
 .. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is `Notepad++ <https://notepad-plus-plus.org/>`__. Please make sure that `tabs are replaced with spaces <https://stackoverflow.com/questions/455037/convert-tabs-to-spaces-in-notepad>`__, and the space indentation is set to ``3``.
 
@@ -52,7 +52,7 @@ Indentation of content directives as new line ``.. toctree::``  should be `3` sp
 Blank Lines
 ^^^^^^^^^^^
 
-There should be ``1`` blank lines seperating basic text blocks and section titles. There *should* be ``1`` blank line seperating text blocks *and* content directives.
+There should be ``1`` blank lines separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
 
 Interior Whitespace
 ^^^^^^^^^^^^^^^^^^^
@@ -62,7 +62,7 @@ Use one space between sentences.
 Headings
 --------
 
-Headings should be in the following strucutre
+Headings should be in the following structure
 
 1. ``=`` for document titles. *Do not* use this more than *once* per article.
 2. ``-`` for document sections
@@ -93,7 +93,7 @@ Links should be in the following format
 Images
 ------
 
-Images should be created with ``1`` new line seperating content and directive.
+Images should be created with ``1`` new line separating content and directive.
 
 .. code-block:: text
 
