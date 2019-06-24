@@ -12,7 +12,7 @@ In fact, the :code:`AnalogPotentiometer` name is something of a misnomer - this 
 The AnalogPotentiometer class
 -----------------------------
 
-.. note:: The "full range" or "scale" parameters in the :code:`AnalogPotentiometer` constructor are scale factors from a range of 0-1 to the actual range, *not* from 0-5.  That is, they represent a native fractioanal scale, rather than a voltage scale.
+.. note:: The "full range" or "scale" parameters in the :code:`AnalogPotentiometer` constructor are scale factors from a range of 0-1 to the actual range, *not* from 0-5.  That is, they represent a native fractional scale, rather than a voltage scale.
 
 An AnalogPotentiometer can be initialized as follows:
 

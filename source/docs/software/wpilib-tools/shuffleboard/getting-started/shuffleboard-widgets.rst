@@ -35,7 +35,7 @@ You can change the title of widgets by double-clicking in their title bar and ed
 Changing widget properties
 --------------------------
 
-You can change the appearance of a widget such as the range of values represented, colors or some other visual element. In cases where this is possible right-click on the widget and select "Edit properties" from the popup menu. In this boolean value widget shown below, the widget title, true color and false color can all be editted.
+You can change the appearance of a widget such as the range of values represented, colors or some other visual element. In cases where this is possible right-click on the widget and select "Edit properties" from the popup menu. In this boolean value widget shown below, the widget title, true color and false color can all be edited.
 
 .. figure:: images/widgets-4.png
    :alt:

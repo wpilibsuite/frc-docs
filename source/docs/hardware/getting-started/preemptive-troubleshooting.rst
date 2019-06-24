@@ -3,7 +3,7 @@ Robot Preemptive Troubleshooting
 
 .. note::
 
-    In FIRST Robotics Competion, robots take a lot of stress while driving around the field. It is important to make sure that connections are tight, parts are bolted securely in place and that everthing is mounted so that a robot bouncing around the field does not break.
+    In FIRST Robotics Competition, robots take a lot of stress while driving around the field. It is important to make sure that connections are tight, parts are bolted securely in place and that everything is mounted so that a robot bouncing around the field does not break.
 
 Check battery connections
 ------------------------------
@@ -101,7 +101,7 @@ Driver station checks
 We often see problems with the Drivers Station. You should:
 
 - ALWAYS bring the laptop power cable to the field, it doesn’t matter how good the battery is, you are allowed to plug in at the field.
-- Check the power and sleep settings, turn off sleep and hybernate, screen savers, etc.
+- Check the power and sleep settings, turn off sleep and hibernate, screen savers, etc.
 - Turn off power management for USB devices (dev manager)
 - Turn off power management for ethernet ports (dev manager)
 - Turn off windows defender
@@ -117,4 +117,4 @@ Handy tools
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
 
-Wago tool is nice to for redoing weidmuller connections with stranded wires.  Often I’ll do one to show the team, and then have them do the rest using the WAGO tool to press down the white-plunger while they insert the stranded wire.  The angle of the WAGO tool makes this particularly helpful.
+WAGO tool is nice to for redoing weidmuller connections with stranded wires.  Often I’ll do one to show the team, and then have them do the rest using the WAGO tool to press down the white-plunger while they insert the stranded wire.  The angle of the WAGO tool makes this particularly helpful.

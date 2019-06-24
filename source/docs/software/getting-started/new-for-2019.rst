@@ -70,7 +70,7 @@ WPILib C++/Java
 -----------------------------
 
 -  A new high level CAN API was added. This enables easier creation of custom CAN devices for users.
--  The OSSerialPort class was removed. It was a bugfix for some Serial port bugs, but never actually worked anyway.
+-  The OSSerialPort class was removed. It was a bug fix for some Serial port bugs, but never actually worked anyway.
 -  SensorBase was removed. If you were deriving from SensorBase you should now derive from SendableBase (C++) or SendableBase+ErrorBase(Java). If you need methods previously contained in SensorBase, they are now in SensorUtil.
 -  The Watchdog class was added. This calls a callback function when the specified timeout is exceeded. This class is used by TimedRobot to warn on periodic loop time overruns (nominally 20ms) in user code. **Note: These Timed Robot messages are warnings. They inform you if your code overruns the specified timing. They are not errors.**
 -  IterativeRobot was deprecated for eventual removal. TimedRobot is a drop-in replacement that is strictly better with regard to execution jitter.
@@ -87,7 +87,7 @@ WPILib C++
 -  The namespace frc shim was removed. WPILib classes need to be accessed by their full namespaces, or using statements added.
 -  **Headers were moved to an frc folder.**
 -  HAL methods were removed from WPILib headers. In order to access HAL methods, their headers must be directly included.
--  Llvm renamespaced to wpi, headers moved to wpi folder
+-  LLVM renamespaced to wpi, headers moved to wpi folder
 -  All classes now properly support move semantics (for those who know what that is and care).
 -  Doxygen comments were moved from the source files to the header files for easier reference.
 

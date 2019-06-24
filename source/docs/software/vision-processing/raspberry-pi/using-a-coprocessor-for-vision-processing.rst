@@ -3,8 +3,8 @@ Using a Coprocessor for vision processing
 Vision processing using libraries like OpenCV for recognizing field targets or game pieces can often be a CPU intensive process.
 Often the load isn't too significant and the processing can easily be handled by the roboRIO. In cases where there are more camera
 streams or the image processing is complex, it is desirable to off-load the roboRIO by putting the code and the camera connection
-on a different processor. There are a number of choices of processors that are popular in FRC such as the Raspberry PI, the i
-ntel-based Kangaroo, the LimeLight for the ultimate in simplicity, or for more complex vision code a graphics accelerator such as
+on a different processor. There are a number of choices of processors that are popular in FRC such as the Raspberry PI, the
+intel-based Kangaroo, the LimeLight for the ultimate in simplicity, or for more complex vision code a graphics accelerator such as
 one of the nVidia Jetson models.
 
 Strategy

@@ -15,7 +15,7 @@ USB Connection Troubleshooting
 
 If you are attempting to troubleshoot the USB connection, try pinging the roboRIO's IP address. As long as there is only one roboRIO connected to the PC, it should be configured as 172.22.11.2. If this ping fails, make sure you have the roboRIO connected and powered, and that you have installed the NI FRC Update Suite. This update installs the roboRIO drivers needed for the USB connection.
 
-If this ping suceeds, but the .local ping fails, it is likely that either the roboRIO hostname is configured incorrectly,, or you are connected to a DNS server which is attempting to resolve the .local address.
+If this ping succeeds, but the .local ping fails, it is likely that either the roboRIO hostname is configured incorrectly,, or you are connected to a DNS server which is attempting to resolve the .local address.
 
 - Verify that your roboRIO has been :ref:`imaged for your team number <imaging-your-roborio>`. This sets the hostname used by mDNS.
 - Disconnect your computer from all other networks including Ethernet and WiFi. It is possible that one of these networks contains a DNS server that is attempting to resolve the .local address.

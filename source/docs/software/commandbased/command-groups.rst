@@ -150,7 +150,7 @@ Recursive composition of command groups
 ---------------------------------------
 
 As mentioned earlier, command groups are `recursively
-composeable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
+composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
 - since command groups are themselves commands, they may be included as
 components of other command groups. This is an extremely powerful
 feature of command groups, and allows users to build very complex robot

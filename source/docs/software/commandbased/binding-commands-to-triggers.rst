@@ -162,7 +162,7 @@ the HID:
 
 .. code-block:: java
 
-   leftStick.getButton(Joystick.Button.kTrigger.value) // Returns the JoystickButton pbject
+   leftStick.getButton(Joystick.Button.kTrigger.value) // Returns the JoystickButton object
                                                        // corresponding to the trigger of leftStick
 
 .. code-block:: java

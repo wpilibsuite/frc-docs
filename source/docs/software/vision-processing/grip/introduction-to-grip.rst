@@ -54,7 +54,7 @@ locate the Resize operation, type "Resize" into the search box at the top of the
 
 1.  Type "Resize" into the search box on the palette
 2.  Click the Resize operation from the palette. It will appear in the pipeline.
-3.  Enter the x and y resize scale factor into the resize operation in the popeline. In this case 0.25 was chosen for both.
+3.  Enter the x and y resize scale factor into the resize operation in the pipeline. In this case 0.25 was chosen for both.
 4.  Drag from the Webcam image output mat socket to the Resize image source mat socket. A connection will be shown
     indicating that the camera output is being sent to the resize input.
 5.  Click on the destination preview button on the "Resize" operation in the pipeline. The smaller image will be displayed

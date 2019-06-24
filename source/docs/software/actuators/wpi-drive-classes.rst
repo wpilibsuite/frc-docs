@@ -172,7 +172,7 @@ Using the DifferentialDrive class to control Differential Drive (WCD) robots
 
 DifferentialDrive is a method provided for the control of
 "skid-steer" or "West Coast" drivetrains, such as the Kit of
-Parts chassis. Instatiating a DifferentialDrive is as simple
+Parts chassis. Instantiating a DifferentialDrive is as simple
 as so:
 
 .. tabs::
@@ -202,16 +202,7 @@ SpeedController, using the SpeedControllerGroup class. The
 examples below show a 4 motor (2 per side) drivetrain. To
 extend to more motors, simply create the additional
 controllers and pass them all into the SpeedController group
-contructor (it takes an arbitrary number of inputs).
-
-Many FRC drivetrains have more than 1 motor on each side. In
-order to use these with DifferentialDrive, the motors on
-each side have to be collected into a single
-SpeedController, using the SpeedControllerGroup class. The
-examples below show a 4 motor (2 per side) drivetrain. To
-extend to more motors, simply create the additional
-controllers and pass them all into the SpeedController group
-contructor (it takes an arbitrary number of inputs).
+constructor (it takes an arbitrary number of inputs).
 
 .. tabs::
 

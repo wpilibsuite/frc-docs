@@ -64,7 +64,7 @@ able to tell the scheduler when (if ever) it has finished execution -
 this is done by overriding the ``isFinished()`` method. All of these
 methods are defaulted to reduce clutter in user code: ``initialize()``,
 ``execute()``, and ``end()`` are defaulted to simply do nothing, while
-``isFinishsed()`` is defaulted to return false (resulting in a command
+``isFinished()`` is defaulted to return false (resulting in a command
 that never ends).
 
 Initialization
@@ -101,7 +101,7 @@ scheduled, whenever the scheduler’s ``run()`` method is called (this is
 generally done in the main robot periodic method, which runs every 20ms
 by default). The execute block should be used for any task that needs to
 be done continually while the command is scheduled, such as updating
-motor outputs to match joystick inputs, or using the ouput of a control
+motor outputs to match joystick inputs, or using the output of a control
 loop.
 
 Ending
