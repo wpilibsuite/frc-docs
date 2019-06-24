@@ -6,7 +6,7 @@ Your robot can display data in regular operating modes like Teleop and Autonomou
 .. figure:: images/displaying-data-tabs.png
    :alt:
 
-Often debugging or monitoring the status of a robot envolves writing a number of values to the console and watching them stream by. With Shuffleboard you can put values to a GUI that is automatically constructed based on your program. As values are updated, the corresponding GUI element changes value - there is no need to try to catch numbers streaming by on the screen.
+Often debugging or monitoring the status of a robot involves writing a number of values to the console and watching them stream by. With Shuffleboard you can put values to a GUI that is automatically constructed based on your program. As values are updated, the corresponding GUI element changes value - there is no need to try to catch numbers streaming by on the screen.
 
 Displaying values in normal operating mode (autonomous or teleop)
 -----------------------------------------------------------------

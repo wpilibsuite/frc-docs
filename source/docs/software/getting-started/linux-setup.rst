@@ -38,7 +38,7 @@ To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: \* ``$ cd ~/
 Installing the extensions for WPILib VS Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Start VSCODE ($ code or search "Visual Studio Code" in your aplication launcher)
+1. Start VSCODE ($ code or search "Visual Studio Code" in your application launcher)
 2. **Control-Shift-P** to bring up the command palette, type "Install from VSIX"
 3. Select "Extensions: Install from VSIX"
 4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix

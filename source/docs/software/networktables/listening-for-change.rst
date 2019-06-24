@@ -36,7 +36,7 @@ One of the more common cases for NetworkTables is waiting for a value to change 
 
             //add an entry listener for changed values of "X", the lambda ("->" operator)
             //defines the code that should run when "X" changes
-            table.addEntryListener("X", (table, key, entry, value, falgs) -> {
+            table.addEntryListener("X", (table, key, entry, value, flags) -> {
                System.out.println("X changed value: " + value.getValue());
             }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 

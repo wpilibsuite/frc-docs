@@ -135,7 +135,7 @@ sequence. The command-based library provides several types of command
 groups for teams to use, and users are encouraged to write their own, if
 desired. As command groups themselves implement the ``Command``
 interface, they are `recursively
-composeable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
+composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
 - one can include command groups *within* other command groups. This
 provides an extremely powerful way of building complex robot actions
 with a simple library.

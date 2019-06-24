@@ -159,7 +159,7 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
 
         // Using "import static an.enum.or.constants.inner.class.*;" helps reduce verbosity
         // this replaces "DoubleSolenoid.Value.kForward" with just kForward
-        // further reading is avalible at https://www.geeksforgeeks.org/static-import-java/
+        // further reading is available at https://www.geeksforgeeks.org/static-import-java/
         import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
         DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);

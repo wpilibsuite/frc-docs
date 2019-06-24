@@ -15,7 +15,7 @@ Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboa
           private DifferentialDrive robotDrive = ...;
 
           public void drive(double left, double right) {
-            // Retrive the maximum speed from the dashboard
+            // Retrieve the maximum speed from the dashboard
             double max = maxSpeed.getDouble(1.0);
             robotDrive.tankDrive(left * max, right * max);
           }

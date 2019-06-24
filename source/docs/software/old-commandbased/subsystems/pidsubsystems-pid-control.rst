@@ -42,7 +42,7 @@ In this example you can see the basic elements of a PIDSubsystem for the wrist j
          }
 
          protected void usePIDOutput(double output) {
-             motor.pidWrite(output); // this is where the computed output value fromthe PIDController is applied to the motor
+             motor.pidWrite(output); // this is where the computed output value from the PIDController is applied to the motor
          }
       }
 

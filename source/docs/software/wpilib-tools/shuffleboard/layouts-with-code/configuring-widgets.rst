@@ -29,7 +29,7 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
 
    .. code-tab:: java
 
-       ShuffShuffleboard.getTab("Drive")
+    Shuffleboard.getTab("Drive")
         .add("Max Speed", 1)
         .withWidget(BuiltInWidgets.kNumberSlider)
         .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here

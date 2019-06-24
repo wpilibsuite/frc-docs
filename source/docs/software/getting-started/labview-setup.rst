@@ -7,8 +7,8 @@ Installing LabVIEW for FRC 2019 (LabVIEW only)
 
     Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
-Uninstall Old Vesions (recommended)
------------------------------------
+Uninstall Old Versions (recommended)
+------------------------------------
 
 .. note:: NOTE: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
 

@@ -29,7 +29,7 @@ Shafted encoders
 
 .. todo:: add picture
 
-Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with zipties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__.
+Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with cable ties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__.
 
 On-shaft encoders
 ^^^^^^^^^^^^^^^^^

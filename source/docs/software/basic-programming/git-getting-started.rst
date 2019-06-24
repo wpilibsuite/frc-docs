@@ -3,7 +3,7 @@ Git Version Control Introduction
 
 `Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
-- Seperate testing environments into *branches*
+- Separate testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
 - Ability to manage *commits* in various ways, including combining them
 - Various other features, see `here <https://git-scm.com/about>`__
@@ -238,7 +238,7 @@ Gitignore
 
 .. important:: It is extremely important that teams **do not** modify the .gitignore file that is included with their robot project. This can lead to offline deployment not working.
 
-A .gitignore file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be commited. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
+A .gitignore file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
 
 Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__
 
