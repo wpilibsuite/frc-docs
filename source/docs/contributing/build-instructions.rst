@@ -22,6 +22,8 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 
 .. image:: images/build-instructions-1.png
 
+Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
+
 Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path <https://stackoverflow.com/a/44272417>`__. By default, this folder is located at ``C:\Program Files (x86)\Graphviz2.38\bin``.
 
 .. image:: images/build-instructions-2.png
@@ -44,6 +46,11 @@ Building
 Open up a Powershell Window or terminal and navigate to the frc-docs directory that was cloned.
 
 .. image:: images/build-instructions-3.png
+
+Lint Check
+^^^^^^^^^^
+
+It's encouraged to check any changes you make with the linter. This **will** fail the buildbot if it does not pass. To check, run ``.\make lint``
 
 Building HTML
 ^^^^^^^^^^^^^
