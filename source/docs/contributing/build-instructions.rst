@@ -28,7 +28,7 @@ Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path <https
 
 .. image:: images/build-instructions-2.png
 
-Install the missing MikTex packages by running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
+Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
 
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
