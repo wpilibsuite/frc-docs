@@ -20,6 +20,6 @@ Option 2 - Running from the Script
 
 .. image:: images/starting-robotbuilder-2.png
 
-The install process installs the tools to ``~home\frcYYYY\tools`` (where YYYY is the year and ~home is ``C:\Users\Public on Windows``).
+The install process installs the tools to ``~/frcYYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public on Windows``).
 
 Inside this folder you will find .vbs (Windows) and .py (Mac/Linux) files that you can use to launch each tool. These scripts help launch the tools using the correct JDK and are what you should use to launch the tools.
