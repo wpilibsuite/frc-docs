@@ -33,7 +33,8 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.ghcontributors'
 ]
 
 # TODO Directives omit a warning
