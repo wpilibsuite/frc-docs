@@ -3,7 +3,7 @@ RobotBuilder Overview
 
 Creating a program with RobotBuilder is a very straight forward procedure by following a few steps that are the same for any robot. This lesson describes the steps that you can follow. You can find more details about each of these steps in subsequent sections of the document.
 
-In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <http://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
+In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
 
 Divide the Robot into Subsystems
 --------------------------------

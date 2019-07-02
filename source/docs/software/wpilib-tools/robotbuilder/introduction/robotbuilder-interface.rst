@@ -3,7 +3,7 @@ RobotBuilder User Interface
 
 .. image:: images/robotbuilder-interface-1.png
 
-RobotBuilder has a user interface designed for rapid development of robot programs. Almost all operations are performed by drag and drop or selecting options from drop-down lists.
+RobotBuilder has a user interface designed for rapid development of robot programs. Almost all operations are performed by drag-and-drop or selecting options from drop-down lists.
 
 Dragging Items from the Palette to the Robot Description
 --------------------------------------------------------

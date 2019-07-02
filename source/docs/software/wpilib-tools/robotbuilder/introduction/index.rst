@@ -9,3 +9,4 @@ RobotBuilder Introduction
    robotbuilder-interface
    robotbuilder-setup
    robotbuilder-creating-subsystem
+   robotbuilder-creating-command
