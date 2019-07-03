@@ -10,3 +10,7 @@ RobotBuilder Introduction
    robotbuilder-setup
    robotbuilder-creating-subsystem
    robotbuilder-creating-command
+   robotbuilder-default-autonomous-command
+   robotbuilder-testing-with-smartdashboard
+   robotbuilder-operator-interface-to-command
+   robotbuilder-created-code
