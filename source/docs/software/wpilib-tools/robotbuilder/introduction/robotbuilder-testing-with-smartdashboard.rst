@@ -26,7 +26,7 @@ Adding Commands Manually
 
    .. code-tab:: java
 
-   	  SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+      SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
       SmartDashboard.putData("Open Claw", new OpenClaw());
       SmartDashboard.putData("Close Claw", new CloseClaw());
 

@@ -1,7 +1,7 @@
 Setting up the Robot Project
 ============================
 
-The RobotBuilder program has some default properties that need to be set up so the generated program and other generated files work properly. This setup information is stored in the properties for robot description (the first line). 
+The RobotBuilder program has some default properties that need to be set up so the generated program and other generated files work properly. This setup information is stored in the properties for robot description (the first line).
 
 Robot Project Properties
 ------------------------

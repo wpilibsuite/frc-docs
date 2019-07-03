@@ -97,7 +97,7 @@ Java Export.yaml
 
 .. image:: images/custom-components-7.png
 
-Very similar to the C++ export file; the only difference should be the Construction line. This example expects a KiwiDrive class with the constructor 
+Very similar to the C++ export file; the only difference should be the Construction line. This example expects a KiwiDrive class with the constructor
 
 .. code-block:: java
 

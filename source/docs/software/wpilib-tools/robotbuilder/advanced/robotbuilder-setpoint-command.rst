@@ -17,7 +17,7 @@ Creating the Setpoint Command
 
 .. image:: images/setpoint-command-2.png
 
-Right-click on the Commands folder in the palette and select "Add Setpoint command". 
+Right-click on the Commands folder in the palette and select "Add Setpoint command".
 
 Setpoint Command Parameters
 ---------------------------
