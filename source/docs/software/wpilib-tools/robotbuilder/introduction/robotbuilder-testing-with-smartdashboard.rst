@@ -26,14 +26,14 @@ Adding Commands Manually
 
    .. code-tab:: java
 
-   SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-   SmartDashboard.putData("Open Claw", new OpenClaw());
-   SmartDashboard.putData("Close Claw", new CloseClaw());
+   	  SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+      SmartDashboard.putData("Open Claw", new OpenClaw());
+      SmartDashboard.putData("Close Claw", new CloseClaw());
 
    .. code-tab:: cpp
 
-   SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());
-   SmartDashboard::PutData("Open Claw", new OpenClaw());
-   SmartDashboard::PutData("Close Claw", new CloseClaw());
+      SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());
+      SmartDashboard::PutData("Open Claw", new OpenClaw());
+      SmartDashboard::PutData("Close Claw", new CloseClaw());
 
 Commands can be added to the SmartDashboard manually by writing the code yourself. This is done by passing instances of the command to the PutData method along with the name that should be associated with the button on the SmartDashboard. These instances are scheduled whenever the button is pressed. The result is exactly the same as RobotBuilder generated code, although clicking the checkbox in RobotBuilder is much easier than writing all the code by hand.
