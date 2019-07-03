@@ -6,3 +6,4 @@ RobotBuilder
 
    introduction/index
    writing-code/index
+   advanced/index

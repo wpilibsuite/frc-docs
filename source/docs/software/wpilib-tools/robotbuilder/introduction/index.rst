@@ -1,5 +1,5 @@
-RobotBuilder Introduction
-=========================
+RobotBuilder - Introduction
+===========================
 
 .. toctree::
    :maxdepth: 1
