@@ -49,8 +49,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    :caption: Robot Networking
 
    docs/networking/networking-basics
-   docs/networking/ip-networking
-   docs/networking/roborio-networking
+   docs/networking/ip-configurations
    docs/networking/roborio-network-troubleshooting
 
 .. toctree::
