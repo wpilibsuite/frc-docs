@@ -162,7 +162,7 @@ The :ref:`docs/software/getting-started/radio-programming:Programming your Radio
 Summary
 -------
 
-IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present.
+IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see `this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics>`__ article by Microsoft.
 
 If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 
