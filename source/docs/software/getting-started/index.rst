@@ -7,7 +7,7 @@ Getting Started
    new-for-2019
    known-issues
    control-system-software
-   offline-installation-preperations
+   offline-installation-preparations
    labview-setup
    windows-setup
    macos-setup
