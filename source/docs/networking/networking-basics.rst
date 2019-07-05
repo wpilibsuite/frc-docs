@@ -117,16 +117,16 @@ To use mDNS, an mDNS implementation is required to be installed on your PC. Here
 
 Windows:
 
-- **NI mDNS Responder:** - Installed with the NI FRC Update Suite
-- **Apple Bonjour:** - Installed with iTunes
+- **NI mDNS Responder:** Installed with the NI FRC Update Suite
+- **Apple Bonjour:** Installed with iTunes
 
 OSX:
 
-- **Apple Bonjour:** - Installed by default
+- **Apple Bonjour:** Installed by default
 
 Linux:
 
-- **nss-mDNS/Avahi/Zeroconf:** - Installed and enabled by default on some Linux variants (such as Ubuntu or Mint). May need to be installed or enabled on others (such as Arch)
+- **nss-mDNS/Avahi/Zeroconf:** Installed and enabled by default on some Linux variants (such as Ubuntu or Mint). May need to be installed or enabled on others (such as Arch)
 
 mDNS - Firewalls
 ^^^^^^^^^^^^^^^^
