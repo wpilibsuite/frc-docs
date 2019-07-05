@@ -30,7 +30,7 @@ Ping the roboRIO IP address
 
 If there is an IP address in the step above, try pinging this IP address using the command prompt as described above. If this works, you have an issue resolving the mDNS address on your PC. The two most common causes are not having an mDNS resolver installed on the system and a DNS server on the network that is trying to resolve the .local address using regular DNS.
 
-- Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Update Suite. For more information on mDNS resolvers, see the :doc:`RoboRIO Networking article <networking-basics>`. 
+- Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Update Suite. For more information on mDNS resolvers, see the :doc:`RoboRIO Networking article <networking-basics>`.
 - Disconnect your computer from any other networks and make sure you have the OM5P-AN configured as an access point, using the :ref:`FRC Radio Configuration Utility <docs/software/getting-started/radio-programming:Programming your Radio>`. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
 
 Ping fails

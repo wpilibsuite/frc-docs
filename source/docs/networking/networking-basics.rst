@@ -28,7 +28,7 @@ then passing the returned data back to the private IP that requested it. This al
 
 .. image:: images/networking-basics/nat-diagram.png
 
-.. note:: 
+.. note::
    For the FRC networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
 
 
@@ -102,7 +102,7 @@ On the field and in the pits, there is no DNS server that allows us to perform t
 
 mDNS provides us the same benefits as traditional DNS, but is just implemented in a way that does not require a server. Whenever a user asks to connect to a device using a friendly name, mDNS sends out a message asking the device with that name to identify itself. The device with the name then sends a return message including its IP address so all devices on the network can update their information. mDNS is what allows us to refer to our roboRIO as ``roboRIO-TEAM-FRC.local`` and have it connect on a DHCP network.
 
-.. note:: 
+.. note::
    If a device used for FRC does not support mDNS, then it will be assigned an IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the exact address to connect and we won’t be able to use the friendly name like before. In this case, the device would need to have a static IP Address.
 
 mDNS - Principles
