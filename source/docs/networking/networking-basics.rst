@@ -138,11 +138,11 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
 - Add an application/service exception for the mDNS implementation (NI mDNS Responder is ``C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe``)
 - Add a port exception for traffic to/from UDP 5353. IP Ranges:
 
-  - 10.0.0.0 - 10.255.255.255
-  - 172.16.0.0 - 172.31.255.255
-  - 192.168.0.0 - 192.168.255.255
-  - 169.254.0.0 - 169.254.255.255
-  - 224.0.0.251
+  - ``10.0.0.0 - 10.255.255.255``
+  - ``172.16.0.0 - 172.31.255.255``
+  - ``192.168.0.0 - 192.168.255.255``
+  - ``169.254.0.0 - 169.254.255.255``
+  - ``224.0.0.251``
 
 mDNS - Browser support
 ^^^^^^^^^^^^^^^^^^^^^^
