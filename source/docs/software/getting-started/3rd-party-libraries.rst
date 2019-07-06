@@ -12,7 +12,7 @@ Libraries
 
 `Analog Devices ADIS16470 IMU <https://github.com/juchong/ADIS16470-RoboRIO-Driver>`__ - Driver for ADIS16470 IMU. More info `here <https://wiki.analog.com/first>`__
 
-`CTRE Phoenix Toolsuite <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__ - Contains TalonSRX/Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+`CTRE Phoenix Toolsuite <https://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__ - Contains TalonSRX/Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
 
@@ -20,7 +20,7 @@ Libraries
 
 `Mindsensors Libraries <http://www.mindsensors.com/blog/how-to/how-to-use-sd540c-and-canlight-with-roborio>`__ - Contains libraries for SD540C and CANLight
 
-`Rev Robotics <http://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
+`Rev Robotics <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
 
 `Scansense Sweep <https://github.com/PeterJohnson/sweep-sdk/releases>`__ - C/Java Libraries for Scansense Sweep LIDAR (packaged by Peter Johnson)
 
@@ -41,7 +41,7 @@ To use installed Third Party libraries, simply locate the VIs in one of these 3 
 The Mechanism - C++/Java
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-For C++ and Java a JSON file describing the vendor library is installed on your system to ``~home\frcYYYY\vendordeps`` (~home = ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in VSCode. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\frcYYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be online for an initial build to fetch the library from a remote Maven location.
+For C++ and Java a JSON file describing the vendor library is installed on your system to ``~\frcYYYY\vendordeps`` (~ = ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in VSCode. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\frcYYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be online for an initial build to fetch the library from a remote Maven location.
 
 The JSON file allows specification of complex libraries with multiple components (C++, Java, JNI, etc.) and also helps handle some complexities related to simulation. Vendors choosing to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
