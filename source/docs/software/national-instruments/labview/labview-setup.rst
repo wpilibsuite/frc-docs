@@ -1,7 +1,7 @@
 Installing LabVIEW for FRC 2019 (LabVIEW only)
 ==============================================
 
-.. image:: images/labview/ni_logo.png
+.. image:: images/ni_logo.png
 
 .. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD.
 
@@ -14,14 +14,14 @@ Uninstall Old Versions (recommended)
 
 Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2019 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Control Panel >> Uninstall a Program. Locate the entry labeled "National Instruments Software", right-click on it and select Uninstall/Change.
 
-.. image:: images/labview/uninstall_old_control_panel.png
+.. image:: images/uninstall_old_control_panel.png
 
 Select components to uninstall
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the left pane of the dialog box that appears, select all entries. The easiest way to do this is to click the top entry to highlight it, then scroll down to the bottom entry, press and hold shift and click on the last entry then release shift. Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
-.. image:: images/labview/uninstall_select_components.png
+.. image:: images/uninstall_select_components.png
 
 Getting LabVIEW installer
 -------------------------
@@ -42,136 +42,136 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
-.. image:: images/labview/labview_welcome.png
+.. image:: images/labview_welcome.png
 
 Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC robot, click the top option Install Everything for LabVIEW Development. To install only NI Vision Assistant for use with C++ or Java, click Install Only NI Vision Development Module. If prompted with any Windows security warnings, click Allow or Yes.
 
 Warnings
 ^^^^^^^^
 
-.. image:: images/labview/labview_warnings.png
+.. image:: images/labview_warnings.png
 
 Click "Next"
 
 Product List
 ^^^^^^^^^^^^
-.. image:: images/labview/labview_product_list.png
+.. image:: images/labview_product_list.png
 
 Click "Next"
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_product_info.png
+.. image:: images/labview_product_info.png
 
 Un-check the box, then click "Next". (Note: you may not see the warning shown in the top portion of the window in this picture).
 
 User Information
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_user_info.png
+.. image:: images/labview_user_info.png
 
 Enter name, organization, and the serial number from the ReadMe in the File Releases on Teamforge. Click "Next". If you cannot find your serial number, please reach out to National Instruments at www.ni.com/frc/needhelp.
 
 Destination Directory
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_install_dir.png
+.. image:: images/labview_install_dir.png
 
 Click "Next"
 
 License agreements
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_license_1.png
+.. image:: images/labview_license_1.png
 
 Check "I accept..." then Click "Next"
 
-.. image:: images/labview/labview_license_2.png
+.. image:: images/labview_license_2.png
 
 Check "I accept..." then Click "Next"
 
 Driver Software installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_drivers.png
+.. image:: images/labview_drivers.png
 
 If you see this screen, Click "Next"
 
 Disable Windows Fast Startup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_fast_startup.png
+.. image:: images/labview_fast_startup.png
 
 If you see this screen, click "Next"
 
 Start Installation
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_start_install.png
+.. image:: images/labview_start_install.png
 
 Click "Next"
 
 Overall Progress
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_install_progress.png
+.. image:: images/labview_install_progress.png
 
 Overall installation progress will be tracked in this window
 
 Individual Product Progress
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_ind_product_progress.png
+.. image:: images/labview_ind_product_progress.png
 
 Each product installed will also create an individual progress window like the one shown above.
 
 Post-Install Information
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_wrapup_info.png
+.. image:: images/labview_wrapup_info.png
 
 Click "Next"
 
 Installation Summary
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_install_summary.png
+.. image:: images/labview_install_summary.png
 
 If internet access is available and you are ready to activate, click "Next"; otherwise uncheck the "Run License Manager..." and click "Next".
 
 NI Activation Wizard
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/ni_activation_login.png
+.. image:: images/ni_activation_login.png
 
 Log into your ni.com account. If you don't have an account, select 'Create account' to create a free account.
 
-.. image:: images/labview/ni_activation_keys.png
+.. image:: images/ni_activation_keys.png
 
 The serial number you entered at the "User Information" screen should appear in all of the text boxes, if it doesn't, enter it now. Click "Activate".
 
 .. note:: If this is the first time activating the 2019 software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
 
-.. image:: images/labview/ni_activation_success.png
+.. image:: images/ni_activation_success.png
 
 If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select “Try Again”. If everything activated successfully, click “Next”.
 
-.. image:: images/labview/ni_activation_finish.png
+.. image:: images/ni_activation_finish.png
 
 Click "Close".
 
 Restart
 ^^^^^^^
 
-.. image:: images/labview/labview_restart.png
+.. image:: images/labview_restart.png
 
 Select "Yes"
 
 NI Update Service
 -----------------
 
-.. image:: images/labview/ni_update.png
+.. image:: images/ni_update.png
 
 On occasion you may see alerts from the NI Update Service about patches to LabVIEW.
 

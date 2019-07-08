@@ -6,16 +6,20 @@
 FIRST Robotics Competition Documentation
 ========================================
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`docs/contributing/contribution-guidelines`.
+Welcome to the FIRST Robotics Competition Documentation! This website contains information on using various WPILib, FIRST, and National Instruments Software. 
+
+See the :ref:`FRC Software Component Overview <docs/software/wpilib-setup/control-system-software:FRC Software Component Overview>` for a brief description on the various WPILib and NI software located on this website. A list of all the various documents and sections can be found below.
+
+Lastly, if you're interested in contributing to the website, see the :ref:`contributing <docs/contributing/contribution-guidelines:Contribution Guidelines>` guidelines on how to get started!
 
 .. toctree::
    :maxdepth: 2
    :caption: WPILib Software
 
-   docs/software/getting-started/index
+   docs/software/wpilib-setup/index
    docs/software/wpilib-overview/index
-   docs/software/getting-started-with-benchtop/index
-   docs/software/roborio-info/index
+   docs/software/national-instruments/index
+   docs/software/first/index
    docs/software/actuators/index
    docs/software/sensors/index
    docs/software/can-devices/index

@@ -77,7 +77,7 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 Install the software
 --------------------
 
-.. image:: images/radio-programming/radio-installer.png
+.. image:: images/radio-installer.png
 
 Double click on FRC_Radio_Configuration_VERSION.exe to launch the installer. Follow the prompts to complete the installation.
 
@@ -86,7 +86,7 @@ Part of the installation prompts will include installing WinPCap if it is not al
 Launch the software
 -------------------
 
-.. image:: images/radio-programming/radio-launch.png
+.. image:: images/radio-launch.png
 
 Use the Start menu or desktop shortcut to launch the program.
 
@@ -95,14 +95,14 @@ Note: If you need to locate the program it is installed to C:\Program Files (x86
 Allow the program to make changes, if prompted
 ----------------------------------------------
 
-.. image:: images/radio-programming/allow-changes.png
+.. image:: images/allow-changes.png
 
 If the your computer is running Windows Vista or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer. Click "Yes" if the prompt appears.
 
 Select the network interface
 ----------------------------
 
-.. image:: images/radio-programming/select-network-connection.png
+.. image:: images/select-network-connection.png
 
 Use the pop-up window to select the which ethernet interface the configuration utility will use to communicate with the wireless bridge. On Windows machines, ethernet interfaces are typically named "Local Area Connection". The configuration utility can not program a bridge over a wireless connection.
 
@@ -122,7 +122,7 @@ If you do not need to update or re-load the firmware, skip the next step.
 Loading FRC Firmware to OpenMesh radio
 --------------------------------------
 
-.. image:: images/radio-programming/openmesh-firmware.png
+.. image:: images/openmesh-firmware.png
 
 If you need to load the FRC firmware (or reset the radio), you can do so using the FRC Radio Configuration Utility.
 
@@ -140,7 +140,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 Select a bridge model and operating mode
 ----------------------------------------
 
-.. image:: images/radio-programming/select-bridge-model-mode.png
+.. image:: images/select-bridge-model-mode.png
 
 1. Select which radio you are configuring using the drop-down list.
 2. Select which operating mode you want to configure. For most cases, the default selection of 2.4GHz Access Point will be sufficient. If your computers support it, the 5GHz AP mode is recommended, as 5GHz is less congested in many environments.
@@ -148,7 +148,7 @@ Select a bridge model and operating mode
 Select Options
 --------------
 
-.. image:: images/radio-programming/select-options.png
+.. image:: images/select-options.png
 
 The default values of the options have been selected to match the use case of most teams, however, you may wish to customize these options to your specific scenario:
 
@@ -163,14 +163,14 @@ The default values of the options have been selected to match the use case of mo
 Prepare and start the configuration process
 -------------------------------------------
 
-.. image:: images/radio-programming/start-config.png
+.. image:: images/start-config.png
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
 
 Configuration Progress
 ----------------------
 
-.. image:: images/radio-programming/config-in-progress.png
+.. image:: images/config-in-progress.png
 
 Throughout the configuration process, the window will indicate:
 
@@ -181,7 +181,7 @@ Throughout the configuration process, the window will indicate:
 Configuration completed
 -----------------------
 
-.. image:: images/radio-programming/config-completed.png
+.. image:: images/config-completed.png
 
 Once the configuration is complete:
 
@@ -191,7 +191,7 @@ Once the configuration is complete:
 Configuration errors
 --------------------
 
-.. image:: images/radio-programming/config-errors.png
+.. image:: images/config-errors.png
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
 
@@ -200,22 +200,22 @@ Troubleshooting: Disabling Network Adapters
 
 If you get an error message about "NPF adapter" when attempting to load firmware, you need to disable all other adapters. This is not always the same as turning the adapters off with a physical button or putting the PC into airplane mode. The following steps provide more detail on how to disable adapters.
 
-.. image:: images/radio-programming/open-control-panel.png
+.. image:: images/open-control-panel.png
 
 Open the Control Panel by going to Start->Control Panel
 
-.. image:: images/radio-programming/network-internet.png
+.. image:: images/network-internet.png
 
 Choose the Network and Internet category.
 
-.. image:: images/radio-programming/network-and-sharing-center.png
+.. image:: images/network-and-sharing-center.png
 
 Click Network and Sharing Center
 
-.. image:: images/radio-programming/adapter-settings.png
+.. image:: images/adapter-settings.png
 
 On the left pane, click Change Adapter Settings
 
-.. image:: images/radio-programming/disable-network-adapter.png
+.. image:: images/disable-network-adapter.png
 
 For each adapter other than the one connected to the radio, right click on the adapter and select Disable from the menu.
