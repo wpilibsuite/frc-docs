@@ -50,7 +50,7 @@ Open up a Powershell Window or terminal and navigate to the frc-docs directory t
 Lint Check
 ^^^^^^^^^^
 
-.. note:: Lint Check is currently unavailable due to a bug with line endings. See `this issue<https://bugs.launchpad.net/doc8/+bug/1756704>`__ for more information.
+.. note:: Lint Check is currently unavailable due to a bug with line endings. See `this issue <https://bugs.launchpad.net/doc8/+bug/1756704>`__ for more information.
 
 It's encouraged to check any changes you make with the linter. This **will** fail the buildbot if it does not pass. To check, run ``.\make lint``
 
