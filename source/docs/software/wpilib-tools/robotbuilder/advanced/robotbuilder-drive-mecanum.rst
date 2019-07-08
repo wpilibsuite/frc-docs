@@ -21,13 +21,12 @@ Code for Driving with Mecanum Wheels
       /**
        * Simplest program to drive a robot with mecanum drive using a single Logitech
        * Extreme 3D Pro joystick and 4 drive motors connected as follows:
-       *   - Digital Sidecar 1:
-       *     - PWM 1 - Connected to front left drive motor
-       *     - PWM 2 - Connected to rear left drive motor
-       *     - PWM 3 - Connected to front right drive motor
-       *     - PWM 4 - Connected to rear right drive motor
+       *   - PWM 1 - Connected to front left drive motor
+       *   - PWM 2 - Connected to rear left drive motor
+       *   - PWM 3 - Connected to front right drive motor
+       *   - PWM 4 - Connected to rear right drive motor
        */
-      class MecanumDefaultCode : public IterativeRobot
+      class MecanumDefaultCode : public TimedRobot
       {
          RobotDrive *m_robotDrive;     // RobotDrive object using PWM 1-4 for drive motors
          Joystick *m_driveStick;       // Joystick object on USB port 1 (mecanum drive)

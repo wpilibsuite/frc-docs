@@ -1,7 +1,7 @@
 Creating a Command that Runs Other Commands
 ===========================================
 
-Often you will want to run multiple commands, one after another to enable more complex behaviors in your program. Once each of the individual commands have been debugged, you can create a CommandGroup. A CommandGroup is a named set of commands that may be executed sequentially or in parallel.
+Often you will want to run multiple commands one after another or simultaneously to enable more complex behaviors in your program. Once each of the individual commands have been debugged, you can create a CommandGroup. A CommandGroup is a named set of commands that may be executed sequentially or in parallel.
 
 Creating a Command Group
 ------------------------
@@ -42,7 +42,7 @@ An empty command group isn't very useful, so to add commands to it:
 1. Click a command in the palette ("Command 1" in this example)
 2. Drag it somewhere into the graph editor
 
-Alternatively, you can right-click anywhere on the editor and choose the command from the dropdown, or right click a command and choose a command to automatically be placed after the command you click.
+Alternatively, you can right-click anywhere on the editor and choose the command from the dropdown, or right-click a command and choose a command to automatically be placed after the command you click.
 
 Now you have a command in the group! But it's not connected to anything, so RobotBuilder doesn't know how it's supposed to behave.
 
@@ -51,10 +51,10 @@ Connecting Commands
 
 .. image:: images/command-run-commands-4.png
 
-To connect commands and control when commands run in the group,
+To connect commands and control when commands run in the group;
 
 1. Click the center of the box for the previous command (or "Start" if you want it to run at the beginning). In this example, "Command 1" is the first command to run "Start" is clicked.
-2. When a yellow box appears around the first box, drag your mouse to the command to run after it. This will create an arrow from the first box to your mouse
+2. When a yellow box appears around the first box, drag your mouse to the command to run after it. This will create an arrow from the first box to your mouse.
 3. When a yellow box appears around the second box, you can release your mouse. The arrow will connect the two boxes and RobotBuilder will set the sequence of commands.
 
 You can skip this step if you right-click a box and add a command through the menu -- Robotbuilder will automatically connect them.
