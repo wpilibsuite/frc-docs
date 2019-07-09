@@ -26,6 +26,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
    docs/software/wpilib-tools/path-planning/index
+   docs/software/wpilib-tools/robotbuilder/index
    docs/software/basic-programming/index
    docs/software/advanced-programming/index
 
