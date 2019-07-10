@@ -32,4 +32,4 @@ Practice Tuning in FRCSim
 
 With the FRCSim, you can experiment with PID and practice tuning in simulation! This means no broken couplers or time consuming uploads!
 
-A video on tuning PID with SmartDashboard in simulation can be found on the official WPILib channel here: https://www.youtube.com/watch?v=yqD9iHiR3j8
+A video on tuning PID with SmartDashboard in simulation can be found on the official WPILib channel `here <https://www.youtube.com/watch?v=yqD9iHiR3j8>`__
