@@ -5,7 +5,7 @@ You may add code to your program to display values for your sensors and actuator
 
 Setting Test mode with the Driver Station
 -----------------------------------------
-.. image:: images/enabling-test-mode/setting-test-mode-driver-station
+.. image:: images/enabling-test-mode/setting-test-mode-driver-station.png
 
 Enable Test Mode in the Driver Station by clicking on the "Test" button and setting "Enable" on the robot. When doing this, the SmartDashboard display will switch to test mode (LiveWindow) and will display the status of any actuators and sensors used by your program.
 
