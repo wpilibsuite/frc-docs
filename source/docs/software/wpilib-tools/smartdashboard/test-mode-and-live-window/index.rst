@@ -1,5 +1,5 @@
 SmartDashboard: Test Mode and Live Window
-==============
+=========================================
 
 .. toctree::
    :maxdepth: 1
