@@ -25,7 +25,9 @@ Once you have determined P, I, and D values they can be inserted into the progra
 
 The F (feedforward) term is used for controlling velocity with a PID controller.
 
-You can find more information in Operating the robot with feedback from sensors(C++ or Java).
+.. todo:: add link to pid article when ported
+
+You can find more information in Operating the robot with feedback from sensors.
 
 Practice Tuning in FRCSim
 -------------------------
