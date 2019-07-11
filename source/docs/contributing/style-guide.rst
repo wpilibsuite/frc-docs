@@ -84,11 +84,19 @@ Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ fo
 Links
 -----
 
-Links should be in the following format
+It is preferred to format links as an anonymous hyperlink. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
 
 .. code-block:: text
 
-   Hi there, `this is a link <http://example.com>`_ and it's pretty cool!
+   Hi there, `this is a link <http://example.com>`__ and it's pretty cool!
+
+However, in some cases where the same link must be referenced multiple times, the syntax below is accepted.
+
+.. code-block:: text
+
+   Hi there, `this is a link`_ and it's pretty cool!
+
+   ..  _this is a link: http://example.com
 
 Images
 ------
