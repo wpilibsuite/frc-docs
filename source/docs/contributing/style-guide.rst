@@ -84,7 +84,7 @@ Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ fo
 Links
 -----
 
-It is preferred to format links as an anonymous hyperlink. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
+It is preferred to format links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
 
 .. code-block:: text
 
