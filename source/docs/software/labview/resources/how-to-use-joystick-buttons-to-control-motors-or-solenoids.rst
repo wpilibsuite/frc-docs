@@ -34,7 +34,7 @@ Here I used joystick buttons 0 and 2, but feel free to use whatever buttons you 
 Scenario 2
 ----------
 
-I want different joystick buttons move at various speeds.
+**"I want different joystick buttons move at various speeds."**
 
 This example could be helpful if you need to have one motor do different things based on the buttons you press.  For instance, let's say my joystick has a trigger (button 0) and 4 buttons on top (buttons 1 through 4).  In this case, the following buttons should have the following functions:
 
@@ -67,7 +67,7 @@ Since our requirements were simple, we only need a single constant in each case.
 Scenario 3
 -----------
 
-I want to control a solenoid with my joystick buttons.
+**"I want to control a solenoid with my joystick buttons."**
 
 By now, we are familiar with how the joystick outputs the buttons in an array of booleans.  We need to index this array to get the button we are interested in, and wire this boolean to a select node.  Since the "Solenoid Set.vi" requires a Enum as an input, the easiest way to get the enum is to right click the "Value" input of the "Solenoid Set.vi" and select "Create Constant".  Duplicate this constant and wire one copy to the True terminal and one to the False terminal of the select node.  Then wire the output of the select node to the "Value" input of the solenoid VI.
 
