@@ -7,6 +7,7 @@ Troubleshooting
 
   general/robot-preemptive-troubleshooting
   general/status-light-quick-reference
+  general/driver-station-log-file-viewer
 
 .. toctree::
   :maxdepth: 1
