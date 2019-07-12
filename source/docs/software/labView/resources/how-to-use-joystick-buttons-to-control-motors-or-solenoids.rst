@@ -72,6 +72,5 @@ By now, we are familiar with how the joystick outputs the buttons in an array of
 
 .. image::images/how-to-use-joystick-buttons-to-control-motors-or-solenoids/3.png
 
-Hope this helps!  Feel free to comment below.
 
 Happy Roboting!
