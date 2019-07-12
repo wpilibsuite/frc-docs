@@ -42,7 +42,7 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        nt::NetworkTableEntry cameraSelection;
 
-       void Robot::RobotInit() 
+       void Robot::RobotInit()
        {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
