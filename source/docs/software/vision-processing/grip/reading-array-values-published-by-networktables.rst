@@ -58,9 +58,9 @@ Writing a program to access the keys
 
       std::shared_ptr<NetworkTable> table;
 
-      void Robot::RobotInit() 
+      void Robot::RobotInit()
       {
-        table = NetworkTable::GetTable("GRIP/myContoursReport"); 
+        table = NetworkTable::GetTable("GRIP/myContoursReport");
       }
 
       void Robot::TeleopPeriodic() {
