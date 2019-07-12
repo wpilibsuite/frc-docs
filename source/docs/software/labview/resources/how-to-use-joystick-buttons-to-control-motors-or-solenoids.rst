@@ -19,7 +19,7 @@ The rest of the code in this document will be placed in the "Teleop.VI" This is 
 Scenario 1
 ----------
 
-I want a motor to move one way when I press one button and the other way when I press a different button.
+**"I want a motor to move one way when I press one button and the other way when I press a different button."**
 
 This code uses button 0 on two different joysticks to control the same motor.  If button 0 on LeftStick is pressed, the motor moves backward, and if button 0 on RightStick is pressed, the motor moves forward.  If both buttons are pressed or neither button is pressed, the motor doesn't move.  Here I named my motor reference "Motor5", but you can name your motor whatever you want in the "Begin.vi"
 
