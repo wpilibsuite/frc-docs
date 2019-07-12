@@ -154,14 +154,14 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        cs::VideoSink server;
        frc::Joystick joy1{0};
        bool prevTrigger = false;
-       void RobotInit() override {
+       void RobotInit() {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
          server = frc::CameraServer::GetInstance()->GetServer();
          camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
          camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
        }
-       void TeleopPeriodic() override {
+       void TeleopPeriodic() {
          if (joy1.GetTrigger() && !prevTrigger) {
            std::cout << "Setting Camera 2" << std::endl;
            server.SetSource(camera2);
