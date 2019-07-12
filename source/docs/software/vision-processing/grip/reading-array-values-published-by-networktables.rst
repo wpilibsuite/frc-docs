@@ -68,9 +68,7 @@ Writing a program to access the keys
 
         std::vector<double> arr = table->GetEntry("area").GetDoubleArray(std::vector<double>());
 
-        for (unsigned int i = 0; i < arr.size(); i++) {
-          std::cout << arr[i] << " ";
-        }
+        for (double val : arr) std::cout << val << " ";
 
         std::cout << std::endl;
       }
