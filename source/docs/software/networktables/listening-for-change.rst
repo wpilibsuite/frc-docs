@@ -50,6 +50,7 @@ One of the more common cases for NetworkTables is waiting for a value to change 
                Thread.sleep(10000);
             } catch (InterruptedException ex) {
                System.out.println("Interrupted");
+               Thread.currentThread().interrupt();
                return;
             }
          }
