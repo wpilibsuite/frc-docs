@@ -24,7 +24,7 @@ Global variables are created slightly differently.  Add one to the block diagram
 
 .. image::images/local-and-global-variables-in-labview-for-frc/3.png
 
-.. note:: Note: Be very careful to avoid race conditions when using local and global variables!  Essentially, make sure that you are not accidentally writing to the same variable in multiple locations without a way to know to which location it was last written.  For a more thorough explanation, see `this help document <http://zone.ni.com/reference/en-XX/help/371361L-01/lvconcepts/using_local_and_global/>`_
+.. note:: Be very careful to avoid race conditions when using local and global variables!  Essentially, make sure that you are not accidentally writing to the same variable in multiple locations without a way to know to which location it was last written.  For a more thorough explanation, see `this help document <http://zone.ni.com/reference/en-XX/help/371361L-01/lvconcepts/using_local_and_global/>`_
 
 How They are Used in the Default LabVIEW for FRC Robot Project
 --------------------------------------------------------------
