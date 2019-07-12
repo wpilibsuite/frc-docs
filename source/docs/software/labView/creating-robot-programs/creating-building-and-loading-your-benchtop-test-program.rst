@@ -1,11 +1,10 @@
 Creating, Building and Loading your Benchtop Test Program
 =========================================================
 
-.. image::images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
+.. image:: images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
-.. note:: This document covers how to create, build and load an FRC LabVIEW program onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Driver Station and that you have configured and imaged your roboRIO as described in the Getting Started with the Control System section.
+.. note:: This document covers how to create, build and load an FRC LabVIEW program onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Driver Station and that you have configured and imaged your roboRIO as described in the :ref:`Getting Started with the Control System section <docs/software/getting-started/index:Getting Started>`.
 
-.. todo:: Add link to the Getting Started with the Control System section.
 
 
 Creating a Project

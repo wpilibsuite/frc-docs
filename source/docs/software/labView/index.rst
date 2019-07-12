@@ -7,7 +7,6 @@ FRC LabVIEW Programming
 
    installing-labview-for-frc-2019-labview-only
 
-.. todo:: Add link to ``Installing the FRC Update Suite (All Languages)``
 
 .. toctree::
   :maxdepth: 1
