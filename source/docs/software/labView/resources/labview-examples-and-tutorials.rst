@@ -29,7 +29,7 @@ Popular Tutorials
 `Command and Control Tutorial <http://forums.ni.com/docs/DOC-46544>`__
 
 -  What is Command and Control?
--  How do I implement it? 
+-  How do I implement it?
 
 `Driver Station Tutorial <http://forums.ni.com/docs/DOC-26297>`__
 
