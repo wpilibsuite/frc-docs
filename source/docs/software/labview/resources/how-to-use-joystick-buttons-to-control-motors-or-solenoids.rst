@@ -50,15 +50,15 @@ Each case corresponds to a binary representation of the values in the array.  In
 
 It might be helpful to review the LabVIEW 2014 Case Structure Help document here:
 
-http://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/
+https://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/
 
 There are also 3 Community Tutorials on case structures here:
 
-http://forums.ni.com/docs/DOC-11621
+https://forums.ni.com/docs/DOC-11621
 
-http://forums.ni.com/docs/DOC-11622
+https://forums.ni.com/docs/DOC-11622
 
-http://forums.ni.com/docs/DOC-11623
+https://forums.ni.com/docs/DOC-11623
 
 .. image:: images/how-to-use-joystick-buttons-to-control-motors-or-solenoids/2.png
 
@@ -72,6 +72,5 @@ Scenario 3
 By now, we are familiar with how the joystick outputs the buttons in an array of booleans.  We need to index this array to get the button we are interested in, and wire this boolean to a select node.  Since the "Solenoid Set.vi" requires a Enum as an input, the easiest way to get the enum is to right click the "Value" input of the "Solenoid Set.vi" and select "Create Constant".  Duplicate this constant and wire one copy to the True terminal and one to the False terminal of the select node.  Then wire the output of the select node to the "Value" input of the solenoid VI.
 
 .. image:: images/how-to-use-joystick-buttons-to-control-motors-or-solenoids/3.png
-
 
 Happy Roboting!
