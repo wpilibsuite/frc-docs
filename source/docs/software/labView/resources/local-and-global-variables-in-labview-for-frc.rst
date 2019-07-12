@@ -33,7 +33,7 @@ Global variables for “Enable Vision” and “Image Size” are written to dur
 
 .. image::images/local-and-global-variables-in-labview-for-frc/4.png
 
-…And then read in each iteration of the Vision Processing VI:
+… And then read in each iteration of the Vision Processing VI:
 
 .. image::images/local-and-global-variables-in-labview-for-frc/5.png
 
