@@ -6,4 +6,4 @@ SmartDashboard: Test Mode and Live Window
 
    displaying-LiveWindow-values
    enabling-test-mode
-   PID-tuning-with-SmartDashboard
+   pid-tuning-with-smartdashboard
