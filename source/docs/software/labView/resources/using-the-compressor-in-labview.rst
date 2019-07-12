@@ -7,11 +7,11 @@ This snippet shows how to set up your roboRIO project to use the Pneumatic Contr
 
 For more information, check out the following links:
 
-https://rps01.usfirst.org/frc/manual/2015/2015FRCPneumaticsManual.pdf
+`FRC Pneumatics Manual <https://rps01.usfirst.org/frc/manual/2015/2015FRCPneumaticsManual.pdf>`__
 
-http://crosstheroadelectronics.com/PCM%20User's%20Guide.pdf
+`PCM User's Guide <http://crosstheroadelectronics.com/PCM%20User's%20Guide.pdf>`__
 
-http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf
+`Pneumatics Step by Step for the roboRIO <http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf>`__
 
 Begin VI
 --------
