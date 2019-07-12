@@ -26,9 +26,54 @@ Both of the following examples are extremely simplified programs that just illus
 the robotInit() method so it's only run when the program starts up. In your programs, you would more likely get the values in code
 that is evaluating which direction to aim the robot in a command or a control loop during the autonomous or teleop periods.
 
-Writing a Java program to access the keys
+Writing a program to access the keys
 -----------------------------------------
-.. figure:: images/reading-array-values-published-by-networktables/writing-a-java-program-to-access-the-keys.png
+.. tabs::
+
+   .. code-tab:: java
+
+      NetworkTable table;
+      double[] areas;
+      double[] defaultValue = new double[0];
+
+      @Override
+      public void robotInit() {
+        table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
+      }
+
+      @Override
+      public void teleopPeriodic() {
+          double[] areas = table.getEntry("area").getDoubleArray(defaultValue);
+
+          System.out.print("areas: " );
+
+          for (double area : areas) {
+            System.out.print(area + " ");
+          }
+
+          System.out.println();
+      }
+
+   .. code-tab:: cpp
+
+      std::shared_ptr<NetworkTable> table;
+
+      void Robot::RobotInit() 
+      {
+        table = NetworkTable::GetTable("GRIP/myContoursReport"); 
+      }
+
+      void Robot::TeleopPeriodic() {
+        std::cout << "Areas: ";
+
+        std::vector<double> arr = table->GetEntry("area").GetDoubleArray(std::vector<double>());
+
+        for (unsigned int i = 0; i < arr.size(); i++) {
+          std::cout << arr[i] << " ";
+        }
+
+        std::cout << std::endl;
+      }
 
 The steps to getting the values and, in this program, printing them are:
 
@@ -37,22 +82,7 @@ The steps to getting the values and, in this program, printing them are:
 3.  Read the array of values from NetworkTables. In the case of a communicating programs, it's possible that the program producing
     the output being read here might not yet be available when the robot program starts up. To avoid issues of the data not being
     ready, a default array of values is supplied. This default value will be returned if the network table key hasn't yet been
-    published. This code just loops forever and reads values and prints them to the console.
-
-Writing a C++ program to access the keys
-----------------------------------------
-.. figure:: images/reading-array-values-published-by-networktables/writing-a-cpp-program-to-access-the-keys.png
-
-The steps to getting the values and, in this program, printing them are:
-
-1.  Declare the table variable that will hold the instance of the subtable that have the values. It is a shared pointer where the
-    library takes care of allocation and deallocation automatically.
-2.  Initialize the subtable instance so that it can be used later for retrieving the values.
-3.  Read the array of values from NetworkTables. In the case of a communicating programs, it's possible that the program producing
-    the output being read here might not yet be available when the robot program starts up. To avoid issues of the data not being
-    ready, a default array of values is supplied. llvm::ArrayRef<double> creates this temporary array reference of zero length
-    that would be returned if the network table key hasn't yet been published. This code just loops forever and reads values and
-    prints them to the console.
+    published. This code will loop over the value of areas every 20ms.
 
 Program output
 --------------

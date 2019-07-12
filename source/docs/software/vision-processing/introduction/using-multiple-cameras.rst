@@ -52,10 +52,10 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        void Robot::TeleopPeriodic() {
          if (joy1.GetTriggerPressed()) {
-           printf("Setting Camera 2\n");
+           std::cout << "Setting Camera 2\n" << std::endl;
            cameraSelection.SetString(camera2.GetName());
          } else if (joy1.GetTriggerReleased()) {
-           printf("Setting Camera 1\n");
+           std::cout << "Setting Camera 1\n" << std::endl;
            cameraSelection.SetString(camera1.GetName());
          }
        }
@@ -103,10 +103,10 @@ If you're using some other dashboard, you can change the camera used by the came
        }
        void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
-           printf("Setting camera 2\n");
+           std::cout << "Setting Camera 2\n" << std::endl;
            server.SetSource(camera2);
          } else if (!joy1.GetTrigger() && prevTrigger) {
-           printf("Setting camera 1\n");
+           std::cout << "Setting Camera 1\n" << std::endl;
            server.SetSource(camera1);
          }
          prevTrigger = joy1.GetTrigger();
@@ -163,10 +163,10 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        }
        void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
-           printf("Setting camera 2\n");
+           std::cout << "Setting Camera 2\n" << std::endl;
            server.SetSource(camera2);
          } else if (!joy1.GetTrigger() && prevTrigger) {
-           printf("Setting camera 1\n");
+           std::cout << "Setting Camera 1\n" << std::endl;
            server.SetSource(camera1);
          }
          prevTrigger = joy1.GetTrigger();
