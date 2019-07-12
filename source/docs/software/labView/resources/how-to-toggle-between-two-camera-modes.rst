@@ -1,7 +1,7 @@
 How To Toggle Between Two Camera Modes
 ======================================
 
-.. image::images/ni-logo.png
+.. image:: images/ni-logo.png
 
 This code shows how to use a button to toggle between two distinct camera modes. The code consists of four stages.
 
@@ -13,4 +13,4 @@ After that, the camera mode is toggled by masking the result of the second stage
 
 Finally, you can insert the code for each camera mode in the case structure at the end. Each time the code is run, this section will run the code for the current camera mode.
 
-.. image::images/toggle-between-two-camera-modes.png
+.. image:: images/toggle-between-two-camera-modes.png

@@ -1,7 +1,7 @@
-Installing LabVIEW for FRC 2019 (LabVIEW only)
-==============================================
+LabVIEW Resources
+=================
 
-.. image::images/ni-logo.png
+.. image:: images/ni-logo.png
 
 .. note:: To learn more about programming in LabVIEW and specifically programming FRC robots in LabVIEW, check out the following resources.
 

@@ -1,7 +1,7 @@
 LabVIEW Examples and Tutorials
 ======================================
 
-.. image::images/ni-logo.png
+.. image:: images/ni-logo.png
 
 Popular Tutorials
 -----------------
