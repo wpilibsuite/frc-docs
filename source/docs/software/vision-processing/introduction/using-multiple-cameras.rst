@@ -13,21 +13,24 @@ If you're interested in just switching what the driver sees, and are using Smart
        UsbCamera camera1;
        UsbCamera camera2;
        Joystick joy1 = new Joystick(0);
+       NetworkTableEntry cameraSelection;
 
        @Override
        public void robotInit() {
            camera1 = CameraServer.getInstance().startAutomaticCapture(0);
            camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+
+           cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
        }
 
        @Override
        public void teleopPeriodic() {
            if (joy1.getTriggerPressed()) {
                System.out.println("Setting camera 2");
-               NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection").setString(camera2.getName());
+               cameraSelection.setString(camera2.getName());
            } else if (joy1.getTriggerReleased()) {
                System.out.println("Setting camera 1");
-               NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection").setString(camera1.getName());
+               cameraSelection.setString(camera1.getName());
            }
        }
 
@@ -36,20 +39,25 @@ If you're interested in just switching what the driver sees, and are using Smart
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
        frc::Joystick joy1{0};
-       bool prevTrigger = false;
-       void RobotInit() override {
+
+       nt::NetworkTableEntry cameraSelection;
+
+       void Robot::RobotInit() 
+       {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
+
+         cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
        }
-       void TeleopPeriodic() override {
-         if (joy1.GetTrigger() && !prevTrigger) {
-           printf("Setting camera 2\n");
-           nt::NetworkTableInstance::GetDefault().GetTable("")->PutString("CameraSelection", camera2.GetName());
-         } else if (!joy1.GetTrigger() && prevTrigger) {
-           printf("Setting camera 1\n");
-           nt::NetworkTableInstance::GetDefault().GetTable("")->PutString("CameraSelection", camera1.GetName());
+
+       void Robot::TeleopPeriodic() {
+         if (joy1.GetTriggerPressed()) {
+           printf("Setting Camera 2\n");
+           cameraSelection.SetString(camera2.GetName());
+         } else if (joy1.GetTriggerReleased()) {
+           printf("Setting Camera 1\n");
+           cameraSelection.SetString(camera1.GetName());
          }
-         prevTrigger = joy1.GetTrigger();
        }
 
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
