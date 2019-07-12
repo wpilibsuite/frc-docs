@@ -12,14 +12,14 @@ Constructing a Servo object
 
 .. tabs::
 
+    .. code-tab:: java
+
+        Servo exampleServo = new Servo(1);
+
     .. code-tab:: c++
 
         Servo *exampleServo = new Servo(1);
 
-
-    .. code-tab:: java
-
-        Servo exampleServo = new Servo(1);
 
 
 A servo object is constructed by passing a channel.
@@ -27,16 +27,16 @@ Setting Servo Values
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        exampleServo->Set(.5);
-        exampleServo->SetAngle(75);
-
-
     .. code-tab:: java
 
         exampleServo.set(.5);
         exampleServo.setAngle(75);
+
+    .. code-tab:: c++
+
+        exampleServo->Set(.5);
+        exampleServo->SetAngle(75);
+        
 
 
 There are two methods of setting servo values in WPILib:

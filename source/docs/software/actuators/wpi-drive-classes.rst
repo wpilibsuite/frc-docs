@@ -130,6 +130,13 @@ The Motor Safety interface of speed controllers can be interacted with by the us
 
 .. tabs::
 
+    .. code-tab:: java
+
+        exampleJaguar.setSafetyEnabled(true);
+        exampleJaguar.setSafetyEnabled(false);
+        exampleJaguar.setExpiration(.1);
+        exampleJaguar.feed()
+
     .. code-tab:: c++
 
         exampleJaguar->SetSafetyEnabled(true);
@@ -137,12 +144,6 @@ The Motor Safety interface of speed controllers can be interacted with by the us
         exampleJaguar->SetExpiration(.1);
         exampleJaguar->Feed();
 
-    .. code-tab:: java
-
-        exampleJaguar.setSafetyEnabled(true);
-        exampleJaguar.setSafetyEnabled(false);
-        exampleJaguar.setExpiration(.1);
-        exampleJaguar.feed()
 
 
 By default all RobotDrive objects enable Motor Safety.
@@ -177,6 +178,13 @@ as so:
 
 .. tabs::
 
+    .. code-tab:: java
+
+        Spark m_left = new Spark(1);
+        m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
+        Spark m_right = new Spark(2);
+        DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+
     .. code-tab:: c++
 
         class Robot {
@@ -186,12 +194,7 @@ as so:
                 m_left->SetInverted(true); // if you want to invert motor outputs, you must do so here
                 frc::DifferentialDrive m_drive{m_left, m_right};
 
-    .. code-tab:: java
 
-        Spark m_left = new Spark(1);
-        m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
-        Spark m_right = new Spark(2);
-        DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
 Multi-Motor DifferentialDrive with SpeedControllerGroups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,6 +208,20 @@ controllers and pass them all into the SpeedController group
 constructor (it takes an arbitrary number of inputs).
 
 .. tabs::
+
+    .. code-tab:: java
+
+        public class Robot
+        {
+            Spark m_frontLeft = new Spark(1);
+            Spark m_rearLeft = new Spark(2);
+            m_frontLeft.setInverted(true);
+            SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
+
+            Spark m_frontRight = new Spark(3);
+            Spark m_rearRight = new Spark(4);
+            SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
+            DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
     .. code-tab:: c++
 
@@ -223,19 +240,7 @@ constructor (it takes an arbitrary number of inputs).
 
                 frc::DifferentialDrive m_drive{m_left, m_right};
 
-    .. code-tab:: java
 
-        public class Robot
-        {
-            Spark m_frontLeft = new Spark(1);
-            Spark m_rearLeft = new Spark(2);
-            m_frontLeft.setInverted(true);
-            SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
-
-            Spark m_frontRight = new Spark(3);
-            Spark m_rearRight = new Spark(4);
-            SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
-            DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
 Drive Modes
 ^^^^^^^^^^^
@@ -284,6 +289,14 @@ Joystick construction.
 
 .. tabs::
 
+    .. code-tab:: java
+
+        public void teleopPeriodic() {
+            myDrive.tankDrive(leftStick.getY(), rightStick.getY());
+            myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
+            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.GetButton(1));
+        }
+
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
@@ -292,10 +305,4 @@ Joystick construction.
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
 
-    .. code-tab:: java
 
-        public void teleopPeriodic() {
-            myDrive.tankDrive(leftStick.getY(), rightStick.getY());
-            myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
-            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.GetButton(1));
-        }
