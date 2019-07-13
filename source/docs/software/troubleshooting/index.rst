@@ -25,3 +25,7 @@ Troubleshooting
 .. toctree::
   :maxdepth: 1
   :caption: At the Event
+
+  at-the-event/ip-networking-at-the-event
+  at-the-event/troubleshooting-dashboard-connectivity
+  at-the-event/programming-radios-for-fms-offseason
