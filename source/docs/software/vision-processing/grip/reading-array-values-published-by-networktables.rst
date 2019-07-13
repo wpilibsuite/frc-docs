@@ -58,12 +58,11 @@ Writing a program to access the keys
 
       std::shared_ptr<NetworkTable> table;
 
-      void Robot::RobotInit()
-      {
+      void Robot::RobotInit() override {
         table = NetworkTable::GetTable("GRIP/myContoursReport");
       }
 
-      void Robot::TeleopPeriodic() {
+      void Robot::TeleopPeriodic() override {
         std::cout << "Areas: ";
 
         std::vector<double> arr = table->GetEntry("area").GetDoubleArray(std::vector<double>());

@@ -42,15 +42,14 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        nt::NetworkTableEntry cameraSelection;
 
-       void Robot::RobotInit()
-       {
+       void Robot::RobotInit() override {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
 
          cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
        }
 
-       void Robot::TeleopPeriodic() {
+       void Robot::TeleopPeriodic() override {
          if (joy1.GetTriggerPressed()) {
            std::cout << "Setting Camera 2" << std::endl;
            cameraSelection.SetString(camera2.GetName());
@@ -96,12 +95,12 @@ If you're using some other dashboard, you can change the camera used by the came
        cs::VideoSink server;
        frc::Joystick joy1{0};
        bool prevTrigger = false;
-       void RobotInit() {
+       void RobotInit() override {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
          server = frc::CameraServer::GetInstance()->GetServer();
        }
-       void TeleopPeriodic() {
+       void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
            std::cout << "Setting Camera 2" << std::endl;
            server.SetSource(camera2);
@@ -154,14 +153,14 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        cs::VideoSink server;
        frc::Joystick joy1{0};
        bool prevTrigger = false;
-       void RobotInit() {
+       void RobotInit() override {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
          server = frc::CameraServer::GetInstance()->GetServer();
          camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
          camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
        }
-       void TeleopPeriodic() {
+       void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
            std::cout << "Setting Camera 2" << std::endl;
            server.SetSource(camera2);
