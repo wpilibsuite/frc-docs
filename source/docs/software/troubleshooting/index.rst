@@ -8,6 +8,7 @@ Troubleshooting
   general/robot-preemptive-troubleshooting
   general/status-light-quick-reference
   general/driver-station-log-file-viewer
+  general/roborio-brownout-and-understanding-current-draw
 
 .. toctree::
   :maxdepth: 1
