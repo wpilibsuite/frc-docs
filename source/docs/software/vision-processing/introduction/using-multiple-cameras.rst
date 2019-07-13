@@ -100,6 +100,7 @@ If you're using some other dashboard, you can change the camera used by the came
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
          server = frc::CameraServer::GetInstance()->GetServer();
        }
+
        void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
            std::cout << "Setting Camera 2" << std::endl;
@@ -160,6 +161,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
          camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
          camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
        }
+
        void TeleopPeriodic() override {
          if (joy1.GetTrigger() && !prevTrigger) {
            std::cout << "Setting Camera 2" << std::endl;
