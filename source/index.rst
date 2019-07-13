@@ -54,6 +54,9 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/networking/networking-basics
    docs/networking/ip-configurations
    docs/networking/roborio-network-troubleshooting
+   docs/networking/windows-firewall-configuration
+   docs/networking/measuring-bandwidth-usage
+   docs/networking/om5p-ac-radio-modification
 
 .. toctree::
    :maxdepth: 1
