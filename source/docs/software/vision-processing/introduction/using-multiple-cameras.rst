@@ -95,6 +95,7 @@ If you're using some other dashboard, you can change the camera used by the came
        cs::VideoSink server;
        frc::Joystick joy1{0};
        bool prevTrigger = false;
+       
        void RobotInit() override {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
