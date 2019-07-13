@@ -27,18 +27,19 @@ Prior to departing for the competition
    e. A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 and replace it with a SSD.
    f. Updated to the current release of Windows 10. Windows 10 is the most common OS now seen at competitions, so bugs are more likely to be found than on Windows.
 
-5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Updatesettings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
+5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
 6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
-7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving.  Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("crapware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
+7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("crapware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
 8. Avoid managed Windows 10 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
 9. Laptop battery / power
 
    a. Turn off Put the computer to sleep in your power plan for both battery and powered operation.
    b. Turn off USB Selective Suspend:
 
-      i.Right click on the battery/charging icon in the tray, then select Power Options.
-      ii.Edit the plan settings of your power plan.
-      iii.Click the Change advanced power settings link. iv.Scroll down in the advanced settings and disable the USB selective suspendsetting for both Battery and Plugged in.
+      i. Right click on the battery/charging icon in the tray, then select Power Options.
+      ii. Edit the plan settings of your power plan.
+      iii. Click the Change advanced power settings link.
+      iv. Scroll down in the advanced settings and disable the USB selective suspendsetting for both Battery and Plugged in.
 
    c. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
 
@@ -52,7 +53,7 @@ At the competition
 1. Turn off Windows firewall using these instructions.
 2. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by disabling it in the Adapter Settings control panel.
 3. Charge the driver station when it’s in the pit.
-4. Disable / remove login passwords or ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.
+4. Remove login passwords or ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.
 5. Ensure your LabView code is deployed permanently and set to "run as startup", using the instructions in the LabView Tutorial. If you must deploy code every time you turn the robot on, you’re doing it wrong.
 6. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
 7. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
