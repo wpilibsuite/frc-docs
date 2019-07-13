@@ -22,7 +22,7 @@ Prior to departing for the competition
       ii. Use an Ethernet port saver to make your Ethernet connection. This extends the life of the port on the laptop. This is particularly important if you have a consumer-grade laptop with a hinged Ethernet port.
       iii. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand. Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
       iv. 2 USB ports minimum
-      
+
    d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
    e. A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 and replace it with a SSD.
    f. Updated to the current release of Windows 10. Windows 10 is the most common OS now seen at competitions, so bugs are more likely to be found than on Windows.
