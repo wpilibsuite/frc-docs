@@ -18,16 +18,14 @@ way to see a solenoid's state is via the small red LED (which indicates
 if the valve is "on" or not). Some pneumatic solenoids can be actuated
 by a small button on the solenoid itself.
 
-Single acting solenoids apply or vent pressure from a single output
-port. They are typically used either when an external force will provide
-the return action of the cylinder (spring, gravity, separate mechanism)
-or in pairs to act as a double solenoid. A double solenoid switches air
-flow between two output ports (many also have a center position where
-neither output is vented or connected to the input). Double solenoid
-valves are commonly used when you wish to control both the extend and
-retract actions of a cylinder using air pressure. Double solenoid valves
-have two electrical inputs which connect back to two separate channels
-on the solenoid breakout.
+There are two types of pneumatic solenoids; Single and Double acting.
+One difference between the two is what happens in their unpowered state.
+Single acting solenoids return to their default state, while double
+acting solenoids will maintain their most recently commanded state.
+Another difference between the two is that single acting solenoids only
+connect to a single PCM channel, where as double acting solenoids have
+two electrical inputs which connect back to two separate channels
+on the PCM.
 
 PCM Modules are identified by their CAN Device ID. The default CAN ID
 for PCMs is 0. If using a single PCM on the bus it is recommended to
