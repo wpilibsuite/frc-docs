@@ -93,7 +93,7 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
         exampleDouble.set(kReverse);
 
    .. code-tab:: c++
-   
+
         frc::DoubleSolenoid exampleDouble {1, 2};
         frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
 
