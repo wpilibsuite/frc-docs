@@ -5,16 +5,16 @@ Solenoid control
 ----------------
 
 FRC teams use solenoids to preform a variety of tasks, from shifting
-gearboxes to operating robot mechanisms. There are two types of solenoids 
-legal in FRC; electrical (the wattage of which is limited by each years 
+gearboxes to operating robot mechanisms. There are two types of solenoids
+legal in FRC; electrical (the wattage of which is limited by each years
 game manual); and pneumatic using compressed air. A solenoid is a valve
 used to electronically switch either an electromagnet or pressurised air
 line "on" or "off". This article focuses on pneumatic solenoids.
 For more information on solenoids, see `this wikipedia
-article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Pneumatic 
-Solenoids are controlled by a robot's Pneumatics Control Module, or PCM, 
-which is in turn connected to the robot's roboRIO via CAN. The easiest 
-way to see a solenoid's state is via the small red LED (which indicates 
+article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Pneumatic
+Solenoids are controlled by a robot's Pneumatics Control Module, or PCM,
+which is in turn connected to the robot's roboRIO via CAN. The easiest
+way to see a solenoid's state is via the small red LED (which indicates
 if the valve is "on" or not). Some pneumatic solenoids can be actuated
 by a small button on the solenoid itself.
 
@@ -64,8 +64,6 @@ disable the solenoid output.
 
         exampleSolenoid.Set(true);
         exampleSolenoid.Set(false);
-
-
 
 Double Solenoids in WPILib
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
