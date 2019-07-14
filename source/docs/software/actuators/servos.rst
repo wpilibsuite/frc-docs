@@ -36,8 +36,6 @@ Setting Servo Values
 
         exampleServo->Set(.5);
         exampleServo->SetAngle(75);
-        
-
 
 There are two methods of setting servo values in WPILib:
 
