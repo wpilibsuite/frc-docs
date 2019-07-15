@@ -2,6 +2,12 @@ FRC LabVIEW Programming
 =======================
 
 .. toctree::
+  :maxepth: 1
+  :caption: LabVIEW Setup
+
+  setup/labview-setup
+
+.. toctree::
   :maxdepth: 1
   :caption: Creating Robot Programs
 
