@@ -15,21 +15,22 @@ Adding the current state of a Sendable class to NetworkTables is as simple as ad
 
 .. tabs::
 
-    .. code-tab:: c++
+  .. code-tab:: java
 
-        frc::SmartDashboard::PutData(m_SendableClass)
-        frc::SmartDashboard::PutData("my sendable", m_SendableClass)
+      SmartDashboard.putData(m_SendableClass)
+      SmartDashboard.putData("my sendable", m_SendableClass)
 
-        frc::ShuffleboardTab& m_tab = frc::Shuffleboard::GetTab("tabName");
-        m_tab.Add("Motor", m_Motor);
+      ShuffleboardTab m_tab = Shuffleboard.getTab("tabName")
+      m_tab.add("Motor", m_Motor);
 
-    .. code-tab:: java
+  .. code-tab:: c++
 
-        SmartDashboard.putData(m_SendableClass)
-        SmartDashboard.putData("my sendable", m_SendableClass)
+      frc::SmartDashboard::PutData(m_SendableClass)
+      frc::SmartDashboard::PutData("my sendable", m_SendableClass)
 
-        ShuffleboardTab m_tab = Shuffleboard.getTab("tabName")
-        m_tab.add("Motor", m_Motor);
+      frc::ShuffleboardTab& m_tab = frc::Shuffleboard::GetTab("tabName");
+      m_tab.Add("Motor", m_Motor);
+
 
 Interacting with Sendable classes
 ---------------------------------
@@ -59,44 +60,46 @@ To expose information about a class to users over NetworkTables, one must create
 
 .. tabs::
 
-      .. code-tab:: c++
+  .. code-tab:: java
 
-        void MySubsystem::InitSendable(SendableBuilder& builder) {
+      public class MySubsystem extends Subsystem {
 
-            builder.AddDoubleProperty("IntakeSpeed",
-                    [=]() { return
-                        myMotor.Get(); },
-                    [=](double value) {
-                        myMotor.Set(value);
-                });
+          Spark spark = new Spark(1);
+          Solenoid solenoid = new Solenoid(0);
 
-                Subsystem.InitSendable(builder);
+          @Override
+          public void initSendable(SendableBuilder builder) {
 
-        }
+             builder.addDoubleProperty("IntakeSpeed", spark::get, (value) -> spark.set(value));
 
-    .. code-tab:: java
+             // this call sets up Command specific configuration, including calling setSmartDashboardType("Subsystem")
+             // to let Shuffleboard know to treat this as such.
+             super.initSendable(builder);
+          }
 
-        public class MySubsystem extends Subsystem {
+      }
 
-            Spark spark = new Spark(1);
-            Solenoid solenoid = new Solenoid(0);
+  .. code-tab:: c++
 
-            @Override
-            public void initSendable(SendableBuilder builder) {
+    void MySubsystem::InitSendable(SendableBuilder& builder) {
 
-               builder.addDoubleProperty("IntakeSpeed", spark::get, (value) -> spark.set(value));
+        builder.AddDoubleProperty("IntakeSpeed",
+                [=]() { return
+                    myMotor.Get(); },
+                [=](double value) {
+                    myMotor.Set(value);
+            });
 
-               // this call sets up Command specific configuration, including calling setSmartDashboardType("Subsystem")
-               // to let Shuffleboard know to treat this as such.
-               super.initSendable(builder);
-            }
+            Subsystem.InitSendable(builder);
 
-        }
+    }
+
+
 
 Creating a new Sendable class with SendableBuilder
 --------------------------------------------------
 
-Creating an entirely new :code:`Sendable` class follows a similar pattern to the extending the implementation present in subclasses of WPI classes such as :code:`Command` and :code:`Subsystem` as presented above. The main difference is that when creating a new class, teams must explicitly define the Sendable's type. This allows teams to create custom wigets for Shuffleboard to display data. This example shows a data class which holds boolean and double values about an arm's state.
+Creating an entirely new :code:`Sendable` class follows a similar pattern to the extending the implementation present in subclasses of WPI classes such as :code:`Command` and :code:`Subsystem` as presented above. The main difference is that when creating a new class, teams must explicitly define the Sendable's type. This allows teams to create custom widgets for Shuffleboard to display data. This example shows a data class which holds a reference to the ArmSubsystem and provides details about an arm's state.
 
 .. tabs::
 
@@ -104,19 +107,17 @@ Creating an entirely new :code:`Sendable` class follows a similar pattern to the
 
         public class ArmState implement Sendable {
 
-            double armAngle;
-            boolean intakeOpen;
+            ArmSubsystem armSubsystem;
 
-            public ArmState(double angle, boolean intakeOpen) {
-                this.armAngle = angle;
-                this.intakeOpen = intakeOpen;
+            public ArmState(ArmSubsystem subsystem) {
+                this.armSubsystem = subsystem;
             }
 
             public void initSendable(SendableBuilder builder) {
 
                 builder.setSmartDashboardType("ArmState");
-                builder.addDoubleProperty("Angle", () -> armAngle, null);
-                builder.addBooleanProperty("IsOpen", () -> intakeOpen, null);
+                builder.addDoubleProperty("Angle", () -> armSubsystem::getAngle, (value) -> armSubsystem:setAngle(value));
+                builder.addBooleanProperty("IsOpen", () -> armSubsystem::isOpen, (value) -> armSubsystem:setClaw(value));
 
                 super.initSendable(builder);
             }
