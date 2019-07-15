@@ -14,9 +14,9 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
 
    docs/software/getting-started/index
    docs/software/wpilib-overview/index
-   docs/software/driverstation/index
    docs/software/getting-started-with-benchtop/index
    docs/software/labview/index
+   docs/software/driverstation/index
    docs/software/roborio-info/index
    docs/software/actuators/index
    docs/software/sensors/index
