@@ -34,7 +34,7 @@ Adding the current state of a Sendable class to NetworkTables is as simple as ad
 Interacting with Sendable classes
 ---------------------------------
 
-Sendable classes are published via NetworkTables for users to view using WPILIb through programs such as OutlineViewer, Shuffleboard and SmartDashboard. These programs allow users to not only view the current state, such as solenoid states, motor output, or PIDSubsystem/PIDCommand's current PID constants, but to actually modify or send data the other direction to the RoboRIO to do things like manually start and stop commands. 
+Sendable classes are published via NetworkTables for users to view using WPILIb through programs such as OutlineViewer, Shuffleboard and SmartDashboard. These programs allow users to not only view the current state, such as solenoid states, motor output, or PIDSubsystem/PIDCommand's current PID constants, but to actually modify or send data the other direction to the RoboRIO to do things like manually start and stop commands.
 
 What is SendableBuilder?
 ------------------------
@@ -50,7 +50,7 @@ SendableBuilder (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/
 - String arrays
 - NetworkTableValues
 
-The passed SendableBuilder is also used to set tye type of system being displayed using the :code:`setSmartDashboardType` method. This allows users to write custom widgets to display their custom data type. Existing implementations of this include :code:`Command` and WPI's :code:`DifferentialDrive` classes. SendableBuilder can also be used to set the actuator flag on or off, add functions to run to set the Sendable into a safe state, set the type of the Sendable displayed on SmartDashboard, or functions to run to update the network table for things other than properties. If a Sendable is configured as an actuator, users will be able to control it directly through Shuffleboard, SmartDashboard or OutlineViewer when the robot is enabled in Test mode.
+The passed SendableBuilder is also used to set the type of system being displayed using the :code:`setSmartDashboardType` method. This allows users to write custom widgets to display their custom data type. Existing implementations of this include :code:`Command` and WPI's :code:`DifferentialDrive` classes. SendableBuilder can also be used to set the actuator flag on or off, add functions to run to set the Sendable into a safe state, set the type of the Sendable displayed on SmartDashboard, or functions to run to update the network table for things other than properties. If a Sendable is configured as an actuator, users will be able to control it directly through Shuffleboard, SmartDashboard or OutlineViewer when the robot is enabled in Test mode.
 
 Adding Data to a Subsystem or other subclass of a Sendable
 ----------------------------------------------------------
@@ -63,7 +63,7 @@ To expose information about a class to users over NetworkTables, one must create
 
         void MySubsystem::InitSendable(SendableBuilder& builder) {
 
-            builder.AddDoubleProperty(".intakeSpeed",
+            builder.AddDoubleProperty("IntakeSpeed",
                     [=]() { return
                         myMotor.Get(); },
                     [=](double value) {
@@ -84,7 +84,7 @@ To expose information about a class to users over NetworkTables, one must create
             @Override
             public void initSendable(SendableBuilder builder) {
 
-               builder.addDoubleProperty(".intakeSpeed", spark::get, (value) -> spark.set(value));
+               builder.addDoubleProperty("IntakeSpeed", spark::get, (value) -> spark.set(value));
 
                // this call sets up Command specific configuration, including calling setSmartDashboardType("Subsystem")
                // to let Shuffleboard know to treat this as such.
@@ -110,17 +110,17 @@ Creating an entirely new :code:`Sendable` class follows a similar pattern to the
 
             final double armAngle;
             final boolean intakeOpen;
-            
+
             public ArmState(double angle, boolean intakeOpen) {
                 this.armAngle = angle;
                 this.intakeOpen = intakeOpen;
             }
 
             public void initSendable(SendableBuilder builder) {
-                
+
                 builder.setSmartDashboardType("ArmState");
-                builder.addDoubleProperty(".angle", () -> armAngle, null);
-                builder.addBooleanProperty(".isOpen", () -> intakeOpen, null);
+                builder.addDoubleProperty("Angle", () -> armAngle, null);
+                builder.addBooleanProperty("IsOpen", () -> intakeOpen, null);
 
                 super.initSendable(builder);
             }

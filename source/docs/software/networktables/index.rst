@@ -9,3 +9,4 @@ NetworkTables
    client-side-program
    multiple-instances
    listening-for-subtable-creation
+   creating-sendable-classes
