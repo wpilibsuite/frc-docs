@@ -6,7 +6,7 @@ This document was created by Steve Peterson, with contributions from Juan Chong,
 
 Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.
 
-Prior to departing for the competition
+Prior To Departing For The Competition
 --------------------------------------
 
 1. Dedicate a laptop to be used solely as a driver station. Many teams do. A dedicated machine allows you manage the configuration for one goal – being ready to compete at the field. Dedicated means no other software except the FRC-provided Driver Station software and associated Dashboard installed or running.
@@ -47,7 +47,7 @@ Prior to departing for the competition
 11. Add retention/strain relief to prevent your joystick/gamepad controllers from falling on the floor and/or yanking on the USB ports. This helps prevent issues with intermittent controller connections.
 12. The Windows user account you use to drive must be a member of the Administrator group.
 
-At the competition
+At The Competition
 ------------------
 
 1. Turn off Windows firewall using these instructions.
@@ -58,7 +58,7 @@ At the competition
 6. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
 7. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
 
-Before each match
+Before Each Match
 -----------------
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
