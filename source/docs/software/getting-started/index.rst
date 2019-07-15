@@ -12,9 +12,7 @@ Getting Started
    windows-setup
    macos-setup
    linux-setup
-   frc-update-suite
    3rd-party-libraries
    imaging-your-roborio
    imaging-your-classmate
    radio-programming
-   driver-station

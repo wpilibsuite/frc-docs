@@ -17,7 +17,7 @@ LabVIEW FRC
 
 .. image:: images/control-system-software/labview-frc.png
 
-LabVIEW FRC, based on National Instruments’ LabVIEW 2018, is the development environment for LabVIEW, one of the three officially supported languages for programming an FRC robot. LabVIEW is a graphical, dataflow-driven language. LabVIEW programs consist of a collection of icons, called VIs, wired together with wires which pass data between the VIs. The LabVIEW FRC installer is distributed on a DVD found in the Kickoff Kit of Parts and is also available for download (see installation instructions page linked below). Instructions for installing the FRC libraries (package also includes Driver Station and Utilities) can be found :doc:`here <frc-update-suite>`. A guide to getting started with the LabVIEW FRC software, including installation instructions can be found :doc:`here <labview-setup>`.
+LabVIEW FRC, based on National Instruments’ LabVIEW 2018, is the development environment for LabVIEW, one of the three officially supported languages for programming an FRC robot. LabVIEW is a graphical, dataflow-driven language. LabVIEW programs consist of a collection of icons, called VIs, wired together with wires which pass data between the VIs. The LabVIEW FRC installer is distributed on a DVD found in the Kickoff Kit of Parts and is also available for download (see installation instructions page linked below). Instructions for installing the FRC libraries (package also includes Driver Station and Utilities) can be found :ref:`here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. A guide to getting started with the LabVIEW FRC software, including installation instructions can be found :doc:`here <labview-setup>`.
 
 FRC Robot Simulator
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ FRC Driver Station Powered by NI LabVIEW
 
 .. image:: images/control-system-software/frc-driver-station.png
 
-The FRC Driver Station Powered by NI LabVIEW is the only software allowed to be used for the purpose of controlling the state of the robot during competition. This software contains the code necessary to send data to your robot from a variety of input devices such as joysticks, gamepads, and customizable IO boards. It also contains a number of tools used to help troubleshoot robot issues such as status indicators and log file creation. Instructions for installing the FRC Driver Station Powered by NI LabVIEW (included in the FRC Update Suite) can be found :doc:`here <frc-update-suite>`. More information about the FRC Driver Station Powered by NI LabVIEW can be found :doc:`here <driver-station>`.
+The FRC Driver Station Powered by NI LabVIEW is the only software allowed to be used for the purpose of controlling the state of the robot during competition. This software contains the code necessary to send data to your robot from a variety of input devices such as joysticks, gamepads, and customizable IO boards. It also contains a number of tools used to help troubleshoot robot issues such as status indicators and log file creation. Instructions for installing the FRC Driver Station Powered by NI LabVIEW (included in the FRC Update Suite) can be found :ref:`here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Driver Station Powered by NI LabVIEW can be found :ref:`here <docs/software/driverstation/driver-station:FRC Driver Station Powered by NI LabVIEW>`.
 
 FRC LabVIEW Dashboard
 ---------------------
@@ -47,7 +47,7 @@ FRC LabVIEW Dashboard
 
 .. todo:: port article, see https://github.com/wpilibsuite/frc-docs/issues/118
 
-The FRC LabVIEW Dashboard is the default dashboard program installed with, and automatically launched by, the FRC Driver Station. The purpose of the Dashboard is to provide feedback about the operation of the robot. The FRC Default Dashboard serves as a an example of the types of feedback teams may want from their robot. It includes a tabbed display that can switch between viewing an image from a camera on the robot or a display of NetworkTables variables, a display of information regarding the joysticks and drive motors, an indicator of the robot IP and battery voltage, and a second tabbed display that can switch between examples of custom indicators and controls, a test tab for use with the Driver Station Test Mode and a Checklist tab that teams can use to enter a custom checklist to complete before each match. The FRC Default Dashboard is included in the FRC Update Suite. Installation instructions can be found :doc:`here <frc-update-suite>`. More information about the FRC Default Dashboard software can be found here.
+The FRC LabVIEW Dashboard is the default dashboard program installed with, and automatically launched by, the FRC Driver Station. The purpose of the Dashboard is to provide feedback about the operation of the robot. The FRC Default Dashboard serves as a an example of the types of feedback teams may want from their robot. It includes a tabbed display that can switch between viewing an image from a camera on the robot or a display of NetworkTables variables, a display of information regarding the joysticks and drive motors, an indicator of the robot IP and battery voltage, and a second tabbed display that can switch between examples of custom indicators and controls, a test tab for use with the Driver Station Test Mode and a Checklist tab that teams can use to enter a custom checklist to complete before each match. The FRC Default Dashboard is included in the FRC Update Suite. Installation instructions can be found :ref:`here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Default Dashboard software can be found here.
 
 SmartDashboard
 --------------
@@ -77,7 +77,7 @@ FRC roboRIO Imaging Tool
 
 .. image:: images/control-system-software/frc-roborio-imaging-tool.png
 
-The FRC roboRIO Imaging Tool is a software tool used to format and setup an roboRIO-FRC device for use in FRC. The tool detects any roboRIO device on the network, reports the current MAC, name, IP and Image version. The tool allows the user to configure the team number, set options including Console Out and whether an applications runs on Startup, and install the latest software image on the device. The FRC roboRIO Imaging Tool is installed as part of the FRC Update Suite. Installation instructions can be found :doc:`here <frc-update-suite>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here <imaging-your-roborio>`.
+The FRC roboRIO Imaging Tool is a software tool used to format and setup an roboRIO-FRC device for use in FRC. The tool detects any roboRIO device on the network, reports the current MAC, name, IP and Image version. The tool allows the user to configure the team number, set options including Console Out and whether an applications runs on Startup, and install the latest software image on the device. The FRC roboRIO Imaging Tool is installed as part of the FRC Update Suite. Installation instructions can be found :ref:`here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here <imaging-your-roborio>`.
 
 CTRE Toolsuite
 --------------
@@ -93,7 +93,7 @@ Setup Axis Camera
 
 .. image:: images/control-system-software/axis-camera-setup.png
 
-The Setup Axis Camera utility is a LabVIEW program used to configure an Axis 206, M1011 or M1013 camera for use on the robot. The tool takes a factory reset camera connected directly to the computer and configures the IP, username and password, anonymous access, and default framerate and compression (for use with the SmartDashboard or other access methods). The Setup Axis Camera tool is installed as part of the FRC Update Suite. Installation instructions can be found :doc:`here <frc-update-suite>`. Instructions for using the tool to configure the camera are located :ref:`here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`.
+The Setup Axis Camera utility is a LabVIEW program used to configure an Axis 206, M1011 or M1013 camera for use on the robot. The tool takes a factory reset camera connected directly to the computer and configures the IP, username and password, anonymous access, and default framerate and compression (for use with the SmartDashboard or other access methods). The Setup Axis Camera tool is installed as part of the FRC Update Suite. Installation instructions can be found :ref:`here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. Instructions for using the tool to configure the camera are located :ref:`here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`.
 
 FRC Driver Station Log Viewer
 -----------------------------
@@ -102,7 +102,7 @@ FRC Driver Station Log Viewer
 
 .. todo:: add article, see https://github.com/wpilibsuite/frc-docs/issues/120 and https://github.com/wpilibsuite/frc-docs/issues/118
 
-The FRC Driver Station Log Viewer is a LabVIEW program used to view logs created by the FRC Driver Station. These logs contain information such as battery voltage, trip time, CPU% and robot mode, as well as events such as joystick removal. The FRC Driver Station Log Viewer is included in the FRC Update Suite. Installation instructions can be found `here <frc-update-suite>`. More information about the FRC Driver Station Log Viewer and understanding the logs can be found here.
+The FRC Driver Station Log Viewer is a LabVIEW program used to view logs created by the FRC Driver Station. These logs contain information such as battery voltage, trip time, CPU% and robot mode, as well as events such as joystick removal. The FRC Driver Station Log Viewer is included in the FRC Update Suite. Installation instructions can be found `here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Driver Station Log Viewer and understanding the logs can be found here.
 
 RobotBuilder
 ------------
