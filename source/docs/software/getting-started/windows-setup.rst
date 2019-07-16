@@ -4,7 +4,7 @@ Windows Offline Install Guide
 Offline Installer
 ^^^^^^^^^^^^^^^^^
 
-.. note:: Windows 7: You must install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of VSCode for FRC. The NI Update installer will automatically install the proper version of .NET. The stand alone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
+.. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of VSCode for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
 
 Download the appropriate installer for your Windows installation (32 bit or 64 bit) `from GitHub <https://github.com/wpilibsuite/allwpilib/releases>`__. If you're not sure, open Control Panel -> System to check.
 
