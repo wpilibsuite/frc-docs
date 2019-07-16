@@ -42,14 +42,14 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        nt::NetworkTableEntry cameraSelection;
 
-       void Robot::RobotInit() override {
+       void RobotInit() override {
          camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
          camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
 
          cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
        }
 
-       void Robot::TeleopPeriodic() override {
+       void TeleopPeriodic() override {
          if (joy1.GetTriggerPressed()) {
            std::cout << "Setting Camera 2" << std::endl;
            cameraSelection.SetString(camera2.GetName());
