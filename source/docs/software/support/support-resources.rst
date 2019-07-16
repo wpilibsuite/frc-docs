@@ -10,10 +10,8 @@ In addition to this site there are a few other places teams may check for docume
 
 -  `NI FRC Community Documents Section <https://decibel.ni.com/content/community/academic/student_competitions/frc?view=documents>`__
 -  `USFIRST.org Technical Resources Page <http://www.usfirst.org/roboticsprograms/frc/2013-Technical-Resources>`__
--  `VEXPro Jaguar Page <http://www.vexrobotics.com/vexpro/motors-electronics/217-3367.html>`__
--  `CTRE Product Pages <http://www.ctr-electronics.com/control-system.html>`__
+-  `CTRE Product Pages <https://www.ctr-electronics.com/control-system.html>`__
 
-People also often ask technical questions in the `technical section on ChiefDelphi <https://www.chiefdelphi.com/c/technical>`__
 
 Forums
 ------
@@ -21,9 +19,8 @@ Forums
 Stuck? Have a question not answered by the documentation? Official Support is provided on these forums:
 
 -  `NI FRC Community Discussion Section <https://decibel.ni.com/content/community/academic/student_competitions/frc?view=discussions>`__ (roboRIO, LabVIEW and Driver Station software questions)
--  `USFIRST.org Control System Forum <http://forums.usfirst.org/forumdisplay.php?f=1338>`__ (wiring, hardware and Driver Station questions)
--  `USFIRST.org Programming Forum <http://forums.usfirst.org/forumdisplay.php?f=1332>`__\ (programming questions for C++, Java, or LabVIEW)
-- `Technical section on ChiefDelphi <https://www.chiefdelphi.com/c/technical>`__ (any FRC technical question)
+-  `USFIRST.org Control System Forum <https://forums.usfirst.org/forumdisplay.php?f=1338>`__ (wiring, hardware and Driver Station questions)
+-  `USFIRST.org Programming Forum <https://forums.usfirst.org/forumdisplay.php?f=1332>`__\ (programming questions for C++, Java, or LabVIEW)
 
 NI Phone Support
 ----------------
