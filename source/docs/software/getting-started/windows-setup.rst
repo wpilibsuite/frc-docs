@@ -19,7 +19,7 @@ If you select **All Users**, you will need to accept the security prompt that ap
 Download VSCode
 ^^^^^^^^^^^^^^^
 
-For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click **Select/Download VSCode** to either Download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click **Open Downloaded File** to be taken to the zip file on the file system to copy along with the Offline Installer.
+For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click **Select/Download VSCode** to either download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click **Open Downloaded File** to be taken to the zip file on the file system to copy along with the Offline Installer.
 
 .. image:: images/windows/DownloadVSCode.png
 
