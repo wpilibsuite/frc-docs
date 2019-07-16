@@ -1,7 +1,7 @@
 Windows Firewall Configuration
 ==============================
 
-Many of the programming tools used in FRC need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs. This document describes procedures for Windows 7, but Windows 8 should be similar.
+Many of the programming tools used in FRC need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs. This document describes procedures for Windows 7, but future versions should be similar.
 
 Disabling Windows Firewall
 --------------------------
