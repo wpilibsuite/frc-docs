@@ -31,6 +31,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/software/basic-programming/index
    docs/software/advanced-programming/index
    docs/software/troubleshooting/index
+   docs/software/support/support-resources
 
 .. toctree::
    :maxdepth: 1
