@@ -85,4 +85,4 @@ View Bandwidth Usage
 
 .. image:: images/measuring-bandwidth-usage-10.png
 
-Average bandwidth usage, in Megabits/Second is displayed near the bottom of the summary window. The bandwidth cap on the field is 7 Megabits/second.
+Average bandwidth usage, in Megabits/Second is displayed near the bottom of the summary window.
