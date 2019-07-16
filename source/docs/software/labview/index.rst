@@ -2,7 +2,7 @@ FRC LabVIEW Programming
 =======================
 
 .. toctree::
-  :maxepth: 1
+  :maxdepth: 1
   :caption: LabVIEW Setup
 
   setup/labview-setup
