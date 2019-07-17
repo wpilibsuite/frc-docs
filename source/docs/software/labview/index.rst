@@ -3,6 +3,12 @@ FRC LabVIEW Programming
 
 .. toctree::
   :maxdepth: 1
+  :caption: LabVIEW Setup
+
+  setup/labview-setup
+
+.. toctree::
+  :maxdepth: 1
   :caption: Creating Robot Programs
 
   creating-robot-programs/creating-building-and-loading-your-benchtop-test-program
