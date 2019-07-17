@@ -2,6 +2,6 @@ LabVIEW Setup
 =============
 
 .. toctree::
-  :maxdepth: 1
+   :maxdepth: 1
 
-  labview-setup
+   labview-setup
