@@ -11,7 +11,7 @@ Test mode on the robot can be enabled from the Driver Station just like Autonomo
 Adding Test mode code to your robot code
 ----------------------------------------
 
-Adding test mode can be as painless as calling your already written Teleop methods from Test. This will allow you to use the LiveWindow tuning features for classes such as PIDBase and PIDController, as well as PIDSubsystems and PIDCommands, to change PIDF constants and setpoints. Make sure to add your subsystems to SmartDashboard with the .. code-block:: putData(subsystem) and .. code-block:: PutData(subsystem) methods.
+Adding test mode can be as painless as calling your already written Teleop methods from Test. This will allow you to use the LiveWindow tuning features for classes such as PIDBase and PIDController, as well as PIDSubsystems and PIDCommands, to change PIDF constants and setpoints. Make sure to add your subsystems to SmartDashboard with the ``putData(subsystem)`` and ``PutData(subsystem)`` methods.
 
 .. tabs::
 
