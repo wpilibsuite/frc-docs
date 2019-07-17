@@ -1,5 +1,3 @@
-.. _wpi_drive:
-
 Using the WPILib Classes to Drive your Robot
 ======================================================
 

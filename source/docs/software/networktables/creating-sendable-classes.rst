@@ -1,5 +1,3 @@
-.. _creating-sendable-classes:
-
 Using the Sendable interface
 ============================
 
