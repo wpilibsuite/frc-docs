@@ -21,15 +21,15 @@ An :code:`AnalogInput` may be initialized as follows:
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        // Initializes an AnalogInput on port 0
-        frc::AnalogInput analog{0};
-
     .. code-tab:: java
 
         // Initializes an AnalogInput on port 0
         AnalogInput analog = new AnalogInput(0);
+
+    .. code-tab:: c++
+
+        // Initializes an AnalogInput on port 0
+        frc::AnalogInput analog{0};
 
 Oversampling and Averaging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
