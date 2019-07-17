@@ -53,6 +53,17 @@ all be queried from the Compressor object.
 
 .. tabs::
 
+    .. code-tab:: java
+
+        Compressor c = new Compressor(0);
+
+        c.setClosedLoopControl(true);
+        c.setClosedLoopControl(false);
+
+        boolean enabled = c.enabled();
+        boolean pressureSwitch = c.getPressureSwitchValue();
+        double current = c.getCompressorCurrent();
+
     .. code-tab:: c++
 
         Compressor *c = new Compressor(0);
@@ -64,16 +75,7 @@ all be queried from the Compressor object.
         bool pressureSwitch = c->GetPressureSwitchValue();
         double current = c->GetCompressorCurrent();
 
-    .. code-tab:: java
 
-        Compressor c = new Compressor(0);
-
-        c.setClosedLoopControl(true);
-        c.setClosedLoopControl(false);
-
-        boolean enabled = c.enabled();
-        boolean pressureSwitch = c.getPressureSwitchValue();
-        double current = c.getCompressorCurrent();
 
 
 Solenoid control
@@ -120,6 +122,13 @@ disable the solenoid output.
 
 .. tabs::
 
+    .. code-tab:: java
+
+        Solenoid exampleSolenoid = new Solenoid(1);
+
+        exampleSolenoid.set(true);
+        exampleSolenoid.set(false);
+
     .. code-tab:: c++
 
         frc::Solenoid exampleSolenoid {1};
@@ -127,12 +136,7 @@ disable the solenoid output.
         exampleSolenoid.Set(true);
         exampleSolenoid.Set(false);
 
-    .. code-tab:: java
 
-        Solenoid exampleSolenoid = new Solenoid(1);
-
-        exampleSolenoid.set(true);
-        exampleSolenoid.set(false);
 
 Double Solenoids in WPILib
 --------------------------
@@ -145,15 +149,6 @@ or kReverse (reverse channel enabled). Additionally, the PCM CAN ID can
 be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
 
 .. tabs::
-
-   .. code-tab:: c++
-
-        frc::DoubleSolenoid exampleDouble {1, 2};
-        frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
-
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
 
    .. code-tab:: java
 
@@ -169,3 +164,14 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
         exampleDouble.set(kOff);
         exampleDouble.set(kForward);
         exampleDouble.set(kReverse);
+
+   .. code-tab:: c++
+
+        frc::DoubleSolenoid exampleDouble {1, 2};
+        frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
+
+        exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
+        exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
+        exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+
+

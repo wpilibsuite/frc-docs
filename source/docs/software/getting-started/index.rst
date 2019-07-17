@@ -8,7 +8,6 @@ Getting Started
    known-issues
    control-system-software
    offline-installation-preparations
-   labview-setup
    windows-setup
    macos-setup
    linux-setup
