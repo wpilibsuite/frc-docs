@@ -152,7 +152,7 @@ Most web-browsers should be able to utilize the mDNS address to access the roboR
 USB
 ---
 
-If using the USB interface, no network setup is required (you do need the :ref:`docs/software/getting-started/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
+If using the USB interface, no network setup is required (you do need the :ref:`docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
 
 Ethernet/Wireless
 -----------------
