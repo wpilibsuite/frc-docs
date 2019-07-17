@@ -36,7 +36,7 @@ The Radio Configuration Utility programs a number of configuration settings into
 - 4Mb/s bandwidth limit on the outbound side of the wireless interface
 - QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (All other traffic).
 
-When programmed with the team version of the Radio Configuration - Utility, the user accounts will be left at (or set to) the firmware - defaults:
+When programmed with the team version of the Radio Configuration - Utility, the user accounts will be left at (or set to) the firmware - defaults **for the DAPs only**:
 
 - Username: root
 - Password: root
@@ -66,7 +66,7 @@ Launch the software
 
 Use the Start menu or desktop shortcut to launch the program.
 
-Note: If you need to locate the program it is installed to C:/\Program Files (x86)/\FRC Radio Configuration Utility. For 32-bit machines the path is C:/\Program Files/\FRC Radio Configuration Utility/\
+.. note:: If you need to locate the program it is installed to C:/Program Files (x86)/FRC Radio Configuration Utility. For 32-bit machines the path is C:/Program Files/FRC Radio Configuration Utility/
 
 Allow the program to make changes, if prompted
 ----------------------------------------------
@@ -103,7 +103,7 @@ Program Radios
 
 The Kiosk is now ready to program any number of radios to connect to the network entered. To program each radio, connect the radio to the Kiosk, set the Team Number in the box, and click Configure.
 
-The kiosk will program D-Link Rev A or Rev B radios to work on an offseason FMS network by selecting the appropriate option from the "Radio" dropdown.
+The kiosk will program OpenMesh, D-Link Rev A or D-Link Rev B radios to work on an offseason FMS network by selecting the appropriate option from the "Radio" dropdown.
 
 .. note:: Bandwidth limitations and QoS will not be configured on the D-Link radios in this mode.
 
