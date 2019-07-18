@@ -6,3 +6,4 @@ Driverstation
 
    frc-update-suite
    driver-station
+   driver-station-log-viewer
