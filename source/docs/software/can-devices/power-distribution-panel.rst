@@ -27,13 +27,13 @@ Reading the Bus Voltage
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        examplePDP.GetVoltage();
-
     .. code-tab:: java
 
         examplePDP.getVoltage();
+
+    .. code-tab:: c++
+
+        examplePDP.GetVoltage();
 
 .. todo:: link to page on brownout protection after it's ported
 
@@ -44,13 +44,13 @@ Reading the Temperature
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        examplePDP.GetTemperature();
-
     .. code-tab:: java
 
         examplePDP.getTemperature();
+
+    .. code-tab:: c++
+
+        examplePDP.GetTemperature();
 
 Monitoring the temperature can be useful for detecting if the robot has been drawing too much power and needs to be shut down for a while, or if there is a short or other wiring problem.
 
@@ -59,15 +59,15 @@ Reading the Total Current and Energy
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        examplePDP.GetTotalCurrent();
-        examplePDP.GetTotalEnergy();
-
     .. code-tab:: java
 
         examplePDP.getTotalCurrent();
         examplePDP.getTotalEnergy();
+
+    .. code-tab:: c++
+
+        examplePDP.GetTotalCurrent();
+        examplePDP.GetTotalEnergy();
 
 Monitoring the total current and total energy (the total energy is simply the total current multiplied by the bus voltage) can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required.
 
@@ -78,12 +78,12 @@ The PDP also allows users to monitor the current drawn by the individual device 
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        examplePDP.GetCurrent(0);
-
     .. code-tab:: java
 
         examplePDP.getCurrent(0);
+
+    .. code-tab:: c++
+
+        examplePDP.GetCurrent(0);
 
 Monitoring individual device current draws can be useful for detecting shorts or stalled motors.

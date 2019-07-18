@@ -23,22 +23,6 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        #include <frc/TimedRobot.h>
-
-        class Robot : public frc::TimedRobot {
-            public:
-                void RobotInit() override; // This is called once when the robot code initializes
-                void RobotPeriodic() override; // This is called every period regardless of mode
-                void AutonomousInit() override; // This is called once when the robot first enters autonomous mode
-                void AutonomousPeriodic() override; // This is called periodically while the robot is in autonomous mode
-                void TeleopInit() override; // This is called once when the robot first enters teleoperated mode
-                void TeleopPeriodic() override; // This is called periodically while the robot is in teleopreated mode
-                void TestInit() override; // This is called once when the robot enters test mode
-                void TestPeriodic() override; // This is called periodically while the robot is in test mode
-        };
-
     .. code-tab:: java
 
         import edu.wpi.first.wpilibj.TimedRobot;
@@ -86,6 +70,22 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
             }
 
         }
+
+    .. code-tab:: c++
+
+        #include <frc/TimedRobot.h>
+
+        class Robot : public frc::TimedRobot {
+            public:
+                void RobotInit() override; // This is called once when the robot code initializes
+                void RobotPeriodic() override; // This is called every period regardless of mode
+                void AutonomousInit() override; // This is called once when the robot first enters autonomous mode
+                void AutonomousPeriodic() override; // This is called periodically while the robot is in autonomous mode
+                void TeleopInit() override; // This is called once when the robot first enters teleoperated mode
+                void TeleopPeriodic() override; // This is called periodically while the robot is in teleopreated mode
+                void TestInit() override; // This is called once when the robot enters test mode
+                void TestPeriodic() override; // This is called periodically while the robot is in test mode
+        };
 
 IterativeRobotBase
 ~~~~~~~~~~~~~~~~~~

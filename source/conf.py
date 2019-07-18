@@ -41,7 +41,7 @@ extensions = [
 todo_emit_warnings = False
 
 # TODO Directives are not shown in output
-todo_include_todos = False
+todo_include_todos = True
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True

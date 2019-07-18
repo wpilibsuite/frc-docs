@@ -15,7 +15,7 @@ Tethered Operation
 
 Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the the program was successfully deployed and that the driver station and roboRIO are properly configured.
 
-The roboRIO should be powered on and connected to the PC over Ethernet or USB. The Driver Station software should be configured with your team number as described in :ref:`this article <driver_station>`.
+The roboRIO should be powered on and connected to the PC over Ethernet or USB. The Driver Station software should be configured with your team number as described in :ref:`this article <docs/software/driverstation/driver-station:FRC Driver Station Powered by NI LabVIEW>`.
 
 Wireless Operation
 ------------------
