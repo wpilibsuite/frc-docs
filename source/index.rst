@@ -54,6 +54,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/networking/networking-basics
    docs/networking/ip-configurations
    docs/networking/roborio-network-troubleshooting
+   docs/networking/measuring-bandwidth-usage
 
 .. toctree::
    :maxdepth: 1
