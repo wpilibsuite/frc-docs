@@ -3,7 +3,7 @@ Analog Inputs - Software
 
 .. note:: This section covers analog inputs in software.  For a hardware guide to analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog Inputs - Hardware`.
 
-The RoboRIO's FPGA supports up to 8 analog input channels that can be used to read the value of an analog voltage from a sensor.  Analog inputs may be used for any sensor that outputs a simple voltage.
+The roboRIO's FPGA supports up to 8 analog input channels that can be used to read the value of an analog voltage from a sensor.  Analog inputs may be used for any sensor that outputs a simple voltage.
 
 Analog inputs from the FPGA by default return a 12-bit integer proportional to the voltage, from 0 to 5 volts.
 

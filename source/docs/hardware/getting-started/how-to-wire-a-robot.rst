@@ -18,7 +18,7 @@ Locate the following control system components and tools
 
 - Kit Materials:
       - Power Distribution Panel (PDP)
-      - RoboRIO
+      - roboRIO
       - Pneumatics Control Module (PCM)
       - Voltage Regulator Module (VRM)
       - OpenMesh radio (with power cable and Ethernet cable)
@@ -270,7 +270,7 @@ Requires: Small flat screwdriver (optional), Rev radio PoE cable
 1. Insert the ferrules of the passive PoE injector cable into the corresponding colored terminals on the 12V/2A section of the VRM.
 2. Connect the male RJ45 (Ethernet) end of the cable into the Ethernet port on the radio closest to the barrel connector (labeled 18-24v POE)
 
-RoboRIO to Radio Ethernet
+roboRIO to Radio Ethernet
 ---------------------------------------------------
 
 .. image:: images/how-to-wire-a-robot/image14.jpg
@@ -286,7 +286,7 @@ Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
 CAN Devices
 -----------
 
-RoboRIO to PCM CAN
+roboRIO to PCM CAN
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: images/how-to-wire-a-robot/image15.jpg
@@ -449,5 +449,5 @@ Battery Connect BatteryZoom: Connect Battery
 Connect the battery to the robot side of the Andersen connector. Power
 on the robot by moving the lever on the top of the 120A main breaker
 into the ridge on the top of the housing. If stuff blinks, you
-probably did it right. From here, you should connect to the RoboRIO
+probably did it right. From here, you should connect to the roboRIO
 and try uploading your code!

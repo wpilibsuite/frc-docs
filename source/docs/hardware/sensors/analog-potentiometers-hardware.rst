@@ -10,13 +10,13 @@ Apart from :doc:`quadrature encoders <encoders-hardware>`, another common way of
 Wiring an analog potentiometer
 ------------------------------
 
-As suggested by the names, analog potentiometers connect to the RoboRIO's :doc:`analog input <analog-inputs-hardware>` ports.  To understand how exactly to wire potentiometers, however, it is important to understand their internal circuitry.
+As suggested by the names, analog potentiometers connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.  To understand how exactly to wire potentiometers, however, it is important to understand their internal circuitry.
 
 |Potentiometer| |Voltage Divider|
 
 The picture above on the left shows a typical potentiometer.  There are three pins, just as there are on the RIO's analog inputs.  The middle pin is the signal pin, while the outer pins can both be *either* power or ground.
 
-As mentioned before, a potentiometer is a voltage divider, as shown in the circuit diagram on the right.  As the potentiometer shaft turns, the resistances R1 and R2 change; however, their sum remains constant [1]_.  Thus, the voltage across the entire potentiometer remains constant (for the RoboRIO, this would be 5 volts), but the voltage between the signal pin and either the voltage or ground pin varies linearly as the shaft turns.
+As mentioned before, a potentiometer is a voltage divider, as shown in the circuit diagram on the right.  As the potentiometer shaft turns, the resistances R1 and R2 change; however, their sum remains constant [1]_.  Thus, the voltage across the entire potentiometer remains constant (for the roboRIO, this would be 5 volts), but the voltage between the signal pin and either the voltage or ground pin varies linearly as the shaft turns.
 
 Since the circuit is symmetric, it is reversible - this allows the user to choose at which end of the travel the measured voltage is zero, and at which end it is 5 volts.  To reverse the directionality of the sensor, it can simply be wired backwards!  Be sure to check the directionality of your potentiometer with a multimeter to be sure it is in the desired orientation before soldering your wires to the contacts.
 
