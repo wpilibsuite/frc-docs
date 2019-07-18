@@ -72,7 +72,7 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
-.. warning:: Version 19.1.1 corrects an issue with applying the Bandwidth Limit present in version 19.1.0. Teams should install the new version, then re-program their radio (their is no need to re-flash the firmware).
+.. warning:: Version 19.1.1 corrects an issue with applying the Bandwidth Limit present in version 19.1.0. Teams should install the new version, then re-program their radio (there is no need to re-flash the firmware).
 
 Install the software
 --------------------

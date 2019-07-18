@@ -1,5 +1,3 @@
-.. _driver_station:
-
 FRC Driver Station Powered by NI LabVIEW
 ========================================
 
