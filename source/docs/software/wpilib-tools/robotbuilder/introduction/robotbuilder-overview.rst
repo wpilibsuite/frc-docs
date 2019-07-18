@@ -14,7 +14,7 @@ Your robot is naturally made up of a number of smaller systems like the drive tr
 
 .. todo:: add link
 
-For more information see: Creating a Subsystem
+For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>`.
 
 Adding each Subsystem to the Project
 ------------------------------------
@@ -28,9 +28,7 @@ Each subsystem will be added to the "Subsystems" folder in the RobotBuilder and 
 
 As you look through more of this documentation the differences between the subsystem types will become more apparent.
 
-.. todo:: add links
-
-For more information see: Creating a subsystem,  Writing Java code for a subsystem and Writing C++ code for a subsystem
+For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing the Code for a Subsystem>`.
 
 Adding Components to each of the Subsystems
 -------------------------------------------
@@ -50,9 +48,7 @@ Commands are distinct goals that the robot will perform. These commands are adde
 - Command groups - these commands are a combination of other commands running both in a sequential order and in parallel. Use these to build up more complicated actions after you have a number of basic commands implemented.
 - Setpoint commands - setpoint commands move a PID Subsystem to a fixed setpoint, or the desired location.
 
-.. todo:: add links
-
-For more information see: Creating a command, Writing the code for a command in Java and Writing the code for a command in C++
+For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
 
 Testing each Command
 --------------------
@@ -63,9 +59,7 @@ Each command can be run from the SmartDashboard. This is useful for testing comm
 
 By creating buttons, each command can be tested individually. If all the commands work individually, you can be pretty sure that the robot will work as a whole.
 
-.. todo:: add link
-
-For more information see: Adding a button to SmartDashboard to run a command
+For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-smartdashboard>`.
 
 Adding Operator Interface Components
 ------------------------------------
@@ -85,9 +79,7 @@ Commands can be associated with buttons so that when a button is pressed the com
 
 This is simply done by (1) adding the command to the JoystickButton object in the RobotBuilder program, then (2) setting the condition in which the command is scheduled.
 
-.. todo:: add link
-
-For more information see: Connecting the operator interface to a command
+For more information see :doc:`Connecting the Operator Interface to a Command <robotbuilder-operator-interface-to-command>`.
 
 Developing Autonomous Commands
 ------------------------------
@@ -98,9 +90,7 @@ Commands make it simple to develop autonomous programs. You simply specify which
 
 Select the robot at the root of the RobotBuilder project, then edit the Autonomous Command property to choose the command to run. It's that simple!
 
-.. todo:: add link
-
-For more information see: Setting the default autonomous command
+For more information see :doc:`Setting the Default Autonomous Command <robotbuilder-default-autonomous-command>`.
 
 Generating Code
 ---------------
@@ -111,4 +101,4 @@ At any point in the process outlined above you can have RobotBuilder generate a 
 
 .. todo:: add link
 
-For more information see: Generating Code for a project
+For more information see :ref:`Generating RobotBuilder Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code:Generating Code for a Project>`.
