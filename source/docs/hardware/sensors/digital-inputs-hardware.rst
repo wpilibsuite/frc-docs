@@ -5,20 +5,20 @@ Digital Inputs - Hardware
 
 A `digital signal <https://en.wikipedia.org/wiki/Digital_signal>`__ is a signal that can be in one of several discrete states.  In the vast majority of cases, the signal is the voltage in a wire, and there are only two states for a digital signal - high, or low (also denoted 1 and 0, or true and false, respectively).
 
-The RoboRIO's built-in digital input-output ports (or "DIO") ports function on 5V, so "high" corresponds to a signal of 5V, and "low" to a signal of 0V [1]_ [2]_.
+The roboRIO's built-in digital input-output ports (or "DIO") ports function on 5V, so "high" corresponds to a signal of 5V, and "low" to a signal of 0V [1]_ [2]_.
 
-Connecting to the RoboRIO DIO ports
+Connecting to the roboRIO DIO ports
 -----------------------------------
 
 .. note:: Additional DIO ports are available through the "MXP" expansion port.  To use these, a breakout board of some sort that connects to the MXP is needed.
 
 .. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the device.
 
-.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behaviour.
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behaviour.
 
 |Roborio DIO Ports|
 
-The RoboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the DIO ports - there is a constant 5V potential difference between the "power" and the "ground" pins [3]_ - the "power" pin corresponds to the "high" state (5V), and the "ground" to "low" (0V).  The signal pin is the pin on which the signal is actually measured (or, when used as an output, the pin that sends the signal).
+The roboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the DIO ports - there is a constant 5V potential difference between the "power" and the "ground" pins [3]_ - the "power" pin corresponds to the "high" state (5V), and the "ground" to "low" (0V).  The signal pin is the pin on which the signal is actually measured (or, when used as an output, the pin that sends the signal).
 
 All DIO ports have built in "pull-up" resistors between the power pins and the signal pins - these ensure that when the signal pin is "floating" (i.e. is not connected to any circuit), they consistently remain in a "high" state.
 
@@ -52,5 +52,5 @@ Footnotes
 ---------
 
 .. [1] More-precisely, the signal reads "high" when it rises above 2.0V, and reads "low" when it falls back below 0.8V - behavior between these two thresholds is not guaranteed to be consistent.
-.. [2] The RoboRIO also offers 3.3V logic via the "MXP" expansion port; however, use of this is far less-common than the 5V.
+.. [2] The roboRIO also offers 3.3V logic via the "MXP" expansion port; however, use of this is far less-common than the 5V.
 .. [3] All power pins are actually connected to a single rail, as are all ground pins - there is no need to use the power/ground pins corresponding to a given signal pin.

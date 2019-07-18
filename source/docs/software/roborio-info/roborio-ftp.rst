@@ -1,11 +1,11 @@
-RoboRIO FTP
+roboRIO FTP
 ===========
 
 .. note:: The roboRIO has both SFTP and anonymous FTP enabled. This article describes how to use each to access the roboRIO file system.
 
 SFTP
 ----
-SFTP is the recommended way to access the RoboRIO file system. Because you will be using the same account that your program will run under, files copied over should always have permissions compatible with your code.
+SFTP is the recommended way to access the roboRIO file system. Because you will be using the same account that your program will run under, files copied over should always have permissions compatible with your code.
 
 Software
 ^^^^^^^^
@@ -13,7 +13,7 @@ There are a number of freely available programs for SFTP. This article will disc
 
 .. _FileZilla: https://filezilla-project.org/download.php?type=client
 
-Connecting to the RoboRIO
+Connecting to the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/roborio-connect.png
@@ -26,7 +26,7 @@ To connect to your roboRIO:
 4. Enter "22" in the port box (the SFTP default port)
 5. Click Quickconnect
 
-Browsing the RoboRIO filesystem
+Browsing the roboRIO filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/roborio-filesystem.png

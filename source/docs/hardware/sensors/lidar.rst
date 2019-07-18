@@ -17,7 +17,7 @@ There are two types of LIDAR sensors commonly used in current FRC: 1-dimensional
 
 A 1-dimensional (1D) LIDAR sensor works much like an ultrasonic sensor - it measures the distance to the nearest object more or less along a line in front of it.  1D LIDAR sensors can often be more-reliable than ultrasonics, as they have narrower "beam profiles" and are less susceptible to interference.
 
-1D LIDAR sensors generally output an analog voltage proportional to the measured distance, and thus connect to the RoboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
+1D LIDAR sensors generally output an analog voltage proportional to the measured distance, and thus connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
 
 2-Dimensional LIDAR
 ^^^^^^^^^^^^^^^^^^^
@@ -26,7 +26,7 @@ A 1-dimensional (1D) LIDAR sensor works much like an ultrasonic sensor - it meas
 
 A 2-dimensional (2D) LIDAR sensor measures distance in all directions in a plane.  Generally, this is accomplished (more-or-less) by simply placing a 1D LIDAR sensor on a turntable that spins at a constant rate.
 
-Since, by nature, 2D LIDAR sensors need to send a large amount of data back to the RoboRIO, they almost always connect to one of the RoboRIO's :doc:`serial buses <serial-buses>`.
+Since, by nature, 2D LIDAR sensors need to send a large amount of data back to the roboRIO, they almost always connect to one of the roboRIO's :doc:`serial buses <serial-buses>`.
 
 Caveats
 -------

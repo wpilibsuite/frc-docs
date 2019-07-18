@@ -10,7 +10,7 @@ In order to be effective, it is often vital for robots to be able to gather info
 What sensors does WPILIB support?
 ---------------------------------
 
-The RoboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ which allows accurate real-time measuring of a variety of sensor input.  WPILib, in turn, provides a number of classes for accessing this functionality.
+The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ which allows accurate real-time measuring of a variety of sensor input.  WPILib, in turn, provides a number of classes for accessing this functionality.
 
 .. todo:: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
 
