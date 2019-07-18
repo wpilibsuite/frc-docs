@@ -16,4 +16,3 @@ Getting Started
    imaging-your-classmate
    radio-programming
    updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel
-   driver-station-best-practices
