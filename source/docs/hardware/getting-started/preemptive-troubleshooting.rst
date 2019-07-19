@@ -3,7 +3,7 @@ Robot Preemptive Troubleshooting
 
 .. note::
 
-    In FIRST Robotics Competion, robots take a lot of stress while driving around the field. It is important to make sure that connections are tight, parts are bolted securely in place and that everthing is mounted so that a robot bouncing around the field does not break.
+    In FIRST Robotics Competition, robots take a lot of stress while driving around the field. It is important to make sure that connections are tight, parts are bolted securely in place and that everything is mounted so that a robot bouncing around the field does not break.
 
 Check battery connections
 ------------------------------
@@ -63,7 +63,7 @@ Blade fuses
 
 If you can remove the blade fuses by hand then they are not in completely. Make sure that they are completely seated in the PDP so that they don't pop out during robot operation.
 
-RoboRIO swarf
+roboRIO swarf
 ------------------------------------
 
 Swarf is: fine chips or filings of stone, metal, or other material produced by a machining operation. Often modifications must be made to a robot while the control system parts are in place. The circuit board for the roboRIO is conformally coated, but that doesn't absolutely guarantee that metal chips won't short out traces or components inside the case. In this case, you must exercise care in making sure that none of the chips end up in the roboRIO or any of the other components. In particular, the exposed 3 pin headers are a place where chips can enter the case. A quick sweep through each of the four sides with a flashlight is usually sufficient to find the really bad areas of infiltration.
@@ -101,7 +101,7 @@ Driver station checks
 We often see problems with the Drivers Station. You should:
 
 - ALWAYS bring the laptop power cable to the field, it doesn’t matter how good the battery is, you are allowed to plug in at the field.
-- Check the power and sleep settings, turn off sleep and hybernate, screen savers, etc.
+- Check the power and sleep settings, turn off sleep and hibernate, screen savers, etc.
 - Turn off power management for USB devices (dev manager)
 - Turn off power management for ethernet ports (dev manager)
 - Turn off windows defender
@@ -117,4 +117,4 @@ Handy tools
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
 
-Wago tool is nice to for redoing weidmuller connections with stranded wires.  Often I’ll do one to show the team, and then have them do the rest using the WAGO tool to press down the white-plunger while they insert the stranded wire.  The angle of the WAGO tool makes this particularly helpful.
+WAGO tool is nice to for redoing weidmuller connections with stranded wires.  Often I’ll do one to show the team, and then have them do the rest using the WAGO tool to press down the white-plunger while they insert the stranded wire.  The angle of the WAGO tool makes this particularly helpful.

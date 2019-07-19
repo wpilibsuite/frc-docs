@@ -20,7 +20,7 @@ to have a new device type assigned from the ``Reserved`` pool, please
 submit a request to FIRST.
 
 ========================= =====
-Device Types             
+Device Types
 ========================= =====
 Broadcast Messages        0
 Robot Controller          1
@@ -38,8 +38,8 @@ Reserved                  12-30
 Firmware Update           31
 ========================= =====
 
-Manufactor
-~~~~~~~~~~
+Manufacturer
+~~~~~~~~~~~~
 
 This is an 8-bit value indicating the manufacturer of the CAN device.
 Currently assigned values can be found in the table below. If you wish
@@ -47,7 +47,7 @@ to have a manufacturer ID assigned from the ``Reserved``\ pool, please
 submit a request to FIRST.
 
 =============== =====
-Manufactor     
+Manufacturer
 =============== =====
 Broadcast       0
 NI              1
@@ -58,7 +58,9 @@ REV Robotics    5
 Grapple         6
 MindSensors     7
 Team Use        8
-Reserved        9-255
+Kauai Labs      9
+Copperforge     10
+Reserved        11-255
 =============== =====
 
 API/Message Identifier
@@ -82,7 +84,7 @@ messages are grouped into a single API Class. An example of the API
 Classes for the Jaguar Motor Controller is shown in the table below.
 
 ========================= =
-API Class                
+API Class
 ========================= =
 Voltage Control Mode      0
 Speed Control Mode        1
@@ -103,7 +105,7 @@ API Class. An example of the API Index values for the Jaguar Motor
 Controller Speed Control API Class is shown in the table below.
 
 =========================== ==
-API Index                  
+API Index
 =========================== ==
 Enable Control              0
 Disable Control             1
@@ -144,21 +146,21 @@ type and manufacturer fields to 0. The API Class for broadcast messages
 is 0. The currently defined broadcast messages are shown in the table
 below:
 
-=========================== ==
-API Index                  
-=========================== ==
-Enable Control              0
-Disable Control             1
-Set Setpoint                2
-P Constant                  3
-I Constant                  4
-D Constant                  5
-Set Reference               6
-Trusted Enable              7
-Trusted Set No Ack          8
-Trusted Set Setpoint No Ack 10
-Set Setpoint No Ack         11
-=========================== ==
+================= ==
+Description
+================= ==
+Disable	          0
+System Halt	      1
+System Reset      2
+Device Assign     3
+Device Query	  4
+Heartbeat         5
+Sync              6
+Update            7
+Firmware Version  8
+Enumerate         9
+System Resume     10
+================= ==
 
 Devices should disable immediately when receiving the Disable message
 (arbID 0), implementation of other broadcast messages is optional.
@@ -169,15 +171,14 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Communicate using Arbitration IDs which match the prescribed FRC
    format:
-   
+
    -  A valid, issued CAN Device Type (per Table 1 - CAN Device Types)
    -  A valid, issued Manufacturer ID (per Table 2 - CAN Manufacturer Codes)
    -  API Class(es) and Index(s) assigned and documented by the device manufacturer
    -  A user selectable device number if multiple units of the device type are intended to co-exist on the same network.
-   
+
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
 -  Provide software library support for LabVIEW, C++, and Java or arrange with FIRST or FIRSTs Control System Partners to provide such interfaces.
 
 .. |image0| image:: images/how-to-wire-a-robot/can-id-example.png
-

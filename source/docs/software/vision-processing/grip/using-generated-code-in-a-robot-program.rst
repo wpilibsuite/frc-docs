@@ -40,14 +40,14 @@ Iterative program definitions
 
         public class Robot extends IterativeRobot {
 
-        	private static final int IMG_WIDTH = 320;
-        	private static final int IMG_HEIGHT = 240;
+            private static final int IMG_WIDTH = 320;
+            private static final int IMG_HEIGHT = 240;
 
-        	private VisionThread visionThread;
-        	private double centerX = 0.0;
-        	private RobotDrive drive;
+            private VisionThread visionThread;
+            private double centerX = 0.0;
+            private RobotDrive drive;
 
-        	private final Object imgLock = new Object();
+            private final Object imgLock = new Object();
 
 In this first part of the program you can see all the import statements for the WPILib classes used for this program.
 

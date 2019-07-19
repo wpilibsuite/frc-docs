@@ -4,7 +4,7 @@ MacOS Offline Install Guide
 The tools (except the Driver Station and the roboRIO Imaging Tool)
 will run natively on a Mac.
 
-.. note:: Note: if you have the alpha release of VSCode for FRC installed, you\
+.. note:: If you have the alpha release of VSCode for FRC installed, you\
  should uninstall it before proceeding or create a new VSCode\
  install. Failing to do this will have both versions installed at the\
  same time causing things to not operate properly.\
@@ -22,7 +22,7 @@ Once downloaded, double-click on the zip file to expand it and copy the
 new file: "Visual Studio Code" to the Applications folder (2).
 
 .. figure:: images/mac/VisualStudioCode.png
-   :alt: 
+   :alt:
 
 Download the WPILib release and move the directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,7 +32,7 @@ https://github.com/wpilibsuite/allwpilib/releases and downloading the
 Mac release.
 
 .. figure:: images/mac/MacReleasePage.png
-   :alt: 
+   :alt:
 
 Unzip and untar the file by looking at the file in the explorer and
 double-clicking on it, once or twice to unzip (remove the .gz extension)
@@ -40,13 +40,13 @@ and again to untar it (remove the .tar extension). When finished it
 should like like the folder shown below.
 
 .. figure:: images/mac/UntarredRelease.png
-   :alt: 
+   :alt:
 
 Using Finder (or command line) copy the contents of the folder to a new
 folder in your home directory, ~/frc2019 as shown below.
 
 .. figure:: images/mac/MovedFiles.png
-   :alt: 
+   :alt:
 
 Run the ``ToolsUpdater.py`` script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ This should populate the tools directory with all of the WPILib tools
 (Shuffleboard, Robot Builder, PathWeaver, etc.)
 
 .. figure:: images/mac/ToolsUpdater.png
-   :alt: 
+   :alt:
 
 Installing the extensions for WPILib development
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,10 +73,10 @@ typing "Install from VSIX into the search box. Choose that command. In
 the file selection box select Cpp.vsix.
 
 .. figure:: images/mac/InstallFromVSIX.png
-   :alt: 
+   :alt:
 
 .. figure:: images/mac/CppVSIX.png
-   :alt: 
+   :alt:
 
 You should see a message confirming the install and asking to reload
 vscode. Click the reload button then repeat the vsix installation for
@@ -101,6 +101,4 @@ Code at where it is. To do this:
    from the dropdown
 
 .. figure:: images/mac/JDKHome.png
-   :alt: 
-
-
+   :alt:

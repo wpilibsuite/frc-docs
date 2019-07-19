@@ -13,7 +13,7 @@ than no internet present).
 
 Workaround: Install the Microsoft Loopback Adapter 1. Access the Device
 Manager (typically by clicking start and typing Device Manager) 2. Click
-the Network Adapter Catagory 3. Click the Action menu from the top bar
+the Network Adapter Category 3. Click the Action menu from the top bar
 and select Add Legacy Hardware 4. Click Next on the window that pops up
 5. Select the second option to install manually 6. Select “Network
 Adapter” and click Next. You will need to wait a bit for the next screen
@@ -56,8 +56,8 @@ about a full update with this issue resolved will be coming soon.
 
 Solution: Fixed in 2019v13 image in `2019.1.0 NI Update Suite`_
 
-SmartDashboard and Simlation fail to launch on Windows N Editions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SmartDashboard and Simulation fail to launch on Windows N Editions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Issue: WPILib code using CSCore (dashboards and simulated robot code)
 will fail to launch on Education N editions of Windows.

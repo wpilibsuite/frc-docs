@@ -17,9 +17,10 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'FIRST Robotics Documentation'
-copyright = '2019, FIRST Community'
-author = 'FIRST Community'
+project = 'FIRST Robotics Competition'
+copyright = '2019, FIRST'
+author = 'WPILib'
+version = '2019'
 
 
 # -- General configuration ---------------------------------------------------
@@ -29,8 +30,22 @@ author = 'FIRST Community'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinx.ext.imgmath'
+    'sphinx.ext.imgmath',
+    'sphinx.ext.todo',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.ghcontributors'
 ]
+
+# TODO Directives omit a warning
+todo_emit_warnings = False
+
+# TODO Directives are not shown in output
+todo_include_todos = False
+
+# Autosection labels prefix document path and filename
+autosectionlabel_prefix_document = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -53,13 +68,48 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['_static']
+
+# Sidebar logo
+html_logo = "assets/wpilibDocsLogo.png"
+
+# URL favicon
+html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
 html_theme_options = {
-	'collapse_navigation': False,
-	'sticky_navigation': False
+	'collapse_navigation': True,
+	'sticky_navigation': False,
+	'titles_only': True
 }
 
 user_options = [
         ('warning-is-error', True),
 ]
+
+def setup(app):
+  app.add_stylesheet('css/frc-rtd.css')
+
+
+# -- Options for latex generation --------------------------------------------
+
+latex_engine = 'xelatex'
+
+latex_elements = {
+    'fontpkg': r'''
+	\setmainfont{DejaVu Serif}
+	\setsansfont{DejaVu Sans}
+	\setmonofont{DejaVu Sans Mono}''',
+    'preamble': r'''
+	\usepackage[titles]{tocloft}
+	\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+	\setlength{\cftchapnumwidth}{0.75cm}
+	\setlength{\cftsecindent}{\cftchapnumwidth}
+	\setlength{\cftsecnumwidth}{1.25cm}
+	''',
+    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    'printindex': r'\footnotesize\raggedright\printindex',
+}
+
+suppress_warnings = ['epub.unknown_project_files']
+
+sphinx_tabs_valid_builders = ['epub']

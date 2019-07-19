@@ -1,11 +1,14 @@
+.. _imaging-your-roborio:
+
 Imaging your roboRIO
 ====================
 
-*Before imaging your roboRIO, you must have completed installation of the
-FRC Update Suite. You also must have the roboRIO power properly wired to
-the Power Distribution Panel.
-**Make sure the power wires to the roboRIO are secure and that the connector
-is secure firmly to the roboRIO (4 total screws to check).***
+.. warning:: Before imaging your roboRIO, you must have completed installation of the
+ FRC Update Suite. You also must have the roboRIO power properly wired to
+ the Power Distribution Panel.
+
+ **Make sure the power wires to the roboRIO are secure and that the connector
+ is secure firmly to the roboRIO (4 total screws to check).**
 
 Configuring the roboRIO
 _______________________
@@ -20,8 +23,8 @@ Connect a USB cable from the roboRIO USB Device port to the PC. This requires
 a USB Type A male (standard PC end) to Type B male cable (square with 2 cut
 corners), most commonly found as a printer USB cable.
 
-.. note:: **Note: The roboRIO should only be imaged via the USB connection. It is not\
- recommended to attempt imaging using the Ethernet connection.**
+.. note:: The roboRIO should only be imaged via the USB connection. It is not\
+ recommended to attempt imaging using the Ethernet connection.
 
 Driver Installation
 ^^^^^^^^^^^^^^^^^^^
@@ -54,7 +57,7 @@ Updating Firmware
 ^^^^^^^^^^^^^^^^^
 .. image:: images/imaging-your-roborio/updating-firmware.png
 
-RoboRIO firmware must be at least v5.0 to work with the 2019 image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
+roboRIO firmware must be at least v5.0 to work with the 2019 image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
 To update roboRIO firmware:
 
@@ -87,7 +90,7 @@ ________________
 When the imaging completes you should see the dialog above. Click Ok, then click the Close button at the bottom right to close the imaging tool. Reboot
 the roboRIO using the Reset button to have the new team number take effect.
 
-.. note:: Note: The default CAN webdash functionality has been removed from the image (CAN devices will still work from robot code). You\
+.. note:: The default CAN webdash functionality has been removed from the image (CAN devices will still work from robot code). You\
  will need to use the tools provided by individual vendors to service their CAN devices.
 
 Troubleshooting

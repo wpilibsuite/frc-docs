@@ -39,24 +39,24 @@ You can find information about the new IDE in the Offline Installation Guides. T
 Vendor Libraries
 ----------------
 
--  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see here_:
+-  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see `here <3rd-party-libraries.html>`__:
 
-RoboRIO WebDashboard
+roboRIO WebDashboard
 --------------------
 
 -  No longer requires Silverlight
 -  No longer supports CAN device status/configuration
 -  Recommended to be used in non-IE browser
 
-More information here
+More information `here <../../software/roborio-info/roborio-web-dashboard.html>`__
 
-RoboRIO Imaging Tool
+roboRIO Imaging Tool
 --------------------
 
 -  Reworked UI
 -  Added firmware update capability
 
-More information here
+More information `here <imaging-your-roborio.html>`__
 
 CAN Device Configuration
 ------------------------
@@ -64,13 +64,13 @@ CAN Device Configuration
 -  Removed from WebDashboard
 -  Provided by vendor specific tools.
 
-See this article for updated PDP/PCM configuration instructions
+See `this article <../../software/can-devices/using-can-devices.html>`__ for updated PDP/PCM configuration instructions
 
 WPILib C++/Java
 -----------------------------
 
 -  A new high level CAN API was added. This enables easier creation of custom CAN devices for users.
--  The OSSerialPort class was removed. It was a bugfix for some Serial port bugs, but never actually worked anyway.
+-  The OSSerialPort class was removed. It was a bug fix for some Serial port bugs, but never actually worked anyway.
 -  SensorBase was removed. If you were deriving from SensorBase you should now derive from SendableBase (C++) or SendableBase+ErrorBase(Java). If you need methods previously contained in SensorBase, they are now in SensorUtil.
 -  The Watchdog class was added. This calls a callback function when the specified timeout is exceeded. This class is used by TimedRobot to warn on periodic loop time overruns (nominally 20ms) in user code. **Note: These Timed Robot messages are warnings. They inform you if your code overruns the specified timing. They are not errors.**
 -  IterativeRobot was deprecated for eventual removal. TimedRobot is a drop-in replacement that is strictly better with regard to execution jitter.
@@ -87,7 +87,7 @@ WPILib C++
 -  The namespace frc shim was removed. WPILib classes need to be accessed by their full namespaces, or using statements added.
 -  **Headers were moved to an frc folder.**
 -  HAL methods were removed from WPILib headers. In order to access HAL methods, their headers must be directly included.
--  Llvm renamespaced to wpi, headers moved to wpi folder
+-  LLVM renamespaced to wpi, headers moved to wpi folder
 -  All classes now properly support move semantics (for those who know what that is and care).
 -  Doxygen comments were moved from the source files to the header files for easier reference.
 
@@ -128,7 +128,7 @@ Find more documentation on Pathweaver here
 Raspberry Pi Image for Cameras
 ------------------------------
 
-A pre-made Raspberry Pi Image for camera streaming/image processing has been developed to lower the barrier to entry to off-board vision processing. This image contains all of the libraries required to implement FRC compatible camera streaming, as well as a helpful web dashboard, read only file system configuration to handle robot power off and more. Learn more in the new manual here.
+A pre-made Raspberry Pi Image for camera streaming/image processing has been developed to lower the barrier to entry to off-board vision processing. This image contains all of the libraries required to implement FRC compatible camera streaming, as well as a helpful web dashboard, read only file system configuration to handle robot power off and more. Learn more in the new manual `here <../../software/vision-processing/raspberry-pi/using-the-raspberry-pi-for-frc.html>`__.
 
 SmartDashboard
 --------------
@@ -149,5 +149,3 @@ Outline Viewer
 -  Requires Java 11 to run.
 
 .. |image0| image:: images/new-for-2019/offline-install.png
-
-.. _here: 

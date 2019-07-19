@@ -1,4 +1,6 @@
-RoboRIO Web Dashboard
+.. _roborio-web-dashboard:
+
+roboRIO Web Dashboard
 =====================
 
 The roboRIO web dashboard is a webpage built into the roboRIO that can
@@ -9,31 +11,31 @@ not use SilverLight. Users may encounter issues using IE (compatibility)
 or Edge (mDNS site access). Alternate browsers such as Google Chrome or
 Mozilla Firefox are recommended for the best experience.
 
-Note: The roboRIO web dashboard was been re-written for 2019. All CAN
-configuration functionality has been removed. Configuration of CAN
-devices should be done with software provided by the device vendor. For
-CTRE devices previously serviced using the webdashboard, the appropriate
-software is `CTRE Phoenix
-Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
+.. note:: The roboRIO web dashboard was been re-written for 2019. All CAN
+ configuration functionality has been removed. Configuration of CAN
+ devices should be done with software provided by the device vendor. For
+ CTRE devices previously serviced using the webdashboard, the appropriate
+ software is `CTRE Phoenix
+ Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
 
 Opening the WebDash
 -------------------
 
 .. figure:: images/roborio-page-home.png
-   :alt: 
+   :alt:
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
 "roboRIO-####-FRC.local where #### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
-mDNS and roboRIO networking: `RoboRIO
+mDNS and roboRIO networking: `roboRIO
 Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__
 
 System Configuration Tab
 ------------------------
 
 .. figure:: images/system-configuration-tab.png
-   :alt: 
+   :alt:
 
 The home screen of the web dashboard is the System Configuration tab
 which has 5 main sections:
@@ -55,7 +57,7 @@ Startup Settings
 ~~~~~~~~~~~~~~~~
 
 .. figure:: images/startup-settings.png
-   :alt: 
+   :alt:
 
 -  Force Safe Mode - Forces the controller into Safe Mode. This can be
    used with troubleshooting imaging issues, but it is recommended to
@@ -83,9 +85,9 @@ Network Configuration
 ---------------------
 
 .. figure:: images/network-configuration.png
-   :alt: 
+   :alt:
 
 This page shows the configuration of the roboRIO's network adapters.
 **It is not recommended to change any settings on this page.** For more
-information on roboRIO networking see this article: `RoboRIO
+information on roboRIO networking see this article: `roboRIO
 Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__

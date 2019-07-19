@@ -9,7 +9,7 @@ Located at https://frc-docs.readthedocs.io/en/latest/
 An experimental, more up-to-date version can be found at https://frc-docs.readthedocs.io/en/develop
 
 ## Contribution Guides
-- See [Contributing](contributing.md) for more information
+- See [Contributing](source/contributing.rst) for more information
 
 ## Local Build Environment
 - Requires Python 3.5 or greater

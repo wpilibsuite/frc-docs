@@ -1,97 +1,73 @@
-.. FIRST Robotics Documentation documentation master file, created by
+.. FIRST Robotics Competition documentation master file, created by
    sphinx-quickstart on Fri Apr  5 23:28:43 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to FIRST Robotics Documentation
-========================================================
+FIRST Robotics Competition Documentation
+========================================
+
+Welcome to the FIRST Robotics Competition Documentation! This documentation is very much a work-in-progress, so please excuse the constant house-keeping. If you'd like to contribute, check out :doc:`docs/contributing/contribution-guidelines`.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: WPILib Software
+
+   docs/software/getting-started/index
+   docs/software/wpilib-overview/index
+   docs/software/getting-started-with-benchtop/index
+   docs/software/labview/index
+   docs/software/driverstation/index
+   docs/software/roborio-info/index
+   docs/software/actuators/index
+   docs/software/sensors/index
+   docs/software/can-devices/index
+   docs/software/vision-processing/index
+   docs/software/old-commandbased/index
+   docs/software/commandbased/index
+   docs/software/networktables/index
+   docs/software/wpilib-tools/shuffleboard/index
+   docs/software/wpilib-tools/smartdashboard/index
+   docs/software/wpilib-tools/path-planning/index
+   docs/software/wpilib-tools/robotbuilder/index
+   docs/software/basic-programming/index
+   docs/software/advanced-programming/index
 
 .. toctree::
    :maxdepth: 1
-   :caption: Software - Getting Started
+   :caption: API Docs
 
-   docs/software/getting-started/new-for-2019
-   docs/software/getting-started/known-issues
-   docs/software/getting-started/control-system-software
-   docs/software/getting-started/offline-installation-preperations
-   docs/software/getting-started/windows-setup
-   docs/software/getting-started/macos-setup
-   docs/software/getting-started/linux-setup
-   docs/software/getting-started/frc-update-suite
-   docs/software/getting-started/3rd-party-libraries
-   docs/software/getting-started/imaging-your-roborio
-   docs/software/getting-started/imaging-your-classmate
+   WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Software - WPILib Overview
+   :maxdepth: 2
+   :caption: WPILib Hardware
+   :titlesonly:
 
-   docs/software/wpilib-overview/what-is-wpilib
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software - RoboRIO
-
-   docs/software/roborio-info/roborio-web-dashboard
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software - Actuators
-
-   docs/software/actuators/solenoids
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software - Vision
-
-   docs/software/vision-processing/strategies-for-vision-programming
-   docs/software/vision-processing/cameraserver-class
-   docs/software/vision-processing/2017-vision-examples
-   docs/software/vision-processing/target-info-and-retroreflection
-   docs/software/vision-processing/identifying-and-processing-the-targets
-   docs/software/vision-processing/configuring-an-axis-camera
-   docs/software/vision-processing/using-the-microsoft-lifecam
-   docs/software/vision-processing/camera-settings
-   docs/software/vision-processing/calibration
-   docs/software/vision-processing/axis-m1013-camera-compatibility
-   docs/software/vision-processing/using-the-axis-camera-at-single-network-events
-   docs/software/vision-processing/using-the-cameraserver-on-the-roborio
-   docs/software/vision-processing/using-multiple-cameras
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software - Vision - GRIP
-
-   docs/software/vision-processing/grip/introduction-to-grip
-   docs/software/vision-processing/grip/reading-array-values-published-by-networktables
-   docs/software/vision-processing/grip/generating-code-from-grip
-   docs/software/vision-processing/grip/using-generated-code-in-a-robot-program
-   docs/software/vision-processing/grip/using-grip-with-a-kangaroo-computer
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software - Vision - Raspberry Pi
-
-   docs/software/vision-processing/raspberry-pi/using-a-coprocessor-for-vision-processing
-   docs/software/vision-processing/raspberry-pi/using-the-raspberry-pi-for-frc
-   docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running
-   docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card
-   docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Hardware - Getting Started
-
-   docs/hardware/getting-started/control-system-hardware
-   docs/hardware/getting-started/how-to-wire-a-robot
-   docs/hardware/getting-started/wiring-best-practices
-   docs/hardware/getting-started/wiring-pneumatics
-   docs/hardware/getting-started/status-lights-ref
-   docs/hardware/getting-started/can-addressing
-   docs/hardware/getting-started/preemptive-troubleshooting
+   docs/hardware/getting-started/index
+   docs/hardware/sensors/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
 
-   docs/networking/ip-networking
+   docs/networking/networking-basics
+   docs/networking/ip-configurations
+   docs/networking/roborio-network-troubleshooting
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contributing
+
+   docs/contributing/contribution-guidelines
+   docs/contributing/style-guide
+   docs/contributing/build-instructions
+   docs/contributing/top-contributors
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Issues
+
+   Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
+
+.. todolist::

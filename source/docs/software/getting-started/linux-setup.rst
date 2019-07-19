@@ -38,7 +38,7 @@ To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: \* ``$ cd ~/
 Installing the extensions for WPILib VS Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Start VSCODE ($ code or search "Visual Studio Code" in your aplication launcher)
+1. Start VSCODE ($ code or search "Visual Studio Code" in your application launcher)
 2. **Control-Shift-P** to bring up the command palette, type "Install from VSIX"
 3. Select "Extensions: Install from VSIX"
 4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix
@@ -52,8 +52,11 @@ Installing the extensions for WPILib VS Code
 
 Setting up VSCode to use Java 11
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this:
 
-The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this: 1. Open VS Code 2. Press **Ctrl-Shift-P** and type **WPILib** or click on the WPILib icon in the top right to open the WPILib Command Palette 3. Begin typing **Set VS Code Java Home to FRC Home** and select that item from the dropdown.
+ 1. Open VS Code
+ 2. Press **Ctrl-Shift-P** and type **WPILib** or click on the WPILib icon in the top right to open the WPILib Command Palette
+ 3. Begin typing **Set VS Code Java Home to FRC Home** and select that item from the dropdown.
 
 .. figure:: images/linux/java-11.png
    :alt: Java 11
