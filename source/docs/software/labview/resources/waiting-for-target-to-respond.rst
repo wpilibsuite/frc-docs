@@ -26,9 +26,9 @@ Set No App
 
 .. image:: images/waiting-for-target-to-respond/set-no-app.png
 
-Using the roboRIO webserver (see the article RoboRIO Webdashboard for more details). **Check** the box to "Disable RT Startup App".
+Using the roboRIO webserver (see the article roboRIO Webdashboard for more details). **Check** the box to "Disable RT Startup App".
 
-.. todo:: link to RoboRIO Webdashboard article above.
+.. todo:: link to roboRIO Webdashboard article above.
 
 Reboot
 ------
@@ -40,9 +40,9 @@ Clear No App
 
 .. image:: images/waiting-for-target-to-respond/clar-no-app.png
 
-Using the roboRIO webserver (see the article RoboRIO Webdashboard for more details). **Uncheck** the box to "Disable RT Startup App".
+Using the roboRIO webserver (see the article roboRIO Webdashboard for more details). **Uncheck** the box to "Disable RT Startup App".
 
-.. todo:: link to RoboRIO Webdashboard article above.
+.. todo:: link to roboRIO Webdashboard article above.
 
 Load LabVIEW Code
 -----------------

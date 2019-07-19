@@ -18,8 +18,8 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Change Stop Simulation on Entry Setting** - Change whether to stop robot code on entry when running simulation. Defaults to disabled (don't stop on entry).
 - **WPILib: Check for WPILib Updates** - Check for an update to the WPILib extensions
 - **WPILib: Create a new class/command** - Clicking this command in the palette will not do anything. This command is triggered by right-clicking on the desired folder in the Navigation Pane and selecting the appropriate option.
-- **WPILib: Debug Robot Code** - Build and deploy robot code to RoboRIO in debug mode and start debugging
-- **WPILib: Deploy Robot Code** - Build and deploy robot code to RoboRIO
+- **WPILib: Debug Robot Code** - Build and deploy robot code to roboRIO in debug mode and start debugging
+- **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
 - **WPILib: Import a WPILib Eclipse Project** - Open a wizard to help you create a new VS Code project from an existing WPILib Eclipse project from a previous season.
 - **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. SmartDashboard, Shuffleboard, etc.). Note that this is done by default by the offline installer
 - **WPILib: Manage Vendor Libraries** - Install/update 3rd party libraries

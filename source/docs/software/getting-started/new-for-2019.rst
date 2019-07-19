@@ -41,7 +41,7 @@ Vendor Libraries
 
 -  With the change in IDE/Build System there was also a change to how Vendor libraries integrate with the system. For more information, see `here <3rd-party-libraries.html>`__:
 
-RoboRIO WebDashboard
+roboRIO WebDashboard
 --------------------
 
 -  No longer requires Silverlight
@@ -50,7 +50,7 @@ RoboRIO WebDashboard
 
 More information `here <../../software/roborio-info/roborio-web-dashboard.html>`__
 
-RoboRIO Imaging Tool
+roboRIO Imaging Tool
 --------------------
 
 -  Reworked UI

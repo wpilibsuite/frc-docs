@@ -1,7 +1,7 @@
 Power Distribution Panel
 ========================
 
-The Power Distribution Panel (PDP) can use its CAN connectivity to communicate a wealth of status information regarding the robot's power use to the RoboRIO, for use in user code.  The PDP has the capability to report its current temperature, the bus voltage, the total robot current draw, the total robot energy use, and the individual current draw of each device power channel.  These data can be used for a number of advanced control techniques, such as motor torque limiting and brownout avoidance.
+The Power Distribution Panel (PDP) can use its CAN connectivity to communicate a wealth of status information regarding the robot's power use to the roboRIO, for use in user code.  The PDP has the capability to report its current temperature, the bus voltage, the total robot current draw, the total robot energy use, and the individual current draw of each device power channel.  These data can be used for a number of advanced control techniques, such as motor torque limiting and brownout avoidance.
 
 Creating a PDP Object
 ---------------------

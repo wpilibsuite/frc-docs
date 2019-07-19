@@ -19,7 +19,7 @@ Three-axis accelerometers often require more complicated communications protocol
 AnalogAccelerometer
 -------------------
 
-The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogAccelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the RoboRIO's analog inputs.
+The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogAccelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
 .. tabs::
 
@@ -135,7 +135,7 @@ The :code:`ADXL362` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
 BuiltInAccelerometer
 ^^^^^^^^^^^^^^^^^^^^
 
-The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1BuiltInAccelerometer.html>`__) provides access to the RoboRIO's own built-in accelerometer:
+The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1BuiltInAccelerometer.html>`__) provides access to the roboRIO's own built-in accelerometer:
 
 .. tabs::
 

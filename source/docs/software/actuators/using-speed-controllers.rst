@@ -4,7 +4,7 @@ Using Motor Controllers in Code
 ================================
 Motor controllers come in two main flavors: CAN and PWM. A
 CAN controller can send more detailed status information
-back to the RoboRIO, whereas a PWM controller can only be
+back to the roboRIO, whereas a PWM controller can only be
 set to a value. For information on using these motors with
 the WPI drivetrain classes, see :doc:`wpi-drive-classes`.
 
@@ -15,7 +15,7 @@ For a more detailed background on *how* they work, see
 :ref:`pwm_theory`. To use a PWM speed controller, simply use the
 appropriate
 speed controller class provided by WPI
-and supply it the port the speed controller(s) are plugged into on the RoboRIO.
+and supply it the port the speed controller(s) are plugged into on the roboRIO.
 All approved motor controllers have WPI classes provided for them.
 
 .. tabs::
