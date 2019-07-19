@@ -10,7 +10,7 @@ Ultrasonic rangefinders are some of the most common rangefinders used in FRC.  T
 Types of ultrasonics
 --------------------
 
-While all ultrasonic rangefinders operate on the "ping-response" principle outlined above, they may vary in the way they communicate with the RoboRIO.
+While all ultrasonic rangefinders operate on the "ping-response" principle outlined above, they may vary in the way they communicate with the roboRIO.
 
 Analog ultrasonics
 ^^^^^^^^^^^^^^^^^^
@@ -32,6 +32,6 @@ Caveats
 
 Ultrasonic sensors are generally quite easy to use, however there are a few caveats.  As ultrasonics work by measuring the time between the pulse and its echo, they generally measure distance only to the *closest* target in their range.  Thus, it is extremely important to pick a the right sensor for the job.  The documentation for ultrasonic sensors will generally include a picture of the "beam pattern" that shows the shape of the "window" in which the ultrasonic will detect a target - pay close attention to this when selecting your sensor.
 
-Ultrasonic sensors are also susceptible to interference from other ultrasonic sensors.  In order to minimize this, the RoboRIO can run ping-response ultrasonics in a "round-robin" fashion - however, in competition, there is no sure way to ensure that interference from sensors mounted on other robots does not occur.
+Ultrasonic sensors are also susceptible to interference from other ultrasonic sensors.  In order to minimize this, the roboRIO can run ping-response ultrasonics in a "round-robin" fashion - however, in competition, there is no sure way to ensure that interference from sensors mounted on other robots does not occur.
 
 Finally, ultrasonics may not be able to detect objects that absorb sound waves, or that redirect them in strange ways.  Thus, they work best for detecting hard, flat objects.

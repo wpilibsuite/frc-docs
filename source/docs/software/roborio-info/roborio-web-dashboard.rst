@@ -1,6 +1,6 @@
 .. _roborio-web-dashboard:
 
-RoboRIO Web Dashboard
+roboRIO Web Dashboard
 =====================
 
 The roboRIO web dashboard is a webpage built into the roboRIO that can
@@ -28,7 +28,7 @@ To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
 "roboRIO-####-FRC.local where #### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
-mDNS and roboRIO networking: `RoboRIO
+mDNS and roboRIO networking: `roboRIO
 Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__
 
 System Configuration Tab
@@ -89,5 +89,5 @@ Network Configuration
 
 This page shows the configuration of the roboRIO's network adapters.
 **It is not recommended to change any settings on this page.** For more
-information on roboRIO networking see this article: `RoboRIO
+information on roboRIO networking see this article: `roboRIO
 Networking <https://frc-docs.readthedocs.io/en/latest/docs/networking/ip-networking.html>`__

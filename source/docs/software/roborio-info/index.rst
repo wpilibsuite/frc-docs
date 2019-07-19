@@ -1,4 +1,4 @@
-RoboRIO
+roboRIO
 =======
 
 .. toctree::
