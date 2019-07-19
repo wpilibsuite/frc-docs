@@ -1,9 +1,9 @@
-RoboRIO Brownout and Understanding Current Draw
+roboRIO Brownout and Understanding Current Draw
 ===============================================
 
 In order to help maintain battery voltage to preserve itself and other control system components such as the radio during high current draw events, the roboRIO contains a staged brownout protection scheme. This article describes this scheme, provides information about proactively planning for system current draw, and describes how to use the new functionality of the PDP as well as the DS Log File Viewer to understand brownout events if they do happen on your robot.
 
-RoboRIO Brownout Protection
+roboRIO Brownout Protection
 ---------------------------
 
 The roboRIO uses a staged brownout protection scheme to attempt to preserve the input voltage to itself and other control system components in order to prevent device resets in the event of large current draws pulling the battery voltage dangerously low.

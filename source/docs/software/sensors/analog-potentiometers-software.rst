@@ -3,7 +3,7 @@ Analog Potentiometers - Software
 
 .. note:: This section covers analog potentiometers in software.  For a hardware guide to analog potentiometers, see :ref:`docs/hardware/sensors/analog-potentiometers-hardware:Analog Potentiometers - Hardware`.
 
-Potentiometers are variable resistors that allow information about position to be converted into an analog voltage signal.  This signal can be read by the RoboRIO to control whatever device is attached to the potentiometer.
+Potentiometers are variable resistors that allow information about position to be converted into an analog voltage signal.  This signal can be read by the roboRIO to control whatever device is attached to the potentiometer.
 
 While it is possible to read information from a potentiometer directly with an :doc:`analog-inputs-software`, WPILib provides an :code:`AnalogPotentiometer` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogPotentiometer.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogPotentiometer.html>`__) that handles re-scaling the values into meaningful units for the user.  It is strongly encouraged to use this class.
 

@@ -1,19 +1,19 @@
-RoboRIO User Accounts and SSH
+roboRIO User Accounts and SSH
 =============================
 
 .. note:: **This document contains advanced topics not required for typical FRC programming**
 
- The RoboRIO image contains a number of accounts, this article will highlight the two used
+ The roboRIO image contains a number of accounts, this article will highlight the two used
  for FRC and provide some detail about their purpose. It will also describe how to connect
  to the roboRIO over SSH.
 
-RoboRIO User Accounts
+roboRIO User Accounts
 ---------------------
 The roboRIO image contains a number of user accounts, but there are two of primary interest for FRC.
 
 Admin
 ^^^^^
-The "admin" account has root access to the system and can be used to manipulate OS files or settings. Teams should take caution when using this account as it allows for the modification of settings and files that may corrupt the operating system of the RoboRIO. The credentials for this account are:
+The "admin" account has root access to the system and can be used to manipulate OS files or settings. Teams should take caution when using this account as it allows for the modification of settings and files that may corrupt the operating system of the roboRIO. The credentials for this account are:
 
 ``Username: admin``
 
@@ -27,7 +27,7 @@ The "lvuser" account is the account used to run user code for all three language
 
 SSH
 ---
-SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the RoboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. A free client which can be used for SSH is PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the roboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. A free client which can be used for SSH is PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 Open Putty
 ^^^^^^^^^^
