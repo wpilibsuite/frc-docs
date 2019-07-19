@@ -1,22 +1,12 @@
 [![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)](https://frc-docs.readthedocs.io/en/latest/?badge=latest)
-[![Build Status](https://dev.azure.com/darasmith/frc-docs/_apis/build/status/Daltz333.frc-docs?branchName=master)](https://dev.azure.com/darasmith/frc-docs/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/wpilib/Documentation/_apis/build/status/wpilibsuite.frc-docs?branchName=master)
 
 # frc-docs
-Better FRC documentation using ReadTheDocs
+Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://firstinspires.org/). 
 
-Located at https://frc-docs.readthedocs.io/en/latest/
+# WPILib Mission
+The WPILib Mission is to enable FIRST Robotics teams to focus on writing game-specific software rather than focusing on hardware details - "raise the floor, don't lower the ceiling". We work to enable teams with limited programming knowledge and/or mentor experience to be as successful as possible, while not hampering the abilities of teams with more advanced programming capabilities. We support Kit of Parts control system components directly in the library. We also strive to keep parity between major features of each language (Java, C++, and NI's LabVIEW), so that teams aren't at a disadvantage for choosing a specific programming language. WPILib is an open source project, licensed under the BSD 3-clause license. You can find a copy of the license [here](https://github.com/wpilibsuite/allwpilib/blob/master/LICENSE.txt).
 
-An experimental, more up-to-date version can be found at https://frc-docs.readthedocs.io/en/develop
+# Contribution Guide
+frc-docs uses the Sphinx documentation generator, and documentation is written in [reStructuredText](http://docutils.sourceforge.net/rst.html). If you're interested in contributing to frc-docs, see [this document](https://frc-docs.readthedocs.io/en/latest/docs/contributing/contribution-guidelines.html) for information on the style-guide and building the source material.
 
-## Contribution Guides
-- See [Contributing](source/contributing.rst) for more information
-
-## Local Build Environment
-- Requires Python 3.5 or greater
-- `git clone https://github.com/wpilibsuite/frc-docs.git`
-- `cd frc-docs`
-- `pip install -r source/requirements.txt`
-- `make html`
-
-## ReStructuredText Tutorial
-See the link here http://www.sphinx-doc.org/en/1.5/tutorial.html
