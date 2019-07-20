@@ -3,24 +3,24 @@ Analog Inputs - Hardware
 
 .. note:: This section covers analog input hardware.  For a software guide to analog inputs, see :ref:`docs/software/sensors/analog-inputs-software:Analog Inputs - Software`.
 
-An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The RoboRIO's analog input ports allow the measurement of analog signals with values from 0V to 5V.
+An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The roboRIO's analog input ports allow the measurement of analog signals with values from 0V to 5V.
 
-In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the RoboRIO).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
+In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the roboRIO).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
 
 Analog inputs are typically (but not always!) used for sensors whose measurements vary continuously over a range, such as :doc:`ultrasonic rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-potentiometers-hardware>`, as they can communicate by outputting a voltage proportional to their measurements.
 
-Connecting to RoboRIO analog input ports
+Connecting to roboRIO analog input ports
 ----------------------------------------
 
 .. note:: An additional four analog inputs are available via the "MXP" expansion port.  To use these, a breakout board of some sort that connects to the MXP is needed.
 
 .. warning:: Always consult the technical specifications of the sensor you are using *before* wiring the sensor, to ensure that the correct wire is being connected to each pin.  Failure to do so can result in damage to the sensor or the RIO.
 
-.. warning:: **Never** directly connect the power pin to the ground pin on any port on the RoboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
-|RoboRIO Analog Inputs|
+|roboRIO Analog Inputs|
 
-The RoboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
+The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
 
 Connecting a sensor to a single analog input port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ Some sensors may need to connect to multiple analog input ports in order to func
 
 .. todo:: add picture
 
-.. |RoboRIO Analog Inputs| image:: images/analog-inputs-hardware/roborio-analog-inputs.png
+.. |roboRIO Analog Inputs| image:: images/analog-inputs-hardware/roborio-analog-inputs.png
 .. |ground| unicode:: 0x23DA
 
 Footnotes

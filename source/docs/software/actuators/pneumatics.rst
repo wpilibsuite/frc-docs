@@ -21,7 +21,7 @@ Using the FRC Control System to control Pneumatics
 The Pneumatics Control Module from CTR Electronics is responsible
 for regulating the robot's pressure using a pressure switch and a
 compressor and switching solenoids on and off. The PCM communicates
-with the RoboRIO over CAN. For more information, see `FRC Control System Hardware Overview`
+with the roboRIO over CAN. For more information, see `FRC Control System Hardware Overview`
 
 PCM Module Numbers
 ------------------
@@ -86,7 +86,7 @@ electronically switch a pressurized air line "on" or "off". For more
 information on solenoids, see `this wikipedia
 article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are
 controlled by a robot's Pneumatics Control Module, or PCM, which is in
-turn connected to the robot's RoboRIO via CAN. The easiest way to see a
+turn connected to the robot's roboRIO via CAN. The easiest way to see a
 solenoid's state is via the small red LED (which indicates if the valve
 is "on" or not), and solenoids can be manually actuated when un-powered
 with the small button adjacent to the LED.
