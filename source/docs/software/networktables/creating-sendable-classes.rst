@@ -4,7 +4,7 @@ Using the Sendable interface
 What is Sendable?
 -----------------
 
-Sendable is the base class that allows something to be sent over NetworkTables for debugging through programs such as OutlineViewer, Shuffleboard and SmartDashboard. Base WPI classes such as Command and Subsystem, as well as actuator classes such as DoubleSolenoid, implement the Sendable interface. The WPI documentation of the Sendable interface, as well as a full list of WPI classes which implement Sendable, can be found on the WPI docs for Sendable (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`__).
+Sendable is the base class that allows something to be sent over NetworkTables for debugging through programs such as OutlineViewer, Shuffleboard, and SmartDashboard. Base WPI classes such as Command and Subsystem, as well as actuator classes such as DoubleSolenoid, implement the Sendable interface. The WPI documentation of the Sendable interface, as well as a full list of WPI classes which implement Sendable, can be found in the API docs for Sendable (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Sendable.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classSendable.html>`__).
 
 Putting a Sendable on NetworkTables
 -----------------------------------
@@ -33,7 +33,7 @@ Adding the current state of a Sendable class to NetworkTables is as simple as ad
 Interacting with Sendable classes
 ---------------------------------
 
-Sendable classes are published via NetworkTables for users to view using WPILIb through programs such as OutlineViewer, Shuffleboard and SmartDashboard. These programs allow users to not only view the current state, such as solenoid states, motor output, or PIDSubsystem/PIDCommand's current PID constants, but to actually modify or send data the other direction to the RoboRIO to do things like manually start and stop commands.
+Sendable classes are published via NetworkTables for users to view using WPILIb through programs such as OutlineViewer, Shuffleboard, and SmartDashboard. These programs allow users to not only view the current state, such as solenoid states, motor output, or PIDSubsystem/PIDCommand's current PID constants, but to actually modify or send data the other direction to the RoboRIO to do things like manually start and stop commands.
 
 What is SendableBuilder?
 ------------------------
