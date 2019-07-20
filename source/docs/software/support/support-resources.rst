@@ -9,7 +9,7 @@ Other Documentation
 In addition to this site there are a few other places teams may check for documentation:
 
 -  `NI FRC Community Documents Section <https://decibel.ni.com/content/community/academic/student_competitions/frc?view=documents>`__
--  `USFIRST.org Technical Resources Page <http://www.usfirst.org/roboticsprograms/frc/2013-Technical-Resources>`__
+-  `USFIRST.org Technical Resources Page <https://www.firstinspires.org/resource-library?flagged=All&combine=&field_content_type_value%5B0%5D=first_robotics_competition&field_resource_library_tags_tid=171&sort_by=created_1>`__
 -  `CTRE Product Pages <https://www.ctr-electronics.com/control-system.html>`__
 
 

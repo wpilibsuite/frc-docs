@@ -75,7 +75,7 @@ Re-assemble the radio by reversing the instructions to open it:
 
 - Lay the board back down, making sure it aligns with the screw holes near the front and seats securely
 - Slide the lid onto the back left retaining feature by moving it in from right to left. Take care of the capacitor in this area
-- Rotate the lid, press downwards and slide the back right retaining feature in.
-- Press down firmly on the front/middle of the lid to seat the latches.
+- Rotate the lid, press downwards and slide the back right retaining feature in
+- Press down firmly on the front/middle of the lid to seat the latches
 - Replace 2 screws in front feet
-- Replace front feet.
+- Replace front feet
