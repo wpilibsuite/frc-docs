@@ -120,9 +120,7 @@ Copy Complete
 
 .. image::  images/imaging-your-classmate/copy-complete.png
 
-Once formatting is complete, the restoration files will be extracted and copied to the USB drive. This process should
-take ~15 minutes when connected to a USB 2.0 port.  When all files have been copied, this message will appear, press
-OK to continue.
+Once formatting is complete, the restoration files will be extracted and copied to the USB drive. This process should take ~15 minutes when connected to a USB 2.0 port.  When all files have been copied, this message will appear, press OK to continue.
 
 Eject Drive
 ^^^^^^^^^^^
@@ -168,8 +166,7 @@ Image the Classmate
 Initial Driver Station Boot
 ---------------------------
 
-The first time the Classmate is turned on, there are some unique steps, listed below, that you’ll need to take. The
-initial boot may take several minutes; make sure you do not cycle power during the process.
+The first time the Classmate is turned on, there are some unique steps, listed below, that you’ll need to take. The initial boot may take several minutes; make sure you do not cycle power during the process.
 
 .. note:: These steps are only required during original startup.
 
@@ -224,20 +221,15 @@ Right click on the top entry of the tree and click "Scan for hardware changes". 
 
 Update Software
 ---------------
-In order for the Classmate images to be prepared on time, they are created before the final versions of the software were ready. To use the software for FRC some additional components
-will need to be installed. LabVIEW teams should continue with Installing the FRC Update Suite (All Languages). C++ or Java teams should continue Installing C++ and Java Development Tools for FRC.
+In order for the Classmate images to be prepared on time, they are created before the final versions of the software were ready. To use the software for FRC some additional components will need to be installed. LabVIEW teams should continue with Installing the FRC Update Suite (All Languages). C++ or Java teams should continue Installing C++ and Java Development Tools for FRC.
 
 Errors during Imaging Process
 -----------------------------
 .. image::  images/imaging-your-classmate/errors-during-imaging-process.png
 
-If an error is detected during the imaging process, the following screen will appear. Note that the screenshot below
-shows the error screen for the Driver Station-only image for the E09. The specific image filename shown will vary depending
-on the image being applied.
+If an error is detected during the imaging process, the following screen will appear. Note that the screenshot below shows the error screen for the Driver Station-only image for the E09. The specific image filename shown will vary depending on the image being applied.
 
-The typical reason for the appearance of this message is due to an error with the USB device on which the image is
-stored. Each option is listed below with further details as to the actions you can take in pursuing a solution.
-Pressing any key once this error message is shown will return the user to the menu screen shown in Image the Classmate.
+The typical reason for the appearance of this message is due to an error with the USB device on which the image is stored. Each option is listed below with further details as to the actions you can take in pursuing a solution. Pressing any key once this error message is shown will return the user to the menu screen shown in Image the Classmate.
 
 Option 1
 ^^^^^^^^
