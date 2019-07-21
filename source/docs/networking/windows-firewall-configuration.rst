@@ -13,21 +13,21 @@ Control Panel
 
 .. image:: images/windows-firewall-configuration-1.png
 
-Click ``Start->Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Firewall``.
+Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Defender Firewall``.
 
 Turn Windows Firewall on or off
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/windows-firewall-configuration-2.png
 
-In the left pane, click ``Turn Windows Firewall on or off``, and click yes or enter your Administrator password if a dialog appears.
+In the left pane, click ``Turn Windows Defender Firewall on or off``, and click yes. Enter your Administrator password if a dialog appears.
 
 Disable the Firewall
 ^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/windows-firewall-configuration-3.png
 
-For each category, select the radio button to ``Turn off Windows Firewall``. Then click OK.
+For each category, select the radio button to ``Turn off Windows Defender Firewall``. Then click OK.
 
 Configure the firewall
 ----------------------
@@ -39,14 +39,14 @@ Open Control Panel
 
 .. image:: images/windows-firewall-configuration-4.png
 
-Click ``Start->Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Firewall``.
+Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Defender Firewall``.
 
 Allow a program...
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/windows-firewall-configuration-5.png
 
-In the left pane, click ``Allow a program or feature through Windows Firewall``
+In the left pane, click ``Allow a program or feature through Windows Defender Firewall``
 
 Allowed Programs
 ^^^^^^^^^^^^^^^^

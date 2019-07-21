@@ -11,16 +11,17 @@ Before you begin using the software:
 Pre-Requisites
 --------------
 
-The 2016 FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). If you do not have Java installed, you can download the JRE from here: https://www.java.com/en/download/
+.. note:: While many other WPILib software uses Java 11, the FRC Radio Configuration Utility requires Java 8. 
+The FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). If you do not have Java installed, you can download the JRE from `here <https://www.java.com/en/download/>`__.
 
 The FRC Radio Configuration Utility requires Administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-Administrator account), but if you are having trouble try running it from an Administrator account.
 
 Application Notes
 -----------------
 
-The 2016 Radio Kiosk will program the radio to enforce the 7 Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
+The Radio Kiosk will program the radio to enforce the 4 Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
 
-The 2016 Kiosk has been tested on Windows 7, 8 and 10. It may work on other operating systems, but has not been tested.
+The Kiosk has been tested on Windows 7, 8 and 10. It may work on other operating systems, but has not been tested.
 
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -41,7 +42,7 @@ When programmed with the team version of the Radio Configuration - Utility, the 
 - Username: root
 - Password: root
 
-Note: It is not recommended to modify the configuration manually
+.. note:: It is not recommended to modify the configuration manually
 
 Download the software
 ---------------------
@@ -66,7 +67,7 @@ Launch the software
 
 Use the Start menu or desktop shortcut to launch the program.
 
-.. note:: If you need to locate the program it is installed to C:/Program Files (x86)/FRC Radio Configuration Utility. For 32-bit machines the path is C:/Program Files/FRC Radio Configuration Utility/
+.. note:: If you need to locate the program it is installed to ``C:/Program Files (x86)/FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:/Program Files/FRC Radio Configuration Utility/``
 
 Allow the program to make changes, if prompted
 ----------------------------------------------

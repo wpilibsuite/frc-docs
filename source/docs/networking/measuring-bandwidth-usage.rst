@@ -33,7 +33,7 @@ Add Network Counter
 #. Click ``Add>>`` to add the counter to the right pane.
 #. Click ``OK`` to add the counters to the graph.
 
-Remove extra counters
+Remove Extra Counters
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/measuring-bandwidth-usage-4.png
@@ -52,7 +52,7 @@ Configure Graph Properties
 
 .. image:: images/measuring-bandwidth-usage-6.png
 
-In the ``Maximum Box`` under ``Vertical Scale`` enter 917504 (this is 7 Megabits converted to Bytes). If desired, turn on the horizontal grid by checking the box. The click ``OK`` to close the dialog.
+In the ``Maximum Box`` under ``Vertical Scale`` enter 917504 (this is 7 Megabits converted to Bytes). If desired, turn on the horizontal grid by checking the box. Then click ``OK`` to close the dialog.
 
 Viewing Bandwidth Usage
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ Open Statistics Summary
 
 .. image:: images/measuring-bandwidth-usage-9.png
 
-Let the capture run for at least 1 minute, then click ``Statistics>>Summary``.
+Let the capture run for at least 1 minute, then click ``Statistics`` then ``Summary``.
 
 View Bandwidth Usage
 ^^^^^^^^^^^^^^^^^^^^
