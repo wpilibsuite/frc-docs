@@ -83,9 +83,9 @@ The example below grabs the first character (the direction of the Switch) and us
   {
     if(gameData.charAt(0) == 'L')
     {
-  	//Put left auto code here
+      //Put left auto code here
     } else {
-  	//Put right auto code here
+      //Put right auto code here
     }
   }
 
