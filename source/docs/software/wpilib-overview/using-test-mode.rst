@@ -54,11 +54,14 @@ Test mode in the SmartDashboard
 
 The above sample code produces the following output when the Driver Station is put into Test mode then enabled. You can operate the motors by moving the sliders and read the values of sensors such as the wrist potentiometer.
 
-Notice that the values are grouped by the subsystem names to group related actuators and sensors for easy testing. The subsystem names are suppled in the AddActuator() and AddSensor() method calls as shown in the code examples. This grouping, while not required, makes it much easier to test one subsystem at a time and have all the values next to each other on the screen. Using Test mode with the IterativeRobot template Using Test mode with the IterativeRobot template
+Notice that the values are grouped by the subsystem names to group related actuators and sensors for easy testing. The subsystem names are suppled in the AddActuator() and AddSensor() method calls as shown in the code examples. This grouping, while not required, makes it much easier to test one subsystem at a time and have all the values next to each other on the screen.
 
-The IterativeRobot template lends itself quite nicely to testing since it will periodically call the testPeriodic() method (or Test() in C++) in your robot program. The testPeriodic() method will be called with each DriverStation update, about every 20ms, and it is a good place to do whatever testing commands or LiveWindow updates are desired for testing. The LiveWindow updating is built into the IterativeRobot template so there is very little that is necessary to do in the program to get LiveWindow updates.
+Using Test mode with the TimedRobot template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This works even if you are using the IterativeRobot template and not doing Command-based programming.
+The TimedRobot template lends itself quite nicely to testing since it will periodically call the testPeriodic() method (or Test() in C++) in your robot program. The testPeriodic() method will be called with each DriverStation update, about every 20ms, and it is a good place to do whatever testing commands or LiveWindow updates are desired for testing. The LiveWindow updating is built into the TimedRobot template so there is very little that is necessary to do in the program to get LiveWindow updates.
+
+.. note:: This works even if you are using the TimedRobot template and not doing Command-based programming.
 
 In this example the sensors are registered with the LiveWindow and during the testPeriodic method, simply update all the values by calling the LiveWindow ``run()`` method. If your program is causing too much network traffic you can call the run method less frequently by, for example, only calling it every 5 updates for a 100ms update rate.
 
