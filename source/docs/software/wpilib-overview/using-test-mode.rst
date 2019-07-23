@@ -60,7 +60,7 @@ The IterativeRobot template lends itself quite nicely to testing since it will p
 
 .. note:: This works even if you are using the IterativeRobot template and not doing Command-based programming.
 
-In this example the sensors are registered with the LiveWindow and during the testPeriodic method, simply update all the values by calling the LiveWindow run() method. If your program is causing too much network traffic you can call the run method less frequently by, for example, only calling it every 5 updates for a 100ms update rate.
+In this example the sensors are registered with the LiveWindow and during the testPeriodic method, simply update all the values by calling the LiveWindow ``run()`` method. If your program is causing too much network traffic you can call the run method less frequently by, for example, only calling it every 5 updates for a 100ms update rate.
 
 PID Tuning in Test mode
 -----------------------
