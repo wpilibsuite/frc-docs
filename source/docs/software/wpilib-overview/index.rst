@@ -12,3 +12,4 @@ WPILib Overview
    viewing-console-output
    debugging-robot-program
    importing-eclipse-project
+   2018-game-details

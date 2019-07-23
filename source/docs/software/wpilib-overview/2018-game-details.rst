@@ -16,8 +16,8 @@ Initial States
 
 The initial state of the Game Data returned from the Robot code is non-deterministic. Before the data for the current match is sent the data returned will depend on what data is currently stored in the DS. This may be data from the last match, data from testing using the text box in the DS, or empty. If the data is empty, an empty (not NULL) string is returned. It is recommended to read the data as described above (and check string length if polling in Disabled) to avoid acting on incorrect data.
 
-The Data
-^^^^^^^^
+Plate Assignment Data
+^^^^^^^^^^^^^^^^^^^^^
 
 Data regarding plate assignment is provided to each robot based on their alliance. In other words, the Blue alliance will receive data corresponding to the location of the Blue plates and the Red alliance will receive data corresponding to the location of the Red plates. The data is referenced from the perspective of the Drive Team looking out from their Player Station. The data consists of three characters, each 'L' or 'R', representing the location (Left or Right) of the Alliance's plate on each element, starting with the element closest to the Alliance.
 
