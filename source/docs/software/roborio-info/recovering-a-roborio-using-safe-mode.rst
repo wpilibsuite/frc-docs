@@ -17,7 +17,7 @@ To boot the roboRIO into Safe Mode:
 Recovering the roboRIO
 ----------------------
 
-The roboRIO can now be imaged by using the roboRIO Imaging Tool as described in :ref:`Imaging your roboRIO <docs/software/getting-started/imaging-your-roborio:Imaging your roboRIO>`__.
+The roboRIO can now be imaged by using the roboRIO Imaging Tool as described in :ref:`Imaging your roboRIO <docs/software/getting-started/imaging-your-roborio:Imaging your roboRIO>`.
 
 About Safe Mode
 ---------------
