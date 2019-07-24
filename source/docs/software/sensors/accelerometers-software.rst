@@ -210,7 +210,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearDigitalFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__) to reduce the noise:
 
 .. tabs::
 
@@ -220,30 +220,22 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
         // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
 
-        LinearDigitalFilter xAccelFilter = LinearDigitalFilter.movingAverage(
-            new PIDSource() {
-                @Override
-                public PIDSourceType getPIDSourceType() {
-                    return PIDSourceType.kRate;
-                }
-
-                @Override
-                public double pidGet() {
-                    return accelerometer.getX();
-                }
-
-                @Override
-                public void setPIDSourceType(PIDSourceType pidSource) {
-                }
-            },
-            10);
+        LinearFilter xAccelFilter = LinearFilter.movingAverage(10);
 
         @Override
         public void robotPeriodic() {
             // Get the filtered X acceleration
-            double filteredXAccel = xAccelFilter.pidGet();
+            double filteredXAccel = xAccelFilter.calculate(accelerometer.getX());
         }
 
     .. code-tab:: c++
+    
+        frc::BuiltInAccelerometer accelerometer;
 
-        .. todo:: C++ example
+        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+        auto filter = frc::LinearFilter::MovingAverage(10);
+
+        void Robot::RobotPeriodic() {
+            // Get the filtered X acceleration
+            double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
+        }
