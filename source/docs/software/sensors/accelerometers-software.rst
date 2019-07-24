@@ -229,7 +229,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
         }
 
     .. code-tab:: c++
-    
+
         frc::BuiltInAccelerometer accelerometer;
 
         // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
