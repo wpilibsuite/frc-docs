@@ -210,7 +210,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__) to reduce the noise (Note: Link will be updated with correct documentation closer to kickoff when the docs website is updated):
 
 .. tabs::
 
