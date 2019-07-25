@@ -25,7 +25,7 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 NI Phone Support
 ----------------
 
-Have a LabVIEW, roboRIO, or Driver Station question? NI provides phone support for FRC teams during the build season at 866-511-6285 1:00-7:00 PM CST Monday - Friday.
+Have a LabVIEW, roboRIO, or Driver Station question? NI provides phone support for FRC teams during the build season at `+1 (866) 511-6285 <tel:+1-866-511-6285>`__ 1:00-7:00 PM CST Monday - Friday.
 
 CTRE Support
 ------------
