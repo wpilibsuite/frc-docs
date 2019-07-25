@@ -11,7 +11,7 @@ Before you begin using the software:
 Pre-Requisites
 --------------
 
-.. note:: While many other WPILib software uses Java 11, the FRC Radio Configuration Utility requires Java 8.
+.. note:: Even though WPILib uses Java 11, the FRC Radio Configuration Utility requires Java 8.
 
 The FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). If you do not have Java installed, you can download the JRE from `here <https://www.java.com/en/download/>`__.
 
