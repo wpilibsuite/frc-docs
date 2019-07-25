@@ -22,7 +22,7 @@ Application Notes
 
 The Radio Kiosk will program the radio to enforce the 4 Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
 
-The Kiosk has been tested on Windows 7, 8 and 10. It may work on other operating systems, but has not been tested.
+The Kiosk has been tested on Windows 7, 8, and 10. It may work on other operating systems, but has not been tested.
 
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
