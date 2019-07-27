@@ -16,7 +16,7 @@ Download the Computer Image
 ---------------------------
 .. image:: images/imaging-your-classmate/download-the-computer-image.png
 
-Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/2019>`__. There are several computer images available,
+Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/>`__. There are several computer images available,
 one for each model. On the download site, select the option that matches your computer by clicking the button below the image. Due to the limited size of hard drive in the E09,
 it is supported with a DS/Utilities image only and does not have the IDEs for LabVIEW or C++/Java installed. All other images have the LabVIEW base installation already present.
 

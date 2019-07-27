@@ -53,7 +53,6 @@ be found on this page.
 .. _2019 NI Update Suite: http://www.ni.com/download/first-robotics-software-2017/7904/en/
 .. _2019 FRC Radio Configuration Utility: https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip
 .. _2019 FRC Radio Configuration Utility Israel Version: https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip
-.. _Classmate/Acer PC Image: https://frc-events.firstinspires.org/services/DSImages/2019
+.. _Classmate/Acer PC Image: https://frc-events.firstinspires.org/services/DSImages/
 .. _Download: http://www.ni.com/download/labview-for-frc-18.0/7841/en/
 .. _C++/Java WPILib Installer: https://github.com/wpilibsuite/allwpilib/releases
-
