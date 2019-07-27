@@ -38,9 +38,7 @@ current and 8 pairs rated for 30A continuous current. The PDP provides
 dedicated 12V connectors for the roboRIO, as well as connectors for the
 Voltage Regulator Module and Pneumatics Control Module. It also includes
 a CAN interface for logging current, temperature, and battery voltage.
-For more detailed information, see the[ PDP User
-Manual](http://www.ctr-electronics.com/control-system/pdp.html#product_tabs_technical_resources
-" PDP User Manual").
+For more detailed information, see the `PDP User Manual. <http://www.ctr-electronics.com/control-system/pdp.html#product_tabs_technical_resources>`__
 
 Pneumatics Control Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~
