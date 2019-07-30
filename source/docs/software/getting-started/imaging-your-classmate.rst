@@ -198,7 +198,7 @@ Acer ES1: Fix Wireless Driver
 
 **Acer ES1 PC only!**
 
-The default wireless driver in the image may have issues with intermittent communication with the robot radio. The correct driver is in the image, but could not be set to load by default. To load the correct driver, open the Device Manager by clicking start, typing "Device Manager" in the box and clicking Device Manager
+The default wireless driver in the image may have issues with intermittent communication with the robot radio. The correct driver is in the image, but could not be set to load by default. To load the correct driver, open the Device Manager by clicking start, typing "Device Manager" in the box and clicking Device Manager.
 
 Open Wireless Device Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
