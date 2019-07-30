@@ -233,7 +233,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
         frc::BuiltInAccelerometer accelerometer;
 
         // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-        auto filter = frc::LinearFilter::MovingAverage(10);
+        auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
 
         void Robot::RobotPeriodic() {
             // Get the filtered X acceleration
