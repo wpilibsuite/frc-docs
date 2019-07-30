@@ -212,8 +212,6 @@ For detecting collisions, it is often more robust to measure the jerk than the a
 
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`__) to reduce the noise:
 
-.. todo:: Link should be updated with correct documentation closer to kickoff when the docs website is updated
-
 .. tabs::
 
     .. code-tab:: java
