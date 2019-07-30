@@ -31,6 +31,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/basic-programming/index
    docs/software/advanced-programming/index
+   docs/software/support/support-resources
 
 .. toctree::
    :maxdepth: 1
@@ -54,6 +55,9 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation is v
    docs/networking/networking-basics
    docs/networking/ip-configurations
    docs/networking/roborio-network-troubleshooting
+   docs/networking/windows-firewall-configuration
+   docs/networking/measuring-bandwidth-usage
+   docs/networking/om5p-ac-radio-modification
 
 .. toctree::
    :maxdepth: 1
