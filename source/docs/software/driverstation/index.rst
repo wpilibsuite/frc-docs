@@ -6,6 +6,7 @@ Driverstation
 
    frc-update-suite
    driver-station
+   programming-radios-for-fms-offseason
+   troubleshooting-dashboard-connectivity
    driver-station-best-practices
    driver-station-log-viewer
-
