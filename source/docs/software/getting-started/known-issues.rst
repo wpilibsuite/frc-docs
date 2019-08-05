@@ -1,7 +1,7 @@
-Common Issues
-=============
+Known Issues
+============
 
-This article details common issues (and workarounds) for FRC Control System Software.
+This article details known issues (and workarounds) for FRC Control System Software.
 
 VSCode Fails to Launch Offline
 ------------------------------

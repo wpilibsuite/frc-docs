@@ -5,7 +5,7 @@ Getting Started
    :maxdepth: 1
 
    new-for-2019
-   common-issues
+   known-issues
    control-system-software
    offline-installation-preparations
    windows-setup
