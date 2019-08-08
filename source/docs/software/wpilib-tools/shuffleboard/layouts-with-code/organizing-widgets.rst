@@ -19,6 +19,13 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
         .withSize(2, 1) // make the widget 2x1
         .withPosition(0, 0); // place it in the top-left corner
 
+   .. code-tab:: cpp
+
+      frc::Shuffleboard::GetTab("Pre-round")
+        .Add("Auto Mode", autoModeChooser)
+        .WithSize(2, 1)
+        .WithPosition(0,0);
+
 Adding Widgets to Layouts
 -------------------------
 
@@ -32,9 +39,23 @@ If there are many widgets in a tab with related data, it can be useful to place 
         .getLayout("Elevator", BuiltInLayouts.kList)
         .withSize(2, 2)
         .withProperties(Map.of("Label position", "HIDDEN")); // hide labels for commands
+
       elevatorCommands.add(new ElevatorDownCommand());
       elevatorCommands.add(new ElevatorUpCommand());
-
       // Similarly for the claw commands
+
+   .. code-tab:: cpp
+
+      wpi::StringMap<std::shared_ptr<nt::Value>> properties{
+        std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))
+      };
+
+      frc::ShuffleboardLayout& elevatorCommands = frc::Shuffleboard::GetTab("Commands")
+        .GetLayout("Elevator", frc::BuiltInLayouts::kList)
+        .WithSize(2, 2)
+        .WithProperties(properties);
+
+      elevatorCommands.Add(new ElevatorDownCommand());
+      elevatorCommands.Add(new ElevatorUpCommand());
 
 .. image:: images/organizing-widgets-1.png
