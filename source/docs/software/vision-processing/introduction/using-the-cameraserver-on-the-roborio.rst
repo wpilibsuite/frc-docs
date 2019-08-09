@@ -83,33 +83,29 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
     .. code-tab:: c++
 
-    	#include <cameraserver/CameraServer.h>
-        #include <opencv2/imgproc/imgproc.hpp>
-        #include <opencv2/core/core.hpp>
+      #include <cameraserver/CameraServer.h>
+      #include <opencv2/imgproc/imgproc.hpp>
+      #include <opencv2/core/core.hpp>
 
-        class Robot: public TimedRobot {
-        private:
-          static void VisionThread() {
-            cs::UsbCamera camera = frc::CameraServer::GetInstance()->StartAutomaticCapture();
-            camera.SetResolution(640, 480);
-            cs::CvSink cvSink = frc::CameraServer::GetInstance()->GetVideo();
-            cs::CvSource outputStreamStd = frc::CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
-            cv::Mat source;
-            cv::Mat output;
-            while(true) {
-              if (cvSink.GrabFrame(source) == 0) {
-                continue;
-              }
-              cvtColor(source, output, cv::COLOR_BGR2GRAY);
-              outputStreamStd.PutFrame(output);
-            }
+      void VisionThread() {
+        cs::UsbCamera camera = frc::CameraServer::GetInstance()->StartAutomaticCapture();
+        camera.SetResolution(640, 480);
+        cs::CvSink cvSink = frc::CameraServer::GetInstance()->GetVideo();
+        cs::CvSource outputStreamStd = frc::CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
+        cv::Mat source;
+        cv::Mat output;
+        while(true) {
+          if (cvSink.GrabFrame(source) == 0) {
+            continue;
           }
+          cvtColor(source, output, cv::COLOR_BGR2GRAY);
+          outputStreamStd.PutFrame(output);
+        }
+      }
 
-          void RobotInit() {
-            std::thread visionThread(VisionThread);
-            visionThread.detach();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
+      void Robot::RobotInit() {
+        std::thread visionThread(VisionThread);
+        visionThread.detach();
+      }
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on Shuffleboard, select that named stream. In this case that is "Blur" for the Java program and "Gray" for the C++ sample.
