@@ -28,13 +28,9 @@ The following program starts automatic capture of a USB camera like the Microsof
 
         #include "cameraserver/CameraServer.h"
 
-        class Robot: public TimedRobot {
-        private:
-          void RobotInit() {
-            frc::CameraServer::GetInstance()->StartAutomaticCapture();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
+        void Robot::RobotInit() {
+          frc::CameraServer::GetInstance()->StartAutomaticCapture();
+        }
 
 
 Advanced Camera Server Program
