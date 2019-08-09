@@ -148,7 +148,8 @@ The CameraServer implementation effectively does the following at the cscore lev
 
     .. code-tab:: c++
 
-        #include "cscore_oo.h"
+        #include <cscore.h>
+        #include <cscore_cv.h>
 
         // Creates UsbCamera and MjpegServer [1] and connects them
         cs::UsbCamera usbCamera("USB Camera 0", 0);
@@ -160,7 +161,7 @@ The CameraServer implementation effectively does the following at the cscore lev
         cvSink.SetSource(usbCamera);
 
         // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream("Blur", cs::PixelFormat::kMJPEG, 640, 480, 30);
+        cs::CvSource outputStream("Blur", cs::VideoMode::kMJPEG, 640, 480, 30);
         cs::MjpegServer mjpegServer2("serve_Blur", 1182);
         mjpegServer2.SetSource(outputStream);
 
