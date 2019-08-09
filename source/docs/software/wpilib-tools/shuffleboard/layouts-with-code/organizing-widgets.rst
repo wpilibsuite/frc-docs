@@ -55,7 +55,10 @@ If there are many widgets in a tab with related data, it can be useful to place 
         .WithSize(2, 2)
         .WithProperties(properties);
 
-      elevatorCommands.Add(new ElevatorDownCommand());
-      elevatorCommands.Add(new ElevatorUpCommand());
+      ElevatorDownCommand* elevatorDown = new ElevatorDownCommand();
+      ElevatorUpCommand* elevatorUp = new ElevatorUpCommand();
+
+      elevatorCommands.Add("Elevator Down", elevatorDown);
+      elevatorCommands.Add("Elevator Up", elevatorUp);
 
 .. image:: images/organizing-widgets-1.png
