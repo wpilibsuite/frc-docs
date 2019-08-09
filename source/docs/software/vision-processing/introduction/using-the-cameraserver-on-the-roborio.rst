@@ -15,9 +15,9 @@ The following program starts automatic capture of a USB camera like the Microsof
         package org.usfirst.frc.team190.robot;
 
         import edu.wpi.first.wpilibj.CameraServer;
-        import edu.wpi.first.wpilibj.IterativeRobot;
+        import edu.wpi.first.wpilibj.TimedRobot
 
-        public class Robot extends IterativeRobot {
+        public class Robot extends TimedRobot {
 
           public void robotInit() {
             CameraServer.getInstance().startAutomaticCapture();
@@ -26,13 +26,12 @@ The following program starts automatic capture of a USB camera like the Microsof
 
     .. code-tab:: c++
 
-        #include "WPILib.h"
-        class Robot: public IterativeRobot
-        {
+        #include "cameraserver/CameraServer.h"
+
+        class Robot: public TimedRobot {
         private:
-          void RobotInit()
-          {
-            CameraServer::GetInstance()->StartAutomaticCapture();
+          void RobotInit() {
+            frc::CameraServer::GetInstance()->StartAutomaticCapture();
           }
         };
         START_ROBOT_CLASS(Robot)
@@ -84,18 +83,17 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
     .. code-tab:: c++
 
-        #include "WPILib.h"
+    	#include <cameraserver/CameraServer.h>
         #include <opencv2/imgproc/imgproc.hpp>
         #include <opencv2/core/core.hpp>
-        class Robot: public IterativeRobot
-        {
+
+        class Robot: public TimedRobot {
         private:
-          static void VisionThread()
-          {
-            cs::UsbCamera camera = CameraServer::GetInstance()->StartAutomaticCapture();
+          static void VisionThread() {
+            cs::UsbCamera camera = frc::CameraServer::GetInstance()->StartAutomaticCapture();
             camera.SetResolution(640, 480);
-            cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
-            cs::CvSource outputStreamStd = CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
+            cs::CvSink cvSink = frc::CameraServer::GetInstance()->GetVideo();
+            cs::CvSource outputStreamStd = frc::CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
             cv::Mat source;
             cv::Mat output;
             while(true) {
@@ -106,8 +104,8 @@ In the following example a thread created in robotInit() gets the Camera Server 
               outputStreamStd.PutFrame(output);
             }
           }
-          void RobotInit()
-          {
+
+          void RobotInit() {
             std::thread visionThread(VisionThread);
             visionThread.detach();
           }
