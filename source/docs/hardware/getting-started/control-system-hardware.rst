@@ -89,7 +89,7 @@ Talon SRX
 
 The Talon SRX motor controller is a CAN-enabled “smart motor controller” from Cross The Road Electronics/VEX Robotics. The Talon SRX has an electrically isolated metal housing for heat dissipation, making the use of a fan optional. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control such as limiting or PID(F) closed loop control on the device. For more information see the `Talon SRX User Manual <http://www.ctr-electronics.com/talon-srx.html#product_tabs_technical_resources>`__.
 
-..note:: CAN Talon SRX has been removed from WPILib. See this `blog <https://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ **for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__.
+..note:: CAN Talon SRX has been removed from WPILib. See this `blog <https://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__.
 
 Victor 888 Motor Controller / Victor 884 Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -170,7 +170,7 @@ Robot Battery
 
 .. image:: images/control-system-hardware/robot-battery.png
 
-The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the Datasheets for the `MK ES17-12 <https://www.batteryuniverse.com/msds/sealed-lead-acid-msds.pdf>`__ and `nersys NP18-12 <https://www.enersys.com/WorkArea/DownloadAsset.aspx?id=488>`__. 
+The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the Datasheets for the `MK ES17-12 <https://www.batteryuniverse.com/msds/sealed-lead-acid-msds.pdf>`__ and `nersys NP18-12 <https://www.enersys.com/WorkArea/DownloadAsset.aspx?id=488>`__.
 
 .. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
 
