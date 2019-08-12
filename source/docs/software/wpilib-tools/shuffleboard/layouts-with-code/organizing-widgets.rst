@@ -15,7 +15,7 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
    .. code-tab:: java
 
       Shuffleboard.getTab("Pre-round")
-        .add("Auto Mode", autoModeChooser) 
+        .add("Auto Mode", autoModeChooser)
         .withSize(2, 1) // make the widget 2x1
         .withPosition(0, 0); // place it in the top-left corner
 
