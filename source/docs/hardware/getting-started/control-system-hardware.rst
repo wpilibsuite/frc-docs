@@ -80,7 +80,7 @@ Talon Motor Controller
 
 .. image:: images/control-system-hardware/talon-motor-controller.png
 
-The Talon Motor Controller from Cross the Road Electronics is a variable speed motor controller for use in FRC. The Talon is controlled over the PWM interface. The Talon should be connected to a PWM output of the roboRIO and powered from the Power Distribution Panel. For more information see the `Talon User Manual <http://www.crosstheroadelectronics.com/Talon_User_Manual_1_1.pdf>`__.
+The Talon Motor Controller from Cross the Road Electronics is a variable speed motor controller for use in FRC. The Talon is controlled over the PWM interface. The Talon should be connected to a PWM output of the roboRIO and powered from the Power Distribution Panel. For more information see the `Talon User Manual <https://ctr-electronics.com/Talon_User_Manual_1_1.pdf>`__.
 
 Talon SRX
 ^^^^^^^^^
