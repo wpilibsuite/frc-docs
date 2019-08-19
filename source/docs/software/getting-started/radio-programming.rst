@@ -68,7 +68,7 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 
 `FRC Radio Configuration 19.1.1 <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip>`_
 
-`FRC Radio Configuration 19.1.1 Israel Version <http://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`_
+`FRC Radio Configuration 19.1.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`_
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
