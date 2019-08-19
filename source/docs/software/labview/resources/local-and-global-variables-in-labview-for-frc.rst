@@ -7,7 +7,7 @@ This example serves as an introduction to local and global variables, how they a
 
 Local variables and global variables may be used to transfer data between locations within the same VI (local variables) or within different VI’s (global variables), breaking the conventional `Data Flow Paradigm <http://www.ni.com/getting-started/labview-basics/dataflow>`__ for which LabVIEW is famous.  Thus, they may be useful when, for whatever reason, you cannot wire the value directly to the node to another.
 
-Note: One possible reason may be that you need to pass data between consecutive loop iterations; Miro\_T covered this `in this post <http://decibel.ni.com/content/docs/DOC-41137>`__.  It should also be noted that the `feedback node <http://zone.ni.com/reference/en-XX/help/371361L-01/lvconcepts/block_diagram_feedback/>`__ in LabVIEW may be used as an equivalent to the shift register, although that may be a topic for another day!
+Note: One possible reason may be that you need to pass data between consecutive loop iterations; Miro\_T covered this `in this post <https://forums.ni.com/t5/FIRST-Robotics-Competition/Use-of-Shift-Registers-to-Pass-Data-Between-Loop-Iterations/ta-p/3498415?profile.language=en>`__.  It should also be noted that the `feedback node <http://zone.ni.com/reference/en-XX/help/371361L-01/lvconcepts/block_diagram_feedback/>`__ in LabVIEW may be used as an equivalent to the shift register, although that may be a topic for another day!
 
 Introduction to Local and Global Variables
 ------------------------------------------

@@ -6,37 +6,37 @@ LabVIEW Examples and Tutorials
 Popular Tutorials
 -----------------
 
-`Autonomous Timed Movement Tutorial <http://forums.ni.com/docs/DOC-26295>`__
+`Autonomous Timed Movement Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2016-Autonomous-Timed-Movement-Tutorial/ta-p/3535608?profile.language=en>`__
 
 -  Move your robot autonomously based on different time intervals
--  `See more on Autonomous Movement <http://forums.ni.com/community/academic/student_competitions/frc?view=all#/?tag=1641&tagSet=1895>`__
+-  `See more on Autonomous Movement <https://forums.ni.com/t5/FIRST-Robotics-Competition/Autonomous-Timed-Movement-Tutorial/ta-p/3732667?profile.language=en>`__
 
-`Basic Motor Control Tutorial <http://forums.ni.com/docs/DOC-14723>`__
+`Basic Motor Control Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2014-Basic-Motor-Control-Tutorial/ta-p/3504064?profile.language=en>`__
 
 -  Setup your roboRIO motor hardware and software
 -  Learn to setup the FRC Control System and FRC Robot Project
--  `See more on Motor Control <http://forums.ni.com/community/academic/student_competitions/frc?view=all#/?tag=14410&tagSet=1894>`__
+-  `See more on Motor Control <https://forums.ni.com/t5/FIRST-Robotics-Competition/Basic-Motor-Control-Tutorial/ta-p/3733426?profile.language=en>`__
 
-`Image Processing Tutorial <http://forums.ni.com/docs/DOC-26318>`__
+`Image Processing Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2015-Image-Processing-Tutorial/ta-p/3490518?profile.language=en>`__
 
 -  Learn basic Image Processing techniques and how to use NI Vision Assistant
--  `See more on Cameras and Image Processing <http://forums.ni.com/community/academic/student_competitions/frc?view=all#/?tag=1010&tagSet=1894>`__
+-  `See more on Cameras and Image Processing <https://forums.ni.com/t5/FIRST-Robotics-Competition/Image-Processing-in-LabVIEW-for-FRC/ta-p/3732677?profile.language=en>`__
 
-`PID Control Tutorial <http://forums.ni.com/docs/DOC-26317>`__
+`PID Control Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2015-PID-Tutorial/ta-p/3535805?profile.language=en>`__
 
 -  What is PID Control and how can I implement it?
 
-`Command and Control Tutorial <http://forums.ni.com/docs/DOC-46544>`__
+`Command and Control Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/Command-and-Control-Tutorial/ta-p/3534946?profile.language=en>`__
 
 -  What is Command and Control?
 -  How do I implement it?
 
-`Driver Station Tutorial <http://forums.ni.com/docs/DOC-26297>`__
+`Driver Station Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/Archived-FRC-2015-Driver-Station-Tutorial/ta-p/3535650?profile.language=en>`__
 
 -  Get to know the FRC Driver Station
 
-`Test Mode Tutorial <http://forums.ni.com/docs/DOC-26314>`__
+`Test Mode Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2015-Test-Mode-Tutorial/ta-p/3535797?profile.language=en>`__
 
 -  Learn to setup and use Test Mode
 
-Looking for more examples and discussions? Search through more documents or post your own discussion, example code, or tutorial by \ `clicking here! <http://forums.ni.com/community/academic/student_competitions/frc?view=all#/?tagSet=undefined>`__\  Don’t forget to mark your posts with a tag!
+Looking for more examples and discussions? Search through more documents or post your own discussion, example code, or tutorial by \ `clicking here! <https://forums.ni.com/t5/FIRST-Robotics-Competition/tkb-p/3019?profile.language=en>`__\  Don’t forget to mark your posts with a tag!

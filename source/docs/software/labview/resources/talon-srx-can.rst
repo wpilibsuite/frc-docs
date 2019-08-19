@@ -5,4 +5,4 @@ The Talon SRX motor controller is a CAN-enabled "smart motor controller" from Cr
 
 Extensive documentation about programming the Talon SRX in all three FRC languages can be found in the `Talon SRX Software Reference Manual on CTRE's Talon SRX product page <http://www.ctr-electronics.com/talon-srx.html#product_tabs_technical_resources>`__.
 
-.. note:: CAN Talon SRX has been removed from WPILib. See `this blog <http://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__
+.. note:: CAN Talon SRX has been removed from WPILib. See `this blog <https://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for more info and find the CTRE Toolsuite installer `here <http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__

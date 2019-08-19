@@ -89,7 +89,6 @@ user_options = [
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
 
-
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
@@ -113,3 +112,8 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub']
+
+
+# -- Options for the linkcheck builder ---------------------------------------
+
+linkcheck_anchors = False

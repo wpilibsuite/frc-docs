@@ -36,7 +36,7 @@ On-shaft encoders
 
 .. todo:: add picture
 
-On-shaft encoders (such as the `AMT103-V <https://www.digikey.com/product-detail/en/cui-inc/AMT103-V/102-1308-ND/827016>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
+On-shaft encoders (such as the `AMT103-V <https://www.cui.com/product/motion/rotary-encoders/incremental/modular/amt10-series>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
 
 Magnetic encoders
 ^^^^^^^^^^^^^^^^^
