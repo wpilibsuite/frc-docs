@@ -16,7 +16,7 @@ All Teams
 
 -  `2019 NI Update Suite <https://www.ni.com/download/first-robotics-software-2017/7904/en/>`__ (Note: Requires decryption key from kickoff broadcast!)
 -  `2019 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip>`__ or `2019 FRC Radio Configuration Utility Israel Version <http://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`__
--  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/`__
+-  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
