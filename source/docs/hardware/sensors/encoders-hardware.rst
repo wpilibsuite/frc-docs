@@ -43,7 +43,7 @@ Magnetic encoders
 
 .. todo:: add picture
 
-Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <http://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
+Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 
 Encoder resolution
 ------------------

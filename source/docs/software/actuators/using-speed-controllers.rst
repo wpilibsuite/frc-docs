@@ -55,7 +55,7 @@ and REV Robotics.
 SPARK MAX
 ^^^^^^^^^
 For information regarding the SparkMAX CAN Speed Controller, which can be
-used in either CAN or PWM mode, please refer to the SparkMAX `software resources <http://www.revrobotics.com/sparkmax-software/>`_
+used in either CAN or PWM mode, please refer to the SparkMAX `software resources <https://www.revrobotics.com/sparkmax-software/>`_
 and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_
 
 CTRE CAN Motor Controllers
