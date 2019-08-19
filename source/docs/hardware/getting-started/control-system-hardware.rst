@@ -103,7 +103,7 @@ Victor SP
 
 .. image:: images/control-system-hardware/victor-sp-motor-controller.png
 
-The Victor SP motor controller is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models. For more information, see the `Victor SP User Manual <https://www.vexrobotics.com/vexpro/motors-electronics/217-9090.html>`__.
+The Victor SP motor controller is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models. For more information, see the `Victor SP User Manual <https://www.vexrobotics.com/217-9090.html#Docs_&_Downloads>`__.
 
 Victor SPX
 ^^^^^^^^^^
