@@ -112,8 +112,3 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub']
-
-
-# -- Options for the linkcheck builder ---------------------------------------
-
-linkcheck_anchors = False
