@@ -59,7 +59,6 @@ New teams may wish to familiarize themselves with the different components of th
    docs/networking/roborio-network-troubleshooting
    docs/networking/measuring-bandwidth-usage
    docs/networking/windows-firewall-configuration
-   docs/networking/measuring-bandwidth-usage
    docs/networking/om5p-ac-radio-modification
 
 .. toctree::
