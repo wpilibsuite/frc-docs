@@ -1,6 +1,8 @@
 Git Version Control Introduction
 ================================
 
+.. important:: A more in-depth guide on Git is available on the `Git website <https://git-scm.com/book/en/v2>`__.
+
 `Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separate testing environments into *branches*
