@@ -93,77 +93,41 @@ The above graph is what the following CameraServer snippet creates:
 
 .. tabs::
 
-    .. code-tab:: java
+   .. tab:: Java
 
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
+      .. literalinclude:: examples/cameraserver-class-1/java/Robot.java
+         :language: java
+         :lines: 23-33
+         :linenos:
+         :lineno-start: 23
 
-        // Creates UsbCamera and MjpegServer [1] and connects them
-        CameraServer.getInstance().startAutomaticCapture();
+   .. tab:: C++
 
-        // Creates the CvSink and connects it to the UsbCamera
-        CvSink cvSink = CameraServer.getInstance().getVideo();
-
-        // Creates the CvSource and MjpegServer [2] and connects them
-        CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
-
-    .. code-tab:: c++
-
-        #include "cameraserver/CameraServer.h"
-
-        // Creates UsbCamera and MjpegServer [1] and connects them
-        frc::CameraServer::GetInstance().StartAutomaticCapture();
-
-        // Creates the CvSink and connects it to the UsbCamera
-        cs::CvSink cvSink = frc::CameraServer::GetInstance().GetVideo();
-
-        // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream = frc::CameraServer::GetInstance().PutVideo("Blur", 640, 480);
+      .. literalinclude:: examples/cameraserver-class-1/cpp/Robot.cpp
+         :language: cpp
+         :lines: 13-22
+         :linenos:
+         :lineno-start: 13
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
 
 .. tabs::
 
-    .. code-tab:: java
+   .. tab:: Java
 
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
-        import edu.wpi.cscore.MjpegServer;
-        import edu.wpi.cscore.UsbCamera;
+      .. literalinclude:: examples/cameraserver-class-2/java/Robot.java
+         :language: java
+         :lines: 25-40
+         :linenos:
+         :lineno-start: 25
 
-        // Creates UsbCamera and MjpegServer [1] and connects them
-        UsbCamera usbCamera = new UsbCamera("USB Camera 0", 0);
-        MjpegServer mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
-        mjpegServer1.setSource(usbCamera);
+   .. tab:: C++
 
-        // Creates the CvSink and connects it to the UsbCamera
-        CvSink cvSink = new CvSink("opencv_USB Camera 0");
-        cvSink.setSource(usbCamera);
-
-        // Creates the CvSource and MjpegServer [2] and connects them
-        CvSource outputStream = new CvSource("Blur", PixelFormat.kMJPEG, 640, 480, 30);
-        MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
-        mjpegServer2.setSource(outputStream);
-
-    .. code-tab:: c++
-
-        #include <cscore.h>
-        #include <cscore_cv.h>
-
-        // Creates UsbCamera and MjpegServer [1] and connects them
-        cs::UsbCamera usbCamera("USB Camera 0", 0);
-        cs::MjpegServer mjpegServer1("serve_USB Camera 0", 1181);
-        mjpegServer1.SetSource(usbCamera);
-
-        // Creates the CvSink and connects it to the UsbCamera
-        cs::CvSink cvSink("opencv_USB Camera 0");
-        cvSink.SetSource(usbCamera);
-
-        // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream("Blur", cs::VideoMode::kMJPEG, 640, 480, 30);
-        cs::MjpegServer mjpegServer2("serve_Blur", 1182);
-        mjpegServer2.SetSource(outputStream);
+      .. literalinclude:: examples/cameraserver-class-2/cpp/Robot.cpp
+         :language: cpp
+         :lines: 10-27
+         :linenos:
+         :lineno-start: 10
 
 Reference Counting
 ^^^^^^^^^^^^^^^^^^

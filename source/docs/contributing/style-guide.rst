@@ -72,14 +72,34 @@ Headings should be in the following structure
 
 Use title case for headings.
 
-Code blocks
+Code Blocks
 -----------
 
-All code blocks should have a language specified.
+Sphinx doesn't easily allow testing of Java and C++ code snippets. As a workaround, examples must be compilabled in a ``Robot.java`` or ``Robot.cpp`` form. The folder structure for this format must be in an examples directory, relative to the document. It must then be in a subfolder with the document name appended with a number recognizing where it appears in the document. Lastly, it must be in a ``java`` or ``cpp`` directory.
 
-1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
+Example Directory Structure:
+
+.. code-block:: text
+
+   examples/
+   --->hello-world-1
+   ------->java
+   ----------->Robot.java
+   ------->cpp
+   ----------->Robot.cpp
+   ----------->Robot.h
+   --->hello-world-2
+   ------->java
+   ----------->Robot.java
+   ------->cpp
+   ----------->Robot.cpp
+   ----------->Robot.h
+
+   hello-world.rst
 
 Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
+
+.. important:: Remember, examples **must** be compilable!
 
 Links
 -----
@@ -132,9 +152,15 @@ Examples
    =====
    This is an example article
 
-   .. code-block:: java
+   .. tabs::
 
-      System.out.println("Hello World");
+      .. tab:: Java
+
+         .. literalinclude:: examples/example-1/Robot.java
+            :language: java
+            :lines: 5
+            :linenos:
+            :lineno-start: 5
 
    Section
    -------
