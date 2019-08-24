@@ -84,12 +84,14 @@ Example Directory Structure:
    examples/
    --->hello-world-1
    ------->java
+   ----------->Main.java
    ----------->Robot.java
    ------->cpp
    ----------->Robot.cpp
    ----------->Robot.h
    --->hello-world-2
    ------->java
+   ----------->Main.java
    ----------->Robot.java
    ------->cpp
    ----------->Robot.cpp
