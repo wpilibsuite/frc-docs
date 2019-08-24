@@ -45,12 +45,14 @@ All approved motor controllers have WPI classes provided for them.
    .. code-tab:: c++
 
       frc::Spark spark{
-      // The RIO PWM port this is connected to
-      0};
+         // The RIO PWM port this is connected to
+         0
+      };
 
       spark.Set(
-      // the output of the motor, between -1 and 1
-      -0.75);
+         // the output of the motor, between -1 and 1
+         -0.75
+      );
 
       frc::VictorSP victor{
          // The RIO PWM port this is connected to
