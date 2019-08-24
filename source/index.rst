@@ -10,6 +10,11 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
 
 New teams may wish to familiarize themselves with the different components of the FRC :doc:`Software <docs/software/getting-started/control-system-software>` and :doc:`Hardware <docs/hardware/getting-started/control-system-hardware>`. These pages introduce the various components of the software and hardware elements that make up building a FRC robot. After reviewing these pages, information on setting up and using this software/hardware can be found in their appropriate sections in the left-hand navigation menu.
 
+**New to Programming?**
+
+- Check out the `Head First Java <https://www.amazon.com/dp/B009KCUX3S>`__ textbook for a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
+- `Programming: Principles and Practice Using C++ <https://www.amazon.com/dp/B00KPTEH8C/>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
+
 .. toctree::
    :maxdepth: 2
    :caption: WPILib Software
