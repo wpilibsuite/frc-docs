@@ -12,8 +12,8 @@ New teams may wish to familiarize themselves with the different components of th
 
 **New to Programming?**
 
-- Check out the `Head First Java <https://www.amazon.com/dp/B009KCUX3S>`__ textbook for a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
-- `Programming: Principles and Practice Using C++ <https://www.amazon.com/dp/B00KPTEH8C/>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
+- Check out the `Head First Java 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ textbook for a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
+- `Programming: Principles and Practice Using C++ 2nd Edition <https://www.amazon.com/dp/B00KPTEH8C/>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784). Another great resource for learning C++ is `C++ Primer Plus 6th Edition <https://www.amazon.com/dp/0321776402/>`__ (ISBN-10: 0321776402).
 
 .. toctree::
    :maxdepth: 2
