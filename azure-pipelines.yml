@@ -50,7 +50,7 @@ steps:
     rootFolderOrFile: build/html/
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/html/docs-html.zip'
     replaceExistingArchive: true
 
 - task: ArchiveFiles@2
@@ -59,7 +59,7 @@ steps:
     rootFolderOrFile: build/latex/firstroboticscompetition.pdf
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/pdf/docs-pdf.zip'
     replaceExistingArchive: true
 
 - task: ArchiveFiles@2
@@ -68,10 +68,24 @@ steps:
     rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-epub.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/epub/docs-epub.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifacts'
+  displayName: 'Publish HTML Artifact'
   inputs:
-    artifactName: 'Docs'
+    path: $(Build.ArtifactStagingDirectory)/html/
+    artifactName: 'docs-html'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish PDF Artifact'
+  inputs:
+    path: $(Build.ArtifactStagingDirectory)/pdf/
+    artifactName: 'docs-pdf'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish EPUB Artifact'
+  inputs:
+    path: $(Build.ArtifactStagingDirectory)/epub/
+    artifactName: 'docs-epub'
+
