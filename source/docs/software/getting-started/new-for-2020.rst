@@ -10,4 +10,4 @@ WPILib
 - PIDController has been rewritten
   - Takes lambdas for the measurements and outputs
   - No longer runs asynchronously. Async has been a footgun for a large majority of teams, and a new implementation will be implemented in the future.
-- Drive classes have been added for Swerve
+- Kinematics classes have been added for Swerve, Mecanum, and DifferentialDrive. This allows for more complete closed loop driving of these drive types.
