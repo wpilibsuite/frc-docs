@@ -24,7 +24,7 @@ The following program starts automatic capture of a USB camera like the Microsof
            :language: cpp
            :lines: 11-15
            :linenos:
-           :lineno-start: 21
+           :lineno-start: 11
 
 
 Advanced Camera Server Program
