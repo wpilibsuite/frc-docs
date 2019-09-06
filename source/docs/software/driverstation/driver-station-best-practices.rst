@@ -25,7 +25,7 @@ Prior To Departing For The Competition
 
    d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
    e. A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 and replace it with a SSD.
-   f. Updated to the current release of Windows 10. Windows 10 is the most common OS now seen at competitions, so bugs are more likely to be found than on Windows.
+   f. Updated to the current release of Windows 10. Being the most common OS now seen at competitions, bugs are more likely to be found and fixed for Windows 10 than on older Windows versions.
 
 5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
 6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
