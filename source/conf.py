@@ -34,7 +34,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
-    'sphinxcontrib.ghcontributors'
+    'sphinxcontrib.ghcontributors',
+    'sphinxcontrib.remoteliteralinclude'
 ]
 
 # TODO Directives omit a warning
