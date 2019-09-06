@@ -14,7 +14,7 @@ Inline command definitions
 --------------------------
 
 While users are able to create commands by explicitly writing command
-classes (either by subclassing ``SendableCommandBase`` or implementing
+classes (either by subclassing ``CommandBase`` or implementing
 ``Command``), for many commands (such as those that simply call a single
 subsystem method) this involves a lot of wasteful boilerplate code. To
 help alleviate this, many of the prewritten commands included in the

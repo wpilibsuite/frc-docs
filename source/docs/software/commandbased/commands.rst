@@ -1,28 +1,31 @@
 Commands
 ========
 
-Commands are simple state machines that perform high-level robot
-functions using the methods defined by subsystems. Commands can be
-either idle, in which they do nothing, or scheduled, in which the
-scheduler will execute a specific set of the command’s code depending on
-the state of the command. The ``CommandScheduler`` recognizes scheduled
-commands as being in one of three states: initializing, executing, or
-ending. Commands specify what is done in each of these states through
-the ``initialize()``, ``execute()`` and ``end()`` methods.
+Commands are simple state machines that perform high-level robot functions using the methods defined by subsystems. Commands can be either idle, in which they do nothing, or scheduled, in which the scheduler will execute a specific set of the command’s code depending on the state of the command. The ``CommandScheduler`` recognizes scheduled commands as being in one of three states: initializing, executing, or ending. Commands specify what is done in each of these states through the ``initialize()``, ``execute()`` and ``end()`` methods.
 
 Creating commands
 -----------------
 
-Similarly to subsystems, the recommended method for most users to create
-a command is to subclass the abstract ``SendableCommandBase`` class:
+Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class:
 
-.. code-block:: java
+.. tabs::
 
-   import edu.wpi.first.wpilibj.experimental.command.SendableCommandBase;
+  .. tab:: Java
+    
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
+      :language: java
+      :lines: 10-29
+      :linenos:
+      :lineno-start: 10
 
-   public class ExampleCommand extends SendableCommandBase {
-     // Your command code goes here!
-   }
+  .. tab:: C++
+
+    .. literalinclude:: examples/commands/example-command/c++/ExampleCommand.h
+      :language: c++
+      :lines: 8-34
+      :linenos:
+      :lineno-start: 8
+    
 
 As before, this contains several convenience features. It automatically
 overrides the ``getRequirements()`` method for users, returning a list
@@ -158,14 +161,14 @@ is a simple command from the HatchBot example project that uses the
    package edu.wpi.first.wpilibj.examples.hatchbottraditional.commands;
 
    import edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems.HatchSubsystem;
-   import edu.wpi.first.wpilibj.experimental.command.SendableCommandBase;
+   import edu.wpi.first.wpilibj.experimental.command.CommandBase;
 
    /**
     * A simple command that grabs a hatch with the {@link HatchSubsystem}.  Written explicitly for
     * pedagogical purposes; actual code should inline a command this simple with
     * {@link edu.wpi.first.wpilibj.experimental.command.InstantCommand}.
     */
-   public class GrabHatch extends SendableCommandBase {
+   public class GrabHatch extends CommandBase {
 
      // The subsystem the command runs on
      private final HatchSubsystem m_hatchSubsystem;
@@ -211,14 +214,14 @@ same example project:
    import java.util.function.DoubleSupplier;
 
    import edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems.DriveSubsystem;
-   import edu.wpi.first.wpilibj.experimental.command.SendableCommandBase;
+   import edu.wpi.first.wpilibj.experimental.command.CommandBase;
 
    /**
     * A command to drive the robot with joystick input (passed in as {@link DoubleSupplier}s).
     * Written explicitly for pedagogical purposes - actual code should inline a command this simple
     * with {@link edu.wpi.first.wpilibj.experimental.command.RunCommand}.
     */
-   public class DefaultDrive extends SendableCommandBase {
+   public class DefaultDrive extends CommandBase {
 
      private final DriveSubsystem m_drive;
      private final DoubleSupplier m_forward;
