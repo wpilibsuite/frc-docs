@@ -4,4 +4,4 @@ sphinx-tabs==1.1.11
 latex==0.7.0
 doc8==0.8.0
 sphinxcontrib-ghcontributors==0.1.0
-sphinxcontrib-remoteliteralinclude==0.0.2
+sphinxcontrib-remoteliteralinclude==0.0.3
