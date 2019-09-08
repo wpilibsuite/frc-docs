@@ -89,7 +89,6 @@ user_options = [
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
 
-
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'

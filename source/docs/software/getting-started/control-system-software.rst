@@ -84,7 +84,7 @@ CTRE Toolsuite
 
 .. image:: images/control-system-software/ctre-toolsuite.png
 
-The CTRE Toolsuite installs the software libraries for Talon SRX (C++/Java/LabVIEW) as well as the HERO Lifeboat software which can be used to update the roboRIO web based CAN configuration with the latest CTRE-specific features. The installer can be found `here <http://www.ctr-electronics.com/control-system/hro.html>`__
+The CTRE Toolsuite installs the software libraries for Talon SRX (C++/Java/LabVIEW) as well as the HERO Lifeboat software which can be used to update the roboRIO web based CAN configuration with the latest CTRE-specific features. The installer can be found `here <https://www.ctr-electronics.com/control-system/hro.html>`__
 
 .. note:: A separate package (zip) is provided to get the Talon SRX and Pidgeon libraries on non-Windows systems. Users should unzip this file and place the contents into ``USER\wpilib\user`` folder
 
