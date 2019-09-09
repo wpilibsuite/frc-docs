@@ -1,8 +1,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 resources:
   containers:
-  - container: readthedocs
-    image: readthedocs/build:latest
+  - container: daltz333
+    image: frc-docs-docker/build:latest
 
 trigger:
 - master
