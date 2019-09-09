@@ -4,6 +4,8 @@ resources:
   - container: darasmith
     image: frc-docs-docker/build:latest
 
+container: frc-docs-docker
+
 trigger:
 - master
 - develop
