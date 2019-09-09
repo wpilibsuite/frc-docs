@@ -2,7 +2,7 @@
 resources:
   containers:
   - container: darasmith
-    image: frc-docs-docker/build:latest
+    image: darasmith/frc-docs-docker/build:latest
 
 container: darasmith
 
