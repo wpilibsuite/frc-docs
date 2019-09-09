@@ -44,6 +44,9 @@ todo_emit_warnings = False
 # TODO Directives are not shown in output
 todo_include_todos = False
 
+# Disable following anchors in URLS for linkcheck
+linkcheck_anchors = False
+
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
 
@@ -90,7 +93,6 @@ user_options = [
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
 
-
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
@@ -113,4 +115,4 @@ latex_elements = {
 
 suppress_warnings = ['epub.unknown_project_files']
 
-sphinx_tabs_valid_builders = ['epub']
+sphinx_tabs_valid_builders = ['epub', 'linkcheck']

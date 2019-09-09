@@ -54,11 +54,11 @@ https://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/
 
 There are also 3 Community Tutorials on case structures here:
 
-https://forums.ni.com/docs/DOC-11621
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-1/ta-p/3505945?profile.language=en
 
-https://forums.ni.com/docs/DOC-11622
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-2/ta-p/3505933?profile.language=en
 
-https://forums.ni.com/docs/DOC-11623
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-3/ta-p/3505979?profile.language=en
 
 .. image:: images/how-to-use-joystick-buttons-to-control-motors-or-solenoids/2.png
 
