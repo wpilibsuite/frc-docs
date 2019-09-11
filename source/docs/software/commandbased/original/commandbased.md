@@ -148,12 +148,12 @@ Subsystems can be associated with "default commands" that will be automatically 
 
 ### Creating a subsystem
 
-The recommended method to create a subsystem for most users is to subclass the abstract `SendableSubsystemBase` class:
+The recommended method to create a subsystem for most users is to subclass the abstract `SubsystemBase` class:
 
 ```java
-import edu.wpi.first.wpilibj.experimental.command.SendableSubsystemBase;
+import edu.wpi.first.wpilibj.experimental.command.SubsystemBase;
 
-public class ExampleSubsystem extends SendableSubsystemBase {
+public class ExampleSubsystem extends SubsystemBase {
   // Your subsystem code goes here!
 }
 ```
@@ -182,7 +182,7 @@ What might a functional subsystem look like in practice?  Below is a simple pneu
 package edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.experimental.command.SendableSubsystemBase;
+import edu.wpi.first.wpilibj.experimental.command.SubsystemBase;
 
 import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 import static edu.wpi.first.wpilibj.examples.hatchbottraditional.Constants.HatchConstants.*;
@@ -190,7 +190,7 @@ import static edu.wpi.first.wpilibj.examples.hatchbottraditional.Constants.Hatch
 /**
  * A hatch mechanism actuated by a single {@link DoubleSolenoid}.
  */
-public class HatchSubsystem extends SendableSubsystemBase {
+public class HatchSubsystem extends SubsystemBase {
 
   private final DoubleSolenoid m_hatchSolenoid =
       new DoubleSolenoid(kHatchSolenoidModule, kHatchSolenoidPorts[0], kHatchSolenoidPorts[1]);

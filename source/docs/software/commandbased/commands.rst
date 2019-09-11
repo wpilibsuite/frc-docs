@@ -1,12 +1,12 @@
 Commands
 ========
 
-Commands are simple state machines that perform high-level robot functions using the methods defined by subsystems. Commands can be either idle, in which they do nothing, or scheduled, in which the scheduler will execute a specific set of the command’s code depending on the state of the command. The ``CommandScheduler`` recognizes scheduled commands as being in one of three states: initializing, executing, or ending. Commands specify what is done in each of these states through the ``initialize()``, ``execute()`` and ``end()`` methods.
+Commands are simple state machines that perform high-level robot functions using the methods defined by subsystems. Commands can be either idle, in which they do nothing, or scheduled, in which the scheduler will execute a specific set of the command’s code depending on the state of the command. The ``CommandScheduler`` recognizes scheduled commands as being in one of three states: initializing, executing, or ending. Commands specify what is done in each of these states through the ``initialize()``, ``execute()`` and ``end()`` methods.  Commands are represented in the command-based library by the Command interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__).
 
 Creating commands
 -----------------
 
-Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
+Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandBase.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
 .. tabs::
 
@@ -72,29 +72,25 @@ What might a functional command look like in practice? As before, below is a sim
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++
+  .. tab:: C++ (Header)
 
-    .. tabs::
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-      .. tab:: Header
+  .. tab:: C++ (Source)
 
-        .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
-          :language: c++
-          :lines: 8-
-          :linenos:
-          :lineno-start: 8
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-      .. tab:: Source
+Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called `dependency injection <https://en.wikipedia.org/wiki Dependency_injection>`__, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
-        .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
-          :language: c++
-          :lines: 8-
-          :linenos:
-          :lineno-start: 8
-
-Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called `dependency injection <https://en.wikipedia.org/wiki Dependency_injection>`__, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :ref:`later section <structuring>`.
-
-Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <instant-command>` even more succinctly.
+Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <docs/software/commandbased/convenience-features:InstantCommand>` even more succinctly.
 
 What about a more complicated case? Below is a drive command, from the same example project:
 
@@ -108,24 +104,20 @@ What about a more complicated case? Below is a drive command, from the same exam
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++
+  .. tab:: C++ (Header)
 
-    .. tabs::
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-      .. tab:: Header
+  .. tab:: C++ (Source)
 
-        .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
-          :language: c++
-          :lines: 8-
-          :linenos:
-          :lineno-start: 8
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-      .. tab:: Source
-
-        .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
-          :language: c++
-          :lines: 8-
-          :linenos:
-          :lineno-start: 8
-
-Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make :ref:`this kind of command <run-command>` easier to write, too!).
+Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make :ref:`this kind of command <docs/software/commandbased/convenience-features:RunCommand>` easier to write, too!).

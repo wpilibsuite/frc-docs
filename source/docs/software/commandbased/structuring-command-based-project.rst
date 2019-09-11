@@ -1,5 +1,3 @@
-.. _structuring:
-
 Structuring a command-based robot project
 =========================================
 

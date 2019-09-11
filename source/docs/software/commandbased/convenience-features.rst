@@ -135,8 +135,6 @@ on the value of a user-specified selector:
            this::select
        );
 
-.. _instant-command:
-
 InstantCommand
 ~~~~~~~~~~~~~~
 
