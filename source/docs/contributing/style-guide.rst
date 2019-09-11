@@ -88,7 +88,7 @@ It is preferred to format links as anonymous hyperlinks. The important thing to 
 
 .. code-block:: text
 
-   Hi there, `this is a link <http://example.com>`__ and it's pretty cool!
+   Hi there, `this is a link <https://example.com>`__ and it's pretty cool!
 
 However, in some cases where the same link must be referenced multiple times, the syntax below is accepted.
 
@@ -96,7 +96,7 @@ However, in some cases where the same link must be referenced multiple times, th
 
    Hi there, `this is a link`_ and it's pretty cool!
 
-   ..  _this is a link: http://example.com
+   ..  _this is a link: https://example.com
 
 Images
 ------

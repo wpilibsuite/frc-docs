@@ -26,7 +26,7 @@ In the left pane of the dialog box that appears, select all entries. The easiest
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2019 installer from http://www.ni.com/download/labview-for-frc-18.0/7841/en/
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2019 installer from https://www.ni.com/download/labview-for-frc-18.0/7841/en/
 
 If downloaded, right click on the downloaded file (NI_FRC2019.zip) and select Extract All.
 
