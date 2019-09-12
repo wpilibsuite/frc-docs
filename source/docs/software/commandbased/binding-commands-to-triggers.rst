@@ -78,7 +78,7 @@ After the joystick is instantiated, users can then pass it to a ``JoystickButton
 
   .. code-tab:: c++
 
-    frc::JoystickButton exampleButton(&exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
+    frc2::JoystickButton exampleButton(&exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
     
 
 Binding a command to a JoystickButton
@@ -139,7 +139,7 @@ The ``Trigger`` class (including its ``Button`` subclasses) can be composed to c
   .. code-tab:: c++
 
     // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
-    (frc::JoystickButton(&exampleController, frc::XBoxController::Button::kX)
+    (frc2::JoystickButton(&exampleController, frc::XBoxController::Button::kX)
         && JoystickButton(&exampleController, frc::XboxController::Button::kY))
         .WhenActive(new ExampleCommand());
 
@@ -163,7 +163,7 @@ While binding to HID buttons is by far the most common use case, advanced users 
 
   .. code-tab:: c++
 
-    class ExampleTrigger : public frc::Trigger {
+    class ExampleTrigger : public frc2::Trigger {
      public:
       bool get() override {
         // This returns whether the trigger is active
@@ -182,4 +182,4 @@ Alternatively, this can also be done inline by passing a lambda to the construct
   .. code-tab:: c++
 
     // Here it is assumed that "condition" is a boolean that determines whether the trigger should be active
-    frc::Trigger exampleTrigger([&condition] { return condition; });
+    frc2::Trigger exampleTrigger([&condition] { return condition; });
