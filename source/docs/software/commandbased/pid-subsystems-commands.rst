@@ -200,7 +200,7 @@ of the two PIDCommand classes.
 
 However, as with many of the other command classes in the command-based
 library, users may want to save code by defining a PIDCommand
-:ref:`inline <inlined-commands>`:
+:ref:`inline <docs/software/commandbased/convenience-features:Inline command definitions>`:
 
 .. code-block:: java
 
@@ -260,7 +260,7 @@ examples are from the GyroDriveCommands example project:
      }
    }
 
-And, for an :ref:`inlined <inlined-commands>`  example:
+And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline command definitions>`  example:
 
 .. code-block:: java
 
