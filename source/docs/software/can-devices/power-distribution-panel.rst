@@ -6,7 +6,7 @@ The Power Distribution Panel (PDP) can use its CAN connectivity to communicate a
 Creating a PDP Object
 ---------------------
 
-To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (`Java <http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__, `C++ <http://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):
+To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):
 
 .. tabs::
 

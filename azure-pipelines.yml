@@ -26,6 +26,9 @@ steps:
 - script: make lint
   displayName: 'Lint Check'
 
+- script: make linkcheck
+  displayName: 'Link Check'
+
 - script: sudo apt-get update
   displayName: 'Update System Packages'
 

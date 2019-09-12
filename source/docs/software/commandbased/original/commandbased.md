@@ -167,7 +167,7 @@ import edu.wpi.first.wpilibj.experimental.command.Subsystem;
 
 public class ExampleSubsystem implements Subsystem {
   // Your subsystem code goes here!
-  
+
   public ExampleSubsystem() {
     register(); // Registers this subsystem with the scheduler so that its periodic method will be called.
   }
@@ -252,7 +252,7 @@ import edu.wpi.first.wpilibj.experimental.command.Command;
 
 public class ExampleCommand implements Command {
   // Your command code goes here!
-  
+
   // Must be overridden!
   @override
   public List<Subsystem> getRequirements() {
@@ -295,7 +295,7 @@ The `execute()` method is called repeatedly while the command is scheduled, when
 public void end(boolean interrupted) {
   // Code here will be executed whenever the command ends, whether it finishes normally or is interrupted!
   if (interrupted) {
-    // Using the argument of the method allows users to do different actions depending on whether the command 
+    // Using the argument of the method allows users to do different actions depending on whether the command
     // finished normally or was interrupted!
   }
 }
@@ -327,15 +327,15 @@ import edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems.HatchSubsys
 import edu.wpi.first.wpilibj.experimental.command.CommandBase;
 
 /**
- * A simple command that grabs a hatch with the {@link HatchSubsystem}.  Written explicitly for 
- * pedagogical purposes; actual code should inline a command this simple with 
+ * A simple command that grabs a hatch with the {@link HatchSubsystem}.  Written explicitly for
+ * pedagogical purposes; actual code should inline a command this simple with
  * {@link edu.wpi.first.wpilibj.experimental.command.InstantCommand}.
  */
 public class GrabHatch extends CommandBase {
   
   // The subsystem the command runs on
   private final HatchSubsystem m_hatchSubsystem;
-  
+
   public GrabHatch(HatchSubsystem subsystem) {
     m_hatchSubsystem = subsystem;
     addRequirements(m_hatchSubsystem);
@@ -628,7 +628,7 @@ leftStick.getButton(Joystick.Button.kTrigger.value) // Returns the JoystickButto
 ```
 
 ```java
-driverController.getButton(XboxController.Button.kX.value) // Returns the JoystickButton object 
+driverController.getButton(XboxController.Button.kX.value) // Returns the JoystickButton object
                                                            // corresponding to the `X` button of driverController
 ```
 
@@ -1153,7 +1153,7 @@ public class ExampleSequence extends SequentialCommandGroup {
         )
     );
   }
-  
+
 }
 ```
 
@@ -1181,7 +1181,7 @@ To create a PIDSubsystem, users should subclass one of the two PIDSubsystem clas
 import edu.wpi.first.wpilibj.experimental.controller.PIDController;
 
 public class ExamplePIDSubsystem extends SynchronousPIDSubsystem {
-  
+
   public ExamplePIDSubsystem() {
     // This would set the internal controller's gains (P, I, and D) to 0.
     super(new PIDController(0, 0, 0))
@@ -1315,7 +1315,7 @@ As with PIDSubsystem, users can create a PIDCommmand by subclassing one of the t
 import edu.wpi.first.wpilibj.experimental.controller.PIDController;
 
 public class ExamplePIDCommand extends SynchronousPIDCommand {
-  
+
   public ExamplePIDCommand() {
     super(new PIDController(0, 0, 0), //Creates a PIDController with all gains set to 0
         () -> { /*This should return the measurement of the process variable*/ },
@@ -1323,7 +1323,7 @@ public class ExamplePIDCommand extends SynchronousPIDCommand {
         (output) -> { /*Code to use the output of the PID loop goes here*/ },
         requiredSubsystem /*PIDCommands should declare their requirements*/);
   }
-  
+
 }
 ```
 
