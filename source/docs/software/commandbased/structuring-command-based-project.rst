@@ -188,7 +188,7 @@ For more illustrative examples of what a ``constants`` class should look like in
 
 * FrisbeeBot (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/Constants.h>`__)
 * GyroDriveCommands (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/Constants.h>`__)
-* Hatchbot (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/HatchBotTraditional/include/Constants.h>`__)
+* Hatchbot (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/Constants.h>`__)
 
 In Java, it is recommended that the constants be used from other classes by statically importing the necessary inner class. An ``import static`` statement imports the static namespace of a class into the class in which you are working, so that any ``static`` constants can be referenced directly as if they had been defined in that class.  In C++, the same effect can be attained with ``using namespace``:
 

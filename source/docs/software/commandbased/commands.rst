@@ -39,7 +39,7 @@ While subsystems are fairly freeform, and may generally look like whatever the u
 Initialization
 ~~~~~~~~~~~~~~
 
-The ``initialize()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command Command.html#initialize()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp classfrc2_1_1Command.html#ad3f1971a1b44ecdd4683d766f831bccd>`__) is run exactly once per time a command is scheduled, as part of the scheduler’s ``schedule()`` method. The scheduler’s ``run()`` method does not need to be called for the ``initialize()`` method to run. The initialize block should be used to place the command in a known starting state for execution. It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
+The ``initialize()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#initialize()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#ad3f1971a1b44ecdd4683d766f831bccd>`__) is run exactly once per time a command is scheduled, as part of the scheduler’s ``schedule()`` method. The scheduler’s ``run()`` method does not need to be called for the ``initialize()`` method to run. The initialize block should be used to place the command in a known starting state for execution. It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
 
 Execution
 ~~~~~~~~~
@@ -87,7 +87,7 @@ What might a functional command look like in practice? As before, below is a sim
       :linenos:
       :lineno-start: 8
 
-Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called `dependency injection <https://en.wikipedia.org/wiki Dependency_injection>`__, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
+Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called `dependency injection <https://en.wikipedia.org/wiki/Dependency_injection>`__, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
 Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <docs/software/commandbased/convenience-features:InstantCommand>` even more succinctly.
 
