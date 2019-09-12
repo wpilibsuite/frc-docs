@@ -6,7 +6,7 @@ WPILib developers have done a number of changes to the control system for the 20
 frc-docs/ScreenSteps
 --------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
+- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
 - Code examples are testable again WPILib releases, ensuring they are working and accurate.
 - Link Checking. Every link in frc-docs gets the link tested to ensure validity.
 
