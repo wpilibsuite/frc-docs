@@ -1,7 +1,7 @@
 Driver Station Best Practices
 =============================
 
-This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and followup posts can be found here: https://www.chiefdelphi.com/media/papers/3452 and a mirror of the document can be found `here. <assets/Driver_Station_Best_Practices_March_14_2018.pdf>`_
+This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and followup posts can be found here: https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429 and a mirror of the document can be found `here. <assets/Driver_Station_Best_Practices_March_14_2018.pdf>`_
 
 
 Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.

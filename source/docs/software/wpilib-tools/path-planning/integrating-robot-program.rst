@@ -28,7 +28,7 @@ Integrating path following into a robot program
 
 Overview
 --------
-This article describes the process of writing a program that can use a stored path and have the robot follow it. The robot for this example is based on the TimedRobot template class and has left and right driven 4" wheels connected to motors with encoders on each side. In addition the robot has an Analog Gyro that is used to help make sure the robot hardware is keeping up with each generated point. The following code is heavily taken from `Jaci's Pathfinder's wiki <https://github.com/JacisNonsense/Pathfinder/wiki/Pathfinder-for-FRC---Java>`__. This is because the paths PathWeaver generates are Pathfinder paths and Pathfinder must be added as a `vendor dependency <https://dev.imjac.in/maven/jaci/pathfinder/PathfinderOLD-latest.json>`__.
+This article describes the process of writing a program that can use a stored path and have the robot follow it. The robot for this example is based on the TimedRobot template class and has left and right driven 4" wheels connected to motors with encoders on each side. In addition the robot has an Analog Gyro that is used to help make sure the robot hardware is keeping up with each generated point. The following code is heavily taken from `Jaci's Pathfinder's wiki <https://github.com/JacisNonsense/Pathfinder/wiki/Pathfinder-for-FRC---Java>`__. This is because the paths PathWeaver generates are Pathfinder paths and Pathfinder must be added as a `vendor dependency <https://imjac.in/dev/maven/frc/7194a2d4-2860-4bcc-86c0-97879737d875>`__.
 
 Import Directives
 -----------------

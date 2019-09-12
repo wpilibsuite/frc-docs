@@ -49,10 +49,10 @@ Building the program
 --------------------
 When building and running the program you will need some additional libraries to include with your client-side program. These are:
 
-http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore/ntcore-java/2019.4.1/ (ntcore java files)
+https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore/ntcore-java/2019.4.1/ (ntcore java files)
 
-http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore/ntcore-jni/2019.4.1/ (ntcore native libs for all desktop platforms)
+https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore/ntcore-jni/2019.4.1/ (ntcore native libs for all desktop platforms)
 
-http://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpiutil/wpiutil-java/2019.4.1/ (wpiutil java files)
+https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpiutil/wpiutil-java/2019.4.1/ (wpiutil java files)
 
 .. note:: The desktop platform jar is for Windows, Mac, and Linux.

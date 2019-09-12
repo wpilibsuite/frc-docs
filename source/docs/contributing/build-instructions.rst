@@ -24,7 +24,7 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 
-Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path <https://stackoverflow.com/a/44272417>`__. By default, this folder is located at ``C:\Program Files (x86)\Graphviz2.38\bin``.
+Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path <https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho/44272417#44272417>`__. By default, this folder is located at ``C:\Program Files (x86)\Graphviz2.38\bin``.
 
 .. image:: images/build-instructions-2.png
 
