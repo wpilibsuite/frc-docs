@@ -15,4 +15,3 @@ Getting Started
    radio-programming
    updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel
    known-issues
-   new-for-2020
