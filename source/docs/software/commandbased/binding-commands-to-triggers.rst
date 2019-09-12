@@ -73,13 +73,12 @@ After the joystick is instantiated, users can then pass it to a ``JoystickButton
 .. tabs::
 
   .. code-tab:: java
-  
+
     JoystickButton exampleButton = new JoystickButton(exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
 
   .. code-tab:: c++
 
     frc2::JoystickButton exampleButton(&exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
-    
 
 Binding a command to a JoystickButton
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +87,7 @@ Binding a command to a JoystickButton
 
 Putting it all together, it is very simple to bind a button to a JoystickButton:
 
-.. tabs:: 
+.. tabs::
 
   .. code-tab:: java
 

@@ -11,7 +11,7 @@ Similarly to subsystems, the recommended method for most users to create a comma
 .. tabs::
 
   .. tab:: Java
-    
+
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
       :language: java
       :lines: 10-29
@@ -25,7 +25,6 @@ Similarly to subsystems, the recommended method for most users to create a comma
       :lines: 8-34
       :linenos:
       :lineno-start: 8
-    
 
 As before, this contains several convenience features. It automatically overrides the ``getRequirements()`` method for users, returning a list
 of requirements that is empty by default, but can be added to with the ``addRequirements()`` method. It also implements the ``Sendable`` interface, and so can be sent to the dashboard - this provides a handy way for scheduling commands for testing (via a button on the dashboard) without needing to bind them to buttons on a controller.

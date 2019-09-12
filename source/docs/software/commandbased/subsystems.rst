@@ -15,7 +15,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 .. tabs::
 
   .. tab:: Java
-    
+  
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
       :language: java
       :lines: 10-

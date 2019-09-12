@@ -181,7 +181,7 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
       // Start driving forward at the start of the command
       [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
       // Stop driving at the end of the command
-      [this] { m_drive.ArcadeDrive(0, 0); }, 
+      [this] { m_drive.ArcadeDrive(0, 0); },
       // Requires the drive subsystem
       {&m_drive}
     )
@@ -216,7 +216,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develo
       // Start driving forward at the start of the command
       [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
       // Stop driving at the end of the command
-      [this] { m_drive.ArcadeDrive(0, 0); }, 
+      [this] { m_drive.ArcadeDrive(0, 0); },
       // End the command when the robot's driven distance exceeds the desired value
       [this] { return m_drive.GetAverageEncoderDistance() >= kAutoDriveDistanceInches; },
       // Requires the drive subsystem
@@ -228,7 +228,7 @@ PrintCommand
 
 The ``PrintCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PrintCommand.html>`__) prints a given string.
 
-.. tabs:: 
+.. tabs::
 
   .. code-tab:: java
 
@@ -302,7 +302,7 @@ WaitUntilCommand
 
 The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1WaitUntilCommand.html>`__) does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
 
-.. tabs:: 
+.. tabs::
 
   .. code-tab:: java
 
