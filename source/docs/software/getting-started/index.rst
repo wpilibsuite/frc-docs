@@ -4,8 +4,6 @@ Getting Started
 .. toctree::
    :maxdepth: 1
 
-   new-for-2019
-   known-issues
    control-system-software
    offline-installation-preparations
    windows-setup
@@ -16,3 +14,5 @@ Getting Started
    imaging-your-classmate
    radio-programming
    updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel
+   known-issues
+   new-for-2020
