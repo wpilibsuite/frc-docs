@@ -27,7 +27,7 @@ click "Flash". Expect the process to take about 3 minutes on a fairly fast lapto
 Testing the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1.  Put the micro SD card in a rPi 3 and apply power.
-2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to http://frcvision.local/ to open the web dashboard.
+2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://frcvision.local/`` to open the web dashboard.
     On the first bootup the filesystem will be writable, but later bootups will default to read only, so it's necessary to click
     the "writable" button to make changes.
 

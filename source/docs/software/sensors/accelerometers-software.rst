@@ -210,7 +210,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`__) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/filters/LinearDigitalFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearDigitalFilter.html>`__) to reduce the noise:
 
 .. tabs::
 
@@ -218,9 +218,9 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
         Accelerometer accelerometer = new BuiltInAccelerometer();
 
-        // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
 
-        LinearFilter xAccelFilter = LinearFilter.movingAverage(10);
+        LinearDigitalFilter xAccelFilter = LinearDigitalFilter.movingAverage(10);
 
         @Override
         public void robotPeriodic() {
@@ -232,8 +232,8 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
         frc::BuiltInAccelerometer accelerometer;
 
-        // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-        auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
+        // Create a LinearDigitalFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+        auto xAccelFilter = frc::LinearDigitalFilter::MovingAverage(10);
 
         void Robot::RobotPeriodic() {
             // Get the filtered X acceleration

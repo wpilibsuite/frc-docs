@@ -43,7 +43,7 @@ Downloading the Update
 ----------------------
 
 Download the update from
-http://www.ni.com/download/first-robotics-software-2017/7904/en/
+https://www.ni.com/download/first-robotics-software-2017/7904/en/
 
 .. note:: Note: This download will require the decryption key from the Kickoff broadcast.
 
