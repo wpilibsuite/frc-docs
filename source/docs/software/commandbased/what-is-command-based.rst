@@ -1,4 +1,4 @@
-What is “command-based” programming?
+What is "command-based" programming?
 ====================================
 
 WPILib supports a robot programming methodology called “command-based” programming. In general, “command-based” can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
