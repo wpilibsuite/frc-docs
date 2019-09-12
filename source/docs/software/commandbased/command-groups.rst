@@ -82,7 +82,7 @@ Command groups can be used without subclassing at all: one can simply pass in th
 
    .. code-tab:: c++
 
-      SequentialCommandGroup{FooCommand(), BarCommand()};
+      frc2::SequentialCommandGroup{FooCommand(), BarCommand()};
 
 This is called an :ref:`inline <docs/software/commandbased/convenience-features:Inline command definitions>` command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
 
@@ -104,9 +104,9 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
 
    .. code-tab:: c++
 
-      SequentialCommandGroup{
+      frc2::SequentialCommandGroup{
          DriveToGoal(&m_drive),
-         ParallelCommandGroup{
+         frc2::ParallelCommandGroup{
             RaiseElevator(&m_elevator),
             SetWristPosition(&m_wrist)},
          ScoreTube(&m_wrist)};

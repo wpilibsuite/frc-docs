@@ -72,17 +72,17 @@ Setting default commands
 
 .. note:: In the C++ command-based library, the CommandScheduler `owns` the default command objects - accordingly, the object passed to the ``SetDefaultCommand()`` method will be either moved or copied, depending on whether it is an rvalue or an lvalue.  The examples here ensure that move semantics are used by casting to an rvalue with ``std::move()``.
 
-Setting a default command for a subsystem is very easy; one simply calls ``Scheduler.getInstance().setDefaultCommand()``, or, more simply, the ``setDefaultCommand()`` method of the ``Subsystem`` interface:
+Setting a default command for a subsystem is very easy; one simply calls ``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the ``setDefaultCommand()`` method of the ``Subsystem`` interface:
 
 .. tabs::
 
   .. code-tab:: java
 
-    Scheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
+    CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
 
   .. code-tab:: c++
 
-    Scheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
+    CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
 
 .. tabs::
 
