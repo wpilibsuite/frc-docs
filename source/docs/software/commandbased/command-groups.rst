@@ -15,22 +15,22 @@ Types of command groups
 The command-based library supports four basic types of command groups: ``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup``, and ``ParallelDeadlineGroup``. Each of these command groups combines multiple commands into a composite command - however, they do so in different ways:
 
 SequentialCommandGroup
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 A ``SequentialCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SequentialCommandGroup.html>`__) runs a list of commands in sequence - the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
 ParallelCommandGroup
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 A ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelCommandGroup.html>`__) runs a set of commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
 
 ParallelRaceGroup
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 A ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelRaceGroup.html>`__) is much like a ``ParallelCommandgroup``, in that it runs a set of commands concurrently. However, the race group ends as soon as any command in the group ends - all other commands are interrupted at that point.
 
 ParallelDeadlineGroup
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the “deadline”) ends, interrupting all other commands in the group that are still running at that point.
 

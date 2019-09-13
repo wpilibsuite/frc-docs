@@ -1,4 +1,4 @@
-Structuring a command-based robot project
+Structuring a Command-Based Robot Project
 =========================================
 
 While users are free to use the command-based libraries however they like (and advanced users are encouraged to do so), new users may want some guidance on how to structure a basic command-based robot project.
