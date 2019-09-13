@@ -1,6 +1,8 @@
 PID control through PIDSubsystems and PIDCommands
 =================================================
 
+.. todo:: Add link to PIDController docs
+
 One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :code:`PIDController` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__) to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` object: PIDSubsystem, which integrates the PID controller into a subsystem, and PIDCommand, which integrates the PID controller into a command.
 
 PIDSubsystems
