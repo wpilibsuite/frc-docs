@@ -1,4 +1,4 @@
-PID control through PIDSubsystems and PIDCommands
+PID Control through PIDSubsystems and PIDCommands
 =================================================
 
 .. todo:: Add link to PIDController docs
