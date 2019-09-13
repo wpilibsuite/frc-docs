@@ -1,4 +1,4 @@
-What is "command-based" programming?
+What Is "Command-Based" Programming?
 ====================================
 
 WPILib supports a robot programming methodology called “command-based” programming. In general, “command-based” can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
@@ -43,7 +43,7 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       }
     }
 
-Subsystems and commands
+Subsystems and Commands
 -----------------------
 
 .. figure:: images/subsystemscommands.png
@@ -59,7 +59,7 @@ The command-based pattern is based around two core abstractions: **commands**, a
 specifying which action should be taken in each state. Simple commands can be composed into “command groups” to accomplish more-complicated
 tasks. Commands, including command groups, implement the ``Command`` interface.
 
-How commands are run
+How Commands Are Run
 --------------------
 
 Commands are run by the ``CommandScheduler``, a singleton class that is at the core of the command-based library. The ``CommandScheduler`` is in
@@ -80,7 +80,7 @@ Subsystems also can be associated with “default commands” that will be autom
 
 When a command is scheduled, its ``initialize()`` method is called once. Its ``execute()`` method is then called once per call to ``CommandScheduler.getInstance().run()``. A command is un-scheduled and has its ``end(boolean interrupted)`` method called when either its ``isFinished()`` method returns true, or else it is interrupted (either by another command with which it shares a required subsystem, or by being canceled).
 
-Command groups
+Command Groups
 --------------
 
 It is often desirable to build complex commands from simple pieces. This is achievable by `composing <https://en.wikipedia.org/wiki/Object_composition>`__ commands into “command groups.” A command group is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they are `recursively composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.

@@ -72,7 +72,7 @@ Using a PIDSubsystem with commands can be very simple:
 PIDCommands
 -----------
 
-The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a PIDCommmand by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a PIDCommand :ref:`inline <docs/software/commandbased/convenience-features:Inline command definitions>`.
+The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a PIDCommmand by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a PIDCommand :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Using a PIDCommand
 ^^^^^^^^^^^^^^^^^^
@@ -105,7 +105,7 @@ What does a PIDCommand look like when used in practice? The following examples a
       :linenos:
       :lineno-start: 8
 
-And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline command definitions>`  example:
+And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline Command Definitions>`  example:
 
 .. tabs::
 

@@ -1,14 +1,14 @@
-Convenience features
+Convenience Features
 ====================
 
 While the previously-described methodologies will work fine for writing command-based robot code, the command-based libraries contain several convenience features for more-advanced users that can greatly reduce the verbosity/complexity of command-based code. It is highly recommended that users familiarize themselves with these features to maximize the value they get out of the command-based libraries.
 
-Inline command definitions
+Inline Command Definitions
 --------------------------
 
 While users are able to create commands by explicitly writing command classes (either by subclassing ``CommandBase`` or implementing ``Command``), for many commands (such as those that simply call a single subsystem method) this involves a lot of wasteful boilerplate code. To help alleviate this, many of the prewritten commands included in the command-based library may be *inlined* - that is, the command body can be defined in a single line of code at command construction.
 
-Passing subroutines as parameters
+Passing Subroutines As Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to inline a command definition, users require some way to specify what code the commands will run as constructor parameters. Fortunately, both Java and C++ offer users the ability to pass subroutines as parameters.
@@ -63,8 +63,8 @@ The ``InstantCommand`` class provides an example of a type of command that benef
 
 Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` commands which call only one method before ending, both can be accomplished with a simple inline definition by passing appropriate subsystem method.
 
-Included pre-made command classes
----------------------------------
+Included Command Types
+----------------------
 
 The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__).
 
@@ -337,7 +337,7 @@ The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
     // Will run commandToRunForever perpetually, even if its isFinished() method returns true
     frc2::PerpetualCommand(commandToRunForever)
 
-Command decorator methods
+Command Decorator Methods
 -------------------------
 
 The ``Command`` interface contains a number of defaulted “decorator”
@@ -482,7 +482,7 @@ The ``perpetually()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/develo
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     command.Perpetually()
 
-Composing decorators
+Composing Decorators
 ^^^^^^^^^^^^^^^^^^^^
 
 Remember that decorators, like all command groups, can be composed! This allows very powerful and concise inline expressions:
@@ -492,7 +492,7 @@ Remember that decorators, like all command groups, can be composed! This allows 
    // Will run fooCommand, and then a race between barCommand and bazCommand
    fooCommand.andThen(barCommand.raceWith(bazCommand))
 
-Static factory methods for command groups (Java only)
+Static Factory Methods for Command Groups (Java only)
 -----------------------------------------------------
 
 .. note:: These factory methods are not included in the C++ command library, as the reduction in verbosity would be minimal - C++ commands should be stack-allocated, removing the need for the ``new`` keyword.

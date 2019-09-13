@@ -3,7 +3,7 @@ Commands
 
 Commands are simple state machines that perform high-level robot functions using the methods defined by subsystems. Commands can be either idle, in which they do nothing, or scheduled, in which the scheduler will execute a specific set of the command’s code depending on the state of the command. The ``CommandScheduler`` recognizes scheduled commands as being in one of three states: initializing, executing, or ending. Commands specify what is done in each of these states through the ``initialize()``, ``execute()`` and ``end()`` methods.  Commands are represented in the command-based library by the Command interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__).
 
-Creating commands
+Creating Commands
 -----------------
 
 Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandBase.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
@@ -31,7 +31,7 @@ of requirements that is empty by default, but can be added to with the ``addRequ
 
 Also as before, advanced users seeking more flexibility are free to simply create their own class implementing the ``Command`` interface.
 
-The structure of a command
+The Structure of a Command
 --------------------------
 
 While subsystems are fairly freeform, and may generally look like whatever the user wishes them to, commands are quite a bit more constrained. Command code must specify what the command will do in each of its possible states. This is done by overriding the ``initialize()``, ``execute()``, and ``end()`` methods. Additionally, a command must be able to tell the scheduler when (if ever) it has finished execution - this is done by overriding the ``isFinished()`` method. All of these methods are defaulted to reduce clutter in user code: ``initialize()``, ``execute()``, and ``end()`` are defaulted to simply do nothing, while ``isFinished()`` is defaulted to return false (resulting in a command that never ends).
@@ -56,7 +56,7 @@ Specifying end conditions
 
 The ``isFinished()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#end(boolean)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#af5e8c12152d195a4f3c06789366aac88>`__) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it is un-scheduled. The ``isFinished()`` method is called *after* the ``execute()`` method, so the command *will* execute once on the same iteration that it is un-scheduled.
 
-Simple command example
+Simple Command Example
 ----------------------
 
 What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__) that uses the ``HatchSubsystem`` introduced in the previous section:

@@ -84,7 +84,7 @@ Command groups can be used without subclassing at all: one can simply pass in th
 
       frc2::SequentialCommandGroup{FooCommand(), BarCommand()};
 
-This is called an :ref:`inline <docs/software/commandbased/convenience-features:Inline command definitions>` command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
+This is called an :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>` command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
 
 Recursive composition of command groups
 ---------------------------------------

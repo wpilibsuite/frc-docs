@@ -1,4 +1,4 @@
-Binding commands to triggers
+Binding Commands to Triggers
 ============================
 
 Apart from autonomous commands, which are scheduled at the start of the autonomous period, and default commands, which are automatically scheduled whenever their subsystem is not currently in-use, the most common way to run a command is by binding it to a triggering event, such as a button being pressed by a human operator. The command-based paradigm makes this extremely easy to do.
@@ -7,7 +7,7 @@ As mentioned earlier, command-based is a `declarative <https://en.wikipedia.org/
 
 Command binding is done through the ``Trigger`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Trigger.html>`__) and its various ``Button`` subclasses (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Button.html>`__).
 
-Trigger/Button bindings
+Trigger/Button Bindings
 -----------------------
 
 .. note:: The C++ command-based library offers two overloads of each button binding method - one that takes a raw pointer, and one that takes a forwarding reference.  The raw pointer overload leaves the user responsible for the lifespan of the command object; the forwarding reference overload transfers ownership (by either moving or copying depending on if the command is an rvalue or and lvalue) to the scheduler.  It is recommended that users preferentially use the forwarding reference overload unless there is a specific need to retain a handle to the command in the calling code.
@@ -80,7 +80,7 @@ After the joystick is instantiated, users can then pass it to a ``JoystickButton
 
     frc2::JoystickButton exampleButton(&exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
 
-Binding a command to a JoystickButton
+Binding a Command to a JoystickButton
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: In the C++ command-based library, button objects *do not need to survive past the call to a binding method*, and so the binding methods may be simply called on a temp.
@@ -121,7 +121,7 @@ It is useful to note that the command binding methods all return the trigger/but
 
 Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
-Composing triggers
+Composing Triggers
 ------------------
 
 The ``Trigger`` class (including its ``Button`` subclasses) can be composed to create composite triggers through the ``and()``, ``or()``, and ``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). For example:
@@ -144,7 +144,7 @@ The ``Trigger`` class (including its ``Button`` subclasses) can be composed to c
 
 Note that these methods return a ``Trigger``, not a ``Button``, so the ``Trigger`` binding method names must be used even when buttons are composed.
 
-Creating your own custom trigger
+Creating Your Own Custom Trigger
 --------------------------------
 
 While binding to HID buttons is by far the most common use case, advanced users may occasionally want to bind commands to arbitrary triggering events. This can be easily done by simply writing your own subclass of ``trigger`` or ``button``:

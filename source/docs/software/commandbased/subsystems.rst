@@ -7,7 +7,7 @@ Subsystems also serve as the backbone of the ``CommandScheduler``\ ’s resource
 
 Subsystems can be associated with “default commands” that will be automatically scheduled when no other command is currently using the subsystem. This is useful for continuous “background” actions such as controlling the robot drive, or keeping an arm held at a setpoint. Similar functionality can be achieved in the subsystem’s ``periodic()`` method, which is run once per run of the scheduler; teams should try to be consistent within their codebase about which functionality is achieved through either of these methods.  Subsystems are represented in the command-based library by the Subsystem interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Subsystem.html>`__).
 
-Creating a subsystem
+Creating a Subsystem
 --------------------
 
 The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SubsystemBase.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__):
@@ -34,7 +34,7 @@ This class contains a few convenience features on top of the basic ``Subsystem``
 
 Advanced users seeking more flexibility may simply create a class that implements the ``Subsystem`` interface.
 
-Simple subsystem example
+Simple Subsystem Example
 ------------------------
 
 What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
@@ -67,10 +67,12 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that “implementation details” such as the double solenoid be “hidden” in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-Setting default commands
+Setting Default Commands
 ------------------------
 
 .. note:: In the C++ command-based library, the CommandScheduler `owns` the default command objects - accordingly, the object passed to the ``SetDefaultCommand()`` method will be either moved or copied, depending on whether it is an rvalue or an lvalue.  The examples here ensure that move semantics are used by casting to an rvalue with ``std::move()``.
+
+"Default commands" are commands that run automatically whenever a subsystem is not being used by another command.
 
 Setting a default command for a subsystem is very easy; one simply calls ``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the ``setDefaultCommand()`` method of the ``Subsystem`` interface:
 
