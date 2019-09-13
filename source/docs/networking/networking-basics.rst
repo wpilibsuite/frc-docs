@@ -8,7 +8,7 @@ An IP address is a unique string of numbers, separated by periods that identifie
 
 .. image:: images/networking-basics/ip-address-parts.png
 
-As shown above, this means that each IP address is a 32-bit address meaning there are 232 addresses, or nearly 4,300,000,000 addresses possible. However, most of these are used publicly for things like web servers.
+As shown above, this means that each IP address is a 32-bit address meaning there are 2\ :sup:`32` addresses, or nearly 4,300,000,000 addresses possible. However, most of these are used publicly for things like web servers.
 
 This brings up our **first key point** of IP Addressing: Each device on the network must have a unique IP address. No two devices can have the same IP address, otherwise collisions will occur.
 
