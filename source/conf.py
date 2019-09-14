@@ -49,7 +49,7 @@ linkcheck_anchors = False
 
 # Linkcheck Exclusions
 linkcheck_ignore = [
-	r'/kauailabs.com/g'
+	r'kauailabs.com'
 ]
 
 # Autosection labels prefix document path and filename
