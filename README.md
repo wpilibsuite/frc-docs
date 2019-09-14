@@ -49,4 +49,4 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 ## Additional Note
 
-A web version of these instructions is available at the [frc-docs website](https://frc-docs.readthedocs.io/en/latest/docs/contributing/build-instructions.html).
+A web version of these instructions is available at the [frc-docs website](https://docs.wpilib.org/en/latest/docs/contributing/build-instructions.html).
