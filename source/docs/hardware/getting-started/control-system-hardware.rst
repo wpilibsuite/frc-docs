@@ -52,7 +52,7 @@ Jaguar Motor Controller
 
 .. image:: images/control-system-hardware/jaguar-motor-controller.png
 
-The Jaguar Motor Controller from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface. For more information, see the Jaguar Getting Started Guide, Jaguar Datasheet and Jaguar FAQ on `this page <https://www.vexrobotics.com/217-3367.html>`__.
+The Jaguar Motor Controller from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
 SD540B and SD540C Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ Victor SP
 
 .. image:: images/control-system-hardware/victor-sp-motor-controller.png
 
-The Victor SP motor controller is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models. For more information, see the `Victor SP User Manual <https://www.vexrobotics.com/217-9090.html#Docs_&_Downloads>`__.
+The Victor SP motor controller is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
 
 Victor SPX
 ^^^^^^^^^^
