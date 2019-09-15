@@ -1,0 +1,63 @@
+2020 Command-Based Rewrite: What Changed?
+=========================================
+
+This article provides a summary of changes from the :ref:`original command-based framework <docs/software/old-commandbased/basics/what-is-command-based:What is Command-Based Programming?>` to the 2020 rewrite.  This summary is not necessarily comprehensive - for rigorous documentation, as always, refer to the API docs (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/>`__).
+
+Package Location
+----------------
+
+The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still in its original location, but has been deprecated.
+
+Major Architectural Changes
+---------------------------
+
+The overall structure of the command-based framework has remained largely the same.  However, there are some still a few major architectural changes that users should be aware of:
+
+Commands and Subsystems as Interfaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``Command`` and ``Subsystem`` are both now interfaces as opposed to abstract classes, allowing advanced users more potential flexibility.  ``CommandBase`` and ``SubsystemBase`` abstract base classes are still provided for convenience, but are not required.  For more information, see :doc:`commands` and :doc:`subsystems`.
+
+Multiple Command Group Classes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``CommandGroup`` class no longer exists, and has been replaced by a number of narrower classes that can be recursively composed to create more-complicated group structures.  For more information see :doc:`command-groups`.
+
+Inline Command Definitions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Previously, users were required to write a subclass of ``Command`` in almost all cases where a command was needed.  Many of the new commands are designed to allow inline definition of command functionality, and so can be used without the need for an explicit subclass.  For more information, see :doc:`convenience-features`.
+
+Injection of Command Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While not an actual change to the coding of the library, the recommended use pattern for the new command-based framework utilizes injection of subsystem dependencies into commands, so that subsystems are not declared as globals.  This is a cleaner, more maintainable, and more reusable pattern than the global subsystem pattern promoted previously.  For more information, see :doc:`structuring-command-based-project`.
+
+Command Ownership (C++ Only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The previous command framework required users to use raw pointers for all commands, resulting in nearly-unavoidable memory leaks in all C++ command-based projects, as well as leaving room for common errors such as double-allocating commands within command-groups.
+
+The new command framework offers ownership management for all commands.  Default commands and commands bound to buttons are typically owned by the scheduler, and component commands are owned by their encapsulating command groups.  As a result, users should generally never heap-allocate a command with ``new`` unless there is a very good reason to do so.
+
+Changes to the Scheduler
+------------------------
+
+* ``Scheduler`` has been renamed to ``CommandScheduler``.
+* Interruptibility of commands is now the responsibility of the scheduler, not the commands, and can be specified during the call to ``schedule``.
+* Users can now pass actions to the scheduler which are taken whenever a command is scheduled, interrupted, or ends normally.  This is highly useful for cases such as event logging.
+
+Changes to Subsystem
+--------------------
+
+.. note:: For more information on subsystems, see :doc:`subsystems`.
+
+* ``initDefaultCommand`` has been removed; subsystems no longer need to "know about" their default commands, which are instead registered directly with the ``CommandScheduler``.  The new ``setDefaultCommand`` method simply wraps the ``CommandScheduler`` call.
+* Subsystems no longer "know about" the commands currently requiring them; this is handled exclusively by the ``CommandScheduler``.  A convenience wrapper on the ``CommandScheduler`` method is provided, however.
+
+Changes to Command
+------------------
+
+.. note:: For more information on commands, see :doc:g`commands`.
+
+* 
