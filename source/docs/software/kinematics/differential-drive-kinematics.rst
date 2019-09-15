@@ -6,12 +6,12 @@ The kinematics suite allows easy odometry with differential drive robots (such a
 Differential Drive Kinematics
 -----------------------------
 
-WPILib provides a helper DifferentialDriveKinematics class to convert from robot velocities (linear and angular velocity) to left and right wheel velocities. This class is necessary for odometry and requires the robot's trackwidth (the distance between the left and right wheels). 
+WPILib provides a helper DifferentialDriveKinematics class to convert from robot velocities (linear and angular velocity) to left and right wheel velocities. This class is necessary for odometry and requires the robot's trackwidth (the distance between the left and right wheels).
 
 Empirical Trackwidth Measurement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-While the trackwidth can be measured by physically measuring the distance between wheels, it's common for the actual trackwidth to differ. The trackwidth can be empirically measured as long as the robot has wheel encoders and a gyro. 
+While the trackwidth can be measured by physically measuring the distance between wheels, it's common for the actual trackwidth to differ. The trackwidth can be empirically measured as long as the robot has wheel encoders and a gyro.
 
 1. Turn the robot in place by a known angle meausure.
 2. Measure the change in left and right encoder position caused by turning the robot in place.
