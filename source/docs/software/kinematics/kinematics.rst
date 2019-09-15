@@ -1,7 +1,7 @@
 Kinematics
 ==========
 
-The kinematics suite simplifies advanced control of differential, mecanum, and swerve drivetrains, handling the inverse kinematics and odometry for a user. Each type of drivetrain has a kinematics and odometry class. The kinematics classes convert chasis speeds to robot wheel speeds and vice versa. The odometry classes calculate and return the position of the robot on the cartesian plane.
+The kinematics suite simplifies advanced control of differential, mecanum, and swerve drivetrains, handling the inverse kinematics and odometry for a user. Each type of drivetrain has a kinematics and odometry class. The kinematics classes convert chasis speeds to robot wheel speeds and vice versa. The odometry classes calculate and return the position of the robot on the cartesian plane. Note that all kinematics classes assume that units of length are in meters.
 
 Chasis Speeds
 -------------

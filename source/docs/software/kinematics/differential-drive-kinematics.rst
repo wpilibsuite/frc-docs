@@ -11,7 +11,7 @@ WPILib provides a helper DifferentialDriveKinematics class to convert from robot
 Empirical Trackwidth Measurement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- While the trackwidth can be measured by physically measuring the distance between wheels, it's common for the actual trackwidth to differ. The trackwidth can be empirically measured as long as the robot has wheel encoders and a gyro. 
+While the trackwidth can be measured by physically measuring the distance between wheels, it's common for the actual trackwidth to differ. The trackwidth can be empirically measured as long as the robot has wheel encoders and a gyro. 
 
 1. Turn the robot in place by a known angle meausure.
 2. Measure the change in left and right encoder position caused by turning the robot in place.
@@ -21,9 +21,9 @@ Empirical Trackwidth Measurement
 Differential Drive Odometry
 ---------------------------
 
-A DifferentialDriveOdometry class is provided to calculate the robot's current x and y position. The robot's starting position can be set in the constructor. Call the update() method of an instance of DifferentialDriveOdometry, giving it the robot's current angle, wheel speeds (as a DifferentialDriveWheelSpeeds), and the time between calls of the update() method. The method can also be called with only the current angle and wheel speeds, and the function will automatically calculate the time difference between function calls. The method returns the robot's current position as a Pose2D.
+A DifferentialDriveOdometry class is provided to calculate the robot's current x and y position. The robot's starting position can be set in the constructor. Call the update() method of an instance of DifferentialDriveOdometry to calculate the robot's pose, giving it the robot's current angle, wheel speeds (as a DifferentialDriveWheelSpeeds), and the time between calls of the update() method. The method can also be called with only the current angle and wheel speeds, and the function will automatically calculate the time difference between function calls. The method returns the robot's current position as a Pose2D.
 
 Differential Drive Wheel Speeds
 -------------------------------
 
-The DifferentialDriveWheelSpeeds class contains the left and right wheel velocities of the robot. The DifferentialDriveKinematicsclass can convert wheel speeds to chasis speeds.
+The DifferentialDriveWheelSpeeds class contains the left and right wheel velocities of the robot. The DifferentialDriveKinematics class can convert wheel speeds to chasis speeds.
