@@ -33,6 +33,7 @@ New teams may wish to familiarize themselves with the different components of th
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/basic-programming/index
    docs/software/advanced-programming/index
+   docs/software/kinematics/index
    docs/software/support/support-resources
 
 .. toctree::
