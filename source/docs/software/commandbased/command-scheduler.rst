@@ -23,20 +23,20 @@ TODO: flowchart?
 
 What does a single iteration of the scheduler's ``run()`` method actually do?  The following section walks through the logic of a scheduler iteration.
 
-Step 1: Subsystem Periodic Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Run Subsystem Periodic Methods
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, the scheduler runs the ``periodic()`` method of each registered ``Subsystem``.
 
-Step 2: Trigger Polling
-^^^^^^^^^^^^^^^^^^^^^^^
+Step 2: Poll Command Scheduling Triggers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: For more information on how trigger bindings work, see :doc:`binding-commands-to-triggers`
 
 Secondly, the scheduler polls the state of all registered triggers to see if any new commands that have been bound to those triggers should be scheduled.  If the conditions for scheduling a bound command are met, the command is scheduled and its ``Initialize()`` method is run.
 
-Step 3: Running/Finishing Scheduled Commands
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Run/Finish Scheduled Commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Thirdly, the scheduler calls the ``execute()`` method of each currently-scheduled command, and then checks whether the command has finished by calling the ``isFinished()`` method.  If the command has finished, the ``end()`` method is also called, and the command is de-scheduled and its required subsystems are freed.
 
@@ -86,15 +86,15 @@ A typical use-case for these methods is adding markers in an event log whenever 
   .. tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging/RobotContainer.java
-    :language: java
-    :lines: 48-54
-    :linenos:
-    :lineno-start: 48
+      :language: java
+      :lines: 48-54
+      :linenos:
+      :lineno-start: 48
 
   .. tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging/cpp/RobotContainer.cpp
-    :language: c++
-    :lines: 22-41
-    :linenos:
-    :lineno-start: 22
+      :language: c++
+      :lines: 22-41
+      :linenos:
+      :lineno-start: 22
