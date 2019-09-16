@@ -70,7 +70,7 @@ Notice that the subsystem hides the presence of the DoubleSolenoid from outside 
 Setting Default Commands
 ------------------------
 
-.. note:: In the C++ command-based library, the CommandScheduler `owns` the default command objects - accordingly, the object passed to the ``SetDefaultCommand()`` method will be either moved or copied, depending on whether it is an rvalue or an lvalue.  The examples here ensure that move semantics are used by casting to an rvalue with ``std::move()``.
+.. note:: In the C++ command-based library, the CommandScheduler `owns` the default command objects - accordingly, the object passed to the ``SetDefaultCommand()`` method will be either moved or copied, depending on whether it is an rvalue or an lvalue (`rvalue/lvalue explanation <http://thbecker.net/articles/rvalue_references/section_01.html>`__).  The examples here ensure that move semantics are used by casting to an rvalue with ``std::move()``.
 
 "Default commands" are commands that run automatically whenever a subsystem is not being used by another command.
 

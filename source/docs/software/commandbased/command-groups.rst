@@ -10,7 +10,7 @@ Most importantly, however, command groups *are themselves commands* - they imple
 Types of command groups
 -----------------------
 
-.. note:: In the C++ command-based library, command groups *own* their component commands.  This means that commands passed to command groups will be either moved or copied depending on whether they are rvalues or lvalues.  Due to certain technical concerns, command groups themselves are not copyable, and so recursive composition *must* use move semantics.
+.. note:: In the C++ command-based library, command groups *own* their component commands.  This means that commands passed to command groups will be either moved or copied depending on whether they are rvalues or lvalues (`rvalue/lvalue explanation <http://thbecker.net/articles/rvalue_references/section_01.html>`__).  Due to certain technical concerns, command groups themselves are not copyable, and so recursive composition *must* use move semantics.
 
 The command-based library supports four basic types of command groups: ``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup``, and ``ParallelDeadlineGroup``. Each of these command groups combines multiple commands into a composite command - however, they do so in different ways:
 
