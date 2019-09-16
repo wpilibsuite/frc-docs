@@ -44,7 +44,7 @@ SendableBuilder (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/
 - Boolean arrays
 - Double values
 - Double arrays
-- Bytes values
+- Bytes arrays
 - String values
 - String arrays
 - NetworkTableValues
