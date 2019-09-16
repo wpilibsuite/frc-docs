@@ -4,6 +4,7 @@ Command-Based Programming
 .. toctree::
    :maxdepth: 1
 
+   command-based-changes
    what-is-command-based
    subsystems
    commands
