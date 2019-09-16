@@ -9,6 +9,7 @@ Command-Based Programming
    subsystems
    commands
    command-groups
+   command-scheduler
    binding-commands-to-triggers
    structuring-command-based-project
    convenience-features
