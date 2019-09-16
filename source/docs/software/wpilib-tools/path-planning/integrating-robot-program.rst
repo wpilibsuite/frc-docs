@@ -165,8 +165,7 @@ At the start of the autonomous period we do the following operations:
 
                m_follower_notifier = new Notifier(this::followPath);
                m_follower_notifier.startPeriodic(left_trajectory.get(0).dt);
-             }
-             catch (IOException e) {
+             } catch (IOException e) {
                e.printStackTrace()
              }
            }
