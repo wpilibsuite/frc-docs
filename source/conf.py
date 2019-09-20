@@ -47,6 +47,9 @@ todo_include_todos = False
 # Disable following anchors in URLS for linkcheck
 linkcheck_anchors = False
 
+# Linkcheck Exclusions
+linkcheck_ignore = [r'.*kauailabs.com.*']
+
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
 
