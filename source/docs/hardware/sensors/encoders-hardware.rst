@@ -7,7 +7,7 @@ Quadrature encoders are by far the most common method for measuring rotational m
 
 The term "quadrature" refers to the method by which the motion is measured/encoded.  A quadrature encoder produces two square-wave pulses that are 90-degrees out-of-phase from each other, as seen in the picture below:
 
-|Encoding Direction|
+.. image:: images/encoders-hardware/encoding-direction.png
 
 Thus, across both channels, there are four total "edges" per period (hence "quad").  The use of two out-of-phase pulses allows the direction of motion to be unambiguously determined from which pulse "leads" the other.
 
@@ -27,21 +27,21 @@ These encoders vary in how they are mounted to the mechanism in question.  In ad
 Shafted encoders
 ^^^^^^^^^^^^^^^^
 
-.. todo:: add picture
+.. image:: images/encoders-hardware/grayhill-63r.jpg
 
-Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with cable ties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__.
+Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with cable ties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__, pictured above.
 
 On-shaft encoders
 ^^^^^^^^^^^^^^^^^
 
-.. todo:: add picture
+.. image:: images/encoders-hardware/cui-amt102.png
 
 On-shaft encoders (such as the `AMT103-V <https://www.digikey.com/product-detail/en/cui-inc/AMT103-V/102-1308-ND/827016>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
 
 Magnetic encoders
 ^^^^^^^^^^^^^^^^^
 
-.. todo:: add picture
+.. image:: images/encoders-hardware/ctre-magnetic-encoder.jpg
 
 Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <http://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 
@@ -59,5 +59,3 @@ As encoders measure rotation with digital pulses, the accuracy of the measuremen
 Thus, a resolution stated in edges per revolution has a value four times that of the same resolution stated in cycles per revolution.
 
 In general, the resolution of your encoder in edges-per-revolution should be somewhat finer than your smallest acceptable error in positioning.  Thus, if you want to know the mechanism plus-or-minus one degree, you should have an encoder with a resolution somewhat higher than 360 edges per revolution.
-
-.. |Encoding Direction| image:: images/encoders-hardware/encoding-direction.png

@@ -12,7 +12,10 @@ Wiring an analog potentiometer
 
 As suggested by the names, analog potentiometers connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.  To understand how exactly to wire potentiometers, however, it is important to understand their internal circuitry.
 
-|Potentiometer| |Voltage Divider|
+.. image:: images/analog-potentiometers-hardware/potentiometer.jpg
+  :width: 40%
+.. image:: images/analog-potentiometers-hardware/voltage-divider.png
+   :width: 40%
 
 The picture above on the left shows a typical potentiometer.  There are three pins, just as there are on the RIO's analog inputs.  The middle pin is the signal pin, while the outer pins can both be *either* power or ground.
 
@@ -27,11 +30,6 @@ An "absolute encoder" is an encoder that measures the absolute position of the e
 
 Absolute encoders that do not offer a simple analog output require :doc:`more complicated communications with the RIO <serial-buses>`.
 
-
-.. |Potentiometer| image:: images/analog-potentiometers-hardware/potentiometer.jpg
-   :width: 40%
-.. |Voltage Divider| image:: images/analog-potentiometers-hardware/voltage-divider.png
-   :width: 40%
 
 Footnotes
 ---------

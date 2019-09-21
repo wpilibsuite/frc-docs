@@ -18,7 +18,7 @@ Connecting to roboRIO analog input ports
 
 .. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
-|roboRIO Analog Inputs|
+.. image:: images/analog-inputs-hardware/roborio-analog-inputs.png
 
 The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
 
@@ -34,11 +34,10 @@ Most sensors that connect to analog input ports will have three wires - signal, 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed.
+Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows a digital encoder that requires two digital input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
 
-.. todo:: add picture
+.. image:: images/analog-inputs-hardware/e4t-oem-miniature-optical-encoder-to-roborio-01.png
 
-.. |roboRIO Analog Inputs| image:: images/analog-inputs-hardware/roborio-analog-inputs.png
 .. |ground| unicode:: 0x23DA
 
 Footnotes

@@ -5,13 +5,7 @@ Accelerometers are common sensors used to measure acceleration.
 
 In principle, precise measurements of acceleration can be double-integrated and used to track position (similarly to how the measurement of turn rate from a gyroscope can be integrated to determine heading) - however, in practice, accelerometers that are available within the legal FRC price range are not nearly accurate for this use.  However, accelerometers are still useful for a number of tasks in FRC.
 
-The roboRIO comes with a built-in three-axis accelerometer that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
-
-Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
-
-  - `Analog Devices ADIS16448 and ADIS 16470 IMUs <https://www.analog.com/en/landing-pages/001/first.html>`__
-  - `CTRE Pigeon IMU <http://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__
-  - `Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__
+The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
 
 Types of accelerometers
 -----------------------
@@ -39,4 +33,8 @@ IMUs (Inertial Measurement Units)
 
 .. image:: images/accelerometers-hardware/ctre-pigion-imu.png
 
-IMUs, or inertial measurement units, are a type of sensor that often combines a gyroscope and accelerometer. There are a variety of IMUs available for FRC teams, such as the `Analog Devices ADIS16448 IMU MXP <https://ez.analog.com/b/engineering-mind/posts/adis16448-imu-mxp-board-for-first-robotics>`__, which has historically been available via FIRST Choice. Another option is the `CTRE Gadgeteer Pigeon IMU <https://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__ which connects via the CAN bus.
+Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
+
+  - `Analog Devices ADIS16448 and ADIS 16470 IMUs <https://www.analog.com/en/landing-pages/001/first.html>`__
+  - `CTRE Pigeon IMU <http://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__
+  - `Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__

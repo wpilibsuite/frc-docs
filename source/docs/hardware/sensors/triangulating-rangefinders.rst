@@ -1,7 +1,7 @@
 Triangulating Rangefinders
 ==========================
 
-.. todo:: add image
+.. image:: images/triangulating-rangefinders/infrared-proximity-sensor.jpg
 
 Triangulating rangefinders (often called "IR rangefinders," as they commonly function in the infrared wavelength band) are another common type of rangefinder used in FRC.
 

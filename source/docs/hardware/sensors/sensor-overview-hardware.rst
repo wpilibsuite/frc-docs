@@ -7,22 +7,22 @@ In order to be effective, it is often vital for robots to be able to gather info
 
 Additionally, sensors can be extremely important for robot safety - many robot mechanisms are capable of breaking themselves if used incorrectly.  Sensors provide a safeguard against this, allowing robots to, for example, disable a motor if a mechanism is against a hard-stop.
 
-Types of sensors
+Types of Sensors
 ----------------
 
 Sensors used in FRC can be generally categorized in two different ways: by function, and by communication protocol.  The former categorization is relevant for robot design; the latter for wiring and programming.
 
-Sensors by function
+Sensors by Function
 ^^^^^^^^^^^^^^^^^^^
 
 Sensors can provide feedback on a variety of different aspects of the robot's state.  Sensor functions common to FRC include:
 
 - :doc:`Proximity switches <proximity-switches>`
 
-    * Mechanical proximity switches ("limit switches")
-    * Magnetic proximity switches
-    * Inductive proximity switches
-    * Photoelectric proximity switches
+    * :ref:`Mechanical proximity switches ("limit switches") <proximity-switches:Mechanical Proximity Switches ("limit switches")>`
+    * :ref:`Magnetic proximity switches <proximity-switches:Magnetic Proximity Switches>`
+    * :ref:`Inductive proximity switches <proximity-switches:Inductive Proximity Switches>`
+    * :ref:`Photoelectric proximity switches <proximity-switches:Photoelectric Proximity Switches>`
 
 - Distance sensors
 
@@ -39,7 +39,7 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 
 - :doc:`Gyroscopes <gyros-hardware>`
 
-Sensors by communication protocol
+Sensors by Communication Protocol
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  There are three main methods by which sensors can communicate their readings to the roboRIO:
@@ -52,5 +52,6 @@ In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  T
     * I2C
     * RS232
     * USB
+    * CAN Bus
 
-In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus is more complicated.
+In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus can be more complicated.
