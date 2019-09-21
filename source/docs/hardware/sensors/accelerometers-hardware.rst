@@ -7,6 +7,7 @@ In principle, precise measurements of acceleration can be double-integrated and 
 
 The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
 
+
 Types of accelerometers
 -----------------------
 
@@ -36,5 +37,5 @@ IMUs (Inertial Measurement Units)
 Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
 
   - `Analog Devices ADIS16448 and ADIS 16470 IMUs <https://www.analog.com/en/landing-pages/001/first.html>`__
-  - `CTRE Pigeon IMU <http://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__
+  - `CTRE Pigeon IMU <https://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__
   - `Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__

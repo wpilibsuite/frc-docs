@@ -44,7 +44,25 @@ All approved motor controllers have WPI classes provided for them.
 
    .. code-tab:: c++
 
-      // idk c++
+      frc::Spark spark{
+         // The RIO PWM port this is connected to
+         0
+      };
+
+      spark.Set(
+         // the output of the motor, between -1 and 1
+         -0.75
+      );
+
+      frc::VictorSP victor{
+         // The RIO PWM port this is connected to
+         0
+      };
+
+      victor.set(
+         // the output of the motor, between -1 and 1
+         0.6
+      );
 
 
 CAN Motor Controllers
@@ -55,7 +73,7 @@ and REV Robotics.
 SPARK MAX
 ^^^^^^^^^
 For information regarding the SparkMAX CAN Speed Controller, which can be
-used in either CAN or PWM mode, please refer to the SparkMAX `software resources <http://www.revrobotics.com/sparkmax-software/>`_
+used in either CAN or PWM mode, please refer to the SparkMAX `software resources <https://www.revrobotics.com/sparkmax-software/>`_
 and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_
 
 CTRE CAN Motor Controllers

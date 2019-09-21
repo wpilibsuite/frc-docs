@@ -4,7 +4,7 @@ The initial release of PathWeaver contained the field image for the FRC 2018 Gam
 
 Games are loaded from the ``~/PathWeaver/Games`` on Linux and Mac or ``%USERPROFILE%/PathWeaver/Games`` directory on Windows. The files can be in either a game-specific subdirectory, or in a zip file in the Games directory. The ZIP file must follow the same layout as a game directory; the JSON file must be in the root of the ZIP file (cannot be in a subdirectory).
 
-`FIRST Destination Deep Space <https://github.com/wpilibsuite/PathWeaver/files/2730942/DeepSpace.zip>`__ field definition.
+Download the ready-to-use FIRST Destination Deep Space field definition :download:`here <files/DeepSpace.zip>`. Other field definitions are available in the `PathWeaver GitHub repository <https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`__.
 
 File Layout
 -----------
