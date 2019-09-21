@@ -1,16 +1,14 @@
 Wiring Best Practices
 ========================
 
-.. hint:: The article Wiring the FRC Control System walks through the details of what connects where to wire up the FRC Control System, this article provides some additional "Best Practices" that may increase reliability and make maintenance easier.
+.. tip:: The article :doc:`Wiring the FRC Control System <how-to-wire-a-robot>` walks through the details of what connects where to wire up the FRC Control System and this article provides some additional "Best Practices" that may increase reliability and make maintenance easier. Take a look at :doc:`Preemptive Troubleshooting <preemptive-troubleshooting>` for more tips and tricks.
 
 Vibration/Shock
 ------------------
 
 An FRC Robot is an incredibly rough environment when it comes to vibrations and shock loads. While many of the FRC specific electronics are extensively tested for mechanical robustness in these conditions, a few components, such as the radio, are not specifically designed for use on a mobile platform. Taking steps to reduce the shock and vibration these components are exposed to may help reduce failures. Some suggestions that may reduce mechanical failures:
 
-- Vibration Isolation -
-  Make sure to isolate any components which create excessive vibration, such as compressors, using "vibration isolators". This
-  will help reduce vibration on the robot which can loosen fasteners and cause premature fatigue failure on some electronic
+- Vibration Isolation - Make sure to isolate any components which create excessive vibration, such as compressors, using "vibration isolators". This will help reduce vibration on the robot which can loosen fasteners and cause premature fatigue failure on some electronic
   components.
 - Bumpers - Use Bumpers to cover as much of the robot as possible for your design. While the rules require specific bumper coverage around the corners of your robot, maximizing the use of bumpers increases the likelihood that all collisions will be damped by your bumpers. Bumpers significantly reduce the g-forces experienced in a collision compared to hitting directly on a hard robot surface, reducing the shock experienced by the electronics and decreasing the chance of a shock related failure.
 - Shock Mounting - You may choose to shock mount some or all of your electronic components to further reduce the forces they see in robot collisions. This is especially helpful for the robot radio and other electronics such as co-processors, which may not be designed for use on mobile platforms. Vibration isolators, springs, foams, or mounting to flexible materials all may reduce the shock forces seen by these components.

@@ -57,7 +57,7 @@ roboRIO Mode
 roboRIO RSL
 ^^^^^^^^^^^
 
-- See above
+- `See above <Robot Signal Light (RSL)>`_
 
 
 OpenMesh Radio
@@ -89,13 +89,13 @@ Power Distribution Panel
 ------------------------
 
 .. image:: images/status-lights/pdpLight.png
-    :width: 300
+    :width: 100%
 
 Voltage Regulator Module
 ------------------------
 
 .. image:: images/status-lights/vrmLight.png
-    :width: 300
+    :width: 60%
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
 
@@ -103,7 +103,7 @@ Pneumatics Control Module (PCM)
 -------------------------------
 
 .. image:: images/status-lights/pcmLight.png
-    :width: 300
+    :width: 100%
 
 Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
@@ -128,19 +128,19 @@ Jaguar speed controllers
 ------------------------
 
 .. image:: images/status-lights/jagLight.png
-    :width: 300
+    :width: 100%
 
 Mindsensors SD 540
 ------------------
 
 .. image:: images/status-lights/sd540Light.png
-    :width: 300
+    :width: 100%
 
 REV Robotics Servo Power Module
 -------------------------------
 
 .. image:: images/status-lights/servoLight.png
-    :width: 300
+    :width: 60%
 
 - 6V Power LED off, dim or flickering with power applied = Over-current shutdown
 
@@ -148,7 +148,7 @@ REV Robotics SPARK
 ------------------
 
 .. image:: images/status-lights/sparkLight.png
-    :width: 300
+    :width: 100%
 
 Talon speed controllers
 -----------------------
