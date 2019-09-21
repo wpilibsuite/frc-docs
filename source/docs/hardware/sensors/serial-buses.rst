@@ -14,8 +14,8 @@ The roboRIO supports many basic types of serial communications:
 - `SPI`_
 - `RS232`_
 - `USB`_
-- `CAN Bus`_
 - `MXP Expansion Port`_
+- `CAN Bus`_
 
 I2C
 ^^^
@@ -27,7 +27,7 @@ I2C
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
-The I2C bus can also be used through the `MXP expansion port`_.
+The I2C bus can also be used through the `MXP Expansion Port`_.
 
 SPI
 ^^^
@@ -39,7 +39,7 @@ SPI
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the CS 0-3 pins on the diagram above).
 
-The SPI bus can also be used through the `MXP expansion port`_.
+The SPI bus can also be used through the `MXP Expansion Port`_.
 
 RS232
 ^^^^^
@@ -68,11 +68,11 @@ MXP Expansion Port
 .. image:: images/serial-buses/mxp-pinout.png
    :width: 40%
 
-Several of the serial buses are also available for use through the roboRIO's MXP expansion port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
+Several of the serial buses are also available for use through the roboRIO's MXP Expansion Port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
 
 Many peripheral devices attach directly to the MXP port for convenience, requiring no wiring on the part of the user.
 
-CAN bus
+CAN Bus
 ^^^^^^^
 
 .. image:: images/serial-buses/can-bus-talon-srx-chain.png
