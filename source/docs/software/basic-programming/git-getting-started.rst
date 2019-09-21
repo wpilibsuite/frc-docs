@@ -1,6 +1,8 @@
 Git Version Control Introduction
 ================================
 
+.. important:: A more in-depth guide on Git is available on the `Git website <https://git-scm.com/book/en/v2>`__.
+
 `Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separate testing environments into *branches*
@@ -51,7 +53,7 @@ Creating the repository
 
 You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
-.. note:: There are various providers that can host repositories. `Gitlab <http://gitlab.com/>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <http://www.cloudforge.com/>`_ are a few alternatives to Github
+.. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to Github
 
 Creating a Github Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~

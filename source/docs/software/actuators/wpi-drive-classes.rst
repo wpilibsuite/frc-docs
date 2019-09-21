@@ -301,7 +301,7 @@ Joystick construction.
 
         void TeleopPeriodic() override {
             myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
-                myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
 
