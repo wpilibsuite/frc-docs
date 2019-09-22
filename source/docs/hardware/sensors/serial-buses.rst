@@ -8,14 +8,7 @@ Both the digital and analog inputs are highly limited in the amount of data that
 Types of supported serial buses
 -------------------------------
 
-The roboRIO supports many basic types of serial communications:
-
-- `I2C`_
-- `SPI`_
-- `RS232`_
-- `USB`_
-- `MXP Expansion Port`_
-- `CAN Bus`_
+The roboRIO supports many basic types of serial communications.
 
 I2C
 ^^^
@@ -27,7 +20,7 @@ I2C
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
-The I2C bus can also be used through the `MXP Expansion Port`_.
+The I2C bus can also be used through the MXP Expansion Port.
 
 SPI
 ^^^
@@ -39,7 +32,7 @@ SPI
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the CS 0-3 pins on the diagram above).
 
-The SPI bus can also be used through the `MXP Expansion Port`_.
+The SPI bus can also be used through the MXP Expansion Port.
 
 RS232
 ^^^^^
@@ -51,7 +44,7 @@ RS232
 
 To communicate to peripheral devices over RS232, each pin should be wired to its corresponding pin on the device.
 
-The RS232 bus can also be used through the `MXP Expansion Port`_.
+The RS232 bus can also be used through the MXP Expansion Port.
 
 USB
 ^^^
@@ -81,9 +74,9 @@ Additionally, the roboRIO supports communications with peripheral devices over t
 
 Several sensors primarily use the CAN bus, such as:
 
-- `CAN Based Time-of-Flight Range/Distance Sensor from playingwithfusion.com <https://www.playingwithfusion.com/productview.php?pdid=96&catid=1009`__
-- TalonSRX-based sensors, such as the `Gadgeteer Pigeon IMU <http://www.ctr-electronics.com/sensors/gadgeteer-imu-module-pigeon.html>`__ and the `SRX MAG Encoder <http://www.ctr-electronics.com/sensors/srx-magnetic-encoder.html>`__
-- `CANifier <http://www.ctr-electronics.com/control-system/can-can-canifier-driver-led-driver-gpio.html>`__
+- `CAN Based Time-of-Flight Range/Distance Sensor from playingwithfusion.com <https://www.playingwithfusion.com/productview.php?pdid=96&catid=1009>`__
+- TalonSRX-based sensors, such as the `Gadgeteer Pigeon IMU  <http://www.ctr-electronics.com/sensors/gadgeteer-imu-module-pigeon.html>`__ and the `SRX MAG Encoder <https://www.ctr-electronics.com/sensors/srx-magnetic-encoder.html>`__
+- `CANifier <https://www.ctr-electronics.com/control-system/can-can-canifier-driver-led-driver-gpio.html>`__
 - Power monitoring sensors built into the :ref:`Power Distribution Panel (PDP) <docs/hardware/getting-started/control-system-hardware:Power Distribution Panel>`
 
-More information about using devices connected to the CAN bus can be found in the article about :doc:`software/can-devices/using-can-devices`
+More information about using devices connected to the CAN bus can be found in the article about :ref:`using can devices <docs/software/can-devices/using-can-devices:Using CAN Devices>`
