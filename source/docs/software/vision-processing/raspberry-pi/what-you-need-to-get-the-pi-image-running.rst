@@ -2,8 +2,8 @@ What you need to get the PI image running
 =========================================
 To start using the Raspberry PI as a video or image coprocessor you need the following:
 
--   A Raspberry PI 3 B or Raspberry PI 3 B+
--   A micro SD card that is at least 4Gb to hold all the provided software
+-   A Raspberry PI 3 B, Raspberry PI 3 B+, or a Raspberry PI 4 B
+-   A micro SD card that is at least 4Gb to hold all the provided software, with a recommended Speed Class of 10 (10MB/s)
 -   An ethernet cable to connect the PI to your roboRIO network
 -   A USB micro power cable to connect to the Voltage Regulator Module (VRM) on your robot. It is recommended to use the
     VRM connection for power rather than powering it from one of the roboRIO USB ports for higher reliability
