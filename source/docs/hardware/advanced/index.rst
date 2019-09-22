@@ -1,5 +1,5 @@
-Advanced Hardware
-=================
+Advanced
+========
 
 .. toctree::
    :maxdepth: 1
