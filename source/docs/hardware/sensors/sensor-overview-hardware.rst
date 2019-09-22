@@ -19,10 +19,10 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 
 - :doc:`Proximity switches <proximity-switches>`
 
-    * :ref:`Mechanical proximity switches ("limit switches") <proximity-switches:Mechanical Proximity Switches ("limit switches")>`
-    * :ref:`Magnetic proximity switches <proximity-switches:Magnetic Proximity Switches>`
-    * :ref:`Inductive proximity switches <proximity-switches:Inductive Proximity Switches>`
-    * :ref:`Photoelectric proximity switches <proximity-switches:Photoelectric Proximity Switches>`
+    * Mechanical proximity switches ("limit switches")
+    * Magnetic proximity switches
+    * Inductive proximity switches
+    * Photoelectric proximity switches
 
 - Distance sensors
 
