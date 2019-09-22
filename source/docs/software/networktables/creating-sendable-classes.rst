@@ -121,7 +121,24 @@ Creating an entirely new :code:`Sendable` class follows a similar pattern to the
 
   .. code-tab:: c++
 
-    Todo: add C++ code
+        public class ArmState : public Sendable {
+          private:
+            ArmSubsystem armSubsystem;
+          public:
+            ArmState(ArmSubsystem a) {
+              armSubsystem = a;
+            }
+
+            void initSendable(SendableBuilder s) {
+              /*
+              builder.setSmartDashboardType("ArmState");
+              builder.addDoubleProperty("Angle", () -> armSubsystem::getAngle, (value) -> armSubsystem:setAngle(value));
+              builder.addBooleanProperty("IsOpen", () -> armSubsystem::isOpen, (value) -> armSubsystem:setClaw(value));
+              */
+              Sendable::initSendable(s);
+            }
+        }
+
 
 The following example is an example implementation from WPILib's DifferentialDrive class, which implements Sendable. The properties added to the builder in this example expose many features of DifferentialDrive to modification through NetworkTables. The instance of DifferentialDrive is treated as an actuator of type "DifferentialDrive", which means that Test mode can be used to control the drive's outputs, and the name DifferentialDrive will be displayed to the user. When Test mode is enabled or disabled, the actuator will be set to a safe state by calling the :code:`stopMotor` method, which will stop the motors. Finally, a getter and setter for the left motor speed and right motor speed allows the user both to view the current output of both motors, as well as set them to an arbitrary output. For more information on the DifferentialDrive class, see :doc:`../actuators/wpi-drive-classes`.
 
