@@ -9,5 +9,4 @@ Getting Started
    wiring-best-practices
    wiring-pneumatics
    status-lights-ref
-   can-addressing
    preemptive-troubleshooting

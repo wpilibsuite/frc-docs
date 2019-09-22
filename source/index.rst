@@ -54,6 +54,7 @@ New teams may wish to familiarize themselves with the different components of th
 
    docs/hardware/getting-started/index
    docs/hardware/sensors/index
+   docs/hardware/advanced/index
 
 .. toctree::
    :maxdepth: 1

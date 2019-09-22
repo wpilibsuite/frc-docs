@@ -128,7 +128,7 @@ a particular type. Devices should default to device ID 0 to match other
 components of the FRC Control System. Device 0x3F may be reserved for
 device specific broadcast messages.
 
-.. image:: images/how-to-wire-a-robot/can-id-example.png
+.. image:: images/can-addressing/can-id-example.png
 
 Protected Frames
 ----------------
