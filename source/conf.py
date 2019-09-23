@@ -119,3 +119,6 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub', 'linkcheck']
+
+locale_dirs = ['locale/']
+gettext_compact = False
