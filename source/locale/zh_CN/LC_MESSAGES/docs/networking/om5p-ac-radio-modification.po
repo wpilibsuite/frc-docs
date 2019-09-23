@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:2
+msgid "OM5P-AC Radio Modification"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:4
+msgid ""
+"The intended use case for the OM5P-AC radio does not subject it to the "
+"same shocks and forces as it sees in the FRC environment. If the radio is"
+" subjected to significant pressure on the bottom of the case, it is "
+"possible to cause a radio reboot by shorting a metal shield at the bottom"
+" of the radio to some exposed metal leads on the bottom of the board. "
+"This article details a modification to the radio to prevent this "
+"scenario."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:6
+msgid ""
+"It takes significant pressure applied to the bottom of the case to cause "
+"a reboot in this manner. Most FRC radio reboot issues can be traced to "
+"the power path in some form. We recommend mitigating this risk via "
+"strategic mounting of the radio rather than opening and modifying the "
+"radio (and risk damaging delicate internal components):"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:8
+msgid "Avoid using the \"mounting tab\" features on the bottom of the radio)"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:9
+msgid ""
+"You may wish to mount the radio to allow for some shock absorption. A "
+"little can go a long way, mounting the radio using hook and loop fastener"
+" or to a robot surface with a small amount of flex (plastic or sheet "
+"metal sheet, etc.) can significantly reduce the forces experienced by the"
+" radio."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:12
+msgid "Opening the Radio"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:14
+msgid ""
+"The OpenMesh OM5P-AC is not designed to be a user serviceable device. "
+"Users perform this modification at their own risk. Make sure to work "
+"slowly and carefully to avoid damaging internal components such as radio "
+"antenna cables."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:17
+msgid "Case Screws"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:23
+msgid ""
+"Locate the two rubber feet on the front side of the radio then pry them "
+"off the radio using fingernails, small flat screwdriver, etc. Using a "
+"small Phillips screwdriver, remove the two screws under the feet."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:26
+msgid "Side Latches"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:30
+msgid ""
+"There is a small latch on the lid of the radio near the middle of each "
+"long edge (you can see these latches more clearly in the next picture). "
+"Using a fingernail or very thin tool, slide along the gap between the lid"
+" and case from front to back towards the middle of the radio, you should "
+"hear a small pop as you near the middle of radio. Repeat on the other "
+"side (note: it's not hard to accidentally re-latch the first side while "
+"doing this, make sure both sides are unlatched before proceeding). The "
+"radio lid should now be slightly open on the front side as shown in the "
+"image above."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:33
+msgid "Remove Lid"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:35
+msgid ""
+"The board may stick to the lid as you remove it due to the heatsink pads."
+" Look through the vents of the radio as you remove the lid to see if the "
+"board is coming with it, if it is you may need to insert a small tool to "
+"hold the board down to separate it from the lid. We recommend a small "
+"screwdriver or similar tool that fits through the vents, applied through "
+"the front corner on the barrel jack side, right above the screw hole. You"
+" can scroll down to the picture with the lid removed to see what the "
+"board looks like in this area."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:39
+msgid ""
+"To begin removing the lid, slide it forward (lifting slightly) until the "
+"screw holders hit the case front (you may need to apply pressure on the "
+"latch areas while doing this."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:43
+msgid ""
+"Next, begin rotating the lid slightly away from the barrel jack side, as "
+"shown while continuing to lift. This will unhook the lid from the small "
+"triangle visible in the top right corner. Continue to rotate slightly in "
+"this direction while pushing the top left corner towards the barrel jack "
+"(don't try to lift further in this step) to unhook a similar feature in "
+"the top left corner. Then lift the lid completely away from the body."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:46
+msgid "Remove Board"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:50
+msgid ""
+"Note the antenna wires shown in the image above. These wires, and their "
+"connectors, are fragile, take care not to damage them while performing "
+"the next steps."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:56
+msgid ""
+"To remove the board, we recommend grasping one or both network ports with"
+" your fingers (as shown) and pushing inward (toward the front of the "
+"radio) and upward until the network ports and barrel jack are free from "
+"the case."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:60
+msgid ""
+"Tilt the board up (towards the short grey antenna cable) to expose the "
+"metal shield underneath."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:62
+msgid ""
+"When you perform this step, you may notice that there is a small reset "
+"button on the underside of the board that is larger than the hole in the "
+"case. Note that pressing the reset button with the FRC firmware installed"
+" has no effect and that drilling the case of the radio is not a permitted"
+" modification."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:65
+msgid "Apply Tape"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:69
+msgid ""
+"Apply a piece of electrical tape to the metal shield in the area just "
+"inside of the network port/barrel jack openings. This will prevent the "
+"exposed leads on the underside of the board from short circuiting on this"
+" plate."
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:72
+msgid "Re-assemble Radio"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:74
+msgid "Re-assemble the radio by reversing the instructions to open it:"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:76
+msgid ""
+"Lay the board back down, making sure it aligns with the screw holes near "
+"the front and seats securely"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:77
+msgid ""
+"Slide the lid onto the back left retaining feature by moving it in from "
+"right to left. Take care of the capacitor in this area"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:78
+msgid ""
+"Rotate the lid, press downwards and slide the back right retaining "
+"feature in"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:79
+msgid "Press down firmly on the front/middle of the lid to seat the latches"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:80
+msgid "Replace 2 screws in front feet"
+msgstr ""
+
+#: ../../source/docs/networking/om5p-ac-radio-modification.rst:81
+msgid "Replace front feet"
+msgstr ""
+

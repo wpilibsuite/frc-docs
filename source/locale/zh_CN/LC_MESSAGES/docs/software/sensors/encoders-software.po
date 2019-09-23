@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/encoders-software.rst:2
+msgid "Encoders - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:4
+msgid ""
+"This section covers encoders in software.  For a hardware guide to "
+"encoders, see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - "
+"Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:6
+msgid "|Encoding Direction|"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:8
+msgid ""
+"Encoders are devices used to measure motion (usually, the rotation of a "
+"shaft).  The encoders used in FRC are known as \"quadrature encoders.\"  "
+"These encoders produce square-wave signals on two channels that are a "
+"quarter-period out-of-phase (hence the term, \"quadrature\").  The pulses"
+" are used to measure the rotation, and the direction of motion can be "
+"determined from which channel \"leads\" the other."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:10
+msgid "|Encoder Modules|"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:12
+msgid ""
+"The FPGA handles encoders either through a counter module or an encoder "
+"module, depending on the :ref:`decoding type <docs/software/sensors"
+"/encoders-software:Decoding type>` - the choice is handled automatically "
+"by WPILib.  The FPGA contains 8 encoder modules."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:15
+msgid "The Encoder class"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:17
+msgid ""
+"WPILib provides support for encoders through the :code:`Encoder` class "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"encoders."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:20
+msgid "Initializing an encoder"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:22
+msgid "An encoder can be instantiated as follows:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:39
+msgid "Decoding type"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:41
+msgid ""
+"The WPILib :code:`Encoder` class can decode encoder signals in three "
+"different modes:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:43
+msgid ""
+"**1X Decoding**: Increments the distance for every complete period of the"
+" encoder signal (once per four edges)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:44
+msgid ""
+"**2X Decoding**: Increments the distance for every half-period of the "
+"encoder signal (once per two edges)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:45
+msgid ""
+"**4X Decoding**: Increments the distance for every edge of the encoder "
+"signal (four times per period)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:47
+msgid ""
+"4X decoding offers the greatest precision, but at the potential cost of "
+"increased \"jitter\" in rate measurements.  To use a different decoding "
+"type, use the following constructor:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:64
+msgid "Configuring encoder parameters"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:66
+msgid ""
+"The :code:`Encoder` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate "
+"the distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:68
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does "
+"*not* depend on the :ref:`decoding type <docs/software/sensors/encoders-"
+"software:Decoding type>` - each \"pulse\" should always be considered to "
+"be a full cycle (four edges)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:70
+msgid "The :code:`Encoder` class offers a number of configuration methods:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:113
+msgid "Reading information from encoders"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:115
+msgid ""
+"The :code:`Encoder` class provides a wealth of information to the user "
+"about the motion of the encoder."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:118
+msgid "Distance"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:120
+msgid ""
+"Quadrature encoders measure *relative* distance, not absolute; the "
+"distance value returned will depend on the position of the encoder when "
+"the robot was turned on or the encoder value was last :ref:`reset "
+"<docs/software/sensors/encoders-software:Resetting an encoder>`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:122
+msgid ""
+"Users can obtain the total distance traveled by the encoder with the "
+":code:`getDistance()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:137
+msgid "Rate"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:139
+msgid "Units of time for the :code:`Encoder` class are *always* in seconds."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:141
+msgid ""
+"Users can obtain the current rate of change of the encoder with the "
+":code:`getRate()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:156
+msgid "Stopped"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:158
+msgid ""
+"Users can obtain whether the encoder is stationary with the "
+":code:`getStopped()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:173
+msgid "Direction"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:175
+msgid ""
+"Users can obtain the direction in which the encoder last moved with the "
+":code:`getDirection()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:190
+msgid "Period"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:192
+msgid ""
+"Users can obtain the period of the encoder pulses (in seconds) with the "
+":code:`getPeriod()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:207
+msgid "Resetting an encoder"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:209
+msgid ""
+"To reset an encoder to a distance reading of zero, call the "
+":code:`reset()` method.  This is useful for ensuring that the measured "
+"distance corresponds to the actual desired physical measurement, and is "
+"often called during a :ref:`homing <docs/software/sensors/encoders-"
+"software:Homing an encodered mechanism>` routine:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:224
+msgid "Using encoders in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:226
+msgid ""
+"Encoders are some of the most useful sensors in FRC; they are very nearly"
+" a requirement to make a robot capable of nontrivially-automated "
+"actuations and movement.  The potential applications of encoders in robot"
+" code are too numerous to summarize fully here, but a few basic examples "
+"are provided below:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:229
+msgid "Driving to a distance"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:231
+msgid ""
+"Encoders can be used on a robot drive to create a simple \"drive to "
+"distance\" routine.  This is very useful for robot autonomy:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:303
+msgid "Stabilizing heading"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:305
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are "
+"not, the loop will be unstable and the robot will turn wildly."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:307
+msgid ""
+"Encoders can be used to ensure that a robot drives straight in a manner "
+"quite similar to :ref:`how it is done with a gyroscope "
+"<docs/software/sensors/gyros-software:Stabilizing heading while "
+"driving>`.  A simple implementation with a P loop is given below:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:386
+msgid ""
+"More-advanced implementations can use more-complicated control loops.  "
+"Closing a control loop on the encoder difference is roughly analogous to "
+"closing it on the heading error, and so PD loops are particularly "
+"effective."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:389
+msgid "PID Control"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:391
+msgid ""
+"Encoders are particularly useful as inputs to PID controllers (the "
+"heading stabilization example above is a simple P loop).  For more "
+"information on PID control, see :ref:`docs/software/advanced-programming"
+"/common-control-algorithms:Common Control Algorithms`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:394
+msgid "Homing an encodered mechanism"
+msgstr ""
+
+#: ../../source/docs/software/sensors/encoders-software.rst:396
+msgid ""
+"Since encoders measure *relative* distance, it is often important to "
+"ensure that their \"zero-point\" is in the right place.  A typical way to"
+" do this is a \"homing routine,\" in which a mechanism is moved until it "
+"hits a known position (usually accomplished with a limit switch), or "
+"\"home,\" and then the encoder is reset.  The following code provides a "
+"basic example:"
+msgstr ""
+

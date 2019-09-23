@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:2
+msgid "Viewing Console Output"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:4
+msgid ""
+"For viewing the console output of text based programs the roboRIO "
+"implements a NetConsole. There are two main ways to view the NetConsole "
+"output from the roboRIO: The Console Viewer in the FRC Driver Station and"
+" the Riolog plugin in VS Code."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:6
+msgid ""
+"On the roboRIO, the NetConsole is only for program output.  If you want "
+"to interact with the system console you will need to use SSH or the "
+"Serial console."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:9
+msgid "Console Viewer"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:12
+msgid "Opening the Console Viewer"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:14
+msgid "|Opening Console Viewer|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:16
+msgid ""
+"To open Console Viewer, first open the FRC Driver Station. Then, click on"
+" the gear at the top of the message viewer window (1) and select \"View "
+"Console\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:19
+msgid "Console Viewer Window"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:21
+msgid "|Console Viewer Window|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:23
+msgid ""
+"The Console Viewer window displays the output from our robot program in "
+"green.  The gear in the top right can clear the window and set the level "
+"of messages displayed."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:26
+msgid "Riolog VS Code Plugin"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:28
+msgid ""
+"The Riolog plugin is a VS Code view that can be used to view the "
+"NetConsole output in VS Code (credit for the original Eclipse version: "
+"Manuel Stoeckl, FRC1511)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:31
+msgid "Opening the RioLog View"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:33
+msgid "|Opening Riolog View|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:35
+msgid ""
+"By default, the RioLog view will open automatically at the end of each "
+"roboRIO deploy. To launch the RioLog view manually, press Ctrl+Shift+P to"
+" open the command palette and start typing \"RioLog\", then select the "
+"WPILib: Start RioLog option."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:38
+msgid "Riolog Window"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:40
+msgid "|Riolog Window|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:42
+msgid ""
+"The RioLog view should appear in the top pane. The Riolog contains a "
+"number of controls for manipulating the console:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:44
+msgid ""
+"**Pause/Resume Display** - This will pause/resume the display. In the "
+"background, the new packets will still be received and will be displayed "
+"when the resume button is clicked."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:45
+msgid ""
+"**Discard/Accept Incoming** - This will toggle whether to accept new "
+"packets. When packets are being discarded the display will be paused and "
+"all packets received will be discarded. Clicking the button again will "
+"resume receiving packets."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:46
+msgid "**Clear** - This will clear the current contents of the display."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:47
+msgid ""
+"**Don't Show/Show Prints** - This shows or hides messages categorized as "
+"print statements"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:48
+msgid "**Switch to Viewer** - This switches to viewer for saved log files"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:49
+msgid ""
+"**Don't Show/Show Warnings** - This shows or hides messages categorized "
+"as warnings"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:50
+msgid ""
+"**Disconnect/Reconnect** - This disconnects or reconnects to the console "
+"stream"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:51
+msgid ""
+"**Show/Don't Show Timestamps** - Shows or hides timestamps on messages in"
+" the window"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:52
+msgid ""
+"**Save Log** - Copies the log contents into a file you can save and view "
+"or open later with the RioLog viewer (see Switch to Viewer above)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/viewing-console-output.rst:53
+msgid ""
+"**Set Team Number** - Sets the team number of the roboRIO to connect to "
+"the console stream on, set automatically if RioLog is launched by the "
+"deploy process"
+msgstr ""
+

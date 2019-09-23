@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:2
+msgid "Windows Firewall Configuration"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:4
+msgid ""
+"Many of the programming tools used in FRC need network access for various"
+" reasons. Depending on the exact configuration, the Windows Firewall may "
+"potentially interfere with this access for one or more of these programs."
+" This document describes procedures for Windows 7, but future versions "
+"should be similar."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:7
+msgid "Disabling Windows Firewall"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:9
+msgid ""
+"The easiest solution is to disable the Windows Firewall. Teams should "
+"beware that this does make the PC potentially more vulnerable to malware "
+"attacks if connecting to the internet."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:12
+msgid "Control Panel"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:16
+#: ../../source/docs/networking/windows-firewall-configuration.rst:42
+msgid ""
+"Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the"
+" dropdown next to ``View by:`` and select ``Small icons`` then click "
+"``Windows Defender Firewall``."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:19
+msgid "Turn Windows Firewall on or off"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:23
+msgid ""
+"In the left pane, click ``Turn Windows Defender Firewall on or off``, and"
+" click yes. Enter your Administrator password if a dialog appears."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:26
+msgid "Disable the Firewall"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:30
+msgid ""
+"For each category, select the radio button to ``Turn off Windows Defender"
+" Firewall``. Then click OK."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:33
+msgid "Configure the firewall"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:35
+msgid ""
+"Alternatively, you can add exceptions to the Firewall for any FRC "
+"programs you are having issues with."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:38
+msgid "Open Control Panel"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:45
+msgid "Allow a program..."
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:49
+msgid ""
+"In the left pane, click ``Allow a program or feature through Windows "
+"Defender Firewall``"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:52
+msgid "Allowed Programs"
+msgstr ""
+
+#: ../../source/docs/networking/windows-firewall-configuration.rst:56
+msgid ""
+"For each FRC program you are having an issue with, make sure that it "
+"appears in the list and that it has a check in each of the 3 columns. If "
+"you need to change a setting, you made need to click the ``Change "
+"settings`` button in the top right before changing the settings. If the "
+"program is not in the list at all, click the ``Allow another program...``"
+" button and browse to the location of the program to add it."
+msgstr ""
+

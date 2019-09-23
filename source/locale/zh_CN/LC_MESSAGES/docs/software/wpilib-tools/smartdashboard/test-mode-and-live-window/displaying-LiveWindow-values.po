@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:2
+msgid "Displaying LiveWindow values"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:4
+msgid ""
+"Typically LiveWindows are displayed as part of the automatically "
+"generated RobotBuilder code. You may also display LiveWindow values by "
+"writing the code yourself and adding it to your robot program. LiveWindow"
+" will display values grouped in subsystems. This is a convenient method "
+"of displaying whether they are actual command based program subsystems or"
+" just a grouping that you decide to use in your program."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:7
+msgid "Adding the necessary code to your program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:10
+msgid ""
+"**(1)** Get a reference (in Java) or a pointer (in C++) to the LiveWindow"
+" object in your program. **(2)** Then for each sensor or actuator that is"
+" created, add it to the LiveWindow display by either calling "
+"``AddActuator`` or ``AddSensor`` (``addActuator`` or ``addSensor`` in "
+"Java). When the SmartDashboard is put into LiveWindow mode, it will "
+"display the sensors and actuators."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:13
+msgid "Viewing the display in the SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.rst:16
+msgid ""
+"The sensors and actuators added to the LiveWindow will be displayed "
+"grouped by subsystem. The subsystem name is just an arbitrary grouping "
+"the helping to organize the display of the sensors. Actuators can be "
+"operated by operating the slider for the two motor controllers."
+msgstr ""
+

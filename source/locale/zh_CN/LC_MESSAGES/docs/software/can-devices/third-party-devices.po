@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:2
+msgid "Third-Party CAN Devices"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:4
+msgid ""
+"A number of FRC vendors offer their own CAN peripherals.  As CAN devices "
+"offer expansive feature-sets, vendor CAN devices require similarly "
+"expansive code libraries to operate.  As a result, these libraries are "
+"not maintained as an official part of WPILib, but are instead maintained "
+"by the vendors themselves.  For a guide to installing third-party "
+"libraries, see :ref:`3rd Party Libraries <docs/software/getting-started"
+"/3rd-party-libraries:3rd Party Libraries>`"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:11
+msgid ""
+"A list of common third-party CAN devices from various vendors, along with"
+" links to corresponding external documentation, is provided below:"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:14
+msgid "Cross-the-Road Electronics"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:16
+msgid ""
+"Cross-the-Road Electronics (CTRE) offers several CAN peripherals with "
+"external libraries:"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:19
+msgid "CTRE Motor Controllers"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:21
+msgid "**Talon SRX**"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:23
+msgid ""
+"API Documentation (`Java <https://www.ctr-"
+"electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__,"
+" `C++ <https://www.ctr-"
+"electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:24
+#, python-format
+msgid ""
+"`Technical Manual <https://www.ctr-"
+"electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:26
+msgid "**Victor SPX**"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:28
+msgid ""
+"API Documentation (`Java <https://www.ctr-"
+"electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__,"
+" `C++ <https://www.ctr-"
+"electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:29
+#, python-format
+msgid ""
+"`Technical Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:32
+msgid "CTRE Sensors"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:34
+msgid "**Pigeon IMU**"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:36
+msgid ""
+"API Documentation(`Java <https://www.ctr-"
+"electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__,"
+" `C++ <https://www.ctr-"
+"electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:37
+#, python-format
+msgid ""
+"`Technical Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/Pigeon%20IMU%20User's%20Guide.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:39
+msgid "**CANifier**"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:41
+msgid ""
+"API Documentation (`Java <https://www.ctr-"
+"electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1_c_a_nifier.html#ad9a05fae7065d3f39f7bc8a86f15b0a1>`__,"
+" `C++ <https://www.ctr-"
+"electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1_c_a_nifier.html#a706308fce1dea96785bf3ac845bafc02>`__)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:42
+#, python-format
+msgid ""
+"`Technical Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/CANifier%20User's%20Guide.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:45
+msgid "REV Robotics"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:47
+msgid ""
+"REV Robotics currently offers the SPARK MAX motor controller, which has a"
+" similar feature-set to the Talon SRX."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:50
+msgid "REV Motor Controllers"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:52
+msgid "**SPARK MAX**"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:54
+msgid ""
+"API Documentation (`Java <https://www.revrobotics.com/content/sw/max/sw-"
+"docs/java/com/revrobotics/CANSparkMax.html>`__, `C++ "
+"<https://www.revrobotics.com/content/sw/max/sw-"
+"docs/cpp/classrev_1_1_c_a_n_spark_max.html>`__)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/third-party-devices.rst:55
+msgid "`Technical Manual <https://www.revrobotics.com/sparkmax-users-manual/>`__"
+msgstr ""
+

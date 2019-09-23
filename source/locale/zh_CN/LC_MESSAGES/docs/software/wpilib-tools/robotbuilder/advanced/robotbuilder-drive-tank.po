@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:2
+msgid "Driving the Robot with Tank Drive and Joysticks"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:4
+msgid ""
+"A common use case is to have a joystick that should drive some actuators "
+"that are part of a subsystem. The problem is that the joystick is created"
+" in the OI class and the motors to be controlled are in the subsystem. "
+"The idea is to create a command that, when scheduled, reads input from "
+"the joystick and calls a method that is created on the subsystem that "
+"drives the motors."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:6
+msgid ""
+"In this example a drive base subsystem is shown that is operated in tank "
+"drive using a pair of joysticks."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:9
+msgid "Create a Drive Train Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:13
+msgid ""
+"Create a subsystem called Drive Train. Its responsibility will be to "
+"handle the driving for the robot base. Inside the Drive Train is a Robot "
+"Drive object for a two motor drive robot (in this case). There is a left "
+"motor and right motor as part of the Robot Drive 2 class."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:16
+msgid "Add the Joysticks to the Operator Interface"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:20
+msgid ""
+"Add two joysticks to the Operator Interface, one is the left stick and "
+"the other is the right stick. The y-axis on the two joysticks are used to"
+" drive the robots left and right sides."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:22
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:60
+msgid ""
+"Be sure to export your program to C++ or Java before continuing to the "
+"next step."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:25
+msgid "Create a Method to Write the Motors on the Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:49
+msgid ""
+"Create a method that takes the joystick inputs, in this case the the left"
+" and right driver joystick. The values are passed to the RobotDrive "
+"object that in turn does tank steering using the joystick values. Also "
+"create a method called stop() that stops the robot from driving, this "
+"might come in handy later."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:51
+msgid ""
+"The extra RobotBuilder comments have been removed to format the example "
+"for the documentation."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:54
+msgid "Read Joystick Values and Call the Subsystem Methods"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:58
+msgid ""
+"Create a command, in this case called DriveWithJoysticks. Its purpose "
+"will be to read the joystick values and send them to the Drive Base "
+"subsystem. Notice that this command Requires the Drive Train subsystem. "
+"This will cause it to stop running whenever anything else tries to use "
+"the Drive Train."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:63
+msgid "Add the Code to do the Driving"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:97
+msgid ""
+"Add code to the execute method to do the actual driving. All that is "
+"needed is to get the Joystick objects for the left and right drive "
+"joysticks and pass them to the Drive Train subsystem. The subsystem just "
+"uses them for the tank steering method on its RobotDrive object. And we "
+"get tank steering."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:99
+msgid ""
+"We also filled in the ``end()`` and ``interrupted()`` methods so that "
+"when this command is interrupted or stopped, the motors will be stopped "
+"as a safety precaution."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:102
+msgid "Make Default Command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:106
+msgid ""
+"The last step is to make the DriveWIthJoysticks command be the \"Default "
+"Command\" for the Drive Train subsystem. This means that whenever no "
+"other command is using the Drive Train, the Joysticks will be in control."
+" This is probably the desirable behavior. When the autonomous code is "
+"running, it will also require the drive train and interrupt the "
+"\"DriveWithJoystick\" command. When the autonomous code is finished, the "
+"DriveWithJoysticks command will restart automatically (because it is the "
+"default command), and the operators will be back in control. If you write"
+" any code that does teleop automatic driving, those commands should also "
+"\"require\" the DriveTrain so that they too will interrupt the "
+"DriveWithJoysticks command and have full control."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:108
+msgid "Be sure to export your program to C++ or Java before continuing."
+msgstr ""
+

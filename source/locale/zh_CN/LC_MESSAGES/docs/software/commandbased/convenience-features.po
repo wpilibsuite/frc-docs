@@ -1,0 +1,415 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:2
+msgid "Convenience features"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:4
+msgid ""
+"While the previously-described methodologies will work fine for writing "
+"command-based robot code, the command-based libraries contain several "
+"convenience features for more-advanced users that can greatly reduce the "
+"verbosity/complexity of command-based code. It is highly recommended that"
+" users familiarize themselves with these features to maximize the value "
+"they get out of the command-based libraries."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:14
+msgid "Inline command definitions"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:16
+msgid ""
+"While users are able to create commands by explicitly writing command "
+"classes (either by subclassing ``SendableCommandBase`` or implementing "
+"``Command``), for many commands (such as those that simply call a single "
+"subsystem method) this involves a lot of wasteful boilerplate code. To "
+"help alleviate this, many of the prewritten commands included in the "
+"command-based library may be *inlined* - that is, the command body can be"
+" defined in a single line of code at command construction."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:25
+msgid "Passing subroutines as parameters"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:27
+msgid ""
+"In order to inline a command definition, users require some way to "
+"specify what code the commands will run as constructor parameters. "
+"Fortunately, both Java and C++ offer users the ability to pass "
+"subroutines as parameters."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:33
+msgid "Method references (Java)"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:35
+msgid ""
+"In Java, a reference to a subroutine that can be passed as a parameter is"
+" called a method reference. The general syntax for a method reference is "
+"``object::method``. Note that no method parameters are included, since "
+"the method *itself* is the parameter. The method is not being called - it"
+" is being passed to another piece of code (in this case, a command) so "
+"that *that* code can call it when needed. For further information on "
+"method references, see `the official Oracle documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:45
+msgid "Lambda expressions (Java)"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:47
+msgid ""
+"While method references work well for passing a subroutine that has "
+"already been written, often it is inconvenient/wasteful to write a "
+"subroutine solely for the purpose of sending as a method reference, if "
+"that subroutine will never be used elsewhere. To avoid this, Java also "
+"supports a feature called “lambda expressions.” A lambda expression is an"
+" inline method definition - it allows a subroutine to be defined *inside "
+"of a parameter list*. For specifics on how to write lambda expressions, "
+"see `this tutorial <http://tutorials.jenkov.com/java/lambda-"
+"expressions.html>`__"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:58
+msgid "Inlined command example"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:60
+msgid "So, what does an inlined command definition look like in practice?"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:62
+msgid ""
+"The ``InstantCommand`` class provides an example of a type of command "
+"that benefits greatly from inlining. Consider the following from the "
+"HatchBotInlined example in the examples directory:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:75
+msgid ""
+"Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch``"
+" commands which call only one method before ending, both can be "
+"accomplished with a simple inline definition by passing appropriate "
+"subsystem method."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:81
+msgid "Included pre-made command classes"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:83
+msgid ""
+"The command-based library includes a variety of pre-written commands for "
+"commonly-encountered use cases. Many of these commands are intended to be"
+" used “out-of-the-box” via :ref:`inlining <inlined-commands>`, however "
+"they may be subclassed, as well. A list of the included pre-made commands"
+" can be found below, along with brief examples of each - for more "
+"rigorous documentation, see the javadoc."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:90
+#: ../../source/docs/software/commandbased/convenience-features.rst:298
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:90
+msgid "Link to javadoc after merge"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:93
+msgid "ConditionalCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:95
+msgid ""
+"The ``ConditionalCommand`` class runs one of two commands when executed, "
+"depending on a user-specified true-or-false condition:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:104
+msgid "SelectCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:106
+msgid ""
+"The ``SelectCommand`` class is a generalization of the "
+"``ConditionalCommand`` class, runs one of a selection of commands based "
+"on the value of a user-specified selector:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:141
+msgid "InstantCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:143
+msgid ""
+"The ``InstantCommand`` class executes a single action on initialization, "
+"and then ends immediately:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:154
+msgid "RunCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:156
+msgid ""
+"The ``RunCommand`` class runs a specified method repeatedly in its "
+"``execute()`` block. It does not have end conditions by default; users "
+"can either subclass it, or :ref:'decorate <Command decorator methods>' it"
+" to add them."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:170
+msgid "StartEndCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:172
+msgid ""
+"The ``StartEndCommand`` class executes an action when starting, and a "
+"second one when ending. It does not have end conditions by default; users"
+" can either subclass it, or :ref:'decorate <Command decorator methods>' "
+"an inlined command to add them."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:189
+msgid "FunctionalCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:191
+msgid ""
+"The ``FunctionalCommand`` class allows all four ``Command`` methods to be"
+" passed in as method references or lambdas:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:210
+msgid "PrintCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:212
+msgid "The ``PrintCommand`` class prints a given string."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:219
+msgid "ScheduleCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:221
+msgid ""
+"The ``ScheduleCommand`` class schedules a specified command, and ends "
+"instantly:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:229
+msgid "It is often useful for “forking off” from command groups."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:232
+msgid "BlockingScheduleCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:234
+msgid ""
+"The ``BlockingScheduleCommand`` class schedules a specified command, and "
+"does not end until that command ends:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:242
+msgid ""
+"This is also often useful for “forking off” from commandgroups, when it "
+"is required that the command group flow depend on the “forked off” "
+"command."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:247
+msgid "WaitCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:249
+msgid ""
+"The ``WaitCommand`` class does nothing, and ends after a specified period"
+" of time elapses after its initial scheduling:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:257
+msgid "This is often useful as a component of a command group."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:260
+msgid "WaitUntilCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:262
+msgid ""
+"The ``WaitUntilCommand`` class does nothing, and ends once a specified "
+"condition becomes true, or until a specified match time passes."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:276
+msgid "PerpetualCommand"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:278
+msgid ""
+"The ``PerpetualCommand`` class runs a given command with its end "
+"condition removed, so that it runs forever (unless externally "
+"interrupted):"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:288
+msgid "Command decorator methods"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:290
+msgid ""
+"The ``Command`` interface contains a number of defaulted “decorator” "
+"methods which can be used to add additional functionality to existing "
+"commands. A “decorator” method is a method that takes an object (in this "
+"case, a command) and returns an object of the same type (i.e. a command) "
+"with some additional functionality added to it. A list of the included "
+"decorator methods with brief examples is included below - for rigorous "
+"documentation, see the javadoc."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:298
+msgid "add link to javadoc after merge"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:301
+msgid "withTimeout"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:303
+msgid ""
+"The ``withTimeout()`` decorator adds a timeout to a command. The "
+"decorated command will be interrupted if the timeout expires:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:312
+msgid "interruptOn"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:314
+msgid ""
+"The ``interruptOn()`` decorator adds a condition on which the command "
+"will be interrupted:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:323
+msgid "whenFinished"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:325
+msgid ""
+"The ``whenFinished()`` decorator adds a method to be executed after the "
+"command ends:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:334
+msgid "beforeStarting"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:336
+msgid ""
+"The ``beforeStarting()`` decorator adds a method to be executed before "
+"the command starts:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:345
+msgid "andThen"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:347
+msgid ""
+"The ``andThen()`` decorator returns a sequential command group containing"
+" the command, followed by the list of commands passed as arguments:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:357
+msgid "alongWith"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:359
+msgid ""
+"The ``alongWith()`` decorator returns a parallel command group containing"
+" the command, along with all the other commands passed in as arguments:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:369
+msgid "raceWith"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:371
+msgid ""
+"The ``raceWith()`` decorator returns a parallel command race containing "
+"the command, along with all the other commands passed in as arguments:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:380
+msgid "deadlineWith"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:382
+msgid ""
+"The ``deadlineWith()`` decorator returns a parallel deadline group "
+"containing the command, along with all the other commands passed in as "
+"arguments:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:392
+msgid "perpetually"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:394
+msgid ""
+"The ``perpetually()`` decorator removes the end condition of a command, "
+"so that it runs forever."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:403
+msgid "Composing decorators"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:405
+msgid ""
+"Remember that decorators, like all command groups, can be composed! This "
+"allows very powerful and concise inline expressions:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:414
+msgid "Static factory methods for command groups"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/convenience-features.rst:416
+msgid ""
+"If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``,"
+" and ``deadlineWith`` decorators for declaring command groups, but still "
+"wish to reduce verbosity compared to calling the constructors, the "
+"``CommandGroupBase`` class contains several four static factory methods "
+"for declaring command groups: ``sequence()``, ``parallel()``, ``race()``,"
+" and ``deadline()``. When used from within a command group subclass or in"
+" combination with ``import static``, these become extremely concise and "
+"greatly aid in command composition:"
+msgstr ""
+

@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:2
+msgid "Binding commands to triggers"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:4
+msgid ""
+"Apart from autonomous commands, which are scheduled at the start of the "
+"autonomous period, and default commands, which are automatically "
+"scheduled whenever their subsystem is not currently in-use, the most "
+"common way to run a command is by binding it to a triggering event, such "
+"as a button being pressed by a human operator. The command-based paradigm"
+" makes this extremely easy to do."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:11
+msgid ""
+"As mentioned earlier, command-based is a `declarative "
+"<https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. "
+"Accordingly, binding buttons to commands is done declaratively; the "
+"association of a button and a command is “declared” once, during robot "
+"initialization. The library then does all the hard work of checking the "
+"button state and scheduling (or cancelling) the command as needed, "
+"behind-the-scenes. Users only need to worry about designing their desired"
+" UI setup - not about implementing it!"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:20
+msgid ""
+"Command binding is done through the ``Trigger`` class and its various "
+"``Button`` subclasses."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:23
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:23
+msgid "Link to API docs after merge."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:26
+msgid "Trigger/Button bindings"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:28
+msgid ""
+"There are a number of bindings available for the ``Trigger`` class. All "
+"of these bindings will automatically schedule a command when a certain "
+"trigger activation event occurs - however, each binding has different "
+"specific behavior. ``Button`` and its subclasses have bindings with "
+"identical behaviors, but slightly different names that better-match a "
+"button rather than an arbitrary triggering event."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:36
+msgid "whenActive/whenPressed"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:46
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button changes is initially pressed). The"
+" command will be scheduled on the iteration when the state changes, and "
+"will not be scheduled again unless the trigger becomes inactive and then "
+"active again (or the button is released and then re-pressed)."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:53
+msgid "whileActiveContinuous/whileHeld"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:63
+msgid ""
+"This binding schedules a command repeatedly while a trigger is active "
+"(or, accordingly, while a button is held), and cancels it when the "
+"trigger becomes inactive (or when the button is released). Note that "
+"scheduling an already-running command has no effect; but if the command "
+"finishes while the trigger is still active, it will be re-scheduled."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:70
+msgid "whileActiveOnce/whenHeld"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:80
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed) and cancels "
+"it when the trigger becomes inactive again (or the button is released). "
+"The command will *not* be re-scheduled if it finishes while the trigger "
+"is still active."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:87
+msgid "whenInactive/whenReleased"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:97
+msgid ""
+"This binding schedules a command when a trigger changes from active to "
+"inactive (or, accordingly, when a button is initially released). The "
+"command will be scheduled on the iteration when the state changes, and "
+"will not be re-scheduled unless the trigger becomes active and then "
+"inactive again (or the button is pressed and then re-released)."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:104
+msgid "toggleWhenActive/toggleWhenPressed"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:114
+msgid ""
+"This binding toggles a command, scheduling it when a trigger changes from"
+" inactive to active (or a button is initially pressed), and cancelling it"
+" under the same condition if the command is currently running. Note that "
+"while this functionality is supported, toggles are *not* a highly-"
+"recommended option for user control, as they require the driver to "
+"mentally keep track of the robot state."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:122
+msgid "cancelWhenActive/cancelWhenPressed"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:132
+msgid ""
+"This binding cancels a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed). the command"
+" is canceled on the iteration when the state changes, and will not be "
+"canceled again unless the trigger becomes inactive and then active again "
+"(or the button is released and re-pressed). Note that cancelling a "
+"command that is not currently running has no effect."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:140
+msgid "Binding a command to a joystick button"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:142
+msgid ""
+"The most-common way to trigger a command is to bind a command to a button"
+" on a joystick or other HID (human interface device). To do this, users "
+"should use the ``JoystickButton`` class."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:147
+msgid "Creating a JoystickButton"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:149
+msgid ""
+"There are two ways to create a ``JoystickButton``. For both, one must "
+"first create an instance of one of the subclasses of ``GenericHID``:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:160
+msgid ""
+"After this is done, users can simply call the ``getButton()`` method on "
+"the HID:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:174
+msgid "Binding a command to a JoystickButton"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:176
+msgid ""
+"Putting it all together, it is very simple to bind a button to a "
+"JoystickButton:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:189
+msgid ""
+"It is useful to note that the command binding methods all return the "
+"trigger/button that they were initially called on, and thus can be "
+"chained to bind multiple commands to different states of the same button."
+" For example:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:202
+msgid ""
+"Remember that button binding is *declarative*: bindings only need to be "
+"declared once, ideally some time during robot initialization. The library"
+" handles everything else."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:207
+msgid "Composing triggers"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:209
+msgid ""
+"The ``Trigger`` class (including its ``Button`` subclasses) can be "
+"composed to create composite triggers through the ``and()``, ``or()``, "
+"and ``negate()`` methods. For example:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:220
+msgid ""
+"Note that these methods return a ``Trigger``, not a ``Button``, so the "
+"``Trigger`` binding method names must be used even when buttons are "
+"composed."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:225
+msgid "Creating your own custom trigger"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/binding-commands-to-triggers.rst:227
+msgid ""
+"While binding to HID buttons is by far the most common use case, advanced"
+" users may occasionally want to bind commands to arbitrary triggering "
+"events. This can be easily done by simply writing your own subclass of "
+"trigger:"
+msgstr ""
+

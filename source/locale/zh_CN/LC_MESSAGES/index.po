@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: 2019-09-23 23:19+0800\n"
+"Last-Translator: Soha Jin <soha@lohu.info>\n"
+"Language-Team: F&D Studio <we@flowerdan.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+"Language: zh_CN\n"
+
+#: ../../source/index.rst:18
+msgid "WPILib Software"
+msgstr "WPILib 软件部分"
+
+#: ../../source/index.rst:43
+msgid "API Docs"
+msgstr "API 文档"
+
+#: ../../source/index.rst:50
+msgid "WPILib Hardware"
+msgstr "WPILib 硬件部分"
+
+#: ../../source/index.rst:58
+msgid "Robot Networking"
+msgstr "机器人网络部分"
+
+#: ../../source/index.rst:69
+msgid "Contributing"
+msgstr "贡献"
+
+#: ../../source/index.rst:78
+msgid "Issues"
+msgstr "问题"
+
+#: ../../source/index.rst:7
+msgid "FIRST Robotics Competition Documentation"
+msgstr "FIRST Robotics Competition 文档"
+
+#: ../../source/index.rst:9
+msgid ""
+"Welcome to the FIRST Robotics Competition Documentation! This "
+"documentation will be the Official FIRST® Robotics Competition "
+"documentation for the 2020 season and beyond. It is important to "
+"recognize that while most of these documents are identical to their "
+"`ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ predecessors, "
+"various tweaks have been made to clean up and update the articles. This "
+"includes using features that are only available in the 2020 release of "
+"WPILib. It's advised to continue using `ScreenSteps "
+"<https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib "
+"release for 2020. Teams that are in the closed beta program *should* use "
+"this website, as it contains all of the changes that will be in the beta."
+" Information on contributing to this website can be found at the "
+":doc:`contributing <docs/contributing/contribution-guidelines>` page."
+msgstr ""
+"欢迎来到 FIRST Robotics Competition 文档! 这个文档将在 2020 及以后的赛季 "
+"成为 FIRST® Robotics Competition 的官方文档。你要知道的是，虽然其中大部分 "
+"内容和原先的 `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ "
+"文档一致，但是对原先的文章做了很多删改和更新，包括只有在 2020 赛季才开始 "
+"有的一些新功能。因此在 2020 赛季之前，我们依旧建议队伍参考 "
+"`ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ 的文档。但是所有在封闭测试 "
+"计划中的参赛队伍*应当*使用这个文档，因为这个文档包括了测试版中的所有改 "
+"动。想给文档做贡献的话请参考 :doc:`贡献 <docs/contributing/contribution-guidelines>` "
+"页面。"
+
+#: ../../source/index.rst:11
+msgid ""
+"New teams may wish to familiarize themselves with the different "
+"components of the FRC :doc:`Software <docs/software/getting-started"
+"/control-system-software>` and :doc:`Hardware <docs/hardware/getting-"
+"started/control-system-hardware>`. These pages introduce the various "
+"components of the software and hardware elements that make up building a "
+"FRC robot. After reviewing these pages, information on setting up and "
+"using this software/hardware can be found in their appropriate sections "
+"in the left-hand navigation menu."
+msgstr ""
+"对于新队伍，可能想要熟悉一下 FRC :doc:`软件 <docs/software/getting-started/control-system-software>` "
+"和 :doc:`硬件 <docs/hardware/getting-started/control-system-hardware>` "
+"各个部分和组件的内容。这两个页面介绍了构成 FRC 机器人的软件和硬件的各个组件。"
+"阅读了这些页面后，有关安装、配置和使用软硬件的内容可以在左边的导航菜单的相应部分中找到。"
+
+#: ../../source/index.rst:13
+msgid "**New to Programming?**"
+msgstr "**编程初学者吗？**"
+
+#: ../../source/index.rst:15
+msgid ""
+"Check out the `Head First Java 2nd Edition "
+"<https://www.amazon.com/dp/B009KCUX3S>`__ textbook for a very beginner "
+"friendly introduction to programming in Java (ISBN-10: 0596009208)."
+msgstr ""
+"你可以看看 `Head First Java (第二版) "
+"<https://item.jd.com/10100190.html>`__， "
+"这是一本对初学者十分友好的 Java 编程课本。(ISBN: 9787508344980)"
+
+#: ../../source/index.rst:16
+msgid ""
+"`Programming: Principles and Practice Using C++ 2nd Edition "
+"<https://www.amazon.com/dp/B00KPTEH8C/>`__ is an introduction to C++ by "
+"the creator of the language himself (ISBN-10: 0321992784). Another great "
+"resource for learning C++ is `C++ Primer Plus 6th Edition "
+"<https://www.amazon.com/dp/0321776402/>`__ (ISBN-10: 0321776402)."
+msgstr ""
+"`C++ 程序设计：原理与实践 (第二版) <https://item.jd.com/12173174.html>`__ "
+"是一本 C++ 之父写的介绍 C++ 的书。(ISBN: 9787111562252) 还有一本不错的用"
+"来学习 C++ 的书是 `C++ Primer Plus (第六版) "
+"<https://item.jd.com/11017238.html>`__ (ISBN: 9787115279460)"
+

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:2
+msgid "MacOS Offline Install Guide"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:4
+msgid ""
+"The tools (except the Driver Station and the roboRIO Imaging Tool) will "
+"run natively on a Mac."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:7
+msgid ""
+"If you have the alpha release of VSCode for FRC installed, you\\ should "
+"uninstall it before proceeding or create a new VSCode\\ install. Failing "
+"to do this will have both versions installed at the\\ same time causing "
+"things to not operate properly.\\"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:13
+msgid "Getting Visual Studio Code"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:15
+msgid ""
+"VSCode is the IDE (Integrated Development Environment) that is used for "
+"2019 and beyond. It needs to be installed on any development computer. It"
+" can be downloaded here: https://code.visualstudio.com."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:19
+msgid "The downloaded file will be \"VSCode-darwin-stable.zip\" (1)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:21
+msgid ""
+"Once downloaded, double-click on the zip file to expand it and copy the "
+"new file: \"Visual Studio Code\" to the Applications folder (2)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:28
+msgid "Download the WPILib release and move the directory"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:30
+msgid ""
+"Download the software release by navigating to this page: "
+"https://github.com/wpilibsuite/allwpilib/releases and downloading the Mac"
+" release."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:37
+msgid ""
+"Unzip and untar the file by looking at the file in the explorer and "
+"double-clicking on it, once or twice to unzip (remove the .gz extension) "
+"and again to untar it (remove the .tar extension). When finished it "
+"should like like the folder shown below."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:45
+msgid ""
+"Using Finder (or command line) copy the contents of the folder to a new "
+"folder in your home directory, ~/frc2019 as shown below."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:52
+msgid "Run the ``ToolsUpdater.py`` script"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:54
+msgid ""
+"To update all the additional tools WPILib tools, open a terminal window "
+"and change directory to ~/frc2019/tools and run the script "
+"``ToolsUpdater.py`` with the command:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:58
+msgid "``python ToolsUpdater.py``"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:60
+msgid ""
+"This should populate the tools directory with all of the WPILib tools "
+"(Shuffleboard, Robot Builder, PathWeaver, etc.)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:67
+msgid "Installing the extensions for WPILib development"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:69
+msgid ""
+"Before using VSCode for WPILib development there are a number of "
+"extensions that need to be installed. Start up VSCode and type the "
+"shortcut Cmd-Shift-P to bring up the list of commands available. Start "
+"typing \"Install from VSIX into the search box. Choose that command. In "
+"the file selection box select Cpp.vsix."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:81
+msgid ""
+"You should see a message confirming the install and asking to reload "
+"vscode. Click the reload button then repeat the vsix installation for the"
+" rest of the vsix files in this order:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:85
+msgid "Cpp.vsix"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:86
+msgid "JavaLang.vsix"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:87
+msgid "JavaDeps.vsix"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:88
+msgid "JavaDebug.vsix"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:89
+msgid "WPILib.vsix"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:92
+msgid "Setting up VSCode to use Java 11"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:94
+msgid ""
+"The WPILib installation includes a JDK, however you need to point VS Code"
+" at where it is. To do this:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:97
+msgid "Open VS Code"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:98
+msgid ""
+"Press Ctrl + Shift + P and type WPILib or click on the WPILib icon in the"
+" top right to open the WPILib Command Palette"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/macos-setup.rst:100
+msgid ""
+"Begin typing Set VS Code Java Home to FRC Home and select that item from "
+"the dropdown"
+msgstr ""
+

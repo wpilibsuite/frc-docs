@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:2
+msgid "Triangulating Rangefinders"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:4
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:4
+msgid "add image"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:6
+msgid ""
+"Triangulating rangefinders (often called \"IR rangefinders,\" as they "
+"commonly function in the infrared wavelength band) are another common "
+"type of rangefinder used in FRC."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:8
+msgid ""
+"Unlike :doc:`LIDAR <lidar>`, triangulating rangefinders do not measure "
+"the time between the emission of a pulse and the receiving of a "
+"reflection.  Rather, most IR rangefinders work by emitting a constant "
+"beam at a slight angle, and measuring the position of the reflected beam."
+"  The closer the point of contact of the reflected beam to the emitter, "
+"the closer the object to the sensor."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:11
+msgid "Using IR rangefinders"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:13
+msgid ""
+"IR Rangefinders generally output an analog voltage proportional to the "
+"distance to the target, and thus connect to the :doc:`analog input "
+"<analog-inputs-hardware>` ports on the RIO."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:16
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:18
+msgid ""
+"IR rangefinders suffer similar drawbacks to 1D LIDAR sensors - they are "
+"very sensitive to the reflectivity of the target in the wavelength of the"
+" emitted laser."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/triangulating-rangefinders.rst:20
+msgid ""
+"Additionally, while IR rangefinders tend to offer better resolution than "
+"LIDAR sensors when measuring at short distances, they are also usually "
+"more sensitive to differences in orientation of the target, *especially* "
+"if the target is highly-reflective (such as a mirror)."
+msgstr ""
+

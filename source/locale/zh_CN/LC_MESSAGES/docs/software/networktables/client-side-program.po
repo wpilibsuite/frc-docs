@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/networktables/client-side-program.rst:2
+msgid "Creating a client-side program"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:4
+msgid ""
+"If all you need to do is have your robot program communicate with GRIP or"
+" a dashboard running on the Driver Station laptop, then the previous "
+"examples of writing robot programs are sufficient. But if you would like "
+"to write some custom client code that would run on the drivers station or"
+" on a coprocessor then you need to know how to build Network Tables "
+"programs for those (non-roboRIO) platforms."
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:6
+msgid "A basic client program looks like the following example."
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:42
+msgid ""
+"In this example an instance of NetworkTables is created and a "
+"NetworkTableEntry if created to reference the values of \"x\" and \"y\" "
+"from a table called \"datatable\"."
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:44
+msgid ""
+"Then this instance is started as a NetworkTable client with the team "
+"number (the roboRIO is always the server). Additionally, if the program "
+"is running on the Driver Station computer, by using the startDSClient() "
+"method, NetworkTables will get the robot IP address from the Driver "
+"Station."
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:46
+msgid ""
+"Then this sample program simply loops once a second and gets the values "
+"for x and y and prints them on the console. In a more realistic program, "
+"the client might be processing or generating values for the robot to "
+"consume."
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:49
+msgid "Building the program"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:50
+msgid ""
+"When building and running the program you will need some additional "
+"libraries to include with your client-side program. These are:"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:52
+msgid ""
+"https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore"
+"/ntcore-java/2019.4.1/ (ntcore java files)"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:54
+msgid ""
+"https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore"
+"/ntcore-jni/2019.4.1/ (ntcore native libs for all desktop platforms)"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:56
+msgid ""
+"https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpiutil"
+"/wpiutil-java/2019.4.1/ (wpiutil java files)"
+msgstr ""
+
+#: ../../source/docs/software/networktables/client-side-program.rst:58
+msgid "The desktop platform jar is for Windows, Mac, and Linux."
+msgstr ""
+

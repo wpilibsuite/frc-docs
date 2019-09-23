@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:2
+msgid "LabVIEW Resources"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:6
+msgid ""
+"To learn more about programming in LabVIEW and specifically programming "
+"FRC robots in LabVIEW, check out the following resources."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:9
+msgid "LabVIEW Basics"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:11
+msgid ""
+"National Instruments provides a `combination of videos "
+"<https://www.ni.com/academic/students/learn-labview/>`_ and `traditional "
+"text/picture tutorials on the basics of LabVIEW <https://www.ni.com"
+"/getting-started/labview-basics/>`_. These tutorials can help you get "
+"acquainted with the LabVIEW environment and the basics of the graphical, "
+"dataflow programing model used in LabVIEW."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:14
+msgid "NI FRC Tutorials"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:16
+msgid ""
+"National Instruments also hosts many `FRC specific tutorials and "
+"presentations ranging from basic to advanced <https://forums.ni.com/t5"
+"/FIRST-Robotics-Competition/Archived-2015-FRC-LabVIEW-Additional-"
+"Resources/ta-p/3528790?profile.language=en>`_. For an in-depth single "
+"resource check out the FRC Basic and Advanced Training Classes linked "
+"near the bottom of the page."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:19
+msgid "Installed Tutorials and Examples"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:21
+msgid ""
+"There are also tutorials and examples for all sorts of tasks and "
+"components provided as part of your LabVIEW installation. To access the "
+"tutorials, from the LabVIEW Splash screen (the screen that appears when "
+"the program is first launched) click on the ``Tutorials`` tab on the left"
+" side. Note that the tutorials are all in one document, so once it is "
+"open you are free to browse to other tutorials without returning to the "
+"splash screen."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/labview-resources.rst:23
+msgid ""
+"To access the examples either click the ``Support`` tab, then ``Find FRC "
+"Examples`` or anytime you're working on a program open the ``Help`` menu,"
+" select ``Find Examples`` and open the ``FRC Robotics`` folder."
+msgstr ""
+

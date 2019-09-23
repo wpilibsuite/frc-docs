@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:2
+msgid "Running Commands on Joystick Input"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library,"
+" which has been deprecated. While this documentation has been preserved "
+"to help teams that have yet to do so, teams are strongly encouraged to "
+"migrate to the :ref:`new command-based library "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:6
+msgid ""
+"You can cause commands to run when joystick buttons are pressed, "
+"released, or continuously while the button is held down. This is "
+"extremely easy to do only requiring a few lines of code."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:9
+msgid "The OI Class"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:13
+msgid ""
+"The command based template contains a class called OI, located in "
+"``OI.java``, where **Operator Interface** behaviors are typically "
+"defined. If you are using RobotBuilder this file can be found in the "
+"``org.usfirst.frc####.NAME`` package"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:16
+msgid "Create the Joystick object and JoystickButton Objects"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:53
+msgid ""
+"In this example there is a Joystick object connected as Joystick 0. Then "
+"8 buttons are defined on that joystick to control various aspects of the "
+"robot. This is especially useful for testing although generating buttons "
+"on SmartDashboard is another alternative for testing commands."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:56
+msgid "Associate the Buttons with Commands"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:84
+msgid ""
+"In this example most of the joystick buttons from the previous code "
+"fragment are associated with commands. When the associated button is "
+"pressed the command is run. This is an excellent way to create a teleop "
+"program that has buttons to do particular actions."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:87
+msgid "Other Options"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:89
+msgid ""
+"In addition to the ``whenPressed()`` condition showcased above, there are"
+" a few other conditions you can use to link buttons to commands:"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:91
+msgid ""
+"Commands can run when a button is released by using ``whenReleased()`` "
+"instead of ``whenPressed()``."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:92
+msgid ""
+"Commands can run continuously while the button is depressed by calling "
+"``whileHeld()``."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:93
+msgid ""
+"Commands can be toggled when a button is pressed using "
+"``toggleWhenPressed()``."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:94
+msgid ""
+"A command can be canceled when a button is pressed using "
+"``cancelWhenPressed()``."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/running-commands-joystick-input.rst:96
+msgid ""
+"Additionally commands can be triggered by arbitrary conditions of your "
+"choosing by using the Trigger class instead of Button. Triggers (and "
+"Buttons) are usually polled every 20ms or whenever the scheduler is "
+"called."
+msgstr ""
+

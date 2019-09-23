@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:2
+msgid "Driver Station Best Practices"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:4
+msgid ""
+"This document was created by Steve Peterson, with contributions from Juan"
+" Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris"
+" Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and followup "
+"posts can be found here: https://www.chiefdelphi.com/t/paper-driver-"
+"station-best-practices/164429 and a mirror of the document can be found "
+"`here. <assets/Driver_Station_Best_Practices_March_14_2018.pdf>`_"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:7
+msgid ""
+"Want to ensure the driver station isn't a stopper for your team at the "
+"FIRST Robotics Competition (FRC) field? Building and configuring a solid "
+"driver station laptop is an easy project for the time between stop build "
+"day and your competition. Read on to find lessons learned by many teams "
+"over thousands of matches."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:10
+msgid "Prior To Departing For The Competition"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:12
+msgid ""
+"Dedicate a laptop to be used solely as a driver station. Many teams do. A"
+" dedicated machine allows you manage the configuration for one goal – "
+"being ready to compete at the field. Dedicated means no other software "
+"except the FRC-provided Driver Station software and associated Dashboard "
+"installed or running."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:13
+msgid ""
+"Use a business-class laptop for your driver station. Why? They're much "
+"more durable than the $300 Black Friday special at Best Buy. They'll "
+"survive being banged around at the competition. Business-class laptops "
+"have higher quality device drivers, and the drivers are maintained for a "
+"longer period than consumer laptops. This makes your investment last "
+"longer. Lenovo ThinkPad T series and Dell Latitude are two popular "
+"business-class brands you'll commonly see at competitions. There are "
+"thousands for sale every day on eBay. The laptop provided in recent "
+"rookie kits is a good entry level machine. Teams often graduate from it "
+"to bigger displays as they do more with vision and dashboards."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:14
+msgid ""
+"Consider used laptops rather than new. The FRC Driver Station and "
+"dashboard software uses very few system resources, so you don't need to "
+"buy a new laptop -- instead, buy a cheap 4-5 year old used one. You might"
+" even get one donated by a used computer store in your area."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:15
+msgid "Laptop recommended features"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:17
+msgid "RAM -- 2GB of RAM is minimum, if you have a SSD."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:18
+msgid "A display size of 13\" or greater, with minimum resolution of 1440x1050."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:19
+msgid "Ports"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:21
+msgid ""
+"A built-in Ethernet port is highly preferred. Ensure that it's a full-"
+"sized port. The hinged Ethernet ports don't hold up to repeated use."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:22
+msgid ""
+"Use an Ethernet port saver to make your Ethernet connection. This extends"
+" the life of the port on the laptop. This is particularly important if "
+"you have a consumer-grade laptop with a hinged Ethernet port."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:23
+msgid ""
+"If the Ethernet port on your laptop is dodgy, either replace the laptop "
+"(recommended) or buy a USB Ethernet dongle from a reputable brand. Many "
+"teams find that USB Ethernet is less reliable than built-in Ethernet, "
+"primarily due to cheap hardware and bad drivers. The dongles given to "
+"rookies in the KOP have a reputation for working well."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:24
+msgid "2 USB ports minimum"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:26
+msgid ""
+"A keyboard. It’s hard to quickly do troubleshooting on touch-only "
+"computers at the field."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:27
+msgid ""
+"A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 "
+"and replace it with a SSD."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:28
+msgid ""
+"Updated to the current release of Windows 10. Being the most common OS "
+"now seen at competitions, bugs are more likely to be found and fixed for "
+"Windows 10 than on older Windows versions."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:30
+msgid ""
+"Install all Windows updates a week before the competition. This allows "
+"you time to ensure the updates will not interfere with driver station "
+"functions. To do so, open the Windows Update settings page and see that "
+"you're up-to-date. Install pending updates if not. Reboot and check again"
+" to make sure you’re up to date."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:31
+msgid ""
+"Change \"Active Hours\" for Windows Updates to prevent updates from "
+"installing during competition hours. Navigate to Start -> Settings -> "
+"Update & Security -> Windows Update, then select Change active hours. If "
+"you’re traveling to a competition, take time zone differences into "
+"account. This will help ensure your driver station does not reboot or "
+"fail due to update installing on the field."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:32
+msgid ""
+"Remove any 3rd party antivirus or antimalware software. Instead, use "
+"Windows Defender on Windows 10. Since you're only connecting to the "
+"internet for Windows and FRC software updating, the risk is low. Only "
+"install software on your driver station that's needed for driving. Your "
+"goal here is to eliminate variables that might interfere with proper "
+"operation. Remove any unneeded preinstalled software (\"crapware\") that "
+"came with the machine. Don't use the laptop as your Steam machine for "
+"gaming back at the hotel the night before the event. Many teams go as far"
+" as having a separate programming laptop."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:33
+msgid ""
+"Avoid managed Windows 10 installations from the school's IT department. "
+"These deployments are built for the school environment and often come "
+"with unwanted software that interferes with your robot's operation."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:34
+msgid "Laptop battery / power"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:36
+msgid ""
+"Turn off Put the computer to sleep in your power plan for both battery "
+"and powered operation."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:37
+msgid "Turn off USB Selective Suspend:"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:39
+msgid ""
+"Right click on the battery/charging icon in the tray, then select Power "
+"Options."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:40
+msgid "Edit the plan settings of your power plan."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:41
+msgid "Click the Change advanced power settings link."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:42
+msgid ""
+"Scroll down in the advanced settings and disable the USB selective "
+"suspendsetting for both Battery and Plugged in."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:44
+msgid ""
+"Ensure the laptop battery can hold a charge for at least an hour after "
+"making the changes above. This allows plenty of time for the robot and "
+"drive team to go through the queue and reach the alliance station without"
+" mains power."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:46
+msgid "Bring a trusted USB and Ethernet cable for use connecting to the roboRIO."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:47
+msgid ""
+"Add retention/strain relief to prevent your joystick/gamepad controllers "
+"from falling on the floor and/or yanking on the USB ports. This helps "
+"prevent issues with intermittent controller connections."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:48
+msgid ""
+"The Windows user account you use to drive must be a member of the "
+"Administrator group."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:51
+msgid "At The Competition"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:53
+msgid "Turn off Windows firewall using these instructions."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:54
+msgid ""
+"Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi "
+"switch or by disabling it in the Adapter Settings control panel."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:55
+msgid "Charge the driver station when it’s in the pit."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:56
+msgid ""
+"Remove login passwords or ensure everyone on the drive team knows the "
+"password. You'd be surprised at how often drivers arrive at the field "
+"without knowing the password for the laptop."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:57
+msgid ""
+"Ensure your LabView code is deployed permanently and set to \"run as "
+"startup\", using the instructions in the LabView Tutorial. If you must "
+"deploy code every time you turn the robot on, you’re doing it wrong."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:58
+msgid ""
+"Limit web browsing to FRC related web sites. This minimizes the chance of"
+" getting malware during the competition."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:59
+msgid ""
+"Don't plan on using internet access to do software updates. There likely "
+"won't be any in the venue, and hotel Wi-Fi varies widely in quality. If "
+"you do need updates, contact a Control System Advisor in the pit."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:62
+msgid "Before Each Match"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:64
+msgid ""
+"Make sure the laptop is on and logged in prior to the end of the match "
+"before yours."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:65
+msgid ""
+"Close programs that aren’t needed during the match – e.g., Eclipse or "
+"LabView – when you are competing."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:66
+msgid ""
+"Bring your laptop charger to the field. Power is provided for you in each"
+" player station."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:67
+msgid ""
+"Fasten your laptop with hook-and-loop tape to the player station shelf. "
+"You never know when your alliance partner will have an autonomous "
+"programming issue and blast the wall."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:68
+msgid "Ensure joysticks and controllers are assigned to the correct USB ports."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:70
+msgid ""
+"In the USB tab in the FRC Driver Station software, drag and drop to "
+"assign joysticks as needed."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:71
+msgid "Use the rescan button (F1) if joysticks / controllers do not appear green"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/driver-station-best-practices.rst:72
+msgid ""
+"Use the rescan button (F1) during competition if joystick or controllers "
+"become unplugged and then are plugged back in or otherwise turn gray "
+"during competition."
+msgstr ""
+

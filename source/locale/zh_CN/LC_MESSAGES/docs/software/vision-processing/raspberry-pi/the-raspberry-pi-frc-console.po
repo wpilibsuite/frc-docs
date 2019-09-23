@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:2
+msgid "The Raspberry PI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:4
+msgid "FRC Console"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:6
+msgid ""
+"The FRC image for the Raspberry PI includes a console that can be viewed "
+"in any web browser that makes it easy to:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:8
+msgid "Look at the Raspberry PI status"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:9
+msgid "View the status of the background process running the camera"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:10
+msgid "View or change network settings"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:11
+msgid "Look at each camera plugged into the rPI and add additional cameras"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:12
+msgid "Load a new vision program onto the rPI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:15
+msgid "Setting the rPI to be Read-Only vs. Writable"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:16
+msgid ""
+"The rPI is normally set to Read-Only which means that the file system "
+"cannot be changed. This ensures that if power is removed without first "
+"shutting down the rPi the file system isn't corrupted. When settings are "
+"changed (following sections), the new settings cannot be saved while the "
+"rPI file system is  set as Read-Only. Buttons are provided that allow the"
+" file system to be changed from Read-Only to Writable and back whenever "
+"changes are made. If the other buttons that change information stored on "
+"the rPI cannot be press, check the Read-Only status of the system."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:23
+msgid "Status of the network connection to the rPI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:24
+msgid ""
+"There is a label in the top right corner of the console that indicates if"
+" the rPi is currently connected. It will change from Connected to "
+"Disconnected if there is no longer a network connection to the rPi."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:30
+msgid "System status"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:33
+msgid ""
+"The system status shows what the CPU on the rPI is doing at any time. "
+"There are two columns of status values, on being a 1 second average and "
+"the other a 5 second average. Shown is:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:36
+msgid "free and available RAM on the PI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:37
+msgid "CPU usage for user processes and system processes as well as idle time."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:38
+msgid ""
+"And network bandwidth - which allows one to determine if the used camera "
+"bandwidth is exceeding the maximum bandwidth allowed in the robot rules "
+"for any year."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:42
+msgid "Vision Status"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:45
+msgid ""
+"Allows monitoring of the task which is running the camera code in the "
+"rPI, either one of the default programs or your own program in Java, C++,"
+" or Python. You can also enable and view the console output to see "
+"messages coming from the background camera service. In this case there "
+"are number of messages about being unable to connect to network tables "
+"(NT: connect()) because in this example the rPI is simply connected to a "
+"laptop with no Network Tables server running (usually the roboRIO.)"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:51
+msgid "Network Settings"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:52
+msgid "The rPI network settings have options to connect to the PI:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:54
+msgid ""
+"DHCP - the default name resolution usually used by the roboRIO. The "
+"default name is raspberry.local."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:55
+msgid ""
+"Static - where a fixed IP address, network mask, and router settings are "
+"filled in explicitly"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:56
+msgid ""
+"DHCP with Static Fallback - DHCP with Static Fallback - the PI will try "
+"to get an IP address via DHCP, but if it can't find a DHCP server, it "
+"will use the provided static IP address and parameters"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:61
+msgid ""
+"The picture above is showing the settings for both DHCP and Static IP "
+"Addressing. The mDNS name for the rPi should always work regardless of "
+"the options selected above."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:65
+msgid "Vision Settings"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:68
+msgid ""
+"The Vision Settings are to set the parameters for each camera and whether"
+" the rPI should be a NetworkTables client or server. There can only be "
+"one server on the network and the roboRIO is always a server. Therefor "
+"when connected to a roboRIO, the rPI should always be in client mode with"
+" the team number filled in. If testing on a desktop setup with no roboRIO"
+" or anything acting as a server then it should be set to Server (Client "
+"switch is off)."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:73
+msgid ""
+"To view and manipulate all the camera settings click on the camera in "
+"question. In this case the camera is called \"Camera rPi Camera 0\" and "
+"clicking on the name reveals the current camera view and the associated "
+"settings."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:78
+msgid ""
+"Manipulating the camera settings is reflected in the current camera view."
+" The bottom of the page shows all the possible camera modes (combinations"
+" of Width, Height, and frame rates) that are supported by this camera."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:82
+msgid "Getting the current settings to persist over reboots"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:83
+msgid ""
+"The rPi will load all the camera settings on startup. Editing the camera "
+"configuration in the above screen is temporary. To make the values "
+"persist click on the \"Load Source Config From Camera\" button and the "
+"current settings will be filled in on the camera settings fields. Then "
+"click \"Save\" at the bottom of the page. Note: you must set the file "
+"system Writeable in order to save the settings. *The Writeable button is "
+"at the top of the page.*"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:90
+msgid ""
+"There are some commonly used camera settings values shown in the camera "
+"settings (above). These values Brightness, White Balance, and Exposure "
+"are loaded into the camera before the user JSON file is applied. So if a "
+"user JSON file contains those settings they will overwrite the ones from "
+"the text field."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:95
+msgid "Application"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:96
+msgid ""
+"The Application tab shows the application that is currently running on "
+"the rPi."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:99
+msgid "Vision workflows"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:100
+msgid ""
+"There is a sample vision program using OpenCV in each of the supported "
+"languages, C++, Java, or Python. Each sample program can capture and "
+"stream video from the rPi. In addition, the samples have some minimal "
+"OpenCV. They are all set up to be extended to replace the provided OpenCV"
+" sample code with the code needed for the robot application. The rPi "
+"Application tab supports a number of programming workflows:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:105
+msgid ""
+"Stream one or more cameras from the rPi for consumption on the driver "
+"station computer and displayed using ShuffleBoard"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:106
+msgid ""
+"Edit and build one of the sample programs (one for each language: Java, "
+"C++ or Python) on the rPi using the included toolchains"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:108
+msgid ""
+"Download a sample program for the chosen language and edit and build it "
+"on your development computer. Then upload that built program back to the "
+"rPi"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:110
+msgid ""
+"Do everything yourself using completely custom applications and scripts "
+"(probably based on one of the samples)"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:114
+msgid ""
+"The running application can be changed by selecting one of the choices in"
+" the drop-down menu. The choices are:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:116
+msgid ""
+"Built-in multi camera streaming which steams whatever cameras are plugged"
+" into the rPi. The camera configuration including number of cameras can "
+"be set on the \"Vision Settings\" tab."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:118
+msgid ""
+"Custom application which doesn't upload anything to the rPi and assumes "
+"that the developer wants to have a custom program and script."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:120
+msgid ""
+"Java, C++ or Python pre-installed sample programs that can be edited into"
+" your own application."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:121
+msgid ""
+"Java, C++, or Python uploaded program. Java programs require a .jar file "
+"with the compiled program and C++ programs require an rPi executable to "
+"be uploaded to the rPI."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:126
+msgid ""
+"When selecting one of the Upload options, a file chooser is presented "
+"where the jar, executable or Python program can be selected and uploaded "
+"to the rPi. In the following picture an Uploaded Java jar is chosen and "
+"the \"Choose File\" button will select a file and clicking on the "
+"\"Save\" button will upload the selected file."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.rst:130
+msgid ""
+"Note: in order to Save a new file onto the rPi, the file system has to be"
+" set writeable using the \"Writable\" button at the top left of the web "
+"page. After saving the new file, set the file system back to \"Read-"
+"Only\" so that it is protected against accidental changes."
+msgstr ""
+

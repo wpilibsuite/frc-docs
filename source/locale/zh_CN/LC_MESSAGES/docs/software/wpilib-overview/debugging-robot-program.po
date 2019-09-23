@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:2
+msgid "Debugging a Robot Program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:4
+msgid ""
+"Inevitably, a program will not behave in the way we expect it to behave."
+"  When this occurs, it becomes necessary to figure out why the program is"
+" doing what it is doing, so that we can make it do what we want it to do,"
+" instead.  Such an undesired program behavior is called a \"bug,\" and "
+"this process is called \"debugging.\""
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:6
+msgid ""
+"A debugger is a tool used to control program flow and monitor variables "
+"in order to assist in debugging a program. This section will describe how"
+" to set up a debug session for an FRC robot program."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:8
+msgid ""
+"For beginning users who need to debug their programs but do not know/have"
+" time to learn how to use a debugger, it is often possible to debug a "
+"program simply by printing the relevant program state to the console.  "
+"However, it is strongly recommended that students eventually learn to use"
+" a debugger."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:11
+msgid "Breakpoints"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:13
+msgid ""
+"A \"breakpoint\" is a line of code at which the debugger will stop the "
+"program execution so that the user can examine the program state.  This "
+"is extremely useful while debugging, as it allows the user to pause the "
+"program at specific points in problematic code to determine where exactly"
+" the program is deviating from the expected behavior."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:16
+msgid "Setting a Breakpoint"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:18
+msgid "|Setting a Breakpoint|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:20
+msgid ""
+"Double-click in the left margin of the source code window to set a "
+"breakpoint in your user program: A small red circle indicates the "
+"breakpoint has been set on the corresponding line."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:23
+msgid "Viewing Program State"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:25
+msgid "|Debug Tab|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:27
+msgid ""
+"When the program is stopped at a breakpoint, various pieces of program "
+"state can be viewed from the debug tab.  The Debug tab is accessed by "
+"clicking on the debug icon on the far left pane.  Within the debug tab, "
+"the program state can be viewed from an assortment of \"panes.\""
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:30
+msgid "The Variables Pane"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:32
+msgid "|Variables Pane|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:34
+msgid ""
+"The Variables view shows the current values of variables. To see a "
+"variable that is not displayed, select the “Watch” pane and enter the "
+"variable name. This will show the variable’s value if it’s in-scope. "
+"Clicking on the arrows next to a variable name will expand the tree and "
+"show its `fields "
+"<https://en.wikipedia.org/wiki/Field_(computer_science)>`__."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:37
+msgid "Watch Pane"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:39
+msgid "|Watch Pane|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:41
+msgid ""
+"The Watch Pane can be used to monitor specific variables or expressions "
+"while debugging. To add an expression, right-click and select Add "
+"Expression."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:44
+msgid "Call Stack"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:46
+msgid "|Call Stack|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:48
+msgid ""
+"The Call Stack pane is used to display the current `call stack "
+"<https://en.wikipedia.org/wiki/Call_stack>`__ of the running program. "
+"This can be used to monitor the current call hierarchy of the program "
+"while debugging."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:51
+msgid "Breakpoint Pane"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:53
+msgid "|Breakpoint Pane|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:55
+msgid ""
+"The Breakpoint Pane displays all of the current breakpoints. To "
+"temporarily disable a breakpoint without permanently removing it, click "
+"the corresponding checkbox."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:58
+msgid "Running the Debugger"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:60
+msgid "|Start Debugging|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:62
+msgid ""
+"Press Ctrl+Shift+P and type WPILib or click on the WPILib Menu item to "
+"open the Command palette with WPILib pre-populated. Type Debug and select"
+" the Debug Robot Code menu item to start debugging. The code will "
+"download to the roboRIO and begin debugging."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:64
+msgid ""
+"The debugger will automatically pause at the first breakpoint it "
+"encounters.  The user can then tell the debugger when to proceed to the "
+"next breakpoint."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:67
+msgid "Debugging with Console"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/debugging-robot-program.rst:68
+msgid ""
+"Another way to debug your program is to use System.out.println statements"
+" in your code and receive them using the RioLog in VSCode."
+msgstr ""
+

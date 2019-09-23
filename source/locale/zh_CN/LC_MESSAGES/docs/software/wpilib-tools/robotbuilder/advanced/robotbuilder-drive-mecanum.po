@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:2
+msgid "Driving a Robot using Mecanum Drive"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:4
+msgid ""
+"Mecanum drive is a method of driving using specially designed wheels that"
+" allow the robot to drive in any direction without changing the "
+"orientation of the robot. A robot with a conventional drivetrain (4 or "
+"six wheels) must turn in the direction it needs to drive. A mecanum robot"
+" can move in any direction without first turning and is called a "
+"holonomic drive."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:7
+msgid "Mecanum Wheels"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:11
+msgid ""
+"The wheels shown in this robot have rollers that cause the forces from "
+"driving to be applied at a 45 degree angle rather than straight forward "
+"as in the case of a conventional drive. You might guess that varying the "
+"speed of the wheels results in travel in any direction. You can look up "
+"how mecanum wheels work on various web sites on the internet."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:14
+msgid "Code for Driving with Mecanum Wheels"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:56
+msgid ""
+"Here's a sample program that shows the minimum code to drive using a "
+"single joystick and mecanum wheels. It uses the RobotDrive object that is"
+" available in both C++ and Java so even though this example is in C++ "
+"similar code will work in Java. The idea is to create the RobotDrive "
+"object with 4 PWM ports for the 4 speed controllers on the robot. The "
+"joystick XY position represents a direction vector that the robot should "
+"follow regardless of its orientation. The twist axis on the joystick "
+"represents the rate of rotation for the robot while it's driving."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:58
+msgid "Thanks to **FRC Team 2468** in Austin, TX for developing this example."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:61
+msgid "Field-Oriented Driving"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:63
+msgid ""
+"I would be remiss in not mentioning that is a 4th parameter to the "
+"``MecanumDrive_Cartesian()`` method that is the angle returned from a "
+"Gyro sensor. This will adjust the rotation value supplied, in this case, "
+"from the twist axis of the joystick to be relative to the field rather "
+"than relative to the robot. This is particularly useful with mecanum "
+"drive since, for the purposes of steering, the robot really has no front,"
+" back or sides. It can go in any direction. Adding the angle in degrees "
+"from a gyro object will cause the robot to move away from the drivers "
+"when the joystick is pushed forwards, and towards the drivers when it is "
+"pulled towards them - regardless of what direction the robot is facing!"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:65
+msgid ""
+"The use of field-oriented driving makes often makes the robot much easier"
+" to drive, especially compared to a \"robot-oriented\" drive system where"
+" the controls are reversed when the robot is facing the drivers."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.rst:67
+msgid ""
+"Just remember to get the gyro angle each time ``MecanumDrive_Caresian()``"
+" is called."
+msgstr ""
+

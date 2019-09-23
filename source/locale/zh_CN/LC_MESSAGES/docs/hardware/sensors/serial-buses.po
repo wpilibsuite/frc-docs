@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:2
+msgid "Serial Buses"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:4
+msgid ""
+"In addition to the :doc:`digital <digital-inputs-hardware>` and "
+":doc:`analog <analog-inputs-hardware>` inputs, the roboRIO also offers "
+"several methods of serial communication with peripheral devices."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:6
+msgid ""
+"Both the digital and analog inputs are highly limited in the amount of "
+"data that can be send over them.  Serial buses allow users to make use of"
+" far more-robust and higher-bandwidth communications protocols with "
+"sensors that collect large amounts of data, such as inertial measurement "
+"units (IMUs) or 2D LIDAR sensors."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:9
+msgid "Types of supported serial buses"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:11
+msgid "The roboRIO supports three basic types of serial communications:"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:13
+msgid "`I2C`_"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:14
+msgid "`SPI`_"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:15
+msgid "`RS232`_"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:16
+msgid "`USB`_"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:18
+msgid ""
+"Additionally, the roboRIO supports communications with peripheral devices"
+" over the CAN bus.  However, as the FRC CAN protocol is quite "
+"idiosyncratic, relatively few peripheral sensors support it (though it is"
+" heavily used for motor controllers)."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:21
+msgid "I2C"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:23
+msgid "|roboRIO I2C| |I2C Pinout|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:25
+msgid ""
+"To communicate to peripheral devices over I2C, each pin should be wired "
+"to its corresponding pin on the device.  I2C allows users to wire a "
+"\"chain\" of slave devices to a single port, so long as those devices "
+"have separate IDs set."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:27
+msgid "The I2C bus can also be used through the `MXP expansion port`_."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:30
+msgid "SPI"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:32
+msgid "|roboRIO SPI| |SPI Pinout|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:34
+msgid ""
+"To communicate to peripheral devices over SPI, each pin should be wired "
+"to its corresponding pin on the device.  The SPI port supports "
+"communications to up to four devices (corresponding to the CS 0-3 pins on"
+" the diagram above)."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:36
+msgid "The SPI bus can also be used through the `MXP expansion port`_."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:39
+msgid "RS232"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:41
+msgid "|roboRIO RS232| |RS232 Pinout|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:43
+msgid ""
+"To communicate to peripheral devices over RS232, each pin should be wired"
+" to its corresponding pin on the device."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:45
+msgid "The RS232 bus can also be used through the `MXP expansion port`_."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:48
+msgid "USB"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:50
+msgid "|roboRIO USB|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:52
+msgid ""
+"The roboRIO has three USB ports: 1x USB-B, and 2x USB-A.  These can be "
+"connected to devices with standard USB cables."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:55
+msgid "MXP expansion port"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:57
+msgid "|roboRIO MXP| |MXP Pinout|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:59
+msgid ""
+"Several of the serial buses are also available for use through the "
+"roboRIO's MXP expansion port.  This port allows users to make use of many"
+" additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog "
+"<analog-inputs-hardware>` inputs, as well as the various serial buses."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/serial-buses.rst:61
+msgid ""
+"Many peripheral devices attach directly to the MXP port for convenience, "
+"requiring no wiring on the part of the user."
+msgstr ""
+

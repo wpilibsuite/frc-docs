@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:2
+msgid "Troubleshooting Dashboard Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:4
+msgid ""
+"We have received a number of reports of Dashboard connectivity issues "
+"from events. This document will help explain how to recognize if the "
+"Dashboard is not connected to your robot, steps to troubleshoot this "
+"condition and a code modification you can make."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:7
+msgid "LabVIEW Dashboard"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:9
+msgid ""
+"This section discusses connectivity between the robot and LabVIEW "
+"dashboard"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:12
+msgid "Recognizing LabVIEW Dashboard Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:16
+msgid ""
+"If you have an indicator on your dashboard that you expect to be changing"
+" it may be fairly trivial to recognize if the Dashboard is connected. If "
+"not, there is a way to check without making any changes to your robot "
+"code. On the Variables tab of the Dashboard, the variables are shown with"
+" a black diamond when they are not synced with the robot. Once the "
+"Dashboard connects to the robot and these variables are synced, the "
+"diamond will disappear."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:19
+msgid "Troubleshooting LabVIEW Dashboard Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:21
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:49
+msgid ""
+"If the Dashboard does not connect to the Robot (after the Driver Station "
+"has connected to the robot) the recommended troubleshooting steps are:"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:23
+msgid ""
+"Close the Driver Station and Dashboard, then re-open the Driver Station "
+"(which should launch the Dashboard)."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:25
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:53
+msgid ""
+"If that doesn't work, restart the Robot Code using the Restart Robot Code"
+" button on the Diagnostics tab of the Driver Station"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:28
+msgid "Improving Reliability of a Custom Dashboard"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:32
+msgid ""
+"If you have created a custom LabVIEW dashboard there is a tweak you can "
+"make to the code to improve reliability of the initial connection. Locate"
+" the loop labeled Loop 7 in the Dashboard Main VI. Modify the loop "
+"according to the image above by adding a loop around the listener, 2 case"
+" statements, a Wait block and error wiring."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:35
+msgid "SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:37
+msgid ""
+"This section discusses connectivity between the robot and Java "
+"SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:40
+msgid "Recognizing SmartDashboard Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:44
+msgid ""
+"The typical way to recognize connectivity with the Java SmartDashboard is"
+" to add a Connection Indicator widget and to make sure your code is "
+"writing at least one key during initialization or disabled to trigger the"
+" connection indicator. The connection indicator can be moved or re-sized "
+"if the Editable checkbox is checked."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:47
+msgid "Troubleshooting SmartDashboard Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:51
+msgid ""
+"Restart the SmartDashboard (there is no need to restart the Driver "
+"Station software for the Java SmartDashboard)"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/troubleshooting-dashboard-connectivity.rst:55
+msgid ""
+"If it still doesn't connect verify that the Team Number is set properly "
+"in the Dashboard and that your Robot Code writes a SmartDashboard value "
+"during initialization or disabled"
+msgstr ""
+

@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:2
+msgid "Analog Inputs - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:4
+msgid ""
+"This section covers analog inputs in software.  For a hardware guide to "
+"analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-"
+"hardware:Analog Inputs - Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:6
+msgid ""
+"The roboRIO's FPGA supports up to 8 analog input channels that can be "
+"used to read the value of an analog voltage from a sensor.  Analog inputs"
+" may be used for any sensor that outputs a simple voltage."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:8
+msgid ""
+"Analog inputs from the FPGA by default return a 12-bit integer "
+"proportional to the voltage, from 0 to 5 volts."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:11
+msgid "The AnalogInput class"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:13
+msgid ""
+"It is often more convenient to use the :doc:`Analog Potentiometers "
+"<analog-potentiometers-software>` wrapper class than to use "
+":code:`AnalogInput` directly, as it supports scaling to meaningful units."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:15
+msgid ""
+"Support for reading the voltages on the FPGA analog inputs is provided "
+"through the :code:`AnalogInput` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:18
+msgid "Initializing an AnalogInput"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:20
+msgid "An :code:`AnalogInput` may be initialized as follows:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:35
+msgid "Oversampling and Averaging"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:37
+msgid "|Oversampling and Averaging|"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:39
+msgid ""
+"The FPGA's analog input modules supports both oversampling and averaging."
+"  These behaviors are highly similar, but differ in a few important ways."
+"  Both may be used at the same time."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:42
+msgid "Oversampling"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:44
+msgid ""
+"When oversampling is enabled, the FPGA will add multiple consecutive "
+"samples together, and return the accumulated value.  Users may specify "
+"the number of *bits* of oversampling - for :math:`n` bits of "
+"oversampling, the number of samples added together is :math:`2~{n}`:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:63
+msgid "Averaging"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:65
+msgid ""
+"Averaging behaves much like oversampling, except the accumulated values "
+"are divided by the number of samples so that the scaling of the returned "
+"values does not change.  This is often more-convenient, but occasionally "
+"the additional roundoff error introduced by the rounding is undesirable."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:81
+msgid ""
+"When oversampling and averaging are used at the same time, the "
+"oversampling is applied *first,* and then the oversampled values are "
+"averaged.  Thus, 2-bit oversampling and 2-bit averaging used at the same "
+"time will increase the scale of the returned values by approximately a "
+"factor of 2, and decrease the update rate by approximately a factor of 4."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:84
+msgid "Reading values from an AnalogInput"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:86
+msgid "Values can be read from an AnalogInput with one of four different methods:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:89
+msgid "getValue"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:91
+msgid ""
+"The :code:`getValue` method returns the raw instantaneous measured value "
+"from the analog input, without applying any calibration and ignoring "
+"oversampling and averaging settings.  The returned value is an integer."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:104
+msgid "getVoltage"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:106
+msgid ""
+"The :code:`getVoltage` method returns the instantaneous measured voltage "
+"from the analog input.  Oversampling and averaging settings are ignored, "
+"but the value is rescaled to represent a voltage.  The returned value is "
+"a double."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:119
+msgid "getAverageValue"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:121
+msgid ""
+"The :code:`getAverageValue` method returns the averaged value from the "
+"analog input.  The value is not rescaled, but oversampling and averaging "
+"are both applied.  The returned value is an integer."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:134
+msgid "getAverageVoltage"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:136
+msgid ""
+"The :code:`getAverageVoltage` method returns the averaged voltage from "
+"the analog input.  Rescaling, oversampling, and averaging are all "
+"applied.  The returned value is a double."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:149
+msgid "Accumulator"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:151
+msgid ""
+"The accumulator methods do not currently support returning a value in "
+"units of volts - the returned value will always be an integer "
+"(specifically, a :code:`long`)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:153
+msgid ""
+"Analog input channels 0 and 1 additionally support an accumulator, which "
+"integrates (adds up) the signal indefinitely, so that the returned value "
+"is the sum of all past measured values.  Oversampling and averaging are "
+"applied prior to accumulation."
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:196
+msgid "Obtaining synchronized count and value"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:198
+msgid ""
+"Sometimes, it is necessarily to obtain matched measurements of the count "
+"and the value.  This can be done using the :code:`getAccumulatorOutput` "
+"method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:224
+msgid "Using analog inputs in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:226
+msgid ""
+"The :code:`AnalogInput` class can be used to write code for a wide "
+"variety of sensors (including potentiometers, accelerometers, gyroscopes,"
+" ultrasonics, and more) that return their data as an analog voltage.  "
+"However, if possible it is almost always more convenient to use one of "
+"the other existing WPILib classes that handles the lower-level code "
+"(reading the analog voltages and converting them to meaningful units) for"
+" you.  Users should only directly use :code:`AnalogInput` as a \"last "
+"resort.\""
+msgstr ""
+
+#: ../../source/docs/software/sensors/analog-inputs-software.rst:228
+msgid ""
+"Accordingly, for examples of how to effectively use analog sensors in "
+"code, users should refer to the other pages of this chapter that deal "
+"with more-specific classes."
+msgstr ""
+

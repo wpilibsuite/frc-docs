@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:2
+msgid "Setting up the Robot Project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:4
+msgid ""
+"The RobotBuilder program has some default properties that need to be set "
+"up so the generated program and other generated files work properly. This"
+" setup information is stored in the properties for robot description (the"
+" first line)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:7
+msgid "Robot Project Properties"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:9
+msgid "The properties that describe the robot are:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:11
+msgid "**Name** - The name of the robot project that is created"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:13
+msgid ""
+"**Autnomous Command** - the command that will run by default when the "
+"program is placed in autonomous mode"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:15
+msgid "**Team Number** - the team number is used for creating the package names"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:17
+msgid ""
+"**Use Default Java Package** - If checked RobotBuilder will use the "
+"default package (org.usfirst.frc####). Otherwise you can specify a custom"
+" package name to be used."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:19
+msgid ""
+"**Java Package** - The name of the generated Java package used when "
+"generating the project code"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:21
+msgid ""
+"**Export Directory** - The folder that the java project is generated into"
+" when Export to Java is selected"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:23
+msgid ""
+"**Export Subsystems** - Checked if RobotBuilder should export the "
+"Subsystem classes from your project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:25
+msgid ""
+"**Export Commands** - Checked if RobotBuilder should export the Command "
+"classes from your project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:27
+msgid ""
+"**Simulation World File** - The World File that is used for simulation of"
+" your robot project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:29
+msgid ""
+"**Wiring File** - the location of the html file that contains the wiring "
+"diagram for your robot"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:32
+msgid "Using Source Control with the RobotBuilder Project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.rst:36
+msgid ""
+"When using source control the project will typically be used on a number "
+"of computers and the path to the project directory might be different "
+"from one users computer to another. If the RobotBuilder project file is "
+"stored using an absolute path, it will typically contain the user name "
+"and won't be usable across multiple computers. To make this work, select "
+"\"relative path\" and specify the path as an directory offset from the "
+"project files. In the above example, the project file is stored in the "
+"folder just above the project files in the file hierarchy. In this case, "
+"the user name is not part of the path and it will be portable across all "
+"of your computers."
+msgstr ""
+

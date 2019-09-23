@@ -1,0 +1,920 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:2
+msgid "How to wire an FRC Robot"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:6
+msgid ""
+"This document details the wiring of a basic electronics board for bench-"
+"top testing."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:8
+msgid ""
+"Some images shown in this section reflect the setup for a Robot Control "
+"System using Spark motor controllers. Wiring diagram and layout should be"
+" similar for other motor controllers. Where appropriate, a second set of "
+"images shows the wiring steps for using PWM controllers with integrated "
+"wires."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:11
+msgid "Gather Materials"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:16
+msgid "Locate the following control system components and tools"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:41
+msgid "Kit Materials:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:20
+msgid "Power Distribution Panel (PDP)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:21
+msgid "roboRIO"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:22
+msgid "Pneumatics Control Module (PCM)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:23
+msgid "Voltage Regulator Module (VRM)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:24
+msgid "OpenMesh radio (with power cable and Ethernet cable)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:25
+msgid "Robot Signal Light (RSL)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:26
+msgid "4x Victor SPX or other speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:27
+msgid "2x PWM y-cables"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:28
+msgid "120A Circuit breaker"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:29
+msgid "4x 40A Circuit breaker"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:30
+msgid "6 AWG Red wire"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:31
+msgid "10 AWG Red/Black wire"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:32
+msgid "18 AWG Red/Black wire"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:33
+msgid "22AWG yellow/green twisted CAN cable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:34
+msgid ""
+"16x 10-12 AWG  (yellow) ring terminals (8x quick disconnect pairs if "
+"using integrated wire controllers)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:36
+msgid "2x Andersen SB50 battery connectors"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:37
+msgid "6AWG Terminal lugs"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:38
+msgid "12V Battery"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:39
+msgid "Red/Black Electrical tape"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:40
+msgid "Dual Lock material or fasteners"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:41
+msgid "Zip ties"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:42
+msgid "1/4\" or 1/2\" plywood"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:50
+msgid "Tools Required:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:44
+msgid "Wago Tool or small flat-head screwdriver"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:45
+msgid "Very small flat head screwdriver (eyeglass repair size)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:46
+msgid "Philips head screw driver"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:47
+msgid "5mm Hex key (3/16\" may work if metric is unavailable)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:48
+msgid "1/16\" Hex key"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:49
+msgid "Wire cutters, strippers, and crimpers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:50
+msgid "7/16” box end wrench or nut driver"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:52
+msgid "Create the Base for the Control System"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:54
+msgid ""
+"For a benchtop test board, cut piece of 1/4” or 1/2\" material (wood or "
+"plastic) approximately 24\" x 16\". For a Robot Quick Build control board"
+" see the supporting documentation for the proper size board for the "
+"chosen chassis configuration."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:60
+msgid "Layout the Core Control System Components"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:66
+msgid ""
+"Layout the components on the board. One layout that should work is shown "
+"in the images/how-to-wire-a-robot above."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:74
+msgid "Fasten Components"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:76
+msgid ""
+"Using the Dual Lock or hardware, fasten all components to the board. Note"
+" that in many FRC games robot-to-robot contact may be substantial and "
+"Dual Lock alone is unlikely to stand up as a fastener for many electronic"
+" components. Teams may wish to use nut and bolt fasteners or (as shown in"
+" the image above) cable ties, with or without Dual Lock to secure devices"
+" to the board."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:84
+msgid "Attach Battery Connector to PDP"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:89
+msgid ""
+"Requires: Battery Connector, 6AWG terminal lugs, 1/16\" Allen, 5mm Allen,"
+" 7/16\" Box end"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:93
+msgid "Attach terminal lugs to battery connector:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:95
+msgid ""
+"Using a 1/16\" Allen wrench, remove the two screws securing the PDP "
+"terminal cover."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:96
+msgid ""
+"Using a 5mm Allen wrench (3/16\" will work if metric is not available), "
+"remove the negative (-) bolt and washer from the PDP and fasten the "
+"negative terminal of the battery connector."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:97
+msgid ""
+"Using a 7/16\" box end wrench, remove the nut on the \"Batt\" side of the"
+" main breaker and secure the positive terminal of the battery conenctor"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:100
+msgid "Wire Breaker to PDP"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:106
+msgid "Requires: 6AWG red wire, 2x 6AWG terminal lugs, 5mm Allen, 7/16\" box end"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:108
+msgid ""
+"Secure one terminal lug to the end of the 6AWG red wire. Using the 7/16\""
+" box end, remove the nut from the “AUX” side of the 120A main breaker and"
+" place the terminal over the stud. Loosely secure the nut (you may wish "
+"to remove it shortly to cut, strip, and crimp the other end of the wire)."
+" Measure out the length of wire required to reach the positive terminal "
+"of the PDP."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:115
+msgid "Cut, strip, and crimp the terminal to the 2nd end of the red 6AWG wire."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:116
+msgid ""
+"Using the 7/16\" box end, secure the wire to the \"AUX\" side of the 120A"
+" main breaker."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:117
+msgid "Using the 5mm, secure the other end to the PDP positive terminal."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:120
+msgid "Insulate PDP connections"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:125
+msgid "Requires: 1/16\" Allen, Electrical tape"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:131
+msgid "Using electrical tape, insulate the two connections to the 120A"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:128
+msgid ""
+"breaker. Also insulate any part of the PDP terminals which will be "
+"exposed when the cover is replaced. One method for insulating the main "
+"breaker connections is to wrap the stud and nut first, then use the tape "
+"wrapped around the terminal and wire to secure the tape."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:133
+msgid "Using the 1/16\" Allen wrench, replace the PDP terminal cover"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:136
+msgid "Wago connectors"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:144
+msgid ""
+"The next step will involve using the Wago connectors on the PDP. To use "
+"the Wago connectors, insert a small flat blade screwdriver into the "
+"rectangular hole at a shallow angle then angle the screwdriver upwards as"
+" you continue to press in to actuate the lever, opening the terminal. Two"
+" sizes of Wago connector are found on the PDP:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:150
+msgid "Small Wago connector: Accepts 10AWG-24AWG, strip 11-12mm (~7/16\")"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:151
+msgid "Large Wago connector: Accepts 6AWG-12AWG, strip 12-13mm(~1/2\")"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:153
+msgid ""
+"To maximize pullout force and minimize connection resistance wires should"
+" not be tinned (and ideally not twisted) before inserting into the Wago "
+"connector."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:158
+msgid "Motor Controller Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:165
+msgid ""
+"Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG wire, 10 or"
+" 12 AWG fork/ring terminals (terminal controllers only), wire crimper"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:168
+msgid "For Victor SPX or other wire integrated motor controllers (top image):"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:171
+msgid "Cut and strip the red and black power input wires wire,"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:171
+msgid "then insert into one of the 40A (larger) Wago terminal pairs."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:173
+msgid "For terminal motor controllers (bottom image):"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:175
+msgid ""
+"Cut red and black wire to appropriate length to reach from one of the 40A"
+" (larger) Wago terminal pairs to the input side of the speed controller "
+"(with a little extra for the length that will be inserted into the "
+"terminals on each end)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:176
+msgid "Strip one end of each of the wires, then insert into the Wago terminals."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:177
+msgid "Strip the other end of each wire, and crimp on a ring or fork terminal"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:178
+msgid ""
+"Attach the terminal to the speed controller input terminals (red to +, "
+"black to -)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:181
+msgid "Weidmuller Connectors"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:190
+msgid ""
+"The correct strip length is ~5/16\" (8mm), not the 5/8\" mentioned in the"
+" video."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:193
+msgid ""
+"A number of the CAN and power connectors in the system use a Weidmuller "
+"LSF series wire-to-board connector. There are a few things to keep in "
+"mind when using this connector for best results:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:197
+msgid "Wire should be 16AWG to 24AWG (consult rules to"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:198
+msgid "verify required gauge for power wiring)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:199
+msgid "Wire ends should be stripped approximately 5/16\""
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:201
+msgid "To insert or remove the wire, press down on the"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:201
+msgid "corresponding \"button\" to open the terminal"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:203
+msgid "After making the connection check to be sure that it is clean and secure:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:206
+msgid "Verify that there are no \"whiskers\" outside"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:207
+msgid "the connector that may cause a short circuit"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:210
+msgid "Tug on the wire to verify that it is seated fully."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:209
+msgid ""
+"If the wire comes out and is the correct gauge it needs to be inserted "
+"further and/or stripped back further."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:213
+msgid "roboRIO Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:218
+msgid ""
+"Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver,"
+" 18AWG Red and Black"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:221
+msgid ""
+"Insert the 10A and 20A mini fuses in the PDP in the locations shown on "
+"the silk screen (and in the image above)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:222
+msgid ""
+"Strip ~5/16\" on both the red and black 18AWG wire and connect to the "
+"\"Vbat Controller PWR\" terminals on the PDB"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:223
+msgid ""
+"Measure the required length to reach the power input on the roboRIO. Take"
+" care to leave enough length to route the wires around any other "
+"components such as the battery and to allow for any strain relief or "
+"cable management."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:224
+msgid "Cut and strip the wire."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:225
+msgid ""
+"Using a very small flat screwdriver connect the wires to the power input "
+"connector of the roboRIO (red to V, black to C). Also make sure that the "
+"power connector is screwed down securely to the roboRIO."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:228
+msgid "Voltage Regulator Module Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:233
+msgid ""
+"Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and"
+" black wire:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:236
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:254
+msgid "Strip ~5/16\" on the end of the red and black 18AWG wire."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:237
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:255
+msgid ""
+"Connect the wire to one of the two terminal pairs labeled \"Vbat VRM PCM "
+"PWR\" on the PDP."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:238
+msgid ""
+"Measure the length required to reach the \"12Vin\" terminals on the VRM. "
+"Take care to leave enough length to route the wires around any other "
+"components such as the battery and to allow for any strain relief or "
+"cable management."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:239
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:257
+msgid "Cut and strip ~5/16\" from the end of the wire."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:240
+msgid "Connect the wire to the VRM 12Vin terminals."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:243
+msgid "Pneumatics Control Module Power (Optional)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:248
+msgid ""
+"Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and"
+" black wire"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:251
+msgid ""
+"Note: The PCM is an optional component used for controlling pneumatics on"
+" the robot."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:256
+msgid ""
+"Measure the length required to reach the \"Vin\" terminals on the PCM. "
+"Take care to leave enough length to route the wires around any other "
+"components such as the battery and to allow for any strain relief or "
+"cable management."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:258
+msgid "Connect the wire to the PCM 12Vin terminals."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:261
+msgid "Radio Power and Ethernet"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:263
+msgid ""
+"DO NOT connect the Rev passive POE injector cable directly to the "
+"roboRIO. The roboRIO MUST connect to the female end of the cable using an"
+" additional Ethernet cable as shown in the next step."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:268
+msgid "Requires: Small flat screwdriver (optional), Rev radio PoE cable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:270
+msgid ""
+"Insert the ferrules of the passive PoE injector cable into the "
+"corresponding colored terminals on the 12V/2A section of the VRM."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:271
+msgid ""
+"Connect the male RJ45 (Ethernet) end of the cable into the Ethernet port "
+"on the radio closest to the barrel connector (labeled 18-24v POE)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:274
+msgid "roboRIO to Radio Ethernet"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:279
+msgid "Requires: Ethernet cable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:281
+msgid ""
+"Connect an Ethernet cable from the female RJ45 (Ethernet) port of the Rev"
+" Passive POE cable to the RJ45 (Ethernet) port on the roboRIO."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:287
+msgid "CAN Devices"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:290
+msgid "roboRIO to PCM CAN"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:295
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:314
+msgid ""
+"Requires: Wire stripper, small flat screwdriver (optional), yellow/green "
+"twisted CAN cable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:298
+msgid ""
+"Note: The PCM is an optional component used for controlling pneumatics on"
+" the robot. If you are not using the PCM, wire the CAN connection "
+"directly from the roboRIO (shown in this step) to the PDP (show in the "
+"next step)."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:303
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:322
+msgid "Strip ~5/16\" off of each of the CAN wires."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:304
+msgid ""
+"Insert the wires into the appropriate CAN terminals on the roboRIO "
+"(Yellow->YEL, Green->GRN)."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:305
+msgid ""
+"Measure the length required to reach the CAN terminals of the PCM (either"
+" of the two available pairs). Cut and strip ~5/16\" off this end of the "
+"wires."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:306
+msgid ""
+"Insert the wires into the appropriate color coded CAN terminals on the "
+"PCM. You may use either of the Yellow/Green terminal pairs on the PCM, "
+"there is no defined in or out."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:309
+msgid "PCM to PDP CAN"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:317
+msgid ""
+"Note: The PCM is an optional component used for controlling pneumatics on"
+" the robot. If you are not using the PCM, wire the CAN connection "
+"directly from the roboRIO (shown in the above step) to the PDP (show in "
+"this step)."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:323
+msgid "Insert the wires into the appropriate CAN terminals on the PCM."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:324
+msgid ""
+"Measure the length required to reach the CAN terminals of the PDP (either"
+" of the two available pairs). Cut and strip ~5/16\" off this end of the "
+"wires."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:325
+msgid ""
+"Insert the wires into the appropriate color coded CAN terminals on the "
+"PDP. You may use either of the Yellow/Green terminal pairs on the PDP, "
+"there is no defined in or out."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:327
+msgid ""
+"Note: The PDP ships with the CAN bus terminating resistor jumper in the "
+"“ON” position. It is recommended to leave the jumper in this position and"
+" place any additional CAN nodes between the roboRIO and the PDP (leaving "
+"the PDP as the end of the bus). If you wish to place the PDP in the "
+"middle of the bus (utilizing both pairs of PDP CAN terminals) move the "
+"jumper to the “OFF” position and place your own 120 ohm terminating "
+"resistor at the end of your CAN bus chain."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:336
+msgid "PWM Cables"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:341
+msgid ""
+"Requires: 4x PWM cables (if using non-integrated wire controllers), 2x "
+"PWM Y-cable (Optional)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:344
+msgid "Option 1 (Direct connect):"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:346
+msgid ""
+"Connect the PWM cables from each controller directly to the roboRIO. For "
+"Victor SPX's and other PWM/CAN controllers, the green wire (black wire "
+"for non-integrated controllers) should be towards the outside of the "
+"roboRIO. For controllers without integrated wires, make sure the "
+"controller side of the black wire is located according to the markings on"
+" the controller. It is recommended to connect the left side to PWM 0 and "
+"1 and the right side to PWM 2 and 3 for the most straightforward "
+"programming experience, but any channel will work as long as you note "
+"which side goes to which channel and adjust the code accordingly."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:348
+msgid "Option 2 (Y-cable):"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:350
+msgid ""
+"Connect 1 PWM Y-cable to the PWM cables for the controllers controlling "
+"one side of the robot. The brown wire on the Y-cable should match the "
+"green/black wire on the PWM cable."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:351
+msgid ""
+"Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire "
+"should be towards the outside of the roboRIO. It is recommended to "
+"connect the left side to PWM 0 and the right side to PWM 1 for the most "
+"straightforward programming experience, but any channel will work as long"
+" as you note which side goes to which channel and adjust the code "
+"accordingly."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:354
+msgid "Robot Signal Light"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:359
+msgid ""
+"Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18AWG red wire,"
+" very small flat screwdriver"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:362
+msgid "Cut one end off of the 2 pin cable and strip both wires"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:363
+msgid ""
+"Insert the black wire into the center, \"N\" terminal and tighten the "
+"terminal."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:364
+msgid ""
+"Strip the 18AWG red wire and insert into the \"La\" terminal and tighten "
+"the terminal."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:365
+msgid ""
+"Cut and strip the other end of the 18AWG wire to insert into the \"Lb\" "
+"terminal"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:366
+msgid ""
+"Insert the red wire from the two pin cable into the \"Lb\" terminal with "
+"the 18AWG red wire and tighten the terminal."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:367
+msgid ""
+"Connect the two-pin connector to the RSL port on the roboRIO. The black "
+"wire should be closest to the outside of the roboRIO."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:369
+msgid ""
+"You may wish to temporarily secure the RSL to the control board using "
+"cable ties or Dual Lock (it is recommended to move the RSL to a more "
+"visible location as the robot is being constructed) Circuit Breakers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:374
+msgid "Circuit Breakers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:379
+msgid "Requires: 4x 40A circuit breakers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:381
+msgid ""
+"Insert 40-amp Circuit Breakers into the positions on the PDP "
+"corresponding with the Wago connectors the Talons are connected to. Note "
+"that, for all breakers, the breaker corresponds with the nearest positive"
+" (red) terminal (see graphic above). All negative terminals on the board "
+"are directly connected internally."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:387
+msgid ""
+"If working on a Robot Quick Build, stop here and insert the board into "
+"the robot chassis before continuing."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:391
+msgid "Motor Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:396
+msgid ""
+"Requires: Wire stripper, wire crimper, phillips head screwdriver, wire "
+"connecting hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:399
+msgid "For each CIM motor:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:401
+msgid "Strip the ends of the red and black wires from the CIM"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:403
+msgid "For integrated wire controllers (including Victor SPX):"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:405
+msgid "Strip the white and green wires from the controller"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:406
+msgid ""
+"Connect the motor wires to the controller output wires (it is recommended"
+" to connect the red wire to the white M+ output). The images/how-to-"
+"wire-a-robot above show examples using quick disconnect terminals."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:408
+msgid "For Sparks or other non-integrated-wire controllers:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:410
+msgid "Crimp a ring/fork terminal on each of the motor wires."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:411
+msgid ""
+"Attach the wires to the output side of the motor controller (red to +, "
+"black to -)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:414
+msgid "STOP"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:419
+msgid "STOP!!"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:421
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:423
+msgid ""
+"Before plugging in the battery, make sure all connections have been made "
+"with the proper polarity. Ideally have someone that did not wire the "
+"robot check to make sure all connections are correct."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:427
+msgid ""
+"Start with the battery and verify that the red wire is connected to the "
+"positive terminal"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:428
+msgid ""
+"Check that the red wire passes through the main breaker and to the + "
+"terminal of the PDP and that the black wire travels directly to the - "
+"terminal."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:429
+msgid ""
+"For each motor controller, verify that the red wire goes from the red PDP"
+" terminal to the Talon input labeled with the red + (not the white "
+"M+!!!!)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:430
+msgid ""
+"For each device on the end of the PDP, verify that the red wire connects "
+"to the red terminal on the PDP and the red terminal on the component."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:431
+msgid ""
+"Make sure that the orange Passive PoE cable is plugged directly into the "
+"radio NOT THE roboRIO! It must be connected to the roboRIO using an "
+"additional Ethernet cable."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:433
+msgid ""
+"It is also recommended to put the robot on blocks so the wheels are off "
+"the ground before proceeding. This will prevent any unexpected movement "
+"from becoming dangerous."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:438
+msgid "Manage Wires"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:443
+msgid "Requires: Zip ties"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:445
+msgid ""
+"Now may be a good time to add a few zip ties to manage some of the wires "
+"before proceeding. This will help keep the robot wiring neat. Connect "
+"Battery Connect BatteryZoom: Connect Battery"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/how-to-wire-a-robot.rst:449
+msgid ""
+"Connect the battery to the robot side of the Andersen connector. Power on"
+" the robot by moving the lever on the top of the 120A main breaker into "
+"the ridge on the top of the housing. If stuff blinks, you probably did it"
+" right. From here, you should connect to the roboRIO and try uploading "
+"your code!"
+msgstr ""
+

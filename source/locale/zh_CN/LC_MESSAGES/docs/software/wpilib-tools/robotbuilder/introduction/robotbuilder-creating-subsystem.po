@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:2
+msgid "Creating a Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:4
+msgid ""
+"Subsystems are classes that encapsulate (or contain) all the data and "
+"code that make a subsystem on your robot operate. The first step in "
+"creating a robot program with the RobotBuilder is to identify and create "
+"all the subsystems on the robot. Examples of subsystems are grippers, "
+"ball collectors, the drive base, elevators, arms, etc. Each subsystem "
+"contains all the sensors and actuators that are used to make it work. For"
+" example, an elevator might have a Jaguar speed controller and a "
+"potentiometer to provide feedback of the robot position."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:7
+msgid "Creating a Subsystem using the Palette"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:11
+msgid ""
+"Drag the subsystem icon from the palette to the Subsystems folder in the "
+"robot description to create a subsystem class."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:14
+msgid "Creating a Subsystem using the Context Menu"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:18
+msgid ""
+"Right-click on the Subsystem folder in the robot description to add a "
+"subsystem to that folder."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:21
+msgid "Name the Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:25
+msgid ""
+"After creating the subsystem by either dragging or using the context menu"
+" as described above, simply type the name you would like to give the "
+"subsystem. The name can be multiple words separated by spaces, "
+"RobotBuilder will concatenate the words to make a proper Java or C++ "
+"class name for you."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:28
+msgid "Adding Constants (2016 Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:32
+msgid ""
+"Constants are very useful to reduce the amount of magic numbers in your "
+"code. In subsystems, they can be used to keep track of certain values, "
+"such as sensor values for specific heights of an elevator, or the speed "
+"at which to drive the robot."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:34
+msgid ""
+"By default, there will be no constants in a subsystem. Press the button "
+"next to \"Constants\" to open a dialog to create some."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:37
+msgid "Creating Constants (2016 Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:41
+msgid ""
+"The constants table will be empty at first. Press \"Add constant\" to add"
+" one."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:44
+msgid "Add Constants (2016 Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:48
+msgid ""
+"The name of the constant. Change this to something descriptive. In this "
+"example of a gripper, some good constants might be \"open\" and "
+"\"close\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:49
+msgid ""
+"The type of the constant. This will most likely be a double, but you can "
+"choose from one of: String, double, int, long int, boolean, or byte."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:50
+msgid "The value of the constant."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:53
+msgid "Saving Constants (2016 Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:57
+msgid ""
+"After adding constants and setting their values, just press \"Save and "
+"close\" to save the constants and close the dialog. If you don't want to "
+"save, press the exit button on the top of the window."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:60
+msgid "After Saving (2016 Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:64
+msgid ""
+"After saving constants, the names will appear in the \"Constants\" button"
+" in the subsystem properties."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:67
+msgid "Dragging Actuators/Sensors into the Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:69
+msgid "There are two steps to adding components to a subsystem:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:71
+msgid "Drag actuators or sensors from the palette into the subsystem as required."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:72
+msgid "Give the actuator or sensor a meaningful name"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:73
+msgid ""
+"Edit the properties such as module numbers and channel numbers for each "
+"item in the subsystem."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:75
+msgid ""
+"RobotBuilder will automatically use incrementing channel numbers for each"
+" module on the robot. If you haven't yet wired the robot you can just let"
+" RobotBuilder assign unique channel numbers for each sensor or actuator "
+"and wire the robot according to the generating wiring table."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.rst:77
+msgid ""
+"This just creates the subsystem in RobotBuilder, and will subsequently "
+"generate skeleton code for the subsystem. To make it actually operate "
+"your robot please refer to :ref:`Writing Code for a Subsystem "
+"<docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-"
+"writing-subsystem-code:Writing the Code for a Subsystem>`."
+msgstr ""
+

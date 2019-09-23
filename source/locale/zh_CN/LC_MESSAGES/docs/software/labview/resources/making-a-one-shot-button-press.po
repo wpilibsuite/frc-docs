@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:2
+msgid "Making a One-Shot Button Press"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:6
+msgid ""
+"When using the Joystick Get Values function, pushing a joystick button "
+"will cause the button to read TRUE until the button is released. This "
+"means that you will most likely read multiple TRUE values for each press."
+" What if you want to read only one TRUE value each time the button is "
+"pressed? This is often called a \"One-Shot Button\". The following "
+"tutorial will show you how to create a subVI that you can drop into your "
+"Teleop.vi to do this."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:8
+msgid "First, create a new VI in the Support Code folder of your project."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:12
+msgid ""
+"Now on the block diagram of the new VI, drop in the following code "
+"snippet."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:16
+msgid ""
+"This code uses a function called the Feedback Node. We have wired the "
+"current value of the button into the left side of the feedback node. The "
+"wire coming out of the arrow of the feedback node represents the previous"
+" value of the button. If the arrow on your feedback node is going the "
+"opposite direction as shown here, right click to find the option to "
+"reverse the direction."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:18
+msgid ""
+"When a button is pressed, the value of the button goes from FALSE to "
+"TRUE. We want the output of this VI to be TRUE only when the current "
+"value of the button is TRUE, and the previous value of the button is "
+"FALSE."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:20
+msgid ""
+"Next we need to connect the boolean control and indicator to the inputs "
+"and outputs of the VI. To do this, first click the block on the connector"
+" pane, then click the button to connect the two (see the diagram below). "
+"Repeat this for the indicator."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:24
+msgid ""
+"Next, we need to change the properties of this VI so that we can use "
+"multiples of this VI in our TeleOp.vi. Right click the VI Icon and go to "
+"VI Properties. Then select the category \"Execution\" and select "
+"\"Preallocated clone reentrant execution\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:30
+msgid ""
+"Lastly, we should change the VI Icon to be more descriptive of the VI's "
+"function. Right click the Icon and go to Edit Icon. Create a new Icon."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:34
+msgid ""
+"Finally, save the VI with a descriptive name. You can now drag and drop "
+"this VI from the Support Files folder into your TeleOp.vi. Here's an "
+"example of how you could use this VI."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:38
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/making-a-one-shot-button-press.rst:38
+msgid ""
+"add download link to finished VI: "
+"https://media.screensteps.com/attachment_assets/assets/001/013/297/original/Button_Press.vi"
+msgstr ""
+

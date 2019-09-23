@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/contributing/build-instructions.rst:2
+msgid "Build Instructions"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:4
+msgid ""
+"This document contains information on how to build the HTML, PDF, and "
+"EPUB versions of the frc-docs site. frc-docs uses Sphinx as the "
+"documentation generator. This document also assumes you have basic "
+"knowledge of `Git <https://git-scm.com/>`__ and console commands."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:7
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:9
+msgid ""
+"Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-"
+"docs repository is cloned by using ``git clone "
+"https://github.com/wpilibsuite/frc-docs.git``."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:12
+msgid "Windows"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:14
+msgid ""
+"The majority of MikTeX packages are not required for building HTML, "
+"additional packages may be required for building PDF and EPUB."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:16
+msgid "`Python 3.6 or greater <https://www.python.org/downloads/>`__"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:17
+msgid "`MiKTeX <https://miktex.org/download>`__"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:18
+msgid ""
+"`GraphViz "
+"<https://graphviz.gitlab.io/_pages/Download/Download_windows.html>`__"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:19
+msgid "`Perl <http://strawberryperl.com/>`__"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:21
+msgid ""
+"Ensure that Python is in your Path by selecting the **Add Python to "
+"PATH** toggle when installing Python."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:25
+msgid ""
+"Once Python is installed, open up Powershell. Then navigate to the frc-"
+"docs directory. Run the following command: ``pip install -r "
+"source/requirements.txt``"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:27
+msgid ""
+"Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path"
+" <https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-"
+"path-environment-variable-in-windows-10-with-"
+"screensho/44272417#44272417>`__. By default, this folder is located at "
+"``C:\\Program Files (x86)\\Graphviz2.38\\bin``."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:31
+msgid ""
+"Install the missing MikTex packages by navigating to the frc-docs "
+"directory, then running the following command from Powershell: ``mpm "
+"--verbose --require=@miktex-packages.txt``"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:34
+msgid "Linux (Ubuntu)"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:36
+msgid "`sudo apt-get update`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:37
+msgid "`sudo apt-get install python3`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:38
+msgid "`python3 -m pip install --upgrade pip setuptools wheel`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:39
+msgid "`python3 -m pip install -r source/requirements.txt`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:40
+msgid ""
+"`sudo apt-get install -y texlive-latex-recommended texlive-fonts-"
+"recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex"
+" texlive-xetex texlive-fonts-extra dvipng`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:41
+msgid "`sudo apt-get install -qy --force-yes graphviz`"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:44
+msgid "Building"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:46
+msgid ""
+"Open up a Powershell Window or terminal and navigate to the frc-docs "
+"directory that was cloned."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:51
+msgid "Lint Check"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:53
+msgid ""
+"Lint Check is currently unavailable due to a bug with line endings. See "
+"`this issue <https://bugs.launchpad.net/doc8/+bug/1756704>`__ for more "
+"information."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:55
+msgid ""
+"It's encouraged to check any changes you make with the linter. This "
+"**will** fail the buildbot if it does not pass. To check, run ``.\\make "
+"lint``"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:58
+msgid "Building HTML"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:60
+msgid ""
+"Type the command ``.\\make html`` to generate HTML content. The content "
+"is located in the ``build/html`` directory at the root of the repository."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:63
+msgid "Building PDF"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:65
+msgid ""
+"Type the command ``.\\make latexpdf`` to generate PDF content. The PDF is"
+" located in the ``build/latex`` directory at the root of the repository."
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:68
+msgid "Building EPUB"
+msgstr ""
+
+#: ../../source/docs/contributing/build-instructions.rst:70
+msgid ""
+"Type the command ``.\\make epub`` to generate EPUB content. The EPUB is "
+"located in the ``build/epub`` directory at the root of the repository."
+msgstr ""
+

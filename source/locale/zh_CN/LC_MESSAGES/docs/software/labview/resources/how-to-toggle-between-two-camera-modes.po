@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:2
+msgid "How To Toggle Between Two Camera Modes"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:6
+msgid ""
+"This code shows how to use a button to toggle between two distinct camera"
+" modes. The code consists of four stages."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:8
+msgid "In the first stage, the value of a button on the joystick is read."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:10
+msgid ""
+"Next, the current reading is compared to the previous reading using a "
+"**Feedback Node** and some Boolean arithmetic. Together, these ensure "
+"that the camera mode is only toggled when the button is initially pressed"
+" rather than toggling back and forth multiple times while the button is "
+"held down."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:12
+msgid ""
+"After that, the camera mode is toggled by masking the result of the "
+"second stage over the current camera mode value. This is called bit "
+"masking and by doing it with the **XOR** function the code will toggle "
+"the camera mode when the second stage returns true and do nothing "
+"otherwise."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:14
+msgid ""
+"Finally, you can insert the code for each camera mode in the case "
+"structure at the end. Each time the code is run, this section will run "
+"the code for the current camera mode."
+msgstr ""
+

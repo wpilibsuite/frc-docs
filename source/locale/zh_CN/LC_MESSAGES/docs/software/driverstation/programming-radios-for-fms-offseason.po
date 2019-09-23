@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:2
+msgid "Programming Radios for FMS Offseason"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:4
+msgid ""
+"When using the FMS Offseason software, the typical networking setup is to"
+" use a single access point with a single SSID and WPA key. This means "
+"that the radios should all be programmed to connect to this network, but "
+"with different IPs for each team. The Team version of the FRC Bridge "
+"Configuration Utility has an FMS-Lite mode that can be used to do this "
+"configuration."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:6
+msgid "Before you begin using the software:"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:8
+msgid ""
+"Disable WiFi connections on your computer, as it may prevent the "
+"configuration utility from properly communicating with the bridge"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:9
+msgid ""
+"Make sure no devices are connected to your computer via ethernet, other "
+"than the wireless bridge."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:12
+msgid "Pre-Requisites"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:14
+msgid ""
+"Even though WPILib uses Java 11, the FRC Radio Configuration Utility "
+"requires Java 8."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:16
+msgid ""
+"The FRC Radio Configuration Utility requires the Java Runtime Engine "
+"(JRE). If you do not have Java installed, you can download the JRE from "
+"`here <https://www.java.com/en/download/>`__."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:18
+msgid ""
+"The FRC Radio Configuration Utility requires Administrator privileges to "
+"configure the network settings on your machine. The program should "
+"request the necessary privileges automatically (may require a password if"
+" run from a non-Administrator account), but if you are having trouble try"
+" running it from an Administrator account."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:21
+msgid "Application Notes"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:23
+msgid ""
+"The Radio Kiosk will program the radio to enforce the 4 Mbps bandwidth "
+"limit on traffic exiting the radio over the wireless interface. In the "
+"home configuration (AP mode) this is a total, not a per client limit. "
+"This means that streaming video to multiple clients is not recommended."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:25
+msgid ""
+"The Kiosk has been tested on Windows 7, 8, and 10. It may work on other "
+"operating systems, but has not been tested."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:28
+msgid "Programmed Configuration"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:32
+msgid ""
+"The Radio Configuration Utility programs a number of configuration "
+"settings into the radio when run. These settings apply to the radio in "
+"all modes (including at events). These include:"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:34
+msgid "Set a static IP of 10.TE.AM.1"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:35
+msgid ""
+"Set an alternate IP on the wired side of 192.168.1.1 for future "
+"programming"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:36
+msgid "Bridge the wired ports so they may be used interchangeably"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:37
+msgid "The LED configuration noted in the graphic above"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:38
+msgid "4Mb/s bandwidth limit on the outbound side of the wireless interface"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:39
+msgid ""
+"QoS rules for internal packet prioritization (affects internal buffer and"
+" which packets to discard if bandwidth limit is reached). These rules are"
+" Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network "
+"Tables (TCP 1735, 1740) >> Bulk (All other traffic)."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:41
+msgid ""
+"When programmed with the team version of the Radio Configuration - "
+"Utility, the user accounts will be left at (or set to) the firmware - "
+"defaults **for the DAPs only**:"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:43
+msgid "Username: root"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:44
+msgid "Password: root"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:46
+msgid "It is not recommended to modify the configuration manually"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:49
+msgid "Download the software"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:53
+msgid ""
+"Download the latest FRC Radio Configuration Utility Installer from the "
+"`WPILib project File Releases "
+"<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:56
+msgid "Install the software"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:60
+msgid ""
+"Double click on FRC_Radio_Configuration_MM_DD_YY.exe to launch the "
+"installer. Follow the prompts to complete the installation."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:62
+msgid ""
+"Part of the installation prompts will include installing WinPCap if it is"
+" not already present. The WinPCap installer contains a checkbox (checked "
+"by default) to start the WinPCap driver on boot. You should leave this "
+"box checked."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:65
+msgid "Launch the software"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:69
+msgid "Use the Start menu or desktop shortcut to launch the program."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:71
+msgid ""
+"If you need to locate the program it is installed to ``C:/Program Files "
+"(x86)/FRC Radio Configuration Utility``. For 32-bit machines the path is "
+"``C:/Program Files/FRC Radio Configuration Utility/``"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:74
+msgid "Allow the program to make changes, if prompted"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:78
+msgid ""
+"If the your computer is running Windows Vista or Windows 7, a prompt may "
+"appear about allowing the configuration utility to make changes to the "
+"computer.  Click \"Yes\" if the prompt appears."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:81
+msgid "Enter FMS-Lite Mode"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:85
+msgid "Click ``Tools`` -> ``FMS-Lite Mode`` to enter FMS-Lite Mode."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:88
+msgid "Enter SSID"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:92
+msgid "Enter the SSID (name) of your wireless network in the box and click OK."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:95
+msgid "Enter WPA Key"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:99
+msgid ""
+"Enter the WPA key for your network in the box and click OK. Leave the box"
+" blank if you are using an unsecured network."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:102
+msgid "Program Radios"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:106
+msgid ""
+"The Kiosk is now ready to program any number of radios to connect to the "
+"network entered. To program each radio, connect the radio to the Kiosk, "
+"set the Team Number in the box, and click Configure."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:108
+msgid ""
+"The kiosk will program OpenMesh, D-Link Rev A or D-Link Rev B radios to "
+"work on an offseason FMS network by selecting the appropriate option from"
+" the \"Radio\" dropdown."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:110
+msgid ""
+"Bandwidth limitations and QoS will not be configured on the D-Link radios"
+" in this mode."
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:113
+msgid "Changing SSID or Key"
+msgstr ""
+
+#: ../../source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:115
+msgid ""
+"If you enter something incorrectly or need to change the SSID or WPA Key,"
+" go to the Tools menu and click FMS-Lite Mode to take the kiosk out of "
+"FMS-Lite Mode. When you click again to put the Kiosk back in FMS-Lite "
+"Mode, you will be re-prompted for the SSID and Key."
+msgstr ""
+

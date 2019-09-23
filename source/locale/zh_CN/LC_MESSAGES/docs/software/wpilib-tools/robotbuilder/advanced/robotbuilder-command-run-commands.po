@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:2
+msgid "Creating a Command that Runs Other Commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:4
+msgid ""
+"Often you will want to run multiple commands one after another or "
+"simultaneously to enable more complex behaviors in your program. Once "
+"each of the individual commands have been debugged, you can create a "
+"CommandGroup. A CommandGroup is a named set of commands that may be "
+"executed sequentially or in parallel."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:7
+msgid "Creating a Command Group"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:11
+msgid "To create a CommandGroup:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:13
+msgid ""
+"Drag the command group from the palette to Commands folder in the robot "
+"description"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:14
+msgid "Name the command group so that is has a meaningful name"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:15
+msgid ""
+"Give the group any parameters it needs and presets for those parameters, "
+"just like with a normal command. These can be changed later at any time"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:18
+msgid "Overview of the Editor"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:22
+msgid "The elements of the command group editor are:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:24
+msgid "The properties of the command group."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:25
+msgid "The editor where commands are placed and connected."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:26
+msgid ""
+"The organize button will automatically organize all the commands in the "
+"editor"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:28
+msgid ""
+"There are also a few differences between sequential and parallel commands"
+" in the editor."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:30
+msgid ""
+"A command running sequentially can have only one command run sequentially"
+" after it"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:31
+msgid "A command running in parallel cannot have any commands run after it"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:32
+msgid ""
+"Sequential commands are colored light green and are placed at the top of "
+"the editor when it's organized"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:33
+msgid ""
+"Parallel commands are colored light blue and prefer to be placed below "
+"sequential commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:36
+msgid "Adding Commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:40
+msgid "An empty command group isn't very useful, so to add commands to it:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:42
+msgid "Click a command in the palette (\"Command 1\" in this example)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:43
+msgid "Drag it somewhere into the graph editor"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:45
+msgid ""
+"Alternatively, you can right-click anywhere on the editor and choose the "
+"command from the dropdown, or right-click a command and choose a command "
+"to automatically be placed after the command you click."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:47
+msgid ""
+"Now you have a command in the group! But it's not connected to anything, "
+"so RobotBuilder doesn't know how it's supposed to behave."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:50
+msgid "Connecting Commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:54
+msgid "To connect commands and control when commands run in the group;"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:56
+msgid ""
+"Click the center of the box for the previous command (or \"Start\" if you"
+" want it to run at the beginning). In this example, \"Command 1\" is the "
+"first command to run \"Start\" is clicked."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:57
+msgid ""
+"When a yellow box appears around the first box, drag your mouse to the "
+"command to run after it. This will create an arrow from the first box to "
+"your mouse."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:58
+msgid ""
+"When a yellow box appears around the second box, you can release your "
+"mouse. The arrow will connect the two boxes and RobotBuilder will set the"
+" sequence of commands."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:60
+msgid ""
+"You can skip this step if you right-click a box and add a command through"
+" the menu -- Robotbuilder will automatically connect them."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:63
+msgid "Editing Commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:67
+msgid "Double click a command to bring up the editor window."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:69
+msgid ""
+"Commands you drag in are automatically sequential. To change a command "
+"between running sequentially and in parallel, simply double-click on the "
+"command you want to edit and choose the order you want from the dropdown."
+" You can also right-click on the command and choose \"Set Parallel\" or "
+"\"Set Sequential\" from the popup menu."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:70
+msgid ""
+"If the command has been configured to have presets, you can select one "
+"from this dropdown and Robotbuilder will fill out the values of the "
+"parameters."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:71
+msgid ""
+"The editor also allows you to edit the values of parameters that have "
+"been added to the command. Double-click the cell in the \"Value\" column "
+"to change it. The values of parameters can either be passed literally "
+"(e.g. the value for \"foo\" has been hardcoded to 0), or as a reference "
+"to a variable, method, or expression in the code. A reference starts with"
+" a dollar sign ('$'); everything after the dollar sign will be inserted "
+"into the code generated by RobotBuilder *exactly how it's typed*, so it's"
+" easy to misstype something and have the code not compile. The user is "
+"responsible for creating proper imports/include statements and declaring "
+"variables and methods."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-command-run-commands.rst:72
+msgid ""
+"When you are done with editing, press the \"Save and close\" button to "
+"exit the editor and save the changes you've made to the command. If you "
+"don't want to save, press the close window button on the top of the "
+"window."
+msgstr ""
+

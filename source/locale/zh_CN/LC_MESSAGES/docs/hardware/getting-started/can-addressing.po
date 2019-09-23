@@ -1,0 +1,538 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:2
+msgid "FRC CAN Device Specifications"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:4
+msgid ""
+"This document seeks to describe the basic functions of the current FRC "
+"CAN system and the requirements for any new CAN devices seeking to work "
+"with the system."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:9
+msgid "Addressing"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:11
+msgid ""
+"FRC CAN nodes assign arbitration IDs based on a pre-defined scheme that "
+"breaks the ID into 5 components:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:15
+msgid "Device Type"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:17
+msgid ""
+"This is a 5-bit value describing the type of device being addressed. A "
+"table of currently assigned device types can be found below. If you wish "
+"to have a new device type assigned from the ``Reserved`` pool, please "
+"submit a request to FIRST."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:23
+msgid "Device Types"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:25
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:142
+msgid "Broadcast Messages"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:25
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:52
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:89
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:110
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:152
+msgid "0"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:26
+msgid "Robot Controller"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:26
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:53
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:90
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:111
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:153
+msgid "1"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:27
+msgid "Motor Controller"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:27
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:54
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:91
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:112
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:154
+msgid "2"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:28
+msgid "Relay Controller"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:28
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:55
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:92
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:113
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:155
+msgid "3"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:29
+msgid "Gyro Sensor"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:29
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:56
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:93
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:114
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:156
+msgid "4"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:30
+msgid "Accelerometer"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:30
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:57
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:94
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:115
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:157
+msgid "5"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:31
+msgid "Ultrasonic Sensor"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:31
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:58
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:95
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:116
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:158
+msgid "6"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:32
+msgid "Gear Tooth Sensor"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:32
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:59
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:96
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:117
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:159
+msgid "7"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:33
+msgid "Power Distribution Module"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:33
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:60
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:97
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:118
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:160
+msgid "8"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:34
+msgid "Pneumatics Controller"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:34
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:61
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:161
+msgid "9"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:35
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:35
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:62
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:119
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:162
+msgid "10"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:36
+msgid "IO Breakout"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:36
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:120
+msgid "11"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:37
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:63
+msgid "Reserved"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:37
+msgid "12-30"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:38
+msgid "Firmware Update"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:38
+msgid "31"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:42
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:50
+msgid "Manufacturer"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:44
+msgid ""
+"This is an 8-bit value indicating the manufacturer of the CAN device. "
+"Currently assigned values can be found in the table below. If you wish to"
+" have a manufacturer ID assigned from the ``Reserved``\\ pool, please "
+"submit a request to FIRST."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:52
+msgid "Broadcast"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:53
+msgid "NI"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:54
+msgid "Luminary Micro"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:55
+msgid "DEKA"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:56
+msgid "CTR Electronics"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:57
+msgid "REV Robotics"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:58
+msgid "Grapple"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:59
+msgid "MindSensors"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:60
+msgid "Team Use"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:61
+msgid "Kauai Labs"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:62
+msgid "Copperforge"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:63
+msgid "11-255"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:67
+msgid "API/Message Identifier"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:69
+msgid ""
+"The API or Message Identifier is a 10-bit value that identifies a "
+"particular command or message type. These identifiers are unique for each"
+" Manufacturer + Device Type combination (so an API identifier that may be"
+" a “Voltage Set” for a Luminary Micro Motor Controller may be a “Status "
+"Get” for a CTR Electronics Motor Controller or ``Current Get`` for a CTR "
+"Power Distribution Module)."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:76
+msgid ""
+"The Message identifier is further broken down into 2 sub-fields: the "
+"6-bit API Class and the 4-bit API Index."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:80
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:87
+msgid "API Class"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:82
+msgid ""
+"The API Class is a 6-bit identifier for an API grouping. Similar messages"
+" are grouped into a single API Class. An example of the API Classes for "
+"the Jaguar Motor Controller is shown in the table below."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:89
+msgid "Voltage Control Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:90
+msgid "Speed Control Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:91
+msgid "Voltage Compensation Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:92
+msgid "Position Control Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:93
+msgid "Current Control Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:94
+msgid "Status"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:95
+msgid "Periodic Status"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:96
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:97
+msgid "Ack"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:101
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:108
+msgid "API Index"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:103
+msgid ""
+"The API Index is a 4-bit identifier for a particular message within an "
+"API Class. An example of the API Index values for the Jaguar Motor "
+"Controller Speed Control API Class is shown in the table below."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:110
+msgid "Enable Control"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:111
+msgid "Disable Control"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:112
+msgid "Set Setpoint"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:113
+msgid "P Constant"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:114
+msgid "I Constant"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:115
+msgid "D Constant"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:116
+msgid "Set Reference"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:117
+msgid "Trusted Enable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:118
+msgid "Trusted Set No Ack"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:119
+msgid "Trusted Set Setpoint No Ack"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:120
+msgid "Set Setpoint No Ack"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:124
+msgid "Device Number"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:126
+msgid ""
+"Device Number is a 6-bit quantity indicating the number of the device of "
+"a particular type. Devices should default to device ID 0 to match other "
+"components of the FRC Control System. Device 0x3F may be reserved for "
+"device specific broadcast messages."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:131
+msgid "|image0|"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:134
+msgid "Protected Frames"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:136
+msgid ""
+"FRC CAN Nodes which implement actuator control capability (motor "
+"controllers, relays, pneumatics controllers, etc.) must implement a way "
+"to verify that the robot is enabled and that commands originate with the "
+"main robot controller (i.e. the roboRIO)."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:144
+msgid ""
+"Broadcast messages are messages sent to all nodes by setting the device "
+"type and manufacturer fields to 0. The API Class for broadcast messages "
+"is 0. The currently defined broadcast messages are shown in the table "
+"below:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:150
+msgid "Description"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:152
+msgid "Disable"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:153
+msgid "System Halt"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:154
+msgid "System Reset"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:155
+msgid "Device Assign"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:156
+msgid "Device Query"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:157
+msgid "Heartbeat"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:158
+msgid "Sync"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:159
+msgid "Update"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:160
+msgid "Firmware Version"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:161
+msgid "Enumerate"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:162
+msgid "System Resume"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:165
+msgid ""
+"Devices should disable immediately when receiving the Disable message "
+"(arbID 0), implementation of other broadcast messages is optional."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:169
+msgid "Requirements for FRC CAN Nodes"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:170
+msgid "For CAN Nodes to be accepted for use in the FRC System, they must:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:172
+msgid "Communicate using Arbitration IDs which match the prescribed FRC format:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:175
+msgid "A valid, issued CAN Device Type (per Table 1 - CAN Device Types)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:176
+msgid "A valid, issued Manufacturer ID (per Table 2 - CAN Manufacturer Codes)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:177
+msgid ""
+"API Class(es) and Index(s) assigned and documented by the device "
+"manufacturer"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:178
+msgid ""
+"A user selectable device number if multiple units of the device type are "
+"intended to co-exist on the same network."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:180
+msgid ""
+"Support the minimum Broadcast message requirements as detailed in the "
+"Broadcast Messages section."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:181
+msgid ""
+"If controlling actuators, utilize a scheme to assure that the robot is "
+"issuing commands, is enabled, and is still present"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/can-addressing.rst:182
+msgid ""
+"Provide software library support for LabVIEW, C++, and Java or arrange "
+"with FIRST or FIRSTs Control System Partners to provide such interfaces."
+msgstr ""
+

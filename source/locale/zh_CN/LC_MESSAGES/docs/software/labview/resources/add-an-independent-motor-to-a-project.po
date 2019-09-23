@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:2
+msgid "Add an Independent Motor to a Project"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:6
+msgid ""
+"Once your drive that controls the wheels is all set, you might need to "
+"add an additional motor to control something completely independent of "
+"the wheels, such as an arm. Since this motor will not be part of your "
+"tank, arcade, or mecanum drive, you'll definitely want independent "
+"control of it."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:8
+msgid ""
+"These VI Snippets show how to set up a single motor in a project that may"
+" already contain a multi-motor drive. If you see the HAND>ARROW>LABVIEW "
+"symbol, just drag the image into your block diagram, and voila: code! Ok,"
+" here's how you do it."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:10
+msgid ""
+"FIRST, create a motor reference in the\\ **Begin.vi**, using the \\ "
+"**Motor Control Open VI** and \\ **Motor Control Refnum Registry Set "
+"VI**. These can be found by right-clicking in the block diagram and going"
+" to **WPI Robotics Library>>RobotDrive>>Motor Control**. Choose your PWM "
+"line and name your motor. I named mine \"Lift Motor\" and connected it to"
+" PWM 7. (I also included and enabled the Motor Control Safety Config VI, "
+"which automatically turns off the motor if it loses connection.)"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:14
+msgid ""
+"Now, reference your motor (the name has to be exact) in the **Teleop.vi**"
+" using the **Motor Control Refnum Registry Get VI** and tell it what to "
+"do with the **Motor Control Set Output VI**. These are in the same place "
+"as the above VIs."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:18
+msgid ""
+"For example, the next snippet tells the Lift Motor to move forward if "
+"button 4 is pressed on Joystick 0 and to remain motionless otherwise. For"
+" me, button 4 is the left bumper on my Xbox style controller (\"Joystick "
+"0\"). For much more in-depth joystick button options, check out How to "
+"Use Joystick Buttons to Control Motors or Solenoids."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:20
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:20
+msgid ""
+"add internal link to How to Use Joystick Buttons to Control Motors or "
+"Solenoids."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:24
+msgid ""
+"Finally, we need to close the references in the **Finish.vi** (just like "
+"we do with the drive and joystick), using the **Motor Control Refnum "
+"Registry Get VI** and **Motor Control Close VI**. While this picture "
+"shows the Close VI in a flat sequence structure by itself, we really want"
+" all of the Close VIs in the same frame. You can just put these two VIs "
+"below the other Get VIs and Close VIs (for the joystick and drive)."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:28
+msgid "I hope this helps you program the best robot ever! Good luck!"
+msgstr ""
+

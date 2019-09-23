@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:2
+msgid "Writing the Code for a Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:4
+msgid ""
+"Adding code to create an actual working subsystem is very "
+"straightforward. For simple subsystems that don't use feedback it turns "
+"out to be extremely simple. In this section we will look at an example of"
+" a Claw subsystem that operates the motor for some amount of time to open"
+" or close a claw on the robot arm."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:7
+msgid "RobotBuilder Representation of the Claw Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:11
+msgid ""
+"The claw at the end of a robot arm is a subsystem operated by a single "
+"Victor speed controller. There are three things we want the claw to do, "
+"start opening, start closing, and stop moving. This is the responsibility"
+" of the subsystem. The timing for opening and closing will be handled by "
+"a command later in this tutorial."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:14
+msgid "Adding Subsystem Capabilities"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:69
+msgid ""
+"Add methods to the claw.java that will open, close, and stop the claw "
+"from moving. Those will be used by commands that actually operate the "
+"claw. The comments have been removed from this file to make it easier to "
+"see the changes for this document. Notice that a member variable called "
+"\"victor\" is created by RobotBuilder so it can be used throughout the "
+"subsystem. Each of your dragged-in palette items will have a member "
+"variable with the name given in RobotBuilder."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:72
+msgid "Adding the Method Declarations to the Header File (C++ Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:101
+msgid ""
+"In addition to adding the methods to the class implementation file, "
+"Claw.cpp, the declarations for the methods need to be added to the header"
+" file, Claw.h. Those declarations that must be added are shown here."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:103
+msgid ""
+"To add the behavior to the claw subsystem to operate it to handle opening"
+" and closing you need to :doc:`define commands <../introduction"
+"/robotbuilder-creating-command>`."
+msgstr ""
+

@@ -1,0 +1,406 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:2
+msgid "Status Light Quick Reference"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:4
+msgid ""
+"Many of the components of the FRC Control System have indicator lights "
+"that can be used to quickly diagnose problems with your robot. This guide"
+" shows each of the hardware components and describes the meaning of the "
+"indicators. Photos and information from Innovation FIRST and Cross the "
+"Road Electronics."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:7
+msgid "Robot Signal Light (RSL)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:11
+msgid "Solid ON - Robot On and Disabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:12
+msgid "Blinking - Robot On and Enabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:13
+msgid "Off - Robot Off, roboRIO not powered or RSL not wired properly."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:16
+msgid "roboRIO"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:21
+msgid "roboRIO Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:23
+msgid "Green - Power is good"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:24
+msgid "Amber - Brownout protection tripped, outputs disabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:25
+msgid "Red - Power fault, check user rails for short circuit"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:28
+msgid "roboRIO Status"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:30
+msgid "On while the controller is booting, then should turn off"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:31
+msgid "2 blinks - Software error, reimage roboRIO"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:32
+msgid "3 blinks - Safe Mode, restart roboRIO, reimage if not resolved"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:33
+msgid ""
+"4 blinks - Software crashed twice without rebooting, reboot roboRIO, "
+"reimage if not resolved"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:34
+msgid "Constant flash or stays solid on - Unrecoverable error"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:37
+msgid "roboRIO Radio"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:39
+msgid "Not currently implemented"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:42
+msgid "roboRIO Comm"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:44
+msgid "Off - No Communication"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:45
+msgid "Red Solid - Communication with DS, but no user code"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:46
+msgid "Red Blinking - E-stop"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:47
+msgid "Green Solid - Good communication with DS"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:50
+msgid "roboRIO Mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:52
+msgid "Off - Outputs disabled (robot in Disabled, brown-out, etc.)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:53
+msgid "Amber/Orange - Autonomous Enabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:54
+msgid "Green - Teleop Enabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:55
+msgid "Red - Test Enabled"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:58
+msgid "roboRIO RSL"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:60
+msgid "See above"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:64
+msgid "OpenMesh Radio"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:69
+msgid "Radio Power"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:71
+msgid "Blue - On or Powering Up"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:72
+msgid "Blue Blinking - Powering Up"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:75
+msgid "Radio Eth Link"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:77
+msgid "Blue - Link Up"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:78
+msgid "Blue Blinking - Link Up + Traffic Present"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:81
+msgid "Radio WiFi"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:83
+msgid "Off - Bridge Mode Unlinked or Non-FRC Firmware"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:84
+msgid "Red - AP Mode Unlinked"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:85
+msgid "Yellow\\Orange - AP Mode Linked"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:86
+msgid "Green - Bridge Mode Linked"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:89
+msgid "Power Distribution Panel"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:95
+msgid "Voltage Regulator Module"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:100
+msgid ""
+"The status LEDs on the VRM indicate the state of the two power supplies. "
+"If the supply is functioning properly the LED should be lit bright green."
+" If the LED is not lit or is dim, the output may be shorted or drawing "
+"too much current."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:103
+msgid "Pneumatics Control Module (PCM)"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:108
+msgid ""
+"Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is"
+" enabled and not lit if it is disabled."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:111
+msgid "PCM Comp"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:113
+msgid ""
+"This is the Compressor LED. This LED is green when the compressor output "
+"is active (compressor is currently on) and off when the compressor output"
+" is not active."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:116
+msgid "PCM Status"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:118
+msgid ""
+"The status LED indicates device status as indicated by the two tables "
+"above. For more information on resolving PCM faults see the PCM User "
+"Manual. Note that the No CAN Comm fault will not occur only if the device"
+" cannot see communicate with any other device, if the PCM and PDP can "
+"communicate with each other, but not the roboRIO you will NOT see a No "
+"Can Comm fault."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:121
+msgid "Digilent DMC-60"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:125
+msgid ""
+"When the center LED is off the device is operating in coast mode. When "
+"the center LED is illuminated the device is operating in brake mode. The "
+"Brake/Coast mode can be toggled by pressing down on the center of the "
+"triangle and then releasing the button."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:128
+msgid "Jaguar speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:134
+msgid "Mindsensors SD 540"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:140
+msgid "REV Robotics Servo Power Module"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:145
+msgid ""
+"6V Power LED off, dim or flickering with power applied = Over-current "
+"shutdown"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:148
+msgid "REV Robotics SPARK"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:154
+msgid "Talon speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:158
+#, python-format
+msgid ""
+"The LED is used to indicate the direction and percentage of throttle and "
+"state of calibration. The LED may be one of three colors; red, orange or "
+"green. A solid green LED indicates positive output voltage equal to the "
+"input voltage of the Talon. A solid Red LED indicates an output voltage "
+"that is equal to the input voltage multiplied by -1(input voltage = 12 "
+"volts, output equals -12 volts). The LED will blink it’s corresponding "
+"color for any throttle less than 100% (red indicates negative polarity, "
+"green indicates positive). The rate at which the led blinks is "
+"proportional to the percent throttle. The faster the LED blinks the "
+"closer the output is to 100% in either polarity."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:160
+#, python-format
+msgid ""
+"The LED will blink orange any time the Talon is in the disabled state. "
+"This will happen if the PWM input signal is lost, or in FRC, when the "
+"robot is disabled. If the Talon is in the enabled state and the throttle "
+"is within the 4% dead band, the LED will remain solid orange."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:162
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:192
+msgid ""
+"Flashing Red/Green indicate ready for calibration. Several green flashes "
+"indicates successful calibration, and red several times indicates "
+"unsuccessful calibration."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:165
+msgid "Victor speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:168
+msgid "LED Indicator Status:"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:170
+msgid "Green - full forward"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:171
+msgid "Orange - neutral / brake"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:172
+msgid "Red - full reverse"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:173
+msgid "Flashing orange - no PWM signal"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:174
+msgid "Flashing red/green - calibration mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:175
+msgid "Flashing green - successful calibration"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:176
+msgid "Flashing red - unsuccessful calibration"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:179
+msgid "Victor-SP speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:183
+msgid ""
+"Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off "
+"if the controller is in coast mode"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:186
+msgid "Status"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:188
+#, python-format
+msgid ""
+"The Status LEDs are used to indicate the direction and percentage of "
+"throttle and state of calibration. The LEDs may be one of three colors; "
+"red, orange or green. Solid green LEDs indicate positive output voltage "
+"equal to the input voltage of the Victor-SP. Solid Red LEDs indicate an "
+"output voltage that is equal to the input voltage multiplied by -1(input "
+"voltage = 12 volts, output equals -12 volts). The LEDs will blink in the "
+"corresponding color for any throttle less than 100% (red indicates "
+"negative polarity, green indicates positive). The rate at which the LEDs "
+"blink is proportional to the percent throttle. The faster the LEDs blink "
+"the closer the output is to 100% in either polarity."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:190
+#, python-format
+msgid ""
+"The LEDs will blink orange any time the Victor-SP is in the disabled "
+"state. This will happen if the PWM input signal is lost, or in FRC, when "
+"the robot is disabled. If the Victor-SP is in the enabled state and the "
+"throttle is within the 4% dead band, the LED will remain solid orange."
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:195
+msgid "Talon-SRX speed controllers"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:200
+msgid "Spike relay configured as a motor, light, or solenoid switch"
+msgstr ""
+
+#: ../../source/docs/hardware/getting-started/status-lights-ref.rst:205
+msgid "Spike relay configured as for one or two solenoids"
+msgstr ""
+

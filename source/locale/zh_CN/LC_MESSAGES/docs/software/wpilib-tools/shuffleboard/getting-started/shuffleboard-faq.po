@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:2
+msgid "Shuffleboard FAQ, issues, and bugs"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:4
+msgid ""
+"Shuffleboard as well as most of the other control system components were "
+"developed with Java 11 and will not work with Java 8. Be sure before "
+"reporting problems that your computer has Java 11 installed and is set as"
+" the default Java Environment."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:7
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:10
+msgid "How do I report issues, bugs or feature requests with Shuffleboard?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:12
+msgid ""
+"Bugs, issues, and feature requests can be added on the Shuffleboard "
+"Github page by creating an issue. We will try to address them as they are"
+" entered into the system. Please try to look at existing issues before "
+"creating new ones to make sure you aren't duplicating something that has "
+"already been reported or work that is planned. You can find the issues on"
+" the[ shuffleboard site](https://github.com/wpilibsuite/shuffleboard \" "
+"shuffleboard site\")."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:15
+msgid "How can I add my own widgets or other extensions to Shuffleboard?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:17
+msgid ""
+"The `Shuffleboard wiki "
+"<https://github.com/wpilibsuite/shuffleboard/wiki>`__ has a large amount "
+"of documentation on extending the program with custom plugins. In the "
+"future we will be posting a sample plugin project that can be used for "
+"additional custom widgets, but for now the wiki documentation is "
+"complete."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:20
+msgid "How can I build Shuffleboard from the source code?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:22
+msgid ""
+"You can get the source code by downloading, cloning, or forking the "
+"repository on the GitHub site. To build and run Shuffleboard from the "
+"source, make sure that the current directory is the top level source code"
+" and use one of these commands:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:25
+msgid "Application"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:25
+msgid "Command (for Windows systems run the gradlew.bat file)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:32
+msgid "Running Shuffleboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:32
+msgid "./gradlew :app:run"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:35
+msgid "Building the APIs and utility classes for plugin creation"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:35
+msgid "./gradlew :api:shadowJa r"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:42
+msgid "Building the complete application jar file"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.rst:42
+msgid "./gradlew :app:shadowJa r"
+msgstr ""
+

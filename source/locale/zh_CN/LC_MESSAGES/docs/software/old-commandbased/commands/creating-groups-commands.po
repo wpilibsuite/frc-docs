@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:2
+msgid "Creating Groups of Commands"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library,"
+" which has been deprecated. While this documentation has been preserved "
+"to help teams that have yet to do so, teams are strongly encouraged to "
+"migrate to the :ref:`new command-based library "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:6
+msgid ""
+"Once you have created commands to operate the mechanisms in your robot, "
+"they can be grouped together to get more complex operations. These "
+"groupings of commands are called CommandGroups and are easily defined as "
+"shown in this article."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:9
+msgid "Complex Operations"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:37
+msgid ""
+"This is an example of a command group that places a soda can on a table. "
+"To accomplish this, (1) the robot elevator must move to the "
+"``TABLE_HEIGHT``, then (2) set the wrist angle, then (3) open the claw. "
+"All of these tasks must run sequentially to make sure that the soda can "
+"isn't dropped. The ``addSequential()`` method takes a command (or a "
+"command group) as a parameter and will execute them one after another "
+"when this command is scheduled."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:40
+msgid "Running Commands in Parallel"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:68
+msgid ""
+"To make the program more efficient, often it is desirable to run multiple"
+" commands at the same time. In this example, the robot is getting ready "
+"to grab a soda can. Since the robot isn't holding anything, all the "
+"joints can move at the same time without worrying about dropping "
+"anything. Here all the commands are run in parallel so all the motors are"
+" running at the same time and each completes whenever the "
+"``isFinished()`` method is called. The commands may complete out of "
+"order. The steps are: (1) move the wrist to the pickup setpoint, then (2)"
+" move the elevator to the floor pickup position, and (3) open the claw"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:71
+msgid "Mixing Parallel and Sequential Commands"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/creating-groups-commands.rst:99
+msgid ""
+"Often there are some parts of a command group that must complete before "
+"other parts run. In this example, a soda can is grabbed, then the "
+"elevator and wrist can move to their stowed positions. In this case, the "
+"wrist and elevator have to wait until the can is grabbed, then they can "
+"operate independently. The first command (1) ``CloseClaw`` grabs the soda"
+" and nothing else runs until it is finished since it is sequential, then "
+"the (2) elevator and (3) wrist move at the same time."
+msgstr ""
+

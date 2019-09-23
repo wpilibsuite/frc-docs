@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:2
+msgid "Using the Axis Camera at Single Network Events"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:4
+msgid ""
+"The convention for using the Axis camera uses mDNS with the camera name "
+"set to ``axis-camera.local``. At home, this works fine as there is only "
+"one camera on the network. At official events, this works fine as each "
+"team is on their own VLAN and therefore doesn't have visibility to "
+"another team's camera. However, at an off-season event using a single "
+"network, this will cause an issue where all teams will connect to "
+"whichever team's camera \"wins\" the mDNS resolution and becomes ``axis-"
+"camera``. The other cameras will see that the name is taken and use an "
+"alternative name. This article describes how to modify the Dashboard "
+"and/or robot code to use a different mDNS name to separate the camera "
+"streams."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:7
+msgid "Changing the Camera mDNS Name"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:9
+msgid ""
+"To change the mDNS name in the camera, follow the instructions in :doc"
+":`configuring-an-axis-camera`, but substitute the new name such as "
+"``axis-cameraTEAM`` where ``TEAM`` is your team number."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:12
+msgid "Viewing the Camera on the DS PC -  Browser or SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:14
+msgid ""
+"If you are using a web-browser or SmartDashboard (which accepts mDNS "
+"names for the Simple Camera Viewer widget), updating to use the new mDNS "
+"name is simple. Simply change the URL in the browser or the address in "
+"the Simple Camera Viewer widget properties to the new mDNS name and you "
+"are all set."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:17
+msgid "Viewing the Camera on the DS PC - LabVIEW Dashboard"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:19
+msgid ""
+"To view the camera stream in the LabVIEW Dashboard, you will need to "
+"build a customized version of the Dashboard. Note that this customized "
+"version will only work for the Axis camera and will no longer work for a "
+"USB camera. Revert to the default Dashboard to use a USB camera."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:22
+msgid "Creating a Dashboard Project"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:26
+msgid ""
+"From the LabVIEW Splash screen, select \"FRC Dashboard Project\". Name "
+"the project as desired, then click Finish."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:29
+msgid "Locating Loop 2 - Camera IP"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:33
+msgid ""
+"Double click on ``Dashboard Main.vi`` in the project explorer to open it "
+"and press Ctrl+e to see the block diagram. Scroll down to the loop with "
+"the comment that says Loop 2 and locate the \"Camera IP\" input."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:36
+msgid "Editing the Camera IP"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:40
+msgid ""
+"Delete the Camera IP node, right click on the broken wire and click "
+"Create Constant (connect the constant to the wire if necessary). In the "
+"box, enter the mDNS name of your camera with a ``.local`` suffix (e.g. "
+"``axis-cameraTEAM.local`` where ``TEAM`` is replaced with your team "
+"number). The example above shows a sample name for team 9999. Then click "
+"File->Save or Ctrl+S to save the VI."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:42
+msgid ""
+"You may also wish to make a minor modification to the Front Panel to "
+"verify that you are running the right dashboard later."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:45
+msgid "Building the Dashboard"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:49
+msgid ""
+"To build the new dashboard, expand Build Specifications in the Project "
+"Explorer, right click on FRC_Dashboard and select Build."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:52
+msgid "Setting the Driver Station to Launch the Modified Dashboard"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:56
+msgid ""
+"On the Setup tab of the Driver Station, change to dropdown box to LabVIEW"
+" to launch your new Dashboard."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:59
+msgid "Accessing the Camera from Robot Code"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:61
+msgid ""
+"If you wish to access the renamed camera from your robot code, you will "
+"have to modify it as well. In C++ and Java, just change the String used "
+"for the camera host name to match the new name. In LabVIEW follow the "
+"step below."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:64
+msgid "Modifying LabVIEW Robot Code"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.rst:68
+msgid ""
+"In the Project Explorer, locate ``Vision Processing.VI`` and double click"
+" to open it. Then press Ctrl+e to open the Block Diagram. Locate the "
+"string ``axis-camera.local`` near the left of the image and replace with "
+"``axis-cameraTEAM.local``. Also make sure the constant is set to "
+"``False`` to use the Axis camera instead of USB."
+msgstr ""
+

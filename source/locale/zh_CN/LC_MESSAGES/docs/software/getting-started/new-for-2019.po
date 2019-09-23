@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:2
+msgid "New for 2019!"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:4
+msgid ""
+"This article describes the major changes to the Control System software "
+"for FRC 2019"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:7
+msgid "Major Changes"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:9
+msgid ""
+"New IDE - VSCode (replacing Eclipse). This also includes a change from "
+"the Ant build system to GradleRIO"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:11
+#: ../../source/docs/software/getting-started/new-for-2019.rst:40
+msgid "Vendor Libraries"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:13
+msgid "Pathweaver path planning software"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:14
+msgid "Raspberry PI image for image processing"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:15
+msgid "New Shuffleboard API"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:16
+msgid "New Java version - Java 11"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:17
+msgid "New roboRIO Webdashboard"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:20
+msgid "Game Specifics"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:22
+msgid ""
+"Bandwidth - Bandwidth limit has been reduced to 4 Mbps. Like airline and "
+"hotel booking, the 7 Mbps limit included some assumptions that not all "
+"teams would use it. With the Sandstorm driving expected camera usage, we "
+"have lowered the limit in attempt to limit the likelihood teams will need"
+" to reduce below the limit at an event."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:23
+msgid "Sandstorm Coding"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:25
+msgid ""
+"Mode - Despite the Sandstorm not truly being an \"Autonomous\" mode, all "
+"code (DS, robot code, etc.) will continue to refer to this period as "
+"\"Autonomous\" or \"Auto\" for continuity."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:26
+msgid ""
+"Mode Transitions - The field will transition through modes in the same "
+"way as prior seasons. Prior to the start of the match, robot's will be in"
+" Disabled Mode. Once the match starts, they will transition to Autonomous"
+" Enabled mode. At the end of the Sandstorm, robots will briefly "
+"transition through Disabled (~.5s), if team's are driving their robot "
+"with joysticks/gamepads at this time, there will be a noticeable hitch. "
+"Finally the robot will transition to Teleop Enabled mode for the "
+"remainder of the match until the buzzer sounds. When the match expires, "
+"the robot will return to Disabled mode."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:27
+msgid ""
+"Joystick Access - For this season only, joystick data will not be cached "
+"on the transition to Autonomous. Teams will be able to access updated "
+"joystick data throughout the Autonomous/Sandstorm period."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:28
+msgid "Game Data - There is no game data for the 2019 season."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:31
+msgid "VS Code IDE (C++/Java)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:33
+msgid ""
+"For the 2019 season, FRC is moving from Eclipse to VS Code as the "
+"officially supported IDE for C++/Java development. This setup is easier "
+"for us to develop the extensions for and we expect it to be more "
+"streamlined and functional for the majority of teams. If VS Code doesn't "
+"seem to be your thing, the accompanying switch to GradleRIO should make "
+"it easier to use alternate IDEs as well (though this is not officially "
+"supported)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:35
+msgid ""
+"You can find information about the new IDE in the Offline Installation "
+"Guides. They can be found in the sidebar."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:37
+msgid "|image0|"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:42
+msgid ""
+"With the change in IDE/Build System there was also a change to how Vendor"
+" libraries integrate with the system. For more information, see `here "
+"<3rd-party-libraries.html>`__:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:45
+msgid "roboRIO WebDashboard"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:47
+msgid "No longer requires Silverlight"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:48
+msgid "No longer supports CAN device status/configuration"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:49
+msgid "Recommended to be used in non-IE browser"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:51
+msgid ""
+"More information `here <../../software/roborio-info/roborio-web-"
+"dashboard.html>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:54
+msgid "roboRIO Imaging Tool"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:56
+msgid "Reworked UI"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:57
+msgid "Added firmware update capability"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:59
+msgid "More information `here <imaging-your-roborio.html>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:62
+msgid "CAN Device Configuration"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:64
+msgid "Removed from WebDashboard"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:65
+msgid "Provided by vendor specific tools."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:67
+msgid ""
+"See `this article <../../software/can-devices/using-can-devices.html>`__ "
+"for updated PDP/PCM configuration instructions"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:70
+msgid "WPILib C++/Java"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:72
+msgid ""
+"A new high level CAN API was added. This enables easier creation of "
+"custom CAN devices for users."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:73
+msgid ""
+"The OSSerialPort class was removed. It was a bug fix for some Serial port"
+" bugs, but never actually worked anyway."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:74
+msgid ""
+"SensorBase was removed. If you were deriving from SensorBase you should "
+"now derive from SendableBase (C++) or SendableBase+ErrorBase(Java). If "
+"you need methods previously contained in SensorBase, they are now in "
+"SensorUtil."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:75
+msgid ""
+"The Watchdog class was added. This calls a callback function when the "
+"specified timeout is exceeded. This class is used by TimedRobot to warn "
+"on periodic loop time overruns (nominally 20ms) in user code. **Note: "
+"These Timed Robot messages are warnings. They inform you if your code "
+"overruns the specified timing. They are not errors.**"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:76
+msgid ""
+"IterativeRobot was deprecated for eventual removal. TimedRobot is a drop-"
+"in replacement that is strictly better with regard to execution jitter."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:77
+msgid ""
+"Linux was updated to require Ubuntu 18.04 as its default OS to run WPILib"
+" tools"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:78
+msgid "Building the libraries:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:80
+msgid ""
+"All libraries require C++14 capability to build. On Linux, this means GCC"
+" 6, and on Windows MSVC 2015 or newer."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:81
+msgid ""
+"Linux was updated to require Ubuntu 18.04 as its default OS to link to "
+"the libraries."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:82
+msgid ""
+"Windows builds are done with MSVC 2017 update 9, so linking to the "
+"libraries requires 2017 update 9 or later."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:85
+msgid "WPILib C++"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:87
+msgid ""
+"The namespace frc shim was removed. WPILib classes need to be accessed by"
+" their full namespaces, or using statements added."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:88
+msgid "**Headers were moved to an frc folder.**"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:89
+msgid ""
+"HAL methods were removed from WPILib headers. In order to access HAL "
+"methods, their headers must be directly included."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:90
+msgid "LLVM renamespaced to wpi, headers moved to wpi folder"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:91
+msgid ""
+"All classes now properly support move semantics (for those who know what "
+"that is and care)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:92
+msgid ""
+"Doxygen comments were moved from the source files to the header files for"
+" easier reference."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:95
+msgid "WPILib Java"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:97
+msgid ""
+"The CameraServer class was moved to a new package, and the class in the "
+"old location was deprecated. Please move to the new package location."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:98
+msgid "The JNI classes were moved to a new package."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:99
+msgid ""
+"Any Java class that had a free method was changed to implement "
+"AutoClosable and have a close method instead."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:100
+msgid ""
+"The main method was moved from being internal in WPILib to explicitly "
+"defined by user code. This removes the reflection loading of the main "
+"robot class, and makes changing your robot class a compile time error "
+"rather then a runtime error. **Teams should not need to edit the "
+"Main.java file.**"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:103
+msgid "CameraServer (cscore)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:105
+msgid "USB cameras are now supported on Windows desktop builds"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:108
+msgid "All WPILib Tools (Shuffleboard, Robot Builder, etc.)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:110
+msgid ""
+"Are now installed to `~home/frcYYYY/tools` (where YYYY is the year and "
+"~home on Windows is `C:/Users/Public`)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:111
+msgid ""
+"Run ToolsUpdater.bat (Windows) or ToolsUpdater.py (Mac/Linux) or Install "
+"Tools from GradleRIO to install tools."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:112
+msgid ""
+"Folder contains .vbs files for Windows and .sh files for Mac/Linux that "
+"should be used to run the program. This sets the program up to run using "
+"the FRC specific JDK (which it has been tested with)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:115
+msgid "Shuffleboard"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:117
+msgid ""
+"New roboRIO API for automatically placing widgets on tabs and setting "
+"formatting options. More info here"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:118
+msgid "Camera viewer widget with adjustable stream parameters"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:121
+msgid "PathWeaver/Pathfinder"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:123
+msgid "Added PathWeaver as UI to create paths for Pathfinder V1"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:124
+msgid ""
+"Generated paths are automatically downloaded to the RIO as part of the "
+"gradle configuration"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:126
+msgid "Find more documentation on Pathweaver here"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:129
+msgid "Raspberry Pi Image for Cameras"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:131
+msgid ""
+"A pre-made Raspberry Pi Image for camera streaming/image processing has "
+"been developed to lower the barrier to entry to off-board vision "
+"processing. This image contains all of the libraries required to "
+"implement FRC compatible camera streaming, as well as a helpful web "
+"dashboard, read only file system configuration to handle robot power off "
+"and more. Learn more in the new manual `here <../../software/vision-"
+"processing/raspberry-pi/using-the-raspberry-pi-for-frc.html>`__."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:134
+msgid "SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:136
+msgid ""
+"Support for plugins has been removed. It was prohibitively difficult to "
+"maintain this feature when moving to Java 11 for the minimal number of "
+"teams believed to still be using it."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:137
+#: ../../source/docs/software/getting-started/new-for-2019.rst:149
+msgid "Requires Java 11 to run."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:140
+msgid "Robot Builder"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:142
+msgid "Generates projects for the new VS Code/GradleRIO system"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:143
+msgid ""
+"Java/C++: encapsulates hardware in the specific subsystem. RobotMap is "
+"removed."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:144
+msgid "C++: Updated to idiomatic C++ to match VSCode examples."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/new-for-2019.rst:147
+msgid "Outline Viewer"
+msgstr ""
+

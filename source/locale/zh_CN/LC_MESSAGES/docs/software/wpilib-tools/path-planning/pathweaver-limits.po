@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:2
+msgid "What paths can and cannot do"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:5
+msgid "What kind of paths can PathFinder follow?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:6
+msgid ""
+"Paths and path groups work best when the robot generally drives in the "
+"same direction and multiple paths continue straight line driving."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:9
+msgid "Can Pathfinder generate paths where the robot drives in reverse?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:10
+msgid ""
+"PathFinder paths always go in the forward direction, however, for any "
+"path the robot can drive backward by negating the velocities, then "
+"exchanging left for right. You should also exchange the left and right "
+"encoder values."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:13
+msgid "Can I have a 90-degree turn in my path?"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/pathweaver-limits.rst:14
+msgid ""
+"A 90-degree turn requires a point-turn and is discontinuous in curvature "
+"and therefore not possible to create in PathFinder."
+msgstr ""
+

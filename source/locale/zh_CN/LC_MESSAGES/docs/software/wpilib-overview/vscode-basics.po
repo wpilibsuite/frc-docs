@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:2
+msgid "Visual Studio Code Basics and the WPILib Extension"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:4
+msgid ""
+"Microsoft's Visual Studio Code is the new supported IDE for C++ and Java "
+"development in FRC, replacing the Eclipse IDE used from 2015-2018. This "
+"article introduces some of the basics of using Visual Studio Code and the"
+" WPILib extension."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:6
+msgid ""
+"If you used the publicly available Visual Studio Code Alpha or the closed"
+" Beta, you should create a new project or re-import your Eclipse project."
+" There were breaking changes made to some of the configuration files "
+"(such as build.gradle) between releases."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:9
+msgid "Welcome Page"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:11
+msgid "|Welcome Screen|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:13
+msgid ""
+"When Visual Studio Code first opens, you are presented with a Welcome "
+"page. On this page you will find some quick links that allow you to "
+"customize Visual Studio Code as well as a number of links to help "
+"documents and videos that may help you learn about the basics of the IDE "
+"as well as some tips and tricks."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:15
+msgid ""
+"You may also notice a small WPILib logo way up in the top right corner. "
+"This is one way to access the features provided by the WPILib extension "
+"(discussed further below)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:18
+msgid "User Interface"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:20
+msgid ""
+"The most important link to take a look at is probably the basic User "
+"Interface document. This document describes a lot of the basics of using "
+"the UI and provides the majority of the information you should need to "
+"get started using Visual Studio Code for FRC."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:23
+msgid "Command Palette"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:25
+msgid ""
+"The Command Palette can be used to access or run almost any function or "
+"feature in Visual Studio Code (including those from the WPILib "
+"extension). The Command Palette can be accessed from the View menu or by "
+"pressing Ctrl+Shift+P (Cmd+Shift+P on Mac). Typing text into the window "
+"will dynamically narrow the search to relevant commands and show them in "
+"the dropdown."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:27
+msgid ""
+"In the following example \"wpilib\" is typed into the search box after "
+"activating the Command Palette, and it narrows the list to functions "
+"containing WPILib."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:30
+msgid "WPILib Extension"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:32
+msgid "|WPILib Commands|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:34
+msgid ""
+"The WPILib extension provides the FRC specific functionality related to "
+"creating projects and project components, building and downloading code "
+"to the roboRIO and more. You can access the WPILib commands one of two "
+"ways:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:36
+msgid "By typing \"WPILib\" into the Command Palette"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:37
+msgid ""
+"By clicking on the WPILib icon in the top right of most windows. This "
+"will open the Command Palette with \"WPILib\" pre-entered"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/vscode-basics.rst:39
+msgid ""
+"For more information about specific WPILib extension commands, see the "
+"other articles in this chapter."
+msgstr ""
+

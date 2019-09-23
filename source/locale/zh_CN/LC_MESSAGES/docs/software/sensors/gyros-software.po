@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/gyros-software.rst:2
+msgid "Gyroscopes - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:4
+msgid ""
+"This section covers gyros in software.  For a hardware guide to gyros, "
+"see :ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:6
+msgid ""
+"A gyroscope, or \"gyro,\" is an angular rate sensor typically used in "
+"robotics to measure and/or stabilize robot headings.  WPILib natively "
+"provides specific support for the ADXRS450 gyro available in the kit of "
+"parts, as well as more general support for a wider variety of analog "
+"gyros through the `AnalogGyro`_ class."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:9
+msgid "The Gyro interface"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:11
+msgid ""
+"All natively-supported gyro objects in WPILib implement the :code:`Gyro` "
+"interface (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Gyro.html>`__)."
+"  This interface provides methods for getting the current angular rate "
+"and heading, zeroing the current heading, and calibrating the gyro."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:13
+msgid "It is crucial that the robot remain stationary while calibrating a gyro."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:16
+msgid "ADXRS450_Gyro"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:18
+msgid ""
+"The :code:`ADXRS450_Gyro` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ADXRS450__Gyro.html>`__)"
+" provides support for the Analog Devices ADXRS450 gyro available in the "
+"kit of parts, which connects over the SPI bus."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:33
+msgid "AnalogGyro"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:35
+msgid ""
+"The :code:`AnalogGyro` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogGyro.html>`__)"
+" provides support for any single-axis gyro with an analog output."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:37
+msgid ""
+"Gyro accumulation is handled through special circuitry in the FPGA; "
+"accordingly, :code:`AnalogGyro`\\`s may only be used on analog ports 0 "
+"and 1."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:52
+msgid "Third-party gyros"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:54
+msgid ""
+"While WPILib provides native support for a the ADXRS450 gyro available in"
+" the kit of parts and for any analog gyro, there are a few popular AHRS "
+"(Attitude and Heading Reference System) devices commonly used in FRC that"
+" include accelerometers and require more complicated communications.  "
+"These are generally controlled through vendor libraries."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:57
+msgid "Using gyros in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:59
+msgid ""
+"As gyros measure rate rather than position, position is inferred by "
+"integrating (adding up) the rate signal to get the total change in angle."
+"  Thus, gyro angle measurements are always relative to some arbitrary "
+"zero angle (determined by the angle of the gyro when either the robot was"
+" turned on or a zeroing method was called), and are also subject to "
+"accumulated errors (called \"drift\") that increase in magnitude the "
+"longer the gyro is used.  The amount of drift varies with the type of "
+"gyro."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:61
+msgid ""
+"Gyros are extremely useful in FRC for both measuring and controlling "
+"robot heading.  Since FRC matches are generally short, total gyro drift "
+"over the course of an FRC match tends to be manageably small (on the "
+"order of a couple of degrees for a good-quality gyro).  Moreover, not all"
+" useful gyro applications require the absolute heading measurement to "
+"remain accurate over the course of the entire match."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:64
+msgid "Displaying the robot heading on the dashboard"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:66
+msgid ""
+":ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-"
+"started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for "
+"displaying heading data from a :code:`Gyro` in the form of a compass.  "
+"This can be helpful for viewing the robot heading when sight lines to the"
+" robot are obscured:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:90
+msgid "Stabilizing heading while driving"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:92
+msgid ""
+"A very common use for a gyro is to stabilize robot heading while driving,"
+" so that the robot drives straight.  This is especially important for "
+"holonomic drives such as mecanum and swerve, but is extremely useful for "
+"tank drives as well."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:94
+msgid ""
+"This is typically achieved by closing a PID controller on either the turn"
+" rate or the heading, and piping the output of the loop to one's turning "
+"control (for a tank drive, this would be a speed differential between the"
+" two sides of the drive)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:96
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are "
+"not, the loop will be unstable and the robot will turn wildly."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:99
+msgid "Example: Tank drive stabilization using turn rate"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:101
+msgid ""
+"The following example shows how to stabilize heading using a simple P "
+"loop closed on the turn rate.  Since a robot that is not turning should "
+"have a turn rate of zero, the setpoint for the loop is implicitly zero, "
+"making this method very simple."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:159
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  "
+"When closing the loop on the turn rate for heading stabilization, PI "
+"loops are particularly effective."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:162
+msgid "Example: Tank drive stabilization using heading"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:164
+msgid ""
+"The following example shows how to stabilize heading using a simple P "
+"loop closed on the heading.  Unlike in the turn rate example, we will "
+"need to set the setpoint to the current heading before starting motion, "
+"making this method slightly more-complicated."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:237
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  "
+"When closing the loop on the heading for heading stabilization, PD loops "
+"are particularly effective."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:240
+msgid "Turning to a set heading"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:242
+msgid ""
+"Another common and highly-useful application for a gyro is turning a "
+"robot to face a specified direction.  This can be a component of an "
+"autonomous driving routine, or can be used during teleoperated control to"
+" help align a robot with field elements."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:244
+msgid ""
+"Much like with heading stabilization, this is often accomplished with a "
+"PID loop - unlike with stabilization, however, the loop can only be "
+"closed on the heading.  The following example code will turn the robot to"
+" face 90 degrees with a simple P loop:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:302
+msgid ""
+"As before, more-advanced implementations can use more-complicated control"
+" loops."
+msgstr ""
+
+#: ../../source/docs/software/sensors/gyros-software.rst:304
+msgid ""
+"Turn-to-angle loops can be tricky to tune correctly due to static "
+"friction in the drivetrain, especially if a simple P loop is used.  There"
+" are a number of ways to account for this; one of the most "
+"common/effective is to add a \"minimum output\" to the output of the "
+"control loop.  Another effective strategy is to cascade to well-tuned "
+"velocity controllers on each side of the drive."
+msgstr ""
+

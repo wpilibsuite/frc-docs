@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:2
+msgid "Importing an Eclipse project into VS Code"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:4
+msgid ""
+"To make it easy for teams to use existing projects with the new IDE, "
+"WPILib includes a wizard for importing Eclipse projects into VS Code. "
+"This will generate the necessary Gradle components and load the project "
+"into VS Code."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:7
+msgid "Launching the Import Wizard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:9
+msgid "|Launching Import Wizard|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:12
+msgid ""
+"Press Ctrl+Shift+P and type \"WPILib\" or click the WPILib icon to locate"
+" the WPILib commands. Begin typing \"Import a WPILib Eclipse project\" "
+"and select it from the dropdown."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:14
+msgid "|Eclipse Project Importer|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:16
+msgid ""
+"You'll be presented with the WPILib Eclipse Project Upgrade window. This "
+"is similar to the process of creating a new project and the window and "
+"the steps are shown below.  This window contains the following elements:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:18
+msgid ""
+"**Eclipse Project Selection**: Selects the Eclipse project to be "
+"imported.  Users should select the build.properties file in the root "
+"directory of the eclipse project."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:19
+msgid ""
+"**Project Location**: This determines the folder in which the robot "
+"project will be located."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:20
+msgid ""
+"**Create New Folder**: If this is checked, a new folder will be created "
+"to hold the project within the previously-specified folder.  If it is "
+"*not* checked, the project will be located directly in the previously-"
+"specified folder.  An error will be thrown if the folder is not empty and"
+" this is not checked."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:21
+msgid ""
+"**Project Name**: The name of the robot project.  This also specifies the"
+" name that the project folder will be given if the Create New Folder box "
+"is checked."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:22
+msgid ""
+"**Team Number**: The team number for the project, which will be used for "
+"package names within the project and to locate the robot when deploying "
+"code."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:24
+msgid "Click \"Upgrade Project\" to begin the upgrade."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:26
+msgid ""
+"The eclipse project will be upgraded and copied into the new project "
+"directory. You can then either open the new project immediately (the pop-"
+"up shown below should appear in the bottom right) or open it later using "
+"the Ctrl-O (or Command-O for Mac) shortcut."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:28
+msgid "|Opening Project|"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:31
+msgid "C++ Configurations (C++ Only)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:33
+msgid ""
+"For C++ projects, there is one more step to set up IntelliSense. Whenever"
+" you open a project, you should get a pop-up in the bottom right corner "
+"asking to refresh C++ configurations.  Click \"Yes\" to set up "
+"IntelliSense."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-overview/importing-eclipse-project.rst:35
+msgid "|C++ Configurations|"
+msgstr ""
+

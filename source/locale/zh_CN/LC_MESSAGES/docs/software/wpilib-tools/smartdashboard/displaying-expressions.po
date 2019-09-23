@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:2
+msgid "Displaying Expressions from a Robot Program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:4
+msgid ""
+"Often debugging or monitoring the status of a robot involves writing a "
+"number of values to the console and watching them stream by. With "
+"SmartDashboard you can put values to a GUI that is automatically "
+"constructed based on your program. As values are updated, the "
+"corresponding GUI element changes value - there is no need to try to "
+"catch numbers streaming by on the screen."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:7
+msgid "Writing values to the SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:11
+msgid ""
+"You can write Boolean, Numeric, or String values to the SmartDashboard by"
+" simply calling the correct method for the type and including the name "
+"and the value of the data, no additional code is required. Any time in "
+"your program that you write another value with the same name, it appears "
+"in the same UI element on the screen on the driver station or development"
+" computer. As you can imagine this is a great way of debugging and "
+"getting status of your robot as it is operating."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:14
+msgid "Creating widgets on SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:16
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:16
+msgid "add references"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/displaying-expressions.rst:18
+msgid ""
+"Widgets are populated on the SmartDashboard automatically, no user "
+"intervention is required. Note that the widgets are only populated when "
+"the value is first written, you may need to enable your robot in a "
+"particular mode or trigger a particular code routine for an item to "
+"appear. To alter the appearance of the widget, see the next two sections "
+"Changing the Display Properties of a Value and Changing the Display "
+"Widget Type for a Value."
+msgstr ""
+

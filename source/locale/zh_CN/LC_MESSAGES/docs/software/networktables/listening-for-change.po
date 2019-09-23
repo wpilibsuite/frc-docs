@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/networktables/listening-for-change.rst:2
+msgid "Listening for value changes"
+msgstr ""
+
+#: ../../source/docs/software/networktables/listening-for-change.rst:3
+msgid ""
+"A common use case for NetworkTables is where a program on the Driver "
+"Station generates values that need to be sent to the robot. For example, "
+"imagine that some image processing code running on the Driver Station "
+"computes the heading and distance to a goal and sends those values to the"
+" robot. In this case it might be desirable for the robot program to be "
+"notified when new values arrive from the Driver Station. NetworkTables "
+"provides facilities to do that."
+msgstr ""
+
+#: ../../source/docs/software/networktables/listening-for-change.rst:6
+msgid "Using a NetworkTable EntryListener"
+msgstr ""
+
+#: ../../source/docs/software/networktables/listening-for-change.rst:7
+msgid ""
+"One of the more common cases for NetworkTables is waiting for a value to "
+"change on the robot. This is called an EntryListener because it notifies "
+"the robot program when a network table entry (single value) changes. The "
+"following code shows how to do this."
+msgstr ""
+

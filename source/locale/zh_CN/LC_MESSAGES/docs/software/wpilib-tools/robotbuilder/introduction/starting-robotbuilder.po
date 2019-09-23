@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:2
+msgid "Starting RobotBuilder"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:4
+msgid ""
+"RobotBuilder is a Java program and as such should be able to run on any "
+"platform that is supported by Java. We have been running RobotBuilder on "
+"Mac OS X, Windows, and various versions of Linux successfully."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:7
+msgid "Getting RobotBuilder"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:9
+msgid ""
+"RobotBuilder is downloaded as part of the WPILib Offline Installer. For "
+"more information, see the :ref:`Windows/MacOS/Linux installation guides "
+"<docs/software/getting-started/index:Getting Started>`"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:12
+msgid "Option 1 - Starting from VSCode"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:16
+msgid ""
+"Press **Ctrl + Shift + P** and type WPILib or click the WPILib logo in "
+"the top right to launch the WPILib Command Palette and select **Start "
+"Tool**, then select **Robot Builder**."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:19
+msgid "Option 2 - Running from the Script"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:23
+msgid ""
+"The install process installs the tools to ``~/frcYYYY/tools`` (where YYYY"
+" is the year and ~ is ``C:\\Users\\Public on Windows``)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.rst:25
+msgid ""
+"Inside this folder you will find .vbs (Windows) and .py (Mac/Linux) files"
+" that you can use to launch each tool. These scripts help launch the "
+"tools using the correct JDK and are what you should use to launch the "
+"tools."
+msgstr ""
+

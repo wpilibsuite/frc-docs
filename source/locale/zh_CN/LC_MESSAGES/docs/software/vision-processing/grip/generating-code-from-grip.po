@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:2
+msgid "Generating Code from GRIP"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:4
+msgid "GRIP Code Generation"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:5
+msgid ""
+"When running your vision algorithm on a small processor such as a roboRIO"
+" or Raspberry PI it is encouraged to run OpenCV directly on the processor"
+" without the overhead of GRIP. To facilitate this, GRIP can generate code"
+" in C++, Java, and Python for the pipeline that you have created. This "
+"generated code can be added to your robot project and called directly "
+"from your existing robot code."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:9
+msgid ""
+"Input sources such as cameras or image directories and output steps such "
+"as NetworkTables are not generated. Your code must supply images as "
+"OpenCV mats. On the roboRIO, the CameraServer class supplies images in "
+"that format. For getting results you can just use generated getter "
+"methods for retrieving the resultant values such as contour x and y "
+"values."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:14
+msgid "Generating Code"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:15
+msgid ""
+"To generate code, go to ``Tools > Generate Code``. This will bring up a "
+"save dialog that lets you create a C++, Java, or Python class that "
+"performs the steps in the GRIP pipeline."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:20
+msgid ""
+"If generating code to be used in a pre-existing project, choose a "
+"relevant directory to save the pipeline to."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:22
+msgid ""
+"**C++ Users**: the pipeline class is split into a header and "
+"implementation file"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:23
+msgid ""
+"**Java Users**: the generated class lacks a package declaration, so a "
+"declaration should be added to match the directory where the file was "
+"saved."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:25
+msgid ""
+"**Python Users**: the module name will be identical to the class, so the "
+"import statement will be something like ``from Pipeline import Pipeline``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:29
+msgid "Structure of the Generated Code"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:43
+msgid "Running the Pipeline"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:44
+msgid ""
+"To run the Pipeline, call the process method with the sources (webcams, "
+"IP camera, image file, etc) as arguments. This will expose the outputs of"
+" every operation in the pipeline with the ``getFooOutput`` methods."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:48
+msgid "Getting the Results"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:49
+msgid ""
+"Users are able to the outputs of every step in the pipeline. The outputs "
+"of these operations would be accessible through their respective "
+"accessors.  For example:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Operation"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+msgid "Java/C++ getter"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+msgid "Python variable"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "RGB Threshold"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "``getRgbThresholdOutput``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "``rgb_threshold_output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "Blur"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+msgid "``getBlurOutput``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+msgid "``blur_output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "CV Erode"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "``getCvErodeOutput``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "``mcv_erode_output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "Find Contours"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "``getFindContoursOutput``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "``find_contours_output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "Filter Contours"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "``getFilterContoursOutput``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "``filter_contours_output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:62
+msgid ""
+"If an operation appears multiple times in the pipeline, the accessors for"
+" those operations have the number of that operation:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Which appearance"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Accessor"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+msgid "First"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+msgid "``getBlur0Output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+msgid "Second"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+msgid "``getBlur1Output``"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "Third"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "``getBlur2Output``"
+msgstr ""
+

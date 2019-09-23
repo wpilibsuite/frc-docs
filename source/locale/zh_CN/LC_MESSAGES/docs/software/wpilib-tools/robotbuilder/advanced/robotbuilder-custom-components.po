@@ -1,0 +1,480 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:2
+msgid "Adding Custom Components"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:4
+msgid ""
+"RobotBuilder works very well for creating robot programs that just use "
+"WPILib for motors, controllers, and sensors. But for teams that use "
+"custom classes, RobotBuilder doesn't have any support for those classes, "
+"so a few steps need to be taken to use them in RobotBuilder"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:7
+msgid "Custom Component Structure"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:11
+msgid ""
+"Custom components all go in ``$USER_HOME/Robotbuilder/extensions``. On "
+"Linux and Mac, ``$USER_HOME`` will be ``/Users/yourusername/``. On "
+"Windows, it will be ``C:\\Users\\yourusername\\``"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:13
+msgid ""
+"There are seven files and one folder that are needed for a custom "
+"component. The folder contains the files describing the component and how"
+" to export it. It should have the same name as the component (e.g.\"Kiwi "
+"Drive\" for a kiwi drive controller, \"Robot Drive 6\" for a six-motor "
+"drive controller, etc.). The files should have the same names and "
+"extensions as the ones shown here. Other files can be in the folder along"
+" with these seven, but the seven must be present for RobotBuilder to "
+"recognize the custom component."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:16
+msgid "PaletteDescription.yaml"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:20
+msgid "Line-by-line:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:22
+msgid "!Component: Declares the beginning of a new component"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:23
+msgid ""
+"name: The name of the component. This is what will show up in the "
+"palette/tree -- this should also be the same as the name of the "
+"containing folder"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:24
+msgid ""
+"type: the type of the component (these will be explained in depth later "
+"on)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:25
+msgid ""
+"supports: a map of the amount of each type of component this can support."
+" Motor controllers in RobotBuilder are all PIDOutputs, so a kiwi drive "
+"can support three PIDOutputs. If a component doesn't support anything "
+"(such as sensors or motor controllers), just leave this line out"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:26
+msgid ""
+"help: a short string that gives a helpful message when one of these "
+"components is hovered over"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:27
+msgid ""
+"properties: a list of the properties of this component. In this kiwi "
+"drive example, there are three very similar properties, one for each "
+"motor. A ChildSelectionProperty allows the user to choose a component of "
+"the given type from the subcomponents of the one being edited (so here, "
+"they would show a dropdown asking for a PIDOutput - i.e. a motor "
+"controller - that has been added to the kiwi drive)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:29
+msgid "The types of component RobotBuilder supports (these are case-sensitive):"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:31
+msgid "Command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:32
+msgid "Subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:33
+msgid "PIDOutput (speed controller)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:34
+msgid ""
+"PIDSource (sensor that implements PIDSource e.g. analog potentiometer, "
+"encoder)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:35
+msgid "Sensor (sensor that does not implement PIDSource e.g. limit switch)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:36
+msgid "Controller (robot drive, PID controller, etc.)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:37
+msgid "Actuator (an output that is not a motor, e.g. solenoid, servo)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:38
+msgid "Joystick"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:39
+msgid "Joystick Button"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:42
+msgid "Properties"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:44
+msgid "The properties relevant for a custom component:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:46
+msgid ""
+"StringProperty: used when a component needs a string e.g. the name of the"
+" component"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:47
+msgid ""
+"BooleanProperty: used when a component needs a boolean value e.g. putting"
+" a button on the SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:48
+msgid ""
+"DoubleProperty: used when a component needs a number value e.g. PID "
+"constantsChoicesProperty"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:49
+msgid ""
+"ChildSelectionProperty: used when you need to choose a child component "
+"e.g. speed controllers in a RobotDrive"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:50
+msgid ""
+"TypeSelectionProperty: used when you need to choose any component of the "
+"given type from anywhere in the program e.g. input and output for a PID "
+"command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:52
+msgid "The fields for each property are described below:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:57
+msgid "Validators.yaml"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:61
+msgid ""
+"You may have noticed \"KiwiDriveValidator\" in the validators entry of "
+"each of the motor properties in PaletteDescription.yaml. It's not a "
+"built-in validator, so it had to be defined in Validators.yaml. This "
+"example validator is very simple - it just makes sure that each of the "
+"named fields has a different value than the others."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:64
+msgid "Built-in Validators and Validator Types"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:68
+msgid ""
+"The built-in validators are very useful (especially the UniqueValidators "
+"for port/channel use), but sometimes a custom validator is needed, like "
+"in the previous step"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:70
+msgid ""
+"DistinctValidator: Makes sure the values of each of the given fields are "
+"unique"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:71
+msgid ""
+"ExistsValidator: Makes sure that a value has been set for the property "
+"using this validator"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:72
+msgid ""
+"UniqueValidator: Makes sure that the value for the property is unique "
+"globally for the given fields"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:73
+msgid "ListValidator: Makes sure that all the values in a list property are valid"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:76
+msgid "C++ Export.yaml"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:80
+msgid "A line-by-line breakdown of the file:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:82
+msgid ""
+"Kiwi Drive: the name of the component being exported. This is the same as"
+" the name set in PaletteDescription.yaml, and the name of the folder "
+"containing this file"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:83
+msgid ""
+"Defaults: provides some default values for includes needed by this "
+"component, the name of the class, a construction template, and more. The "
+"CustomComponent default adds an include for ``Custom/${ClassName}.h`` to "
+"every generated file that uses the component (e.g. ``RobotDrive.h`` would"
+" have ``#include \"Custom/KiwiDrive.h`` the top of the file)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:84
+msgid "ClassName: the name of the custom class you're adding."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:85
+msgid ""
+"Construction: an instruction for how the component should be constructed."
+" Variables will be replaced with their values (\"${ClassName}\" will be "
+"replaced with \"KiwiDrive\"), then macros will be evaluated (for example,"
+" ``#variable($Name)`` may be replaced with ``drivebaseKiwiDrive``)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:87
+msgid "This example expects a KiwiDrive class with the constructor"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:93
+msgid "If your team uses Java, this file can be empty."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:96
+msgid "Java Export.yaml"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:100
+msgid ""
+"Very similar to the C++ export file; the only difference should be the "
+"Construction line. This example expects a KiwiDrive class with the "
+"constructor"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:106
+msgid "If your team uses C++, this file can be empty."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:109
+msgid "Using Macros and Variables"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:111
+msgid ""
+"Macros are simple functions that RobotBuilder uses to turn variables into"
+" text that will be inserted into generated code. They always start with "
+"the \"#\" symbol, and have a syntax similar to functions: ``<macro_name>("
+" arg0, arg1, arg2, ...)``. The only macro you'll probably need to use is "
+"``#variable( component_name )``"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:113
+msgid ""
+"``#variable`` takes a string, usually the a variable defined somewhere "
+"(i.e. \"Name\" is the name given to the component in RobotBuilder, such "
+"as \"Arm Motor\"), and turns it into the name of a variable defined in "
+"the generated code. For example, ``#variable(\"Arm Motor\")`` results in "
+"the string ``ArmMotor``"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:115
+msgid ""
+"Variables are referenced by placing a dollar sign (\"$\") in front of the"
+" variable name, which an optionally be placed inside curly braces to "
+"easily distinguish the variable from other text in the file. When the "
+"file is parsed, the dollar sign, variable name, and curly braces are "
+"replaced with the value of the variable (e.g. ``${ClassName}`` is "
+"replaced with ``KiwiDrive``)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:117
+msgid ""
+"Variables are either component properties (e.g. \"Motor 1\", \"Motor 2\","
+" \"Motor 3\" in the kiwi drive example), or one of the following:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:119
+msgid ""
+"Short_Name: the name given to the component in the editor panel in "
+"RobotBuilder"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:120
+msgid ""
+"Name: the full name of the component. If the component is in a subsystem,"
+" this will be the short name appended to the name of the subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:121
+msgid ""
+"Export: The name of the file this component should be created in, if any."
+" This should be \"RobotMap\" for components like actuators, controllers, "
+"and sensors; or \"OI\" for things like gamepads or other custom OI "
+"components. Note that the \"CustomComponent\" default will export to the "
+"RobotMap."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:122
+msgid ""
+"Import: Files that need to be included or imported for this component to "
+"be able to be used."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:123
+msgid ""
+"Declaration: an instruction, similar to Construction, for how to declare "
+"a variable of this component type. This is taken care of by the default "
+"\"None\""
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:124
+msgid ""
+"Construction: an instruction for how to create a new instance of this "
+"component"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:125
+msgid "LiveWindow: an instruction for how to add this component to the LiveWindow"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:126
+msgid ""
+"Extra: instructions for any extra functions or method calls for this "
+"component to behave correctly, such as encoders needing to set the "
+"encoding type."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:127
+msgid ""
+"Prototype (C++ only): The prototype for a function to be created in the "
+"file the component is declared in, typically a getter in the OI class"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:128
+msgid ""
+"Function: A function to be created in the file the component is declared "
+"in, typically a getter in the OI class"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:129
+msgid ""
+"PID: An instruction for how to get the PID output of the component, if it"
+" has one (e.g. ``#variable($Short_Name)->PIDGet()``)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:130
+msgid ""
+"ClassName: The name of the class that the component represents (e.g. "
+"``KiwiDrive`` or ``Joystick``)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:132
+msgid ""
+"If you have variables with spaces in the name (such as \"Motor 1\", "
+"\"Right Front Motor\", etc.), the spaces need to be replaced with "
+"underscores when using them in the export files."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:135
+msgid "help.html"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:139
+msgid ""
+"A HTML file giving information on the component. It is better to have "
+"this be as detailed as possible, though it certainly isn't necessary if "
+"the programmer(s) are familiar enough with the component, or if it's so "
+"simple that there's little point in a detailed description."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:142
+msgid "config.txt"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:146
+msgid ""
+"A configuration file to hold miscellaneous information about the "
+"component. Currently, this only has the section of the palette to put the"
+" component in."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:148
+msgid "The sections of the palette (these are case sensitive):"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:150
+msgid "Subsystems"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:151
+msgid "Controllers"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:152
+msgid "Sensors"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:153
+msgid "Actuators"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:154
+msgid "Pneumatics"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:155
+msgid "OI"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:156
+msgid "Commands"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:159
+msgid "icon.png"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:161
+msgid ""
+"The icon that shows up in the palette and the help page. This should be a"
+" 64x64 .png file. It should use the color scheme and general style of the"
+" section it's in to avoid visual clutter, but this is entirely optional."
+msgstr ""
+

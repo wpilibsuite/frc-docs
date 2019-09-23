@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/commandbased/command-groups.rst:2
+msgid "Command groups"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:4
+msgid ""
+"Individual commands are capable of accomplishing a large variety of robot"
+" tasks, but the simple three-state format can quickly become cumbersome "
+"when more advanced functionality requiring extended sequences of robot "
+"tasks or coordination of multiple robot subsystems is required. In order "
+"to accomplish this, users are encouraged to use the powerful command "
+"group functionality included in the command-based library."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:11
+msgid ""
+"As the name suggests, command groups are combinations of multiple "
+"commands. The act of combining multiple objects (such as commands) into a"
+" bigger object is known as `composition "
+"<https://en.wikipedia.org/wiki/Object_composition>`__. Command groups "
+"*compose* multiple commands into a *composite* command. This allows code "
+"to be kept much cleaner and simpler, as the individual *component* "
+"commands may be written independently of the code that combines them, "
+"greatly reducing the amount of complexity at any given step of the "
+"process."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:21
+msgid ""
+"Most importantly, however, command groups *are themselves commands* - "
+"they implement the ``Command`` interface. This allows command groups to "
+"be `recursively composed "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__"
+" - that is, a command group may contain *other command groups* as "
+"components."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:29
+msgid "Types of command groups"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:31
+msgid ""
+"The command-based library supports four basic types of command groups: "
+"``SequentialCommandGroup``, ``ParallelCommandGroup``, "
+"``ParallelRaceGroup``, and ``ParallelDeadlineGroup``. Each of these "
+"command groups combines multiple commands into a composite command - "
+"however, they do so in different ways:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:38
+msgid "SequentialCommandGroup"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:44
+msgid ""
+"A ``SequentialCommandGroup`` runs a list of commands in sequence - the "
+"first command will be executed, then the second, then the third, and so "
+"on until the list finishes. The sequential group finishes after the last "
+"command in the sequence finishes. It is therefore usually important to "
+"ensure that each command in the sequence does actually finish (if a given"
+" command does not finish, the next command will never start!)."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:52
+msgid "ParallelCommandGroup"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:58
+msgid ""
+"A ``ParallelCommandGroup`` runs a set of commands concurrently - all "
+"commands will execute at the same time. The parallel group will end when "
+"all commands have finished."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:63
+msgid "ParallelRaceGroup"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:69
+msgid ""
+"A ``ParallelRaceGroup`` is much like a ``ParallelCommandgroup``, in that "
+"it runs a set of commands concurrently. However, the race group ends as "
+"soon as any command in the group ends - all other commands are "
+"interrupted at that point."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:75
+msgid "ParallelDeadlineGroup"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:81
+msgid ""
+"A ``ParallelDeadlineGroup`` also runs a set of commands concurrently. "
+"However, the deadline group ends when a *specific* command (the "
+"“deadline”) ends, interrupting all other commands in the group that are "
+"still running at that point."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:87
+msgid "Creating command groups"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:89
+#: ../../source/docs/software/commandbased/command-groups.rst:197
+#: ../../source/docs/software/commandbased/command-groups.rst:223
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:89
+msgid "link to Hatchbot after new command merge"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:91
+msgid ""
+"Users have several options for creating command groups. One way - similar"
+" to the previous incarnation of the command-based library - is to "
+"subclass one of the command group classes. Consider the following from "
+"the Hatch Bot example project:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:126
+msgid ""
+"The ``addCommands`` method adds commands to the group, and is present in "
+"all four types of command group."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:129
+msgid ""
+"Equivalently, however, command groups can be used without subclassing at "
+"all: one can simply pass in the desired commands through the constructor."
+" Thus, the following two pieces of code are equivalent:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:144
+msgid ""
+"This is called an :ref:`inline <inlined-commands>` command definition, "
+"and is very handy for circumstances where command groups are not likely "
+"to be reused, and writing an entire class for them would be wasteful."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:150
+msgid "Recursive composition of command groups"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:152
+msgid ""
+"As mentioned earlier, command groups are `recursively composable "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__"
+" - since command groups are themselves commands, they may be included as "
+"components of other command groups. This is an extremely powerful feature"
+" of command groups, and allows users to build very complex robot actions "
+"from simple pieces. For example, consider the following code:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:168
+msgid ""
+"This creates a sequential command group that *contains* a parallel "
+"command group. The resulting control flow looks something like this:"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:174
+msgid "command group with concurrency"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:176
+msgid ""
+"Notice how the recursive composition allows the embedding of a parallel "
+"control structure within a sequential one. Notice also that this entire, "
+"more-complex structure, could be again embedded in another structure. "
+"Composition is an extremely powerful tool, and one that users should be "
+"sure to use extensively."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:183
+msgid "Command groups and requirements"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:185
+msgid ""
+"As command groups are commands, they also must declare their "
+"requirements. However, users are not required to specify requirements "
+"manually for command groups - requirements are automatically inferred "
+"from the commands included. As a rule, *command groups include the union "
+"of all of the subsystems required by their component commands.* Thus, the"
+" ``ComplexAuto`` shown previously will require both the drive subsystem "
+"and the hatch subsystem of the robot."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:193
+msgid ""
+"Additionally, requirements are enforced within all three types of "
+"parallel groups - a parallel group may not contain multiple commands that"
+" require the same subsystem."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:197
+msgid "Link to ScheduleCommand class API doc after merge"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:199
+msgid ""
+"Some advanced users may find this overly-restrictive - for said users, "
+"the library offers a ``ScheduleCommand`` class that can be used to "
+"independently “branch off” from command groups to provide finer "
+"granularity in requirement management."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:205
+msgid "Restrictions on command group components"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:207
+msgid ""
+"Since command group components are run through their encapsulating "
+"command groups, errors could occur if those same command instances were "
+"independently scheduled at the same time as the group - the command would"
+" be being run from multiple places at once, and thus could end up with "
+"inconsistent internal state, causing unexpected and hard-to-diagnose "
+"behavior."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:214
+msgid ""
+"For this reason, command instances that have been added to a command "
+"group cannot be independently scheduled or added to a second command "
+"group. Attempting to do so will throw an "
+"``InvalidUseOfCommandException``."
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:219
+msgid ""
+"Advanced users who wish to re-use a command instance and are *certain* "
+"that it is safe to do so may bypass this restriction with the "
+"``clearGroupedCommand()`` method in the ``CommandGroupBase`` class"
+msgstr ""
+
+#: ../../source/docs/software/commandbased/command-groups.rst:223
+msgid "Link to API docs after merge"
+msgstr ""
+

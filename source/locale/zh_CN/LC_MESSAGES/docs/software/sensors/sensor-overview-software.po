@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:2
+msgid "Sensor Overview - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:4
+msgid ""
+"This section covers using sensors in software.  For a guide to sensor "
+"hardware, see :ref:`docs/hardware/sensors/sensor-overview-hardware:Sensor"
+" Overview - Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:6
+msgid ""
+"While cameras may definitely be considered \"sensors\", vision processing"
+" is a sufficiently-complicated subject that it is covered in :ref:`its "
+"own section <strategies-for-vision-programming>`, rather than here."
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:8
+msgid ""
+"In order to be effective, it is often vital for robots to be able to "
+"gather information about their surroundings.  Devices that provide "
+"feedback to the robot on the state of its environment are called "
+"\"sensors.\"  WPILib innately supports a large variety of sensors through"
+" classes included in the library.  This section will provide a guide to "
+"both using common sensor types through WPILib, as well as writing code "
+"for sensors without official support."
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:11
+msgid "What sensors does WPILIB support?"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:13
+msgid ""
+"The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-"
+"programmable_gate_array>`__ which allows accurate real-time measuring of "
+"a variety of sensor input.  WPILib, in turn, provides a number of classes"
+" for accessing this functionality."
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:15
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:15
+msgid ""
+"Fix this graphic.  Vision should be removed, counters are omitted but "
+"should be included, in general this needs to be made sensible/consistent"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:17
+msgid "|Types of Sensors|"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:19
+msgid "WPILib provides native support for:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:21
+msgid ""
+":ref:`Accelerometers <docs/software/sensors/accelerometers-"
+"software:Accelerometers - Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:22
+msgid ""
+":ref:`Gyroscopes <docs/software/sensors/gyros-software:Gyroscopes - "
+"Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:23
+msgid ""
+":ref:`Ultrasonic rangefinders <docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:24
+msgid ""
+":ref:`Potentiometers <docs/software/sensors/analog-potentiometers-"
+"software:Analog Potentiometers - Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:25
+msgid ":ref:`Counters <docs/software/sensors/counters:Counters>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:26
+msgid ""
+":ref:`Quadrature encoders <docs/software/sensors/encoders-"
+"software:Encoders - Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:27
+msgid ""
+":ref:`Limit switches <docs/software/sensors/digital-inputs-"
+"software:Digital Inputs - Software>`"
+msgstr ""
+
+#: ../../source/docs/software/sensors/sensor-overview-software.rst:29
+msgid ""
+"Additionally, WPILib includes lower-level classes for interfacing "
+"directly with the FPGA's digital and analog inputs and outputs."
+msgstr ""
+

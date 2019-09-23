@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/actuators/overview.rst:4
+msgid "Actuator Overview"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:5
+msgid ""
+"This section discusses the control of motors and pneumatics through speed"
+" controllers, solenoids and pneumatics, and their interface with C++ and "
+"Java WPILib."
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:10
+msgid "Speed controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:11
+msgid ""
+"A speed controller is responsible on your robot for making motors move. "
+"For brushed DC motors such as CIMs or 775s, the speed controller "
+"regulates the voltage that the motor receives, much like a light bulb. "
+"For brushless speed controllers such as the Spark MAX, the controller "
+"regulates the power delivered to each \"phase\" of the motor."
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:25
+msgid ""
+"Connecting a BRUSHLESS motor controller straight to power, such as to a "
+"conventional brushed motor controller, will destroy the motor!"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:29
+msgid "FRC Legal Motor Controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:30
+msgid ""
+"Speed controllers come in lots of shapes, sizes and feature sets. This is"
+" the full list of FRC Legal speed controllers as of April 2019:"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:33
+msgid "DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:34
+msgid ""
+"Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected"
+" to PWM only"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:35
+msgid ""
+"Nidec Dynamo BLDC Motor with Controller to control integral actuator only"
+" (P/N 840205-000, am-3740)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:36
+msgid ""
+"SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, "
+"SD540Bx2, SD540Bx4, SD540C)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:37
+msgid "Spark Motor Controller (P/N: REV-11-1200)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:38
+msgid "Spark MAX Motor Controller (P/N: REV-11-2158)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:39
+msgid "Talon Motor Controller (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:40
+msgid "Talon SRX Motor Controller (P/N: 217-8080, am-2854, 14-838288)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:41
+msgid "Victor 884 Motor Controller (P/N: VICTOR-884-12/12)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:42
+msgid "Victor 888 Motor Controller (P/N: 217-2769)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:43
+msgid "Victor SP Motor Controller (P/N: 217-9090, am-2855, 14-868380)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:44
+msgid "Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:47
+msgid "Pneumatics"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:48
+msgid ""
+"Pneumatics are a quick and easy way to make something that's in one state"
+" or another using compressed air. For information on operating "
+"pneumatics, see :ref:`operating-pneumatic-cylinders`"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:54
+msgid "FRC Legal Relay Modules"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:55
+msgid "Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:56
+msgid ""
+"Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-"
+"SSR6M40-DC200D)"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:59
+msgid "FRC Legal Pneumatics controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/overview.rst:60
+msgid "Pneumatics Control Module (P/N: am-2858, 217-4243)"
+msgstr ""
+

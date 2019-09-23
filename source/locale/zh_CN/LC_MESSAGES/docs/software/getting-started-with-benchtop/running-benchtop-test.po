@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:2
+msgid "Running your Benchtop Test Program"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:7
+msgid ""
+"You should create and download a Benchtop Test Program as described for "
+"your programming language:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:9
+msgid ":ref:`C++/Java <creating_benchtop_test_cpp_java>`"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:11
+msgid ":ref:`LabVIEW <creating_benchtop_test_labview>`"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:14
+msgid "Tethered Operation"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:16
+msgid ""
+"Running your benchtop testing program while tethered to the Driver "
+"Station via ethernet or USB cable will confirm the the program was "
+"successfully deployed and that the driver station and roboRIO are "
+"properly configured."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:18
+msgid ""
+"The roboRIO should be powered on and connected to the PC over Ethernet or"
+" USB. The Driver Station software should be configured with your team "
+"number as described in :ref:`this article <docs/software/driverstation"
+"/driver-station:FRC Driver Station Powered by NI LabVIEW>`."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:21
+msgid "Wireless Operation"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:23
+msgid ""
+"Before attempting wireless operation, tethered operation should have been"
+" confirmed as described in `Tethered Operation`_. Running your benchtop "
+"testing program while connected to the Driver Station via WiFi will "
+"confirm that the access point is properly configured."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:26
+msgid "Configuring the Access Point"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:28
+msgid ""
+"See the article :ref:`Programming your radio <radio-programming>` for "
+"details on configuring the robot radio for use as an access point."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:30
+msgid ""
+"After configuring the access point, connect the driver station wirelessly"
+" to the robot. The SSID will be your team number (as entered in the "
+"Bridge Configuration Utility). If you set a key when using the Bridge "
+"Configuration Utility you will need to enter it to connect to the "
+"network. Make sure the computer network adapter is set to DHCP (\"Obtain "
+"an IP address automatically\")."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:33
+msgid "Confirm Connectivity"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:37
+msgid "Tethered"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:41
+msgid "Wireless"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:43
+msgid ""
+"Using the Driver Station software, click Diagnostics and confirm that the"
+" Enet Link (or Robot Radio led, if operating wirelessly) and Robot leds "
+"are green."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:46
+msgid "Operate the Robot"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:50
+msgid "Click the Operation Tab"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:52
+msgid "Confirm that battery voltage is displayed"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:53
+msgid "Communications, Robot Code, and Joysticks indicators are green."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:54
+msgid "Put the robot in Teleop Mode"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:55
+msgid "Click Enable. Move the joysticks and observe how the robot responds."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/running-benchtop-test.rst:56
+msgid "Click Disable"
+msgstr ""
+

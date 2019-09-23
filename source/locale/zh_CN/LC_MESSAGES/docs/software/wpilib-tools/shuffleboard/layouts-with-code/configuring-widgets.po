@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:2
+msgid "Configuring widgets"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:4
+msgid ""
+"Robot programs can specify exactly which widget to use to display a data "
+"point, as well as how that widget should be configured. As there are too "
+"many widgets to be listed here, consult the docs for details."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:7
+msgid "Specifying a widget"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:9
+msgid "Call `withWidget` after `add` in the call chain:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:20
+msgid ""
+"In this example, we configure the \"Max Speed\" widget to use a slider to"
+" modify the values instead of a basic text field."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:25
+msgid "Setting widget properties"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:26
+msgid ""
+"Since the maximum speed only makes sense to be a value from 0 to 1 (full "
+"stop to full speed), a slider from -1 to 1 can cause problems if the "
+"value drops below zero. Fortunately, we can modify that using the "
+"``withProperties`` method"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:41
+msgid "Notes"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:42
+msgid ""
+"Widgets can be specified by name; however, names are case- and "
+"whitespace-sensitive (\"Number Slider\" is different from \"Number "
+"slider\" and \"NumberSlider\"). For this reason, it is recommended to use"
+" the built in widgets class to specify the widget instead of by raw name."
+" However, a custom widget can only be specified by name or by creating a "
+"custom ``WidgetType`` for that widget."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.rst:44
+msgid ""
+"Widget property names are neither case-sensitive nor whitespace-sensitive"
+" (\"Max\" and \"max\" are the same). Consult the documentation on the "
+"widget in the BuiltInWidgets class for details on the properties of that "
+"widget."
+msgstr ""
+

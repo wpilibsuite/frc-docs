@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:2
+msgid "Adding Safety Features to Your Robot Code"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:6
+msgid ""
+"A common problem with complex projects is making sure that all of your "
+"code is executing when you expect it to. Problems can arise when tasks "
+"with high priority, long execution times, or frequent calls hog "
+"processing power on the roboRIO. This leads to what is known as "
+"\"starvation\" for the tasks that are not able to execute due to the "
+"processor being busy. In most cases this will simply slow the reaction "
+"time to your input from the joysticks and other devices. However, this "
+"can also cause the drive motors of your robot to stay on long after you "
+"try to stop them. To avoid any robotic catastrophes from this, you can "
+"implement safety features that check for task input starvation and "
+"automatically shut down potentially harmful operations."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:8
+msgid ""
+"There are built-in functions for the motors that allow easy "
+"implementation of safety checks. These functions are:"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:10
+msgid "Robot Drive Safety Configuration"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:11
+msgid "Motor Drive Safety Configuration"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:12
+msgid "Relay Safety Configuration"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:13
+msgid "PWM Safety Configuration"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:14
+msgid "Solenoid Safety Configuration"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:15
+msgid "Robot Drive Delay and Update Safety"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:17
+msgid ""
+"In all of the Safety Configuration functions, you can enable and disable "
+"the safety checks while your programming is running and configure what "
+"timeout you think is appropriate. The functions keep a cache of all "
+"devices that have the safety enabled and will check if any of them have "
+"exceeded their time limit. If any has, all devices in the cache will be "
+"disabled and the robot will come to an immediate stop or have its "
+"relay/PWM/solenoid outputs turned off. The code below demonstrates how to"
+" use the Drive Safety Configuration functions to set a maximum time limit"
+" that the motors will receive no input before being shut off."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:21
+msgid ""
+"To test the safety shut-off, try adding a Wait function to the loop that "
+"is longer than your timeout!"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:23
+msgid ""
+"The final function that relates to implementing safety checks--Robot "
+"Drive Delay and Update Safety--allows you to put the roboRIO in "
+"Autonomous Mode without exceeding the time limit. It will maintain the "
+"current motor output without making costly calls to the Drive Output "
+"functions, and will also make sure that the safety checks are regularly "
+"updated so that the motors will not suddenly stop."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:25
+msgid ""
+"Overall, it is highly recommended that some sort of safety check is "
+"implemented in your project to make sure that your robot is not "
+"unintentionally left in a dangerous state!"
+msgstr ""
+

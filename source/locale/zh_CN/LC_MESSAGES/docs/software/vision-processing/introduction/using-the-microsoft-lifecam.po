@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:2
+msgid "Using the Microsoft Lifecam HD-3000"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:4
+msgid ""
+"The Microsoft Lifecam HD-3000 is a USB webcam that was tested with the "
+"roboRIO as part of the Beta testing and software development effort. "
+"While other USB webcams may work with the roboRIO, this camera has been "
+"tested to be compatible with the provided software."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:7
+msgid "Connecting the Camera to the roboRIO"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:11
+msgid "The camera can be connected to either of the roboRIO USB ports."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:14
+msgid "Using the Camera - LabVIEW"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:18
+msgid ""
+"To stream the camera back to the Dashboard using LabVIEW, no additional "
+"code is necessary. Simply select USB HW (image compression done by the "
+"camera, fewer options but lower roboRIO CPU usage) or USB SW (image "
+"compressed by roboRIO, more options, but higher roboRIO CPU usage) and "
+"the image should begin streaming back."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:20
+msgid ""
+"The camera should be plugged in before your LabVIEW code starts running "
+"to work properly. If you just plugged in the camera, rebooting the "
+"roboRIO is a quick way to make sure it is recognized properly."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:22
+msgid ""
+"The default LabVIEW templates and the image processing examples are "
+"already set up for the USB camera if you want to do image processing. On "
+"the LabVIEW splash screen, click Tutorials, then click Tutorial 8 for "
+"more information about integrating Vision processing in your LabVIEW "
+"code."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:25
+msgid "Using the Camera - C++/Java"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.rst:27
+msgid ""
+"To stream the camera back to the Dashboard using C++ or Java robot code, "
+"you will need to add some code to your robot project. See :doc:`using-"
+"the-cameraserver-on-the-roborio` for instructions on using the "
+"CameraServer class to automatically stream images back to the Dashboard."
+msgstr ""
+

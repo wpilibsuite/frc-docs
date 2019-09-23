@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:2
+msgid "Displaying Camera Streams"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:4
+msgid ""
+"Camera streams from the robot can be viewed on a tab in Shuffleboard. "
+"This is useful for viewing what the robot is seeing to give a less "
+"obstructed view for operators or helping visualize the output from a "
+"vision algorithm running on the driver station computer or a coprocessor "
+"on the robot. Any stream that is running using the CameraServer API can "
+"be viewed in a camera stream widget."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:7
+msgid "Adding a Camera Stream"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:9
+msgid ""
+"To add a camera to your dashboard select \"Sources\" and view the "
+"\"CameraServer\" source in the left side panel in the Shuffleboard window"
+" as shown in the example below. A list of camera streams will be shown, "
+"in this case there is only one camera called \"Robot Front Camera\". Drag"
+" that to the tab where it should be displayed. Alternatively the stream "
+"can also be placed on the dashboard by right-clicking on the stream in "
+"the Sources list and selecting \"Show as: Camera Stream\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:13
+msgid ""
+"Once the camera stream is added it will be displayed in the window. It "
+"can be resized and moved where you would like it."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.rst:15
+msgid ""
+"Be aware that sending too much data from too high a resolution or too "
+"high a frame rate will cause high CPU usage on both the roboRIO and the "
+"laptop."
+msgstr ""
+

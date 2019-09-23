@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:2
+msgid "Default Commands"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library,"
+" which has been deprecated. While this documentation has been preserved "
+"to help teams that have yet to do so, teams are strongly encouraged to "
+"migrate to the :ref:`new command-based library "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:6
+msgid ""
+"In some cases you may have a subsystem which you want to always be "
+"running a command no matter what. So what do you do when the command you "
+"are currently running ends? That's where default commands come in."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:9
+msgid "The Default Command"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:11
+msgid ""
+"Each subsystem may, but is not required to, have a default command which "
+"is scheduled whenever the subsystem is idle (the command currently "
+"requiring the system completes). The most common example of a default "
+"command is a command for the drivetrain that implements the normal "
+"joystick control. This command may be interrupted by other commands for "
+"specific maneuvers (\"precision mode\", automatic alignment/targeting, "
+"etc.) but after any command requiring the drivetrain completes the "
+"joystick command would be scheduled again."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:14
+msgid "Setting the Default Command"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/commands/default-commands.rst:47
+msgid ""
+"All subsystems should contain a method called ``initDefaultCommand()`` "
+"which is where you will set the default command if desired. If you do not"
+" wish to have a default command, simply leave this method blank. If you "
+"do wish to set a default command, call setDefaultCommand from within this"
+" method, passing in the command to be set as the default."
+msgstr ""
+

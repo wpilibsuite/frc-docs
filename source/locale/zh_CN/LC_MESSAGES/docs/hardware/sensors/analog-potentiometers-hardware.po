@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:2
+msgid "Analog Potentiometers - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:4
+msgid ""
+"This section covers analog potentiometer hardware.  For a software guide "
+"to analog potentiometers, see :ref:`docs/software/sensors/analog-"
+"potentiometers-software:Analog Potentiometers - Software`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:6
+msgid ""
+"Potentiometers generally have a mechanically-limited travel range.  Users"
+" should be careful that their mechanisms do not turn their potentiometers"
+" past their maximum travel, as this will damage or destroy the "
+"potentiometer."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:8
+msgid ""
+"Apart from :doc:`quadrature encoders <encoders-hardware>`, another common"
+" way of measuring rotation on FRC robots is with analog potentiometers.  "
+"A potentiometer is simply a variable resistor - as the shaft of the "
+"potentiometer turns, the resistance changes (usually linearly).  Placing "
+"this resistor in a `voltage divider "
+"<https://en.wikipedia.org/wiki/Voltage_divider>`__ allows the user to "
+"easily measure the resistance by measuring the voltage across the "
+"potentiometer, which can then be used to calculate the rotational "
+"position of the shaft."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:11
+msgid "Wiring an analog potentiometer"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:13
+msgid ""
+"As suggested by the names, analog potentiometers connect to the roboRIO's"
+" :doc:`analog input <analog-inputs-hardware>` ports.  To understand how "
+"exactly to wire potentiometers, however, it is important to understand "
+"their internal circuitry."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:15
+msgid "|Potentiometer| |Voltage Divider|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:17
+msgid ""
+"The picture above on the left shows a typical potentiometer.  There are "
+"three pins, just as there are on the RIO's analog inputs.  The middle pin"
+" is the signal pin, while the outer pins can both be *either* power or "
+"ground."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:19
+msgid ""
+"As mentioned before, a potentiometer is a voltage divider, as shown in "
+"the circuit diagram on the right.  As the potentiometer shaft turns, the "
+"resistances R1 and R2 change; however, their sum remains constant [1]_.  "
+"Thus, the voltage across the entire potentiometer remains constant (for "
+"the roboRIO, this would be 5 volts), but the voltage between the signal "
+"pin and either the voltage or ground pin varies linearly as the shaft "
+"turns."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:21
+msgid ""
+"Since the circuit is symmetric, it is reversible - this allows the user "
+"to choose at which end of the travel the measured voltage is zero, and at"
+" which end it is 5 volts.  To reverse the directionality of the sensor, "
+"it can simply be wired backwards!  Be sure to check the directionality of"
+" your potentiometer with a multimeter to be sure it is in the desired "
+"orientation before soldering your wires to the contacts."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:24
+msgid "Absolute encoders"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:26
+msgid ""
+"An \"absolute encoder\" is an encoder that measures the absolute position"
+" of the encoder shaft, rather than the incremental movement (as a "
+":doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, "
+"absolute encoders are more similar to potentiometers than to incremental "
+"encoders.  Many absolute encoders offer a simple analog output - these "
+"can be used exactly in the same way as a potentiometer, except their "
+"wiring is not generally reversible.  Absolute encoders have the advantage"
+" of lacking a hard travel limit - the signal will simply reset when the "
+"shaft crosses the zero point."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:28
+msgid ""
+"Absolute encoders that do not offer a simple analog output require "
+":doc:`more complicated communications with the RIO <serial-buses>`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:37
+msgid "Footnotes"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-potentiometers-hardware.rst:39
+msgid ""
+"The way this actually works is generally by having the shaft control the "
+"position of a contact along a resistive \"wiper\" of fixed length along "
+"which the current flows - the resistance is proportional to the length of"
+" wiper between the contact and the end of the wiper."
+msgstr ""
+

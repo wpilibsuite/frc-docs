@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:2
+msgid "Analog Inputs - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:4
+msgid ""
+"This section covers analog input hardware.  For a software guide to "
+"analog inputs, see :ref:`docs/software/sensors/analog-inputs-"
+"software:Analog Inputs - Software`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:6
+msgid ""
+"An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a "
+"signal whose value can lie anywhere in a continuous interval.  This lies "
+"in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, "
+"which can take only one of several discrete values.  The roboRIO's analog"
+" input ports allow the measurement of analog signals with values from 0V "
+"to 5V."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:8
+msgid ""
+"In practice, there is no way to measure a \"true\" analog signal with a "
+"digital device such as a computer (like the roboRIO).  Accordingly, the "
+"analog inputs are actually measured as a 12-bit digital signal - however,"
+" this is quite a high resolution [1]_."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:10
+msgid ""
+"Analog inputs are typically (but not always!) used for sensors whose "
+"measurements vary continuously over a range, such as :doc:`ultrasonic "
+"rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-"
+"potentiometers-hardware>`, as they can communicate by outputting a "
+"voltage proportional to their measurements."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:13
+msgid "Connecting to roboRIO analog input ports"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:15
+msgid ""
+"An additional four analog inputs are available via the \"MXP\" expansion "
+"port.  To use these, a breakout board of some sort that connects to the "
+"MXP is needed."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:17
+msgid ""
+"Always consult the technical specifications of the sensor you are using "
+"*before* wiring the sensor, to ensure that the correct wire is being "
+"connected to each pin.  Failure to do so can result in damage to the "
+"sensor or the RIO."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:19
+msgid ""
+"**Never** directly connect the power pin to the ground pin on any port on"
+" the roboRIO!  This will trigger protection features on the roboRIO and "
+"may result in unexpected behavior."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:21
+msgid "|roboRIO Analog Inputs|"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:23
+msgid ""
+"The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in "
+"the image above.  Each port has three pins - signal (\"S\"), power "
+"(\"V\"), and ground (\"|ground|\").  The \"power\" and \"ground\" pins "
+"are used to power the peripheral sensors that connect to the analog input"
+" ports - there is a constant 5V potential difference between the "
+"\"power\" and the \"ground\" pins [2]_.  The signal pin is the pin on "
+"which the signal is actually measured."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:26
+msgid "Connecting a sensor to a single analog input port"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:28
+msgid ""
+"Some simple sensors (such as :doc:`potentiometers <analog-potentiometers-"
+"hardware>`) may have interchangeable power and ground connections."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:30
+msgid ""
+"Most sensors that connect to analog input ports will have three wires - "
+"signal, power, and ground - corresponding precisely to the three pins of "
+"the analog input ports.  They should be connected accordingly."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:32
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:39
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:32
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:39
+msgid "add picture"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:35
+msgid "Connecting a sensor to multiple analog input ports"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:37
+msgid ""
+"Some sensors may need to connect to multiple analog input ports in order "
+"to function.  In general, these sensors will only ever require a single "
+"power and a single ground pin - only the signal pin of the additional "
+"port(s) will be needed."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:45
+msgid "Footnotes"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:47
+msgid ""
+"A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For"
+" a 5V range, that's an effective resolution of approximately 1.2 mV, or "
+".0012V.  The actual accuracy specification is plus-or-minus 50mV, so the "
+"discretization is not the limiting factor in the measurement accuracy."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/analog-inputs-hardware.rst:48
+msgid ""
+"All power pins are actually connected to a single rail, as are all ground"
+" pins - there is no need to use the power/ground pins corresponding to a "
+"given signal pin."
+msgstr ""
+

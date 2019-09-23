@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:2
+msgid "Digital Inputs - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:4
+msgid ""
+"This section covers digital inputs in software.  For a hardware guide to "
+"digital inputs, see :ref:`docs/hardware/sensors/digital-inputs-"
+"hardware:Digital Inputs - Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:6
+msgid ""
+"The roboRIO's FPGA supports up to 26 digital inputs.  10 of these are "
+"made available through the built-in DIO ports on the RIO itself, while "
+"the other 16 are available through the MXP breakout port."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:8
+msgid ""
+"Digital inputs read one of two states - \"high\" or \"low.\"  By default,"
+" the built-in ports on the RIO will read \"high\" due to internal pull-up"
+" resistors (for more information, see :ref:`docs/hardware/sensors"
+"/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, "
+"digital inputs are most-commonly used with switches of some sort.  "
+"Support for this usage is provided through the :code:`DigitalInput` class"
+" (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/DigitalInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1DigitalInput.html>`__)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:11
+msgid "The DigitalInput class"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:13
+msgid "A :code:`DigitalInput` can be initialized as follows:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:28
+msgid "Reading the value of the DigitalInput"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:30
+msgid ""
+"The state of the :code:`DigitalInput` can be polled with the :code:`get` "
+"method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:45
+msgid "Creating a DigitalInput from an AnalogInput"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:47
+msgid ""
+"An :code:`AnalogTrigger` constructed with a port number argument can "
+"share that analog port with a separate :code:`AnalogInput`, but two "
+"`AnalogInput` objects may not share the same port."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:49
+msgid ""
+"Sometimes, it is desirable to use an analog input as a digital input.  "
+"This can be easily achieved using the :code:`AnalogTrigger` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogTrigger.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogTrigger.html>`__)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:51
+msgid ""
+"An :code:`AnalogTrigger` may be initialized as follows.  As with "
+":code:`AnalogPotentiometer`, an :code:`AnalogInput` may be passed "
+"explicitly if the user wishes to customize the sampling settings:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:80
+msgid "Setting the trigger points"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:82
+msgid ""
+"For details on the scaling of \"raw\" :code:`AnalogInput` values, see "
+":doc:`analog-inputs-software`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:84
+msgid ""
+"To convert the analog signal to a digital one, it is necessary to specify"
+" at what values the trigger will enable and disable.  These values may be"
+" different to avoid \"dithering\" around the transition point:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:105
+msgid "Using DigitalInputs in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:107
+msgid ""
+"As almost all switches on the robot will be used through a "
+":code:`DigitalInput`, this class is extremely important for effective "
+"robot control."
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:110
+msgid "Limiting the motion of a mechanism"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:112
+msgid ""
+"Nearly all motorized mechanisms (such as arms and elevators) in FRC "
+"should be given some form of \"limit switch\" to prevent them from "
+"damaging themselves at the end of their range of motions.  A short "
+"example is given below:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:150
+msgid "Homing an encodered mechanism"
+msgstr ""
+
+#: ../../source/docs/software/sensors/digital-inputs-software.rst:152
+msgid ""
+"Limit switches are very important for being able to \"home\" an encodered"
+" mechanism.  For an example of this, see :ref:`docs/software/sensors"
+"/encoders-software:Homing an encodered mechanism`."
+msgstr ""
+

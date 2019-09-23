@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:2
+msgid "Using tabs"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:4
+msgid ""
+"Shuffleboard is a tabbed interface. Each tab organizes widgets in a "
+"logical grouping. By default, Shuffleboard has tabs for the legacy "
+"SmartDashboard and LiveWindow - but new tabs can now be created in "
+"Shuffleboard directly from a robot program for better organization."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:6
+msgid "Creating a new tab"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:19
+msgid ""
+"Creating a new tab is as simple as calling a single method on the "
+"Shuffleboard class, which will create a new tab on Shuffleboard and "
+"return a handle for adding your data to the tab. Calling getTab multiple "
+"times with the same tab title will return the same handle each time."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:22
+msgid "Selecting a tab"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:35
+msgid ""
+"This method lets a tab be selected by title. This is case-sensitive (so "
+"\"Tab Title\" and \"Tab title\" are two individual tabs), and only works "
+"if a tab with that title exists at the time the method is called, so "
+"calling ``selectTab(\"Example\")``\\ will only have an effect if a tab "
+"named \"Example\" has previously been defined."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:37
+msgid ""
+"This method can be used to select any tab in Shuffleboard, not just ones "
+"created by the robot program."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:40
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:42
+msgid ""
+"Tabs created from a robot program differ in a few important ways from "
+"normal tabs created from the dashboard:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:44
+msgid "Not saved in the Shuffleboard save file"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:45
+msgid "No support for autopopulation"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:46
+msgid "Users are expected to specify the tab contents in their robot program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.rst:47
+msgid "Have a special color to differentiate from normal tabs"
+msgstr ""
+

@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:2
+msgid "Sensor Overview - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:4
+msgid ""
+"This section covers sensor hardware, not the use of sensors in code. For "
+"a software sensor guide, see :ref:`docs/software/sensors/sensor-overview-"
+"software:Sensor Overview - Software`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:6
+msgid ""
+"In order to be effective, it is often vital for robots to be able to "
+"gather information about their surroundings.  Devices that provide "
+"feedback to the robot on the state of its environment are called "
+"\"sensors.\"  There are a large variety of sensors available to FRC "
+"teams, for measuring everything from on-field positioning to robot "
+"orientation to motor/mechanism positioning.  Making use of sensors is an "
+"absolutely crucial skill for on-field success; while most FRC games do "
+"have tasks that can be accomplished by a \"blind\" robot, the best robots"
+" rely heavily on sensors to accomplish game tasks as quickly and reliably"
+" as possible."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:8
+msgid ""
+"Additionally, sensors can be extremely important for robot safety - many "
+"robot mechanisms are capable of breaking themselves if used incorrectly."
+"  Sensors provide a safeguard against this, allowing robots to, for "
+"example, disable a motor if a mechanism is against a hard-stop."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:11
+msgid "Types of sensors"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:13
+msgid ""
+"Sensors used in FRC can be generally categorized in two different ways: "
+"by function, and by communication protocol.  The former categorization is"
+" relevant for robot design; the latter for wiring and programming."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:16
+msgid "Sensors by function"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:18
+msgid ""
+"Sensors can provide feedback on a variety of different aspects of the "
+"robot's state.  Sensor functions common to FRC include:"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:20
+msgid ":doc:`Proximity switches <proximity-switches>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:22
+msgid "Mechanical proximity switches (\"limit switches\")"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:23
+msgid "Magnetic proximity switches"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:24
+msgid "Inductive proximity switches"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:25
+msgid "Photoelectric proximity switches"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:27
+msgid "Distance sensors"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:29
+msgid ":doc:`Ultrasonic sensors <ultrasonics-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:30
+msgid ":doc:`Triangulating rangefinders <triangulating-rangefinders>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:31
+msgid ":doc:`LIDAR <lidar>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:33
+msgid "Shaft rotation sensors"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:35
+msgid ":doc:`Encoders <encoders-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:36
+msgid ":doc:`Potentiometers <analog-potentiometers-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:38
+msgid ":doc:`Accelerometers <accelerometers-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:40
+msgid ":doc:`Gyroscopes <gyros-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:43
+msgid "Sensors by communication protocol"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:45
+msgid ""
+"In order for a sensor to be useful, it must be able to \"talk\" to the "
+"roboRIO.  There are three main methods by which sensors can communicate "
+"their readings to the roboRIO:"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:47
+msgid ":doc:`Analog input <analog-inputs-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:48
+msgid ":doc:`Digital input <digital-inputs-hardware>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:49
+msgid ":doc:`Serial bus <serial-buses>`"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:51
+msgid "SPI"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:52
+msgid "I2C"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:53
+msgid "RS232"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:54
+msgid "USB"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/sensor-overview-hardware.rst:56
+msgid ""
+"In general, support for sensors that communicate via analog and digital "
+"inputs is straightforward, while communication over serial bus is more "
+"complicated."
+msgstr ""
+

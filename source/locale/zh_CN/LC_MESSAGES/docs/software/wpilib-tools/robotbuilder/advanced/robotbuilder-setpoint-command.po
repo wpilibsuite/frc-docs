@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:2
+msgid "Setpoint Command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:4
+msgid ""
+"A common use case in robot programs is to drive an actuator to a "
+"particular angle or position that is measured using a potentiometer or "
+"encoder. This happens so often that there is a shortcut in RobotBuilder "
+"to do this task. It is called the Setpoint command and it's one of the "
+"choices on the palette or the right-click context menu that can be "
+"inserted under \"Commands\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:7
+msgid "Start with a PIDSubsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:11
+msgid ""
+"Suppose in a robot there is a wrist joint with a potentiometer that "
+"measures the angle. First :doc:`create a PIDSubsystem <../writing-code"
+"/robotbuilder-writing-pidsubsystem-code>` that include the motor that "
+"moves the wrist joint and the potentiometer that measures the angle. The "
+"PIDSubsystem should have all the PID constants filled in and working "
+"properly."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:13
+msgid ""
+"It is important to set the **Tolerance** parameter. This controls how far"
+" off the current value can be from the setpoint and be considered on "
+"target. This is the criteria that the SetpointCommand uses to move onto "
+"the next command."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:16
+msgid "Creating the Setpoint Command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:20
+msgid ""
+"Right-click on the Commands folder in the palette and select \"Add "
+"Setpoint command\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:23
+msgid "Setpoint Command Parameters"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:27
+msgid ""
+"Fill in the name of the new command. The Requires field is the "
+"PIDSubsystem that is being driven to a setpoint and the Setpoint "
+"parameter is the setpoint value for the PIDSubsystem. There is no need to"
+" fill in any code for this command, it is automatically created by "
+"RobotBuilder."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:29
+msgid ""
+"Whenever this command is scheduled, it will automatically drive the "
+"subsystem to the specified setpoint. When the setpoint is reached within "
+"the tolerance specified in the PIDSubsystem, the command ends and the "
+"next command starts. It is important to specify a tolerance in the "
+"PIDSubsystem or this command might never end because the tolerance is not"
+" achieved."
+msgstr ""
+

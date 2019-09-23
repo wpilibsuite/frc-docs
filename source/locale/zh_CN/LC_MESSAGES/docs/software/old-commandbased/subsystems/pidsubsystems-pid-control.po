@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:2
+msgid "PIDSubsystems for built-in PID Control"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library,"
+" which has been deprecated. While this documentation has been preserved "
+"to help teams that have yet to do so, teams are strongly encouraged to "
+"migrate to the :ref:`new command-based library "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:7
+msgid ""
+"If a mechanism uses a sensor for feedback, then most often a PID "
+"controller will be used to control the motor speed or position. Examples "
+"of subsystems that might use PID control are: elevators with "
+"potentiometers to track the height, shooters with encoders to measure the"
+" speed, wrists with potentiometers to measure the joint angle, etc."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:9
+msgid ""
+"There is a PIDController class built into WPILib, but to simplify its use"
+" for command based programs there is a PIDSubsystem. A PIDSubsystem is a "
+"normal subsystem with the PIDController built in and exposes the required"
+" methods for operation."
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:12
+msgid "Controlling the Angle of a Wrist Joint"
+msgstr ""
+
+#: ../../source/docs/software/old-commandbased/subsystems/pidsubsystems-pid-control.rst:14
+msgid ""
+"In this example you can see the basic elements of a PIDSubsystem for the "
+"wrist joint:"
+msgstr ""
+

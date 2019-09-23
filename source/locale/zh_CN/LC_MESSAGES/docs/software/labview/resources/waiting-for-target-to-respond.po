@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:2
+msgid "Waiting for Target to Respond - Recovering from bad loops"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:6
+msgid ""
+"If you download LabVIEW code which contains an unconstrained loop (a loop"
+" with no delay) it is possible to get the roboRIO into a state where "
+"LabVIEW is unable to connect to download new code. This document explains"
+" the process required to load new, fixed, code to recover from this state"
+".waiting-for-target-to-respond/"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:9
+msgid "The Symptom"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:13
+msgid ""
+"The primary symptom of this issue is attempts to download new robot code "
+"hang at the \"Waiting for the target (Target) to respond\" step as shown "
+"above. Note that there are other possible causes of this symptom (such as"
+" switching from a C++\\Java program to LabVIEW program) but the steps "
+"described here should resolve most or all of them."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:15
+msgid "Click ``Cancel`` to close the download dialog."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:18
+msgid "The Problem"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:22
+msgid ""
+"One common source of this issue is unconstrained loops in your LabVIEW "
+"code. An unconstrained loop is a loop which does not contain any delay "
+"element (such as the one on the left). If you are unsure where to begin "
+"looking, Disabled.VI, Periodic Tasks.VI and Vision Processing.VI are the "
+"common locations for this type of loop. To fix the issue with the code, "
+"add a delay element such as the Wait (ms) VI from the Timing palette, "
+"found in the right loop."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:25
+msgid "Set No App"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:29
+msgid ""
+"Using the roboRIO webserver (see the article roboRIO Webdashboard for "
+"more details). **Check** the box to \"Disable RT Startup App\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:31
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:45
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:31
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:45
+msgid "link to roboRIO Webdashboard article above."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:34
+msgid "Reboot"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:36
+msgid ""
+"Reboot the roboRIO, either using the Reset button on the device or by "
+"click Restart in the top right corner of the webpage."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:39
+msgid "Clear No App"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:43
+msgid ""
+"Using the roboRIO webserver (see the article roboRIO Webdashboard for "
+"more details). **Uncheck** the box to \"Disable RT Startup App\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:48
+msgid "Load LabVIEW Code"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/waiting-for-target-to-respond.rst:50
+msgid ""
+"Load LabVIEW code (either using the Run button or Run as Startup). Make "
+"sure to set LabVIEW code to Run as Startup before rebooting the roboRIO "
+"or you will need to follow the instructions above again."
+msgstr ""
+

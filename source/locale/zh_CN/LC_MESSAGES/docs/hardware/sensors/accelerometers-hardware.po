@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:2
+msgid "Accelerometers - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:4
+msgid "Accelerometers are common sensors used to measure acceleration."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:6
+msgid ""
+"In principle, precise measurements of acceleration can be double-"
+"integrated and used to track position (similarly to how the measurement "
+"of turn rate from a gyroscope can be integrated to determine heading) - "
+"however, in practice, accelerometers that are available within the legal "
+"FRC price range are not nearly accurate for this use.  However, "
+"accelerometers are still useful for a number of tasks in FRC."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:8
+msgid ""
+"The roboRIO comes with a built-in three-axis accelerometer that all teams"
+" can use, however teams seeking more-precise measurements may purchase "
+"and use a peripheral accelerometer, as well."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:10
+msgid ""
+"Several popular FRC devices (known as \"inertial measurement units,\" or "
+"\"IMUs\") combine both an accelerometer and a gyroscope.  Popular FRC "
+"example include:"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:12
+msgid ""
+"`Analog Devices ADIS16448 and ADIS 16470 IMUs <https://www.analog.com/en"
+"/landing-pages/001/first.html>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:13
+msgid ""
+"`CTRE Pigeon IMU <https://www.ctr-electronics.com/gadgeteer-imu-module-"
+"pigeon.html>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:14
+msgid "`Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:17
+msgid "Types of accelerometers"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:19
+msgid ""
+"There are two types of accelerometers commonly-used in FRC: single-axis "
+"accelerometers, and multi-axis accelerometers."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:22
+msgid "Single-axis accelerometers"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:24
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:31
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:24
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:31
+msgid "add picture"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:26
+msgid ""
+"As per their name, single-axis accelerometers measure acceleration along "
+"a single axis.  This axis is generally specified on the physical device, "
+"and mounting the device in the proper orientation so that the desired "
+"axis is measured is highly important.  Single-axis accelerometers "
+"generally output an analog voltage corresponding to the measured "
+"acceleration, and so connect to the roboRIO's :doc:`analog input <analog-"
+"inputs-hardware>` ports."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:29
+msgid "Multi-axis accelerometers"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:33
+msgid ""
+"Multi-axis accelerometers measure acceleration along all multiple spacial"
+" axes.  The roboRIO's built-in accelerometer is a three-axis "
+"accelerometer."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/accelerometers-hardware.rst:35
+msgid ""
+"Peripheral multi-axis accelerometers may simply output multiple analog "
+"voltages (and thus connect to the :ref:`analog input ports "
+"<docs/hardware/sensors/analog-inputs-hardware:Connecting a sensor to "
+"multiple analog input ports>`, or (more commonly) they may communicate "
+"with one of the roboRIO's :doc:`serial buses <serial-buses>`."
+msgstr ""
+

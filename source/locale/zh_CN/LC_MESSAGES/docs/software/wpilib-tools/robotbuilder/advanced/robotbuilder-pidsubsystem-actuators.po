@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:2
+msgid "Using PIDSubsystem to Control Actuators"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:4
+msgid ""
+"More advanced subsystems will use sensors for feedback to get guaranteed "
+"results for operations like setting elevator heights or wrist angles. The"
+" PIDSubsystem has a built-in PIDController to automatically set the "
+"correct setpoints for these types of mechanisms."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:7
+msgid "Create a PIDSubsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:11
+msgid ""
+"Creating a subsystem that uses feedback to control the position or speed "
+"of a mechanism is very easy."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:13
+msgid ""
+"Drag a PIDSubsystem from the palette to the Subsystems folder in the "
+"robot description"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:14
+msgid "Rename the PID Subsystem to a more meaningful name for the subsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:16
+msgid ""
+"Notice that some of the parts of the robot description have turned red. "
+"This indicates that these components (the PIDSubsystem) haven't been "
+"completed and need to be filled in. The properties that are either "
+"missing or incorrect are shown in red."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:19
+msgid "Adding Sensors and Actuators to the PIDSubsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:23
+msgid "Add the missing components for the PIDSubsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:25
+msgid ""
+"Drag in the actuator (a speed controller) to the particular subsystem - "
+"in this case the Elevator"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:26
+msgid ""
+"Drag the sensor that will be used for feedback to the subsystem, in this "
+"case the sensor is a potentiometer that might give elevator height "
+"feedback."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:29
+msgid "Fill in the PIDSubsystem Parameters"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:33
+msgid ""
+"There a number of parameters for the PIDSubsystem but only a few need to "
+"be filled in for most cases"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:35
+msgid ""
+"The Input and Output compents will have been filled in automatically from"
+" the previous step when the actuator and sensor were dragged into the "
+"PIDSubsystem"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:36
+msgid ""
+"The P, I, and D values need to be filled in to get the desired "
+"sensitivity and stability of the component"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.rst:38
+msgid ""
+"See :doc:`Writing the Code for a PIDSubsystem <../writing-code"
+"/robotbuilder-writing-pidsubsystem-code>`"
+msgstr ""
+

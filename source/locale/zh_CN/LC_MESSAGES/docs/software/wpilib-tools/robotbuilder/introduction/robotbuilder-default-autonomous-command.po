@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst:2
+msgid "Setting the Default Autonomous Command"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst:4
+msgid ""
+"Since a command is simply one or more actions (behaviors) that the robot "
+"performs, it makes sense to describe the autonomous operation of a robot "
+"as a command. While it could be a single command, it is more likely going"
+" to be a command group (a group of commands that happen together)."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst:8
+msgid ""
+"To designate a command that runs when the robot starts during the "
+"autonomous period of a competition:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst:10
+msgid ""
+"Select the robot in the robot program description Fill in the Autonomous "
+"command field with the command that should run when the robot is placed "
+"in autonomous mode. This is a drop-down field and will give you the "
+"option to select any command that has been defined. Set the parameters "
+"the command takes, if any"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst:14
+msgid ""
+"When the robot is put into autonomous mode, the defined Autonomous "
+"command will be scheduled."
+msgstr ""
+

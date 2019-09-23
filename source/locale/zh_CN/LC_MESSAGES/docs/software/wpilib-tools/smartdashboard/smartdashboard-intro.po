@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:2
+msgid "SmartDashboard Introduction"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:6
+msgid ""
+"The SmartDashboard is a Java program that will display robot data in real"
+" time. The SmartDashboard helps you with these things:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:9
+msgid ""
+"Displays robot data of your choice while the program is running. It can "
+"be displayed as simple text fields or more elaborately in many other "
+"display types like graphs, dials, etc."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:10
+msgid ""
+"Displays the state of the robot program such as the currently executing "
+"commands and the status of any subsystems"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:11
+msgid ""
+"Displays buttons that you can press to cause variables to be set on your "
+"robot"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:12
+msgid ""
+"Allows you to choose startup options on the dashboard that can be read by"
+" the robot program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:14
+msgid ""
+"The displayed data is automatically formatted in real-time as the data is"
+" sent from the robot, but you can change the format or the display widget"
+" types and then save the new screen layouts to be used again later. And "
+"with all these options, it is still extremely simple to use. To display "
+"some data on the dashboard, simply call one of the SmartDashboard methods"
+" with the data and its name and the value will automatically appear on "
+"the dashboard screen."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:17
+msgid "Installing the SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:21
+msgid ""
+"The SmartDashboard is now packaged with the C++ and Java language updates"
+" and can be launched directly from the Driver Station by selecting the "
+"**Java** or **C++** buttons on the Setup tab."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:23
+msgid ""
+"If using the Classmate PC or other PC where the DS is run from a separate"
+" account from the C++\\Java tools install (e.g. Driver and Developer) the"
+" buttons shown above may not work."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:25
+msgid ""
+"You can utilize the SmartDashboard in this type of setup in one of two "
+"ways. The first way is to set the type to **Default** and modify the DS "
+"INI file to launch the appropriate dashboard, details can be found in "
+"this article. The second option is to copy the "
+":code:`C:\\Users\\Developer\\wpilib\\tools` directory to "
+":code:`C:\\Users\\Driver\\wpilib\\tools`. When using this second method "
+"it is recommended to make sure that the Dashboard under both the Driver "
+"and Developer accounts point to the same save file (see Locating the Save"
+" File) below."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:28
+msgid "Configuring the Team Number"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:32
+msgid ""
+"The first time you launch the SmartDashboard you should be prompted for "
+"your team number. To change the team number after this: click **File > "
+"Preferences** to open the Preferences dialog. Double-click the box to the"
+" right of **Team Number** and enter your FRC Team Number, then click "
+"outside the box to save."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:34
+msgid ""
+"SmartDashboard will take a moment to configure itself for the team "
+"number, do not be alarmed."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:37
+msgid "Locating the Save File"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:41
+msgid ""
+"Users may wish to customize the save location of the SmartDashboard. To "
+"do this click the box next to **Save File** then browse to the folder "
+"where you would like to save the configuration. Files saved in the "
+"installation directories for the WPILib components will likely be "
+"overwritten on updates to the tools."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:43
+msgid ""
+"It is recommended that this folder be inside the users home directory and"
+" not inside the sunspotfrcsdk or workbench directories."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:46
+msgid "Adding a Connection Indicator"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:50
+msgid ""
+"It is often helpful to see if the SmartDashboard is connected to the "
+"robot. To add a connection indicator, select **View > Add > Connection "
+"Indicator**. This indicator will be red when disconnected and green when "
+"connected. To move or resize this indicator, select **View > Editable** "
+"to toggle the SmartDashboard into editable mode, then drag the center of "
+"the indicator to move it or the edges to resize. Select the **Editable** "
+"item again to lock it in place."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:53
+msgid "Adding Widgets to the SmartDashboard"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.rst:57
+msgid ""
+"Widgets are automatically added to the SmartDashboard for each \"key\" "
+"sent by the robot code. For instructions on adding robot code to write to"
+" the SmartDashboard see :doc:`Displaying Expressions from Within the "
+"Robot Program <displaying-expressions>`."
+msgstr ""
+

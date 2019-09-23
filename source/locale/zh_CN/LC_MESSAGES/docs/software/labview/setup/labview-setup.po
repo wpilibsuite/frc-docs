@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:2
+msgid "Installing LabVIEW for FRC 2019 (LabVIEW only)"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:6
+msgid ""
+"This installation is for teams programming in LabVIEW or using NI Vision "
+"Assistant only. C++ and Java teams not using these features do not need "
+"to install from the DVD."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:8
+msgid ""
+"Download and installation times will vary widely with computer and "
+"internet connection specifications, however note that this process "
+"involves a large file download and installation and will likely take at "
+"least an hour to complete."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:11
+msgid "Uninstall Old Versions (recommended)"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:13
+msgid ""
+"NOTE: If you wish to keep programming cRIOs you will need to maintain an "
+"install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has "
+"been extended. While these versions should be able to co-exist on a "
+"single computer, this is not a configuration that has been extensively "
+"tested."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:15
+msgid ""
+"Before installing the new version of LabVIEW it is recommended to remove "
+"any old versions. The new version will likely co-exist with the old "
+"version, but all testing has been done with FRC 2019 only. Make sure to "
+"back up any team code located in the \"User\\\\LabVIEW Data\" directory "
+"before un-installing. Then click Start >> Control Panel >> Uninstall a "
+"Program. Locate the entry labeled \"National Instruments Software\", "
+"right-click on it and select Uninstall/Change."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:20
+msgid "Select components to uninstall"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:22
+msgid ""
+"In the left pane of the dialog box that appears, select all entries. The "
+"easiest way to do this is to click the top entry to highlight it, then "
+"scroll down to the bottom entry, press and hold shift and click on the "
+"last entry then release shift. Click Remove. Wait for the uninstaller to "
+"complete and reboot if prompted."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:27
+msgid "Getting LabVIEW installer"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:29
+msgid ""
+"Either locate and insert the LabVIEW USB Drive or download the LabVIEW "
+"2019 installer from https://www.ni.com/download/labview-for-"
+"frc-18.0/7841/en/"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:31
+msgid ""
+"If downloaded, right click on the downloaded file (NI_FRC2019.zip) and "
+"select Extract All."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:33
+msgid ""
+"This is a large download (~5GB). It is recommended to use a fast internet"
+" connection and to use the NI Downloader to allow the download to resume "
+"if interrupted."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:36
+msgid "Installing LabVIEW"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:38
+msgid ""
+"National Instruments LabVIEW requires a license. Each season’s license is"
+" active until January 31st of the following year (e.g. the license for "
+"the 2019 season expires on January 31, 2020)"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:40
+msgid ""
+"Teams are permitted to install the software on as many team computers as "
+"needed, subject to the restrictions and license terms that accompany the "
+"applicable software, and provided that only team members or mentors use "
+"the software, and solely for FRC. Rights to use LabVIEW are governed "
+"solely by the terms of the license agreements that are shown during the "
+"installation of the applicable software."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:43
+msgid "Welcome"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:47
+msgid ""
+"Double click on ``autorun.exe`` to launch the installer. If prompted to "
+"allow changes click Yes. To install LabVIEW to program your FRC robot, "
+"click the top option Install Everything for LabVIEW Development. To "
+"install only NI Vision Assistant for use with C++ or Java, click Install "
+"Only NI Vision Development Module. If prompted with any Windows security "
+"warnings, click Allow or Yes."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:50
+msgid "Warnings"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:54
+#: ../../source/docs/software/labview/setup/labview-setup.rst:60
+#: ../../source/docs/software/labview/setup/labview-setup.rst:81
+#: ../../source/docs/software/labview/setup/labview-setup.rst:113
+#: ../../source/docs/software/labview/setup/labview-setup.rst:134
+msgid "Click \"Next\""
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:57
+msgid "Product List"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:63
+msgid "Product Information"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:67
+msgid ""
+"Un-check the box, then click \"Next\". (Note: you may not see the warning"
+" shown in the top portion of the window in this picture)."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:70
+msgid "User Information"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:74
+msgid ""
+"Enter name, organization, and the serial number from the ReadMe in the "
+"File Releases on Teamforge. Click \"Next\". If you cannot find your "
+"serial number, please reach out to National Instruments at "
+"www.ni.com/frc/needhelp."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:77
+msgid "Destination Directory"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:84
+msgid "License agreements"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:88
+#: ../../source/docs/software/labview/setup/labview-setup.rst:92
+msgid "Check \"I accept...\" then Click \"Next\""
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:95
+msgid "Driver Software installation"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:99
+msgid "If you see this screen, Click \"Next\""
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:102
+msgid "Disable Windows Fast Startup"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:106
+msgid "If you see this screen, click \"Next\""
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:109
+msgid "Start Installation"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:116
+msgid "Overall Progress"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:120
+msgid "Overall installation progress will be tracked in this window"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:123
+msgid "Individual Product Progress"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:127
+msgid ""
+"Each product installed will also create an individual progress window "
+"like the one shown above."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:130
+msgid "Post-Install Information"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:137
+msgid "Installation Summary"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:141
+msgid ""
+"If internet access is available and you are ready to activate, click "
+"\"Next\"; otherwise uncheck the \"Run License Manager...\" and click "
+"\"Next\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:144
+msgid "NI Activation Wizard"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:148
+msgid ""
+"Log into your ni.com account. If you don't have an account, select "
+"'Create account' to create a free account."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:152
+msgid ""
+"The serial number you entered at the \"User Information\" screen should "
+"appear in all of the text boxes, if it doesn't, enter it now. Click "
+"\"Activate\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:154
+msgid ""
+"If this is the first time activating the 2019 software on this account, "
+"you will see the message shown above about a valid license not being "
+"found. You can ignore this."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:158
+msgid ""
+"If your products activate successfully, an “Activation Successful” "
+"message will appear. If the serial number was incorrect, it will give you"
+" a text box and you can re-enter the number and select “Try Again”. If "
+"everything activated successfully, click “Next”."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:162
+msgid "Click \"Close\"."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:165
+msgid "Restart"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:169
+msgid "Select \"Yes\""
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:172
+msgid "NI Update Service"
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:176
+msgid ""
+"On occasion you may see alerts from the NI Update Service about patches "
+"to LabVIEW."
+msgstr ""
+
+#: ../../source/docs/software/labview/setup/labview-setup.rst:178
+msgid ""
+"It is not recommended to install these updates unless directed by FRC "
+"through our usual communication channels (Frank's Blog, Team Updates or "
+"E-mail Blasts)."
+msgstr ""
+

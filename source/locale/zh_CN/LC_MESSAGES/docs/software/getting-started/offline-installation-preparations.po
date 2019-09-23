@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:2
+msgid "Offline Installation Preparation"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:4
+msgid ""
+"This article contains instructions/links to components you will want to "
+"gather if you need to do offline installation of the FRC Control System "
+"software."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:7
+msgid "Documentation"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:9
+msgid ""
+"This documentation can be downloaded for offline viewing. The link to "
+"download the PDF can be found `here "
+"<https://buildmedia.readthedocs.org/media/pdf/frc-docs/latest/frc-"
+"docs.pdf>`__."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:12
+msgid "Installers"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:15
+msgid "All Teams"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:17
+msgid ""
+"`2019 NI Update Suite <https://www.ni.com/download/first-robotics-"
+"software-2017/7904/en/>`__ (Note: Requires decryption key from kickoff "
+"broadcast!)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:18
+msgid ""
+"`2019 FRC Radio Configuration Utility "
+"<https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip>`__"
+" or `2019 FRC Radio Configuration Utility Israel Version "
+"<https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:19
+msgid ""
+"(Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-"
+"events.firstinspires.org/services/DSImages/>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:22
+msgid "LabVIEW Teams"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:24
+msgid ""
+"LabVIEW USB (from FIRST Choice) or `Download <https://www.ni.com/download"
+"/labview-for-frc-18.0/7841/en/>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:27
+msgid "C++/Java Teams"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:29
+msgid ""
+"`C++/Java WPILib Installer "
+"<https://github.com/wpilibsuite/allwpilib/releases>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:30
+msgid ""
+"VS Code (if using Windows, run the installer and use it to download the "
+"appropriate VS Code file. If using Mac/Linux, download VSCode from `here "
+"<https://code.visualstudio.com/download>`__)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:33
+msgid "3rd Party Libraries/Software"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:35
+msgid ""
+"A number of software components were broken out of WPILib in 2017 and are"
+" now maintained by third parties. See `this blog "
+"<https://www.firstinspires.org/robotics/frc/blog/2017-control-system-"
+"update>`__ for more details."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/offline-installation-preparations.rst:37
+msgid ""
+"A directory of available 3rd party software that plugs in to WPILib can "
+"be found on :ref:`docs/software/getting-started/3rd-party-libraries:3rd "
+"Party Libraries`."
+msgstr ""
+

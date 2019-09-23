@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:4
+msgid "Creating your Benchtop Test Program (C++/Java)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:6
+msgid "This article describes the Benchtop test example program"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:9
+msgid "Creating a Project"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:11
+msgid ""
+"Create a new Getting Started Example project. For more info about "
+"creating projects, see :ref:`docs/software/wpilib-overview/creating-"
+"robot-program:Creating a Robot Program`."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:14
+msgid "Imports/Includes"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:34
+msgid ""
+"Our code needs to reference the components of WPILib that are used. In "
+"C++ this is accomplished using ``#include`` statements, in Java it is "
+"done with ``import`` statements. The program references classes for "
+"``Joystick`` (for driving), ``PWMVictorSPX`` (for controlling motors), "
+"``TimedRobot`` (the base class used for the example), ``Timer`` (used for"
+" autonomous), ``DifferentialDrive`` (for connecting the joystick control "
+"to the motors), and ``LiveWindow`` (C++ only)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:37
+msgid "Defining the variables for our sample robot"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:68
+msgid ""
+"The sample robot in our examples will have a joystick on USB port 0 for "
+"arcade drive and two motors on PWM ports 0 and 1. Here we create objects "
+"of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and time "
+"(m_timer). This section of the code does three things:"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:70
+msgid "Defines the variables as members of our Robot class."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:71
+msgid "Initializes the variables."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:73
+msgid ""
+"The variable initializations for C++ are in the ``private`` section at "
+"the bottom of the program. This means they are private to the class "
+"(``Robot``). The C++ code also sets the Motor Safety expiration to 0.1 "
+"seconds (the drive will shut off if we don't give it a command every .1 "
+"seconds and starts the ``Timer`` used for autonomous."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:76
+msgid "Robot Initialization"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:90
+msgid ""
+"The ``RobotInit`` method is run when the robot program is starting up, "
+"but after the constructor. The ``RobotInit`` for our sample program gets "
+"a pointer to the ``LiveWindow`` instance (this is used in the test method"
+" discussed below). This method is omitted from the code, meaning the "
+"default version will be run (if we wanted to run something here we could "
+"provide the code above to override the default)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:93
+msgid "Simple Autonomous Example"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:133
+msgid ""
+"The ``AutonomousInit`` method is run once each time the robot transitions"
+" to autonomous from another mode. In this program, we reset the ``Timer``"
+" and then start it in this method."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:135
+msgid ""
+"``AutonomousPeriodic`` is run once every period while the robot is in "
+"autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
+"which defaults to 20ms. In this example, the periodic code checks if the "
+"timer is less than 2 seconds and if so, drives forward at half speed "
+"using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. The "
+"value is negative for forward motion because of the convention for "
+"joysticks where a negative Y-axis value corresponds to moving the stick "
+"away from you (forward). If more than 2 seconds has elapsed, the code "
+"stops the robot drive."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:138
+msgid "Joystick Control for teleoperation"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:162
+msgid ""
+"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
+"``TeleopPeriodic`` function. In this example we don't have anything to do"
+" in ``TeleopInit``, it is provided for illustration purposes only. In "
+"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
+"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and"
+" the X-axis to turning motion."
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:165
+msgid "Test Mode"
+msgstr ""
+
+#: ../../source/docs/software/getting-started-with-benchtop/creating-benchtop-test-program-cpp-java.rst:178
+msgid ""
+"Test Mode is used for testing robot functionality. Similar to "
+"``TeleopInit``, the ``TestPeriodic`` is provided here for example."
+msgstr ""
+

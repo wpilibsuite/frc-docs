@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:2
+msgid "Generating Code for a Project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:4
+msgid ""
+"After you've set up your robot framework in RobotBuilder, you'll need to "
+"export the code and load it into VS Code. This article describes the "
+"process for doing so."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:7
+msgid "Generate the Code for the Project"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:11
+msgid ""
+"Verity that the Export Directory points to where you want (1) and then "
+"click Java or C++ (2) to generate a VSCode project or update code."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:14
+msgid "Open the Project in VSCode"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst:18
+msgid ""
+"Open VS Code and select **File -> Open Folder**. Navigate to your Export "
+"location and click **Select Folder**."
+msgstr ""
+

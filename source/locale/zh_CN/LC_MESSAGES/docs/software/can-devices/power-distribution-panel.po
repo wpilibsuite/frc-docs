@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:2
+msgid "Power Distribution Panel"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:4
+msgid ""
+"The Power Distribution Panel (PDP) can use its CAN connectivity to "
+"communicate a wealth of status information regarding the robot's power "
+"use to the roboRIO, for use in user code.  The PDP has the capability to "
+"report its current temperature, the bus voltage, the total robot current "
+"draw, the total robot energy use, and the individual current draw of each"
+" device power channel.  These data can be used for a number of advanced "
+"control techniques, such as motor torque limiting and brownout avoidance."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:7
+msgid "Creating a PDP Object"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:9
+msgid ""
+"To use the PDP, create an instance of the :code:`PowerDistributionPanel` "
+"class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:21
+msgid ""
+"Note: it is not necessary to create a PowerDistributionPanel object "
+"unless you need to read values from it. The board will work and supply "
+"power on all the channels even if the object is never created."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:23
+msgid ""
+"To work with the current versions of C++ and Java WPILib, the CAN ID for "
+"the PDP *must* be 0."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:26
+msgid "Reading the Bus Voltage"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:38
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:38
+msgid "link to page on brownout protection after it's ported"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:40
+msgid ""
+"Monitoring the bus voltage can be useful for (among other things) "
+"detecting when the robot is near a brownout, so that action can be taken "
+"to avoid brownout in a controlled manner."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:43
+msgid "Reading the Temperature"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:55
+msgid ""
+"Monitoring the temperature can be useful for detecting if the robot has "
+"been drawing too much power and needs to be shut down for a while, or if "
+"there is a short or other wiring problem."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:58
+msgid "Reading the Total Current and Energy"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:72
+msgid ""
+"Monitoring the total current and total energy (the total energy is simply"
+" the total current multiplied by the bus voltage) can be useful for "
+"controlling how much power is being drawn from the battery, both for "
+"preventing brownouts and ensuring that mechanisms have sufficient power "
+"available to perform the actions required."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:75
+msgid "Reading Individual Channel Currents"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:77
+msgid ""
+"The PDP also allows users to monitor the current drawn by the individual "
+"device power channels.  For example, to read the current on channel 0:"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/power-distribution-panel.rst:89
+msgid ""
+"Monitoring individual device current draws can be useful for detecting "
+"shorts or stalled motors."
+msgstr ""
+

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/getting-started/known-issues.rst:2
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:4
+msgid ""
+"This article details known issues (and workarounds) for FRC Control "
+"System Software."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:7
+msgid "VSCode Fails to Launch Offline"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:9
+msgid ""
+"There are reports that on some builds of Windows 10 (build 1809), VSCode "
+"may fail to launch if no network is present (note: this is different than"
+" no internet present)."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:11
+msgid "**Workaround:** Install the Microsoft Loopback Adapter"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:13
+msgid ""
+"Access the Device Manager (typically by clicking start and typing Device "
+"Manager)"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:14
+msgid "Click the Network Adapter Category"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:15
+msgid "Click the Action menu from the top bar and select Add Legacy Hardware"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:16
+msgid "Click Next on the window that pops up"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:17
+msgid "Select the second option to install manually"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:18
+msgid ""
+"Select “Network Adapter” and click Next. You will need to wait a bit for "
+"the next screen to populate."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:19
+msgid ""
+"Select Microsoft in the Manufacturer pane, then Microsoft Loopback "
+"Adapter in the right pane."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:20
+msgid "Click Next twice to install the adapter, then Finish to close the window."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:23
+msgid "C++ Intellisense - Files Open on Launch Don't Work Properly"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:25
+msgid ""
+"**Issue:** In C++, files open when VS Code launches will have issues with"
+" Intellisense showing suggestions from all options from a compilation "
+"unit and not just the appropriate ones. This is a bug in VS Code"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:27
+msgid ""
+"**Workaround:** Close the files in VS Code, close VS Code, wait ~ 1 min, "
+"re-launch VS Code."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:30
+msgid "SmartDashboard and Simulation fail to launch on Windows N Editions"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:32
+msgid ""
+"**Issue:** WPILib code using CSCore (dashboards and simulated robot code)"
+" will fail to launch on Education N editions of Windows."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:34
+msgid ""
+"**Solution:** Install the `Media Feature Pack <https://www.microsoft.com"
+"/en-us/software-download/mediafeaturepack>`__"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:37
+msgid "PathWeaver Tank Drive Swapped Paths"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:39
+msgid ""
+"There is currently an issue with PathWeaver where the left and right "
+"sides of the drivetrain are swapped. This can be solved quickly with the "
+"instructions in the article, :ref:`Intergrating Path Following into a "
+"Robot Program <docs/software/wpilib-tools/path-planning/integrating-"
+"robot-program:Integrating path following into a robot program>`. This "
+"will be fixed in the next update."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:42
+msgid "NetworkTables Interoperability"
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:44
+msgid ""
+"There is currently an issue with inter-operating C++/Java Network Tables "
+"clients (dashboards or co-processors) with LabVIEW servers (LV robot "
+"code). In some scenarios users will see updates from one client fail to "
+"be replicated across to other clients (e.g. data from a co-processor will"
+" not be properly replicated out to a dashboard). Data still continues to "
+"return correctly when accessed by code on the server."
+msgstr ""
+
+#: ../../source/docs/software/getting-started/known-issues.rst:46
+msgid ""
+"**Workaround**: Write code on the server to mirror any keys you wish to "
+"see on other clients (e.g. dashboards) to a separate key. For example, if"
+" you have a key named ``targetX`` being published by a co-processor that "
+"you want to show up on a dashboard, you could write code on the robot to "
+"read the key and re-write it to a key like ``targetXDash``."
+msgstr ""
+

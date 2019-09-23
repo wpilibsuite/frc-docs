@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:2
+msgid "Recording and Playback"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:4
+msgid ""
+"Shuffleboard can log all widget updates during a session. Later the log "
+"file can be \"played back\" to see what happened during a match or a "
+"practice run. This is especially useful if something doesn't operate as "
+"intended during a match and you want to see what happened. Each recording"
+" is captured in a recording file."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:7
+msgid "Creating a Recording"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:9
+msgid ""
+"When shuffleboard starts it begins recording to all the NetworkTable "
+"values are recorded and continues until stopped by hitting the "
+"record/stop button in the recorder controls as shown below. If a new "
+"recording is desired, such as when a new piece of code or mechanical "
+"system is being tested, stop the current recording if it is running, and "
+"click the record button. Click the button again to stop recording and "
+"close the recording file. If the button is round (as shown) then click it"
+" to start a recording. If the button is a square, then a recoding is "
+"currently running so click it to stop the recording."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:14
+msgid "Playing a Recording"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:16
+msgid "Previous recordings can be played back by:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:18
+msgid "Selecting the \"Recording\" menu then click \"Load playback\"."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:19
+msgid ""
+"Choose a recording from the from the directory shown. Recordings are "
+"grouped by date and the file names are the time the recording was made to"
+" help identify the correct one. Select the correct recording from the "
+"list."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:24
+msgid "Controlling the Playback"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:26
+msgid ""
+"Selecting the recoding file will begin playback of that file. While the "
+"recording is playing the recording controls will show the current time "
+"within the recording as well as the option to loop the recording while "
+"watching it. When the recording is being played back the \"transport\" "
+"controls will allow the playback to be controlled."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:30
+msgid "The controls work as follows:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:32
+msgid ""
+"The left double-arrow button backs up the playback to the last changed "
+"data point"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:33
+msgid "The play/pause controls starts and stops the playback"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:34
+msgid ""
+"The square stop button stops playback and resumes showing current robot "
+"values"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:35
+msgid "The right double-arrow skips forward to the next changed data value"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:36
+msgid ""
+"The scrubber is a slider that allow direct positioning to any point in "
+"time to view different parts of the recording"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:37
+msgid ""
+"The loop switch turns on playback looping, that is, the playback will run"
+" over and over until stopped"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:38
+msgid ""
+"The time shows the current point within the recording and the total time "
+"of the recording"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:41
+msgid "Converting to Different File Formats"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:45
+msgid ""
+"Shuffleboard recordings are in a custom binary format for efficiency. To "
+"analyze recorded data without playing it back through the app, "
+"Shuffleboard supports data converters to convert the recordings to an "
+"arbitrary format. Only a simple CSV converter is shipped with the app, "
+"but teams can write custom converters and include them in Shuffleboard "
+"plugins."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:49
+msgid ""
+"Multiple recordings can be converted at once. Individual files can be "
+"selected with the \"Add Files\" button, or all recording files in a "
+"directory can be selected at once with the \"Add Directory\" button."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:51
+msgid ""
+"Converted recordings will be generated in the "
+"``~/Shuffleboard/recordings`` directory, but can be manually selected "
+"with the \"Change\" button."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:53
+msgid ""
+"Different converters can be selected with the dropdown in the top right. "
+"By default, only the CSV converter is available. Custom converters from "
+"plugins will appear as options in the dropdown."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:56
+msgid "Additional Notes"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.rst:58
+msgid ""
+"Graphs won't display properly while scrubbing the timeline but if it is "
+"playing through where the graph history can be captured by the graph then"
+" they will display as in the original run."
+msgstr ""
+

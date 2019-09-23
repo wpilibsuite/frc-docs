@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:2
+msgid "Installing the image to your MicroSD card"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:4
+msgid "Getting the FRC Raspberry PI image"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:5
+msgid ""
+"The image is stored on the GitHub release page for the FRC PI-gen "
+"repository: https://github.com/wpilibsuite/FRCVision-pi-gen/releases."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:8
+msgid ""
+"In addition to the instructions on this page, see the documentation on "
+"the GitHub web page (below)."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:10
+msgid ""
+"The image is fairly large so have a fast internet connection when "
+"downloading it. Always use the most recent release from the top of the "
+"list of releases."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:16
+msgid "Copy the image to your MicroSD card"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:17
+msgid ""
+"Download and install Etcher (https://www.balena.io/etcher/) to image the "
+"micro SD card. The micro SD card needs to be at least 4 GB. Note: a micro"
+" SD to USB dongle such as https://www.amazon.com/gp/product/B0779V61XB "
+"works well for writing to micro SD cards."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:22
+msgid ""
+"Flash the MicroSD card with the image using Etcher by selecting the zip "
+"file as the source, your SD card as the destination and click \"Flash\". "
+"Expect the process to take about 3 minutes on a fairly fast laptop."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:28
+msgid "Testing the Raspberry PI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:29
+msgid "Put the micro SD card in a rPi 3 and apply power."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:30
+msgid ""
+"Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect"
+" to ``http://frcvision.local/`` to open the web dashboard. On the first "
+"bootup the filesystem will be writable, but later bootups will default to"
+" read only, so it's necessary to click the \"writable\" button to make "
+"changes."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:35
+msgid "Logging into the Raspberry PI"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:36
+msgid ""
+"Most tasks with the rPi can be done from the web console interface. "
+"Sometimes for advanced use such as program development on the rPi it is "
+"necessary to log in. To log in, use the default Raspberry PI password: ::"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:43
+msgid ""
+"Known issues with this release (errata). These will be fixed in the next "
+"release."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:45
+msgid ""
+"Downloading the Java example program on the web dashboard does not work. "
+"Grab it manually from /home/pi/zips instead (using ssh)."
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.rst:47
+msgid ""
+"Console output enable button on the web dashboard doesn't persist "
+"correctly through a rPi reboot (it needs to be disabled and re-enabled to"
+" again get console output)."
+msgstr ""
+

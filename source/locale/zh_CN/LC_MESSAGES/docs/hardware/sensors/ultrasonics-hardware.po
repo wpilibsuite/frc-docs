@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:2
+msgid "Ultrasonics - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:4
+msgid ""
+"This section covers ultrasonic sensor hardware.  For a software guide to "
+"ultrasonics, see :ref:`docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:6
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:6
+msgid "add image(s)"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:8
+msgid ""
+"Ultrasonic rangefinders are some of the most common rangefinders used in "
+"FRC.  They are cheap, easy-to-use, and fairly reliable.  Ultrasonic "
+"rangefinders work by emitting a pulse of high-frequency sound, and then "
+"measuring how long it takes the echo to reach the sensor after bouncing "
+"off the target.  From the measured time and the speed of sound in air, it"
+" is possible to calculate the distance to the target."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:11
+msgid "Types of ultrasonics"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:13
+msgid ""
+"While all ultrasonic rangefinders operate on the \"ping-response\" "
+"principle outlined above, they may vary in the way they communicate with "
+"the roboRIO."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:16
+msgid "Analog ultrasonics"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:18
+msgid ""
+"Analog ultrasonics output a simple analog voltage corresponding to the "
+"distance to the target, and thus connect to an :doc:`analog input "
+"<analog-inputs-hardware>` port.  The user will need to calibrate the "
+"voltage-to-distance conversion in :ref:`software <docs/software/sensors"
+"/ultrasonics-software:Ultrasonics - Software>`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:21
+msgid "Ping-response ultrasonics"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:23
+msgid ""
+"While, as mentioned, all ultrasonics are functionally ping-response "
+"devices, a \"ping response\" ultrasonic is one configured to connect to "
+":ref:`both a digital input and a digital output <docs/hardware/sensors"
+"/digital-inputs-hardware:Connecting a sensor that uses multiple DIO "
+"ports>`.  The digital output is used to send the ping, while the input is"
+" used to read the response."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:26
+msgid "Serial ultrasonics"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:28
+msgid ""
+"Some more-complicated ultrasonic sensors may communicate with the RIO "
+"over one of the :doc:`serial buses <serial-buses>`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:31
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:33
+msgid ""
+"Ultrasonic sensors are generally quite easy to use, however there are a "
+"few caveats.  As ultrasonics work by measuring the time between the pulse"
+" and its echo, they generally measure distance only to the *closest* "
+"target in their range.  Thus, it is extremely important to pick a the "
+"right sensor for the job.  The documentation for ultrasonic sensors will "
+"generally include a picture of the \"beam pattern\" that shows the shape "
+"of the \"window\" in which the ultrasonic will detect a target - pay "
+"close attention to this when selecting your sensor."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:35
+msgid ""
+"Ultrasonic sensors are also susceptible to interference from other "
+"ultrasonic sensors.  In order to minimize this, the roboRIO can run ping-"
+"response ultrasonics in a \"round-robin\" fashion - however, in "
+"competition, there is no sure way to ensure that interference from "
+"sensors mounted on other robots does not occur."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/ultrasonics-hardware.rst:37
+msgid ""
+"Finally, ultrasonics may not be able to detect objects that absorb sound "
+"waves, or that redirect them in strange ways.  Thus, they work best for "
+"detecting hard, flat objects."
+msgstr ""
+

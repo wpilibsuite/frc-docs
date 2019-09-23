@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:2
+msgid "What you need to get the PI image running"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:3
+msgid ""
+"To start using the Raspberry PI as a video or image coprocessor you need "
+"the following:"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:5
+msgid "A Raspberry PI 3 B or Raspberry PI 3 B+"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:6
+msgid "A micro SD card that is at least 4Gb to hold all the provided software"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:7
+msgid "An ethernet cable to connect the PI to your roboRIO network"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:8
+msgid ""
+"A USB micro power cable to connect to the Voltage Regulator Module (VRM) "
+"on your robot. It is recommended to use the VRM connection for power "
+"rather than powering it from one of the roboRIO USB ports for higher "
+"reliability"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:10
+msgid ""
+"A laptop that can write the MicroSD card, either using a USB dongle "
+"(preferred) or a SD to MicroSD adapter that ships with most MicroSD cards"
+msgstr ""
+
+#: ../../source/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.rst:15
+msgid ""
+"Shown is an inexpensive USB dongle that will write the FRC image to the  "
+"MicroSD card."
+msgstr ""
+

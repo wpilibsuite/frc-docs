@@ -1,0 +1,553 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:2
+msgid "Git Version Control Introduction"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:4
+msgid ""
+"A more in-depth guide on Git is available on the `Git website <https"
+"://git-scm.com/book/en/v2>`__."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:6
+msgid ""
+"`Git <https://git-scm.com/about>`_ is a Distributed Version Control "
+"System (VCS) created by Linus Torvalds, also known for creating and "
+"maintaining the linux kernel. Version Control is a system for tracking "
+"changes of code for developers. The advantages of Git Version Control "
+"are:"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:8
+msgid "Separate testing environments into *branches*"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:9
+msgid "Ability to navigate to a particular *commit* without removing history"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:10
+msgid "Ability to manage *commits* in various ways, including combining them"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:11
+msgid "Various other features, see `here <https://git-scm.com/about>`__"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:14
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:16
+msgid "This tutorial uses the Windows operating system"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:18
+msgid "You have to download and install Git from the following links:"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:20
+msgid "`Windows <https://git-scm.com/download/win>`_"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:21
+msgid "`Mac OS X <https://git-scm.com/download/mac>`_"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:22
+msgid "`Linux <https://git-scm.com/download/linux>`_"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:24
+msgid ""
+"You may need to add Git to your `path "
+"<https://www.google.com/search?q=adding+git+to+path>`__"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:27
+msgid "Git Vocabulary"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:29
+msgid "Git revolves around several core commands:"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:31
+msgid ""
+"**Repository:** the data structure of your code, including a ``.git`` "
+"folder in the root directory"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:32
+msgid ""
+"**Commit:** a particular saved state of the repository, this includes all"
+" files and additions"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:33
+msgid ""
+"**Branch:** a means of separating various commits, having a unique "
+"history. This is primarily used for separating development and stable "
+"branches."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:34
+msgid "**Push:** update the remote repository with your local changes"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:35
+msgid "**Pull:** update your local repository with the remote changes"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:36
+msgid "**Clone:** retrieving a local copy of a repository to modify"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:37
+msgid ""
+"**Fork:** duplicating a pre-existing repository to modify, and to compare"
+" against the original"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:38
+msgid ""
+"**Merge:** combining various changes from different "
+"branches/commits/forks into a single history"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:41
+msgid "Repository"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:43
+msgid ""
+"A Git repository is a data structure containing the structure, history, "
+"and files of a project."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:45
+msgid "Git repositories usually consist of:"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:47
+msgid ""
+"A ``.git`` folder. This folder contains the various information about the"
+" repository."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:48
+msgid ""
+"A ``.gitignore`` file. This file contains the files or directories that "
+"you do *not* want included when you commit."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:49
+msgid "Files and folders. This is the main content of the repository."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:52
+msgid "Creating the repository"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:54
+msgid ""
+"You can store the repository locally, or through a remote. A remote being"
+" the cloud, or possibly another storage medium that hosts your "
+"repository. `Github <https://github.com/>`_ is a popular free hosting "
+"service. Numerous developers use it, and that's what this tutorial will "
+"use."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:56
+msgid ""
+"There are various providers that can host repositories. `Gitlab "
+"<https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and "
+"`Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to "
+"Github"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:59
+msgid "Creating a Github Account"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:61
+msgid ""
+"Go ahead and create a Github account by visiting the `website "
+"<https://github.com>`_ and following the own screen prompts."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:66
+msgid "Local Creation"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:68
+msgid ""
+"After creating and verifying your account, you'll want to visit the "
+"homepage. It'll look similar to the shown image."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:72
+msgid "Click the plus icon in the top right."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:76
+msgid "Then click *\"New Repository\"*"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:80
+msgid ""
+"Fill out the appropriate information, and then click *\"Create "
+"repository\"*"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:84
+msgid "You should see a screen similar to this"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:88
+msgid ""
+"The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in "
+"Visual Studio Code."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:90
+msgid ""
+"Now you'll want to open a powershell window and navigate to your project "
+"directory. An excellent tutorial on powershell can be found `here "
+"<https://programminghistorian.org/en/lessons/intro-to-powershell>`__. "
+"Please consult your search engine on how to open a terminal on "
+"alternative operating systems."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:94
+msgid ""
+"In the below example, we created a file called ``README.md`` with the "
+"contents of ``# Example Repo``. More details on the various commands can "
+"be found in the subsequent sections."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:99
+msgid "Commits"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:101
+msgid ""
+"Repositories are primarily composed of commits. Commits are saved states "
+"or *versions* of code."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:103
+msgid ""
+"In the previous example, we created a file called README.md. Open that "
+"file in your favorite text editor and edit a few lines. After tinkering "
+"with the file for a bit, simply save and close. Navigate to powershell "
+"and type the following commands."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:105
+msgid "``git add README.md``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:106
+msgid "``git commit -m \"example commit\"``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:107
+msgid "``git push``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:112
+msgid "Git Pull"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:114
+msgid ""
+"``git fetch`` can be used when the user does not wish to automatically "
+"merge into the current working branch"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:116
+msgid ""
+"This command retrieves the history or commits from the remote repository."
+" When the remote contains work you do not have, it will attempt to "
+"automatically merge. See :ref:`docs/software/basic-programming/git-"
+"getting-started:Merging`."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:118
+msgid "Run: ``git pull``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:121
+msgid "Git Add"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:123
+msgid ""
+"This command adds a selected file(s) to a commit. To commit every "
+"file/folder that isn't excluded via *gitignore*."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:125
+msgid ""
+"Run: ``git add FILENAME.txt`` where FILENAME.txt is the name and "
+"extension of the file to add to a commit. Run: ``git add .`` will add "
+"every untracked, unexcluded file when ran in the root of the repository."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:129
+msgid "Git Commit"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:131
+msgid ""
+"This command creates the commit and stores it locally. This saves the "
+"state and adds it to the repositories history."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:133
+msgid "Run: ``git commit -m \"type message here\"``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:136
+msgid "Git Push"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:138
+msgid "Upload (Push) your local changes to the remote (Cloud)"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:140
+msgid "Run: ``git push``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:143
+msgid "Branches"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:145
+msgid ""
+"Branches are a similar to parallel worlds to Git. They start off the "
+"same, and then they can \"branch\" out into different varying paths. "
+"Consider the Git control flow to look similar to this."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:165
+msgid ""
+"In the above example, FeatureB was merged into FeatureA. This is what is "
+"called a merge. You are \"merging\" the changes from one branch into "
+"another."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:168
+msgid "Creating a Branch"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:170
+msgid ""
+"Run: ``git branch branch-name`` where branch-name is the name of the "
+"branch to create. The new branch history will be created from the current"
+" active branch."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:173
+msgid "Entering a Branch"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:175
+msgid "Once a branch is created, you have to then enter the branch."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:177
+msgid ""
+"Run: ``git checkout branch-name`` where branch-name is the branch that "
+"was previously created."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:180
+msgid "Merging"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:182
+msgid ""
+"In scenarios where you want to copy one branches history into another, "
+"you can merge them. A merge is done by calling ``git merge branch-name`` "
+"with branch-name being the name of the branch to merge from. It is "
+"automatically merged in the current active branch."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:184
+msgid ""
+"It's common for a remote repository to contain work (history) that you do"
+" not have. Whenever you run ``git pull``, it will attempt to "
+"automatically merge those commits. That merge may look like the below."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:204
+msgid ""
+"However, in the above example, what if File 1 was modified by both branch"
+" FeatureA and FeatureB? This is called a **merge conflict**. A merge "
+"conflict will can be resolved by editing the conflicting file. In the "
+"example, we would need to edit File 1 to keep the history or changes that"
+" we want. After that has been done. Simply re-add, re-commit, and then "
+"push your changes."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:207
+msgid "Resets"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:209
+msgid ""
+"Sometimes history needs to be reset, or a commit needs to be undone. This"
+" can be done multiple ways."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:212
+msgid "Reverting the Commit"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:214
+msgid ""
+"You cannot revert a merge, as git does not know which branch or origin it"
+" should choose."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:216
+msgid ""
+"To revert history leading up to a commit run ``git revert commit-id``. "
+"The commit IDs can be shown using the ``git log`` command."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:219
+msgid "Resetting the Head"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:221
+msgid ""
+"Forcibly resetting the head is a dangerous command. It permanently erases"
+" all history past the target. You have been warned!"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:223
+msgid "Run: ``git reset --hard commit-id``."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:226
+msgid "Forks"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:228
+msgid ""
+"Forks can be treated similarly to branches. You can merge the upstream "
+"(original repository) into the origin (forked repository)."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:231
+msgid "Updating a Fork"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:233
+msgid ""
+"Add the upstream: ``git remote add upstream "
+"https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:234
+msgid "Confirm it was added via: ``git remote -v``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:235
+msgid "Pull changes from upstream: ``git fetch upstream``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:236
+msgid "Merge the changes into head: ``git merge upstream/upstream-branch-name``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:239
+msgid "Gitignore"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:241
+msgid ""
+"It is extremely important that teams **do not** modify the .gitignore "
+"file that is included with their robot project. This can lead to offline "
+"deployment not working."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:243
+msgid ""
+"A .gitignore file is commonly used as a list of files to not "
+"automatically commit with ``git add``. Any files or directory listed in "
+"this file will **not** be committed. They will also not show up with `git"
+" status <https://git-scm.com/docs/git-status>`_."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:245
+msgid ""
+"Additional Information can be found `here "
+"<https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:248
+msgid "Hiding a Folder"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:250
+msgid ""
+"Simply add a new line containing the folder to hide, with a forward slash"
+" at the end"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:252
+msgid "EX: ``directory-to-exclude/``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:255
+msgid "Hiding a File"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:257
+msgid ""
+"Add a new line with the name of the file to hide, including any "
+"prepending directory relative to the root of the repository."
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:259
+msgid "EX: ``directory/file-to-hide.txt``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:261
+msgid "EX: ``file-to-hide2.txt``"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:264
+msgid "Additional Information"
+msgstr ""
+
+#: ../../source/docs/software/basic-programming/git-getting-started.rst:266
+msgid ""
+"A much more in-depth tutorial can be found at the official `git <https"
+"://git-scm.com/docs/gittutorial>`__ website."
+msgstr ""
+

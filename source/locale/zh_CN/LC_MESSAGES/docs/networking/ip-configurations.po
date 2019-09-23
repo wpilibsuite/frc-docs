@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/networking/ip-configurations.rst:2
+msgid "IP Configurations"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:4
+msgid ""
+"This document describes the IP configuration used at events, both on the "
+"fields and in the pits, potential issues and workaround configurations."
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:7
+msgid "TE.AM IP Notation"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:9
+msgid ""
+"The notation TE.AM is used as part of IPs in numerous places in this "
+"document. This notation refers to splitting your four digit team number "
+"into two digit pairs for the IP address octets."
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:11
+msgid "Example: ``10.TE.AM.2``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:13
+msgid "Team 12 - ``10.0.12.2``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:15
+msgid "Team 122 - ``10.1.22.2``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:17
+msgid "Team 1212 - ``10.12.12.2``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:19
+msgid "Team 3456 - ``10.34.56.2``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:22
+msgid "On the Field"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:24
+msgid ""
+"This section describes networking when connected to the Field Network for"
+" match play"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:27
+msgid "On the Field DHCP Configuration"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:29
+msgid ""
+"The Field Network runs a DHCP server with pools for each team that will "
+"hand our addresses in the range of 10.TE.AM.20 and up with subnet masks"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:31
+msgid ""
+"OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by "
+"Kiosk"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:33
+msgid "roboRIO - DHCP ``10.TE.AM.2`` assigned by the Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:34
+msgid ""
+"Driver Station - DHCP (“Obtain an IP address automatically”) 10.TE.AM.X "
+"assigned by field"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:36
+msgid "IP camera (if used) - DHCP ``10.TE.AM.Y`` assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:37
+msgid "Other devices (if used) - DHCP ``10.TE.AM.Z`` assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:40
+msgid "On the Field Static Configuration"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:42
+msgid ""
+"It is also possible to configure static IPs on your devices to "
+"accommodate devices or software which do not support mDNS. When doing so "
+"you want to make sure to avoid addresses that will be in use when the "
+"robot is on the field network. These addresses are ``10.TE.AM.1`` and "
+"``10.TE.AM.4`` for the OpenMesh radio and the field access point and "
+"anything ``10.TE.AM.20`` and up which may be assigned to a device still "
+"configured for DHCP. The roboRIO network configuration can be set from "
+"the webdashboard."
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:44
+msgid "OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:45
+msgid ""
+"roboRIO - Static ``10.TE.AM.2`` would be a reasonable choice, subnet mask"
+" of ``255.255.255.0`` (default)"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:47
+msgid ""
+"Driver Station - Static ``10.TE.AM.5`` would be a reasonable choice, "
+"subnet mask **must** be ``255.0.0.0``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:49
+msgid ""
+"IP Camera (if used) - Static ``10.TE.AM.11`` would be a reasonable "
+"choice, subnet ``255.255.255.0`` should be fine"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:51
+msgid ""
+"Other devices - Static``10.TE.AM.6-.10`` or ``.12-.19`` (.11 if camera "
+"not present) subnet ``255.255.255.0``"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:55
+msgid "In the Pits"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:57
+msgid ""
+"**New for 2018:** There is now a DHCP server running on the wired side of"
+" the Robot Radio in the event configuration."
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:60
+msgid "In the Pits DHCP Configuration"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:62
+msgid "OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk."
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:63
+msgid "roboRIO - ``10.TE.AM.2``, assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:64
+msgid ""
+"Driver Station - DHCP (“Obtain an IP address automatically”), "
+"``10.TE.AM.X``, assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:66
+msgid "IP camera (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:67
+msgid "Other devices (if used) - DHCP, ``10.TE.AM.Z``, assigned by Robot Radio"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:70
+msgid "In the Pits Static Configuration"
+msgstr ""
+
+#: ../../source/docs/networking/ip-configurations.rst:72
+msgid ""
+"It is also possible to configure static IPs on your devices to "
+"accommodate devices or software which do not support mDNS. When doing so "
+"you want to make sure to avoid addresses that will be in use when the "
+"robot is on the field network. These addresses are ``10.TE.AM.1`` and "
+"``10.TE.AM.4`` for the OpenMesh radio"
+msgstr ""
+

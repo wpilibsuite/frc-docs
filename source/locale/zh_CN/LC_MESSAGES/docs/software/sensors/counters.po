@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/counters.rst:2
+msgid "Counters"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:4
+msgid "|Counters|"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:6
+msgid ""
+"The :code:`Counter` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Counter.html>`__)"
+" is a versatile class that allows the counting of pulse edges on a "
+"digital input.  :code:`Counter` is used as a component in several more-"
+"complicated WPILib classes (such as :ref:`Encoder <docs/software/sensors"
+"/encoders-software:Encoders - Software>` and :ref:`Ultrasonic "
+"<docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`), "
+"but is also quite useful on its own."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:8
+msgid ""
+"There are a total of 8 counter units in the roboRIO FPGA, meaning no more"
+" than 8 :code:`Counter` objects may be instantiated at any one time, "
+"including those contained as resources in other WPILib objects.  For "
+"detailed information on when a :code:`Counter` may be used by another "
+"object, refer to the official API documentation."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:11
+msgid "Configuring a counter"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:13
+msgid ""
+"The :code:`Counter` class can be configured in a number of ways to "
+"provide differing functionalities."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:16
+msgid "Counter Modes"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:18
+msgid ""
+"The :code:`Counter` object may be configured to operate in one of four "
+"different modes:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:20
+msgid ""
+"`Two-pulse mode`_: Counts up and down based on the edges of two different"
+" channels."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:21
+msgid "`Semi-period mode`_: Measures the duration of a pulse on a single channel."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:22
+msgid ""
+"`Pulse-length mode`_: Counts up and down based on the edges of one "
+"channel, with the direction determined by the duration of the pulse on "
+"that channel."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:23
+msgid ""
+"`External direction mode`_: Counts up and down based on the edges of one "
+"channel, with a separate channel specifying the direction."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:25
+msgid ""
+"In all modes except semi-period mode, the counter can be configured to "
+"increment either once per edge (2X decoding), or once per pulse (1X "
+"decoding).  By default, counters are set to two-pulse mode, if only one "
+"channel is specified, the counter will only count up."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:28
+msgid "Two-pulse mode"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:30
+msgid ""
+"In two-pulse mode, the :code:`Counter` will count up for every edge/pulse"
+" on the specified \"up channel,\" and down for every edge/pulse on the "
+"specified \"down channel.\"  A counter can be initialized in two-pulse "
+"with the following code:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:65
+msgid "Semi-period mode"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:67
+msgid ""
+"In semi-period mode, the :code:`Counter` will count the duration of the "
+"pulses on a channel, either from a rising edge to the next falling edge, "
+"or from a falling edge to the next rising edge.  A counter can be "
+"initialized in semi-period mode with the following code:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:97
+msgid "To get the pulse width, call the :code:`getPeriod()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:112
+msgid "Pulse-length mode"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:114
+msgid ""
+"In pulse-length mode, the counter will count either up or down depending "
+"on the length of the pulse. A pulse below the specified threshold time "
+"will be interpreted as a forward count and a pulse above the threshold is"
+" a reverse count. This is useful for some gear tooth sensors which encode"
+" direction in this manner.  A counter can be initialized in this mode as "
+"follows:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:151
+msgid "External direction mode"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:153
+msgid ""
+"In external direction mode, the counter counts either up or down "
+"depending on the level on the second channel. If the direction source is "
+"low, the counter will increase, if the direction source is high, the "
+"counter will decrease (to reverse this, see the next section). A counter "
+"can be initialized in this mode as follows:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:186
+msgid "Configuring counter parameters"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:188
+msgid ""
+"The :code:`Counter` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate "
+"the distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:190
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does "
+"*not* depend on the decoding type - each \"pulse\" should always be "
+"considered to be a full cycle (rising and falling)."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:192
+msgid ""
+"Apart from the mode-specific configurations, the :code:`Counter` class "
+"offers a number of additional configuration methods:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:235
+msgid "Reading information from counters"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:237
+msgid ""
+"Regardless of mode, there is some information that the :code:`Counter` "
+"class always exposes to users:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:240
+msgid "Count"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:242
+msgid "Users can obtain the current count with the :code:`get()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:257
+msgid "Distance"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:259
+msgid ""
+"Counters measure *relative* distance, not absolute; the distance value "
+"returned will depend on the position of the encoder when the robot was "
+"turned on or the encoder value was last :ref:`reset "
+"<docs/software/sensors/counters:Resetting a Counter>`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:261
+msgid ""
+"If the :ref:`distance per pulse "
+"<docs/software/sensors/counters:Configuring counter parameters>` has been"
+" configured, users can obtain the total distance traveled by the counted "
+"sensor with the :code:`getDistance()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:276
+msgid "Rate"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:278
+msgid "Units of time for the :code:`Counter` class are *always* in seconds."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:280
+msgid ""
+"Users can obtain the current rate of change of the counter with the "
+":code:`getRate()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:295
+msgid "Stopped"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:297
+msgid ""
+"Users can obtain whether the counter is stationary with the "
+":code:`getStopped()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:312
+msgid "Direction"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:314
+msgid ""
+"Users can obtain the direction in which the counter last moved with the "
+":code:`getDirection()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:329
+msgid "Period"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:331
+msgid ""
+"In :ref:`semi-period mode <docs/software/sensors/counters:Semi-period "
+"mode>`, this method returns the duration of the pulse, not of the period."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:333
+msgid ""
+"Users can obtain the duration (in seconds) of the most-recent period with"
+" the :code:`getPeriod()` method:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:348
+msgid "Resetting a counter"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:350
+msgid ""
+"To reset a counter to a distance reading of zero, call the "
+":code:`reset()` method.  This is useful for ensuring that the measured "
+"distance corresponds to the actual desired physical measurement."
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:365
+msgid "Using counters in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/counters.rst:367
+msgid ""
+"Counters are useful for a wide variety of robot applications - but since "
+"the :code:`Counter` class is so varied, it is difficult to provide a good"
+" summary of them here.  Many of these applications overlap with the "
+":code:`Encoder` class - a simple counter is often a cheaper alternative "
+"to a quadrature encoder.  For a summary of potential uses for encoders in"
+" code, see :ref:`docs/software/sensors/encoders-software:Encoders - "
+"Software`."
+msgstr ""
+

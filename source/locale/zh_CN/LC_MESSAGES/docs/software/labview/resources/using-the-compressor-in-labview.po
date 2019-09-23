@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:2
+msgid "Using the Compressor in LabVIEW"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:6
+msgid ""
+"This snippet shows how to set up your roboRIO project to use the "
+"Pneumatic Control Module (PCM).  The PCM automatically starts and stops "
+"the compressor when specific pressures are measured in the tank. In your "
+"roboRIO program, you will need to add the following VIs."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:8
+msgid "For more information, check out the following links:"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:10
+msgid ":download:`FRC Pneumatics Manual <files/2015-frc-pneumatics-manual.pdf>`"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:12
+#, python-format
+msgid ""
+"`PCM User's Guide <https://ctr-"
+"electronics.com/PCM%20User's%20Guide.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:14
+msgid ""
+"`Pneumatics Step by Step for the roboRIO "
+"<http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf>`__"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:17
+msgid "Begin VI"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:19
+msgid "Place this snippet in the Begin.vi."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:24
+msgid "Teleop VI"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:26
+msgid ""
+"Place this snippet in the Teleop.vi. This portion is only required if you"
+" are using the outputs for other processes."
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:31
+msgid "Finish VI"
+msgstr ""
+
+#: ../../source/docs/software/labview/resources/using-the-compressor-in-labview.rst:33
+msgid "Place this snippet in Close Refs, save data, etc. frame of the Finish.vi."
+msgstr ""
+

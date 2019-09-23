@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:2
+msgid "Ultrasonics - Software"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:4
+msgid ""
+"This section covers ultrasonics in software.  For a hardware guide to "
+"ultrasonics, see :ref:`docs/hardware/sensors/ultrasonics-"
+"hardware:Ultrasonics - Hardware`."
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:6
+msgid ""
+"An ultrasonic sensor is commonly used to measure distance to an object "
+"using high-frequency sound.  Generally, ultrasonics measure the distance "
+"to the closest object within their \"field of view.\""
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:8
+msgid "There are two primary types of ultrasonics supported natively by WPILib:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:10
+msgid "`Ping-response ultrasonics`_"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:11
+msgid "`Analog ultrasonics`_"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:14
+msgid "Ping-response ultrasonics"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:16
+msgid ""
+"The :code:`Ultrasonic` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Ultrasonic.html>`__)"
+" provides support for ping-response ultrasonics.  As ping-response "
+"ultrasonics (per the: name) require separate pins for both spending the "
+"ping and measuring the response, users must specify DIO pin numbers for "
+"both output and input when constructing an :code:`Ultrasonic` instance:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:30
+msgid ""
+"It is highly recommended to use ping-response ultrasonics in \"automatic "
+"mode,\" as this will allow WPILib to ensure that multiple sensors do not "
+"interfere with each other:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:45
+msgid "Analog ultrasonics"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:47
+msgid ""
+"Some ultrasonic sensors simply return an analog voltage corresponding to "
+"the measured distance.  These sensors can may simply be used with the "
+":doc:`AnalogPotentiometer <analog-potentiometers-software>` class."
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:50
+msgid "Third-party ultrasonics"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:52
+msgid ""
+"Other ultrasonic sensors offered by third-parties may use more "
+"complicated communications protocols (such as I2C or SPI).  WPILib does "
+"not provide native support for any such ultrasonics; they will typically "
+"be controlled with vendor libraries."
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:55
+msgid "Using ultrasonics in code"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:57
+msgid ""
+"Ultrasonic sensors are very useful for determining spacing during "
+"autonomous routines.  For example, the following code will drive the "
+"robot forward until the ultrasonic measures a distance of 12 inches to "
+"the nearest object, and then stop:"
+msgstr ""
+
+#: ../../source/docs/software/sensors/ultrasonics-software.rst:124
+msgid ""
+"Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard"
+" <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-"
+"tour:Tour of Shuffleboard>`, where they will be displayed with their own "
+"widgets:"
+msgstr ""
+

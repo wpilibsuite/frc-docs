@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/path-planning/introduction.rst:2
+msgid "Introduction to Path Planning"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/introduction.rst:3
+msgid ""
+"Autonomous is an important section of the match; it is exciting when "
+"robots do impressive things in autonomous. In order to score, the robot "
+"usually need to go somewhere. The faster the robot arrives at that "
+"location, the sooner it can score points! The traditional method for "
+"autonomous is driving in a straight line, turning to a certain angle, and"
+" driving in a straight line again. This approach works fine, but the "
+"robot spends a non-negligible amount of time stopping and starting again "
+"after each straight line and turn."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/introduction.rst:5
+msgid ""
+"A more advanced approach to autonomous is called “path planning”. Instead"
+" of driving in a straight line and turning once the line is complete, the"
+" robot continuously moves, driving with a curve-like motion. This can "
+"reduce turning stoppage time."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/introduction.rst:7
+msgid ""
+"Paths have position and velocity values. A path has a list of position "
+"and velocity values for the robot every x seconds (usually 0.02 seconds "
+"or less). The robot then attempts to follow these points, adjusting using"
+" PID control when needed."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/introduction.rst:9
+msgid ""
+"Many teams and organizations have created path planning libraries for "
+"FRC, but the officially supported library for WPILib is Pathfinder, which"
+" can be added as a vendor library by adding this vendor JSON using the "
+"**Manage Libraries->Install New Libraries (online)** function in VSCode "
+"(see the `3rd Party Libraries <../../getting-started/3rd-party-"
+"libraries.html>`__ article for more details): "
+"https://imjac.in/dev/maven/frc/7194a2d4-2860-4bcc-86c0-97879737d875"
+msgstr ""
+

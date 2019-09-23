@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:4
+msgid "Using Motor Controllers in Code"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:5
+msgid ""
+"Motor controllers come in two main flavors: CAN and PWM. A CAN controller"
+" can send more detailed status information back to the roboRIO, whereas a"
+" PWM controller can only be set to a value. For information on using "
+"these motors with the WPI drivetrain classes, see :ref:`wpi_drive`."
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:12
+msgid "Using PWM Speed Controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:13
+msgid ""
+"PWM speed controllers can be controlled in the same was as a CAN speed "
+"controller. For a more detailed background on *how* they work, see "
+":ref:`pwm_theory`. To use a PWM speed controller, simply use the "
+"appropriate speed controller class provided by WPI and supply it the port"
+" the speed controller(s) are plugged into on the roboRIO. All approved "
+"motor controllers have WPI classes provided for them."
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:69
+msgid "CAN Motor Controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:70
+msgid ""
+"A handful of CAN speed controllers are available through vendors such as "
+"CTR Electronics and REV Robotics."
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:74
+msgid "SPARK MAX"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:75
+msgid ""
+"For information regarding the SparkMAX CAN Speed Controller, which can be"
+" used in either CAN or PWM mode, please refer to the SparkMAX `software "
+"resources <https://www.revrobotics.com/sparkmax-software/>`_ and `example"
+" code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:80
+msgid "CTRE CAN Motor Controllers"
+msgstr ""
+
+#: ../../source/docs/software/actuators/using-speed-controllers.rst:81
+msgid ""
+"Please refer to the third party CTR documentation on the Phoenix software"
+" for more detailed information. The documentation is available `here. "
+"<https://phoenix-documentation.readthedocs.io/en/latest/>`_"
+msgstr ""
+

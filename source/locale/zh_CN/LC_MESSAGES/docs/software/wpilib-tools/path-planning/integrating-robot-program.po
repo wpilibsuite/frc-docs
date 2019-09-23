@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:2
+msgid "Integrating path following into a robot program"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:5
+msgid "**Known Issue**"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:7
+msgid ""
+"PathWeaver currently has a known issue. The left and right paths are "
+"being swapped. This will be fixed in the next release of PathWeaver. In "
+"the meantime, this can be corrected in the follower (what this article "
+"describes).  Once this update is published, the following fix will not be"
+" needed. The fix is as follows:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:9
+msgid "Replace:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:16
+msgid "With:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:23
+msgid ""
+"Depending on the orientation of your gyro, you may also need to invert "
+"the desired heading with the following fix:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:30
+msgid "Overview"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:31
+msgid ""
+"This article describes the process of writing a program that can use a "
+"stored path and have the robot follow it. The robot for this example is "
+"based on the TimedRobot template class and has left and right driven 4\" "
+"wheels connected to motors with encoders on each side. In addition the "
+"robot has an Analog Gyro that is used to help make sure the robot "
+"hardware is keeping up with each generated point. The following code is "
+"heavily taken from `Jaci's Pathfinder's wiki "
+"<https://github.com/JacisNonsense/Pathfinder/wiki/Pathfinder-for-FRC---"
+"Java>`__. This is because the paths PathWeaver generates are Pathfinder "
+"paths and Pathfinder must be added as a `vendor dependency "
+"<https://imjac.in/dev/maven/frc/7194a2d4-2860-4bcc-86c0-97879737d875>`__."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:34
+msgid "Import Directives"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:35
+msgid ""
+"Each class in WPILib requires that an import declaration to help the "
+"compiler resolve the references to WPILib libraries and Pathfinder code "
+"included as a vendor library."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:57
+msgid "Start of program and constant declarations"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:58
+msgid ""
+"The program is based on the TimedRobot class - a class where the "
+"appropriate initialization and periodic methods for each state (disabled,"
+" autonomous, test, and teleop) that the program could be in. For example,"
+" the teleopPeriodic() method is called periodically, every 20mS by "
+"default, and the same is true for autonomous, test, and disabled."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:60
+msgid ""
+"Symbolic constants are used throughout the program to name each one to "
+"match its purpose in the program. By grouping the constants together at "
+"the start of the module it makes it easier to see the assumptions the "
+"program is making where each is reflected as some constant value."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:84
+msgid "Member variables used for the Robot class"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:85
+msgid ""
+"The Robot class (inherited from TimedRobot) contains the periodic "
+"methods. It also has a number of variables required for the Robot class."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:106
+msgid "**k_ticks_per_rev** - number of encoder counts per wheel revolution"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:108
+msgid ""
+"**k_wheel_diameter** - diameter of the wheels in the units that was used "
+"in PathWeaver (feet in this example)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:110
+msgid ""
+"**k_max_velocity** - maximum velocity of the robot in units/sec (feet/sec"
+" in this example)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:112
+msgid ""
+"**k_left_channel, k_right_channel** - the port numbers for the left and "
+"right speed controllers"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:114
+msgid ""
+"**k_left_encoder_port_a, k_left_encoder_port_b, k_right_encoder_port_a, "
+"k_right_encoder_port_b** - the port numbers for the encoders connected to"
+" the left and right side of the drivetrain"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:116
+msgid ""
+"**k_gyro_port** - the analog input for the gyro (other gyros might be "
+"connected differently)"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:118
+msgid "**k_path_name** - name of this path"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:121
+msgid "Initialize the robot sensors and actuators"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:137
+msgid "Initialize the EncoderFollower objects"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:138
+msgid "At the start of the autonomous period we do the following operations:"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:140
+msgid ""
+"Create the trajectories for the left and right sides of the drivetrain. "
+"This will look for paths in the ``/home/lvuser/deploy/paths`` folder on "
+"the roboRIO. If you choose the output directory in PathWeaver (as shown "
+"in the previous instructions), PathWeaver will automatically place the "
+"paths in the proper folder. The full filename for the path is: "
+"``/home/lvuser/deploy/paths/PathName.left.pf1.csv`` and "
+"``/home/lvuser/deploy/paths/PathName.right.pf1.csv`` for the left and "
+"right paths."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:141
+msgid ""
+"Create encoder followers from the left and right  trajectories. The "
+"encoder followers compute the motor values based on where the robot is in"
+" the path."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:142
+msgid ""
+"Configure the encoders used by the followers with the number of counts "
+"per wheel revolution and diameter and PID constants to tune how fast the "
+"follower reacts to changes in velocity."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:143
+msgid ""
+"Create the notifier that will regularly call the ``followPath()`` method "
+"that computes the motor speeds and send them to the motors."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:174
+msgid "Notifier method that actually drives the motors"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:175
+msgid ""
+"Each delta time (value programmed into the notifier in the previous code "
+"segment) get the current wheel speeds for the left and the right side. "
+"Use the predicted heading at each point and the actual robot heading from"
+" the gyro sensor. The difference between the actual and predicted heading"
+" is the heading error that is factored into the motor speed setting to "
+"help ensure the robot tracks the path direction."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:204
+msgid "Stop the motors at the start of the Teleop period"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/path-planning/integrating-robot-program.rst:205
+msgid ""
+"After the autonomous period ends and the teleop period begins, be sure to"
+" stop the notifier from running the followPath() method (above) and stop "
+"the motors in case they were still running."
+msgstr ""
+

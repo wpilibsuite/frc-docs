@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:2
+msgid "Gyroscopes - Hardware"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:4
+msgid ""
+"This section covers gyro hardware.  For a software guide to gyros, see "
+":ref:`docs/software/sensors/gyros-software:Gyroscopes - Software`."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:6
+msgid ""
+"Gyroscopes (or \"gyros\", for short) are devices that measure rate-of-"
+"rotation.  These are particularly useful for stabilizing robot driving, "
+"or for measuring heading or tilt by integrating (adding-up) the rate "
+"measurements to get a measurement of total angular displacement."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:8
+msgid ""
+"Several popular FRC devices (known as \"inertial measurement units,\" or "
+"\"IMUs\") combine both an accelerometer and a gyroscope.  Some  popular "
+"examples are:"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:10
+msgid ""
+"`Analog Devices ADIS16448 and ADIS 16470 IMUs <https://www.analog.com/en"
+"/landing-pages/001/first.html>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:11
+msgid ""
+"`CTRE Pigeon IMU <https://www.ctr-electronics.com/gadgeteer-imu-module-"
+"pigeon.html>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:12
+msgid "`Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:15
+msgid "Types of gyros"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:17
+msgid ""
+"There are two types of Gyros commonly-used in FRC: single-axis gyros, and"
+" three-axis gyros."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:20
+msgid "Single-axis gyros"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:22
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:31
+msgid "Todo"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:22
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:31
+msgid "add picture"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:24
+msgid ""
+"As per their name, single-axis gyros measure rotation rate around a "
+"single axis.  This axis is generally specified on the physical device, "
+"and mounting the device in the proper orientation so that the desired "
+"axis is measured is highly important.  Single-axis gyros generally output"
+" an analog voltage corresponding to the measured rate of rotation, and so"
+" connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` "
+"ports."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:26
+msgid ""
+"The `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en"
+"/landing-pages/001/first.html>`__ that has been in FIRST Choice in recent"
+" years is a commonly used single axis gyro."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:29
+msgid "Three-axis gyros"
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:33
+msgid ""
+"Three-axis gyros measure rotation rate around all three spacial axes "
+"(typically labeled x, y, and z)."
+msgstr ""
+
+#: ../../source/docs/hardware/sensors/gyros-hardware.rst:35
+msgid ""
+"Peripheral three-axis gyros may simply output three analog voltages (and "
+"thus connect to the :ref:`analog input ports <docs/hardware/sensors"
+"/analog-inputs-hardware:Connecting a sensor to multiple analog input "
+"ports>`, or (more commonly) they may communicate with one of the "
+"roboRIO's :doc:`serial buses <serial-buses>`."
+msgstr ""
+

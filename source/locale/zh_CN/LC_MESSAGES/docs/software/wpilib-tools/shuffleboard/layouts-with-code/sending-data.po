@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:2
+msgid "Sending data"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:3
+msgid ""
+"Unlike SmartDashboard, data cannot be sent directly to Shuffleboard "
+"without first specifying what tab the data should be placed in."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:6
+msgid "Sending simple data"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:7
+msgid ""
+"Sending simple data (numbers, strings, booleans, and arrays of these) is "
+"done by calling ``add`` on a tab. This method will set the value if not "
+"already present, but will not overwrite an existing value."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:21
+msgid ""
+"If data needs to be updated (for example, the output of some calculation "
+"done on the robot), call ``getEntry()`` after defining the value, then "
+"update it when needed or in a ``periodic`` function"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:40
+msgid "Making choices persist between reboots"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:42
+msgid ""
+"When configuring a robot from the dashboard, some settings may want to "
+"persist between robot or driverstation reboots instead of having drivers "
+"remember (or forget) to configure the settings before each match."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:44
+msgid ""
+"Simply using `addPersistent` instead of `add` will make the value saved "
+"on the roboRIO and loaded when the robot program starts."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:46
+msgid ""
+"This does not apply to sendable data such as choosers or motor "
+"controllers."
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:56
+msgid "Sending sensors, motors, etc"
+msgstr ""
+
+#: ../../source/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.rst:58
+msgid ""
+"Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most "
+"sensors, speed controllers, and SendableChoosers) can be added to any tab"
+msgstr ""
+

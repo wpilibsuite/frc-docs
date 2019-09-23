@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, FIRST
+# This file is distributed under the same license as the FIRST Robotics
+# Competition package.
+# Soha Jin <soha@lohu.info>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2019\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 22:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:2
+msgid "Using CAN Devices"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:4
+msgid ""
+"CAN has many advantages over other methods of connection between the "
+"robot controller and peripheral devices."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:6
+msgid ""
+"CAN connections are daisy-chained from device to device, which often "
+"results in much shorter wire runs than having to wire each device to the "
+"RIO itself."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:8
+msgid ""
+"Much more data can be sent over a CAN connection than over a PWM "
+"connection - thus, CAN motor controllers are capable of a much more "
+"expansive feature-set than are PWM motor controllers."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:10
+msgid ""
+"CAN is bi-directional, so CAN motor controllers can send data back to the"
+" RIO, again facilitating a more expansive feature-set than can be offered"
+" by PWM Controllers."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:12
+msgid "Supported CAN peripherals include:"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:14
+msgid "CAN speed controllers"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:15
+msgid "The Power Distribution Panel (PDP)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:16
+msgid "The Pneumatics Control Module (PCM)"
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:18
+msgid ""
+"For instructions on wiring CAN devices, see the relevant section of the "
+":ref:`robot wiring guide <can-device-wiring>`."
+msgstr ""
+
+#: ../../source/docs/software/can-devices/using-can-devices.rst:20
+msgid ""
+"CAN devices generally have their own WPILib classes.  The following "
+"sections will describe the use of several of these classes."
+msgstr ""
+
