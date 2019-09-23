@@ -47,6 +47,14 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 ``.\make epub`` or ``make epub``
 
+## Translation
+
+To work on localization, first check the target language exists in ``./source/locale``. Then just edit ``*.po`` files in that directory to do the translation.
+
+If the directory is not exists, use ``make gettext`` to generate POT files. Then execute ``sphinx-intl update -p build/gettext -l zh_CN`` *(replace `zh_CN` with the target language code)*, to generate PO files in the locale folder.
+
+With the option ``-Dlanguage=zh_CN``, ``sphinx-build`` will build the document in the locale ``zh_CN``.
+
 ## Additional Note
 
 A web version of these instructions is available at the [frc-docs website](https://docs.wpilib.org/en/latest/docs/contributing/build-instructions.html).
