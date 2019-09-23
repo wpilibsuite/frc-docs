@@ -1,8 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
+# Chinese (Simplified) Translation for FRC docs
 # Copyright (C) 2019, FIRST
 # This file is distributed under the same license as the FIRST Robotics
 # Competition package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# Soha Jin <soha@lohu.info>, 2019.
 #
 msgid ""
 msgstr ""
@@ -67,10 +67,10 @@ msgstr ""
 "内容和原先的 `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ "
 "文档一致，但是对原先的文章做了很多删改和更新，包括只有在 2020 赛季才开始 "
 "有的一些新功能。因此在 2020 赛季之前，我们依旧建议队伍参考 "
-"`ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ 的文档。但是所有在封闭测试 "
-"计划中的参赛队伍*应当*使用这个文档，因为这个文档包括了测试版中的所有改 "
-"动。想给文档做贡献的话请参考 :doc:`贡献 <docs/contributing/contribution-guidelines>` "
-"页面。"
+"`ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ 的文档。"
+"但是所有在封闭测试计划中的参赛队伍*应当*使用这个文档，因为这个文档包括了测试版中的所有改动。"
+"如果想给文档做贡献，请参考 "
+":doc:`贡献 <docs/contributing/contribution-guidelines>` 页面。"
 
 #: ../../source/index.rst:11
 msgid ""
@@ -100,7 +100,7 @@ msgid ""
 msgstr ""
 "你可以看看 `Head First Java (第二版) "
 "<https://item.jd.com/10100190.html>`__， "
-"这是一本对初学者十分友好的 Java 编程课本。(ISBN: 9787508344980)"
+"这是一本对初学者十分友好的 Java 编程教材。(ISBN: 9787508344980)"
 
 #: ../../source/index.rst:16
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 "<https://www.amazon.com/dp/0321776402/>`__ (ISBN-10: 0321776402)."
 msgstr ""
 "`C++ 程序设计：原理与实践 (第二版) <https://item.jd.com/12173174.html>`__ "
-"是一本 C++ 之父写的介绍 C++ 的书。(ISBN: 9787111562252) 还有一本不错的用"
-"来学习 C++ 的书是 `C++ Primer Plus (第六版) "
+"是一本 C++ 之父写的介绍 C++ 的书。(ISBN: 9787111562252) "
+"还有一本同样优秀的用来学习 C++ 的书叫做 `C++ Primer Plus (第六版) "
 "<https://item.jd.com/11017238.html>`__ (ISBN: 9787115279460)"
 
