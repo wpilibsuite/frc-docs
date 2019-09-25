@@ -57,9 +57,8 @@ Photoelectric Proximity Switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/proximity-switches-hardware/photoelectric-proximity-switch.jpg
-  :width: 40%
+
 .. image:: images/proximity-switches-hardware/ir-beam-break-sensor.jpg
-  :width: 40%
 
 Photoelectric proximity switches are the last type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold.
 

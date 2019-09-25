@@ -29,10 +29,8 @@ Three-axis gyros
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/gyros-hardware/3-axis-gyro.jpg
-  :width: 40%
 
 .. image:: images/gyros-hardware/yaw-pitch-roll.png
-  :width: 40%
 
 Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw and roll.
 

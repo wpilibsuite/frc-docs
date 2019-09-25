@@ -14,9 +14,8 @@ I2C
 ^^^
 
 .. image:: images/serial-buses/roborio-i2c.png
-  :width: 40%
+
 .. image:: images/serial-buses/i2c-pinout.png
-  :width: 40%
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
@@ -26,9 +25,7 @@ SPI
 ^^^
 
 .. image:: images/serial-buses/roborio-spi.png
-   :width: 40%
 .. image:: images/serial-buses/spi-pinout.png
-   :width: 40%
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the CS 0-3 pins on the diagram above).
 
@@ -38,9 +35,8 @@ RS232
 ^^^^^
 
 .. image:: images/serial-buses/roborio-rs232.png
-   :width: 40%
+
 .. image:: images/serial-buses/rs232-pinout.png
-   :width: 40%
 
 To communicate to peripheral devices over RS232, each pin should be wired to its corresponding pin on the device.
 
@@ -57,9 +53,8 @@ MXP Expansion Port
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/serial-buses/roborio-mxp.png
-   :width: 40%
+
 .. image:: images/serial-buses/mxp-pinout.png
-   :width: 40%
 
 Several of the serial buses are also available for use through the roboRIO's MXP Expansion Port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
 
