@@ -42,7 +42,7 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 Sensors by Communication Protocol
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  There are three main methods by which sensors can communicate their readings to the roboRIO:
+In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  There are several main methods by which sensors can communicate their readings to the roboRIO:
 
 - :doc:`Analog input <analog-inputs-hardware>`
 - :doc:`Digital input <digital-inputs-hardware>`
