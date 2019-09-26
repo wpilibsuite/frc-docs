@@ -6,7 +6,7 @@ New for 2019!
 Major Changes
 -------------
 
--  New IDE - VSCode (replacing Eclipse). This also includes a change from the Ant build system to GradleRIO
+-  New IDE - Visual Studio Code (replacing Eclipse). This also includes a change from the Ant build system to GradleRIO
 
    -  Vendor Libraries
 
@@ -141,7 +141,7 @@ Robot Builder
 
 -  Generates projects for the new VS Code/GradleRIO system
 -  Java/C++: encapsulates hardware in the specific subsystem. RobotMap is removed.
--  C++: Updated to idiomatic C++ to match VSCode examples.
+-  C++: Updated to idiomatic C++ to match VS Code examples.
 
 Outline Viewer
 --------------

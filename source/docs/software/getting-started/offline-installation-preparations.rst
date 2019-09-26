@@ -27,7 +27,7 @@ C++/Java Teams
 ^^^^^^^^^^^^^^
 
 -  `C++/Java WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
--  VS Code (if using Windows, run the installer and use it to download the appropriate VS Code file. If using Mac/Linux, download VSCode from `here <https://code.visualstudio.com/download>`__)
+-  VS Code (if using Windows, run the installer and use it to download the appropriate VS Code file. If using Mac/Linux, download Visual Studio Code from `here <https://code.visualstudio.com/download>`__)
 
 3rd Party Libraries/Software
 ----------------------------
