@@ -89,7 +89,7 @@ the rest of the vsix files in this order:
 5. WPILib.vsix
 
 Setting up Visual Studio Code to use Java 11
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The WPILib installation includes a JDK, however you need to point VS
 Code at where it is. To do this:

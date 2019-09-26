@@ -17,7 +17,7 @@ Choose whether to install for **All Users** on the machine or the **Current User
 If you select **All Users**, you will need to accept the security prompt that appears.
 
 Download Visual Studio Code
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For licensing reasons, the installer cannot contain the VS Code installer bundled in. Click **Select/Download VS Code** to either download the VS Code installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click **Open Downloaded File** to be taken to the zip file on the file system to copy along with the Offline Installer.
 
