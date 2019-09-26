@@ -6,7 +6,7 @@ Installing VS Code
 
 1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__
 2. Double-click on the .deb file in the file explorer
-3. Click the "Install" button to install VSCode
+3. Click the "Install" button to install Visual Studio Code
 
 .. figure:: images/linux/install-vscode.png
    :alt: Install VS-Code
@@ -38,7 +38,7 @@ To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: \* ``$ cd ~/
 Installing the extensions for WPILib VS Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Start VSCODE ($ code or search "Visual Studio Code" in your application launcher)
+1. Start VS Code ($ code or search "Visual Studio Code" in your application launcher)
 2. **Control-Shift-P** to bring up the command palette, type "Install from VSIX"
 3. Select "Extensions: Install from VSIX"
 4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix
@@ -50,7 +50,7 @@ Installing the extensions for WPILib VS Code
 .. figure:: images/linux/vsix-files.png
     :alt: VSIX Files
 
-Setting up VSCode to use Java 11
+Setting up Visual Studio Code to use Java 11
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this:
 
