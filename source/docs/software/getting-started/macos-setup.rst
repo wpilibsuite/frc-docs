@@ -4,15 +4,15 @@ MacOS Offline Install Guide
 The tools (except the Driver Station and the roboRIO Imaging Tool)
 will run natively on a Mac.
 
-.. note:: If you have the alpha release of VSCode for FRC installed, you\
- should uninstall it before proceeding or create a new VSCode\
+.. note:: If you have the alpha release of Visual Studio Code for FRC installed, you\
+ should uninstall it before proceeding or create a new VS Code\
  install. Failing to do this will have both versions installed at the\
  same time causing things to not operate properly.\
 
 Getting Visual Studio Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-VSCode is the IDE (Integrated Development Environment) that is used for
+VS Code is the IDE (Integrated Development Environment) that is used for
 2019 and beyond. It needs to be installed on any development computer.
 It can be downloaded here: https://code.visualstudio.com.
 
@@ -66,8 +66,8 @@ This should populate the tools directory with all of the WPILib tools
 Installing the extensions for WPILib development
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before using VSCode for WPILib development there are a number of
-extensions that need to be installed. Start up VSCode and type the
+Before using VS Code for WPILib development there are a number of
+extensions that need to be installed. Start up VS Code and type the
 shortcut Cmd-Shift-P to bring up the list of commands available. Start
 typing "Install from VSIX into the search box. Choose that command. In
 the file selection box select Cpp.vsix.
@@ -79,7 +79,7 @@ the file selection box select Cpp.vsix.
    :alt:
 
 You should see a message confirming the install and asking to reload
-vscode. Click the reload button then repeat the vsix installation for
+VS Code. Click the reload button then repeat the vsix installation for
 the rest of the vsix files in this order:
 
 1. Cpp.vsix
@@ -88,8 +88,8 @@ the rest of the vsix files in this order:
 4. JavaDebug.vsix
 5. WPILib.vsix
 
-Setting up VSCode to use Java 11
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting up Visual Studio Code to use Java 11
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The WPILib installation includes a JDK, however you need to point VS
 Code at where it is. To do this:
