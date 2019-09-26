@@ -65,7 +65,7 @@ The debugger will automatically pause at the first breakpoint it encounters.  Th
 
 Debugging with Console
 ----------------------
-Another way to debug your program is to use System.out.println statements in your code and receive them using the RioLog in VSCode.
+Another way to debug your program is to use System.out.println statements in your code and receive them using the RioLog in Visual Studio Code.
 
 .. |Setting a Breakpoint| image:: images/debugging-robot-program/setting-a-breakpoint.png
 .. |Debug Tab| image:: images/debugging-robot-program/debug-tab.png
