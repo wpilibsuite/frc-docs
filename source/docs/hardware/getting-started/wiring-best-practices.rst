@@ -71,21 +71,10 @@ functional poorly, or not at all, during a match. Label all of your batteries
 to help keep track of usage during the event. Many teams also include
 information such as the age of the battery on this label.
 
-- Never lift or carry batteries by the wires! Carrying batteries by the wires
-    has the potential to damage the internal connection between the terminals and
-    the plates, dramatically increasing internal resistance and degrading performance.
-- Mark any dropped battery bad until a complete test can be conducted. In
-    addition to the mentioned terminal connections, dropping a battery also has
-    the potential to damage individual cells. This damage may not register on a simple
-    voltage test, instead hiding until the battery is placed under load.
-- Rotate batteries evenly. This helps ensure that batteries have the most time to
-    charge and rest and that they wear evenly (equal number of charge/discharge cycles)
-- Load test batteries if possible to monitor health. There are a number of
-    commercially available products teams use to load test batteries, including at
-    least one designed specifically for FRC. A load test can provide an indicator of
-    battery health by measuring internal resistance. This measurement is much more
-    meaningful when it comes to match performance than a simple no-load voltage number
-    provided by a multimeter.
+- Never lift or carry batteries by the wires! Carrying batteries by the wires has the potential to damage the internal connection between the terminals and the plates, dramatically increasing internal resistance and degrading performance.
+- Mark any dropped battery bad until a complete test can be conducted. In addition to the mentioned terminal connections, dropping a battery also has the potential to damage individual cells. This damage may not register on a simple voltage test, instead hiding until the battery is placed under load.
+- Rotate batteries evenly. This helps ensure that batteries have the most time to charge and rest and that they wear evenly (equal number of charge/discharge cycles)
+- Load test batteries if possible to monitor health. There are a number of commercially available products teams use to load test batteries, including at least one designed specifically for FRC. A load test can provide an indicator of battery health by measuring internal resistance. This measurement is much more meaningful when it comes to match performance than a simple no-load voltage number provided by a multimeter.
 
 Check DS Logs
 ----------------------
