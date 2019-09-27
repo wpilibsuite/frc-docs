@@ -89,7 +89,10 @@ WPILib Installation Guide
 
     **Running Tools Updater**
 
-      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: \* ``$ cd ~/frc2019/tools`` \* ``$ python3 ToolsUpdater.py``
+      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: 
+      
+      - ``$ cd ~/frc2019/tools`` 
+      - ``$ python3 ToolsUpdater.py``
 
     **Installing the extensions for WPILib VS Code**
 
@@ -155,7 +158,7 @@ WPILib Installation Guide
       .. figure:: images/mac/MovedFiles.png
          :alt:
 
-    **Run the ``ToolsUpdater.py`` script**
+    **Run the ToolsUpdater.py script**
 
       To update all the additional tools WPILib tools, open a terminal window
       and change directory to ~/frc2019/tools and run the script
