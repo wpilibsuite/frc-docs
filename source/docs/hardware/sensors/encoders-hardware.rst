@@ -13,7 +13,7 @@ Thus, across both channels, there are four total "edges" per period (hence "quad
 
 As each square wave pulse is a digital signal, quadrature encoders connect to the :doc:`digital input <digital-inputs-hardware>` ports on the RIO.
 
-Types of encoders
+Types of Encoders
 -----------------
 
 There are three types of quadrature encoders typically used in FRC:
@@ -45,7 +45,14 @@ Magnetic encoders
 
 Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 
-Encoder resolution
+Encoder Wiring
+--------------
+
+.. image:: images/encoders-hardware/e4t-oem-miniature-optical-encoder-to-roborio-01.png
+
+Encoders that need two digital inputs, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports. Other encoders, such as the on-shaft ones shown above, often need :doc:`an analog input port <analog-inputs-hardware>`. CTRE Magnetic encoders shown above can be wired to a :ref:`TalonSRX data port <docs/hardware/sensors/serial-buses:CAN Bus>` with a ribbon cable.
+
+Encoder Resolution
 ------------------
 
 .. warning:: The acronyms "CPR" and "PPR" are *both* used by varying sources to denote both edges per revolution *and* cycles per revolution, so the acronym alone is not enough to tell which is of the two is meant when by a given value.  When in doubt, consult the technical manual of your specific encoder.
