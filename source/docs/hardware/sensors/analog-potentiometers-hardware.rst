@@ -12,9 +12,7 @@ Wiring an analog potentiometer
 
 As suggested by the names, analog potentiometers connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.  To understand how exactly to wire potentiometers, however, it is important to understand their internal circuitry.
 
-.. image:: images/analog-potentiometers-hardware/potentiometer.jpg
-
-.. image:: images/analog-potentiometers-hardware/voltage-divider.png
+.. image:: images/analog-potentiometers-hardware/analog-potentiometer-to-roborio-with-diagram-01.png
 
 The picture above on the left shows a typical potentiometer.  There are three pins, just as there are on the RIO's analog inputs.  The middle pin is the signal pin, while the outer pins can both be *either* power or ground.
 
