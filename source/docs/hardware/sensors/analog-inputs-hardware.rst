@@ -18,25 +18,25 @@ Connecting to roboRIO analog input ports
 
 .. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
-.. image:: images/analog-inputs-hardware/roborio-analog-inputs.png
+.. image:: images/roborio-ports/roborio-aio.png
 
 The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
 
 Connecting a sensor to a single analog input port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Some simple sensors (such as :doc:`potentiometers <analog-potentiometers-hardware>`) may have interchangeable power and ground connections.
+.. note:: Some sensors (such as :doc:`potentiometers <analog-potentiometers-hardware>`) may have interchangeable power and ground connections.
 
-Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports.  They should be connected accordingly.
+Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports. They should be connected accordingly.
 
-.. todo:: add picture
+.. image:: images/analog-inputs-hardware/mb1013-ultrasonic-sensor-to-roborio.png
 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows a digital encoder that requires two digital input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
+Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows an analog accelerometer that requires three digital input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
 
-.. image:: images/analog-inputs-hardware/e4t-oem-miniature-optical-encoder-to-roborio-01.png
+.. image:: images/analog-inputs-hardware/triple-axis-accelerometer-to-roborio.png
 
 .. |ground| unicode:: 0x23DA
 
