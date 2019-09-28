@@ -9,7 +9,7 @@ Forwarding a Remote Port
 .. todo:: Add link to PortForwarding API doc
 
 Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
- 
+
 .. tabs::
 
    .. tab:: Java
@@ -24,7 +24,7 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
    .. tab:: C++
 
       .. code-block:: cpp
-      
+
          void Robot::RobotInit {
             PortForwarder::Add(8888, "frcvision.local", 80);
          }
