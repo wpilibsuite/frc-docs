@@ -3,10 +3,10 @@ Known Issues
 
 This article details known issues (and workarounds) for FRC Control System Software.
 
-VSCode Fails to Launch Offline
-------------------------------
+Visual Studio Code Fails to Launch Offline
+------------------------------------------
 
-There are reports that on some builds of Windows 10 (build 1809), VSCode may fail to launch if no network is present (note: this is different than no internet present).
+There are reports that on some builds of Windows 10 (build 1809), VS Code may fail to launch if no network is present (note: this is different than no internet present).
 
 **Workaround:** Install the Microsoft Loopback Adapter
 
