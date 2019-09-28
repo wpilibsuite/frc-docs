@@ -59,12 +59,8 @@ New teams may wish to familiarize themselves with the different components of th
    :maxdepth: 1
    :caption: Robot Networking
 
-   docs/networking/networking-basics
-   docs/networking/ip-configurations
-   docs/networking/roborio-network-troubleshooting
-   docs/networking/windows-firewall-configuration
-   docs/networking/measuring-bandwidth-usage
-   docs/networking/om5p-ac-radio-modification
+   docs/networking/networking-introduction/index
+   docs/networking/networking-utilities/index
 
 .. toctree::
    :maxdepth: 1
