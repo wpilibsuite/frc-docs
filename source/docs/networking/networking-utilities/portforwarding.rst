@@ -38,7 +38,7 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 
 .. tabs::
 
-   ..tab:: Java
+   .. tab:: Java
 
       .. code-block:: java
 
