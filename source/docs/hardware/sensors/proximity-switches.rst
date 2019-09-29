@@ -21,6 +21,7 @@ There are several types of proximity switches that are commonly-used in FRC:
  - `Magnetic Proximity Switches`_
  - `Inductive Proximity Switches`_
  - `Photoelectric Proximity Switches`_
+ - `Time-of-flight Proximity Switches`_
 
 Mechanical Proximity Switches ("limit switches")
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -60,8 +61,15 @@ Photoelectric Proximity Switches
 
 .. image:: images/proximity-switches-hardware/ir-beam-break-sensor-to-roborio.png
 
-Photoelectric proximity switches are the last type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold. One such sensor is the `IR Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured above.
+Photoelectric proximity switches are another type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold. One such sensor is the `IR Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured above.
 
 Since photoelectric proximity switches rely on measuring the amount of reflected light, they are often inconsistent in their triggering range between different materials - accordingly, most photoelectric sensors have an adjustable activation point (typically controller by turning a screw somewhere on the sensor body).  On the other hand, photoelectric sensors are also extremely versatile, as they can detect a greater variety of objects than the other types of no-contact switches.
 
 Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor. Pictured above is a `beam break sensor with an IR LED transmitter and IR reciver <https://www.adafruit.com/product/2167>`__.
+
+Time-of-flight Proximity Switches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/proximity-switches-hardware/time-of-flight-i2c-distance-sensor-to-roborio.png
+
+Time-of-flight Proximity Switches are newer to the market and are not commonly found in FRC. They use a concentrated light source, such as a small laser, and measure the time between the emission of light and when the receiver detects it. Using the speed of light, it can produce a very accurate distance measurement for a very small target area. Range on this type of sensor can range greatly, between 30mm to around 1000mm for the `VL53L0X sensor <https://www.adafruit.com/product/3317>`__ pictured above. There are also longer range version available. More information about time of flight sensors can be found in `this article <https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout>`__ and more about the circuitry can be found in `this article <https://www.allaboutcircuits.com/technical-articles/how-do-time-of-flight-sensors-work-pmdtechnologies-tof-3D-camera/>`__.
