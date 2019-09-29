@@ -5,6 +5,13 @@ The goal of this document is to provide a brief overview of the hardware compone
 
 .. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System <how-to-wire-a-robot>` document.
 
+Overview of 2019 Control System
+-------------------------------
+
+.. image:: images/control-system-hardware/frc-control-system-team-3161.png
+
+Image courtesy of `@stefenacepcion <https://www.chiefdelphi.com/t/control-system-layout-infographic/361110/20>`__ on Chief Delphi. `Click here <https://drive.google.com/file/d/1C8mV5wYJSe1oBIUHVwHYJ3nsNioG2019/view>`__ for a high-resolution 30x24 poster version.
+
 National Instruments roboRIO
 ----------------------------
 
