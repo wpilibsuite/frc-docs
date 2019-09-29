@@ -16,23 +16,28 @@ There are three types of accelerometers commonly-used in FRC: single-axis accele
 Single-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/adxl-001-evaluation-board.jpg
-
 As per their name, single-axis accelerometers measure acceleration along a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Single-axis accelerometers generally output an analog voltage corresponding to the measured acceleration, and so connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
 
 Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/adafruit-1413-3-axis-acclerometer.jpg
+.. image:: images/accelerometers-hardware/triple-axis-accelerometer-to-roborio.png
 
-Multi-axis accelerometers measure acceleration along all multiple spacial axes.  The roboRIO's built-in accelerometer is a three-axis accelerometer.
+Multi-axis accelerometers measure acceleration along multiple spacial axes.  The roboRIO's built-in accelerometer is a three-axis accelerometer.
 
 Peripheral multi-axis accelerometers may simply output multiple analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/sensors/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the roboRIO's :doc:`serial buses <serial-buses>`.
+
+roboRIO built-in accelerometer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/accelerometers-hardware/roborio-accelerometer.png
+
+The roboRIO has a built-in accelerometer, which does not need any external connections. You can find more details about how to use it in the :ref:`Built-in Accelerometer section <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` of the software documentation.
 
 IMUs (Inertial Measurement Units)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/ctre-pigion-imu.png
+.. image:: images/accelerometers-hardware/navx-imu-to-roborio-mxp.png
 
 Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
 
