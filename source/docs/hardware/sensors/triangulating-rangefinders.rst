@@ -10,6 +10,8 @@ Unlike :doc:`LIDAR <lidar>`, triangulating rangefinders do not measure the time 
 Using IR rangefinders
 ---------------------
 
+.. image:: images/triangulating-rangefinders/ir-proximity-sensor-to-roborio.png
+
 IR Rangefinders generally output an analog voltage proportional to the distance to the target, and thus connect to the :doc:`analog input <analog-inputs-hardware>` ports on the RIO.
 
 Caveats
