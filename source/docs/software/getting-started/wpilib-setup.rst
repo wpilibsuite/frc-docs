@@ -4,60 +4,60 @@ WPILib Installation Guide
 .. tabs::
 
   .. tab:: Windows
-      .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of VSCode for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
+    .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of VSCode for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
 
-   **Offline Installer**
-    
-    Download the appropriate installer for your Windows installation (32 bit or 64 bit) `from GitHub <https://github.com/wpilibsuite/allwpilib/releases>`__. If you're not sure, open Control Panel -> System to check. After the zip file is downloaded, ensure that the installer is extracted before attempting to run it. Running it while the installer is inside the zip will cause the installation process to fail.
+    **Offline Installer**
 
-    Double click on the installer to run it. If you see any Security warnings, click *Run (Windows 7)* or *More Info -> Run Anyway* (Windows 8+).
+      Download the appropriate installer for your Windows installation (32 bit or 64 bit) `from GitHub <https://github.com/wpilibsuite/allwpilib/releases>`__. If you're not sure, open Control Panel -> System to check. After the zip file is downloaded, ensure that the installer is extracted before attempting to run it. Running it while the installer is inside the zip will cause the installation process to fail.
 
-    .. image:: images/windows/InstallationType.png
+      Double click on the installer to run it. If you see any Security warnings, click *Run (Windows 7)* or *More Info -> Run Anyway* (Windows 8+).
 
-    Choose whether to install for *All Users* on the machine or the *Current User*. The *All Users* option requires administrator privileges, but installs in a way that is accessible to all user accounts, the *Current User* install is only accessible from the account it is installed from.
+      .. image:: images/windows/InstallationType.png
 
-    If you select *All Users*, you will need to accept the security prompt that appears.
+      Choose whether to install for *All Users* on the machine or the *Current User*. The *All Users* option requires administrator privileges, but installs in a way that is accessible to all user accounts, the *Current User* install is only accessible from the account it is installed from.
 
-   **Download VSCode**
+      If you select *All Users*, you will need to accept the security prompt that appears.
 
-    For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click *Select/Download VSCode* to either download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click *Open Downloaded File* to be taken to the zip file on the file system to copy along with the Offline Installer.
+    **Download VSCode**
 
-    .. image:: images/windows/DownloadVSCode.png
+      For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click *Select/Download VSCode* to either download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click *Open Downloaded File* to be taken to the zip file on the file system to copy along with the Offline Installer.
 
-    
-   **Execute Install**
+      .. image:: images/windows/DownloadVSCode.png
 
-    Make sure all checkboxes are checked (unless you have already installed 2019 WPILib software on this machine and the software unchecked them automatically), then click *Execute Install*.
 
-    .. image:: images/windows/ExecuteInstall.png
+    **Execute Install**
 
-    
-   **Finished**
+      Make sure all checkboxes are checked (unless you have already installed 2019 WPILib software on this machine and the software unchecked them automatically), then click *Execute Install*.
 
-    When the installer completes, you will now be able to open and use the WPILib version of VSCode. If you are using any 3rd party libraries, you will still need to install those separately before using them in robot code.
+      .. image:: images/windows/ExecuteInstall.png
 
-    .. image:: images/windows/Finished.png
 
-    
-   **What's installed?**
+    **Finished**
 
-    The Offline Installer installs the following components:
+      When the installer completes, you will now be able to open and use the WPILib version of VSCode. If you are using any 3rd party libraries, you will still need to install those separately before using them in robot code.
 
-    -  *Visual Studio Code* - The supported IDE for 2019 robot code development. The offline installer sets up a separate copy of VSCode for WPILib development, even if you already have VSCode on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VSCode for other projects.
-    -  *C++ Compiler* - The toolchains for building C++ code for the roboRIO
-    -  *Gradle* - The specific version of Gradle used for building/deploying C++ or Java robot code
-    -  *Java JDK/JRE* - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the ``JAVA_HOME`` variable
-    -  *WPILib Tools* - SmartDashboard, Shuffleboard, Robot Builder, Outline Viewer, Pathweaver
-    -  *WPILib Dependencies* - OpenCV, etc.
-    -  *VSCode Extensions* - WPILib extensions for robot code development in VSCode
+      .. image:: images/windows/Finished.png
 
-   **What's Installed - Continued**
 
-    The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command ``frccode2019``.
+    **What's installed?**
 
-    .. image:: images/windows/DesktopIcon.png
+      The Offline Installer installs the following components:
 
-    Both of these reference the specific year as the WPIlib C++ tools will now support side-by-side installs of multiple environments from different seasons.
+      -  *Visual Studio Code* - The supported IDE for 2019 robot code development. The offline installer sets up a separate copy of VSCode for WPILib development, even if you already have VSCode on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VSCode for other projects.
+      -  *C++ Compiler* - The toolchains for building C++ code for the roboRIO
+      -  *Gradle* - The specific version of Gradle used for building/deploying C++ or Java robot code
+      -  *Java JDK/JRE* - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the ``JAVA_HOME`` variable
+      -  *WPILib Tools* - SmartDashboard, Shuffleboard, Robot Builder, Outline Viewer, Pathweaver
+      -  *WPILib Dependencies* - OpenCV, etc.
+      -  *VSCode Extensions* - WPILib extensions for robot code development in VSCode
+
+    **What's Installed - Continued**
+
+      The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command ``frccode2019``.
+
+      .. image:: images/windows/DesktopIcon.png
+
+      Both of these reference the specific year as the WPIlib C++ tools will now support side-by-side installs of multiple environments from different seasons.
 
   .. tab :: Mac OSX
 
@@ -73,7 +73,7 @@ WPILib Installation Guide
       new file: "Visual Studio Code" to the Applications folder (2).
 
       .. figure:: images/mac/VisualStudioCode.png
-         :alt:
+          :alt:
 
     **Download the WPILib release and move the directory**
 
@@ -82,7 +82,7 @@ WPILib Installation Guide
       Mac release.
 
       .. figure:: images/mac/MacReleasePage.png
-         :alt:
+          :alt:
 
       Unzip and untar the file by looking at the file in the explorer and
       double-clicking on it, once or twice to unzip (remove the .gz extension)
@@ -90,13 +90,13 @@ WPILib Installation Guide
       should like like the folder shown below.
 
       .. figure:: images/mac/UntarredRelease.png
-         :alt:
+          :alt:
 
       Using Finder (or command line) copy the contents of the folder to a new
       folder in your home directory, ~/frc2019 as shown below.
 
       .. figure:: images/mac/MovedFiles.png
-         :alt:
+          :alt:
 
     **Run the ToolsUpdater.py script**
 
@@ -110,7 +110,7 @@ WPILib Installation Guide
       (Shuffleboard, Robot Builder, PathWeaver, etc.)
 
       .. figure:: images/mac/ToolsUpdater.png
-         :alt:
+          :alt:
 
     **Installing the extensions for WPILib development**
 
@@ -121,10 +121,10 @@ WPILib Installation Guide
       the file selection box select Cpp.vsix.
 
       .. figure:: images/mac/InstallFromVSIX.png
-         :alt:
+          :alt:
 
       .. figure:: images/mac/CppVSIX.png
-         :alt:
+          :alt:
 
       You should see a message confirming the install and asking to reload
       vscode. Click the reload button then repeat the vsix installation for
@@ -148,10 +148,10 @@ WPILib Installation Guide
          from the dropdown
 
       .. figure:: images/mac/JDKHome.png
-         :alt:
-         
+          :alt:
+
   .. tab:: Linux
-  
+
     **Installing VS Code**
 
       1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__
@@ -159,7 +159,7 @@ WPILib Installation Guide
       3. Click the "Install" button to install VSCode
 
       .. figure:: images/linux/install-vscode.png
-         :alt: Install VS-Code
+          :alt: Install VS-Code
 
     **Download the WPILib release**
 
@@ -176,12 +176,12 @@ WPILib Installation Guide
       2. Drag the contents of WPILIB\_Linux-2019.1.1 directory to ~/frc2019 or run ``$ mv -v WPILib_Linux-2019.1.1/* ~/frc2019``
 
       .. figure:: images/linux/toolsupdater.png
-         :alt: Tools Updater
+          :alt: Tools Updater
 
     **Running Tools Updater**
 
       To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: 
-      
+
       - ``$ cd ~/frc2019/tools`` 
       - ``$ python3 ToolsUpdater.py``
 
@@ -200,7 +200,7 @@ WPILib Installation Guide
           :alt: VSIX Files
 
     **Setting up VSCode to use Java 11**
-    
+
       The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this:
 
        1. Open VS Code
@@ -208,4 +208,4 @@ WPILib Installation Guide
        3. Begin typing *Set VS Code Java Home to FRC Home* and select that item from the dropdown.
 
       .. figure:: images/linux/java-11.png
-         :alt: Java 11
+          :alt: Java 11
