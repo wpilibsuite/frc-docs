@@ -180,9 +180,9 @@ WPILib Installation Guide
 
     **Running Tools Updater**
 
-      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run: 
+      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
 
-      - ``$ cd ~/frc2019/tools`` 
+      - ``$ cd ~/frc2019/tools``
       - ``$ python3 ToolsUpdater.py``
 
     **Installing the extensions for WPILib VS Code**
