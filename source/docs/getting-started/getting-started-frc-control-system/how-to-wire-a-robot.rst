@@ -1,4 +1,4 @@
-How to wire an FRC Robot
+How to Wire an FRC Robot
 ========================
 
 .. note::

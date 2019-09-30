@@ -8,3 +8,4 @@ CAN Devices
    pneumatics-control-module
    power-distribution-panel
    third-party-devices
+   can-addressing
