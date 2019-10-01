@@ -4,6 +4,7 @@ Getting Started
 .. toctree::
    :maxdepth: 1
 
+   intro
    control-system-software
    control-system-hardware
    offline-installation-preparations
