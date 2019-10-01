@@ -4,7 +4,7 @@ PathWeaver is the tool used to draw the paths for a robot to follow. The paths f
 
 Starting Pathweaver
 -------------------
-PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the VSCode interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on"PathWeaver" as shown below.
+PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the Visual Studio Code interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on"PathWeaver" as shown below.
 
 .. image:: images/pathweaver-1.png
 

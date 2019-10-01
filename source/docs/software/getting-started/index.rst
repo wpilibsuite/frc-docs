@@ -6,9 +6,7 @@ Getting Started
 
    control-system-software
    offline-installation-preparations
-   windows-setup
-   macos-setup
-   linux-setup
+   wpilib-setup
    3rd-party-libraries
    imaging-your-roborio
    imaging-your-classmate

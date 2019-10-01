@@ -1,81 +1,96 @@
 New for 2020
 ============
 
-WPILib developers have done a number of changes to the control system for the 2020 season. This article will describe and provide a brief overview of the new changes and features.
+A number of changes have been made to both C++ and Java WPILib for the 2020 season. This article will describe and provide a brief overview of the new changes and features.
 
 frc-docs/ScreenSteps
 --------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
-- Code examples are testable again WPILib releases, ensuring they are working and accurate.
-- Link Checking. Every link in frc-docs gets the link tested to ensure validity.
+- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
 
 WPILib
 ------
 
-The core WPILib library has received many changes. These include rewrites to major part of the core library, as well as a suite of kinematics to improve closed loop driving. The full change log can be read below.
+There are many changes and additions to the main WPILib library for 2020. Most notably, there is a new version of the command-based framework with several major enhancements, a new (synchronous) PIDController, and kinematics classes have been added for closed loop driving. The full change log can be read below.
 
 .. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController.
 
-- CommandBased has been rewritten from the ground up. The explanation on why can be found `here <https://github.com/Oblarg/docs/blob/master/CommandRewriteDesignDoc.md>`__.
-- LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value.
-  - Takes a double in the ``Calculate()`` method instead of a ``PIDSource`` in the constructor.
-  - ``PIDGet()`` was replaced with ``Calculate()``.
-- PIDController has been rewritten from the ground up.
+- The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/Oblarg/docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
 
-  - No longer runs asynchronously. Async has been a footgun for a large majority of teams, and a more robust method of synchronization (e.g., message passing) will be investigated for 2021.
-  - Input range was replaced with ``EnableContinuousInput()`` and output range was replaced with integrator range. The user can use ``std::clamp()`` or ``wpiutil.MathUtils.clamp()`` to clamp inputs and outputs. (Users should use ProfiledPIDController instead of reducing the output range or having an integral sterm to deal with steady-state error.
-  - Takes a double in ``Calculate`` instead of ``PIDSource``.
-  - ``PIDOutput`` is now redundant because users can call ``Set()`` themselves with the output of ``Calculate()``.
-  - PercentTolerance has been removed. Teams should use absolute tolerance instead via ``SetTolerance()``.
+- LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value
 
-- Added kinematics classes for Swerve, Mecanum, and DifferentialDrive. This allows for more complete closed loop driving of these drive types.
+  - Takes a double in the ``Calculate()`` method instead of a ``PIDSource`` in the constructor
+  - ``PIDGet()`` was replaced with ``Calculate()``
+  - Both of these changes make it easy to compose the LinearFilter class with the new PIDController class
+
+- PIDController has been rewritten; the old PIDController along with PIDSource and PIDOutput have been deprecated. The new version of PIDController is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
+
+  - The new PIDController no longer runs asynchronously in a separate thread. This eliminates a major source of bugs for teams. Instead, teams should run the controller as part of their main periodic TimedRobot loop by calling ``Calculate()`` and passing the result to the motor’s ``Set()`` function. Note this means that the controller will run at the TimedRobot periodic rate.
+  - Input range was replaced with ``EnableContinuousInput()`` and output range was replaced with integrator range.  If it’s necessary to clamp inputs or outputs to a range, use ``std::clamp()`` or ``wpiutil.MathUtils.clamp()`` on either the input or output of ``Calculate()`` as appropriate. To deal with steady-state error, use ProfiledPIDController instead of reducing the output range or having an integral term.
+  - ``PIDSource`` is no longer used.  Instead, pass the sensor value directly to ``Calculate()``.
+  - ``PIDOutput`` is no longer used.  Instead, call ``Set()`` with the output of ``Calculate()``.
+  - Percent tolerance has been removed. Absolute tolerance is provided via ``SetTolerance()``.
+
+- Added kinematics classes for Swerve, Mecanum, and DifferentialDrive. These classes can be used to implement closed loop driving of these drive types.
 - Added odometry classes for Swerve, Mecanum, and DifferentialDrive. These are needed for closed loop feedback control on global pose (as opposed to just PID on the two drivetrain sides, which can accrue error since there are multiple ending positions a robot can be in for a given set of encoder measurements)
-- [**NOT YET MERGED**] Add RamseteController for closed loop feedback control on global pose for unicycles (the DifferentialDriveKinematics class can convert the chassis speeds to that of a differential drive)
-- [**NOT YET MERGED**] Real-time trajectory generation for 2 DOF trajectories (e.g., x and y position for a drivetrain)
-- Sample Robot has been removed.
-- Descriptive null checking for Java parameters.
-- Remove deprecated live window functions.
-- frc/WPILib.h has been deprecated. Teams should instead directly include what they use.
+- Add RamseteController for closed loop feedback control on global pose for unicycles (the DifferentialDriveKinematics class can convert the chassis speeds to that of a differential drive)
+- Real-time trajectory generation for 2 DOF trajectories (e.g., x and y position for a drivetrain)
+- Added a PortForwarding class to allow forwarding a ports from a remote, to a client. This can be used when connecting to the roboRIO from USB and needing to access Ethernet content.
+- Removed SampleRobot
+- Made null checks on Java parameters more descriptive
+- Removed deprecated LiveWindow functions
+- Deprecated frc/WPILib.h. Instead,include only what you use.
 - Removed deprecated shim header files for wpilibc and llvm.
-- Introduce geometry classes: Pose2d, Rotation2d, Transform2d, Translation2d
-- Units (C++) and Units utility classes (Java) have been added to safely convert between functions that take different types of units.
-- Add TrapezoidProfile class for 1 DOF trajectories (one degree of freedom like x position)
-- Add ProfiledPIDController class. Given a goal, it constrains the setpoint movement over time to a max velocity and acceleration.
-- CircularBuffer/circular_buffer was moved from wpilib to wpiutil
-- Uses ``wpilib\2020\`` instead of ``frc2020\``.
-- GearTooth class has been deprecated as no teams can be recorded using this sensor. If usage is needed, teams can use the Counter class directly.
-- Filter class has been deprecated. Since PIDSource is deprecated, it serves no purpose. Teams should use any derived classes of Filter directly rather than using polymorphism.
-
-.. note:: IterativeRobot has not been removed as the WPILib team observes that having packet based robot control can be useful in certain instances. IterativeRobot may receive a rewrite in the feature to better expand on these capabilities.
+- Added low-level geometry classes: Pose2d, Rotation2d, Transform2d, Translation2d
+- Added C++ units library. This library provides type safety, which makes it impossible to mix up units (e.g. pass seconds as meters) and also provides automatic unit conversion. The units can be specified in literals using a suffix, e.g. ``1.0_s`` for 1 second.
+- Added Java units utility functions for unit conversions. This provides a set of common unit conversions (e.g. feet to meters). Unlike C++, the Java library does not provide type safety; this was done for performance reasons.
+- Added TrapezoidProfile class for 1 degree-of-freedom (DOF) trajectories
+- Added ProfiledPIDController class. Given a goal, this class constrains the setpoint movement over time to a max velocity and acceleration.
+- Moved the CircularBuffer/circular_buffer classes from wpilib to wpiutil
+- Deprecated the GearTooth class. Based on usage reporting, no teams have used this class in the last several years. The Counter class can be used directly instead.
+- Deprecated the Filter class. Since PIDSource is deprecated, it no longer serves a purpose. Teams should use the derived classes of Filter directly rather than using polymorphism.
+- Added the PWMSparkMax class for PWM control of the REV Robotics SPARK MAX Motor Controller
+- Simplified the Sendable interface and deprecated SendableBase. The name and subsystem have been removed from individual objects, and instead this data is stored in a new singleton class, SendableRegistry. Much of LiveWindow has been refactored into SendableRegistry.
+  - In C++, a new CRTP helper class, SendableHelper, has been added to provide move and destruction functionality.
+  - Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added
+to Command and Subsystem (both old and new), and also to SendableHelper to
+prevent code breakage.
+- Update to GCC 7, and use C++17
+- Use OS for serial port instead of the NI driver
 
 RobotBuilder
 ------------
 
-- Various dependency updates.
-- Exports using the new CommandBased rewrite.
+- Updated to use the new Command-based framework
 
 Shuffleboard
 ------------
 
-- Ignore whitespace and capitalization for remotely defined settings.
-- Components in grids can have location specified remotely.
-- Users can manually specify upper and lower bounds on graph X and Y axis.
+- Ignore whitespace and capitalization for remotely defined settings
+- Components in grids can now have location specified remotely
+- Upper and lower bounds on graph X and Y axis can now be manually specified
 
 OutlineViewer
 -------------
 
-- Fix for JavaFX alert dialog being too small.
-- Fix bug preventing array edits.
-- Update dependencies.
+- Fixed the initial settings dialog (it was too small on some platforms)
+- Fixed array editor
 
 GradleRIO
 ---------
 
-- Fix JRE slowdown when using ``concat()`` on Strings.
-- Fix JRE slowdown on garbage collection.
+- Fixed JRE slowdown when using ``concat()`` on Strings.
+- Fixed JRE slowdown on garbage collection.
 
 CScore
 ------
 
-- Fix CScore build with OpenCV 4.
+- Fixed cscore compatibility with OpenCV 4 (mainly useful for coprocessors)
+- Fixed setting exposure on PS3eye cameras
+
+WPILib All in One Installer
+---------------------------
+
+- Use ``wpilib\2020\`` instead of ``frc2020\``. This prevents cluttering the user’s home directory when installing alongside previous years’ installation.
+- Fixed an issue where shortcuts would get created for installed tools, even if it was unchecked.
+- Installing for **All Users** will now create shortcuts for all users, instead of only the current one.

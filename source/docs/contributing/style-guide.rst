@@ -32,6 +32,7 @@ Use the following case for these terms:
 
 - roboRIO (not RoboRIO, roboRio, or RoboRio)
 - LabVIEW (not labview or LabView)
+- Visual Studio Code (VS Code) (not vscode, VScode, vs code, etc)
 
 Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`_.
 

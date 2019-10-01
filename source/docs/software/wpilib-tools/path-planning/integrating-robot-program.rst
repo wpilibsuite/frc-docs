@@ -4,7 +4,7 @@ Integrating path following into a robot program
 .. warning::
    **Known Issue**
 
-   PathWeaver currently has a known issue. The left and right paths are being swapped. This will be fixed in PathWeaver v2019.3.1. In the meantime, this can be corrected in the follower (what this article describes).  Once this update is published, the following fix will not be needed. The fix is as follows:
+   PathWeaver currently has a known issue. The left and right paths are being swapped. This will be fixed in the next release of PathWeaver. In the meantime, this can be corrected in the follower (what this article describes).  Once this update is published, the following fix will not be needed. The fix is as follows:
 
    Replace:
 
@@ -40,6 +40,8 @@ Each class in WPILib requires that an import declaration to help the compiler re
 
       package frc.robot;
 
+      import java.io.IOException;
+
       import edu.wpi.first.wpilibj.AnalogGyro;
       import edu.wpi.first.wpilibj.Encoder;
       import edu.wpi.first.wpilibj.Notifier;
@@ -49,7 +51,7 @@ Each class in WPILib requires that an import declaration to help the compiler re
       import jaci.pathfinder.Pathfinder;
       import jaci.pathfinder.PathfinderFRC;
       import jaci.pathfinder.Trajectory;
-      import jaci.pathfinder.followers.EncoderFollower
+      import jaci.pathfinder.followers.EncoderFollower;
 
 Start of program and constant declarations
 ------------------------------------------
@@ -85,6 +87,7 @@ The Robot class (inherited from TimedRobot) contains the periodic methods. It al
 .. tabs::
 
    .. code-tab:: java
+
         private SpeedController m_left_motor;
         private SpeedController m_right_motor;
 
@@ -102,9 +105,9 @@ The Robot class (inherited from TimedRobot) contains the periodic methods. It al
 
 **k_ticks_per_rev** - number of encoder counts per wheel revolution
 
-**k_wheel_diameter** - diameter of the wheels
+**k_wheel_diameter** - diameter of the wheels in the units that was used in PathWeaver (feet in this example)
 
-**k_max_velocity** - maximum velocity of the robot
+**k_max_velocity** - maximum velocity of the robot in units/sec (feet/sec in this example)
 
 **k_left_channel, k_right_channel** - the port numbers for the left and right speed controllers
 
@@ -145,22 +148,26 @@ At the start of the autonomous period we do the following operations:
 
            @Override
            public void autonomousInit() {
-             Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
-             Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
+             try {
+               Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
+               Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
 
-             m_left_follower = new EncoderFollower(left_trajectory);
-             m_right_follower = new EncoderFollower(right_trajectory);
+               m_left_follower = new EncoderFollower(left_trajectory);
+               m_right_follower = new EncoderFollower(right_trajectory);
 
-             m_left_follower.configureEncoder(m_left_encoder.get(), k_ticks_per_rev, k_wheel_diameter);
-             // You must tune the PID values on the following line!
-             m_left_follower.configurePIDVA(1.0, 0.0, 0.0, 1 / k_max_velocity, 0);
+               m_left_follower.configureEncoder(m_left_encoder.get(), k_ticks_per_rev, k_wheel_diameter);
+               // You must tune the PID values on the following line!
+               m_left_follower.configurePIDVA(1.0, 0.0, 0.0, 1 / k_max_velocity, 0);
 
-             m_right_follower.configureEncoder(m_right_encoder.get(), k_ticks_per_rev, k_wheel_diameter);
-             // You must tune the PID values on the following line!
-             m_right_follower.configurePIDVA(1.0, 0.0, 0.0, 1 / k_max_velocity, 0);
+               m_right_follower.configureEncoder(m_right_encoder.get(), k_ticks_per_rev, k_wheel_diameter);
+               // You must tune the PID values on the following line!
+               m_right_follower.configurePIDVA(1.0, 0.0, 0.0, 1 / k_max_velocity, 0);
 
-             m_follower_notifier = new Notifier(this::followPath);
-             m_follower_notifier.startPeriodic(left_trajectory.get(0).dt);
+               m_follower_notifier = new Notifier(this::followPath);
+               m_follower_notifier.startPeriodic(left_trajectory.get(0).dt);
+             } catch (IOException e) {
+               e.printStackTrace()
+             }
            }
 
 Notifier method that actually drives the motors
