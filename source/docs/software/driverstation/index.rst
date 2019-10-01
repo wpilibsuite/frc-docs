@@ -3,7 +3,7 @@ Driverstation
 
 .. toctree::
    :maxdepth: 1
-   
+
    imaging-your-classmate
    driver-station
    programming-radios-for-fms-offseason

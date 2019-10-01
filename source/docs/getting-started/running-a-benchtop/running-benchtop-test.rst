@@ -6,16 +6,16 @@ Overview
 
 You should create and download a Benchtop Test Program as described for your programming language:
 
-:ref:`C++/Java <creating_benchtop_test_cpp_java>`
+:ref:`C++/Java <creating-benchtop-test-program-cpp-java>`
 
-:ref:`LabVIEW <creating_benchtop_test_labview>`
+:ref:`LabVIEW <creating-benchtop-test-program-labview>`
 
 Tethered Operation
 ------------------
 
 Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the the program was successfully deployed and that the driver station and roboRIO are properly configured.
 
-The roboRIO should be powered on and connected to the PC over Ethernet or USB. 
+The roboRIO should be powered on and connected to the PC over Ethernet or USB.
 
 Starting the FRC Driver Station
 -------------------------------

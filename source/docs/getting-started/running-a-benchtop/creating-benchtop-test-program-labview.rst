@@ -1,5 +1,3 @@
-.. _creating_benchtop_test_labview:
-
 Creating your Benchtop Test Program (LabVIEW)
 =============================================
 
