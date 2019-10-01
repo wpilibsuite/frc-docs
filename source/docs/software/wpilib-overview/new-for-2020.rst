@@ -6,7 +6,7 @@ A number of changes have been made to both C++ and Java WPILib for the 2020 seas
 frc-docs/ScreenSteps
 --------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
+- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
 
 WPILib
 ------
@@ -52,9 +52,7 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - Added the PWMSparkMax class for PWM control of the REV Robotics SPARK MAX Motor Controller
 - Simplified the Sendable interface and deprecated SendableBase. The name and subsystem have been removed from individual objects, and instead this data is stored in a new singleton class, SendableRegistry. Much of LiveWindow has been refactored into SendableRegistry.
   - In C++, a new CRTP helper class, SendableHelper, has been added to provide move and destruction functionality.
-  - Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added
-to Command and Subsystem (both old and new), and also to SendableHelper to
-prevent code breakage.
+  - Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added to Command and Subsystem (both old and new), and also to SendableHelper to prevent code breakage.
 - Update to GCC 7, and use C++17
 - Use OS for serial port instead of the NI driver
 
