@@ -15,19 +15,24 @@ Tethered Operation
 
 Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the the program was successfully deployed and that the driver station and roboRIO are properly configured.
 
-The roboRIO should be powered on and connected to the PC over Ethernet or USB. The Driver Station software should be configured with your team number as described in :ref:`this article <docs/software/driverstation/driver-station:FRC Driver Station Powered by NI LabVIEW>`.
+The roboRIO should be powered on and connected to the PC over Ethernet or USB. 
 
-Wireless Operation
-------------------
+Starting the FRC Driver Station
+-------------------------------
 
-Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your benchtop testing program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
+.. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
 
-Configuring the Access Point
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
-See the article :ref:`Programming your radio <radio-programming>` for details on configuring the robot radio for use as an access point.
+Setting Up the Driver Station
+-----------------------------
 
-After configuring the access point, connect the driver station wirelessly to the robot. The SSID will be your team number (as entered in the Bridge Configuration Utility). If you set a key when using the Bridge Configuration Utility you will need to enter it to connect to the network. Make sure the computer network adapter is set to DHCP ("Obtain an IP address automatically").
+.. image:: /docs/software/driverstation/images/driver-station/ds-setup.png
+
+The DS must be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
+
+PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to DHCP.
+
 
 Confirm Connectivity
 --------------------
@@ -54,3 +59,17 @@ Click the Operation Tab
 3. Put the robot in Teleop Mode
 4. Click Enable. Move the joysticks and observe how the robot responds.
 5. Click Disable
+
+Wireless Operation
+------------------
+
+Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your benchtop testing program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
+
+Configuring the Access Point
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See the article :ref:`Programming your radio <radio-programming>` for details on configuring the robot radio for use as an access point.
+
+After configuring the access point, connect the driver station wirelessly to the robot. The SSID will be your team number (as entered in the Bridge Configuration Utility). If you set a key when using the Bridge Configuration Utility you will need to enter it to connect to the network. Make sure the computer network adapter is set to DHCP ("Obtain an IP address automatically").
+
+You can now confirm wireless operation using the same steps in **Confirm Connectivity** and **Operate the Robot** above.

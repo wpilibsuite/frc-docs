@@ -1,14 +1,57 @@
-.. _creating_benchtop_test_cpp_java:
 
 Creating your Benchtop Test Program (C++/Java)
 ==============================================
 
-This article describes the Benchtop test example program
+Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
-Creating a Project
-------------------
+Creating a New WPILib Project
+-----------------------------
 
-Create a new Getting Started Example project. For more info about creating projects, see :ref:`docs/software/wpilib-overview/creating-robot-program:Creating a Robot Program`.
+Bring up the Visual Studio Code command palette with Control+Shift+P:
+
+|Command Palette|
+
+Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
+
+|WPILib Commands|
+
+Now, select the "Create a new project" command:
+
+|Create New Project|
+
+This will bring up the "New Project Creator Window:"
+
+|New Project Creator|
+
+The elements of the New Project Creator Window are explained below:
+
+1. **Project Type**: The kind of project we wish to create.  For this example, select **Example**
+2. **Language**: This is the language (C++ or Java) that will be used for this project.
+3. **Base class or example**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+4. **Project Location**: This determines the folder in which the robot project will be located.
+5. **Create New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+6. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+
+Once all the above have been configured, click "Generate Project" and the robot project will be created.
+
+.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+
+Opening The New Project
+-----------------------
+
+After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing Ctrl-O (Command+O on mac) and select the folder where We saved our project.
+
+Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
+
+|Opened Robot Project|
+
+C++ Configurations (C++ Only)
+-----------------------------
+
+For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+
+|C++ Configurations|
 
 Imports/Includes
 ----------------
@@ -176,3 +219,11 @@ Test Mode
         void TestPeriodic() override {}
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestPeriodic`` is provided here for example.
+
+.. |Command Palette| image:: /docs/software/wpilib-overview/images/creating-robot-program/command-palette.png
+.. |WPILib Commands| image:: /docs/software/wpilib-overview/images/creating-robot-program/wpilib-commands.png
+.. |Create New Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
+.. |New Project Creator| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator.png
+.. |New Project Configured| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator-configured.png
+.. |Opened Robot Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/opened-robot-project.png
+.. |C++ Configurations| image:: /docs/software/wpilib-overview/images/creating-robot-program/cpp-configurations.png
