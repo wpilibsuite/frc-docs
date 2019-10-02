@@ -12,14 +12,14 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
 
 .. tabs::
 
-   .. code-tab:: Java
+   .. code-tab:: java
 
       @Override
       public void robotInit() {
          PortForwarder.add(8888, "frcvision.local", 80);
       }
 
-   .. code-tab:: Cpp
+   .. code-tab:: c++
 
       void Robot::RobotInit {
          PortForwarder::Add(8888, "frcvision.local", 80);
@@ -34,14 +34,14 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 
 .. tabs::
 
-   .. code-tab:: Java
+   .. code-tab:: java
 
       @Override
       public void robotInit() {
          PortForwarder.remove(8888);
       }
 
-   .. code-tab:: Cpp
+   .. code-tab:: c++
 
       void Robot::RobotInit {
          PortForwarder::Remove(8888);
