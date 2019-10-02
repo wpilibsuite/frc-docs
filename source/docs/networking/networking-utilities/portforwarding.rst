@@ -12,22 +12,18 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
 
 .. tabs::
 
-   .. tab:: Java
+   .. code-tab:: Java
 
-      .. code-block:: java
+      @Override
+      public void robotInit() {
+         PortForwarder.add(8888, "frcvision.local", 80);
+      }
 
-         @Override
-         public void robotInit() {
-            PortForwarder.add(8888, "frcvision.local", 80);
-         }
-
-   .. tab:: C++
-
-      .. code-block:: cpp
-
-         void Robot::RobotInit {
-            PortForwarder::Add(8888, "frcvision.local", 80);
-         }
+   .. code-tab:: Cpp
+   
+      void Robot::RobotInit {
+         PortForwarder::Add(8888, "frcvision.local", 80);
+      }
 
 .. important:: You **can not** use a port less than 1024 as your local forwarded port. It is also important to note that you **can not** use full URLs (``http://frcvision.local``) and should only use IP Addresses or DNS names.
 
@@ -38,19 +34,15 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 
 .. tabs::
 
-   .. tab:: Java
+   .. code-tab:: Java
 
-      .. code-block:: java
+      @Override
+      public void robotInit() {
+         PortForwarder.remove(8888);
+      }
 
-         @Override
-         public void robotInit() {
-            PortForwarder.remove(8888);
-         }
+   .. code-tab:: Cpp
 
-   .. tab:: C++
-
-      .. code-block:: cpp
-
-         void Robot::RobotInit {
-            PortForwarder::Remove(8888);
-         }
+      void Robot::RobotInit {
+         PortForwarder::Remove(8888);
+      }
