@@ -14,13 +14,22 @@ The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_g
 
 .. graphviz::
 
-    graph sensorclasses {
-        bgcolor="#FFFFFF00"
-        splines=ortho
-        node [shape=rectangle]
-        Sensors -- {Ultrasonic Encoder Accelerometer AnalogInput DigitalInput Gyro AnalogPotentiometer}
-        Accelerometer -- {ADXL345_SPI ADXL345_I2C ADXL362 BuiltInAccelerometer}
-        Gyro -- {AnalogGyro ADXRS450_Gyro}
+    graph {
+        splines=ortho;
+        Sensors [shape=box]
+        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 [width=0, shape=point, style=invis];}
+        {rank=same; 1 -- 2 -- 3 -- 4 -- 5 -- 6;}
+        Sensors -- 3
+        node [shape=box]
+        1 -- Ultrasonic
+        1 -- Encoder
+        2 -- Accelerometer
+        3 -- AnalogInput
+        4 -- Gyro
+        6 -- DigitalInput
+        6 -- AnalogPotentiometer
+        Accelerometer -- ADXL345_SPI -- ADXL345_I2C -- ADXL362 -- BuiltInAccelerometer
+        Gyro -- AnalogGyro -- ADXRS450_Gyro
     }
 
 WPILib provides native support for:
