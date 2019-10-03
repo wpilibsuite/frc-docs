@@ -12,9 +12,16 @@ What sensors does WPILIB support?
 
 The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ which allows accurate real-time measuring of a variety of sensor input.  WPILib, in turn, provides a number of classes for accessing this functionality.
 
-.. todo:: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
+.. graphviz::
 
-|Types of Sensors|
+    graph sensorclasses {
+        bgcolor="#FFFFFF00"
+        splines=ortho
+        node [shape=rectangle]
+        Sensors -- {Ultrasonic Encoder Accelerometer AnalogInput DigitalInput Gyro AnalogPotentiometer}
+        Accelerometer -- {ADXL345_SPI ADXL345_I2C ADXL362 BuiltInAccelerometer}
+        Gyro -- {AnalogGyro ADXRS450_Gyro}
+    }
 
 WPILib provides native support for:
 
@@ -27,5 +34,3 @@ WPILib provides native support for:
 - :ref:`Limit switches <docs/software/sensors/digital-inputs-software:Digital Inputs - Software>`
 
 Additionally, WPILib includes lower-level classes for interfacing directly with the FPGA's digital and analog inputs and outputs.
-
-.. |Types of Sensors| image:: images/sensor-overview-software/types-of-sensors.png
