@@ -17,19 +17,35 @@ The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_g
     graph {
         splines=ortho;
         Sensors [shape=box]
-        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 [width=0, shape=point, style=invis];}
+        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 [width=0, shape=point, style=invis];}
         {rank=same; 1 -- 2 -- 3 -- 4 -- 5 -- 6;}
         Sensors -- 3
         node [shape=box]
+        Accelerometer [shape=plaintext, label=<
+
+         <table border='0' cellborder='1' cellspacing='0'>
+           <tr><td><b>Accelerometer</b></td></tr>
+           <tr><td>ADXL345_SPI</td></tr>
+           <tr><td>ADXL345_I2C</td></tr>
+           <tr><td>ADXL362</td></tr>
+           <tr><td>BuiltInAccelerometer</td></tr>
+         </table>
+        >];
+        Gyro [shape=plaintext, label=<
+
+         <table border='0' cellborder='1' cellspacing='0'>
+           <tr><td><b>Gyro</b></td></tr>
+           <tr><td>AnalogGyro</td></tr>
+           <tr><td>ADXRS450_GyroC</td></tr>
+         </table>
+        >];
         1 -- Ultrasonic
         1 -- Encoder
         2 -- Accelerometer
         3 -- AnalogInput
-        4 -- Gyro
-        6 -- DigitalInput
+        4 -- DigitalInput
         6 -- AnalogPotentiometer
-        Accelerometer -- ADXL345_SPI -- ADXL345_I2C -- ADXL362 -- BuiltInAccelerometer
-        Gyro -- AnalogGyro -- ADXRS450_Gyro
+        6 -- Gyro
     }
 
 WPILib provides native support for:
