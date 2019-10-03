@@ -113,10 +113,21 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
 
 This creates a sequential command group that *contains* a parallel command group. The resulting control flow looks something like this:
 
-.. figure:: images/commandgroupchart.png
-   :alt: command group with concurrency
+.. graphviz::
+   :align: center
+   :caption: Command Group with Concurrency
 
-   command group with concurrency
+    digraph {
+        bgcolor = "#FFFFFF00"
+        rankdir = LR
+        node [shape=box]
+
+        Invisible [shape=point, style=invis, width=0]
+        DriveToGoal -> Invisible [dir=none,
+        headlabel="\n\nAt this point\n the elevator and \nthe wrist are both\nmoving at the\n same time"]
+        Invisible -> RaiseElevator, SetWristPosition
+        RaiseElevator -> ScoreTube
+    }
 
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one. Notice also that this entire, more-complex structure, could be again embedded in another structure. Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
