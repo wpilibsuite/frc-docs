@@ -14,7 +14,7 @@ C++
 ^^^
 
 - `LearnCPP <https://www.learncpp.com/>`__
-- `Programming: Principles and Practice Using C++ 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784). 
+- `Programming: Principles and Practice Using C++ 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
 - `C++ Primer Plus 6th Edition <https://www.amazon.com/dp/0321776402/>`__ (ISBN-10: 0321776402).
 
 

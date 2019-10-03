@@ -6,9 +6,9 @@ Overview
 
 You should create and download a Benchtop Test Program as described for your programming language:
 
-:ref:`C++/Java <creating-benchtop-test-program-cpp-java>`
+:ref:`C++/Java <docs/getting-started/running-a-benchtop/creating-benchtop-test-program-cpp-java:Creating your Benchtop Test Program (C++/Java)>`
 
-:ref:`LabVIEW <creating-benchtop-test-program-labview>`
+:ref:`LabVIEW <docs/getting-started/running-a-benchtop/creating-benchtop-test-program-labview:Creating your Benchtop Test Program (LabVIEW)>`
 
 Tethered Operation
 ------------------

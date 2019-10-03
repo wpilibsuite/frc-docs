@@ -6,21 +6,21 @@
 FIRST Robotics Competition Documentation
 ========================================
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation will be the Official FIRST® Robotics Competition documentation for the 2020 season and beyond. 
+Welcome to the FIRST Robotics Competition Documentation! This documentation will be the Official FIRST® Robotics Competition documentation for the 2020 season and beyond.
 
 .. note:: It's advised to continue using `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib release for 2020.
 
 .. toctree::
    :maxdepth: 2
    :caption: Programming and Electrical Basics
-   
-   docs/getting-started/getting-started-frc-control-system/index   
+
+   docs/getting-started/getting-started-frc-control-system/index
    docs/getting-started/running-a-benchtop/index
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: WPILib Programming Basics
-   
+
    docs/software/wpilib-overview/index
    docs/software/labview/index
    docs/software/actuators/index
@@ -34,22 +34,22 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
    :caption: API Docs
 
    WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
-   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>   
-   
-.. toctree:: 
+   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
+
+.. toctree::
    :maxdepth: 1
    :caption: WPILib Software Tools
-   
+
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
    docs/software/wpilib-tools/path-planning/index
    docs/software/wpilib-tools/robotbuilder/index
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: WPILib Advanced Programming
-   
+
    docs/software/vision-processing/index
    docs/software/old-commandbased/index
    docs/software/commandbased/index
