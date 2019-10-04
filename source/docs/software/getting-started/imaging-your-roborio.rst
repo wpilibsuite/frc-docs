@@ -23,7 +23,7 @@ Connect a USB cable from the roboRIO USB Device port to the PC. This requires
 a USB Type A male (standard PC end) to Type B male cable (square with 2 cut
 corners), most commonly found as a printer USB cable.
 
-.. note:: The roboRIO should only be imaged via the USB connection. It is not\
+.. note:: The roboRIO should only be imaged via the USB connection. It is not
  recommended to attempt imaging using the Ethernet connection.
 
 Driver Installation
