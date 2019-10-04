@@ -44,9 +44,6 @@ steps:
 - script: make latexpdf
   displayName: 'Compile PDF'
 
-- script: make epub
-  displayName: 'Compile EPUB'
-
 - task: ArchiveFiles@2
   displayName: 'Archive HTML'
   inputs:
