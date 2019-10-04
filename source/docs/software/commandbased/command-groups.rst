@@ -118,15 +118,16 @@ This creates a sequential command group that *contains* a parallel command group
    :caption: Command Group with Concurrency
 
     digraph {
-        bgcolor = "#FFFFFF00"
-        rankdir = LR
+        bgcolor="#FFFFFF00"
+        rankdir=LR
         node [shape=box]
 
+        label [shape=plain, label="At this point\n the elevator and \nthe wrist are both\nmoving at the\n same time"]
         Invisible [shape=point, style=invis, width=0]
-        DriveToGoal -> Invisible [dir=none,
-        headlabel="\n\nAt this point\n the elevator and \nthe wrist are both\nmoving at the\n same time"]
-        Invisible -> RaiseElevator, SetWristPosition
+        Invisible -> label [dir=none, style=invis]
+        DriveToGoal -> RaiseElevator, SetWristPosition
         RaiseElevator -> ScoreTube
+        label -> RaiseElevator [constraint=false]
     }
 
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one. Notice also that this entire, more-complex structure, could be again embedded in another structure. Composition is an extremely powerful tool, and one that users should be sure to use extensively.
