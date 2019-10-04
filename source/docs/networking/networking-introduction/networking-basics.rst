@@ -34,7 +34,35 @@ To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” wa
 These reserved ranges let us assign one “unreserved IP Address” to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
 
-.. image:: images/networking-basics/nat-diagram.png
+.. graphviz::
+   :alt: NAT Diagram
+   :align: center
+
+    graph {
+        rankdir=RL
+        bgcolor="#FFFFFF00"
+        splines=ortho
+        ranksep=1
+        node [shape=plain]
+        Internet [shape=box] // Cloud??
+        Internet -- NAT [headlabel="   88.66.88.66", minlen=2]
+        subgraph clusterprivatenetwork {
+            label = "10.0.0.0/24"
+            labeljust="l"
+            bgcolor="#d1ddff"
+            rankdir=TB
+            {1, 2, 3 [width=0, shape=point, style=invis];}
+            NAT [shape=box]
+            NAT -- 2 [taillabel="10.0.0.1"]
+            {rank=same; 3 -- 2 -- 1}
+            {A, B, C, D, E  [label="", image="images/networking-basics/computer-icon.png"]}
+            1 -- A [headlabel="10.0.0.2"]
+            1 -- B [headlabel="10.0.0.3"]
+            2 -- C [headlabel="10.0.0.10"]
+            3 -- D [headlabel="10.0.0.55"]
+            3 -- E [headlabel="10.0.0.99"]
+        }
+    }
 
 .. note::
    For the FRC networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
