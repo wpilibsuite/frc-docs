@@ -62,15 +62,6 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
     replaceExistingArchive: true
 
-- task: ArchiveFiles@2
-  displayName: 'Archive EPUB'
-  inputs:
-    rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-epub.zip'
-    replaceExistingArchive: true
-
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
   inputs:
