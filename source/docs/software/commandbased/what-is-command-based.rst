@@ -46,10 +46,30 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
 Subsystems and Commands
 -----------------------
 
-.. figure:: images/subsystemscommands.png
-   :alt: image of subsystems and commands
+.. graphviz::
+   :alt: Image of Subsystems and Commands
+   :align: center
+   :layout: circo
 
-   image of subsystems and commands
+    graph {
+        bgcolor="#FFFFFF00"
+        mindist=0
+        overlap=false
+        rankdir=LR
+        root=Center
+        Center [shape=point, style=invis]
+        node [shape=plain, fontsize=12]
+        edge [style=invis]
+        Center -- Commands, Subsystems
+
+        Subsystems [shape=box, fontsize=14, root=true]
+        Subsystems -- Gripper, DriveLine, Wrist, Elevator, Arm, BallShooter, MiniBotLauncher
+
+        Commands [shape=box, fontsize=14]
+        Commands -- StowWrist, MoveToScoringPosition, DeployMiniBot,
+                    DriveForwardAndScore, ElevatorToHighPosition,
+                    DriveToGoal, LaunchMiniBot
+    }
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
