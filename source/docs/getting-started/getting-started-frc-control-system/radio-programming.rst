@@ -31,7 +31,7 @@ The Utility has been tested on Windows 7, 8 and 10. It may work on other operati
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../hardware/getting-started/images/status-lights/radioLight.png
+.. image:: /docs/hardware/hardware-basics/images/status-lights/radioLight.png
 
 
 The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
