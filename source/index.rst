@@ -69,6 +69,7 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
    :caption: Robot Networking
 
    docs/networking/networking-introduction/index
+   docs/networking/networking-utilities/index
 
 .. toctree::
    :maxdepth: 1
