@@ -4,6 +4,7 @@ roboRIO
 .. toctree::
    :maxdepth: 1
 
+   /docs/getting-started/getting-started-frc-control-system/imaging-your-roborio
    roborio-web-dashboard
    roborio-ftp
    roborio-ssh

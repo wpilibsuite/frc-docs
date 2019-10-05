@@ -21,7 +21,15 @@ To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” wa
 
 **Key point #2**: Unless you a directly connecting to your internet provider’s basic modem (no router function), your device will have an IP Address in one of these ranges. This means that at any local network, such as: your school, work office, home, etc., your device will 99% of the time have an IP address in a range listed below:
 
-.. image:: images/networking-basics/ip-ranges.png
++-------+------+---------------+-----------------+---------------------+
+| Class | Bits | Start Address | End Address     | Number of Addresses |
++=======+======+===============+=================+=====================+
+| A     | 24   | 10.0.0.0      | 10.255.255.255  | 16,777,216          |
++-------+------+---------------+-----------------+---------------------+
+| B     | 20   | 172.16.0.0    | 172.31.255.255  | 1,048,576           |
++-------+------+---------------+-----------------+---------------------+
+| C     | 16   | 192.168.0.0   | 192.168.255.255 | 65,536              |
++-------+------+---------------+-----------------+---------------------+
 
 These reserved ranges let us assign one “unreserved IP Address” to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
@@ -152,12 +160,12 @@ Most web-browsers should be able to utilize the mDNS address to access the roboR
 USB
 ---
 
-If using the USB interface, no network setup is required (you do need the :ref:`docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
+If using the USB interface, no network setup is required (you do need the :ref:`docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
 
 Ethernet/Wireless
 -----------------
 
-The :ref:`docs/software/getting-started/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
+The :ref:`docs/getting-started/getting-started-frc-control-system/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
 
 Summary
 -------
