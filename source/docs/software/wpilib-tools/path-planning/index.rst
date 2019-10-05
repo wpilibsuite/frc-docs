@@ -1,13 +1,9 @@
-Autonomous Path Planning
-========================
+Path Following
+==============
+
+There are two main implementions of path-followering/trajectory generation. Pathfinder and the new WPILib trajectory classes. Unless reason otherwise, it's recommended to use the new WPILib trajectory classes.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   introduction
-   creating-pathweaver-project
-   drawing-pathweaver-path
-   creating-path-groups
-   pathweaver-limits
-   integrating-robot-program
-   adding-field-images
+   pathfinder/index
