@@ -1,5 +1,5 @@
-Autonomous Path Planning
-========================
+Autonomous Path Planning with Pathfinder
+========================================
 
 .. toctree::
    :maxdepth: 1
