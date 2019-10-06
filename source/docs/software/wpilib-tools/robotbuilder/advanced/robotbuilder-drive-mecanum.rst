@@ -64,4 +64,4 @@ I would be remiss in not mentioning that is a 4th parameter to the ``MecanumDriv
 
 The use of field-oriented driving makes often makes the robot much easier to drive, especially compared to a "robot-oriented" drive system where the controls are reversed when the robot is facing the drivers.
 
-Just remember to get the gyro angle each time ``MecanumDrive_Caresian()`` is called.
+Just remember to get the gyro angle each time ``MecanumDrive_Cartesian()`` is called.

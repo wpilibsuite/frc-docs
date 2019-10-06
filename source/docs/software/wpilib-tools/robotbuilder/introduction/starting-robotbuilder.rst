@@ -6,10 +6,10 @@ Starting RobotBuilder
 Getting RobotBuilder
 --------------------
 
-RobotBuilder is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/MacOS/Linux installation guides <docs/software/getting-started/index:Getting Started>`
+RobotBuilder is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/MacOS/Linux installation guides <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`
 
-Option 1 - Starting from VSCode
--------------------------------
+Option 1 - Starting from Visual Studio Code
+-------------------------------------------
 
 .. image:: images/starting-robotbuilder-1.png
 
