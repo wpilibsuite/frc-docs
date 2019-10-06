@@ -180,10 +180,16 @@ as so:
 
     .. code-tab:: java
 
-        Spark m_left = new Spark(1);
-        m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
-        Spark m_right = new Spark(2);
-        DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+        public class Robot
+        {
+                Spark m_left = new Spark(1);
+                Spark m_right = new Spark(2);
+                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+
+                public void robotInit()
+                {
+                    m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
+                }
 
     .. code-tab:: c++
 
@@ -215,7 +221,6 @@ constructor (it takes an arbitrary number of inputs).
         {
             Spark m_frontLeft = new Spark(1);
             Spark m_rearLeft = new Spark(2);
-            m_frontLeft.setInverted(true);
             SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
 
             Spark m_frontRight = new Spark(3);
@@ -223,8 +228,12 @@ constructor (it takes an arbitrary number of inputs).
             SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
             DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-    .. code-tab:: c++
+            public void robotInit()
+            {
+                m_left.setInverted(true); // if you want to invert the entire side you can do so here
+            }
 
+    .. code-tab:: c++
 
         class Robot
         {
