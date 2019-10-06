@@ -61,7 +61,7 @@ Team Use              8
 Kauai Labs            9
 Copperforge           10
 Playing With Fusion   11
-Reserved              11-255
+Reserved              12-255
 ===================== ==========
 
 API/Message Identifier
