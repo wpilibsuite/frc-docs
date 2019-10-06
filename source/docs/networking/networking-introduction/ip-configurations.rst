@@ -48,7 +48,7 @@ It is also possible to configure static IPs on your devices to accommodate devic
    subnet mask **must** be ``255.0.0.0``
 -  IP Camera (if used) - Static ``10.TE.AM.11`` would be a reasonable
    choice, subnet ``255.255.255.0`` should be fine
--  Other devices - Static``10.TE.AM.6-.10`` or ``.12-.19`` (.11 if camera not
+-  Other devices - Static ``10.TE.AM.6-.10`` or ``.12-.19`` (.11 if camera not
    present) subnet ``255.255.255.0``
 
 In the Pits
