@@ -6,7 +6,33 @@ Displaying Expressions from a Robot Program
 Writing values to the SmartDashboard
 ------------------------------------
 
-.. image:: images/expressions-1.png
+.. tabs::
+
+    .. code-tab:: java
+
+        protected void execute() {
+          SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
+          SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
+          SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
+          SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
+          SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
+          SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
+          SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
+          SmartDashboard.putNumber("RPM", shooter.getRPM());
+        }
+
+    .. code-tab:: cpp
+
+        void Command::Execute() {
+          SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
+          SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
+          SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
+          SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
+          SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
+          SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
+          SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
+          SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
+        }
 
 You can write Boolean, Numeric, or String values to the SmartDashboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required. Any time in your program that you write another value with the same name, it appears in the same UI element on the screen on the driver station or development computer. As you can imagine this is a great way of debugging and getting status of your robot as it is operating.
 
