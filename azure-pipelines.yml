@@ -38,21 +38,35 @@ jobs:
     - script: make latexpdf
       displayName: 'Compile PDF'
 
+    - task: ArchiveFiles@2
+      displayName: 'Archive HTML'
+      inputs:
+        rootFolderOrFile: build/html/
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+        replaceExistingArchive: true
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive PDF'
+      inputs:
+        rootFolderOrFile: build/latex/firstroboticscompetition.pdf
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
+        replaceExistingArchive: true
+
     - task: PublishBuildArtifacts@1
       displayName: 'Publish HTML'
       inputs:
         artifactName: 'docs-html'
-        PathToPublish: 'build/html/'
-        parallel: true
-        parallelCount: 8
+        PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'
       inputs:
         artifactName: 'docs-pdf'
-        PathToPublish: 'build/latex/firstroboticscompetition.pdf'
-        parallel: true
-        parallelCount: 8
+        PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
 
   - job: LintCheck
     steps:
