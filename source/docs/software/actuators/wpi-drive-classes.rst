@@ -182,20 +182,20 @@ as so:
 
         public class Robot
         {
-                Spark m_left = new Spark(1);
-                Spark m_right = new Spark(2);
-                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+            Spark m_left = new Spark(1);
+            Spark m_right = new Spark(2);
+            DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-                public void robotInit()
-                {
-                    m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
-                }
+            public void robotInit()
+            {
+                m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
+            }
 
     .. code-tab:: c++
 
         class Robot {
             public:
-                frc::Spark m_left{1};
+                   frc::Spark m_left{1};
                 frc::Spark m_right{2};
                 m_left->SetInverted(true); // if you want to invert motor outputs, you must do so here
                 frc::DifferentialDrive m_drive{m_left, m_right};
@@ -236,7 +236,6 @@ constructor (it takes an arbitrary number of inputs).
     .. code-tab:: c++
 
         class Robot
-        {
             public:
                 frc::Spark m_frontLeft{1};
                 frc::Spark m_rearLeft{2};
