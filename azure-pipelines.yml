@@ -54,7 +54,7 @@ jobs:
         PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
 
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifacts'
+      displayName: 'Publish PDF'
       inputs:
         artifactName: 'docs-pdf'
         PathToPublish: 'build/latex/firstroboticscompetition.pdf'
