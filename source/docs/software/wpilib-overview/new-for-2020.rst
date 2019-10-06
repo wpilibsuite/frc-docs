@@ -6,7 +6,7 @@ A number of changes have been made to both C++ and Java WPILib for the 2020 seas
 frc-docs/ScreenSteps
 --------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
+- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest/>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
 
 WPILib
 ------
