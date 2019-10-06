@@ -195,7 +195,7 @@ as so:
 
         class Robot {
             public:
-                   frc::Spark m_left{1};
+                frc::Spark m_left{1};
                 frc::Spark m_right{2};
                 m_left->SetInverted(true); // if you want to invert motor outputs, you must do so here
                 frc::DifferentialDrive m_drive{m_left, m_right};
