@@ -76,11 +76,11 @@ Command groups can be used without subclassing at all: one can simply pass in th
 
 .. tabs::
 
-   .. code-group-tab:: java
+   .. code-tab:: java
 
       new SequentialCommandGroup(new FooCommand(), new BarCommand());
 
-   .. code-group-tab:: c++
+   .. code-tab:: c++
 
       frc2::SequentialCommandGroup{FooCommand(), BarCommand()};
 
@@ -93,7 +93,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
 
 .. tabs::
 
-   .. code-group-tab:: java
+   .. code-tab:: java
 
       new SequentialCommandGroup(
          new DriveToGoal(m_drive),
@@ -102,7 +102,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
             new SetWristPosition(m_wrist)),
          new ScoreTube(m_wrist));
 
-   .. code-group-tab:: c++
+   .. code-tab:: c++
 
       frc2::SequentialCommandGroup{
          DriveToGoal(&m_drive),

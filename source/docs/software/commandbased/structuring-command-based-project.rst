@@ -194,11 +194,11 @@ In Java, it is recommended that the constants be used from other classes by stat
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     using namespace OIConstants;
 

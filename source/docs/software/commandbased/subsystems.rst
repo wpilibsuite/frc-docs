@@ -78,20 +78,20 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     exampleSubsystem.setDefaultCommand(exampleCommand);
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));

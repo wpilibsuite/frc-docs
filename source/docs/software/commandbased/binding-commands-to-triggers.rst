@@ -56,12 +56,12 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     Joystick exampleStick = new Joystick(1); // Creates a joystick on port 1
     XboxController exampleController = new XboxController(2); // Creates an XboxController on port 2.
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     frc::Joystick exampleStick{1}; // Creates a joystick on port 1
     frc::XBoxController exampleController{2} // Creates an XboxController on port 2
@@ -72,11 +72,11 @@ After the joystick is instantiated, users can then pass it to a ``JoystickButton
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     JoystickButton exampleButton = new JoystickButton(exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     frc2::JoystickButton exampleButton(&exampleStick, 1); // Creates a new JoystickButton object for button 1 on exampleStick
 
@@ -89,12 +89,12 @@ Putting it all together, it is very simple to bind a button to a JoystickButton:
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     // Binds an ExampleCommand to be scheduled when the trigger of the example joystick is pressed
     exampleButton.whenPressed(new ExampleCommand());
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     // Binds an ExampleCommand to be scheduled when the trigger of the example joystick is pressed
     exampleButton.WhenPressed(ExampleCommand());
@@ -103,7 +103,7 @@ It is useful to note that the command binding methods all return the trigger/but
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     exampleButton
         // Binds a FooCommand to be scheduled when the `X` button of the driver gamepad is pressed
@@ -111,7 +111,7 @@ It is useful to note that the command binding methods all return the trigger/but
         // Binds a BarCommand to be scheduled when that same button is released
         .whenReleased(new BarCommand());
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     exampleButton
         // Binds a FooCommand to be scheduled when the `X` button of the driver gamepad is pressed
@@ -128,14 +128,14 @@ The ``Trigger`` class (including its ``Button`` subclasses) can be composed to c
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
     new JoystickButton(exampleController, XBoxController.Button.kX.value)
         .and(new JoystickButton(exampleController, XboxController.Button.kY.value))
         .whenActive(new ExampleCommand());
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
     (frc2::JoystickButton(&exampleController, frc::XBoxController::Button::kX)
@@ -151,7 +151,7 @@ While binding to HID buttons is by far the most common use case, advanced users 
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     public class ExampleTrigger extends Trigger {
       @Override
@@ -160,7 +160,7 @@ While binding to HID buttons is by far the most common use case, advanced users 
       }
     }
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     class ExampleTrigger : public frc2::Trigger {
      public:
@@ -173,12 +173,12 @@ Alternatively, this can also be done inline by passing a lambda to the construct
 
 .. tabs::
 
-  .. code-group-tab:: java
+  .. code-tab:: java
 
     // Here it is assumed that "condition" is an object with a method "get" that returns whether the trigger should be active
     Trigger exampleTrigger = new Trigger(condition::get);
 
-  .. code-group-tab:: c++
+  .. code-tab:: c++
 
     // Here it is assumed that "condition" is a boolean that determines whether the trigger should be active
     frc2::Trigger exampleTrigger([&condition] { return condition; });
