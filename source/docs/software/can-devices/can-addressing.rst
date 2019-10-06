@@ -1,6 +1,8 @@
 FRC CAN Device Specifications
 =============================
 
+The original document can be downloaded :download:`here <files/frc-can-device-specifications.docx>`.
+
 This document seeks to describe the basic functions of the current FRC
 CAN system and the requirements for any new CAN devices seeking to work
 with the system.
