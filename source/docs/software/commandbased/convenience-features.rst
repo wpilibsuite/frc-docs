@@ -13,22 +13,22 @@ Passing Subroutines As Parameters
 
 In order to inline a command definition, users require some way to specify what code the commands will run as constructor parameters. Fortunately, both Java and C++ offer users the ability to pass subroutines as parameters.
 
-Method references (Java)
+Method References (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Java, a reference to a subroutine that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method``. Note that no method parameters are included, since the method *itself* is the parameter. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see `the official Oracle documentation <https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__.
 
-Lambda expressions (Java)
+Lambda Expressions (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__
 
-Lambda expressions (C++)
+Lambda Expressions (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly useable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see `cppreference <https://en.cppreference.com/w/cpp/language/lambda>`__.
 
-Inlined command example
+Inlined Command Example
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 So, what does an inlined command definition look like in practice?
