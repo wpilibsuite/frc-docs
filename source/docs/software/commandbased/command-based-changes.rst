@@ -74,7 +74,9 @@ Changes to PIDSubsystem/PIDCommand
 
 .. note:: For more information, see :doc:`pid-subsystems-commands`
 
-* Following the changes to PIDController (TODO: link), these classes now run synchronously from the main robot loop.
+.. TODO:: Link to new PIDController article.
+
+* Following the changes to PIDController, these classes now run synchronously from the main robot loop.
 * Several methods have changed names:
   - ``usePIDOutput`` is now ``useOutput``
   - ``getPIDInput`` is now ``getMeasurement``

@@ -17,7 +17,7 @@ However, there is one exception: users *must* call ``CommandScheduler.getInstanc
 The Scheduler Run Sequence
 --------------------------
 
-TODO: flowchart?
+.. TODO:: Add flowchart?
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
