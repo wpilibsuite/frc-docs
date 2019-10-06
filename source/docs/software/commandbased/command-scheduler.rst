@@ -83,7 +83,7 @@ A typical use-case for these methods is adding markers in an event log whenever 
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging/RobotContainer.java
       :language: java
@@ -91,7 +91,7 @@ A typical use-case for these methods is adding markers in an event log whenever 
       :linenos:
       :lineno-start: 48
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging/cpp/RobotContainer.cpp
       :language: c++

@@ -9,11 +9,11 @@ The command-based paradigm is also an example of what is known as `declarative <
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     aButton.whenPressed(intake::run);
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     aButton.WhenPressed([&intake] { intake.Run(); });
 
@@ -21,7 +21,7 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     if(aButton.get()) {
       if(!pressed) {
@@ -32,7 +32,7 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       }
     }
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     if(aButton.Get()) {
       if(!pressed) {

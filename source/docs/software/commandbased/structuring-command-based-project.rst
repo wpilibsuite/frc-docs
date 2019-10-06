@@ -18,7 +18,7 @@ As ``Robot`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilib
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
@@ -32,7 +32,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
@@ -40,7 +40,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
       :linenos:
       :lineno-start: 36
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
@@ -52,7 +52,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
@@ -60,7 +60,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
       :linenos:
       :lineno-start: 63
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
@@ -72,7 +72,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
@@ -80,7 +80,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
       :linenos:
       :lineno-start: 83
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
@@ -99,7 +99,7 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjE
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
@@ -107,7 +107,7 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjE
       :linenos:
       :lineno-start: 24
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
       :language: c++
@@ -119,7 +119,7 @@ Notice that subsystems are declared as private fields in ``RobotContainer``. Thi
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
@@ -127,7 +127,7 @@ Notice that subsystems are declared as private fields in ``RobotContainer``. Thi
       :linenos:
       :lineno-start: 26
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
@@ -139,7 +139,7 @@ Since subsystems are declared as private members, they must be explicitly passed
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
@@ -147,7 +147,7 @@ Since subsystems are declared as private members, they must be explicitly passed
       :linenos:
       :lineno-start: 38
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
@@ -159,7 +159,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
@@ -167,7 +167,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
       :linenos:
       :lineno-start: 48
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
@@ -194,11 +194,11 @@ In Java, it is recommended that the constants be used from other classes by stat
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     using namespace OIConstants;
 

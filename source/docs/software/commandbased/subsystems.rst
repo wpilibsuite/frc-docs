@@ -14,7 +14,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
       :language: java
@@ -22,7 +22,7 @@ The recommended method to create a subsystem for most users is to subclass the a
       :linenos:
       :lineno-start: 10
 
-  .. tab:: C++
+  .. group-tab:: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
       :language: c++
@@ -41,7 +41,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
       :language: java
@@ -49,7 +49,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
       :language: c++
@@ -57,7 +57,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
@@ -78,20 +78,20 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     exampleSubsystem.setDefaultCommand(exampleCommand);
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));

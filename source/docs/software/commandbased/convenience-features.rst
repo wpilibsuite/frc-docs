@@ -37,7 +37,7 @@ The ``InstantCommand`` class provides an example of a type of command that benef
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
       :language: java
@@ -45,7 +45,7 @@ The ``InstantCommand`` class provides an example of a type of command that benef
       :linenos:
       :lineno-start: 99
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
       :language: c++
@@ -53,7 +53,7 @@ The ``InstantCommand`` class provides an example of a type of command that benef
       :linenos:
       :lineno-start: 63
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
@@ -75,12 +75,12 @@ The ``ConditionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/devel
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
     new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
     frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
@@ -96,7 +96,7 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developmen
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
       :language: java
@@ -104,7 +104,7 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developmen
       :linenos:
       :lineno-start: 27
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
       :language: c++
@@ -119,12 +119,12 @@ The ``InstantCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developme
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Actuates the hatch subsystem to grab the hatch
     new InstantCommand(m_hatchSubsystem::grabHatch, m_hatchSubsystem)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Actuates the hatch subsystem to grab the hatch
     frc2::InstantCommand([&m_hatchSubsystem] { m_hatchSubsystem.GrabHatch(); }, {&m_hatchSubsystem})
@@ -136,7 +136,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/d
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
@@ -145,7 +145,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/d
         driverController.getX(GenericHID.Hand.kRight)),
         m_robotDrive)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
@@ -164,7 +164,7 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     new StartEndCommand(
         // Start driving forward at the start of the command
@@ -175,7 +175,7 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
         m_robotDrive
     )
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     frc2::StartEndCommand(
       // Start driving forward at the start of the command
@@ -193,7 +193,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develo
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     new FunctionalCommand(
         // Reset encoders on command start
@@ -208,7 +208,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develo
         m_robotDrive
     )
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     frc2::FunctionalCommand(
       // Reset encoders on command start
@@ -230,11 +230,11 @@ The ``PrintCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     new PrintCommand("This message will be printed!")
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     frc2::PrintCommand("This message will be printed!)
 
@@ -245,12 +245,12 @@ The ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Schedules commandToSchedule when run
     new ScheduleCommand(commandToSchedule)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Schedules commandToSchedule when run
     frc2::ScheduleCommand(&commandToSchedule)
@@ -264,12 +264,12 @@ The ``ProxyScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/dev
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Schedules commandToSchedule when run, does not end until commandToSchedule is no longer scheduled
     new ProxyScheduleCommand(commandToSchedule)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Schedules commandToSchedule when run, does not end until commandToSchedule is no longer scheduled
     frc2::ProxyScheduleCommand(&commandToSchedule)
@@ -283,12 +283,12 @@ The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Ends 5 seconds after being scheduled
     new WaitCommand(5)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Ends 5 seconds after being scheduled
     frc2::WaitCommand(5)
@@ -304,7 +304,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Ends after the 60-second mark of the current match
     new WaitUntilCommand(60)
@@ -312,7 +312,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
     // Ends after m_limitSwitch.get() returns true
     new WaitUntilCommand(m_limitSwitch::get)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Ends after the 60-second mark of the current match
     frc2::WaitUntilCommand(60)
@@ -327,12 +327,12 @@ The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will run commandToRunForever perpetually, even if its isFinished() method returns true
     new PerpetualCommand(commandToRunForever)
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will run commandToRunForever perpetually, even if its isFinished() method returns true
     frc2::PerpetualCommand(commandToRunForever)
@@ -356,12 +356,12 @@ decorated command will be interrupted if the timeout expires:
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will time out 5 seconds after being scheduled, and be interrupted
     command.withTimeout(5)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Will time out 5 seconds after being scheduled, and be interrupted
     command.WithTimeout(5)
@@ -373,12 +373,12 @@ The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will be interrupted if m_limitSwitch.get() returns true
     command.interruptOn(m_limitSwitch::get)
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
     command.InterruptOn([&m_limitSwitch] { return m_limitSwitch.Get(); })
@@ -390,12 +390,12 @@ The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/devel
 
 ..tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will print "hello" after ending
     command.whenFinished(() -> System.out.println("hello"))
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Will print "hello" after ending
     command.WhenFinished([] { std::cout << "hello"; })
@@ -407,12 +407,12 @@ The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/dev
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will print "hello" before starting
     command.beforeStarting(() -> System.out.println("hello"))
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Will print "hello" before starting
     command.BeforeStarting([] { std::cout << "hello"; })
@@ -472,12 +472,12 @@ The ``perpetually()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/develo
 
 .. tabs::
 
-  .. code-tab:: java
+  .. code-group-tab:: java
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     command.perpetually()
 
-  .. code-tab:: c++
+  .. code-group-tab:: c++
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     command.Perpetually()

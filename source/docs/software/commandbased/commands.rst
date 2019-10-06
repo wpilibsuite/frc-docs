@@ -12,7 +12,7 @@ Similarly to subsystems, the recommended method for most users to create a comma
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
       :language: java
@@ -20,7 +20,7 @@ Similarly to subsystems, the recommended method for most users to create a comma
       :linenos:
       :lineno-start: 10
 
-  .. tab:: C++
+  .. group-tab:: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h
       :language: c++
@@ -65,7 +65,7 @@ What might a functional command look like in practice? As before, below is a sim
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
       :language: java
@@ -73,7 +73,7 @@ What might a functional command look like in practice? As before, below is a sim
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
       :language: c++
@@ -81,7 +81,7 @@ What might a functional command look like in practice? As before, below is a sim
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
       :language: c++
@@ -97,7 +97,7 @@ What about a more complicated case? Below is a drive command, from the same exam
 
 .. tabs::
 
-  .. tab:: Java
+  .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
       :language: java
@@ -105,7 +105,7 @@ What about a more complicated case? Below is a drive command, from the same exam
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Header)
+  .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
       :language: c++
@@ -113,7 +113,7 @@ What about a more complicated case? Below is a drive command, from the same exam
       :linenos:
       :lineno-start: 8
 
-  .. tab:: C++ (Source)
+  .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
       :language: c++
