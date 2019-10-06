@@ -42,7 +42,7 @@ jobs:
       displayName: 'Publish HTML'
       inputs:
         artifactName: 'docs-html'
-        PathToPublish: '$(Build.ArtifactStagingDirectory)/build/html/'
+        PathToPublish: 'build/html/'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'
