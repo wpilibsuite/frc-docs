@@ -38,20 +38,11 @@ jobs:
     - script: make latexpdf
       displayName: 'Compile PDF'
 
-    - task: ArchiveFiles@2
-      displayName: 'Archive HTML'
-      inputs:
-        rootFolderOrFile: build/html/
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
-        replaceExistingArchive: true
-
     - task: PublishBuildArtifacts@1
       displayName: 'Publish HTML'
       inputs:
         artifactName: 'docs-html'
-        PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+        PathToPublish: '$(Build.ArtifactStagingDirectory)/build/html/'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'
