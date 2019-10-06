@@ -47,15 +47,6 @@ jobs:
         archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
         replaceExistingArchive: true
 
-    - task: ArchiveFiles@2
-      displayName: 'Archive PDF'
-      inputs:
-        rootFolderOrFile: build/latex/firstroboticscompetition.pdf
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
-        replaceExistingArchive: true
-
     - task: PublishBuildArtifacts@1
       displayName: 'Publish HTML'
       inputs:
@@ -66,7 +57,7 @@ jobs:
       displayName: 'Publish PDF'
       inputs:
         artifactName: 'docs-pdf'
-        PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
+        PathToPublish: 'build/latex/firstroboticscompetition.pdf'
 
   - job: LintCheck
     steps:
