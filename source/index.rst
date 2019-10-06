@@ -54,7 +54,6 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
    docs/software/old-commandbased/index
    docs/software/commandbased/index
    docs/software/networktables/index
-   docs/software/advanced-programming/index
    docs/software/roborio-info/index
 
 .. toctree::
