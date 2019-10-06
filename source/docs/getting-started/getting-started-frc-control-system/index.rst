@@ -15,4 +15,3 @@ Getting Started
    imaging-your-roborio
    radio-programming
    updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel
-   known-issues
