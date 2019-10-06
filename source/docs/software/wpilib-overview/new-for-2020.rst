@@ -6,14 +6,14 @@ A number of changes have been made to both C++ and Java WPILib for the 2020 seas
 frc-docs/ScreenSteps
 --------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
+- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
 
 WPILib
 ------
 
 There are many changes and additions to the main WPILib library for 2020. Most notably, there is a new version of the command-based framework with several major enhancements, a new (synchronous) PIDController, and kinematics classes have been added for closed loop driving. The full change log can be read below.
 
-.. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController.
+.. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController. Also update link to use the WPILibSuite repo on merge.
 
 - The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/Oblarg/docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
 
