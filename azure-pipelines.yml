@@ -43,7 +43,7 @@ jobs:
       inputs:
         artifactName: 'docs-html'
         PathToPublish: 'build/html/'
-        parallel: false
+        parallel: true
         parallelCount: 8
 
     - task: PublishBuildArtifacts@1
@@ -51,7 +51,7 @@ jobs:
       inputs:
         artifactName: 'docs-pdf'
         PathToPublish: 'build/latex/firstroboticscompetition.pdf'
-        parallel: false
+        parallel: true
         parallelCount: 8
 
   - job: LintCheck
