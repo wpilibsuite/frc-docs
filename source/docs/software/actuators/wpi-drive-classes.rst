@@ -180,8 +180,7 @@ as so:
 
     .. code-tab:: java
 
-        public class Robot
-        {
+        public class Robot {
             Spark m_left = new Spark(1);
             Spark m_right = new Spark(2);
             DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
@@ -217,8 +216,7 @@ constructor (it takes an arbitrary number of inputs).
 
     .. code-tab:: java
 
-        public class Robot
-        {
+        public class Robot {
             Spark m_frontLeft = new Spark(1);
             Spark m_rearLeft = new Spark(2);
             SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
