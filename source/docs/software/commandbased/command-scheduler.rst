@@ -14,6 +14,11 @@ For the most part, users do not have to call scheduler methods directly - almost
 
 However, there is one exception: users *must* call ``CommandScheduler.getInstance().run()`` from the ``robotPeriodic()`` method of their ``Robot`` class.  If this is not done, the scheduler will never run, and the command framework will not work.  The provided command-based project template has this call already included.
 
+The ``schedule()`` Method
+-------------------------
+
+To schedule a command, users call the ``schedule()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command (and, optionally, a specification as to whether that command is interruptible), and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called. 
+
 The Scheduler Run Sequence
 --------------------------
 
@@ -64,7 +69,7 @@ The Scheduler Run Sequence
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
-What does a single iteration of the scheduler's ``run()`` method actually do?  The following section walks through the logic of a scheduler iteration.
+What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__ actually do?  The following section walks through the logic of a scheduler iteration.
 
 Step 1: Run Subsystem Periodic Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
