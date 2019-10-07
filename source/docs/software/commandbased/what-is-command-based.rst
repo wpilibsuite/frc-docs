@@ -3,9 +3,9 @@ What Is "Command-Based" Programming?
 
 WPILib supports a robot programming methodology called “command-based” programming. In general, “command-based” can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
 
-“Command-based” programming is an example of what is known as a `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ It is a general way of organizing one’s robot code that is well-suited to a particular problem-space. It is not the only way to write a robot program, but it is a very effective one; command-based robot code tend to be clean, extensible, and (with some tricks) easy to re-use from year to year.
+“Command-based” programming is an example of what is known as a `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ It is a general way of organizing one’s robot code that is well-suited to a particular problem-space. It is not the only way to write a robot program, but it is a very effective one; command-based robot code tends to be clean, extensible, and (with some tricks) easy to re-use from year to year.
 
-The command-based paradigm is also an example of what is known as `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ programming. In declarative programming, the emphasis is placed on *what* the program ought to do, rather than *how* the program ought to do it. Thus, the command-based libraries allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in a command-based program, a user can specify that “the robot should perform an action when a button is pressed” (note the use of a lambda TODO: link):
+The command-based paradigm is also an example of what is known as `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ programming. In declarative programming, the emphasis is placed on *what* the program ought to do, rather than *how* the program ought to do it. Thus, the command-based libraries allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in a command-based program, a user can specify that “the robot should perform an action when a button is pressed” (note the use of a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`):
 
 .. tabs::
 
@@ -59,6 +59,8 @@ The command-based pattern is based around two core abstractions: **commands**, a
 
 How Commands Are Run
 --------------------
+
+.. note:: For a more detailed explanation, see :doc:`command-scheduler`.
 
 Commands are run by the ``CommandScheduler``, a singleton class that is at the core of the command-based library. The ``CommandScheduler`` is in charge of polling buttons for new commands to schedule, checking the resources required by those commands to avoid conflicts, executing currently-scheduled commands, and removing commands that have finished or been interrupted. The scheduler’s ``run()`` method may be called from any place in the user’s code; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
 
