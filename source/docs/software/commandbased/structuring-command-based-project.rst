@@ -1,5 +1,3 @@
-.. _structuring:
-
 Structuring a command-based robot project
 =========================================
 
@@ -179,7 +177,7 @@ constructor gets too “busy,” users are encouraged to migrate code into
 separate subroutines (such as the ``configureButtonBindings()`` method
 included by default) which are called from the constructor. Note that
 one of the example autonomous commands has been
-:ref:`inlined <inlined-commands>` for convenience. Note also
+:ref:`inlined <docs/software/commandbased/convenience-features:Inline command definitions>` for convenience. Note also
 that, since subsystems are declared as private fields, they must be
 explicitly passed to commands.
 

@@ -1,5 +1,3 @@
-.. _strategies-for-vision-programming:
-
 Strategies for Vision Programming
 =================================
 

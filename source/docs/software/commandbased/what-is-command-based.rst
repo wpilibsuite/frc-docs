@@ -1,5 +1,3 @@
-.. _what-is-command-based:
-
 What is “command-based” programming?
 ====================================
 

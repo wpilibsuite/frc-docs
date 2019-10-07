@@ -8,8 +8,6 @@ verbosity/complexity of command-based code. It is highly recommended
 that users familiarize themselves with these features to maximize the
 value they get out of the command-based libraries.
 
-.. _inlined-commands:
-
 Inline command definitions
 --------------------------
 
@@ -82,7 +80,7 @@ Included pre-made command classes
 
 The command-based library includes a variety of pre-written commands for
 commonly-encountered use cases. Many of these commands are intended to
-be used “out-of-the-box” via :ref:`inlining <inlined-commands>`,
+be used “out-of-the-box” via `inlining <Inline command definitions>`_,
 however they may be subclassed, as well. A list of the included pre-made
 commands can be found below, along with brief examples of each - for
 more rigorous documentation, see the javadoc.
@@ -135,8 +133,6 @@ on the value of a user-specified selector:
            this::select
        );
 
-.. _instant-command:
-
 InstantCommand
 ~~~~~~~~~~~~~~
 
@@ -147,8 +143,6 @@ and then ends immediately:
 
    // Actuates the hatch subsystem to grab the hatch
    new InstantCommand(m_hatchSubsystem::grabHatch, m_hatchSubsystem)
-
-.. _run-command:
 
 RunCommand
 ~~~~~~~~~~
