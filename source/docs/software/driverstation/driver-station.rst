@@ -3,7 +3,7 @@ FRC Driver Station Powered by NI LabVIEW
 
 This article describes the use and features of the FRC Driver Station Powered by NI LabVIEW.
 
-For information on installing the Driver Station software see :ref:`this document <installing_FRC_update_suite>`.
+For information on installing the Driver Station software see :ref:`this document <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`.
 
 Starting the FRC Driver Station
 -------------------------------

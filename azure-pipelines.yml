@@ -3,78 +3,92 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 trigger:
-- master
-- develop
+  batch: true
+  branches:
+    include:
+      - master
 
-pr:
-- master
-- develop
+jobs:
+  - job: Build
+    steps:
+    - task: UsePythonVersion@0
+      displayName: 'Select Python Version 3.6'
+      inputs:
+        versionSpec: '3.6'
+        architecture: 'x64'
 
-steps:
-- task: UsePythonVersion@0
-  displayName: 'Select Python Version 3.6'
-  inputs:
-    versionSpec: '3.6'
-    architecture: 'x64'
+    - script: python -m pip install --upgrade pip setuptools wheel
+      displayName: 'Install and Upgrade Pip'
 
-- script: python -m pip install --upgrade pip setuptools wheel
-  displayName: 'Install and Upgrade Pip'
+    - script: pip install -r source/requirements.txt
+      displayName: 'Install Python Requirements'
 
-- script: pip install -r source/requirements.txt
-  displayName: 'Install Python Requirements'
+    - script: sudo apt-get update
+      displayName: 'Update System Packages'
 
-- script: make lint
-  displayName: 'Lint Check'
+    - script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng
+      displayName: 'Install LateX'
 
-- script: make linkcheck
-  displayName: 'Link Check'
+    - script: sudo apt-get install -qy --force-yes graphviz
+      displayName: 'Install GraphViz'
 
-- script: sudo apt-get update
-  displayName: 'Update System Packages'
+    - script: make html
+      displayName: 'Compile HTML'
 
-- script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng
-  displayName: 'Install LateX'
+    - script: make latexpdf
+      displayName: 'Compile PDF'
 
-- script: sudo apt-get install -qy --force-yes graphviz
-  displayName: 'Install GraphViz'
+    - task: ArchiveFiles@2
+      displayName: 'Archive HTML'
+      inputs:
+        rootFolderOrFile: build/html/
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+        replaceExistingArchive: true
 
-- script: make html
-  displayName: 'Compile HTML'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish HTML'
+      inputs:
+        artifactName: 'docs-html'
+        PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
 
-- script: make latexpdf
-  displayName: 'Compile PDF'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish PDF'
+      inputs:
+        artifactName: 'docs-pdf'
+        PathToPublish: 'build/latex/firstroboticscompetition.pdf'
 
-- script: make epub
-  displayName: 'Compile EPUB'
+  - job: LintCheck
+    steps:
+    - task: UsePythonVersion@0
+      displayName: 'Select Python Version 3.6'
+      inputs:
+        versionSpec: '3.6'
+        architecture: 'x64'
 
-- task: ArchiveFiles@2
-  displayName: 'Archive HTML'
-  inputs:
-    rootFolderOrFile: build/html/
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
-    replaceExistingArchive: true
+    - script: python -m pip install --upgrade pip setuptools wheel
+      displayName: 'Install and Upgrade Pip'
 
-- task: ArchiveFiles@2
-  displayName: 'Archive PDF'
-  inputs:
-    rootFolderOrFile: build/latex/firstroboticscompetition.pdf
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-pdf.zip'
-    replaceExistingArchive: true
+    - script: pip install -r source/requirements.txt
+      displayName: 'Install Python Requirements'
 
-- task: ArchiveFiles@2
-  displayName: 'Archive EPUB'
-  inputs:
-    rootFolderOrFile: build/epub/FIRSTRoboticsCompetition.epub
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/docs-epub.zip'
-    replaceExistingArchive: true
+    - script: make lint
+      displayName: 'Lint Check'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifacts'
-  inputs:
-    artifactName: 'Docs'
+  - job: LinkCheck
+    steps:
+    - task: UsePythonVersion@0
+      displayName: 'Select Python Version 3.6'
+      inputs:
+        versionSpec: '3.6'
+        architecture: 'x64'
+
+    - script: python -m pip install --upgrade pip setuptools wheel
+      displayName: 'Install and Upgrade Pip'
+
+    - script: pip install -r source/requirements.txt
+      displayName: 'Install Python Requirements'
+
+    - script: make linkcheck
+      displayName: 'Link Check'

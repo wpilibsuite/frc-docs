@@ -125,11 +125,11 @@ If desired, users can omit a base class entirely and simply write their program 
 Creating a New WPILib Project
 -----------------------------
 
-Once we've decided on a base class, we can create our new robot project.  Bring up the VSCode command palette with Control+Shift+P:
+Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with Control+Shift+P:
 
 |Command Palette|
 
-Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VSCode commands:
+Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
 
 |WPILib Commands|
 
@@ -160,7 +160,7 @@ Once all the above have been configured, click "Generate Project" and the robot 
 Opening The New Project
 -----------------------
 
-After successfully creating your project, Visual Studio Code will give the option of opening the project as shown below. We can choose to do that now or later by typing Ctrl-O (Command+O on mac) and select the folder where We saved our project.
+After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing Ctrl-O (Command+O on mac) and select the folder where We saved our project.
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 

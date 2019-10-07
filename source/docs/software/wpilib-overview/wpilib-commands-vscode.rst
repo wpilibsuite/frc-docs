@@ -1,6 +1,6 @@
-WPILib Commands in VSCode
-=========================
-This document contains a complete list of the commands provided by the WPILib VSCode Extension and what they do.
+WPILib Commands in Visual Studio Code
+=====================================
+This document contains a complete list of the commands provided by the WPILib VS Code Extension and what they do.
 
 To access these commands, press Ctrl+Shift+P to open the Command Palette, then begin typing the command name as shown here to filter the list of commands. Click on the command name to execute it.
 
@@ -32,5 +32,5 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Show Log Folder** - Shows the folder where the WPILib extension stores internal logs. This may be useful when debugging/reporting an extension issue to the WPILib developers
 - **WPILib: Simulate Robot Code on Desktop** - This builds the current robot code project on your PC and starts it running in simulation. This requires Desktop Support to be set to Enabled.
 - **WPILib: Start RioLog** - This starts the RioLog display used to view console output from a robot program
-- **WPILib: Start Tool** - This allows you to launch WPILib tools (e.g. SmartDashboard, Shuffleboard, etc.) from inside VSCode
+- **WPILib: Start Tool** - This allows you to launch WPILib tools (e.g. SmartDashboard, Shuffleboard, etc.) from inside VS Code
 - **WPILib: Test Robot Code** - This builds the current robot code project and runs any created tests. This requires Desktop Support to be set to Enabled.
