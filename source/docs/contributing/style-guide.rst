@@ -87,6 +87,19 @@ Admonitions
 
 Admonitions (list `here <http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
+Use
+
+.. code-block:: text
+
+   .. warning:: This is a warning!
+
+NOT
+
+.. code-block:: text
+
+   .. warning::
+      This is a warning!
+
 Links
 -----
 
