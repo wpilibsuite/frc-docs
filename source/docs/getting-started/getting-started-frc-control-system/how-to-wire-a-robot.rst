@@ -281,8 +281,6 @@ Requires: Ethernet cable
 Connect an Ethernet cable from the female RJ45 (Ethernet) port of the
 Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
 
-.. _can-device-wiring:
-
 CAN Devices
 -----------
 

@@ -93,15 +93,13 @@ What is DNS?
 
 DNS (Domain Name System) can become a complex topic, but for the scope of this paper, we are going to just look at the high level overview of DNS. In the most basic explanation, DNS is what allows us to relate human-friendly names for network devices to IP Addresses, and keep track of those IP addresses if they change.
 
-Example 1: Let’s look at the site `www.google.com`_. The IP address for this site is ``172.217.164.132``, however that is not very user friendly to remember!
+Example 1: Let’s look at the site `www.google.com <www.google.com>`__. The IP address for this site is ``172.217.164.132``, however that is not very user friendly to remember!
 
-Whenever a user types `www.google.com`_ into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for `www.google.com`_. The DNSserver returns the IP address and then the computer is able to use that to connect to the Google web site.
+Whenever a user types `www.google.com <www.google.com>`__ into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for `www.google.com <www.google.com>`__. The DNSserver returns the IP address and then the computer is able to use that to connect to the Google web site.
 
 Example 2: On your home network, you have a server named ``MYCOMPUTER`` that you want to connect to from your laptop. Your network uses DHCP so you don’t know the IP Address of ``MYCOMPUTER``, but DNS allows you to connect just by using the ``MYCOMPUTER`` name. Additionally, whenever the DHCP assignments refresh, ``MYCOMPUTER`` may end up with a different address, but because you’re connecting by using the ``MYCOMPUTER`` name instead of a specific IP address, the DNS record was updated and you’re still able to connect.
 
 This is the second benefit to DNS, and the most relevant for FRC. With DNS, if we reference devices by their friendly name instead of IP Address, we don’t have to change anything in our program if the IP Address changes. DNS will keep track of the changes and return the new address if it ever changes.
-
-.. _www.google.com: https://www.google.com
 
 DNS for FRC
 ^^^^^^^^^^^
@@ -175,4 +173,3 @@ IP Addresses are what allow us to communicate with devices on a network. For FRC
 If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 
 If all devices are set to use DHCP or Static IP assignments (with correct static settings), the communication should work in both the pit and on the field without any changes needed. If there are a mix of some Static and some DHCP devices, then the Static devices will connect on the field, but will not connect in the pit. This can be resolved by either setting all devices to static settings, or leaving the current settings and providing a DHCP server in the pit.
-
