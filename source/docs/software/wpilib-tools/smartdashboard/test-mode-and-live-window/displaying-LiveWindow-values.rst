@@ -1,15 +1,31 @@
-Displaying LiveWindow values
+Displaying LiveWindow Values
 ============================
 
-Typically LiveWindows are displayed as part of the automatically generated RobotBuilder code. You may also display LiveWindow values by writing the code yourself and adding it to your robot program. LiveWindow will display values grouped in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
+.. note::
+    LiveWindow will automatically add your sensors for you. There is no need to do it manually.
+
+LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. LiveWindow will display values grouped in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
 
 Adding the necessary code to your program
 -----------------------------------------
+
+1. First, get a reference (Java) or pointer (C++) to the LiveWindow object.
+
 .. tabs::
 
     .. code-tab:: java
 
-        lw = LiveWindow.getInstance()    // (1)
+        lw = LiveWindow.getInstance()
+
+    .. code-tab:: cpp
+
+        lw = LiveWindow::GetInstance()
+
+2. Then for each sensor or actuator that is created, add it to the LiveWindow display by either calling ``AddActuator`` or ``AddSensor`` (``addActuator`` or ``addSensor`` in Java). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
+
+.. tabs::
+
+    .. code-tab:: java
 
         ultrasonic = new Ultrasonic(1, 2);
         lw.addSensor("Arm", "Ultrasonic", ultrasonic)
@@ -22,8 +38,6 @@ Adding the necessary code to your program
 
     .. code-tab:: cpp
 
-        lw = LiveWindow::GetInstance()    // (1)
-
         ultrasonic = new Ultrasonic(1, 2);
         lw->AddSensor("Arm", "Ultrasonic", ultrasonic)
 
@@ -32,9 +46,6 @@ Adding the necessary code to your program
 
         wrist = new Victor(2)
         lw->AddActuator("Arm", "Wrist", wrist);
-
-
-**(1)** Get a reference (in Java) or a pointer (in C++) to the LiveWindow object in your program. **(2)** Then for each sensor or actuator that is created, add it to the LiveWindow display by either calling ``AddActuator`` or ``AddSensor`` (``addActuator`` or ``addSensor`` in Java). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
 
 Viewing the display in the SmartDashboard
 -----------------------------------------
