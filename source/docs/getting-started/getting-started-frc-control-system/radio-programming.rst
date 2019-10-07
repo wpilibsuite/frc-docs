@@ -1,5 +1,3 @@
-.. _radio-programming:
-
 Programming your Radio
 ======================
 

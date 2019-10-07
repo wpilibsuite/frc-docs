@@ -1,5 +1,3 @@
-.. _actuator-overview:
-
 Actuator Overview
 ==================
 This section discusses the control of motors and pneumatics
@@ -47,7 +45,7 @@ Pneumatics
 ----------
 Pneumatics are a quick and easy way to make something that's in one
 state or another using compressed air. For information on operating
-pneumatics, see :ref:`operating-pneumatic-cylinders`
+pneumatics, see :doc:`pneumatics`.
 
 
 FRC Legal Relay Modules

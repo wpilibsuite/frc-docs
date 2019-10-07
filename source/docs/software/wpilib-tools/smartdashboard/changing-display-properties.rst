@@ -1,5 +1,3 @@
-.. _smartdashboard-changing-display-properties:
-
 Changing the display properties of a value
 ==========================================
 

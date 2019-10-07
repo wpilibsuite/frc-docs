@@ -1,5 +1,3 @@
-.. _operating-pneumatic-cylinders:
-
 Operating pneumatic cylinders
 =============================
 
@@ -173,5 +171,3 @@ be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID
         exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
-
-

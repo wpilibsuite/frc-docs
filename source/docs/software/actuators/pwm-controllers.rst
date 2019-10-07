@@ -1,5 +1,3 @@
-.. _pwm_theory:
-
 PWM Speed Controllers in Depth
 ==============================
 .. hint::
