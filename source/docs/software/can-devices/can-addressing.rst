@@ -46,22 +46,23 @@ Currently assigned values can be found in the table below. If you wish
 to have a manufacturer ID assigned from the ``Reserved``\ pool, please
 submit a request to FIRST.
 
-=============== =====
+===================== ==========
 Manufacturer
-=============== =====
-Broadcast       0
-NI              1
-Luminary Micro  2
-DEKA            3
-CTR Electronics 4
-REV Robotics    5
-Grapple         6
-MindSensors     7
-Team Use        8
-Kauai Labs      9
-Copperforge     10
-Reserved        11-255
-=============== =====
+===================== ==========
+Broadcast             0
+NI                    1
+Luminary Micro        2
+DEKA                  3
+CTR Electronics       4
+REV Robotics          5
+Grapple               6
+MindSensors           7
+Team Use              8
+Kauai Labs            9
+Copperforge           10
+Playing With Fusion   11
+Reserved              12-255
+===================== ==========
 
 API/Message Identifier
 ~~~~~~~~~~~~~~~~~~~~~~
