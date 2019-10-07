@@ -22,7 +22,50 @@ To schedule a command, users call the ``schedule()`` method (`Java <https://firs
 The Scheduler Run Sequence
 --------------------------
 
-.. TODO:: Add flowchart?
+.. graphviz::
+    :alt: Scheduler Control Flow Diagram
+
+    digraph control_flow {
+        splines=ortho
+        bgcolor="#FFFFFF00"
+        
+        // Processes
+        node [shape=box]
+            Initialize [label="Initialize()"]
+            Execute [label="Execute()"]
+            Triggers [label="Schedule commands\nfrom triggers"]
+            
+        // Input/Output
+        node [shape=parallelogram]
+            
+
+        // Terminals
+        node [shape=oval]
+            Start [label="Subsystem\nPeriodic()"]
+            EndYes [label="Execute()"]
+            EndNo [label="End()"]
+        
+        // Decisions
+        node [shape=diamond, margin=0.1]
+            Finished [label="IsFinished()"]
+            
+        // Line Extenders
+        node [shape=point, width=0, style=invis]
+            
+            
+        Start -> Triggers
+        Triggers -> Initialize
+        
+        subgraph cluster_for_each_command {
+            label="For Each\nCommand"
+            labeljust="left"
+            Initialize -> Execute -> Finished
+
+            Finished -> EndYes [taillabel="   Yes"]
+            Finished -> EndNo  [taillabel="\nNo   "]
+
+        }
+    }
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
@@ -49,6 +92,48 @@ Note that this sequence of calls is done in order for each command - thus, one c
 
 Step 4: Schedule Default Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. graphviz::
+    :alt: Scheduling Commands
+
+    digraph control_flow {
+        splines=ortho
+        bgcolor="#FFFFFF00"
+        
+        // Processes
+        node [shape=box]
+            Interrupt [label="Interrupt conflicting commands"]
+
+        // Terminals
+        node [shape=oval]
+            Start [label="Start"]
+            EndYes [label="Run Command"]
+            EndNo [label="Do nothing"]
+        
+        // Decisions
+        node [shape=diamond, margin=0.1]
+            Scheduled [label="Already\n scheduled?"]
+            Requirements [label="Requirements\n available?"]
+            Conflicting [label="Conflicting\n commands\n all interruptible?"]
+            
+        // Line Extenders
+        node [shape=point, width=0, style=invis]
+            1, 2
+        
+        Start -> Scheduled
+        
+        Scheduled -> Requirements [taillabel=" No"]
+        Scheduled:e -> 1 [taillabel="Yes", dir=none]
+
+        Requirements -> Conflicting [taillabel="No "]
+        Requirements -> EndYes [taillabel="Yes"]
+        
+        Conflicting:e -> 2 [headlabel="  No\n\n\n\n\n\n", dir=none]
+        Conflicting -> Interrupt [taillabel="Yes"]
+        Interrupt -> EndYes
+        
+        1,2 -> EndNo
+    }
 
 Finally, any registered ``Subsystem`` has its default command scheduled (if it has one).  Note that the ``initialize()`` method of the default command will be called at this time.
 

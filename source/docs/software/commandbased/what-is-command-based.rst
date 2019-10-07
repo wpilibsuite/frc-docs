@@ -66,13 +66,6 @@ Multiple commands can run concurrently, as long as they do not require the same 
 
 Subsystems also can be associated with “default commands” that will be automatically scheduled when no other command is currently using the subsystem. This is useful for continuous “background” actions such as controlling the robot drive, or keeping an arm held at a setpoint.
 
-.. todo:: replace this graphic with one that isn’t wrong
-
-.. figure:: images/commandflowchart.png
-   :alt: scheduler control flow diagram
-
-   scheduler control flow diagram
-
 When a command is scheduled, its ``initialize()`` method is called once. Its ``execute()`` method is then called once per call to ``CommandScheduler.getInstance().run()``. A command is un-scheduled and has its ``end(boolean interrupted)`` method called when either its ``isFinished()`` method returns true, or else it is interrupted (either by another command with which it shares a required subsystem, or by being canceled).
 
 Command Groups
