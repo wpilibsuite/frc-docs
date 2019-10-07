@@ -2,7 +2,7 @@ Reporting Progress
 ==================
 
 .. warning::
-   In order to help us track team participation, please post your team number at the top of your task report
+   In order to help us track team participation, please post your team number at the top of your task report.
 
 Accessing the Task Report Section
 ---------------------------------
