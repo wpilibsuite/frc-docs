@@ -73,6 +73,22 @@ Headings should be in the following structure. Heading underlines should match t
 
 Use title case for headings.
 
+Lists
+-----
+
+Lists should have a new line in between each indent level. The highest indent should have ``0`` indentation, and subsequent sublists should have an indentation starting at the first character of the previous indentation.
+
+.. code-block:: text
+
+   - Block one
+   - Block two
+   - Block three
+
+     - Sub 1
+     - Sub 2
+
+   - Block four
+
 Code blocks
 -----------
 
