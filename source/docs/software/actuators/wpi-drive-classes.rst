@@ -185,8 +185,7 @@ as so:
             Spark m_right = new Spark(2);
             DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-            public void robotInit()
-            {
+            public void robotInit() {
                 m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
             }
 
@@ -226,8 +225,7 @@ constructor (it takes an arbitrary number of inputs).
             SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
             DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-            public void robotInit()
-            {
+            public void robotInit() {
                 m_left.setInverted(true); // if you want to invert the entire side you can do so here
             }
 
