@@ -1,223 +1,141 @@
-Command groups
+Command Groups
 ==============
 
-Individual commands are capable of accomplishing a large variety of
-robot tasks, but the simple three-state format can quickly become
-cumbersome when more advanced functionality requiring extended sequences
-of robot tasks or coordination of multiple robot subsystems is required.
-In order to accomplish this, users are encouraged to use the powerful
-command group functionality included in the command-based library.
+Individual commands are capable of accomplishing a large variety of robot tasks, but the simple three-state format can quickly become cumbersome when more advanced functionality requiring extended sequences of robot tasks or coordination of multiple robot subsystems is required. In order to accomplish this, users are encouraged to use the powerful command group functionality included in the command-based library.
 
-As the name suggests, command groups are combinations of multiple
-commands. The act of combining multiple objects (such as commands) into
-a bigger object is known as
-`composition <https://en.wikipedia.org/wiki/Object_composition>`__.
-Command groups *compose* multiple commands into a *composite* command.
-This allows code to be kept much cleaner and simpler, as the individual
-*component* commands may be written independently of the code that
-combines them, greatly reducing the amount of complexity at any given
-step of the process.
+As the name suggests, command groups are combinations of multiple commands. The act of combining multiple objects (such as commands) into a bigger object is known as `composition <https://en.wikipedia.org/wiki/Object_composition>`__. Command groups *compose* multiple commands into a *composite* command. This allows code to be kept much cleaner and simpler, as the individual *component* commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
 
-Most importantly, however, command groups *are themselves commands* -
-they implement the ``Command`` interface. This allows command groups to
-be `recursively
-composed <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
-- that is, a command group may contain *other command groups* as
-components.
+Most importantly, however, command groups *are themselves commands* - they implement the ``Command`` interface. This allows command groups to be `recursively composed <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - that is, a command group may contain *other command groups* as components.
 
-Types of command groups
+Types of Command Groups
 -----------------------
 
-The command-based library supports four basic types of command groups:
-``SequentialCommandGroup``, ``ParallelCommandGroup``,
-``ParallelRaceGroup``, and ``ParallelDeadlineGroup``. Each of these
-command groups combines multiple commands into a composite command -
-however, they do so in different ways:
+.. note:: In the C++ command-based library, command groups *own* their component commands.  This means that commands passed to command groups will be either moved or copied depending on whether they are rvalues or lvalues (`rvalue/lvalue explanation <http://thbecker.net/articles/rvalue_references/section_01.html>`__).  Due to certain technical concerns, command groups themselves are not copyable, and so recursive composition *must* use move semantics.
+
+The command-based library supports four basic types of command groups: ``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup``, and ``ParallelDeadlineGroup``. Each of these command groups combines multiple commands into a composite command - however, they do so in different ways:
 
 SequentialCommandGroup
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: java
-
-   SequentialCommandGroup(Command... commands)
-
-A ``SequentialCommandGroup`` runs a list of commands in sequence - the
-first command will be executed, then the second, then the third, and so
-on until the list finishes. The sequential group finishes after the last
-command in the sequence finishes. It is therefore usually important to
-ensure that each command in the sequence does actually finish (if a
-given command does not finish, the next command will never start!).
+A ``SequentialCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SequentialCommandGroup.html>`__) runs a list of commands in sequence - the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
 ParallelCommandGroup
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
-::
-
-   ParallelCommandGroup(Command... commands)
-
-A ``ParallelCommandGroup`` runs a set of commands concurrently - all
-commands will execute at the same time. The parallel group will end when
-all commands have finished.
+A ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelCommandGroup.html>`__) runs a set of commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
 
 ParallelRaceGroup
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
-::
-
-   ParallelRaceGroup(Command... commands)
-
-A ``ParallelRaceGroup`` is much like a ``ParallelCommandgroup``, in that
-it runs a set of commands concurrently. However, the race group ends as
-soon as any command in the group ends - all other commands are
-interrupted at that point.
+A ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelRaceGroup.html>`__) is much like a ``ParallelCommandgroup``, in that it runs a set of commands concurrently. However, the race group ends as soon as any command in the group ends - all other commands are interrupted at that point.
 
 ParallelDeadlineGroup
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
-::
+A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the “deadline”) ends, interrupting all other commands in the group that are still running at that point.
 
-   ParallelDeadlineGroup(Command deadline, Command... commands)
-
-A ``ParallelDeadlineGroup`` also runs a set of commands concurrently.
-However, the deadline group ends when a *specific* command (the
-“deadline”) ends, interrupting all other commands in the group that are
-still running at that point.
-
-Creating command groups
+Creating Command Groups
 -----------------------
 
-.. todo:: link to Hatchbot after new command merge
+Users have several options for creating command groups. One way - similar to the previous implementation of the command-based library - is to subclass one of the command group classes. Consider the following from the Hatch Bot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
 
-Users have several options for creating command groups. One way -
-similar to the previous incarnation of the command-based library - is to
-subclass one of the command group classes. Consider the following from
-the Hatch Bot example project:
+.. tabs::
 
-.. code-block:: java
+  .. group-tab:: Java
 
-   package edu.wpi.first.wpilibj.examples.hatchbottraditional.commands;
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-   import edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems.DriveSubsystem;
-   import edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems.HatchSubsystem;
-   import edu.wpi.first.wpilibj.experimental.command.SequentialCommandGroup;
+  .. group-tab:: C++ (Header)
 
-   import static edu.wpi.first.wpilibj.examples.hatchbottraditional.Constants.AutoConstants.*;
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-   /**
-    * A complex auto command that drives forward, releases a hatch, and then drives backward.
-    */
-   public class ComplexAuto extends SequentialCommandGroup {
+  .. group-tab:: C++ (Source)
 
-     public ComplexAuto(DriveSubsystem drive, HatchSubsystem hatch) {
-       addCommands(
-           // Drive forward the correct distance
-           new DriveDistance(kAutoDriveDistanceInches, kAutoDriveSpeed, drive),
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-           // Release the hatch
-           new ReleaseHatch(hatch),
+The ``addCommands()`` method adds commands to the group, and is present in all four types of command group.
 
-           // Drive backward the specified distance
-           new DriveDistance(kAutoBackupDistanceInches, -kAutoDriveSpeed, drive)
-       );
-     }
+Inline Command Groups
+---------------------
 
-   }
+.. note:: Due to the verbosity of Java's ``new`` syntax, the Java ``CommandGroupBase`` object offers a factory method for each of the four command-group types: `sequence <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#sequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `parallel <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#parallel(edu.wpi.first.wpilibj2.command.Command...)>`__, `race <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#race(edu.wpi.first.wpilibj2.command.Command...)>`__, and `deadline <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#deadline(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command...)>`__.
 
-The ``addCommands`` method adds commands to the group, and is present in
-all four types of command group.
+Command groups can be used without subclassing at all: one can simply pass in the desired commands through the constructor:
 
-Equivalently, however, command groups can be used without subclassing at
-all: one can simply pass in the desired commands through the
-constructor. Thus, the following two pieces of code are equivalent:
+.. tabs::
 
-.. code-block:: java
+   .. code-tab:: java
 
-   Command complexAuto = new ComplexAuto(m_robotDrive, m_hatchSubsystem);
+      new SequentialCommandGroup(new FooCommand(), new BarCommand());
 
-.. code-block:: java
+   .. code-tab:: c++
 
-   Command complexAuto = new SequentialCommandGroup(
-       new DriveDistance(kAutoDriveDistanceInches, kAutoDriveSpeed, m_robotDrive),
-       new ReleaseHatch(m_hatchSubsystem),
-       new DriveDistance(kAutoBackupDistanceInches, -kAutoDriveSpeed, m_robotDrive));
+      frc2::SequentialCommandGroup{FooCommand(), BarCommand()};
 
-This is called an :ref:`inline <docs/software/commandbased/convenience-features:Inline command definitions>` command
-definition, and is very handy for circumstances where command groups are
-not likely to be reused, and writing an entire class for them would be
-wasteful.
+This is called an :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>` command definition, and is very handy for circumstances where command groups are not likely to be reused, and writing an entire class for them would be wasteful.
 
-Recursive composition of command groups
+Recursive Composition of Command Groups
 ---------------------------------------
 
-As mentioned earlier, command groups are `recursively
-composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__
-- since command groups are themselves commands, they may be included as
-components of other command groups. This is an extremely powerful
-feature of command groups, and allows users to build very complex robot
-actions from simple pieces. For example, consider the following code:
+As mentioned earlier, command groups are `recursively composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - since command groups are themselves commands, they may be included as components of other command groups. This is an extremely powerful feature of command groups, and allows users to build very complex robot actions from simple pieces. For example, consider the following code:
 
-.. code-block:: java
+.. tabs::
 
-   new SequentialCommandGroup(
-       new DriveToGoal(m_drive),
-       new ParallelCommandGroup(
-           new RaiseElevator(m_elevator),
-           new SetWristPosition(m_wrist)),
-       new ScoreTube(m_wrist));
+   .. code-tab:: java
 
-This creates a sequential command group that *contains* a parallel
-command group. The resulting control flow looks something like this:
+      new SequentialCommandGroup(
+         new DriveToGoal(m_drive),
+         new ParallelCommandGroup(
+            new RaiseElevator(m_elevator),
+            new SetWristPosition(m_wrist)),
+         new ScoreTube(m_wrist));
+
+   .. code-tab:: c++
+
+      frc2::SequentialCommandGroup{
+         DriveToGoal(&m_drive),
+         frc2::ParallelCommandGroup{
+            RaiseElevator(&m_elevator),
+            SetWristPosition(&m_wrist)},
+         ScoreTube(&m_wrist)};
+
+This creates a sequential command group that *contains* a parallel command group. The resulting control flow looks something like this:
 
 .. figure:: images/commandgroupchart.png
    :alt: command group with concurrency
 
    command group with concurrency
 
-Notice how the recursive composition allows the embedding of a parallel
-control structure within a sequential one. Notice also that this entire,
-more-complex structure, could be again embedded in another structure.
-Composition is an extremely powerful tool, and one that users should be
-sure to use extensively.
+Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one. Notice also that this entire, more-complex structure, could be again embedded in another structure. Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
-Command groups and requirements
+Command Groups and Requirements
 -------------------------------
 
-As command groups are commands, they also must declare their
-requirements. However, users are not required to specify requirements
-manually for command groups - requirements are automatically inferred
-from the commands included. As a rule, *command groups include the union
-of all of the subsystems required by their component commands.* Thus,
-the ``ComplexAuto`` shown previously will require both the drive
-subsystem and the hatch subsystem of the robot.
+As command groups are commands, they also must declare their requirements. However, users are not required to specify requirements manually for command groups - requirements are automatically inferred from the commands included. As a rule, *command groups include the union of all of the subsystems required by their component commands.* Thus, the ``ComplexAuto`` shown previously will require both the drive subsystem and the hatch subsystem of the robot.
 
-Additionally, requirements are enforced within all three types of
-parallel groups - a parallel group may not contain multiple commands
-that require the same subsystem.
+Additionally, requirements are enforced within all three types of parallel groups - a parallel group may *not* contain multiple commands that require the same subsystem.
 
-.. todo:: Link to ScheduleCommand class API doc after merge
+Some advanced users may find this overly-restrictive - for said users, the library offers a ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ScheduleCommand.html>`__) that can be used to independently “branch off” from command groups to provide finer granularity in requirement management.
 
-Some advanced users may find this overly-restrictive - for said users,
-the library offers a ``ScheduleCommand`` class that can be used to
-independently “branch off” from command groups to provide finer
-granularity in requirement management.
-
-Restrictions on command group components
+Restrictions on Command Group Components
 ----------------------------------------
 
-Since command group components are run through their encapsulating
-command groups, errors could occur if those same command instances were
-independently scheduled at the same time as the group - the command
-would be being run from multiple places at once, and thus could end up
-with inconsistent internal state, causing unexpected and
-hard-to-diagnose behavior.
+.. note:: The following is only relevant for the Java command-based library; the C++ library's ownership model naturally prevents users from making this category of mistake.
 
-For this reason, command instances that have been added to a command
-group cannot be independently scheduled or added to a second command
-group. Attempting to do so will throw an
-``InvalidUseOfCommandException``.
+Since command group components are run through their encapsulating command groups, errors could occur if those same command instances were independently scheduled at the same time as the group - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior.
 
-Advanced users who wish to re-use a command instance and are *certain*
-that it is safe to do so may bypass this restriction with the
-``clearGroupedCommand()`` method in the ``CommandGroupBase`` class
+For this reason, command instances that have been added to a command group cannot be independently scheduled or added to a second command group. Attempting to do so will throw an exception and crash the user program.
 
-.. todo:: Link to API docs after merge
+Advanced users who wish to re-use a command instance and are *certain* that it is safe to do so may bypass this restriction with the ``clearGroupedCommand()`` `method <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#clearGroupedCommand(edu.wpi.first.wpilibj2.command.Command)>`__ in the ``CommandGroupBase`` class.
