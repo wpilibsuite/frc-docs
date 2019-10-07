@@ -19,6 +19,48 @@ The ``schedule()`` Method
 
 To schedule a command, users call the ``schedule()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command (and, optionally, a specification as to whether that command is interruptible), and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called. 
 
+.. graphviz::
+    :alt: Scheduling Commands
+
+    digraph control_flow {
+        splines=ortho
+        bgcolor="#FFFFFF00"
+
+        // Processes
+        node [shape=box]
+            Interrupt [label="Interrupt conflicting commands"]
+
+        // Terminals
+        node [shape=oval]
+            Start [label="Start"]
+            EndYes [label="Run Command"]
+            EndNo [label="Do nothing"]
+
+        // Decisions
+        node [shape=diamond, margin=0.1]
+            Scheduled [label="Already\n scheduled?"]
+            Requirements [label="Requirements\n available?"]
+            Conflicting [label="Conflicting\n commands\n all interruptible?"]
+
+        // Line Extenders
+        node [shape=point, width=0, style=invis]
+            1, 2
+
+        Start -> Scheduled
+
+        Scheduled -> Requirements [taillabel=" No"]
+        Scheduled:e -> 1 [taillabel="Yes", dir=none]
+
+        Requirements -> Conflicting [taillabel="No "]
+        Requirements -> EndYes [taillabel="Yes"]
+
+        Conflicting:e -> 2 [headlabel="  No\n\n\n\n\n\n", dir=none]
+        Conflicting -> Interrupt [taillabel="Yes"]
+        Interrupt -> EndYes
+
+        1,2 -> EndNo
+    }
+
 The Scheduler Run Sequence
 --------------------------
 
@@ -28,42 +70,40 @@ The Scheduler Run Sequence
     digraph control_flow {
         splines=ortho
         bgcolor="#FFFFFF00"
-        
+
         // Processes
         node [shape=box]
             Initialize [label="Initialize()"]
             Execute [label="Execute()"]
             Triggers [label="Schedule commands\nfrom triggers"]
-            
-        // Input/Output
-        node [shape=parallelogram]
-            
 
         // Terminals
         node [shape=oval]
             Start [label="Subsystem\nPeriodic()"]
             EndYes [label="Execute()"]
             EndNo [label="End()"]
-        
+
         // Decisions
         node [shape=diamond, margin=0.1]
             Finished [label="IsFinished()"]
-            
-        // Line Extenders
-        node [shape=point, width=0, style=invis]
-            
-            
+
         Start -> Triggers
         Triggers -> Initialize
-        
+
+        // Decisions
+        node [shape=diamond, margin=0.1]
+            Finished [label="IsFinished()"]
+
+        Start -> Triggers
+        Triggers -> Initialize
+
         subgraph cluster_for_each_command {
             label="For Each\nCommand"
             labeljust="left"
             Initialize -> Execute -> Finished
 
-            Finished -> EndYes [taillabel="   Yes"]
-            Finished -> EndNo  [taillabel="\nNo   "]
-
+            Finished -> EndYes [taillabel="True  "]
+            Finished -> EndNo  [taillabel="\n  False  "]
         }
     }
 
