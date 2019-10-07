@@ -143,7 +143,7 @@ This will bring up the "New Project Creator Window:"
 
 The elements of the New Project Creator Window are explained below:
 
-1. **Project Type**: The kind of project we wish to create.  This can be an example project, or one of the project templates provided by WPILib.  Templates exist for each of the robot base classes.  Additionally, a template exists for :ref:`Command-based <what-is-command-based>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
+1. **Project Type**: The kind of project we wish to create.  This can be an example project, or one of the project templates provided by WPILib.  Templates exist for each of the robot base classes.  Additionally, a template exists for :ref:`Command-based <docs/software/commandbased/what-is-command-based:What is “command-based” programming?>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
 2. **Language**: This is the language (C++ or Java) that will be used for this project.
 3. **Template Type**: If this is a template project, this specifies the type of template that will be used.
 4. **Project Location**: This determines the folder in which the robot project will be located.
