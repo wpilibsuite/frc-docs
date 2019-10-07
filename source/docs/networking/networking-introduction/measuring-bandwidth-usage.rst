@@ -34,6 +34,7 @@ Add Network Counter
 #. Click ``OK`` to add the counters to the graph.
 
 Remove Extra Counters
+^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/measuring-bandwidth-usage-4.png
 

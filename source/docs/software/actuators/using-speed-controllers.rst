@@ -6,7 +6,7 @@ Motor controllers come in two main flavors: CAN and PWM. A
 CAN controller can send more detailed status information
 back to the roboRIO, whereas a PWM controller can only be
 set to a value. For information on using these motors with
-the WPI drivetrain classes, see :doc:`wpi-drive-classes`.
+the WPI drivetrain classes, see :ref:`wpi_drive`.
 
 Using PWM Speed Controllers
 ---------------------------
