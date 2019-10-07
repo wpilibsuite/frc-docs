@@ -2,7 +2,7 @@ Trackers - Reporting Bugs
 ==========================
 
 .. warning::
-   While we will certainly accept and respond to bugs in either location, for 2020 we would prefer bugs for WPILib C++/Java components (libraries, VSCode, Shuffleboard, etc.) be submitted to the appropriate `GitHub repositories <https://github.com/wpilibsuite>`__.
+   While we will certainly accept and respond to bugs in either location, we would prefer bugs for WPILib C++/Java components (libraries, VS Code, Shuffleboard, etc.) be submitted to the appropriate `GitHub repositories <https://github.com/wpilibsuite>`__.
 
 Teamforge Bug Tracker
 ---------------------------------

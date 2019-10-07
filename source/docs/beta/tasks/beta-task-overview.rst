@@ -1,7 +1,7 @@
 Beta Task Overview
 ==================
 
-This document provides an overview of the Tasks assigned for the 2019 Control System Beta Test. Further details on each Task can be found in the subsequent pages of this section.
+This document provides an overview of the Tasks assigned for the Control System Beta Test. Further details on each Task can be found in the subsequent pages of this section.
 
 Task 0 - Background and Preparation
 -----------------------------------
@@ -14,14 +14,14 @@ The purpose of Task 0 is to complete some housekeeping tasks and familiarize you
 Task 1 - Install Software (Targeted Completion 10/28/19)
 --------------------------------------------------------
 
-The purpose of Task 1 is to complete installation of the 2019 Control System software. This task consists of 1 Objective
+The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 
    1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Update Suite, CTRE installer if using CANTalon SRX)
 
 Task 2 - Basic Benchtop Test (Targeted Completion 11/4/19)
 ----------------------------------------------------------
 
-The purpose of Task 2 is to get the base 2019 Control System software set up and running. This helps minimize complexity to ease debugging of any issues that do occur. In this task you will set up the development environment for your programming language, configure the roboRIO, load and debug a simple program. This Task consists of 2 Objectives:
+The purpose of Task 2 is to get the base new Control System software set up and running. This helps minimize complexity to ease debugging of any issues that do occur. In this task you will set up the development environment for your programming language, configure the roboRIO, load and debug a simple program. This Task consists of 2 Objectives:
 
    1. Configure the roboRIO
    2. Create, Build and Load Default Program
@@ -29,9 +29,9 @@ The purpose of Task 2 is to get the base 2019 Control System software set up and
 Task 3 - Port Previous Robot Code (Targeted Completion 11/18/19)
 ----------------------------------------------------------------
 
-The purpose of Task 3 is to port a previous year's robot code (2019 preferred) with the 2020 Control System software and bring it to full functionality. This Task consists of 2 Objectives and 1 Optional Objective:
+The purpose of Task 3 is to port the previous year's robot code with the new Control System software and bring it to full functionality. This Task consists of 2 Objectives and 1 Optional Objective:
 
-   1. Port Existing Robot Code to 2020 System
+   1. Port Existing Robot Code to new System
    2. Wireless Operation of FRC Robot
    3. (Optional) Offseason Competition with Existing FRC Robot
 

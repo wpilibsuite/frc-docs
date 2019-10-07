@@ -12,7 +12,7 @@ Monitoring Individual Items
 You can choose to monitor a number of different individual items (forum threads, tracker artifacts, file releases, etc.) via e-mail. Items that can be subscribed to will have a Monitor button located at the bottom of the screen. Clicking this button will subscribe you to the item and notify you of changes via e-mail. To unsubscribe, click the Stop Monitoring button (which will replace the Monitor button when you are subscribed).
 
 Monitoring Folders
-------------------------
+------------------
 
 .. image:: images/monitoring-via-email-notifications/monitoring-folder.png
 
@@ -53,7 +53,7 @@ You can also customize notifications on a per section basis. To do this:
 
    1. Click My Workspace
    2. Click Monitoring
-   3. Click on the FRC2019Beta project on the left side
+   3. Click on the FRC20**Beta project on the left side
    4. Select the Email Notification Preferences tab
    5. Change the settings for any section of the project you wish to have override your base settings.
    6. Click Save
