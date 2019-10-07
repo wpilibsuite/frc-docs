@@ -231,7 +231,7 @@ constructor (it takes an arbitrary number of inputs).
 
     .. code-tab:: c++
 
-        class Robot
+        class Robot {
             public:
                 frc::Spark m_frontLeft{1};
                 frc::Spark m_rearLeft{2};
