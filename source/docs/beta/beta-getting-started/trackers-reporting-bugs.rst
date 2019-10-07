@@ -27,6 +27,6 @@ GitHub Issues
 
 .. image:: images/trackers-reporting-bugs/github-issues.png
 
-For bugs in WPILib C++\Java\Java dashboards\etc., please locate the appropriate repository from the `WPILibSuite Github <https://github.com/wpilibsuite>`__ organization and report the bug there. To Report a bug, click the **Issues** tab and select **New issue**.
+For bugs in WPILib C++/Java/Java dashboards/etc., please locate the appropriate repository from the `WPILibSuite Github <https://github.com/wpilibsuite>`__ organization and report the bug there. To Report a bug, click the **Issues** tab and select **New issue**.
 
 Fill out a title and description of the bug, then click **Submit new issue**.
