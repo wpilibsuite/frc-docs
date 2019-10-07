@@ -78,7 +78,9 @@ Changes to PIDSubsystem/PIDCommand
 
 * Following the changes to PIDController, these classes now run synchronously from the main robot loop.
 * Several methods have changed names:
+
  - ``usePIDOutput`` is now ``useOutput``
  - ``getPIDInput`` is now ``getMeasurement``
+
 * The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modifier after construction with ``getController()``.
 * ``PIDCommand`` is intended largely for inline use, as shown in the GyroDriveCommands example (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__).
