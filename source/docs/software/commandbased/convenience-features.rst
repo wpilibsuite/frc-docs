@@ -388,7 +388,7 @@ whenFinished
 
 The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#whenFinished(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#a935487276747ed668967259856b90165>`__) adds a method to be executed after the command ends:
 
-..tabs::
+.. tabs::
 
   .. code-tab:: java
 
