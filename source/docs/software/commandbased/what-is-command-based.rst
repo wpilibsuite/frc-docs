@@ -60,6 +60,8 @@ The command-based pattern is based around two core abstractions: **commands**, a
 How Commands Are Run
 --------------------
 
+.. note:: For a more detailed explanation, see :doc:`command-scheduler`.
+
 Commands are run by the ``CommandScheduler``, a singleton class that is at the core of the command-based library. The ``CommandScheduler`` is in charge of polling buttons for new commands to schedule, checking the resources required by those commands to avoid conflicts, executing currently-scheduled commands, and removing commands that have finished or been interrupted. The scheduler’s ``run()`` method may be called from any place in the user’s code; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
 
 Multiple commands can run concurrently, as long as they do not require the same resources on the robot. Resource management is handled on a per-subsystem basis: commands may specify which subsystems they interact with, and the scheduler will never schedule more than one command requiring a given subsystem at a time. this ensures that, for example, users will not end up with two different pieces of code attempting to set the same motor controller to different output values. If a new command is scheduled that requires a subsystem that is already in use, it will either interrupt the currently-running command that requires that subsystem (if the command has been scheduled as interruptible), or else it will not be scheduled.
