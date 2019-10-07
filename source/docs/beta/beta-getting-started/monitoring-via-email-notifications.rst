@@ -5,7 +5,7 @@ Monitoring Via Email Notifications
    You may wish to monitor specific items or even whole sections of the Beta project via email. TeamForge has a large degree of flexibility in setting up e-mail monitoring.
 
 Monitoring Individual Items
----------------------------------
+---------------------------
 
 .. image:: images/monitoring-via-email-notifications/monitoring-item.png
 
@@ -25,24 +25,24 @@ Monitoring Project Sections
 
 It is also possible to set up for entire sections of the site. To set up this monitoring:
 
-   1. Click My Workspace
-   2. Click on the Monitoring Tab
-   3. Select the project from the list on the left
-   4. Click on the Monitored Applications tab
-   5. Check the box for any section you wish to subscribe to
-   6. Click Save
+1. Click My Workspace
+2. Click on the Monitoring Tab
+3. Select the project from the list on the left
+4. Click on the Monitored Applications tab
+5. Check the box for any section you wish to subscribe to
+6. Click Save
 
 Monitoring Settings
-------------------------
+-------------------
 
 .. image:: images/monitoring-via-email-notifications/monitoring-settings.png
 
 You can set your overall notification settings to e-mail you per change or to send you a daily digest email with all changes. To do this:
 
-   1. Click My Workspace
-   2. Click My Settings
-   3. Select the desired setting
-   4. Click Save
+1. Click My Workspace
+2. Click My Settings
+3. Select the desired setting
+4. Click Save
 
 Per Section Notification Settings
 ---------------------------------
@@ -51,9 +51,9 @@ Per Section Notification Settings
 
 You can also customize notifications on a per section basis. To do this:
 
-   1. Click My Workspace
-   2. Click Monitoring
-   3. Click on the FRC20**Beta project on the left side
-   4. Select the Email Notification Preferences tab
-   5. Change the settings for any section of the project you wish to have override your base settings.
-   6. Click Save
+1. Click My Workspace
+2. Click Monitoring
+3. Click on the FRC20**Beta project on the left side
+4. Select the Email Notification Preferences tab
+5. Change the settings for any section of the project you wish to have override your base settings.
+6. Click Save
