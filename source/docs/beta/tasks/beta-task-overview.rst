@@ -44,4 +44,4 @@ The purpose of Task 4 is to write new code in order to test features and functio
 
 1. New Command Based framework
 2. Kinematics classes
-3. C++\Java Simulator UI
+3. C++/Java Simulator UI
