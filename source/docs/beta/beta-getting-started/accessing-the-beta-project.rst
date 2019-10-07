@@ -20,7 +20,7 @@ Opening the Beta Project
 Your user account should already be added to the Beta Project. To view the project:
 
 1. Click the Projects tab on the top navigation ribbon.
-2. Then click on FRC20**Beta in the projects list (image of 2015 as an example).
+2. Then click on ``FRC20**Beta`` in the projects list (image of 2015 as an example).
 
 The Project Homepage
 --------------------
