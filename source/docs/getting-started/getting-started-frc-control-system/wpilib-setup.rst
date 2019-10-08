@@ -29,7 +29,7 @@ WPILib Installation Guide
 
     **Execute Install**
 
-      Make sure all checkboxes are checked (unless you have already installed 2019 WPILib software on this machine and the software unchecked them automatically), then click *Execute Install*.
+      Make sure all checkboxes are checked (unless you have already installed 2020 WPILib software on this machine and the software unchecked them automatically), then click *Execute Install*.
 
       .. image:: images/windows/ExecuteInstall.png
 
@@ -45,7 +45,7 @@ WPILib Installation Guide
 
       The Offline Installer installs the following components:
 
-      -  *Visual Studio Code* - The supported IDE for 2019 robot code development. The offline installer sets up a separate copy of VSCode for WPILib development, even if you already have VSCode on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VSCode for other projects.
+      -  *Visual Studio Code* - The supported IDE for 2019 and later robot code development. The offline installer sets up a separate copy of VSCode for WPILib development, even if you already have VSCode on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VSCode for other projects.
       -  *C++ Compiler* - The toolchains for building C++ code for the roboRIO
       -  *Gradle* - The specific version of Gradle used for building/deploying C++ or Java robot code
       -  *Java JDK/JRE* - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the ``JAVA_HOME`` variable
@@ -55,7 +55,7 @@ WPILib Installation Guide
 
     **What's Installed - Continued**
 
-      The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command ``frccode2019``.
+      The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command ``frccode2020``.
 
       .. image:: images/windows/DesktopIcon.png
 
@@ -95,7 +95,7 @@ WPILib Installation Guide
           :alt:
 
       Using Finder (or command line) copy the contents of the folder to a new
-      folder in your home directory, ~/frc2019 as shown below.
+      folder in your home directory, ~/wpilib/2020 as shown below.
 
       .. figure:: images/mac/MovedFiles.png
           :alt:
@@ -103,7 +103,7 @@ WPILib Installation Guide
     **Run the ToolsUpdater.py script**
 
       To update all the additional tools WPILib tools, open a terminal window
-      and change directory to ~/frc2019/tools and run the script
+      and change directory to ~/wpilib/2020/tools and run the script
       ``ToolsUpdater.py`` with the command:
 
       ``python ToolsUpdater.py``
@@ -172,10 +172,10 @@ WPILib Installation Guide
       .. figure:: images/linux/extract-wpilib.png
           :alt: Extract WPILib
 
-    **Moving to FRC2019**
+    **Moving to wpilib/2020**
 
-      1. Create a directory in your home directory called frc2019 - either from the file manager or with ``$ mkdir ~/frc2019``
-      2. Drag the contents of WPILIB\_Linux-2019.1.1 directory to ~/frc2019 or run ``$ mv -v WPILib_Linux-2019.1.1/* ~/frc2019``
+      1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir ~/wpilib/2020``
+      2. Drag the contents of WPILIB\_Linux-2020.1.1 directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-2020.1.1/* ~/wpilib/2020``
 
       .. figure:: images/linux/toolsupdater.png
           :alt: Tools Updater
@@ -184,7 +184,7 @@ WPILib Installation Guide
 
       To extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
 
-      - ``$ cd ~/frc2019/tools``
+      - ``$ cd ~/wpilib/2020/tools``
       - ``$ python3 ToolsUpdater.py``
 
     **Installing the extensions for WPILib VS Code**
@@ -192,7 +192,7 @@ WPILib Installation Guide
       1. Start VSCODE ($ code or search "Visual Studio Code" in your application launcher)
       2. *Control-Shift-P* to bring up the command palette, type "Install from VSIX"
       3. Select "Extensions: Install from VSIX"
-      4. Navigate to ``~/frc2019/vsCodeExtensions`` and select Cpp.vsix
+      4. Navigate to ``~/wpilib/2020/vsCodeExtensions`` and select Cpp.vsix
       5. Repeat for JavaLang.vsix, JavaDeps.vsix, JavaDebug.vsix, and WPILib.vsix in that order
 
       .. figure:: images/linux/install-vsix.png
