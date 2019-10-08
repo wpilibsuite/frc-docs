@@ -19,6 +19,13 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
 
 .. toctree::
    :maxdepth: 1
+   :caption: 2020 Beta Testing
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
    :caption: WPILib Programming Basics
 
    docs/software/wpilib-overview/index
@@ -51,8 +58,8 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
    :caption: WPILib Advanced Programming
 
    docs/software/vision-processing/index
-   docs/software/old-commandbased/index
    docs/software/commandbased/index
+   docs/software/old-commandbased/index
    docs/software/networktables/index
    docs/software/roborio-info/index
 
