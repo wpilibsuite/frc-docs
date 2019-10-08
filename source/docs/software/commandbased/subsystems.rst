@@ -1,141 +1,97 @@
 Subsystems
 ==========
 
-Subsystems are the basic unit of robot organization in the command-based
-paradigm. A subsystem is an abstraction for a collection of robot
-hardware that *operates together as a unit*. Subsystems
-`encapsulate <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__
-this hardware, “hiding” it from the rest of the robot code
-(e.g. commands) and restricting access to it except through the
-subsystem’s public methods. Restricting the access in this way provides
-a single convenient place for code that might otherwise be duplicated in
-multiple places (such as scaling motor outputs or checking limit
-switches) if the subsystem internals were exposed. It also allows
-changes to the specific details of how the subsystem works (the
-“implementation”) to be isolated from the rest of robot code, making it
-far easier to make substantial changes if/when the design constraints
-change.
+Subsystems are the basic unit of robot organization in the command-based paradigm. A subsystem is an abstraction for a collection of robot hardware that *operates together as a unit*. Subsystems `encapsulate <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ this hardware, “hiding” it from the rest of the robot code (e.g. commands) and restricting access to it except through the subsystem’s public methods. Restricting the access in this way provides a single convenient place for code that might otherwise be duplicated in multiple places (such as scaling motor outputs or checking limit switches) if the subsystem internals were exposed. It also allows changes to the specific details of how the subsystem works (the “implementation”) to be isolated from the rest of robot code, making it far easier to make substantial changes if/when the design constraints change.
 
-Subsystems also serve as the backbone of the ``CommandScheduler``\ ’s
-resource management system. Commands may declare resource requirements
-by specifying which subsystems they interact with; the scheduler will
-never concurrently schedule more than one command that requires a given
-subsystem. An attempt to schedule a command that requires a subsystem
-that is already-in-use will either interrupt the currently-running
-command (if the command has been scheduled as interruptible), or else be
-ignored.
+Subsystems also serve as the backbone of the ``CommandScheduler``\ ’s resource management system. Commands may declare resource requirements by specifying which subsystems they interact with; the scheduler will never concurrently schedule more than one command that requires a given subsystem. An attempt to schedule a command that requires a subsystem that is already-in-use will either interrupt the currently-running command (if the command has been scheduled as interruptible), or else be ignored.
 
-Subsystems can be associated with “default commands” that will be
-automatically scheduled when no other command is currently using the
-subsystem. This is useful for continuous “background” actions such as
-controlling the robot drive, or keeping an arm held at a setpoint.
-Similar functionality can be achieved in the subsystem’s ``periodic()``
-method, which is run once per run of the scheduler; teams should try to
-be consistent within their codebase about which functionality is
-achieved through either of these methods.
+Subsystems can be associated with “default commands” that will be automatically scheduled when no other command is currently using the subsystem. This is useful for continuous “background” actions such as controlling the robot drive, or keeping an arm held at a setpoint. Similar functionality can be achieved in the subsystem’s ``periodic()`` method, which is run once per run of the scheduler; teams should try to be consistent within their codebase about which functionality is achieved through either of these methods.  Subsystems are represented in the command-based library by the Subsystem interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Subsystem.html>`__).
 
-Creating a subsystem
+Creating a Subsystem
 --------------------
 
-The recommended method to create a subsystem for most users is to
-subclass the abstract ``SendableSubsystemBase`` class:
+The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SubsystemBase.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__):
 
-.. code-block:: java
+.. tabs::
 
-   import edu.wpi.first.wpilibj.experimental.command.SendableSubsystemBase;
+  .. group-tab:: Java
 
-   public class ExampleSubsystem extends SendableSubsystemBase {
-     // Your subsystem code goes here!
-   }
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
+      :language: java
+      :lines: 10-
+      :linenos:
+      :lineno-start: 10
 
-This class contains a few convenience features on top of the basic
-``Subsystem`` interface: it automatically calls the ``register()``
-method in its constructor to register the subsystem with the scheduler
-(this is necessary for the ``periodic()`` method to be called when the
-scheduler runs), and also implements the ``Sendable`` interface so that
-it can be sent to the dashboard to display/log relevant status
-information.
+  .. group-tab:: C++
 
-This is not required, however; advanced users seeking more flexibility
-are able to simply create a class that implements the ``Subsystem``
-interface:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-.. code-block:: java
+This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements the ``Sendable`` interface so that it can be sent to the dashboard to display/log relevant status information.
 
-   import edu.wpi.first.wpilibj.experimental.command.Subsystem;
+Advanced users seeking more flexibility may simply create a class that implements the ``Subsystem`` interface.
 
-   public class ExampleSubsystem implements Subsystem {
-     // Your subsystem code goes here!
-
-     public ExampleSubsystem() {
-       register(); // Registers this subsystem with the scheduler so that its periodic method will be called.
-     }
-   }
-
-Simple subsystem example
+Simple Subsystem Example
 ------------------------
 
-.. todo:: link to Hatchbot after new command merge
+What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
 
-What might a functional subsystem look like in practice? Below is a
-simple pneumatically-actuated hatch mechanism from the HatchBot example
-project:
+.. tabs::
 
-.. code-block:: java
+  .. group-tab:: Java
 
-   package edu.wpi.first.wpilibj.examples.hatchbottraditional.subsystems;
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-   import edu.wpi.first.wpilibj.DoubleSolenoid;
-   import edu.wpi.first.wpilibj.experimental.command.SendableSubsystemBase;
+  .. group-tab:: C++ (Header)
 
-   import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
-   import static edu.wpi.first.wpilibj.examples.hatchbottraditional.Constants.HatchConstants.*;
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-   /**
-    * A hatch mechanism actuated by a single {@link DoubleSolenoid}.
-    */
-   public class HatchSubsystem extends SendableSubsystemBase {
+  .. group-tab:: C++ (Source)
 
-     private final DoubleSolenoid m_hatchSolenoid =
-         new DoubleSolenoid(kHatchSolenoidModule, kHatchSolenoidPorts[0], kHatchSolenoidPorts[1]);
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-     /**
-      * Grabs the hatch.
-      */
-     public void grabHatch() {
-       m_hatchSolenoid.set(kForward);
-     }
+Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that “implementation details” such as the double solenoid be “hidden” in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-     /**
-      * Releases the hatch.
-      */
-     public void releaseHatch() {
-       m_hatchSolenoid.set(kReverse);
-     }
-   }
-
-Notice that the subsystem hides the presence of the DoubleSolenoid from
-outside code (it is declared ``private``), and instead publicly exposes
-two higher-level, descriptive robot actions: ``grabHatch()`` and
-``releaseHatch()``. It is extremely important that “implementation
-details” such as the double solenoid be “hidden” in this manner; this
-ensures that code outside the subsystem will never cause the solenoid to
-be in an unexpected state. It also allows the user to change the
-implementation (for instance, a motor could be used instead of a
-pneumatic) without any of the code outside of the subsystem having to
-change with it.
-
-Setting default commands
+Setting Default Commands
 ------------------------
 
-Setting a default command for a subsystem is very easy; one simply calls
-``Scheduler.getInstance().setDefaultCommand()``, or, more simply, the
-``setDefaultCommand()`` method of the ``Subsystem`` interface:
+.. note:: In the C++ command-based library, the CommandScheduler `owns` the default command objects - accordingly, the object passed to the ``SetDefaultCommand()`` method will be either moved or copied, depending on whether it is an rvalue or an lvalue (`rvalue/lvalue explanation <http://thbecker.net/articles/rvalue_references/section_01.html>`__).  The examples here ensure that move semantics are used by casting to an rvalue with ``std::move()``.
 
-.. code-block:: java
+"Default commands" are commands that run automatically whenever a subsystem is not being used by another command.
 
-   Scheduler.getInstance().setDefaultCommand(driveSubsystem, defaultDriveCommand);
+Setting a default command for a subsystem is very easy; one simply calls ``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the ``setDefaultCommand()`` method of the ``Subsystem`` interface:
 
-.. code-block:: java
+.. tabs::
 
-   driveSubsystem.setDefaultCommand(defaultDriveCommand);
+  .. code-tab:: java
+
+    CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
+
+  .. code-tab:: c++
+
+    CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
+
+.. tabs::
+
+  .. code-tab:: java
+
+    exampleSubsystem.setDefaultCommand(exampleCommand);
+
+  .. code-tab:: c++
+
+    exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));

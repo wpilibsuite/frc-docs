@@ -11,4 +11,4 @@ An additional PCM module can be used where the modules corresponding solenoids a
 
 For more information on controlling the compressor, see Operating a Compressor for Pneumatics.
 
-For more information on controlling solenoids, see :ref:`Operating Pneumatic Cylinders <operating-pneumatic-cylinders>`.
+For more information on controlling solenoids, see :ref:`Operating Pneumatic Cylinders <docs/software/actuators/pneumatics:Operating pneumatic cylinders>`.
