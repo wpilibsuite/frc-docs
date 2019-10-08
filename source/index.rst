@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FIRST Robotics Competition Documentation
-========================================
+FIRST Robotics Competition Control System Documentation
+=======================================================
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation will be the Official FIRST® Robotics Competition documentation for the 2020 season and beyond.
+Welcome to the FIRST Robotics Competition Control System Documentation! This documentation will be the Official FIRST® Robotics Competition control system documentation for the 2020 season and beyond.
 
 .. note:: It's advised to continue using `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib release for 2020.
 
@@ -79,17 +79,13 @@ Welcome to the FIRST Robotics Competition Documentation! This documentation will
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contributing
+   :caption: Contributing to Documentation
 
    docs/contributing/contribution-guidelines
    docs/contributing/style-guide
    docs/contributing/build-instructions
    docs/contributing/top-contributors
+   Report a documentation issue <https://github.com/wpilibsuite/frc-docs/issues>
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Issues
-
-   Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
 
 .. todolist::
