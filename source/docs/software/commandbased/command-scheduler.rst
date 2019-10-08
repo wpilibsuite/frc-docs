@@ -64,6 +64,8 @@ To schedule a command, users call the ``schedule()`` method (`Java <https://firs
 The Scheduler Run Sequence
 --------------------------
 
+.. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
+
 .. graphviz::
     :alt: Scheduler Control Flow Diagram
 
@@ -104,9 +106,7 @@ The Scheduler Run Sequence
         }
     }
 
-.. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
-
-What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__ actually do?  The following section walks through the logic of a scheduler iteration.
+What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration.
 
 Step 1: Run Subsystem Periodic Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
