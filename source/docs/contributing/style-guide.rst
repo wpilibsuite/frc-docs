@@ -63,7 +63,7 @@ Use one space between sentences.
 Headings
 --------
 
-Headings should be in the following structure
+Headings should be in the following structure. Heading underlines should match the same number of characters as the heading itself.
 
 1. ``=`` for document titles. *Do not* use this more than *once* per article.
 2. ``-`` for document sections
@@ -73,6 +73,22 @@ Headings should be in the following structure
 
 Use title case for headings.
 
+Lists
+-----
+
+Lists should have a new line in between each indent level. The highest indent should have ``0`` indentation, and subsequent sublists should have an indentation starting at the first character of the previous indentation.
+
+.. code-block:: text
+
+   - Block one
+   - Block two
+   - Block three
+
+     - Sub 1
+     - Sub 2
+
+   - Block four
+
 Code blocks
 -----------
 
@@ -81,6 +97,24 @@ All code blocks should have a language specified.
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
 
 Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
+
+Admonitions
+-----------
+
+Admonitions (list `here <http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
+
+Use
+
+.. code-block:: text
+
+   .. warning:: This is a warning!
+
+NOT
+
+.. code-block:: text
+
+   .. warning::
+      This is a warning!
 
 Links
 -----
