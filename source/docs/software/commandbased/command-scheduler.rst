@@ -80,7 +80,7 @@ The Scheduler Run Sequence
         // Terminals
         node [shape=oval]
             Start [label="Subsystem\nPeriodic()"]
-            EndYes [label="Execute()"]
+            EndYes [label="Move to next command"]
             EndNo [label="End()"]
 
         // Decisions
@@ -93,9 +93,6 @@ The Scheduler Run Sequence
         // Decisions
         node [shape=diamond, margin=0.1]
             Finished [label="IsFinished()"]
-
-        Start -> Triggers
-        Triggers -> Initialize
 
         subgraph cluster_for_each_command {
             label="For Each\nCommand"
