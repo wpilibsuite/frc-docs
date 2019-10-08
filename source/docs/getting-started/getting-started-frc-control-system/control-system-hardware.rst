@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 FRC Control System Hardware Overview
 ====================================
 
-The goal of this document is to provide a brief overview of the hardware components that make up the FRC Control System. Each component will contain a brief description of the component function, a brief listing of critical connections, and a link to more documentation if available.
+The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function, a brief listing of critical connections, and a link to more documentation if available.
 
 .. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System <how-to-wire-a-robot>` document.
 
@@ -177,4 +179,4 @@ The power supply for an FRC robot is a single 12V 18Ah battery. The batteries us
 Image Credits
 -------------
 
-Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photoscourtesy of FIRST. All other photos courtesy of AndyMark Inc.
+Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. All other photos courtesy of AndyMark Inc.

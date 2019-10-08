@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Introduction
 ============
 
-Welcome to the official documentation home for the *FIRST* Robotics Competition Control System and WPILib software packages. This page is the primary resource documenting the use of the FRC Control System (including wiring, configuration and software) as well as the WPILib libraries and tools.
+Welcome to the official documentation home for the *FIRST*\ |reg| Robotics Competition Control System and WPILib software packages. This page is the primary resource documenting the use of the FRC\ |reg| Control System (including wiring, configuration and software) as well as the WPILib libraries and tools.
 
 New to Programming?
 -------------------
