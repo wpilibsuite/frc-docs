@@ -2,10 +2,10 @@
    sphinx-quickstart on Fri Apr  5 23:28:43 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-   
+
 .. include:: <isonum.txt>
 
-*FIRST* Robotics Competition Control System
+FIRST Robotics Competition Control System
 ===========================================
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This documentation will be the Official *FIRST* Robotics Competition Control System documentation for the 2020 season and beyond.
