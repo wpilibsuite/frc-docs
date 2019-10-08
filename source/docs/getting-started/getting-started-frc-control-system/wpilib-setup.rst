@@ -6,7 +6,7 @@ WPILib Installation Guide
 .. tabs::
 
   .. tab:: Windows
-    .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of VSCode for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
+    .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of Visual Studio Code for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
 
     **Offline Installer**
 
@@ -20,9 +20,9 @@ WPILib Installation Guide
 
       If you select *All Users*, you will need to accept the security prompt that appears.
 
-    **Download VSCode**
+    **Download Visual Studio Code**
 
-      For licensing reasons, the installer cannot contain the VSCode installer bundled in. Click *Select/Download VSCode* to either download the VSCode installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click *Open Downloaded File* to be taken to the zip file on the file system to copy along with the Offline Installer.
+      For licensing reasons, the installer cannot contain the VS Code installer bundled in. Click *Select/Download VS Code* to either download the VS Code installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click *Open Downloaded File* to be taken to the zip file on the file system to copy along with the Offline Installer.
 
       .. image:: images/windows/DownloadVSCode.png
 
@@ -36,7 +36,7 @@ WPILib Installation Guide
 
     **Finished**
 
-      When the installer completes, you will now be able to open and use the WPILib version of VSCode. If you are using any 3rd party libraries, you will still need to install those separately before using them in robot code.
+      When the installer completes, you will now be able to open and use the WPILib version of VS Code. If you are using any 3rd party libraries, you will still need to install those separately before using them in robot code.
 
       .. image:: images/windows/Finished.png
 
@@ -45,17 +45,17 @@ WPILib Installation Guide
 
       The Offline Installer installs the following components:
 
-      -  *Visual Studio Code* - The supported IDE for 2019 and later robot code development. The offline installer sets up a separate copy of VSCode for WPILib development, even if you already have VSCode on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VSCode for other projects.
+      -  *Visual Studio Code* - The supported IDE for 2019 and later robot code development. The offline installer sets up a separate copy of VS Code for WPILib development, even if you already have VS Code on your machine. This is done because some of the settings that make the WPILib setup work may break existing workflows if you use VS Code for other projects.
       -  *C++ Compiler* - The toolchains for building C++ code for the roboRIO
       -  *Gradle* - The specific version of Gradle used for building/deploying C++ or Java robot code
       -  *Java JDK/JRE* - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the ``JAVA_HOME`` variable
       -  *WPILib Tools* - SmartDashboard, Shuffleboard, Robot Builder, Outline Viewer, Pathweaver
       -  *WPILib Dependencies* - OpenCV, etc.
-      -  *VSCode Extensions* - WPILib extensions for robot code development in VSCode
+      -  *VS Code Extensions* - WPILib extensions for robot code development in VS Code
 
     **What's Installed - Continued**
 
-      The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VSCode and sets up a command shortcut so this copy of VSCode can be opened from the command line using the command ``frccode2020``.
+      The Offline Installer also installs a Desktop Shortcut to the WPILib copy of VS Code and sets up a command shortcut so this copy of VS Code can be opened from the command line using the command ``frccode2020``.
 
       .. image:: images/windows/DesktopIcon.png
 
@@ -65,7 +65,7 @@ WPILib Installation Guide
 
     **Getting Visual Studio Code**
 
-      VSCode is the IDE (Integrated Development Environment) that is used for
+      VS Code is the IDE (Integrated Development Environment) that is used for
       2019 and beyond. It needs to be installed on any development computer.
       It can be downloaded here: https://code.visualstudio.com.
 
@@ -116,8 +116,8 @@ WPILib Installation Guide
 
     **Installing the extensions for WPILib development**
 
-      Before using VSCode for WPILib development there are a number of
-      extensions that need to be installed. Start up VSCode and type the
+      Before using VS Code for WPILib development there are a number of
+      extensions that need to be installed. Start up VS Code and type the
       shortcut Cmd-Shift-P to bring up the list of commands available. Start
       typing "Install from VSIX into the search box. Choose that command. In
       the file selection box select Cpp.vsix.
@@ -129,7 +129,7 @@ WPILib Installation Guide
           :alt:
 
       You should see a message confirming the install and asking to reload
-      vscode. Click the reload button then repeat the vsix installation for
+      VS Code. Click the reload button then repeat the vsix installation for
       the rest of the vsix files in this order:
 
       1. Cpp.vsix
@@ -138,7 +138,7 @@ WPILib Installation Guide
       4. JavaDebug.vsix
       5. WPILib.vsix
 
-    **Setting up VSCode to use Java 11**
+    **Setting up Visual Studio Code to use Java 11**
 
       The WPILib installation includes a JDK, however you need to point VS
       Code at where it is. To do this:
@@ -154,11 +154,13 @@ WPILib Installation Guide
 
   .. tab:: Linux
 
-    **Installing VS Code**
+    .. note:: These instructions are based on Ubuntu 18.04, but would be similar for other Debian based Linux distributions.
+
+    **Installing Visual Studio Code**
 
       1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__
       2. Double-click on the .deb file in the file explorer
-      3. Click the "Install" button to install VSCode
+      3. Click the "Install" button to install VS Code
 
       .. figure:: images/linux/install-vscode.png
           :alt: Install VS-Code
@@ -174,7 +176,7 @@ WPILib Installation Guide
 
     **Moving to wpilib/2020**
 
-      1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir ~/wpilib/2020``
+      1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir -p ~/wpilib/2020``
       2. Drag the contents of WPILIB\_Linux-2020.1.1 directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-2020.1.1/* ~/wpilib/2020``
 
       .. figure:: images/linux/toolsupdater.png
@@ -187,9 +189,9 @@ WPILib Installation Guide
       - ``$ cd ~/wpilib/2020/tools``
       - ``$ python3 ToolsUpdater.py``
 
-    **Installing the extensions for WPILib VS Code**
+    **Installing the extensions for WPILib Visual Studio Code**
 
-      1. Start VSCODE ($ code or search "Visual Studio Code" in your application launcher)
+      1. Start VS Code (``$ code`` or search "Visual Studio Code" in your application launcher)
       2. *Control-Shift-P* to bring up the command palette, type "Install from VSIX"
       3. Select "Extensions: Install from VSIX"
       4. Navigate to ``~/wpilib/2020/vsCodeExtensions`` and select Cpp.vsix
@@ -201,7 +203,7 @@ WPILib Installation Guide
       .. figure:: images/linux/vsix-files.png
           :alt: VSIX Files
 
-    **Setting up VSCode to use Java 11**
+    **Setting up Visual Studio Code to use Java 11**
 
       The WPILib installation includes a JDK, however you need to point VS Code at where it is. To do this:
 
