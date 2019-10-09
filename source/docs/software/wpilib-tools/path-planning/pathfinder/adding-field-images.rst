@@ -1,10 +1,12 @@
+.. include:: <isonum.txt>
+
 Adding field images to PathWeaver
 =================================
-The initial release of PathWeaver contained the field image for the FRC 2018 Game. The next update will include FIRST Destination Deep Space. Here are instructions for adding the 2019 game now or adding your own field image for some other application.
+The initial release of PathWeaver contained the field image for the *FRC*\ |reg| 2018 Game. The next update will include *FIRST*\ |reg| Destination Deep Space. Here are instructions for adding the 2019 game now or adding your own field image for some other application.
 
 Games are loaded from the ``~/PathWeaver/Games`` on Linux and Mac or ``%USERPROFILE%/PathWeaver/Games`` directory on Windows. The files can be in either a game-specific subdirectory, or in a zip file in the Games directory. The ZIP file must follow the same layout as a game directory; the JSON file must be in the root of the ZIP file (cannot be in a subdirectory).
 
-Download the ready-to-use FIRST Destination Deep Space field definition :download:`here <files/DeepSpace.zip>`. Other field definitions are available in the `PathWeaver GitHub repository <https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`__.
+Download the ready-to-use *FIRST* Destination Deep Space field definition :download:`here <files/DeepSpace.zip>`. Other field definitions are available in the `PathWeaver GitHub repository <https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`__.
 
 File Layout
 -----------
@@ -38,4 +40,4 @@ The field corners are the X and Y coordinates of the top-left and bottom-right p
 
 The field size is the width and length of the playable area of the field in the provided units.
 
-The field units are case-insensitive and can be in meters, cm, mm, inches, feet, yards, or miles. Singular, plural, and abbreviations are supported (eg"meter","meters", and"m"are all valid for specifying meters)
+The field units are case-insensitive and can be in meters, cm, mm, inches, feet, yards, or miles. Singular, plural, and abbreviations are supported (e.g. "meter","meters", and"m"are all valid for specifying meters)

@@ -17,7 +17,7 @@ This document walks through the approach used by the example code provided in La
 Original Image
 --------------
 
-The image shown below is the starting image for the example described here. The image was taken using the green ring light available in FIRST Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
+The image shown below is the starting image for the example described here. The image was taken using the green ring light available in *FIRST*\ |reg| Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
 
 .. image:: images/identifying-and-processing-the-targets/original-image.png
 

@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Offline Installation Preparation
 ================================
 
-This article contains instructions/links to components you will want to gather if you need to do offline installation of the FRC Control System software.
+This article contains instructions/links to components you will want to gather if you need to do offline installation of the FRC\ |reg| Control System software.
 
 Documentation
 -------------
@@ -21,7 +23,7 @@ All Teams
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  LabVIEW USB (from FIRST Choice) or `Download <https://www.ni.com/download/labview-for-frc-18.0/7841/en/>`__
+-  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/download/labview-for-frc-18.0/7841/en/>`__
 
 C++/Java Teams
 ^^^^^^^^^^^^^^
