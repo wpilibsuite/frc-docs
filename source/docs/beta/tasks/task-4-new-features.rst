@@ -10,10 +10,10 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **LabVIEW**
 
-**C++\Java**
+**C++/Java**
 
 - New Command Based framework
-- C++\Java Simulator UI
+- C++/Java Simulator UI
 - Synchronous PID Controller
 - Kinematics classes
 - C++ Units feature
