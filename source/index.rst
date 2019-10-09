@@ -3,10 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FIRST Robotics Competition Documentation
-========================================
+.. include:: <isonum.txt>
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation will be the Official FIRST® Robotics Competition documentation for the 2020 season and beyond.
+FIRST Robotics Competition Control System
+===========================================
+
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This documentation will be the Official *FIRST* Robotics Competition Control System documentation for the 2020 season and beyond.
 
 .. note:: It's advised to continue using `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib release for 2020.
 

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Style Guide
 ===========
 
@@ -39,6 +41,8 @@ Use the ASCII character set for English text. For special characters (e.g. Greek
 Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
 
 Use literals for filenames, function, and variable names.
+
+Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from `this page <https://www.firstinspires.org/brand>`__. Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``..include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
 
 Whitespace
 ----------
