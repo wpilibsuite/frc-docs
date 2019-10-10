@@ -6,7 +6,7 @@ Starting RobotBuilder
 Getting RobotBuilder
 --------------------
 
-RobotBuilder is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/MacOS/Linux installation guides <docs/software/getting-started/index:Getting Started>`
+RobotBuilder is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/MacOS/Linux installation guides <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`
 
 Option 1 - Starting from Visual Studio Code
 -------------------------------------------
@@ -20,6 +20,6 @@ Option 2 - Running from the Script
 
 .. image:: images/starting-robotbuilder-2.png
 
-The install process installs the tools to ``~/frcYYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public on Windows``).
+The install process installs the tools to ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public on Windows``).
 
 Inside this folder you will find .vbs (Windows) and .py (Mac/Linux) files that you can use to launch each tool. These scripts help launch the tools using the correct JDK and are what you should use to launch the tools.

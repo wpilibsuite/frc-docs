@@ -21,7 +21,15 @@ To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” wa
 
 **Key point #2**: Unless you a directly connecting to your internet provider’s basic modem (no router function), your device will have an IP Address in one of these ranges. This means that at any local network, such as: your school, work office, home, etc., your device will 99% of the time have an IP address in a range listed below:
 
-.. image:: images/networking-basics/ip-ranges.png
++-------+------+---------------+-----------------+---------------------+
+| Class | Bits | Start Address | End Address     | Number of Addresses |
++=======+======+===============+=================+=====================+
+| A     | 24   | 10.0.0.0      | 10.255.255.255  | 16,777,216          |
++-------+------+---------------+-----------------+---------------------+
+| B     | 20   | 172.16.0.0    | 172.31.255.255  | 1,048,576           |
++-------+------+---------------+-----------------+---------------------+
+| C     | 16   | 192.168.0.0   | 192.168.255.255 | 65,536              |
++-------+------+---------------+-----------------+---------------------+
 
 These reserved ranges let us assign one “unreserved IP Address” to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
@@ -85,15 +93,13 @@ What is DNS?
 
 DNS (Domain Name System) can become a complex topic, but for the scope of this paper, we are going to just look at the high level overview of DNS. In the most basic explanation, DNS is what allows us to relate human-friendly names for network devices to IP Addresses, and keep track of those IP addresses if they change.
 
-Example 1: Let’s look at the site `www.google.com`_. The IP address for this site is ``172.217.164.132``, however that is not very user friendly to remember!
+Example 1: Let’s look at the site `www.google.com <www.google.com>`__. The IP address for this site is ``172.217.164.132``, however that is not very user friendly to remember!
 
-Whenever a user types `www.google.com`_ into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for `www.google.com`_. The DNSserver returns the IP address and then the computer is able to use that to connect to the Google web site.
+Whenever a user types `www.google.com <www.google.com>`__ into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for `www.google.com <www.google.com>`__. The DNSserver returns the IP address and then the computer is able to use that to connect to the Google web site.
 
 Example 2: On your home network, you have a server named ``MYCOMPUTER`` that you want to connect to from your laptop. Your network uses DHCP so you don’t know the IP Address of ``MYCOMPUTER``, but DNS allows you to connect just by using the ``MYCOMPUTER`` name. Additionally, whenever the DHCP assignments refresh, ``MYCOMPUTER`` may end up with a different address, but because you’re connecting by using the ``MYCOMPUTER`` name instead of a specific IP address, the DNS record was updated and you’re still able to connect.
 
 This is the second benefit to DNS, and the most relevant for FRC. With DNS, if we reference devices by their friendly name instead of IP Address, we don’t have to change anything in our program if the IP Address changes. DNS will keep track of the changes and return the new address if it ever changes.
-
-.. _www.google.com: https://www.google.com
 
 DNS for FRC
 ^^^^^^^^^^^
@@ -152,12 +158,12 @@ Most web-browsers should be able to utilize the mDNS address to access the roboR
 USB
 ---
 
-If using the USB interface, no network setup is required (you do need the :ref:`docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
+If using the USB interface, no network setup is required (you do need the :ref:`docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
 
 Ethernet/Wireless
 -----------------
 
-The :ref:`docs/software/getting-started/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
+The :ref:`docs/getting-started/getting-started-frc-control-system/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
 
 Summary
 -------
@@ -167,4 +173,3 @@ IP Addresses are what allow us to communicate with devices on a network. For FRC
 If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 
 If all devices are set to use DHCP or Static IP assignments (with correct static settings), the communication should work in both the pit and on the field without any changes needed. If there are a mix of some Static and some DHCP devices, then the Static devices will connect on the field, but will not connect in the pit. This can be resolved by either setting all devices to static settings, or leaving the current settings and providing a DHCP server in the pit.
-

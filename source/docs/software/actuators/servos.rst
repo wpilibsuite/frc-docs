@@ -1,5 +1,3 @@
-.. _servos:
-
 Repeatable Low Power Movement - Controlling Servos with WPILib
 ==============================================================
 Servo motors are a type of motor which integrates positional
