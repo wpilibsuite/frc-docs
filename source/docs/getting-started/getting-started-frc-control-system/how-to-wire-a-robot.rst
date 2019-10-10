@@ -239,6 +239,7 @@ and black wire:
 4. Cut and strip ~5/16" from the end of the wire.
 5. Connect the wire to the VRM 12Vin terminals.
 
+.. _wiring-pcm:
 Pneumatics Control Module Power (Optional)
 ---------------------------------------------------
 
