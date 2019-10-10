@@ -59,7 +59,7 @@ Filters
 Three filters are currently available in the Log Viewer:
 
 1.  Default: This filter filters out many of the errors and warnings produced by the Driver Station. This filter is useful for identifying errors thrown by the code on the Robot.
-2.  All Events and Time: This filter shows all events and the time they occured
+2.  All Events and Time: This filter shows all events and the time they occurred
 3.  All Events, All Info: This filter shows all events and all recorded info. At this time the primary difference between this filter and "All Events and Time" is that this option shows the "unique" designator for the first occurrence of a particular message.
 
 Identifying Logs from Matches
