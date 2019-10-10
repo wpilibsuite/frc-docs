@@ -9,9 +9,7 @@ SFTP is the recommended way to access the roboRIO file system. Because you will 
 
 Software
 ^^^^^^^^
-There are a number of freely available programs for SFTP. This article will discuss using FileZilla. You can either download and install FileZilla_ before proceeding or extrapolate the directions below to your SFTP client of choice.
-
-.. _FileZilla: https://filezilla-project.org/download.php?type=client
+There are a number of freely available programs for SFTP. This article will discuss using FileZilla. You can either download and install `FileZilla <https://filezilla-project.org/download.php?type=client>`__ before proceeding or extrapolate the directions below to your SFTP client of choice.
 
 Connecting to the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^

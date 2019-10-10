@@ -1,5 +1,3 @@
-.. _wpi_drive:
-
 Using the WPILib Classes to Drive your Robot
 ======================================================
 
@@ -308,5 +306,3 @@ Joystick construction.
             myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
-
-

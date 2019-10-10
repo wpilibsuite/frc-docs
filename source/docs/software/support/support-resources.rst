@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Support Resources
 =================
 
-In addition to the documentation here, there are a variety of other resources available to FRC teams to help understand the Control System and software.
+In addition to the documentation here, there are a variety of other resources available to FRC\ |reg| teams to help understand the Control System and software.
 
 Other Documentation
 -------------------
