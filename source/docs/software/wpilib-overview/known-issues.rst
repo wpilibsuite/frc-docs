@@ -3,22 +3,6 @@ Known Issues
 
 This article details known issues (and workarounds) for FRC Control System Software.
 
-Visual Studio Code Fails to Launch Offline
-------------------------------------------
-
-There are reports that on some builds of Windows 10 (build 1809), VS Code may fail to launch if no network is present (note: this is different than no internet present).
-
-**Workaround:** Install the Microsoft Loopback Adapter
-
-1. Access the Device Manager (typically by clicking start and typing Device Manager)
-2. Click the Network Adapter Category
-3. Click the Action menu from the top bar and select Add Legacy Hardware
-4. Click Next on the window that pops up
-5. Select the second option to install manually
-6. Select “Network Adapter” and click Next. You will need to wait a bit for the next screen to populate.
-7. Select Microsoft in the Manufacturer pane, then Microsoft Loopback Adapter in the right pane.
-8. Click Next twice to install the adapter, then Finish to close the window.
-
 C++ Intellisense - Files Open on Launch Don't Work Properly
 -----------------------------------------------------------
 
