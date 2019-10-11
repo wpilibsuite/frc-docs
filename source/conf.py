@@ -18,9 +18,9 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FIRST Robotics Competition'
-copyright = '2019, FIRST'
+copyright = '2020, FIRST'
 author = 'WPILib'
-version = '2019'
+version = '2020'
 
 
 # -- General configuration ---------------------------------------------------
