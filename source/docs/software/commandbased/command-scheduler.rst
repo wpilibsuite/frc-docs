@@ -142,7 +142,7 @@ The scheduler may be re-enabled by calling ``CommandScheduler.getInstance().enab
 Command Event Methods
 ---------------------
 
-Occasionally, it is desireable to have the scheduler execute a custom action whenever a certain command event (initialization, execution, or ending) occurs.  This can be done with the following three methods:
+Occasionally, it is desirable to have the scheduler execute a custom action whenever a certain command event (initialization, execution, or ending) occurs.  This can be done with the following three methods:
 
 onCommandInitialize
 ^^^^^^^^^^^^^^^^^^^
