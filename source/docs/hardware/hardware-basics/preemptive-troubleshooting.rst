@@ -10,7 +10,7 @@ Robot Preemptive Troubleshooting
 Check battery connections
 -------------------------
 
-.. image:: images/preemptive-troubleshooting/preCheckBatt.png
+.. image:: images/preemptive-troubleshooting/battery-bolt-check.png
 
 The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
 
@@ -28,7 +28,7 @@ In almost every event we see at least one robot where a not properly secured bat
 120 Amp circuit breaker
 -----------------------
 
-.. image:: images/preemptive-troubleshooting/preCheckBreaker.png
+.. image:: images/preemptive-troubleshooting/tighten-breaker.png
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
 
@@ -37,14 +37,14 @@ Because the metal is just molded into the case, every once in awhile you will br
 Power Distribution Panel (PDP)
 ------------------------------
 
-.. image:: images/preemptive-troubleshooting/preCheckPDP.png
+.. image:: images/preemptive-troubleshooting/pdp-bolts.jpg
 
-Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case.    Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
+Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
 Tug test everything
 -------------------
 
-.. image:: images/preemptive-troubleshooting/preCheckTug.png
+.. image:: images/preemptive-troubleshooting/tug-test.png
 
 The Weidmuller contacts for power, compressor output, roboRIO power connector, and radio power are important to verify by tugging on the connections as shown.  Make sure that none of the connections pull out.
 
@@ -108,9 +108,8 @@ We often see problems with the Drivers Station. You should:
 Handy tools
 -----------
 
-.. image:: images/preemptive-troubleshooting/preCheckTools.png
+.. image:: images/preemptive-troubleshooting/tools.png
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
 
 A WAGO tool is nice tool for redoing Weidmuller connections with stranded wires.  Often I’ll do one to show the team, and then have them do the rest using the WAGO tool to press down the white-plunger while they insert the stranded wire.  The angle of the WAGO tool makes this particularly helpful.
-
