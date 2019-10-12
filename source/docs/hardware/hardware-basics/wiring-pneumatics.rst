@@ -34,7 +34,7 @@ Each solenoid channel should be wired directly to a numbered pair of terminals o
 Solenoid Voltage Jumper
 ------------------------
 
-.. image:: images/wiring-pneumatics/pcm01.jpg
+.. image:: images/wiring-pneumatics/pcm-jumper.jpg
 
 The PCM is capable of powering **either 12V or 24V solenoids**,
 but all solenoids connected to a single PCM must be the same
