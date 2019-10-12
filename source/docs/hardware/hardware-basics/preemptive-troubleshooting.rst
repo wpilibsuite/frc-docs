@@ -7,7 +7,7 @@ Robot Preemptive Troubleshooting
 
     In *FIRST*\ |reg| Robotics Competition, robots take a lot of stress while driving around the field. It is important to make sure that connections are tight, parts are bolted securely in place and that everything is mounted so that a robot bouncing around the field does not break.
 
-Check battery connections
+Check Battery Connections
 -------------------------
 
 .. image:: images/preemptive-troubleshooting/battery-bolt-check.png
@@ -18,14 +18,14 @@ Wiggle battery harness connector. Often these are loose because the screws loose
 
 Apply considerable force onto the battery cable at 90 degrees to try to move the direction of the cable leaving the battery, if successful the connection was not tight enough to begin with and it should be redone.
 
-Secure the battery to robot connection
+Securing the Battery to the Robot
 --------------------------------------
 
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
 
 In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
 
-120 Amp circuit breaker
+120 Amp Circuit Breaker
 -----------------------
 
 .. image:: images/preemptive-troubleshooting/tighten-breaker.png
@@ -41,7 +41,7 @@ Power Distribution Panel (PDP)
 
 Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
-Tug test everything
+Tug Testing
 -------------------
 
 .. image:: images/preemptive-troubleshooting/tug-test.png
@@ -52,7 +52,7 @@ Look for possible or impending shorts with Weidmuller connections that are close
 
 Spade connectors can also fail due to improper crimps, so tug-test those as well.
 
-Blade fuses
+Blade Fuses
 -----------
 
 .. image:: images/preemptive-troubleshooting/preCheckFuse.png
@@ -64,24 +64,24 @@ roboRIO swarf
 
 Swarf is: fine chips or filings of stone, metal, or other material produced by a machining operation. Often modifications must be made to a robot while the control system parts are in place. The circuit board for the roboRIO is conformally coated, but that doesn't absolutely guarantee that metal chips won't short out traces or components inside the case. In this case, you must exercise care in making sure that none of the chips end up in the roboRIO or any of the other components. In particular, the exposed 3 pin headers are a place where chips can enter the case. A quick sweep through each of the four sides with a flashlight is usually sufficient to find the really bad areas of infiltration.
 
-Radio barrel jack
+Radio Barrel Jack
 -----------------
 
 Make sure the correct barrel jack is used, not one that is too small and falls out for no reason.  This isn’t common, but ask an FTA and every once in awhile a team will use some random barrel jack that is not sized correctly, and it falls out in a match on first contact.
 
-Ethernet cable
+Ethernet Cable
 --------------
 
 If the RIO to radio ethernet cable is missing the clip that locks the connector in, get another cable.  This is a common problem that will happen several times in every competition. Make sure that your cables are secure. The clip often breaks off, especially when pulling it through a tight path, it snags on something then breaks.
 
-Cable slack
+Loose Cables
 -----------
 
 Cables must be tightened down, particularly the radio power and ethernet cable.  The radio power cables don’t have a lot of friction force and will fall out (even if it is the correct barrel) if the weight of the cable-slack is allowed to swing freely.
 
 Ethernet cable is also pretty heavy, if it’s allowed to swing freely, the plastic clip may not be enough to hold the ethernet pin connectors in circuit.
 
-Reproducing problems in the pit
+Reproducing Problems in the Pit
 -------------------------------
 
 Beyond the normal shaking and rattling of all cables while the robot is power and tethered, you might try picking up one side of the robot  off the ground and drop it, and see if you lose connection. The driving on the field, especially when trying to breach defenses will often be very violent. It's better to see it fail in the pit rather than in a critical match.
@@ -91,7 +91,7 @@ Check firmware and versions
 
 Robot inspectors do this, but you should do it as well, it helps robot inspectors out and they appreciate it.  And it guarantees that you are running with the most recent, bug fixed code. You wouldn't want to lose a match because of an out of date piece of control system software on your robot.
 
-Driver station checks
+Driver Station Checks
 ---------------------
 
 We often see problems with the Drivers Station. You should:
@@ -105,7 +105,7 @@ We often see problems with the Drivers Station. You should:
 - Close all apps except for DS/Dashboard when out on the field.
 - Verify that there is nothing unnecessary running in the application tray in the start menu (bottom right side)
 
-Handy tools
+Handy Tools
 -----------
 
 .. image:: images/preemptive-troubleshooting/tools.png
