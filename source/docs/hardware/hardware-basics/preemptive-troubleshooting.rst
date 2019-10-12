@@ -19,7 +19,7 @@ Wiggle battery harness connector. Often these are loose because the screws loose
 Apply considerable force onto the battery cable at 90 degrees to try to move the direction of the cable leaving the battery, if successful the connection was not tight enough to begin with and it should be redone.
 
 Securing the Battery to the Robot
---------------------------------------
+---------------------------------
 
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
 
@@ -42,7 +42,7 @@ Power Distribution Panel (PDP)
 Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
 Tug Testing
--------------------
+-----------
 
 .. image:: images/preemptive-troubleshooting/tug-test.png
 
@@ -75,7 +75,7 @@ Ethernet Cable
 If the RIO to radio ethernet cable is missing the clip that locks the connector in, get another cable.  This is a common problem that will happen several times in every competition. Make sure that your cables are secure. The clip often breaks off, especially when pulling it through a tight path, it snags on something then breaks.
 
 Loose Cables
------------
+------------
 
 Cables must be tightened down, particularly the radio power and ethernet cable.  The radio power cables don’t have a lot of friction force and will fall out (even if it is the correct barrel) if the weight of the cable-slack is allowed to swing freely.
 
