@@ -20,7 +20,7 @@
 project = 'FIRST Robotics Competition'
 copyright = '2019, FIRST'
 author = 'WPILib'
-version = '2019'
+version = '2020'
 
 
 # -- General configuration ---------------------------------------------------
