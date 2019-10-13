@@ -9,16 +9,16 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
-Uninstall Old Versions (recommended)
+Uninstall Old Versions (Recommended)
 ------------------------------------
 
-.. note:: NOTE: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
+.. note:: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
 
 Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
-Select components to uninstall
+Select Components to Uninstall
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
@@ -50,6 +50,14 @@ Welcome
 
 Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC\ |reg| robot, click the top option Install Everything for LabVIEW Development. If prompted with any Windows security warnings, click Allow or Yes.
 
+Ni Package Manager License
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/labview/ni-package-license.png
+
+If you see this screen, click "Next"
+
+
 Disable Windows Fast Startup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -62,7 +70,14 @@ NI Package Manager Review
 
 .. image:: images/labview/labview_package_manager_review.png
 
-Click "Next"
+If you see this screen, click "Next"
+
+NI Package Manager Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/labview/ni-package-install.png
+
+Installation progress of the NI Package Manager will be tracked in this window
 
 Product List
 ^^^^^^^^^^^^

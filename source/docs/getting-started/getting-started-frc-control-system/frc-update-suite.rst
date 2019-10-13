@@ -16,14 +16,14 @@ Station or Utilities.**
 .. note:: The Driver Station will only work on Windows 7, Windows 8,\
  Windows 8.1, and Windows 10. It will not work on Windows XP.
 
-Uninstall Old Versions (recommended)
+Uninstall Old Versions (Recommended)
 ------------------------------------
 
 **LabVIEW teams have already completed this step, do not repeat it.** Before installing the new version of the NI Update it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
-Select components to uninstall
+Select Components to Uninstall
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
@@ -52,15 +52,42 @@ necessary.
 Welcome
 -------
 
-|Welcome|
-
 Right click on the downloaded zip file and select Extract All.
 If you downloaded the encrypted zip file, you will be prompted for the
 encryption key which will be released at Kickoff. Open the extracted
 folder and any subfolders until you reach the folder containing “install”
 (may say “install.exe” on some machines). Double click on the setup icon
 to launch the installer. Click “Yes” if a Windows Security prompt
-appears. Click “Next” on the splash screen that appears.
+appears.
+
+Ni Package Manager License
+--------------------------
+
+.. image:: images/labview/ni-package-license.png
+
+If you see this screen, click "Next"
+
+
+Disable Windows Fast Startup
+----------------------------
+
+.. image:: images/labview/labview_fast_startup.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Review
+-------------------------
+
+.. image:: images/labview/labview_package_manager_review.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Installation
+-------------------------------
+
+.. image:: images/labview/ni-package-install.png
+
+Installation progress of the NI Package Manager will be tracked in this window
 
 Product List
 ------------
@@ -72,14 +99,12 @@ Update” for C++ or Java teams, if you do not have the base LabVIEW
 installation (because you are not programming in LabVIEW) this
 installation will be skipped automatically.
 
-User Information
-----------------
+Additional Software
+-------------------
 
-|User Information|
+|Additional Software|
 
-Enter name and organization and the serial number
-from the Team Registration System (in the Password/Voucher code section)
-then click **Next**
+If you see this screen, click "Next"
 
 License Agreements
 ------------------
@@ -93,10 +118,7 @@ License Agreements Page 2
 
 |License Agreements Page 2|
 
-Select “I accept…” then click “Next” If you
-see a screen asking to disable Windows Fast Startup, leave it at the
-recommended option (disable Fast Startup) and click Next. If you see a
-screen talking about Windows Firewall, click Next.
+Select “I accept…” then click “Next”
 
 Review Summary
 ----------------
@@ -167,10 +189,9 @@ You will be prompted whether to enable the NI update service. You can choose to 
 
 .. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
 
-.. |Welcome| image:: images/update-suite/welcome.png
+.. |Additional Software| image:: images/update-suite/additional-software.png
 .. |Product List| image:: images/update-suite/product-list.png
 .. |Product Information| image:: images/update-suite/product-information.png
-.. |User Information| image:: images/update-suite/user-information.png
 .. |License Agreements| image:: images/update-suite/license-agreements.png
 .. |License Agreements Page 2| image:: images/update-suite/license-agreements-2.png
 .. |Installation Summary| image:: images/update-suite/installation-summary.png
