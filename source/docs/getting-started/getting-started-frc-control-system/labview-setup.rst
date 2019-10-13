@@ -109,14 +109,6 @@ Product Information
 
 Click "Next"
 
-
-Disable Windows Fast Startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_fast_startup.png
-
-If you see this screen, click "Next"
-
 Start Installation
 ^^^^^^^^^^^^^^^^^^
 

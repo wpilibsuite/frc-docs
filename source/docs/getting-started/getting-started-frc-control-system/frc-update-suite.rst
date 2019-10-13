@@ -156,9 +156,7 @@ NI Activation Wizard (2)
 
 |NI Activation Wizard 2|
 
-The serial number you entered at the “User
-Information” screen should appear in all of the text boxes, if it
-doesn’t, enter it now. Click “Activate”. Note: If this is the first time
+Enter the serial number. Click “Activate”. Note: If this is the first time
 activating the 2019 software on this account, you will see the message
 shown above about a valid license not being found. You can ignore this.
 
