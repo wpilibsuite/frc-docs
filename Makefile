@@ -9,6 +9,10 @@ BUILDDIR      = build
 LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
 
+ifeq ($(OS),Windows_NT)
+	LINTEROPTS += --ignore D002 --ignore D004 # https://github.com/vscode-restructuredtext/vscode-restructuredtext/issues/84
+endif
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
