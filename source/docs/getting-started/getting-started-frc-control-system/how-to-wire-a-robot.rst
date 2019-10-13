@@ -94,7 +94,7 @@ Attach terminal lugs to battery connector:
 
 1. Using a 1/16" Allen wrench, remove the two screws securing the PDP terminal cover.
 2. Using a 5mm Allen wrench (3/16" will work if metric is not available), remove the negative (-) bolt and washer from the PDP and fasten the negative terminal of the battery connector.
-3. Using a 7/16" box end wrench, remove the nut on the "Batt" side of the main breaker and secure the positive terminal of the battery conenctor
+3. Using a 7/16" box end wrench, remove the nut on the "Batt" side of the main breaker and secure the positive terminal of the battery connector
 
 Wire Breaker to PDP
 ---------------------------------------------------
@@ -280,8 +280,6 @@ Requires: Ethernet cable
 
 Connect an Ethernet cable from the female RJ45 (Ethernet) port of the
 Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
-
-.. _can-device-wiring:
 
 CAN Devices
 -----------
