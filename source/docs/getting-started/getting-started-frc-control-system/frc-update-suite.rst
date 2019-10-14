@@ -60,7 +60,7 @@ folder and any subfolders until you reach the folder containing “install”
 to launch the installer. Click “Yes” if a Windows Security prompt
 appears.
 
-Ni Package Manager License
+NI Package Manager License
 --------------------------
 
 .. image:: images/labview/ni-package-license.png

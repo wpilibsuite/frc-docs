@@ -50,7 +50,7 @@ Welcome
 
 Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC\ |reg| robot, click the top option Install Everything for LabVIEW Development. If prompted with any Windows security warnings, click Allow or Yes.
 
-Ni Package Manager License
+NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/ni-package-license.png
