@@ -41,7 +41,7 @@ Your ``build.gradle`` should then look like the below
          }
 
    .. group-tab:: C++
-      
+
       You may need to create a ``dependencies{}`` block in your build.gradle, as C++ projects do not normally have this. This can be positioned below the ``model{}`` block. It's also important to note that C++ requires the boolean to be set to ``true`` instead of ``false``. It should look like the following:
 
       .. code-block:: groovy
@@ -75,7 +75,7 @@ Learning the Layout
 1. **Robot State** - This is the robot's current state or "mode". You can click on the labels to change mode as you would on the normal Driver Station.
 2. **Relays** - This includes any relay devices. This includes VEX Spike relays.
 3. **Solenoids** - This is a list of "connected" solenoids. When you create a solenoid object and push outputs, these are shown here.
-4. **DIO** - (Digital Input Output) This includes any devices that use the **DIO** connector on the roboRIO. 
+4. **DIO** - (Digital Input Output) This includes any devices that use the **DIO** connector on the roboRIO.
 5. **Analog Inputs** - This includes any devices that would normally use the **ANALOG IN** connector on the roboRIO, such as any Analog based gyros.
 6. **PWM Outputs** - This is a list of instantiated PWM devices. This will appear as many devices as you instantiate in robot code, as well as their outputs.
 7. **Encoders** - This will show any instantiated devices that extend or use the ``Encoder`` class.
@@ -102,7 +102,7 @@ Using the ADXRS450 object is a fantastic way to test gyro based outputs. This wi
 Determing Simulation from Robot Code
 ------------------------------------
 
-In cases where vendor libraries do not compile when running the robot simulation, you can wrap their content with ``RobotBase.isReal()`` which returns a ``boolean``. 
+In cases where vendor libraries do not compile when running the robot simulation, you can wrap their content with ``RobotBase.isReal()`` which returns a ``boolean``.
 
 .. tabs::
 
