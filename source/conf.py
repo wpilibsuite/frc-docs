@@ -20,7 +20,7 @@
 project = 'FIRST Robotics Competition'
 copyright = '2019, FIRST'
 author = 'WPILib'
-version = '2019'
+version = '2020'
 
 
 # -- General configuration ---------------------------------------------------
@@ -49,6 +49,10 @@ linkcheck_anchors = False
 
 # Linkcheck Exclusions
 linkcheck_ignore = [r'.*kauailabs.com.*']
+
+# Sets linkcheck timeout in seconds
+linkcheck_timeout = 5
+linkcheck_retries = 3
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
