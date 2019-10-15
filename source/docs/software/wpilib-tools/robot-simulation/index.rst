@@ -5,3 +5,4 @@ Robot Simulation
    :maxdepth: 1
 
    introduction
+   simulation-gui

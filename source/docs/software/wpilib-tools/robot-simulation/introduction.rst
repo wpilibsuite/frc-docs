@@ -28,12 +28,12 @@ If at any point in time you want to disable Desktop Support, simply re-run the "
 Running Robot Simulation
 ------------------------
 
-Basic robot simulation can be ran using the ``./gradlew simulateExternalJava`` or ``./gradlew simulateExternalCpp`` commands. This can be done without using any commands by using VSCode's command palette.
+Basic robot simulation can be ran using VSCode. This can be done without using any commands by using VSCode's command palette.
 
 .. image:: images/vscode-run-simulation.png
    :alt: Running robot simulation through VSCode
 
-Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using WPILib's Simulation GUI.
+Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
 
 .. code-block:: console
 
@@ -41,3 +41,5 @@ Your console output in Visual Studio Code should look like the below. However, t
    Default disabledInit() method... Override me!
    Default disabledPeriodic() method... Override me!
    Default robotPeriodic() method... Override me!
+
+.. important:: Simulation can also be ran outside of VSCode using ``./gradlew simulateJava``. It's important to note that C++ simulation is not available through command-line at this time.
