@@ -19,7 +19,7 @@ Your ``build.gradle`` should then look like the below
 
 .. tabs::
 
-   .. tab-group:: Java
+   .. group-tab:: Java
 
       .. code-block:: groovy
 
@@ -40,7 +40,7 @@ Your ``build.gradle`` should then look like the below
              testCompile 'junit:junit:4.12'
          }
 
-   .. tab-group:: C++
+   .. group-tab:: C++
       
       You may need to create a ``dependencies{}`` block in your build.gradle, as C++ projects do not normally have this. This can be positioned below the ``model{}`` block. It's also important to note that C++ requires the boolean to be set to ``true`` instead of ``false``. It should look like the following:
 
@@ -55,7 +55,7 @@ Running the GUI
 
 Then you can simply launch the GUI via the **Run Simulation** command palette option.
 
-.. image:: images:: vscode-run-simulation.png
+.. image:: images/vscode-run-simulation.png
    :alt: Running simulation via VSCode
 
 And the ``halsim_gui.dll`` option should popup in a new dialog. Select this and press **Ok**. This will now launch the Simulation GUI!
@@ -67,7 +67,7 @@ Using the GUI
 -------------
 
 Learning the Layout
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/sim-gui-with-labels.png
    :alt: Simulation graphical user interface but with labels
