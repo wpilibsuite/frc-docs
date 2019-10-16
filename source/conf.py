@@ -77,6 +77,9 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Specify custom search, prevents RTD override
+html_search_scorer = '_static/scorer.js'
+
 # Sidebar logo
 html_logo = "assets/wpilibDocsLogo.png"
 
