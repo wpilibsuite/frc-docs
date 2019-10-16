@@ -20,7 +20,7 @@
 project = 'FIRST Robotics Competition'
 copyright = '2019, FIRST'
 author = 'WPILib'
-version = '2020'
+version = '2019'
 
 
 # -- General configuration ---------------------------------------------------
@@ -49,10 +49,6 @@ linkcheck_anchors = False
 
 # Linkcheck Exclusions
 linkcheck_ignore = [r'.*kauailabs.com.*']
-
-# Sets linkcheck timeout in seconds
-linkcheck_timeout = 5
-linkcheck_retries = 3
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -98,7 +94,8 @@ user_options = [
 ]
 
 def setup(app):
-  app.add_css_file('css/frc-rtd.css')
+  app.add_stylesheet('css/frc-rtd.css')
+
 
 # -- Options for latex generation --------------------------------------------
 
