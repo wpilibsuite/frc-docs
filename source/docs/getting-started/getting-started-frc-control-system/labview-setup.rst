@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Installing LabVIEW for FRC (LabVIEW only)
 =========================================
 
@@ -7,35 +9,37 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
-Uninstall Old Versions (recommended)
+Uninstall Old Versions (Recommended)
 ------------------------------------
 
-.. note:: NOTE: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
+.. note:: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
 
-Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2019 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Control Panel >> Uninstall a Program. Locate the entry labeled "National Instruments Software", right-click on it and select Uninstall/Change.
+Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
-Select components to uninstall
+Select Components to Uninstall
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the left pane of the dialog box that appears, select all entries. The easiest way to do this is to click the top entry to highlight it, then scroll down to the bottom entry, press and hold shift and click on the last entry then release shift. Click Remove. Wait for the uninstaller to complete and reboot if prompted.
+In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
 .. image:: images/labview/uninstall_select_components.png
 
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2019 installer from https://www.ni.com/download/labview-for-frc-18.0/7841/en/
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/download/labview-for-frc-18.0/7841/en/
 
-If downloaded, right click on the downloaded file (NI_FRC2019.zip) and select Extract All.
+.. note:: Beta teams will download LabVIEW from teamforge.
 
-.. note:: This is a large download (~5GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
+If downloaded, right click on the downloaded file (LabVIEW_Software_for_FRC_2020.zip) and select Extract All.
+
+.. note:: This is a large download (~7GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
 
 Installing LabVIEW
 ------------------
 
-National Instruments LabVIEW requires a license. Each season’s license is active until January 31st of the following year (e.g. the license for the 2019 season expires on January 31, 2020)
+National Instruments LabVIEW requires a license. Each season’s license is active until January 31st of the following year (e.g. the license for the 2020 season expires on January 31, 2021)
 
 Teams are permitted to install the software on as many team computers as needed, subject to the restrictions and license terms that accompany the applicable software, and provided that only team members or mentors use the software, and solely for FRC. Rights to use LabVIEW are governed solely by the terms of the license agreements that are shown during the installation of the applicable software.
 
@@ -44,14 +48,36 @@ Welcome
 
 .. image:: images/labview/labview_welcome.png
 
-Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC robot, click the top option Install Everything for LabVIEW Development. To install only NI Vision Assistant for use with C++ or Java, click Install Only NI Vision Development Module. If prompted with any Windows security warnings, click Allow or Yes.
+Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC\ |reg| robot, click the top option Install Everything for LabVIEW Development. If prompted with any Windows security warnings, click Allow or Yes.
 
-Warnings
-^^^^^^^^
+NI Package Manager License
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_warnings.png
+.. image:: images/labview/ni-package-license.png
 
-Click "Next"
+If you see this screen, click "Next"
+
+
+Disable Windows Fast Startup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/labview/labview_fast_startup.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Review
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/labview/labview_package_manager_review.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/labview/ni-package-install.png
+
+Installation progress of the NI Package Manager will be tracked in this window
 
 Product List
 ^^^^^^^^^^^^
@@ -59,24 +85,9 @@ Product List
 
 Click "Next"
 
-Product Information
+Additional Packages
 ^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_product_info.png
-
-Un-check the box, then click "Next". (Note: you may not see the warning shown in the top portion of the window in this picture).
-
-User Information
-^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_user_info.png
-
-Enter name, organization, and the serial number from the ReadMe in the File Releases on Teamforge. Click "Next". If you cannot find your serial number, please reach out to National Instruments at www.ni.com/frc/needhelp.
-
-Destination Directory
-^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_install_dir.png
+.. image:: images/labview/labview_additional_software.png
 
 Click "Next"
 
@@ -91,19 +102,12 @@ Check "I accept..." then Click "Next"
 
 Check "I accept..." then Click "Next"
 
-Driver Software installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Product Information
+^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_drivers.png
+.. image:: images/labview/labview_product_info.png
 
-If you see this screen, Click "Next"
-
-Disable Windows Fast Startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_fast_startup.png
-
-If you see this screen, click "Next"
+Click "Next"
 
 Start Installation
 ^^^^^^^^^^^^^^^^^^
@@ -119,26 +123,14 @@ Overall Progress
 
 Overall installation progress will be tracked in this window
 
-Individual Product Progress
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NI Update Service
+-----------------
 
-.. image:: images/labview/labview_ind_product_progress.png
+.. image:: images/labview/ni_update_enable.png
 
-Each product installed will also create an individual progress window like the one shown above.
+You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
 
-Post-Install Information
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_wrapup_info.png
-
-Click "Next"
-
-Installation Summary
-^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/labview_install_summary.png
-
-If internet access is available and you are ready to activate, click "Next"; otherwise uncheck the "Run License Manager..." and click "Next".
+.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
 
 NI Activation Wizard
 ^^^^^^^^^^^^^^^^^^^^
@@ -151,11 +143,11 @@ Log into your ni.com account. If you don't have an account, select 'Create accou
 
 The serial number you entered at the "User Information" screen should appear in all of the text boxes, if it doesn't, enter it now. Click "Activate".
 
-.. note:: If this is the first time activating the 2019 software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
+.. note:: If this is the first time activating the 2020 software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
 
 .. image:: images/labview/ni_activation_success.png
 
-If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select “Try Again”. If everything activated successfully, click “Next”.
+If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select “Try Again”. The items shown above are not expected to activate. If everything activated successfully, click “Next”.
 
 .. image:: images/labview/ni_activation_finish.png
 
@@ -166,13 +158,6 @@ Restart
 
 .. image:: images/labview/labview_restart.png
 
-Select "Yes"
+Select "Reboot Now" after closing any open programs.
 
-NI Update Service
------------------
 
-.. image:: images/labview/ni_update.png
-
-On occasion you may see alerts from the NI Update Service about patches to LabVIEW.
-
-.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (Frank's Blog, Team Updates or E-mail Blasts).
