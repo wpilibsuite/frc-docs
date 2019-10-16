@@ -1,7 +1,7 @@
 Simulation User Interface
 =========================
 
-WPILib has extended HAL simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robots inputs and outputs.
+WPILib has extended robot simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robot's inputs and outputs.
 
 Enabling the GUI
 ----------------

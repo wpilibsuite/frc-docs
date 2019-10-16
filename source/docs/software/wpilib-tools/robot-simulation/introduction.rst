@@ -6,7 +6,7 @@ Often a team may want to test their code without having an actual robot availabl
 Enabling Desktop Support
 ------------------------
 
-Before you can start robot simulation, it's required to have desktop support enabled. Desktop support can be enabled via checking the  "Enable Desktop Support Checbox" when creating your robot project, or via running "WPILib: Change Desktop Support Enabled Setting" from the command palette. If none of the already listed options work, please `report a bug <https://github.com/wpilibsuite/allwpilib/issues>`__.
+Use of the Desktop Simulator requires Desktop Support to be enabled. This can be done by checking the "Enable Desktop Support Checkbox" when creating your robot project or by running "WPILib: Change Desktop Support Enabled Setting" from the Visual Studio Code command palette. If none of the already listed options work, please `report a bug <https://github.com/wpilibsuite/allwpilib/issues>`__.
 
 .. image:: images/vscode-desktop-support.png
    :alt: Enabling desktop support through VSCode
@@ -25,10 +25,15 @@ Desktop support can also be enabled by manually editing your ``build.gradle`` fi
 
 If at any point in time you want to disable Desktop Support, simply re-run the "WPILib: Change Desktop Support Enabled Setting" from the command palette.
 
+Additional C++ Dependency
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be Visual Studio 2019 (**not** VSCode). This can be downloaded from `Microsoft's website <https://visualstudio.microsoft.com/vs/>`__.
+
 Running Robot Simulation
 ------------------------
 
-Basic robot simulation can be ran using VSCode. This can be done without using any commands by using VSCode's command palette.
+Basic robot simulation can be run using VSCode. This can be done without using any commands by using VSCode's command palette.
 
 .. image:: images/vscode-run-simulation.png
    :alt: Running robot simulation through VSCode
@@ -42,4 +47,4 @@ Your console output in Visual Studio Code should look like the below. However, t
    Default disabledPeriodic() method... Override me!
    Default robotPeriodic() method... Override me!
 
-.. important:: Simulation can also be ran outside of VSCode using ``./gradlew simulateJava``. It's important to note that C++ simulation is not available through command-line at this time.
+.. important:: Simulation can also be run outside of VSCode using ``./gradlew simulateJava``. It's important to note that C++ simulation is not available through command-line at this time.
