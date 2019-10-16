@@ -47,7 +47,7 @@ USB Client
 
 .. image:: images/roborio-ports/roborio-usb-client.png
 
-One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a driver station computer, with a standard USB cable.
+One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 
 USB Host
 ^^^^^^^^

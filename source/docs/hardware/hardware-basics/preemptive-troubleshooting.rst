@@ -84,7 +84,7 @@ Ethernet cable is also pretty heavy, if it’s allowed to swing freely, the plas
 Reproducing Problems in the Pit
 -------------------------------
 
-Beyond the normal shaking and rattling of all cables while the robot is power and tethered, you might try picking up one side of the robot  off the ground and drop it, and see if you lose connection. The driving on the field, especially when trying to breach defenses will often be very violent. It's better to see it fail in the pit rather than in a critical match.
+Beyond the normal shaking and rattling of all cables whilst the robot is power and tethered, you might try picking up one side of the robot off the ground and drop it, and see if you lose connection. Driving on the field, especially against defenders, will often be very violent. It's better to see it fail in the pit rather than in a critical match.
 
 When doing this test it’s important to be ethernet tethered and not USB tethered, otherwise you are not testing all of the critical paths.
 Check firmware and versions
