@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Installing the FRC Update Suite
 ===============================
 
@@ -17,25 +19,16 @@ Station or Utilities.**
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-|Uninstaller|
+**LabVIEW teams have already completed this step, do not repeat it.** Before installing the new version of the NI Update it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
-**LabVIEW teams have already completed this step, do not
-repeat it.** Before installing the new version of the NI Update it is
-recommended to remove any old versions. The new version will likely
-properly overwrite the old version, but all testing has been done with
-FRC 2019 only. Make sure to back up any team code located in the
-``User:\LabVIEW\Data`` directory before un-installing. Then
-click **Start >> Control Panel >> Uninstall a Program.** Locate the
-entry labeled “**National Instruments Software**”, right-click on it and
-select **Uninstall/Change**.
+.. image:: images/labview/uninstall_old_control_panel.png
 
 Select Components to Uninstall
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|Remove All|
+In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
-Click **Remove All** and follow any prompts to remove all
-previous NI products.
+.. image:: images/labview/uninstall_select_components.png
 
 Downloading the Update
 ----------------------
@@ -44,6 +37,8 @@ Download the update from
 https://www.ni.com/download/first-robotics-software-2017/7904/en/
 
 .. note:: Note: This download will require the decryption key from the Kickoff broadcast.
+
+.. note:: Beta teams will download the update from teamforge.
 
 .NET Framework 4.6.2
 --------------------
@@ -57,15 +52,42 @@ necessary.
 Welcome
 -------
 
-|Welcome|
-
 Right click on the downloaded zip file and select Extract All.
 If you downloaded the encrypted zip file, you will be prompted for the
 encryption key which will be released at Kickoff. Open the extracted
-folder and any subfolders until you reach the folder containing “setup”
-(may say “setup.exe” on some machines). Double click on the setup icon
+folder and any subfolders until you reach the folder containing “install”
+(may say “install.exe” on some machines). Double click on the setup icon
 to launch the installer. Click “Yes” if a Windows Security prompt
-appears. Click “Next” on the splash screen that appears.
+appears.
+
+NI Package Manager License
+--------------------------
+
+.. image:: images/labview/ni-package-license.png
+
+If you see this screen, click "Next"
+
+
+Disable Windows Fast Startup
+----------------------------
+
+.. image:: images/labview/labview_fast_startup.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Review
+-------------------------
+
+.. image:: images/labview/labview_package_manager_review.png
+
+If you see this screen, click "Next"
+
+NI Package Manager Installation
+-------------------------------
+
+.. image:: images/labview/ni-package-install.png
+
+Installation progress of the NI Package Manager will be tracked in this window
 
 Product List
 ------------
@@ -77,21 +99,12 @@ Update” for C++ or Java teams, if you do not have the base LabVIEW
 installation (because you are not programming in LabVIEW) this
 installation will be skipped automatically.
 
-Product Information
+Additional Software
 -------------------
 
-|Product Information|
+|Additional Software|
 
-Un-check the box, then Click “Next”.
-
-User Information
-----------------
-
-|User Information|
-
-Enter name and organization and the serial number
-from the Team Registration System (in the Password/Voucher code section)
-then click **Next**
+If you see this screen, click "Next"
 
 License Agreements
 ------------------
@@ -105,18 +118,15 @@ License Agreements Page 2
 
 |License Agreements Page 2|
 
-Select “I accept…” then click “Next” If you
-see a screen asking to disable Windows Fast Startup, leave it at the
-recommended option (disable Fast Startup) and click Next. If you see a
-screen talking about Windows Firewall, click Next.
+Select “I accept…” then click “Next”
 
-Summary Progress
+Review Summary
 ----------------
 
-.. figure:: images/update-suite/summary-progress.png
-   :alt: Summary Progress
+.. figure:: images/update-suite/review-summary.png
+   :alt: Review Summary
 
-   Summary Progress
+Click Next
 
 Detail Progress
 ---------------
@@ -131,8 +141,7 @@ Installation Summary
 
 |Installation Summary|
 
-Make sure the box is checked to Run License
-Manager… then click Next or Finish
+click Close
 
 NI Activation Wizard
 --------------------
@@ -147,9 +156,7 @@ NI Activation Wizard (2)
 
 |NI Activation Wizard 2|
 
-The serial number you entered at the “User
-Information” screen should appear in all of the text boxes, if it
-doesn’t, enter it now. Click “Activate”. Note: If this is the first time
+Enter the serial number. Click “Activate”. Note: If this is the first time
 activating the 2019 software on this account, you will see the message
 shown above about a valid license not being found. You can ignore this.
 
@@ -174,19 +181,15 @@ Click “Close”.
 NI Update Service
 -----------------
 
-|NI Update Service|
+.. image:: images/labview/ni_update_enable.png
 
-On occasion you may see alerts from the NI Update
-Service about patches to LabVIEW. It is not recommended to install these
-patches. **FRC will communicate any recommended updates through our
-usual channels** (Frank’s Blog, Team Updates or E-mail Blasts).
+You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
 
-.. |Uninstaller| image:: images/update-suite/uninstall.png
-.. |Remove All| image:: images/update-suite/remove-all.jpg
-.. |Welcome| image:: images/update-suite/welcome.png
+.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
+
+.. |Additional Software| image:: images/update-suite/additional-software.png
 .. |Product List| image:: images/update-suite/product-list.png
 .. |Product Information| image:: images/update-suite/product-information.png
-.. |User Information| image:: images/update-suite/user-information.png
 .. |License Agreements| image:: images/update-suite/license-agreements.png
 .. |License Agreements Page 2| image:: images/update-suite/license-agreements-2.png
 .. |Installation Summary| image:: images/update-suite/installation-summary.png
@@ -194,4 +197,3 @@ usual channels** (Frank’s Blog, Team Updates or E-mail Blasts).
 .. |NI Activation Wizard 2| image:: images/update-suite/ni-activation-wizard-2.png
 .. |NI Activation Wizard 3| image:: images/update-suite/ni-activation-wizard-3.png
 .. |NI Activation Wizard 4| image:: images/update-suite/ni-activation-wizard-4.png
-.. |NI Update Service| image:: images/update-suite/ni-update-service.png
