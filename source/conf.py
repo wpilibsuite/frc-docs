@@ -99,7 +99,6 @@ user_options = [
 
 def setup(app):
   app.add_css_file('css/frc-rtd.css')
-  app.add_js_file('js/scorer.js')
 
 # -- Options for latex generation --------------------------------------------
 
