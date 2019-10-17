@@ -13,7 +13,7 @@ Use of the Desktop Simulator requires Desktop Support to be enabled. This can be
 
 
 .. image:: images/vscode-desktop-support-manual.png
-   :alt: Manually enabling desktop support through VSCode command-palette
+   :alt: Manually enabling desktop support through VS Code command-palette
 
 Desktop support can also be enabled by manually editing your ``build.gradle`` file located at the root of your robot project. Simply change ``includeDesktopSupport = false`` to ``includeDesktopSupport = true``
 
