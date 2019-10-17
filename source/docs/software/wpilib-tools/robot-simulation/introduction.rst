@@ -9,7 +9,7 @@ Enabling Desktop Support
 Use of the Desktop Simulator requires Desktop Support to be enabled. This can be done by checking the "Enable Desktop Support Checkbox" when creating your robot project or by running "WPILib: Change Desktop Support Enabled Setting" from the Visual Studio Code command palette.
 
 .. image:: images/vscode-desktop-support.png
-   :alt: Enabling desktop support through VSCode
+   :alt: Enabling desktop support through VS Code
 
 
 .. image:: images/vscode-desktop-support-manual.png
