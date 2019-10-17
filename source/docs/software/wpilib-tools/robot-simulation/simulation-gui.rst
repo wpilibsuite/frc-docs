@@ -55,7 +55,7 @@ Running the GUI
 Then you can simply launch the GUI via the **Run Simulation** command palette option.
 
 .. image:: images/vscode-run-simulation.png
-   :alt: Running simulation via VSCode
+   :alt: Running simulation via VS Code
 
 And the ``halsim_gui.dll`` option should popup in a new dialog. Select this and press **Ok**. This will now launch the Simulation GUI!
 
