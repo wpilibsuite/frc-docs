@@ -10,8 +10,12 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=build
 set SPHINXOPTS=-W --keep-going
+set LINTER=doc8
+set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
 
 if "%1" == "" goto help
+
+if "%1" == "lint" goto lint
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -31,6 +35,9 @@ goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+
+:lint
+%LINTER% %LINTEROPTS%
 
 :end
 popd
