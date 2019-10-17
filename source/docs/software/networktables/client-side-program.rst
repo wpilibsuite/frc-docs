@@ -55,4 +55,4 @@ https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/ntcore/ntcore-jni/
 
 https://first.wpi.edu/FRC/roborio/maven/release/edu/wpi/first/wpiutil/wpiutil-java/2019.4.1/ (wpiutil java files)
 
-.. note:: The desktop platform jar is for Windows, Mac, and Linux.
+.. note:: The desktop platform jar is for Windows, macOS, and Linux.
