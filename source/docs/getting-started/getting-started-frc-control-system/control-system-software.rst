@@ -8,7 +8,7 @@ Operating System Compatibility
 
 The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 7, 8, and 10. Windows XP is not supported.
 
-Having said that, many of the tools for C++/Java programming are also supported and tested on Mac and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as Driver Station, radio programming, and roboRIO imaging.
+Having said that, many of the tools for C++/Java programming are also supported and tested on macOS and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as Driver Station, radio programming, and roboRIO imaging.
 
 Components supported on all OS’s have been marked with an \* below. All other items are Windows only, unless noted.
 

@@ -23,7 +23,7 @@ You'll be presented with the WPILib Eclipse Project Upgrade window. This is simi
 
 Click "Upgrade Project" to begin the upgrade.
 
-The eclipse project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the Ctrl-O (or Command-O for Mac) shortcut.
+The eclipse project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the Ctrl-O (or Command-O for macOS) shortcut.
 
 |Opening Project|
 

@@ -8,7 +8,7 @@ Custom Component Structure
 
 .. image:: images/custom-components-1.png
 
-Custom components all go in ``$USER_HOME/Robotbuilder/extensions``. On Linux and Mac, ``$USER_HOME`` will be ``/Users/yourusername/``. On Windows, it will be ``C:\Users\yourusername\``
+Custom components all go in ``$USER_HOME/Robotbuilder/extensions``. On Linux and macOS , ``$USER_HOME`` will be ``/Users/yourusername/``. On Windows, it will be ``C:\Users\yourusername\``
 
 There are seven files and one folder that are needed for a custom component. The folder contains the files describing the component and how to export it. It should have the same name as the component (e.g."Kiwi Drive" for a kiwi drive controller, "Robot Drive 6" for a six-motor drive controller, etc.). The files should have the same names and extensions as the ones shown here. Other files can be in the folder along with these seven, but the seven must be present for RobotBuilder to recognize the custom component.
 
