@@ -18,7 +18,7 @@ Prerequisites
 You have to download and install Git from the following links:
 
 - `Windows <https://git-scm.com/download/win>`_
-- `Mac OS X <https://git-scm.com/download/mac>`_
+- `macOS <https://git-scm.com/download/mac>`_
 - `Linux <https://git-scm.com/download/linux>`_
 
 .. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path>`__

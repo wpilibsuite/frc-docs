@@ -22,7 +22,7 @@ The most important link to take a look at is probably the basic User Interface d
 Command Palette
 ---------------
 
-The Command Palette can be used to access or run almost any function or feature in Visual Studio Code (including those from the WPILib extension). The Command Palette can be accessed from the View menu or by pressing Ctrl+Shift+P (Cmd+Shift+P on Mac). Typing text into the window will dynamically narrow the search to relevant commands and show them in the dropdown.
+The Command Palette can be used to access or run almost any function or feature in Visual Studio Code (including those from the WPILib extension). The Command Palette can be accessed from the View menu or by pressing Ctrl+Shift+P (Cmd+Shift+P on macOS). Typing text into the window will dynamically narrow the search to relevant commands and show them in the dropdown.
 
 In the following example "wpilib" is typed into the search box after activating the Command Palette, and it narrows the list to functions containing WPILib.
 
