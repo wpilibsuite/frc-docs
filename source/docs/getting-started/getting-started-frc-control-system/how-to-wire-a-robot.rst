@@ -17,8 +17,6 @@ Image courtesy of `@stefenacepcion <https://www.chiefdelphi.com/t/control-system
 Gather Materials
 ----------------
 
-.. image:: images/how-to-wire-a-robot/image0.jpg
-
 Locate the following control system components and tools
 
 
