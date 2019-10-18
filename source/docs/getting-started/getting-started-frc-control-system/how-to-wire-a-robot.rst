@@ -336,8 +336,6 @@ STOP
 
 .. image:: images/how-to-wire-a-robot/image21.png
 
-.. danger:: STOP!!
-
 .. danger:: Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
 
 Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
