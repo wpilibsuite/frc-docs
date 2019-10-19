@@ -82,7 +82,7 @@ Radio WiFi
 
 - Off - Bridge Mode Unlinked or Non-FRC Firmware
 - Red - AP Mode Unlinked
-- Yellow\Orange - AP Mode Linked
+- Yellow/Orange - AP Mode Linked
 - Green - Bridge Mode Linked
 
 Power Distribution Panel
