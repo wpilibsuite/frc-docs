@@ -18,7 +18,11 @@ WPILib Installation Guide
 
       Choose whether to install for *All Users* on the machine or the *Current User*. The *All Users* option requires administrator privileges, but installs in a way that is accessible to all user accounts, the *Current User* install is only accessible from the account it is installed from.
 
-      If you select *All Users*, you will need to accept the security prompt that appears.
+      If you select *All Users*, you will need to accept the security prompt that appears to allow administrator access.
+      
+      .. note:: Regardless of whether *All Users* or *Current User* is chosen, the software is installed to ``C:\Users\Public\wpilib\YYYY`` where YYYY is the current FRC year. If you choose *All Users*, then shortcuts are installed to all users desktop and start menu and system environment variables are set. If *Current User* is chosen, then shortcuts and environment variables are set for only the current user.
+      
+      .. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``C:\Users\Public\frcYYYY``. In 2020 and later it is installed to ``C:\Users\Public\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
 
     **Download Visual Studio Code**
 
