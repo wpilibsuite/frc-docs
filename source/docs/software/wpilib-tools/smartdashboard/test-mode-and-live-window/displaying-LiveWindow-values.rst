@@ -14,11 +14,11 @@ Adding the Necessary Code to your Program
 
     .. code-tab:: java
 
-        lw = LiveWindow.getInstance()
+        LiveWindow lw = LiveWindow.getInstance();
 
     .. code-tab:: cpp
 
-        lw = LiveWindow::GetInstance()
+        frc::LiveWindow lw = frc::LiveWindow::GetInstance();
 
 2. Then for each sensor or actuator that is created, add it to the LiveWindow display by either calling ``AddActuator`` or ``AddSensor`` (``addActuator`` or ``addSensor`` in Java). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
 
@@ -26,24 +26,24 @@ Adding the Necessary Code to your Program
 
     .. code-tab:: java
 
-        ultrasonic = new Ultrasonic(1, 2);
-        lw.addSensor("Arm", "Ultrasonic", ultrasonic)
+        Ultrasonic ultrasonic = new Ultrasonic(1, 2);
+        lw.addSensor("Arm", "Ultrasonic", ultrasonic);
 
-        elbow = new Jaguar(1);
+        Jaguar elbow = new Jaguar(1);
         lw.addActuator("Arm", "Elbow", elbow);
 
-        wrist = new Victor(2)
+        Victor wrist = new Victor(2);
         lw.addActuator("Arm", "Wrist", wrist);
 
     .. code-tab:: cpp
 
-        ultrasonic = new Ultrasonic(1, 2);
-        lw->AddSensor("Arm", "Ultrasonic", ultrasonic)
+        frc::Ultrasonic ultrasonic{1, 2};
+        lw->AddSensor("Arm", "Ultrasonic", ultrasonic);
 
-        elbow = new Jaguar(1);
+        frc::Jaguar elbow{1};
         lw->AddActuator("Arm", "Elbow", elbow);
 
-        wrist = new Victor(2)
+        frc::Victor wrist{2};
         lw->AddActuator("Arm", "Wrist", wrist);
 
 Viewing the Display in SmartDashboard

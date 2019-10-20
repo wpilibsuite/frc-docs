@@ -24,14 +24,14 @@ Writing Values to SmartDashboard
     .. code-tab:: cpp
 
         void Command::Execute() {
-          SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
-          SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
-          SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
-          SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
-          SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
-          SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
-          SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
-          SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
+          frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
+          frc::SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
+          frc::SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
+          frc::SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
+          frc::SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
+          frc::SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
+          frc::SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
+          frc::SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
         }
 
 You can write Boolean, Numeric, or String values to the SmartDashboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required. Any time in your program that you write another value with the same name, it appears in the same UI element on the screen on the driver station or development computer. As you can imagine this is a great way of debugging and getting status of your robot as it is operating.
