@@ -205,7 +205,7 @@ Pneumatics Control Module Power (Optional)
 
 Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and black wire
 
-Note: The PCM is an optional component used for controlling pneumatics on the robot.
+..note: The PCM is an optional component used for controlling pneumatics on the robot.
 
 1. Strip ~5/16" on the end of the red and black 18AWG wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
