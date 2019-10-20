@@ -52,6 +52,6 @@ It is often helpful to see if the SmartDashboard is connected to the robot. To a
 Adding Widgets to the SmartDashboard
 ------------------------------------
 
-.. image:: images/smartdashboard-intro-6.png
+.. image:: images/smartdashboard-intro-1.png
 
 Widgets are automatically added to the SmartDashboard for each "key" sent by the robot code. For instructions on adding robot code to write to the SmartDashboard see :doc:`Displaying Expressions from Within the Robot Program <displaying-expressions>`.
