@@ -65,7 +65,7 @@ Click Save.
 Manual Camera Configuration
 ---------------------------
 
-.. image:: images/configuring-an-axis-camera/manual-camera-configuration.png
+.. image:: images/configuring-an-axis-camera/camera-webpage.png
 
 It is recommended to use the Setup Axis Camera Tool to configure the Axis Camera. If you need to configure the camera manually, connect the camera directly to the computer, configure your computer to have a static IP of ``192.168.0.5``, then open a web browser and enter ``192.168.0.90`` in the address bar and press enter. You should see a Configure Root Password page, set this password to whatever you would like, but admin is recommended.
 
