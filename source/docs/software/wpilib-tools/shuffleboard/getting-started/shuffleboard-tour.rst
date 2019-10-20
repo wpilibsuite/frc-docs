@@ -24,7 +24,7 @@ Starting Shuffleboard
 .. figure:: images/shuffleboard-driverstation.png
    :alt:
 
-You can start Shuffleboard in one of three ways:
+You can start Shuffleboard in one of four ways:
 
 1. You can automatically start it when the Driver Station starts by setting the "Dashboard Type" to Shuffleboard in the settings tab as shown in the picture above.
 2. You can run it by double-clicking the Shuffleboard icon on the Windows Desktop.
