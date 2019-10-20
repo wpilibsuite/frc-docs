@@ -48,10 +48,4 @@ In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  T
 - :doc:`Digital input <digital-inputs-hardware>`
 - :doc:`Serial bus <serial-buses>`
 
-    * SPI
-    * I2C
-    * RS232
-    * USB
-    * CAN Bus
-
 In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus can be more complicated.
