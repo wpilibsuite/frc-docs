@@ -6,7 +6,7 @@ Displaying LiveWindow Values
 
 LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. LiveWindow will display values grouped in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
 
-Adding the necessary code to your program
+Adding the Necessary Code to your Program
 -----------------------------------------
 
 1. First, get a reference (Java) or pointer (C++) to the LiveWindow object.
@@ -47,7 +47,7 @@ Adding the necessary code to your program
         wrist = new Victor(2)
         lw->AddActuator("Arm", "Wrist", wrist);
 
-Viewing the display in the SmartDashboard
+Viewing the Display in SmartDashboard
 -----------------------------------------
 .. image:: images/displaying-LiveWindow-values/view-display.png
 
