@@ -1,24 +1,24 @@
 Integrating path following into a robot program
 ===============================================
 
-.. warning::
-   **Known Issue**
+.. note::
 
-   PathWeaver currently has a known issue. The left and right paths are being swapped. This will be fixed in the next release of PathWeaver. In the meantime, this can be corrected in the follower (what this article describes).  Once this update is published, the following fix will not be needed. The fix is as follows:
+   In 2019, PathWeaver had an issue where the left and right paths were swapped. This is fixed in the 2020 release of PathWeaver. Robot code written in 2019 needs to be updated to work with the 2020 PathWeaver. The fix is as follows:
 
    Replace:
 
    .. code-block:: java
 
-      Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
-      Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
+
+      Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
+      Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
 
    With:
 
    .. code-block:: java
 
-      Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
-      Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
+      Trajectory left_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".left");
+      Trajectory right_trajectory = PathfinderFRC.getTrajectory(k_path_name + ".right");
 
    Depending on the orientation of your gyro, you may also need to invert the desired heading with the following fix:
 
