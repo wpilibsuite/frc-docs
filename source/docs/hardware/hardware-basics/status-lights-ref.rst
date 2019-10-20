@@ -57,7 +57,7 @@ roboRIO Mode
 roboRIO RSL
 ^^^^^^^^^^^
 
-- `See above <Robot Signal Light (RSL)>`_
+- `See here <#robot-signal-light-rsl>`_
 
 
 OpenMesh Radio
