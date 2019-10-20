@@ -5,11 +5,8 @@ In addition to the :doc:`digital <digital-inputs-hardware>` and :doc:`analog <an
 
 Both the digital and analog inputs are highly limited in the amount of data that can be send over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
 
-Types of Supported Serial Buses
--------------------------------
-
 I2C
-^^^
+---
 
 .. image:: images/roborio-ports/roborio-i2c.png
 
@@ -20,7 +17,7 @@ To communicate to peripheral devices over I2C, each pin should be wired to its c
 The I2C bus can also be used through the MXP Expansion Port.
 
 SPI
-^^^
+---
 
 .. image:: images/roborio-ports/roborio-spi.png
 .. image:: images/serial-buses/spi-pinout.png
@@ -29,8 +26,8 @@ To communicate to peripheral devices over SPI, each pin should be wired to its c
 
 The SPI bus can also be used through the MXP Expansion Port.
 
-RS232
-^^^^^
+RS-232
+------
 
 .. image:: images/roborio-ports/roborio-rs-232.png
 
@@ -41,14 +38,14 @@ To communicate to peripheral devices over RS232, each pin should be wired to its
 The RS232 bus can also be used through the MXP Expansion Port.
 
 USB Client
-^^^^^^^^^^
+----------
 
 .. image:: images/roborio-ports/roborio-usb-client.png
 
 One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 
 USB Host
-^^^^^^^^
+--------
 
 .. image:: images/roborio-ports/roborio-usb-host.png
 
@@ -56,7 +53,7 @@ Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be 
 
 
 MXP Expansion Port
-^^^^^^^^^^^^^^^^^^
+------------------
 
 .. image:: images/roborio-ports/roborio-mxp.png
 
@@ -67,7 +64,7 @@ Several of the serial buses are also available for use through the roboRIO's MXP
 Many peripheral devices attach directly to the MXP port for convenience, requiring no wiring on the part of the user.
 
 CAN Bus
-^^^^^^^
+-------
 
 .. image:: images/roborio-ports/roborio-can.png
 
@@ -80,4 +77,4 @@ Several sensors primarily use the CAN bus. Some examples include:
 - `CANifier <https://www.ctr-electronics.com/control-system/can-can-canifier-driver-led-driver-gpio.html>`__
 - Power monitoring sensors built into the :ref:`Power Distribution Panel (PDP) <docs/getting-started/getting-started-frc-control-system/control-system-hardware:Power Distribution Panel>`
 
-More information about using devices connected to the CAN bus can be found in the article about :ref:`using can devices <docs/software/can-devices/using-can-devices:Using CAN Devices>`
+More information about using devices connected to the CAN bus can be found in the article about :ref:`using can devices <docs/software/can-devices/using-can-devices:Using CAN Devices>`.
