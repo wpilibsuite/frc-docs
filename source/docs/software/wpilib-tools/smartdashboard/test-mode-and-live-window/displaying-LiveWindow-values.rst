@@ -1,8 +1,7 @@
 Displaying LiveWindow Values
 ============================
 
-.. note::
-    LiveWindow will automatically add your sensors for you. There is no need to do it manually.
+.. note:: LiveWindow will automatically add your sensors for you. There is no need to do it manually.
 
 LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. LiveWindow will display values grouped in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
 
