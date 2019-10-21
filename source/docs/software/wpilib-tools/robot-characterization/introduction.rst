@@ -33,7 +33,7 @@ To install the Robotpy Characterization Toolsuite, open a console and enter the 
 
 The toolsuite, and all of its dependencies, should be automatically downloaded and installed. If you are using a windows machine and the command pip is not recognized, ensure that your python scripts folder `has been added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__.
 
-Once the toolsuite has been installed, launch a new drive characterization project to ensure that it works by running the following command from powershell or a terminal window. 
+Once the toolsuite has been installed, launch a new drive characterization project to ensure that it works by running the following command from powershell or a terminal window.
 
 
 .. code-block:: console
