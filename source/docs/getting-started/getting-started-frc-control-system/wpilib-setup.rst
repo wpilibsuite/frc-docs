@@ -1,7 +1,7 @@
 WPILib Installation Guide
 =============================
 
-.. note:: This setup is for C++\Java teams. LabVIEW teams should proceed to :doc:`Installing LabVIEW for FRC </docs/getting-started/getting-started-frc-control-system/labview-setup>`.
+.. note:: This setup is for C++/Java teams. LabVIEW teams should proceed to :doc:`Installing LabVIEW for FRC </docs/getting-started/getting-started-frc-control-system/labview-setup>`.
 
 .. tabs::
 
