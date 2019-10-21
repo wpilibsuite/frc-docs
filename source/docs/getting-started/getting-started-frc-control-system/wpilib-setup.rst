@@ -22,8 +22,6 @@ WPILib Installation Guide
 
       .. note:: Regardless of whether *All Users* or *Current User* is chosen, the software is installed to ``C:\Users\Public\wpilib\YYYY`` where YYYY is the current FRC year. If you choose *All Users*, then shortcuts are installed to all users desktop and start menu and system environment variables are set. If *Current User* is chosen, then shortcuts and environment variables are set for only the current user.
 
-      .. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``C:\Users\Public\frcYYYY``. In 2020 and later it is installed to ``C:\Users\Public\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
-
     **Download Visual Studio Code**
 
       For licensing reasons, the installer cannot contain the VS Code installer bundled in. Click *Select/Download VS Code* to either download the VS Code installer or select a pre-downloaded copy. If you intend to install on other machines without internet connections, after the download completes, you can click *Open Downloaded File* to be taken to the zip file on the file system to copy along with the Offline Installer.
@@ -217,3 +215,5 @@ WPILib Installation Guide
 
       .. figure:: images/linux/java-11.png
           :alt: Java 11
+
+.. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``~\frcYYYY`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year. In 2020 and later it is installed to ``~\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
