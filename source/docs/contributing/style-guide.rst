@@ -35,6 +35,7 @@ Use the following case for these terms:
 - roboRIO (not RoboRIO, roboRio, or RoboRio)
 - LabVIEW (not labview or LabView)
 - Visual Studio Code (VS Code) (not vscode, VScode, vs code, etc)
+- macOS (not Mac OS, Mac OSX, Mac OS X, Mac, Mac OS, etc.)
 
 Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`_.
 
@@ -42,7 +43,7 @@ Use ``.. math::`` for standalone equations and ``:math:`` for inline equations. 
 
 Use literals for filenames, function, and variable names.
 
-Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from `this page <https://www.firstinspires.org/brand>`__. Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``..include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
+Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from `this page <https://www.firstinspires.org/brand>`__. Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``.. include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
 
 Whitespace
 ----------

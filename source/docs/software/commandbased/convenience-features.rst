@@ -92,7 +92,7 @@ SelectCommand
 
 .. note:: An alternate version of SelectCommand simply takes a method that supplies the command to be run - this can be very succinct, but makes inferring the command's requirements impossible, and so leaves the user responsible for manually adding the requirements to the SelectCommand.
 
-The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SelectCommand.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands basedvon the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
+The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SelectCommand.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands based on the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
 
 .. tabs::
 

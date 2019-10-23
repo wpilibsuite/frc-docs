@@ -37,7 +37,7 @@ Alternatively, you can add exceptions to the Firewall for any FRC programs you a
 Open Control Panel
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/windows-firewall-configuration-4.png
+.. image:: images/windows-firewall-configuration-1.png
 
 Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Defender Firewall``.
 
