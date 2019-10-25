@@ -165,7 +165,7 @@ Simple Autonomous Example
             // Drive for 2 seconds
             if (m_timer.Get() < 2.0) {
                 // Drive forwards half speed
-                m_robotDrive.ArcadeDrive(-0.5, 0.0);
+                m_robotDrive.ArcadeDrive(0.5, 0.0);
             } else {
                 // Stop robot
                 m_robotDrive.ArcadeDrive(0.0, 0.0);
@@ -174,7 +174,7 @@ Simple Autonomous Example
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we reset the ``Timer`` and then start it in this method.
 
-``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. The value is negative for forward motion because of the convention for joysticks where a negative Y-axis value corresponds to moving the stick away from you (forward). If more than 2 seconds has elapsed, the code stops the robot drive.
+``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than 2 seconds has elapsed, the code stops the robot drive.
 
 Joystick Control for teleoperation
 ----------------------------------
