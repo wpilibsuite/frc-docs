@@ -61,7 +61,7 @@ WPILib Installation Guide
 
       Both of these reference the specific year as the WPIlib C++ tools will now support side-by-side installs of multiple environments from different seasons.
 
-  .. tab :: Mac OSX
+  .. tab :: macOS
 
     **Getting Visual Studio Code**
 
@@ -81,7 +81,7 @@ WPILib Installation Guide
 
       Download the software release by navigating to this page:
       https://github.com/wpilibsuite/allwpilib/releases and downloading the
-      Mac release.
+      macOS release.
 
       .. figure:: images/mac/MacReleasePage.png
           :alt:
