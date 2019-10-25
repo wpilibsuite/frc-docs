@@ -84,4 +84,12 @@
 	.header-bar {
 		display: none;
 	}
+
+	.wy-nav-content-wrap {
+		margin-left: 0px;
+	}
+
+	.wy-nav-side {
+		width: 300px;
+	}
 }
