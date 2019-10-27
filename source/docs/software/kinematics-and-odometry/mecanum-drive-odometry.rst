@@ -52,7 +52,7 @@ The ``MecanumDriveOdometry`` class requires one mandatory argument and one optio
 
 Updating the robot pose
 -----------------------
-The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the current angle of the robot, along with a ``MecanumDriveWheelSpeeds`` object representing the speed of each of the 4 wheels on the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a `Subsystem <docs/software/commandbased/subsystems>`_. The ``update`` method returns the new updated pose of the robot.
+The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the current angle of the robot, along with a ``MecanumDriveWheelSpeeds`` object representing the speed of each of the 4 wheels on the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
 .. note:: The ``MecanumDriveWheelSpeeds`` class in Java must be constructed with each wheel speed in meters per second. In C++, the units library must be used to represent your wheel speeds.
 

@@ -91,7 +91,7 @@ The elements in the array that is returned by this method are the same order in 
 
 Field-oriented drive
 ~~~~~~~~~~~~~~~~~~~~
-`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>`_ that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
+:ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
 
 .. tabs::
 
