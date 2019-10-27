@@ -1,6 +1,6 @@
 Mecanum Drive Odometry
 ===========================
-A user can use the mecanum drive kinematics classes in order to perform odometry. Odometry is a way to figure out the position of the robot on the field using measurements from encoders and a gyroscope. WPILib contains a ``MecanumDriveOdometry`` class that can be used to track the position of a mecanum drive robot on the field.
+A user can use the mecanum drive kinematics classes in order to perform odometry. WPILib contains a ``MecanumDriveOdometry`` class that can be used to track the position of a mecanum drive robot on the field.
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 

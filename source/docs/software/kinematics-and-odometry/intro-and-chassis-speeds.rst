@@ -1,5 +1,12 @@
-The Chassis Speeds Object
-=========================
+Introduction to Kinematics and Odometry & The Chassis Speeds Class
+==================================================================
+
+The brand new kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
+
+The odometry classes utilize the kinematics classes to track the position of the robot on the field using measurements from encoders and a gyroscope.
+
+The Chassis Speeds class
+------------------------
 The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odometry suite. The ``ChassisSpeeds`` object represents the speeds of a robot chassis. This struct has three components:
 
 * ``vx``: The velocity of the robot in the x (forward) direction.
@@ -7,8 +14,6 @@ The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odome
 * ``omega``: The angular velocity of the robot in radians per second.
 
 .. note:: A non-holonomic drivetrain (i.e. a drivetrain that cannot move sideways, ex: a differential drive) will have a ``vy`` component of zero because of its inability to move sideways.
-
-The kinematics classes are used to convert a ``ChassisSpeeds`` object into usable velocities i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
 
 Constructing a ChassisSpeeds object
 -----------------------------------
