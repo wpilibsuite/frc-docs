@@ -108,7 +108,7 @@ Field-oriented drive
       // Now use this in our kinematics
       SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(speeds);
 
-   .. code-tab: c++
+   .. code-tab:: c++
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
