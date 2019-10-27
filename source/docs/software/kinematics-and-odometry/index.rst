@@ -9,4 +9,5 @@ Kinematics and Odometry
    differential-drive-odometry
    swerve-drive-kinematics
    swerve-drive-odometry
+   mecanum-drive-kinematics
    mecanum-drive-odometry

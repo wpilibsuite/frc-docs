@@ -1,6 +1,6 @@
 Swerve Drive Kinematics
 =======================
-The ``SwerveDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which velocities and angles for each swerve module of a swerve drive robot.
+The ``SwerveDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which contains velocities and angles for each swerve module of a swerve drive robot.
 
 The swerve module state class
 -----------------------------
@@ -11,7 +11,7 @@ The ``SwerveModuleState`` class contains information about the velocity and angl
 
 Constructing the kinematics object
 ----------------------------------
-The ``SwerveDriveKinematics`` accepts a variable number of constructor arguments, with each argument being the location of a swerve module relative to the robot center (as a ``Translation2d``. The number of constructor arguments corresponds to the number of swerve modules.
+The ``SwerveDriveKinematics`` class accepts a variable number of constructor arguments, with each argument being the location of a swerve module relative to the robot center (as a ``Translation2d``. The number of constructor arguments corresponds to the number of swerve modules.
 
 .. note:: A swerve drive must have 2 or more modules.
 

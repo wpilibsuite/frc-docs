@@ -1,4 +1,4 @@
-Introduction to Kinematics and Odometry & The Chassis Speeds Class
+Introduction to Kinematics and The Chassis Speeds Class
 ==================================================================
 
 The brand new kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
