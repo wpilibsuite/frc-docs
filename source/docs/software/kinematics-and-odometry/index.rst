@@ -5,3 +5,4 @@ Kinematics and Odometry
    :maxdepth: 1
 
    differential-drive-odometry
+   swerve-drive-odometry
