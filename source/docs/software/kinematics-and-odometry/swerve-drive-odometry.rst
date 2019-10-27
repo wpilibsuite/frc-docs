@@ -14,7 +14,7 @@ The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument
 
    .. code-tab:: java
    
-      // Locations for the swerve drive modules.
+      // Locations for the swerve drive modules relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
       Translation2d m_frontRightLocation = new Translation2d(0.381, -0.381);
       Translation2d m_backLeftLocation = new Translation2d(-0.381, 0.381);
@@ -33,7 +33,7 @@ The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument
       
    .. code-tab:: c++
    
-      // Locations for the swerve drive modules
+      // Locations for the swerve drive modules relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
       frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
       frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
