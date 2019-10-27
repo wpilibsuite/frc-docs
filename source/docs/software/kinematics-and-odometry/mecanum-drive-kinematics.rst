@@ -50,7 +50,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
 
       // Convert to wheel speeds
       MecanumDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(speeds);
-      
+
       // Get the individual wheel speeds
       double frontLeft = wheelSpeeds.frontLeftMetersPerSecond
       double frontRight = wheelSpeeds.frontRightMetersPerSecond
