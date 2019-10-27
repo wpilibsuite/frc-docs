@@ -8,7 +8,7 @@ Both the digital and analog inputs are highly limited in the amount of data that
 I2C
 ---
 
-.. image:: images/roborio-ports/roborio-i2c.png
+.. image:: images/roborio/roborio-i2c.png
 
 .. image:: images/serial-buses/i2c-pinout.png
 
@@ -19,7 +19,7 @@ The I2C bus can also be used through the MXP Expansion Port.
 SPI
 ---
 
-.. image:: images/roborio-ports/roborio-spi.png
+.. image:: images/roborio/roborio-spi.png
 .. image:: images/serial-buses/spi-pinout.png
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the CS 0-3 pins on the diagram above).
@@ -29,7 +29,7 @@ The SPI bus can also be used through the MXP Expansion Port.
 RS-232
 ------
 
-.. image:: images/roborio-ports/roborio-rs-232.png
+.. image:: images/roborio/roborio-rs-232.png
 
 .. image:: images/serial-buses/rs232-pinout.png
 
@@ -40,14 +40,14 @@ The RS232 bus can also be used through the MXP Expansion Port.
 USB Client
 ----------
 
-.. image:: images/roborio-ports/roborio-usb-client.png
+.. image:: images/roborio/roborio-usb-client.png
 
 One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 
 USB Host
 --------
 
-.. image:: images/roborio-ports/roborio-usb-host.png
+.. image:: images/roborio/roborio-usb-host.png
 
 Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be connected to devices, such as cameras or sensors, with a standard USB cable.
 
@@ -55,7 +55,7 @@ Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be 
 MXP Expansion Port
 ------------------
 
-.. image:: images/roborio-ports/roborio-mxp.png
+.. image:: images/roborio/roborio-mxp.png
 
 .. image:: images/serial-buses/mxp-pinout.png
 
@@ -66,7 +66,7 @@ Many peripheral devices attach directly to the MXP port for convenience, requiri
 CAN Bus
 -------
 
-.. image:: images/roborio-ports/roborio-can.png
+.. image:: images/roborio/roborio-can.png
 
 Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
