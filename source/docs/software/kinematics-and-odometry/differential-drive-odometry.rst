@@ -4,7 +4,7 @@ A user can use the differential drive kinematics classes in order to perform odo
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 
-Creating the odometry object
+Creating the Odometry Object
 ----------------------------
 The ``DifferentialDriveOdometry`` class requires one mandatory argument and one optional argument. The mandatory argument is the kinematics object that represents your differential drive (in the form of a ``DifferentialDriveKinematics`` class). The second optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
@@ -34,7 +34,7 @@ The ``DifferentialDriveOdometry`` class requires one mandatory argument and one 
       frc::DifferentialDriveOdometry m_odometry{m_kinematics, frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
 
-Updating the robot pose
+Updating the Robot Pose
 -----------------------
 The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the current angle of the robot, along with a ``DifferentialDriveWheelSpeeds`` object representing the left and right wheel speeds of the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 

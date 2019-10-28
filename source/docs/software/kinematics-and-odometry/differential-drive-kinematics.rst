@@ -2,13 +2,13 @@ Differential Drive Kinematics
 =============================
 The ``DifferentialDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and a ``DifferentialDriveWheelSpeeds`` object, which contains velocities for the left and right sides of a differential drive robot.
 
-Constructing the kinematics object
+Constructing the Kinematics Object
 ----------------------------------
 The ``DifferentialDriveKinematics`` object accepts one constructor argument, which is the track width of the robot. This represents the distance between the two sets of wheels on a differential drive.
 
 .. note:: In Java, the track width must be in meters. In C++, the units library can be used to pass in the track width using any length unit.
 
-Converting chassis speeds to wheel speeds
+Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
 The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``DifferentialDriveWheelSpeeds`` object. This is useful in situations where you have to convert a linear velocity (``vx``) and an angular velocity (``omega``) to left and right wheel velocities.
 
@@ -47,7 +47,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       // struct into left and right velocities.
       auto [left, right] = kinematics.ToWheelSpeeds(chassisSpeeds);
 
-Converting wheel speeds to chassis speeds
+Converting Wheel Speeds to Chassis Speeds
 -----------------------------------------
 One can also use the kinematics object to convert individual wheel speeds (left and right) to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (C++) method should be used to achieve this.
 

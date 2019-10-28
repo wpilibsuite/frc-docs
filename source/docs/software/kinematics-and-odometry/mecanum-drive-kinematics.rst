@@ -2,7 +2,7 @@ Mecanum Drive Kinematics
 ========================
 The ``MecanumDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and a ``MecanumDriveWheelSpeeds`` object, which contains velocities for each of the four wheels on a mecanum drive.
 
-Constructing the kinematics object
+Constructing the Kinematics Object
 ----------------------------------
 The ``MecanumDriveKinematics`` class accepts four constructor arguments, with each argument being the location of a wheel relative to the robot center (as a ``Translation2d``). The order for the arguments is front left, front right, back left, and back right. The locations for the wheels must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.
 
@@ -35,7 +35,7 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
         m_backRightLocation};
 
-Converting chassis speeds to wheel speeds
+Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
 The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual wheel speeds.
 

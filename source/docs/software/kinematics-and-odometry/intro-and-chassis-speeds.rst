@@ -5,7 +5,7 @@ The brand new kinematics suite contains classes for differential drive, swerve d
 
 The odometry classes utilize the kinematics classes to track the position of the robot on the field using measurements from encoders and a gyroscope.
 
-The Chassis Speeds class
+The Chassis Speeds Class
 ------------------------
 The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odometry suite. The ``ChassisSpeeds`` object represents the speeds of a robot chassis. This struct has three components:
 
@@ -37,7 +37,7 @@ The constructor for the ``ChassisSpeeds`` object is very straightforward, accept
         units::radians_per_second_t(wpi::math::pi)};
 
 
-Creating a ChassisSpeeds object from field-relative speeds
+Creating a ChassisSpeeds Object from Field-Relative Speeds
 ----------------------------------------------------------
 A ``ChassisSpeeds`` object can also be created from a set of field-relative speeds when the robot angle is given. This converts a set of desired velocities relative to the field (for example, toward the opposite alliance station and toward the right field boundary) to a ``ChassisSpeeds`` object which represents speeds that are relative to the robot frame. This is useful for implementing field-oriented controls for a swerve or mecanum drive robot.
 
