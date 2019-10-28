@@ -38,7 +38,7 @@ Updating the robot pose
 -----------------------
 The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the current angle of the robot, along with a ``DifferentialDriveWheelSpeeds`` object representing the left and right wheel speeds of the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
-.. note:: The ``DifferentialDriveWheelSpeeds`` class in Java must be constructed with the left and right wheel speeds in meters per second. In C++, the units library must be used to represent your wheel speeds.
+.. note:: The ``DifferentialDriveWheelSpeeds`` class in Java must be constructed with the left and right wheel speeds in meters per second. In C++, the units library must be used to represent your wheel speeds. If the robot is moving forward in a straight line, **both** velocities (left and right) must be positive.
 
 .. tabs::
 
