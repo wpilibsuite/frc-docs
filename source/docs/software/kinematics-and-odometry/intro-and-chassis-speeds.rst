@@ -1,9 +1,13 @@
 Introduction to Kinematics and The Chassis Speeds Class
 ==================================================================
 
+What is kinematics?
+-------------------
 The brand new kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
 
-The odometry classes utilize the kinematics classes to track the position of the robot on the field using measurements from encoders and a gyroscope.
+What is odometry?
+-----------------
+Odometry involves using sensors on the robot to create an estimate of the position of the robot on the field. In FRC, these sensors are typically several encoders (the exact number depends on the drive type) and a gyroscope to measure robot angle. The odometry classes utilize the kinematics classes along with periodic user inputs about speeds (and angles in the case of swerve) to create an estimate of the robot's location on the field.
 
 The Chassis Speeds Class
 ------------------------
