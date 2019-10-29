@@ -8,10 +8,6 @@ Wiring Overview
 
 A single PCM will support most pneumatics applications, providing an output for the compressor, input for the pressure switch, and outputs for up to 8 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the CAN bus and powered via 12V from the PDP.
 
-.. figure:: images/wiring-pneumatics/pneumatics_overview_stefenacepcion.png
-   :alt: Overview Layout Image by @stefenacepcion
-   Image courtesy of `@stefenacepcion <https://www.chiefdelphi.com/t/control-system-layout-infographic/361110/20>`__ on Chief Delphi. `Click here <https://drive.google.com/file/d/1C8mV5wYJSe1oBIUHVwHYJ3nsNioG2019/view>`__ for a high-resolution 30x24 poster version.
-
 For complicated robot designs requiring more channels or multiple solenoid voltages, additional PCMs can be added to the control system.
 
 PCM Power and Control Wiring
