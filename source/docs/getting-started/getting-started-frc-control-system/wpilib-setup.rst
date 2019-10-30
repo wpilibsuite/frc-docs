@@ -185,8 +185,8 @@ WPILib Installation Guide
 
     .. code-block:: console
 
-        $ example@pc:~/Downloads$ cd ~/wpilib.2020/tools
-        $ example@pc:~/wpilib.2020/tools$ python3 ToolsUpdater.py
+        $ example@pc:~/Downloads$ cd ~/wpilib/2020/tools
+        $ example@pc:~/wpilib/2020/tools$ python3 ToolsUpdater.py
 
     **Installing the extensions for WPILib Visual Studio Code**
 
