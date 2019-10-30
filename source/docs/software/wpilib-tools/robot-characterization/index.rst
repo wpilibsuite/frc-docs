@@ -9,3 +9,6 @@ Robot Characterization
    deploying-project
    characterization-routine
    analyzing-data
+   viewing-diagnostics
+   analyzing-feedback
+

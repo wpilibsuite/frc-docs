@@ -3,6 +3,19 @@ Introduction to Robot Characterization
 
 The characterization tools consist of a python application that runs on the user's PC, and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over network tables, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
 
+What is Characterization?
+-------------------------
+
+The process of “characterization” measures how your drivetrain responds to voltage applied (or really, how much voltage it needs to start moving, how much voltage it needs to have applied to maintain a given speed, and how much voltage on top of that is needed to induce a given acceleration). It does this by measuring three coefficients.
+
+``kS`` is the voltage needed to overcome your drivetrain’s static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) constantly has the same effect on the motor power needed. That is, no matter what speed you’re going or what voltage you’ve applied to your motors, about 1 volt of that voltage (give or take depending on your drivetrain torque and the specific assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.
+
+``kV`` describes how much voltage your drivetrain needs to hold (or “cruise”) at a given constant velocity while overcoming the electromagnetic resistance in the motor and any additional friction that increases with speed. The relationship between speed and voltage required is almost entirely linear (with FRC components, anyway) because of how motors work, so if you take a bunch of measurements of velocity with different voltages (and little to no acceleration), you can perform a linear regression and find the ratio between velocity and voltage applied.
+
+``kA`` describes the voltage needed to induce a given acceleration while overcoming the robot’s inertia (and also some electromagnetic forces in the motor IIRC). Same deal as ``kV``, it’s pretty linear, and you can calculate it by accelerating to a given speed, measuring your robot’s acceleration and voltage, and subtracting the component of voltage related to static friction and velocity (which you can do because you know ``kV`` and ``kA``).
+
+With these three coefficients, and given a desired velocity and acceleration for (one side of) your drivetrain, you can use Oblarg’s equation to calculate the voltage you should apply. (It also works, albeit not as well, with just velocity.) This is very useful not just for, say, following a motion profile, but also for making your drivetrain more controllable in open-loop driving because your joystick inputs will more closely match the actual robot velocity.
+
 Included Characterization Tools
 -------------------------------
 
