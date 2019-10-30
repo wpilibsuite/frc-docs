@@ -39,6 +39,10 @@
 	width: 25%;
 }
 
+.rst-versions {
+	width: 320px !important;
+}
+
 .header-bar {
 	background: #003974;
 	min-height: 60px;
