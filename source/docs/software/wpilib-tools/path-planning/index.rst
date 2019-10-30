@@ -6,4 +6,5 @@ There are two main implementions of path-following/trajectory generation. Pathfi
 .. toctree::
    :maxdepth: 2
 
+   wpilib-trajectories/index
    pathfinder/index

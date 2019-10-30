@@ -118,7 +118,7 @@ License Agreements Page 2
 
 |License Agreements Page 2|
 
-Select “I accept…” then click “Next”
+If you see this screen, select “I accept…” then click “Next”
 
 Review Summary
 ----------------
@@ -185,13 +185,18 @@ NI Update Service
 
 You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
 
-.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
+Reboot to Complete Installation
+-------------------------------
+
+.. image:: images/labview/labview_restart.png
+
+If prompted, Select "Reboot Now" after closing any open programs.
 
 .. |Additional Software| image:: images/update-suite/additional-software.png
 .. |Product List| image:: images/update-suite/product-list.png
 .. |Product Information| image:: images/update-suite/product-information.png
 .. |License Agreements| image:: images/update-suite/license-agreements.png
-.. |License Agreements Page 2| image:: images/update-suite/license-agreements-2.png
+.. |License Agreements Page 2| image:: images/labview/labview_license_2.png
 .. |Installation Summary| image:: images/update-suite/installation-summary.png
 .. |NI Activation Wizard| image:: images/update-suite/ni-activation-wizard.png
 .. |NI Activation Wizard 2| image:: images/update-suite/ni-activation-wizard-2.png
