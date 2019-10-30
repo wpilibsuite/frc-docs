@@ -14,7 +14,9 @@ The process of “characterization” measures how your drivetrain responds to v
 
 ``kA`` describes the voltage needed to induce a given acceleration while overcoming the robot’s inertia (and also some electromagnetic forces in the motor IIRC). Same deal as ``kV``, it’s pretty linear, and you can calculate it by accelerating to a given speed, measuring your robot’s acceleration and voltage, and subtracting the component of voltage related to static friction and velocity (which you can do because you know ``kV`` and ``kA``).
 
-With these three coefficients, and given a desired velocity and acceleration for (one side of) your drivetrain, you can use Oblarg’s equation to calculate the voltage you should apply. (It also works, albeit not as well, with just velocity.) This is very useful not just for, say, following a motion profile, but also for making your drivetrain more controllable in open-loop driving because your joystick inputs will more closely match the actual robot velocity.
+With these three coefficients, and given a desired velocity and acceleration for (one side of) your drivetrain, you can use the below equation to calculate the voltage you should apply. (It also works, albeit not as well, with just velocity.) This is very useful not just for, say, following a motion profile, but also for making your drivetrain more controllable in open-loop driving because your joystick inputs will more closely match the actual robot velocity.
+
+.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
 Included Characterization Tools
 -------------------------------
