@@ -3,14 +3,40 @@ Displaying Expressions from a Robot Program
 
 .. note:: Often debugging or monitoring the status of a robot involves writing a number of values to the console and watching them stream by. With SmartDashboard you can put values to a GUI that is automatically constructed based on your program. As values are updated, the corresponding GUI element changes value - there is no need to try to catch numbers streaming by on the screen.
 
-Writing values to the SmartDashboard
+Writing Values to SmartDashboard
 ------------------------------------
 
-.. image:: images/expressions-1.png
+.. tabs::
+
+    .. code-tab:: java
+
+        protected void execute() {
+          SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
+          SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
+          SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
+          SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
+          SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
+          SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
+          SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
+          SmartDashboard.putNumber("RPM", shooter.getRPM());
+        }
+
+    .. code-tab:: cpp
+
+        void Command::Execute() {
+          frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
+          frc::SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
+          frc::SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
+          frc::SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
+          frc::SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
+          frc::SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
+          frc::SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
+          frc::SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
+        }
 
 You can write Boolean, Numeric, or String values to the SmartDashboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required. Any time in your program that you write another value with the same name, it appears in the same UI element on the screen on the driver station or development computer. As you can imagine this is a great way of debugging and getting status of your robot as it is operating.
 
-Creating widgets on SmartDashboard
+Creating Widgets on SmartDashboard
 ----------------------------------
 
 .. todo:: add references

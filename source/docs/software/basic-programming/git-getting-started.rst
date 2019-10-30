@@ -93,7 +93,19 @@ Now you'll want to open a powershell window and navigate to your project directo
 
 In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
 
-.. image:: images/image8.png
+.. code-block:: console
+
+    > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
+    > git init
+    Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
+    > echo "# ExampleRepo" >> README.md
+    > git add README.md
+    > git commit -m "First commit"
+    [master (root-commit) fafafa] First commit
+     1 file changed, 1 insertions(+), 0 deletions(-)
+     create mode 100644 README.md
+    > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
+    > git push -u origin master
 
 Commits
 -------
@@ -102,11 +114,13 @@ Repositories are primarily composed of commits. Commits are saved states or *ver
 
 In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
 
-1. ``git add README.md``
-2. ``git commit -m "example commit"``
-3. ``git push``
+.. code-block:: console
 
-.. image:: images/image9.png
+    > git add README.md
+    > git commit -m "Adds a description to the repository"
+    [master bcbcbc] Adds a description to the repository
+     1 file changed, 2 insertions(+), 0 deletions(-)
+    > git push
 
 Git Pull
 ^^^^^^^^
