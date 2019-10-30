@@ -359,12 +359,12 @@ decorated command will be interrupted if the timeout expires:
   .. code-tab:: java
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    command.withTimeout(5)
+    button.whenPressed(command.withTimeout(5));
 
   .. code-tab:: c++
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    command.WithTimeout(5)
+    button.WhenPressed(command.WithTimeout(5));
 
 interruptOn
 ^^^^^^^^^^^
@@ -376,12 +376,12 @@ The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs
   .. code-tab:: java
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    command.interruptOn(m_limitSwitch::get)
+    button.whenPressed(command.interruptOn(m_limitSwitch::get));
 
   .. code-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    command.InterruptOn([&m_limitSwitch] { return m_limitSwitch.Get(); })
+    button.WhenPressed(command.InterruptOn([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
 whenFinished
 ^^^^^^^^^^^^
@@ -393,12 +393,12 @@ The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/devel
   .. code-tab:: java
 
     // Will print "hello" after ending
-    command.whenFinished(() -> System.out.println("hello"))
+    button.whenPressed(command.whenFinished(() -> System.out.println("hello")));
 
   .. code-tab:: c++
 
     // Will print "hello" after ending
-    command.WhenFinished([] { std::cout << "hello"; })
+    button.WhenPressed(command.WhenFinished([] { std::cout << "hello"; }));
 
 beforeStarting
 ^^^^^^^^^^^^^^
@@ -410,12 +410,12 @@ The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/dev
   .. code-tab:: java
 
     // Will print "hello" before starting
-    command.beforeStarting(() -> System.out.println("hello"))
+    button.whenPressed(command.beforeStarting(() -> System.out.println("hello")));
 
   .. code-tab:: c++
 
     // Will print "hello" before starting
-    command.BeforeStarting([] { std::cout << "hello"; })
+    button.WhenPressed(command.BeforeStarting([] { std::cout << "hello"; }));
 
 andThen (Java only)
 ^^^^^^^^^^^^^^^^^^^
@@ -427,7 +427,7 @@ The ``andThen()`` `decorator <https://first.wpi.edu/FRC/roborio/development/docs
 .. code-block:: java
 
    // Will be the sequence fooCommand -> barCommand -> bazCommand
-   fooCommand.andThen(barCommand, bazCommand)
+   button.whenPressed(fooCommand.andThen(barCommand, bazCommand));
 
 alongWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^
@@ -439,7 +439,7 @@ The ``alongWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development/do
 .. code-block:: java
 
    // Will be a parallel command group containing fooCommand, barCommand, and bazCommand
-   fooCommand.alongWith(barCommand, bazCommand)
+   button.whenPressed(fooCommand.alongWith(barCommand, bazCommand));
 
 raceWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^
@@ -451,7 +451,7 @@ The ``raceWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development/doc
 .. code-block:: java
 
    // Will be a parallel command race containing fooCommand, barCommand, and bazCommand
-   fooCommand.raceWith(barCommand, bazCommand)
+   button.whenPressed(fooCommand.raceWith(barCommand, bazCommand));
 
 deadlineWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -463,7 +463,7 @@ The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development
 .. code-block:: java
 
    // Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
-   fooCommand.deadlineWith(barCommand, bazCommand)
+   button.whenPressed(fooCommand.deadlineWith(barCommand, bazCommand));
 
 perpetually
 ^^^^^^^^^^^
@@ -475,12 +475,12 @@ The ``perpetually()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/develo
   .. code-tab:: java
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
-    command.perpetually()
+    button.whenPressed(command.perpetually());
 
   .. code-tab:: c++
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
-    command.Perpetually()
+    button.WhenPressed(command.Perpetually());
 
 Composing Decorators
 ^^^^^^^^^^^^^^^^^^^^
@@ -490,7 +490,7 @@ Remember that decorators, like all command groups, can be composed! This allows 
 .. code-block:: java
 
    // Will run fooCommand, and then a race between barCommand and bazCommand
-   fooCommand.andThen(barCommand.raceWith(bazCommand))
+   button.whenPressed(fooCommand.andThen(barCommand.raceWith(bazCommand)));
 
 Static Factory Methods for Command Groups (Java only)
 -----------------------------------------------------

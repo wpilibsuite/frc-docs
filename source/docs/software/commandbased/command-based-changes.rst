@@ -66,6 +66,9 @@ Changes to Command
 * As noted earlier, ``Command`` is now an interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__); the closest equivalent of the old ``Command`` is the new ``CommandBase`` class.  Many of the Sendable-related constructor overloads have been removed to reduce clutter; users can call the setters directly from their own constructor, if needed.
 * Commands no longer handle their own scheduling state; this is now the responsibility of the scheduler.
 * The ``interrupted()`` method has been rolled into the ``end()`` method, which now takes a parameter specifying whether the command was interrupted (``false`` if it ended normally).
+* The ``requires()`` method has been renamed to ``addRequirement()``.
+* ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overrideable ``runsWhenDisabled()`` method.  Commands that should run when disabled should override this method to return true.
+* ''void setInterruptible(boolean interruptible)'' has been removed; interruptibility is no longer an innate property of commands, and can be set when the command is scheduled.
 * Several :ref:`"decorator" methods <docs/software/commandbased/convenience-features:Command Decorator Methods>` have been added to allow easy inline modification of commands (e.g. adding a timeout).
 * (C++ only) In order to allow the decorators to work with the command ownership model, a `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is used via the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/include/frc2/command/CommandHelper.h>`__.  Any user-defined Command subclass ``Foo`` *must* extend ``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class.
 
@@ -77,10 +80,6 @@ Changes to PIDSubsystem/PIDCommand
 .. TODO:: Link to new PIDController article.
 
 * Following the changes to PIDController, these classes now run synchronously from the main robot loop.
-* Several methods have changed names:
-
- - ``usePIDOutput`` is now ``useOutput``
- - ``getPIDInput`` is now ``getMeasurement``
-
 * The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modifier after construction with ``getController()``.
 * ``PIDCommand`` is intended largely for inline use, as shown in the GyroDriveCommands example (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__).
+* If users wish to use PIDCommand more "traditionally," overriding the protected ``returnPIDInput()`` and ``usePIDOutput(double output)`` methods has been replaced by modifying the protected ``m_measurement`` and ``m_useOutput`` fields.  Similarly, rather than calling ``setSetpoint``, users can modify the protected ``m_setpoint`` field.
