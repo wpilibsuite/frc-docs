@@ -179,15 +179,14 @@ WPILib Installation Guide
       1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir -p ~/wpilib/2020``
       2. Drag the contents of WPILIB\_Linux-2020.1.1 directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-2020.1.1/* ~/wpilib/2020``
 
-      .. figure:: images/linux/toolsupdater.png
-          :alt: Tools Updater
-
     **Running Tools Updater**
 
-      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
+      To update or extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
 
-      - ``$ cd ~/wpilib/2020/tools``
-      - ``$ python3 ToolsUpdater.py``
+    .. code-block:: console
+
+        $ example@pc:~/Downloads$ cd ~/wpilib/2020/tools
+        $ example@pc:~/wpilib/2020/tools$ python3 ToolsUpdater.py
 
     **Installing the extensions for WPILib Visual Studio Code**
 
