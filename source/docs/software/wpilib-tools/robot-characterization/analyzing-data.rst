@@ -19,7 +19,7 @@ In the resulting file dialog, select the JSON file you want to analyze. If the f
 Running Feedforward Analysis
 ----------------------------
 
-Once a data file has been selected, the ``Analyze Data`` button becomes available in the ``Feedforwad Analysis`` frame. Click it.
+Once a data file has been selected, the ``Analyze Data`` button becomes available in the ``Feedforward Analysis`` frame. Click it.
 
 .. image:: images/analyzing-data.png
    :alt: Analyzing data for feedforward

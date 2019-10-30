@@ -27,7 +27,7 @@ Next, select your project type from the drop-down menu:
 Configure Project Parameters
 ----------------------------
 
-In order to run on your robot, the tool must know some parameters about how your robot is set up. Project config settings are formatted as a `Python dictionary literal <https://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch15s02.html>`__. These can be modified via the in-window config editor:
+In order to run on your robot, the tool must know some parameters about how your robot is set up. Project config settings are formatted as a `Python dictionary literal <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`__. These can be modified via the in-window config editor:
 
 .. image:: images/config-editor.png
    :alt: Using the robot characterization configuration editor

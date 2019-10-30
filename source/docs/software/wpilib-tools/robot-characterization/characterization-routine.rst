@@ -44,7 +44,7 @@ Each test type is run both forwards and backwards, for four tests in total, corr
 .. image:: images/running-tests.png
    :alt: Quasistatic Forward, Quasistatic Backward, Dynamic Forward, Dynamic Backward buttons
 
-The tests can be run in any order, but running a "backwards" test directly after a "forwards" test is generally adviseable (as it will more or less reset the mechanism to its original position).
+The tests can be run in any order, but running a "backwards" test directly after a "forwards" test is generally advisable (as it will more or less reset the mechanism to its original position).
 
 Follow the instructions in the pop-up windows after pressing each test button.
 
