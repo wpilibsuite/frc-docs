@@ -1,5 +1,5 @@
-Analzing Data
-=============
+Analyzing Data
+==============
 
 Once we have data from a characterization run, we can analyze it. To launch the data analyzer, click on the ``Launch Data Analyzer`` button.
 
