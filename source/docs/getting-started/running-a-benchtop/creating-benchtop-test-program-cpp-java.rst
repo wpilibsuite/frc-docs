@@ -6,7 +6,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 Creating a New WPILib Project
 -----------------------------
 
-Bring up the Visual Studio Code command palette with Control+Shift+P:
+Bring up the Visual Studio Code command palette with :kbd:`Control+Shift+P`:
 
 |Command Palette|
 
