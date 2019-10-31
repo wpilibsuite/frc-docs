@@ -37,7 +37,6 @@ Take care of the following caveats when entering your robot specifications:
 - The key names must *not be changed*, as they are hard-coded for each project type. Only the values (i.e. the things on the right-hand side of the colons) should be modified.
 - ``True`` and ``False`` *must* be capitalized, as they are evaluated as native Python.
 - All string values (e.g. controller names and unit types) *must* be wrapped in quotes and *must* correspond exactly to one of the options described.
-- All list values *must* be lists, even if they have only one element. Do not omit trailing commas (e.g. in ``(False,)``), as this will cause them not to be parsed as a list.
 
 Once your robot configuration is set, you may save it to a location/name of your choice:
 

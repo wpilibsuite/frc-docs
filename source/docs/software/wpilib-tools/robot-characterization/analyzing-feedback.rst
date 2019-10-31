@@ -6,7 +6,7 @@ Once the feedforward coefficients have been computed, the controls on the ``Feed
 .. image:: images/feedbackanalysis.png
    :alt: Picture of the feedback analysis pane
 
-These can be used to calculate optimal gains for a PD or P controller for your mechanism.
+These can be used to calculate optimal gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
 
 .. important:: These gains are, in effect, "educated guesses" - they are not guaranteed to be perfect, and should be viewed as a "starting point" for further tuning.
 
@@ -74,7 +74,7 @@ If one wishes to use the ``Feedback Analysis`` pane without running a full analy
 Calculate Gains
 ---------------
 
-Finally, press the ``Calculate Optimal Controller Gains`` to run the LQR algorithm and determine the gains.
+Finally, press the ``Calculate Optimal Controller Gains`` to determine the gains.
 
 .. image:: images/calculategains.png
    :alt: Calculating the Optimal Controller Gains

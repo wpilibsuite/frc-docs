@@ -3,23 +3,35 @@ Introduction to Robot Characterization
 
 The characterization tools consist of a python application that runs on the user's PC, and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over network tables, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
 
-What is Characterization?
--------------------------
+What is "Characterization?"
+---------------------------
 
-The process of “characterization” measures how your drivetrain responds to voltage applied (or really, how much voltage it needs to start moving, how much voltage it needs to have applied to maintain a given speed, and how much voltage on top of that is needed to induce a given acceleration). It does this by measuring three coefficients.
+"Characterization" - or, more formally, `system identification <https://en.wikipedia.org/wiki/System_identification>`__ - is the process of determining a mathematical model for the behavior of a system through statistical analysis of its inputs and outputs.
 
-``kS`` is the voltage needed to overcome your drivetrain’s static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) constantly has the same effect on the motor power needed. That is, no matter what speed you’re going or what voltage you’ve applied to your motors, about 1 volt of that voltage (give or take depending on your drivetrain torque and the specific assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.
+In FRC, the most common system that we're interested in characterizing is the `permanent-magnet DC motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__.  In particular, we're interested in figuring out which motor *input* (i.e. voltage from the motor controller) is required to achieve our desired *outputs* (i.e. velocity and acceleration of the motor).
 
-``kV`` describes how much voltage your drivetrain needs to hold (or “cruise”) at a given constant velocity while overcoming the electromagnetic resistance in the motor and any additional friction that increases with speed. The relationship between speed and voltage required is almost entirely linear (with FRC components, anyway) because of how motors work, so if you take a bunch of measurements of velocity with different voltages (and little to no acceleration), you can perform a linear regression and find the ratio between velocity and voltage applied.
-
-``kA`` describes the voltage needed to induce a given acceleration while overcoming the robot’s inertia. Same deal as ``kV``, it’s pretty linear, and you can calculate it by accelerating to a given speed, measuring your robot’s acceleration and voltage, and subtracting the component of voltage related to static friction and velocity (which you can do because you know ``kV`` and ``kA``).
-
-With these three coefficients, and given a desired velocity and acceleration for (one side of) your drivetrain, you can use the below equation to calculate the voltage you should apply. (It also works, albeit not as well, with just velocity.) This is very useful not just for, say, following a motion profile, but also for making your drivetrain more controllable in open-loop driving because your joystick inputs will more closely match the actual robot velocity.
+Fortunately, it is not so difficult to do this.  A permanent-magnet DC motor (with no load other than friction and inertia) will obey the following "voltage-balance equation" (for more information, see `this paper <https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):
 
 .. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the motor, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration (the "overdot" notation traditionally denotes the `derivative <https://en.wikipedia.org/wiki/Derivative>`__ with respect to time).
+
+Heuristically, we can interpret the coefficients in the above equation as follows:
+
+``kS`` is the voltage needed to overcome the motor's static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) has the same effect regardless of velocity or acceleration. That is, no matter what speed you’re going or how fast you're accelerating, some constant portion of the voltage you've applied to your motor (depending on the specific mechanism assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.  Note the presence of the `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, because friction force always opposes the direction-of-motion.
+
+``kV`` describes how much voltage is needed to hold (or “cruise”) at a given constant velocity while overcoming the `electromagnetic resistance in the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any additional friction that increases with speed (known as `viscous drag <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__. The relationship between speed and voltage (at constant acceleration) is almost entirely linear (with FRC components, anyway) because of how permanent-magnet DC motors work.
+
+``kA`` describes the voltage needed to induce a given acceleration in the motor shaft. As with ``kV``, the relationship between voltage and acceleration (at constant velocity) is almost perfectly linear for FRC components.
+
+Once these coefficient have been determined (here accomplished by a `multiple linear regression <https://en.wikipedia.org/wiki/Linear_regression>`__), we can then take a given  desired velocity and acceleration for the motor and calculate the voltage that should be applied to achieve it.  This is very useful - not only for, say, following motion profiles, but also for making mechanisms more controllable in open-loop control, because your joystick inputs will more closely match the actual mechanism motion.
+
+Some of the tools in this toolsuite introduce additional terms into the above equation to account for known differences from the simple case described above - details for each tool can be found below:
+
 Included Characterization Tools
 -------------------------------
+
+.. note:: Many other types of mechanisms can be characterized by simply adapting the existing code in this library.
 
 The robot characterization toolsuite currently supports characterization for:
 
@@ -27,12 +39,37 @@ The robot characterization toolsuite currently supports characterization for:
 - Arms
 - Elevators
 
-.. note:: Many mechanisms can be characterized by simply adapting the existing code in this library.
+Drivetrain Characterization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The drivetrain characterization tool determines the best-fit parameters for the equation:
+
+.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.
+
+Arm Characterization
+^^^^^^^^^^^^^^^^^^^^
+
+The arm characterization tool determines the best-fit parameters for the equation:
+
+.. math:: V = kS \cdot sgn(\dot{\theta}) + kCos \cdot cos(\theta) + kV \cdot \dot{\theta} + kA \cdot \ddot{\theta}
+
+where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`kCos`) is added to correctly account for the effect of gravity.
+
+Elevator Characterization
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The elevator characterization tool determines the best-fit parameters for the equation:
+
+.. math:: V = kG + kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is added to correctly account for the effect of gravity.
 
 Prerequisites
 -------------
 
-To use the Robotpy Characterization Toolsuite, you must have Python (3.6 or higher) installed on your computer, as well as the standard WPILib programming toolsuite.
+To use the Robotpy Characterization Toolsuite, you must have Python 3.7 installed on your computer, as well as the standard WPILib programming toolsuite.
 
 `Python 3.7 <https://www.python.org/downloads/>`__
 
@@ -56,6 +93,6 @@ Once the toolsuite has been installed, launch a new drive characterization proje
 
 The new project GUI should open momentarily. To launch other characterization projects, simply replace ``drive`` with the desired characterization type.
 
-While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing new with logger or analyzer.
+While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing ``new`` with ``logger`` or ``analyzer``.
 
 For more information on CLI usage, enter ``robot-characterization -h``.

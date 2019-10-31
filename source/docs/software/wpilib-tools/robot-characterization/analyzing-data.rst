@@ -33,12 +33,3 @@ The computed coefficients of the mechanism characterization will then be filled 
 
 .. image:: images/reg-coefficients.png
    :alt: Analysis coefficient results
-
-The coefficients correspond to the characterization equation for each of the mechanism types:
-
-.. todo:: Add coefficient equations
-
-- Drive
-- Arm
-- Elevator
-

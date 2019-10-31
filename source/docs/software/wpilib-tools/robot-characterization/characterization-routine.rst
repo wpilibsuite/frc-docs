@@ -1,5 +1,5 @@
-Characterization Routine
-========================
+Running the Characterization Routine
+====================================
 
 Once the characterization code has been deployed, we can now run the characterization routine, and record the resulting data for analysis.
 
