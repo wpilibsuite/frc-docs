@@ -43,13 +43,13 @@ To specify the correct settings for your PID controller, use the following optio
 - **Has Slave:** Whether there is a motor controller slaved to the controller running the control loop, if the control loop is being run on a peripheral device. This changes the effective loop period.
 - **Slave Update Period:** The rate at which the slave (if present) is updated. By default, this is 100Hz (every 0.01s) for Talons and Sparks, but can be changed.
 
-Specify Optimality Criterion
-----------------------------
+Specify Optimality Criteria
+---------------------------
 
 Finally, the user must specify what will be considered an "optimal" controller.  This takes the form of desired tolerances for the system error and control effort - note that it is *not* guaranteed that the system will obey these tolerances at all times.
 
-.. image:: images/optimalitycriterion.png
-   :alt: Entering optimality criterion for the feedback controller
+.. image:: images/optimalitycriteria.png
+   :alt: Entering optimality criteria for the feedback controller
 
 As a rule, smaller values for the ``Max Acceptable Error`` and larger values for the ``Max Acceptable Control Effort`` will result in larger gains - this will result in larger control efforts, which can grant better setpoint-tracking but may cause more violent behavior and greater wear on components.
 
