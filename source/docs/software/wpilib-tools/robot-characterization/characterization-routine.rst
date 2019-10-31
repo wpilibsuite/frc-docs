@@ -51,7 +51,7 @@ Follow the instructions in the pop-up windows after pressing each test button.
 .. image:: images/running-the-test.png
    :alt: Running the various tests
 
-After all four tests have been completed, the ``save`` button will become activated.
+After all four tests have been completed, the ``Save Data`` button will become activated.
 
 .. image:: images/save-data.png
    :alt: Saving the test data
