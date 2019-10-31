@@ -6,7 +6,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 Creating a New WPILib Project
 -----------------------------
 
-Bring up the Visual Studio Code command palette with Control+Shift+P:
+Bring up the Visual Studio Code command palette with :kbd:`Control+Shift+P`:
 
 |Command Palette|
 
@@ -39,7 +39,7 @@ Once all the above have been configured, click "Generate Project" and the robot 
 Opening The New Project
 -----------------------
 
-After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing Ctrl-O (Command+O on macOS) and select the folder where We saved our project.
+After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl-K` then :kbd:`Ctrl-O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
@@ -165,7 +165,7 @@ Simple Autonomous Example
             // Drive for 2 seconds
             if (m_timer.Get() < 2.0) {
                 // Drive forwards half speed
-                m_robotDrive.ArcadeDrive(-0.5, 0.0);
+                m_robotDrive.ArcadeDrive(0.5, 0.0);
             } else {
                 // Stop robot
                 m_robotDrive.ArcadeDrive(0.0, 0.0);
@@ -174,7 +174,7 @@ Simple Autonomous Example
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we reset the ``Timer`` and then start it in this method.
 
-``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. The value is negative for forward motion because of the convention for joysticks where a negative Y-axis value corresponds to moving the stick away from you (forward). If more than 2 seconds has elapsed, the code stops the robot drive.
+``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than 2 seconds has elapsed, the code stops the robot drive.
 
 Joystick Control for teleoperation
 ----------------------------------
