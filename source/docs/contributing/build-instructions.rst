@@ -33,19 +33,33 @@ Install the missing MikTex packages by navigating to the frc-docs directory, the
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
 
-- `sudo apt-get update`
-- `sudo apt-get install python3`
-- `python3 -m pip install --upgrade pip setuptools wheel`
-- `python3 -m pip install -r source/requirements.txt`
-- `sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng`
-- `sudo apt-get install -qy --force-yes graphviz`
+.. code-block:: console
+
+    $ sudo apt update
+    $ sudo apt install python3 python3-pip
+    $ python3 -m pip install -U pip setuptools wheel
+    $ python3 -m pip install -r source/requirements.txt
+    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz
 
 Building
 --------
 
 Open up a Powershell Window or terminal and navigate to the frc-docs directory that was cloned.
 
-.. image:: images/build-instructions-3.png
+.. code-block:: console
+
+    PS > cd "%USERPROFILE%\Documents"
+    PS C:\Users\Example\Documents> git clone https://github.com/wpilibsuite/frc-docs.git
+    Cloning into 'frc-docs'...
+    remote: Enumerating objects: 217, done.
+    remote: Counting ojbects: 100% (217/217), done.
+    remote: Compressing objects: 100% (196/196), done.
+    remote: Total 2587 (delta 50), reused 68 (delta 21), pack-reused 2370
+    Receiving objects: 100% (2587/2587), 42.68MiB | 20.32 MiB/s, done.
+    Receiving deltas: 100% (1138/1138), done/
+    PS C:\Users\Example\Documents> cd frc-docs
+    PS C:\Users\Example\Documents\frc-docs>
+
 
 Lint Check
 ^^^^^^^^^^
