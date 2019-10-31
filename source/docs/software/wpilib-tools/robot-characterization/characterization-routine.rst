@@ -56,4 +56,4 @@ After all four tests have been completed, the ``Save Data`` button will become a
 .. image:: images/save-data.png
    :alt: Saving the test data
 
-This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename if the "add timestamp" button is checked.
+This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename if the ``Add Timestamp`` button is checked.
