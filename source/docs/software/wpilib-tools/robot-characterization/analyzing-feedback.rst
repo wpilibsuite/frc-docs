@@ -46,7 +46,7 @@ To specify the correct settings for your PID controller, use the following optio
 Specify Optimality Criterion
 ----------------------------
 
-Finally, the user must specify what will be considered an "optimal" controller.  These take the form of desired tolerances for the system error and control effort - note that it is *not* guaranteed that the system will obey these tolerances at all times.
+Finally, the user must specify what will be considered an "optimal" controller.  This takes the form of desired tolerances for the system error and control effort - note that it is *not* guaranteed that the system will obey these tolerances at all times.
 
 .. image:: images/optimalitycriterion.png
    :alt: Entering optimality criterion for the feedback controller
