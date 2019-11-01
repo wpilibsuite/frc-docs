@@ -71,14 +71,14 @@ Imaging the roboRIO
 Imaging Progress
 ^^^^^^^^^^^^^^^^
 
-.. image::images/imaging-your-roborio/imaging-progress.png
+.. image:: images/imaging-your-roborio/imaging-progress.png
 
 The imaging process will take approximately 3-10 minutes. A progress bar in the bottom left of the window will indicate progress.
 
 Imaging Complete
 ^^^^^^^^^^^^^^^^
 
-.. image::images/imaging-your-roborio/imaging-complete.png
+.. image:: images/imaging-your-roborio/imaging-complete.png
 
 When the imaging completes you should see the dialog above. Click Ok, then click the Close button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
 
