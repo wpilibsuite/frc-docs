@@ -73,7 +73,7 @@ The units library can also be used to perform operations between units, such as 
 
 Removing the unit wrapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to expose the underlying type of the unit object, the ``to<..>()`` method can be used, where the template argument is the underlying type.
+To expose the underlying type of the unit object, the ``to<..>()`` method can be used, where the template argument is the underlying type.
 
 .. code-block:: c++
 
