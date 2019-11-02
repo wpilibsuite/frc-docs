@@ -10,8 +10,8 @@ The units library is a header-only library. You must include the ``units.h`` hea
 
    #include <units/units.h>
 
-Creating instances of units
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating Instances of Units
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ``units`` namespace contains various types for different types of units. These types have a suffix of ``_t``. See the `documentation <http://nholthaus.github.io/units/namespaces.html>`_ for the complete list of types.
 
 .. code-block:: c++
@@ -34,8 +34,8 @@ Units can also be initialized using a value of an another unit type, as long as 
    units::meter_t meters{feet};
 
 
-``<cmath>`` functions
-~~~~~~~~~~~~~~~~~~~~~
+``<cmath>`` Functions
+^^^^^^^^^^^^^^^^^^^^^
 The units library's ``units::math`` namespace contains several ``cmath`` functions that accept units. Examples of such functions include ``sqrt``, ``pow``, etc.
 
 .. code-block:: c++
@@ -43,8 +43,8 @@ The units library's ``units::math`` namespace contains several ``cmath`` functio
    auto area = 36_sq_m;
    units::meter_t sideLength = units::math::sqrt(area);
 
-Performing unit operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Performing Unit Operations
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The units library can also be used to perform operations between units, such as addition and multiplication.
 
 .. code-block:: c++
@@ -71,8 +71,8 @@ The units library can also be used to perform operations between units, such as 
 
 .. note:: When the calculation is made, ``auto`` is not used to ensure the validity of the calculation. When we divide distance by time, we want to make sure that a speed object (i.e. ``units::meter_per_second_t``) is being created. If the rvalue is not of type ``meter_per_second_t``, the compiler will throw an error. If ``auto`` is used, this check will not be made.
 
-Removing the unit wrapper
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Removing the Unit Wrapper
+^^^^^^^^^^^^^^^^^^^^^^^^^
 To expose the underlying type of the unit object, the ``to<..>()`` method can be used, where the template argument is the underlying type.
 
 .. code-block:: c++
