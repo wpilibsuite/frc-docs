@@ -18,7 +18,7 @@ Constructing a Servo object
 
     .. code-tab:: c++
 
-        frc::Servo *exampleServo = new frc::Servo(1);
+        frc::Servo exampleServo {1};
 
 
 
@@ -36,8 +36,8 @@ Setting Servo Values
 
     .. code-tab:: c++
 
-        exampleServo->Set(.5);
-        exampleServo->SetAngle(75);
+        exampleServo.Set(.5);
+        exampleServo.SetAngle(75);
 
 There are two methods of setting servo values in WPILib:
 
