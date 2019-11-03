@@ -17,11 +17,6 @@ SmartDashboard and Simulation fail to launch on Windows N Editions
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
 
-PathWeaver Tank Drive Swapped Paths
------------------------------------
-
-There is currently an issue with PathWeaver where the left and right sides of the drivetrain are swapped. This can be solved quickly with the instructions in the article, :ref:`Intergrating Path Following into a Robot Program <docs/software/wpilib-tools/path-planning/pathfinder/integrating-robot-program:Integrating path following into a robot program>`. This will be fixed in the next update.
-
 NetworkTables Interoperability
 ------------------------------
 

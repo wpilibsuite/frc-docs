@@ -1,7 +1,7 @@
 WPILib Installation Guide
 =============================
 
-.. note:: This setup is for C++\Java teams. LabVIEW teams should proceed to :doc:`Installing LabVIEW for FRC </docs/getting-started/getting-started-frc-control-system/labview-setup>`.
+.. note:: This setup is for C++/Java teams. LabVIEW teams should proceed to :doc:`Installing LabVIEW for FRC </docs/getting-started/getting-started-frc-control-system/labview-setup>`.
 
 .. tabs::
 
@@ -18,7 +18,9 @@ WPILib Installation Guide
 
       Choose whether to install for *All Users* on the machine or the *Current User*. The *All Users* option requires administrator privileges, but installs in a way that is accessible to all user accounts, the *Current User* install is only accessible from the account it is installed from.
 
-      If you select *All Users*, you will need to accept the security prompt that appears.
+      If you select *All Users*, you will need to accept the security prompt that appears to allow administrator access.
+
+      .. note:: Regardless of whether *All Users* or *Current User* is chosen, the software is installed to ``C:\Users\Public\wpilib\YYYY`` where YYYY is the current FRC year. If you choose *All Users*, then shortcuts are installed to all users desktop and start menu and system environment variables are set. If *Current User* is chosen, then shortcuts and environment variables are set for only the current user.
 
     **Download Visual Studio Code**
 
@@ -179,15 +181,14 @@ WPILib Installation Guide
       1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir -p ~/wpilib/2020``
       2. Drag the contents of WPILIB\_Linux-2020.1.1 directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-2020.1.1/* ~/wpilib/2020``
 
-      .. figure:: images/linux/toolsupdater.png
-          :alt: Tools Updater
-
     **Running Tools Updater**
 
-      To extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
+      To update or extract the WPILib tools (Dashboards, Robot Builder, etc.), run:
 
-      - ``$ cd ~/wpilib/2020/tools``
-      - ``$ python3 ToolsUpdater.py``
+    .. code-block:: console
+
+        $ example@pc:~/Downloads$ cd ~/wpilib/2020/tools
+        $ example@pc:~/wpilib/2020/tools$ python3 ToolsUpdater.py
 
     **Installing the extensions for WPILib Visual Studio Code**
 
@@ -213,3 +214,5 @@ WPILib Installation Guide
 
       .. figure:: images/linux/java-11.png
           :alt: Java 11
+
+.. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``~\frcYYYY`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year. In 2020 and later it is installed to ``~\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
