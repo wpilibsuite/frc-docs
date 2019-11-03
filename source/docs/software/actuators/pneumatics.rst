@@ -46,7 +46,7 @@ all be queried from the Compressor object.
     allows for integrated closed loop control of a compressor. Creating any
     instance of a Solenoid or Double Solenoid object will enable the
     Compressor control on the corresponding PCM. The Compressor object is
-    only needed if you want to have greater control over the compressor or
+    only needed if you want the ability to turn off the compressor or
     query compressor status.
 
 .. tabs::
@@ -64,14 +64,14 @@ all be queried from the Compressor object.
 
     .. code-tab:: c++
 
-        Compressor *c = new Compressor(0);
+        frc::Compressor c {0};
 
-        c->SetClosedLoopControl(true);
-        c->SetClosedLoopControl(false);
+        c.SetClosedLoopControl(true);
+        c.SetClosedLoopControl(false);
 
-        bool enabled = c->Enabled();
-        bool pressureSwitch = c->GetPressureSwitchValue();
-        double current = c->GetCompressorCurrent();
+        bool enabled = c.Enabled();
+        bool pressureSwitch = c.GetPressureSwitchValue();
+        double current = c.GetCompressorCurrent();
 
 
 
