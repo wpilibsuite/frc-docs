@@ -1,9 +1,9 @@
 The C++ Units Library
----------------------
+=====================
 The 2020 release of WPILib is coupled with a `Units <https://github.com/nholthaus/units>`_ library for C++ teams. The units library allows for users to define a unit, convert between units, and perform operations on units (dimensional analysis) at compile-time without any runtime costs. Several new features in wpilibc now use this units library.
 
 Using the Units Library
-=======================
+-----------------------
 The units library is a header-only library. You must include the ``units.h`` header in your code files.
 
 .. code-block:: c++
