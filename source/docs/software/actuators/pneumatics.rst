@@ -46,7 +46,7 @@ all be queried from the Compressor object.
     allows for integrated closed loop control of a compressor. Creating any
     instance of a Solenoid or Double Solenoid object will enable the
     Compressor control on the corresponding PCM. The Compressor object is
-    only needed if you want to the ability to turn off the compressor or
+    only needed if you want the ability to turn off the compressor or
     query compressor status.
 
 .. tabs::
