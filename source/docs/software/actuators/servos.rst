@@ -6,7 +6,9 @@ perform repeatable, controllable movement, taking position
 as the input signal. WPILib provides the capability to
 control servos which match the common hobby input
 specification (PWM signal, 1.0ms-2.0ms pulse width)
+
 Constructing a Servo object
+---------------------------
 
 .. tabs::
 
@@ -16,12 +18,14 @@ Constructing a Servo object
 
     .. code-tab:: c++
 
-        Servo *exampleServo = new Servo(1);
+        frc::Servo exampleServo {1};
 
 
 
 A servo object is constructed by passing a channel.
+
 Setting Servo Values
+--------------------
 
 .. tabs::
 
@@ -32,8 +36,8 @@ Setting Servo Values
 
     .. code-tab:: c++
 
-        exampleServo->Set(.5);
-        exampleServo->SetAngle(75);
+        exampleServo.Set(.5);
+        exampleServo.SetAngle(75);
 
 There are two methods of setting servo values in WPILib:
 
