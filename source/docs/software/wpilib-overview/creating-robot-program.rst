@@ -111,7 +111,7 @@ Documentation:
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__
-- `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/RobotBase.cpp>`__
+- `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__
 
 The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method.
 

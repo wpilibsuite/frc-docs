@@ -6,7 +6,7 @@ Commands are simple state machines that perform high-level robot functions using
 Creating Commands
 -----------------
 
-.. note:: In the C++ API, a `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is used to allow certain Command methods to work with the object ownership model.  Users should *always* extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
+.. note:: In the C++ API, a `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is used to allow certain Command methods to work with the object ownership model.  Users should *always* extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
 
 Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandBase.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
