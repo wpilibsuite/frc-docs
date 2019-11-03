@@ -176,25 +176,36 @@ as so:
 
 .. tabs::
 
-    .. code-tab:: java
+    .. group-tab:: Java
 
-        public class Robot {
-            Spark m_left = new Spark(1);
-            Spark m_right = new Spark(2);
-            DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+        .. code-block:: java
 
-            public void robotInit() {
-                m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
+            public class Robot {
+                Spark m_left = new Spark(1);
+                Spark m_right = new Spark(2);
+                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+
+                public void robotInit() {
+                    m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
+                }
+
+    .. group-tab:: C++ (Header)
+
+        .. code-block:: cpp
+
+            class Robot {
+                private:
+                    frc::Spark m_left{1};
+                    frc::Spark m_right{2};
+                    frc::DifferentialDrive m_drive{m_left, m_right};
+
+    .. group-tab:: C++ (Source)
+
+        .. code-block:: cpp
+
+            void Robot::RobotInit() {
+                m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
             }
-
-    .. code-tab:: c++
-
-        class Robot {
-            public:
-                frc::Spark m_left{1};
-                frc::Spark m_right{2};
-                m_left->SetInverted(true); // if you want to invert motor outputs, you must do so here
-                frc::DifferentialDrive m_drive{m_left, m_right};
 
 
 
@@ -211,36 +222,48 @@ constructor (it takes an arbitrary number of inputs).
 
 .. tabs::
 
-    .. code-tab:: java
+    .. group-tab:: Java
 
-        public class Robot {
-            Spark m_frontLeft = new Spark(1);
-            Spark m_rearLeft = new Spark(2);
-            SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
+        .. code-block:: java
 
-            Spark m_frontRight = new Spark(3);
-            Spark m_rearRight = new Spark(4);
-            SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
-            DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+            public class Robot {
+                Spark m_frontLeft = new Spark(1);
+                Spark m_rearLeft = new Spark(2);
+                SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
 
-            public void robotInit() {
-                m_left.setInverted(true); // if you want to invert the entire side you can do so here
+                Spark m_frontRight = new Spark(3);
+                Spark m_rearRight = new Spark(4);
+                SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
+                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+
+                public void robotInit() {
+                    m_left.setInverted(true); // if you want to invert the entire side you can do so here
+                }
+
+    .. group-tab:: C++ (Header)
+
+        .. code-block:: c++
+
+            class Robot {
+                public:
+                    frc::Spark m_frontLeft{1};
+                    frc::Spark m_rearLeft{2};
+                    frc::SpeedControllerGroup m_left{m_frontLeft, m_rearLeft};
+
+                    frc::Spark m_frontRight{3};
+                    frc::Spark m_rearRight{4};
+                    frc::SpeedControllerGroup m_right{m_frontRight, m_rearRight};
+
+                    frc::DifferentialDrive m_drive{m_left, m_right};
+
+    .. group-tab:: C++ (Source)
+
+        .. code-block:: c++
+
+            void Robot::RobotInit() {
+                m_left.SetInverted(true); // if you want to invert the entire side you can do so here
             }
 
-    .. code-tab:: c++
-
-        class Robot {
-            public:
-                frc::Spark m_frontLeft{1};
-                frc::Spark m_rearLeft{2};
-                m_frontLeft->SetInverted(true);
-                frc::SpeedControllerGroup m_left{m_frontLeft, m_rearLeft};
-
-                frc::Spark m_frontRight{3};
-                frc::Spark m_rearRight{4};
-                frc::SpeedControllerGroup m_right{m_frontRight, m_rearRight};
-
-                frc::DifferentialDrive m_drive{m_left, m_right};
 
 
 
