@@ -97,6 +97,6 @@ The code above is equivalent to the following.
 
   Trajectory::State point = trajectory.Sample(1200_ms);
 
-.. note:: This conversion from milliseconds to seconds is performed at compile-time, meaning that there is no penalty for using any unit for measuring time.
+.. note:: This conversion from milliseconds to seconds is performed at compile-time, meaning that there is no penalty for using any unit that measures time.
 
 For more detailed documentation and defining custom units, please visit the official `GitHub page <https://github.com/nholthaus/units>`_ for the units library.
