@@ -332,7 +332,7 @@ The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
     // Will run commandToRunForever perpetually, even if its isFinished() method returns true
     new PerpetualCommand(commandToRunForever)
 
-  .. code-tab:: java
+  .. code-tab:: c++
 
     // Will run commandToRunForever perpetually, even if its isFinished() method returns true
     frc2::PerpetualCommand(commandToRunForever)
