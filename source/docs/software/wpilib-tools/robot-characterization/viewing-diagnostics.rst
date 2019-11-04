@@ -49,7 +49,7 @@ However, if your robot or mechanism has low mass compared to the motor power, th
 
 As before, an overly-small threshold setting may be seen as a flat "leading tail" on the quasistatic plot.
 
-.. note:: The x-axes corresponds to ``velocity-portion voltage`` and ``acceleration-portion voltage``, respectively - as the governing voltage-balance equations are multi-dimensional, plots against raw voltage are not as useful as one might expect.
+.. note:: The x-axis corresponds to ``velocity-portion voltage`` and ``acceleration-portion voltage``, respectively - as the governing voltage-balance equations are multi-dimensional, plots against raw voltage are not as useful as one might expect.
 
 3D Diagnostics
 --------------

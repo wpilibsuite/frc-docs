@@ -6,7 +6,7 @@ Once the feedforward coefficients have been computed, the controls on the ``Feed
 .. image:: images/feedbackanalysis.png
    :alt: Picture of the feedback analysis pane
 
-These can be used to calculate optimal gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
+These can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
 
 .. important:: These gains are, in effect, "educated guesses" - they are not guaranteed to be perfect, and should be viewed as a "starting point" for further tuning.
 
@@ -25,6 +25,8 @@ Additionally, if your choice of units requires a physical measurement (i.e. it i
 
 Enter Controller Parameters
 ---------------------------
+
+.. note:: The "Spark Max" preset assumes that the user has configured the controller to operate in in the units of analysis with the Spark Max API's position/velocity scaling factor feature.
 
 The calculated feedforward gains are *dimensioned quantities*. Unfortunately, not much attention is often paid to the units of PID gains in FRC controls, and so the various typical options for PID controller implementations differ in their unit conventions (which are often not made clear to the user).
 
@@ -66,6 +68,8 @@ It is typical to control drives with both position and velocity PIDs, depending 
 Enter Known Velocity/Acceleration
 ---------------------------------
 
+.. note:: Sometimes, with an exceptionally light mechanism/robot and/or exceptionally-noisy data, it is possible for the ``kA`` value to be exceedingly small (or even slightly negative).  In this case, the user should set ``kA`` to zero.  The computed feedback gains in this case may also be zero - this is because such a mechanism should not require feedback to accurately track the setpoint under the assumptions of LQR.  These assumptions may not be perfectly accurate, and users may need to add feedback regardless - in this case, the loop must be tuned manually.
+
 If one wishes to use the ``Feedback Analysis`` pane without running a full analysis on a set of data, or otherwise view the effect of modifying the ``kV`` and ``kA`` values, this can be done here.
 
 .. image:: images/known-acceleration-velocity.png
@@ -74,7 +78,7 @@ If one wishes to use the ``Feedback Analysis`` pane without running a full analy
 Calculate Gains
 ---------------
 
-Finally, press the ``Calculate Optimal Controller Gains`` to determine the gains.
+Finally, press the ``Calculate Optimal Controller Gains`` to determine the feedback gains.
 
 .. image:: images/calculategains.png
    :alt: Calculating the Optimal Controller Gains
