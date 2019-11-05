@@ -1,7 +1,7 @@
 Wiring Pneumatics
 =================
 
-.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules (Section 10 in 2019). For mechanical design guidelines, the FIRST Pneumatics Manual is located `here (last updated 2017) <https://firstfrc.blob.core.windows.net/frc2017/pneumatics-manual.pdf>`__
+.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here (last updated 2017) <https://firstfrc.blob.core.windows.net/frc2017/pneumatics-manual.pdf>`__
 
 Wiring Overview
 ---------------
