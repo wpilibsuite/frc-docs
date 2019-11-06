@@ -1,17 +1,21 @@
 Wiring Pneumatics
 =================
 
-.. tip:: Wiring pneumatics has been made very simple in the 2019 Control System. A single Pneumatics Control Module is all that will be needed for many pneumatics applications, with additional PCMs supporting more complex designs including more than 8 solenoid channels or a mix of 12V and 24V solenoids.
+.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here (last updated 2017) <https://firstfrc.blob.core.windows.net/frc2017/pneumatics-manual.pdf>`__
 
 Wiring Overview
 ---------------
 
-A single PCM will support many pneumatics applications, providing an output for the compressor, input for the pressure switch and outputs for up to 8 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the CAN bus and powered via 12V from the PDP.
+A single PCM will support most pneumatics applications, providing an output for the compressor, input for the pressure switch, and outputs for up to 8 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the CAN bus and powered via 12V from the PDP.
+
+For complicated robot designs requiring more channels or multiple solenoid voltages, additional PCMs can be added to the control system.
 
 PCM Power and Control Wiring
 ----------------------------
 
-The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP. The PCM is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM see :ref:`Wiring the FRC Control System <docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:Pneumatics Control Module Power (Optional)>`. Additional PCMs can be wired to a standard WAGO connector on the side of the PDP and protected with a 20A or smaller circuit breaker. Additional PCMs should also be placed anywhere in the middle of the CAN chain.
+The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP. The PCM is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM, see :ref:`docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:Pneumatics Control Module Power (Optional)`
+
+Additional PCMs can be wired to a standard WAGO connector on the side of the PDP and protected with a 20A or smaller circuit breaker. Additional PCMs should also be placed anywhere in the middle of the CAN chain.
 
 The Compressor
 ---------------
@@ -26,7 +30,7 @@ The pressure switch should be connected directly to the pressure switch input te
 Solenoids
 ---------
 
-Each solenoid channel should be wired directly to a numbered pair of terminals on the PCM. A single acting solenoid will use one numbered terminal pair. A double acting solenoid will use two pairs (as shown in the image above). If your solenoid does not come with color coded wiring, check the datasheet to make sure to wire with the proper polarity.
+Each solenoid channel should be wired directly to a numbered pair of terminals on the PCM. A single acting solenoid will use one numbered terminal pair. A double acting solenoid will use two pairs. If your solenoid does not come with color coded wiring, check the datasheet to make sure to wire with the proper polarity.
 
 Solenoid Voltage Jumper
 ------------------------
