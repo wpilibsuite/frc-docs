@@ -69,14 +69,14 @@ where :math:`V` is the applied voltage, :math:`d` is the displacement (position)
 Prerequisites
 -------------
 
-To use the Robotpy Characterization Toolsuite, you must have Python 3.7 installed on your computer, as well as the standard WPILib programming toolsuite.
+To use the Robot Characterization Toolsuite, you must have Python 3.7 installed on your computer, as well as the standard WPILib programming toolsuite.
 
 `Python 3.7 <https://www.python.org/downloads/>`__
 
 Installing and Launching the Toolsuite
 --------------------------------------
 
-To install the Robotpy Characterization Toolsuite, open a console and enter the following command
+To install the Robot Characterization Toolsuite, open a console and enter the following command
 
 .. code-block:: console
 
@@ -94,10 +94,10 @@ Once the toolsuite has been installed, launch a new drive characterization proje
 
 .. code-block:: console
 
-   robotpy-characterization drive new
+   frc-characterization drive new
 
 The new project GUI should open momentarily. To launch other characterization projects, simply replace ``drive`` with the desired characterization type.
 
 While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing ``new`` with ``logger`` or ``analyzer``.
 
-For more information on CLI usage, enter ``robot-characterization -h``.
+For more information on CLI usage, enter ``frc-characterization -h``.
