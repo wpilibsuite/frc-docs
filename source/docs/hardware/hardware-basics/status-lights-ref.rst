@@ -491,6 +491,11 @@ B/C CAL Blink Codes
 | Off                  | Coast Mode      |
 +----------------------+-----------------+
 
+Spark-MAX speed controller
+--------------------------
+
+.. image:: images/status-lights/sparkMAXLight.png
+
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------
 
