@@ -8,7 +8,7 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This documentation will be the Official *FIRST* Robotics Competition Control System documentation for the 2020 season and beyond. A brief overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/software/wpilib-overview/new-for-2020:New for 2020>` document.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This documentation will be the Official *FIRST* Robotics Competition Control System documentation for the 2020 season and beyond. An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/software/wpilib-overview/new-for-2020:New for 2020>` document.
 
 .. note:: It's advised to continue using `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib release for 2020.
 
