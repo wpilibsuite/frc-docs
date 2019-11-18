@@ -42,7 +42,7 @@ There are two ways to update the robot pose using the ``DifferentialDriveOdometr
 Both methods use overloads of the ``update`` method, which updates the robot position on the field. This method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
 Updating the Robot Pose using Encoder Positions or Distances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This ``update`` overload takes in the gyro angle of the robot, along with the left encoder distance and right encoder distance.
 
@@ -77,7 +77,7 @@ This ``update`` overload takes in the gyro angle of the robot, along with the le
       }
 
 Updating the Robot Pose using Encoder Velocities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This ``update`` overload takes in the gyro angle of the robot, along with a ``DifferentialDriveWheelSpeeds`` object representing the left and right wheel speeds of the robot.
 
