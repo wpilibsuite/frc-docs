@@ -255,7 +255,7 @@ The ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
     // Schedules commandToSchedule when run
     frc2::ScheduleCommand(&commandToSchedule)
 
-This is often useful for "forking off" from command groups.
+This is often useful for "forking off" from command groups: by default, commands in command groups are run *through* the command group, and are never themselves seen by the scheduler.  Accordingly, their requirements are added to the group's requirements.  While this is usually fine, sometimes it is undesirable for the entire command group to gain the requirements of a single command - a good solution is to "fork off" from the command group and schedule that command separately.
 
 ProxyScheduleCommand
 ^^^^^^^^^^^^^^^^^^^^
@@ -274,7 +274,7 @@ The ``ProxyScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/dev
     // Schedules commandToSchedule when run, does not end until commandToSchedule is no longer scheduled
     frc2::ProxyScheduleCommand(&commandToSchedule)
 
-This is also often useful for “forking off” from commandgroups, when it is required that the command group flow depend on the “forked off” command.
+This is often useful for "forking off" from command groups: by default, commands in command groups are run *through* the command group, and are never themselves seen by the scheduler.  Accordingly, their requirements are added to the group's requirements.  While this is usually fine, sometimes it is undesirable for the entire command group to gain the requirements of a single command - a good solution is to "fork off" from the command group and schedule the command separately.
 
 WaitCommand
 ^^^^^^^^^^^
@@ -497,7 +497,7 @@ Static Factory Methods for Command Groups (Java only)
 
 .. note:: These factory methods are not included in the C++ command library, as the reduction in verbosity would be minimal - C++ commands should be stack-allocated, removing the need for the ``new`` keyword.
 
-If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains several four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
+If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
 
 .. code-block:: java
 

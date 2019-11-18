@@ -106,9 +106,12 @@ WPILib Installation Guide
 
       To update all the additional tools WPILib tools, open a terminal window
       and change directory to ~/wpilib/2020/tools and run the script
-      ``ToolsUpdater.py`` with the command:
+      ``ToolsUpdater.py`` with the commands:
 
-      ``python ToolsUpdater.py``
+      .. code-block:: bash
+
+        cd ~/wpilib/2020/tools
+        python ToolsUpdater.py
 
       This should populate the tools directory with all of the WPILib tools
       (Shuffleboard, Robot Builder, PathWeaver, etc.)
