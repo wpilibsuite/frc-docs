@@ -1,7 +1,7 @@
 Feedforward Control in WPILIB
 =============================
 
-.. todo:: link to conceptual feedforward article when it's done
+.. todo:: link to conceptual feedforward/feedback article when it's done
 
 .. note:: This article covers the in-code implementation of feedforward control with WPILib's provided library classes.  For an explanation of the concepts involved in feedforward, see <TODO: link>.
 
@@ -149,3 +149,27 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     // and an acceleration of 30 meters/second^2
     // Output is in volts
     feedforward.Calculate(10_m, 20_mps, 30_mps_sq);
+
+Using Feedforward to Control Mechanisms
+---------------------------------------
+
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
+
+Feedforward control can be used entirely on its own, without a feedback controller.  This is known as "open-loop" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    public void tankDriveWithFeedforward(double leftVelocity, double rightVelocity) {
+      leftMotor.setVoltage(feedforward.calculate(leftVelocity));
+      rightMotor.setVoltage(feedForward.calculate(rightVelocity));
+    }
+
+  .. code-tab:: c++
+
+    void TankDriveWithFeedforward(units::meters_per_second_t leftVelocity,
+                                  units::meters_per_second_t rightVelocity) {
+      leftMotor.SetVoltage(feedforward.Calculate(leftVelocity));
+      rightMotor.SetVoltage(feedforward.Calculate(rightVelocity));
+    }

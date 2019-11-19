@@ -165,22 +165,3 @@ Unlike the old ``PIDController``, the new controller does not offer any output c
 
     // Clamps the controller output to between -0.5 and 0.5
     std::clamp(pid.Calculate(encoder.GetDistance(), setpoint));
-
-Using Feedforward
------------------
-
-Users familiar with the old ``PIDController`` class may notice the lack of any feedforward gain in the new controller.  As users are expected to use the controller output themselves, there is no longer any need for the ``PIDController`` to implement feedforward - users may simply add any feedforward they like to the output of the controller before sending it to their motors:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    // Adds a feedforward to the loop output before sending it to the motor
-    motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward);
-
-  .. code-tab:: c++
-
-    // Adds a feedforward to the loop output before sending it to the motor
-    motor.SetVoltage(pid.Calculate(encoder.GetDistance(), setpoint) + feedforward);
-
-Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC mechanisms - for more information, see :ref:`docs/software/advanced-control/feedforward:Feedforward Control in WPILib`. 
