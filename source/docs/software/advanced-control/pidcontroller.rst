@@ -3,7 +3,7 @@ PID Control in WPILib
 
 .. todo:: Link to conceptual PID article when it's finished
 
-.. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  For a conceptual overview of the concepts involved in PID control, see <TODO: link>.
+.. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  For an explanation of the concepts involved in PID control, see <TODO: link>.
 
 WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
@@ -183,4 +183,4 @@ Users familiar with the old ``PIDController`` class may notice the lack of any f
     // Adds a feedforward to the loop output before sending it to the motor
     motor.SetVoltage(pid.Calculate(encoder.GetDistance(), setpoint) + feedforward);
 
-Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC mechanisms - for more information, see :ref:`docs/software/advanced-control/feedforward:Feedforward`. 
+Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC mechanisms - for more information, see :ref:`docs/software/advanced-control/feedforward:Feedforward Control in WPILib`. 
