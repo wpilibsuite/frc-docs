@@ -31,7 +31,7 @@ Using Feedforward Components with PID
 
 .. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
 
-What might a more complete example of combined feedforward/PID control look like?  Consider the :ref:`drive example <docs/software/advanced-control/feedforward:Using Feedforward to Control Mechanisms>` from the feedforward page.  We can easily modify this to include feedback control:
+What might a more complete example of combined feedforward/PID control look like?  Consider the :ref:`drive example <docs/software/advanced-control/feedforward:Using Feedforward to Control Mechanisms>` from the feedforward page.  We can easily modify this to include feedback control (with a ``SimpleMotorFeedforward`` component):
 
 .. tabs::
 
@@ -53,3 +53,5 @@ What might a more complete example of combined feedforward/PID control look like
       rightMotor.SetVoltage(feedforward.Calculate(rightVelocity)
           + rightPID.Calculate(rightEncoder.getRate(), rightVelocity.to<double>());
     }
+
+Other mechanism types can be handled similarly.

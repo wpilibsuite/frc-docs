@@ -5,6 +5,8 @@ PID Control in WPILib
 
 .. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  For an explanation of the concepts involved in PID control, see <TODO: link>.
 
+.. note:: For information on implementing PID control through the Command framework, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
+
 WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 Using the ``PIDController`` Class
@@ -40,7 +42,7 @@ Using the Feedback Loop Output
 
 .. warning:: Unlike the old ``PIDController``, the new PIDController does not automatically control an output from its own thread - users are required to call ``calculate()`` and use the resulting output in their own code.
 
-Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method, or from the ``execute()`` method of a :ref:`command <docs/software/commandbased/commands:Commands>` (the :ref:`PIDCommand and PIDSubsystem <docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands>` classes do this for you!):
+Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method):
 
 .. tabs::
 
