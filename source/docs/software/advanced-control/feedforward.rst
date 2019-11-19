@@ -49,7 +49,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
   .. code-tab:: java
 
-    // Calculates the feedforward for a velocity of 10 units and an acceleration of 20 units/second
+    // Calculates the feedforward for a velocity of 10 units/second and an acceleration of 20 units/second^2
     // Units are determined by the units of the gains passed in at construction.
     feedforward.calculate(10, 20);
 
