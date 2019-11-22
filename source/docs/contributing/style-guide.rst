@@ -154,7 +154,7 @@ Image files should be stored in the document directory, sub-directory of ``image
 
 They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
 
-They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
+They should be of the ``.png`` or ``gif`` image extension. The image file should be no more than ``3`` megabytes in size.
 
 Table of Contents (TOC)
 -----------------------
