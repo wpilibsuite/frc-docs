@@ -16,6 +16,7 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 .. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController.
 
 - The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/Oblarg/docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
+- The command-based frameworks are now separate vendor libraries, rather then built into WPILib itself.
 
 - LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value
 
@@ -58,6 +59,8 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - Update to GCC 7, and use C++17
 - Use OS for serial port instead of the NI driver
 - IterativeRobot template has been removed
+- Add support for Addressable LEDs, such as WS2812's and NeoPixels
+- Add support for DutyCycle inputs, such as the absolute output on many FRC encoders
 
 Shuffleboard
 ------------
@@ -73,6 +76,7 @@ FRC Raspberry Pi Image
 ----------------------
 
 - Updated to work on Raspberry Pi 4
+- Updated to use Raspbian Buster
 - Added CPU temperature to system status screen
 
 SmartDashboard
@@ -110,7 +114,14 @@ WPILib All in One Installer
 - Use ``wpilib\2020\`` instead of ``frc2020\``. This prevents cluttering the user’s home directory when installing alongside previous years’ installation.
 - Fixed an issue where shortcuts would get created for installed tools, even if it was unchecked.
 - Installing for **All Users** will now create shortcuts for all users, instead of only the current one.
-- Update to Visual Studio Code 1.39.1
+- Update to lastest Visual Studio Code and C++/Java extensions
+
+Visual Studio Code Extension
+----------------------------
+
+- Added a 2019 to 2020 project importer
+- Add a window for a simple way to grab all project information
+- Add built in way to open and display API docs
 
 RobotBuilder
 ------------
