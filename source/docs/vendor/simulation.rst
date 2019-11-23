@@ -1,7 +1,7 @@
 Vendor Simulation Support
 =========================
 
-Desktop simulation (see :ref:`Introduction to Robot Simulation`) is an extremely useful tool for teams, as it provides them with the ability to run robot code on the desktop without the need for a RoboRIO.
+Desktop simulation (see :ref:`docs/software/wpilib-tools/robot-simulation/introduction:Introduction to Robot Simulation`) is an extremely useful tool for teams, as it provides them with the ability to run robot code on the desktop without the need for a RoboRIO.
 
 Vendor support for simulation is necessary for teams using vendor devices to link (C++) or run (Java) desktop simulation of their robot code. At a minimum, for C++ and JNI, vendors need to provide compiled shared libraries for all desktop platforms (Windows, Mac, and Linux).
 
@@ -16,7 +16,7 @@ There are two ways for vendors to utilize the GUI:
 
 2. Implement custom GUI windows
 
-Using the HAL SimDevice framework is the best starting point for most devices. This framework enables creating simulation-only variables for higher level device access. For example, a device such as a SPI gyro can expose angle and rate variables to enable direct access from simulation extensions or user test code instead of requiring that the SPI bit-level protocol be implemented in the simulation code. 
+Using the HAL SimDevice framework is the best starting point for most devices. This framework enables creating simulation-only variables for higher level device access. For example, a device such as a SPI gyro can expose angle and rate variables to enable direct access from simulation extensions or user test code instead of requiring that the SPI bit-level protocol be implemented in the simulation code.
 
 SimDevice Framework
 ^^^^^^^^^^^^^^^^^^^
