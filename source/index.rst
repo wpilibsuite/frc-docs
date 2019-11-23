@@ -93,6 +93,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
+   :caption: Vendor Reference
+
+   docs/vendor/getting-started
+   docs/vendor/simulation
+
+.. toctree::
+   :maxdepth: 1
    :caption: Issues
 
    Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
