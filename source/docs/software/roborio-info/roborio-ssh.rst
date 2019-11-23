@@ -25,7 +25,7 @@ Lvuser
 ^^^^^^
 The "lvuser" account is the account used to run user code for all three languages. The credentials for this account should not be changed. Teams may wish to use this account (via ssh or sftp) when working with the roboRIO to ensure that any files or settings changes are being made on the same account as their code will run under.
 
-.. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will cause C++ and Java teams to not be able to upload code.
+.. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will prevent C++ and Java teams from uploading code.
 
 SSH
 ---
