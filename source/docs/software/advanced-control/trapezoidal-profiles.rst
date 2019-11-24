@@ -37,15 +37,92 @@ In order to create a trapezoidal motion profile, we must first impose some const
     // Creates a new set of trapezoidal motion profile constraints
     // Max velocity of 10 meters per second
     // Max acceleration of 20 meters per second squared
-    TrapezoidProfile<units::meter>::Constraints{10_mps, 20_mps_sq);
+    frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq);
 
 Start and End States
 ^^^^^^^^^^^^^^^^^^^^
 
-Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class.  Each state has a position and an acceleration:
+Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.State.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile_1_1State.html>`__).  Each state has a position and an acceleration:
 
 .. tabs::
 
   .. code-tab:: java
 
-    // Creates a new state 
+    // Creates a new state with a position of 5 meters
+    // and a velocity of 0 meters per second
+    new TrapezoidProfile.State(5, 0);
+
+  .. code-tab:: c++
+
+    // Creates a new state with a position of 5 meters
+    // and a velocity of 0 meters per second squared
+    frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
+
+Putting It All Together
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: C++ is often able to infer the type of the inner classes, and thus a simple initializer list (without the class name) can be sent as a parameter.  The full class names are included in the example below for clarity.
+
+Now that we know how to create a set of constraints and the desired start/end states, we are ready to create our motion profile.  The ``TrapezoidProfile`` constructor takes 3 parameters, in order: the constraints, the goal state, and the initial state.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Creates a new TrapezoidProfile
+    // Profile will have a max vel of 5 meters per second
+    // Profile will have a max acceleration of 10 meters per second squared
+    // Profile will end stationary at 5 meters
+    // Profile will start stationary at zero position
+    TrapezoidProfile profile = new TrapezoidProfile(new TrapezoidProfile.Constraints(5, 10),
+                                                    new TrapezoidProfile.State(5, 0),
+                                                    new TrapezoidProfile.State(0, 0));
+
+  .. code-tab:: c++
+
+    // Creates a new TrapezoidProfile
+    // Profile will have a max vel of 5 meters per second
+    // Profile will have a max acceleration of 10 meters per second squared
+    // Profile will end stationary at 5 meters
+    // Profile will start stationary at zero position
+    frc::TrapezoidProfile<units::meters> profile(
+      frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq},
+      frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps},
+      frc::TrapezoidProfile<units::meters>::State(0_m, 0_mps});
+
+Using a ``TrapezoidProfile``
+----------------------------
+
+Sampling the Profile
+^^^^^^^^^^^^^^^^^^^^
+
+Once we've created a ``TrapezoidProfile``, using it is very simple: to get the profile state at the given time after the profile has started, call the ``calculate()`` method:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Returns the motion profile state after 5 seconds of motion
+    profile.calculate(5);
+
+  .. code-tab:: c++
+
+    // Returns the motion profile state after 5 seconds of motion
+    profile.Calculate(5_s);
+
+Using the State
+^^^^^^^^^^^^^^^
+
+The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same one that was used to specify the initial/end states when constructing the profile).  To use this for actual control, simply pass the contained position and velocity values to whatever controller you wish (for example, a PIDController):
+
+.. tabs::
+
+  .. code-tab:: java
+
+    var setpoint = profile.calculate(elapsedTime);
+    controller.calculate(encoder.getDistance(), setpoint.position);
+
+  .. code-tab:: c++
+
+    auto setpoint = profile.Calculate(elapsedTime);
+    controller.Calculate(encoder.GetDistance(), setpoint.position.to<double>());
