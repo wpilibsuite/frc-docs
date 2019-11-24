@@ -37,21 +37,21 @@ What might a more complete example of combined feedforward/PID control look like
 
   .. code-tab:: java
 
-    public void tankDriveWithFeedforwardPID(double leftVelocity, double rightVelocity) {
-      leftMotor.setVoltage(feedforward.calculate(leftVelocity)
-          + leftPID.calculate(leftEncoder.getRate(), leftVelocity);
-      rightMotor.setVoltage(feedForward.calculate(rightVelocity)
-          + rightPID.calculate(rightEncoder.getRate(), rightVelocity);
+    public void tankDriveWithFeedforwardPID(double leftVelocitySetpoint, double rightVelocitySetpoint) {
+      leftMotor.setVoltage(feedforward.calculate(leftVelocitySetpoint)
+          + leftPID.calculate(leftEncoder.getRate(), leftVelocitySetpoint);
+      rightMotor.setVoltage(feedForward.calculate(rightVelocitySetpoint)
+          + rightPID.calculate(rightEncoder.getRate(), rightVelocitySetpoint);
     }
 
   .. code-tab:: c++
 
-    void TankDriveWithFeedforwardPID(units::meters_per_second_t leftVelocity,
-                                     units::meters_per_second_t rightVelocity) {
-      leftMotor.SetVoltage(feedforward.Calculate(leftVelocity)
-          + leftPID.Calculate(leftEncoder.getRate(), leftVelocity.to<double>());
-      rightMotor.SetVoltage(feedforward.Calculate(rightVelocity)
-          + rightPID.Calculate(rightEncoder.getRate(), rightVelocity.to<double>());
+    void TankDriveWithFeedforwardPID(units::meters_per_second_t leftVelocitySetpoint,
+                                     units::meters_per_second_t rightVelocitySetpoint) {
+      leftMotor.SetVoltage(feedforward.Calculate(leftVelocitySetpoint)
+          + leftPID.Calculate(leftEncoder.getRate(), leftVelocitySetpoint.to<double>());
+      rightMotor.SetVoltage(feedforward.Calculate(rightVelocitySetpoint)
+          + rightPID.Calculate(rightEncoder.getRate(), rightVelocitySetpoint.to<double>());
     }
 
 Other mechanism types can be handled similarly.
