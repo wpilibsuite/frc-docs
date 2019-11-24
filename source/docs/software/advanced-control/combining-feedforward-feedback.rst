@@ -37,7 +37,7 @@ What might a more complete example of combined feedforward/PID control look like
 
   .. code-tab:: java
 
-    public void tankDriveWithFeedforward(double leftVelocity, double rightVelocity) {
+    public void tankDriveWithFeedforwardPID(double leftVelocity, double rightVelocity) {
       leftMotor.setVoltage(feedforward.calculate(leftVelocity)
           + leftPID.calculate(leftEncoder.getRate(), leftVelocity);
       rightMotor.setVoltage(feedForward.calculate(rightVelocity)
@@ -46,8 +46,8 @@ What might a more complete example of combined feedforward/PID control look like
 
   .. code-tab:: c++
 
-    void TankDriveWithFeedforward(units::meters_per_second_t leftVelocity,
-                                  units::meters_per_second_t rightVelocity) {
+    void TankDriveWithFeedforwardPID(units::meters_per_second_t leftVelocity,
+                                     units::meters_per_second_t rightVelocity) {
       leftMotor.SetVoltage(feedforward.Calculate(leftVelocity)
           + leftPID.Calculate(leftEncoder.getRate(), leftVelocity.to<double>());
       rightMotor.SetVoltage(feedforward.Calculate(rightVelocity)

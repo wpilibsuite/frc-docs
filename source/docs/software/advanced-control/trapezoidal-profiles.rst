@@ -14,9 +14,38 @@ To help users do this, WPILib provides a ``TrapezoidProfile`` class (`Java <http
 Creating a ``TrapezoidProfile``
 -------------------------------
 
+.. note:: In C++, the ``SimpleMotorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+
 Constraints
 ^^^^^^^^^^^
 
-.. note:: The maximum velocity and acceleration that are simultaneously achievable by a mechanism can often be inferred from the feedforward equation for that mechanism.
+.. note:: The various :ref:`feedforward helper classes <docs/software/advanced-control/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
 
-In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.
+In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.Constraints.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile_1_1Constraints.html>`__):
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Creates a new set of trapezoidal motion profile constraints
+    // Max velocity of 10 meters per second
+    // Max acceleration of 20 meters per second squared
+    new TrapezoidProfile.Constraints(10, 20);
+
+  .. code-tab:: c++
+
+    // Creates a new set of trapezoidal motion profile constraints
+    // Max velocity of 10 meters per second
+    // Max acceleration of 20 meters per second squared
+    TrapezoidProfile<units::meter>::Constraints{10_mps, 20_mps_sq);
+
+Start and End States
+^^^^^^^^^^^^^^^^^^^^
+
+Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class.  Each state has a position and an acceleration:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Creates a new state 
