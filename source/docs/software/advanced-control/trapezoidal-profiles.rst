@@ -126,3 +126,30 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
     auto setpoint = profile.Calculate(elapsedTime);
     controller.Calculate(encoder.GetDistance(), setpoint.position.to<double>());
+
+Complete Usage Example
+----------------------
+
+.. note:: In this example, the profile is re-computed every timestep.  This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at at a time corresponding to the loop period to get the setpoint for the next loop iteration.
+
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__):
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile/Robot.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+Although this example uses the ``TrapezoidProfile`` class directly with the ``PIDController`` class, it is generally most useful to only use ``TrapezoidProfile`` directly if it needs to be composed with a custom controller (e.g. an external PID on a "smart" motor controller).  As will be seen in the next article, WPILib provides a handy convenience wrapper for automatically combining a ``TrapezoidProfile`` with a ``PIDController``.
