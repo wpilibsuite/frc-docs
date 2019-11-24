@@ -15,7 +15,7 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 
 .. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController.
 
-- The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/Oblarg/docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
+- The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/wpilibsuite/design-docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
 - The command-based frameworks are now separate vendor libraries, rather then built into WPILib itself.
 
 - LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value
