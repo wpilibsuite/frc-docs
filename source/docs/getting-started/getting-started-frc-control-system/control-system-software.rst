@@ -10,17 +10,15 @@ The primary supported OS for FRC components is Windows. All required FRC softwar
 
 Having said that, many of the tools for C++/Java programming are also supported and tested on macOS and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as Driver Station, radio programming, and roboRIO imaging.
 
-Components supported on all OS’s have been marked with an \* below. All other items are Windows only, unless noted.
-
-LabVIEW FRC
------------
+LabVIEW FRC (Windows Only)
+--------------------------
 
 .. image:: images/control-system-software/labview-frc.png
 
-LabVIEW FRC, based on National Instruments’ LabVIEW 2018, is the development environment for LabVIEW, one of the three officially supported languages for programming an FRC robot. LabVIEW is a graphical, dataflow-driven language. LabVIEW programs consist of a collection of icons, called VIs, wired together with wires which pass data between the VIs. The LabVIEW FRC installer is distributed on a DVD found in the Kickoff Kit of Parts and is also available for download (see installation instructions page linked below). Instructions for installing the FRC libraries (package also includes Driver Station and Utilities) can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. A guide to getting started with the LabVIEW FRC software, including installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/labview-setup:Installing LabVIEW for FRC (LabVIEW only)>`.
+LabVIEW FRC, based on National Instruments’ LabVIEW 2019, is the development environment for LabVIEW, one of the three officially supported languages for programming an FRC robot. LabVIEW is a graphical, dataflow-driven language. LabVIEW programs consist of a collection of icons, called VIs, wired together with wires which pass data between the VIs. The LabVIEW FRC installer is distributed on a DVD found in the Kickoff Kit of Parts and is also available for download (see installation instructions page linked below). Instructions for installing the FRC libraries (package also includes Driver Station and Utilities) can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. A guide to getting started with the LabVIEW FRC software, including installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/labview-setup:Installing LabVIEW for FRC (LabVIEW only)>`.
 
-FRC Robot Simulator
-^^^^^^^^^^^^^^^^^^^
+FRC Robot Simulator (Windows Only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/control-system-software/robot-simulator.png
 
@@ -33,15 +31,15 @@ Visual Studio Code
 
 Visual Studio Code is the supported development environment for C++ and Java, two of the three supported languages used for programming an FRC robot. Both are object-oriented text based programming languages. A program in C++ (for FRC) consists of a number of header (.h) and implementation (.cpp) files where as a program in Java consists of .java files contained in one or more packages. A guide to getting started with C++ for FRC, including the installation and configuration of Visual Studio Code can be found :doc:`here <offline-installation-preparations>`.
 
-FRC Driver Station Powered by NI LabVIEW
-----------------------------------------
+FRC Driver Station Powered by NI LabVIEW (Windows Only)
+-------------------------------------------------------
 
 .. image:: images/control-system-software/frc-driver-station.png
 
 The FRC Driver Station Powered by NI LabVIEW is the only software allowed to be used for the purpose of controlling the state of the robot during competition. This software contains the code necessary to send data to your robot from a variety of input devices such as joysticks, gamepads, and customizable IO boards. It also contains a number of tools used to help troubleshoot robot issues such as status indicators and log file creation. Instructions for installing the FRC Driver Station Powered by NI LabVIEW (included in the FRC Update Suite) can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Driver Station Powered by NI LabVIEW can be found :ref:`here <docs/software/driverstation/driver-station:FRC Driver Station Powered by NI LabVIEW>`.
 
-FRC LabVIEW Dashboard
----------------------
+FRC LabVIEW Dashboard (Windows Only)
+------------------------------------
 
 .. image:: images/control-system-software/frc-labview-dashboard.png
 
@@ -61,48 +59,35 @@ LiveWindow
 
 .. image:: images/control-system-software/livewindow-smartdashboard.png
 
-.. todo:: port article
-
-LiveWindow is a new mode of SmartDashboard for 2013, designed for use with the new Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found here.
+LiveWindow is a mode of SmartDashboard , designed for use with the Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found :ref:`here <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index:SmartDashboard: Test Mode and Live Window>`.
 
 Shuffleboard
 ------------
 
 .. image:: images/control-system-software/shuffleboard.png
 
-Shuffleboard is an alternative dashboard application written in Java. It takes many of the concepts from SmartDashboard such as automatic adding of widgets and adds new features including better layout control and record/playback functionality. Shuffleboard contains all of the basic widget types found in the SmartDashboard as well as a number of new ones intended to make visualizing specific robot components even easier. It has full integration with WPILib’s “cscore” for displaying, recording, and playing back camera streams. Shuffleboard is included in the C++ and Java language updates (enabled by clicking the Shuffleboard button on the Setup tab of the Driver Station or by launching it from the WPILib menu in Eclipse). Additional documentation on Shuffleboard can be found :ref:`here <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`.
+Shuffleboard is an alternative dashboard application written in Java. It takes many of the concepts from SmartDashboard such as automatic adding of widgets and adds new features including better layout control and record/playback functionality. Shuffleboard contains all of the basic widget types found in the SmartDashboard as well as a number of new ones intended to make visualizing specific robot components even easier. It has full integration with WPILib’s “cscore” for displaying, recording, and playing back camera streams. Shuffleboard is included in the C++ and Java language updates (enabled by selecting Shuffleboard from the dashboard type on the Setup tab of the Driver Station or by launching it from the WPILib start tool menu in Visual Studio Code). Additional documentation on Shuffleboard can be found :ref:`here <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`.
 
-FRC roboRIO Imaging Tool
-------------------------
+FRC roboRIO Imaging Tool (Windows Only)
+---------------------------------------
 
 .. image:: images/control-system-software/frc-roborio-imaging-tool.png
 
 The FRC roboRIO Imaging Tool is a software tool used to format and setup an roboRIO-FRC device for use in FRC. The tool detects any roboRIO device on the network, reports the current MAC, name, IP and Image version. The tool allows the user to configure the team number, set options including Console Out and whether an applications runs on Startup, and install the latest software image on the device. The FRC roboRIO Imaging Tool is installed as part of the FRC Update Suite. Installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here <imaging-your-roborio>`.
 
-CTRE Toolsuite
---------------
-
-.. image:: images/control-system-software/ctre-toolsuite.png
-
-The CTRE Toolsuite installs the software libraries for Talon SRX (C++/Java/LabVIEW) as well as the HERO Lifeboat software which can be used to update the roboRIO web based CAN configuration with the latest CTRE-specific features. The installer can be found `here <https://www.ctr-electronics.com/control-system/hro.html>`__
-
-.. note:: A separate package (zip) is provided to get the Talon SRX and Pidgeon libraries on non-Windows systems. Users should unzip this file and place the contents into ``USER\wpilib\user`` folder
-
-Setup Axis Camera
------------------
+Setup Axis Camera (Windows Only)
+--------------------------------
 
 .. image:: images/control-system-software/axis-camera-setup.png
 
 The Setup Axis Camera utility is a LabVIEW program used to configure an Axis 206, M1011 or M1013 camera for use on the robot. The tool takes a factory reset camera connected directly to the computer and configures the IP, username and password, anonymous access, and default framerate and compression (for use with the SmartDashboard or other access methods). The Setup Axis Camera tool is installed as part of the FRC Update Suite. Installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. Instructions for using the tool to configure the camera are located :ref:`here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`.
 
-FRC Driver Station Log Viewer
------------------------------
+FRC Driver Station Log Viewer (Windows Only)
+--------------------------------------------
 
 .. image:: images/control-system-software/frc-log-viewer.png
 
-.. todo:: add article, see https://github.com/wpilibsuite/frc-docs/issues/120 and https://github.com/wpilibsuite/frc-docs/issues/118
-
-The FRC Driver Station Log Viewer is a LabVIEW program used to view logs created by the FRC Driver Station. These logs contain information such as battery voltage, trip time, CPU% and robot mode, as well as events such as joystick removal. The FRC Driver Station Log Viewer is included in the FRC Update Suite. Installation instructions can be found `here <docs/software/driverstation/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Driver Station Log Viewer and understanding the logs can be found here.
+The FRC Driver Station Log Viewer is a LabVIEW program used to view logs created by the FRC Driver Station. These logs contain information such as battery voltage, trip time, CPU% and robot mode, as well as events such as joystick removal. The FRC Driver Station Log Viewer is included in the FRC Update Suite. Installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. More information about the FRC Driver Station Log Viewer and understanding the logs can be found :ref:`here <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`
 
 RobotBuilder
 ------------
@@ -122,8 +107,8 @@ To connect to your robot, open OutlineViewer and set the “Server Location” t
 
 LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.
 
-FRC Radio Configuration Utility
--------------------------------
+FRC Radio Configuration Utility (Windows Only)
+----------------------------------------------
 
 .. image:: images/control-system-software/frc-radio-configuration-utility.png
 

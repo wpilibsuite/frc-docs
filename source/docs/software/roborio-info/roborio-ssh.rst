@@ -25,6 +25,8 @@ Lvuser
 ^^^^^^
 The "lvuser" account is the account used to run user code for all three languages. The credentials for this account should not be changed. Teams may wish to use this account (via ssh or sftp) when working with the roboRIO to ensure that any files or settings changes are being made on the same account as their code will run under.
 
+.. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will prevent C++ and Java teams from uploading code.
+
 SSH
 ---
 SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the roboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. A free client which can be used for SSH is PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
