@@ -157,6 +157,48 @@ WPILib Installation Guide
       .. figure:: images/mac/JDKHome.png
           :alt:
 
+    **Allow toolchain to bypass Gatekeeper**
+
+      In order to build certain components, you may be prompted with a Gatekeeper dialog that says: "cannot be opened because the developer cannot be verified".
+
+      .. figure:: images/mac/GatekeeperWarning.png
+            :alt:
+
+      The name of the programs that will cause this are named:
+
+      * ``arm-frc2020-linux-gnueabi-g++``
+      * ``cc1``
+      * ``arm-frc2020-linux-gnueabi-gcc``
+      * ``cc1plus``
+      * ``as``
+      * ``collect2``
+      * ``ld``
+      * ``liblto_plugin.so``
+      * ``arm-frc2020-linux-gnueabi-objcopy``
+      * ``arm-frc2020-linux-gnueabi-strip``
+
+
+      Builds will fail when this dialog appears. Follow the steps below and try to rerun the build.
+
+      1) Press the *Cancel* button on the dialog.
+      2) Open System Preferences to the "Security and Privacy" pane
+
+      .. figure:: images/mac/SecurityPreferences.png
+            :alt:
+
+      3) On the "General" tab, press *Allow Anyway*
+
+      .. figure:: images/mac/SecurityPreferencesAllow.png
+            :alt:
+
+      4) Rerun the build that caused the inital dialog to appear
+      5) A similar dialog will appear but will have a *Open* button. Press the *Open* button
+
+      .. figure:: images/mac/GatekeeperWarningOpen.png
+            :alt:
+
+      You may need to repeat this process multiple times for each of the programs listed above but once each program has been whitelisted, it should stay whitelisted and not prompt you again.
+
   .. tab:: Linux
 
     .. note:: These instructions are based on Ubuntu 18.04, but would be similar for other Debian based Linux distributions.
