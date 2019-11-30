@@ -78,12 +78,12 @@ The Scheduler Run Sequence
             Initialize [label="Initialize()"]
             Execute [label="Execute()"]
             Triggers [label="Schedule commands\nfrom triggers"]
+            EndYes [label="End()"]
 
         // Terminals
         node [shape=oval]
             Start [label="Subsystem\nPeriodic()"]
-            EndYes [label="Move to next command"]
-            EndNo [label="End()"]
+            MoveNextCommand [label="Move to next command"]
 
         // Decisions
         node [shape=diamond, margin=0.1]
@@ -101,8 +101,9 @@ The Scheduler Run Sequence
             labeljust="left"
             Initialize -> Execute -> Finished
 
-            Finished -> EndYes [taillabel="True  "]
-            Finished -> EndNo  [taillabel="\n  False  "]
+            Finished -> EndYes [taillabel="\n    True"]
+            EndYes -> MoveNextCommand
+            Finished -> MoveNextCommand  [taillabel="\n    False"]
         }
     }
 
