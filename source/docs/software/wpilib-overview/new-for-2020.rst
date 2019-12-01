@@ -54,8 +54,10 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - Deprecated the Filter class. Since PIDSource is deprecated, it no longer serves a purpose. Teams should use the derived classes of Filter directly rather than using polymorphism.
 - Added the PWMSparkMax class for PWM control of the REV Robotics SPARK MAX Motor Controller
 - Simplified the Sendable interface and deprecated SendableBase. The name and subsystem have been removed from individual objects, and instead this data is stored in a new singleton class, SendableRegistry. Much of LiveWindow has been refactored into SendableRegistry.
+
   - In C++, a new CRTP helper class, SendableHelper, has been added to provide move and destruction functionality.
   - Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added to Command and Subsystem (both old and new), and also to SendableHelper to prevent code breakage.
+
 - Update to GCC 7, and use C++17
 - Use OS for serial port instead of the NI driver
 - IterativeRobot template has been removed
