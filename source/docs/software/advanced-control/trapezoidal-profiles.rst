@@ -42,7 +42,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
 Start and End States
 ^^^^^^^^^^^^^^^^^^^^
 
-Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.State.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile_1_1State.html>`__).  Each state has a position and an acceleration:
+Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.State.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile_1_1State.html>`__).  Each state has a position and a velocity:
 
 .. tabs::
 
@@ -55,7 +55,7 @@ Next, we must specify the desired starting and ending states for our mechanisms 
   .. code-tab:: c++
 
     // Creates a new state with a position of 5 meters
-    // and a velocity of 0 meters per second squared
+    // and a velocity of 0 meters per second
     frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
 
 Putting It All Together

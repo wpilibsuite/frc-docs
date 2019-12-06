@@ -12,7 +12,7 @@ WPILib supports PID control of mechanisms through the ``PIDController`` class (`
 Using the ``PIDController`` Class
 ---------------------------------
 
-.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``WPIlibj.controller`` package.
+.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``wpilibj.controller`` package.
 
 Constructing a ``PIDController``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,7 +108,7 @@ When the ``PIDController`` has been disabled and then re-enabled, or the setpoin
 Setting a Max Integrator Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-control/feedforward:Feedforward`.
+.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-control/feedforward:Feedforward>`.
 
 A typical problem encountered when using integral feedback is excessive "wind-up" causing the system to wildly overshoot the setpoint.  This can be alleviated in a number of ways - the WPILib ``PIDController`` offers an integrator range limiter to help teams overcome this issue.
 
@@ -137,7 +137,7 @@ Setting Continuous Input
 
 Some process variables (such as the angle of a turret) are measured on a circular scale, rather than a linear one - that is, each "end" of the process variable range corresponds to the same point in reality (e.g. 360 degrees and 0 degrees).  In such a configuration, there are two possible values for any given error, corresponding to which way around the circle the error is measured.  It is usually best to use the smaller of these errrors.
 
-To configure a PIDController to automatically do this, use the ``enableContinuousInput()`` method:
+To configure a ``PIDController`` to automatically do this, use the ``enableContinuousInput()`` method:
 
 .. tabs::
 
@@ -161,9 +161,9 @@ Unlike the old ``PIDController``, the new controller does not offer any output c
   .. code-tab:: java
 
     // Clamps the controller output to between -0.5 and 0.5
-    MathUtils.clamp(pid.calculate(encoder.getDistance(), setpoint));
+    MathUtils.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
 
   .. code-tab:: c++
 
     // Clamps the controller output to between -0.5 and 0.5
-    std::clamp(pid.Calculate(encoder.GetDistance(), setpoint));
+    std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);

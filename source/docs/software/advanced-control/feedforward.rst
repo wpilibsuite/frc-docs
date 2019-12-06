@@ -1,4 +1,4 @@
-Feedforward Control in WPILIB
+Feedforward Control in WPILib
 =============================
 
 .. todo:: link to conceptual feedforward/feedback article when it's done
@@ -62,7 +62,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 ``ArmFeedforward``
 ------------------
 
-.. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular, or a compile-time error will be thrown.  ``kS`` and ``kCos`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+.. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kCos`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 .. note:: The Java feedforward components will calculate outputs in units determined by the units of the user-provided feedforward gains.  Users *must* take care to keep units consistent, as WPILibJ does not have a type-safe unit system.
 
