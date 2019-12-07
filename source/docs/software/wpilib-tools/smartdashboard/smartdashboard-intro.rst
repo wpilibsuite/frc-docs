@@ -18,7 +18,7 @@ Installing the SmartDashboard
 
 .. image:: images/smartdashboard-intro-2.png
 
-The SmartDashboard is now packaged with the C++ and Java language updates and can be launched directly from the Driver Station by selecting the **SmartDashboard** button on the Setup tab.
+The SmartDashboard is packaged with the C++ and Java language updates and can be launched directly from the Driver Station by selecting the **SmartDashboard** button on the Setup tab.
 
 .. note:: If using the Classmate PC or other PC where the DS is run from a separate account from the C++\Java tools install (e.g. Driver and Developer) the buttons shown above may not work.
 
