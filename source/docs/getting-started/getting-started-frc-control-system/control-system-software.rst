@@ -71,7 +71,7 @@ Shuffleboard is an alternative dashboard application written in Java. It takes m
 FRC roboRIO Imaging Tool (Windows Only)
 ---------------------------------------
 
-.. image:: images/control-system-software/frc-roborio-imaging-tool.png
+.. image:: images/imaging-your-roborio/roborio-imaging-tool.png
 
 The FRC roboRIO Imaging Tool is a software tool used to format and setup an roboRIO-FRC device for use in FRC. The tool detects any roboRIO device on the network, reports the current MAC, name, IP and Image version. The tool allows the user to configure the team number, set options including Console Out and whether an applications runs on Startup, and install the latest software image on the device. The FRC roboRIO Imaging Tool is installed as part of the FRC Update Suite. Installation instructions can be found :ref:`here <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here <imaging-your-roborio>`.
 
