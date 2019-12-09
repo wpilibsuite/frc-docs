@@ -3,9 +3,11 @@ Trapezoidal Motion Profiles in WPILib
 
 .. todo:: link to conceptual motion profiling article
 
-.. todo:: link to matching command article
-
 .. note:: This article covers the in-code generation of trapezoidal motion profiles.  For an explanation of the concepts involved in motion profiling, see <TODO: link>.
+
+.. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :ref:`docs/software/commandbased/profile-subsystems-commands:Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands`.
+
+.. note:: The ``TrapezoidProfile`` class, used on its own, is most useful when composed with a custom controller.  To integrate it with a WPILib ``PIDController``, see :doc:`profiled-pidcontroller`.
 
 While feedforward and feedback control offer convenient ways to achieve a given setpoint, we are often still faced with the problem of generating setpoints for our mechanisms.  While the naive approach of immediately commanding a mechanism to its desired state may work, it is often suboptimal.  To improve the handling of our mechanisms, we often wish to command mechanisms to a *sequence* of setpoints that smoothly interpolate between its current state, and its desired goal state.
 
@@ -151,5 +153,3 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
       :lines: 8-
       :linenos:
       :lineno-start: 8
-
-Although this example uses the ``TrapezoidProfile`` class directly with the ``PIDController`` class, it is generally most useful to only use ``TrapezoidProfile`` directly if it needs to be composed with a custom controller (e.g. an external PID on a "smart" motor controller).  As will be seen in the next article, WPILib provides a handy convenience wrapper for automatically combining a ``TrapezoidProfile`` with a ``PIDController``.

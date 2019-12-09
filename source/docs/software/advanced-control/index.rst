@@ -6,3 +6,6 @@ Advanced Controls
 
    pidcontroller.rst
    feedforward.rst
+   combining-feedforward-feedback.rst
+   trapezoid-profiles.rst
+   profiled-pidcontroller.rst

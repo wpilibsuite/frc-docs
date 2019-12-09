@@ -5,7 +5,7 @@ PID Control in WPILib
 
 .. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  For an explanation of the concepts involved in PID control, see <TODO: link>.
 
-.. note:: For information on implementing PID control through the Command framework, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
+.. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 
 WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 

@@ -5,17 +5,17 @@ PID Control through PIDSubsystems and PIDCommands
 
 .. note:: Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
 
-One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :code:`PIDController` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__) to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: PIDSubsystem, which integrates the PID controller into a subsystem, and PIDCommand, which integrates the PID controller into a command.
+One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :ref:`PIDController <docs/software/advanced-control/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
 
 PIDSubsystems
 -------------
 
-The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
+The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
 Creating a ``PIDSubsystem``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When subclassing PIDSubsystem, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
+When subclassing ``PIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
 ``getMeasurement()``
 ~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +91,7 @@ Additionally, the ``enable()`` method resets the internal ``PIDController``, and
 Full ``PIDSubsystem`` Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-What does a PIDSubsystem look like when used in practice? The following examples are taken from the FrisbeeBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):
+What does a ``PIDSubsystem`` look like when used in practice? The following examples are taken from the FrisbeeBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):
 
 .. tabs::
 
@@ -119,7 +119,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
       :linenos:
       :lineno-start: 8
 
-Using a PIDSubsystem with commands can be very simple:
+Using a ``PIDSubsystem`` with commands can be very simple:
 
 .. tabs::
 
@@ -147,8 +147,8 @@ Using a PIDSubsystem with commands can be very simple:
       :linenos:
       :lineno-start: 32
 
-PIDCommands
------------
+``PIDCommand``
+--------------
 
 The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommmand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
@@ -213,7 +213,7 @@ Like all inlineable commands, ``PIDCommand`` allows the user to specify its subs
 Full ``PIDCommand`` Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-What does a PIDCommand look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
+What does a ``PIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 
 .. tabs::
 

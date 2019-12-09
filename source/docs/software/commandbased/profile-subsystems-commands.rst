@@ -3,7 +3,7 @@ Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands
 
 .. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-control/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
 
-.. note:: The ``TrapezoidProfile`` command wrappers are generally intended for composition with custom or external controllers.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, consider instead using the <TODO: link to ProfiledPIDSubsystem/Command article>.
+.. note:: The ``TrapezoidProfile`` command wrappers are generally intended for composition with custom or external controllers.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-subsystems-commands`.
 
 When controlling a mechanism, is often desirable to move it smoothly between two positions, rather than to abruptly change its setpoint.  This is called "motion-profiling," and is supported in WPILib through the ``TrapezoidProfile`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile.html>`__).
 
@@ -14,7 +14,7 @@ To further help teams integrate motion profiling into their command-based robot 
 
 .. note:: In C++, the ``TrapezoidProfileSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``TrapezoidProfileSubsystem`` class will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
+The ``TrapezoidProfileSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1TrapezoidProfileSubsystem.html>`__) will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
 
 Creating a ``TrapezoidProfileSubsystem``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,14 +130,14 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
 .. note:: In C++, the ``TrapezoidProfileCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``TrapezoidProfileCommand`` class allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
+The ``TrapezoidProfileCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1TrapezoidProfileCommand.html>`__) allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
 
 As with ``TrapezoidProfileSubsystem``, users can create a ``TrapezoidProfileCommand`` by subclassing the ``TrapezoidProfileCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``TrapezoidProfileCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Creating a ``TrapezoidProfileCommand``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``PIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``TrapezoidProfileCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
 In either case, a ``TrapezoidProfileCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
