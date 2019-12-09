@@ -61,7 +61,7 @@ Using the constructed ``PIDController`` is simple: simply call the ``calculate()
 Checking Errors
 ^^^^^^^^^^^^^^^
 
-.. note:: ``getPositionError()` and ``getVelocityError()`` are named assuming that the loop is controlling a position - for a loop that is controlling a velocity, these return the velocity error and the acceleration error, respectively.
+.. note:: ``getPositionError()`` and ``getVelocityError()`` are named assuming that the loop is controlling a position - for a loop that is controlling a velocity, these return the velocity error and the acceleration error, respectively.
 
 .. note:: If using :ref:`continuous input <docs/software/advanced-control/pidcontroller:Setting Continuous Input>`, use ``getContinuousError`` rather than ``getPositionError``.  Velocity error is unaffected.
 
