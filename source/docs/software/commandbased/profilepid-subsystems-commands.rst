@@ -159,8 +159,6 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
 .. tabs::
 
-  .. tabs::
-
   .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
