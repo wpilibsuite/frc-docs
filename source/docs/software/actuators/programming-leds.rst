@@ -1,16 +1,16 @@
 Programming LEDs
 ================
 
-LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling LEDs with their data pin connected via PWM.
+LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling WS2812 LEDs with their data pin connected via PWM.
 
 Instantiating the AddressableLED Object
 ---------------------------------------
 
-You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header. Then you set the number of LEDs located on your LED strip, with can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the RoboRIO. Then you set the number of LEDs located on your LED strip, with can be done with the ``setLength()`` function.
 
 .. important:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
-After the length of the strip has been set, you'll have to create an ``AddressableLEDBuffer`` object that takes the number of LEDs as an input. You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set the led output data. Finally, you can call ``myAddressableLed.start`` to write the output continuously. Below is a full example of the initialization process.
+After the length of the strip has been set, you'll have to create an ``AddressableLEDBuffer`` object that takes the number of LEDs as an input. You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set the led output data. Finally, you can call ``myAddressableLed.start()`` to write the output continuously. Below is a full example of the initialization process.
 
 .. note:: C++ does not have an AddressableLEDBuffer, and instead uses an Array.
 
@@ -41,7 +41,12 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 Setting the Entire Strip to One Color
 -------------------------------------
 
-Color can be set to an individual led on the strip using the ``setHSV()`` method. ``setHSV`` takes four arguments; index of the LED, hue, saturation, and value.
+Color can be set to an individual led on the strip using two methods.``setHSV()`` which takes HSV values as an input, and ``setRGB`` which takes RGB values as an input.
+
+Using HSV Values
+^^^^^^^^^^^^^^^^
+
+HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. Hue is an integer from 1 - 360. Saturation and Value are integers from 0 - 100. LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red.
 
 .. tabs::
 
@@ -61,7 +66,35 @@ Color can be set to an individual led on the strip using the ``setHSV()`` method
       .. code-block:: C++
 
          for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetHSV(0, 255, 255);
+            m_ledBuffer[i].SetHSV(0, 100, 100);
+         }
+
+         m_led.SetData(m_ledBuffer);
+
+Using RGB Values
+^^^^^^^^^^^^^^^^
+
+RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. code-block:: Java
+
+         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+            // Sets the specified LED to the RGB values for red
+            m_ledBuffer.setRGB(i, 255, 0, 0);
+         }
+
+         m_led.setData(m_ledBuffer);
+
+   .. group-tab:: C++
+
+      .. code-block:: C++
+
+         for (int i = 0; i < kLength; i++) {
+            m_ledBuffer[i].SetRGB(255, 0, 0);
          }
 
          m_led.SetData(m_ledBuffer);
@@ -73,7 +106,7 @@ It's good robot practice to keep the ``robotPeriodic()`` method as clean as poss
 
 The below method does a couple of important things. Inside of the *for* loop, it equally distributes the hue over the entire length of the strand and stores the individual LED hue to a variable called ``hue``. Then the for loop sets the HSV value of that specified pixel using the ``hue`` value.
 
-Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the pixel that contains the "initial" hue creating the rainbow effect. ``m_rainbowFirstPIxelHue`` then checks to make sure that the hue is inside the hue boundaries of 180. This is because HSV hue is a value from 0-180.
+Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the pixel that contains the "initial" hue creating the rainbow effect. ``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside the hue boundaries of 180. This is because HSV hue is a value from 0-180.
 
 .. tabs::
 
