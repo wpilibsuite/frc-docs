@@ -3,6 +3,8 @@ PID Control through PIDSubsystems and PIDCommands
 
 .. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-control/pidcontroller:PID Control in WPILib`.
 
+.. note:: Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
+
 One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :code:`PIDController` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__) to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: PIDSubsystem, which integrates the PID controller into a subsystem, and PIDCommand, which integrates the PID controller into a command.
 
 PIDSubsystems
@@ -49,6 +51,13 @@ Users should override this method to return whatever sensor reading they wish to
 The ``useOutput()`` method consumes the output of the PID controller, and the current setpoint (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.
 
 Users should override this method to pass the final computed control output to their subsystem's motors.
+
+Passing In the Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base class through the superclass constructor call of their subclass.  This serves to specify the PID gains, as well as the period (if the user is using a non-standard main robot loop period).
+
+Additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
 Using a ``PIDSubsystem``
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,7 +150,7 @@ Using a PIDSubsystem with commands can be very simple:
 PIDCommands
 -----------
 
-The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a PIDCommmand by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a PIDCommand :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommmand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Creating a ``PIDCommand``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -173,7 +182,7 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 ``controller``
 ~~~~~~~~~~~~~~
 
-The ``controller`` parameter is the ``PIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains and the period for the controller.
+The ``controller`` parameter is the ``PIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains and the period for the controller (if the user is using a nonstandard main robot loop period).
 
 When subclassing ``PIDCommand``, additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
