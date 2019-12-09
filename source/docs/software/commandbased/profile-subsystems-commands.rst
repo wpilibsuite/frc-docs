@@ -176,4 +176,53 @@ The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/s
 
 Like all inlineable commands, ``TrapezoidProfileCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-.. todo:: add full TrapezoidProfileCommand example when one's written.
+Full ``TrapezoidProfileCommand`` Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
+
+. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+  .. group-tab:: C++ (Header)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline Command Definitions>`  example:
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+      :language: java
+      :lines: 69-87
+      :linenos:
+      :lineno-start: 69
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 44-62
+      :linenos:
+      :lineno-start: 44
