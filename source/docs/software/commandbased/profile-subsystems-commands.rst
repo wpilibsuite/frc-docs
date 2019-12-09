@@ -143,8 +143,6 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
 .. tabs::
 
-  .. tabs::
-
   .. group-tab:: Java
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
