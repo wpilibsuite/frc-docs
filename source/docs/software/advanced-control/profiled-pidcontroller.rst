@@ -112,7 +112,7 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
   .. group-tab:: C++
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
-      :language: java
+      :language: c++
       :lines: 8-
       :linenos:
       :lineno-start: 8
