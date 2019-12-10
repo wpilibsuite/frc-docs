@@ -6,7 +6,7 @@ LED strips have been commonly used by teams for several years for a variety of r
 Instantiating the AddressableLED Object
 ---------------------------------------
 
-You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the RoboRIO. Then you set the number of LEDs located on your LED strip, with can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, with can be done with the ``setLength()`` function.
 
 .. important:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
