@@ -92,14 +92,14 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
   .. code-tab:: java
 
-    // Calculates the feedforward for a position of 2 units, a velocity of 2 units/second, and
+    // Calculates the feedforward for a position of 1 units, a velocity of 2 units/second, and
     // an acceleration of 3 units/second^2
     // Units are determined by the units of the gains passed in at construction.
     feedforward.calculate(1, 2, 3);
 
   .. code-tab:: c++
 
-    // Calculates the feedforward for a position of 2 radians, a velocity of 2 radians/second, and
+    // Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
     // an acceleration of 3 radians/second^2
     // Output is in volts
     feedforward.Calculate(1_rad, 2_rad_per_s, 3_rad/(1_s * 1_s));

@@ -161,7 +161,7 @@ Unlike the old ``PIDController``, the new controller does not offer any output c
   .. code-tab:: java
 
     // Clamps the controller output to between -0.5 and 0.5
-    MathUtils.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
+    MathUtil.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
 
   .. code-tab:: c++
 
