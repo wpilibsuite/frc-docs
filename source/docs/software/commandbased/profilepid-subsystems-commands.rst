@@ -5,22 +5,22 @@ Combining Motion Profiling and PID in Command-Based
 
 .. note:: Unlike the earlier version of ``PIDController``, the 2020 ``ProfiledPIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
 
-A common FRC controls solution is to pair a trapezoidal motion profile for setpoint generation with a PID controller for setpoint tracking.  To facilitate this, WPILib includes its own :ref:`ProfiledPIDController <docs/software/advanced-control/profiled-pidcontroller:Combining Motion Profiling and PID Control with \`\`ProfiledPIDController\`\`>` class.  To further aid teams in integrating this functionality into their robots, the command-based framework contains two convenience wrappers for the ``ProfiledPIDController`` class: ``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, and ``ProfiledPIDCommand``, which integrates the controller into a command.
+A common FRC controls solution is to pair a trapezoidal motion profile for setpoint generation with a PID controller for setpoint tracking.  To facilitate this, WPILib includes its own :ref:`ProfiledPIDController <docs/software/advanced-control/profiled-pidcontroller:Combining Motion Profiling and PID Control with ProfiledPIDController>` class.  To further aid teams in integrating this functionality into their robots, the command-based framework contains two convenience wrappers for the ``ProfiledPIDController`` class: ``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, and ``ProfiledPIDCommand``, which integrates the controller into a command.
 
-``ProfiledPIDSubsystem``
-------------------------
+ProfiledPIDSubsystem
+--------------------
 
 .. note:: In C++, the ``ProfiledPIDSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 The ``ProfiledPIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ProfiledPIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users must create a subclass of it.
 
-Creating a ``ProfiledPIDSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a ProfiledPIDSubsystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When subclassing ``ProfiledPIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
-``getMeasurement()``
-~~~~~~~~~~~~~~~~~~~~
+getMeasurement()
+~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -36,8 +36,8 @@ The ``getMeasurement`` method returns the current measurement of the process var
 
 Users should override this method to return whatever sensor reading they wish to use as their process variable measurement.
 
-``useOutput()``
-~~~~~~~~~~~~~~~
+useOutput()
+~~~~~~~~~~~
 
 .. tabs::
 
@@ -61,13 +61,13 @@ Users must also pass in a ``ProfiledPIDController`` to the ``ProfiledPIDSubsyste
 
 Additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-Using a ``ProfiledPIDSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using a ProfiledPIDSubsystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once an instance of a ``PIDSubsystem`` subclass has been created, it can be used by commands through the following methods:
 
-``setGoal()``
-~~~~~~~~~~~~~~~~~
+setGoal()
+~~~~~~~~~
 
 .. note:: If you wish to set the goal to a simple distance with an implicit target velocity of zero, an overload of ``setGoal()`` exists that takes a single distance value, rather than a full motion profile state.
 
@@ -85,15 +85,15 @@ The ``setGoal()`` method can be used to set the setpoint of the ``PIDSubsystem``
     // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
     examplePIDSubsyste.SetGoal({5_m, 3_mps});
 
-``enable()`` and ``disable()``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+enable() and disable()
+~~~~~~~~~~~~~~~~~~~~~~
 
 The ``enable()`` and ``disable()`` methods enable and disable the automatic control of the ``ProfiledPIDSubsystem``.  When the subsystem is enabled, it will automatically run the motion profile and the control loop and track to the goal.  When it is disabled, no control is performed.
 
 Additionally, the ``enable()`` method resets the internal ``ProfiledPIDController``, and the ``disable()`` method calls the user-defined `useOutput()`_ method with both output and setpoint set to ``0``.
 
-Full ``ProfiledPIDSubsystem`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full ProfiledPIDSubsystem Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a PIDSubsystem look like when used in practice? The following examples are taken from the ArmBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ArmBot>`__):
 
@@ -143,15 +143,15 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
       :linenos:
       :lineno-start: 33
 
-``ProfiledPIDCommand``
-----------------------
+ProfiledPIDCommand
+------------------
 
 .. note:: In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 The ``ProfiledPIDCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ProfiledPIDCommand.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
-Creating a ``PIDCommand``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a PIDCommand
+^^^^^^^^^^^^^^^^^^^^^
 
 A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``ProfiledPIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
@@ -175,41 +175,41 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
       :linenos:
       :lineno-start: 39
 
-``controller``
-~~~~~~~~~~~~~~
+controller
+~~~~~~~~~~
 
 The ``controller`` parameter is the ``ProfiledPIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains, the motion profile constraints, and the period for the controller (if the user is using a nonstandard main robot loop period).
 
 When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-``measurementSource``
-~~~~~~~~~~~~~~~~~~~~~
+measurementSource
+~~~~~~~~~~~~~~~~~
 
 The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Pasing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
-``goalSource``
-~~~~~~~~~~~~~~
+goalSource
+~~~~~~~~~~
 
 The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the current goal state for the mechanism.  If only a constant goal is needed, an overload exists that takes a constant goal rather than a supplier.  Additionally, if goal velocities are desired to be zero, overloads exist that take a constant distance rather than a full profile state.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_goal`` field.
 
-``useOutput``
-~~~~~~~~~~~~~
+useOutput
+~~~~~~~~~
 
 The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint state of the control loop.  Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 
-``requirements``
-~~~~~~~~~~~~~~~~
+requirements
+~~~~~~~~~~~~
 
 Like all inlineable commands, ``ProfiledPIDCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-Full ``ProfiledPIDCommand`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full ProfiledPIDCommand Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a ``ProfiledPIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 

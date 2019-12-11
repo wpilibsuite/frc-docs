@@ -15,8 +15,8 @@ WPILib currently provides the following three helper classes for feedforward con
 * `ArmFeedforward`_ (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/ArmFeedforward.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1ArmFeedforward.html>`__)
 * `ElevatorFeedforward`_ (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/ElevatorFeedforward.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1ElevatorFeedforward.html>`__)
 
-``SimpleMotorFeedforward``
---------------------------
+SimpleMotorFeedforward
+----------------------
 
 .. note:: In C++, the ``SimpleMotorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -59,8 +59,8 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     // Output is in volts
     feedforward.Calculate(10_mps, 20_mps_sq);
 
-``ArmFeedforward``
-------------------
+ArmFeedforward
+--------------
 
 .. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kCos`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -104,8 +104,8 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     // Output is in volts
     feedforward.Calculate(1_rad, 2_rad_per_s, 3_rad/(1_s * 1_s));
 
-``ElevatorFeedforward``
------------------------
+ElevatorFeedforward
+-------------------
 
 .. note:: In C++, the ``ElevatorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 

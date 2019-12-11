@@ -9,13 +9,13 @@ PID Control in WPILib
 
 WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
-Using the ``PIDController`` Class
----------------------------------
+Using the PIDController Class
+-----------------------------
 
 .. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``wpilibj.controller`` package.
 
-Constructing a ``PIDController``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Constructing a PIDController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: While ``PIDController`` may be used asynchronously, it does *not* provide any thread safety features - ensuring threadsafe operation is left entirely to the user, and thus asynchronous usage is recommended only for advanced teams.
 

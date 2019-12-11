@@ -9,20 +9,20 @@ When controlling a mechanism, is often desirable to move it smoothly between two
 
 To further help teams integrate motion profiling into their command-based robot projects, WPILib includes two convenience wrappers for the ``TrapezoidProfile`` class: ``TrapezoidProfileSubsystem``, which automatically generates and executes motion profiles in its ``periodic()`` method, and the ``TrapezoidProfileCommand``, which executes a single user-provided ``TrapezoidProfile``.
 
-``TrapezoidProfileSubsystem``
------------------------------
+TrapezoidProfileSubsystem
+-------------------------
 
 .. note:: In C++, the ``TrapezoidProfileSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 The ``TrapezoidProfileSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1TrapezoidProfileSubsystem.html>`__) will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
 
-Creating a ``TrapezoidProfileSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a TrapezoidProfileSubsystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When subclassing ``TrapezoidProfileSubsystem``, users must override a single abstract method to provide functionality that the class will use in its ordinary operation:
 
-``useState()``
-~~~~~~~~~~~~~~
+useState()
+~~~~~~~~~~
 
 .. tabs::
 
@@ -48,13 +48,13 @@ Users must also pass in an initial position for the mechanism.
 
 Advanced users may pass in an alternate value for the loop period, if a non-standard main loop period is being used.
 
-Using a ``TrapezoidProfileSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using a TrapezoidProfileSubsystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once an instance of a ``TrapezoidProfileSubsystem`` subclass has been created, it can be used by commands through the following methods:
 
-``setGoal()``
-~~~~~~~~~~~~~~~~~
+setGoal()
+~~~~~~~~~
 
 .. note:: If you wish to set the goal to a simple distance with an implicit target velocity of zero, an overload of ``setGoal()`` exists that takes a single distance value, rather than a full motion profile state.
 
@@ -74,8 +74,8 @@ The ``setGoal()`` method can be used to set the goal state of the ``TrapezoidPro
 
 .. todo:: add section on enable/disable once these are added to profilesubsystem classes.
 
-Full ``TrapezoidProfileSubsystem`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full TrapezoidProfileSubsystem Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the ArmbotOffobard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard>`__):
 
@@ -125,8 +125,8 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
       :linenos:
       :lineno-start: 33
 
-``TrapezoidProfileCommand``
----------------------------
+TrapezoidProfileCommand
+-----------------------
 
 .. note:: In C++, the ``TrapezoidProfileCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -134,8 +134,8 @@ The ``TrapezoidProfileCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/
 
 As with ``TrapezoidProfileSubsystem``, users can create a ``TrapezoidProfileCommand`` by subclassing the ``TrapezoidProfileCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``TrapezoidProfileCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
-Creating a ``TrapezoidProfileCommand``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a TrapezoidProfileCommand
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``TrapezoidProfileCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
@@ -159,23 +159,23 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
       :linenos:
       :lineno-start: 36
 
-``profile``
-~~~~~~~~~~~
+profile
+~~~~~~~
 
 The ``profile`` parameter is the ``TrapezoidProfile`` object that will be executed by the command.  By passing this in, users specify the start state, end state, and motion constraints of the profile that the command will use.
 
-``output``
-~~~~~~~~~~
+output
+~~~~~~
 
 The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useState()`_ function in ``PIDSubsystem``.
 
-``requirements``
-~~~~~~~~~~~~~~~~
+requirements
+~~~~~~~~~~~~
 
 Like all inlineable commands, ``TrapezoidProfileCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-Full ``TrapezoidProfileCommand`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full TrapezoidProfileCommand Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
 

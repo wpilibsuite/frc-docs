@@ -12,13 +12,13 @@ PIDSubsystems
 
 The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
-Creating a ``PIDSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a PIDSubsystem
+^^^^^^^^^^^^^^^^^^^^^^^
 
 When subclassing ``PIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
-``getMeasurement()``
-~~~~~~~~~~~~~~~~~~~~
+getMeasurement()
+~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -34,8 +34,8 @@ The ``getMeasurement`` method returns the current measurement of the process var
 
 Users should override this method to return whatever sensor reading they wish to use as their process variable measurement.
 
-``useOutput()``
-~~~~~~~~~~~~~~~
+useOutput()
+~~~~~~~~~~~
 
 .. tabs::
 
@@ -59,13 +59,13 @@ Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base class t
 
 Additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-Using a ``PIDSubsystem``
-^^^^^^^^^^^^^^^^^^^^^^^^
+Using a PIDSubsystem
+^^^^^^^^^^^^^^^^^^^^
 
 Once an instance of a ``PIDSubsystem`` subclass has been created, it can be used by commands through the following methods:
 
-``setSetpoint()``
-~~~~~~~~~~~~~~~~~
+setSetpoint()
+~~~~~~~~~~~~~
 
 The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsystem``.  The subsystem will automatically track to the setpoint using the defined output:
 
@@ -81,15 +81,15 @@ The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsyst
     // The subsystem will track to a setpoint of 5.
     examplePIDSubsyste.SetSetpoint(5);
 
-``enable()`` and ``disable()``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+enable() and disable()
+~~~~~~~~~~~~~~~~~~~~~~
 
 The ``enable()`` and ``disable()`` methods enable and disable the PID control of the ``PIDSubsystem``.  When the subsystem is enabled, it will automatically run the control loop and track the setpoint.  When it is disabled, no control is performed.
 
 Additionally, the ``enable()`` method resets the internal ``PIDController``, and the ``disable()`` method calls the user-defined `useOutput()`_ method with both output and setpoint set to ``0``.
 
-Full ``PIDSubsystem`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full PIDSubsystem Example
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a ``PIDSubsystem`` look like when used in practice? The following examples are taken from the FrisbeeBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):
 
@@ -147,13 +147,13 @@ Using a ``PIDSubsystem`` with commands can be very simple:
       :linenos:
       :lineno-start: 32
 
-``PIDCommand``
---------------
+PIDCommand
+----------
 
 The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommmand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
-Creating a ``PIDCommand``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a PIDCommand
+^^^^^^^^^^^^^^^^^^^^^
 
 A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
@@ -177,41 +177,41 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
       :linenos:
       :lineno-start: 29
 
-``controller``
-~~~~~~~~~~~~~~
+controller
+~~~~~~~~~~
 
 The ``controller`` parameter is the ``PIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains and the period for the controller (if the user is using a nonstandard main robot loop period).
 
 When subclassing ``PIDCommand``, additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-``measurementSource``
-~~~~~~~~~~~~~~~~~~~~~
+measurementSource
+~~~~~~~~~~~~~~~~~
 
 The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Pasing in the ``measurementSource`` function in ``PIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``PIDSubsystem``.
 
 When subclassing ``PIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
-``setpointSource``
-~~~~~~~~~~~~~~~~~~
+setpointSource
+~~~~~~~~~~~~~~
 
 The ``setpointSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the current setpoint for the control loop.  If only a constant setpoint is needed, an overload exists that takes a constant setpoint rather than a supplier.
 
 When subclassing ``PIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_setpoint`` field.
 
-``useOutput``
-~~~~~~~~~~~~~
+useOutput
+~~~~~~~~~
 
 The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``PIDSubsystem``.
 
 When subclassing ``PIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 
-``requirements``
-~~~~~~~~~~~~~~~~
+requirements
+~~~~~~~~~~~~
 
 Like all inlineable commands, ``PIDCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-Full ``PIDCommand`` Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Full PIDCommand Example
+^^^^^^^^^^^^^^^^^^^^^^^
 
 What does a ``PIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 
