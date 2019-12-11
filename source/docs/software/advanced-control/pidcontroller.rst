@@ -3,7 +3,7 @@ PID Control in WPILib
 
 .. todo:: Link to conceptual PID article when it's finished
 
-.. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  For an explanation of the concepts involved in PID control, see <TODO: link>.
+.. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  Documentation describing the involved concepts in more detail is forthcoming.
 
 .. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 

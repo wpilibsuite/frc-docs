@@ -3,7 +3,7 @@ Feedforward Control in WPILib
 
 .. todo:: link to conceptual feedforward/feedback article when it's done
 
-.. note:: This article covers the in-code implementation of feedforward control with WPILib's provided library classes.  For an explanation of the concepts involved in feedforward, see <TODO: link>.
+.. note:: This article covers the in-code implementation of feedforward control with WPILib's provided library classes.  Documentation describing the involved concepts in more detail is forthcoming.
 
 .. note:: The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:`frc-characterization toolsuite <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>` - the characterization toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  The toolsuite will indicate the appropriate units for each of the gains.
 

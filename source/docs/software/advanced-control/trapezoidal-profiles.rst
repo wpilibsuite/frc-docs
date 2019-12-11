@@ -3,7 +3,7 @@ Trapezoidal Motion Profiles in WPILib
 
 .. todo:: link to conceptual motion profiling article
 
-.. note:: This article covers the in-code generation of trapezoidal motion profiles.  For an explanation of the concepts involved in motion profiling, see <TODO: link>.
+.. note:: This article covers the in-code generation of trapezoidal motion profiles.  Documentation describing the involved concepts in more detail is forthcoming.
 
 .. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :ref:`docs/software/commandbased/profile-subsystems-commands:Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands`.
 
