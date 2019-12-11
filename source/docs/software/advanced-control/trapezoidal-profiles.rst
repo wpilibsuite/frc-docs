@@ -13,8 +13,8 @@ While feedforward and feedback control offer convenient ways to achieve a given 
 
 To help users do this, WPILib provides a ``TrapezoidProfile`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1TrapezoidProfile.html>`__).
 
-Creating a ``TrapezoidProfile``
--------------------------------
+Creating a TrapezoidProfile
+---------------------------
 
 .. note:: In C++, the ``TrapezoidProfile`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
