@@ -5,7 +5,7 @@ Combining Feedforward and PID Control
 
 .. note:: This article covers the in-code implementation of combined feedforward/PID control with WPILib's provided library classes.  Documentation describing the involved concepts in more detail is forthcoming.
 
-Feedforward and feedback controllers can each be used in isolation, but are most effective when combined together.  Thankfully, combining these two control methods is *exceedingly* simple - one simply adds their outputs together.
+Feedforward and feedback controllers can each be used in isolation, but are most effective when combined together.  Thankfully, combining these two control methods is *exceedingly* straightforward - one simply adds their outputs together.
 
 Using Feedforward with a PIDController
 --------------------------------------
