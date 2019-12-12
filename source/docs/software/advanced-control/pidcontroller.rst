@@ -103,7 +103,7 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
 Resetting the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-When the ``PIDController`` has been disabled and then re-enabled, or the setpoint has changed, it is often desirable to clear its internal state (most importantly, the integral accumulator), as it may be no longer valid.  This can be accomplished by calling the ``reset()`` method.
+It is sometimes desirable to clear the internal state (most importantly, the integral accumulator) of a ``PIDController``, as it may be no longer valid (e.g. when the ``PIDController`` has been disabled and then re-enabled).  This can be accomplished by calling the ``reset()`` method.
 
 Setting a Max Integrator Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
