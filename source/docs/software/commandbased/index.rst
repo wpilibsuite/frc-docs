@@ -14,3 +14,5 @@ Command-Based Programming
    structuring-command-based-project
    convenience-features
    pid-subsystems-commands
+   profile-subsystems-commands
+   profilepid-subsystems-commands

@@ -67,6 +67,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
+   docs/software/advanced-control/index
 
 .. toctree::
    :maxdepth: 1
