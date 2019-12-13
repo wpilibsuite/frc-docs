@@ -12,15 +12,15 @@ To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (
 
     .. code-tab:: c++
 
-        PowerDistributionPanel examplePDP{1};
+        PowerDistributionPanel examplePDP{0};
 
     .. code-tab:: java
 
-        PowerDistributionPanel examplePDP = new PowerDistributionPanel(1);
+        PowerDistributionPanel examplePDP = new PowerDistributionPanel(0);
 
 Note: it is not necessary to create a PowerDistributionPanel object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
-.. warning:: To work with the current versions of C++ and Java WPILib, the CAN ID for the PDP *must* be 0.
+.. warning:: To enable voltage and current logging in the Driver Station, the CAN ID for the PDP *must* be 0.
 
 Reading the Bus Voltage
 -----------------------
