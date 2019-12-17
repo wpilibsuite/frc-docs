@@ -116,7 +116,7 @@ WPILib All in One Installer
 - Use ``wpilib\2020\`` instead of ``frc2020\``. This prevents cluttering the user’s home directory when installing alongside previous years’ installation.
 - Fixed an issue where shortcuts would get created for installed tools, even if it was unchecked.
 - Installing for **All Users** will now create shortcuts for all users, instead of only the current one.
-- Update to lastest Visual Studio Code and C++/Java extensions
+- Update to latest Visual Studio Code and C++/Java extensions
 
 Visual Studio Code Extension
 ----------------------------
