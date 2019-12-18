@@ -32,7 +32,7 @@ Checking Diagnostics
 
 Per the :ref:`FRC-Characterization guide <docs/software/wpilib-tools/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
-.. todo:: add plots from prateek's data here
+|Diagnostics|
 
 As our data look reasonably linear and our threshold seems to be set correctly, we may move on to the next step.
 
@@ -43,7 +43,7 @@ Record Feedforward Gains
 
 We now record the feedforward gains calculated by the tool:
 
-.. todo:: add picture of prateek's FF gains here
+|Feedforward Gains|
 
 Since our wheel diameter was specified in meters, our feedforward gains are in the following units:
 
@@ -60,14 +60,20 @@ Calculate Feedback Gains
 
 We now :ref:`calculate the feedback gains <docs/software/wpilib-tools/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``velocity`` mode in the characterization tool:
 
-.. todo:: pic
+|Velocity Mode|
 
 Since we will be using the WPILib PIDController for our velocity loop, we furthermore select the ``WPILib (2020-)`` option from the drop-down "presets" menu.  This is *very* important, as the feedback gains will not be in the correct units if we do not select the correct preset:
 
-.. todo:: pic
+|WPILib Preset|
 
 Finally, we calculate and record the feedback gains for our control loop.  Since it is a velocity controller, only a P gain is required:
 
-.. todo:: pic
+|Feedback Gains|
 
 Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.
+
+.. |Diagnostics| image:: images/voltage-domain-plots.png
+.. |Feedforward Gains| image:: images/ff-gains.png
+.. |Velocity Mode| image:: images/velocity-mode.png
+.. |WPILib Preset| image:: images/wpilib-preset.png
+.. |Feedback Gains| image:: images/fb-gains.png
