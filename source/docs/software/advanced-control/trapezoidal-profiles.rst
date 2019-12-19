@@ -39,7 +39,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
     // Creates a new set of trapezoidal motion profile constraints
     // Max velocity of 10 meters per second
     // Max acceleration of 20 meters per second squared
-    frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq);
+    frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
 
 Start and End States
 ^^^^^^^^^^^^^^^^^^^^
