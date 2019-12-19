@@ -28,7 +28,7 @@ Ensure the repository is cloned with ``git clone https://github.com/wpilibsuite/
   - ``sudo apt-get install -y python3``
   - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz``
 
-Ensure the Python requirements are installed via running ``python3 -m pip install source/requirements.txt``
+Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
 
 **Note:** Windows users who are building PDF or EPUB versions of the docs *must* run ``mpm --verbose --require=@miktex-packages.txt`` to properly install all of the required MiKTeX packages.
 
