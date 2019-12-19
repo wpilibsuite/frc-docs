@@ -58,7 +58,7 @@ Calculate Feedback Gains
 
 .. note:: Feedback gains do *not*, in general, transfer across robots.  Do *not* use the gains from this tutorial for your own robot.
 
-We now :ref:`calculate the feedback gains <docs/software/wpilib-tools/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``velocity`` mode in the characterization tool:
+We now :ref:`calculate the feedback gains <docs/software/wpilib-tools/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the characterization tool:
 
 |Velocity Mode|
 
@@ -70,7 +70,7 @@ Finally, we calculate and record the feedback gains for our control loop.  Since
 
 |Feedback Gains|
 
-Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.
+Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.  Thus, our calculated gain means that, for each meter per second of velocity error, the controller will output an additional 8.5 volts.
 
 .. |Diagnostics| image:: images/voltage-domain-plots.png
 .. |Feedforward Gains| image:: images/ff-gains.png
