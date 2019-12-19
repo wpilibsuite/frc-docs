@@ -76,7 +76,7 @@ Specifying and Checking Tolerances
 
 .. todo:: link to article on motion profiles
 
-Occasionally, it is useful to know if a controller has tracked the setpoint to within a given tolerance - for example, to determine if a command should be ended, or (while following a motion profile) if motion is being impeded and needs to be re-planned).
+Occasionally, it is useful to know if a controller has tracked the setpoint to within a given tolerance - for example, to determine if a command should be ended, or (while following a motion profile) if motion is being impeded and needs to be re-planned.
 
 To do this, we first must specify the tolerances with the ``setTolerance()`` method; then, we can check it with the ``atSetpoint()`` method.
 
@@ -131,7 +131,7 @@ Enabling this setting with the ``setIntegratorRange()`` method will prevent the 
 Setting Continuous Input
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warning:: If your mechanism is not capable of fully continuous rotational motion (e.g. a turret without a slip ring, whose wires twist as it rotates), *do not* enable continuous input unless you have implemented an additional safety feature to prevent the mechanism from past its limit!
+.. warning:: If your mechanism is not capable of fully continuous rotational motion (e.g. a turret without a slip ring, whose wires twist as it rotates), *do not* enable continuous input unless you have implemented an additional safety feature to prevent the mechanism from moving past its limit!
 
 .. warning:: The continuous input function does *not* automatically wrap your input values - be sure that your input values, when using this feature, are never outside of the specified range!
 
