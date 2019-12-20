@@ -40,5 +40,5 @@ To follow this tutorial, you will need ready access to the following materials:
 2. A driver-station computer configured with:
 
   * :ref:`FRC Driver Station <docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite>`.
-  * :ref:`WPILib 2020 <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`.
+  * :ref:`WPILib <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`.
   * :ref:`The FRC-Characterization Toolsuite <docs/software/wpilib-tools/robot-characterization/introduction:Installing and Launching the Toolsuite>`.
