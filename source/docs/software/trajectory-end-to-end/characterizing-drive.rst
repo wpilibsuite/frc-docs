@@ -1,7 +1,7 @@
 Step 1: Characterizing Your Robot Drive
 =======================================
 
-.. note::  For detailed instructions on using the FRC-Characterization Toolsuite, see its :ref:`dedicated documentation <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`.
+.. note::  For detailed instructions on using the FRC-Characterization tool, see its :ref:`dedicated documentation <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
 .. note:: The drive characterization process requires ample space for the robot to drive.  Be sure to have *at least* a 10' stretch (ideally closer to 20') in which the robot can drive during the characterization routine.
 
