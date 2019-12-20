@@ -12,7 +12,7 @@ Before accurately following a path with a robot, it is important to have an accu
 Gathering the Data
 ------------------
 
-We begin by gathering our drive characterization data.  Per the FRC-Characterization instructions, we:
+We begin by gathering our drive characterization data.
 
 1. :ref:`Generate a robot project <docs/software/wpilib-tools/robot-characterization/generating-project:Generating a Project>`.
 
