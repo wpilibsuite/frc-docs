@@ -31,7 +31,7 @@ Downloading the Update
 ----------------------
 
 Download the update from
-http://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html
+https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html
 
 ..image:: images/labview/offline-installer.png
 
