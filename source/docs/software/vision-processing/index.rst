@@ -7,3 +7,4 @@ Vision Processing
    introduction/index
    grip/index
    raspberry-pi/index
+   limelight/index

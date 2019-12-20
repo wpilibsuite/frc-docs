@@ -137,6 +137,14 @@ Axis M1013/M1011/206 Ethernet Camera
 
 The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for capturing images/control-system-hardware for vision processing and/or sending video back to the Driver Station laptop. The camera should be wired to a 5V power output on the Voltage Regulator Module and an open ethernet port on the robot radio. For more information, see :ref:`Configuring an Axis Camera <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>` and the `Axis 206 <https://www.axis.com/en-us/products/axis-206>`__, `Axis M1011 <https://www.axis.com/en-us/products/axis-m1011>`__, `Axis M1013 pages <https://www.axis.com/en-us/products/axis-m1013>`__.
 
+Limelight Smart Camera
+------------------------------------
+
+.. image:: images/control-system-hardware/limelight-gradient.png
+
+The Limelight Smart Camera runs configurable 90fps vision processing pipelines. It combines a computer, a camera, green leds, a robust power supply, and software into a package about the size of a credit card. For more information, see the `Limelight product page <https://limelightvision.io/>`__, the :ref:`Limelight <docs/software/vision-processing/limelight/what-is-limelight:What is Limelight?>` section of this documentation, and the `official Limelight Docs <https://docs.limelightvision.io/>`__.
+
+
 Microsoft Lifecam HD3000
 ------------------------
 
@@ -179,4 +187,4 @@ The power supply for an FRC robot is a single 12V 18Ah battery. The batteries us
 Image Credits
 -------------
 
-Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. All other photos courtesy of AndyMark Inc.
+Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX courtesy of REV Robotics. Image of Limelight courtesy of Limelight For FRC. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. All other photos courtesy of AndyMark Inc.
