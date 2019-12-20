@@ -28,7 +28,7 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from http://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
 
 ..image:: images/labview/offline-installer.png
 
@@ -159,5 +159,4 @@ Restart
 .. image:: images/labview/labview_restart.png
 
 Select "Reboot Now" after closing any open programs.
-
 
