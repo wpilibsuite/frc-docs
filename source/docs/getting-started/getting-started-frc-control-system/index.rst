@@ -10,7 +10,7 @@ Getting Started
    offline-installation-preparations
    wpilib-setup
    labview-setup
-   frc-update-suite
+   frc-game-tools
    how-to-wire-a-robot
    imaging-your-roborio
    radio-programming
