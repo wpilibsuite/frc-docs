@@ -5,7 +5,7 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 .. image:: images/labview/ni_logo.png
 
-.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Update Suite </docs/getting-started/getting-started-frc-control-system/frc-update-suite>`.
+.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Game Tools </docs/getting-started/getting-started-frc-control-system/frc-game-tools>`.
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
@@ -28,13 +28,13 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/download/labview-for-frc-18.0/7841/en/
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from http://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
 
-.. note:: Beta teams will download LabVIEW from teamforge.
+..image:: images/labview/offline-installer.png
 
-If downloaded, right click on the downloaded file (LabVIEW_Software_for_FRC_2020.zip) and select Extract All.
+If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
-.. note:: This is a large download (~7GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
+.. note:: This is a large download (~8GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
 
 Installing LabVIEW
 ------------------
