@@ -76,7 +76,7 @@ Adding the Method Declarations to the Header File (C++ Only)
    .. code-tab:: cpp
 
       #pragma once
-      
+
       #include "frc/commands/Subsystem.h"
       #include "frc/Victor.h"
 
