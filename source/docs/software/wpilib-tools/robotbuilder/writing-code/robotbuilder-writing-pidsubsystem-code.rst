@@ -82,8 +82,7 @@ Adding the Constants to the Header File (C++ Only)
 
    .. code-tab:: cpp
 
-      #ifndef ELEVATOR_H
-      #define ELEVATOR_H
+      #pragma once
 
       #include "Commands/PIDSubsystem.h"
       #include "WPILIb.h"
@@ -105,7 +104,6 @@ Adding the Constants to the Header File (C++ Only)
          void InitDefaultCommand();
       };
 
-      #endif
 
 Return PID Input Values
 -----------------------
