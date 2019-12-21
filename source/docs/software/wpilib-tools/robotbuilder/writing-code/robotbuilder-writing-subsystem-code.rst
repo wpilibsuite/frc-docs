@@ -77,7 +77,7 @@ Adding the Method Declarations to the Header File (C++ Only)
 
       #pragma once
       
-      #include "frc/command/Subsystem.h"
+      #include "frc/commands/Subsystem.h"
       #include "frc/Victor.h"
 
       class Claw: public Subsystem {
