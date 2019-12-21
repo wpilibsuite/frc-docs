@@ -42,7 +42,7 @@ Polling - Waiting for a Switch to Close
    .. code-tab:: cpp
 
       #include "RobotTemplate.h"
-      #include "WPILib.h"
+      #include "frc/DigitalInput.h"
 
       RobotTemplate::RobotTemplate()
       {
