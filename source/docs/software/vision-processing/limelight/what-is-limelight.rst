@@ -79,4 +79,3 @@ Example code to retrieve targeting data from Limelight is below.
             ty = table.getNumber('ty',None)
             ta = table.getNumber('ta',None)
             ts = table.getNumber('ts',None)
-            
