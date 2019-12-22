@@ -3,7 +3,7 @@ Imaging your Classmate (Veteran Image Download)
 
 .. note:: Veteran teams are not required to re-image their classmate
 
-This document describes the procedure for creating a bootable USB drive to restore the 2017 FRC image on a Classmate computer. If you do not wish to re-image your Classmate then you can start with the appropriate document for C++\Java, LabVIEW, or DS only.
+This document describes the procedure for creating a bootable USB drive to restore the FRC image on a Classmate computer. If you do not wish to re-image your Classmate then you can start with the appropriate document for C++\Java, LabVIEW, or DS only.
 
 Prerequisites
 -------------
@@ -21,6 +21,8 @@ Download the Computer Image
 Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/>`__. There are several computer images available, one for each model. On the download site, select the option that matches your computer by clicking the button below the image. Due to the limited size of the hard drive in the E09, it is supported with a DS/Utilities image only and does not have the IDEs for LabVIEW or C++/Java installed. All other images have the LabVIEW base installation already present.
 
 .. note:: These images only install the prerequisite core FRC software, it is still necessary to install the FRC specific updates. See the Update Software step for more information.
+
+.. warning:: Due to computer availability, the E14 image provided is the 2018 images. If using this image, teams may have to remove the old IDE (LabVIEW or Eclipse) and install the new IDE.
 
 Preparation
 -----------
