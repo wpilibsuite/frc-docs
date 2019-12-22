@@ -22,7 +22,7 @@ Download the image from the `FIRST FRC Driver Station System Image Portal <https
 
 .. note:: These images only install the prerequisite core FRC software, it is still necessary to install the FRC specific updates. See the Update Software step for more information.
 
-.. warning:: Due to computer availability, the E14 image provided is the 2018 images. If using this image, teams may have to remove the old IDE (LabVIEW or Eclipse) and install the new IDE.
+.. warning:: Due to computer availability, the E14 image provided is the 2018 image. If using this image, teams may need to remove the old IDE (LabVIEW or Eclipse) and install the new IDE.
 
 Preparation
 -----------
