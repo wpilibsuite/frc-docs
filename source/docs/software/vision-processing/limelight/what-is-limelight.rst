@@ -17,65 +17,65 @@ Once powered, Limelight will begin tracking targets and streaming data to the ro
 Example code to retrieve targeting data from Limelight is below.
 
 .. tabs::
-	
-	.. tab:: Java
 
-		.. code-block:: java
+    .. tab:: Java
 
-			NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-			NetworkTableEntry tx = table.getEntry("tx");
-			NetworkTableEntry ty = table.getEntry("ty");
-			NetworkTableEntry ta = table.getEntry("ta");
-			
-			//read values periodically
-			double x = tx.getDouble(0.0);
-			double y = ty.getDouble(0.0);
-			double area = ta.getDouble(0.0);
+        .. code-block:: java
 
-			//post to smart dashboard periodically
-			SmartDashboard.putNumber("LimelightX", x);
-			SmartDashboard.putNumber("LimelightY", y);
-			SmartDashboard.putNumber("LimelightArea", area);
+            NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+            NetworkTableEntry tx = table.getEntry("tx");
+            NetworkTableEntry ty = table.getEntry("ty");
+            NetworkTableEntry ta = table.getEntry("ta");
 
-		Don't forget to add these imports:
+            //read values periodically
+            double x = tx.getDouble(0.0);
+            double y = ty.getDouble(0.0);
+            double area = ta.getDouble(0.0);
 
-		.. code-block:: java
+            //post to smart dashboard periodically
+            SmartDashboard.putNumber("LimelightX", x);
+            SmartDashboard.putNumber("LimelightY", y);
+            SmartDashboard.putNumber("LimelightArea", area);
 
-			import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-			import edu.wpi.first.networktables.NetworkTable;
-			import edu.wpi.first.networktables.NetworkTableEntry;
-			import edu.wpi.first.networktables.NetworkTableInstance;
+        Don't forget to add these imports:
 
-	.. tab:: LabView
+        .. code-block:: java
 
-		.. image:: images/what-is-limelight/limelight-labview.png
+            import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+            import edu.wpi.first.networktables.NetworkTable;
+            import edu.wpi.first.networktables.NetworkTableEntry;
+            import edu.wpi.first.networktables.NetworkTableInstance;
 
-	.. tab:: C++
+    .. tab:: LabView
 
-		.. code-block:: c++
+        .. image:: images/what-is-limelight/limelight-labview.png
 
-			std::shared_ptr<NetworkTable> table = nt::NetworkTableInstance::GetDefault().GetTable("limelight");  
-			double targetOffsetAngle_Horizontal = table->GetNumber("tx",0.0);
-			double targetOffsetAngle_Vertical = table->GetNumber("ty",0.0);
-			double targetArea = table->GetNumber("ta",0.0);
-			double targetSkew = table->GetNumber("ts",0.0); 
+    .. tab:: C++
 
-		Don't forget to add these includes:
+        .. code-block:: c++
 
-		.. code-block:: c++
+            std::shared_ptr<NetworkTable> table = nt::NetworkTableInstance::GetDefault().GetTable("limelight");
+            double targetOffsetAngle_Horizontal = table->GetNumber("tx",0.0);
+            double targetOffsetAngle_Vertical = table->GetNumber("ty",0.0);
+            double targetArea = table->GetNumber("ta",0.0);
+            double targetSkew = table->GetNumber("ts",0.0);
 
-			include "frc/smartdashboard/Smartdashboard.h"
-			include "networktables/NetworkTable.h"
-			include "networktables/NetworkTableInstance.h"
-			
-	.. tab:: Python
+        Don't forget to add these includes:
 
-		.. code-block:: python
+        .. code-block:: c++
 
-		    from networktables import NetworkTables
-		    
-		    table = NetworkTables.getTable("limelight")
-		    tx = table.getNumber('tx',None)
-		    ty = table.getNumber('ty',None)
-		    ta = table.getNumber('ta',None)
-		    ts = table.getNumber('ts',None) 
+            include "frc/smartdashboard/Smartdashboard.h"
+            include "networktables/NetworkTable.h"
+            include "networktables/NetworkTableInstance.h"
+
+    .. tab:: Python
+
+        .. code-block:: python
+
+            from networktables import NetworkTables
+
+            table = NetworkTables.getTable("limelight")
+            tx = table.getNumber('tx',None)
+            ty = table.getNumber('ty',None)
+            ta = table.getNumber('ta',None)
+            ts = table.getNumber('ts',None)
