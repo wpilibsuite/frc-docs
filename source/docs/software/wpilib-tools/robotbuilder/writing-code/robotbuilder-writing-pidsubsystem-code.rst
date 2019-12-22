@@ -84,8 +84,9 @@ Adding the Constants to the Header File (C++ Only)
 
       #pragma once
 
-      #include "Commands/PIDSubsystem.h"
-      #include "WPILIb.h"
+      #include "frc/commands/PIDSubsystem.h"
+      #include "frc/AnalogChannel.h"
+      #include "frc/Victor.h"
 
       class Elevator: public PIDSubsystem {
        public:
