@@ -10,8 +10,6 @@ Before you begin using the software:
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
-.. note:: Teams will need to update firmware on both OM5P-AN and OM5P-AC radios in order for the programming utility to program them, or for them to be used at events. This must be done before you attempt to program them. Also note that for the OM5P-AN and AC bridge, it is recommended to use a particular Ethernet port. See the on screen image and instructions for more information.
-
 Pre-Requisites
 --------------
 
@@ -64,9 +62,9 @@ At home only:
 Download the software
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-`FRC Radio Configuration 19.1.1 <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip>`_
+`FRC Radio Configuration 20.0.0 <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_
 
-`FRC Radio Configuration 19.1.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`_
+`FRC Radio Configuration 20.0.0 Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
@@ -79,7 +77,7 @@ Install the software
 
 Double click on FRC_Radio_Configuration_VERSION.exe to launch the installer. Follow the prompts to complete the installation.
 
-Part of the installation prompts will include installing WinPCap if it is not already present. The WinPCap installer contains a checkbox (checked by default) to start the WinPCap driver on boot. You should leave this box checked.
+Part of the installation prompts will include installing Npcap if it is not already present. The Npcap installer contains a number of checkboxes to configure the install. You should leave the options as the defaults.
 
 Launch the software
 -------------------
@@ -115,7 +113,7 @@ For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio
 
 If you do not need to update or re-load the firmware, skip the next step.
 
-.. warning:: Note: Radios used in 2018 will need to be updated to 2019 firmware before configuring.
+.. warning:: Note: Radios used in 2019 **do not** need to be updated before configuring, the 2020 tool uses the same 2019 firmware.
 
 Loading FRC Firmware to OpenMesh radio
 --------------------------------------
