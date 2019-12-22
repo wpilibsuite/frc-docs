@@ -1,14 +1,15 @@
 New for 2020
 ============
 
-A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++\Java WPILib changes.
+A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes.
 
 Major Features - All Languages
 ------------------------------
 
-- **Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to control individually addressable LEDs (WS2812 or compatible protocol) from the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these LEDs directly to the roboRIO PWM signal line (they should be powered from an external supply) and control them from APIs in all three languages.
+- **Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to control individually addressable LEDs (WS2812 or compatible protocol) from the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these LEDs directly to the roboRIO PWM signal line and control them from APIs in all three languages. Depending on the length of the LED string and whether any servos are also being powered from the PWM ports, teams may be able to power the string directly from the PWM port or may need to use an external supply.
 - **Duty Cycle Encoder** - The roboRIO FPGA has been enhanced to be able to decode the signals from Duty Cycle encoders (this includes devices like the US Digital MA3, CTRE Mag Encoder, and REV Robotics Through Bore Encoder). Teams can connect these devices to the DIO ports on the roboRIO and access the encoder data via APIs in all three languages.
 - **CAN Bus Internal Restructure** - The internal implementation of the CAN bus has changed to reduce the latency incurred by CAN bus calls from robot programs. Team programs, particularly those with many CAN calls, should see reduced and more consistent loop timing with the new implementation. No team action is needed to take advantage of this change, the changes are limited to internal implementation. Users may notice changes in how some tools like the CTRE Phoenix Tuner work as a consequence of the restructure.
+- **Control Packet Caching** - A change has been made to the internals of how control packet data (such as Joystick data, current mode, etc.) is retrieved, resulting in reduced latency in these calls. The user-facing API has not changed, users will see this benefit without making any changes to their programs.
 - **Documentation** - If you're on this page, you're likely aware that the software documentation has moved from Screensteps to this new FRC-Docs page. This open source documentation, hosted on Read the Docs, allows for a greater number of contributors (including community contribution) as well as new features such as testable example code (to ensure example code remains correct as library changes are made), better support for localization, and more. For the 2020 season, KOP part documentation can still be found on `Screensteps <https://wpilib.screenstepslive.com/s/4485>`__
 
 Major Features - C++\Java
