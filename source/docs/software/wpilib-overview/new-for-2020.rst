@@ -1,7 +1,7 @@
 New for 2020
 ============
 
-A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++\\Java WPILib changes.
+A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes.
 
 Major Features - All Languages
 ------------------------------
