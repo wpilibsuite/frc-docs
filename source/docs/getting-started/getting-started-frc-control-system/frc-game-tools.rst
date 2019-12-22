@@ -1,16 +1,13 @@
 .. include:: <isonum.txt>
 
-Installing the FRC Update Suite
-===============================
+Installing the FRC Game Tools
+=============================
 
-The FRC Update Suite contains the following software components:
-LabVIEW Update, FRC Driver Station, and FRC Utilities. If an FRC
-LabVIEW installation is found, the LabVIEW Update will be installed
-or updated, otherwise this step will be skipped. The FRC Driver
-Station and FRC Utilities will always be installed or updated. The
-LabVIEW runtime components required for the driver station and
-utilities is included in this package. **No components from the
-LabVIEW Merged Suite are required for running either the Driver
+The FRC Game Tools contains the following software components:
+LabVIEW Update, FRC Driver Station, and FRC Utilities. The
+LabVIEW runtime components required for the Driver Station and
+Utilities are included in this package. **No components from the
+LabVIEW Software for FRC package are required for running either the Driver
 Station or Utilities.**
 
 .. note:: The Driver Station will only work on Windows 7, Windows 8,\
@@ -19,7 +16,7 @@ Station or Utilities.**
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-**LabVIEW teams have already completed this step, do not repeat it.** Before installing the new version of the NI Update it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
+**LabVIEW teams have already completed this step, do not repeat it.** Before installing the new version of the NI Update it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
@@ -34,11 +31,11 @@ Downloading the Update
 ----------------------
 
 Download the update from
-https://www.ni.com/download/first-robotics-software-2017/7904/en/
+https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html
 
-.. note:: Note: This download will require the decryption key from the Kickoff broadcast.
+..image:: images/labview/offline-installer.png
 
-.. note:: Beta teams will download the update from teamforge.
+If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
 .NET Framework 4.6.2
 --------------------
