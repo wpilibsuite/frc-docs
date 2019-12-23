@@ -182,7 +182,7 @@ Constants
 
 The ``Constants`` class (`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Constants.java>`__, `C++ (Header) <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/templates/commandbased/include/Constants.h>`__) (in C++ this is not a class, but simply a header file in which several namespaces are defined) is where globally-accessible robot constants (such as speeds, unit conversion factors, PID gains, and sensor/motor ports) can be stored. It is recommended that users separate these constants into individual inner classes corresponding to subsystems or robot modes, to keep variable names shorter.
 
-In Java, all constants should be declared ``public static final`` so that they are globally accessible and cannot be changed.  In C++, all constants should be ``const``.
+In Java, all constants should be declared ``public static final`` so that they are globally accessible and cannot be changed.  In C++, all constants should be ``constexpr``.
 
 For more illustrative examples of what a ``constants`` class should look like in practice, see those of the various command-based example projects:
 

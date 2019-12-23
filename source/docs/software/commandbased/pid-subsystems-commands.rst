@@ -127,9 +127,9 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
       :language: java
-      :lines: 86-92
+      :lines: 85-91
       :linenos:
-      :lineno-start: 86
+      :lineno-start: 85
 
   .. group-tab:: C++ (Header)
 
@@ -249,9 +249,9 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
       :language: java
-      :lines: 71-83
+      :lines: 70-81
       :linenos:
-      :lineno-start: 71
+      :lineno-start: 70
 
   .. group-tab:: C++
 

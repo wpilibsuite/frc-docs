@@ -211,11 +211,11 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/DriveDistanceOffboard/RobotContainer.java
       :language: java
-      :lines: 69-87
+      :lines: 68-87
       :linenos:
-      :lineno-start: 69
+      :lineno-start: 68
 
   .. group-tab:: C++
 
