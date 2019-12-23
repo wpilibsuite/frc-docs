@@ -6,7 +6,7 @@ Constructing the Ramsete Controller Object
 ------------------------------------------
 The Ramsete controller should be initialized with two gains, namely ``b`` and ``zeta``. Larger values of ``b`` make convergence more aggressive like a proportional term whereas larger values of ``zeta`` provide more damping in the response. These controller gains only dictate how the controller will output adjusted velocities. It does NOT affect the actual velocity tracking of the robot. This means that these controller gains are generally robot-agnostic.
 
-.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results.
+.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
 Getting Adjusted Velocities
 ---------------------------
