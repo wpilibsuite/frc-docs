@@ -227,3 +227,8 @@ Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, th
 .. |New Project Configured| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator-configured.png
 .. |Opened Robot Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/opened-robot-project.png
 .. |C++ Configurations| image:: /docs/software/wpilib-overview/images/creating-robot-program/cpp-configurations.png
+
+Deploying the Project to a Robot
+--------------------------------
+
+Please see the instructions :ref:`here <docs/software/wpilib-overview/deploying-robot-code:Building and Deploying Robot Code>` for deploying the program onto a robot.
