@@ -7,7 +7,7 @@ Step 1: Characterizing Your Robot Drive
 
 .. note:: The characterization data for this tutorial has been generously provided by Team 5190, who generated it as part of a demonstration of this functionality at the 2019 North Carolina State University P2P Workshop.
 
-Before accurately following a path with a robot, it is important to have an accurate model for how the robot moves in response to its control inputs.  Determining such a model is a process called "system identification."  WPIlib's FRC-Characterization is a tool for drive system identification.
+Before accurately following a path with a robot, it is important to have an accurate model for how the robot moves in response to its control inputs.  Determining such a model is a process called "system identification."  WPILib's FRC-Characterization is a tool for drive system identification.
 
 Gathering the Data
 ------------------
