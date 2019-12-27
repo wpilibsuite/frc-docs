@@ -46,7 +46,12 @@ Color can be set to an individual led on the strip using two methods.``setHSV()`
 Using HSV Values
 ^^^^^^^^^^^^^^^^
 
-HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. Hue is an integer from 1 - 360. Saturation and Value are integers from 0 - 100. LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red.
+HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. Hue is an integer from 1 - 360. Saturation and Value are integers from 0 - 100. 
+
+.. image:: images/hsv-models.png
+   :alt: HSV models picture
+
+LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red (hue of 0).
 
 .. tabs::
 
@@ -102,11 +107,11 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
 Creating a Rainbow Effect
 -------------------------
 
-It's good robot practice to keep the ``robotPeriodic()`` method as clean as possible, so we'll create a method for handling setting our LED data. We'll call this method ``rainbow()`` and call it from ``robotPeriodic()``.
-
 The below method does a couple of important things. Inside of the *for* loop, it equally distributes the hue over the entire length of the strand and stores the individual LED hue to a variable called ``hue``. Then the for loop sets the HSV value of that specified pixel using the ``hue`` value.
 
 Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the pixel that contains the "initial" hue creating the rainbow effect. ``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside the hue boundaries of 180. This is because HSV hue is a value from 0-180.
+
+.. note:: It's good robot practice to keep the ``robotPeriodic()`` method as clean as possible, so we'll create a method for handling setting our LED data. We'll call this method ``rainbow()`` and call it from ``robotPeriodic()``.
 
 .. tabs::
 
