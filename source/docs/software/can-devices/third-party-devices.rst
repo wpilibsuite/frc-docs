@@ -53,7 +53,7 @@ REV Motor Controllers
 
     - API Documentation (`Java <https://www.revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANSparkMax.html>`__, `C++ <https://www.revrobotics.com/content/sw/max/sw-docs/cpp/classrev_1_1_c_a_n_spark_max.html>`__)
     - `Technical Manual <https://www.revrobotics.com/sparkmax-users-manual/>`__
-    
+
 Playing With Fusion
 -------------------
 
