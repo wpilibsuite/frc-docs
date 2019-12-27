@@ -20,9 +20,9 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 8-23
+         :lines: 21-35
          :linenos:
-         :lineno-start: 14
+         :lineno-start: 21
 
    .. group-tab:: C++
 
