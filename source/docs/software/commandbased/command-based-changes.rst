@@ -1,7 +1,7 @@
 2020 Command-Based Rewrite: What Changed?
 =========================================
 
-This article provides a summary of changes from the :ref:`original command-based framework <docs/software/old-commandbased/basics/what-is-command-based:What is Command-Based Programming?>` to the 2020 rewrite.  This summary is not necessarily comprehensive - for rigorous documentation, as always, refer to the API docs (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/>`__).
+This article provides a summary of changes from the :ref:`original command-based framework <docs/software/old-commandbased/basics/what-is-command-based:What is Command-Based Programming?>` to the 2020 rewrite.  This summary is not necessarily comprehensive - for rigorous documentation, as always, refer to the API docs (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/>`__).
 
 Package Location
 ----------------
@@ -16,7 +16,7 @@ The overall structure of the command-based framework has remained largely the sa
 Commands and Subsystems as Interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``Command`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__) and ``Subsystem`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Subsystem.html>`__) are both now interfaces as opposed to abstract classes, allowing advanced users more potential flexibility.  ``CommandBase`` and ``SubsystemBase`` abstract base classes are still provided for convenience, but are not required.  For more information, see :doc:`commands` and :doc:`subsystems`.
+``Command`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html>`__) and ``Subsystem`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Subsystem.html>`__) are both now interfaces as opposed to abstract classes, allowing advanced users more potential flexibility.  ``CommandBase`` and ``SubsystemBase`` abstract base classes are still provided for convenience, but are not required.  For more information, see :doc:`commands` and :doc:`subsystems`.
 
 Multiple Command Group Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,7 @@ Transfer of ownership is done using `perfect forwarding <https://cpppatterns.com
 Changes to the Scheduler
 ------------------------
 
-* ``Scheduler`` has been renamed to ``CommandScheduler`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1CommandScheduler.html>`__).
+* ``Scheduler`` has been renamed to ``CommandScheduler`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__).
 * Interruptibility of commands is now the responsibility of the scheduler, not the commands, and can be specified during the call to ``schedule``.
 * Users can now pass actions to the scheduler which are taken whenever a command is scheduled, interrupted, or ends normally.  This is highly useful for cases such as event logging.
 
@@ -54,7 +54,7 @@ Changes to Subsystem
 
 .. note:: For more information on subsystems, see :doc:`subsystems`.
 
-* As noted earlier, ``Subsystem`` is now an interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Subsystem.html>`__); the closest equivalent of the old ``Subsystem`` is the new ``SubsystemBase`` class.  Many of the Sendable-related constructor overloads have been removed to reduce clutter; users can call the setters directly from their own constructor, if needed.
+* As noted earlier, ``Subsystem`` is now an interface (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Subsystem.html>`__); the closest equivalent of the old ``Subsystem`` is the new ``SubsystemBase`` class.  Many of the Sendable-related constructor overloads have been removed to reduce clutter; users can call the setters directly from their own constructor, if needed.
 * ``initDefaultCommand`` has been removed; subsystems no longer need to "know about" their default commands, which are instead registered directly with the ``CommandScheduler``.  The new ``setDefaultCommand`` method simply wraps the ``CommandScheduler`` call.
 * Subsystems no longer "know about" the commands currently requiring them; this is handled exclusively by the ``CommandScheduler``.  A convenience wrapper on the ``CommandScheduler`` method is provided, however.
 
@@ -63,7 +63,7 @@ Changes to Command
 
 .. note:: For more information on commands, see :doc:`commands`.
 
-* As noted earlier, ``Command`` is now an interface (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__); the closest equivalent of the old ``Command`` is the new ``CommandBase`` class.  Many of the Sendable-related constructor overloads have been removed to reduce clutter; users can call the setters directly from their own constructor, if needed.
+* As noted earlier, ``Command`` is now an interface (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html>`__); the closest equivalent of the old ``Command`` is the new ``CommandBase`` class.  Many of the Sendable-related constructor overloads have been removed to reduce clutter; users can call the setters directly from their own constructor, if needed.
 * Commands no longer handle their own scheduling state; this is now the responsibility of the scheduler.
 * The ``interrupted()`` method has been rolled into the ``end()`` method, which now takes a parameter specifying whether the command was interrupted (``false`` if it ended normally).
 * The ``requires()`` method has been renamed to ``addRequirement()``.
