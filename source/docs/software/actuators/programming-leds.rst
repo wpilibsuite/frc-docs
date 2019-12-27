@@ -46,7 +46,7 @@ Color can be set to an individual led on the strip using two methods.``setHSV()`
 Using HSV Values
 ^^^^^^^^^^^^^^^^
 
-HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. Hue is an integer from 1 - 360. Saturation and Value are integers from 0 - 100. 
+HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. Hue is an integer from 1 - 360. Saturation and Value are integers from 0 - 100.
 
 .. image:: images/hsv-models.png
    :alt: HSV models picture
