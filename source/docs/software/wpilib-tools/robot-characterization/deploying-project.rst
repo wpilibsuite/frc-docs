@@ -21,4 +21,4 @@ Option 2: Deploying Manually
 
 Since the generated project is a standard GradleRIO Java project, it can be deployed like any other. Users may open the generated project in their editor of choice and deploy as they normally would any other robot project. This can be convenient if customization of the generated code is required.
 
-Now that your the characterization code has been deployed, you'll need to run the characterization routine.
+Now that the characterization code has been deployed, you'll need to run the characterization routine.
