@@ -21,7 +21,7 @@ Labeling
 
 .. note:: Some applications create two folders when extracting from a .tar file. If this happens, upload the nested folder.
 
-.. image:: supervisely-import.png
+.. image:: images/supervisely-import.png
    :alt: Importing using supervisely
 
 7. Upload your own video to your workspace. Click ``UPLOAD`` when inside of your workspace, change your import plugin to video, drag in your video, give the project a name, and click ``import``. The default configuration, seen in the picture below, is fine.
@@ -66,7 +66,7 @@ Uploading to AWS S3
 
 An S3 bucket is a cloud storage service provided by AWS which you will be using to store your ``.tar`` of labeled images and the trained model after you finish running through this guide.
 
-7. Create a new bucket by giving it a unique name. Hit ``next`` and then hit ``next`` again **without** changing anything on the second page. On the third page, make sure it has public read permissions if multiple accounts will be using this data. 
+7. Create a new bucket by giving it a unique name. Hit ``next`` and then hit ``next`` again **without** changing anything on the second page. On the third page, make sure it has public read permissions if multiple accounts will be using this data.
 
 .. image:: images/new-bucket.png
    :alt: S3 new bucket
