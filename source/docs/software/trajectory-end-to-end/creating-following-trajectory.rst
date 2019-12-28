@@ -102,7 +102,9 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 Creating the RamseteCommand
 ---------------------------
 
-.. note:: It is very important that the robot begin the trajectory-following at a pose corresponding to the start pose of the trajectory.  As our example is an autonomous command, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  When in doubt, it is always possible to reset the odometry to a set position.
+.. todo:: link to ``relativeTo`` api docs once they're uploaded
+
+.. note:: It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method.
 
 Now that we have a trajectory, we can create a command that, when executed, will follow that trajectory.  To do this, we use the ``RamseteCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1RamseteCommand.html>`__)
 
