@@ -1,4 +1,4 @@
-Programming LEDs
+Addressable LEDs
 ================
 
 LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling WS2812 LEDs with their data pin connected via PWM.
@@ -41,7 +41,35 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 Setting the Entire Strip to One Color
 -------------------------------------
 
-Color can be set to an individual led on the strip using two methods.``setHSV()`` which takes HSV values as an input, and ``setRGB`` which takes RGB values as an input.
+Color can be set to an individual led on the strip using two methods.``setRGB`` which takes RGB values as an input and ``setHSV()`` which takes HSV values as an input.
+
+Using RGB Values
+^^^^^^^^^^^^^^^^
+
+RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. code-block:: Java
+
+         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+            // Sets the specified LED to the RGB values for red
+            m_ledBuffer.setRGB(i, 255, 0, 0);
+         }
+
+         m_led.setData(m_ledBuffer);
+
+   .. group-tab:: C++
+
+      .. code-block:: C++
+
+         for (int i = 0; i < kLength; i++) {
+            m_ledBuffer[i].SetRGB(255, 0, 0);
+         }
+
+         m_led.SetData(m_ledBuffer);
 
 Using HSV Values
 ^^^^^^^^^^^^^^^^
@@ -72,34 +100,6 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
 
          for (int i = 0; i < kLength; i++) {
             m_ledBuffer[i].SetHSV(0, 100, 100);
-         }
-
-         m_led.SetData(m_ledBuffer);
-
-Using RGB Values
-^^^^^^^^^^^^^^^^
-
-RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
-
-.. tabs::
-
-   .. group-tab:: Java
-
-      .. code-block:: Java
-
-         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            // Sets the specified LED to the RGB values for red
-            m_ledBuffer.setRGB(i, 255, 0, 0);
-         }
-
-         m_led.setData(m_ledBuffer);
-
-   .. group-tab:: C++
-
-      .. code-block:: C++
-
-         for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetRGB(255, 0, 0);
          }
 
          m_led.SetData(m_ledBuffer);
