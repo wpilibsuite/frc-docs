@@ -47,9 +47,9 @@ The encoder ports are specified in the encoder's constructor, like so:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 47-53
+      :lines: 38-46
       :linenos:
-      :lineno-start: 47
+      :lineno-start: 38
 
   .. group-tab:: C++ (Source)
 
@@ -70,9 +70,9 @@ The distance per pulse is specified by calling the encoder's ``setDistancePerPul
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 65-67
+      :lines: 58-60
       :linenos:
-      :lineno-start: 65
+      :lineno-start: 58
 
   .. group-tab:: C++ (Source)
 
@@ -93,9 +93,9 @@ To access the values measured by the encoders, we include the following method:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 89-96
+      :lines: 82-89
       :linenos:
-      :lineno-start: 89
+      :lineno-start: 82
 
   .. group-tab:: C++ (Source)
 
@@ -118,9 +118,9 @@ The gyroscope measures the rate of change of the robot's heading (which can then
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 55-56
+      :lines: 48-49
       :linenos:
-      :lineno-start: 55
+      :lineno-start: 48
 
   .. group-tab:: C++ (Header)
 
@@ -141,9 +141,9 @@ To access the current heading measured by the gyroscope, we include the followin
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 180-187
+      :lines: 173-180
       :linenos:
-      :lineno-start: 180
+      :lineno-start: 173
 
   .. group-tab:: C++ (Source)
 
@@ -166,9 +166,9 @@ First, we create a member instance of the ``DifferentialDriveOdometry`` class:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 58-59
+      :lines: 51-52
       :linenos:
-      :lineno-start: 58
+      :lineno-start: 51
 
   .. group-tab:: C++ (Header)
 
@@ -189,9 +189,9 @@ The odometry class must be regularly updated to incorporate new readings from th
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 73-78
+      :lines: 66-71
       :linenos:
-      :lineno-start: 73
+      :lineno-start: 66
 
   .. group-tab:: C++ (Source)
 
@@ -212,9 +212,9 @@ To access the robot's current computed pose, we include the following method:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 80-87
+      :lines: 72-78
       :linenos:
-      :lineno-start: 80
+      :lineno-start: 72
 
   .. group-tab:: C++ (Source)
 
@@ -235,9 +235,9 @@ Finally, we must include one additional method - a method that allows us to set 
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 118-127
+      :lines: 111-120
       :linenos:
-      :lineno-start: 118
+      :lineno-start: 111
 
   .. group-tab:: C++ (Source)
 

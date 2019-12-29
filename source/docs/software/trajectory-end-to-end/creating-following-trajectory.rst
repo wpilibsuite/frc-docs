@@ -11,9 +11,9 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 89-144
+      :lines: 82-140
       :linenos:
-      :lineno-start: 89
+      :lineno-start: 82
 
   .. group-tab:: C++ (Source)
 
@@ -39,9 +39,9 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 96-103
+      :lines: 89-96
       :linenos:
-      :lineno-start: 96
+      :lineno-start: 89
 
   .. group-tab:: C++ (Source)
 
@@ -64,9 +64,9 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 105-111
+      :lines: 98-105
       :linenos:
-      :lineno-start: 105
+      :lineno-start: 98
 
   .. group-tab:: C++ (Source)
 
@@ -87,9 +87,9 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 113-126
+      :lines: 108-120
       :linenos:
-      :lineno-start: 113
+      :lineno-start: 108
 
   .. group-tab:: C++ (Source)
 
@@ -114,9 +114,9 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 128-143
+      :lines: 122-136
       :linenos:
-      :lineno-start: 128
+      :lineno-start: 122
 
   .. group-tab:: C++ (Source)
 
