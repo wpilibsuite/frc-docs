@@ -17,7 +17,8 @@ Code for Driving with Mecanum Wheels
 
    .. code-tab:: cpp
 
-      #include "WPILib.h"
+      #include "frc/Joystick.h"
+      #include "frc/RobotDrive.h"
       /**
        * Simplest program to drive a robot with mecanum drive using a single Logitech
        * Extreme 3D Pro joystick and 4 drive motors connected as follows:

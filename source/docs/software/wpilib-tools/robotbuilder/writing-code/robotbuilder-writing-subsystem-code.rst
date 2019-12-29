@@ -75,10 +75,10 @@ Adding the Method Declarations to the Header File (C++ Only)
 
    .. code-tab:: cpp
 
-      #ifndef CLAW_H
-      #define CLAW_H
-      #include "Commands/Subsystem.h"
-      #include "WPILib.h"
+      #pragma once
+
+      #include "frc/commands/Subsystem.h"
+      #include "frc/Victor.h"
 
       class Claw: public Subsystem {
       private:
@@ -95,8 +95,6 @@ Adding the Method Declarations to the Header File (C++ Only)
          void Close();
          void Stop();
       };
-
-      #endif
 
 In addition to adding the methods to the class implementation file, Claw.cpp, the declarations for the methods need to be added to the header file, Claw.h. Those declarations that must be added are shown here.
 
