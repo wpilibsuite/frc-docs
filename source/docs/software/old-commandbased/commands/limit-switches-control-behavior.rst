@@ -178,8 +178,11 @@ Counter to detect Switch Close
 
    .. code-tab:: cpp
 
-      #include "WPILIB.h"
       #include "Arm.h"
+      #include "frc/Counter.h"
+      #include "frc/DigitalInput.h"
+      #include "frc/SpeedController.h"
+      #include "frc/Victor.h"
 
       DigitalInput* limitSwitch;
       SpeedController* armMotor;
