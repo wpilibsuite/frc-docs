@@ -43,7 +43,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/path-planning/index
+   docs/software/wpilib-tools/pathfinder/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/robot-characterization/index
@@ -58,8 +58,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
-   docs/software/advanced-control/index
-   docs/software/trajectory-end-to-end/index
+   docs/software/advanced-control/controllers/index
+   docs/software/advanced-control/trajectories/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: WPILib Examples and Tutorials
+
+   docs/software/examples-tutorials/index
 
 .. toctree::
    :maxdepth: 1
