@@ -97,6 +97,9 @@ user_options = [
         ('warning-is-error', True),
 ]
 
+# Hide the beta documentation
+exclude_patterns = ['docs/beta/*.rst']
+
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
 
