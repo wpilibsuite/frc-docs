@@ -1,8 +1,6 @@
 Gathering Data
 ==============
 
-.. todo:: Add link to skip to training section
-
 Machine learning works by "learning" what objects are supposed to look like by looking at thousands of pictures, where important objects have boxes drawn around them. WPILib provides a pre-labeled dataset, however you may wish to supplement this dataset. The below steps describe how to do this. If you do not wish to create your dataset, skip to Training.
 
 .. note:: When you record your video, if you do not use the provided script, make sure your images are small (640x40 works). Large images have too much unnecessary data, and will take up too much memory.

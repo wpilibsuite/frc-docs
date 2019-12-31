@@ -5,3 +5,4 @@ Machine Learning
    :maxdepth: 1
 
    gathering-data
+   training
