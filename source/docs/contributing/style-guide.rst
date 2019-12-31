@@ -152,7 +152,11 @@ Image Files
 
 Image files should be stored in the document directory, sub-directory of ``images``
 
+Image files should be at the highest quality visibly seen. This includes minimal visual artifacts.
+
 They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
+
+They should be at a maximum of 3MB or 3000KBs in size.
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is also supported, but requires extra steps.
 
