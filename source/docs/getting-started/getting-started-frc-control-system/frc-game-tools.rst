@@ -33,7 +33,7 @@ Downloading the Update
 Download the update from
 https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html
 
-..image:: images/labview/offline-installer.png
+.. image:: images/labview/offline-installer.png
 
 If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
