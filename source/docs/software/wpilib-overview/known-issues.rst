@@ -8,6 +8,10 @@ WPILib Projects created with 2020.1.1 have a project version of Beta2020-2
 
 Any projects created have a project version of `Beta2020-2` set in wpilib_preferences.json. This is not an issue, everything will still work properly. This will be fixed and update your projects in the 2nd release.
 
+PathWeaver "Build Paths" Doesn't Work
+-------------------------------------
+The "Build Paths" button in PathWeaver currently doesn't work due to HAL usage reporting in the kinematics classes. This will be resolved in the 2nd release. See `this page <https://github.com/wpilibsuite/PathWeaver/issues/157>`_ for more info on this error.
+
 C++ Intellisense - Files Open on Launch Don't Work Properly
 -----------------------------------------------------------
 
