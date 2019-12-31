@@ -154,7 +154,26 @@ Image files should be stored in the document directory, sub-directory of ``image
 
 They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
 
-They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
+They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is also supported, but requires extra steps.
+
+Using Animated GIFs
+~~~~~~~~~~~~~~~~~~~
+
+GIFs require an extra step for proper support for both HTML and PDF output. Two files of the *same* name are required: an animated GIF (``example.gif``) and a static png (``example.png``).
+
+These files *must* be in the *same* image directory, and they can only be referenced using a wildcard. The example directory structure is shown below.
+
+.. code-block:: text
+
+   --> images/
+   ----> example.png
+   ----> example.gif
+
+The GIF can then be referenced using the follow image directive
+
+.. code-block:: text
+
+   .. image:: images/example.*
 
 Table of Contents (TOC)
 -----------------------
