@@ -16,20 +16,20 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2019 NI Update Suite <https://www.ni.com/download/first-robotics-software-2017/7904/en/>`__ (Note: Requires decryption key from kickoff broadcast!)
--  `2019 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1.zip>`__ or `2019 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2019/Radio/FRC_Radio_Configuration_19_1_1_IL.zip>`__
+-  `2020 FRC Game Tools <https://www.ni.com/en-il/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/download/labview-for-frc-18.0/7841/en/>`__
+-  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-il/support/downloads/drivers/download.labview-software-for-frc.html#330601>`__ (Note: (Note: Click on link for "Individual Offline Installers")
 
 C++/Java Teams
 ^^^^^^^^^^^^^^
 
 -  `C++/Java WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
--  VS Code (if using Windows, run the installer and use it to download the appropriate VS Code file. If using macOS/Linux, download Visual Studio Code from `here <https://code.visualstudio.com/download>`__)
+-  Visual Studio Code (if using Windows, run the installer and use it to download the appropriate VS Code file. If using macOS/Linux, download Visual Studio Code from `here <https://code.visualstudio.com/download>`__)
 
 3rd Party Libraries/Software
 ----------------------------
