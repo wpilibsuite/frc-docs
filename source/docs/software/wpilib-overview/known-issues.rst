@@ -3,6 +3,11 @@ Known Issues
 
 This article details known issues (and workarounds) for FRC Control System Software.
 
+WPILib Projects created with 2020.1.1 have a project version of Beta2020-2
+--------------------------------------------------------------------------
+
+Any projects created have a project version of `Beta2020-2` set in wpilib_preferences.json. This is not an issue, everything will still work properly. This will be fixed and update your projects in the 2nd release.
+
 C++ Intellisense - Files Open on Launch Don't Work Properly
 -----------------------------------------------------------
 
