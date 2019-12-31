@@ -97,6 +97,15 @@ user_options = [
         ('warning-is-error', True),
 ]
 
+# Specify GIF as the first HTML supported image type
+from sphinx.builders.html import StandaloneHTMLBuilder
+StandaloneHTMLBuilder.supported_image_types = [
+    'image/svg+xml',
+    'image/gif',
+    'image/png',
+    'image/jpeg'
+]
+
 def setup(app):
   app.add_stylesheet('css/frc-rtd.css')
 
