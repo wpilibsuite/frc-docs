@@ -12,7 +12,7 @@ Major Features - All Languages
 - **Control Packet Caching** - A change has been made to the internals of how control packet data (such as Joystick data, current mode, etc.) is retrieved, resulting in reduced latency in these calls. The user-facing API has not changed, users will see this benefit without making any changes to their programs.
 - **Documentation** - If you're on this page, you're likely aware that the software documentation has moved from Screensteps to this new FRC-Docs page. This open source documentation, hosted on Read the Docs, allows for a greater number of contributors (including community contribution) as well as new features such as testable example code (to ensure example code remains correct as library changes are made), better support for localization, and more. For the 2020 season, KOP part documentation can still be found on `Screensteps <https://wpilib.screenstepslive.com/s/4485>`__
 
-Major Features - C++\Java
+Major Features - C++/Java
 -------------------------
 More complete details on all of these changes can be found in the changelog below (under **WPILib**).
 
