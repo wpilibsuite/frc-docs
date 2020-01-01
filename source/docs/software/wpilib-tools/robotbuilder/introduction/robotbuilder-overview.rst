@@ -14,7 +14,7 @@ Creating a program with RobotBuilder is a very straight forward procedure by fol
 
 In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
 
-.. note:: RobotBuilder generates code using the old Command Framework. For more details on the old framework see :doc:`[Old] Command Based Programming <docs\software\old-commandbased>`.
+.. note:: RobotBuilder generates code using the old Command Framework. For more details on the old framework see :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
 
 Divide the Robot into Subsystems
 --------------------------------

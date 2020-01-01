@@ -31,7 +31,7 @@ Adding a Command to the Project
 
 .. image:: images/adding-commands-subsystems/image4.png
 
-A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command (Old)**, **Instant Command (Old)**, **TimedCommand (Old), **Command Group (Old)**:
+A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command (Old)**, **Instant Command (Old)**, **TimedCommand (Old)**, **Command Group (Old)**:
 
 - **Command** -  A basic command that operates on a subsystem
 - **Instant Command** - A command that runs and completes instantly
