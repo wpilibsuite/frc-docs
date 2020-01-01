@@ -1,7 +1,7 @@
 Running Commands on Joystick Input
 ==================================
 
-.. important:: This documentation describes the use of the legacy command-based library, which has been deprecated. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
+.. important:: This documentation describes the use of the legacy command-based library. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
 
 .. note:: You can cause commands to run when joystick buttons are pressed, released, or continuously while the button is held down. This is extremely easy to do only requiring a few lines of code.
 
@@ -10,7 +10,7 @@ The OI Class
 
 .. image:: images/commands-joystick-input/image1.png
 
-The command based template contains a class called OI, located in ``OI.java``, where **Operator Interface** behaviors are typically defined. If you are using RobotBuilder this file can be found in the ``org.usfirst.frc####.NAME`` package
+The command based template contains a class called OI, located in ``OI.java``, where **Operator Interface** behaviors are typically defined.
 
 Create the Joystick object and JoystickButton Objects
 -----------------------------------------------------
