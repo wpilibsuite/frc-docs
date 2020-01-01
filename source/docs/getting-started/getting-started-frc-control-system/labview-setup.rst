@@ -46,28 +46,28 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
-Starting Install (online)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting Install
+^^^^^^^^^^^^^^^^
 
-Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
+.. tabs::
+  .. tab:: Online Installer
 
-Starting Install (offline)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+     Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
 
-Windows 10:
-Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+  .. tab:: Offline Installer (Windows 10)
 
-.. image:: images/labview/mount-iso.png
+     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
 
+     .. image:: images/labview/mount-iso.png
 
-Windows 7 & 8/8.1:
+  .. tab:: Offline Installer (Windows 7, 8, & 8.1)
 
-Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
-Right click on the downloaded iso file and select Extract to.
+     Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
+     Right click on the downloaded iso file and select Extract to.
 
-.. image:: images/labview/extract-iso.png
+     .. image:: images/labview/extract-iso.png
 
-Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
+     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
