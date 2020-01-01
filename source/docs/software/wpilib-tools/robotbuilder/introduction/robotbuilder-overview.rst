@@ -1,9 +1,20 @@
 RobotBuilder Overview
 =====================
 
+RobotBuilder is an application designed to aid the robot development process. RobotBuilder can help you:
+
+    Generating boilerplate code.
+    Organize your robot and figure out what its key subsystems are.
+    Check that you have enough channels for all of your sensors and actuators.
+    Generate wiring diagrams.
+    Easily modify your operator interface.
+    More...
+
 Creating a program with RobotBuilder is a very straight forward procedure by following a few steps that are the same for any robot. This lesson describes the steps that you can follow. You can find more details about each of these steps in subsequent sections of the document.
 
 In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
+
+.. note:: RobotBuilder generates code using the old Command Framework. For more details on the old framework see :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
 
 Divide the Robot into Subsystems
 --------------------------------
