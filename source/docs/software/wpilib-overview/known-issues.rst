@@ -3,6 +3,9 @@ Known Issues
 
 This article details known issues (and workarounds) for FRC Control System Software.
 
+Open Issues
+-----------
+
 C++ Intellisense - Files Open on Launch Don't Work Properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
