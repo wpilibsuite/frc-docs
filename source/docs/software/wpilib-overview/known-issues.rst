@@ -3,13 +3,13 @@ Known Issues
 
 This article details known issues (and workarounds) for FRC Control System Software.
 
-WPILib Projects created with 2020.1.1 have a project version of Beta2020-2
---------------------------------------------------------------------------
+WPILib Projects created with 2020.1.1 have a project version of Beta2020-2 (Fixed in 2020.1.2)
+----------------------------------------------------------------------------------------------
 
 Any projects created have a project version of `Beta2020-2` set in wpilib_preferences.json. This is not an issue, everything will still work properly. This will be fixed and update your projects in the 2nd release.
 
-PathWeaver "Build Paths" Doesn't Work
--------------------------------------
+PathWeaver "Build Paths" Doesn't Work (Fixed in 2020.1.2)
+---------------------------------------------------------
 The "Build Paths" button in PathWeaver currently doesn't work due to HAL usage reporting in the kinematics classes. This will be resolved in the 2nd release. See `this page <https://github.com/wpilibsuite/PathWeaver/issues/157>`_ for more info on this error.
 
 C++ Intellisense - Files Open on Launch Don't Work Properly
