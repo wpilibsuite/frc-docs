@@ -6,6 +6,24 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
+macOS Simulation fails to launch in Visual Studio Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first time launching simulation in VS Code on macOS using the ``WPILib: Simulate Robot Code on Desktop`` task will fail with a warning similar to the one below.
+
+.. code-block:: console
+
+    java.io.IOException: wpiHaljni could not be loaded from path or an embedded resource.
+        attempted to load for platform /osx/x86-64/
+        at edu.wpi.first.wpiutil.RuntimeLoader.loadLibrary(RuntimeLoader.java:78)
+        at edu.wpi.first.hal.JNIWrapper.<clinit>(JNIWrapper.java:38)
+        at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:316)
+        at frc.robot.Main.main(Main.java:27)
+
+This is a bug in Visual Studio Code being tracked by WPILib in `vscode-wpilib#334 <https://github.com/wpilibsuite/vscode-wpilib/issues/334>`__.
+
+**Workaround:** Attempt to launch the simulation once using the ``WPILib: Simulate Robot Code on Desktop`` task and let the task fail. Without closing the console that opens at the bottom of the VS Code window, launch the simulator again using the ``WPILib: Simulate Robot Code on Desktop`` task. The second time the simulator will launch properly.
+
 C++ Intellisense - Files Open on Launch Don't Work Properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
