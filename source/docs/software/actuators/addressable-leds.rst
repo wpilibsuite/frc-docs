@@ -74,7 +74,7 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
 Using HSV Values
 ^^^^^^^^^^^^^^^^
 
-HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like `Google's <https://www.google.com/search?client=firefox-b-1-d&q=color+picker/>_, Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
+HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like `Google's <https://www.google.com/search?client=firefox-b-1-d&q=color+picker/>`_, Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
 
 .. image:: images/hsv-models.png
    :alt: HSV models picture
