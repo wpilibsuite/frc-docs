@@ -20,7 +20,7 @@ The first time launching simulation in VS Code on macOS using the ``WPILib: Simu
         at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:316)
         at frc.robot.Main.main(Main.java:27)
 
-This is a bug in Visual Studio Code being tracked by WPILib in `vscode-wpilib#334 <https://github.com/wpilibsuite/vscode-wpilib/issues/334>`__.
+This is a bug in VS Code being tracked by WPILib in `vscode-wpilib#334 <https://github.com/wpilibsuite/vscode-wpilib/issues/334>`__.
 
 **Workaround:** Attempt to launch the simulation once using the ``WPILib: Simulate Robot Code on Desktop`` task and let the task fail. Without closing the console that opens at the bottom of the VS Code window, launch the simulator again using the ``WPILib: Simulate Robot Code on Desktop`` task. The second time the simulator will launch properly.
 
