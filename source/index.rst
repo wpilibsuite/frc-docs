@@ -19,6 +19,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
+   :caption: 2020 Beta Testing
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
    :caption: WPILib Programming Basics
 
    docs/software/wpilib-overview/index
