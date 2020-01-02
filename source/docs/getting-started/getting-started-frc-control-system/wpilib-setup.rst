@@ -286,10 +286,10 @@ WPILib is designed to install to different folders for different years, so that 
 
   .. tab:: macOS
 
-     1. Delete Visual Studio Code from the Applications folder
+     1. Delete Visual Studio Code from the Applications folder. Alternately, the extensions can be `uninstalled <https://code.visualstudio.com/docs/editor/extension-gallery#_manage-extensions>`__
      2. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
 
   .. tab:: Linux
 
      1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/frc2019``
-     2. Uninstall Visual Studio Code ``sudo dpkg -r code``.
+     2. Uninstall Visual Studio Code ``sudo dpkg -r code``. Alternately, the extensions can be `uninstalled <https://code.visualstudio.com/docs/editor/extension-gallery#_manage-extensions>`__
