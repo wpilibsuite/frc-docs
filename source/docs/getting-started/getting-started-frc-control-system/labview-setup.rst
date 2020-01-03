@@ -30,7 +30,7 @@ Getting LabVIEW installer
 
 Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
 
-..image:: images/labview/offline-installer.png
+.. image:: images/labview/offline-installer.png
 
 If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
@@ -46,9 +46,28 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
-.. image:: images/labview/labview_welcome.png
+Starting Install
+^^^^^^^^^^^^^^^^
 
-Double click on ``autorun.exe`` to launch the installer. If prompted to allow changes click Yes. To install LabVIEW to program your FRC\ |reg| robot, click the top option Install Everything for LabVIEW Development. If prompted with any Windows security warnings, click Allow or Yes.
+.. tabs::
+  .. tab:: Online Installer
+
+     Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
+
+  .. tab:: Offline Installer (Windows 10)
+
+     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+
+     .. image:: images/labview/mount-iso.png
+
+  .. tab:: Offline Installer (Windows 7, 8, & 8.1)
+
+     Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
+     Right click on the downloaded iso file and select Extract to.
+
+     .. image:: images/labview/extract-iso.png
+
+     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

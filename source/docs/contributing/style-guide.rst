@@ -37,7 +37,7 @@ Use the following case for these terms:
 - Visual Studio Code (VS Code) (not vscode, VScode, vs code, etc)
 - macOS (not Mac OS, Mac OSX, Mac OS X, Mac, Mac OS, etc.)
 
-Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <http://docutils.sourceforge.net/docs/ref/rst/definitions.html#character-entity-sets>`_.
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets>`_.
 
 Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
 
@@ -106,7 +106,7 @@ Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ fo
 Admonitions
 -----------
 
-Admonitions (list `here <http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
+Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
 Use
 

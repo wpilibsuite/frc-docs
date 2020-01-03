@@ -1,7 +1,7 @@
 Adding Commands and Subsystems to the Project
 =============================================
 
-.. important:: This documentation describes the use of the legacy command-based library, which has been deprecated. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
+.. important:: This documentation describes the use of the legacy command-based library. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
 
 .. note:: Commands and Subsystems each are created as classes. The plugin has built-in templates for both Commands and Subsystems to make it easier for you to add them to your program.
 
@@ -10,7 +10,7 @@ Adding Subsystems to the Project
 
 .. image:: images/adding-commands-subsystems/image1.png
 
-To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem** or **PID Subsystem**.
+To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem (Old)** or **PID Subsystem (Old)**.
 
 Naming the Subsystem
 --------------------
@@ -31,12 +31,12 @@ Adding a Command to the Project
 
 .. image:: images/adding-commands-subsystems/image4.png
 
-A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command**, **Instant Command**, **TimedCommand** or **Trigger**:
+A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command (Old)**, **Instant Command (Old)**, **TimedCommand (Old)**, **Command Group (Old)**:
 
 - **Command** -  A basic command that operates on a subsystem
 - **Instant Command** - A command that runs and completes instantly
 - **Timed Command** - A command that runs for a specified time duration
-- **Trigger** - A command that is easily tied to a button input on a joystick.
+- **Command Group** - A command that is runs other commands
 
 Set the Command Name
 --------------------
