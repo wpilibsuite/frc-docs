@@ -52,8 +52,8 @@ Using the ADXRS450 object is a fantastic way to test gyro based outputs. This wi
 
 .. image:: images/sim-gui-using-gyro.png
 
-Determing Simulation from Robot Code
-------------------------------------
+Determining Simulation from Robot Code
+--------------------------------------
 
 In cases where vendor libraries do not compile when running the robot simulation, you can wrap their content with ``RobotBase.isReal()`` which returns a ``boolean``.
 
