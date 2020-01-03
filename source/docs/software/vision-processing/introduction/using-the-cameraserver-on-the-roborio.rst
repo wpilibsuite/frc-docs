@@ -26,7 +26,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
     .. code-tab:: c++
 
-        #include "WPILib.h"
+        #include "cameraserver/CameraServer.h"
         class Robot: public IterativeRobot
         {
         private:
@@ -84,7 +84,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
     .. code-tab:: c++
 
-        #include "WPILib.h"
+        #include "cameraserver/CameraServer.h"
         #include <opencv2/imgproc/imgproc.hpp>
         #include <opencv2/core/core.hpp>
         class Robot: public IterativeRobot

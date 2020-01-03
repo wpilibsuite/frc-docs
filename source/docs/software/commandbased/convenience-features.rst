@@ -66,12 +66,12 @@ Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` comman
 Included Command Types
 ----------------------
 
-The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__).
+The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html>`__).
 
 ConditionalCommand
 ^^^^^^^^^^^^^^^^^^
 
-The ``ConditionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ConditionalCommand.html>`__) runs one of two commands when executed, depending on a user-specified true-or-false condition:
+The ``ConditionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ConditionalCommand.html>`__) runs one of two commands when executed, depending on a user-specified true-or-false condition:
 
 .. tabs::
 
@@ -92,7 +92,7 @@ SelectCommand
 
 .. note:: An alternate version of SelectCommand simply takes a method that supplies the command to be run - this can be very succinct, but makes inferring the command's requirements impossible, and so leaves the user responsible for manually adding the requirements to the SelectCommand.
 
-The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SelectCommand.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands based on the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
+The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1SelectCommand.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands based on the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
 
 .. tabs::
 
@@ -115,7 +115,7 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developmen
 InstantCommand
 ^^^^^^^^^^^^^^
 
-The ``InstantCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1InstantCommand.html>`__) executes a single action on initialization, and then ends immediately:
+The ``InstantCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1InstantCommand.html>`__) executes a single action on initialization, and then ends immediately:
 
 .. tabs::
 
@@ -132,7 +132,7 @@ The ``InstantCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developme
 RunCommand
 ^^^^^^^^^^
 
-The ``RunCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1RunCommand.html>`__) runs a specified method repeatedly in its ``execute()`` block. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ it to add them.
+The ``RunCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1RunCommand.html>`__) runs a specified method repeatedly in its ``execute()`` block. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ it to add them.
 
 .. tabs::
 
@@ -160,7 +160,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/d
 StartEndCommand
 ^^^^^^^^^^^^^^^
 
-The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1StartEndCommand.html>`__) executes an action when starting, and a second one when ending. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ an inlined command to add them.
+The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1StartEndCommand.html>`__) executes an action when starting, and a second one when ending. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ an inlined command to add them.
 
 .. tabs::
 
@@ -189,7 +189,7 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/developm
 FunctionalCommand
 ^^^^^^^^^^^^^^^^^
 
-The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1FunctionalCommand.html>`__) allows all four ``Command`` methods to be passed in as method references or lambdas:
+The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1FunctionalCommand.html>`__) allows all four ``Command`` methods to be passed in as method references or lambdas:
 
 .. tabs::
 
@@ -226,7 +226,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develo
 PrintCommand
 ^^^^^^^^^^^^
 
-The ``PrintCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PrintCommand.html>`__) prints a given string.
+The ``PrintCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PrintCommand.html>`__) prints a given string.
 
 .. tabs::
 
@@ -241,7 +241,7 @@ The ``PrintCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development
 ScheduleCommand
 ^^^^^^^^^^^^^^^
 
-The ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ScheduleCommand.html>`__) schedules a specified command, and ends instantly:
+The ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ScheduleCommand.html>`__) schedules a specified command, and ends instantly:
 
 .. tabs::
 
@@ -260,7 +260,7 @@ This is often useful for "forking off" from command groups: by default, commands
 ProxyScheduleCommand
 ^^^^^^^^^^^^^^^^^^^^
 
-The ``ProxyScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ProxyScheduleCommand.html>`__) schedules a specified command, and does not end until that command ends:
+The ``ProxyScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProxyScheduleCommand.html>`__) schedules a specified command, and does not end until that command ends:
 
 .. tabs::
 
@@ -279,7 +279,7 @@ This is often useful for "forking off" from command groups: by default, commands
 WaitCommand
 ^^^^^^^^^^^
 
-The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1WaitCommand.html>`__) does nothing, and ends after a specified period of time elapses after its initial scheduling:
+The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1WaitCommand.html>`__) does nothing, and ends after a specified period of time elapses after its initial scheduling:
 
 .. tabs::
 
@@ -300,7 +300,7 @@ WaitUntilCommand
 
 .. warning:: The match timer used by WaitUntilCommand does *not* provide an official match time!  While it is fairly accurate, use of this timer can *not* guarantee the legality of your robot's actions.
 
-The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1WaitUntilCommand.html>`__) does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
+The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1WaitUntilCommand.html>`__) does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
 
 .. tabs::
 
@@ -323,7 +323,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/develop
 PerpetualCommand
 ^^^^^^^^^^^^^^^^
 
-The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PerpetualCommand.html>`__) runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
+The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PerpetualCommand.html>`__) runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
 
 .. tabs::
 
@@ -346,12 +346,12 @@ commands. A “decorator” method is a method that takes an object (in this
 case, a command) and returns an object of the same type (i.e. a command)
 with some additional functionality added to it. A list of the included
 decorator methods with brief examples is included below - for rigorous
-documentation, see the API docs (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html>`__).
+documentation, see the API docs (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html>`__).
 
 withTimeout
 ^^^^^^^^^^^
 
-The ``withTimeout()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#a3a10e79038afc9bc7c98461b7dbb895b>`__) adds a timeout to a command. The
+The ``withTimeout()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a3a10e79038afc9bc7c98461b7dbb895b>`__) adds a timeout to a command. The
 decorated command will be interrupted if the timeout expires:
 
 .. tabs::
@@ -369,7 +369,7 @@ decorated command will be interrupted if the timeout expires:
 interruptOn
 ^^^^^^^^^^^
 
-The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#interruptOn(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#a6efa0fe6197b11036d947b2a8dfdee0b>`__) decorator adds a condition on which the command will be interrupted:
+The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#interruptOn(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a6efa0fe6197b11036d947b2a8dfdee0b>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
@@ -386,7 +386,7 @@ The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs
 whenFinished
 ^^^^^^^^^^^^
 
-The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#whenFinished(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#a935487276747ed668967259856b90165>`__) adds a method to be executed after the command ends:
+The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#whenFinished(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a935487276747ed668967259856b90165>`__) adds a method to be executed after the command ends:
 
 .. tabs::
 
@@ -403,7 +403,7 @@ The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/devel
 beforeStarting
 ^^^^^^^^^^^^^^
 
-The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#a65155a6d7062deed375da196d2ba4c89>`__) adds a method to be executed before the command starts:
+The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a65155a6d7062deed375da196d2ba4c89>`__) adds a method to be executed before the command starts:
 
 .. tabs::
 
@@ -422,7 +422,7 @@ andThen (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a sequential command group the ordinary way instead.
 
-The ``andThen()`` `decorator <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a sequential command group containing the command, followed by the list of commands passed as arguments:
+The ``andThen()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a sequential command group containing the command, followed by the list of commands passed as arguments:
 
 .. code-block:: java
 
@@ -434,7 +434,7 @@ alongWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel command group the ordinary way instead.
 
-The ``alongWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command group containing the command, along with all the other commands passed in as arguments:
+The ``alongWith()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command group containing the command, along with all the other commands passed in as arguments:
 
 .. code-block:: java
 
@@ -446,7 +446,7 @@ raceWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command race containing the command, along with all the other commands passed in as arguments:
+The ``raceWith()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command race containing the command, along with all the other commands passed in as arguments:
 
 .. code-block:: java
 
@@ -458,7 +458,7 @@ deadlineWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
+The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
 
 .. code-block:: java
 
@@ -468,7 +468,7 @@ The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/development
 perpetually
 ^^^^^^^^^^^
 
-The ``perpetually()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Command.html#ae1583c73c9b953d8ff730d4809926518>`__) removes the end condition of a command, so that it runs forever.
+The ``perpetually()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#ae1583c73c9b953d8ff730d4809926518>`__) removes the end condition of a command, so that it runs forever.
 
 .. tabs::
 
@@ -497,7 +497,7 @@ Static Factory Methods for Command Groups (Java only)
 
 .. note:: These factory methods are not included in the C++ command library, as the reduction in verbosity would be minimal - C++ commands should be stack-allocated, removing the need for the ``new`` keyword.
 
-If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
+If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
 
 .. code-block:: java
 

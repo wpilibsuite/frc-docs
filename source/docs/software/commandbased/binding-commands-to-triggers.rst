@@ -5,7 +5,7 @@ Apart from autonomous commands, which are scheduled at the start of the autonomo
 
 As mentioned earlier, command-based is a `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is “declared” once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or cancelling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
 
-Command binding is done through the ``Trigger`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Trigger.html>`__) and its various ``Button`` subclasses (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1Button.html>`__).
+Command binding is done through the ``Trigger`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Trigger.html>`__) and its various ``Button`` subclasses (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Button.html>`__).
 
 Trigger/Button Bindings
 -----------------------
@@ -52,7 +52,7 @@ The most-common way to trigger a command is to bind a command to a button on a j
 Creating a JoystickButton
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to create a ``JoystickButton``, we first need a Joystick.  All types of joysticks (including gamepads) are represented in code by the ``GenericHID`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/GenericHID.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1GenericHID.html>`__), or one of its subclasses:
+In order to create a ``JoystickButton``, we first need a Joystick.  All types of joysticks (including gamepads) are represented in code by the ``GenericHID`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/GenericHID.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1GenericHID.html>`__), or one of its subclasses:
 
 .. tabs::
 
@@ -66,9 +66,9 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
     frc::Joystick exampleStick{1}; // Creates a joystick on port 1
     frc::XBoxController exampleController{2} // Creates an XboxController on port 2
 
-.. note:: When creating a ``JoystickButton`` with an XboxController, it is usually a good idea to use the button enum (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc_1_1XboxController.html#a1034633d4be2db9277b3864efa55b99b>`__) to get the button number corresponding to a given button.
+.. note:: When creating a ``JoystickButton`` with an XboxController, it is usually a good idea to use the button enum (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1XboxController.html#a1034633d4be2db9277b3864efa55b99b>`__) to get the button number corresponding to a given button.
 
-After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1JoystickButton.html>`__):
+After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1JoystickButton.html>`__):
 
 .. tabs::
 
