@@ -1,7 +1,7 @@
 Imaging your roboRIO
 ====================
 
-.. warning:: Before imaging your roboRIO, you must have completed installation of the FRC Game Tools. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
+.. warning:: Before imaging your roboRIO, you must have completed installation of the `FRC Game Tools<https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -29,6 +29,8 @@ Launching the Imaging Tool
 .. image:: images/imaging-your-roborio/launching-the-imaging-tool.png
 
 The roboRIO imaging tool and latest image are installed with the NI Update Suite. Launch the imaging tool by double clicking on the shortcut on the Desktop. If you have difficulties imaging your roboRIO, you may need to try right-clicking on the icon and selecting Run as Administrator instead.
+
+.. note:: The roboRIO imaging tool is also located at ``C:\Program Files (x86)\National Instruments\LabVIEW 2019\project\roboRIO Tool``
 
 roboRIO Imaging Tool
 ^^^^^^^^^^^^^^^^^^^^
