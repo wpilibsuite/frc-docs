@@ -14,5 +14,6 @@ WPILib Overview
    debugging-robot-program
    3rd-party-libraries
    importing-eclipse-project
+   importing-gradle-project
    using-test-mode
    new-for-2020
