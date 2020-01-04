@@ -23,6 +23,8 @@ Select Components to Uninstall
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
+.. warning:: These instructions assume that no other National Instruments software is installed. If you have other National Instruments software installed, it is necessary to uncheck the software that should not be uninstalled.
+
 .. image:: images/labview/uninstall_select_components.png
 
 Getting LabVIEW installer
