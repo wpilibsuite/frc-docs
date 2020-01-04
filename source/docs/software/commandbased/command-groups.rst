@@ -17,22 +17,22 @@ The command-based library supports four basic types of command groups: ``Sequent
 SequentialCommandGroup
 ^^^^^^^^^^^^^^^^^^^^^^
 
-A ``SequentialCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1SequentialCommandGroup.html>`__) runs a list of commands in sequence - the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
+A ``SequentialCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1SequentialCommandGroup.html>`__) runs a list of commands in sequence - the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
 ParallelCommandGroup
 ^^^^^^^^^^^^^^^^^^^^
 
-A ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelCommandGroup.html>`__) runs a set of commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
+A ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ParallelCommandGroup.html>`__) runs a set of commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
 
 ParallelRaceGroup
 ^^^^^^^^^^^^^^^^^
 
-A ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelRaceGroup.html>`__) is much like a ``ParallelCommandgroup``, in that it runs a set of commands concurrently. However, the race group ends as soon as any command in the group ends - all other commands are interrupted at that point.
+A ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ParallelRaceGroup.html>`__) is much like a ``ParallelCommandgroup``, in that it runs a set of commands concurrently. However, the race group ends as soon as any command in the group ends - all other commands are interrupted at that point.
 
 ParallelDeadlineGroup
 ^^^^^^^^^^^^^^^^^^^^^
 
-A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the “deadline”) ends, interrupting all other commands in the group that are still running at that point.
+A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the “deadline”) ends, interrupting all other commands in the group that are still running at that point.
 
 Creating Command Groups
 -----------------------
@@ -70,7 +70,7 @@ The ``addCommands()`` method adds commands to the group, and is present in all f
 Inline Command Groups
 ---------------------
 
-.. note:: Due to the verbosity of Java's ``new`` syntax, the Java ``CommandGroupBase`` object offers a factory method for each of the four command-group types: `sequence <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#sequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `parallel <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#parallel(edu.wpi.first.wpilibj2.command.Command...)>`__, `race <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#race(edu.wpi.first.wpilibj2.command.Command...)>`__, and `deadline <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#deadline(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command...)>`__.
+.. note:: Due to the verbosity of Java's ``new`` syntax, the Java ``CommandGroupBase`` object offers a factory method for each of the four command-group types: `sequence <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#sequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `parallel <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#parallel(edu.wpi.first.wpilibj2.command.Command...)>`__, `race <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#race(edu.wpi.first.wpilibj2.command.Command...)>`__, and `deadline <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#deadline(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command...)>`__.
 
 Command groups can be used without subclassing at all: one can simply pass in the desired commands through the constructor:
 
@@ -127,7 +127,7 @@ As command groups are commands, they also must declare their requirements. Howev
 
 Additionally, requirements are enforced within all three types of parallel groups - a parallel group may *not* contain multiple commands that require the same subsystem.
 
-Some advanced users may find this overly-restrictive - for said users, the library offers a ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1ScheduleCommand.html>`__) that can be used to independently “branch off” from command groups to provide finer granularity in requirement management.
+Some advanced users may find this overly-restrictive - for said users, the library offers a ``ScheduleCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ScheduleCommand.html>`__) that can be used to independently “branch off” from command groups to provide finer granularity in requirement management.
 
 Restrictions on Command Group Components
 ----------------------------------------
@@ -138,4 +138,4 @@ Since command group components are run through their encapsulating command group
 
 For this reason, command instances that have been added to a command group cannot be independently scheduled or added to a second command group. Attempting to do so will throw an exception and crash the user program.
 
-Advanced users who wish to re-use a command instance and are *certain* that it is safe to do so may bypass this restriction with the ``clearGroupedCommand()`` `method <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#clearGroupedCommand(edu.wpi.first.wpilibj2.command.Command)>`__ in the ``CommandGroupBase`` class.
+Advanced users who wish to re-use a command instance and are *certain* that it is safe to do so may bypass this restriction with the ``clearGroupedCommand()`` `method <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html#clearGroupedCommand(edu.wpi.first.wpilibj2.command.Command)>`__ in the ``CommandGroupBase`` class.

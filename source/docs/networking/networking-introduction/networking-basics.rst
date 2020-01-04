@@ -153,12 +153,12 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
 mDNS - Browser support
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Most web-browsers should be able to utilize the mDNS address to access the roboRIO web server as long as an mDNS provider is installed. To access the webdashboard, the browser must also support Microsoft Silverlight. Internet Explorer is recommended.
+Most web-browsers should be able to utilize the mDNS address to access the roboRIO web server as long as an mDNS provider is installed. These browsers include Microsoft Edge, Firefox, and Google Chrome.
 
 USB
 ---
 
-If using the USB interface, no network setup is required (you do need the :ref:`docs/getting-started/getting-started-frc-control-system/frc-update-suite:Installing the FRC Update Suite` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
+If using the USB interface, no network setup is required (you do need the :ref:`docs/getting-started/getting-started-frc-control-system/frc-game-tools:Installing the FRC Game Tools` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
 
 Ethernet/Wireless
 -----------------

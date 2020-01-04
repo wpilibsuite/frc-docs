@@ -3,56 +3,10 @@ Simulation User Interface
 
 WPILib has extended robot simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robot's inputs and outputs.
 
-Enabling the GUI
-----------------
-
-Currently, the only way to enable this feature is to modify your ``build.gradle`` file located at the root of your robot project. Simply add the below line into the ``dependencies {}`` section of your build.gradle.
-
-.. code-block:: groovy
-
-   simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
-
-.. important:: C++ requires that you change the boolean ``false`` to ``true``.
-
-Your ``build.gradle`` should then look like the below
-
-.. tabs::
-
-   .. group-tab:: Java
-
-      .. code-block:: groovy
-
-         // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
-         // Also defines JUnit 4.
-         dependencies {
-             compile wpi.deps.wpilib()
-             nativeZip wpi.deps.wpilibJni(wpi.platforms.roborio)
-             nativeDesktopZip wpi.deps.wpilibJni(wpi.platforms.desktop)
-
-
-             compile wpi.deps.vendor.java()
-             nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
-             nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
-
-             simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
-
-             testCompile 'junit:junit:4.12'
-         }
-
-   .. group-tab:: C++
-
-      You may need to create a ``dependencies{}`` block in your build.gradle, as C++ projects do not normally have this. This can be positioned below the ``model{}`` block. It's also important to note that C++ requires the boolean to be set to ``true`` instead of ``false``. It should look like the following:
-
-      .. code-block:: groovy
-
-         dependencies {
-            simulation wpi.deps.sim.gui(wpi.platforms.desktop, true)
-         }
-
 Running the GUI
 ---------------
 
-Then you can simply launch the GUI via the **Run Simulation** command palette option.
+You can simply launch the GUI via the **Run Simulation** command palette option.
 
 .. image:: images/vscode-run-simulation.png
    :alt: Running simulation via VS Code
@@ -98,8 +52,8 @@ Using the ADXRS450 object is a fantastic way to test gyro based outputs. This wi
 
 .. image:: images/sim-gui-using-gyro.png
 
-Determing Simulation from Robot Code
-------------------------------------
+Determining Simulation from Robot Code
+--------------------------------------
 
 In cases where vendor libraries do not compile when running the robot simulation, you can wrap their content with ``RobotBase.isReal()`` which returns a ``boolean``.
 

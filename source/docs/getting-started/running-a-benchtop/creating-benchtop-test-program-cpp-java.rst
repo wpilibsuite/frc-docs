@@ -74,7 +74,7 @@ Imports/Includes
         #include <frc/drive/DifferentialDrive.h>
         #include <frc/livewindow/LiveWindow.h>
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements, in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMVictorSPX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMVictorSPX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -113,7 +113,7 @@ The sample robot in our examples will have a joystick on USB port 0 for arcade d
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
 
-.. note:: The variable initializations for C++ are in the ``private`` section at the bottom of the program. This means they are private to the class (``Robot``). The C++ code also sets the Motor Safety expiration to 0.1 seconds (the drive will shut off if we don't give it a command every .1 seconds and starts the ``Timer`` used for autonomous.
+.. note:: The variable initializations for C++ are in the ``private`` section at the bottom of the program. This means they are private to the class (``Robot``). The C++ code also sets the Motor Safety expiration to 0.1 seconds (the drive will shut off if we don't give it a command every .1 seconds) and starts the ``Timer`` used for autonomous.
 
 Robot Initialization
 --------------------
@@ -227,3 +227,8 @@ Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, th
 .. |New Project Configured| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator-configured.png
 .. |Opened Robot Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/opened-robot-project.png
 .. |C++ Configurations| image:: /docs/software/wpilib-overview/images/creating-robot-program/cpp-configurations.png
+
+Deploying the Project to a Robot
+--------------------------------
+
+Please see the instructions :ref:`here <docs/software/wpilib-overview/deploying-robot-code:Building and Deploying Robot Code>` for deploying the program onto a robot.

@@ -53,3 +53,24 @@ REV Motor Controllers
 
     - API Documentation (`Java <https://www.revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANSparkMax.html>`__, `C++ <https://www.revrobotics.com/content/sw/max/sw-docs/cpp/classrev_1_1_c_a_n_spark_max.html>`__)
     - `Technical Manual <https://www.revrobotics.com/sparkmax-users-manual/>`__
+
+Playing With Fusion
+-------------------
+
+Playing With Fusion (PWF) offers the Venom integrated motor/controller as well as a Time-of-Flight distance sensor:
+
+PWF Motor Controllers
+^^^^^^^^^^^^^^^^^^^^^
+
+- **Venom**
+
+    - API Documentation (`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
+    - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7086>`__
+
+PWF Sensors
+^^^^^^^^^^^
+
+- **Time of Flight Sensor**
+
+    - API Documentation(`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
+    - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7091>`__

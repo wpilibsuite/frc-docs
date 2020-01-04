@@ -1,12 +1,27 @@
 New for 2020
 ============
 
-A number of changes have been made to both C++ and Java WPILib for the 2020 season. This article will describe and provide a brief overview of the new changes and features.
+A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes.
 
-frc-docs/ScreenSteps
---------------------
+Major Features - All Languages
+------------------------------
 
-- ScreenSteps has been replaced with `frc-docs <https://docs.wpilib.org/en/latest/>`__. This change has largely been inspired by growing demands by the WPILib team. We hope that this move toward a community-led model will increase the quality of tutorials and documentation moving forward.
+- **Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to control individually addressable LEDs (WS2812 or compatible protocol) from the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these LEDs directly to the roboRIO PWM signal line and control them from APIs in all three languages. Depending on the length of the LED string and whether any servos are also being powered from the PWM ports, teams may be able to power the string directly from the PWM port or may need to use an external supply.
+- **Duty Cycle Encoder** - The roboRIO FPGA has been enhanced to be able to decode the signals from Duty Cycle encoders (this includes devices like the US Digital MA3, CTRE Mag Encoder, and REV Robotics Through Bore Encoder). Teams can connect these devices to the DIO ports on the roboRIO and access the encoder data via APIs in all three languages.
+- **CAN Bus Internal Restructure** - The internal implementation of the CAN bus has changed to reduce the latency incurred by CAN bus calls from robot programs. Team programs, particularly those with many CAN calls, should see reduced and more consistent loop timing with the new implementation. No team action is needed to take advantage of this change, the changes are limited to internal implementation. Users may notice changes in how some tools like the CTRE Phoenix Tuner work as a consequence of the restructure.
+- **Control Packet Caching** - A change has been made to the internals of how control packet data (such as Joystick data, current mode, etc.) is retrieved, resulting in reduced latency in these calls. The user-facing API has not changed, users will see this benefit without making any changes to their programs.
+- **Documentation** - If you're on this page, you're likely aware that the software documentation has moved from Screensteps to this new FRC-Docs page. This open source documentation, hosted on Read the Docs, allows for a greater number of contributors (including community contribution) as well as new features such as testable example code (to ensure example code remains correct as library changes are made), better support for localization, and more. For the 2020 season, KOP part documentation can still be found on `Screensteps <https://wpilib.screenstepslive.com/s/4485>`__
+
+Major Features - C++/Java
+-------------------------
+More complete details on all of these changes can be found in the changelog below (under **WPILib**).
+
+- **Command Based Framework Rewrite** - A new version of the Command Based framework has been written from the ground up based on the years of experience with the previous framework. Both frameworks will be available as options in 2020 and have been split out as "vendor libraries" (though they are still included in the WPILib installer) in order to reduce the chances of mixing the two which will not work correctly.
+- **PID Controller Rewrite** - A new synchronous PID controller class has been written that is structured in a way that makes it simpler to compose with other higher level classes such as filters, motion profiles, kinematics and more. The new PID Controller is located in a new package to maintain separation from the existing implementation.
+- **High level controls & Trajectory generation** - A number of new classes have been added to assist teams with higher level controls including kinematics, odometry, and trajectory generation. In addition to the characterization GUI mentioned below this should allow teams a much easier entry to high level control of mechanisms included drivetrains (with smooth trajectories), arms, and elevators.
+- **Robot Characterization Tool** - This new tool helps teams characterize their mechanical systems (currently supports drivetrains, elevators, and arms) to help tune control loops. Combined with the new controls classes this should enable teams to follow an end-to-end solution for autonomous trajectory following.
+- **Simulation GUI** - A basic simulation GUI has been implemented allowing teams to visualize outputs and control basic inputs when simulating code on their desktop. While vendor support at Kickoff is expected to be limited, we hope this will expand in the future.
+
 
 WPILib
 ------
@@ -63,6 +78,8 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - IterativeRobot template has been removed
 - Add support for Addressable LEDs, such as WS2812's and NeoPixels
 - Add support for DutyCycle inputs, such as the absolute output on many FRC encoders
+- Eigen has been added to C++, and EJML has been added to Java to support linear algebra and matrix calculations. These are included by default, with no need to add anything to your robot project to use them.
+- Jackson has been added to Java for JSON support. C++ support already existed with json library in the wpi header root. These can be used with no need to add anything to your robot project.
 
 Shuffleboard
 ------------
@@ -116,7 +133,7 @@ WPILib All in One Installer
 - Use ``wpilib\2020\`` instead of ``frc2020\``. This prevents cluttering the user’s home directory when installing alongside previous years’ installation.
 - Fixed an issue where shortcuts would get created for installed tools, even if it was unchecked.
 - Installing for **All Users** will now create shortcuts for all users, instead of only the current one.
-- Update to lastest Visual Studio Code and C++/Java extensions
+- Update to latest Visual Studio Code and C++/Java extensions
 
 Visual Studio Code Extension
 ----------------------------

@@ -6,6 +6,6 @@ FRC LabVIEW Programming
    :titlesonly:
 
    /docs/getting-started/getting-started-frc-control-system/labview-setup
-   /docs/getting-started/getting-started-frc-control-system/frc-update-suite
+   /docs/getting-started/getting-started-frc-control-system/frc-game-tools
    creating-robot-programs/index
    resources/index

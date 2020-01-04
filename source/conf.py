@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FIRST Robotics Competition'
-copyright = '2019, FIRST'
+copyright = '2020, FIRST'
 author = 'WPILib'
 version = '2020'
 
@@ -63,7 +63,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['.png', '.jpg']
+exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"

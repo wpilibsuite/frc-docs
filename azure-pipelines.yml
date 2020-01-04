@@ -35,11 +35,10 @@ jobs:
     - script: make html
       displayName: 'Compile HTML'
 
-    - script: make latexpdf
-      displayName: 'Compile PDF'
-
     - task: ArchiveFiles@2
       displayName: 'Archive HTML'
+      # Try to archive even if the build step failed
+      condition: in(variables['Agent.JobStatus'], 'Succeeded', 'SucceededWithIssues', 'Failed')
       inputs:
         rootFolderOrFile: build/html/
         includeRootFolder: false
@@ -49,9 +48,14 @@ jobs:
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish HTML'
+      # Try to publish even if the build step failed
+      condition: in(variables['Agent.JobStatus'], 'Succeeded', 'SucceededWithIssues', 'Failed')
       inputs:
         artifactName: 'docs-html'
         PathToPublish: '$(Build.ArtifactStagingDirectory)/docs-html.zip'
+
+    - script: make latexpdf
+      displayName: 'Compile PDF'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'

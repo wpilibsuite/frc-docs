@@ -6,7 +6,7 @@ Constructing the Ramsete Controller Object
 ------------------------------------------
 The Ramsete controller should be initialized with two gains, namely ``b`` and ``zeta``. Larger values of ``b`` make convergence more aggressive like a proportional term whereas larger values of ``zeta`` provide more damping in the response. These controller gains only dictate how the controller will output adjusted velocities. It does NOT affect the actual velocity tracking of the robot. This means that these controller gains are generally robot-agnostic.
 
-.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results.
+.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
 Getting Adjusted Velocities
 ---------------------------
@@ -53,9 +53,8 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
       units::meter_per_second_t left = wheelSpeeds.left;
       units::meter_per_second_t right = wheelSpeeds.right;
 
-Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://first.wpi.edu/FRC/roborio/development/docs/cpp/classfrc2_1_1PIDController.html>`_, `Java <https://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`_) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SparkMAX can be used.
+Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDController.html>`_, `Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`_) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SparkMAX can be used.
 
-Ramsete command
----------------
-For the sake of ease for users, a ``RamseteCommand`` class is built in to WPILib. See the ``RamseteCommand`` documentation for more information.
-.. todo:: Add link once RamseteCommand docs are finished.
+Ramsete in the Command-Based Framework
+--------------------------------------
+For the sake of ease for users, a ``RamseteCommand`` class is built in to WPILib. For a full tutorial on implementing a path-following autonomous using RamseteCommand, see :ref:`docs/software/trajectory-end-to-end/trajectory-tutorial-overview:End-to-End Trajectory Tutorial`.
