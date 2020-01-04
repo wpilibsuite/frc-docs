@@ -8,12 +8,13 @@ Both the digital and analog inputs are highly limited in the amount of data that
 Types of supported serial buses
 -------------------------------
 
-The roboRIO supports four basic types of serial communications:
+The roboRIO supports many basic types of serial communications:
 
 - `I2C`_
 - `SPI`_
 - `RS-232`_
-- `USB`_
+- `USB Host`_
+- `CAN Bus`_
 
 Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
@@ -41,7 +42,8 @@ The SPI bus can also be used through the `MXP expansion port`_. The MXP port pro
 RS-232
 ^^^^^^
 
-|roboRIO RS-232| |RS-232 Pinout|
+.. image:: images/roborio/roborio-rs-232.png
+.. image:: images/serial-buses/rs232-pinout.png
 
 To communicate to peripheral devices over RS-232, each pin should be wired to its corresponding pin on the device.
 
@@ -87,22 +89,3 @@ Several sensors primarily use the CAN bus. Some examples include:
 - Power monitoring sensors built into the :ref:`Power Distribution Panel (PDP) <docs/getting-started/getting-started-frc-control-system/control-system-hardware:Power Distribution Panel>`
 
 More information about using devices connected to the CAN bus can be found in the article about :ref:`using can devices <docs/software/can-devices/using-can-devices:Using CAN Devices>`.
-
-.. |roboRIO I2C| image:: images/serial-buses/roborio-i2c.png
-   :width: 40%
-.. |I2C Pinout| image:: images/serial-buses/i2c-pinout.png
-   :width: 40%
-.. |roboRIO SPI| image:: images/serial-buses/roborio-spi.png
-   :width: 40%
-.. |SPI Pinout| image:: images/serial-buses/spi-pinout.png
-   :width: 40%
-.. |roboRIO RS-232| image:: images/serial-buses/roborio-rs232.png
-   :width: 40%
-.. |RS-232 Pinout| image:: images/serial-buses/rs232-pinout.png
-   :width: 40%
-.. |roboRIO USB| image:: images/serial-buses/roborio-usb.png
-.. |roboRIO MXP| image:: images/serial-buses/roborio-mxp.png
-   :width: 40%
-.. |MXP Pinout| image:: images/serial-buses/mxp-pinout.png
-   :width: 40%
-
