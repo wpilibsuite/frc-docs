@@ -28,9 +28,9 @@ Status Pane
 
 The Status Pane of the Driver Station is located in the center of the display and is always visible regardless of the tab selected. It displays a selection of critical information about the state of the DS and robot:
 
-1. Team # - The Team number the DS is currently configured for. This should match your FRC team number, to change the number see the Setup Tab.
-2. Battery Voltage - If the DS is connected and communicating with the roboRIO this displays current battery voltage as a number and with a small chart of voltage over time in the battery icon. The background of the numeric indicator will turn red when the roboRIO brownout is triggered. See roboRIO Brownout and Understanding Current Draw for more information.
-3. Major Status Indicators - These three indicators display major status items for the DS. The "Communications" indicates whether the DS is currently communicating with the FRC Network Communications Task on the roboRIO (this year it is split in half for the TCP and UDP communication). The "Robot Code" indicator shows whether the team Robot Code is currently running (determined by whether or not the Driver Station Task in the robot code is updating the battery voltage), The "Joysticks" indicator shows if at least one joystick is plugged in and recognized by the DS.
+1. Team # - The Team number the DS is currently configured for. This should match your FRC team number. To change the team number see the Setup Tab.
+2. Battery Voltage - If the DS is connected and communicating with the roboRIO this displays current battery voltage as a number and with a small chart of voltage over time in the battery icon. The background of the numeric indicator will turn red when the roboRIO brownout is triggered. See :doc:<docs/software/roborio-inforobo/roborio-brownouts> for more information.
+3. Major Status Indicators - These three indicators display major status items for the DS. The "Communications" indicates whether the DS is currently communicating with the FRC Network Communications Task on the roboRIO (it is split in half for the TCP and UDP communication). The "Robot Code" indicator shows whether the team Robot Code is currently running (determined by whether or not the Driver Station Task in the robot code is updating the battery voltage), The "Joysticks" indicator shows if at least one joystick is plugged in and recognized by the DS.
 4. Status String - The Status String provides an overall status message indicating the state of the robot, some examples are "No Robot Communication", "No Robot Code", "Emergency Stopped", and "Teleoperated Enabled". When the roboRIO brownout is triggered this will display "Voltage Brownout".
 
 Operation Tab
@@ -63,15 +63,19 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the webdash plugin has not been installed using CTRE Phoenix Lifeboat
 5. Memory Stats - This section shows stats about the roboRIO memory
 6. Connection Indicators - The top half of these indicators show connection status to various components.
+
     - "Enet Link" indicates the computer has something connected to the ethernet port.
     - "Robot Radio" indicates the ping status to the robot wireless bridge at 10.XX.YY.1.
     - "Robot" indicates the ping status to the roboRIO using mDNS (with a fallback of a static 10.TE.AM.2 address).
     - "FMS" indicates if the DS is receiving packets from FMS (this is NOT a ping indicator).
+
 7. Network Indicators - The second section of indicators indicates status of network adapters and firewalls. These are provided for informational purposes, communication may be established with one or more unlit indicators in this section
+
     - "Enet" indicates the IP address of the detected Ethernet adapter
     - "WiFi" indicates if a wireless adapter has been detected as enabled
     - "USB" indicates if a roboRIO USB connection has been detected
     - "Firewall" indicates if any firewalls are detected as enabled. Enabled firewalls will show in orange ( Dom = Domain, Pub = Public, Prv = Private)
+
 8. Reboot roboRIO - This button attempts to perform a remote reboot of the roboRIO (after clicking through a confirmation dialog)
 9. Restart Robot Code - This button attempts to restart the code running on the robot (but not restart the OS)
 
@@ -83,7 +87,7 @@ Setup Tab
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
 1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
-2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java Eclipse plugins.
+2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java WPILib installation.
 3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
 5. Audio Control - This button controls whether audio tones are sounded when the Practice Mode is used.
