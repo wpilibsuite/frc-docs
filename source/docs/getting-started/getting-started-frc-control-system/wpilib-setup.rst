@@ -260,6 +260,15 @@ WPILib Installation Guide
       .. figure:: images/linux/java-11.png
           :alt: Java 11
 
+    **Install libvulkan for simulation GUI**
+
+      To install libvulkan in order to run the simulation GUI run:
+
+    .. code-block:: console
+
+        $ example@pc:~$ sudo apt-get install libvulkan1
+
+
 .. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``~\frcYYYY`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year. In 2020 and later it is installed to ``~\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
 
 Uninstall Instructions
