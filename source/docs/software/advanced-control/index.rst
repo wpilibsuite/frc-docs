@@ -5,12 +5,6 @@ This section covers advanced control features in WPILib, such as various feedbac
 
 .. toctree::
    :maxdepth: 2
-   :caption: Controllers
 
    controllers/index
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Trajectories
-
    trajectories/index
