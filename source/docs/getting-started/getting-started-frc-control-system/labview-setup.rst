@@ -60,6 +60,8 @@ Starting Install
 
      Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
 
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+
      .. image:: images/labview/mount-iso.png
 
   .. tab:: Offline Installer (Windows 7, 8, & 8.1)
