@@ -10,7 +10,7 @@ This section covers advanced control features in WPILib, such as various feedbac
    controllers/index
 
 .. toctree::
-   :maxdepth:1
+   :maxdepth: 1
    :caption: Trajectories
 
    trajectories/index
