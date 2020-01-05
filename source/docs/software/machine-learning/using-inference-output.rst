@@ -13,7 +13,7 @@ The Raspberry Pi writes all detection information to NetworkTables, which can be
 
 The below ``VisionSubsystem`` Java class parses the data from NetworkTables and stores it in a usable way.
 
-__Example code coming soon!__
+Example code coming soon!
 
 .. todo:: Code example should be in allwpilib
 
