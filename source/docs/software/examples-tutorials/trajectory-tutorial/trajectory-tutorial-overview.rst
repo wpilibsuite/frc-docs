@@ -1,5 +1,5 @@
-End-to-End Trajectory Tutorial
-==============================
+Trajectory Tutorial
+===================
 
 .. todo:: add pathweaver stuff once it is available
 
