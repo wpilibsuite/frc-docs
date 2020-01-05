@@ -95,4 +95,5 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try accessing the roboRIO webpage with a web-browser at ``http://172.22.11.2/`` and/or verify that the NI network adapter appears in your list of Network Adapters in the Control Panel. If not, try re-installing the NI Update Suite or try a different PC.
 - Make sure your firewall is turned off.
 - Try a different PC
+- Some teams have experienced an issue where imaging fails if the device name of the computer you're using has a dash (``-``) in it. Try renaming the computer (or using a different PC).
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
