@@ -145,7 +145,8 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Add export of PWMSparkMax
+- Use individual includes instead of wpilib.h for C++
+- Add export of PWMSparkMax, PWMTalonFX, PWMVenom
 - Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions
 
 Robot Characterization
