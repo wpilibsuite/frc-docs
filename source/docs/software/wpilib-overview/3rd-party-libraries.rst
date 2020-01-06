@@ -14,7 +14,7 @@ Libraries
 
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
 
-`CTRE Phoenix Toolsuite <https://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__ - Contains TalonSRX/Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+`CTRE Phoenix Toolsuite <https://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__ - Contains Talon SRX/Victor SPX/Talon FX/Pigeon Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
 
@@ -24,7 +24,9 @@ Libraries
 
 `Mindsensors Libraries <http://www.mindsensors.com/blog/how-to/how-to-use-sd540c-and-canlight-with-roborio>`__ - Contains libraries for SD540C and CANLight
 
-`Rev Robotics <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
+`Rev Robotics Color Sensor V3 <http://www.revrobotics.com/rev-31-1557/>`__ - Library for Rev Robotics Color Sensor included in 2020 Kit of Parts
+
+`Rev Robotics SPARK MAX <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
 
 `Scansense Sweep <https://github.com/PeterJohnson/sweep-sdk/releases>`__ - C/Java Libraries for Scansense Sweep LIDAR (packaged by Peter Johnson)
 
