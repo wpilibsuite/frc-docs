@@ -35,10 +35,11 @@ Train with AWS
 
 5. Replace ``estimator.fit(s3://wpilib)`` with ``estimator.fit(s3://<<your-bucket-name>>)``. If you could not access Supervisely in earlier steps, do not replace the bucket's name.
 6. Run the code block by clicking the play button at the top of your screen. This block could take up to two hours to train your model depending on the value of ``epochs`` in the ``hyperparameters`` dictionary.
-7. Go back to SageMaker. Open ``Training jobs`` on the far left. Open the most recent training job.
-8. Once the model is done training (the job says ``Completed``), scroll to the bottom inside the training job. Click on the link in the ``Output`` section, where it says ``S3 model artifact``.
-9. Click on ``model.tar.gz``. Click on ``Download``.
-10. Stop the notebook now that the training job is completed. Do this by going back to the SageMaker tab, clicking on ``Notebook instances`` on the far left, selecting the instance that is no longer needed, and selecting ``Actions -> Stop``.
+7. Once the code block finishes running, the precision for each epoch is outputted. More information about what precision means can be found in :ref:`Understanding Precision <docs/software/examples-tutorials/machine-learning/understanding-precision:Understanding Precision>`.
+8. Go back to SageMaker. Open ``Training jobs`` on the far left. Open the most recent training job.
+9. Once the model is done training (the job says ``Completed``), scroll to the bottom inside the training job. Click on the link in the ``Output`` section, where it says ``S3 model artifact``.
+10. Click on ``model.tar.gz``. Click on ``Download``.
+11. Stop the notebook now that the training job is completed. Do this by going back to the SageMaker tab, clicking on ``Notebook instances`` on the far left, selecting the instance that is no longer needed, and selecting ``Actions -> Stop``.
 
 .. image:: images/aws-stop-instance.png
    :alt: Stop instance button

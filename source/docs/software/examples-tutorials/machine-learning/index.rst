@@ -22,6 +22,7 @@ Table of Contents
    inference
    using-inference-output
    how-it-works
+   understanding-precision
 
 Hardware Requirement
 --------------------
