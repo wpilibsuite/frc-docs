@@ -18,6 +18,7 @@ Table of Contents
    adding-more-data
    uploading-data-to-aws-s3
    training
+   testing
    inference
    using-inference-output
    how-it-works
