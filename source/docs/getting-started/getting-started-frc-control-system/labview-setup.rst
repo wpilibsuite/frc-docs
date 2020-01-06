@@ -23,6 +23,8 @@ Select Components to Uninstall
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the "Products Only" check-box and select the check-box to the left of "Name". Click Remove. Wait for the uninstaller to complete and reboot if prompted.
 
+.. warning:: These instructions assume that no other National Instruments software is installed. If you have other National Instruments software installed, it is necessary to uncheck the software that should not be uninstalled.
+
 .. image:: images/labview/uninstall_select_components.png
 
 Getting LabVIEW installer
@@ -57,6 +59,8 @@ Starting Install
   .. tab:: Offline Installer (Windows 10)
 
      Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
 
      .. image:: images/labview/mount-iso.png
 

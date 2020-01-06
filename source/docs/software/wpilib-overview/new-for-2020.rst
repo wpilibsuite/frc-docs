@@ -78,6 +78,9 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - IterativeRobot template has been removed
 - Add support for Addressable LEDs, such as WS2812's and NeoPixels
 - Add support for DutyCycle inputs, such as the absolute output on many FRC encoders
+- Eigen has been added to C++, and EJML has been added to Java to support linear algebra and matrix calculations. These are included by default, with no need to add anything to your robot project to use them.
+- Jackson has been added to Java for JSON support. C++ support already existed with json library in the wpi header root. These can be used with no need to add anything to your robot project.
+- The location that maven artifacts are published has changed to: https://frcmaven.wpi.edu/artifactory/release/
 
 Shuffleboard
 ------------
@@ -143,7 +146,8 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Add export of PWMSparkMax
+- Use individual includes instead of wpilib.h for C++
+- Add export of PWMSparkMax, PWMTalonFX, PWMVenom
 - Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions
 
 Robot Characterization

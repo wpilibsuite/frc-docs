@@ -63,6 +63,8 @@ Starting Install
 
      .. image:: images/labview/mount-iso.png
 
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+
   .. tab:: Offline Installer (Windows 7, 8, & 8.1)
 
      Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).

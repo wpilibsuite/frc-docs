@@ -49,13 +49,13 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 
    .. tab:: Java
 
-      .. literalinclude:: examples/trajectorygeneration-1/java/ExampleTrajectory.java
+      .. literalinclude:: examples/trajectory-generation-1/java/ExampleTrajectory.java
          :language: java
          :lines: 10-32
 
    .. tab:: C++
 
-      .. literalinclude:: examples/trajectorygeneration-1/cpp/ExampleTrajectory.cpp
+      .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
          :language: cpp
          :lines: 8-22
 

@@ -83,7 +83,7 @@ To expose the underlying type of the unit object, the ``to<..>()`` method can be
 
 Example of the Units Library in WPILib Code
 -------------------------------------------
-Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the Units library. Here is an example of :ref:`sampling a trajectory <docs/software/wpilib-tools/path-planning/wpilib-trajectories/manipulating-trajectories:Sampling the trajectory>`.
+Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the Units library. Here is an example of :ref:`sampling a trajectory <docs/software/advanced-control/trajectories/manipulating-trajectories:Sampling the trajectory>`.
 
 .. code-block:: c++
 
