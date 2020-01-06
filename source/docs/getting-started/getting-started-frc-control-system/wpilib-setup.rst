@@ -69,8 +69,8 @@ WPILib Installation Guide
 
       VS Code is the IDE (Integrated Development Environment) that is used for
       2019 and beyond. It needs to be installed on any development computer.
-      It can be downloaded here: `code.visualstudio.com <https://update.code.visualstudio.com/1.41.1/darwin/stable>`__.
-      For 2020, the version is 1.41.1.
+      It can be downloaded here: `code.visualstudio.com <https://code.visualstudio.com/>`__.
+      For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/darwin/stable <https://update.code.visualstudio.com/1.41.1/darwin/stable>`__
 
       The downloaded file will be "VSCode-darwin-stable.zip" (1)
 
@@ -206,7 +206,8 @@ WPILib Installation Guide
 
     **Installing Visual Studio Code**
 
-      1. Download the Linux .deb file from `code.visualstudio.com <https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable>`__. For 2020, the version is 1.41.1.
+      1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__. For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable <https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable>`__
+
       2. Double-click on the .deb file in the file explorer
       3. Click the "Install" button to install VS Code
 
