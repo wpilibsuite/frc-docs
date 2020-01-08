@@ -273,7 +273,7 @@ Drive Modes
     The DifferentialDrive class contains three different
     default modes of driving your robot's motors.
 
-    - Tank Drive, which controls the left and side independently
+    - Tank Drive, which controls the left and right side independently
     - Arcade Drive, which controls a forward and turn speed
     - Curvature Drive, a subset of Arcade Drive, which makes your robot handle like a car with constant-curvature turns.
 
