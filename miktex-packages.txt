@@ -12,6 +12,7 @@ babel-german
 babel-spanish
 biber-windows-x64
 bibtex
+filehook
 bibtex8bit
 bibtex8bit-polish
 bidi
