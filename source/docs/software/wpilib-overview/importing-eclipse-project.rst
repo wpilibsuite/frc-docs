@@ -1,7 +1,7 @@
 Importing an Eclipse project into VS Code
 =========================================
 
-To make it easy for teams to use existing projects with the new IDE, WPILib includes a wizard for importing Eclipse projects into VS Code. This will generate the necessary Gradle components and load the project into VS Code.
+To make it easy for teams to use existing projects with the new IDE, WPILib includes a wizard for importing Eclipse projects into VS Code. This will generate the necessary Gradle components and load the project into VS Code. The importer automatically imports the old command framework 3rd party library.
 
 Launching the Import Wizard
 ---------------------------

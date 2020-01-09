@@ -19,13 +19,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: 2020 Beta Testing
-
-   docs/beta/beta-getting-started/index
-   docs/beta/tasks/index
-
-.. toctree::
-   :maxdepth: 1
    :caption: WPILib Programming Basics
 
    docs/software/wpilib-overview/index
@@ -50,7 +43,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/path-planning/index
+   docs/software/wpilib-tools/pathfinder/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/robot-characterization/index
@@ -66,7 +59,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/networktables/index
    docs/software/roborio-info/index
    docs/software/advanced-control/index
-   docs/software/trajectory-end-to-end/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: WPILib Examples and Tutorials
+
+   docs/software/examples-tutorials/wpilib-examples
+   docs/software/examples-tutorials/trajectory-tutorial/index
 
 .. toctree::
    :maxdepth: 1

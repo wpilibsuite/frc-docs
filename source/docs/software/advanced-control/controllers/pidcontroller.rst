@@ -63,7 +63,7 @@ Checking Errors
 
 .. note:: ``getPositionError()`` and ``getVelocityError()`` are named assuming that the loop is controlling a position - for a loop that is controlling a velocity, these return the velocity error and the acceleration error, respectively.
 
-.. note:: If using :ref:`continuous input <docs/software/advanced-control/pidcontroller:Setting Continuous Input>`, use ``getContinuousError`` rather than ``getPositionError``.  Velocity error is unaffected.
+.. note:: If using :ref:`continuous input <docs/software/advanced-control/controllers/pidcontroller:Setting Continuous Input>`, use ``getContinuousError`` rather than ``getPositionError``.  Velocity error is unaffected.
 
 The current error of the measured process variable is returned by the ``getPositionError()`` function, while its derivative is returned by the ``getVelocityError()`` function:
 
@@ -108,7 +108,7 @@ It is sometimes desirable to clear the internal state (most importantly, the int
 Setting a Max Integrator Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-control/feedforward:Feedforward Control in WPILib>`.
+.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-control/controllers/feedforward:Feedforward Control in WPILib>`.
 
 A typical problem encountered when using integral feedback is excessive "wind-up" causing the system to wildly overshoot the setpoint.  This can be alleviated in a number of ways - the WPILib ``PIDController`` offers an integrator range limiter to help teams overcome this issue.
 

@@ -69,7 +69,8 @@ WPILib Installation Guide
 
       VS Code is the IDE (Integrated Development Environment) that is used for
       2019 and beyond. It needs to be installed on any development computer.
-      It can be downloaded here: https://code.visualstudio.com.
+      It can be downloaded here: `code.visualstudio.com <https://code.visualstudio.com/>`__.
+      For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/darwin/stable <https://update.code.visualstudio.com/1.41.1/darwin/stable>`__
 
       The downloaded file will be "VSCode-darwin-stable.zip" (1)
 
@@ -205,7 +206,8 @@ WPILib Installation Guide
 
     **Installing Visual Studio Code**
 
-      1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__
+      1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__. For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable <https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable>`__
+
       2. Double-click on the .deb file in the file explorer
       3. Click the "Install" button to install VS Code
 
@@ -260,4 +262,45 @@ WPILib Installation Guide
       .. figure:: images/linux/java-11.png
           :alt: Java 11
 
+    **Install libvulkan for simulation GUI**
+
+      To install libvulkan in order to run the simulation GUI run:
+
+    .. code-block:: console
+
+        $ example@pc:~$ sudo apt-get install libvulkan1
+
+
 .. note:: The installation directory has changed for 2020. In 2019 the software was installed to ``~\frcYYYY`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year. In 2020 and later it is installed to ``~\wpilib\YYYY``. This lessens clutter when multiple years software are installed.
+
+Uninstall Instructions
+----------------------
+
+WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib. However, the following instructions can be used to uninstall WPILib if desired.
+
+.. tabs::
+
+  .. tab:: Windows
+
+     1. Delete the appropriate wpilib folder (2019: ``c:\Users\Public\frc2019``, 2020 and later: ``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
+     2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
+     3. Delete the path environment variables.
+
+        1. In the start menu, type environment and select "edit the system environment variables"
+        2. Click on the environment variables button (1).
+        3. In the user variables, select path (2) and then click on edit (3).
+        4. Select the path with ``roborio\bin`` (4) and click on delete (5).
+        5. Select the path with ``frccode`` and click on delete (5).
+        6. Repeat steps 3-6 in the Systems Variable pane.
+
+        .. figure:: images/windows/EnvironmentVariables.png
+
+  .. tab:: macOS
+
+     1. Delete Visual Studio Code from the Applications folder. Alternately, the extensions can be `uninstalled <https://code.visualstudio.com/docs/editor/extension-gallery#_manage-extensions>`__
+     2. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
+
+  .. tab:: Linux
+
+     1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/frc2019``
+     2. Uninstall Visual Studio Code ``sudo dpkg -r code``. Alternately, the extensions can be `uninstalled <https://code.visualstudio.com/docs/editor/extension-gallery#_manage-extensions>`__

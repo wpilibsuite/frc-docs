@@ -43,19 +43,36 @@ If you wish to install on other machines offline, do not click the Download butt
 The Update installer may prompt that .NET Framework 4.6.2 needs to be
 updated or installed. Follow prompts on-screen to complete the
 installation, including rebooting if requested. Then resume the
-installation of the NI FRC Update, restarting the installer if
+installation of the FRC Game Tools, restarting the installer if
 necessary.
 
 Welcome
 -------
 
-Right click on the downloaded zip file and select Extract All.
-If you downloaded the encrypted zip file, you will be prompted for the
-encryption key which will be released at Kickoff. Open the extracted
-folder and any subfolders until you reach the folder containing “install”
-(may say “install.exe” on some machines). Double click on the setup icon
-to launch the installer. Click “Yes” if a Windows Security prompt
-appears.
+Starting Install
+^^^^^^^^^^^^^^^^
+
+.. tabs::
+  .. tab:: Online Installer
+
+     Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
+
+  .. tab:: Offline Installer (Windows 10)
+
+     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+
+     .. image:: images/labview/mount-iso.png
+
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+
+  .. tab:: Offline Installer (Windows 7, 8, & 8.1)
+
+     Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
+     Right click on the downloaded iso file and select Extract to.
+
+     .. image:: images/labview/extract-iso.png
+
+     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
 
 NI Package Manager License
 --------------------------
@@ -88,13 +105,6 @@ Installation progress of the NI Package Manager will be tracked in this window
 
 Product List
 ------------
-
-|Product List|
-
-Click “Next”. There is no need to de-select “LabVIEW
-Update” for C++ or Java teams, if you do not have the base LabVIEW
-installation (because you are not programming in LabVIEW) this
-installation will be skipped automatically.
 
 Additional Software
 -------------------

@@ -81,7 +81,7 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 Ramsete Parameters
 ------------------
 
-Finally, we must include a pair of parameters for the RAMSETE controller.  The values shown below should work well for most robots, provided distances have been correctly measured in meters - for more information on tuning these values (if it is required), see :ref:`docs/software/wpilib-tools/path-planning/wpilib-trajectories/ramsete:Constructing the Ramsete Controller Object`.
+Finally, we must include a pair of parameters for the RAMSETE controller.  The values shown below should work well for most robots, provided distances have been correctly measured in meters - for more information on tuning these values (if it is required), see :ref:`docs/software/advanced-control/trajectories/ramsete:Constructing the Ramsete Controller Object`.
 
 .. tabs::
 
