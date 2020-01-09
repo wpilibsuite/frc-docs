@@ -55,7 +55,6 @@ gsftopk
 helvetic
 hyperref
 hyph-utf8
-ifxetex
 jknappen
 knuth-lib
 knuth-local
