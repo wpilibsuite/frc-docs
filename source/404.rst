@@ -1,0 +1,10 @@
+:orphan:
+
+The Requested Page Was Not Found
+================================
+
+.. image:: assets/404-crying.png
+   :align: center
+   :alt: Sobbing emoji face
+
+The page you were searching for does not exist. If you feel like this may be an issue, open a request at the `frc-docs repository <https://github.com/wpilibsuite/frc-docs/issues>`__.
