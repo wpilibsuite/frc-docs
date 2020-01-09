@@ -5,7 +5,7 @@ Troubleshooting
 
 Poor trajectory tracking performance can be difficult to troubleshoot. Although the trajectory generator and follower are intended to be easy-to-use and performant out of the box, there are situations where trajectory tracking performance can be poor. This poor performance can be difficult to troubleshoot, because the trajectory generator and followers have many knobs that can be tuned and many moving parts. It can be difficult to know where to start, especially because it is difficult to locate the source of the problems from the robot's general behavior.
 
-Because it is difficult to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended. The below steps are listed in the order that you should take if you have no idea where the problem lies (if you have a guess as to where the problem is then these steps can be take out of order, as long as care is taken to only change one thing at a time).
+Because it is difficult to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended. The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
 .. note:: The below examples put diagnostic values onto Network Tables. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
 
@@ -163,7 +163,7 @@ If you completed the previous step and everything looked good, or you fixed all 
 
 Check RAMSETE
 -------------
-Out of all of the layers of the trajectory follower, RAMSETE is the one that usually works best out of the box. You can, however, still verify that it is tuned properly. In this step we will run with everything enabled, including the wheel P controllers, feedforwards, and the RAMSETE controller.
+Out of all of the layers of the WPILib's trajectory code, RAMSETE is the one that usually works best "out of the box". You can, however, still verify that it is tuned properly. In this step we will run with everything enabled, including the wheel P controllers, feedforwards, and the RAMSETE controller and observe general performance.
 
 1. Remove the code to disable RAMSETE, but keep the all logging code.
 2. Run a variety of trajectories.
