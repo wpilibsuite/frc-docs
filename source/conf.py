@@ -104,6 +104,8 @@ def setup(app):
 
 latex_engine = 'xelatex'
 
+latex_use_xindy = False
+
 latex_elements = {
     'fontpkg': r'''
 	\setmainfont{DejaVu Serif}
