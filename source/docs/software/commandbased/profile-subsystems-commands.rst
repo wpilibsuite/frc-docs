@@ -1,7 +1,7 @@
 Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands
 ================================================================================
 
-.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-control/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
+.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-control/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
 
 .. note:: The ``TrapezoidProfile`` command wrappers are generally intended for composition with custom or external controllers.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-subsystems-commands`.
 
@@ -179,7 +179,7 @@ Full TrapezoidProfileCommand Example
 
 What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
 
-. tabs::
+.. tabs::
 
   .. group-tab:: Java
 
@@ -211,7 +211,7 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/DriveDistanceOffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/RobotContainer.java
       :language: java
       :lines: 68-87
       :linenos:

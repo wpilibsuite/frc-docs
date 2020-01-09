@@ -3,6 +3,8 @@ New for 2020
 
 A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes.
 
+.. important:: Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2020 </docs/getting-started/getting-started-frc-control-system/wpilib-setup>`, any 2019 projects must be :doc:`imported </docs/software/wpilib-overview/importing-gradle-project>` to be compatible.
+
 Major Features - All Languages
 ------------------------------
 
@@ -80,6 +82,7 @@ There are many changes and additions to the main WPILib library for 2020. Most n
 - Add support for DutyCycle inputs, such as the absolute output on many FRC encoders
 - Eigen has been added to C++, and EJML has been added to Java to support linear algebra and matrix calculations. These are included by default, with no need to add anything to your robot project to use them.
 - Jackson has been added to Java for JSON support. C++ support already existed with json library in the wpi header root. These can be used with no need to add anything to your robot project.
+- The location that maven artifacts are published has changed to: https://frcmaven.wpi.edu/artifactory/release/
 
 Shuffleboard
 ------------
@@ -145,7 +148,8 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Add export of PWMSparkMax
+- Use individual includes instead of wpilib.h for C++
+- Add export of PWMSparkMax, PWMTalonFX, PWMVenom
 - Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions
 
 Robot Characterization

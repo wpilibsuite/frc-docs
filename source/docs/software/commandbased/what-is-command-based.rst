@@ -74,3 +74,10 @@ Command Groups
 --------------
 
 It is often desirable to build complex commands from simple pieces. This is achievable by `composing <https://en.wikipedia.org/wiki/Object_composition>`__ commands into “command groups.” A :doc:`command group <command-groups>` is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they are `recursively composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.
+
+Creating a Robot Project
+========================
+
+Creating a project is detailed in :ref:`docs/software/wpilib-overview/creating-robot-program:Creating a Robot Program`. Select "Template" then your programming language then "New Command Robot" to create a basic Command-Based Robot program.
+
+When you create a New Command Robot project, the new command based vendor library is automatically imported. If you imported a 2019 project or created a different type of project, the old command library is imported, and it is necessary to import the new command based vendor library per :doc:`/docs/software/wpilib-overview/3rd-party-libraries` and remove the old command library.

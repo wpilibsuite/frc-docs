@@ -1,11 +1,10 @@
 Advanced Controls
 =================
 
-.. toctree::
-   :maxdepth: 1
+This section covers advanced control features in WPILib, such as various feedback/feedforward control algorithms and trajectory following.
 
-   pidcontroller
-   feedforward
-   combining-feedforward-feedback
-   trapezoidal-profiles
-   profiled-pidcontroller
+.. toctree::
+   :maxdepth: 2
+
+   controllers/index
+   trajectories/index

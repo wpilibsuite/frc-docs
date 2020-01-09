@@ -1,7 +1,7 @@
 Importing a Gradle Project
 ==========================
 
-Due to changes in the project, it is necessary to update the build files for a previous years Gradle project. To make it easy for teams to import previous years gradle projects into the current year's framework, WPILib includes a wizard for importing previous years projects into VS Code. This will generate the necessary gradle components and load the project into VS Code. In place upgrades are not supported
+Due to changes in the project, it is necessary to update the build files for a previous years Gradle project. To make it easy for teams to import previous years gradle projects into the current year's framework, WPILib includes a wizard for importing previous years projects into VS Code. This will generate the necessary gradle components and load the project into VS Code. In place upgrades are not supported. The importer automatically imports the old command framework 3rd party library.
 
 .. important:: The import process copies your project from the current directory to a new directory and completely regenerates the gradle files. If you made non-standard updates to the build.gradle, you will need to make those changes again. For this reason, in place upgrades are not supported. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
 
