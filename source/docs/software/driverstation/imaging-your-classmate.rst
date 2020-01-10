@@ -223,7 +223,7 @@ Right click on the top entry of the tree and click "Scan for hardware changes". 
 
 Update Software
 ---------------
-In order for the Classmate images to be prepared on time, they are created before the final versions of the software were ready. To use the software for FRC some additional components will need to be installed. LabVIEW teams should continue with Installing the FRC Update Suite (All Languages). C++ or Java teams should continue Installing C++ and Java Development Tools for FRC.
+In order for the Classmate images to be prepared on time, they are created before the final versions of the software were ready. To use the software for FRC some additional components will need to be installed. LabVIEW teams should continue with Installing the FRC Game Tools (All Languages). C++ or Java teams should continue Installing C++ and Java Development Tools for FRC.
 
 Errors during Imaging Process
 -----------------------------

@@ -123,7 +123,7 @@ To use mDNS, an mDNS implementation is required to be installed on your PC. Here
 
 Windows:
 
-- **NI mDNS Responder:** Installed with the NI FRC Update Suite
+- **NI mDNS Responder:** Installed with the NI FRC Game Tools
 - **Apple Bonjour:** Installed with iTunes
 
 OSX:

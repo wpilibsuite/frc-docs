@@ -16,7 +16,7 @@ Task 1 - Install Software (Targeted Completion 10/28/19)
 
 The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 
-1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Update Suite, CTRE installer if using CANTalon SRX)
+1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, CTRE installer if using CANTalon SRX)
 
 Task 2 - Basic Benchtop Test (Targeted Completion 11/4/19)
 ----------------------------------------------------------
