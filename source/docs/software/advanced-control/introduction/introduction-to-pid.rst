@@ -10,7 +10,7 @@ First, we'll get some nomenclature for PID controllers out of the way. The :term
 :math:`e(t)` :term:`error`    :math:`y(t)` :term:`output`
 ============ ================ ============ =====================
 
-The :term:`error` :math:`e(t) - y(t)`.
+The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`.
 
 For those already familiar with PID control, this book's interpretation won't be consistent with the classical intuition of "past", "present", and "future" error. We will be approaching it from the viewpoint of modern control theory with proportional controllers applied to different physical quantities we care about. This will provide a more complete explanation of the derivative term's behavior for constant and moving :term:`setpoints <setpoint>`.
 
