@@ -16,7 +16,11 @@ Station or Utilities.**
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-**LabVIEW teams have already completed this step, do not repeat it.** Before installing the new version of the NI Update it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
+.. Warning:: LabVIEW teams have already completed this step, do not repeat it.
+
+.. Note:: It is only necessary to uninstall previous versions when installing a new year's tools. For example, uninstall the 2019 tools before installing the 2020 tools. It is not necessary to uninstall before upgrading to a new update of the 2020 game tools.
+
+Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
@@ -40,7 +44,7 @@ If you wish to install on other machines offline, do not click the Download butt
 .NET Framework 4.6.2
 --------------------
 
-The Update installer may prompt that .NET Framework 4.6.2 needs to be
+The Game Tools installer may prompt that .NET Framework 4.6.2 needs to be
 updated or installed. Follow prompts on-screen to complete the
 installation, including rebooting if requested. Then resume the
 installation of the FRC Game Tools, restarting the installer if

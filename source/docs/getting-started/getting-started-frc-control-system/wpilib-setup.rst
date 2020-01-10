@@ -6,7 +6,7 @@ WPILib Installation Guide
 .. tabs::
 
   .. tab:: Windows
-    .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of Visual Studio Code for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
+    .. note:: Windows 7: You **must** install the NI FRC Game Tools or .NET Version 4.62 (or later) before proceeding with the install of Visual Studio Code for FRC. The NI FRC Game Tools installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
 
     **Offline Installer**
 
