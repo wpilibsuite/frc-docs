@@ -7,7 +7,7 @@ These steps apply to position PID controllers. Velocity PID controllers typicall
 2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
 3. Increase :math:`K_d` as much as possible without introducting jittering in the :term:`system response`.
 
-Plot the position :term:`setpoint`, velocity :term:`setpoint`, measured position, and measured velocity. The velocity :term:`setpoint` can be obtained by numerical integration :math:`v_{des,k} = \frac{r_k - r_{k-1}}{\Delta t}`. Increase :math:`K_p` until the position tracks well, then increase :math:`K_d` until the velocity tracks well.
+Plot the position :term:`setpoint`, velocity :term:`setpoint`, measured position, and measured velocity. The velocity :term:`setpoint` can be obtained via numerical differentiation of the position :term:`setpoint` (i.e., :math:`v_{desired,k} = \frac{r_k - r_{k-1}}{\Delta t}`). Increase :math:`K_p` until the position tracks well, then increase :math:`K_d` until the velocity tracks well.
 
 If the :term:`controller` settles at an :term:`output` above or below the :term:`setpoint`, one can increase :math:`K_i` such that the :term:`controller` reaches the :term:`setpoint` in a reasonable amount of time. However, a steady-state feedforward is strongly preferred over integral control (especially for PID control).
 
