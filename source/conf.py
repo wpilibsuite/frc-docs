@@ -104,6 +104,8 @@ def setup(app):
 
 latex_engine = 'xelatex'
 
+# Disable xindy support
+# See: https://github.com/readthedocs/readthedocs.org/issues/5476
 latex_use_xindy = False
 
 latex_elements = {
