@@ -6,6 +6,19 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
+C++ Command Based JoystickButton and POVButton not functioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+C++ JoystickButton and POVButton are both non functioning.
+
+This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
+
+**Workaround**: Use a Button object directly instead of using JoystickButton or POVButton.
+
+.. code-block:: cpp
+
+    frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
+
 RobotBuilder extensions use the frc namespace (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
