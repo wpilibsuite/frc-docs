@@ -6,7 +6,7 @@ WPILib Installation Guide
 .. tabs::
 
   .. tab:: Windows
-    .. note:: Windows 7: You **must** install the NI Update or .NET Version 4.62 (or later) before proceeding with the install of Visual Studio Code for FRC. The NI Update installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
+    .. note:: Windows 7: You **must** install the NI FRC Game Tools or .NET Version 4.62 (or later) before proceeding with the install of Visual Studio Code for FRC. The NI FRC Game Tools installer will automatically install the proper version of .NET. The standalone .NET installer is `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__
 
     **Offline Installer**
 
@@ -69,7 +69,8 @@ WPILib Installation Guide
 
       VS Code is the IDE (Integrated Development Environment) that is used for
       2019 and beyond. It needs to be installed on any development computer.
-      It can be downloaded here: https://code.visualstudio.com.
+      It can be downloaded here: `code.visualstudio.com <https://code.visualstudio.com/>`__.
+      For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/darwin/stable <https://update.code.visualstudio.com/1.41.1/darwin/stable>`__
 
       The downloaded file will be "VSCode-darwin-stable.zip" (1)
 
@@ -205,7 +206,8 @@ WPILib Installation Guide
 
     **Installing Visual Studio Code**
 
-      1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__
+      1. Download the Linux .deb file from `code.visualstudio.com <https://code.visualstudio.com/>`__. For 2020, the recommended version is 1.41.1 which can be directly downloaded here:  `https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable <https://update.code.visualstudio.com/1.41.1/linux-deb-x64/stable>`__
+
       2. Double-click on the .deb file in the file explorer
       3. Click the "Install" button to install VS Code
 

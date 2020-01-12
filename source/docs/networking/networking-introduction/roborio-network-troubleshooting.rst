@@ -11,7 +11,7 @@ The first step to identifying roboRIO networking issues is to isolate if it is a
 USB Connection Troubleshooting
 ------------------------------
 
-If you are attempting to troubleshoot the USB connection, try pinging the roboRIO's IP address. As long as there is only one roboRIO connected to the PC, it should be configured as 172.22.11.2. If this ping fails, make sure you have the roboRIO connected and powered, and that you have installed the NI FRC Update Suite. This update installs the roboRIO drivers needed for the USB connection.
+If you are attempting to troubleshoot the USB connection, try pinging the roboRIO's IP address. As long as there is only one roboRIO connected to the PC, it should be configured as 172.22.11.2. If this ping fails, make sure you have the roboRIO connected and powered, and that you have installed the NI FRC Game Tools. The game tools installs the roboRIO drivers needed for the USB connection.
 
 If this ping succeeds, but the .local ping fails, it is likely that either the roboRIO hostname is configured incorrectly, or you are connected to a DNS server which is attempting to resolve the .local address.
 
@@ -30,7 +30,7 @@ Ping the roboRIO IP address
 
 If there is an IP address in the step above, try pinging this IP address using the command prompt as described above. If this works, you have an issue resolving the mDNS address on your PC. The two most common causes are not having an mDNS resolver installed on the system and a DNS server on the network that is trying to resolve the .local address using regular DNS.
 
-- Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Update Suite. For more information on mDNS resolvers, see the :doc:`roboRIO Networking article <networking-basics>`.
+- Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Game Tools. For more information on mDNS resolvers, see the :doc:`roboRIO Networking article <networking-basics>`.
 - Disconnect your computer from any other networks and make sure you have the OM5P-AN configured as an access point, using the :ref:`FRC Radio Configuration Utility <docs/getting-started/getting-started-frc-control-system/radio-programming:Programming your Radio>`. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
 
 Ping fails
