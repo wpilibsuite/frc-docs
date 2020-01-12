@@ -2,7 +2,7 @@ Creating a Pathweaver Project
 =============================
 PathWeaver is the tool used to draw the paths for a robot to follow. The paths for a single program are stored in a PathWeaver project.
 
-Starting Pathweaver
+Starting PathWeaver
 -------------------
 PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the Visual Studio Code interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on "PathWeaver" as shown below.
 
@@ -10,37 +10,37 @@ PathWeaver is started by clicking on the ellipsis icon in the top right of the c
 
 .. image:: images/pathweaver-2.png
 
-Creating the project
+Creating the Project
 --------------------
-To create a PathWeaver project, click on "Create project" then fill out the project creation form. Notice that hovering over any of the fields in the form will display more information about what is required.
+To create a PathWeaver project, click on "Create project" and then fill out the project creation form. Notice that hovering over any of the fields in the form will display more information about what is required.
 
 .. image:: images/pathweaver-3.png
 
-**Project directory:** this is normally top level project directory that contains the build.gradle and src files for your robot program. Choosing this directory is the expected way to use PathWeaver and will cause it to locate all the output files in the correct directories for automatic path deployment to your robot.
+**Project Directory:** This is normally the top level project directory that contains the build.gradle and src files for your robot program. Choosing this directory is the expected way to use PathWeaver and will cause it to locate all the output files in the correct directories for automatic path deployment to your robot.
 
-**Output directory:** the directory where the paths are stored for deployment to your robot. If you specified the top level project folder of our robot project in the previous step (as recommended) filling in the project directory is optional.
+**Output directory:** The directory where the paths are stored for deployment to your robot. If you specified the top level project folder of our robot project in the previous step (as recommended) filling in the project directory is optional.
 
-**Game:** the game (which FRC game is being used) will cause the correct field image overlay to be used. You can also create your own field images and the procedure will be described later in this document.
+**Game:** The game (which FRC game is being used) will cause the correct field image overlay to be used. You can also create your own field images and the procedure will be described later in this series.
 
-**Length Unit:** the units to be used in describing your robot and for the field measurements when using PathWeaver. It's best to use units that match the rest of the field documentation to avoid errors in creating paths.
+**Length Unit:** The units to be used in describing your robot and for the field measurements when visualizing trajectories using PathWeaver. It's best to use units that match the rest of the field documentation to avoid errors in creating paths. Note that the exported trajectory will contain units of meters, as this is what is recommended when following WPILib trajectories.
 
+**Max Velocity:** The max speed of the robot for trajectory tracking. This does not need to be the maximum attainable speed of the robot, but just the max speed that you want to run trajectories at.
 
-**Max Velocity:** the maximum speed attainable by your robot. This is the most important parameter of the robot profile since it causes generated paths to never exceed this speed. You can either calculate this velocity using knowledge of your robot design or by measuring it. One method of measuring the Max Velocity is driving in a straight line then measuring the speed after the robot has reached full speed. Another method is spinning in place at full speed for 10 rotations and using the formula for circumference divided by 10 for total distance traveled and the time to complete for the distance traveled.
+**Max Acceleration:** The max acceleration of the robot for trajectory tracking. This does not need to be the maximum attainable acceleration of the robot, but just the max acceleration that you want to run trajectories at.
 
-**Max Acceleration:** this is the maximum acceleration your robot is capable of achieving. A good starting point is 6.56 ft/sec2 or 2m/sec2 for a kit of parts drivetrain.
-
-**Wheel Base:** the distance between the left and right wheels of your robot. This is used to ensure that no wheel on a differential drive will go over the specified max velocity around turns.
+**Wheel Base:** The distance between the left and right wheels of your robot. This is used to ensure that no wheel on a differential drive will go over the specified max velocity around turns.
 
 PathWeaver User Interface
 -------------------------
 
 .. image:: images/pathweaver-4.png
 
-The PathWeaver user interface consists of:
+The PathWeaver user interface consists of the following:
 
-1. The field area where the robot will travel. It is on this image the robot paths will be drawn to visualize the motion.
-2. The properties of the currently selected waypoint
-3. The groups of paths that will be used together. It is a way of seeing all the paths the robot might travel in a single run.
-4. The individual paths that a robot will follow, The paths may be grouped together as a Path Group in order to better visualize the total robot movement in a multi-path sequence.
-5. The paths will be exported to a JSON file that can then be imported into the robot code for trajectory tracking.
-6. Allows the PathWeaver project properties to be edited (includes Project directory, time step, field drawing, etc.) as described at the beginning of this article.
+1. The field area in the top left corner, which takes up most of the PathWeaver window. Trajectories are drawn on this part of the program.
+2. The properties of the currently selected waypoint are displayed in the bottom pane. These properties include the X and Y, along with the tangents at each point.
+3. A group of paths (or an "autonomous" mode) is displayed on the upper right side of the window. This is a convenient way of seeing all of the trajectories in a single auto mode.
+4. The individual paths that a robot might follow are displayed in the lower right side of the window.
+5. The "Build Paths" button will export the trajectories in a JSON format. These JSON files can be used from the robot code to follow the trajectory.
+6. The "Edit Project" button allows you to edit the project properties.
+
