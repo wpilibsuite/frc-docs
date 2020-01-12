@@ -6,10 +6,10 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
-RobotBuilder custom components use the frc namespace (C++)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RobotBuilder extensions use the frc namespace (C++)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using RobotBuilder to create a C++ robot program, CustomComponents will generate code prepended with the ``frc::`` namespace which will not compile.
+When using RobotBuilder to create a C++ robot program, extensions will generate code prepended with the ``frc::`` namespace which will not compile.
 
 **Workaround**: After generating C++ robot code with RobotBuilder, where appropriate, replace ``frc::`` with the correct namespace for that device.
 
