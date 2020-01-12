@@ -6,8 +6,8 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
-C++ Command Based buttons not functioning due to slicing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C++ Command Based JoystickButton and POVButton not functioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 C++ JoystickButton and POVButton are both non functioning.
 
@@ -18,6 +18,15 @@ This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpi
 .. code-block:: cpp
 
     frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
+
+RobotBuilder extensions use the frc namespace (C++)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using RobotBuilder to create a C++ robot program, extensions will generate code prepended with the ``frc::`` namespace which will not compile.
+
+**Workaround**: After generating C++ robot code with RobotBuilder, where appropriate, replace ``frc::`` with the correct namespace for that device.
+
+This issue is being tracked by WPILib in `RobotBuilder#194 <https://github.com/wpilibsuite/RobotBuilder/issues/194>`__.
 
 macOS Simulation fails to launch in Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
