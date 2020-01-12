@@ -1,5 +1,5 @@
-Autonomous Path Planning with WPILib and PathWeaver
-===================================================
+PathWeaver
+==========
 
 .. toctree::
    :maxdepth: 1
