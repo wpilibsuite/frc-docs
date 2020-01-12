@@ -4,6 +4,6 @@ Autonomous is an important section of the match; it is exciting when robots do i
 
 A more advanced approach to autonomous is called “path planning”. Instead of driving in a straight line and turning once the line is complete, the robot continuously moves, driving with a curve-like motion. This can reduce turning stoppage time.
 
-Paths have position and velocity values. A path has a list of position and velocity values for the robot every x seconds (usually 0.02 seconds or less). The robot then attempts to follow these points, adjusting using PID control when needed.
+Paths have position and velocity values. A path has a list of position and velocity values. The robot then attempts to follow these points, adjusting using PID control when needed.
 
-Many teams and organizations have created path planning libraries for FRC, but the officially supported library for WPILib is Pathfinder, which can be added as a vendor library by adding this vendor JSON using the **Manage Libraries->Install New Libraries (online)** function in Visual Studio Code (see the `3rd Party Libraries <../../getting-started/3rd-party-libraries.html>`__ article for more details): https://imjac.in/dev/maven/frc/7194a2d4-2860-4bcc-86c0-97879737d875
+WPILib contains a trajectory generation suite that can be used by teams to generate and follow trajectories.

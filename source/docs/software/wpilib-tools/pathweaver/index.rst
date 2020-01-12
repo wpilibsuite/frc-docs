@@ -1,5 +1,5 @@
-Autonomous Path Planning with Pathfinder
-========================================
+Autonomous Path Planning with WPILib and PathWeaver
+===================================================
 
 .. toctree::
    :maxdepth: 1
