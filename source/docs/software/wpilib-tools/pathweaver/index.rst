@@ -1,5 +1,5 @@
-Autonomous Path Planning with Pathfinder
-========================================
+PathWeaver
+==========
 
 .. toctree::
    :maxdepth: 1
@@ -8,6 +8,5 @@ Autonomous Path Planning with Pathfinder
    creating-pathweaver-project
    drawing-pathweaver-path
    creating-path-groups
-   pathweaver-limits
    integrating-robot-program
    adding-field-images
