@@ -13,7 +13,11 @@ C++ JoystickButton and POVButton are both non functioning.
 
 This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
 
-There is no workaround for this issue.
+**Workaround**: Use a Button object directly instead of using JoystickButton or POVButton.
+
+.. code-block:: cpp
+
+    frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
 
 macOS Simulation fails to launch in Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
