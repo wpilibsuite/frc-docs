@@ -9,7 +9,7 @@ Open Issues
 C++ Command Based buttons not functioning due to slicing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-C++ JoystickButton and POVButton are both non functioning. Since the mutable lambda passed to the CommandScheduler from Trigger captures ``*this``, it slices the class and thus the virtual method defined by the subclasses of Trigger is discarded.
+C++ JoystickButton and POVButton are both non functioning.
 
 This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
 
