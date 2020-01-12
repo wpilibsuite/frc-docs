@@ -1,9 +1,9 @@
 Uploading the Data to AWS S3
 ============================
 
-Amazon Web Services (AWS) S3 is Amazon's cloud storage service. You must upload your dataset to S3 in order to use it while training.
+Amazon Web Services (AWS) S3 is Amazon's cloud storage service. You must upload your dataset to S3 in order to use for training with Amazon servers.
 
-.. note:: If you could not access Supervisely, you can skip all of these steps.
+.. note:: If you can not access Supervisely, you can skip all of these steps.
 
 1. While on `Supervisely <https://supervise.ly/>`__, go to your project page in your workspace. Click on the vertical three dots on the dataset, then "Download as", then select the ``.json + images`` option.
 
