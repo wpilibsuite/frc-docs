@@ -6,6 +6,13 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
+Java predefined colors are all zero
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The predefined (static) colors from the WPILib Color class have all zero red, green, blue values.
+
+This issue is being tracked by WPILib in `allwpilib#2269 <https://github.com/wpilibsuite/allwpilib/pull/2269>`__.
+
 C++ Command Based JoystickButton and POVButton not functioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
