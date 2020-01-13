@@ -2,7 +2,7 @@
 
 Adding field images to PathWeaver
 =================================
-The initial release of PathWeaver contained the field image for the *FRC*\ |reg| 2018 Game. The next update will include *FIRST*\ |reg| Destination Deep Space. Here are instructions for adding the 2019 game now or adding your own field image for some other application.
+Here are instructions for adding your own field image using the 2019 game as an example.
 
 Games are loaded from the ``~/PathWeaver/Games`` on Linux and macOS or ``%USERPROFILE%/PathWeaver/Games`` directory on Windows. The files can be in either a game-specific subdirectory, or in a zip file in the Games directory. The ZIP file must follow the same layout as a game directory; the JSON file must be in the root of the ZIP file (cannot be in a subdirectory).
 
