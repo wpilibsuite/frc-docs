@@ -98,7 +98,8 @@ WPILib Installation Guide
           :alt:
 
       Using Finder (or command line) copy the contents of the folder to a new
-      folder in your home directory, ~/wpilib/2020 as shown below.
+      folder in your home directory, ~/wpilib/2020 as shown below or press cmd + shift + H
+      in a new Finder window.
 
       .. figure:: images/mac/MovedFiles.png
           :alt:
