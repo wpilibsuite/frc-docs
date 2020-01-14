@@ -49,7 +49,7 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 5
@@ -104,6 +104,10 @@ def setup(app):
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
+
+# Disable xindy support
+# See: https://github.com/readthedocs/readthedocs.org/issues/5476
+latex_use_xindy = False
 
 latex_elements = {
     'fontpkg': r'''
