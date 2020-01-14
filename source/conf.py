@@ -48,7 +48,7 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 5
