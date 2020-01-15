@@ -10,6 +10,8 @@ The ``DifferentialDriveOdometry`` class requires one mandatory argument and one 
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. By default, WPILib gyros exhibit the opposite behavior, so you should negate the gyro angle.
 
+.. important:: The encoder positions must be reset to zero before constructing the ``DifferentialDriveOdometry`` class.
+
 .. tabs::
 
    .. code-tab:: java
@@ -34,8 +36,6 @@ Updating the Robot Pose
 The ``update`` method can be used to update the robot's position on the field. This method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot. This method takes in the gyro angle of the robot, along with the left encoder distance and right encoder distance.
 
 .. note:: The encoder distances in Java must be in meters. In C++, the units library can be used to represent the distance using any linear distance unit. If the robot is moving forward in a straight line, **both** distances (left and right) must be positive.
-
-.. important:: The encoder positions must be reset to zero before constructing the ``DifferentialDriveOdometry`` class.
 
 .. tabs::
 
