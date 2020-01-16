@@ -20,7 +20,7 @@ The C++ units library is based around two sorts of type definitions: unit types 
 Unit Types
 ~~~~~~~~~~
 
-Unit types correspond to the abstract concept of a unit, without any actual stored value.  Unit types are the fundamental "building block" of the units library - all units types are defined constructively (using the ``compound_unit`` template) from a small number of "basic" unit types (such as ``meters``, ``seconds``, etc).
+Unit types correspond to the abstract concept of a unit, without any actual stored value.  Unit types are the fundamental "building block" of the units library - all unit types are defined constructively (using the ``compound_unit`` template) from a small number of "basic" unit types (such as ``meters``, ``seconds``, etc).
 
 While unit types cannot contain numerical values, their use in building other unit types means that when a type or method uses a `template parameter <http://www.cplusplus.com/doc/oldtutorial/templates/>`__ to specify its dimensionality, that parameter will be a unit type.
 
@@ -31,7 +31,7 @@ Container types correspond to an actual quantity dimensioned according to some u
 
 Whenever a specific quantity of a unit is used (as a variable or a method parameter), it will be an instance of the container type.  By default, container types will store the actual value as a ``double`` - advanced users may change this by calling the ``unit_t`` template manually.
 
-A full list of unit and container types can be found in the `documentation <http://nholthaus.github.io/units/namespaces.html>`__
+A full list of unit and container types can be found in the `documentation <http://nholthaus.github.io/units/namespaces.html>`__.
 
 Creating Instances of Units
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ To create an instance of a specific unit, we create an instance of its container
    // The variable speed has a value of 5 meters per second.
    units::meter_per_second_t speed{5.0};
 
-Alternatively, the units library has `type literals <https://en.cppreference.com/w/cpp/language/user_literal>`__ defined for some of the more common container types.  These can be used in conjunction with type inference via ``auto`` to define a unit more-succinctly:
+Alternatively, the units library has `type literals <https://en.cppreference.com/w/cpp/language/user_literal>`__ defined for some of the more common container types.  These can be used in conjunction with type inference via ``auto`` to define a unit more succinctly:
 
 .. code-block:: c++
 
