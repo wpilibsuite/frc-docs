@@ -50,7 +50,7 @@ The "period" parameter is the period at which the filter's `calculate()` method 
 movingAverage
 ^^^^^^^^^^^^^
 
-The ``movingAverage`` factory method (`Java <>`__, `C++ <>`__) creates a simple flat moving average filter.  This is the simplest possible low-pass FIR filter, and is useful in many of the same contexts as the single-pole IIR filter.  It is somewhat more costly to compute, but generally behaves in a somewhat nicer manner.
+The ``movingAverage`` factory method creates a simple flat moving average filter.  This is the simplest possible low-pass FIR filter, and is useful in many of the same contexts as the single-pole IIR filter.  It is somewhat more costly to compute, but generally behaves in a somewhat nicer manner.
 
 .. tabs::
 
@@ -75,7 +75,7 @@ The "period" parameter is the period at which the filter's `calculate()` method 
 highPass
 ^^^^^^^^
 
-The ``highPass`` factory method (`Java <>`__, `C++ <>`__) creates a simple first-order infinite impulse response high-pass filter.  This is the "counterpart" to the `singlePoleIIR`_.
+The ``highPass`` factory method creates a simple first-order infinite impulse response high-pass filter.  This is the "counterpart" to the `singlePoleIIR`_.
 
 .. tabs::
 
