@@ -6,6 +6,35 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
+Java predefined colors are all zero
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The predefined (static) colors from the WPILib Color class have all zero red, green, blue values.
+
+This issue is being tracked by WPILib in `allwpilib#2269 <https://github.com/wpilibsuite/allwpilib/pull/2269>`__.
+
+C++ Command Based JoystickButton and POVButton not functioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+C++ JoystickButton and POVButton are both non functioning.
+
+This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
+
+**Workaround**: Use a Button object directly instead of using JoystickButton or POVButton.
+
+.. code-block:: cpp
+
+    frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
+
+RobotBuilder extensions use the frc namespace (C++)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using RobotBuilder to create a C++ robot program, extensions will generate code prepended with the ``frc::`` namespace which will not compile.
+
+**Workaround**: After generating C++ robot code with RobotBuilder, where appropriate, replace ``frc::`` with the correct namespace for that device.
+
+This issue is being tracked by WPILib in `RobotBuilder#194 <https://github.com/wpilibsuite/RobotBuilder/issues/194>`__.
+
 macOS Simulation fails to launch in Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -44,38 +73,6 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java Network Tables clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
-
-Fixed in 2020.2.1
------------------
-
-Java predefined colors are all zero
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The predefined (static) colors from the WPILib Color class have all zero red, green, blue values.
-
-This issue is being tracked by WPILib in `allwpilib#2269 <https://github.com/wpilibsuite/allwpilib/pull/2269>`__.
-
-C++ Command Based JoystickButton and POVButton not functioning
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-C++ JoystickButton and POVButton are both non functioning.
-
-This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
-
-**Workaround**: Use a Button object directly instead of using JoystickButton or POVButton.
-
-.. code-block:: cpp
-
-    frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
-
-RobotBuilder extensions use the frc namespace (C++)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When using RobotBuilder to create a C++ robot program, extensions will generate code prepended with the ``frc::`` namespace which will not compile.
-
-**Workaround**: After generating C++ robot code with RobotBuilder, where appropriate, replace ``frc::`` with the correct namespace for that device.
-
-This issue is being tracked by WPILib in `RobotBuilder#194 <https://github.com/wpilibsuite/RobotBuilder/issues/194>`__.
 
 Fixed in 2020.1.2
 -----------------
