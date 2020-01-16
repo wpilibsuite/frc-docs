@@ -97,9 +97,9 @@ WPILib Installation Guide
       .. figure:: images/mac/UntarredRelease.png
           :alt:
 
-      Using Finder (or command line) copy the contents of the folder to a new
-      folder in your home directory, ~/wpilib/2020 as shown below or press cmd + shift + H
-      in a new Finder window.
+      Using Finder press cmd + shift + H on a new Finder window to get to your home directory
+      and copy the contents of the downloaded folder to a new folder in your home directory,
+      ~/wpilib/2020 as shown below. (Can alternatively be accomplished using Terminal)
 
       .. figure:: images/mac/MovedFiles.png
           :alt:
