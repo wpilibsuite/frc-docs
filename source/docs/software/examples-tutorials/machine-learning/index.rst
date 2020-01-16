@@ -28,4 +28,4 @@ Hardware Requirement
 --------------------
 
 - Rasberry Pi 3 or newer
-- `Google Coral USB Accelerator <https://www.amazon.com/Google-Coral-Accelerator-coprocessor-Raspberry/dp/B07R53D12W>`__
+- `Google Coral USB Accelerator <https://www.amazon.com/dp/B07S214S5Y>`__

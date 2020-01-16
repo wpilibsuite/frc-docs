@@ -3,7 +3,7 @@ Inference
 
 Inference with the Google Coral
 
-1. Acquire a Raspberry Pi 3 or newer, and a `Google Coral USB Accelerator <https://www.amazon.com/Google-Coral-Accelerator-coprocessor-Raspberry/dp/B07R53D12W>`__.
+1. Acquire a Raspberry Pi 3 or newer, and a `Google Coral USB Accelerator <https://www.amazon.com/dp/B07S214S5Y>`__.
 
 .. image:: images/coral.png
    :alt: A Google Coral
