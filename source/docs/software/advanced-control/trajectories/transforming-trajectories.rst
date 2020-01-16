@@ -1,61 +1,41 @@
 Transforming Trajectories
 =========================
-Trajectories can be transformed from one coordinate system to another using the ``transformBy`` and ``relativeTo`` methods. These are useful for converting field-oriented trajectories into a robot-relative trajectories and vice versa.
+Trajectories can be transformed from one coordinate system to another and moved within a coordinate system using the ``relativeTo`` and the ``transformBy`` methods. These methods are useful for moving trajectories within space, or redefining an already existing trajectory in another frame of reference.
 
-.. note:: It is recommended to always generate trajectories with waypoints relative to the field as opposed to waypoints relative to the current robot pose. However, in certain cases like aligning on-the-fly with Vision, it might be easier to generate a robot-relative trajectory and then transform it into a field-relative trajectory. Field-relative trajectories are recommended because they are easier to follow, as the robot pose via odometry is defined with respect to the field.
+.. note:: Neither of these methods changes the shape of the original trajectory.
 
-Transforming a Robot-Relative Trajectory into a Field-Relative Trajectory
--------------------------------------------------------------------------
-The ``transformBy`` method can be used to transform a robot-relative trajectory into a field-relative trajectory. Doing so requires information about the field-relative robot pose, which can be obtained via :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`.
+The ``relativeTo`` Method
+-------------------------
+The ``relativeTo`` method is used to redefine an already existing trajectory in another frame of reference. This method takes one argument: a pose, (via a ``Pose2d`` object) that is defined with respect to the current coordinate system, that represents the origin of the new coordinate system.
 
-The ``transformBy`` method takes one argument: the transform that maps the starting pose of the robot-relative trajectory to the desired starting location on the field (as a ``Transform2d`` object). The transform can be obtained by subtracting the initial pose of the robot-relative trajectory (often zero) from the field-relative robot pose.
-
-.. tabs::
-
-   .. code-tab:: java
-
-      // Get the robot pose.
-      Pose2d robotPose = getPose();
-
-      // Transform the robot-relative trajectory to a field-relative trajectory.
-      // Here, we are subtracting an empty Pose2d from the current robot pose
-      // because the robot-relative trajectory starts at (x = 0, y = 0, rotation = 0).
-      Trajectory fieldRelativeTrajectory = robotRelativeTrajectory.transformBy(
-        robotPose.minus(new Pose2d()));
-
-   .. code-tab:: c++
-
-      // Get the robot pose.
-      frc::Pose2d robotPose = GetPose();
-
-      // Transform the robot-relative trajectory to a field-relative trajectory.
-      // Here, we are subtracting an empty Pose2d from the current robot pose
-      // because the robot-relative trajectory starts at (x = 0, y = 0, rotation = 0).
-      frc::Trajectory fieldRelativeTrajectory = robotRelativeTrajectory.TransformBy(
-        robotPose - Pose2d());
-
-
-Transforming a Field-Relative Trajectory into a Robot-Relative Trajectory
--------------------------------------------------------------------------
-The ``relativeTo`` method can be used to transform a field-relative trajectory into a robot-relative trajectory. Doing so requires information about the field-relative robot pose, which can be obtained via :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`.
-
-The ``relativeTo`` method takes one argument: the field-relative pose which represents the origin of the new coordinate system that you are transforming to. In other words, this represents the field-relative pose of the robot.
+For example, a trajectory defined in coordinate system A can be redefined in coordinate system B, whose origin is at (2, 2, 30 degrees) in coordinate system A, using the ``relativeTo`` method.
 
 .. tabs::
 
    .. code-tab:: java
 
-      // Get the robot pose.
-      Pose2d robotPose = getPose();
-
-      // Transform the field-relative trajectory into the robot's coordinate system.
-      Trajectory robotRelativeTrajectory = fieldRelativeTrajectory.relativeTo(robotPose);
+      Pose2d bOrigin = new Pose2d(2, 2, Rotation2d.fromDegrees(30));
+      Trajectory bTrajectory = aTrajectory.relativeTo(bOrigin);
 
    .. code-tab:: c++
 
-      // Get the robot pose.
-      frc::Pose2d robotPose = GetPose();
+      frc::Pose2d bOrigin{2_m, 2_m, frc::Rotation2d(30_deg)};
+      frc::Trajectory bTrajectory = aTrajectory.RelativeTo(bOrigin);
 
-      // Transform the field-relative trajectory into the robot's coordinate system.
-      frc::Trajectory robotRelativeTrajectory = fieldRelativeTrajectory.RelativeTo(robotPose);
+The ``transformBy`` Method
+--------------------------
+The ``transformBy`` method can be used to move (i.e. translate and rotate) a trajectory within a coordinate system. This method takes one argument: a transform (via a ``Transform2d`` object) that maps the current initial position of the trajectory to a desired initial position of the same trajectory.
 
+For example, one may want to transform a trajectory that begins at (2, 2, 30 degrees) to make it begin at (4, 4, 50 degrees) using the ``transformBy`` method.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      Transform2d transform = new Pose2d(4, 4, Rotation2d.fromDegrees(50)).minus(trajectory.getInitialPose());
+      Trajectory newTrajectory = trajectory.transformBy(transform);
+
+   .. code-tab:: c++
+
+      frc::Transform2d transform = Pose2d(4_m, 4_m, Rotation2d(50_deg)) - trajectory.InitialPose();
+      frc::Trajectory newTrajectory = trajectory.TransformBy(transform);
