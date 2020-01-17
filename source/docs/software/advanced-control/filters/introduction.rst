@@ -16,7 +16,7 @@ Effects of Using a Filter
 Noise Reduction
 ^^^^^^^^^^^^^^^
 
-One of the most typical uses of a filter is for noise reduction.  A filter that reduces noise is called a *low-pass* filter (because it allows low frequencies to "pass through," while blocking high-frequencies).  Most of the filters currently included in WPIlib are effectively low-pass filters.
+One of the most typical uses of a filter is for noise reduction.  A filter that reduces noise is called a *low-pass* filter (because it allows low frequencies to "pass through," while blocking high-frequencies).  Most of the filters currently included in WPILib are effectively low-pass filters.
 
 Rate Limiting
 ^^^^^^^^^^^^^
