@@ -1,0 +1,12 @@
+:orphan:
+
+The Requested Page Was Not Found
+================================
+
+The page you were searching for does not exist. If you feel like this may be an issue, open a request at the `frc-docs repository <https://github.com/wpilibsuite/frc-docs/issues>`__.
+
+.. image:: assets/first_design.png
+   :align: center
+   :alt: https://xkcd.com/689/
+
+Image credit to `XKCD <https://xkcd.com/689/>`__.
