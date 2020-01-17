@@ -58,7 +58,7 @@ Additionally, we must create an instance of the ``DifferentialDriveKinematics`` 
 Max Trajectory Velocity/Acceleration
 ------------------------------------
 
-We must also decide on a nominal max acceleration and max velocity for the robot during path-following.  The maximum velocity value should be set somewhat below the nominal free-speed of the robod.  Due to the later use of the ``DifferentialDriveVolageConstraint``, the maximum acceleration value is not extremely crucial.
+We must also decide on a nominal max acceleration and max velocity for the robot during path-following.  The maximum velocity value should be set somewhat below the nominal free-speed of the robot.  Due to the later use of the ``DifferentialDriveVoltageConstraint``, the maximum acceleration value is not extremely crucial.
 
 .. tabs::
 

@@ -151,6 +151,7 @@ RobotBuilder
 - Use individual includes instead of wpilib.h for C++
 - Add export of PWMSparkMax, PWMTalonFX, PWMVenom
 - Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions
+- GUI for defining Command Groups was removed for maintainability reasons. Commands can be added in VS Code.
 
 Robot Characterization
 ----------------------

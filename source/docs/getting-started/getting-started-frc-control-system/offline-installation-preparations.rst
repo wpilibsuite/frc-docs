@@ -16,14 +16,14 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2020 FRC Game Tools <https://www.ni.com/en-il/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2020 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-il/support/downloads/drivers/download.labview-software-for-frc.html#330601>`__ (Note: (Note: Click on link for "Individual Offline Installers")
+-  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: (Note: Click on link for "Individual Offline Installers")
 
 C++/Java Teams
 ^^^^^^^^^^^^^^
