@@ -22,13 +22,13 @@ Creating a ``MedianFilter`` is simple:
 
   .. code-tab:: java
 
-    // Creates a MedianFilter with a window size of 10 samples
-    MedianFilter filter = new MedianFilter(10);
+    // Creates a MedianFilter with a window size of 5 samples
+    MedianFilter filter = new MedianFilter(5);
 
   .. code-tab:: c++
 
-    // Creates a MedianFilter with a window size of 10 samples
-    frc::MedianFilter<double> filter(10);
+    // Creates a MedianFilter with a window size of 5 samples
+    frc::MedianFilter<double> filter(5);
 
 Using a MedianFilter
 --------------------
