@@ -57,20 +57,16 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
   .. code-tab:: java
 
     // Creates a new flat moving average filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    LinearFilter filter = LinearFilter.movingAverage(0.1, 0.02);
+    // Average will be taken over the last 5 samples
+    LinearFilter filter = LinearFilter.movingAverage(5);
 
   .. code-tab:: c++
 
     // Creates a new flat moving average filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(0.1_s, 0.02_s);
+    // Average will be taken over the last 5 samples
+    frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
 
-The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly shorter than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lag <docs/software/advanced-control/filters/introduction:Phase Lag>`.  The reciprocal this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
-
-The "period" parameter is the period at which the filter's `calculate()` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
+The "taps" parameter is the number of samples that will be included in the flat moving average.  This behaves similarly to the "time constant" above - the effective time constant is the number of taps times the period at which ``calculate()`` is called.
 
 highPass
 ^^^^^^^^
