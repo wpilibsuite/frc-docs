@@ -5,8 +5,6 @@ Filters
 
 This section describes a number of filters included with WPILib that are useful for noise reduction and/or input smoothing.
 
-The data used to generate the demonstration plots for the various filters in this section can be found here:
-
 .. toctree::
    :maxdepth: 1
 
