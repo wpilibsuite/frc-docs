@@ -35,7 +35,8 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
-    'sphinxcontrib.remoteliteralinclude'
+    'sphinxcontrib.remoteliteralinclude',
+    'notfound.extension'
 ]
 
 # TODO Directives omit a warning
