@@ -1,6 +1,8 @@
 Median Filter
 =============
 
+.. image:: images/medianfilter.png
+
 A `robust <https://en.wikipedia.org/wiki/Robust_statistics>`__ alternative to the :ref:`moving-average filter <docs/software/advanced-control/filters/linear-filter:movingAverage>` is the *median filter*.  Where a moving average filter takes the arithmetic *mean* of the input over a moving sample window, a median filter (per the name) takes a median instead.
 
 The median filter is most-useful for removing occasional outliers from an input stream.  This makes it particularly well-suited to filtering inputs from distance sensors, which are prone to occasional interference.  Unlike a moving average, the median filter will remain completely unaffected by small numbers of outliers, no matter how extreme.

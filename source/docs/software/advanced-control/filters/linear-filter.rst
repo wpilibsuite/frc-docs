@@ -25,6 +25,8 @@ While it is possible to directly instantiate ``LinearFilter`` class to build a c
 singlePoleIIR
 ^^^^^^^^^^^^^
 
+.. image:: images/singlepolefilter.png
+
 The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter (also known as `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of having an exponential impulse response).  This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
 
 .. tabs::
@@ -50,6 +52,8 @@ The "period" parameter is the period at which the filter's `calculate()` method 
 movingAverage
 ^^^^^^^^^^^^^
 
+.. image:: images/firfilter.png
+
 The ``movingAverage`` factory method creates a simple flat moving average filter.  This is the simplest possible low-pass FIR filter, and is useful in many of the same contexts as the single-pole IIR filter.  It is somewhat more costly to compute, but generally behaves in a somewhat nicer manner.
 
 .. tabs::
@@ -70,6 +74,8 @@ The "taps" parameter is the number of samples that will be included in the flat 
 
 highPass
 ^^^^^^^^
+
+.. image:: images/highpassfilter.png
 
 The ``highPass`` factory method creates a simple first-order infinite impulse response high-pass filter.  This is the "counterpart" to the `singlePoleIIR`_.
 
