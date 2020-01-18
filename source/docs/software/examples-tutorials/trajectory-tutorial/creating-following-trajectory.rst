@@ -99,6 +99,8 @@ With our trajectory configuration in hand, we are now ready to generate our traj
       :linenos:
       :lineno-start: 61
 
+.. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can :ref:`import a PathWeaver JSON <docs/software/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>` as well.
+
 Creating the RamseteCommand
 ---------------------------
 
