@@ -41,7 +41,7 @@ To specify the correct settings for your PID controller, use the following optio
 - **Time-Normalized Controller:** This specifies whether the PID calculation is normalized to the period of execution, which affects the scaling of the D gain.
 - **Controller Type:** This specifies whether the controller is an onboard RIO loop, or is running on a smart motor controller such as a Talon or a SPARK Max.
 - **Post-Encoder Gearing:** This specifies the gearing between the encoder and the mechanism itself. This is necessary for control loops that do not allow user-specified unit scaling in their PID computations (e.g. those running on Talons). This will be disabled if not relevant.
-- **Encoder EPR:** This specifies the edges-per-revolution (not cycles per revolution) of the encoder used, which is needed in the same caes as Post-Encoder Gearing.
+- **Encoder EPR:** This specifies the edges-per-revolution (not cycles per revolution) of the encoder used, which is needed in the same cases as Post-Encoder Gearing.
 - **Has Slave:** Whether there is a motor controller slaved to the controller running the control loop, if the control loop is being run on a peripheral device. This changes the effective loop period.
 - **Slave Update Period:** The rate at which the slave (if present) is updated. By default, this is 100Hz (every 0.01s) for Talons and Sparks, but can be changed.
 
@@ -82,4 +82,3 @@ Finally, press the ``Calculate Optimal Controller Gains`` to determine the feedb
 
 .. image:: images/calculategains.png
    :alt: Calculating the Optimal Controller Gains
-
