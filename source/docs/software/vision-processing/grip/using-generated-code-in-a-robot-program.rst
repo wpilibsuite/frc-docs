@@ -32,8 +32,9 @@ Iterative program definitions
         import org.opencv.imgproc.Imgproc;
 
         import edu.wpi.cscore.UsbCamera;
-        import edu.wpi.first.wpilibj.CameraServer;
+        import edu.wpi.first.cameraserver.CameraServer;
         import edu.wpi.first.wpilibj.TimedRobot;
+
         import edu.wpi.first.wpilibj.RobotDrive;
         import edu.wpi.first.wpilibj.vision.VisionRunner;
         import edu.wpi.first.wpilibj.vision.VisionThread;
