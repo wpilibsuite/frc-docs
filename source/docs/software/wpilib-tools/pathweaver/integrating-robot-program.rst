@@ -11,7 +11,8 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
    .. code-tab:: java
 
-      Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(Paths.get("/home/lvuser/deploy/YourPath.wpilib.json"));
+      Path trajectoryPath = Filesystem.getDeployDirectory().getPath().resolve("YourPath.wpilib.json");
+      Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
 
    .. code-tab:: c++
 
