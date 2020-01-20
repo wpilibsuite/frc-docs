@@ -61,7 +61,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/advanced-control/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: WPILib Examples and Tutorials
 
    docs/software/examples-tutorials/wpilib-examples
