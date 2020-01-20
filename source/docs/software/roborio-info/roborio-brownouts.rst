@@ -38,7 +38,7 @@ Stage 2 - User Voltage Rail Disable
 
 When the voltage drops below 6.3V, the User Voltage Rails are disabled. This includes the 5V pins (or 3.3V is the jumper has been set) in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank.
 
-**The controller will remain in this state until the voltage rises above 6.3V (return to Stage 2) or drops below the trigger for the next stage of the brownout**
+**The controller will remain in this state until the voltage rises above 6.3V (return to Stage 1) or drops below the trigger for the next stage of the brownout**
 
 Stage 3 - Device Blackout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
