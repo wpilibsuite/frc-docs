@@ -55,7 +55,7 @@ Setting the Command to Run during Autonomous
 
    .. code-tab:: java
 
-      public class Robot extends IterativeRobot {
+      public class Robot extends TimedRobot {
           Command autonomousCommand;
 
           /**
@@ -84,7 +84,7 @@ Setting the Command to Run during Autonomous
 
       Command* autonomousCommand;
 
-      class Robot: public IterativeRobot {
+      class Robot: public TimedRobot {
 
           /**
            * This function is run when the robot is first started up and should be
