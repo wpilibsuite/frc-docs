@@ -22,6 +22,8 @@ Next, select your project type from the drop-down menu:
 
 - **Simple** projects use encoders plugged into the RIO's DIO ports, and measure voltage with the PDP.
 - **Talon** projects use encoders plugged into a Talon SRX, and measure voltage with the Talon.
+- **SparkMax** projects use encoders plugged into a Spark Max, and measure voltage with the Spark Max.
+- **Neo** projects use encoders builtin to a NEO motor, and measure voltage with the Spark Max.
 - More project types may be added in the future.
 
 Configure Project Parameters
