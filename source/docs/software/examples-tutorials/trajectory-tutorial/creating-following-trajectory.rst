@@ -49,7 +49,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
       :language: c++
       :lines: 49-53
       :linenos:
-      :lineno-start: 47
+      :lineno-start: 49
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -74,7 +74,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
       :language: c++
       :lines: 55-61
       :linenos:
-      :lineno-start: 53
+      :lineno-start: 55
 
 Generating the Trajectory
 -------------------------
@@ -97,7 +97,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
       :language: c++
       :lines: 63-72
       :linenos:
-      :lineno-start: 61
+      :lineno-start: 63
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -128,7 +128,7 @@ Now that we have a trajectory, we can create a command that, when executed, will
       :language: c++
       :lines: 74-90
       :linenos:
-      :lineno-start: 72
+      :lineno-start: 74
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 
