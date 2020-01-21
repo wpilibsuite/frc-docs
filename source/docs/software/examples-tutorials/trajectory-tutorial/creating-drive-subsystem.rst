@@ -101,7 +101,7 @@ To access the values measured by the encoders, we include the following method:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 73-76
+      :lines: 74-77
       :linenos:
       :lineno-start: 73
 
@@ -141,17 +141,17 @@ To access the current heading measured by the gyroscope, we include the followin
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 173-180
+      :lines: 174-181
       :linenos:
-      :lineno-start: 173
+      :lineno-start: 174
 
   .. group-tab:: C++ (Source)
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 63-65
+      :lines: 64-66
       :linenos:
-      :lineno-start: 63
+      :lineno-start: 64
 
 Configuring the Odometry
 ------------------------
@@ -220,9 +220,9 @@ To access the robot's current computed pose, we include the following method:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 71-71
+      :lines: 72-72
       :linenos:
-      :lineno-start: 71
+      :lineno-start: 72
 
 Voltage-Based Drive Method
 --------------------------
@@ -235,7 +235,7 @@ Finally, we must include one additional method - a method that allows us to set 
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 111-120
+      :lines: 111-121
       :linenos:
       :lineno-start: 111
 
