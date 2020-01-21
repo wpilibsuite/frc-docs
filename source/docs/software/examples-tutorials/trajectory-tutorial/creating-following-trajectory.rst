@@ -19,9 +19,9 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 46-88
+      :lines: 48-90
       :linenos:
-      :lineno-start: 46
+      :lineno-start: 48
 
 Configuring the Trajectory Constraints
 --------------------------------------
@@ -47,9 +47,9 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 47-51
+      :lines: 49-53
       :linenos:
-      :lineno-start: 47
+      :lineno-start: 49
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -72,9 +72,9 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 53-59
+      :lines: 55-61
       :linenos:
-      :lineno-start: 53
+      :lineno-start: 55
 
 Generating the Trajectory
 -------------------------
@@ -95,9 +95,9 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 61-70
+      :lines: 63-72
       :linenos:
-      :lineno-start: 61
+      :lineno-start: 63
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -124,9 +124,9 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 72-88
+      :lines: 74-90
       :linenos:
-      :lineno-start: 72
+      :lineno-start: 74
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 
