@@ -7,5 +7,6 @@ This section covers advanced control features in WPILib, such as various feedbac
    :maxdepth: 2
 
    introduction/index
+   filters/index
    controllers/index
    trajectories/index
