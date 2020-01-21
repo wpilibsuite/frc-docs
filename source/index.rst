@@ -79,7 +79,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :maxdepth: 1
    :caption: Robot Networking
 
-   docs/networking/networking-introduction/ifndex
+   docs/networking/networking-introduction/index
    docs/networking/networking-utilities/index
 
 .. toctree::
