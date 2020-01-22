@@ -103,7 +103,7 @@ To access the values measured by the encoders, we include the following method:
       :language: c++
       :lines: 74-77
       :linenos:
-      :lineno-start: 73
+      :lineno-start: 74
 
 We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object for easier integration with the ``RamseteCommand`` class later on.
 
