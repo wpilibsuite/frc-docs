@@ -158,4 +158,6 @@ The sections of the palette (these are case sensitive):
 icon.png
 --------
 
-The icon that shows up in the palette and the help page. This should be a 64x64 .png file. It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional.
+The icon that shows up in the palette and the help page. This should be a 64x64 .png file. 
+
+It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional. Photoshop .psd files of the icons and backgrounds are in `/src/main/icons/icons` and png files of the icons and backgrands are in `src/main/resources/icons`
