@@ -10,6 +10,8 @@ These can be used to calculate optimal feedback gains for a PD or P controller f
 
 .. important:: These gains are, in effect, "educated guesses" - they are not guaranteed to be perfect, and should be viewed as a "starting point" for further tuning.
 
+.. important:: Gains from LQR tend to be aggressive, so mechanical imperfections and sensor noise more noticeably affect the system response. Gear backlash in particular can cause severe jittering. Feedback control is much easier with stiff systems that have minimal backlash. Filtering sensor outputs can also help.
+
 Set Units
 ---------
 
