@@ -5,6 +5,8 @@ The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into robot 
 
 The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods in ``TrajectoryUtil`` can be used to create a trajectory from a JSON file stored on the roboRIO file system.
 
+.. note:: PathWeaver places JSON files in ``src/main/deploy/paths`` which will automatically be placed on the roboRIO file system in ``/home/lvuser/deploy/paths`` and can be accessed using getDeployDirectory as shown below.
+
 .. tabs::
 
    .. code-tab:: java
