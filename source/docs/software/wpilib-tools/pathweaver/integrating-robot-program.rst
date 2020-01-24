@@ -13,7 +13,7 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
       String trajectoryJSON = "paths/YourPath.wpilib.json";
       try {
-        Path trajectoryPath = Filesystem.getDeployDirectory().getPath().resolve(trajectoryJSON);
+        Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
         Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
       } catch (IOException ex) {
         DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
