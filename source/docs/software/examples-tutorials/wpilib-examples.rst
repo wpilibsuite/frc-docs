@@ -3,7 +3,9 @@ WPILib Example Projects
 
 .. warning:: While every attempt is made to keep WPILib examples functional, they are *not* intended to be used "as-is."  At the very least, robot-specific constants will need to be changed for the code to work on a user robot.  Many empirical constants have their values "faked" for demonstration purposes.  Users are strongly encouraged to write their own code (from scratch or from an existing template) rather than copy example code.
 
-WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs.
+WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs. All of these examples are available in VS Code by entering Control+Shift+P, then selecting `WPILib: Create a new project` and choosing example.
+
+.. image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
 
 Basic Examples
 --------------
