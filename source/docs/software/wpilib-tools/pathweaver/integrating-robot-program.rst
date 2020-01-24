@@ -5,16 +5,27 @@ The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into robot 
 
 The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods in ``TrajectoryUtil`` can be used to create a trajectory from a JSON file stored on the roboRIO file system.
 
-.. note:: The JSON files placed in ``src/main/deploy`` can be accessed from your robot code with ``Filesystem.getDeployDirectory()``.
-
 .. tabs::
 
    .. code-tab:: java
 
-      Path trajectoryPath = Filesystem.getDeployDirectory().getPath().resolve("YourPath.wpilib.json");
-      Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+      String trajectoryJSON = "paths/YourPath.wpilib.json";
+      try {
+        Path trajectoryPath = Filesystem.getDeployDirectory().getPath().resolve(trajectoryJSON);
+        Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+      } catch (IOException ex) {
+        DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
+      }
 
    .. code-tab:: c++
 
-      frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson("/home/lvuser/deploy/YourPath.wpilib.json");
+       #include <frc/Filesystem.h>
+       #include <frc/trajectory/TrajectoryUtil.h>
+       #include <wpi/Path.h>
 
+       wpi::SmallVector<char, 64> deployDirectory;
+       frc::filesystem::GetDeployDirectory(deployDirectory);
+       wpi::sys::path::append(deployDirectory, "paths");
+       wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
+
+       frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
