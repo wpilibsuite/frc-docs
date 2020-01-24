@@ -24,8 +24,9 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
        #include <frc/Filesystem.h>
        #include <frc/trajectory/TrajectoryUtil.h>
        #include <wpi/Path.h>
+       #include <wpi/SmallString.h>
 
-       wpi::SmallVector<char, 64> deployDirectory;
+       wpi::SmallString<64> deployDirectory;
        frc::filesystem::GetDeployDirectory(deployDirectory);
        wpi::sys::path::append(deployDirectory, "paths");
        wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
