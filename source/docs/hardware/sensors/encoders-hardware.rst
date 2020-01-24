@@ -43,6 +43,8 @@ Magnetic encoders
 
 .. todo:: add picture
 
+.. note:: Magnetic encoders are highly susceptible to EMI (electro-magnetic interference).  Accordingly, they should be placed reasonably far away from motor bodies and other potential sources of EM noise.  Many common drive encounter mounting solutions (such as those on the `AndyMark toughbox mini <https://www.andymark.com/products/toughbox-mini-options>`__ used on the kit of parts bot) should thus not be used with magnetic encoders.
+
 Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 
 Encoder resolution
