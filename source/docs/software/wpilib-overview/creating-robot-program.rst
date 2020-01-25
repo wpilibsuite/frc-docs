@@ -94,7 +94,7 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
    .. code-tab:: java
 
       public Robot() {
-        super(30); // Periodic methods will now be called every 30 ms.
+        super(0.03); // Periodic methods will now be called every 30 ms.
       }
 
    .. code-tab:: c++
