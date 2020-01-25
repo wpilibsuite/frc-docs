@@ -67,7 +67,7 @@ First, the FRC Maven repository should be added to the ``repositories`` block. N
 .. code-block:: groovy
 
    repositories {
-       maven { url "https://frcmaven.wpi.edu/" }
+       maven { url "https://frcmaven.wpi.edu/artifactory/release/" }
    }
 
 Then, the dependencies can be added to the ``dependencies`` block.
