@@ -19,7 +19,7 @@ Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__
 
-The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()` and :code:`periodic()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated).  By default, periodic methods are called every 20ms; this can be changed by overriding the :code:`getPeriod()` method.
+The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()` and :code:`periodic()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated).
 
 .. tabs::
 
@@ -86,6 +86,22 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
                 void TestInit() override; // This is called once when the robot enters test mode
                 void TestPeriodic() override; // This is called periodically while the robot is in test mode
         };
+
+Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      public Robot() {
+        super(30); // Periodic methods will now be called every 30 ms.
+      }
+
+   .. code-tab:: c++
+
+     class Robot : frc::TimedRobot(30_ms) { // Periodic methods will now be called every 30 ms.
+       // Class code here
+     };
 
 IterativeRobotBase
 ~~~~~~~~~~~~~~~~~~
