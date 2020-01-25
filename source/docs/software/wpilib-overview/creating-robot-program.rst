@@ -99,9 +99,7 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
 
    .. code-tab:: c++
 
-     class Robot : frc::TimedRobot(30_ms) { // Periodic methods will now be called every 30 ms.
-       // Class code here
-     };
+      Robot() : frc::TimedRobot(30_ms) {}
 
 IterativeRobotBase
 ~~~~~~~~~~~~~~~~~~
