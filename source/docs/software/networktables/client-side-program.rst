@@ -70,21 +70,21 @@ First, the FRC Maven repository should be added to the ``repositories`` block. N
        maven { url "https://frcmaven.wpi.edu/" }
    }
 
-Then, the dependencies can be added to the ``dependencies`` block.
+Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSION`` should be replaced with the latest version number of the following dependencies. This usually corresponds to the version number of the latest WPILib release.
 
 .. code-block:: groovy
 
    dependencies {
        // Add ntcore-java
-       compile "edu.wpi.first.ntcore:ntcore-java:2020.2.2"
+       compile "edu.wpi.first.ntcore:ntcore-java:VERSION"
 
        // Add wpiutil-java
-       compile "edu.wpi.first.wpiutil:wpiutil-java:2020.2.2"
+       compile "edu.wpi.first.wpiutil:wpiutil-java:VERSION"
 
        // Add ntcore-jni for runtime. We are adding all supported platforms
        // so that our application will work on all supported platforms.
-       runtime "edu.wpi.first.ntcore:ntcore-jni:2020.2.2:windowsx86"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:2020.2.2:windowsx86-64"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:2020.2.2:linuxx86-64"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:2020.2.2:osxx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
    }
