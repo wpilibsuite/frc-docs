@@ -35,9 +35,19 @@ Included Characterization Tools
 
 The robot characterization toolsuite currently supports characterization for:
 
+- Simple Motor Setups
 - Drivetrains
 - Arms
 - Elevators
+
+Simple Motor Characterization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simple motor characterization tool determines the best-fit parameters for the equation:
+
+.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This the the model for a permanent-magnet dc motor with no loading other than friction and inertia, as mentioned above, and is an accurate model for flywheels, turrets, and horizontal linear sliders.
 
 Drivetrain Characterization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,7 +56,11 @@ The drivetrain characterization tool determines the best-fit parameters for the 
 
 .. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
-where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the same modeling equation as is used in the simple motor characterization - however, the drivetrain characterizer is specifically set up to run on differential drives, and will characterize each side of the drive independently if desired.
+
+The drivetrain characterizer can also determine the effective trackwidth of your robot using a gyro.
+
+.. todo:: link to section on trackwidth
 
 Arm Characterization
 ^^^^^^^^^^^^^^^^^^^^
