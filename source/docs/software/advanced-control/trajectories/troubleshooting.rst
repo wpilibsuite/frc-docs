@@ -5,32 +5,32 @@ Troubleshooting complete failures
 ---------------------------------
 There are a number of things that can cause your robot to do completely the wrong thing. The below checklist covers some common mistakes.
 
- * My robot doesn't move.
+* My robot doesn't move.
 
     - Are you actually outputting to your motors?
-    - Is a ``MalformedSplineException`` getting printed to the driver station (if yes, go to the ``MalformedSplineException`` section below.)
+    - Is a ``MalformedSplineException`` getting printed to the driver station? If yes, go to the ``MalformedSplineException`` section below.
     - Is your trajectory very short or in the wrong units?
- * My robot swings around to drive the trajectory facing the other direction.
+* My robot swings around to drive the trajectory facing the other direction.
 
     - Are the start and end headings of your trajectory wrong?
     - Is your robot's gyro getting reset to the wrong heading?
     - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
     - Are your gyro angles clockwise positive? If so, you should negate them.
- * My robot just drives in a straight line even though it should turn.
+* My robot just drives in a straight line even though it should turn.
 
     - Is your gyro set up correctly and returning good data?
     - Are you passing your gyro heading to your odometry object with the correct units?
     - Is your track width correct? Is it in the correct units?
- * I get a ``MalformedSplineException`` printout on the driver station and the robot doesn't move.
+* I get a ``MalformedSplineException`` printout on the driver station and the robot doesn't move.
 
     - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
     - Do you have two waypoints very close together with approximately opposite headings?
     - Do you have two waypoints with the same (or nearly the same) coordinates?
- * My robot drives way too far.
+* My robot drives way too far.
 
     - Are your encoder unit conversions set up correctly?
     - Are your encoders connected?
- * My robot mostly does the right thing, but it's a little inaccurate.
+* My robot mostly does the right thing, but it's a little inaccurate.
 
     - Go to the next section.
 
@@ -41,7 +41,7 @@ Troubleshooting poor performance
 
 .. note:: This section is designed for differential drive robots, but most of the ideas can be adapted to swerve drive or mecanum.
 
-Poor trajectory tracking performance can be difficult to troubleshoot. Although the trajectory generator and follower are intended to be easy-to-use and performant out of the box, there are situations where your robot doesn't quite end up where it should. The trajectory generator and followers have many knobs to tune and many moving parts, so it can be difficult to know where to start, especially because it is difficult to locate the source of the problems from the robot's general behavior.
+Poor trajectory tracking performance can be difficult to troubleshoot. Although the trajectory generator and follower are intended to be easy-to-use and performant out of the box, there are situations where your robot doesn't quite end up where it should. The trajectory generator and followers have many knobs to tune and many moving parts, so it can be difficult to know where to start, especially because it is difficult to locate the source of trajectory problems from the robot's general behavior.
 
 Because it can be so hard to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended for general poor tracking performance (e.g. the robot is off by few feet or more than twenty degrees). The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
@@ -88,7 +88,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
     }
 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
-3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not warn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
+3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
@@ -100,7 +100,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.2.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 131-132
       :linenos:
@@ -108,7 +108,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.2.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 82-83
       :linenos:
@@ -222,19 +222,24 @@ If you completed the previous step and the problem went away then your problem c
 
 Check Constraints
 ^^^^^^^^^^^^^^^^^
- .. note:: Make sure that your P gain is nonzero for this step and that you still have the logging code added in the previous steps. If you're using Java then you should remove the code to disable Ramsete.
+.. note:: Make sure that your P gain is nonzero for this step and that you still have the logging code added in the previous steps. If you're using Java then you should remove the code to disable Ramsete.
 
 If your accuracy issue persisted through all of the previous steps then you might have an issue with your constraints. Below are a list of symptoms that the different available constraints will exhibit when poorly tuned.
 
-Test one constraint at a time! Remove the other constraints, tune your one remaining constraint, and repeat that process for each constraint you want to use. The below checklist assumes that you only have one constraint at a time.
+Test one constraint at a time! Remove the other constraints, tune your one remaining constraint, and repeat that process for each constraint you want to use. The below checklist assumes that you only use one constraint at a time.
 
- - ``DifferentialDriveVoltageConstraint``
-   - If your robot accelerates very slowly then it's possible that the max voltage for this constraint is too low.
-   - If your robot doesn't reach the end of the path then your characterization data may problematic.
- - ``DifferentialDriveKinematicsConstraint``
-   - If your robot ends up at the wrong heading then it's possible that the max drivetrain side speed is too low, or that it's too high. The only way to tell is to tune the max speed and to see what happens.
- - ``CentripetalAccelerationConstraint``
-   - If your robot ends up at the wrong heading then this could be the culprit. If your robot doesn't seem to turn enough then you should increase the max centripetal acceleration, but if it seems to go around tight turns to quickly then you should decrease the maximum centripetal acceleration.
+- ``DifferentialDriveVoltageConstraint``:
+
+    - If your robot accelerates very slowly then it's possible that the max voltage for this constraint is too low.
+    - If your robot doesn't reach the end of the path then your characterization data may problematic.
+
+- ``DifferentialDriveKinematicsConstraint``:
+
+    - If your robot ends up at the wrong heading then it's possible that the max drivetrain side speed is too low, or that it's too high. The only way to tell is to tune the max speed and to see what happens.
+
+- ``CentripetalAccelerationConstraint``:
+
+    - If your robot ends up at the wrong heading then this could be the culprit. If your robot doesn't seem to turn enough then you should increase the max centripetal acceleration, but if it seems to go around tight turns to quickly then you should decrease the maximum centripetal acceleration.
 
 Check Trajectory Waypoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
