@@ -21,7 +21,7 @@ In Java, a reference to a subroutine that can be passed as a parameter is called
 Lambda Expressions (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
 
 Lambda Expressions (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~
