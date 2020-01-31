@@ -10,26 +10,31 @@ There are a number of things that can cause your robot to do completely the wron
   - Are you actually outputting to your motors?
   - Is a ``MalformedSplineException`` getting printed to the driver station? If yes, go to the ``MalformedSplineException`` section below.
   - Is your trajectory very short or in the wrong units?
+
 * My robot swings around to drive the trajectory facing the other direction.
 
   - Are the start and end headings of your trajectory wrong?
   - Is your robot's gyro getting reset to the wrong heading?
   - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
   - Are your gyro angles clockwise positive? If so, you should negate them.
+
 * My robot just drives in a straight line even though it should turn.
 
   - Is your gyro set up correctly and returning good data?
   - Are you passing your gyro heading to your odometry object with the correct units?
   - Is your track width correct? Is it in the correct units?
+
 * I get a ``MalformedSplineException`` printout on the driver station and the robot doesn't move.
 
   - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
   - Do you have two waypoints very close together with approximately opposite headings?
   - Do you have two waypoints with the same (or nearly the same) coordinates?
+
 * My robot drives way too far.
 
   - Are your encoder unit conversions set up correctly?
   - Are your encoders connected?
+
 * My robot mostly does the right thing, but it's a little inaccurate.
 
   - Go to the next section.
@@ -228,16 +233,16 @@ If your accuracy issue persisted through all of the previous steps then you migh
 
 Test one constraint at a time! Remove the other constraints, tune your one remaining constraint, and repeat that process for each constraint you want to use. The below checklist assumes that you only use one constraint at a time.
 
-- ``DifferentialDriveVoltageConstraint``:
+* ``DifferentialDriveVoltageConstraint``:
 
   - If your robot accelerates very slowly then it's possible that the max voltage for this constraint is too low.
   - If your robot doesn't reach the end of the path then your characterization data may problematic.
 
-- ``DifferentialDriveKinematicsConstraint``:
+* ``DifferentialDriveKinematicsConstraint``:
 
   - If your robot ends up at the wrong heading then it's possible that the max drivetrain side speed is too low, or that it's too high. The only way to tell is to tune the max speed and to see what happens.
 
-- ``CentripetalAccelerationConstraint``:
+* ``CentripetalAccelerationConstraint``:
 
   - If your robot ends up at the wrong heading then this could be the culprit. If your robot doesn't seem to turn enough then you should increase the max centripetal acceleration, but if it seems to go around tight turns to quickly then you should decrease the maximum centripetal acceleration.
 
