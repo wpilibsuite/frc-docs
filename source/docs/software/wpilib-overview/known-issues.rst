@@ -27,9 +27,16 @@ This is a bug in VS Code being tracked by WPILib in `vscode-wpilib#334 <https://
 C++ Intellisense - Files Open on Launch Don't Work Properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Issue:** In C++, files open when VS Code launches will have issues with Intellisense showing suggestions from all options from a compilation unit and not just the appropriate ones. This is a bug in VS Code
+**Issue:** In C++, files open when VS Code launches will have issues with Intellisense showing suggestions from all options from a compilation unit and not just the appropriate ones or not finding header files. This is a bug in VS Code.
 
-**Workaround:** Close the files in VS Code, close VS Code, wait ~ 1 min, re-launch VS Code.
+**Workaround:** 
+
+  #. Close all  files in VS Code, but leave VS Code open
+  #. Delete c_cpp_properties.json file in the .vscode folder, if it exists
+  #. Run the "Refresh C++ Intellisense" command in vscode.
+  #. In the bottom right you should see something that looks like a platform (linuxathena or windowsx86-64 etc). If it’s not linuxathena click it and set it to linuxathena (release).
+  #. Wait ~ 1 min
+  #. Open the main cpp file (not a header file). Intellisense should now be working.
 
 SmartDashboard and Simulation fail to launch on Windows N Editions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
