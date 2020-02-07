@@ -100,6 +100,8 @@ To install the Robot Characterization Toolsuite, open a console and enter the fo
 
 The toolsuite, and all of its dependencies, should be automatically downloaded and installed. If you are using a Windows machine and the command pip is not recognized, ensure that your python scripts folder `has been added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__.
 
+.. note:: If you are on Ubuntu, you will have to manually install tkinter with ``sudo apt-get install python3-tk``. You will also have to use the ``pip3`` command instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions.
+
 If you already have the toolsuite installed, be sure to update it regularly to benefit from bugfixes and new features additions:
 
 .. code-block:: console
