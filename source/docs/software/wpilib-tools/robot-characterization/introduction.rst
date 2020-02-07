@@ -87,6 +87,8 @@ To use the Robot Characterization Toolsuite, you must have Python 3.7 installed 
 
 `Python 3.7 <https://www.python.org/downloads/>`__
 
+.. warning:: Do not install Python from the Microsoft Store. Please use the link above to download and install Python.
+
 Installing and Launching the Toolsuite
 --------------------------------------
 
