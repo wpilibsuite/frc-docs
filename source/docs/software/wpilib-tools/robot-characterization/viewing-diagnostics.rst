@@ -87,7 +87,7 @@ While not nearly as problematic as a too-low threshold, a motion threshold that 
 
 To solve this, decrease the setting and re-analyze the data.
 
-Magnetic Encoders Near Motors
+Magnetic Encoders Velocity Noise
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/magencoder-emi-time.png
