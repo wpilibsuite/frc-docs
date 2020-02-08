@@ -41,7 +41,7 @@ Operation Tab
 The Operations Tab is used to control the mode of the robot and provide additional key status indicators while the robot is running.
 
 1. Robot Mode - This section controls the Robot Mode. Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab).
-2. Enable/Disable - These controls enable and disable the robot. You can also use the key combination ``[]\`` (the 3 keys above the enter key on most keyboards) to Enable the robot, and the ``Enter`` key to Disable the robot. The Spacebar will Emergency Stop the Robot
+2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_
 3. Elapsed Time - Indicates the amount of time the robot has been enabled
 4. PC Battery - Indicates current state of DS PC battery and whether the PC is plugged in
 5. PC CPU% - Indicates the CPU Utilization of the DS PC
@@ -121,3 +121,60 @@ Example: The image above shows 4 devices:
 - A Locked, but disconnected "MadCatz GamePad (Controller)" which is a MadCatz Xbox 360 Controller
 
 In this example, unplugging the Logitech Extreme 3D joystick will result in the F310 Gamepad moving up to slot 1. Plugging in the MadCatz Gamepad (even if the devices in Slots 1 and 2 are removed and those slots are empty) will result in it occupying Slot 3.
+
+CAN\\Power Tab
+--------------
+
+.. image:: images/driver-station/ds-can-power-tab.png
+
+
+
+The last tab on the left side of the DS is the CAN\Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
+
+1. Comms Faults - This indicates the number of Comms faults that have occurred since the DS has been connected
+2. 12V Faults - This indicates the number of input power faults (Brownouts) that have occurred since the DS has been connected
+3. 6V/5V/3.3V Faults - This indicates the number of faults (typically cause by short circuits) that have occurred on the User Voltage Rails since the DS has been connected
+4. CAN Bus Utilization - This indicates the percentage utilization of the CAN bus
+5. CAN faults - These indicate the counts of each of the 4 types of CAN faults since the DS has been connected
+
+If a fault is detected, the indicator for this tab (shown in blue in the image above) will turn red.
+
+
+Messages Tab
+------------
+
+.. image:: images/driver-station/ds-messages-tab.png
+
+The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO. The messages are filtered by severity. By default, only Errors are displayed.
+
+To access settings for the Messages tab, click the Gear icon. This will display a menu that will allow you to select the detail level (Errors, Errors+Warnings or Errors+Warnings+Prints), Clear the box, launch a larger Console window for viewing messages, or launch the DS Log Viewer.
+
+Charts Tab
+----------
+
+.. image:: images/driver-station/ds-charts-tab.png
+
+The Charts tab plots and displays advanced indicators of robot status to help teams diagnose robot issues:
+
+1. The top graph charts trip time in milliseconds in green (against the axis on the right) and lost packets per second in orange (against the axis on the left)
+2. The bottom graph plots battery voltage in yellow (against the axis on the left), roboRIO CPU in red (against the axis on the right), DS Requested mode as a continuous line on the bottom of the chart and robot mode as a discontinuous line above it.
+3. This key shows the colors used for the DS Requested and Robot Reported modes in the bottom chart.
+4. Chart scale - These controls change the time scale of the DS Charts
+5. This button launches the :doc:`DS Log File Viewer <driver-station-log-viewer>`
+
+The DS Requested mode is the mode that the Driver Station is commanding the robot to be in. The Robot Reported mode is what code is actually running based on reporting methods contained in the coding frameworks for each language.
+
+Both Tab
+--------
+
+The last tab on the right side is the Both tab which displays Messages and Charts side by side
+
+Driver Station Key Shortcuts
+----------------------------
+
+  * F1 - Force a Joystick refresh.
+  * '[' + ']' + ' \\ ' - Enable the robot (the 3 keys above Enter on most keyboards)
+  * Enter - Disable the Robot
+  * Space - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+
+.. Note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
