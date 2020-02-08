@@ -6,7 +6,7 @@ This article provides a summary of changes from the :ref:`original command-based
 Package Location
 ----------------
 
-The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still in its original location, but has been deprecated.
+The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still available in the original location. The new framework must be installed using the instructions: :ref:`docs/software/wpilib-overview/3rd-party-libraries:WPILib Command Libraries`.
 
 Major Architectural Changes
 ---------------------------
