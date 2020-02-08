@@ -122,20 +122,20 @@ Example: The image above shows 4 devices:
 
 In this example, unplugging the Logitech Extreme 3D joystick will result in the F310 Gamepad moving up to slot 1. Plugging in the MadCatz Gamepad (even if the devices in Slots 1 and 2 are removed and those slots are empty) will result in it occupying Slot 3.
 
-CAN\\Power Tab
+CAN/Power Tab
 --------------
 
 .. image:: images/driver-station/ds-can-power-tab.png
 
 
 
-The last tab on the left side of the DS is the CAN\Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
+The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
 
-1. Comms Faults - This indicates the number of Comms faults that have occurred since the DS has been connected
-2. 12V Faults - This indicates the number of input power faults (Brownouts) that have occurred since the DS has been connected
-3. 6V/5V/3.3V Faults - This indicates the number of faults (typically cause by short circuits) that have occurred on the User Voltage Rails since the DS has been connected
-4. CAN Bus Utilization - This indicates the percentage utilization of the CAN bus
-5. CAN faults - These indicate the counts of each of the 4 types of CAN faults since the DS has been connected
+1. Comms Faults - Indicates the number of Comms faults that have occurred since the DS has been connected
+2. 12V Faults - Indicates the number of input power faults (Brownouts) that have occurred since the DS has been connected
+3. 6V/5V/3.3V Faults - Indicates the number of faults (typically cause by short circuits) that have occurred on the User Voltage Rails since the DS has been connected
+4. CAN Bus Utilization - Indicates the percentage utilization of the CAN bus
+5. CAN faults - Indicates the counts of each of the 4 types of CAN faults since the DS has been connected
 
 If a fault is detected, the indicator for this tab (shown in blue in the image above) will turn red.
 
@@ -172,9 +172,9 @@ The last tab on the right side is the Both tab which displays Messages and Chart
 Driver Station Key Shortcuts
 ----------------------------
 
-  * F1 - Force a Joystick refresh.
-  * '[' + ']' + ' \\ ' - Enable the robot (the 3 keys above Enter on most keyboards)
-  * Enter - Disable the Robot
-  * Space - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+  * `F1` - Force a Joystick refresh.
+  * `[` + `]` + `\\` - Enable the robot (the 3 keys above Enter on most keyboards)
+  * `Enter` - Disable the Robot
+  * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
 
 .. Note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
