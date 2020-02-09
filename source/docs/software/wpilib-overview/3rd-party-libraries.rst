@@ -22,13 +22,9 @@ Libraries
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
 
-`Mindsensors Libraries <http://www.mindsensors.com/blog/how-to/how-to-use-sd540c-and-canlight-with-roborio>`__ - Contains libraries for SD540C and CANLight
-
 `Rev Robotics Color Sensor V3 <http://www.revrobotics.com/rev-31-1557/>`__ - Library for Rev Robotics Color Sensor included in 2020 Kit of Parts
 
 `Rev Robotics SPARK MAX <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
-
-`Scansense Sweep <https://github.com/PeterJohnson/sweep-sdk/releases>`__ - C/Java Libraries for Scansense Sweep LIDAR (packaged by Peter Johnson)
 
 WPILib Command Libraries
 ------------------------
