@@ -1,10 +1,16 @@
 Machine Learning
 ================
 
-.. Warning:: We apologize for delay in getting the procedures to train a network to you.  AWS Educate ran into a problem with the ability to run Sagemaker on their systems at the same time build season was starting.  We have come up with a new solution below to get you going.  
+.. Warning:: 
+     We apologize for delay in getting the procedures to train a network to you.  AWS Educate ran into a problem with the ability to run Sagemaker on their systems at the same time build season was starting.  We have come up with a new solution below to get you going.
 
-Sincerely, 
-   The WPILib ML Team
+    A mentor from the team will need to email us the information below, we will setup an account for them and email instructions on how to setup accounts for the students. Then continue following the instructions in this documentation.  
+
+    Please email the following information to ML@WPILib.org
+    Team number 
+    Mentors name
+    Mentors email that has not been used for an AWS account before. 
+
 
 
 This technology experiment is a way for teams to automatically detect game pieces and other interesting objects with machine learning. It uses Amazon Web Services to train and test, so teams do not need to own especially powerful computers.
