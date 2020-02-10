@@ -1,7 +1,11 @@
 Machine Learning
 ================
 
-.. Warning:: We are aware that you will get an exception while trying to train your model with the Jupyter notebook. The WPILib team and Amazon are working hard on a solution and hope to have something in the next few days. Until we do, you will not be able to train your models. We will post the status here as it changes, so please check back often. We are very sorry that this issue occurred and hope to get it resolved as quickly as possible.
+.. Warning:: We apologize for delay in getting the procedures to train a network to you.  AWS Educate ran into a problem with the ability to run Sagemaker on their systems at the same time build season was starting.  We have come up with a new solution below to get you going.  
+
+Sincerely, 
+   The WPILib ML Team
+
 
 This technology experiment is a way for teams to automatically detect game pieces and other interesting objects with machine learning. It uses Amazon Web Services to train and test, so teams do not need to own especially powerful computers.
 
