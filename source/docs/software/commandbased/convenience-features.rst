@@ -291,7 +291,7 @@ The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
   .. code-tab:: c++
 
     // Ends 5 seconds after being scheduled
-    frc2::WaitCommand(5)
+    frc2::WaitCommand(5.0_s)
 
 This is often useful as a component of a command group.
 
@@ -315,7 +315,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release
   .. code-tab:: c++
 
     // Ends after the 60-second mark of the current match
-    frc2::WaitUntilCommand(60)
+    frc2::WaitUntilCommand(60.0_s)
 
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
@@ -364,7 +364,7 @@ decorated command will be interrupted if the timeout expires:
   .. code-tab:: c++
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    button.WhenPressed(command.WithTimeout(5));
+    button.WhenPressed(command.WithTimeout(5.0_s));
 
 interruptOn
 ^^^^^^^^^^^
