@@ -8,7 +8,7 @@ roboRIO Brownout Protection
 
 The roboRIO uses a staged brownout protection scheme to attempt to preserve the input voltage to itself and other control system components in order to prevent device resets in the event of large current draws pulling the battery voltage dangerously low.
 
-Stage 1 - 6v output droop
+Stage 1 - 6v output drop
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Voltage Trigger - 6.8V**
