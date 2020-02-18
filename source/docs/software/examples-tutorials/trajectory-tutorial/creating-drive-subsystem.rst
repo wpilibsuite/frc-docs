@@ -212,9 +212,9 @@ To access the robot's current computed pose, we include the following method:
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 72-78
+      :lines: 73-80
       :linenos:
-      :lineno-start: 72
+      :lineno-start: 73
 
   .. group-tab:: C++ (Source)
 
