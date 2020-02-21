@@ -60,7 +60,7 @@ PathWeaver Units
 
 **Issue:** PathWeaver exports paths using the length unit that was used for the project. However, the WPILib trajectory tools expects paths with the length units of meters. If different units are selected in PathWeaver, the paths will be scaled incorrectly.
 
-**Solution:** PathWeaver starting with version 2020.3.1 now can export export to meters when the units within PathWeaver are set to something else.
+**Solution:** PathWeaver, starting with version 2020.3.2, can now export export to meters when the units within PathWeaver are set to something else.
 
 Fixed in 2020.2.2
 -----------------
