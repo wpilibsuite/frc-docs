@@ -28,7 +28,7 @@ If at any point in time you want to disable Desktop Support, simply re-run the "
 Additional C++ Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2019 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2019 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code, and **not** just the build tools), macOS requires `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
 
 Running Robot Simulation
 ------------------------
