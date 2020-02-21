@@ -52,7 +52,7 @@ There is currently an issue with inter-operating C++/Java Network Tables clients
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
 
-Fixed in 2020.3.1
+Fixed in 2020.3.2
 -----------------
 
 PathWeaver Units
