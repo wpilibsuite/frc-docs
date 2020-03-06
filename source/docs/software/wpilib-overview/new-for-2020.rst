@@ -93,7 +93,7 @@ Shuffleboard
 - Small numbers will properly be shown in number fields using scientific notation.
 - Allow widget titles to be hidden
 - Added a documentation link in the about dropdown
-- Added text underneath describing the number slider value
+- Added text underneath number slider to display the current value
 
 FRC Raspberry Pi Image
 ----------------------
