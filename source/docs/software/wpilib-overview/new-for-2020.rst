@@ -93,6 +93,7 @@ Shuffleboard
 - Small numbers will properly be shown in number fields using scientific notation.
 - Allow widget titles to be hidden
 - Added a documentation link in the about dropdown
+- Added text underneath describing the number slider value
 
 FRC Raspberry Pi Image
 ----------------------
@@ -123,6 +124,7 @@ GradleRIO
 
 - Fixed JRE slowdown when using ``concat()`` on Strings.
 - Fixed JRE slowdown on garbage collection.
+- Simulation uses the WPILib JDK
 
 CScore
 ------
