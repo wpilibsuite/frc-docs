@@ -366,10 +366,10 @@ decorated command will be interrupted if the timeout expires:
     // Will time out 5 seconds after being scheduled, and be interrupted
     button.WhenPressed(command.WithTimeout(5.0_s));
 
-interruptOn
+withInterrupt
 ^^^^^^^^^^^
 
-The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#interruptOn(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a6efa0fe6197b11036d947b2a8dfdee0b>`__) decorator adds a condition on which the command will be interrupted:
+The ``withInterrupt()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a4a6078c253a1578b3310833dcdfc01f0>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
