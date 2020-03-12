@@ -367,7 +367,7 @@ decorated command will be interrupted if the timeout expires:
     button.WhenPressed(command.WithTimeout(5.0_s));
 
 withInterrupt
-^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 The ``withInterrupt()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a4a6078c253a1578b3310833dcdfc01f0>`__) decorator adds a condition on which the command will be interrupted:
 
