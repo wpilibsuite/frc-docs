@@ -63,8 +63,6 @@ Checking Errors
 
 .. note:: ``getPositionError()`` and ``getVelocityError()`` are named assuming that the loop is controlling a position - for a loop that is controlling a velocity, these return the velocity error and the acceleration error, respectively.
 
-.. note:: If using :ref:`continuous input <docs/software/advanced-control/controllers/pidcontroller:Setting Continuous Input>`, use ``getContinuousError`` rather than ``getPositionError``.  Velocity error is unaffected.
-
 The current error of the measured process variable is returned by the ``getPositionError()`` function, while its derivative is returned by the ``getVelocityError()`` function:
 
 Specifying and Checking Tolerances
