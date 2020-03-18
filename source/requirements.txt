@@ -1,5 +1,5 @@
 sphinx_rtd_theme==0.4.3
-sphinx==2.2.0
+sphinx==2.4.4
 sphinx-tabs==1.1.12
 latex==0.7.0
 doc8==0.8.0
