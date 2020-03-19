@@ -15,8 +15,15 @@ In order to define a plugin, the plugin class must be a sublclass of `edu.wpi.fi
 .. tabs::
 
     .. code-tab:: java
+        import edu.wpi.first.shuffleboard.api.Plugin;
 
-        @Description(group = "com.example", name = "Good Plugin", version = "1.2.3", summary = "A good plugin")
-        public class GoodPlugin extends Plugin {
+        @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+        public class MyPlugin extends Plugin {
 
         }
+
+Note the ``@Description`` which is needed to tell the plugin loader the properties of the custom plugin class.
+Plugin classes are permitted to have a defualt constructor but it cannot take any arguments.
+
+Building plugin
+---------------
