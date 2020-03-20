@@ -94,7 +94,7 @@ jobs:
     - script: pip install -r source/requirements.txt
       displayName: 'Install Python Requirements'
 
-    - script: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
+    - script: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh && sh -s
       displayname: 'Install ReviewDog'
 
     - script: ./bin/reviewdog -reporter=github-pr-check
