@@ -27,9 +27,16 @@ This is a bug in VS Code being tracked by WPILib in `vscode-wpilib#334 <https://
 C++ Intellisense - Files Open on Launch Don't Work Properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Issue:** In C++, files open when VS Code launches will have issues with Intellisense showing suggestions from all options from a compilation unit and not just the appropriate ones. This is a bug in VS Code
+**Issue:** In C++, files open when VS Code launches will have issues with Intellisense showing suggestions from all options from a compilation unit and not just the appropriate ones or not finding header files. This is a bug in VS Code.
 
-**Workaround:** Close the files in VS Code, close VS Code, wait ~ 1 min, re-launch VS Code.
+**Workaround:**
+
+  #. Close all  files in VS Code, but leave VS Code open
+  #. Delete c_cpp_properties.json file in the .vscode folder, if it exists
+  #. Run the "Refresh C++ Intellisense" command in vscode.
+  #. In the bottom right you should see something that looks like a platform (linuxathena or windowsx86-64 etc). If it’s not linuxathena click it and set it to linuxathena (release)
+  #. Wait ~ 1 min
+  #. Open the main cpp file (not a header file). Intellisense should now be working
 
 SmartDashboard and Simulation fail to launch on Windows N Editions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,6 +51,48 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java Network Tables clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
+
+Fixed in 2020.3.2
+-----------------
+
+PathWeaver Units
+~~~~~~~~~~~~~~~~
+
+**Issue:** PathWeaver exports paths using the length unit that was used for the project. However, the WPILib trajectory tools expects paths with the length units of meters. If different units are selected in PathWeaver, the paths will be scaled incorrectly.
+
+**Solution:** PathWeaver, starting with version 2020.3.2, can now export export to meters when the units within PathWeaver are set to something else.
+
+Fixed in 2020.2.2
+-----------------
+
+Java predefined colors are all zero
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The predefined (static) colors from the WPILib Color class have all zero red, green, blue values.
+
+This issue is being tracked by WPILib in `allwpilib#2269 <https://github.com/wpilibsuite/allwpilib/pull/2269>`__.
+
+C++ Command Based JoystickButton and POVButton not functioning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+C++ JoystickButton and POVButton are both non functioning.
+
+This issue is being tracked by WPILib in `allwpilib#2259 <https://github.com/wpilibsuite/allwpilib/pull/2259>`__.
+
+**Workaround**: Use a Button object directly instead of using JoystickButton or POVButton.
+
+.. code-block:: cpp
+
+    frc2::Button button{[&] { return m_joy.GetRawButton(1); }};
+
+RobotBuilder extensions use the frc namespace (C++)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using RobotBuilder to create a C++ robot program, extensions will generate code prepended with the ``frc::`` namespace which will not compile.
+
+**Workaround**: After generating C++ robot code with RobotBuilder, where appropriate, replace ``frc::`` with the correct namespace for that device.
+
+This issue is being tracked by WPILib in `RobotBuilder#194 <https://github.com/wpilibsuite/RobotBuilder/issues/194>`__.
 
 Fixed in 2020.1.2
 -----------------

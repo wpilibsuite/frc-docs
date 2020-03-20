@@ -36,6 +36,8 @@ The WPILib extension provides the FRC specific functionality related to creating
 - By typing "WPILib" into the Command Palette
 - By clicking on the WPILib icon in the top right of most windows. This will open the Command Palette with "WPILib" pre-entered
 
+.. note:: It is **not** recommended to install the `Visual Studio IntelliCode <https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode>`_ plugin with the FRC installation of VS Code as it is known to break IntelliSense in odd ways.
+
 For more information about specific WPILib extension commands, see the other articles in this chapter.
 
 .. |Welcome Screen| image:: images/vscode-basics/vscode-welcome-screen.png

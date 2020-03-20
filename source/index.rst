@@ -8,7 +8,7 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This documentation will be the Official *FIRST* Robotics Competition Control System documentation for the 2020 season and beyond. An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/software/wpilib-overview/new-for-2020:New for 2020>` document.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/software/wpilib-overview/new-for-2020:New for 2020>` document.
 
 .. toctree::
    :maxdepth: 2
@@ -43,7 +43,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/pathfinder/index
+   docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/robot-characterization/index
@@ -61,10 +61,11 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/advanced-control/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: WPILib Examples and Tutorials
 
    docs/software/examples-tutorials/wpilib-examples
+   docs/software/examples-tutorials/machine-learning/index
    docs/software/examples-tutorials/trajectory-tutorial/index
 
 .. toctree::

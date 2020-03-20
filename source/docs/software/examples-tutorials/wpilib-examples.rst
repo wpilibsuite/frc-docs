@@ -3,7 +3,9 @@ WPILib Example Projects
 
 .. warning:: While every attempt is made to keep WPILib examples functional, they are *not* intended to be used "as-is."  At the very least, robot-specific constants will need to be changed for the code to work on a user robot.  Many empirical constants have their values "faked" for demonstration purposes.  Users are strongly encouraged to write their own code (from scratch or from an existing template) rather than copy example code.
 
-WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs.
+WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs. All of these examples are available in VS Code by entering Control+Shift+P, then selecting `WPILib: Create a new project` and choosing example.
+
+.. image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
 
 Basic Examples
 --------------
@@ -78,5 +80,5 @@ These examples demonstrate miscellaneous WPILib functionality that does not fit 
 * **AddressableLED** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/AddressableLED>`__): Demonstrates the use of the ``AddressableLED`` class to control RGB LEDs for robot decoration and/or driver feedback.
 * **DMA** (`C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/DMA>`__): Demonstrates the use of DMA (Direct Memory Access) to read from sensors without using the RoboRIO's CPU (C++ only).
 * **HIDRumble** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hidrumble>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HidRumble>`__): Demonstrates the use of the "rumble" functionality for tactile feedback on supported HIDs (such as XboxControllers).
-* **PacGoat** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/pacgoat>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/PacGoat>`__): A full command-based robot project from FRC Team 190's 2014 robot.  Uses the deprecated version of the command framework; categorized as miscellaneous to avoid confusion.
+* **PacGoat** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/pacgoat>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/PacGoat>`__): A full command-based robot project from FRC Team 190's 2014 robot.  Uses the legacy version of the command framework; categorized as miscellaneous to avoid confusion.
 * **Shuffleboard** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/shuffleboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ShuffleBoard>`__): Demonstrates configuring tab/widget layouts on the "Shuffleboard" dashboard from robot code through the ``Shuffleboard`` class's fluent builder API.

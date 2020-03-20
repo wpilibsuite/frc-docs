@@ -21,7 +21,7 @@ In Java, a reference to a subroutine that can be passed as a parameter is called
 Lambda Expressions (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
 
 Lambda Expressions (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -291,7 +291,7 @@ The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
   .. code-tab:: c++
 
     // Ends 5 seconds after being scheduled
-    frc2::WaitCommand(5)
+    frc2::WaitCommand(5.0_s)
 
 This is often useful as a component of a command group.
 
@@ -315,7 +315,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release
   .. code-tab:: c++
 
     // Ends after the 60-second mark of the current match
-    frc2::WaitUntilCommand(60)
+    frc2::WaitUntilCommand(60.0_s)
 
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
@@ -364,12 +364,12 @@ decorated command will be interrupted if the timeout expires:
   .. code-tab:: c++
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    button.WhenPressed(command.WithTimeout(5));
+    button.WhenPressed(command.WithTimeout(5.0_s));
 
-interruptOn
-^^^^^^^^^^^
+withInterrupt
+^^^^^^^^^^^^^
 
-The ``interruptOn()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#interruptOn(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a6efa0fe6197b11036d947b2a8dfdee0b>`__) decorator adds a condition on which the command will be interrupted:
+The ``withInterrupt()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a4a6078c253a1578b3310833dcdfc01f0>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 

@@ -15,25 +15,25 @@ Adding test mode can be as painless as calling your already written Teleop metho
 
 .. tabs::
 
-  .. code-tab:: java
+    .. code-tab:: java
 
-      public class Robot extends TimedRobot {
+        public class Robot extends TimedRobot {
 
-          @Override
-          public void robotInit() {
-              SmartDashboard.putData(m_aSubsystem);
-          }
+            @Override
+            public void robotInit() {
+                SmartDashboard.putData(m_aSubsystem);
+            }
 
-          @Override
-          public void testInit() {
-              teleopInit();
-          }
+            @Override
+            public void testInit() {
+                teleopInit();
+            }
 
-          @Override
-          public void testPeriodic() {
-              teleopPeriodic();
-          }
-      }
+            @Override
+            public void testPeriodic() {
+                teleopPeriodic();
+            }
+        }
 
     .. code-tab:: c++
 
@@ -54,7 +54,7 @@ Test Mode in SmartDashboard
 
 The above sample code produces the following output when the Driver Station is put into Test mode then enabled. You can operate the motors by moving the sliders and read the values of sensors such as the wrist potentiometer.
 
-Notice that the values are grouped by the subsystem names to group related actuators and sensors for easy testing. The subsystem names are suppled in the AddActuator() and AddSensor() method calls as shown in the code examples. This grouping, while not required, makes it much easier to test one subsystem at a time and have all the values next to each other on the screen.
+Notice that the values are grouped by the subsystem names to group related actuators and sensors for easy testing. The subsystem names are specified by supplying a name to the ``putData()`` method, or by calling ``SendableRegistry.setName()``. This grouping, while not required, makes it much easier to test one subsystem at a time and have all the values next to each other on the screen.
 
 Using Test Mode with the TimedRobot Template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

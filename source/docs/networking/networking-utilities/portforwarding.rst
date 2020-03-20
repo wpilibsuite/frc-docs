@@ -22,7 +22,7 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
    .. code-tab:: c++
 
       void Robot::RobotInit {
-         PortForwarder::Add(8888, "frcvision.local", 80);
+         wpi::PortForwarder::GetInstance().Add(8888, "frcvision.local", 80);
       }
 
 .. important:: You **can not** use a port less than 1024 as your local forwarded port. It is also important to note that you **can not** use full URLs (``http://frcvision.local``) and should only use IP Addresses or DNS names.
@@ -44,5 +44,5 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
    .. code-tab:: c++
 
       void Robot::RobotInit {
-         PortForwarder::Remove(8888);
+         wpi::PortForwarder::GetInstance().Remove(8888);
       }

@@ -60,7 +60,7 @@ This means that if you ever run into a situation where you need to have a DHCP s
 Statically
 ^^^^^^^^^^
 
-Dynamically assigning IP addresses means that we are manually telling each device on the network which IP address we want it to have. This configuration happens through a setting on each device. By disabling DHCP on the network and assigning the addresses manually, we get the benefit of knowing the exact IP address of each device on the network, but because we set each one manually and there is no service keeping track of the used IP addresses, we have to keep track of this ourselves. While statically setting IP addresses, we must be careful not to assign duplicate addresses, and must be sure we are setting the other network settings (such as subnet mask and default gateway) correctly on each device.
+Statically assigning IP addresses means that we are manually telling each device on the network which IP address we want it to have. This configuration happens through a setting on each device. By disabling DHCP on the network and assigning the addresses manually, we get the benefit of knowing the exact IP address of each device on the network, but because we set each one manually and there is no service keeping track of the used IP addresses, we have to keep track of this ourselves. While statically setting IP addresses, we must be careful not to assign duplicate addresses, and must be sure we are setting the other network settings (such as subnet mask and default gateway) correctly on each device.
 
 What is link-local?
 -------------------
@@ -123,7 +123,7 @@ To use mDNS, an mDNS implementation is required to be installed on your PC. Here
 
 Windows:
 
-- **NI mDNS Responder:** Installed with the NI FRC Update Suite
+- **NI mDNS Responder:** Installed with the NI FRC Game Tools
 - **Apple Bonjour:** Installed with iTunes
 
 OSX:

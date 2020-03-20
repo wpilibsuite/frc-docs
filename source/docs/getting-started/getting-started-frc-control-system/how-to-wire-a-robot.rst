@@ -21,6 +21,7 @@ Locate the following control system components and tools
 
 
 - Kit Materials:
+
       - Power Distribution Panel (PDP)
       - roboRIO
       - Pneumatics Control Module (PCM)
@@ -44,7 +45,9 @@ Locate the following control system components and tools
       - Dual Lock material or fasteners
       - Zip ties
       - 1/4" or 1/2" plywood
+
 - Tools Required:
+
       - Wago Tool or small flat-head screwdriver
       - Very small flat head screwdriver (eyeglass repair size)
       - Philips head screw driver
@@ -342,7 +345,7 @@ Before plugging in the battery, make sure all connections have been made with th
 
 - Start with the battery and verify that the red wire is connected to the positive terminal
 - Check that the red wire passes through the main breaker and to the + terminal of the PDP and that the black wire travels directly to the - terminal.
-- For each motor controller, verify that the red wire goes from the red PDP terminal to the Talon input labeled with the red + (not the white M+!!!!)
+- For each motor controller, verify that the red wire goes from the red PDP terminal to the Red wire on the Victor SPX (not the white M+!!!!)
 - For each device on the end of the PDP, verify that the red wire connects to the red terminal on the PDP and the red terminal on the component.
 - Make sure that the orange Passive PoE cable is plugged directly into the radio NOT THE roboRIO! It must be connected to the roboRIO using an additional Ethernet cable.
 

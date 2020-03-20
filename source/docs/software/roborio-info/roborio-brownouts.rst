@@ -8,37 +8,35 @@ roboRIO Brownout Protection
 
 The roboRIO uses a staged brownout protection scheme to attempt to preserve the input voltage to itself and other control system components in order to prevent device resets in the event of large current draws pulling the battery voltage dangerously low.
 
-Stage 1 - Output Disable
+Stage 1 - 6v output drop
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Voltage Trigger - 6.8V**
+
+When the voltage drops below 6.8V, the 6V output on the PWM pins will start to drop.
+
+Stage 2 - Output Disable
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Voltage Trigger**
+**Voltage Trigger - 6.3V**
 
-When the voltage drops below 6.8V, the controller will enter the brownout protection state. The following indicators will show that this condition has occurred:
+When the voltage drops below 6.3V, the controller will enter the brownout protection state. The following indicators will show that this condition has occurred:
 
 -  Power LED on the roboRIO will turn Amber
 -  Background of the voltage display on the Driver Station will turn red
 -  Mode display on the Driver Station will change to Voltage Brownout
--  The CAN\\Power tab of the DS will increment the 12V fault counter by 1.
+-  The CAN/Power tab of the DS will increment the 12V fault counter by 1.
 -  The DS will record a brownout event in the DS log.
 
 The controller will take the following steps to attempt to preserve the battery voltage:
 
 -  PWM outputs will be disabled. For PWM outputs which have set their neutral value (all speed controllers in WPILib) a single neutral pulse will be sent before the output is disabled.
--  6V User Rail disabled (this is the rail that powers servos on the PWM header bank)
+-  6V, 5V, 3.3V User Rails disabled (This includes the 6V outputs on the PWM pins, the 5V pins in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank)
 -  GPIO configured as outputs go to High-Z
 -  Relay Outputs are disabled (driven low)
 -  CAN-based motor controllers are sent an explicit disable command
 
 **The controller will remain in this state until the voltage rises to greater than 7.5V or drops below the trigger for the next stage of the brownout**
-
-Stage 2 - User Voltage Rail Disable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Voltage Trigger - 6.3V**
-
-When the voltage drops below 6.3V, the User Voltage Rails are disabled. This includes the 5V pins (or 3.3V is the jumper has been set) in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank.
-
-**The controller will remain in this state until the voltage rises above 6.3V (return to Stage 2) or drops below the trigger for the next stage of the brownout**
 
 Stage 3 - Device Blackout
 ~~~~~~~~~~~~~~~~~~~~~~~~~

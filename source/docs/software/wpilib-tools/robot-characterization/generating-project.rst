@@ -19,9 +19,10 @@ Next, select your project type from the drop-down menu:
 .. image:: images/selecting-project-type.png
    :alt: Selecting the project type in the robot characterization GUI
 
-
 - **Simple** projects use encoders plugged into the RIO's DIO ports, and measure voltage with the PDP.
 - **Talon** projects use encoders plugged into a Talon SRX, and measure voltage with the Talon.
+- **SparkMax (Brushed)** projects use encoders plugged into a SparkMax motor controller with a *brushed* motor, and measure voltage with the Spark.
+- **SparkMax (Brushless/Neo)** projects use the internal encoder of a NEO motor, and measure voltage with the SparkMax motor controller.
 - More project types may be added in the future.
 
 Configure Project Parameters

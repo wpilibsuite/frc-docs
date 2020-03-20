@@ -35,9 +35,19 @@ Included Characterization Tools
 
 The robot characterization toolsuite currently supports characterization for:
 
+- Simple Motor Setups
 - Drivetrains
 - Arms
 - Elevators
+
+Simple Motor Characterization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simple motor characterization tool determines the best-fit parameters for the equation:
+
+.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This the the model for a permanent-magnet dc motor with no loading other than friction and inertia, as mentioned above, and is an accurate model for flywheels, turrets, and horizontal linear sliders.
 
 Drivetrain Characterization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,7 +56,11 @@ The drivetrain characterization tool determines the best-fit parameters for the 
 
 .. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
-where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the same modeling equation as is used in the simple motor characterization - however, the drivetrain characterizer is specifically set up to run on differential drives, and will characterize each side of the drive independently if desired.
+
+The drivetrain characterizer can also determine the effective trackwidth of your robot using a gyro.
+
+.. todo:: link to section on trackwidth
 
 Arm Characterization
 ^^^^^^^^^^^^^^^^^^^^
@@ -73,6 +87,8 @@ To use the Robot Characterization Toolsuite, you must have Python 3.7 installed 
 
 `Python 3.7 <https://www.python.org/downloads/>`__
 
+.. warning:: Do not install Python from the Microsoft Store. Please use the link above to download and install Python.
+
 Installing and Launching the Toolsuite
 --------------------------------------
 
@@ -83,6 +99,8 @@ To install the Robot Characterization Toolsuite, open a console and enter the fo
    pip install frc-characterization
 
 The toolsuite, and all of its dependencies, should be automatically downloaded and installed. If you are using a Windows machine and the command pip is not recognized, ensure that your python scripts folder `has been added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__.
+
+.. note:: If you are on Ubuntu, you will have to manually install tkinter with ``sudo apt-get install python3-tk``. You will also have to use the ``pip3`` command instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions.
 
 If you already have the toolsuite installed, be sure to update it regularly to benefit from bugfixes and new features additions:
 

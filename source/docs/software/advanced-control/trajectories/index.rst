@@ -8,4 +8,6 @@ This section describes WPILib support for generating parameterized spline trajec
 
    trajectory-generation
    manipulating-trajectories
+   transforming-trajectories
    ramsete
+   troubleshooting

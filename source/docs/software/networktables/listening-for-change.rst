@@ -41,7 +41,7 @@ One of the more common cases for NetworkTables is waiting for a value to change 
             }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 
             //add an entry listener for changed values of "Y", the lambda ("->" operator)
-            //defines the code that should run when "X" changes
+            //defines the code that should run when "Y" changes
             yEntry.addListener(event -> {
                System.out.println("Y changed value: " + value.getValue());
             }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);

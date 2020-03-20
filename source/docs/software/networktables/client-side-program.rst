@@ -49,10 +49,42 @@ Building the program
 --------------------
 When building and running the program you will need some additional libraries to include with your client-side program. These are:
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-java/2020.1.2/ (ntcore java files)
+https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-java/ (ntcore java files)
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-jni/2020.1.2/ (ntcore native libs for all desktop platforms)
+https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-jni/ (ntcore native libs for all desktop platforms)
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-java/2020.1.2/ (wpiutil java files)
+https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil java files)
 
 .. note:: The desktop platform jar is for Windows, macOS, and Linux.
+
+Building using Gradle
+^^^^^^^^^^^^^^^^^^^^^
+
+The dependencies above can be added to the ``dependencies`` block in a ``build.gradle`` file. The ``ntcore-java`` and ``wpiutil-java`` libraries are required at compile-time and the JNI dependencies are required at runtime. The JNI dependencies for all supported platforms should be added to the ``build.gradle`` if cross-platform support for the application is desired.
+
+First, the FRC Maven repository should be added to the ``repositories`` block. Note that this is not required if you are using the GradleRIO plugin with your application.
+
+.. code-block:: groovy
+
+   repositories {
+       maven { url "https://frcmaven.wpi.edu/artifactory/release/" }
+   }
+
+Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSION`` should be replaced with the latest version number of the following dependencies. This usually corresponds to the version number of the latest WPILib release.
+
+.. code-block:: groovy
+
+   dependencies {
+       // Add ntcore-java
+       compile "edu.wpi.first.ntcore:ntcore-java:VERSION"
+
+       // Add wpiutil-java
+       compile "edu.wpi.first.wpiutil:wpiutil-java:VERSION"
+
+       // Add ntcore-jni for runtime. We are adding all supported platforms
+       // so that our application will work on all supported platforms.
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
+   }

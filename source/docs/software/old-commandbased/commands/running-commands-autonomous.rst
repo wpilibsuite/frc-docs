@@ -1,7 +1,7 @@
 Running Commands during Autonomous
 ==================================
 
-.. important:: This documentation describes the use of the legacy command-based library, which has been deprecated. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
+.. important:: This documentation describes the use of the legacy command-based library. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
 
 .. note:: Once commands are defined they can run in either the teleop or autonomous part of the program. In fact, the power of the command based programming approach is that you can reuse the same commands in either place. If the robot has a command that can shoot Frisbees during autonomous with camera aiming and accurate shooting, there is no reason not to use it to help the drivers during the teleop period of the game.
 
@@ -55,7 +55,7 @@ Setting the Command to Run during Autonomous
 
    .. code-tab:: java
 
-      public class Robot extends IterativeRobot {
+      public class Robot extends TimedRobot {
           Command autonomousCommand;
 
           /**
@@ -84,7 +84,7 @@ Setting the Command to Run during Autonomous
 
       Command* autonomousCommand;
 
-      class Robot: public IterativeRobot {
+      class Robot: public TimedRobot {
 
           /**
            * This function is run when the robot is first started up and should be
