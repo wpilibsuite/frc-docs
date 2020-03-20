@@ -95,12 +95,12 @@ jobs:
       displayName: 'Install Python Requirements'
 
     - script: |
-        curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
+        curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b ~/bin
 
         export CI_PULL_REQUEST=$(System.PullRequest.PullRequestNumber)
         export CI_REPO_OWNER=wpilibsuite
         export CI_REPO_NAME=frc-docs
-        export CI_COMMIT=$(git rev-parse HEAD) 
+        export CI_COMMIT=$(git rev-parse HEAD)
 
-        ./bin/reviewdog -reporter=github-pr-check
+        reviewdog -reporter=github-pr-check
       displayName: 'ReviewDog'
