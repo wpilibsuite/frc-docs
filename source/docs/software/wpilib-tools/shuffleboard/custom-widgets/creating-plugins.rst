@@ -67,7 +67,7 @@ from gradle as noted:
       include "*.jar"
    }
 
- 
+
 The ``deployWidget`` task takes 4 parameters, ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
 specifying what to copy. The group and description parameters to specifiy what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
 
