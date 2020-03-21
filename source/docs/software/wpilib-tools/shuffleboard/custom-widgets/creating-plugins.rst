@@ -11,12 +11,12 @@ Plugins provide the ability to create custom widgets, layouts, data sources/type
 
 Create a Custom Plugin
 ----------------------
-In order to define a plugin, the plugin class must be a sublclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
+In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
 
 .. tabs::
 
    .. code-tab:: java
-   
+
       import edu.wpi.first.shuffleboard.api.plugin.Description;
       import edu.wpi.first.shuffleboard.api.plugin.Plugin;
 
@@ -31,7 +31,7 @@ Plugin classes are permitted to have a defualt constructor but it cannot take an
 Building plugin
 ---------------
 Plugins require the usuage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the
-`build.gradle` file or using maven. The dependencies would be as follows:
+``build.gradle`` file or using maven. The dependencies would be as follows:
 
 For Gradle:
 
@@ -56,7 +56,7 @@ This can be done using the ``@Requires`` annotation as shown below:
 
 Deploying Plugin To Shuffleboard
 --------------------------------
-In order to load a plugin to the shuffleboard, you will need to generate a jar file of the plugin and put it in the `~/Shuffleboard/plugins` folder. This can be down automatically
+In order to load a plugin to the shuffleboard, you will need to generate a jar file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This can be done automatically
 from gradle as noted:
 
 .. code-block::groovy

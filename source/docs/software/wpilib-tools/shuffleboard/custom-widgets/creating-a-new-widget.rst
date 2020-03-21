@@ -1,25 +1,24 @@
 Creating A Widget
 =================
-Widgets allow us to view, change, and interact with data published through the NetworkTables. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic
-data types (including FRC-Specific data types). However, custom widgets allow us to control our custom data type we made in the previous sections or Java Objects.
+Widgets allow us to view, change, and interact with data published through NetworkTables. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic
+data types (including FRC-specific data types). However, custom widgets allow us to control our custom data types we made in the previous sections or Java Objects.
 
 The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. Both are basic building blocks towards making widgets and allows us to modify and display data.
-A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the
-orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that allows us to build the widget interface.
+A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that allows us to build the widget interface.
 
 Defining a Widgets FXML
 -----------------------
-In this example, we will create 2 slider to help us control the X and Y coordinates of our Point2D data type we created in previous sections.
+In this example, we will create 2 sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections.
 In order to create an empty, blank window for our widget, we need to create a ``Pane``. In simple terms a Pane is a "Parent" UI element that contains other "Child" UI elements, in this case, 2 sliders.
 There are many different types of Pane, they are as noted:
 
 - Stack Pane
 
-   - Stack Panes allow elements to be placed ontop of each other.
+   - Stack Panes allow elements to be placed on top of each other.
 
 - Grid Pane
 
-   - Grid Panes are extremely useful defining child elements using a coordinate system by creating a felxiable grid of rows and columns on the pane.
+   - Grid Panes are extremely useful defining child elements using a coordinate system by creating a flexible grid of rows and columns on the pane.
 
 - Flow Pane/Tile Pane
 
@@ -29,7 +28,7 @@ There are many different types of Pane, they are as noted:
 
    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
-In this example, it would be sensible to use a stack pane to place the slider ontop of each other. If we wanted the sliders to be at specific positions, it would make sense to use an Anchor or Grid Pane.
+In this example, it would be sensible to use a stack pane to place the slider on top of each other. If we wanted the sliders to be at specific positions, it would make sense to use an Anchor or Grid Pane.
 
 The basic syntax for defining a Pane uing FXML would be as the following:
 
@@ -43,7 +42,7 @@ The basic syntax for defining a Pane uing FXML would be as the following:
 Creating A Widget Class
 -----------------------
 
-Now that we have a Pane, we can now add child elements to that pane. In this example, we can add 2 slider objects. Remember to add an ``fx:id`` to each element so they can be reference in our java class we will make later on.
+Now that we have a Pane, we can now add child elements to that pane. In this example, we can add 2 slider objects. Remember to add an ``fx:id`` to each element so they can be reference in our Java class we will make later on.
 
 .. code-block:: xml
 
@@ -70,7 +69,7 @@ It also must include a ``@ParamatrizedController`` annotation that points to the
 
    }
 
-If you are not using a custom data type, you can reference any java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
+If you are not using a custom data type, you can reference any Java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
 Now that we have created our class we can create Java Objects for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two slider, an example would be:
 
 .. code-block:: java
@@ -131,7 +130,7 @@ In order to display our pane on our custom widget we need to override the ``getV
 
 Binding Elements and Adding Listeners
 -------------------------------------
-Binding is a mechanism that allows JavaFX widgets to express direct relationship to NetworkTableEntries. This meaning, changing a widget will change its bounded NetworkTableEntry and vise versa.
+Binding is a mechanism that allows JavaFX widgets to express direct relationships with NetworkTableEntries. For example, changing a widget will change its related NetworkTableEntry and vise versa.
 An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively.
 A good practise is to set binding in the overidden ``initalize()`` method tagged with the ``@FXML`` annotation.
 

@@ -1,8 +1,7 @@
 Creating Custom Data Types
 ==========================
 
-Widgets can allows us to control and visualize different types of data. This data can be numerical in the form to integers, double, longs, etc..., or less primative forms of data,
-such as java objects, or data involving multiple fields. In order to display these types of data using widgets, it is helpful to create a container class for them.
+Widgets allow us to control and visualize different types of data. This data can be numerical in the form to integers, double, longs, etc..., or less primitive forms of data, such as Java objects, or data involving multiple fields. In order to display these types of data using widgets, it is helpful to create a container class for them.
 It is not nessecary to create your own Data Class if the widget will handle single fieled data types such as doubles, arrays, or strings.
 
 Creating The Data Class
@@ -106,10 +105,10 @@ In order to define a simple data type, the class must extend the ``SimpleDataTyp
 
    }
 
-In the class constructor is set to private to ensure that only a single instance of the data type will exist.
+The class constructor is set to private to ensure that only a single instance of the data type will exist.
 
-In order to define a complex data type, the class must extend the ``ComplexDataType`` class and implement the ``fromMap()``
-and ``getDefaultValue()`` methods. We will use our MyPoint2D class as an example to what a complex data type class would look like.
+In order to define a complex data type, the class must extend the ``ComplexDataType`` class and override the ``fromMap()`` and ``getDefaultValue()`` methods.
+We will use our MyPoint2D class as an example to see what a complex data type class would look like.
 
 .. code-block:: java
 
@@ -139,9 +138,8 @@ and ``getDefaultValue()`` methods. We will use our MyPoint2D class as an example
 
 The following code above works as noted:
 
-The ``fromMap()`` method creates a new MyPoint2D using the values in the NetworkTable entry it is binded to. The
-``getOrDefault`` method will return 0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a new ``MyPoint2D``
-object if no source is present.
+The ``fromMap()`` method creates a new MyPoint2D using the values in the NetworkTable entry it is bound to.
+The ``getOrDefault`` method will return 0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a new ``MyPoint2D`` object if no source is present.
 
 Exporting Data Type To Plugin
 -----------------------------
