@@ -7,4 +7,3 @@ Shuffleboard - Custom Widgets
    creating-plugins
    creating-custom-data-types
    creating-a-new-widget
-   using-widgets-in-robot-code

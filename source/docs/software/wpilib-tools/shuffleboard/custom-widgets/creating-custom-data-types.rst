@@ -24,7 +24,7 @@ custom data class must also implement the ``asMap()`` method that returns the re
         private final double y;
 
         //Constructor should take all the different fields needed and assign them their corresponding instance variables. 
-        public Point(double x, double y) {
+        public MyPoint2D(double x, double y) {
             this.x = x;
             this.y = y;
         }
@@ -117,6 +117,7 @@ and ``getDefaultValue()`` methods. We will use our MyPoint2D class as an example
     public final class PointDataType extends ComplexDataType<MyPoint2D> {
 
         private static final String NAME = "MyPoint2D";
+        public static final PointDataType Instance = new PointDataType();
 
         public PointDataType() {
             super(NAME, MyPoint2D.class);
@@ -155,7 +156,7 @@ For example,
 
         @Override
         public List<DataType> getDataTypes() {
-            return ImmutableList.of(new MyPoint2D());
+            ImmutableList.of(PointDataType.Instance);
         }
 
     }
