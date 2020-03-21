@@ -73,7 +73,13 @@ specifying what to copy. The group and description parameters to specifiy what t
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied.
 Finally, the ``include`` field ensures the ``.jar`` extention is also copied.
 
-By running ``gradle deployWidget`` from the command line, the jar file will automatically placed into the shuffleboard plugin folder
+By running ``gradle deployWidget`` from the command line, the jar file will automatically placed into the shuffleboard plugin folder.
+
+Manually Adding Plugin
+----------------------
+The other way to add a plugin to Shuffleboard is to compile it to a jar file and add it from Shuffleboard.
+First, compile your plugin into a .jar file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
+From the plugins window, choose the "Load plugin" button in the bottom right, and select your jar file. 
 
 
 
