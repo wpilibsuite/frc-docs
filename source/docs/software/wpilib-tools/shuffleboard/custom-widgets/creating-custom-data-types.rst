@@ -6,7 +6,6 @@ It is not nessecary to create your own Data Class if the widget will handle sing
 
 Creating The Data Class
 -----------------------
-
 In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class,
 it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_. Your
 custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
@@ -61,8 +60,7 @@ The ``asMap()`` method should return the data represented in a simple Map object
 
       @Override
       public boolean equals(MyPoint2D point) {
-         // Checks if the x and y values are the same in the point being passed in and the object this method is performed on.
-         // The equals method checks to make sure the content of the objects is the same, whereas the == operator checks if they point to the same memory location.
+         // Checks this object and point object for equal x and y values
          if (this.x == point.asMap().get("x") && this.y == point.asMap().get("y")) {
             return true;
          } else {

@@ -6,5 +6,5 @@ Shuffleboard
 
    getting-started/index
    layouts-with-code/index
-   custom-widgets/index
    advanced-usage/index
+   custom-widgets/index
