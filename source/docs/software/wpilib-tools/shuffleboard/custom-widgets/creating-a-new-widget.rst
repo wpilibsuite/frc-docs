@@ -1,15 +1,15 @@
 Creating A Widget
 =================
 Widgets allow us to view, change, and interact with data published through the NetworkTables. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic
-data types (including FRC-Specific data types). However, custom widgets allow us to control our custom data type we made in the previous sections or Java Objects. 
+data types (including FRC-Specific data types). However, custom widgets allow us to control our custom data type we made in the previous sections or Java Objects.
 
 The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. Both are basic building blocks towards making widgets and allows us to modify and display data.
-A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the 
+A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the
 orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that allows us to build the widget interface.
 
 Defining a Widgets FXML
 -----------------------
-In this example, we will create 2 slider to help us control the X and Y coordinates of our Point2D data type we created in previous sections. 
+In this example, we will create 2 slider to help us control the X and Y coordinates of our Point2D data type we created in previous sections.
 In order to create an empty, blank window for our widget, we need to create a ``Pane``. In simple terms a Pane is a "Parent" UI element that contains other "Child" UI elements, in this case, 2 sliders.
 There are many different types of Pane, they are as noted:
 
@@ -18,7 +18,7 @@ There are many different types of Pane, they are as noted:
     - Stack Panes allow elements to be placed ontop of each other.
 
 - Grid Pane
- 
+
     - Grid Panes are extremely useful defining child elements using a coordinate system by creating a felxiable grid of rows and columns on the pane.
 
 - Flow Pane/Tile Pane
@@ -93,7 +93,7 @@ Now that we have created our class we can create Java Objects for the widgets we
         private Slider slider1;
 
         //Second slider
-        @FXML 
+        @FXML
         private Slider slider2;
     }
 
@@ -119,7 +119,7 @@ In order to display our pane on our custom widget we need to override the ``getV
         private Slider slider1;
 
         //Second slider
-        @FXML 
+        @FXML
         private Slider slider2;
 
         @Override
@@ -132,7 +132,7 @@ In order to display our pane on our custom widget we need to override the ``getV
 Binding Elements and Adding Listeners
 -------------------------------------
 Binding is a mechanism that allows JavaFX widgets to express direct relationship to NetworkTableEntries. This meaning, changing a widget will change its bounded NetworkTableEntry and vise versa.
-An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively. 
+An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively.
 A good practise is to set binding in the overidden ``initalize()`` method tagged with the ``@FXML`` annotation.
 
  .. code-block:: java
@@ -155,7 +155,7 @@ A good practise is to set binding in the overidden ``initalize()`` method tagged
         private Slider slider1;
 
         //Second slider
-        @FXML 
+        @FXML
         private Slider slider2;
 
         @FXML
@@ -173,7 +173,7 @@ A good practise is to set binding in the overidden ``initalize()`` method tagged
     }
 
 The above ``initalize`` method binds the slider's value property to the ``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the slider will change the coordinate and vise versa.
-The ``dataOrDefault.map()`` method will get the data source's value, or, if no source is present, will get the default value we set. 
+The ``dataOrDefault.map()`` method will get the data source's value, or, if no source is present, will get the default value we set.
 
 Using a listener is another way to change values when the slider or data source has changed. One key difference is that a listener does not tell you `what` has changed, simply that the controller `has` changed.
 However, by overiding the ``changed`` method in the listener, you can access the changed property, its previous value, and its new value. For example a listener for our slider would be:
@@ -188,7 +188,7 @@ However, by overiding the ``changed`` method in the listener, you can access the
         }
     });
 
-In this case, the ``setData()`` method is inherited and sets the value of the data source of the widget to the ``newValue``. One downside to using listeners is that is it notourious for memory leaks if not handled properly. 
+In this case, the ``setData()`` method is inherited and sets the value of the data source of the widget to the ``newValue``. One downside to using listeners is that is it notourious for memory leaks if not handled properly.
 
 
 Set Default Widget For Data type

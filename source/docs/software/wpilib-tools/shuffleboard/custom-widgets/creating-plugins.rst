@@ -29,7 +29,7 @@ Plugin classes are permitted to have a defualt constructor but it cannot take an
 
 Building plugin
 ---------------
-Plugins require the usuage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the 
+Plugins require the usuage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the
 `build.gradle` file or using maven. The dependencies would be as follows:
 
 For Gradle:
@@ -38,9 +38,9 @@ For Gradle:
 
     dependencies {
         api files("path/to/shuffleboard.jar")
-    } 
+    }
 
-Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. 
+Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file.
 When having Plugin dependencies to other plugins, it is good practise to define those dependencies so the plugin does not load when the dependencies do not load as well.
 This can be done using the ``@Requires`` annotation as shown below:
 
@@ -66,9 +66,9 @@ from gradle as noted:
         include "*.jar"
     }
 
-        
+ 
 The ``deployWidget`` task takes 4 parameters, ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
-specifying what to copy. The group and description parameters to specifiy what the Group ID of the plugin is and a short descriptive description to what the Plugin does. 
+specifying what to copy. The group and description parameters to specifiy what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
 
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied.
 Finally, the ``include`` field ensures the ``.jar`` extention is also copied.
@@ -82,7 +82,4 @@ First, compile your plugin into a .jar file using Maven or Gradle. Then, open Sh
 
 .. image:: images/loading-plugin.png
 
-From the plugins window, choose the "Load plugin" button in the bottom right, and select your jar file. 
-
-
-
+From the plugins window, choose the "Load plugin" button in the bottom right, and select your jar file.
