@@ -59,6 +59,17 @@ The ``asMap()`` method should return the data represented in a simple Map object
         public Map<String, Object> asMap() {
             return Map.of("x", this.x, "y", this.y);
         }
+
+        @Override
+        public boolean equals(MyPoint2D point) {
+            // Checks if the x and y values are the same in the point being passed in and the object this method is performed on.
+            // The equals method checks to make sure the content of the objects is the same, whereas the == operator checks if they point to the same memory location.
+            if (this.x == point.asMap().get("x") && this.y == point.asMap().get("y")) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
 Other methods can be added to retrieve or edit fields and instance variables, however, it is good practise to make these classes immutable to prevent changing the source data objects.
