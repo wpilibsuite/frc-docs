@@ -15,19 +15,19 @@ There are many different types of Pane, they are as noted:
 
 - Stack Pane
 
-    - Stack Panes allow elements to be placed ontop of each other.
+   - Stack Panes allow elements to be placed ontop of each other.
 
 - Grid Pane
 
-    - Grid Panes are extremely useful defining child elements using a coordinate system by creating a felxiable grid of rows and columns on the pane.
+   - Grid Panes are extremely useful defining child elements using a coordinate system by creating a felxiable grid of rows and columns on the pane.
 
 - Flow Pane/Tile Pane
 
-    - Flow/Tile Panes place elements in the same order they were added to the pane.
+   - Flow/Tile Panes place elements in the same order they were added to the pane.
 
 - Anchor Pane
 
-    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
+   - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
 In this example, it would be sensible to use a stack pane to place the slider ontop of each other. If we wanted the sliders to be at specific positions, it would make sense to use an Anchor or Grid Pane.
 
@@ -35,10 +35,10 @@ The basic syntax for defining a Pane uing FXML would be as the following:
 
 .. code-block:: xml
 
-    <?import javafx.scene.layout.*?>
-    <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
-        ...
-    </StackPane>
+   <?import javafx.scene.layout.*?>
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
+      ...
+   </StackPane>
 
 Creating A Widget Class
 -----------------------
@@ -47,87 +47,87 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 
 .. code-block:: xml
 
-    <?import javafx.scene.layout.*?>
-    <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
+   <?import javafx.scene.layout.*?>
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
 
-        <Slider fx:id = "slider1"/>
-        <Slider fx:id = "slider2"/>
+      <Slider fx:id = "slider1"/>
+      <Slider fx:id = "slider2"/>
 
-    </StackPane>
+   </StackPane>
 
 Now that we have finished creating our FXML file, we can now create a widget class. The widget class must include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget.
 It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. Finally, the class must extend the ``SimpleAnnotatedWidget`` class.
 
- .. code-block:: java
+.. code-block:: java
 
-    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-    import edu.wpi.first.shuffleboard.api.widget.Description;
-    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import edu.wpi.first.shuffleboard.api.widget.Description;
+   import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 
-    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-    @ParamatrizedController("Point2DWidget.fxml")
-    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+   @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+   @ParamatrizedController("Point2DWidget.fxml")
+   public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
-    }
+   }
 
 If you are not using a custom data type, you can reference any java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
 Now that we have created our class we can create Java Objects for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two slider, an example would be:
 
- .. code-block:: java
+.. code-block:: java
 
-    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-    import javafx.fxml.FXML;
-    import edu.wpi.first.shuffleboard.api.widget.Description;
-    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
+   import edu.wpi.first.shuffleboard.api.widget.Description;
+   import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 
-    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-    @ParametrizedController("Point2DWidget.fxml")
-    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+   @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+   @ParametrizedController("Point2DWidget.fxml")
+   public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
-        //Pane
-        @FXML
-        private StackPane pane;
+      //Pane
+      @FXML
+      private StackPane pane;
 
-        //First slider
-        @FXML
-        private Slider slider1;
+      //First slider
+      @FXML
+      private Slider slider1;
 
-        //Second slider
-        @FXML
-        private Slider slider2;
-    }
+      //Second slider
+      @FXML
+      private Slider slider2;
+   }
 
 In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackedPane``.
 
- .. code-block:: java
+.. code-block:: java
 
-    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-    import javafx.fxml.FXML;
-    import edu.wpi.first.shuffleboard.api.widget.Description;
-    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
+   import edu.wpi.first.shuffleboard.api.widget.Description;
+   import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 
-    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-    @ParamatrizedController("Point2DWidget.fxml")
-    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+   @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+   @ParamatrizedController("Point2DWidget.fxml")
+   public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
-        //Pane
-        @FXML
-        private StackPane pane;
+      //Pane
+      @FXML
+      private StackPane pane;
 
-        //First slider
-        @FXML
-        private Slider slider1;
+      //First slider
+      @FXML
+      private Slider slider1;
 
-        //Second slider
-        @FXML
-        private Slider slider2;
+      //Second slider
+      @FXML
+      private Slider slider2;
 
-        @Override
-        public Pane getView() {
-            return pane;
-        }
+      @Override
+      public Pane getView() {
+         return pane;
+      }
 
-    }
+   }
 
 Binding Elements and Adding Listeners
 -------------------------------------
@@ -135,40 +135,39 @@ Binding is a mechanism that allows JavaFX widgets to express direct relationship
 An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively.
 A good practise is to set binding in the overidden ``initalize()`` method tagged with the ``@FXML`` annotation.
 
- .. code-block:: java
+.. code-block:: java
 
-    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-    import javafx.fxml.FXML;
-    import edu.wpi.first.shuffleboard.api.widget.Description;
-    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
+   import edu.wpi.first.shuffleboard.api.widget.Description;
+   import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
 
-    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-    @ParamatrizedController("Point2DWidget.fxml")
-    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+   @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+   @ParamatrizedController("Point2DWidget.fxml")
+   public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
-        //Pane
-        @FXML
-        private StackPane pane;
+      //Pane
+      @FXML
+      private StackPane pane;
 
-        //First slider
-        @FXML
-        private Slider slider1;
+      //First slider
+      @FXML
+      private Slider slider1;
 
-        //Second slider
-        @FXML
-        private Slider slider2;
+      //Second slider
+      @FXML
+      private Slider slider2;
 
-        @FXML
-        private void initialize() {
-            slider.valueProperty().bind(dataOrDefault.map(MyPoint2D::getX));
+      @FXML
+      private void initialize() {
+         slider.valueProperty().bind(dataOrDefault.map(MyPoint2D::getX));
+         slider2.valueProperty().bind(dataOrDefault.map(MyPoint2D::getY));
+      }
 
-            slider2.valueProperty().bind(dataOrDefault.map(MyPoint2D::getY));
-        }
-
-        @Override
-        public Pane getView() {
-            return pane;
-        }
+      @Override
+      public Pane getView() {
+         return pane;
+      }
 
     }
 
@@ -178,15 +177,15 @@ The ``dataOrDefault.map()`` method will get the data source's value, or, if no s
 Using a listener is another way to change values when the slider or data source has changed. One key difference is that a listener does not tell you `what` has changed, simply that the controller `has` changed.
 However, by overiding the ``changed`` method in the listener, you can access the changed property, its previous value, and its new value. For example a listener for our slider would be:
 
- .. code-block:: java
+.. code-block:: java
 
-    slider1.valueProperty().addListener(new ChangeListener<MyPoint2D>() {
+   slider1.valueProperty().addListener(new ChangeListener<MyPoint2D>() {
 
-        @Override
-        public void changed(ObservableValue<? extends MyPoint2D> observable, MyPoint2D oldValue, MyPoint2D newValue) {
-            setData(newValue);
-        }
-    });
+      @Override
+      public void changed(ObservableValue<? extends MyPoint2D> observable, MyPoint2D oldValue, MyPoint2D newValue) {
+         setData(newValue);
+      }
+   });
 
 In this case, the ``setData()`` method is inherited and sets the value of the data source of the widget to the ``newValue``. One downside to using listeners is that is it notourious for memory leaks if not handled properly.
 
@@ -195,12 +194,12 @@ Set Default Widget For Data type
 --------------------------------
 In order to set your widget as default for your custom data type, you can overide the ``getDefaultComponents()`` in your plugin class that stores a Map for all default widgets as noted below:
 
- .. code-block:: java
+.. code-block:: java
 
-    @Override
-    public Map<DataType, ComponentType> getDefaultComponents() {
-        return Map.of(Point2DType.Instance, WidgetType.forAnnotatedWidget(Point2DWidget.class));
-    }
+   @Override
+   public Map<DataType, ComponentType> getDefaultComponents() {
+      return Map.of(Point2DType.Instance, WidgetType.forAnnotatedWidget(Point2DWidget.class));
+   }
 
 
 
