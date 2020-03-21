@@ -58,6 +58,7 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
    </StackPane>
 
 Now that we have finished creating our FXML file, we can now create a widget class. The widget class must include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget.
+
 It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. Finally, the class must extend the ``SimpleAnnotatedWidget`` class.
 
 .. code-block:: java
@@ -73,6 +74,7 @@ It also must include a ``@ParamatrizedController`` annotation that points to the
    }
 
 If you are not using a custom data type, you can reference any Java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
+
 Now that we have created our class we can create Java Objects for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two slider, an example would be:
 
 .. code-block:: java
@@ -134,6 +136,7 @@ In order to display our pane on our custom widget we need to override the ``getV
 Binding Elements and Adding Listeners
 -------------------------------------
 Binding is a mechanism that allows JavaFX widgets to express direct relationships with NetworkTableEntries. For example, changing a widget will change its related NetworkTableEntry and vise versa.
+
 An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively.
 
 A good practise is to set binding in the overidden ``initalize()`` method tagged with the ``@FXML`` annotation.
