@@ -1,91 +1,140 @@
 Creating A Widget
 =================
+Widgets allow us to view, change, and interact with data published through the NetworkTables. The CameraServer, NetworktTables, and Base plugins provide the widgets to control basic
+data types (including FRC-Specific data types). However, custom widgets allow us to control our custom data type we made in the previous sections or Java Objects. 
 
-Overview
---------
-Shuffleboard widgets are used to interact with Shuffleboard and view/edit data. For example, 
+The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. Both are basic building blocks towards making widgets and allows us to modify and display data.
+A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the 
+orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that allows us to build the widget interface.
 
-Creating a Custom Widget
-------------------------
-To define a custom widget, the widget class must be a subclass of `edu.wpi.first.shuffleboard.api.widget.Widget <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/widget/Widget.java>`_ or one of its subclasses.
-For example, `edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/widget/SimpleAnnotatedWidget.java>`_.
+Defining a Widgets FXML
+-----------------------
+In this example, we will create 2 slider to help us control the X and Y coordinates of our Point2D data type we created in previous sections. 
+In order to create an empty, blank window for our widget, we need to create a ``Pane``. In simple terms a Pane is a "Parent" UI elements that contains other "Child" UI elements, in this case, 2 sliders.
+There are many different types of Pane, they are as noted:
 
-.. tabs::
+- Stack Pane
 
-    .. code-tab:: java
-        package edu.wpi.example;
+    - Stack Panes allow elements to be placed ontop of each other.
 
-        import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-        import edu.wpi.first.shuffleboard.api.widget.Description;
-        import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+- Grid Pane
+ 
+    - Grid Panes are extremely useful defining child elements using a coordinate system by creating a felxiable grid of rows and columns on the pane.
 
-        @Description(dataTypes = { }, name = "My Widget")
-        @ParametrizedController(value = "MyWidget.fxml")
-        class MyWidget extends SimpleAnnotatedWidget {
+- Flow Pane/Tile Pane
 
+    - Flow/Tile Panes place elements in the same order they were added to the pane.
+
+- Anchor Pane
+
+    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
+
+In this example, it would be sensible to use a stack pane to place the slider ontop of each other. If we wanted the sliders to be at specific positions, it would make sense to use an Anchor or Grid Pane.
+
+The basic syntax for defining a Pane uing FXML would be as the following:
+
+.. code-block:: xml
+
+    <?import javafx.scene.layout.*?>
+    <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
+        ...
+    </StackPane>
+
+Creating A Widget Class
+-----------------------
+
+Now that we have a Pane, we can now add child elements to that pane. In this example, we can add 2 slider objects. Remember to add an ``fx:id`` to each element so they can be reference in our java class we will make later on.
+
+.. code-block:: xml
+
+    <?import javafx.scene.layout.*?>
+    <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Path To Widget Class" fx:id="name of pane">
+
+        <Slider fx:id = "slider1"/>
+        <Slider fx:id = "slider2"/>
+
+    </StackPane>
+
+Now that we have finished creating our FXML file, we can now create a widget class. The widget class must include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget.
+It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. Finally, the class must extend the ``SimpleAnnotatedWidget`` class.
+
+ .. code-block:: java
+
+    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+    import edu.wpi.first.shuffleboard.api.widget.Description;
+    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+
+    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+    @ParamatrizedController("Point2DWidget.fxml")
+    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+
+    }
+
+If you are not using a custom data type, you can reference any java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
+Now that we have created our class we can create Java Objects for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two slider, an example would be:
+
+ .. code-block:: java
+
+    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+    import javafx.fxml.FXML;
+    import edu.wpi.first.shuffleboard.api.widget.Description;
+    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+
+    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+    @ParamatrizedController("Point2DWidget.fxml")
+    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+
+        //Pane
+        @FXML
+        private StackPane pane;
+
+        //First slider
+        @FXML
+        private Slider slider1;
+
+        //Second slider
+        @FXML 
+        private Slider slider2;
+    }
+
+In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackedPane``.
+
+ .. code-block:: java
+
+    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+    import javafx.fxml.FXML;
+    import edu.wpi.first.shuffleboard.api.widget.Description;
+    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+
+    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+    @ParamatrizedController("Point2DWidget.fxml")
+    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+
+        //Pane
+        @FXML
+        private StackPane pane;
+
+        //First slider
+        @FXML
+        private Slider slider1;
+
+        //Second slider
+        @FXML 
+        private Slider slider2;
+
+        @Override
+        public Pane getView() {
+            return pane;
         }
 
-The widget must be annotated with ``@Description`` to define the properties of the widget for the plugin loader and the widget's data types.
-``@ParametrizedController`` is required to define the path to the widget's corresponding FXML file.
+    }
 
-Defining Widget FXML
---------------------
-Each widget must also have a corresponding FXML file, to define the plugin's inputs and views. 
-With your code located in the ``src/main/java/edu/wpi/example`` directory, each widget's FXML file would be located in the ``src/main/resources/edu/wpi/example`` directory.
+Binding Elements and Adding Listeners
+-------------------------------------
+Binding is a mechanism that allows JavaFX widgets to express direct relationship to NetworkTableEntries. This meaning, changing a widget will change its bounded NetworkTableEntry and vise versa.
+An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively. 
+A good practise is to set binding in the ``initalize()`` method tagged with the ``@FXML`` annotation.
 
-This is an example file, ``MyWidget.fxml``, that includes a button and a text box.
 
-.. tabs::
 
-    .. code-tab:: xml
-        <?xml version="1.0" encoding="UTF-8"?>
 
-        <?import javafx.scene.layout.GridPane?>
-        <?import javafx.scene.control.Button ?>
-        <?import javafx.scene.control.Label?>
-
-        <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.example" fx:id="_pane">
-            <Button text="Push Me" GridPane.ColumnIndex="0" GridPane.RowIndex="0" GridPane.RowSpan="2" onAction="#onButtonPress"/>
-	        <Label text="Textbox" fx:id="_textbox" GridPane.RowIndex="0" GridPane.ColumnIndex="1"/>
-        </GridPane> 
-
-Binding FXML to Widget
-----------------------
-Now there is a class for a widget, and an FXML file for the widget, but they haven't been tied together yet. 
-First, make the the value of the ``@ParametrizedController`` annotation in your code point to the location of your FXML file. For example, if your code is in ``src/main/java/edu/wpi/example`` and your FXML is in ``src/main/resources/edu/wpi/example``, you would set the value to ``MyWidget.fxml``.
-
-Next, to use XML elements as objects in your code, import ``javafx.fxml.FXML``, ``javafx.scene.layout.Pane``, ``javafx.event.ActionEvent``, and ``javafx.scene.control.Label``.
-To bind each element to an object, annotate them with ``@FXML`` and give them the same name as their IDs in the FXML file. For example:
-
-.. tabs::
-
-    .. code-tab:: java
-        import javafx.fxml.FXML;
-        import javafx.scene.layout.Pane;
-        import javafx.scene.control.Label;
-        import javafx.event.ActionEvent;
-
-        @Description(dataTypes = { }, name = "My Widget")
-        @ParametrizedController(value = "MyWidget.fxml")
-        class MyWidget extends SimpleAnnotatedWidget {
-            // FXML elements
-            @FXML
-            protected Pane _pane;
-            @FXML
-            protected Label _textbox;
-
-            // The getView method is required by the Shuffleboard API
-            public Pane getView() {
-                return _pane;
-            }
-
-            // This method is named the same as the action in the onAction tag in the button FXML
-            @FXML
-            protected void onButtonPress (ActionEvent e) {
-                _textbox.setText("button press");
-            }
-
-        }
-
-Now, the label will be set to the text "button press" whenever the button is clicked, since the onButtonPress method is the same as the action in the button's XML tag.
-More methods and elements can be added, as long as their names continue to correspond to their IDs in the FXML and they are annotated properly.
