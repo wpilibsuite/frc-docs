@@ -15,14 +15,15 @@ In order to define a plugin, the plugin class must be a sublclass of `edu.wpi.fi
 
 .. tabs::
 
-    .. code-tab:: java
-        import edu.wpi.first.shuffleboard.api.plugin.Description;
-        import edu.wpi.first.shuffleboard.api.plugin.Plugin;
+   .. code-tab:: java
+   
+      import edu.wpi.first.shuffleboard.api.plugin.Description;
+      import edu.wpi.first.shuffleboard.api.plugin.Plugin;
 
-        @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
-        public class MyPlugin extends Plugin {
+      @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+      public class MyPlugin extends Plugin {
 
-        }
+      }
 
 Note the ``@Description`` annotation which is needed to tell the plugin loader the properties of the custom plugin class.
 Plugin classes are permitted to have a defualt constructor but it cannot take any arguments.
@@ -36,9 +37,9 @@ For Gradle:
 
 .. code-block:: groovy
 
-    dependencies {
-        api files("path/to/shuffleboard.jar")
-    }
+   dependencies {
+      api files("path/to/shuffleboard.jar")
+   }
 
 Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file.
 When having Plugin dependencies to other plugins, it is good practise to define those dependencies so the plugin does not load when the dependencies do not load as well.
@@ -46,12 +47,12 @@ This can be done using the ``@Requires`` annotation as shown below:
 
 .. code-block:: java
 
-    @Requires(group = "com.example", name = "Good Plugin", minVersion = "1.2.3")
-    @Requires(group = "edu.wpi.first.shuffleboard", "Base", minVersion = "1.0.0")
-    @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
-    public class MyPlugin extends Plugin {
+   @Requires(group = "com.example", name = "Good Plugin", minVersion = "1.2.3")
+   @Requires(group = "edu.wpi.first.shuffleboard", "Base", minVersion = "1.0.0")
+   @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+   public class MyPlugin extends Plugin {
 
-    }
+   }
 
 Deploying Plugin To Shuffleboard
 --------------------------------
@@ -60,11 +61,11 @@ from gradle as noted:
 
 .. code-block::groovy
 
-    task deployWidget (type: Copy, group: "...", description: "...", dependsOn: "build") {
-        from "build/libs"
-        into "path/to/Shuffleboard/plugins"
-        include "*.jar"
-    }
+   task deployWidget (type: Copy, group: "...", description: "...", dependsOn: "build") {
+      from "build/libs"
+      into "path/to/Shuffleboard/plugins"
+      include "*.jar"
+   }
 
  
 The ``deployWidget`` task takes 4 parameters, ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
