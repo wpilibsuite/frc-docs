@@ -38,7 +38,8 @@ For Gradle:
 .. code-block:: groovy
 
    dependencies {
-      api files("path/to/shuffleboard.jar")
+      compileOnly("edu.wpi.first.shuffleboard", "api", "2020.+")
+      compileOnly("edu.wpi.first.shuffleboard.plugin", "networktables", "2020.+")
    }
 
 Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file.
