@@ -84,11 +84,55 @@ Now that we have created our class we can create Java Objects for the widgets we
     @ParamatrizedController("Point2DWidget.fxml")
     public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
-    //Our first slider
-    @FXML
-    private Slider slider1;
+        //Pane
+        @FXML
+        private StackPane pane;
 
-    //Our second slider
-    @FXML 
-    private Slider slider2;
+        //First slider
+        @FXML
+        private Slider slider1;
+
+        //Second slider
+        @FXML 
+        private Slider slider2;
     }
+
+In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackedPane``.
+
+ .. code-block:: java
+
+    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+    import javafx.fxml.FXML;
+    import edu.wpi.first.shuffleboard.api.widget.Description;
+    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+
+    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
+    @ParamatrizedController("Point2DWidget.fxml")
+    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+
+        //Pane
+        @FXML
+        private StackPane pane;
+
+        //First slider
+        @FXML
+        private Slider slider1;
+
+        //Second slider
+        @FXML 
+        private Slider slider2;
+
+        @Override
+        public Pane getView() {
+            return pane;
+        }
+
+    }
+
+Binding Elements and Adding Listeners
+-------------------------------------
+Binding is a mechanism that allows JavaFX widgets to express direct relationship to NetworkTableEntries. This meaning, changing a widget will change its bounded NetworkTableEntry and vise versa.
+An example, in this case, would be changing the X and Y coordinate of our 2D point by changing slider1 and slider2 respectively. 
+A good practise is to set binding in the ``initalize()`` method tagged with the ``@FXML`` annotation.
+
+
