@@ -2,4 +2,4 @@ Top Contributors
 ================
 
 .. ghcontributors:: wpilibsuite/frc-docs
-   :limit: 20
+   :limit: 10
