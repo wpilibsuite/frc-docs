@@ -100,9 +100,9 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/do
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
       :language: java
-      :lines: 26-50
+      :lines: 25-49
       :linenos:
-      :lineno-start: 26
+      :lineno-start: 25
 
   .. group-tab:: C++ (Header)
 
