@@ -1,13 +1,12 @@
 Creating Custom Data Types
 ==========================
 
-Widgets allow us to control and visualize different types of data. This data can be numerical in the form to integers, double, longs, etc..., or less primitive forms of data, such as Java objects, or data involving multiple fields. In order to display these types of data using widgets, it is helpful to create a container class for them.
+Widgets allow us to control and visualize different types of data. This includes numbers, strings, arrays or even Java Objects. In order to display these types of data using widgets, it is helpful to create a container class for them.
 It is not nessecary to create your own Data Class if the widget will handle single fieled data types such as doubles, arrays, or strings.
 
 Creating The Data Class
 -----------------------
-In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class,
-it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_. Your
+In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_. Your
 custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
 
 .. code-block:: java
@@ -56,11 +55,6 @@ The ``asMap()`` method should return the data represented in a simple Map object
       @Override
       public Map<String, Object> asMap() {
          return Map.of("x", this.x, "y", this.y);
-      }
-
-      @Override
-      public boolean equals(Object Object) {
-         ..
       }
     }
 

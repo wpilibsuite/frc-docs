@@ -6,7 +6,7 @@ The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` i
 
 A good widget allows the end-user to customize the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that is useful for defining the static layout of the widget (Panes, Labels and Controls).
 
-More about FXML can be found `here <https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/doc-files/introduction_to_fxml.html>`_.
+More about FXML can be found `here <https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html>`_.
 
 Defining a Widget's FXML
 ------------------------
