@@ -29,7 +29,7 @@ custom data class must also implement the ``asMap()`` method that returns the re
 
       @Override
       public Map<String, Object> asMap() {
-         return null;
+         return Map.of("x", x, "y", y);
       }
    }
 
@@ -42,12 +42,12 @@ The ``asMap()`` method should return the data represented in a simple Map object
 
    import java.util.Map;
 
-   public class MyPoint2D extends ComplexData<MyPoint2D> {
+   public final class MyPoint2D extends ComplexData<MyPoint2D> {
 
       private final double x;
       private final double y;
 
-      //Constructor should take all the different fields needed and assign them to their corresponding instance variables.
+      // Constructor should take all the different fields needed and assign them to their corresponding instance variables.
       public Point(double x, double y) {
          this.x = x;
          this.y = y;
@@ -59,13 +59,8 @@ The ``asMap()`` method should return the data represented in a simple Map object
       }
 
       @Override
-      public boolean equals(MyPoint2D point) {
-         // Checks this object and point object for equal x and y values
-         if (this.x == point.asMap().get("x") && this.y == point.asMap().get("y")) {
-            return true;
-         } else {
-            return false;
-         }
+      public boolean equals(Object Object) {
+         ..
       }
     }
 
@@ -74,11 +69,11 @@ Instead, you can make a new copy object instead of manipulating the existing obj
 
 .. code-block:: java
 
-   public MyPoint2D withX(double newY) {
+   public MyPoint2D withY(double newY) {
       return new MyPoint2D(this.x, newY);
    }
 
-This creates a new ``MyPoint2D`` object and returns it with the new y-coordinate.
+This creates a new ``MyPoint2D`` object and returns it with the new y-coordinate. Same can be done for changing the x coordinate.
 
 Creating a Data Types
 ---------------------
@@ -88,12 +83,12 @@ In order to define a simple data type, the class must extend the ``SimpleDataTyp
 
 .. code-block:: java
 
-   public final class MyDataType extends SimpleDataType<double> {
+   public final class MyDoubleDataType extends SimpleDataType<Double> {
 
-      private static final String NAME = "double";
+      private static final String NAME = "Douoble";
 
       private MyDataType() {
-         super(NAME, double.class);
+         super(NAME, Double.class);
       }
 
       @Override
@@ -115,7 +110,7 @@ We will use our MyPoint2D class as an example to see what a complex data type cl
       private static final String NAME = "MyPoint2D";
       public static final PointDataType Instance = new PointDataType();
 
-      public PointDataType() {
+      private PointDataType() {
          super(NAME, MyPoint2D.class);
       }
 
@@ -150,7 +145,7 @@ For example,
 
       @Override
       public List<DataType> getDataTypes() {
-         ImmutableList.of(PointDataType.Instance);
+         List.of(PointDataType.Instance);
       }
 
    }
