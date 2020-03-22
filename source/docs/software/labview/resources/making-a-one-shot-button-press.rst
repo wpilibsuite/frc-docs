@@ -31,8 +31,12 @@ Lastly, we should change the VI Icon to be more descriptive of the VI's function
 
 .. image:: images/making-a-one-shot-button-press/6.png
 
-Finally, save the VI with a descriptive name. You can now drag and drop this VI from the Support Files folder into your TeleOp.vi. Here's an example of how you could use this VI.
+Finally, save the VI with a descriptive name. You can now drag and drop this VI from the Support Files folder into your TeleOp.vi. Here is a copy of the completed VI: :download:`Button_Press.vi <files/Button_Press.vi>`
+
+Here's an example of how you could use this VI.
 
 .. image:: images/making-a-one-shot-button-press/7.png
+
+
 
 .. todo:: add download link to finished VI: https://media.screensteps.com/attachment_assets/assets/001/013/297/original/Button_Press.vi
