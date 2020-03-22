@@ -3,7 +3,7 @@ Creating a Plugin
 
 Overview
 --------
-Plugins provide the ability to create custom widgets, layouts, data sources/types, and custom themes. Shuffleboard provides the following plugins:
+Plugins provide the ability to create custom widgets, layouts, data sources/types, and custom themes. Shuffleboard provides the following built-in plugins:
 
 - NetworkTables Plugin: To connect to data published over NetworkTables
 - Base Plugin: To display custom FRC data types in custom widgets
@@ -27,13 +27,12 @@ In order to define a plugin, the plugin class must be a subclass of `edu.wpi.fir
 
 More resources on how these attributes are used, including version numbers Shuffleboard's plugin dependencies can be found `here <https://semver.org/>`_.
 
-Note the ``@Description`` annotation which is needed to tell the plugin loader the properties of the custom plugin class.
-Plugin classes are permitted to have a defualt constructor but it cannot take any arguments.
+Note the ``@Description`` annotation is needed to tell the plugin loader the properties of the custom plugin class.
+Plugin classes are permitted to have a default constructor but it cannot take any arguments.
 
 Building plugin
 ---------------
-Plugins require the usuage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the
-``build.gradle`` file or using maven. The dependencies would be as follows:
+Plugins require the usage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the ``build.gradle`` file or using maven. The dependencies would be as follows:
 
 For Gradle:
 
@@ -53,9 +52,7 @@ For Maven:
 
  .. code-blocl:: groovy
 
-Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file.
-When having Plugin dependencies to other plugins, it is good practise to define those dependencies so the plugin does not load when the dependencies do not load as well.
-This can be done using the ``@Requires`` annotation as shown below:
+Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. When having Plugin dependencies to other plugins, it is good practice to define those dependencies so the plugin does not load when the dependencies do not load as well. This can be done using the ``@Requires`` annotation as shown below:
 
 .. code-block:: java
 
