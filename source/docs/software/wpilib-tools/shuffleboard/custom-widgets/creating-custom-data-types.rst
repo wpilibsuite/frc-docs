@@ -1,8 +1,7 @@
 Creating Custom Data Types
 ==========================
-
-Widgets allow us to control and visualize different types of data. This includes numbers, strings, arrays or even Java Objects. In order to display these types of data using widgets, it is helpful to create a container class for them.
-It is not nessecary to create your own Data Class if the widget will handle single fieled data types such as doubles, arrays, or strings.
+Widgets allow us to control and visualize different types of data. This data can be numerical in the form to integers, double, longs, etc..., or less primitive forms of data, such as Java objects, or data involving multiple fields. In order to display these types of data using widgets, it is helpful to create a container class for them.
+It is not necessary to create your own Data Class if the widget will handle single fielded data types such as doubles, arrays, or strings.
 
 Creating The Data Class
 -----------------------
@@ -58,8 +57,7 @@ The ``asMap()`` method should return the data represented in a simple Map object
       }
     }
 
-Other methods can be added to retrieve or edit fields and instance variables, however, it is good practise to make these classes immutable to prevent changing the source data objects.
-Instead, you can make a new copy object instead of manipulating the existing object. For example, if we wanted to change the y coordinate of our point, we can define the following method:
+Other methods can be added to retrieve or edit fields and instance variables, however, it is good practice to make these classes immutable to prevent changing the source data objects. Instead, you can make a new copy object instead of manipulating the existing object. For example, if we wanted to change the y coordinate of our point, we can define the following method:
 
 .. code-block:: java
 
@@ -69,7 +67,7 @@ Instead, you can make a new copy object instead of manipulating the existing obj
 
 This creates a new ``MyPoint2D`` object and returns it with the new y-coordinate. Same can be done for changing the x coordinate.
 
-Creating a Data Types
+Creating a Data Type
 ---------------------
 There are two different data types that can be made, Simple data types involve data that contains only one field (ie. a single number or string) whereas Complex data types require multiple data fields (ie. multiple strings, multiple numbers).
 
