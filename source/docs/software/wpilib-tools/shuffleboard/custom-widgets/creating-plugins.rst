@@ -5,7 +5,7 @@ Overview
 --------
 Plugins provide the ability to create custom widgets, layouts, data sources/types, and custom themes. Shuffleboard provides the following plugins:
 
-- NetworkTables Plugin: To view data published on the NetworkTables
+- NetworkTables Plugin: To connect to data published over NetworkTables
 - Base Plugin: To display custom FRC data types in custom widgets
 - CameraServer Plugin: To view streams from the CameraServer
 
@@ -25,6 +25,8 @@ In order to define a plugin, the plugin class must be a subclass of `edu.wpi.fir
 
       }
 
+More resources on how these attributes are used, including version numbers Shuffleboard's plugin dependencies can be found `here <https://semver.org/>`_.
+
 Note the ``@Description`` annotation which is needed to tell the plugin loader the properties of the custom plugin class.
 Plugin classes are permitted to have a defualt constructor but it cannot take any arguments.
 
@@ -37,10 +39,19 @@ For Gradle:
 
 .. code-block:: groovy
 
+   repositories {
+      mavenCentral()
+      maven{ url "https://frcmaven.wpi.edu:443/artifactory/release" }
+   }
+
    dependencies {
       compileOnly("edu.wpi.first.shuffleboard", "api", "2020.+")
       compileOnly("edu.wpi.first.shuffleboard.plugin", "networktables", "2020.+")
    }
+
+For Maven:
+
+ .. code-blocl:: groovy
 
 Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file.
 When having Plugin dependencies to other plugins, it is good practise to define those dependencies so the plugin does not load when the dependencies do not load as well.
