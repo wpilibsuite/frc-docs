@@ -1,18 +1,18 @@
 Creating A Widget
 =================
-Widgets allow us to view, change, and interact with data published through NetworkTables. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic data types (including FRC-specific data types). However, custom widgets allow us to control our custom data types we made in the previous sections or Java Objects.
+Widgets allow us to view, change, and interact with data published through different data sources. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic data types (including FRC-specific data types). However, custom widgets allow us to control our custom data types we made in the previous sections or Java Objects.
 
-The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. ``Component`` is the most basic building block of components that be displayed in shuffleboard. ``Sourced`` is an interface for things that can handle and interface with data sources to display or modify data. Both are basic building blocks towards making widgets and allows us to modify and display data.
+The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. ``Component`` is the most basic building block of components that be displayed in shuffleboard. ``Sourced`` is an interface for things that can handle and interface with data sources to display or modify data. Widgets that don't support data bindings but simply have child nodes would not use the ``Sourced`` interface but simply the ``Component`` interface. Both are basic building blocks towards making widgets and allows us to modify and display data.
 
-A good widget allows the end-user to modify the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that allows us to build the widget interface.
+A good widget allows the end-user to customize the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that is useful for defining the static layout of the widget (Panes, Labels and Controls).
 
 More about FXML can be found `here <https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/doc-files/introduction_to_fxml.html>`_.
 
-Defining a Widgets FXML
+Defining a Widget's FXML
 -----------------------
-In this example, we will create 2 sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections. It is helpful to place the FXML file in the same package as the Java class. 
+In this example, we will create two sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections. It is helpful to place the FXML file in the same package as the Java class. 
 
-In order to create an empty, blank window for our widget, we need to create a ``Pane``. In simple terms a Pane is a "Parent" UI element that contains other "Child" UI elements, in this case, 2 sliders.
+In order to create an empty, blank window for our widget, we need to create a ``Pane``. A Pane is a parent node that contains other child nodes, in this case, 2 sliders.
 There are many different types of Pane, they are as noted:
 
 - Stack Pane

@@ -55,6 +55,8 @@ This can be done using the ``@Requires`` annotation as shown below:
 
    }
 
+The ``minVersion`` specifies the minimum allowable version of the plugin that can be loaded. For example, if the ``minVersion`` is 1.4.5, and the plugin with the version 1.4.7 is loaded, it will be allowed to do so. However, if the plugin with the version 1.2.4 is loaded, it will not be allowed to since it is less than the ``minVersion``.
+
 Deploying Plugin To Shuffleboard
 --------------------------------
 In order to load a plugin to the shuffleboard, you will need to generate a jar file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This can be done automatically
@@ -62,20 +64,21 @@ from gradle as noted:
 
 .. code-block::groovy
 
-   task deployWidget (type: Copy, group: "...", description: "...", dependsOn: "build") {
+   task deployPlugin (type: Copy, group: "...", description: "...", dependsOn: "build") {
       from "build/libs"
       into "path/to/Shuffleboard/plugins"
       include "*.jar"
    }
 
+The path to your Shuffleboard plugin folder will most likely be ``~/Shuffleboard/plugins`` or ``~/wpilib/Shuffleboard/plugins`` .
 
-The ``deployWidget`` task takes 4 parameters, ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
+The ``deployPlugin`` task takes four parameters, ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
 specifying what to copy. The group and description parameters to specifiy what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
 
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied.
 Finally, the ``include`` field ensures the ``.jar`` extention is also copied.
 
-By running ``gradle deployWidget`` from the command line, the jar file will automatically placed into the shuffleboard plugin folder.
+By running ``gradle deployPlugin`` from the command line, the jar file will automatically placed into the Shuffleboard plugin folder.
 
 Manually Adding Plugin
 ----------------------
