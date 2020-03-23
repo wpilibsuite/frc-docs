@@ -37,6 +37,3 @@ Here's an example of how you could use this VI.
 
 .. image:: images/making-a-one-shot-button-press/7.png
 
-
-
-.. todo:: add download link to finished VI: https://media.screensteps.com/attachment_assets/assets/001/013/297/original/Button_Press.vi
