@@ -10,7 +10,7 @@ More about FXML can be found `here <https://openjfx.io/javadoc/11/javafx.fxml/ja
 
 Defining a Widget's FXML
 ------------------------
-In this example, we will create two sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections. It is helpful to place the FXML file in the same package as the Java class. 
+In this example, we will create two sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections. It is helpful to place the FXML file in the same package as the Java class.
 
 In order to create an empty, blank window for our widget, we need to create a ``Pane``. A Pane is a parent node that contains other child nodes, in this case, 2 sliders.
 There are many different types of Pane, they are as noted:
@@ -59,7 +59,7 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 
    </GridPane>
 
-Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class. 
+Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class.
 
 It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. If the class that only supports one data source it must extend the ``SimpleAnnotatedWidget`` class. If the class supports multiple data sources, it must extend the ``ComplexAnnotatedWidget`` class.
 
@@ -72,7 +72,7 @@ It also must include a ``@ParamatrizedController`` annotation that points to the
 
    /*If the FXML file and Java file are in the same package, that is the java file is in src/main/java and the
     * FXML file is under src/main/resources or your code equivalent package, the relative path will work
-    * However, if they are in different packages, an absoulte path will be required. 
+    * However, if they are in different packages, an absoulte path will be required.
    */
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
