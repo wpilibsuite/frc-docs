@@ -113,7 +113,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
 
 This creates a sequential command group that *contains* a parallel command group. The resulting control flow looks something like this:
 
-.. figure:: images/commandgroupchart.svg
+.. figure:: images/commandgroupchart.png
    :alt: command group with concurrency
 
    command group with concurrency

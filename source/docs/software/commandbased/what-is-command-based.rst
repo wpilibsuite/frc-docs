@@ -46,7 +46,7 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
 Subsystems and Commands
 -----------------------
 
-.. figure:: images/subsystemscommands.svg
+.. figure:: images/subsystemscommands.png
    :alt: image of subsystems and commands
 
    image of subsystems and commands
