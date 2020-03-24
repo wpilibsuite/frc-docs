@@ -100,7 +100,7 @@ user_options = [
 ]
 
 def setup(app):
-  app.add_stylesheet('css/frc-rtd.css')
+  app.add_css_files('css/frc-rtd.css')
 
 # -- Options for latex generation --------------------------------------------
 
