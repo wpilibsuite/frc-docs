@@ -52,8 +52,9 @@ linkcheck_anchors = False
 linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 
 # Sets linkcheck timeout in seconds
-linkcheck_timeout = 5
+linkcheck_timeout = 30
 linkcheck_retries = 3
+linkcheck_workers = 1
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
