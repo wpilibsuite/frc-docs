@@ -1,6 +1,6 @@
 Creating Custom Data Types
 ==========================
-Widgets allow us to control and visualize different types of data. This data can be numerical in the form to integers, double, longs, etc..., or less primitive forms of data, such as Java objects, or data involving multiple fields. In order to display these types of data using widgets, it is helpful to create a container class for them.
+Widgets allow us to control and visualize different types of data. This data could be integers and doubles or even Java Objects.. In order to display these types of data using widgets, it is helpful to create a container class for them.
 It is not necessary to create your own Data Class if the widget will handle single fielded data types such as doubles, arrays, or strings.
 
 Creating The Data Class
