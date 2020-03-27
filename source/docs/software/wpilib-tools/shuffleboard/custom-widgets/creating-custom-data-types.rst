@@ -69,7 +69,7 @@ This creates a new ``MyPoint2D`` object and returns it with the new y-coordinate
 
 Creating a Data Type
 ---------------------
-There are two different data types that can be made, Simple data types involve data that contains only one field (ie. a single number or string) whereas Complex data types require multiple data fields (ie. multiple strings, multiple numbers).
+There are two different data types that can be made: Simple data types that have only one field (ie. a single number or string), and Complex data types that have multiple data fields (ie. multiple strings, multiple numbers).
 
 In order to define a simple data type, the class must extend the ``SimpleDataType<DataType>`` class with the data type needed and implement the ``getDefaultValue()`` method. In this example, we will use a double as our simple data type.
 
@@ -77,14 +77,14 @@ In order to define a simple data type, the class must extend the ``SimpleDataTyp
 
    public final class MyDoubleDataType extends SimpleDataType<Double> {
 
-      private static final String NAME = "Douoble";
+      private static final String NAME = "Double";
 
       private MyDataType() {
          super(NAME, Double.class);
       }
 
       @Override
-      public double getDefaultValue() {
+      public Double getDefaultValue() {
          return 0.0;
       }
 
@@ -128,7 +128,7 @@ The ``getOrDefault`` method will return 0.0 if it cannot get the entry values. T
 
 Exporting Data Type To Plugin
 -----------------------------
-In order to have the data type be recognized by the Shuffleboard, the plugin must export them by overriding the ``getDataTypes`` method.
+In order to have the data type be recognized by Shuffleboard, the plugin must export them by overriding the ``getDataTypes`` method.
 For example,
 
 .. code-block:: java
