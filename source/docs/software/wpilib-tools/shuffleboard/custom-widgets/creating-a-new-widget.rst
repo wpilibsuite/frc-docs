@@ -63,7 +63,7 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 
 Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class.
 
-It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. If the class that only supports one data source it must extend the ``SimpleAnnotatedWidget`` class. If the class supports multiple data sources, it must extend the ``ComplexAnnotatedWidget`` class.
+It also must include a ``@ParametrizedController`` annotation that points to the FXML file containing the layout of the widget. If the class that only supports one data source it must extend the ``SimpleAnnotatedWidget`` class. If the class supports multiple data sources, it must extend the ``ComplexAnnotatedWidget`` class.
 
 .. code-block:: java
 
