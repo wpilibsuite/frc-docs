@@ -83,7 +83,7 @@ specifying what to copy. The group and description parameters to specifiy what t
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied.
 Finally, the ``include`` field ensures the ``.jar`` extention is also copied.
 
-After deploying to Shuffleboard, open Shuffleboard, and use Ctrl + L to open the plugins menu, and select clear cache. This is necessary since Shuffleboard automatically caches the plugin when it is loaded, and clearing the cache updates the cached version to the file in the plugins folder.
+After deploying, Shuffleboard will cache the path of the plugin so it can be automatically loaded the next time Shuffleboard loads. It may be necessary to click on ``Clear Cache`` under the plugins menu to remove a plugin or fix issues in the plugin. 
 
 By running ``gradle deployPlugin`` from the command line, the jar file will automatically placed into the Shuffleboard plugin folder.
 
