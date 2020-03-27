@@ -38,9 +38,11 @@ The basic syntax for defining a Pane using FXML would be as the following:
 .. code-block:: xml
 
    <?import javafx.scene.layout.*?>
-   <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
       ...
-   </GridPane>
+   </StackPane>
+   
+The ``fx:controller`` attribute contains the name of the widget class. An instance of this class is created when the FXML file is loaded. For this to work, the controller class must have a no-argument constructor
 
 Creating A Widget Class
 -----------------------
@@ -50,14 +52,14 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 .. code-block:: xml
 
    <?import javafx.scene.layout.*?>
-   <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
 
       <VBox>
          <Slider fx:id = "xSlider"/>
          <Slider fx:id = "ySlider"/>
       </VBox>
 
-   </GridPane>
+   </StackPane>
 
 Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class.
 
@@ -106,7 +108,7 @@ Now that we have created our class we can create fields for the widgets we decla
       private Slider ySlider;
    }
 
-In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``GridPane``.
+In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackPane``.
 
 .. code-block:: java
 
@@ -186,6 +188,19 @@ Using a listener is another way to change values when the slider or data source 
    xSlider.valueProperty().addListener((observable, oldValue, newValue) -> setData(getData().withX(newValue));
 
 In this case, the ``setData()`` method sets the value in the data source of the widget to the ``newValue``.
+
+
+Exporing Custom Components
+--------------------------
+Widgets are not automatically discovered when loading plugins; the defining plugin must explicitly export it for it to be usable. This approach is taken to allow multiple plugins to be defined in the same JAR.
+
+.. code-block:: java
+
+   @Override
+   public List<ComponentType> getComponents() {
+     return List.of(WidgetType.forAnnotatedWidget(Point2DWidget.class));
+   }
+
 
 
 Set Default Widget For Data type
