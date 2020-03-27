@@ -5,8 +5,8 @@ It is not necessary to create your own Data Class if the widget will handle sing
 
 Creating The Data Class
 -----------------------
-In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_. Your
-custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
+In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_.
+Your custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
 
 .. code-block:: java
 
@@ -109,13 +109,13 @@ We will use our MyPoint2D class as an example to see what a complex data type cl
       @Override
       public Function<Map<String, Object>, MyPoint2D> fromMap() {
          return map -> {
-               return new MyPoint2D((double) map.getOrDefault("x", 0.0), (double) map.getOrDefault("y", 0.0));
+            return new MyPoint2D((double) map.getOrDefault("x", 0.0), (double) map.getOrDefault("y", 0.0));
          };
       }
 
       @Override
       public MyPoint2D getDefaultValue() {
-         // use default values of 0 for X and Y coordinate
+         // use default values of 0 for X and Y coordinates
          return new MyPoint2D(0, 0);
       }
 
