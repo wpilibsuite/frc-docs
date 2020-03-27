@@ -38,9 +38,11 @@ The basic syntax for defining a Pane using FXML would be as the following:
 .. code-block:: xml
 
    <?import javafx.scene.layout.*?>
-   <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
       ...
-   </GridPane>
+   </StackPane>
+   
+The ``fx:controller`` attribute contains the name of the widget class. An instance of this class is created when the FXML file is loaded. For this to work, the controller class must have a no-argument constructor
 
 Creating A Widget Class
 -----------------------
@@ -50,14 +52,14 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 .. code-block:: xml
 
    <?import javafx.scene.layout.*?>
-   <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
+   <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
 
       <VBox>
          <Slider fx:id = "xSlider"/>
          <Slider fx:id = "ySlider"/>
       </VBox>
 
-   </GridPane>
+   </StackPane>
 
 Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class.
 
@@ -66,11 +68,12 @@ It also must include a ``@ParamatrizedController`` annotation that points to the
 
 .. code-block:: java
 
-   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
    import edu.wpi.first.shuffleboard.api.widget.Description;
    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
 
-   /*If the FXML file and Java file are in the same package, that is the java file is in src/main/java and the
+   /*
+    * If the FXML file and Java file are in the same package, that is the java file is in src/main/java and the
     * FXML file is under src/main/resources or your code equivalent package, the relative path will work
     * However, if they are in different packages, an absoulte path will be required.
    */
@@ -87,10 +90,10 @@ Now that we have created our class we can create fields for the widgets we decla
 
 .. code-block:: java
 
-   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-   import javafx.fxml.FXML;
    import edu.wpi.first.shuffleboard.api.widget.Description;
    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
    @ParametrizedController("Point2DWidget.fxml")
@@ -105,14 +108,14 @@ Now that we have created our class we can create fields for the widgets we decla
       private Slider ySlider;
    }
 
-In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackedPane``.
+In order to display our pane on our custom widget we need to override the ``getView()`` method and return our ``StackPane``.
 
 .. code-block:: java
 
-   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-   import javafx.fxml.FXML;
    import edu.wpi.first.shuffleboard.api.widget.Description;
    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
    @ParamatrizedController("Point2DWidget.fxml")
@@ -138,16 +141,16 @@ Binding Elements and Adding Listeners
 -------------------------------------
 Binding is a mechanism that allows JavaFX widgets to express direct relationships with the data source. For example, changing a widget will change its related NetworkTableEntry and vise versa.
 
-An example, in this case, would be changing the X and Y coordinate of our 2D point by changing out xSlider and ySlider respectively.
+An example, in this case, would be changing the X and Y coordinate of our 2D point by changing the values of xSlider and ySlider respectively.
 
-A good practice is to set bindings in the ``initalize()`` method tagged with the ``@FXML`` annotation which will be called by the FXML framework.
+A good practice is to set bindings in the ``initalize()`` method tagged with the ``@FXML`` annotation which is required to call the method from FXML if the method is not ``public``.
 
 .. code-block:: java
 
-   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
-   import javafx.fxml.FXML;
    import edu.wpi.first.shuffleboard.api.widget.Description;
    import edu.wpi.first.shuffleboard.api.widget.ParametrizedController;
+   import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
+   import javafx.fxml.FXML;
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
    @ParamatrizedController("Point2DWidget.fxml")
@@ -182,18 +185,31 @@ Using a listener is another way to change values when the slider or data source 
 
 .. code-block:: java
 
-   xSlider.valueProperty().addListener((observable, oldValue, newValue) -> setData(newValue));
+   xSlider.valueProperty().addListener((observable, oldValue, newValue) -> setData(getData().withX(newValue));
 
 In this case, the ``setData()`` method sets the value in the data source of the widget to the ``newValue``.
 
 
+Exporing Custom Components
+--------------------------
+Widgets are not automatically discovered when loading plugins; the defining plugin must explicitly export it for it to be usable. This approach is taken to allow multiple plugins to be defined in the same JAR.
+
+.. code-block:: java
+
+   @Override
+   public List<ComponentType> getComponents() {
+     return List.of(WidgetType.forAnnotatedWidget(Point2DWidget.class));
+   }
+
+
+
 Set Default Widget For Data type
 --------------------------------
-In order to set your widget as default for your custom data type, you can overide the ``getDefaultComponents()`` in your plugin class that stores a Map for all default widgets as noted below:
+In order to set your widget as default for your custom data type, you can override the ``getDefaultComponents()`` in your plugin class that stores a Map for all default widgets as noted below:
 
 .. code-block:: java
 
    @Override
    public Map<DataType, ComponentType> getDefaultComponents() {
-      return Map.of(new Point2DType(), WidgetType.forAnnotatedWidget(Point2DWidget.class));
+      return Map.of(Point2DType.Instance, WidgetType.forAnnotatedWidget(Point2DWidget.class));
    }
