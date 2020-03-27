@@ -97,7 +97,7 @@ Now that we have created our class we can create fields for the widgets we decla
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
    @ParametrizedController("Point2DWidget.fxml")
    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
-   
+
       @FXML
       private Pane root;
 
