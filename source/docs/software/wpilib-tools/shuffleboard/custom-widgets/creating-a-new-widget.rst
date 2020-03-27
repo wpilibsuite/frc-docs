@@ -2,7 +2,7 @@ Creating A Widget
 =================
 Widgets allow us to view, change, and interact with data published through different data sources. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic data types (including FRC-specific data types). However, custom widgets allow us to control our custom data types we made in the previous sections or Java Objects.
 
-The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. ``Component`` is the most basic building block of components that be displayed in shuffleboard. ``Sourced`` is an interface for things that can handle and interface with data sources to display or modify data. Widgets that don't support data bindings but simply have child nodes would not use the ``Sourced`` interface but simply the ``Component`` interface. Both are basic building blocks towards making widgets and allows us to modify and display data.
+The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. ``Component`` is the most basic building block of components that be displayed in Shuffleboard. ``Sourced`` is an interface for things that can handle and interface with data sources to display or modify data. Widgets that don't support data bindings but simply have child nodes would not use the ``Sourced`` interface but simply the ``Component`` interface. Both are basic building blocks towards making widgets and allows us to modify and display data.
 
 A good widget allows the end-user to customize the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that is useful for defining the static layout of the widget (Panes, Labels and Controls).
 
@@ -47,7 +47,7 @@ The ``fx:controller`` attribute contains the name of the widget class. An instan
 Creating A Widget Class
 -----------------------
 
-Now that we have a Pane, we can now add child elements to that pane. In this example, we can add two slider objects. Remember to add an ``fx:id`` to each element so they can be reference in our Java class we will make later on. We will use a ``VBox`` to position our slider on top of each other.
+Now that we have a Pane, we can now add child elements to that pane. In this example, we can add two slider objects. Remember to add an ``fx:id`` to each element so they can be referenced in our Java class we will make later on. We will use a ``VBox`` to position our slider on top of each other.
 
 .. code-block:: xml
 
@@ -61,7 +61,7 @@ Now that we have a Pane, we can now add child elements to that pane. In this exa
 
    </StackPane>
 
-Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. Although not required, not adding the ``@Description`` annotation must implement the ``get()`` method in the ``AbstractWidgetType`` class.
+Now that we have finished creating our FXML file, we can now create a widget class. The widget class should include a ``@Description`` annotation that states the supported data types of the widget and the name of the widget. If a ``@Description`` annotation is not present, the plugin class must implement the ``get()`` method to return its widgets.
 
 It also must include a ``@ParametrizedController`` annotation that points to the FXML file containing the layout of the widget. If the class that only supports one data source it must extend the ``SimpleAnnotatedWidget`` class. If the class supports multiple data sources, it must extend the ``ComplexAnnotatedWidget`` class.
 
@@ -83,7 +83,7 @@ It also must include a ``@ParametrizedController`` annotation that points to the
 
    }
 
-If you are not using a custom data type, you can reference any Java data type (ie. ``Double.class``) or if the widget does not need data binding you can pass ``NoneType.class``.
+If you are not using a custom data type, you can reference any Java data type (ie. ``Double.class``), or if the widget does not need data binding you can pass ``NoneType.class``.
 
 Now that we have created our class we can create fields for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two sliders, an example would be:
 
@@ -97,6 +97,7 @@ Now that we have created our class we can create fields for the widgets we decla
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
    @ParametrizedController("Point2DWidget.fxml")
    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
+   
       @FXML
       private Pane root;
 
