@@ -41,8 +41,8 @@ The basic syntax for defining a Pane using FXML would be as the following:
    <StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="/path/to/widget/class" fx:id="root">
       ...
    </StackPane>
-   
-The ``fx:controller`` attribute contains the name of the widget class. An instance of this class is created when the FXML file is loaded. For this to work, the controller class must have a no-argument constructor
+
+The ``fx:controller`` attribute contains the name of the widget class. An instance of this class is created when the FXML file is loaded. For this to work, the controller class must have a no-argument constructor.
 
 Creating A Widget Class
 -----------------------
@@ -65,7 +65,6 @@ Now that we have finished creating our FXML file, we can now create a widget cla
 
 It also must include a ``@ParamatrizedController`` annotation that points to the FXML file containing the layout of the widget. If the class that only supports one data source it must extend the ``SimpleAnnotatedWidget`` class. If the class supports multiple data sources, it must extend the ``ComplexAnnotatedWidget`` class.
 
-
 .. code-block:: java
 
    import edu.wpi.first.shuffleboard.api.widget.Description;
@@ -84,7 +83,7 @@ It also must include a ``@ParamatrizedController`` annotation that points to the
 
    }
 
-If you are not using a custom data type, you can reference any Java data type (ie. double.class) or if the widget does not need data binding you can pass ``NoneType.class``.
+If you are not using a custom data type, you can reference any Java data type (ie. ``Double.class``) or if the widget does not need data binding you can pass ``NoneType.class``.
 
 Now that we have created our class we can create fields for the widgets we declared in our FXML file using the ``@FXML`` annotation. For our two sliders, an example would be:
 
@@ -189,7 +188,6 @@ Using a listener is another way to change values when the slider or data source 
 
 In this case, the ``setData()`` method sets the value in the data source of the widget to the ``newValue``.
 
-
 Exporing Custom Components
 --------------------------
 Widgets are not automatically discovered when loading plugins; the defining plugin must explicitly export it for it to be usable. This approach is taken to allow multiple plugins to be defined in the same JAR.
@@ -200,8 +198,6 @@ Widgets are not automatically discovered when loading plugins; the defining plug
    public List<ComponentType> getComponents() {
      return List.of(WidgetType.forAnnotatedWidget(Point2DWidget.class));
    }
-
-
 
 Set Default Widget For Data type
 --------------------------------

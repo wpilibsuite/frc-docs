@@ -49,7 +49,7 @@ For Gradle:
    }
 
 
-Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. When having Plugin dependencies to other plugins, it is good practice to define those dependencies so the plugin does not load when the dependencies do not load as well. This can be done using the ``@Requires`` annotation as shown below:
+Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. When a plugin depend on other plugins, it is good practice to define those dependencies so the plugin does not load when the dependencies do not load as well. This can be done using the ``@Requires`` annotation as shown below:
 
 .. code-block:: java
 
@@ -83,7 +83,7 @@ specifying what to copy. The group and description parameters to specifiy what t
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied.
 Finally, the ``include`` field ensures the ``.jar`` extention is also copied.
 
-After deploying, Shuffleboard will cache the path of the plugin so it can be automatically loaded the next time Shuffleboard loads. It may be necessary to click on ``Clear Cache`` under the plugins menu to remove a plugin or fix issues in the plugin. 
+After deploying, Shuffleboard will cache the path of the plugin so it can be automatically loaded the next time Shuffleboard loads. It may be necessary to click on ``Clear Cache`` under the plugins menu to remove a plugin or fix issues in the plugin.
 
 By running ``gradle deployPlugin`` from the command line, the jar file will automatically placed into the Shuffleboard plugin folder.
 
