@@ -23,7 +23,7 @@ All Teams
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: (Note: Click on link for "Individual Offline Installers")
+-  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
 C++/Java Teams
 ^^^^^^^^^^^^^^
