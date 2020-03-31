@@ -226,7 +226,7 @@ WPILib Installation Guide
     **Moving to wpilib/2020**
 
       1. Create a directory structure in your home directory called wpilib/2020 - either from the file manager or with ``$ mkdir -p ~/wpilib/2020``
-      2. Drag the contents of WPILIB\_Linux-2020.2.2 directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-2020.2.2/* ~/wpilib/2020``
+      2. Drag the contents of WPILib_Linux-VERSIONUM directory to ~/wpilib/2020 or run ``$ mv -v WPILib_Linux-VERSIONUM/* ~/wpilib/2020``
 
     **Running Tools Updater**
 
