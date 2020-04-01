@@ -1,4 +1,4 @@
-Sensing and sensors
+Sensing and Sensors
 ===================
 WPI Professor Craig Putnam discusses commonly used sensors and how they apply to various robotics applications.
 

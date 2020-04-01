@@ -1,4 +1,4 @@
-Motors for robotics applications
+Motors for Robotics Applications
 ================================
 WPI Professor Ken Stafford discuss motor performance and designing and choosing motors for your applications.
 

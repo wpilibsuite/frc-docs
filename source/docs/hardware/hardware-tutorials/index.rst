@@ -1,6 +1,8 @@
 Hardware Tutorials
 ==================
 
+.. note:: The pages in this sections of the documentation contain media which is only viewable from the web version of the documentation
+
 .. toctree::
    :maxdepth: 1
 
