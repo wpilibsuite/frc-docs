@@ -5,5 +5,5 @@ Vision Processing
    :maxdepth: 2
 
    introduction/index
-   grip/index
+   Vision with GRIP </docs/software/wpilib-tools/grip/index>
    raspberry-pi/index
