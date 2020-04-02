@@ -21,6 +21,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Debug Robot Code** - Build and deploy robot code to roboRIO in debug mode and start debugging
 - **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
 - **WPILib: Import a WPILib Eclipse Project** - Open a wizard to help you create a new VS Code project from an existing WPILib Eclipse project from a previous season.
+- **WPILib: Import a WPILib 2019 Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2019
 - **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. SmartDashboard, Shuffleboard, etc.). Note that this is done by default by the offline installer
 - **WPILib: Manage Vendor Libraries** - Install/update 3rd party libraries
 - **WPILib: Open WPILib Command Palette** - This command is used to open a WPILib Command Palette (equivalent of hitting Ctrl+Shift+P and typing WPILib)
@@ -34,3 +35,4 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Start RioLog** - This starts the RioLog display used to view console output from a robot program
 - **WPILib: Start Tool** - This allows you to launch WPILib tools (e.g. SmartDashboard, Shuffleboard, etc.) from inside VS Code
 - **WPILib: Test Robot Code** - This builds the current robot code project and runs any created tests. This requires Desktop Support to be set to Enabled.
+- **WPILib: Open Project Information** - Opens a widget with project information (Project version, extension version, etc.)
