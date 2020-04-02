@@ -42,7 +42,7 @@ If you have installed the FRC Toolchain to a directory other than the default, o
 
    ./gradlew build -PtoolChainPath=some/path/to/frc/toolchain/bin
 
-If you also want simulation to be built, add -PmakeSim. This requires gazebo_transport. We have tested on 14.04 and 15.05, but any correct install of Gazebo should work, even on Windows if you build Gazebo from source. Correct means CMake needs to be able to find gazebo-config.cmake. See `The Gazebo website <https://gazebosim.org/>`__ for installation instructions.
+If you also want simulation to be built, add -PmakeSim. This requires gazebo_transport. We have tested on 14.04 and 15.05, but any correct install of Gazebo should work, even on Windows if you build Gazebo from source. Correct means CMake needs to be able to find gazebo-config.cmake. See `The Gazebo website <http://gazebosim.org/>`__ for installation instructions.
 
 .. code-block:: shell
 
