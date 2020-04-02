@@ -5,7 +5,7 @@ Requirements
 ------------
 
 - A C++ compiler
-  
+
   - On Linux, GCC 7+ works fine
   - On Windows, you need Visual Studio 2019 (the free community edition works fine). Make sure to select the C++ Programming Language for installation
 
