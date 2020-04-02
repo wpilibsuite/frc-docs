@@ -11,7 +11,7 @@ which of the returned values are interesting through further processing.
 
 Verify the network table keys being published
 ---------------------------------------------
-.. figure:: images/reading-array-values-published-by-networktables/verify-the-network-table-keys-being-published.png
+.. figure:: images/reading-array-values-published-by-networktables-1
 
 You can verify the names of the network table keys used for publishing the values by using the Network Table Viewer application.
 It is a java program in your user directory in the wpilib/tools folder. The application is started by selecting the "WPILib" menu
@@ -83,7 +83,7 @@ The steps to getting the values and, in this program, printing them are:
 
 Program output
 --------------
-.. figure:: images/reading-array-values-published-by-networktables/program-output.png
+.. figure:: images/reading-array-values-published-by-networktables-2
 
 In this case the program is only looking at the array of areas, but in a real example all the values would more likely be used.
 Using the Riolog in eclipse or the DriverStation log you can see the values as they are retrieved. This program is using a sample
