@@ -114,5 +114,5 @@ You can either download a pre-built release of the code from the github page "Re
 (https://github.com/WPIRoboticsProjects/GRIP) or you can clone the source repository and built it yourself. Directions on
 building GRIP are on the project page. There is also additional documentation on the project wiki.
 
-So, please play with GRiP and give us feedback here on the forum. If you find bugs, you can either post them here or as a
+So, please play with GRIP and give us feedback here on the forum. If you find bugs, you can either post them here or as a
 Github project issue on the project page.
