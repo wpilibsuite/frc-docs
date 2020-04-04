@@ -36,6 +36,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
+    'sphinxcontrib.drawio',
     'notfound.extension'
 ]
 
@@ -129,3 +130,10 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub', 'linkcheck']
+
+# Either png, jpeg or svg
+drawio_output_format = 'png'
+
+drawio_binary_path = 'C:\Program Files\draw.io\draw.io'
+
+drawio_headless = False
