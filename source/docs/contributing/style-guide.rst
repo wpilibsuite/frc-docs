@@ -156,6 +156,18 @@ They should follow the naming scheme of ``document-title-1.png`` so on and so fo
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
 
+Diagrams
+--------
+
+Make diagrams using draw.io, the ``.drawio`` file should be put in the same sub-directory of ``images`` images are stored in.
+Diagrams should be created with ``1`` new line separating content and directive.
+
+.. code-block:: text
+
+   .. drawio:: images/diagram.drawio
+
+.. drawio:: images/example.drawio
+
 Table of Contents (TOC)
 -----------------------
 
