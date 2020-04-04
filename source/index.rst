@@ -8,8 +8,6 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-.. drawio:: assets/test.drawio
-
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/software/wpilib-overview/new-for-2020:New for 2020>` document.
 
 .. toctree::

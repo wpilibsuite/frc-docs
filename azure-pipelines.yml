@@ -32,6 +32,14 @@ jobs:
     - script: sudo apt-get install -qy --force-yes graphviz
       displayName: 'Install GraphViz'
 
+    - script: |
+        wget -O drawio.deb https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw.io-amd64-12.6.5.deb
+        sudo apt-get install ./drawio.deb
+      displayName: 'Install draw.io'
+
+    - script: sudo apt-get install xvfb
+      displayName: 'Install xvfb'
+
     - script: make html
       displayName: 'Compile HTML'
 
