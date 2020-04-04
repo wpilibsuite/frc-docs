@@ -134,6 +134,4 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 # Either png, jpeg or svg
 drawio_output_format = 'png'
 
-drawio_binary_path = 'C:\Program Files\draw.io\draw.io'
-
 drawio_headless = False
