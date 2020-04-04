@@ -34,7 +34,7 @@ jobs:
 
     - script: |
         wget -O drawio.deb https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw.io-amd64-12.6.5.deb
-        sudo apt-get install ./drawio.deb
+        sudo apt-get install libasound2 ./drawio.deb
       displayName: 'Install draw.io'
 
     - script: sudo apt-get install xvfb
