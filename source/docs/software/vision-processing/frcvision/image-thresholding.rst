@@ -12,6 +12,8 @@ Unlike RGB, HSV allows you to not only filter based on the colors of the pixels,
 * Saturation: Measures the intensity of color of the pixel.
 * Value: Measures the brighness of the pixel.
 
+.. image:: images/image-thresholding/hsv-color-space.png
+
 You can use OpenCV to convert a BGR image matrix to HSV.
 
 .. tabs::
