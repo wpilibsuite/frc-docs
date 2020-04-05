@@ -138,4 +138,5 @@ drawio_output_format = 'png'
 drawio_headless = False
 
 if os.environ.get('DRAWIO_HEADLESS') == 'HEADLESS':
-    drawio_headless = True
+    #drawio_headless = True
+    pass
