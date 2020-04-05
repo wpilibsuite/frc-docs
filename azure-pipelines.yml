@@ -40,10 +40,10 @@ jobs:
     - script: sudo apt-get install xvfb
       displayName: 'Install xvfb'
 
-    - script: Xvfb :1 -screen 0 1280x768x16 & export DISPLAY=:1
-      displayName: 'Setup xvfb'
-
-    - script: make html
+    - script: |
+        Xvfb :1 -screen 0 1280x768x16 & export XVFB_PID=$! & export DISPLAY=:1
+        make html
+        sudo kill $XVFB_PID
       displayName: 'Compile HTML'
       env:
         DRAWIO_HEADLESS: 'HEADLESS'
