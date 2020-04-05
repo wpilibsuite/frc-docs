@@ -45,8 +45,9 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
       #
       # CameraServer initialization code here
       #
-
+      
       output = cs.putVideo("Name", width, height)
+      output_img = np.zeros(shape=(width, height, 3), dtype=np.uint8)
 
       while True:
          time, input_img = cvSink.grabFrame(input_img)
@@ -60,3 +61,5 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
          #
 
          output.putFrame(processed_img)
+
+As an example, the processing code could outline the target in red, and show the corners in yellow for debugging purposes.

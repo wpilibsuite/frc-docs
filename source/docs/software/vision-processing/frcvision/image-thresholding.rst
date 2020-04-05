@@ -3,8 +3,8 @@ Thresholding an Image
 
 In order to turn a colored image, such as the one captured by your camera, into a binary image, with the target as the "foreground", we need to threshold the image using the hue, saturation, and value of each pixel.
 
-HSV Model
-_________
+The HSV Model
+_____________
 
 Unlike RGB, HSV allows you to not only filter based on the colors of the pixels, but also by the intensity of color and the brightness.
 
