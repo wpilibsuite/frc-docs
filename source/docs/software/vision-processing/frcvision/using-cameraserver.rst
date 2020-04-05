@@ -45,7 +45,8 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
       #
       # CameraServer initialization code here
       #
-      
+
+      # Preallocate memory so we don't have to allocate memory each iteration
       output = cs.putVideo("Name", width, height)
       output_img = np.zeros(shape=(width, height, 3), dtype=np.uint8)
 

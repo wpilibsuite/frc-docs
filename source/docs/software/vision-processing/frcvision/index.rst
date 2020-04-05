@@ -7,4 +7,4 @@ FRCVision
    using-cameraserver
    image-thresholding
    morphological-operations
-   finding-contours
+   working-with-contours

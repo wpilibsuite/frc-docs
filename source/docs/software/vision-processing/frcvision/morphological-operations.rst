@@ -6,13 +6,13 @@ Sometimes, after thresholding your image, you have unwanted noise in your binary
 Kernel
 ______
 
-The kernel is a simple shape where the origin is superimposed on each pixel of value 1 of the binary image. OpenCV limits the kernel to a NxN matrix where N is an odd number. The origin of the kernel is the center. A common kernel is 
+The kernel is a simple shape where the origin is superimposed on each pixel of value 1 of the binary image. OpenCV limits the kernel to a NxN matrix where N is an odd number. The origin of the kernel is the center. A common kernel is
 
-.. math:: 
-   kernel = \begin{pmatrix} 
+.. math::
+   kernel = \begin{pmatrix}
                1 & 1 & 1\\
                1 & 1 & 1\\
-               1 & 1 & 1 
+               1 & 1 & 1
             \end{pmatrix}
 
 Different kernels can affect the image differently, such as only eroding or dilating vertically.
