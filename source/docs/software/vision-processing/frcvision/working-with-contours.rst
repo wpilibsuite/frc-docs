@@ -36,7 +36,7 @@ Now that you've found the contour(s) that you want, you now want to get informat
 Center
 ^^^^^^
 
-There are multiple ways to find the center of the contour. In this example, we will use the simple method of finding the center of the bounding rectangle. The center's position can be used to estimate the angle of the target to your robot.
+There are multiple ways to find the center of the contour. In this example, we will use the simple method of finding the center of the bounding rectangle.
 
 .. tabs::
 

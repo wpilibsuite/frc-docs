@@ -1,5 +1,5 @@
-FRCVision
-=========
+Vision with FRCVision
+=====================
 
 .. toctree::
    :maxdepth: 1
