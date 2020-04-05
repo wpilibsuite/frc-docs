@@ -20,7 +20,7 @@ The vertical "mirroring" visible here is normal, and is simply the result of the
 
 The quasistatic test ought to have nearly linear velocity, and nearly-zero acceleration (hense "quasistatic"). The dynamic test ought to have velocity that asymptotically approaches a steady-state speed (the shape of the curve should be exponential, in fact), and acceleration that, accordingly, rapidly falls to zero (also exponentially, as the derivative of an exponential function is also an exponential function).
 
-Deviation from this behavior is a sign of an :ref:`error <docs/software/advanced-control/trajectories/robot-characterization/iewing-diagnostics:Diagnostics Plots for Common Failure Modes>`, either in your robot setup, analysis settings, or your test procedure.
+Deviation from this behavior is a sign of an :ref:`error <docs/software/advanced-control/trajectories/robot-characterization/viewing-diagnostics:Diagnostics Plots for Common Failure Modes>`, either in your robot setup, analysis settings, or your test procedure.
 
 Voltage-Domain Diagnostics
 --------------------------
