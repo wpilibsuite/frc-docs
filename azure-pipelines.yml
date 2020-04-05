@@ -41,8 +41,9 @@ jobs:
       displayName: 'Install xvfb'
 
     - script: |
-        Xvfb :1 -screen 0 1280x768x16 & export XVFB_PID=$! & export DISPLAY=:1
+        Xvfb :1 -screen 0 1280x768x16 & export DISPLAY=:1 & export XVFB_PID=$!
         make html
+        sudo kill $XVFB_PID
       displayName: 'Compile HTML'
 
     - task: ArchiveFiles@2
