@@ -43,7 +43,7 @@ jobs:
     - script: make html
       displayName: 'Compile HTML'
       env:
-        DRAWIO-HEADLESS: 'HEADLESS'
+        DRAWIO_HEADLESS: 'HEADLESS'
 
     - task: ArchiveFiles@2
       displayName: 'Archive HTML'
@@ -67,7 +67,7 @@ jobs:
     - script: make latexpdf
       displayName: 'Compile PDF'
       env:
-        DRAWIO-HEADLESS: 'HEADLESS'
+        DRAWIO_HEADLESS: 'HEADLESS'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'
