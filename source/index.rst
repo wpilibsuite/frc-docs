@@ -22,11 +22,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: WPILib Programming Basics
 
    docs/software/wpilib-overview/index
+   docs/software/driverstation/index
    docs/software/labview/index
    docs/software/actuators/index
    docs/software/sensors/index
    docs/software/can-devices/index
    docs/software/basic-programming/index
+   docs/software/robotbuilder/index
    docs/software/support/support-resources
 
 .. toctree::
@@ -38,15 +40,10 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Software Tools
+   :caption: Dashboards
 
-   docs/software/driverstation/index
-   docs/software/wpilib-tools/shuffleboard/index
-   docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/pathweaver/index
-   docs/software/wpilib-tools/robotbuilder/index
-   docs/software/wpilib-tools/robot-simulation/index
-   docs/software/wpilib-tools/robot-characterization/index
+   docs/software/dashboards/shuffleboard/index
+   docs/software/dashboards/smartdashboard/index
 
 .. toctree::
    :maxdepth: 1
@@ -59,6 +56,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/networktables/index
    docs/software/roborio-info/index
    docs/software/advanced-control/index
+   docs/software/robot-simulation/index
 
 .. toctree::
    :maxdepth: 1

@@ -39,7 +39,7 @@ Each subsystem will be added to the "Subsystems" folder in the RobotBuilder and 
 
 As you look through more of this documentation the differences between the subsystem types will become more apparent.
 
-For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing the Code for a Subsystem>`.
+For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing the Code for a Subsystem>`.
 
 Adding Components to each of the Subsystems
 -------------------------------------------
@@ -59,7 +59,7 @@ Commands are distinct goals that the robot will perform. These commands are adde
 - Command groups - these commands are a combination of other commands running both in a sequential order and in parallel. Use these to build up more complicated actions after you have a number of basic commands implemented.
 - Setpoint commands - setpoint commands move a PID Subsystem to a fixed setpoint, or the desired location.
 
-For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
+For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
 
 Testing each Command
 --------------------
@@ -110,4 +110,4 @@ Generating Code
 
 At any point in the process outlined above you can have RobotBuilder generate a C++ or Java program that will represent the project you have created. This is done by specifying the location of the project in the project properties (1), then clicking the appropriate toolbar button to generate the code.
 
-For more information see :ref:`Generating RobotBuilder Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code:Generating Code for a Project>`.
+For more information see :ref:`Generating RobotBuilder Code <docs/software/robotbuilder/writing-code/robotbuilder-generating-code:Generating Code for a Project>`.

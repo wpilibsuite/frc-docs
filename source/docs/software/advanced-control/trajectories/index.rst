@@ -10,4 +10,6 @@ This section describes WPILib support for generating parameterized spline trajec
    manipulating-trajectories
    transforming-trajectories
    ramsete
+   pathweaver/index
+   robot-characterization/index
    troubleshooting
