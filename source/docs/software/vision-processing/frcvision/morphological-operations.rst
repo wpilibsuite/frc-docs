@@ -31,17 +31,17 @@ Erosion in computer vision is similar to erosion on soil. It takes away from the
 
 During erosion, if the superimposed kernel's pixels are not contained completely by the binary image's pixels, the pixel of the image's erosion is deleted.
 
-Dialation
-_________
+Dilation
+________
 
-Dialation is opposite of erosion. Instead of taking away from the borders, it adds to them. This process can remove small holes inside a larger region.
+Dilation is opposite of erosion. Instead of taking away from the borders, it adds to them. This process can remove small holes inside a larger region.
 
 .. tabs::
 
    .. code-tab:: py
 
       kernel = np.ones((3, 3), np.uint8)
-      binary_img = cv2.dialate(binary_img, kernel, iterations = 1)
+      binary_img = cv2.dilate(binary_img, kernel, iterations = 1)
 
 During dilation, every pixel of every superimposed kernel is included in the dilation.
 
