@@ -41,11 +41,9 @@ jobs:
       displayName: 'Install xvfb'
 
     - script: |
-        Xvfb :1 -screen 0 1280x768x16 & export XVFB_PID=$! & export DISPLAY=:1
+        Xvfb :1 & export XVFB_PID=$! & export DISPLAY=:1
         make html
       displayName: 'Compile HTML'
-      env:
-        DRAWIO_HEADLESS: 'HEADLESS'
 
     - task: ArchiveFiles@2
       displayName: 'Archive HTML'
@@ -68,8 +66,6 @@ jobs:
 
     - script: make latexpdf
       displayName: 'Compile PDF'
-      env:
-        DRAWIO_HEADLESS: 'HEADLESS'
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish PDF'

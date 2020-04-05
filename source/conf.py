@@ -136,7 +136,3 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 drawio_output_format = 'png'
 
 drawio_headless = False
-
-if os.environ.get('DRAWIO_HEADLESS') == 'HEADLESS':
-    #drawio_headless = True
-    pass
