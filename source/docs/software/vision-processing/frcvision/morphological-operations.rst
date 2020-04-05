@@ -17,6 +17,10 @@ The kernel is a simple shape where the origin is superimposed on each pixel of v
 
 Different kernels can affect the image differently, such as only eroding or dilating vertically.
 
+For reference, this is our binary image we created:
+
+.. image:: images/morphological-operations/binary.jpg
+
 Erosion
 _______
 
@@ -28,6 +32,8 @@ Erosion in computer vision is similar to erosion on soil. It takes away from the
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.erode(binary_img, kernel, iterations = 1)
+
+.. image:: images/morphological-operations/erosion.jpg
 
 During erosion, if the superimposed kernel's pixels are not contained completely by the binary image's pixels, the pixel of the image's erosion is deleted.
 
@@ -43,6 +49,8 @@ Dilation is opposite of erosion. Instead of taking away from the borders, it add
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.dilate(binary_img, kernel, iterations = 1)
 
+.. image:: images/morphological-operations/dilation.jpg
+
 During dilation, every pixel of every superimposed kernel is included in the dilation.
 
 Opening
@@ -56,6 +64,8 @@ Opening is erosion followed by dilation. This process removes noise without affe
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_OPEN, kernel)
 
+.. image:: images/morphological-operations/opening.jpg
+
 Closing
 _______
 Closing is dilation followed by erosion. This process removes small holes or breaks without affecting the shape of larger features.
@@ -66,3 +76,5 @@ Closing is dilation followed by erosion. This process removes small holes or bre
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel)
+
+.. image:: images/morphological-operations/closing.jpg

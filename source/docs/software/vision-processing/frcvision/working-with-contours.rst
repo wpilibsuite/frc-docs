@@ -28,6 +28,10 @@ In most cases, you want only one contour which is the retroreflective target. Ho
          # Contour processing code
          #
 
+If you draw the contour you just found, it should look something like this:
+
+.. image:: images/working-with-contours/contours.jpg
+
 Extracting Information from Contours
 ____________________________________
 
@@ -61,7 +65,7 @@ We will use a convex hull and then polygon approxmation to find the corners of t
 Rotation
 ^^^^^^^^
 
-We will use an ellipse and find its rotation to find the rotation of the contour.
+We will fit an ellipse and find its rotation to find the rotation of the contour.
 
 .. tabs::
 

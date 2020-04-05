@@ -28,6 +28,10 @@ You can use OpenCV to convert a BGR image matrix to HSV.
 Thresholding
 ____________
 
+We will use this field image as an example for the whole process of image processing.
+
+.. image:: images/image-thresholding/vision-example.jpg
+
 By thresholding the image using HSV, you can seperate the image into the vision target (foreground), and the other things that the camera sees (background). The following code example converts a HSV image into a binary image by thresholding with HSV values.
 
 .. tabs::
@@ -38,3 +42,9 @@ By thresholding the image using HSV, you can seperate the image into the vision 
 
 .. note::
    These values may have to be tuned on an per-venue basis, as ambient lighting may differ across venues.
+
+After thresholding, your image should look like this.
+
+.. image:: images/image-thresholding/binary.jpg
+
+As you can see, the thresholding process is not 100% clean. You can use morphological operations to deal with the noise.
