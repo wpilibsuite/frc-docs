@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import os
 
 
 # -- Project information -----------------------------------------------------
@@ -135,3 +136,6 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 drawio_output_format = 'png'
 
 drawio_headless = False
+
+if os.environ.get('DRAWIO-HEADLESS') == 'HEADLESS':
+    drawio_headless = True
