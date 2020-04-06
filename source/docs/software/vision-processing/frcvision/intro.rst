@@ -16,10 +16,4 @@ The FRCVision image helps reduce development time by coming preinstalled with to
 Configuring Camera Exposure
 ---------------------------
 
-In order to configure your camera exposure to be optimal for vision processing for retroreflective targets, go to your vision settings and open the camera stream.
-
-.. figure:: images/intro-1.png
-
-Lower the exposure until your retroreflective target, which should be green if you have a green LEDs, is bright but the rest of the image is dark. Your image should look like the following picture.
-
-.. figure:: images/intro-2.jpg
+In order to configure your camera exposure to be optimal for vision processing for retroreflective targets, go to your vision settings and open the camera stream. Lower the exposure until your retroreflective target, which should be bright green if you have a green LEDs, is bright but the rest of the image is dark.
