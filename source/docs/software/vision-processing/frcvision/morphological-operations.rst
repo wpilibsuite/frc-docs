@@ -35,7 +35,7 @@ Erosion in computer vision is similar to erosion on soil. It takes away from the
 
 .. image:: images/morphological-operations/erosion.jpg
 
-During erosion, if the superimposed kernel's pixels are not contained completely by the binary image's pixels, the pixel of the image's erosion is deleted.
+During erosion, if the superimposed kernel's pixels are not contained completely by the binary image's pixels, the pixel that it was superimposed on is deleted.
 
 Dilation
 ________

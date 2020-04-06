@@ -11,10 +11,17 @@ Custom vision processing requires more development and testing time over prepack
 Advantages of Using FRCVision
 _____________________________
 
-The FRCVision image helps reduce development time by coming preinstalled with tools needed for custom vision processing. It also has a web dashboard which offers a GUI to configure camera, vision, and system settings.
+The FRCVision image helps reduce development time by coming preinstalled with tools needed for custom vision processing. It also has a web dashboard which offers a GUI to configure camera, vision, and system settings. For more information on how to configure these settings, consult the `Raspberry Pi <https://docs.wpilib.org/en/latest/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.html>`_ docs.
 
 .. image:: images/intro/frcvision-dashboard.png
 
-Configurating using the Dashboard
-_________________________________
+Configuring Camera Exposure
+___________________________
 
+In order to configure your camera exposure to be optimal for vision processing for retroreflective targets, go to your vision settings and open the camera stream.
+
+.. image:: images/intro/vision-settings-2.png
+
+Lower the exposure until your retroreflective target, which should be green if you have a green LEDs, is bright but the rest of the image is dark. Your image should look like the following picture.
+
+.. image:: images/intro/vision-example.jpg

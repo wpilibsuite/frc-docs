@@ -47,4 +47,4 @@ After thresholding, your image should look like this.
 
 .. image:: images/image-thresholding/binary.jpg
 
-As you can see, the thresholding process is not 100% clean. You can use morphological operations to deal with the noise.
+As you can see, the thresholding process may not be 100% clean. You can use morphological operations to deal with the noise.
