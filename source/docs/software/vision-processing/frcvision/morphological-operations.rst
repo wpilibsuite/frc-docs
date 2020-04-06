@@ -66,6 +66,9 @@ Opening is erosion followed by dilation. This process removes noise without affe
 
 .. image:: images/morphological-operations/opening.jpg
 
+.. note::
+   In this specific case, it is appropriate to do more iterations of opening in order to get rid of the pixels in the top right.
+
 Closing
 _______
 Closing is dilation followed by erosion. This process removes small holes or breaks without affecting the shape of larger features.

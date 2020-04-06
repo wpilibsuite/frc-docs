@@ -41,7 +41,7 @@ By thresholding the image using HSV, you can seperate the image into the vision 
       binary_img = cv2.inRange(hsv_img, (min_hue, min_sat, min_val), (max_hue, max_sat, max_val))
 
 .. note::
-   These values may have to be tuned on an per-venue basis, as ambient lighting may differ across venues.
+   These values may have to be tuned on an per-venue basis, as ambient lighting may differ across venues. It is recommended to allow editing of these values through NetworkTables in order to facilitate on-the-fly editing.
 
 After thresholding, your image should look like this.
 
