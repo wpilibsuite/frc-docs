@@ -1,6 +1,6 @@
 Trajectory Constraints
 ======================
-In the :ref:`previous article <docs/software/advanced-control/trajectories/trajectory-generation:Generating the trajectory>`, you might have noticed that no custom constraints were added when generating the trajectories. Custom constraints allow users to impose more restrictions on the velocity and acceleration at points along the trajectory based on location and curvature. 
+In the :ref:`previous article <docs/software/advanced-control/trajectories/trajectory-generation:Generating the trajectory>`, you might have noticed that no custom constraints were added when generating the trajectories. Custom constraints allow users to impose more restrictions on the velocity and acceleration at points along the trajectory based on location and curvature.
 
 For example, a custom constraint can keep the velocity of the trajectory under a certain threshold in a certain region or slow down the robot near turns for stability purposes.
 
@@ -16,12 +16,12 @@ WPILib includes a set of predefined constraints that users can utilize when gene
  - ``MecanumDriveKinematicsConstraint``: Limits the velocity of the robot around turns such that no wheel of a mecanum-drive robot goes over a specified maximum velocity.
  - ``RectangularRegionConstraint``: Imposes a constraint only in a rectangular region on the field.
  - ``SwerveDriveKinematicsConstraint``: Limits the velocity of the robot around turns such that no wheel of a swerve-drive robot goes over a specified maximum velocity.
- 
+
 .. note:: The ``DifferentialDriveVoltageConstraint`` only ensures that theoretical voltage commands do not go over the specified maximum using a :ref:`feedforward model <docs/software/advanced-control/controllers/feedforward:SimpleMotorFeedforward>`. If the robot were to deviate from the reference while tracking, the commanded voltage may be higher than the specified maximum.
- 
+
 Creating a Custom Constraint
 ----------------------------
-Users can create their own constraint by implementing the ``TrajectoryConstraint`` interface. 
+Users can create their own constraint by implementing the ``TrajectoryConstraint`` interface.
 
 .. tabs::
 
@@ -52,7 +52,7 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
                             units::meters_per_second_t speed) override {
         // code here
       }
-      
+
 The ``MaxVelocity`` method should return the maximum allowed velocity for the given pose, curvature, and original velocity of the trajectory without any constraints. The ``MinMaxAcceleration`` method should return the minimum and maximum allowed acceleration for the given pose, curvature, and constrained velocity.
 
 See the source code (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/trajectory/constraint>`_, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibc/src/main/native/cpp/trajectory/constraint>`_) for the WPILib-provided constraints for more examples on how to write your own custom trajectory constraints.
