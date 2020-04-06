@@ -18,8 +18,8 @@ Configuring Camera Exposure
 
 In order to configure your camera exposure to be optimal for vision processing for retroreflective targets, go to your vision settings and open the camera stream.
 
-.. image:: images/intro-1.png
+.. figure:: images/intro-1.png
 
 Lower the exposure until your retroreflective target, which should be green if you have a green LEDs, is bright but the rest of the image is dark. Your image should look like the following picture.
 
-.. image:: images/intro-2.jpg
+.. figure:: images/intro-2.jpg
