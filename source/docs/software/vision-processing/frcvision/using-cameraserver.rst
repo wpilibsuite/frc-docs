@@ -2,7 +2,7 @@ Using CameraServer
 ==================
 
 Grabbing frames from CameraServer
-_________________________________
+---------------------------------
 
 The FRCVision image comes with all the necessary libraries to make your own vision processing system. In order to get the current frame from the camera, we will use the CameraServer library.
 
@@ -34,7 +34,7 @@ The FRCVision image comes with all the necessary libraries to make your own visi
    OpenCV reads in the image as **BGR**, not **RGB** for historical reasons. Use ``cv2.cvtColor`` if you want to change it to RGB.
 
 Sending frames to CameraServer
-______________________________
+------------------------------
 
 Sometimes, you may want to send processed video frames back to the CameraServer instance for debugging purposes, or viewing in a dashboard application like Shuffleboard.
 

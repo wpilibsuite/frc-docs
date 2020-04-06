@@ -4,7 +4,7 @@ Working with Contours
 After thresholding and removing noise with morphological operations, you are now ready to use OpenCV's ``findContours`` method. This method allows you to generate contours based on your binary image.
 
 Finding and Filtering Contours
-______________________________
+------------------------------
 
 .. tabs::
 
@@ -30,10 +30,10 @@ In most cases, you want only one contour which is the retroreflective target. Ho
 
 If you draw the contour you just found, it should look something like this:
 
-.. image:: images/working-with-contours/contours.jpg
+.. image:: images/working-with-contours-1.jpg
 
 Extracting Information from Contours
-____________________________________
+------------------------------------
 
 Now that you've found the contour(s) that you want, you now want to get information about it, such as the center, corners, and rotation.
 
@@ -74,7 +74,7 @@ In order to find the rotation (roll) of the contour, you can fit an ellipse. The
       _, _, rotation = cv2.fitEllipse(contour)
 
 Publishing to NetworkTables
-___________________________
+---------------------------
 
 You can use NetworkTables to send these properties to the Driver Station and the RoboRIO. Additional processing could be done on the Raspberry Pi, or the RoboRIO itself.
 
