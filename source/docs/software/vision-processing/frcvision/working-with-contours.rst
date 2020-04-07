@@ -12,7 +12,7 @@ Finding and Filtering Contours
 
       _, contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-In most cases, you want only one contour which is the retroreflective target. However, if there is noise that was not filtered out by morphological operations, you could end up with more in your contour list. A common way to select which contour to use is to simply use the largest.
+In cases where there is only one vision target, you can just take the largest contour and assume that that is the target you are looking for. When there is more than one vision target, you can use size, shape, fullness, and other properties to filter unwanted contours out.
 
 .. tabs::
 
@@ -37,10 +37,13 @@ Extracting Information from Contours
 
 Now that you've found the contour(s) that you want, you now want to get information about it, such as the center, corners, and rotation.
 
+Aspect Ratio
+^^^^^^^^^^^^
+
+The aspect ratio of a contour is the contour's width divided by its height.
+
 Center
 ^^^^^^
-
-In order to find the center of a contour, you can fit a rectangle to it and find the rectangle's center.
 
 .. tabs::
 
@@ -48,12 +51,10 @@ In order to find the center of a contour, you can fit a rectangle to it and find
 
       rect = cv2.minAreaRect(contour)
       center, _, _ = rect
-      center_x, center_y = rect
+      center_x, center_y = center
 
 Corners
 ^^^^^^^
-
-In order to find the corners of the contour, you can find the convex hull and then approximate a polygon from it. This works better than either of the methods alone.
 
 .. tabs::
 
@@ -64,8 +65,6 @@ In order to find the corners of the contour, you can find the convex hull and th
 
 Rotation
 ^^^^^^^^
-
-In order to find the rotation (roll) of the contour, you can fit an ellipse. The ellipse's rotation will be the same as the contour's roll relative to your camera.
 
 .. tabs::
 

@@ -4,7 +4,7 @@ Using CameraServer
 Grabbing frames from CameraServer
 ---------------------------------
 
-The FRCVision image comes with all the necessary libraries to make your own vision processing system. In order to get the current frame from the camera, we will use the CameraServer library.
+The FRCVision image comes with all the necessary libraries to make your own vision processing system. In order to get the current frame from the camera, we will use the CameraServer library. For information about CameraServer, the `CameraServer docs <https://docs.wpilib.org/en/latest/docs/software/vision-processing/introduction/cameraserver-class.html>`_.
 
 .. tabs::
 

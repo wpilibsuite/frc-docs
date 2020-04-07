@@ -6,5 +6,4 @@ Vision Processing
 
    introduction/index
    grip/index
-   raspberry-pi/index
    frcvision/index
