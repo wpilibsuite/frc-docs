@@ -135,4 +135,4 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 # Either png, jpeg or svg
 drawio_output_format = 'png'
 
-drawio_headless = False
+drawio_headless = "auto"
