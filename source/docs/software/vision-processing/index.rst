@@ -5,6 +5,6 @@ Vision Processing
    :maxdepth: 2
 
    introduction/index
-   axis-camera/index
-   grip/index
    frcvision/index
+   grip/index
+   axis-camera/index
