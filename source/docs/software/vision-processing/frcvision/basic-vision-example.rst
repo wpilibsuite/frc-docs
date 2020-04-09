@@ -83,3 +83,4 @@ This is an example of a basic vision setup that posts the target's location in t
             processing_time = time.time() - start_time
             fps = 1 / processing_time
             cv2.putText(output_img, str(round(fps, 1)), (0, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255))
+            output_stream.putFrame(output_img)
