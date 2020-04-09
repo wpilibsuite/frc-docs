@@ -12,7 +12,7 @@ Using the ProfiledPIDController class
 
 .. note:: In C++, the ``ProfiledPIDController`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-.. note:: Much of the functionality of ``ProfiledPIDController`` is effectively identical to that of ``PIDController``.  Accordingly, this article will only cover features that are substantially-changed to accomodate the motion profiling functionality.  For information on standard ``PIDController`` features, see :ref:`docs/software/advanced-control/controllers/pidcontroller:PID Control in WPILib`.
+.. note:: Much of the functionality of ``ProfiledPIDController`` is effectively identical to that of ``PIDController``.  Accordingly, this article will only cover features that are substantially-changed to accomodate the motion profiling functionality.  For information on standard ``PIDController`` features, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
 
 Constructing a ProfiledPIDController
@@ -20,7 +20,7 @@ Constructing a ProfiledPIDController
 
 .. note:: C++ is often able to infer the type of the inner classes, and thus a simple initializer list (without the class name) can be sent as a parameter.  The full class name is included in the example below for clarity.
 
-Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PIDController <docs/software/advanced-control/controllers/pidcontroller:Constructing a PIDController>`.  The only difference is the need to supply a set of :ref:`trapezoidal profile constraints <docs/software/advanced-control/controllers/trapezoidal-profiles:Constraints>`, which will be automatically forwarded to the internally-generated ``TrapezoidProfile`` instances:
+Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PIDController <docs/software/advanced-controls/controllers/pidcontroller:Constructing a PIDController>`.  The only difference is the need to supply a set of :ref:`trapezoidal profile constraints <docs/software/advanced-controls/controllers/trapezoidal-profiles:Constraints>`, which will be automatically forwarded to the internally-generated ``TrapezoidProfile`` instances:
 
 .. tabs::
 
@@ -66,7 +66,7 @@ The specified ``goal`` value (which can be either a position value or a ``Trapez
 Getting/Using the Setpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since the ``ProfiledPIDController`` goal differs from the setpoint, is if often desirable to poll the current setpoint of the controller (for instance, to get values to use with :ref:`feedforward <docs/software/advanced-control/controllers/combining-feedforward-feedback:Using Feedforward Components with PID>`).  This can be done with the ``getSetpoint()`` method.
+Since the ``ProfiledPIDController`` goal differs from the setpoint, is if often desirable to poll the current setpoint of the controller (for instance, to get values to use with :ref:`feedforward <docs/software/advanced-controls/controllers/combining-feedforward-feedback:Using Feedforward Components with PID>`).  This can be done with the ``getSetpoint()`` method.
 
 The returned setpoint might then be used as in the following example:
 
