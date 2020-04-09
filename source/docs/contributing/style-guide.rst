@@ -159,7 +159,7 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 Diagrams
 --------
 
-Make diagrams using draw.io, the ``.drawio`` file should be put in the same sub-directory of ``images`` images are stored in.
+Make your diagrams using draw.io either in the desktop app or the web app, and save the base ``.drawio`` file.
 Diagrams should be created with ``1`` new line separating content and directive.
 
 .. code-block:: text
@@ -167,6 +167,15 @@ Diagrams should be created with ``1`` new line separating content and directive.
    .. drawio:: images/diagram.drawio
 
 .. drawio:: images/example.drawio
+
+Diagram Files
+^^^^^^^^^^^^^
+
+Diagram files should be stored in a sub-directory named ``diagrams`` in the same directory as the document.
+
+The should follow the naming scheme of ``document-title-1.drawio`` and so on.
+
+All files should be stored only as ``.drawio`` files, they will be automatically converted while being built.
 
 Table of Contents (TOC)
 -----------------------
