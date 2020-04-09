@@ -13,3 +13,4 @@ Vision with FRCVision
    image-thresholding
    morphological-operations
    working-with-contours
+   basic-vision-example
