@@ -168,6 +168,14 @@ Diagrams should be created with ``1`` new line separating content and directive.
 
 .. drawio:: images/example.drawio
 
+.. drawio:: images/test1.drawio
+   :align: "right"
+
+.. drawio:: images/test1.drawio
+   :align: "left"
+
+.. drawio:: images/test2.drawio
+
 Diagram Files
 ^^^^^^^^^^^^^
 
