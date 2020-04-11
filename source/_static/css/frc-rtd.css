@@ -96,4 +96,9 @@
 	.wy-nav-side {
 		width: 300px;
 	}
+
+	/* Fix sidebar adjust */
+	.rst-versions.shift {
+		width: 85%;
+	}
 }
