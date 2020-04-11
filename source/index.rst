@@ -58,7 +58,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
-   docs/software/advanced-control/index
+   docs/software/advanced-controls/index
 
 .. toctree::
    :maxdepth: 1
@@ -72,6 +72,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: WPILib Hardware
 
    docs/hardware/hardware-basics/index
+   docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
 
 .. toctree::
