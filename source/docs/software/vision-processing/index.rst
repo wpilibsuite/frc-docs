@@ -7,4 +7,5 @@ Vision Processing
    introduction/index
    frcvision/index
    grip/index
+   roborio/index
    axis-camera/index

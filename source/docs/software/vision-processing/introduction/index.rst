@@ -10,5 +10,3 @@ Vision Introduction
    2017-vision-examples
    target-info-and-retroreflection
    identifying-and-processing-the-targets
-   using-the-cameraserver-on-the-roborio
-   using-multiple-cameras

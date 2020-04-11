@@ -37,11 +37,6 @@ Extracting Information from Contours
 
 Now that you've found the contour(s) that you want, you now want to get information about it, such as the center, corners, and rotation.
 
-Aspect Ratio
-^^^^^^^^^^^^
-
-The aspect ratio of a contour is the contour's width divided by its height.
-
 Center
 ^^^^^^
 
@@ -71,6 +66,8 @@ Rotation
    .. code-tab:: py
 
       _, _, rotation = cv2.fitEllipse(contour)
+
+For more information on how you can use these values, see :ref:`docs/software/vision-processing/introduction/identifying-and-processing-the-targets:Measurements`
 
 Publishing to NetworkTables
 ---------------------------
