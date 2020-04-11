@@ -72,6 +72,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: WPILib Hardware
 
    docs/hardware/hardware-basics/index
+   docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
 
 .. toctree::
