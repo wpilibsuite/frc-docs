@@ -98,7 +98,7 @@
 	}
 
 	/* Fix sidebar adjust */
-	.rst-versions.shift {
+	.rst-versions {
 		width: 85%;
 	}
 }
