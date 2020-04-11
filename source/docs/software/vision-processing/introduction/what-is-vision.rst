@@ -24,3 +24,5 @@ Instead of only streaming the camera to the Driver Station, this method involves
 - :ref:`Vision Processing with Raspberry Pi <docs/software/vision-processing/frcvision/index:Vision with FRCVision>`
 - :ref:`Vision Processing with GRIP <docs/software/vision-processing/grip/index:Vision with GRIP>`
 - :ref:`Vision Processing with the roboRIO <docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio:Advanced Camera Server Program>`
+
+For additional information on the pros and cons of using a coprocessor for vision processing, see the next page, :ref:`docs/software/vision-processing/introduction/strategies-for-vision-programming:Strategies for Vision Programming`.
