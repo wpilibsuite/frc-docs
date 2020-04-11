@@ -6,7 +6,7 @@ Vision Introduction
 
    what-is-vision
    strategies-for-vision-programming
-   cameraserver-class
-   2017-vision-examples
    target-info-and-retroreflection
    identifying-and-processing-the-targets
+   cameraserver-class
+   2017-vision-examples
