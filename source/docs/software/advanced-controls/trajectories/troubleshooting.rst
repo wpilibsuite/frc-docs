@@ -15,7 +15,7 @@ There are a number of things that can cause your robot to do completely the wron
 
   - Are the start and end headings of your trajectory wrong?
   - Is your robot's gyro getting reset to the wrong heading?
-  - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
+  - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-controls/trajectories/trajectory-generation:Creating the trajectory config>`
   - Are your gyro angles clockwise positive? If so, you should negate them.
 
 * My robot just drives in a straight line even though it should turn.
@@ -26,7 +26,7 @@ There are a number of things that can cause your robot to do completely the wron
 
 * I get a ``MalformedSplineException`` printout on the driver station and the robot doesn't move.
 
-  - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-control/trajectories/trajectory-generation:Creating the trajectory config>`
+  - :ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-controls/trajectories/trajectory-generation:Creating the trajectory config>`
   - Do you have two waypoints very close together with approximately opposite headings?
   - Do you have two waypoints with the same (or nearly the same) coordinates?
 

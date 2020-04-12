@@ -106,7 +106,7 @@ It is sometimes desirable to clear the internal state (most importantly, the int
 Setting a Max Integrator Value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-control/controllers/feedforward:Feedforward Control in WPILib>`.
+.. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
 
 A typical problem encountered when using integral feedback is excessive "wind-up" causing the system to wildly overshoot the setpoint.  This can be alleviated in a number of ways - the WPILib ``PIDController`` offers an integrator range limiter to help teams overcome this issue.
 

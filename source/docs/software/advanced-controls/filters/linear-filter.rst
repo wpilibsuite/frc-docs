@@ -45,7 +45,7 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
     // Period is 0.02 seconds - this is the standard FRC main loop period
     frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
 
-The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly shorter than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lag <docs/software/advanced-control/filters/introduction:Phase Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
+The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly shorter than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lag <docs/software/advanced-controls/filters/introduction:Phase Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
@@ -95,7 +95,7 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
     // Period is 0.02 seconds - this is the standard FRC main loop period
     frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
 
-The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly longer than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lead <docs/software/advanced-control/filters/introduction:Phase lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
+The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly longer than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lead <docs/software/advanced-controls/filters/introduction:Phase lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
