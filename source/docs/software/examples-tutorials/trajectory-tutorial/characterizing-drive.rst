@@ -1,7 +1,7 @@
 Step 1: Characterizing Your Robot Drive
 =======================================
 
-.. note::  For detailed instructions on using the FRC-Characterization tool, see its :ref:`dedicated documentation <docs/software/advanced-control/trajectories/robot-characterization/introduction:Introduction to Robot Characterization>`.
+.. note::  For detailed instructions on using the FRC-Characterization tool, see its :ref:`dedicated documentation <docs/software/advanced-controls/trajectories/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
 .. note:: The drive characterization process requires ample space for the robot to drive.  Be sure to have *at least* a 10' stretch (ideally closer to 20') in which the robot can drive during the characterization routine.
 
@@ -14,23 +14,23 @@ Gathering the Data
 
 We begin by gathering our drive characterization data.
 
-1. :ref:`Generate a robot project <docs/software/advanced-control/trajectories/robot-characterization/generating-project:Generating a Project>`.
+1. :ref:`Generate a robot project <docs/software/advanced-controls/trajectories/robot-characterization/generating-project:Generating a Project>`.
 
   * Our example project uses the "simple" project type.  Other project types (e.g. Talon and NEO) can be used without much difference; however, be *sure* to specify the required robot parameters correctly, regardless of project type!
   * WPILib's trajectory library assumes units of meters are used universally for distance - accordingly, be certain that your robot's wheel diameter is specified in meters!
 
-2. :ref:`Deploy the robot project <docs/software/advanced-control/trajectories/robot-characterization/deploying-project:Deploying a Project>`.
-3. :ref:`Run the Characterization Routine <docs/software/advanced-control/trajectories/robot-characterization/characterization-routine:Running the Characterization Routine>`.
+2. :ref:`Deploy the robot project <docs/software/advanced-controls/trajectories/robot-characterization/deploying-project:Deploying a Project>`.
+3. :ref:`Run the Characterization Routine <docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine:Running the Characterization Routine>`.
 
 Analyzing the Data
 ------------------
 
-Once the characterization routine has been run and the data file has been saved, it is time to :ref:`open it in the analysis pane <docs/software/advanced-control/trajectories/robot-characterization/analyzing-data:Analyzing Data>`.
+Once the characterization routine has been run and the data file has been saved, it is time to :ref:`open it in the analysis pane <docs/software/advanced-controls/trajectories/robot-characterization/analyzing-data:Analyzing Data>`.
 
 Checking Diagnostics
 ^^^^^^^^^^^^^^^^^^^^
 
-Per the :ref:`FRC-Characterization guide <docs/software/advanced-control/trajectories/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
+Per the :ref:`FRC-Characterization guide <docs/software/advanced-controls/trajectories/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
 |Diagnostics|
 
@@ -58,7 +58,7 @@ Calculate Feedback Gains
 
 .. note:: Feedback gains do *not*, in general, transfer across robots.  Do *not* use the gains from this tutorial for your own robot.
 
-We now :ref:`calculate the feedback gains <docs/software/advanced-control/trajectories/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the characterization tool:
+We now :ref:`calculate the feedback gains <docs/software/advanced-controls/trajectories/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the characterization tool:
 
 |Velocity Mode|
 

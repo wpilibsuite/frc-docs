@@ -15,7 +15,7 @@ If the :term:`controller` settles at an :term:`output` above or below the :term:
 
 Beware that if :math:`K_i` is too large, integral windup can occur. Following a large change in :term:`setpoint`, the integral term can accumulate an error larger than the maximal :term:`control input`. As a result, the system overshoots and continues to increase until this accumulated error is unwound.
 
-.. note:: The :ref:`frc-characterization toolsuite <docs/software/advanced-control/trajectories/robot-characterization/index:Robot Characterization>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred over tuning the controller yourself.
+.. note:: The :ref:`frc-characterization toolsuite <docs/software/advanced-controls/trajectories/robot-characterization/index:Robot Characterization>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred over tuning the controller yourself.
 
 Actuator Saturation
 -------------------
