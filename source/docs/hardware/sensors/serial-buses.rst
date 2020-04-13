@@ -21,7 +21,7 @@ Additionally, the roboRIO supports communications with peripheral devices over t
 I2C
 ---
 
-.. image:: images/roborio/roborio-i2c.png
+.. image:: images/roborio/roborio-i2c.svg
 
 .. image:: images/serial-buses/i2c-pinout.png
 
@@ -32,7 +32,7 @@ The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on t
 SPI
 ---
 
-.. image:: images/roborio/roborio-spi.png
+.. image:: images/roborio/roborio-spi.svg
 .. image:: images/serial-buses/spi-pinout.png
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
@@ -42,7 +42,7 @@ The SPI bus can also be used through the `MXP expansion port`_. The MXP port pro
 RS-232
 ^^^^^^
 
-.. image:: images/roborio/roborio-rs-232.png
+.. image:: images/roborio/roborio-rs-232.svg
 .. image:: images/serial-buses/rs232-pinout.png
 
 To communicate to peripheral devices over RS-232, each pin should be wired to its corresponding pin on the device.
@@ -58,7 +58,7 @@ One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be
 USB Host
 --------
 
-.. image:: images/roborio/roborio-usb-host.png
+.. image:: images/roborio/roborio-usb-host.svg
 
 Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be connected to devices, such as cameras or sensors, with a standard USB cable.
 
@@ -66,7 +66,7 @@ Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be 
 MXP Expansion Port
 ------------------
 
-.. image:: images/roborio/roborio-mxp.png
+.. image:: images/roborio/roborio-mxp.svg
 
 .. image:: images/serial-buses/mxp-pinout.png
 
@@ -77,7 +77,7 @@ Many peripheral devices attach directly to the MXP port for convenience, requiri
 CAN Bus
 -------
 
-.. image:: images/roborio/roborio-can.png
+.. image:: images/roborio/roborio-can.svg
 
 Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 

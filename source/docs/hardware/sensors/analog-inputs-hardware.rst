@@ -18,7 +18,7 @@ Connecting to roboRIO analog input ports
 
 .. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
-.. image:: images/roborio/roborio-aio.png
+.. image:: images/roborio/roborio-aio.svg
 
 The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
 
