@@ -10,7 +10,7 @@ WPILib includes a set of predefined constraints that users can utilize when gene
 
  - ``CentripetalAccelerationConstraint``: Limits the centripetal acceleration of the robot as it traverses along the trajectory. This can help slow down the robot around right turns.
  - ``DifferentialDriveKinematicsConstraint``: Limits the velocity of the robot around turns such that no wheel of a differential-drive robot goes over a specified maximum velocity.
- - ``DifferentialDriveVoltageConstraint``: Limits the acceleration of a differential-drive robot such that no commanded voltage goes over a specified maximum.
+ - ``DifferentialDriveVoltageConstraint``: Limits the acceleration of a differential drive robot such that no commanded voltage goes over a specified maximum.
  - ``EllipticalRegionConstraint``: Imposes a constraint only in an elliptical region on the field.
  - ``MaxVelocityConstraint``: Imposes a max velocity constraint. This can be composed with the ``EllipticalRegionConstraint`` or ``RectangularRegionConstraint`` to limit the velocity of the robot only in a specific region.
  - ``MecanumDriveKinematicsConstraint``: Limits the velocity of the robot around turns such that no wheel of a mecanum-drive robot goes over a specified maximum velocity.
