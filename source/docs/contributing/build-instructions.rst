@@ -17,6 +17,7 @@ Windows
 - `MiKTeX <https://miktex.org/download>`__
 - `GraphViz <https://graphviz.gitlab.io/_pages/Download/Download_windows.html>`__
 - `Perl <http://strawberryperl.com/>`__
+- `ImageMagick7 <https://imagemagick.org/script/download.php#windows>`__
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 

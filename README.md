@@ -23,6 +23,7 @@ Ensure the repository is cloned with ``git clone https://github.com/wpilibsuite/
   - [MiKTeX](https://miktex.org/download)
   - [GraphViz](https://graphviz.gitlab.io/_pages/Download/Download_windows.html)
   - [Perl](http://strawberryperl.com/)
+  - [ImageMagick7](https://imagemagick.org/script/download.php#windows)
 
 - **Linux (Ubuntu)**
   - ``sudo apt-get install -y python3``
