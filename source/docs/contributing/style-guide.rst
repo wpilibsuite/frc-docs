@@ -156,6 +156,11 @@ They should follow the naming scheme of ``document-title-1.png`` so on and so fo
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
 
+Vector Images
+^^^^^^^^^^^^^
+
+SVG files are supported through the ``imgconverter`` Sphinx extension.
+
 Table of Contents (TOC)
 -----------------------
 
