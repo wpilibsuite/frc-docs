@@ -48,7 +48,7 @@ Magnetic encoders require no mechanical coupling to the shaft at all; rather, th
 Encoder Wiring
 --------------
 
-.. image:: images/encoders-hardware/e4t-oem-miniature-optical-encoder-to-roborio.png
+.. image:: images/encoders-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
 
 Encoders that need two digital inputs, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports. Other encoders, such as the on-shaft ones shown above, often need :doc:`an analog input port <analog-inputs-hardware>`. CTRE Magnetic encoders shown above can be wired to a :ref:`TalonSRX data port <docs/hardware/sensors/serial-buses:CAN Bus>` with a ribbon cable.
 

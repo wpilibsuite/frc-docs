@@ -15,14 +15,14 @@ While all ultrasonic rangefinders operate on the "ping-response" principle outli
 Analog ultrasonics
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/ultrasonics-hardware/mb1013-ultrasonic-sensor-to-roborio.png
+.. image:: images/ultrasonics-hardware/mb1013-ultrasonic-sensor-to-roborio.svg
 
 Analog ultrasonics output a simple analog voltage corresponding to the distance to the target, and thus connect to an :doc:`analog input <analog-inputs-hardware>` port.  The user will need to calibrate the voltage-to-distance conversion in :ref:`software <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.
 
 Ping-response ultrasonics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/ultrasonics-hardware/vex-ultrasonic-rangefinder-to-roborio.png
+.. image:: images/ultrasonics-hardware/vex-ultrasonic-rangefinder-to-roborio.svg
 
 While, as mentioned, all ultrasonics are functionally ping-response devices, a "ping response" ultrasonic is one configured to connect to :ref:`both a digital input and a digital output <docs/hardware/sensors/digital-inputs-hardware:Connecting a sensor that uses multiple DIO ports>`.  The digital output is used to send the ping, while the input is used to read the response.
 

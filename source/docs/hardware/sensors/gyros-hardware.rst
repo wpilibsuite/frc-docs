@@ -19,7 +19,7 @@ There are two types of Gyros commonly-used in FRC: single-axis gyros, three-axis
 Single-axis gyros
 ^^^^^^^^^^^^^^^^^
 
-.. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.png
+.. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.svg
 
 As per their name, single-axis gyros measure rotation rate around a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Some single-axis gyros can output an analog voltage corresponding to the measured rate of rotation, and so connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports. Other single-axis gyros, such as as the `ADXRS450 <https://wiki.analog.com/first/first_robotics_donation_resources>`__ pictured above, use the :ref:`SPI port <docs/hardware/sensors/serial-buses:SPI>` on the roboRIO instead.
 
@@ -28,7 +28,7 @@ The `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-p
 Three-axis gyros
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/gyros-hardware/triple-axis-i2c-gyro-to-roborio.png
+.. image:: images/gyros-hardware/triple-axis-i2c-gyro-to-roborio.svg
 
 .. image:: images/gyros-hardware/yaw-pitch-roll.png
 

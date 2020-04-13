@@ -21,7 +21,7 @@ As per their name, single-axis accelerometers measure acceleration along a singl
 Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/triple-axis-accelerometer-to-roborio.png
+.. image:: images/accelerometers-hardware/triple-axis-accelerometer-to-roborio.svg
 
 Multi-axis accelerometers measure acceleration along multiple spacial axes.  The roboRIO's built-in accelerometer is a three-axis accelerometer.
 
@@ -37,7 +37,7 @@ The roboRIO has a built-in accelerometer, which does not need any external conne
 IMUs (Inertial Measurement Units)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/navx-imu-to-roborio-mxp.png
+.. image:: images/accelerometers-hardware/navx-imu-to-roborio-mxp.svg
 
 Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
 

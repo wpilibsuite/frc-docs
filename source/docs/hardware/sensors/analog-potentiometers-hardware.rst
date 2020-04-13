@@ -12,7 +12,7 @@ Wiring an analog potentiometer
 
 As suggested by the names, analog potentiometers connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.  To understand how exactly to wire potentiometers, however, it is important to understand their internal circuitry.
 
-.. image:: images/analog-potentiometers-hardware/analog-potentiometer-to-roborio.png
+.. image:: images/analog-potentiometers-hardware/analog-potentiometer-to-roborio.svg
 
 The picture above on the left shows a typical potentiometer.  There are three pins, just as there are on the RIO's analog inputs.  The middle pin is the signal pin, while the outer pins can both be *either* power or ground.
 
@@ -23,7 +23,7 @@ Since the circuit is symmetric, it is reversible - this allows the user to choos
 Absolute encoders
 -----------------
 
-.. image:: images/analog-potentiometers-hardware/absolute-encoder-to-roborio.png
+.. image:: images/analog-potentiometers-hardware/absolute-encoder-to-roborio.svg
 
 An "absolute encoder" is an encoder that measures the absolute position of the encoder shaft, rather than the incremental movement (as a :doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, absolute encoders are more similar to potentiometers than to incremental encoders.  Many absolute encoders offer a simple analog output - these can be used exactly in the same way as a potentiometer, except their wiring is not generally reversible.  Absolute encoders have the advantage of lacking a hard travel limit - the signal will simply reset when the shaft crosses the zero point. The analog potentiometer pictured above can be found at `AndyMark <https://www.andymark.com/products/absolute-encoder-with-cable>`__.
 
