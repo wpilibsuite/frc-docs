@@ -39,7 +39,7 @@ Linux (Ubuntu)
     $ sudo apt install python3 python3-pip
     $ python3 -m pip install -U pip setuptools wheel
     $ python3 -m pip install -r source/requirements.txt
-    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz
+    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz imagemagick
 
 Building
 --------
