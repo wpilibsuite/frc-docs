@@ -161,6 +161,12 @@ Vector Images
 
 SVG files are supported through the ``imgconverter`` Sphinx extension.
 
+Simply use them as you would with any other image.
+
+.. code-block:: text
+
+   .. image:: images/image-1.svg
+
 Table of Contents (TOC)
 -----------------------
 
