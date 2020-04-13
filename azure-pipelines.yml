@@ -32,9 +32,6 @@ jobs:
     - script: sudo apt-get install -qy --force-yes graphviz
       displayName: 'Install GraphViz'
 
-    - script: sudo apt-get install -qy imagemagick
-      displayName: 'Install ImageMagick'
-
     - script: make html
       displayName: 'Compile HTML'
 
