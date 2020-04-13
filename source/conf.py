@@ -71,6 +71,10 @@ exclude_patterns = ['.png', '.jpg', 'docs/beta/*', 'docs/software/examples-tutor
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
 
+# SVG support
+image_converter = "magick"
+image_converter_args = ["convert"]
+
 
 # -- Options for HTML output -------------------------------------------------
 
