@@ -9,11 +9,10 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
 
 # -- Project information -----------------------------------------------------
 
@@ -70,9 +69,10 @@ exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
 
-# SVG support
-image_converter = "magick"
-image_converter_args = ["convert"]
+# This workaround is required because Ubuntu is still stuck on ImageMagick6
+if os.name == 'nt':
+    image_converter = "magick"
+    image_converter_args = ["convert"]
 
 # -- Options for HTML output -------------------------------------------------
 
