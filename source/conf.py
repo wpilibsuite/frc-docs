@@ -9,6 +9,7 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
+
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -70,7 +71,7 @@ exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 master_doc = "index"
 
 # This workaround is required because Ubuntu is still stuck on ImageMagick6
-if os.name == 'nt':
+if os.name == 'nt' or os.name == 'posix':
     image_converter = "magick"
     image_converter_args = ["convert"]
 
