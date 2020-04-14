@@ -27,7 +27,7 @@ Ensure the repository is cloned with ``git clone https://github.com/wpilibsuite/
 
 - **Linux (Ubuntu)**
   - ``sudo apt-get install -y python3``
-  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz imagemagick``
+  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz imagemagick inkscape``
 
 Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
 
