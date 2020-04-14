@@ -65,13 +65,13 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
+exclude_patterns = ['.png', '.jpg', '.svg', 'docs/beta/*']
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
 
 # This workaround is required because Ubuntu is still stuck on ImageMagick6
-if os.name == 'nt' or os.name == 'posix':
+if sys.platform.startswith('win32') or sys.platform.startswith('cygwin') or sys.platform.startswith('darwin'):
     image_converter = "magick"
     image_converter_args = ["convert"]
 
