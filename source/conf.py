@@ -55,6 +55,7 @@ linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
 linkcheck_retries = 3
+linkcheck_workers = 1
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -65,7 +66,8 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['.png', '.jpg', '.svg', 'docs/beta/*']
+
+exclude_patterns = ['.png', '.jpg', '.svg', 'docs/beta/*', 'docs/software/examples-tutorials/machine-learning/*']
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"

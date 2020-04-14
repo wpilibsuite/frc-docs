@@ -100,9 +100,9 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/do
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
       :language: java
-      :lines: 27-51
+      :lines: 25-49
       :linenos:
-      :lineno-start: 27
+      :lineno-start: 25
 
   .. group-tab:: C++ (Header)
 
@@ -376,12 +376,12 @@ The ``withInterrupt()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/j
   .. code-tab:: java
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.whenPressed(command.interruptOn(m_limitSwitch::get));
+    button.whenPressed(command.withInterrupt(m_limitSwitch::get));
 
   .. code-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.WhenPressed(command.InterruptOn([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+    button.WhenPressed(command.WithInterrupt([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
 whenFinished
 ^^^^^^^^^^^^

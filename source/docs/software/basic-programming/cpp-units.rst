@@ -120,7 +120,7 @@ To convert a container type to a raw numeric value, the ``to<..>()`` method can 
 
 Example of the Units Library in WPILib Code
 -------------------------------------------
-Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the units library. Here is an example of :ref:`sampling a trajectory <docs/software/advanced-control/trajectories/manipulating-trajectories:Sampling the trajectory>`.
+Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the units library. Here is an example of :ref:`sampling a trajectory <docs/software/advanced-controls/trajectories/manipulating-trajectories:Sampling the trajectory>`.
 
 .. code-block:: c++
 
