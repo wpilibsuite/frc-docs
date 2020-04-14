@@ -40,7 +40,7 @@ To communicate to peripheral devices over SPI, each pin should be wired to its c
 The SPI bus can also be used through the `MXP expansion port`_. The MXP port provides independent clock, and input/output lines and an additional CS.
 
 RS-232
-^^^^^^
+------
 
 .. image:: images/roborio/roborio-rs-232.svg
 .. image:: images/serial-buses/rs232-pinout.png
