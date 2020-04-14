@@ -10,7 +10,7 @@ How to Wire an FRC Robot
 Overview
 --------
 
-.. image:: images/how-to-wire-a-robot/overview.jpg
+.. image:: images/how-to-wire-a-robot/image0.jpg
 
 Gather Materials
 ----------------
