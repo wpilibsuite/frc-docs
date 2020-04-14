@@ -10,9 +10,7 @@ How to Wire an FRC Robot
 Overview
 --------
 
-.. image:: images/how-to-wire-a-robot/frc-control-system-team-3161.png
-
-Image courtesy of `@stefenacepcion <https://www.chiefdelphi.com/t/control-system-layout-infographic/361110/20>`__ on Chief Delphi. `Click here <https://drive.google.com/file/d/1C8mV5wYJSe1oBIUHVwHYJ3nsNioG2019/view>`__ for a high-resolution 30x24 poster version.
+.. image:: images/how-to-wire-a-robot/overview.jpg
 
 Gather Materials
 ----------------
