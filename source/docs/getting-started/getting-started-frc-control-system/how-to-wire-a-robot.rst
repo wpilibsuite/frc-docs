@@ -10,13 +10,11 @@ How to Wire an FRC Robot
 Overview
 --------
 
-.. image:: images/how-to-wire-a-robot/frc-control-system-team-3161.png
+.. image:: images/how-to-wire-a-robot/FRC-Control-System-Layout.svg
+  :width: 600
 
 Gather Materials
 ----------------
-
-.. image:: images/how-to-wire-a-robot/image0.jpg
-   :width: 600
 
 Locate the following control system components and tools
 
