@@ -21,7 +21,7 @@ Creating a TrapezoidProfile
 Constraints
 ^^^^^^^^^^^
 
-.. note:: The various :ref:`feedforward helper classes <docs/software/advanced-control/controllers/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
+.. note:: The various :ref:`feedforward helper classes <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
 
 In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.Constraints.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1TrapezoidProfile_1_1Constraints.html>`__):
 
