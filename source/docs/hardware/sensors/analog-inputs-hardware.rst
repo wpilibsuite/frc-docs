@@ -29,7 +29,7 @@ Connecting a sensor to a single analog input port
 
 Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports. They should be connected accordingly.
 
-.. image:: images/analog-inputs-hardware/mb1013-ultrasonic-sensor-to-roborio.svg
+.. image:: images/analog-inputs-hardware/ultrasonic-sensor-to-roborio.svg
 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
