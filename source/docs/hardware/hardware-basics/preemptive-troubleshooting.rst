@@ -10,7 +10,7 @@ Robot Preemptive Troubleshooting
 Check Battery Connections
 -------------------------
 
-.. image:: images/preemptive-troubleshooting/battery-bolt-check.png
+.. image:: images/preemptive-troubleshooting/battery-bolt-check.svg
 
 The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
 
@@ -28,7 +28,7 @@ In almost every event we see at least one robot where a not properly secured bat
 120 Amp Circuit Breaker
 -----------------------
 
-.. image:: images/preemptive-troubleshooting/tighten-breaker.png
+.. image:: images/preemptive-troubleshooting/tighten-breaker.svg
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
 
@@ -44,7 +44,7 @@ Make sure that split washers were placed under the PDP screws, but it is not eas
 Tug Testing
 -----------
 
-.. image:: images/preemptive-troubleshooting/tug-test.png
+.. image:: images/preemptive-troubleshooting/tug-test.svg
 
 The Weidmuller contacts for power, compressor output, roboRIO power connector, and radio power are important to verify by tugging on the connections as shown.  Make sure that none of the connections pull out.
 
@@ -108,7 +108,7 @@ We often see problems with the Drivers Station. You should:
 Handy Tools
 -----------
 
-.. image:: images/preemptive-troubleshooting/tools.png
+.. image:: images/preemptive-troubleshooting/tools.svg
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
 
