@@ -14,7 +14,7 @@ The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_g
 
 .. todo:: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
 
-|Types of Sensors|
+.. drawio:: diagrams/sensor-overview-software.drawio
 
 WPILib provides native support for:
 
@@ -27,5 +27,3 @@ WPILib provides native support for:
 - :ref:`Limit switches <docs/software/sensors/digital-inputs-software:Digital Inputs - Software>`
 
 Additionally, WPILib includes lower-level classes for interfacing directly with the FPGA's digital and analog inputs and outputs.
-
-.. |Types of Sensors| image:: images/sensor-overview-software/types-of-sensors.png
