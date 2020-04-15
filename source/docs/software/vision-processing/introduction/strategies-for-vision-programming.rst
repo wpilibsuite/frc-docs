@@ -5,7 +5,7 @@ Using computer vision is a great way of making your robot be responsive to the e
 
 There are many options for choosing the components for vision processing and where the vision program should run. WPILib and associated tools support a number of options and give teams a lot of flexibility to decide what to do. This article will attempt to give you some insight into many of the choices and tradeoffs that are available.
 
-.. image:: images/strategies-for-vision-programming/vision-workflows.png
+.. drawio:: diagrams/vision-workflows.drawio
 
 OpenCV Computer Vision Library
 ------------------------------
