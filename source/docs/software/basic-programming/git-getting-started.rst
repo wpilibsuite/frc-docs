@@ -158,23 +158,7 @@ Branches
 
 Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
 
-.. graphviz::
-
-   digraph branches {
-      "Example Repo" [ shape=cylinder]
-      FeatureA [ shape=ellipse]
-      FeatureB [ shape=ellipse]
-      FeatureC [ shape=ellipse]
-      "Example Repo" -> FeatureA
-      "Example Repo" -> FeatureB
-      "Example Repo" -> FeatureC
-      "Update File 1" [ shape=box]
-      FeatureA -> "Update File 1"
-      "Update File 2" [ shape=box]
-      FeatureB -> "Update File 2"
-      "Update File 3" [ shape=box]
-      FeatureC -> "Update File 3"
-   }
+..drawio:: diagrams/branches.drawio
 
 In the above example, FeatureB was merged into FeatureA. This is what is called a merge. You are "merging" the changes from one branch into another.
 
@@ -197,23 +181,7 @@ In scenarios where you want to copy one branches history into another, you can m
 
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
-.. graphviz::
-
-   digraph branches {
-      "Example Repo" [ shape=cylinder]
-      FeatureA [ shape=ellipse]
-      FeatureB [ shape=ellipse]
-      FeatureC [ shape=ellipse]
-      "Example Repo" -> FeatureA
-      "Example Repo" -> FeatureB
-      "Example Repo" -> FeatureC
-      "Update File 1" [ shape=box]
-      FeatureA -> "Update File 1"
-      "Update File 2" [ shape=box]
-      FeatureB -> "Update File 2"
-      "Update File 3" [ shape=box]
-      FeatureC -> "Update File 3"
-   }
+..drawio:: diagrams/branches.drawio
 
 However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
 
