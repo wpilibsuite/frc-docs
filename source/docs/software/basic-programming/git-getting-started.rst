@@ -181,7 +181,7 @@ In scenarios where you want to copy one branches history into another, you can m
 
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
-..drawio:: diagrams/branches.drawio
+..drawio:: diagrams/merge-conflict.drawio
 
 However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
 
