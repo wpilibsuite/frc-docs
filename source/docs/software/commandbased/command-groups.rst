@@ -116,8 +116,6 @@ This creates a sequential command group that *contains* a parallel command group
 .. drawio:: diagrams/concurrent-commands.drawio
    :alt: command group with concurrency
 
-   command group with concurrency
-
 Notice how the recursive composition allows the embedding of a parallel control structure within a sequential one. Notice also that this entire, more-complex structure, could be again embedded in another structure. Composition is an extremely powerful tool, and one that users should be sure to use extensively.
 
 Command Groups and Requirements
