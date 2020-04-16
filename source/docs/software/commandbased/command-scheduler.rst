@@ -66,46 +66,7 @@ The Scheduler Run Sequence
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
-.. graphviz::
-    :alt: Scheduler Control Flow Diagram
-
-    digraph control_flow {
-        splines=ortho
-        bgcolor="#FFFFFF00"
-
-        // Processes
-        node [shape=box]
-            Initialize [label="Initialize()"]
-            Execute [label="Execute()"]
-            Triggers [label="Schedule commands\nfrom triggers"]
-            EndYes [label="End()"]
-
-        // Terminals
-        node [shape=oval]
-            Start [label="Subsystem\nPeriodic()"]
-            MoveNextCommand [label="Move to next command"]
-
-        // Decisions
-        node [shape=diamond, margin=0.1]
-            Finished [label="IsFinished()"]
-
-        Start -> Triggers
-        Triggers -> Initialize
-
-        // Decisions
-        node [shape=diamond, margin=0.1]
-            Finished [label="IsFinished()"]
-
-        subgraph cluster_for_each_command {
-            label="For Each\nCommand"
-            labeljust="left"
-            Initialize -> Execute -> Finished
-
-            Finished -> EndYes [taillabel="\n    True"]
-            EndYes -> MoveNextCommand
-            Finished -> MoveNextCommand  [taillabel="\n    False"]
-        }
-    }
+..drawio:: diagrams/scheduler.drawio
 
 What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration.
 
