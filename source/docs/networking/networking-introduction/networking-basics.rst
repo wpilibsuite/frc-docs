@@ -34,7 +34,7 @@ To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” wa
 These reserved ranges let us assign one “unreserved IP Address” to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
 
-.. image:: images/networking-basics/nat-diagram.png
+.. drawio:: diagrams/nat.drawio
 
 .. note::
    For the FRC networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
