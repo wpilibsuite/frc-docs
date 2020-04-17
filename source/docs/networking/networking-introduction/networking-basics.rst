@@ -83,6 +83,8 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 
 .. drawio:: diagrams/mixing-static-dynamic.drawio
 
+.. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
+
 mDNS
 ----
 
