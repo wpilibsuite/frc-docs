@@ -160,7 +160,7 @@ Branches are a similar to parallel worlds to Git. They start off the same, and t
 
 ..drawio:: diagrams/branches.drawio
 
-In the above example, FeatureB was merged into FeatureA. This is what is called a merge. You are "merging" the changes from one branch into another.
+In the above example, Master was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
 
 Creating a Branch
 ^^^^^^^^^^^^^^^^^
