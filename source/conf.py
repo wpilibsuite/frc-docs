@@ -28,7 +28,7 @@ if os.environ.get("READTHEDOCS"):
 
     if drawio_download.returncode == 0:
         # If we got the draw.io deb, install it, and xvfb to run headless
-        drawio_install = subprocess.run(["sudo", "apt-get", "install", "-qy", "--force-yes", "libasound2",
+        drawio_install = subprocess.run(["apt-get", "install", "-qy", "--force-yes", "libasound2",
                                          "./drawio.deb", "xvfb"])
         print("Dependencies Installed" if drawio_install.returncode == 0 else "Error Installing Dependencies")
     else:
