@@ -22,10 +22,12 @@ Apply considerable force onto the battery cable at 90 degrees to try to move the
 Secure the battery to robot connection
 ------------------------------------------------------------------
 
+.. image:: images/preemptive-troubleshooting/fallen-battery.jpg
+   :width: 49%
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
-   :width: 400
+   :width: 49%
 
-In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
+In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense. Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
 
 120 Amp circuit breaker
 ------------------------------------
