@@ -40,7 +40,7 @@
 }
 
 .rst-versions {
-	width: 320px !important;
+	width: 320px;
 }
 
 .header-bar {
@@ -96,4 +96,21 @@
 	.wy-nav-side {
 		width: 300px;
 	}
+
+	.wy-nav-side.shift {
+    	max-width: 320px;
+    }
+
+	/* Fix sidebar adjust */
+	.rst-versions {
+		width: 85%;
+		max-width: 320px;
+	}
+}
+
+/* Handle landscape */
+@media screen and (min-width: 377px) {
+  .wy-nav-content-wrap.shift {
+    left: 320px;
+  }
 }
