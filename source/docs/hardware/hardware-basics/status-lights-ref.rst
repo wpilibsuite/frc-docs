@@ -88,21 +88,70 @@ Radio WiFi
 Power Distribution Panel
 ------------------------
 
-.. image:: images/status-lights/pdpLight.png
+.. image:: images/status-lights/pdp-status-lights.svg
+  :width: 600
+
++---------------------+---------------------------+
+| LED Blink/Color     | Description               |
++=====================+===========================+
+| Fast Green Blink    | Robot is enabled          |
++---------------------+---------------------------+
+| Slow Green Blink    | Robot is disabled         |
++---------------------+---------------------------+
+| Slow Orange Blink   | Robot is disabled.        |
+|                     | Sticky Fault present.     |
++---------------------+---------------------------+
+| Slow Red Blink      | No CAN Comm.              |
++---------------------+---------------------------+
+| (COMM LED only)     | Device is in boot-loader. |
+| Green/Orange Blink) | Field-upgrade necessary.  |
++---------------------+---------------------------+
+| Both LEDs off       | Device is NOT powered.    |
++---------------------+---------------------------+
 
 Voltage Regulator Module
 ------------------------
 
-.. image:: images/status-lights/vrmLight.png
+.. image:: images/status-lights/vrm-status-lights.svg
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
 
 Pneumatics Control Module (PCM)
 -------------------------------
 
-.. image:: images/status-lights/pcmLight.png
+.. image:: images/status-lights/pcm-status-lights.svg
 
-Solenoid Channel LEDs - These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
+PCM LED Faults Table
+^^^^^^^^^^^^^^^^^^^^
+
+.. tabularcolumns:: |l|p{13}|p{29}|l|
+
++--------+---------------+-------------------------------+------------------+
+| LED    | Strobe        | Slow                          | Long             |
++========+===============+===============================+==================+
+| Green  | No Fault      | Sticky Fault                  | NA               |
+|        | Robot Enabled |                               |                  |
++--------+---------------+-------------------------------+------------------+
+| Orange | NA            | Sticky Fault                  | NA               |
++--------+---------------+-------------------------------+------------------+
+| Red    | NA            | No CAN Comm or Solenoid Fault | Compressor Fault |
+|        |               | (Blinks Solenoid Index)       |                  |
++--------+---------------+-------------------------------+------------------+
+
+* If a PCM LED is showing more than one color, see the PCM LED special states table below.
+
+PCM LED Special States Table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------+-----------------------------+
+| LED          | Problems                    |
++==============+=============================+
+| Red/Orange   | Damaged Hardware            |
++--------------+-----------------------------+
+| Green/Orange | In Bootloader               |
++--------------+-----------------------------+
+| No LED       | No Power/Incorrect Polarity |
++--------------+-----------------------------+
 
 PCM Comp
 ^^^^^^^^
@@ -112,10 +161,17 @@ This is the Compressor LED. This LED is green when the compressor output is acti
 PCM Status
 ^^^^^^^^^^
 
-The status LED indicates device status as indicated by the two tables above. For more information on resolving PCM faults see the PCM User Manual. Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
+The status LED indicates device status as indicated by the two tables above. For more information on resolving PCM faults see the PCM User Manual.
+
+.. note:: Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
+
+PCM Solenoid Channel LEDs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
 Digilent DMC-60
----------------------------
+---------------
 
 .. image:: images/status-lights/digilentLight.png
 
@@ -146,7 +202,7 @@ REV Robotics SPARK
 Talon speed controllers
 -----------------------
 
-.. image:: images/status-lights/ogTalonLight.png
+.. image:: images/status-lights/talonsr-status-light.png
 
 The LED is used to indicate the direction and percentage of throttle and state of calibration. The LED may be one of three colors; red, orange or green. A solid green LED indicates positive output voltage equal to the input voltage of the Talon. A solid Red LED indicates an output voltage that is equal to the input voltage multiplied by -1(input voltage = 12 volts, output equals -12 volts). The LED will blink it’s corresponding color for any throttle less than 100% (red indicates negative polarity, green indicates positive). The rate at which the led blinks is proportional to the percent throttle. The faster the LED blinks the closer the output is to 100% in either polarity.
 
@@ -183,6 +239,16 @@ The Status LEDs are used to indicate the direction and percentage of throttle an
 The LEDs will blink orange any time the Victor-SP is in the disabled state. This will happen if the PWM input signal is lost, or in FRC, when the robot is disabled. If the Victor-SP is in the enabled state and the throttle is within the 4% dead band, the LED will remain solid orange.
 
 Flashing Red/Green indicate ready for calibration. Several green flashes indicates successful calibration, and red several times indicates unsuccessful calibration.
+
+Victor888 Speed Controller
+--------------------------
+
+.. image:: images/status-lights/victor888-status-light.svg
+
+- Green = Full Forward
+- Orange = Neutral/Brake
+- Red = Full Reverse
+- Flashing Orange = no PWM
 
 Talon-SRX speed controllers
 ---------------------------
