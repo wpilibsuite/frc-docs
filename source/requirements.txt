@@ -6,4 +6,4 @@ doc8==0.8.0
 sphinxcontrib-remoteliteralinclude==0.0.4
 sphinxcontrib-ghcontributors==0.2.2
 sphinx-notfound-page==0.4
--e git://github.com/ItayZiv/sphinxcontrib-drawio.git@scale_support#egg=sphinxcontrib-drawio
+-e git://github.com/ItayZiv/sphinxcontrib-drawio.git@scale-support#egg=sphinxcontrib-drawio
