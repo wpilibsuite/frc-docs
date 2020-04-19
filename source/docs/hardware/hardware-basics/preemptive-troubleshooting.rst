@@ -40,7 +40,7 @@ Because the metal is just molded into the case, every once in awhile you will br
 Power Distribution Panel (PDP)
 ------------------------------
 
-.. image:: images/preemptive-troubleshooting/pdp-bolts.jpg
+.. image:: images/preemptive-troubleshooting/pdp-bolts.png
 
 Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
