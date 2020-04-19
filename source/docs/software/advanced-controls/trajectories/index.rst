@@ -7,6 +7,7 @@ This section describes WPILib support for generating parameterized spline trajec
    :maxdepth: 1
 
    trajectory-generation
+   constraints
    manipulating-trajectories
    transforming-trajectories
    ramsete

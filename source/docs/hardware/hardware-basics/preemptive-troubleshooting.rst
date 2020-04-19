@@ -21,9 +21,12 @@ Apply considerable force onto the battery cable at 90 degrees to try to move the
 Securing the Battery to the Robot
 ---------------------------------
 
+.. image:: images/preemptive-troubleshooting/fallen-battery.jpg
+   :width: 49%
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
+   :width: 49%
 
-In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
+In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense. Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
 
 120 Amp Circuit Breaker
 -----------------------
@@ -55,7 +58,15 @@ Spade connectors can also fail due to improper crimps, so tug-test those as well
 Blade Fuses
 -----------
 
-.. image:: images/preemptive-troubleshooting/preCheckFuse.png
+Be sure to place the 20A fuse (yellow) on the left and the 10A fuse (red) on the right.
+
+.. image:: images/preemptive-troubleshooting/pdp-blade-fuses.svg
+   :width: 600
+
+.. image:: images/preemptive-troubleshooting/blade-fuses.png
+   :width: 600
+
+..warning:: Take care to ensure fuses are fully seated into the fuse holders. The fuses should descend at least as far as the figure below (different brand fuses have different lead lengths). It should be nearly impossible to remove the fuse with bare hands (without the use of pliers). If this is not properly done, the robot/radio may exhibit intermittent connectivity issues.
 
 If you can remove the blade fuses by hand then they are not in completely. Make sure that they are completely seated in the PDP so that they don't pop out during robot operation.
 
