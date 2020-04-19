@@ -154,3 +154,5 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 drawio_output_format = 'png'
 
 drawio_headless = "auto"
+
+drawio_default_scale = 10
