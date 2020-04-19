@@ -21,15 +21,17 @@ import subprocess
 # This is needed because of https://github.com/readthedocs/readthedocs-docker-images/issues/114
 
 if os.environ.get("READTHEDOCS"):
+root_dir = "\\".join(os.getcwd().split("\\")[:-1])
     # Tries to grab draw.io deb
     drawio_download = \
         subprocess.run(["wget", "-O", "drawio.deb",
-                        "https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw.io-amd64-12.6.5.deb"])
+                        "https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw.io-amd64-12.6.5.deb"],
+                        cwd=root_dir)
 
     if drawio_download.returncode == 0:
         # If we got the draw.io deb, install it, and xvfb to run headless
         drawio_install = subprocess.run(["sudo", "apt-get", "install", "-qy", "--force-yes", "libasound2",
-                                         "./drawio.deb", "xvfb"])
+                                         "./drawio.deb", "xvfb"], cwd=root_dir)
         print("Dependencies Installed" if drawio_install.returncode == 0 else "Error Installing Dependencies")
     else:
         print("Error Downloading Dependencies")
