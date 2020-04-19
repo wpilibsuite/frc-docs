@@ -9,7 +9,7 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: images/diffdrive.jpg
+.. image:: /docs/getting-started/getting-started-frc-control-system/images/how-to-wire-a-robot/image1.jpg
    :width: 600
 
 These drive bases typically have two or more in-line
