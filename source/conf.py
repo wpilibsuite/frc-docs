@@ -21,7 +21,8 @@ import subprocess
 # This is needed because of https://github.com/readthedocs/readthedocs-docker-images/issues/114
 
 if os.environ.get("READTHEDOCS"):
-root_dir = "\\".join(os.getcwd().split("\\")[:-1])
+	# Gets the root directory, so draw.io is in stalled in the correct location
+	root_dir = "\\".join(os.getcwd().split("\\")[:-1])
     # Tries to grab draw.io deb
     drawio_download = \
         subprocess.run(["wget", "-O", "drawio.deb",
