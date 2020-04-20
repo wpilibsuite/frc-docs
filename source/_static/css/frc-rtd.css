@@ -115,6 +115,8 @@
   }
 }
 /* Fix table padding https://github.com/readthedocs/sphinx_rtd_theme/issues/117 */
-.wy-table-responsive table td, .wy-table-responsive table th {
-    white-space: normal !important;
+@media screen and (min-width: 768px) {
+	.wy-table-responsive table td, .wy-table-responsive table th {
+	    white-space: normal !important;
+	}
 }
