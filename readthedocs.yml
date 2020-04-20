@@ -1,6 +1,7 @@
-requirements_file: source/requirements.txt
-
 sphinx:
   builder: html
   configuration: source/conf.py
   fail_on_warning: true
+
+conda:
+  environment: environment.yml

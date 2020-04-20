@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - python==3.6
+  - imagemagick
+  - inkscape
+  - pip:
+    - -r file:source/requirements.txt
