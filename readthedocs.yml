@@ -1,7 +1,8 @@
+version: 2
+build:
+  image: latest
+conda:
+  environment: environment.yml
 sphinx:
   builder: html
   configuration: source/conf.py
-  fail_on_warning: true
-
-conda:
-  environment: environment.yml
