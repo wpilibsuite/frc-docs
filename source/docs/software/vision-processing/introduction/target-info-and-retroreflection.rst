@@ -13,7 +13,7 @@ Each 2016 vision target consists of a 1' 8" wide, 1' tall U-shape made of 2" wid
 Retroreflectivity vs. Reflectivity
 ----------------------------------
 
-.. image:: images/target-info-and-retroreflection/retroreflectivity-vs-reflectivity.png
+.. drawio:: diagrams/retroreflectivity-vs-reflectivity.drawio
 
 Highly reflective materials are generally mirrored so that light "bounces off" at a supplementary angle. As shown above-left, the blue and red angles sum to 180 degrees. An equivalent explanation is that the light reflects about the surface normal the green line drawn perpendicular to the surface. Notice that a light pointed at the surface will return to the light source only if the blue angle is ~90 degrees.
 
@@ -22,11 +22,14 @@ Retro-reflective materials are not mirrored, but it will typically have either s
 Examples of Retroreflection
 ---------------------------
 
-.. image:: images/target-info-and-retroreflection/examples-of-retroreflection.png
+.. image:: images/target-info-and-retroreflection/raised-pavement-marker.jpg
+  :width: 49%
+.. image:: images/target-info-and-retroreflection/vest.jpg
+  :width: 49%
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles, and pedestrians.
 
-Initially, retro-reflection may not seem like a useful property for nighttime safety, but when the light and eye are near one another, as shown below, the reflected light returns to the eye, and the material shines brightly even at large distances. Due to the small angle between the driver’s eyes and vehicle headlights, retro-reflective materials can greatly increase visibility of distant objects during nighttime driving.
+Initially, retro-reflection may not seem like a useful property for nighttime safety, but when the light and eye are near one another, as shown above, the reflected light returns to the eye, and the material shines brightly even at large distances. Due to the small angle between the driver’s eyes and vehicle headlights, retro-reflective materials can greatly increase visibility of distant objects during nighttime driving.
 
 Demonstration
 -------------
