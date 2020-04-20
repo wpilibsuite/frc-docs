@@ -3,7 +3,6 @@ channels:
 dependencies:
   - python==3.6
   - imagemagick
-  - inkscape
   - pip
   - pip:
     - -r file:source/requirements.txt
