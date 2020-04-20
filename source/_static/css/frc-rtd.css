@@ -114,7 +114,7 @@
     left: 320px;
   }
 }
-/* Fix table padding https://github.com/readthedocs/sphinx_rtd_theme/issues/117 */
-.wy-table-responsive table td, .wy-table-responsive table th {
+
+.wy-table-responsive table td,.wy-table-responsive table th {
     white-space: normal !important;
 }
