@@ -7,4 +7,3 @@ Shuffleboard
    getting-started/index
    layouts-with-code/index
    advanced-usage/index
-   custom-widgets/index
