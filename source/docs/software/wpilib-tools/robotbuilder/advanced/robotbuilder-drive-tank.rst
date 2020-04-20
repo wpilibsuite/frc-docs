@@ -10,7 +10,7 @@ Create a Drive Train Subsystem
 
 .. image:: images/driving-with-joysticks-1.png
 
-Create a subsystem called Drive Train. Its responsibility will be to handle the driving for the robot base. Inside the Drive Train is a Robot Drive object for a two motor drive robot (in this case). There is a left motor and right motor as part of the Robot Drive 2 class.
+Create a subsystem called Drive Train. Its responsibility will be to handle the driving for the robot base. Inside the Drive Train is a DifferentialDrive object for a two motor drive robot (in this case). There is a left motor and right motor as part of the DifferentialDrive 2 class.
 
 Add the Joysticks to the Operator Interface
 -------------------------------------------
@@ -29,7 +29,7 @@ Create a Method to Write the Motors on the Subsystem
    .. code-tab:: java
 
       public class DriveTrain extends Subsystem {
-         RobotDrive robotDrive2 = RobotMap.DRIVE_TRAIN_ROBOT_DRIVE_2;
+         DifferentialDrive robotDrive2 = RobotMap.DRIVE_TRAIN_ROBOT_DRIVE_2;
          Jaguar rightMotor = RobotMap.DRIVE_TRAIN_RIGHT_MOTOR;
          Jaguar leftMotor = RobotMap.DRIVE_TRAIN_LEFT_MOTOR;
 
@@ -46,7 +46,7 @@ Create a Method to Write the Motors on the Subsystem
          }
       }
 
-Create a method that takes the joystick inputs, in this case the the left and right driver joystick. The values are passed to the RobotDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
+Create a method that takes the joystick inputs, in this case the the left and right driver joystick. The values are passed to the DifferentialDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
 
 .. note:: The extra RobotBuilder comments have been removed to format the example for the documentation.
 
@@ -94,7 +94,7 @@ Add the Code to do the Driving
          }
       }
 
-Add code to the execute method to do the actual driving. All that is needed is to get the Joystick objects for the left and right drive joysticks and pass them to the Drive Train subsystem. The subsystem just uses them for the tank steering method on its RobotDrive object. And we get tank steering.
+Add code to the execute method to do the actual driving. All that is needed is to get the Joystick objects for the left and right drive joysticks and pass them to the Drive Train subsystem. The subsystem just uses them for the tank steering method on its DifferentialDrive object. And we get tank steering.
 
 We also filled in the ``end()`` and ``interrupted()`` methods so that when this command is interrupted or stopped, the motors will be stopped as a safety precaution.
 
