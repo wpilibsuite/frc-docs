@@ -24,7 +24,7 @@ movement.
 
 Mecanum Drive
 ^^^^^^^^^^^^^
-.. image:: images/mecanumdrive.jpg
+.. image:: images/am-14u4-6in-mecanum-upgrade.jpg
    :width: 600
 
 Mecanum drive is a method of driving using specially
