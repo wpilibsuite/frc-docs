@@ -2,3 +2,6 @@ channels:
   - conda-forge
 dependencies:
   - imagemagick
+  - pip
+  - pip:
+    - -r file:source/requirements.txt
