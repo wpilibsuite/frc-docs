@@ -31,7 +31,7 @@ There are many different types of Pane, they are as noted:
 
    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
-Layout panes are also extremely useful for placing child nodes in one horizontal row using a `HBox <https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.html>`_ or one vertical column using a `VBox <https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html>`_.
+Layout panes are also extremely useful for placing child nodes in one horizontal row using a `HBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`_ or one vertical column using a `VBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_.
 
 The basic syntax for defining a Pane using FXML would be as the following:
 
