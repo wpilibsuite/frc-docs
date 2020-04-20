@@ -154,7 +154,7 @@ default (and minimum useful) value is 100ms.
 
 Axis Conventions
 ^^^^^^^^^^^^^^^^
-.. image:: images/axisconventions.jpg
+.. image:: images/drive-axis.png
    :width: 600
 
 This library uses the NED axes convention (North-East-Down
