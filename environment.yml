@@ -1,8 +1,4 @@
 channels:
   - conda-forge
 dependencies:
-  - python==3.6
   - imagemagick
-  - pip
-  - pip:
-    - -r file:source/requirements.txt
