@@ -81,7 +81,7 @@ While on the field, the team should not notice any issues with having devices se
 
 In the pits, a team may encounter issues with mixing Static and DHCP devices for the following reason. As mentioned above, DHCP devices will fall back to a link-local address (``169.254.xx.yy``) if a server isn’t present. For static devices, the IP address will always be the same. If the DHCP server is not present and the roboRIO, driver station, and laptop fall back to link-local addresses, the statically set devices in the 10.TE.AM.xx range will be in a different network and not visible to those with link-local addresses. A visual description of this is provided below:
 
-.. drawio:: diagrams/mixing-static-dynamic.drawio
+.. image:: diagrams/mixing-static-dynamic.drawio.svg
 
 .. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
 
