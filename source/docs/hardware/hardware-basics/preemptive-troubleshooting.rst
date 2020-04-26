@@ -31,6 +31,8 @@ In almost every event we see at least one robot where a not properly secured bat
 120 Amp Circuit Breaker
 -----------------------
 
+.. note:: Ensure nuts are tightened firmly and the breaker is attached to a rigid element.
+
 .. image:: images/preemptive-troubleshooting/tighten-breaker.svg
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
