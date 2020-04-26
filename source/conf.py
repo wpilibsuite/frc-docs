@@ -32,10 +32,10 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
-    'sphinx.ext.imgconverter',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
+    'sphinxcontrib.rsvgconverter',
     'notfound.extension'
 ]
 
