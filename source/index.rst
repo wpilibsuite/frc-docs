@@ -90,6 +90,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/contributing/style-guide
    docs/contributing/build-instructions
    docs/contributing/top-contributors
+   docs/contributing/drawio-saving-instructions
 
 .. toctree::
    :maxdepth: 1
