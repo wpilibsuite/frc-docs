@@ -56,6 +56,7 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'sphinxcontrib.drawio',
     'notfound.extension'
 ]
 
