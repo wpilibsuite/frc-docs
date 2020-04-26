@@ -56,7 +56,6 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
-    'sphinxcontrib.drawio',
     'notfound.extension'
 ]
 
@@ -150,8 +149,3 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub', 'linkcheck']
-
-# Either png, jpeg or svg
-drawio_output_format = 'png'
-
-drawio_headless = "auto"
