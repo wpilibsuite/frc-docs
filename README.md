@@ -23,11 +23,10 @@ Ensure the repository is cloned with ``git clone https://github.com/wpilibsuite/
   - [MiKTeX](https://miktex.org/download)
   - [GraphViz](https://graphviz.gitlab.io/_pages/Download/Download_windows.html)
   - [Perl](http://strawberryperl.com/)
-  - [ImageMagick7](https://imagemagick.org/script/download.php#windows)
 
 - **Linux (Ubuntu)**
   - ``sudo apt-get install -y python3``
-  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz imagemagick librsvg2-bin``
+  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz librsvg2-bin``
 
 Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
 
