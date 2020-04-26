@@ -167,7 +167,6 @@ Simply use them as you would with any other image.
 
    .. image:: images/image-1.svg
 
-
 Table of Contents (TOC)
 -----------------------
 
