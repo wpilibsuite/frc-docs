@@ -13,7 +13,7 @@ Each 2016 vision target consists of a 1' 8" wide, 1' tall U-shape made of 2" wid
 Retroreflectivity vs. Reflectivity
 ----------------------------------
 
-.. drawio:: diagrams/retroreflectivity-vs-reflectivity.drawio
+.. image:: diagrams/retroreflectivity-vs-reflectivity.drawio.svg
 
 Highly reflective materials are generally mirrored so that light "bounces off" at a supplementary angle. As shown above-left, the blue and red angles sum to 180 degrees. An equivalent explanation is that the light reflects about the surface normal the green line drawn perpendicular to the surface. Notice that a light pointed at the surface will return to the light source only if the blue angle is ~90 degrees.
 

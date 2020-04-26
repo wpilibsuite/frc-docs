@@ -14,7 +14,7 @@ The roboRIO includes a `FPGA <https://en.wikipedia.org/wiki/Field-programmable_g
 
 .. todo:: Fix this graphic.  Vision should be removed, counters are omitted but should be included, in general this needs to be made sensible/consistent
 
-.. drawio:: diagrams/sensor-overview-software.drawio
+.. image:: diagrams/sensor-overview-software.drawio.svg
 
 WPILib provides native support for:
 
