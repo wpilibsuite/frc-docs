@@ -159,7 +159,7 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 Vector Images
 ^^^^^^^^^^^^^
 
-SVG files are supported through the ``imgconverter`` Sphinx extension.
+SVG files are supported through the ``svg2pdfconverter`` Sphinx extension.
 
 Simply use them as you would with any other image.
 
