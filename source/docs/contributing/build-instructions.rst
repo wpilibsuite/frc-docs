@@ -39,7 +39,7 @@ Linux (Ubuntu)
     $ sudo apt install python3 python3-pip
     $ python3 -m pip install -U pip setuptools wheel
     $ python3 -m pip install -r source/requirements.txt
-    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz
+    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz librsvg2-bin
 
 Building
 --------
@@ -80,6 +80,8 @@ Type the command ``.\make html`` to generate HTML content. The content is locate
 
 Building PDF
 ------------
+
+.. warning:: Please note that PDF build on Windows may result in distorted images for SVG content. This is due to a lack of librsvg2-bin support on Windows.
 
 Type the command ``.\make latexpdf`` to generate PDF content. The PDF is located in the ``build/latex`` directory at the root of the repository.
 

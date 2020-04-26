@@ -156,6 +156,17 @@ They should follow the naming scheme of ``document-title-1.png`` so on and so fo
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
 
+Vector Images
+^^^^^^^^^^^^^
+
+SVG files are supported through the ``svg2pdfconverter`` Sphinx extension.
+
+Simply use them as you would with any other image.
+
+.. code-block:: text
+
+   .. image:: images/image-1.svg
+
 Table of Contents (TOC)
 -----------------------
 

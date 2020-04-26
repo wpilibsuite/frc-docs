@@ -36,6 +36,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
+    'sphinxcontrib.rsvgconverter',
     'notfound.extension'
 ]
 
