@@ -1,6 +1,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 pool:
-  vmImage: 'ubuntu-16.04'
+  vmImage: 'ubuntu-18.04'
 
 trigger:
   batch: true
@@ -26,7 +26,7 @@ jobs:
     - script: sudo apt-get update
       displayName: 'Update System Packages'
 
-    - script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng
+    - script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
       displayName: 'Install LateX'
 
     - script: sudo apt-get install -qy --force-yes graphviz
@@ -101,6 +101,12 @@ jobs:
 
     - script: pip install -r source/requirements.txt
       displayName: 'Install Python Requirements'
+
+    - script: sudo apt-get update
+      displayName: 'Update System Packages'
+
+    - script: sudo apt-get install -y librsvg2-bin
+      displayName: 'Install SVG requirements'
 
     - script: make linkcheck
       displayName: 'Link Check'

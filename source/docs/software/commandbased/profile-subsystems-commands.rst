@@ -1,7 +1,7 @@
 Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands
 ================================================================================
 
-.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-control/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
+.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
 
 .. note:: The ``TrapezoidProfile`` command wrappers are generally intended for composition with custom or external controllers.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-subsystems-commands`.
 

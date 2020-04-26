@@ -156,34 +156,16 @@ They should follow the naming scheme of ``document-title-1.png`` so on and so fo
 
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
 
-Diagrams
---------
+Vector Images
+^^^^^^^^^^^^^
 
-Make your diagrams using draw.io either in the desktop app or the web app, and save the base ``.drawio`` file.
-Diagrams should be created with ``1`` new line separating content and directive.
+SVG files are supported through the ``svg2pdfconverter`` Sphinx extension.
+
+Simply use them as you would with any other image.
 
 .. code-block:: text
 
-   .. drawio:: images/diagram.drawio
-
-.. drawio:: images/example.drawio
-
-.. drawio:: images/test1.drawio
-   :align: right
-
-.. drawio:: images/test1.drawio
-   :align: left
-
-.. drawio:: images/test2.drawio
-
-Diagram Files
-^^^^^^^^^^^^^
-
-Diagram files should be stored in a sub-directory named ``diagrams`` in the same directory as the document.
-
-The should follow the naming scheme of ``document-title-1.drawio`` and so on.
-
-All files should be stored only as ``.drawio`` files, they will be automatically converted while being built.
+   .. image:: images/image-1.svg
 
 Table of Contents (TOC)
 -----------------------
