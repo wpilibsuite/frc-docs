@@ -68,11 +68,11 @@ An object that generates images is a source and an object that accepts/consumes 
 
 User code (such as that used in a FRC robot program) can act as either a source (providing processed frames as if it were a camera) or as a sink (receiving a frame for processing) via OpenCV source and sink objects. Thus an image processing pipeline that gets images from a camera and serves the processed images out looks like the below graph:
 
-..drawio:: diagrams/sink.drawio
+.. image:: diagrams/sink.drawio.svg
 
 Because sources can have multiple sinks connected, the pipeline may branch. For example, the original camera image can also be served by connecting the UsbCamera source to a second MjpegServer sink in addition to the CvSink, resulting in the below graph:
 
-..drawio:: diagrams/sources.drawio.drawio
+.. image:: diagrams/sources.drawio.svg
 
 When a new image is captured by the camera, both the CvSink and the MjpegServer [1] receive it.
 
