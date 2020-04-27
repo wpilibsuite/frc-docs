@@ -11,6 +11,7 @@ Check Battery Connections
 -------------------------
 
 .. image:: images/preemptive-troubleshooting/battery-bolt-check.svg
+  :width: 500
 
 The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
 
@@ -34,6 +35,7 @@ In almost every event we see at least one robot where a not properly secured bat
 .. note:: Ensure nuts are tightened firmly and the breaker is attached to a rigid element.
 
 .. image:: images/preemptive-troubleshooting/tighten-breaker.svg
+  :width: 600
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
 
@@ -43,6 +45,7 @@ Power Distribution Panel (PDP)
 ------------------------------
 
 .. image:: images/preemptive-troubleshooting/pdp-bolts.png
+  :width: 500
 
 Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
@@ -50,6 +53,7 @@ Tug Testing
 -----------
 
 .. image:: images/preemptive-troubleshooting/tug-test.svg
+  :width: 500
 
 The Weidmuller contacts for power, compressor output, roboRIO power connector, and radio power are important to verify by tugging on the connections as shown.  Make sure that none of the connections pull out.
 
@@ -68,7 +72,7 @@ Be sure to place the 20A fuse (yellow) on the left and the 10A fuse (red) on the
 .. image:: images/preemptive-troubleshooting/blade-fuses.png
    :width: 600
 
-..warning:: Take care to ensure fuses are fully seated into the fuse holders. The fuses should descend at least as far as the figure below (different brand fuses have different lead lengths). It should be nearly impossible to remove the fuse with bare hands (without the use of pliers). If this is not properly done, the robot/radio may exhibit intermittent connectivity issues.
+.. warning:: Take care to ensure fuses are fully seated into the fuse holders. The fuses should descend at least as far as the figure below (different brand fuses have different lead lengths). It should be nearly impossible to remove the fuse with bare hands (without the use of pliers). If this is not properly done, the robot/radio may exhibit intermittent connectivity issues.
 
 If you can remove the blade fuses by hand then they are not in completely. Make sure that they are completely seated in the PDP so that they don't pop out during robot operation.
 
@@ -122,6 +126,7 @@ Handy Tools
 -----------
 
 .. image:: images/preemptive-troubleshooting/tools.svg
+  :width: 500
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
 
