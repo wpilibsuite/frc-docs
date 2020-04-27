@@ -6,3 +6,5 @@ This is a explanation of how to save diagrams made in ``draw.io`` (Otherwise kno
 .. image:: images/drawio-example.svg
 
 .. image:: images/vision-code-on-a-coprocessor.drawio.svg
+
+.. image:: images/vision-code-on-a-coprocessor-lato.drawio.svg
