@@ -23,9 +23,9 @@ Securing the Battery to the Robot
 ---------------------------------
 
 .. image:: images/preemptive-troubleshooting/fallen-battery.jpg
-   :width: 49%
+   :width: 350
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
-   :width: 49%
+   :width: 350
 
 In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense. Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
 
@@ -104,7 +104,9 @@ Reproducing Problems in the Pit
 Beyond the normal shaking of cables whilst the robot is powered and tethered, it is suggested that one side of the robot be picked up and dropped. Driving on the field, especially against defenders, will often be very violent, and this helps makes sure nothing falls out. It is better for the robot to fail in the pits rather than in the middle of a match.
 
 When doing this test it’s important to be ethernet tethered and not USB tethered, otherwise you are not testing all of the critical paths.
-Check firmware and versions
+
+Check Firmware and Versions
+---------------------------
 
 Robot inspectors do this, but you should do it as well, it helps robot inspectors out and they appreciate it.  And it guarantees that you are running with the most recent, bug fixed code. You wouldn't want to lose a match because of an out of date piece of control system software on your robot.
 
