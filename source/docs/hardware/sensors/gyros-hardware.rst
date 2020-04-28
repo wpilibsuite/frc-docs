@@ -11,12 +11,12 @@ Several popular FRC devices known as :ref:`IMUs <docs/hardware/sensors/accelerom
   - `CTRE Pigeon IMU <https://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html>`__
   - `Kauai Labs NavX <https://pdocs.kauailabs.com/navx-mxp/>`__
 
-Types of gyros
+Types of Gyros
 --------------
 
 There are two types of Gyros commonly-used in FRC: single-axis gyros, three-axis gyros and IMUs, which often include a 3-axis gyro.
 
-Single-axis gyros
+Single-axis Gyros
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.svg
@@ -25,7 +25,7 @@ As per their name, single-axis gyros measure rotation rate around a single axis.
 
 The `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-pages/001/first.html>`__ that has been in FIRST Choice in recent years is a commonly used single axis gyro.
 
-Three-axis gyros
+Three-axis Gyros
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/gyros-hardware/triple-axis-i2c-gyro-to-roborio.svg
