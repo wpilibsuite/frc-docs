@@ -285,7 +285,7 @@ Jaguar speed controllers
 Mindsensors SD540B (PWM)
 ------------------------
 
-..
+.. ------ midpoint ------
   .. image:: images/status-lights/sd540b-status-lights.png
   :width: 600
 
@@ -306,7 +306,8 @@ Mindsensors SD540B (PWM)
 Mindsensors SD540C (CAN Bus)
 ----------------------------
 
-.. image:: images/status-lights/sd540c-status-lights.png
+..
+  .. image:: images/status-lights/sd540c-status-lights.png
   :width: 600
 
 +----------------+------------------+---------------------------------------------------------+
@@ -326,7 +327,8 @@ Mindsensors SD540C (CAN Bus)
 REV Robotics Servo Power Module
 -------------------------------
 
-.. image:: images/status-lights/rev-robotics-servo-power-module.png
+..
+  .. image:: images/status-lights/rev-robotics-servo-power-module.png
   :width: 400
 
 Status LEDs
@@ -351,12 +353,14 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 REV Robotics SPARK
 ------------------
 
-.. image:: images/status-lights/sparkLight.png
+..
+  .. image:: images/status-lights/sparkLight.png
 
 Talon speed controllers
 -----------------------
 
-.. image:: images/status-lights/talonsr-status-light.png
+..
+  .. image:: images/status-lights/talonsr-status-light.png
 
 +-----------+----------+------------------------------------------------------------------------+
 | Green     | Solid    | Full forward output                                                    |
@@ -381,7 +385,8 @@ Talon speed controllers
 Victor888 Speed Controller
 --------------------------
 
-.. image:: images/status-lights/victor888-status-light.svg
+..
+  .. image:: images/status-lights/victor888-status-light.svg
   :width: 600
 
 +-----------+----------+--------------------------+
@@ -401,7 +406,8 @@ Victor888 Speed Controller
 Victor-SP speed controllers
 ---------------------------
 
-.. image:: images/status-lights/victorSPLight.png
+..
+  .. image:: images/status-lights/victorSPLight.png
   :width: 600
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
@@ -428,7 +434,8 @@ Status
 Talon SRX speed controller
 --------------------------
 
-.. image:: images/status-lights/talon-srx-status-lights.png
+..
+  .. image:: images/status-lights/talon-srx-status-lights.png
   :width: 600
 
 +-------------------------------------------------+
@@ -484,7 +491,8 @@ Talon SRX speed controller
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------
 
-.. image:: images/status-lights/spikeRelay1Light.png
+..
+  .. image:: images/status-lights/spikeRelay1Light.png
   :width: 600
 
 +---------------------------------+-------------+-----------+-------------------------------------+
@@ -506,7 +514,8 @@ Spike relay configured as a motor, light, or solenoid switch
 Spike relay configured as for one or two solenoids
 --------------------------------------------------
 
-.. image:: images/status-lights/spikeRelay2Light.png
+..
+  .. image:: images/status-lights/spikeRelay2Light.png
   :width: 600
 
 +---------------------------------+-------------+-----------+--------------------------------+
