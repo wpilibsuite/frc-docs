@@ -89,8 +89,8 @@ OpenMesh Radio
 
 Power Distribution Panel
 ------------------------
-
-.. image:: images/status-lights/pdp-status-lights.svg
+..
+  .. image:: images/status-lights/pdp-status-lights.svg
   :width: 600
 
 +---------------------+---------------------------+
@@ -114,7 +114,8 @@ Power Distribution Panel
 Voltage Regulator Module
 ------------------------
 
-.. image:: images/status-lights/vrm-status-lights.svg
+..
+  .. image:: images/status-lights/vrm-status-lights.svg
   :width: 400
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
@@ -122,7 +123,8 @@ The status LEDs on the VRM indicate the state of the two power supplies. If the 
 Pneumatics Control Module (PCM)
 -------------------------------
 
-.. image:: images/status-lights/pcm-status-lights.svg
+..
+  .. image:: images/status-lights/pcm-status-lights.svg
   :width: 400
 
 .. tabularcolumns:: |l|p{13}|p{29}|l|
@@ -169,7 +171,8 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 Digilent DMC-60
 ---------------
 
-.. image:: images/status-lights/dmc60c-status-lights.png
+..
+  .. image:: images/status-lights/dmc60c-status-lights.png
 
 The DMC60C contains four RGB (Red, Green, and Blue) LEDs and one Brake/Coast CAL LED. The four RGB LEDs are located in the corners and are used to indicate status during normal operation, as well as when a fault occurs. The Brake/Coast CAL LED is located in the center of the triangle, which is located at the center of the housing, and is used to indicate the current Brake/Coast setting. When the center LED is off, the device is operating in coast mode. When the center LED is illuminated, the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle, and then releasing the button.
 
@@ -233,7 +236,8 @@ When the center LED is off the device is operating in coast mode. When the cente
 Jaguar speed controllers
 ------------------------
 
-.. image:: images/status-lights/jaguar-status-light.png
+..
+  .. image:: images/status-lights/jaguar-status-light.png
   :width: 400
 
 +------------------------------+------------------------------------------------+
@@ -281,7 +285,8 @@ Jaguar speed controllers
 Mindsensors SD540B (PWM)
 ------------------------
 
-.. image:: images/status-lights/sd540b-status-lights.png
+..
+  .. image:: images/status-lights/sd540b-status-lights.png
   :width: 600
 
 +----------------+-------+---------------------------------+
