@@ -7,64 +7,65 @@ Robot Signal Light (RSL)
 ------------------------
 
 .. image:: images/status-lights/rsl.svg
+  :width: 400
 
-- Solid ON - Robot On and Disabled
-- Blinking - Robot On and Enabled
-- Off - Robot Off, roboRIO not powered or RSL not wired properly.
++----------+----------------------------------------------------------+
+| Solid ON | Robot On and Disabled                                    |
++----------+----------------------------------------------------------+
+| Blinking | Robot On and Enabled                                     |
++----------+----------------------------------------------------------+
+| Off      | Robot Off, roboRIO not powered or RSL not wired properly |
++----------+----------------------------------------------------------+
 
 roboRIO
 -------
 
 .. image:: images/status-lights/roborio-status-lights.svg
-  :width: 600
+  :width: 400
 
-roboRIO Power
-^^^^^^^^^^^^^
-
-- Green - Power is good
-- Amber - Brownout protection tripped, outputs disabled
-- Red - Power fault, check user rails for short circuit
-
-roboRIO Status
-^^^^^^^^^^^^^^
-
-- On while the controller is booting, then should turn off
-- 2 blinks - Software error, reimage roboRIO
-- 3 blinks - Safe Mode, restart roboRIO, reimage if not resolved
-- 4 blinks - Software crashed twice without rebooting, reboot roboRIO, reimage if not resolved
-- Constant flash or stays solid on - Unrecoverable error
-
-roboRIO Radio
-^^^^^^^^^^^^^
-
-- Not currently implemented
-
-roboRIO Comm
-^^^^^^^^^^^^
-
-- Off - No Communication
-- Red Solid - Communication with DS, but no user code
-- Red Blinking - E-stop
-- Green Solid - Good communication with DS
-
-roboRIO Mode
-^^^^^^^^^^^^
-
-- Off - Outputs disabled (robot in Disabled, brown-out, etc.)
-- Amber/Orange - Autonomous Enabled
-- Green - Teleop Enabled
-- Red - Test Enabled
-
-roboRIO RSL
-^^^^^^^^^^^
-
-- `See here <#robot-signal-light-rsl>`_
-
++------------+----------------+-----------------------------------------------------------------------------------+
+| **Power**  | Green          | Power is good                                                                     |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Orange         | Brownout protection tripped, outputs disabled                                     |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Red            | Power fault, check user rails for short circuit                                   |
++------------+----------------+-----------------------------------------------------------------------------------+
+| **Status** | On while the controller is booting, then should turn off                                           |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | 2 blinks       | Software error, reimage roboRIO                                                   |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | 3 blinks       | Safe Mode, restart roboRIO, reimage if not resolved                               |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | 4 blinks       | Software crashed twice without rebooting, reboot roboRIO, reimage if not resolved |
+|            +----------------+---------------------------+-------------------------------------------------------+
+|            | Constant flash or stays solid on           | Unrecoverable error                                   |
++------------+--------------------------------------------+-------------------------------------------------------+
+| **Radio**  | Not currently implemented                                                                          |
++------------+----------------+-----------------------------------------------------------------------------------+
+| **Comm**   | Off            | No Communication                                                                  |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Red Solid      | Communication with DS, but no user code loaded                                    |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Red Blinking   | E-stop triggered                                                                  |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Green Solid    | Good communications with DS                                                       |
++------------+----------------+-----------------------------------------------------------------------------------+
+| **Mode**   | Off            | Outputs disabled (robot in Disabled, brown-out, etc.)                             |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Orange         | Autonomous Enabled                                                                |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Green          | Teleop Enabled                                                                    |
+|            +----------------+-----------------------------------------------------------------------------------+
+|            | Red            | Test Enabled                                                                      |
++------------+----------------+-----------------------------------------------------------------------------------+
+| **RSL**    | `See above <#robot-signal-light-rsl>`_                                                             |
++------------+----------------------------------------------------------------------------------------------------+
 
 OpenMesh Radio
 --------------
 
 .. image:: images/status-lights/openmesh-radio-status-lights.png
+  :width: 600
 
 +----------+---------------+------------------------------+
 | Power    | Blue          | On or Powering up            |
@@ -85,30 +86,11 @@ OpenMesh Radio
 |          | Green         | Bridge mode, Linked          |
 +----------+---------------+------------------------------+
 
-Radio Power
-^^^^^^^^^^^
-
-- Blue - On or Powering Up
-- Blue Blinking - Powering Up
-
-Radio Eth Link
-^^^^^^^^^^^^^^
-
-- Blue - Link Up
-- Blue Blinking - Link Up + Traffic Present
-
-Radio WiFi
-^^^^^^^^^^
-
-- Off - Bridge Mode Unlinked or Non-FRC Firmware
-- Red - AP Mode Unlinked
-- Yellow/Orange - AP Mode Linked
-- Green - Bridge Mode Linked
-
 Power Distribution Panel
 ------------------------
 
 .. image:: images/status-lights/pdp-status-lights.svg
+  :width: 600
 
 +---------------------+---------------------------+
 | LED Blink/Color     | Description               |
@@ -132,6 +114,7 @@ Voltage Regulator Module
 ------------------------
 
 .. image:: images/status-lights/vrm-status-lights.svg
+  :width: 400
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
 
@@ -139,9 +122,7 @@ Pneumatics Control Module (PCM)
 -------------------------------
 
 .. image:: images/status-lights/pcm-status-lights.svg
-
-PCM LED Faults Table
-^^^^^^^^^^^^^^^^^^^^
+  :width: 400
 
 .. tabularcolumns:: |l|p{13}|p{29}|l|
 
@@ -157,7 +138,9 @@ PCM LED Faults Table
 |        |               | (Blinks Solenoid Index)       |                  |
 +--------+---------------+-------------------------------+------------------+
 
-* If a PCM LED is showing more than one color, see the PCM LED special states table below.
+.. tip:: If a PCM LED is showing more than one color, see the PCM LED special states table below. For more information on resolving PCM faults see the PCM User Manual.
+
+.. note:: Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
 
 PCM LED Special States Table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -176,13 +159,6 @@ PCM Comp
 ^^^^^^^^
 
 This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
-
-PCM Status
-^^^^^^^^^^
-
-The status LED indicates device status as indicated by the two tables above. For more information on resolving PCM faults see the PCM User Manual.
-
-.. note:: Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
 
 PCM Solenoid Channel LEDs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -257,7 +233,7 @@ Jaguar speed controllers
 ------------------------
 
 .. image:: images/status-lights/jaguar-status-light.png
-  :width: 600
+  :width: 400
 
 +------------------------------+------------------------------------------------+
 | LED State                    | Module Status                                  |
@@ -305,36 +281,52 @@ Mindsensors SD540B (PWM)
 ------------------------
 
 .. image:: images/status-lights/sd540b-status-lights.png
+  :width: 600
 
-Power LED: This LED will turn Red when Power is supplied.
-
-Motor LED: This LED turns Red in Forward direction and Green in Reverse direction.
-
-PWM Signal LED: This LED turns Red when no valid PWM signal is detected, and turns Green when valid PWM signal is detected.
++----------------+-------+---------------------------------+
+| Power LED      | Off   | Power is not supplied           |
+|                +-------+---------------------------------+
+|                | Red   | Power is supplied               |
++----------------+-------+---------------------------------+
+| Motor LED      | Red   | Forward direction               |
+|                +-------+---------------------------------+
+|                | Green | Reverse direction               |
++----------------+-------+---------------------------------+
+| PWM Signal LED | Red   | No valid PWM signal is detected |
+|                +-------+---------------------------------+
+|                | Green | Valid PWM signal is detected    |
++----------------+-------+---------------------------------+
 
 Mindsensors SD540C (CAN Bus)
 ----------------------------
 
 .. image:: images/status-lights/sd540c-status-lights.png
+  :width: 600
 
-Power LED: This LED will turn Red when Power is supplied.
-
-Motor LED: This LED turns Red in Forward direction and Green in Reverse direction.
-
-Status LED: This LED blinks quickly when no CAN devices are connected. It turns off if it is connected to the roboRIO and the driver station is open.
++----------------+------------------+---------------------------------------------------------+
+| Power LED      | Off              | Power is not supplied                                   |
+|                +------------------+---------------------------------------------------------+
+|                | Red              | Power is supplied                                       |
++----------------+------------------+---------------------------------------------------------+
+| Motor LED      | Red              | Forward direction                                       |
+|                +------------------+---------------------------------------------------------+
+|                | Green            | Reverse direction                                       |
++----------------+------------------+---------------------------------------------------------+
+| CAN Signal LED | Blinking quickly | No CAN devices are connected                            |
+|                +------------------+---------------------------------------------------------+
+|                | Off              | Connected to the roboRIO and the driver station is open |
++----------------+------------------+---------------------------------------------------------+
 
 REV Robotics Servo Power Module
 -------------------------------
 
 .. image:: images/status-lights/rev-robotics-servo-power-module.png
+  :width: 400
 
 Status LEDs
 ^^^^^^^^^^^
 
-Each channel has a corresponding status LED that will
-indicate the sensed state of the connected PWM signal.
-The table below describes each state’s corresponding
-LED pattern.
+Each channel has a corresponding status LED that will indicate the sensed state of the connected PWM signal. The table below describes each state’s corresponding LED pattern.
 
 +-----------------------+----------------+
 | State                 | Pattern        |
@@ -360,56 +352,78 @@ Talon speed controllers
 
 .. image:: images/status-lights/talonsr-status-light.png
 
-The LED is used to indicate the direction and percentage of throttle and state of calibration. The LED may be one of three colors; red, orange or green. A solid green LED indicates positive output voltage equal to the input voltage of the Talon. A solid Red LED indicates an output voltage that is equal to the input voltage multiplied by -1(input voltage = 12 volts, output equals -12 volts). The LED will blink it’s corresponding color for any throttle less than 100% (red indicates negative polarity, green indicates positive). The rate at which the led blinks is proportional to the percent throttle. The faster the LED blinks the closer the output is to 100% in either polarity.
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to reverse output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | No CAN devices are connected                                           |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Disabled state, PWM signal lost, FRC robot disabled, or                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Off                  | No input power to Talon                                                |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Flashing | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
 
-The LED will blink orange any time the Talon is in the disabled state. This will happen if the PWM input signal is lost, or in FRC, when the robot is disabled. If the Talon is in the enabled state and the throttle is within the 4% dead band, the LED will remain solid orange.
+Victor888 Speed Controller
+--------------------------
 
-Flashing Red/Green indicate ready for calibration. Several green flashes indicates successful calibration, and red several times indicates unsuccessful calibration.
+.. image:: images/status-lights/victor888-status-light.svg
+  :width: 600
 
-Victor speed controllers
-------------------------
-
-LED Indicator Status:
-^^^^^^^^^^^^^^^^^^^^^
-
-- Green - full forward
-- Orange - neutral / brake
-- Red - full reverse
-- Flashing orange - no PWM signal
-- Flashing red/green - calibration mode
-- Flashing green - successful calibration
-- Flashing red - unsuccessful calibration
++-----------+----------+--------------------------+
+| Green     | Solid    | Full forward output      |
+|           +----------+--------------------------+
+|           | Blinking | Successful calibration   |
++-----------+----------+--------------------------+
+| Red       | Solid    | Full reverse output      |
+|           +----------+--------------------------+
+|           | Blinking | Unsuccessful calibration |
++-----------+----------+--------------------------+
+| Orange    | Solid    | Neutral/brake            |
++-----------+----------+--------------------------+
+| Red/Green | Blinking | Calibration mode         |
++-----------+----------+--------------------------+
 
 Victor-SP speed controllers
 ---------------------------
 
 .. image:: images/status-lights/victorSPLight.png
+  :width: 600
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
 
 Status
 ^^^^^^
 
-The Status LEDs are used to indicate the direction and percentage of throttle and state of calibration. The LEDs may be one of three colors; red, orange or green. Solid green LEDs indicate positive output voltage equal to the input voltage of the Victor-SP. Solid Red LEDs indicate an output voltage that is equal to the input voltage multiplied by -1(input voltage = 12 volts, output equals -12 volts). The LEDs will blink in the corresponding color for any throttle less than 100% (red indicates negative polarity, green indicates positive). The rate at which the LEDs blink is proportional to the percent throttle. The faster the LEDs blink the closer the output is to 100% in either polarity.
-
-The LEDs will blink orange any time the Victor-SP is in the disabled state. This will happen if the PWM input signal is lost, or in FRC, when the robot is disabled. If the Victor-SP is in the enabled state and the throttle is within the 4% dead band, the LED will remain solid orange.
-
-Flashing Red/Green indicate ready for calibration. Several green flashes indicates successful calibration, and red several times indicates unsuccessful calibration.
-
-Victor888 Speed Controller
---------------------------
-
-.. image:: images/status-lights/victor888-status-light.svg
-
-- Green = Full Forward
-- Orange = Neutral/Brake
-- Red = Full Reverse
-- Flashing Orange = no PWM
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | FRC robot disabled, PWM signal lost, or                                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Blinking | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
 
 Talon SRX speed controller
 --------------------------
 
 .. image:: images/status-lights/talon-srx-status-lights.png
+  :width: 600
 
 +-------------------------------------------------+
 | Blink Codes During Calibration                  |
@@ -465,6 +479,7 @@ Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------
 
 .. image:: images/status-lights/spikeRelay1Light.png
+  :width: 600
 
 +---------------------------------+-------------+-----------+-------------------------------------+
 | Inputs                          | Outputs     |           |                                     |
@@ -486,6 +501,7 @@ Spike relay configured as for one or two solenoids
 --------------------------------------------------
 
 .. image:: images/status-lights/spikeRelay2Light.png
+  :width: 600
 
 +---------------------------------+-------------+-----------+--------------------------------+
 | Inputs                          | Outputs     |           |                                |
