@@ -27,14 +27,16 @@ These encoders vary in how they are mounted to the mechanism in question.  In ad
 Shafted encoders
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/encoders-hardware/grayhill-63r.jpg
+.. image:: images/encoders-hardware/greyhill-63r-encoder-to-roborio.svg
+  :width: 400
 
 Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with cable ties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__, pictured above.
 
 On-shaft encoders
 ^^^^^^^^^^^^^^^^^
 
-.. image:: images/encoders-hardware/cui-amt102.png
+.. image:: images/encoders-hardware/amt10x-encoders-to-roborio.svg
+  :width: 600
 
 On-shaft encoders (such as the `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
 
@@ -42,6 +44,7 @@ Magnetic encoders
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/ctre-magnetic-encoder.jpg
+  :width: 400
 
 Magnetic encoders require no mechanical coupling to the shaft at all; rather, they track the orientation of a magnet fixed to the shaft.  The `CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-encoder.html>`__ is a popular option, with many FRC products offering built-in mounting options for it.  While the no-contact nature of magnetic encoders can be handy, they often require precise construction in order to ensure that the magnet is positioned correctly with respect to the encoder.
 
@@ -49,6 +52,7 @@ Encoder Wiring
 --------------
 
 .. image:: images/encoders-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
+  :width: 400
 
 Encoders that need two digital inputs, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports. Other encoders, such as the on-shaft ones shown above, often need :doc:`an analog input port <analog-inputs-hardware>`. CTRE Magnetic encoders shown above can be wired to a :ref:`TalonSRX data port <docs/hardware/sensors/serial-buses:CAN Bus>` with a ribbon cable.
 
