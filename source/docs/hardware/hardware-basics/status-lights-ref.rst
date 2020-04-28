@@ -19,8 +19,8 @@ Robot Signal Light (RSL)
 
 roboRIO
 -------
-
-.. image:: images/status-lights/roborio-status-lights.svg
+..
+  .. image:: images/status-lights/roborio-status-lights.svg
   :width: 400
 
 +------------+----------------+-----------------------------------------------------------------------------------+
