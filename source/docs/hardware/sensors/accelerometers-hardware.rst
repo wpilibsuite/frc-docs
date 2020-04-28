@@ -11,7 +11,7 @@ The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/
 Types of accelerometers
 -----------------------
 
-There are three types of accelerometers commonly-used in FRC: single-axis accelerometers, multi-axis accelerometers and IMUs.
+There are three types of accelerometers commonly-used in FRC: single-axis accelerometers, multi-axis accelerometers, and IMUs.
 
 Single-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
