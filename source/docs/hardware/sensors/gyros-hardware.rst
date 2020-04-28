@@ -30,8 +30,8 @@ Three-axis Gyros
 
 .. image:: images/gyros-hardware/triple-axis-i2c-gyro-to-roborio.svg
 
-.. image:: images/gyros-hardware/yaw-pitch-roll.png
-
 Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
+
+.. image:: images/gyros-hardware/yaw-pitch-roll.png
 
 Peripheral three-axis gyros may simply output three analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/sensors/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the roboRIO's :doc:`serial buses <serial-buses>`.
