@@ -23,9 +23,9 @@ Examples of Retroreflection
 ---------------------------
 
 .. image:: images/target-info-and-retroreflection/raised-pavement-marker.jpg
-  :width: 49%
+  :width: 350
 .. image:: images/target-info-and-retroreflection/vest.jpg
-  :width: 49%
+  :width: 350
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles, and pedestrians.
 
