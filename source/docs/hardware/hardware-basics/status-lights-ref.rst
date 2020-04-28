@@ -64,7 +64,8 @@ roboRIO
 OpenMesh Radio
 --------------
 
-.. image:: images/status-lights/openmesh-radio-status-lights.png
+..
+  .. image:: images/status-lights/openmesh-radio-status-lights.png
   :width: 600
 
 +----------+---------------+------------------------------+
