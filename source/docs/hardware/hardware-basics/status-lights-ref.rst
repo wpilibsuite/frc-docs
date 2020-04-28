@@ -5,8 +5,8 @@ Many of the components of the FRC Control System have indicator lights that can 
 
 Robot Signal Light (RSL)
 ------------------------
-
-.. image:: images/status-lights/rsl.svg
+..
+  .. image:: images/status-lights/rsl.svg
   :width: 400
 
 +----------+----------------------------------------------------------+
