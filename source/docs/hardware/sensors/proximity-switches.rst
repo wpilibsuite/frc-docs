@@ -59,7 +59,7 @@ Photoelectric Proximity Switches
 
 .. image:: images/proximity-switches-hardware/ir-digital-obstacle-sensor-to-roborio.svg
 
-Photoelectric proximity switches are another type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold. One such sensor is the `IR Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured above.
+Photoelectric proximity switches are another type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold. One such sensor is the `IR Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured below.
 
 Since photoelectric proximity switches rely on measuring the amount of reflected light, they are often inconsistent in their triggering range between different materials - accordingly, most photoelectric sensors have an adjustable activation point (typically controller by turning a screw somewhere on the sensor body).  On the other hand, photoelectric sensors are also extremely versatile, as they can detect a greater variety of objects than the other types of no-contact switches.
 
