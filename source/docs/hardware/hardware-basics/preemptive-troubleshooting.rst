@@ -10,7 +10,7 @@ Robot Preemptive Troubleshooting
 Check Battery Connections
 -------------------------
 
-.. image:: images/preemptive-troubleshooting/battery-bolt-check.svg
+.. image:: images/preemptive-troubleshooting/preCheckBatt.png
   :width: 500
 
 The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
@@ -34,8 +34,11 @@ In almost every event we see at least one robot where a not properly secured bat
 
 .. note:: Ensure nuts are tightened firmly and the breaker is attached to a rigid element.
 
-.. image:: images/preemptive-troubleshooting/tighten-breaker.svg
-  :width: 600
+.. image:: images/preemptive-troubleshooting/preCheckBreaker-1.png
+  :width: 350
+
+.. image:: images/preemptive-troubleshooting/preCheckBreaker-2.png
+  :width: 350
 
 Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
 
