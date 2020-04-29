@@ -7,4 +7,5 @@ Contribuing to frc-docs
    contribution-guidelines
    style-guide
    build-instructions
+   translations
    top-contributors
