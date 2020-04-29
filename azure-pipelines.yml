@@ -117,6 +117,12 @@ jobs:
     - script: pip install -r source/requirements.txt
       displayName: 'Install Python Requirements'
 
+    - script: sudo apt-get update
+      displayName: 'Update System Packages'
+
+    - script: sudo apt-get install -y librsvg2-bin
+      displayName: 'Install SVG requirements'
+      
     - script: make translate
       displayName: 'Build POT Files & Update Configuration File'
 
