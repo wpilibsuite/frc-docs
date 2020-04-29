@@ -22,8 +22,6 @@ Apply considerable force onto the battery cable at 90 degrees to try to move the
 Securing the Battery to the Robot
 ---------------------------------
 
-.. image:: images/preemptive-troubleshooting/fallen-battery.jpg
-   :width: 350
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
    :width: 350
 
