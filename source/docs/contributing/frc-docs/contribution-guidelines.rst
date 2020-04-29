@@ -18,7 +18,7 @@ These docs serve to provide a learning ground for all *FIRST* Robotics Competiti
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
 - Relevant. Documentation should be focused on the *FIRST* Robotics Competition.
 
-Please see the :ref:`docs/contributing/style-guide:Style Guide` for information on styling your documentation.
+Please see the :ref:`docs/contributing/frc-docs/style-guide:Style Guide` for information on styling your documentation.
 
 Note on New Articles
 --------------------
