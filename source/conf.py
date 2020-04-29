@@ -13,26 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import os
-import subprocess
 
-# -- External Dependencies ---------------------------------------------------
-# Install dependencies needed in RTD that RTD doesn't include.
-# This is needed because of https://github.com/readthedocs/readthedocs-docker-images/issues/114
-
-if os.environ.get("READTHEDOCS"):
-    # Tries to grab draw.io deb
-    drawio_download = \
-        subprocess.run(["wget", "-O", "drawio.deb",
-                        "https://github.com/jgraph/drawio-desktop/releases/download/v12.6.5/draw.io-amd64-12.6.5.deb"])
-
-    if drawio_download.returncode == 0:
-        # If we got the draw.io deb, install it, and xvfb to run headless
-        drawio_install = subprocess.run(["apt-get", "install", "-qy", "--force-yes", "libasound2",
-                                         "./drawio.deb", "xvfb"])
-        print("Dependencies Installed" if drawio_install.returncode == 0 else "Error Installing Dependencies")
-    else:
-        print("Error Downloading Dependencies")
 
 # -- Project information -----------------------------------------------------
 
