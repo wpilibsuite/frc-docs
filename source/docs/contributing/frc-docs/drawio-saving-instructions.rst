@@ -20,4 +20,4 @@ The export menu should look something like this:
 
 Then just click ``Export`` then select where you would like to save the file and save it.
 
-.. note:: When saving, make sure you follow the style-guide at :ref:`docs/contributing/style-guide:Draw.io Files`
+.. note:: When saving, make sure you follow the style-guide at :ref:`docs/contributing/frc-docs/style-guide:Draw.io Files`

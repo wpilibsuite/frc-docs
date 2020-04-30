@@ -184,7 +184,7 @@ Draw.io Files
 Draw.io files follow almost the same naming scheme as normal images. To keep track of files that have the embedded ``.drawio`` metadata, append a ``.drawio`` to the end of the file name, before the extension, meaning the name of the file should be ``document-title-1.drawio.svg`` and so on.
 Additionally, diagrams should be stored in the document directory in a sub-folder named ``diagrams``.
 
-For the specifics of saving a diagram as a ``.svg`` with metadata, take a look at :ref:`docs/contributing/drawio-saving-instructions:Draw.io Saving Instructions`.
+For the specifics of saving a diagram as a ``.svg`` with metadata, take a look at :ref:`docs/contributing/frc-docs/drawio-saving-instructions:Draw.io Saving Instructions`.
 
 .. warning:: Make sure you don't modify any file that is in a ``diagrams`` folder, or ends in ``.drawio.svg`` in any program other than draw.io, otherwise you might risk breaking the metadata of the file, making it uneditable.
 
