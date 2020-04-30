@@ -53,8 +53,11 @@ Make sure that split washers were placed under the PDP screws, but it is not eas
 Tug Testing
 -----------
 
-.. image:: images/preemptive-troubleshooting/tug-test.svg
-  :width: 500
+.. image:: images/preemptive-troubleshooting/preCheckTug-1.png
+  :width: 350
+
+.. image:: images/preemptive-troubleshooting/preCheckTug-2.png
+  :width: 350
 
 The Weidmuller contacts for power, compressor output, roboRIO power connector, and radio power are important to verify by tugging on the connections as shown.  Make sure that none of the connections pull out.
 
