@@ -127,7 +127,8 @@ Pneumatics Control Module (PCM)
   .. image:: images/status-lights/pcm-status-lights.svg
   :width: 400
 
-.. tabularcolumns:: |l|p{13}|p{29}|l|
+..
+  .. tabularcolumns:: |l|p{13}|p{29}|l|
 
 +--------+---------------+-------------------------------+------------------+
 | LED    | Strobe        | Slow                          | Long             |
