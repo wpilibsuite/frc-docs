@@ -5,8 +5,8 @@ Many of the components of the FRC Control System have indicator lights that can 
 
 Robot Signal Light (RSL)
 ------------------------
-..
-  .. image:: images/status-lights/rsl.svg
+
+.. image:: images/status-lights/rsl.svg
   :width: 400
 
 +----------+----------------------------------------------------------+
@@ -19,8 +19,8 @@ Robot Signal Light (RSL)
 
 roboRIO
 -------
-..
-  .. image:: images/status-lights/roborio-status-lights.svg
+
+.. image:: images/status-lights/roborio-status-lights.svg
   :width: 400
 
 +------------+----------------+-----------------------------------------------------------------------------------+
@@ -64,8 +64,7 @@ roboRIO
 OpenMesh Radio
 --------------
 
-..
-  .. image:: images/status-lights/openmesh-radio-status-lights.png
+.. image:: images/status-lights/openmesh-radio-status-lights.png
   :width: 600
 
 +----------+---------------+------------------------------+
@@ -89,8 +88,8 @@ OpenMesh Radio
 
 Power Distribution Panel
 ------------------------
-..
-  .. image:: images/status-lights/pdp-status-lights.svg
+
+.. image:: images/status-lights/pdp-status-lights.svg
   :width: 600
 
 +---------------------+---------------------------+
@@ -114,8 +113,7 @@ Power Distribution Panel
 Voltage Regulator Module
 ------------------------
 
-..
-  .. image:: images/status-lights/vrm-status-lights.svg
+.. image:: images/status-lights/vrm-status-lights.svg
   :width: 400
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
@@ -123,12 +121,8 @@ The status LEDs on the VRM indicate the state of the two power supplies. If the 
 Pneumatics Control Module (PCM)
 -------------------------------
 
-..
-  .. image:: images/status-lights/pcm-status-lights.svg
+.. image:: images/status-lights/pcm-status-lights.svg
   :width: 400
-
-..
-  .. tabularcolumns:: |l|p{13}|p{29}|l|
 
 +--------+---------------+-------------------------------+------------------+
 | LED    | Strobe        | Slow                          | Long             |
@@ -172,8 +166,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 Digilent DMC-60
 ---------------
 
-..
-  .. image:: images/status-lights/dmc60c-status-lights.png
+.. image:: images/status-lights/dmc60c-status-lights.png
 
 The DMC60C contains four RGB (Red, Green, and Blue) LEDs and one Brake/Coast CAL LED. The four RGB LEDs are located in the corners and are used to indicate status during normal operation, as well as when a fault occurs. The Brake/Coast CAL LED is located in the center of the triangle, which is located at the center of the housing, and is used to indicate the current Brake/Coast setting. When the center LED is off, the device is operating in coast mode. When the center LED is illuminated, the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle, and then releasing the button.
 
@@ -237,8 +230,7 @@ When the center LED is off the device is operating in coast mode. When the cente
 Jaguar speed controllers
 ------------------------
 
-..
-  .. image:: images/status-lights/jaguar-status-light.png
+.. image:: images/status-lights/jaguar-status-light.png
   :width: 400
 
 +------------------------------+------------------------------------------------+
@@ -286,8 +278,7 @@ Jaguar speed controllers
 Mindsensors SD540B (PWM)
 ------------------------
 
-.. ------ midpoint ------
-  .. image:: images/status-lights/sd540b-status-lights.png
+.. image:: images/status-lights/sd540b-status-lights.png
   :width: 600
 
 +----------------+-------+---------------------------------+
@@ -307,8 +298,7 @@ Mindsensors SD540B (PWM)
 Mindsensors SD540C (CAN Bus)
 ----------------------------
 
-..
-  .. image:: images/status-lights/sd540c-status-lights.png
+.. image:: images/status-lights/sd540c-status-lights.png
   :width: 600
 
 +----------------+------------------+---------------------------------------------------------+
@@ -328,8 +318,7 @@ Mindsensors SD540C (CAN Bus)
 REV Robotics Servo Power Module
 -------------------------------
 
-..
-  .. image:: images/status-lights/rev-robotics-servo-power-module.png
+.. image:: images/status-lights/rev-robotics-servo-power-module.png
   :width: 400
 
 Status LEDs
@@ -354,14 +343,12 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 REV Robotics SPARK
 ------------------
 
-..
-  .. image:: images/status-lights/sparkLight.png
+.. image:: images/status-lights/sparkLight.png
 
 Talon speed controllers
 -----------------------
 
-..
-  .. image:: images/status-lights/talonsr-status-light.png
+.. image:: images/status-lights/talonsr-status-light.png
 
 +-----------+----------+------------------------------------------------------------------------+
 | Green     | Solid    | Full forward output                                                    |
@@ -386,8 +373,7 @@ Talon speed controllers
 Victor888 Speed Controller
 --------------------------
 
-..
-  .. image:: images/status-lights/victor888-status-light.svg
+.. image:: images/status-lights/victor888-status-light.svg
   :width: 600
 
 +-----------+----------+--------------------------+
@@ -407,8 +393,7 @@ Victor888 Speed Controller
 Victor-SP speed controllers
 ---------------------------
 
-..
-  .. image:: images/status-lights/victorSPLight.png
+.. image:: images/status-lights/victorSPLight.png
   :width: 600
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
@@ -435,8 +420,7 @@ Status
 Talon SRX speed controller
 --------------------------
 
-..
-  .. image:: images/status-lights/talon-srx-status-lights.png
+.. image:: images/status-lights/talon-srx-status-lights.png
   :width: 600
 
 +-------------------------------------------------+
@@ -492,8 +476,7 @@ Talon SRX speed controller
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------
 
-..
-  .. image:: images/status-lights/spikeRelay1Light.png
+.. image:: images/status-lights/spikeRelay1Light.png
   :width: 600
 
 +---------------------------------+-------------+-----------+-------------------------------------+
@@ -515,8 +498,7 @@ Spike relay configured as a motor, light, or solenoid switch
 Spike relay configured as for one or two solenoids
 --------------------------------------------------
 
-..
-  .. image:: images/status-lights/spikeRelay2Light.png
+.. image:: images/status-lights/spikeRelay2Light.png
   :width: 600
 
 +---------------------------------+-------------+-----------+--------------------------------+
