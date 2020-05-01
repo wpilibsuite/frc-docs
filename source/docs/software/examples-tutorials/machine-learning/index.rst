@@ -27,6 +27,7 @@ Table of Contents
    using-inference-output
    how-it-works
    understanding-precision
+   video-walkthrough
 
 Hardware Requirement
 --------------------
