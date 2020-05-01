@@ -26,7 +26,7 @@ roboRIO
 +------------+----------------+-----------------------------------------------------------------------------------+
 | **Power**  | Green          | Power is good                                                                     |
 |            +----------------+-----------------------------------------------------------------------------------+
-|            | Orange         | Brownout protection tripped, outputs disabled                                     |
+|            | Amber          | Brownout protection tripped, outputs disabled                                     |
 |            +----------------+-----------------------------------------------------------------------------------+
 |            | Red            | Power fault, check user rails for short circuit                                   |
 +------------+----------------+-----------------------------------------------------------------------------------+
@@ -44,7 +44,7 @@ roboRIO
 +------------+----------------+-----------------------------------------------------------------------------------+
 | **Comm**   | Off            | No Communication                                                                  |
 |            +----------------+-----------------------------------------------------------------------------------+
-|            | Red Solid      | Communication with DS, but no user code loaded                                    |
+|            | Red Solid      | Communication with DS, but no user code running                                   |
 |            +----------------+-----------------------------------------------------------------------------------+
 |            | Red Blinking   | E-stop triggered                                                                  |
 |            +----------------+-----------------------------------------------------------------------------------+
@@ -92,23 +92,35 @@ Power Distribution Panel
 .. image:: images/status-lights/pdp-status-lights.svg
   :width: 600
 
-+---------------------+---------------------------+
-| LED Blink/Color     | Description               |
-+=====================+===========================+
-| Fast Green Blink    | Robot is enabled          |
-+---------------------+---------------------------+
-| Slow Green Blink    | Robot is disabled         |
-+---------------------+---------------------------+
-| Slow Orange Blink   | Robot is disabled.        |
-|                     | Sticky Fault present.     |
-+---------------------+---------------------------+
-| Slow Red Blink      | No CAN Comm.              |
-+---------------------+---------------------------+
-| (COMM LED only)     | Device is in boot-loader. |
-| Green/Orange Blink) | Field-upgrade necessary.  |
-+---------------------+---------------------------+
-| Both LEDs off       | Device is NOT powered.    |
-+---------------------+---------------------------+
+PDP Status/Comm LEDs
+^^^^^^^^^^^^^^^^^^^^
+
++--------+--------------------------+---------------------------+
+| LED    | Strobe                   | Slow                      |
++========+==========================+===========================+
+| Green  | No Fault - Robot Enabled | No Fault - Robot Disabled |
++--------+--------------------------+---------------------------+
+| Orange | NA                       | Sticky Fault              |
++--------+--------------------------+---------------------------+
+| Red    | NA                       | No CAN Comm               |
++--------+--------------------------+---------------------------+
+
+.. tip:: If a PDP LED is showing more than one color, see the PDP LED special states table below. For more information on resolving PDP faults see the PDP User Manual.
+
+.. note:: Note that the No CAN Comm fault will occur if the PDP cannot communicate with the roboRIO via CAN Bus.
+
+PDP Special States
+^^^^^^^^^^^^^^^^^^
+
++--------------+------------------------------+
+| LED Colors   | Problem                      |
++==============+==============================+
+| Red/Orange   | Damaged Hardware             |
++--------------+------------------------------+
+| Green/Orange | In Bootloader                |
++--------------+------------------------------+
+| No LED       | No Power/ Incorrect Polarity |
++--------------+------------------------------+
 
 Voltage Regulator Module
 ------------------------
@@ -124,6 +136,9 @@ Pneumatics Control Module (PCM)
 .. image:: images/status-lights/pcm-status-lights.svg
   :width: 400
 
+PCM Status LED
+^^^^^^^^^^^^^^
+
 +--------+---------------+-------------------------------+------------------+
 | LED    | Strobe        | Slow                          | Long             |
 +========+===============+===============================+==================+
@@ -138,7 +153,7 @@ Pneumatics Control Module (PCM)
 
 .. tip:: If a PCM LED is showing more than one color, see the PCM LED special states table below. For more information on resolving PCM faults see the PCM User Manual.
 
-.. note:: Note that the No CAN Comm fault will not occur only if the device cannot see communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO you will NOT see a No Can Comm fault.
+.. note:: Note that the No CAN Comm fault will not occur only if the device cannot communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO.
 
 PCM LED Special States Table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,8 +168,8 @@ PCM LED Special States Table
 | No LED       | No Power/Incorrect Polarity |
 +--------------+-----------------------------+
 
-PCM Comp
-^^^^^^^^
+PCM Comp LED
+^^^^^^^^^^^^
 
 This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
 
@@ -423,23 +438,12 @@ Talon SRX speed controller
 .. image:: images/status-lights/talon-srx-status-lights.png
   :width: 600
 
-+-------------------------------------------------+
-| Blink Codes During Calibration                  |
-+========================+========================+
-| Status LEDs Blink Code | Talon SRX State        |
-+------------------------+------------------------+
-| Flashing Red/Green     | Calibration Mode       |
-+------------------------+------------------------+
-| Blinking Green         | Successful Calibration |
-+------------------------+------------------------+
-| Blinking Red           | Failed Calibration     |
-+------------------------+------------------------+
+Status LEDs During Normal Operation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------------------+
-| Blink Codes During Normal Operation                                                        |
-+==============================+================+============================================+
-| LEDs                         | Colors         | Talon SRX State                            |
 +------------------------------+----------------+--------------------------------------------+
+| LEDs                         | Colors         | Talon SRX State                            |
++==============================+================+============================================+
 | Both                         | Blinking Green | Forward throttle is applied.               |
 |                              |                | Blink rate is proportional to Duty Cycle.  |
 +------------------------------+----------------+--------------------------------------------+
@@ -463,11 +467,25 @@ Talon SRX speed controller
 | LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
 +------------------------------+----------------+--------------------------------------------+
 
-+----------------------------------------+
-| B/C CAL Blink Codes                    |
-+======================+=================+
-| B/C CAL Button Color | Talon SRX State |
+Status LEDs During Calibration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------+------------------------+
+| Status LEDs Blink Code | Talon SRX State        |
++========================+========================+
+| Flashing Red/Green     | Calibration Mode       |
++------------------------+------------------------+
+| Blinking Green         | Successful Calibration |
++------------------------+------------------------+
+| Blinking Red           | Failed Calibration     |
++------------------------+------------------------+
+
+B/C CAL Blink Codes
+^^^^^^^^^^^^^^^^^^^
+
 +----------------------+-----------------+
+| B/C CAL Button Color | Talon SRX State |
++======================+=================+
 | Solid Red            | Brake Mode      |
 +----------------------+-----------------+
 | Off                  | Coast Mode      |
@@ -480,10 +498,10 @@ Spike relay configured as a motor, light, or solenoid switch
   :width: 600
 
 +---------------------------------+-------------+-----------+-------------------------------------+
-| Inputs                          | Outputs     |           |                                     |
-+-----------------+---------------+------+------+ Indicator | Motor Function                      |
+| Inputs                          | Outputs     | Indicator | Motor Function                      |
++-----------------+---------------+------+------+           |                                     |
 | Forward (White) | Reverse (Red) | M+   | M-   |           |                                     |
-+-----------------+---------------+------+------+-----------+-------------------------------------+
++=================+===============+======+======+===========+=====================================+
 | Off             | Off           | GND  | GND  | Orange    | Off/Brake Condition (default)       |
 +-----------------+---------------+------+------+-----------+-------------------------------------+
 | On              | Off           | +12v | GND  | Green     | Motor rotates in one direction      |
