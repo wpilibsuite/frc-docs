@@ -1898,3 +1898,45 @@ source_file = build/gettext/docs/software/examples-tutorials/machine-learning/us
 source_lang = en
 type = PO
 
+[frc-docs.docs--contributing--frc-docs--build-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--contribution-guidelines]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/contribution-guidelines.po
+source_file = build/gettext/docs/contributing/frc-docs/contribution-guidelines.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--drawio-saving-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/drawio-saving-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/drawio-saving-instructions.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/index.po
+source_file = build/gettext/docs/contributing/frc-docs/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--style-guide]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/style-guide.po
+source_file = build/gettext/docs/contributing/frc-docs/style-guide.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--top-contributors]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/top-contributors.po
+source_file = build/gettext/docs/contributing/frc-docs/top-contributors.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--translations]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/translations.po
+source_file = build/gettext/docs/contributing/frc-docs/translations.pot
+source_lang = en
+type = PO
+
