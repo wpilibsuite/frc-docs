@@ -109,9 +109,7 @@ A common way of eliminating :term:`steady-state error` is to integrate the :term
 PID Controller Definition
 -------------------------
 
-.. note:: For information on using the WPILib provided PIDController, see the relevant article.
-
-.. todo:: Add link to PIDController article
+.. note:: For information on using the WPILib provided PIDController, see the :ref:`relevant article <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`.
 
 When these terms are combined, one gets the typical definition for a PID controller.
 
