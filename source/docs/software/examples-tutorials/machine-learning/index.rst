@@ -18,6 +18,7 @@ Table of Contents
 .. toctree::
    :maxdepth: 1
 
+   video-walkthrough
    setting-up-the-data
    adding-more-data
    uploading-data-to-aws-s3
@@ -27,7 +28,6 @@ Table of Contents
    using-inference-output
    how-it-works
    understanding-precision
-   video-walkthrough
 
 Hardware Requirement
 --------------------
