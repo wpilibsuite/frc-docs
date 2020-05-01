@@ -9,3 +9,4 @@ Vision with Raspberry Pi
    what-you-need-to-get-the-pi-image-running
    installing-the-image-to-your-microsd-card
    the-raspberry-pi-frc-console
+   walkthrough-video

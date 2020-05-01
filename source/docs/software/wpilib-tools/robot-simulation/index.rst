@@ -6,3 +6,4 @@ Robot Simulation
 
    introduction
    simulation-gui
+   video-walkthrough
