@@ -6,6 +6,7 @@ This section covers advanced control features in WPILib, such as various feedbac
 .. toctree::
    :maxdepth: 2
 
+   video-walkthrough
    introduction/index
    filters/index
    controllers/index
