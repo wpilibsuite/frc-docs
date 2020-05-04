@@ -17,6 +17,10 @@ Setup Policy
 ------------
 
 - Go to service IAM (click on "Services" on the upper left of the screen and search for IAM)
+
+.. image:: images/aws-service-iam-search.png
+   :alt: How to search for the IAM service
+
 - On the left click on Policies
 - Click on the blue "Create policy" button
 - Click on Choose a service
