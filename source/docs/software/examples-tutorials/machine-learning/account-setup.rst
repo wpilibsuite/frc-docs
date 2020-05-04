@@ -1,7 +1,7 @@
 Setting Up An AWS Account
 =========================
 
-To get started please go to https://console.aws.amazon.com/console/home Put in your email, then do a forgot password. This will send you an email and allow you to setup your mentor account.
+Please email wpilib.ml@gmail.com with an gmail account that has never been used as an AWS account. After you receive your email confirmation (may take a day or two), go to https://console.aws.amazon.com/console/home Put in your email, then do a forgot password. This will send you an email and allow you to setup your mentor account.
 
 Once you have your mentor account setup you can add students to the account. Follow these steps to setup student accounts.
 
