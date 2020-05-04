@@ -12,7 +12,7 @@ Inference with the Google Coral
 
 2. Go to the training job in SageMaker, scroll to the bottom, and find the output S3 location.
 3. Download the the tar file in the bucket.
-4. Setup your Raspberry Pi by :ref:`installing the FRCVision image to your MicroSD card <docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card:Installing the image to your MicroSD card>`. This will install an operating system and most of the WPILib software that you will use for machine learning.
+4. Setup your Raspberry Pi by :ref:`installing the FRCVision image to your MicroSD card <docs/software/vision-processing/frcvision/installing-the-image-to-your-microsd-card:Installing the image to your MicroSD card>`. This will install an operating system and most of the WPILib software that you will use for machine learning.
 5. Plug the Coral into the Pi, as shown in the picture above.
 6. After successfully imaging your Pi, plug the Pi into your computer over ethernet. Open http://frcvision.local and change the file system to writeable.
 
