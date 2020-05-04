@@ -10,6 +10,9 @@ Setup Region
 
 - Make sure your region is set to N. Virginia, You can find the region in the upper right of the screen to the right of your user name, in this case your team number.
 
+.. image:: images/aws-region.png
+   :alt: Correct region selected
+
 Setup Policy
 ------------
 
@@ -24,6 +27,10 @@ Setup Policy
 - Click the checkbox for "AttachRolePolicy" and "CreatePolicy"
 - Scroll down further an click on Resources
 - Click the circle next to "All resources"
+
+.. image:: images/aws-iam-policy.png
+   :alt: Proper IAM policy
+
 - Click on the blue "Review policy” button
 - Give the policy a name. Something like "1SagemakerRole" I put a 1 first so that it shows at the top of the policies.
 - Click the blue "Create policy" button
@@ -46,6 +53,11 @@ Setup Users
     - AmazonSageMakerFullAccess
     - AmazonS3FullAccess
     - CloudWatchFullAccess
+
+.. image:: images/aws-iam-group-policies-png
+   :alt: Proper group IAM policy
+
+
 - Click on Create Group
 - After Group is created and attached to user(s) click on the blue "Next: Tags" button at the bottom
 - No tags are needed, click on the blue "Next: review" button at the bottom
