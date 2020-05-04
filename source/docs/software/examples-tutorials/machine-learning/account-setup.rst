@@ -1,5 +1,3 @@
-:orphan:
-
 Setting Up An AWS Account
 =========================
 

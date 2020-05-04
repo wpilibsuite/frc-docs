@@ -1,5 +1,3 @@
-:orphan:
-
 How it Works
 ============
 
