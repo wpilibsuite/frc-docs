@@ -3,7 +3,7 @@
 Training
 ========
 
-Training on AWS with the provided dataset should take about 2 hours and cost roughly $1. If you add more images or add new labeling classes the cost and time will be higher.
+Training on AWS with the provided dataset should take about 2 hours. If you add more images or add new labeling classes the time will be higher.
 
 Train with AWS
 --------------
