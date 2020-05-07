@@ -1,32 +1,19 @@
 Actuator Overview
 ==================
-This section discusses the control of motors and pneumatics
-through speed controllers, solenoids and pneumatics, and
-their interface with C++ and Java WPILib.
+This section discusses the control of motors and pneumatics through speed controllers, solenoids and pneumatics, and their interface with C++ and Java WPILib.
 
 Speed controllers
 -----------------
-A speed controller is responsible on your robot for making motors move.
-For brushed DC motors such as CIMs or 775s, the speed controller regulates
-the voltage that the motor receives, much like a light bulb. For
-brushless speed controllers such as the Spark MAX, the controller regulates
-the power delivered to each "phase" of the motor.
+A speed controller is responsible on your robot for making motors move. For brushed DC motors such as CIMs or 775s, the speed controller regulates the voltage that the motor receives, much like a light bulb. For brushless speed controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
 
 .. .. hint::
-..     One can make a quick, non-competition-legal speed controller by
-..     removing the motor from a cordless BRUSHED drill and attaching
-..     PowerPoles or equivalents to the motor's leads. Make sure that
-..     the voltage supplied by the drill will not damage the motor,
-..     but note that the 775 is fine at up to 24 volts.
+..     One can make a quick, non-competition-legal speed controller by removing the motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents to the motor's leads. Make sure that the voltage supplied by the drill will not damage the motor, but note that the 775 is fine at up to 24 volts.
 
-.. warning::
-    Connecting a BRUSHLESS motor controller straight to power, such as
-    to a conventional brushed motor controller, will destroy the motor!
+.. warning:: Connecting a BRUSHLESS motor controller straight to power, such as to a conventional brushed motor controller, will destroy the motor!
 
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Speed controllers come in lots of shapes, sizes and feature sets. This
-is the full list of FRC Legal speed controllers as of January 2020:
+Speed controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC Legal speed controllers as of January 2020:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
 - Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to PWM only
@@ -45,9 +32,7 @@ is the full list of FRC Legal speed controllers as of January 2020:
 
 Pneumatics
 ----------
-Pneumatics are a quick and easy way to make something that's in one
-state or another using compressed air. For information on operating
-pneumatics, see :doc:`pneumatics`.
+Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics`.
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
