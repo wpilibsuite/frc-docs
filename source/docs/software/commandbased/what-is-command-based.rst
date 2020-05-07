@@ -46,10 +46,8 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
 Subsystems and Commands
 -----------------------
 
-.. figure:: images/subsystemscommands.png
+.. image:: diagrams/subsystems-and-commands.drawio.svg
    :alt: image of subsystems and commands
-
-   image of subsystems and commands
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
