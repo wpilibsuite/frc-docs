@@ -10,7 +10,9 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 -------------------------------
 
-.. image:: images/control-system-hardware/FRC-Control-System-Layout.svg
+.. figure:: images/control-system-hardware/FRC-Control-System-Layout.svg
+
+  Diagram countacy of FRC Team 3161 and Stefen Acepcion.
 
 National Instruments roboRIO
 ----------------------------
