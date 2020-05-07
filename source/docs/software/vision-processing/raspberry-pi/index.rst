@@ -4,6 +4,7 @@ Vision with Raspberry Pi
 .. toctree::
    :maxdepth: 1
 
+   walkthrough-video
    using-a-coprocessor-for-vision-processing
    using-the-raspberry-pi-for-frc
    what-you-need-to-get-the-pi-image-running
