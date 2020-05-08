@@ -75,7 +75,7 @@ Changes to Command
 Changes to PIDSubsystem/PIDCommand
 ----------------------------------
 
-.. note:: For more information, see :doc:`pid-subsystems-commands`
+.. note:: For more information, see :doc:`pid-subsystems-commands`, and :ref:docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`
 
 .. TODO:: Link to new PIDController article.
 
