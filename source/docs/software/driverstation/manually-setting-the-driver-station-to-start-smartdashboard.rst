@@ -3,7 +3,7 @@ Manually Setting the Driver Station to Start SmartDashboard
 
 .. note:: If WPILib is not installed to the default location (such as when files are copied to a PC manually), the "C++" or "Java" buttons may not properly launch the SmartDashboard. To have the DS start the SmartDashboard when it starts up you have to manually modify the settings for the Default Dashboard.
 
-.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <driver-station:Setup Tab>` for your language first.
+.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <docs/software/driverstation/driver-station:Setup Tab>` for your language first.
 
 Set Driver Station to Default
 -----------------------------
