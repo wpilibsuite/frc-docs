@@ -1940,3 +1940,27 @@ source_file = build/gettext/docs/contributing/frc-docs/translations.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/video-walkthrough.po
+source_file = build/gettext/docs/software/advanced-controls/video-walkthrough.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/video-walkthrough.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/video-walkthrough.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
+source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--wpilib-tools--robot-simulation--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/video-walkthrough.po
+source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/video-walkthrough.pot
+source_lang = en
+type = PO
+
