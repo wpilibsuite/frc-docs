@@ -11,8 +11,8 @@ Overview
 --------
 
 .. figure:: images/how-to-wire-a-robot/FRC-Control-System-Layout.svg
-  :width: 600
-
+   :width: 600
+   
    Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
 
 Gather Materials
