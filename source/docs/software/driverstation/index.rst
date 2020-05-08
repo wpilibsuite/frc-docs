@@ -1,5 +1,5 @@
-Driverstation
-=============
+Driver Station
+==============
 
 .. toctree::
    :maxdepth: 1
@@ -10,3 +10,4 @@ Driverstation
    troubleshooting-dashboard-connectivity
    driver-station-best-practices
    driver-station-log-viewer
+   driver-station-labview-dashboard
