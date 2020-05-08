@@ -77,8 +77,6 @@ Changes to PIDSubsystem/PIDCommand
 
 .. note:: For more information, see :doc:`pid-subsystems-commands`, and :ref:docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`
 
-.. TODO:: Link to new PIDController article.
-
 * Following the changes to PIDController, these classes now run synchronously from the main robot loop.
 * The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modifier after construction with ``getController()``.
 * ``PIDCommand`` is intended largely for inline use, as shown in the GyroDriveCommands example (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__).
