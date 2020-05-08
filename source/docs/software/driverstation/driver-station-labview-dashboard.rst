@@ -45,9 +45,7 @@ The center pane contains a section that provides feedback on the joysticks and d
 #. Displays a brief chart of the reported battery voltage
 #. Displays a Gyro value
 
-.. todo:: Add link to Using the LabVIEW Dashboard with C++\Java Code
-
-These indicators (other than the Gyro) are hooked up to appropriate values by default when using the LabVIEW framework. For information on using them with C++/Java code see `Using the LabVIEW Dashboard with C++\Java Code`.
+These indicators (other than the Gyro) are hooked up to appropriate values by default when using the LabVIEW framework. For information on using them with C++/Java code see :doc:`using-the-labview-dashboard-with-c++-java-code`.
 
 Autonomous Selection Box and Connection Indicator
 -------------------------------------------------
@@ -64,9 +62,7 @@ Basic
 
 .. image:: images/driver-station-labview-dashboard/basic.png
 
-.. todo:: Add link to Using the LabVIEW Dashboard with C++\Java Code
-
-The Basic tab contains a variety of pre-populated bi-directional controls/indicators which can be used to control the robot or display information from the robot. The SmartDashboard key names associated with each item are labeled next to the indicator with the exception of the Strings which follow the same naming pattern and increment from DB/String 0 to DB/String 4 on the left and DB/String 5 to DB/String 9 on the right. The LabVIEW framework contains an example of reading from the Buttons and Sliders in Teleop. It also contains an example of customizing the labels in Begin. For more detail on using this tab with C++\Java code see `Using the LabVIEW Dashboard with C++\Java Code`.
+The Basic tab contains a variety of pre-populated bi-directional controls/indicators which can be used to control the robot or display information from the robot. The SmartDashboard key names associated with each item are labeled next to the indicator with the exception of the Strings which follow the same naming pattern and increment from DB/String 0 to DB/String 4 on the left and DB/String 5 to DB/String 9 on the right. The LabVIEW framework contains an example of reading from the Buttons and Sliders in Teleop. It also contains an example of customizing the labels in Begin. For more detail on using this tab with C++\Java code see :doc:`using-the-labview-dashboard-with-c++-java-code`.
 
 Custom
 ------
