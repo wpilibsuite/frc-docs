@@ -11,8 +11,8 @@ Overview of Control System
 --------------------------
 
 .. figure:: images/control-system-hardware/FRC-Control-System-Layout.svg
-   
-   Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+
+  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
 
 National Instruments roboRIO
 ----------------------------
