@@ -1,7 +1,7 @@
 # Minimal makefile for Sphinx documentation
 #
-
 # You can set these variables from the command line.
+
 SPHINXOPTS    = -W --keep-going
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
@@ -16,7 +16,11 @@ help:
 lint:
 	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)
 
-.PHONY: help lint Makefile
+translate:
+	@$(SPHINXBUILD) -M gettext "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
+
+.PHONY: help lint translate Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
