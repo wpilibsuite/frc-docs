@@ -7,6 +7,13 @@ The goal of this document is to provide a brief overview of the hardware compone
 
 .. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System <how-to-wire-a-robot>` document.
 
+Overview of Control System
+--------------------------
+
+.. figure:: images/control-system-hardware/FRC-Control-System-Layout.svg
+
+  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+
 National Instruments roboRIO
 ----------------------------
 
