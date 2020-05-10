@@ -7,11 +7,16 @@ How to Wire an FRC Robot
 
    Some images shown in this section reflect the setup for a Robot Control System using Spark motor controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
 
+Overview
+--------
+
+.. figure:: images/how-to-wire-a-robot/FRC-Control-System-Layout.svg
+  :width: 600
+
+  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+
 Gather Materials
 ----------------
-
-.. image:: images/how-to-wire-a-robot/image0.jpg
-   :width: 600
 
 Locate the following control system components and tools
 

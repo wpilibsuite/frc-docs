@@ -12,7 +12,7 @@ software.
 USB Connection
 ~~~~~~~~~~~~~~
 
-.. image:: images/imaging-your-roborio/usb-connection.png
+.. image:: images/imaging-your-roborio/roborio-usb-client.svg
 
 Connect a USB cable from the roboRIO USB Device port to the PC. This requires a USB Type A male (standard PC end) to Type B male cable (square with 2 cut corners), most commonly found as a printer USB cable.
 

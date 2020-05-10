@@ -17,6 +17,8 @@ if "%1" == "" goto help
 
 if "%1" == "lint" goto lint
 
+if "%1" == "translate" goto translate
+
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
@@ -35,9 +37,15 @@ goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+goto end
 
 :lint
 %LINTER% %LINTEROPTS%
+goto end
+
+:translate
+%SPHINXBUILD% -M gettext %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
 
 :end
 popd
