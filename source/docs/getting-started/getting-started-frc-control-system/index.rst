@@ -9,7 +9,6 @@ Getting Started
    control-system-hardware
    offline-installation-preparations
    wpilib-setup
-   other-wpilib-versions
    labview-setup
    frc-game-tools
    how-to-wire-a-robot

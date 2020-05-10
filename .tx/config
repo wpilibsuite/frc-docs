@@ -1964,3 +1964,9 @@ source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/video-wa
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--wpilib-overview--other-wpilib-versions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/other-wpilib-versions.po
+source_file = build/gettext/docs/software/wpilib-overview/other-wpilib-versions.pot
+source_lang = en
+type = PO
+

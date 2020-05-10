@@ -16,5 +16,6 @@ WPILib Overview
    importing-eclipse-project
    importing-gradle-project
    using-test-mode
+   other-wpilib-versions
    new-for-2020
    2020-Game-Data
