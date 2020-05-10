@@ -9,3 +9,4 @@ sphinx-notfound-page==0.4
 transifex-client==0.13.9
 sphinx-intl==2.0.1
 sphinxcontrib-svg2pdfconverter==1.0.1
+git+https://github.com/pixelb/crudini.git@0a3bbb4#egg=crudini
