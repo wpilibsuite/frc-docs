@@ -21,7 +21,7 @@ translate:
 	@$(SPHINXBUILD) -M gettext "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	rm -f .tx/config
 	sphinx-intl create-txconfig
-	crudini --set .tx/config main lang_map "$(LANGMAP)"
+	echo "lang_map = $(LANGMAP)" >> .tx/config
 	sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
 
 .PHONY: help lint translate Makefile

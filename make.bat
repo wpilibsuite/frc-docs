@@ -45,10 +45,10 @@ goto end
 goto end
 
 :translate
-%SPHINXBUILD% -M gettext %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+%SPHINXBUILD% -M gettext %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% || exit /b
 DEL .tx\config
-sphinx-intl create-txconfig
-crudini --set .tx\config main lang_map %LANGMAP%
+sphinx-intl create-txconfig  || exit /b
+@echo "lang_map = %LANGMAP%">> .tx\config  || exit /b
 sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
 
 :end
