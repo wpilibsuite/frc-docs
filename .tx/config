@@ -14,33 +14,45 @@ source_file = build/gettext/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--build-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/build-instructions.po
-source_file = build/gettext/docs/contributing/build-instructions.pot
+[frc-docs.docs--contributing--frc-docs--build-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--contribution-guidelines]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/contribution-guidelines.po
-source_file = build/gettext/docs/contributing/contribution-guidelines.pot
+[frc-docs.docs--contributing--frc-docs--contribution-guidelines]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/contribution-guidelines.po
+source_file = build/gettext/docs/contributing/frc-docs/contribution-guidelines.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--style-guide]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/style-guide.po
-source_file = build/gettext/docs/contributing/style-guide.pot
+[frc-docs.docs--contributing--frc-docs--drawio-saving-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/drawio-saving-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/drawio-saving-instructions.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--top-contributors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/top-contributors.po
-source_file = build/gettext/docs/contributing/top-contributors.pot
+[frc-docs.docs--contributing--frc-docs--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/index.po
+source_file = build/gettext/docs/contributing/frc-docs/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--translations]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/translations.po
-source_file = build/gettext/docs/contributing/translations.pot
+[frc-docs.docs--contributing--frc-docs--style-guide]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/style-guide.po
+source_file = build/gettext/docs/contributing/frc-docs/style-guide.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--top-contributors]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/top-contributors.po
+source_file = build/gettext/docs/contributing/frc-docs/top-contributors.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--translations]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/translations.po
+source_file = build/gettext/docs/contributing/frc-docs/translations.pot
 source_lang = en
 type = PO
 
@@ -380,6 +392,12 @@ source_file = build/gettext/docs/software/advanced-controls/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/video-walkthrough.po
+source_file = build/gettext/docs/software/advanced-controls/video-walkthrough.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--advanced-controls--controllers--combining-feedforward-feedback]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/controllers/combining-feedforward-feedback.po
 source_file = build/gettext/docs/software/advanced-controls/controllers/combining-feedforward-feedback.pot
@@ -695,6 +713,72 @@ type = PO
 [frc-docs.docs--software--examples-tutorials--wpilib-examples]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/wpilib-examples.po
 source_file = build/gettext/docs/software/examples-tutorials/wpilib-examples.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--adding-more-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/adding-more-data.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/adding-more-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--how-it-works]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/how-it-works.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/how-it-works.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/index.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--inference]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/inference.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/inference.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--setting-up-the-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/setting-up-the-data.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/setting-up-the-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--testing]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/testing.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/testing.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--training]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/training.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/training.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--understanding-precision]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/understanding-precision.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/understanding-precision.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--uploading-data-to-aws-s3]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--using-inference-output]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/using-inference-output.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/using-inference-output.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/video-walkthrough.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/video-walkthrough.pot
 source_lang = en
 type = PO
 
@@ -1292,6 +1376,12 @@ source_file = build/gettext/docs/software/vision-processing/raspberry-pi/using-t
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
+source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--vision-processing--raspberry-pi--what-you-need-to-get-the-pi-image-running]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.po
 source_file = build/gettext/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.pot
@@ -1493,6 +1583,12 @@ type = PO
 [frc-docs.docs--software--wpilib-tools--robot-simulation--simulation-gui]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/simulation-gui.po
 source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/simulation-gui.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--wpilib-tools--robot-simulation--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/video-walkthrough.po
+source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/video-walkthrough.pot
 source_lang = en
 type = PO
 
@@ -1835,132 +1931,6 @@ type = PO
 [frc-docs.docs--software--wpilib-tools--smartdashboard--test-mode-and-live-window--pid-tuning-with-smartdashboard]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.po
 source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--adding-more-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/adding-more-data.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/adding-more-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--how-it-works]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/how-it-works.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/how-it-works.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/index.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--inference]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/inference.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/inference.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--setting-up-the-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/setting-up-the-data.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/setting-up-the-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--testing]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/testing.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/testing.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--training]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/training.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/training.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--understanding-precision]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/understanding-precision.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/understanding-precision.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--uploading-data-to-aws-s3]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--using-inference-output]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/using-inference-output.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/using-inference-output.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--build-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
-source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--contribution-guidelines]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/contribution-guidelines.po
-source_file = build/gettext/docs/contributing/frc-docs/contribution-guidelines.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--drawio-saving-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/drawio-saving-instructions.po
-source_file = build/gettext/docs/contributing/frc-docs/drawio-saving-instructions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/index.po
-source_file = build/gettext/docs/contributing/frc-docs/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--style-guide]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/style-guide.po
-source_file = build/gettext/docs/contributing/frc-docs/style-guide.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--top-contributors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/top-contributors.po
-source_file = build/gettext/docs/contributing/frc-docs/top-contributors.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--translations]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/translations.po
-source_file = build/gettext/docs/contributing/frc-docs/translations.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/video-walkthrough.po
-source_file = build/gettext/docs/software/advanced-controls/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/video-walkthrough.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-simulation--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/video-walkthrough.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/video-walkthrough.pot
 source_lang = en
 type = PO
 
