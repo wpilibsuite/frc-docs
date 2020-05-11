@@ -14,4 +14,4 @@ Driver Station
    driver-station-labview-dashboard
    using-the-labview-dashboard-with-c++-java-code
    troubleshooting-dashboard-connectivity
-   manually-setting-the-driver-station-to-start-smartdashboard
+   manually-setting-the-driver-station-to-start-dashboard

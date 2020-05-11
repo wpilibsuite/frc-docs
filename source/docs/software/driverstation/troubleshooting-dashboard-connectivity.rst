@@ -54,4 +54,4 @@ If the Dashboard does not connect to the Robot (after the Driver Station has con
 
 3. If it still doesn't connect, verify that the Team Number is set properly in the Dashboard and that your Robot Code writes a SmartDashboard value during initialization or disabled
 
-4. Finally, if it still doesn't connect, follow the steps in the :doc:`manually-setting-the-driver-station-to-start-smartdashboard` article
+4. Finally, if it still doesn't connect, follow the steps in the :doc:`manually-setting-the-driver-station-to-start-dashboard` article
