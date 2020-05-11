@@ -8,14 +8,14 @@ Drive Tab
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/drive-tab.png
 
-Most of the indicators on the Drive tab utilize arrays. The c++ and Java SmartDashboard classes do not currently support sending arrays.
+Most of the indicators on the Drive tab utilize arrays.
 
 Basic Tab
 ---------
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/basic-tab.png
 
-The Basic tab uses a number of keys in the a "DB" sub-table to send/recieve Dashboard data. The LED's are output only, the other fields are all bi-directional (send or recieve).
+The Basic tab uses a number of keys in the a "DB" sub-table to send/receive Dashboard data. The LED's are output only, the other fields are all bi-directional (send or receive).
 
 Labels
 ^^^^^^
