@@ -12,10 +12,13 @@ set BUILDDIR=build
 set SPHINXOPTS=-W --keep-going
 set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
+set LANGMAP=es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
 
 if "%1" == "" goto help
 
 if "%1" == "lint" goto lint
+
+if "%1" == "translate" goto translate
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -35,9 +38,18 @@ goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+goto end
 
 :lint
 %LINTER% %LINTEROPTS%
+goto end
+
+:translate
+%SPHINXBUILD% -M gettext %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% || exit /b
+DEL .tx\config
+sphinx-intl create-txconfig  || exit /b
+@echo lang_map = %LANGMAP%>> .tx\config  || exit /b
+sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
 
 :end
 popd
