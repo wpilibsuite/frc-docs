@@ -14,33 +14,45 @@ source_file = build/gettext/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--build-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/build-instructions.po
-source_file = build/gettext/docs/contributing/build-instructions.pot
+[frc-docs.docs--contributing--frc-docs--build-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--contribution-guidelines]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/contribution-guidelines.po
-source_file = build/gettext/docs/contributing/contribution-guidelines.pot
+[frc-docs.docs--contributing--frc-docs--contribution-guidelines]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/contribution-guidelines.po
+source_file = build/gettext/docs/contributing/frc-docs/contribution-guidelines.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--style-guide]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/style-guide.po
-source_file = build/gettext/docs/contributing/style-guide.pot
+[frc-docs.docs--contributing--frc-docs--drawio-saving-instructions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/drawio-saving-instructions.po
+source_file = build/gettext/docs/contributing/frc-docs/drawio-saving-instructions.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--top-contributors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/top-contributors.po
-source_file = build/gettext/docs/contributing/top-contributors.pot
+[frc-docs.docs--contributing--frc-docs--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/index.po
+source_file = build/gettext/docs/contributing/frc-docs/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--contributing--translations]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/translations.po
-source_file = build/gettext/docs/contributing/translations.pot
+[frc-docs.docs--contributing--frc-docs--style-guide]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/style-guide.po
+source_file = build/gettext/docs/contributing/frc-docs/style-guide.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--top-contributors]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/top-contributors.po
+source_file = build/gettext/docs/contributing/frc-docs/top-contributors.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--frc-docs--translations]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/translations.po
+source_file = build/gettext/docs/contributing/frc-docs/translations.pot
 source_lang = en
 type = PO
 
@@ -380,6 +392,12 @@ source_file = build/gettext/docs/software/advanced-controls/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/video-walkthrough.po
+source_file = build/gettext/docs/software/advanced-controls/video-walkthrough.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--advanced-controls--controllers--combining-feedforward-feedback]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/controllers/combining-feedforward-feedback.po
 source_file = build/gettext/docs/software/advanced-controls/controllers/combining-feedforward-feedback.pot
@@ -518,6 +536,96 @@ source_file = build/gettext/docs/software/advanced-controls/trajectories/trouble
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--adding-field-images]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/adding-field-images.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/adding-field-images.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--creating-path-groups]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/creating-path-groups.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/creating-path-groups.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--creating-pathweaver-project]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/creating-pathweaver-project.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/creating-pathweaver-project.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--drawing-pathweaver-path]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/drawing-pathweaver-path.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/drawing-pathweaver-path.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/index.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--integrating-robot-program]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/integrating-robot-program.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/integrating-robot-program.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--introduction]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/introduction.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/introduction.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--analyzing-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-data.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--analyzing-feedback]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-feedback.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-feedback.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--characterization-routine]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--deploying-project]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/deploying-project.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/deploying-project.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--generating-project]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/generating-project.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/generating-project.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/index.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--introduction]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/introduction.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/introduction.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--viewing-diagnostics]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/viewing-diagnostics.po
+source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/viewing-diagnostics.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--basic-programming--cpp-units]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/basic-programming/cpp-units.po
 source_file = build/gettext/docs/software/basic-programming/cpp-units.pot
@@ -650,6 +758,210 @@ source_file = build/gettext/docs/software/commandbased/what-is-command-based.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--dashboards--shuffleboard--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/index.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/index.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-commands-subsystems]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-hierarchies]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-hierarchies.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-hierarchies.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-tuning-pid]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-a-new-widget]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-custom-data-types]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-plugins]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/index.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/index.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-displaying-camera]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-camera.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-camera.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-displaying-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-faq]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-faq.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-faq.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-graphs]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-lists]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-lists.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-lists.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-preferences]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-recording]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-tabs]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tabs.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tabs.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-tour]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-widgets]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-widgets.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-widgets.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--configuring-widgets]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/configuring-widgets.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/configuring-widgets.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/index.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--organizing-widgets]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/organizing-widgets.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/organizing-widgets.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--retrieving-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/retrieving-data.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/retrieving-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--sending-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/sending-data.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/sending-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--using-tabs]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/using-tabs.po
+source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/using-tabs.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--changing-display-properties]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/changing-display-properties.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/changing-display-properties.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--displaying-expressions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/displaying-expressions.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/displaying-expressions.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/index.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--smartdashboard-intro]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/smartdashboard-intro.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/smartdashboard-intro.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--displaying-LiveWindow-values]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--enabling-test-mode]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--pid-tuning-with-smartdashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.po
+source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--driverstation--driver-station-best-practices]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-best-practices.po
 source_file = build/gettext/docs/software/driverstation/driver-station-best-practices.pot
@@ -695,6 +1007,72 @@ type = PO
 [frc-docs.docs--software--examples-tutorials--wpilib-examples]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/wpilib-examples.po
 source_file = build/gettext/docs/software/examples-tutorials/wpilib-examples.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--adding-more-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/adding-more-data.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/adding-more-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--how-it-works]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/how-it-works.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/how-it-works.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/index.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--inference]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/inference.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/inference.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--setting-up-the-data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/setting-up-the-data.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/setting-up-the-data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--testing]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/testing.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/testing.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--training]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/training.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/training.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--understanding-precision]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/understanding-precision.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/understanding-precision.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--uploading-data-to-aws-s3]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--using-inference-output]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/using-inference-output.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/using-inference-output.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--examples-tutorials--machine-learning--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/video-walkthrough.po
+source_file = build/gettext/docs/software/examples-tutorials/machine-learning/video-walkthrough.pot
 source_lang = en
 type = PO
 
@@ -1076,6 +1454,168 @@ source_file = build/gettext/docs/software/roborio-info/roborio-web-dashboard.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--robot-simulation--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/index.po
+source_file = build/gettext/docs/software/robot-simulation/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robot-simulation--introduction]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/introduction.po
+source_file = build/gettext/docs/software/robot-simulation/introduction.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robot-simulation--simulation-gui]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/simulation-gui.po
+source_file = build/gettext/docs/software/robot-simulation/simulation-gui.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robot-simulation--video-walkthrough]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/video-walkthrough.po
+source_file = build/gettext/docs/software/robot-simulation/video-walkthrough.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/index.po
+source_file = build/gettext/docs/software/robotbuilder/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/index.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-custom-components]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-custom-components.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-custom-components.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-drive-mecanum]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-drive-mecanum.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-drive-mecanum.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-drive-tank]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-drive-tank.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-drive-tank.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-pidsubsystem-actuators]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-setpoint-command]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-setpoint-command.po
+source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-setpoint-command.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/index.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-created-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-created-code.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-created-code.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-creating-command]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-creating-command.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-creating-command.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-creating-subsystem]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-creating-subsystem.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-creating-subsystem.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-default-autonomous-command]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-default-autonomous-command.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-default-autonomous-command.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-interface]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-interface.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-interface.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-operator-interface-to-command]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-operator-interface-to-command.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-operator-interface-to-command.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-overview]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-overview.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-overview.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-setup]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-setup.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-setup.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-testing-with-smartdashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--introduction--starting-robotbuilder]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/starting-robotbuilder.po
+source_file = build/gettext/docs/software/robotbuilder/introduction/starting-robotbuilder.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--writing-code--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/index.po
+source_file = build/gettext/docs/software/robotbuilder/writing-code/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-generating-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-generating-code.po
+source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-generating-code.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-command-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-command-code.po
+source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-command-code.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-pidsubsystem-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.po
+source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-subsystem-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.po
+source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--sensors--accelerometers-software]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/sensors/accelerometers-software.po
 source_file = build/gettext/docs/software/sensors/accelerometers-software.pot
@@ -1292,6 +1832,12 @@ source_file = build/gettext/docs/software/vision-processing/raspberry-pi/using-t
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
+source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--vision-processing--raspberry-pi--what-you-need-to-get-the-pi-image-running]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.po
 source_file = build/gettext/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.pot
@@ -1385,1038 +1931,6 @@ type = PO
 [frc-docs.docs--software--wpilib-overview--wpilib-commands-vscode]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/wpilib-commands-vscode.po
 source_file = build/gettext/docs/software/wpilib-overview/wpilib-commands-vscode.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--adding-field-images]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/adding-field-images.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/adding-field-images.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--creating-path-groups]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/creating-path-groups.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/creating-path-groups.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--creating-pathweaver-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/creating-pathweaver-project.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/creating-pathweaver-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--drawing-pathweaver-path]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/drawing-pathweaver-path.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/drawing-pathweaver-path.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/index.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--integrating-robot-program]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/integrating-robot-program.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/integrating-robot-program.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--pathweaver--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/pathweaver/introduction.po
-source_file = build/gettext/docs/software/wpilib-tools/pathweaver/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--analyzing-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/analyzing-data.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/analyzing-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--analyzing-feedback]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--characterization-routine]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/characterization-routine.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/characterization-routine.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--deploying-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/deploying-project.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/deploying-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--generating-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/generating-project.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/generating-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/introduction.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-characterization--viewing-diagnostics]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-simulation--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-simulation--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/introduction.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-simulation--simulation-gui]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/simulation-gui.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/simulation-gui.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-custom-components]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-drive-mecanum]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-drive-tank]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-pidsubsystem-actuators]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-setpoint-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-created-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-created-code.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-created-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-creating-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-creating-subsystem]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-subsystem.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-default-autonomous-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-interface]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-interface.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-interface.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-operator-interface-to-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-operator-interface-to-command.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-operator-interface-to-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-overview]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-setup]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-setup.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--robotbuilder-testing-with-smartdashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--introduction--starting-robotbuilder]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/introduction/starting-robotbuilder.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--writing-code--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/writing-code/index.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/writing-code/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--writing-code--robotbuilder-generating-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--writing-code--robotbuilder-writing-command-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--writing-code--robotbuilder-writing-pidsubsystem-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--writing-code--robotbuilder-writing-subsystem-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/index.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--advanced-usage--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/advanced-usage/index.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/advanced-usage/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--advanced-usage--shuffleboard-commands-subsystems]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--advanced-usage--shuffleboard-hierarchies]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-hierarchies.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-hierarchies.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--advanced-usage--shuffleboard-tuning-pid]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--custom-widgets--creating-a-new-widget]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--custom-widgets--creating-custom-data-types]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--custom-widgets--creating-plugins]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--custom-widgets--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/custom-widgets/index.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/custom-widgets/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/index.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-displaying-camera]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-camera.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-displaying-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-faq]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-faq.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-graphs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-lists]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-lists.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-lists.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-preferences]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-preferences.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-preferences.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-recording]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-recording.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-tabs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tabs.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tabs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-tour]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--getting-started--shuffleboard-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-widgets.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--configuring-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/configuring-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/index.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--organizing-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/organizing-widgets.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/organizing-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--retrieving-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/retrieving-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--sending-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--shuffleboard--layouts-with-code--using-tabs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.po
-source_file = build/gettext/docs/software/wpilib-tools/shuffleboard/layouts-with-code/using-tabs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--changing-display-properties]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/changing-display-properties.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/changing-display-properties.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--displaying-expressions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/displaying-expressions.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/displaying-expressions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/index.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--smartdashboard-intro]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--test-mode-and-live-window--displaying-LiveWindow-values]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--test-mode-and-live-window--enabling-test-mode]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/enabling-test-mode.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/enabling-test-mode.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--test-mode-and-live-window--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--test-mode-and-live-window--pid-tuning-with-smartdashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--adding-more-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/adding-more-data.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/adding-more-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--how-it-works]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/how-it-works.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/how-it-works.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/index.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--inference]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/inference.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/inference.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--setting-up-the-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/setting-up-the-data.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/setting-up-the-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--testing]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/testing.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/testing.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--training]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/training.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/training.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--understanding-precision]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/understanding-precision.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/understanding-precision.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--uploading-data-to-aws-s3]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--using-inference-output]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/using-inference-output.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/using-inference-output.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--build-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
-source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--contribution-guidelines]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/contribution-guidelines.po
-source_file = build/gettext/docs/contributing/frc-docs/contribution-guidelines.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--drawio-saving-instructions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/drawio-saving-instructions.po
-source_file = build/gettext/docs/contributing/frc-docs/drawio-saving-instructions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/index.po
-source_file = build/gettext/docs/contributing/frc-docs/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--style-guide]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/style-guide.po
-source_file = build/gettext/docs/contributing/frc-docs/style-guide.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--top-contributors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/top-contributors.po
-source_file = build/gettext/docs/contributing/frc-docs/top-contributors.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--contributing--frc-docs--translations]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/translations.po
-source_file = build/gettext/docs/contributing/frc-docs/translations.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/video-walkthrough.po
-source_file = build/gettext/docs/software/advanced-controls/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--examples-tutorials--machine-learning--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/examples-tutorials/machine-learning/video-walkthrough.po
-source_file = build/gettext/docs/software/examples-tutorials/machine-learning/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robot-simulation--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robot-simulation/video-walkthrough.po
-source_file = build/gettext/docs/software/wpilib-tools/robot-simulation/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--adding-field-images]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/adding-field-images.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/adding-field-images.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--creating-path-groups]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/creating-path-groups.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/creating-path-groups.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--creating-pathweaver-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/creating-pathweaver-project.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/creating-pathweaver-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--drawing-pathweaver-path]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/drawing-pathweaver-path.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/drawing-pathweaver-path.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/index.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--integrating-robot-program]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/integrating-robot-program.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/integrating-robot-program.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--pathweaver--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/pathweaver/introduction.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/pathweaver/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--analyzing-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-data.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--analyzing-feedback]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-feedback.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/analyzing-feedback.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--characterization-routine]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--deploying-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/deploying-project.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/deploying-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--generating-project]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/generating-project.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/generating-project.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/index.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/introduction.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--advanced-controls--trajectories--robot-characterization--viewing-diagnostics]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/trajectories/robot-characterization/viewing-diagnostics.po
-source_file = build/gettext/docs/software/advanced-controls/trajectories/robot-characterization/viewing-diagnostics.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/index.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/index.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-commands-subsystems]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-hierarchies]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-hierarchies.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-hierarchies.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--advanced-usage--shuffleboard-tuning-pid]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-a-new-widget]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-custom-data-types]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--creating-plugins]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--custom-widgets--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/custom-widgets/index.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/custom-widgets/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/index.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-displaying-camera]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-camera.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-camera.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-displaying-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-faq]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-faq.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-faq.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-graphs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-lists]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-lists.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-lists.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-preferences]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-recording]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-tabs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tabs.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tabs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-tour]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--getting-started--shuffleboard-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-widgets.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--configuring-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/configuring-widgets.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/configuring-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/index.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--organizing-widgets]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/organizing-widgets.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/organizing-widgets.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--retrieving-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/retrieving-data.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/retrieving-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--sending-data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/sending-data.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/sending-data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--shuffleboard--layouts-with-code--using-tabs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/shuffleboard/layouts-with-code/using-tabs.po
-source_file = build/gettext/docs/software/dashboards/shuffleboard/layouts-with-code/using-tabs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--changing-display-properties]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/changing-display-properties.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/changing-display-properties.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--displaying-expressions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/displaying-expressions.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/displaying-expressions.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/index.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--smartdashboard-intro]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/smartdashboard-intro.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/smartdashboard-intro.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--displaying-LiveWindow-values]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--enabling-test-mode]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--dashboards--smartdashboard--test-mode-and-live-window--pid-tuning-with-smartdashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.po
-source_file = build/gettext/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robot-simulation--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/index.po
-source_file = build/gettext/docs/software/robot-simulation/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robot-simulation--introduction]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/introduction.po
-source_file = build/gettext/docs/software/robot-simulation/introduction.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robot-simulation--simulation-gui]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/simulation-gui.po
-source_file = build/gettext/docs/software/robot-simulation/simulation-gui.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robot-simulation--video-walkthrough]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robot-simulation/video-walkthrough.po
-source_file = build/gettext/docs/software/robot-simulation/video-walkthrough.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/index.po
-source_file = build/gettext/docs/software/robotbuilder/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/index.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-custom-components]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-custom-components.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-custom-components.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-drive-mecanum]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-drive-mecanum.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-drive-mecanum.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-drive-tank]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-drive-tank.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-drive-tank.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-pidsubsystem-actuators]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-pidsubsystem-actuators.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--advanced--robotbuilder-setpoint-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/advanced/robotbuilder-setpoint-command.po
-source_file = build/gettext/docs/software/robotbuilder/advanced/robotbuilder-setpoint-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/index.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-created-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-created-code.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-created-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-creating-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-creating-command.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-creating-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-creating-subsystem]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-creating-subsystem.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-creating-subsystem.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-default-autonomous-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-default-autonomous-command.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-default-autonomous-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-interface]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-interface.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-interface.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-operator-interface-to-command]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-operator-interface-to-command.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-operator-interface-to-command.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-overview]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-overview.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-overview.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-setup]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-setup.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-setup.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--robotbuilder-testing-with-smartdashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--introduction--starting-robotbuilder]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/introduction/starting-robotbuilder.po
-source_file = build/gettext/docs/software/robotbuilder/introduction/starting-robotbuilder.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--writing-code--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/index.po
-source_file = build/gettext/docs/software/robotbuilder/writing-code/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-generating-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-generating-code.po
-source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-generating-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-command-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-command-code.po
-source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-command-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-pidsubsystem-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.po
-source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--robotbuilder--writing-code--robotbuilder-writing-subsystem-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.po
-source_file = build/gettext/docs/software/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.pot
 source_lang = en
 type = PO
 

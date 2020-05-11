@@ -134,3 +134,5 @@ jobs:
     - ${{ if startsWith(variables['build.sourceBranch'], 'refs/heads/master') }}:
       - script: tx push --source --no-interactive
         displayName: Push Translations
+        env:
+          TX_TOKEN: $(TX_TOKEN)
