@@ -10,10 +10,10 @@ LabVIEW Dashboard
 
 The Dashboard is broken into two main sections. The left pane is for displaying a camera image. The right pane contains:
 
-- Drive tab that contains indicators for joystick and drive motor values (hooked up by default when used with LabVIEW robot code), a gyro indicator, an Autonomous selection text box, a connection indicator and some controls and indicators for the camera,
-- Basic tab that contains some default controls and indicators,
-- Custom tab for customizing the dashboard using LabVIEW
+- Drive tab that contains indicators for joystick and drive motor values (hooked up by default when used with LabVIEW robot code), a gyro indicator, an Autonomous selection text box, a connection indicator and some controls and indicators for the camera
+- Basic tab that contains some default controls and indicators
 - Test tab for use with Test Mode in the LabVIEW framework
+- Custom tab for customizing the dashboard using LabVIEW
 - Commands tab for use with the new LabVIEW C&C Framework
 - Checklist tab that can be used to create task lists to complete before and/or between matches
 - Variables tab that displays the raw Network Tables variables in a tree view format
@@ -38,31 +38,22 @@ Drive
 
 .. image:: images/driver-station-labview-dashboard/drive.png
 
-The center pane contains a section that provides feedback on the joysticks and drive commands when used with the LabVIEW framework and a section that displays the robot IP and reported battery voltage:
+The center pane contains a section that provides feedback on the joysticks and drive commands when used with the LabVIEW framework and a section that displays the NetworkTables status and autonomous selector:
 
 #. Displays X,Y and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
 #. Displays values being sent to motor controllers when using LabVIEW framework
-#. Displays a brief chart of the reported battery voltage
+#. Displays a connection indicator for the NetworkTables (NT) data from the robot
 #. Displays a Gyro value
+#. Displays a text box that can be used to select Autonomous modes. Each language's code templates have examples of using this box to select from multiple autonomous programs.
 
 These indicators (other than the Gyro) are hooked up to appropriate values by default when using the LabVIEW framework. For information on using them with C++/Java code see :doc:`using-the-labview-dashboard-with-c++-java-code`.
-
-Autonomous Selection Box and Connection Indicator
--------------------------------------------------
-
-.. image:: images/driver-station-labview-dashboard/autonomous-selection-box-and-connection-indicator.png
-
-This year, the Dashboard also contains 2 new elements on the Drive tab:
-
-#. A text box that can be used to select Autonomous modes. Each language's code templates have examples of using this box to select from multiple autonomous programs.
-#. A connection indicator for the connection to the robot.
 
 Basic
 -----
 
 .. image:: images/driver-station-labview-dashboard/basic.png
 
-The Basic tab contains a variety of pre-populated bi-directional controls/indicators which can be used to control the robot or display information from the robot. The SmartDashboard key names associated with each item are labeled next to the indicator with the exception of the Strings which follow the same naming pattern and increment from DB/String 0 to DB/String 4 on the left and DB/String 5 to DB/String 9 on the right. The LabVIEW framework contains an example of reading from the Buttons and Sliders in Teleop. It also contains an example of customizing the labels in Begin. For more detail on using this tab with C++\Java code see :doc:`using-the-labview-dashboard-with-c++-java-code`.
+The Basic tab contains a variety of pre-populated bi-directional controls/indicators which can be used to control the robot or display information from the robot. The SmartDashboard key names associated with each item are labeled next to the indicator with the exception of the Strings which follow the same naming pattern and increment from DB/String 0 to DB/String 4 on the left and DB/String 5 to DB/String 9 on the right. The LabVIEW framework contains an example of reading from the Buttons and Sliders in Teleop. It also contains an example of customizing the labels in Begin. For more detail on using this tab with C++\Java code, see :doc:`using-the-labview-dashboard-with-c++-java-code`.
 
 Custom
 ------
