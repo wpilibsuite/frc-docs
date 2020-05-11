@@ -1,3 +1,5 @@
+:orphan:
+
 Machine Learning
 ================
 
@@ -16,6 +18,7 @@ Table of Contents
 .. toctree::
    :maxdepth: 1
 
+   video-walkthrough
    setting-up-the-data
    adding-more-data
    uploading-data-to-aws-s3

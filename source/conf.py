@@ -36,6 +36,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
+    'sphinxcontrib.rsvgconverter',
     'notfound.extension'
 ]
 
@@ -52,8 +53,9 @@ linkcheck_anchors = False
 linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
 
 # Sets linkcheck timeout in seconds
-linkcheck_timeout = 5
+linkcheck_timeout = 30
 linkcheck_retries = 3
+linkcheck_workers = 1
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -128,3 +130,9 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub', 'linkcheck']
+
+
+# Options for translation support -------------------------------------------
+
+gettext_compact = False
+locale_dirs = ['locale/']
