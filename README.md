@@ -40,6 +40,12 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 **Note**: Due to a bug with the linter on Windows machines, this command is currently only usable on Linux systems.
 
+### Translate Check
+
+``.\make translate`` or ``make translate``
+
+This ensures that translations are updated concurrently by updating the transifex configuration file.
+
 ### Building HTML
 
 ``.\make html`` or ``make html``
