@@ -37,6 +37,7 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'hoverxref.extension',
     'notfound.extension'
 ]
 
