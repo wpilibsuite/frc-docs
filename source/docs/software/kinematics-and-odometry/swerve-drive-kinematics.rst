@@ -123,7 +123,7 @@ Field-oriented drive
 
 Using custom centers of rotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Sometimes, rotating around one specific corner might be desirable for certain evasive manuevers. This type of behavior is also supported by the WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
+Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
 
 .. note:: Because all robots are a rigid frame, the provided ``vx`` and ``vy`` velocities from the ``ChassisSpeeds`` object will still apply for the entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` object will be measured from the center of rotation.
 

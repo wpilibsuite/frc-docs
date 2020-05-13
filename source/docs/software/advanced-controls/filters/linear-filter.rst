@@ -3,7 +3,7 @@ Linear Filters
 
 The first (and most commonly-employed) sort of filter that WPILib supports is a *linear filter* - or, more specifically, a linear time-invariant (LTI) filter.
 
-An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reduceable to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  Mathematically, this kind of moving average is known as a `convolution <https://en.wikipedia.org/wiki/Convolution>`__.
+An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reducible to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  Mathematically, this kind of moving average is known as a `convolution <https://en.wikipedia.org/wiki/Convolution>`__.
 
 There are two broad "sorts" of impulse responses: infinite impulse responses (IIR), and finite impulse responses (FIR).
 

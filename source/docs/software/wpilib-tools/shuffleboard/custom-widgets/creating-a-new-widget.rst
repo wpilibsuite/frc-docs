@@ -74,7 +74,7 @@ It also must include a ``@ParametrizedController`` annotation that points to the
    /*
     * If the FXML file and Java file are in the same package, that is the java file is in src/main/java and the
     * FXML file is under src/main/resources or your code equivalent package, the relative path will work
-    * However, if they are in different packages, an absoulte path will be required.
+    * However, if they are in different packages, an absolute path will be required.
    */
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
@@ -189,8 +189,8 @@ Using a listener is another way to change values when the slider or data source 
 
 In this case, the ``setData()`` method sets the value in the data source of the widget to the ``newValue``.
 
-Exporing Custom Components
---------------------------
+Exploring Custom Components
+---------------------------
 Widgets are not automatically discovered when loading plugins; the defining plugin must explicitly export it for it to be usable. This approach is taken to allow multiple plugins to be defined in the same JAR.
 
 .. code-block:: java

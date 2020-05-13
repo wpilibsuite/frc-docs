@@ -17,7 +17,7 @@ Tank Drive Tutorial
 
 4. Push Ctrl + E to see the block diagram.  It should look like the following image:
 
-.. image:: images/tank-drive-tutorial/block-diogram.png
+.. image:: images/tank-drive-tutorial/block-diagram.png
 
 5. Double click the “Teleop” vi inside of the Teleop Enabled case structure.  Look at its block diagram.  You will want to make two changes here:
 
@@ -25,7 +25,7 @@ Tank Drive Tutorial
 
   - Find the Index Array function that is after the Get Values.vi.  You will need to create two numeric constants and wire each into one of the index inputs.  You can determine what the values of each index should be by looking at the USB Devices tab in the FRC Driver Station.  Move the two joysticks to determine which number (index) they are tied to.  You will likely want to use the Y-axis index for each joystick.  This is because it is intuitive to push up on the joystick when you want the motors to go forward, and down when you when them to go in reverse.  If you select the X-axis index for each, then you will have to move the joystick left or right (x-axis directions) to get the robot motors to move.  In my setup, I’ve selected index 1 for my left motors Y-axis control and index 5 as the right motors Y-axis control.  You can see the adjustments in LabVIEW in the following image:
 
-.. image:: images/tank-drive-tutorial/block-diogram-2.png
+.. image:: images/tank-drive-tutorial/block-diagram-2.png
 
 6. Next you will want to go back to your “Robot Main.vi” and double click on the “Begin.vi.”
 
@@ -35,6 +35,6 @@ Tank Drive Tutorial
 
   For example, I am using Jaguar motor controllers and my motors are wired into PWM 8 and 9.  The image below shows the changes I need to make:
 
-.. image:: images/tank-drive-tutorial/block-diogram-3.png
+.. image:: images/tank-drive-tutorial/block-diagram-3.png
 
 9. Save all of the Vis that you have made adjustments to and you are now able to drive a robot with tank drive!

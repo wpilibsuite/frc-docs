@@ -82,7 +82,7 @@ SPARK MAX Motor Controller
 
 .. image:: images/control-system-hardware/spark-max-motor-controller.png
 
-The SPARK MAX Motor Controller from REV Robotics is a variable speed motor controller for use in FRC. The SPARK MAX is capable of controlling either the traditional brushed DC motors commonly used in FRC or the new brushless REV Robotics NEO Brushless Motor. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). The controller has a data port for sensor input and is capable of closed loop control modes when controlled over CAN or USB. For more information see the `REV Robotics SPARK MAX product page <https://www.revrobotics.com/rev-11-2158/>`__.
+The SPARK MAX Motor Controller from REV Robotics is a variable speed motor controller for use in FRC. The SPARK MAX is capable of controlling either the traditional brushed DC motors commonly used in FRC or the REV Robotics NEO Brushless Motor. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). The controller has a data port for sensor input and is capable of closed loop control modes when controlled over CAN or USB. For more information see the `REV Robotics SPARK MAX product page <https://www.revrobotics.com/rev-11-2158/>`__.
 
 Talon Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^

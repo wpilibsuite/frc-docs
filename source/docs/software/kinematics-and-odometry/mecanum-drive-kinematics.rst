@@ -103,7 +103,7 @@ Field-oriented drive
 
 Using custom centers of rotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Sometimes, rotating around one specific corner might be desirable for certain evasive manuevers. This type of behavior is also supported by the WPILib classes. The same ``ToWheelSpeeds()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
+Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToWheelSpeeds()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
 
 .. note:: Because all robots are a rigid frame, the provided ``vx`` and ``vy`` velocities from the ``ChassisSpeeds`` object will still apply for the entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` object will be measured from the center of rotation.
 
@@ -111,7 +111,7 @@ For example, one can set the center of rotation on a certain wheel and if the pr
 
 Converting wheel speeds to chassis speeds
 -----------------------------------------
-One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds soeeds)`` (C++) method can be used to achieve this.
+One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used to achieve this.
 
 .. tabs::
 
