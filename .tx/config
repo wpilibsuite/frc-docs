@@ -206,144 +206,6 @@ source_file = build/gettext/docs/hardware/hardware-tutorials/sensors.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--hardware--kit-of-parts--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/index.po
-source_file = build/gettext/docs/hardware/kit-of-parts/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--control--vmx-pi]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/control/vmx-pi.po
-source_file = build/gettext/docs/hardware/kit-of-parts/control/vmx-pi.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--mechanical--linear-bushings]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/mechanical/linear-bushings.po
-source_file = build/gettext/docs/hardware/kit-of-parts/mechanical/linear-bushings.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--mechanical--linear-motion]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/mechanical/linear-motion.po
-source_file = build/gettext/docs/hardware/kit-of-parts/mechanical/linear-motion.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--mechanical--triangle-bearings]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/mechanical/triangle-bearings.po
-source_file = build/gettext/docs/hardware/kit-of-parts/mechanical/triangle-bearings.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--motors--bosch-seat-motor]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/motors/bosch-seat-motor.po
-source_file = build/gettext/docs/hardware/kit-of-parts/motors/bosch-seat-motor.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--motors--johnson-electric-plg-motor]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/motors/johnson-electric-plg-motor.po
-source_file = build/gettext/docs/hardware/kit-of-parts/motors/johnson-electric-plg-motor.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--motors--nidec-dynamo-bldc]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/motors/nidec-dynamo-bldc.po
-source_file = build/gettext/docs/hardware/kit-of-parts/motors/nidec-dynamo-bldc.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--other--first-bumper-logo]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/other/first-bumper-logo.po
-source_file = build/gettext/docs/hardware/kit-of-parts/other/first-bumper-logo.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--other--robot-mechanisms-curriculum]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/other/robot-mechanisms-curriculum.po
-source_file = build/gettext/docs/hardware/kit-of-parts/other/robot-mechanisms-curriculum.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--pneumatics--festo-solenoid-valve]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/pneumatics/festo-solenoid-valve.po
-source_file = build/gettext/docs/hardware/kit-of-parts/pneumatics/festo-solenoid-valve.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--pneumatics--phd-cylinders]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/pneumatics/phd-cylinders.po
-source_file = build/gettext/docs/hardware/kit-of-parts/pneumatics/phd-cylinders.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--pneumatics--position-and-speed-control-options-for-pneumatic-cylinders]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/pneumatics/position-and-speed-control-options-for-pneumatic-cylinders.po
-source_file = build/gettext/docs/hardware/kit-of-parts/pneumatics/position-and-speed-control-options-for-pneumatic-cylinders.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--amt10-encoder-cui-inc]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/amt10-encoder-cui-inc.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/amt10-encoder-cui-inc.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--analog-devices-sensors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/analog-devices-sensors.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/analog-devices-sensors.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--jetson-tx1-developer-kit]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/jetson-tx1-developer-kit.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/jetson-tx1-developer-kit.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--john-deere-encoder]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/john-deere-encoder.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/john-deere-encoder.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--mb1013-hrlv-maxsonar-ez-ultrasonic-sensor]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/mb1013-hrlv-maxsonar-ez-ultrasonic-sensor.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/mb1013-hrlv-maxsonar-ez-ultrasonic-sensor.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--sensors--navx-mxp]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/sensors/navx-mxp.po
-source_file = build/gettext/docs/hardware/kit-of-parts/sensors/navx-mxp.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--kit-of-parts--wiring-connections--app-powerpole-connectors]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/kit-of-parts/wiring-connections/app-powerpole-connectors.po
-source_file = build/gettext/docs/hardware/kit-of-parts/wiring-connections/app-powerpole-connectors.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--robot-quick-build--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/robot-quick-build/index.po
-source_file = build/gettext/docs/hardware/robot-quick-build/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--robot-quick-build--installing-electrical-board-for-rqbs]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/robot-quick-build/installing-electrical-board-for-rqbs.po
-source_file = build/gettext/docs/hardware/robot-quick-build/installing-electrical-board-for-rqbs.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--hardware--robot-quick-build--robot-quick-build-overview]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/robot-quick-build/robot-quick-build-overview.po
-source_file = build/gettext/docs/hardware/robot-quick-build/robot-quick-build-overview.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--hardware--sensors--accelerometers-hardware]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/sensors/accelerometers-hardware.po
 source_file = build/gettext/docs/hardware/sensors/accelerometers-hardware.pot
@@ -812,18 +674,6 @@ source_file = build/gettext/docs/software/driverstation/driver-station-best-prac
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--driverstation--driver-station-errors-warnings]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-errors-warnings.po
-source_file = build/gettext/docs/software/driverstation/driver-station-errors-warnings.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--driverstation--driver-station-labview-dashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-labview-dashboard.po
-source_file = build/gettext/docs/software/driverstation/driver-station-labview-dashboard.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--driverstation--driver-station-log-viewer]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-log-viewer.po
 source_file = build/gettext/docs/software/driverstation/driver-station-log-viewer.pot
@@ -848,12 +698,6 @@ source_file = build/gettext/docs/software/driverstation/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--driverstation--manually-setting-the-driver-station-to-start-dashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/manually-setting-the-driver-station-to-start-dashboard.po
-source_file = build/gettext/docs/software/driverstation/manually-setting-the-driver-station-to-start-dashboard.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--driverstation--programming-radios-for-fms-offseason]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/programming-radios-for-fms-offseason.po
 source_file = build/gettext/docs/software/driverstation/programming-radios-for-fms-offseason.pot
@@ -863,12 +707,6 @@ type = PO
 [frc-docs.docs--software--driverstation--troubleshooting-dashboard-connectivity]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/troubleshooting-dashboard-connectivity.po
 source_file = build/gettext/docs/software/driverstation/troubleshooting-dashboard-connectivity.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--driverstation--using-the-labview-dashboard-with-c__-java-code]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.po
-source_file = build/gettext/docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.pot
 source_lang = en
 type = PO
 
@@ -1115,12 +953,6 @@ type = PO
 [frc-docs.docs--software--labview--resources--making-a-one-shot-button-press]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/labview/resources/making-a-one-shot-button-press.po
 source_file = build/gettext/docs/software/labview/resources/making-a-one-shot-button-press.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--labview--resources--multisim-ultiboard-and-statechart-module]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/labview/resources/multisim-ultiboard-and-statechart-module.po
-source_file = build/gettext/docs/software/labview/resources/multisim-ultiboard-and-statechart-module.pot
 source_lang = en
 type = PO
 
