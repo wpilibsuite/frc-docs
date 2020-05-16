@@ -41,7 +41,7 @@ extensions = [
     'notfound.extension'
 ]
 
-# Enable hover content on :ref:
+# Enable hover content on glossary term
 hoverxref_roles = ['term']
 
 # TODO Directives omit a warning
