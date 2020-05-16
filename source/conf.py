@@ -42,7 +42,7 @@ extensions = [
 ]
 
 # Enable hover content on :ref:
-hoverxref_auto_ref = True
+hoverxref_roles = ['term']
 
 # TODO Directives omit a warning
 todo_emit_warnings = False
