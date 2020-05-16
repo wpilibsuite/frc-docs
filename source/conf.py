@@ -41,6 +41,9 @@ extensions = [
     'notfound.extension'
 ]
 
+# Enable hover content on :ref:
+hoverxref_auto_ref = True
+
 # TODO Directives omit a warning
 todo_emit_warnings = False
 
