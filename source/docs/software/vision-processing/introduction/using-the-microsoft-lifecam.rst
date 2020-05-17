@@ -6,7 +6,7 @@ The Microsoft Lifecam HD-3000 is a USB webcam that was tested with the roboRIO a
 Connecting the Camera to the roboRIO
 ------------------------------------
 
-.. image:: /docs/getting-started/getting-started-frc-control-system/images/control-system-hardware/microsoft-lifecam.jpg
+.. image:: /docs/getting-started/getting-started-frc-control-system/images/control-system-hardware/microsoft-lifecam.png
 
 The camera can be connected to either of the roboRIO USB ports.
 
