@@ -24,13 +24,6 @@ If the Dashboard does not connect to the Robot (after the Driver Station has con
 
 2. If that doesn't work, restart the Robot Code using the Restart Robot Code button on the Diagnostics tab of the Driver Station
 
-Improving Reliability of a Custom Dashboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/troubleshooting-dashboard-connectivity-2.png
-
-If you have created a custom LabVIEW dashboard there is a tweak you can make to the code to improve reliability of the initial connection. Locate the loop labeled Loop 7 in the Dashboard Main VI. Modify the loop according to the image above by adding a loop around the listener, 2 case statements, a Wait block and error wiring.
-
 SmartDashboard
 --------------
 
