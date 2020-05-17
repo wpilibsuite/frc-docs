@@ -73,6 +73,11 @@ Link Check
 
 The link checker makes sure that all links in the documentation resolve. This **will** fail the buildbot if it does not pass. To check, run ``.\make linkcheck``
 
+Translate Check
+^^^^^^^^^^^^^^^
+
+To ensure translations are updated concurrently, you must update the transifex configuration file. This can be done by running the ``.\make translate`` command. This **must** be done to to pass the buildbot.
+
 Building HTML
 ^^^^^^^^^^^^^
 

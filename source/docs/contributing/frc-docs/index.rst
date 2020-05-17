@@ -8,4 +8,5 @@ Contribuing to frc-docs
    style-guide
    build-instructions
    drawio-saving-instructions
+   translations
    top-contributors

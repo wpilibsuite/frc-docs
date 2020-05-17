@@ -1,11 +1,7 @@
 Repeatable Low Power Movement - Controlling Servos with WPILib
 ==============================================================
-Servo motors are a type of motor which integrates positional
-feedback into the motor in order to allow a single motor to
-perform repeatable, controllable movement, taking position
-as the input signal. WPILib provides the capability to
-control servos which match the common hobby input
-specification (PWM signal, 1.0ms-2.0ms pulse width)
+
+Servo motors are a type of motor which integrates positional feedback into the motor in order to allow a single motor to perform repeatable, controllable movement, taking position as the input signal. WPILib provides the capability to control servos which match the common hobby input specification (PWM signal, 1.0ms-2.0ms pulse width)
 
 Constructing a Servo object
 ---------------------------

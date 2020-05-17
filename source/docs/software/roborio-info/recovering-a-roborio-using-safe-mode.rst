@@ -6,7 +6,7 @@ Occasionally a roboRIO may become corrupted to the point that it cannot be recov
 Booting into Safe Mode
 ----------------------
 
-.. image:: images/recovering-a-roborio-using-safe-mode-1.png
+.. image:: images/roborio-safe-mode.svg
 
 To boot the roboRIO into Safe Mode:
 
