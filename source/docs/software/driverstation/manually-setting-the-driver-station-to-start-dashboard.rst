@@ -3,7 +3,7 @@ Manually Setting the Driver Station to Start Dashboard
 
 .. note:: If WPILib is not installed to the default location (such as when files are copied to a PC manually), the dashboard of choice may not launch properly. To have the DS start a dashboard when it starts up, you have to manually modify the settings for the default dashboard.
 
-.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <docs/software/driverstation/driver-station:Setup Tab>` for your language first.
+.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <docs/software/driverstation/driver-station:Setup Tab>` for your language first. Also, to use a dashboard without installing WPILib, Java 11 must be installed first.
 
 Set Driver Station to Default
 -----------------------------
