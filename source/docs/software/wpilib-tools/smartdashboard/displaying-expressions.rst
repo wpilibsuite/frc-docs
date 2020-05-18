@@ -39,9 +39,7 @@ You can write Boolean, Numeric, or String values to the SmartDashboard by simply
 Creating Widgets on SmartDashboard
 ----------------------------------
 
-.. todo:: add references
-
-Widgets are populated on the SmartDashboard automatically, no user intervention is required. Note that the widgets are only populated when the value is first written, you may need to enable your robot in a particular mode or trigger a particular code routine for an item to appear. To alter the appearance of the widget, see the next two sections Changing the Display Properties of a Value and Changing the Display Widget Type for a Value.
+Widgets are populated on the SmartDashboard automatically, no user intervention is required. Note that the widgets are only populated when the value is first written, you may need to enable your robot in a particular mode or trigger a particular code routine for an item to appear. To alter the appearance of the widget, see the next two sections :doc:`Changing the Display Properties of a Value <changing-display-properties>` and :doc:`Changing the Display Widget Type for a Value <changing-display-widget-type>`.
 
 Stale Data
 ----------

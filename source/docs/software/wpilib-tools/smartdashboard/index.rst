@@ -7,4 +7,5 @@ SmartDashboard
    smartdashboard-intro
    displaying-expressions
    changing-display-properties
+   changing-display-widget-type
    test-mode-and-live-window/index
