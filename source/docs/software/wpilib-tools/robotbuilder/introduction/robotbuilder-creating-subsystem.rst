@@ -66,7 +66,7 @@ After saving constants, the names will appear in the "Constants" button in the s
 Dragging Actuators/Sensors into the Subsystem
 ---------------------------------------------
 
-.. image:: images/creating-commands-9.png
+.. image:: images/creating-subsystem-9.png
 
 There are two steps to adding components to a subsystem:
 
