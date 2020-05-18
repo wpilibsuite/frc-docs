@@ -48,7 +48,7 @@ While magnetic proximity switches are often more reliable than their mechanical 
 Inductive Proximity Switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: images/proximity-switches-hardware/inductive-proximity-switch.jpg
+.. image:: images/proximity-switches-hardware/inductive-proximity-switch.png
 
 Inductive proximity switches are activated when a conductor of any sort comes within a certain range of the sensor.  Like magnetic proximity switches, they are "no-contact" switches.
 
