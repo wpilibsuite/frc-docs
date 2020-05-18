@@ -34,6 +34,8 @@ The left pane is used to display a video feed from an Axis camera or USB camera 
 4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
 5. Framerate - Indicates the approximate received framerate of the image stream.
 
+.. tip:: The bandwidth indicator indicates the combined bandwidth for all camera streams open. 
+
 Drive
 -----
 
@@ -68,6 +70,10 @@ The camera tab is used to display a video feed from an Axis camera or USB camera
 1. Camera Image Display
 2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
 3. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
+4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
+5. Framerate - Indicates the approximate received framerate of the image stream.
+
+.. tip:: The bandwidth indicator indicates the combined bandwidth for all camera streams open.
 
 Custom
 ------
