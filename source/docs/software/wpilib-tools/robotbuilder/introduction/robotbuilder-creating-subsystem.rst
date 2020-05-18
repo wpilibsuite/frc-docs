@@ -66,6 +66,8 @@ After saving constants, the names will appear in the "Constants" button in the s
 Dragging Actuators/Sensors into the Subsystem
 ---------------------------------------------
 
+.. image:: images/creating-commands-9.png
+
 There are two steps to adding components to a subsystem:
 
 1. Drag actuators or sensors from the palette into the subsystem as required.
