@@ -34,7 +34,7 @@ The left pane is used to display a video feed from an Axis camera or USB camera 
 4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
 5. Framerate - Indicates the approximate received framerate of the image stream.
 
-.. tip:: The bandwidth indicator indicates the combined bandwidth for all camera streams open. 
+.. tip:: The bandwidth indicator indicates the combined bandwidth for all camera streams open.
 
 Drive
 -----
