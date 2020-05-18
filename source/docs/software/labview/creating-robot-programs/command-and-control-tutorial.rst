@@ -179,6 +179,8 @@ The Immediate case updates the motors to the set point defined by the command. T
 Stop Driving.vi
 ^^^^^^^^^^^^^^^
 
+.. image:: images/command-and-control-tutorial/stop-driving.jpg
+
 Zero the drive motors, making the robot stationary.
 
 The Reserve command turns off the motors and waits for a new command. When used with a named command sequence, reserve identifies that the drive subsystem is part of a sequence, even if not currently moving the robot. This helps to arbitrate subsystem resource between simultaneously running commands.
