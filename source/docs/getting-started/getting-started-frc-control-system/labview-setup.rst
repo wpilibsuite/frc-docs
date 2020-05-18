@@ -48,6 +48,8 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
+.. image:: images/labview/labview_welcome.png
+
 Starting Install
 ^^^^^^^^^^^^^^^^
 
@@ -182,4 +184,3 @@ Restart
 .. image:: images/labview/labview_restart.png
 
 Select "Reboot Now" after closing any open programs.
-
