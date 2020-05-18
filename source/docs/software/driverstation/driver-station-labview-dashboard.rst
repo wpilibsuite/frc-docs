@@ -12,8 +12,9 @@ The Dashboard is broken into two main sections. The left pane is for displaying 
 
 - Drive tab that contains indicators for joystick and drive motor values (hooked up by default when used with LabVIEW robot code), a gyro indicator, an Autonomous selection text box, a connection indicator and some controls and indicators for the camera
 - Basic tab that contains some default controls and indicators
-- Test tab for use with Test Mode in the LabVIEW framework
+- Camera tab that contains a secondary camera viewer, similar to the viewer in the left pane
 - Custom tab for customizing the dashboard using LabVIEW
+- Test tab for use with Test Mode in the LabVIEW framework
 - Commands tab for use with the new LabVIEW C&C Framework
 - Checklist tab that can be used to create task lists to complete before and/or between matches
 - Variables tab that displays the raw Network Tables variables in a tree view format
@@ -25,13 +26,13 @@ Camera Image and Controls
 
 .. image:: images/driver-station-labview-dashboard/camera-image-and-controls.png
 
-The left pane is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera in the right pane on the Drive tab and below the tab area:
+The left pane is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
 
-#. Camera Image Display
-#. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
-#. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
-#. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
-#. Framerate - Indicates the approximate received framerate of the image stream.
+1. Camera Image Display
+2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
+3. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
+4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
+5. Framerate - Indicates the approximate received framerate of the image stream.
 
 Drive
 -----
@@ -40,11 +41,11 @@ Drive
 
 The center pane contains a section that provides feedback on the joysticks and drive commands when used with the LabVIEW framework and a section that displays the NetworkTables status and autonomous selector:
 
-#. Displays X,Y and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
-#. Displays values being sent to motor controllers when using LabVIEW framework
-#. Displays a connection indicator for the NetworkTables (NT) data from the robot
-#. Displays a Gyro value
-#. Displays a text box that can be used to select Autonomous modes. Each language's code templates have examples of using this box to select from multiple autonomous programs.
+1. Displays X,Y and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
+2. Displays values being sent to motor controllers when using LabVIEW framework
+3. Displays a connection indicator for the NetworkTables (NT) data from the robot
+4. Displays a Gyro value
+5. Displays a text box that can be used to select Autonomous modes. Each language's code templates have examples of using this box to select from multiple autonomous programs.
 
 These indicators (other than the Gyro) are hooked up to appropriate values by default when using the LabVIEW framework. For information on using them with C++/Java code see :doc:`using-the-labview-dashboard-with-c++-java-code`.
 
@@ -54,6 +55,23 @@ Basic
 .. image:: images/driver-station-labview-dashboard/basic.png
 
 The Basic tab contains a variety of pre-populated bi-directional controls/indicators which can be used to control the robot or display information from the robot. The SmartDashboard key names associated with each item are labeled next to the indicator with the exception of the Strings which follow the same naming pattern and increment from DB/String 0 to DB/String 4 on the left and DB/String 5 to DB/String 9 on the right. The LabVIEW framework contains an example of reading from the Buttons and Sliders in Teleop. It also contains an example of customizing the labels in Begin. For more detail on using this tab with C++\Java code, see :doc:`using-the-labview-dashboard-with-c++-java-code`.
+
+Camera
+------
+
+.. tip:: The left pane can only display a single camera output, so use the camera tab on the right pane to display a second camera output if needed.
+
+.. todo:: The image below is a placeholder is is NOT a real screenshot from the dashboard. It should be replaced with a real screenshot.
+
+.. image:: images/driver-station-labview-dashboard/camera.png
+
+The camera tab is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
+
+1. Camera Image Display
+2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
+3. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
+4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
+5. Framerate - Indicates the approximate received framerate of the image stream.
 
 Custom
 ------
@@ -115,4 +133,4 @@ To play a recording back, click the green triangle Play button. The background o
 #. Play/Pause button - This button allows you to pause and resume playback of the log file.
 #. Playback Speed - This dropdown allows you to adjust playback speed from 1/10 speed to 10x speed, the default is real-time (1x)
 #. Time Control Slider - This slider allows you to fast-forward or rewind through the logfile by clicking on the desired location or dragging the slider.
-#. Settings - With a log file selected, this dropdown allows you to rename or delete a file or open the folder containing the logs in Windows Explorer (Typically C:\Users\Public\Documents\FRC\Log Files\Dashboard)
+#. Settings - With a log file selected, this dropdown allows you to rename or delete a file or open the folder containing the logs in Windows Explorer (Typically ``C:\Users\Public\Documents\FRC\Log Files\Dashboard``)
