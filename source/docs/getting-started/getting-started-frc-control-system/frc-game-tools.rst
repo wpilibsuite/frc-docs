@@ -199,7 +199,7 @@ You will be prompted whether to enable the NI update service. You can choose to 
 Reboot to Complete Installation
 -------------------------------
 
-.. image:: images/labview/labview_restart.png
+.. image:: images/update-suite/install-complete-reboot.png
 
 If prompted, Select "Reboot Now" after closing any open programs.
 
