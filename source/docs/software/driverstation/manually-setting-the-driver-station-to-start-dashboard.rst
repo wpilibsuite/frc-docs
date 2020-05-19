@@ -1,9 +1,9 @@
-Manually Setting the Driver Station to Start Dashboard
-======================================================
+Manually Setting the Driver Station to Start Custom Dashboard
+=============================================================
 
-.. note:: If WPILib is not installed to the default location (such as when files are copied to a PC manually), the dashboard of choice may not launch properly. To have the DS start a dashboard when it starts up, you have to manually modify the settings for the default dashboard.
+.. note:: If WPILib is not installed to the default location (such as when files are copied to a PC manually), the dashboard of choice may not launch properly. To have the DS start a custom dashboard when it starts up, you have to manually modify the settings for the default dashboard.
 
-.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <docs/software/driverstation/driver-station:Setup Tab>` for your language first. Also, to use SmartDashboard or Shuffleboard, Java 11 must be installed first.
+.. warning:: This is not needed for most installations, try using the appropriate :ref:`Dashboard Type setting <docs/software/driverstation/driver-station:Setup Tab>` for your language first.
 
 Set Driver Station to Default
 -----------------------------
@@ -15,7 +15,7 @@ Open the Driver Station software, click on the Setup tab and set the Dashboard s
 Locate Dashboard JAR file
 -------------------------
 
-Find the location of the dashboard ``jar`` file (SmartDashboard or Shuffleboard). It should be installed to ``C:\Users\USERNAME\wpilib\tools`` where ``USERNAME`` is the username of the user logged into the computer.
+Find the location of the dashboard ``jar`` file.
 
 Open DS Data Storage file
 -------------------------
@@ -31,17 +31,11 @@ DashboardCmdLine
 
 Locate the line beginning with ``DashboardCmdLine``.
 
-For SmartDashboard
-^^^^^^^^^^^^^^^^^^
+Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
 
-Replace the string after ``=`` with ``java -jar "C:\\Users\\USERNAME\\wpilib\\tools\\SmartDashboard.jar"`` where ``USERNAME`` is the username determined above. Save the file.
-
-For Shuffleboard
-^^^^^^^^^^^^^^^^
-
-Replace the string after``=`` with ``java -jar "C:\\Users\\USERNAME\\wpilib\\tools\\Shuffleboard.jar"`` where ``USERNAME`` is the username determined above. Save the file.
+.. tip:: If the dashboard ``jar`` file was located at ``C:\Users\USERNAME\frc\dashboard.jar``, one should replace the string after ``=`` with ``java -jar "C:\\Users\\USERNAME\\frc\\dashboard.jar"``
 
 Launch Driver Station
 ---------------------
 
-The Driver Station should now launch the SmartDashboard or Shuffleboard each time it is opened.
+The Driver Station should now launch the dashboard each time it is opened.
