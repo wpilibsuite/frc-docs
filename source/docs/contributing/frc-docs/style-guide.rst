@@ -143,7 +143,7 @@ Images
 
 Images should be created with ``1`` new line separating content and directive.
 
-All images (including vectors) should be less than ``500`` kilobytes in size. Please make use of a smaller resolution and more efficient compression algorithms. 
+All images (including vectors) should be less than ``500`` kilobytes in size. Please make use of a smaller resolution and more efficient compression algorithms.
 
 .. code-block:: text
 
