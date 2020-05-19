@@ -62,4 +62,4 @@ This ensures that translations are updated concurrently by updating the transife
 
 ## Additional Note
 
-A web version of these instructions is available at the [frc-docs website](https://docs.wpilib.org/en/latest/docs/contributing/build-instructions.html).
+A web version of these instructions is available at the [frc-docs website](https://docs.wpilib.org/en/latest/docs/contributing/frc-docs/build-instructions.html).
