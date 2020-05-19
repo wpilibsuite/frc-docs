@@ -716,12 +716,6 @@ source_file = build/gettext/docs/software/driverstation/manually-setting-the-dri
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--driverstation--manually-setting-the-driver-station-to-start-dashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/manually-setting-the-driver-station-to-start-dashboard.po
-source_file = build/gettext/docs/software/driverstation/manually-setting-the-driver-station-to-start-dashboard.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--driverstation--programming-radios-for-fms-offseason]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/programming-radios-for-fms-offseason.po
 source_file = build/gettext/docs/software/driverstation/programming-radios-for-fms-offseason.pot
@@ -1919,12 +1913,6 @@ type = PO
 [frc-docs.docs--software--wpilib-tools--smartdashboard--changing-display-properties]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/changing-display-properties.po
 source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/changing-display-properties.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--smartdashboard--changing-display-widget-type]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/changing-display-widget-type.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/changing-display-widget-type.pot
 source_lang = en
 type = PO
 
