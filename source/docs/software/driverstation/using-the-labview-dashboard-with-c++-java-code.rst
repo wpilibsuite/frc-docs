@@ -1,4 +1,4 @@
-Using the LabVIEW Dashboard with C++\Java Code
+Using the LabVIEW Dashboard with C++/Java Code
 ==============================================
 
 The default LabVIEW Dashboard utilizes Network Tables to pass values and is therefore compatible with C++ and Java robot programs. This article covers the keys and value ranges to use to work with the Dashboard.
