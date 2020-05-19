@@ -15,7 +15,7 @@ The WPILib Mission is to enable FIRST Robotics teams to focus on writing game-sp
 # Building frc-docs
 frc-docs uses the Sphinx documentation generator, and documentation is written in [reStructuredText](http://docutils.sourceforge.net/rst.html).
 
-Ensure the repository is cloned with ``git clone https://github.com/wpilibsuite/frc-docs.git``.
+Ensure the repository is cloned with ``git clone --depth 1 https://github.com/wpilibsuite/frc-docs.git``.
 
 ## Requirements
 - **Windows**
