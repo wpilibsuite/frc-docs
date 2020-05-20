@@ -1,9 +1,9 @@
 State Observers and Kalman Filters
 ==================================
 
-State observers combine information about a system's behavior and external measurements to estimate the true state of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`docs/software/advanced-control/filters/index:Filters` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
+State observers combine information about a system's behavior and external measurements to estimate the true state of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`docs/software/advanced-controls/filters/index:Filters` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
 
-This image shows flywheel velocity measurements over time, run through a variety of different filters. Note that a well-tuned Kalman filter shows no measurement lag during flywheel spinup while still rejecting noisy data and reacting quickly to disturbances as balls pass through it. More on filters can be found in the :ref:`filters section <docs/software/advanced-control/filters/index:Filters>`\.
+This image shows flywheel velocity measurements over time, run through a variety of different filters. Note that a well-tuned Kalman filter shows no measurement lag during flywheel spinup while still rejecting noisy data and reacting quickly to disturbances as balls pass through it. More on filters can be found in the :ref:`filters section <docs/software/advanced-controls/filters/index:Filters>`\.
 
 .. image:: images/filter_comparison.png
 
@@ -15,6 +15,9 @@ Kalman Filters
 To summarize, Kalman filters (and all Bayesian filters) have two parts: prediction and correction. Prediction projects our state estimate forward in time according to our system's dynamics, and correct steers the estimated state towards the measured state. While filters often preform both in the same timestep, it's not strictly necessary -- For example, WPILib's pose estimators call predict frequently, and correct only when new measurement data is available (for example, from a low-framerate vision system).
 
 Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process.
+
+.. figure:: images/Normal_Distribution_PDF.svg
+  :width: 600
 
 The following shows the equations of a discrete-time Kalman filter:
 
@@ -45,7 +48,12 @@ The following shows the equations of a discrete-time Kalman filter:
         matrix
     \end{tabular}
 
-In a system, covariance (short for correlated variance) is a measurement of how two variables are correlated. In s system with a single state, the covariance matrix is simply :math:`\mathbf{\text{cov}(x_1, x_1)}`, or a matrix containing the variance :math:`\mathbf{\text{var}(x_1)}` of the state :math:`x_1`. The magnitude of this variance is the square of the standard deviation of the Gaussian function describing the current state estimate. Relatively large values for covariance might indicate noisy data, while small covariances might indicate that the filter is more confident about it's estimate. Remember that "large" and "small" values for variance or covariance are relative to the base unit being used -- for example, if :math:`\mathbf{x_1}` was measured in meters, :math:`\mathbf{\text{cov}(x_1, x_1)}` would be in meters squared.
+What are Q and R?
+-----------------
+
+In a Kalman filter,
+
+In a system, covariance is a measurement of how two random variables are correlated. In a system with a single state, the covariance matrix is simply :math:`\mathbf{\text{cov}(x_1, x_1)}`, or a matrix containing the variance :math:`\mathbf{\text{var}(x_1)}` of the state :math:`x_1`. The magnitude of this variance is the square of the standard deviation of the Gaussian function describing the current state estimate. Relatively large values for covariance might indicate noisy data, while small covariances might indicate that the filter is more confident about it's estimate. Remember that "large" and "small" values for variance or covariance are relative to the base unit being used -- for example, if :math:`\mathbf{x_1}` was measured in meters, :math:`\mathbf{\text{cov}(x_1, x_1)}` would be in meters squared.
 
 Covariance matrices are written in the following form:
 

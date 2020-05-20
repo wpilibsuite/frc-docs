@@ -1,13 +1,13 @@
 State-Space Controller Walkthrough
 ==================================
 
-.. note:: Before following this tutorial, readers are recommended to have read an :ref:`docs/software/advanced-control/state-space/state-space-intro:Introduction to state-space control`.
+.. note:: Before following this tutorial, readers are recommended to have read an :ref:`docs/software/advanced-controls/state-space/state-space-intro:Introduction to state-space control`.
 
 The goal of this tutorial is to provide "end-to-end" tutorial on implementing a state-space controller for a flywheel.  By following this tutorial, readers will learn how to:
 
 1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
-3. Implement a :ref:`LQR <docs/software/advanced-control/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltrage :term`input`\s to drive the flywheel to a :term:`reference`.
+3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltrage :term`input`\s to drive the flywheel to a :term:`reference`.
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
@@ -23,7 +23,7 @@ Because IIC is a meme award. Thank you for coming to my ted talk. No but serious
 Modeling our flywheel
 ---------------------
 
-The idea of modeling the :term:`dynamics` of physical systems using a system of equations is central to state-space control and modern control theory. :ref:`Recall <docs/software/advanced-control/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
+The idea of modeling the :term:`dynamics` of physical systems using a system of equations is central to state-space control and modern control theory. :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
 
 .. math::
     \dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u} \\
@@ -33,7 +33,7 @@ Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`,
 
 Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the frc-characterization toolsuite, and then model it based on the motor and flywheel's moment of inertia.
 
-The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden state`\s in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`reference`\s by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-control/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
+The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden state`\s in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`reference`\s by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
 
 For our flywheel, we care only about one state: its velocity. While we could chose to also model its acceleration, the inclusion of this state isn't necessary for our system. 
 
@@ -41,12 +41,12 @@ Next, we identify the :term:`input`\s to our system. Inputs can be thought of as
 
 A continuous-time state-space system writes :term:`x-dot`, or the instantaneous rate of change of the system's :term:`system`\'s state, as proportional to the current :term:`state` and :term:`input`\s. Because our state is angular velocity, :math:`\mathbf{\dot{x}}` will be the flywheel's angular acceleration. 
 
-Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`State-space notation <docs/software/advanced-control/state-space/state-space-intro:What is state-space notation>` for more on continuous-time and discrete-time systems.
+Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`State-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` for more on continuous-time and discrete-time systems.
 
 Modeling with System identification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-control/state-space/state-space-intro:State-space notation example -- Flywheel from kV and kA>`, where we rewrote the equation :math:`V = kV \cdot v + kA \cdot a` in terms of :math:`a` as :math:`\mathbf{a} = \mathbf{\dot{v}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V`, where :math:`v` is flywheel velocity, :math:`\dot{v}` and :math:`a` are acceleration, and :math:`V` is voltage. Rewriting this with the standard convention of :math:`x` for the state vector and :math:`u` for inputs, we find:
+To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space notation example -- Flywheel from kV and kA>`, where we rewrote the equation :math:`V = kV \cdot v + kA \cdot a` in terms of :math:`a` as :math:`\mathbf{a} = \mathbf{\dot{v}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V`, where :math:`v` is flywheel velocity, :math:`\dot{v}` and :math:`a` are acceleration, and :math:`V` is voltage. Rewriting this with the standard convention of :math:`x` for the state vector and :math:`u` for inputs, we find:
 
 .. math:: 
     \mathbf{\dot{x}} &= \begin{bmatrix}\frac{-kV}{kA} \end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA} \end{bmatrix} \mathbf{u}
@@ -113,16 +113,16 @@ Kalman filters are used to filter our velocity measurements using our state-spac
 
 .. image:: images/filter_comparison.png
 
-The above graph shows two differently tuned Kalman filters, as well as a :ref:`single-pole IIR filter <docs/software/advanced-control/filters/linear-filter:Linear Filters>` and a :ref:`docs/software/advanced-control/filters/median-filter:Median Filter`. This data was collected with a shooter over ~5 seconds, and four balls were run through the shooter (as seen in the four dips in velocity). While there are no hard rules on choosing good state and measurement standard deviations, they should in general be tuned to trust the model enough to reject noise while reacting quickly to external disturbances. Because the feedback controller computes error using the :term:`x-hat` estimated by the Kalman filter, the controller will react to disturbances only as quickly the filter's state estimate changes. In the above chart, the orange plot (with a state standard deviation of 3.0 and measurement standard deviation of 0.2) produced a filter that reacted quickly to disturbances while rejecting noise, while the magenta filter was barely affected by the velocity dips. 
+The above graph shows two differently tuned Kalman filters, as well as a :ref:`single-pole IIR filter <docs/software/advanced-controls/filters/linear-filter:Linear Filters>` and a :ref:`docs/software/advanced-controls/filters/median-filter:Median Filter`. This data was collected with a shooter over ~5 seconds, and four balls were run through the shooter (as seen in the four dips in velocity). While there are no hard rules on choosing good state and measurement standard deviations, they should in general be tuned to trust the model enough to reject noise while reacting quickly to external disturbances. Because the feedback controller computes error using the :term:`x-hat` estimated by the Kalman filter, the controller will react to disturbances only as quickly the filter's state estimate changes. In the above chart, the orange plot (with a state standard deviation of 3.0 and measurement standard deviation of 0.2) produced a filter that reacted quickly to disturbances while rejecting noise, while the magenta filter was barely affected by the velocity dips. 
 
-Because Kalman filters use our state-space model in the :ref:`docs/software/advanced-control/state-space/state-space-observers:Predict step`, it is important that our model is as accurate as possible. One way to verify this is to record a flywheel's input voltage and velocity over time, and replay this data by calling only ``predict`` on the Kalman filter. Then, the kV and kA gains (or moment of inertia and other constants) can be adjusted until the model closely matches the recorded data. 
+Because Kalman filters use our state-space model in the :ref:`docs/software/advanced-controls/state-space/state-space-observers:Predict step`, it is important that our model is as accurate as possible. One way to verify this is to record a flywheel's input voltage and velocity over time, and replay this data by calling only ``predict`` on the Kalman filter. Then, the kV and kA gains (or moment of inertia and other constants) can be adjusted until the model closely matches the recorded data. 
 
 .. todo:: do we need to elaborate on this^ more?
 
 Linear-Quadratic Regulators and Plant Inversion feedforward
 -----------------------------------------------------------
 
-:ref:`docs/software/advanced-control/state-space/state-space-intro:The Linear-Quadratic Regulator` finds a feedback controller to drive our flywheel :term:`system` to its :term:`reference`. Because our flywheel has just one state, the control law picked by our LQR will be in the form :math:`\mathbf{u = K (r - x)}` where :math:`\mathbf{K}` is a 1x1 matrix; in other words, the control law picked by LQR is simply a proportional controller, or a PID controller with only a P gain. This gain is chosen by our LQR based on the state excursion and control efforts we pass it. More on tuning LQR controllers can be found in the :ref:`LQR application example <docs/software/advanced-control/state-space/state-space-intro:LQR: example application>`. 
+:ref:`docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator` finds a feedback controller to drive our flywheel :term:`system` to its :term:`reference`. Because our flywheel has just one state, the control law picked by our LQR will be in the form :math:`\mathbf{u = K (r - x)}` where :math:`\mathbf{K}` is a 1x1 matrix; in other words, the control law picked by LQR is simply a proportional controller, or a PID controller with only a P gain. This gain is chosen by our LQR based on the state excursion and control efforts we pass it. More on tuning LQR controllers can be found in the :ref:`LQR application example <docs/software/advanced-controls/state-space/state-space-intro:LQR: example application>`. 
 
 Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage inputs given kS, kV, and kA constants, the Plant Inversion feedforward class generate feedforward voltage inputs given a state-space system. The voltage commands generated by the ``LinearSystemLoop`` class are the sum of the feedforward and feedback inputs.
 

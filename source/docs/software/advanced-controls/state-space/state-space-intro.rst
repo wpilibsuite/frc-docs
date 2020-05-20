@@ -17,7 +17,7 @@ If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or it
 Vocabulary
 ----------
 
-For the background vocabulary that will be used throught this article, see the :ref:`Glossary <docs/software/advanced-control/state-space/state-space-glossary:State-Space Glossary>`.
+For the background vocabulary that will be used throught this article, see the :ref:`Glossary <docs/software/advanced-controls/state-space/state-space-glossary:State-Space Glossary>`.
 
 What is state-space?
 --------------------
@@ -188,7 +188,7 @@ WPILib's LinearSystemLoop
 WPILib's state-space control is based on the ``LinearSystemLoop`` class. This class contains all the components needed to control a mechanism using state-space control. It contains the following members:
 
 - A ``LinearSystem`` representing the continuous-time state-space equations of the :term:`system`.
-- A :ref:`Kalman Filter <docs/software/advanced-control/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurement`\s.
+- A :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurement`\s.
 - A Linear-Quadratic Regulator, which combines feedback and feedforward to generate :term:`input`\s.
 
 As the system being controlled is in discrete domain, we follow the following steps at each update cycle:
