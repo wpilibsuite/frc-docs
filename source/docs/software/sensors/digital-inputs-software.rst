@@ -146,7 +146,7 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC should be gi
             }
         }
 
-Homing an encoded mechanism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Homing a mechanism
+^^^^^^^^^^^^^^^^^^
 
-Limit switches are very important for being able to "home" an encoded mechanism.  For an example of this, see :ref:`docs/software/sensors/encoders-software:Homing an encoded mechanism`.
+Limit switches are very important for being able to "home" a mechanism with a encoder.  For an example of this, see :ref:`docs/software/sensors/encoders-software:Homing a mechanism`.
