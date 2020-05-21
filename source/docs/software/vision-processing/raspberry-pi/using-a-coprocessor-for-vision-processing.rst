@@ -22,7 +22,7 @@ for more connections, adding a small network switch to the robot. The cameras ar
 images, processes them, and publishes the results, usually target location information, to network tables so it is can be consumed
 by the robot program for steering and aiming.
 
-.. figure:: images/using-a-coprocessor-for-vision-processing/strategy.png
+.. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
 
 Streaming camera data to the dashboard
 --------------------------------------
