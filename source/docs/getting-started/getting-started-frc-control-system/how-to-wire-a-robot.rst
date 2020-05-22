@@ -7,11 +7,16 @@ How to Wire an FRC Robot
 
    Some images shown in this section reflect the setup for a Robot Control System using Spark motor controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
 
+Overview
+--------
+
+.. figure:: images/how-to-wire-a-robot/FRC-Control-System-Layout.svg
+  :width: 600
+
+  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+
 Gather Materials
 ----------------
-
-.. image:: images/how-to-wire-a-robot/image0.jpg
-   :width: 600
 
 Locate the following control system components and tools
 
@@ -55,40 +60,28 @@ Locate the following control system components and tools
 Create the Base for the Control System
 --------------------------------------
 
-For a benchtop test board, cut piece of 1/4” or 1/2" material (wood or
-plastic) approximately 24" x 16". For a Robot Quick Build control board
-see the supporting documentation for the proper size board for the
-chosen chassis configuration.
+For a benchtop test board, cut piece of 1/4” or 1/2" material (wood or plastic) approximately 24" x 16". For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
 Layout the Core Control System Components
 -----------------------------------------
 
 .. image:: images/how-to-wire-a-robot/image1.jpg
-   :width: 600
 
 
-Layout the components on the board. One layout that should work is shown
-in the images/how-to-wire-a-robot above.
+Layout the components on the board. One layout that should work is shown in the images/how-to-wire-a-robot above.
 
 .. image:: images/how-to-wire-a-robot/image2.png
-   :width: 600
 
 
 Fasten Components
 -----------------
 
-Using the Dual Lock or hardware, fasten all components to the board.
-Note that in many FRC games robot-to-robot contact may be substantial
-and Dual Lock alone is unlikely to stand up as a fastener for many
-electronic components. Teams may wish to use nut and bolt fasteners or
-(as shown in the image above) cable ties, with or without Dual Lock to
-secure devices to the board.
+Using the Dual Lock or hardware, fasten all components to the board. Note that in many FRC games robot-to-robot contact may be substantial and Dual Lock alone is unlikely to stand up as a fastener for many electronic components. Teams may wish to use nut and bolt fasteners or (as shown in the image above) cable ties, with or without Dual Lock to secure devices to the board.
 
 Attach Battery Connector to PDP
 -------------------------------
 
 .. image:: images/how-to-wire-a-robot/image3.jpg
-   :width: 600
 
 Requires: Battery Connector, 6AWG terminal lugs, 1/16" Allen, 5mm Allen,
 7/16" Box end
@@ -104,17 +97,11 @@ Wire Breaker to PDP
 -------------------
 
 .. image:: images/how-to-wire-a-robot/image4.jpg
-   :width: 600
 
 
 Requires: 6AWG red wire, 2x 6AWG terminal lugs, 5mm Allen, 7/16" box end
 
-Secure one terminal lug to the end of the 6AWG red wire. Using the 7/16"
-box end, remove the nut from the “AUX” side of the 120A main breaker and
-place the terminal over the stud. Loosely secure the nut (you may wish
-to remove it shortly to cut, strip, and crimp the other end of the
-wire). Measure out the length of wire required to reach the positive
-terminal of the PDP.
+Secure one terminal lug to the end of the 6AWG red wire. Using the 7/16" box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
 
 1. Cut, strip, and crimp the terminal to the 2nd end of the red 6AWG wire.
 2. Using the 7/16" box end, secure the wire to the "AUX" side of the 120A main breaker.
@@ -124,16 +111,10 @@ Insulate PDP connections
 ------------------------
 
 .. image:: images/how-to-wire-a-robot/image5.jpg
-   :width: 600
 
 Requires: 1/16" Allen, Electrical tape
 
-1. Using electrical tape, insulate the two connections to the 120A
-   breaker. Also insulate any part of the PDP terminals which will
-   be exposed when the cover is replaced. One method for insulating
-   the main breaker connections is to wrap the stud and nut first,
-   then use the tape wrapped around the terminal and wire to secure
-   the tape.
+1. Using electrical tape, insulate the two connections to the 120A breaker. Also insulate any part of the PDP terminals which will be exposed when the cover is replaced. One method for insulating the main breaker connections is to wrap the stud and nut first, then use the tape wrapped around the terminal and wire to secure the tape.
 2. Using the 1/16" Allen wrench, replace the PDP terminal cover
 
 Wago connectors
@@ -142,32 +123,24 @@ Wago connectors
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/L3GJGQ7mJqk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://www.youtube.com/embed/L3GJGQ7mJqk" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-The next step will involve using the Wago connectors on the PDP. To use
-the Wago connectors, insert a small flat blade screwdriver into the
-rectangular hole at a shallow angle then angle the screwdriver upwards
-as you continue to press in to actuate the lever, opening the terminal.
-Two sizes of Wago connector are found on the PDP:
+The next step will involve using the Wago connectors on the PDP. To use the Wago connectors, insert a small flat blade screwdriver into the rectangular hole at a shallow angle then angle the screwdriver upwards as you continue to press in to actuate the lever, opening the terminal. Two sizes of Wago connector are found on the PDP:
 
 - Small Wago connector: Accepts 10AWG-24AWG, strip 11-12mm (~7/16")
 - Large Wago connector: Accepts 6AWG-12AWG, strip 12-13mm(~1/2")
 
-To maximize pullout force and minimize connection resistance wires
-should not be tinned (and ideally not twisted) before inserting into the
-Wago connector.
+To maximize pullout force and minimize connection resistance wires should not be tinned (and ideally not twisted) before inserting into the Wago connector.
 
 Motor Controller Power
 ----------------------
 
 .. image:: images/how-to-wire-a-robot/image6.jpg
-   :width: 600
-.. image:: images/how-to-wire-a-robot/image7.jpg
-   :width: 600
 
-Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG wire, 10
-or 12 AWG fork/ring terminals (terminal controllers only), wire crimper
+.. image:: images/how-to-wire-a-robot/image7.jpg
+
+Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG wire, 10 or 12 AWG fork/ring terminals (terminal controllers only), wire crimper
 
 For Victor SPX or other wire integrated motor controllers (top image):
 
@@ -186,23 +159,19 @@ Weidmuller Connectors
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/kCcDw3lDYis" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://www.youtube.com/embed/kCcDw3lDYis" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 
-The correct strip length is ~5/16" (8mm), not the 5/8" mentioned in the
-video.
+.. warning:: The correct strip length is ~5/16" (8mm), not the 5/8" mentioned in the video.
 
-A number of the CAN and power connectors in the system use a Weidmuller
-LSF series wire-to-board connector. There are a few things to keep in
-mind when using this connector for best results:
+A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
 - Wire should be 16AWG to 24AWG (consult rules to verify required gauge for power wiring)
 - Wire ends should be stripped approximately 5/16"
 - To insert or remove the wire, press down on the corresponding "button" to open the terminal
 
-After making the connection check to be sure that it is clean and
-secure:
+After making the connection check to be sure that it is clean and secure:
 
 - Verify that there are no "whiskers" outside the connector that may cause a short circuit
 - Tug on the wire to verify that it is seated fully. If the wire comes out and is the correct gauge it needs to be inserted further and/or stripped back further.
@@ -211,10 +180,8 @@ roboRIO Power
 -------------
 
 .. image:: images/how-to-wire-a-robot/image8.jpg
-   :width: 600
 
-Requires: 10A/20A mini fuses, Wire stripper, very small flat
-screwdriver, 18AWG Red and Black
+Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18AWG Red and Black
 
 1. Insert the 10A and 20A mini fuses in the PDP in the locations shown on the silk screen (and in the image above)
 2. Strip ~5/16" on both the red and black 18AWG wire and connect to the "Vbat Controller PWR" terminals on the PDB
@@ -226,10 +193,8 @@ Voltage Regulator Module Power
 ------------------------------
 
 .. image:: images/how-to-wire-a-robot/image11.jpg
-   :width: 600
 
-Requires: Wire stripper, small flat screwdriver (optional), 18AWG red
-and black wire:
+Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and black wire:
 
 1. Strip ~5/16" on the end of the red and black 18AWG wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
@@ -241,13 +206,10 @@ Pneumatics Control Module Power (Optional)
 ------------------------------------------
 
 .. image:: images/how-to-wire-a-robot/image12.jpg
-   :width: 600
 
-Requires: Wire stripper, small flat screwdriver (optional), 18AWG red
-and black wire
+Requires: Wire stripper, small flat screwdriver (optional), 18AWG red and black wire
 
-Note: The PCM is an optional component used for controlling pneumatics
-on the robot.
+..note: The PCM is an optional component used for controlling pneumatics on the robot.
 
 1. Strip ~5/16" on the end of the red and black 18AWG wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
@@ -261,7 +223,6 @@ Radio Power and Ethernet
 .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the female end of the cable using an additional Ethernet cable as shown in the next step.
 
 .. image:: images/how-to-wire-a-robot/image13.jpg
-   :width: 600
 
 Requires: Small flat screwdriver (optional), Rev radio PoE cable
 
@@ -272,12 +233,10 @@ roboRIO to Radio Ethernet
 -------------------------
 
 .. image:: images/how-to-wire-a-robot/image14.jpg
-   :width: 600
 
 Requires: Ethernet cable
 
-Connect an Ethernet cable from the female RJ45 (Ethernet) port of the
-Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
+Connect an Ethernet cable from the female RJ45 (Ethernet) port of the Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
 
 CAN Devices
 -----------
@@ -286,15 +245,10 @@ roboRIO to PCM CAN
 ~~~~~~~~~~~~~~~~~~
 
 .. image:: images/how-to-wire-a-robot/image15.jpg
-   :width: 600
 
-Requires: Wire stripper, small flat screwdriver (optional), yellow/green
-twisted CAN cable
+Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-Note: The PCM is an optional component used for controlling pneumatics
-on the robot. If you are not using the PCM, wire the CAN connection
-directly from the roboRIO (shown in this step) to the PDP (show in the
-next step).
+.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (show in the next step).
 
 1. Strip ~5/16" off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the roboRIO (Yellow->YEL, Green->GRN).
@@ -305,37 +259,24 @@ PCM to PDP CAN
 ~~~~~~~~~~~~~~
 
 .. image:: images/how-to-wire-a-robot/image16.jpg
-   :width: 600
 
-Requires: Wire stripper, small flat screwdriver (optional), yellow/green
-twisted CAN cable
+Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-Note: The PCM is an optional component used for controlling pneumatics
-on the robot. If you are not using the PCM, wire the CAN connection
-directly from the roboRIO (shown in the above step) to the PDP (show in
-this step).
+.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (show in this step).
 
 1. Strip ~5/16" off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the PCM.
 3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-Note: The PDP ships with the CAN bus terminating resistor jumper in the
-“ON” position. It is recommended to leave the jumper in this position
-and place any additional CAN nodes between the roboRIO and the PDP
-(leaving the PDP as the end of the bus). If you wish to place the PDP in
-the middle of the bus (utilizing both pairs of PDP CAN terminals) move
-the jumper to the “OFF” position and place your own 120 ohm terminating
-resistor at the end of your CAN bus chain.
+.. note: The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain.
 
 PWM Cables
 ----------
 
 .. image:: images/how-to-wire-a-robot/image17.jpg
-   :width: 600
 
-Requires: 4x PWM cables (if using non-integrated wire controllers), 2x
-PWM Y-cable (Optional)
+Requires: 4x PWM cables (if using non-integrated wire controllers), 2x PWM Y-cable (Optional)
 
 Option 1 (Direct connect):
 
@@ -350,10 +291,8 @@ Robot Signal Light
 ------------------
 
 .. image:: images/how-to-wire-a-robot/image18.jpg
-   :width: 600
 
-Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18AWG red
-wire, very small flat screwdriver
+Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18AWG red wire, very small flat screwdriver
 
 1. Cut one end off of the 2 pin cable and strip both wires
 2. Insert the black wire into the center, "N" terminal and tighten the terminal.
@@ -362,35 +301,25 @@ wire, very small flat screwdriver
 5. Insert the red wire from the two pin cable into the "Lb" terminal with the 18AWG red wire and tighten the terminal.
 6. Connect the two-pin connector to the RSL port on the roboRIO. The black wire should be closest to the outside of the roboRIO.
 
-You may wish to temporarily secure the RSL to the control board using
-cable ties or Dual Lock (it is recommended to move the RSL to a more
-visible location as the robot is being constructed) Circuit Breakers
+.. tip:: You may wish to temporarily secure the RSL to the control board using cable ties or Dual Lock (it is recommended to move the RSL to a more visible location as the robot is being constructed)
 
 Circuit Breakers
 ----------------
 
 .. image:: images/how-to-wire-a-robot/image19.jpg
-   :width: 600
 
 Requires: 4x 40A circuit breakers
 
-Insert 40-amp Circuit Breakers into the positions on the PDP
-corresponding with the Wago connectors the Victors are connected to. Note
-that, for all breakers, the breaker corresponds with the nearest
-positive (red) terminal (see graphic above). All negative terminals on
-the board are directly connected internally.
+Insert 40-amp Circuit Breakers into the positions on the PDP corresponding with the Wago connectors the Talons are connected to. Note that, for all breakers, the breaker corresponds with the nearest positive (red) terminal (see graphic above). All negative terminals on the board are directly connected internally.
 
-If working on a Robot Quick Build, stop here and insert the board into
-the robot chassis before continuing.
+If working on a Robot Quick Build, stop here and insert the board into the robot chassis before continuing.
 
 Motor Power
 -----------
 
 .. image:: images/how-to-wire-a-robot/image20.jpg
-   :width: 600
 
-Requires: Wire stripper, wire crimper, phillips head screwdriver, wire
-connecting hardware
+Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
 
 For each CIM motor:
 
@@ -410,15 +339,10 @@ STOP
 ----
 
 .. image:: images/how-to-wire-a-robot/image21.png
-   :width: 600
-
-.. danger:: STOP!!
 
 .. danger:: Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
 
-Before plugging in the battery, make sure all connections have been made
-with the proper polarity. Ideally have someone that did not wire the
-robot check to make sure all connections are correct.
+Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
 
 - Start with the battery and verify that the red wire is connected to the positive terminal
 - Check that the red wire passes through the main breaker and to the + terminal of the PDP and that the black wire travels directly to the - terminal.
@@ -426,24 +350,20 @@ robot check to make sure all connections are correct.
 - For each device on the end of the PDP, verify that the red wire connects to the red terminal on the PDP and the red terminal on the component.
 - Make sure that the orange Passive PoE cable is plugged directly into the radio NOT THE roboRIO! It must be connected to the roboRIO using an additional Ethernet cable.
 
-It is also recommended to put the robot on blocks so the wheels are off
-the ground before proceeding. This will prevent any unexpected movement
-from becoming dangerous.
+.. tip:: It is also recommended to put the robot on blocks so the wheels are off the ground before proceeding. This will prevent any unexpected movement from becoming dangerous.
 
 Manage Wires
 ------------
 
 .. image:: images/how-to-wire-a-robot/image22.jpg
-   :width: 600
 
 Requires: Zip ties
 
-Now may be a good time to add a few zip ties to manage some of the wires
-before proceeding. This will help keep the robot wiring neat. Connect
-Battery Connect BatteryZoom: Connect Battery
+.. tip:: Now may be a good time to add a few zip ties to manage some of the wires before proceeding. This will help keep the robot wiring neat.
 
-Connect the battery to the robot side of the Andersen connector. Power
-on the robot by moving the lever on the top of the 120A main breaker
-into the ridge on the top of the housing. If stuff blinks, you
-probably did it right. From here, you should connect to the roboRIO
-and try uploading your code!
+Connect Battery
+---------------
+
+Connect the battery to the robot side of the Andersen connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
+
+If stuff blinks, you probably did it right. From here, you should connect to the roboRIO and try uploading your code!

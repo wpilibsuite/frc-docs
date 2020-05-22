@@ -143,6 +143,8 @@ Images
 
 Images should be created with ``1`` new line separating content and directive.
 
+All images (including vectors) should be less than ``500`` kilobytes in size. Please make use of a smaller resolution and more efficient compression algorithms.
+
 .. code-block:: text
 
    .. image:: images/image-1.png
@@ -162,6 +164,8 @@ Vector Images
 SVG files are supported through the ``svg2pdfconverter`` Sphinx extension.
 
 Simply use them as you would with any other image.
+
+.. note:: Ensure that any embedded images in the vector do not bloat the vector to exceed the 500KB limit.
 
 .. code-block:: text
 

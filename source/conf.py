@@ -30,15 +30,19 @@ version = '2020'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'hoverxref.extension',
     'notfound.extension'
 ]
+
+# Enable hover content on glossary term
+hoverxref_roles = ['term']
 
 # TODO Directives omit a warning
 todo_emit_warnings = False
@@ -130,3 +134,9 @@ latex_elements = {
 suppress_warnings = ['epub.unknown_project_files']
 
 sphinx_tabs_valid_builders = ['epub', 'linkcheck']
+
+
+# Options for translation support -------------------------------------------
+
+gettext_compact = False
+locale_dirs = ['locale/']

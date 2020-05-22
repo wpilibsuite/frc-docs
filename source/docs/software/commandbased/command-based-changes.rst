@@ -75,9 +75,7 @@ Changes to Command
 Changes to PIDSubsystem/PIDCommand
 ----------------------------------
 
-.. note:: For more information, see :doc:`pid-subsystems-commands`
-
-.. TODO:: Link to new PIDController article.
+.. note:: For more information, see :doc:`pid-subsystems-commands`, and :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`
 
 * Following the changes to PIDController, these classes now run synchronously from the main robot loop.
 * The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modifier after construction with ``getController()``.
