@@ -11,4 +11,5 @@ SmartDashboard
    testing-commands
    choosing-an-autonomous-program-from-smartdashboard
    displaying-status-of-commands-and-subsystems
+   setting-robot-preferences-from-smartdashboard
    test-mode-and-live-window/index
