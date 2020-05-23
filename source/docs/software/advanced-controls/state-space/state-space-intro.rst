@@ -49,12 +49,12 @@ The following two sets of equations are the standard form of continuous-time and
     \mathbf{y}_k &= \mathbf{C}\mathbf{x}_k + \mathbf{D}\mathbf{u}_k
 
 .. math::
-    \begin{tabular}{llll}
-      $\mathbf{A}$ & system matrix      & $\mathbf{x}$ & state vector \\
-      $\mathbf{B}$ & input matrix       & $\mathbf{u}$ & input vector \\
-      $\mathbf{C}$ & output matrix      & $\mathbf{y}$ & output vector \\
-      $\mathbf{D}$ & feedthrough matrix &  &  \\
-    \end{tabular}
+    \begin{array}{llll}
+      \mathbf{A} & \text{system matrix}      & \mathbf{x} & \text{state vector} \\
+      \mathbf{B} & \text{input matrix}       & \mathbf{u} & \text{input vector} \\
+      \mathbf{C} & \text{output matrix}      & \mathbf{y} & \text{output vector} \\
+      \mathbf{D} & \text{feedthrough matrix} &  &  \\
+    \end{array}
 
 Systems are often modeled first as continuous-time systems, and later converted to discrete-time systems. 
 
@@ -70,7 +70,7 @@ Recall that we can model the motion of a flywheel connected to a brushed DC moto
 We can convert this equation to state-space notation. We can create a system with one state (velocity), one :term:`input` (voltage), and one :term:`output` (velocity). Recalling that the first derivative of velocity is acceleration, we can write our equation as follows:
 
 .. math:: 
-    \mathbf{\dot{x}} &= [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
+    \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
 
 That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.
 
@@ -165,7 +165,7 @@ LQR: example application
 Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 2.9 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 0.3 \frac{\text{volts}}{\text{radians per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
 .. math::
-    \mathbf{\dot{x}} &= [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
+    \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
 
 We arbitrarily choose a desired state excursion of q = [0.1rad/sec], and constrain our :term:`control effort` to r = [12 volts]. After discretization with a timestep of 20ms, we find a :term:`gain` of K = ~13. This K :term:`gain` acts as the proportional component of a PID loop on flywheel's velocity. 
 

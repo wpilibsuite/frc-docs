@@ -14,9 +14,9 @@ Kalman Filters
 
 To summarize, Kalman filters (and all Bayesian filters) have two parts: prediction and correction. Prediction projects our state estimate forward in time according to our system's dynamics, and correct steers the estimated state towards the measured state. While filters often preform both in the same timestep, it's not strictly necessary -- For example, WPILib's pose estimators call predict frequently, and correct only when new measurement data is available (for example, from a low-framerate vision system).
 
-Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process.
+Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
 
-.. figure:: images/Normal_Distribution_PDF.svg
+.. figure:: images/normal-distribution.png
   :width: 600
 
 The following shows the equations of a discrete-time Kalman filter:
@@ -36,22 +36,17 @@ The following shows the equations of a discrete-time Kalman filter:
     \mathbf{P}_{k+1}^+ &= (\mathbf{I} - \mathbf{K}_{k+1}\mathbf{C})\mathbf{P}_{k+1}^-
 
 .. math::
-    \begin{tabular}{llll}
-      $\mathbf{A}$ & system matrix & $\hat{\mathbf{x}}$ & state estimate vector \\
-      $\mathbf{B}$ & input matrix       & $\mathbf{u}$ & input vector \\
-      $\mathbf{C}$ & output matrix      & $\mathbf{y}$ & output vector \\
-      $\mathbf{D}$ & feedthrough matrix & $\mathbf{\Gamma}$ & process noise intensity
-        vector \\
-      $\mathbf{P}$ & error covariance matrix & $\mathbf{Q}$ & process noise covariance
-        matrix \\
-      $\mathbf{K}$ & Kalman gain matrix & $\mathbf{R}$ & measurement noise covariance
-        matrix
-    \end{tabular}
+  \begin{array}{llll}
+    \mathbf{A} & \text{system matrix} & \hat{\mathbf{x}} & \text{state estimate vector} \\
+    \mathbf{B} & \text{input matrix}       & \mathbf{u} & \text{input vector} \\
+    \mathbf{C} & \text{output matrix}      & \mathbf{y} & \text{output vector} \\
+    \mathbf{D} & \text{feedthrough matrix} & \mathbf{\Gamma} & \text{process noise intensity vector} \\
+    \mathbf{P} & \text{error covariance matrix} & \mathbf{Q} & \text{process noise covariance matrix} \\
+    \mathbf{K} & \text{Kalman gain matrix} & \mathbf{R} & \text{measurement noise covariance xmatrix}
+  \end{array}
 
 What are Q and R?
 -----------------
-
-In a Kalman filter,
 
 In a system, covariance is a measurement of how two random variables are correlated. In a system with a single state, the covariance matrix is simply :math:`\mathbf{\text{cov}(x_1, x_1)}`, or a matrix containing the variance :math:`\mathbf{\text{var}(x_1)}` of the state :math:`x_1`. The magnitude of this variance is the square of the standard deviation of the Gaussian function describing the current state estimate. Relatively large values for covariance might indicate noisy data, while small covariances might indicate that the filter is more confident about it's estimate. Remember that "large" and "small" values for variance or covariance are relative to the base unit being used -- for example, if :math:`\mathbf{x_1}` was measured in meters, :math:`\mathbf{\text{cov}(x_1, x_1)}` would be in meters squared.
 
@@ -67,7 +62,7 @@ Covariance matrices are written in the following form:
 
 The state estimate :math:`\mathbf{x}`, together with :math:`\mathbf{P}`, describe the mean and covariance of the Gaussian function that describes our estimate of the system's true state.
 
-The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward. 
+The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward. 
 
 Predict step
 ------------
@@ -84,5 +79,5 @@ Finally, the error covariance :math:`\mathbf{P}` decreases to increase our confi
 Tuning Kalman Filters
 ---------------------
 
-WPILib's Kalman Filter classes' constructors take a linear system, a vector of process noise standard deviations and measurement noise standard deviations. These are converted to :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices by filling these diagonals with the square of the standard deviations,  or covariances, for each state. By decreasing a state's standard deviation (and therefore its corresponding entry in :math:`\mathbf{Q}`), the filter will distrust incoming measurements more. Similarly, increasing a state's standard deviation will trust incoming measurements more. The same holds for the measurement standard deviations -- decreasing an entry will make the filter more highly trust the incoming measurement for the corresponding state, while increasing it will decrease trust in the measurement. 
+WPILib's Kalman Filter classes' constructors take a linear system, a vector of process noise standard deviations and measurement noise standard deviations. These are converted to :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices by filling the diagonals with the square of the standard deviations, or variances, of each state or measurement. By decreasing a state's standard deviation (and therefore its corresponding entry in :math:`\mathbf{Q}`), the filter will distrust incoming measurements more. Similarly, increasing a state's standard deviation will trust incoming measurements more. The same holds for the measurement standard deviations -- decreasing an entry will make the filter more highly trust the incoming measurement for the corresponding state, while increasing it will decrease trust in the measurement. 
 
