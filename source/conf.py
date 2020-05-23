@@ -37,8 +37,12 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'hoverxref.extension',
     'notfound.extension'
 ]
+
+# Enable hover content on glossary term
+hoverxref_roles = ['term']
 
 # TODO Directives omit a warning
 todo_emit_warnings = False

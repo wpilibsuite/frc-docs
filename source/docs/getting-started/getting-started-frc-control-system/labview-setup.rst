@@ -3,7 +3,7 @@
 Installing LabVIEW for FRC (LabVIEW only)
 =========================================
 
-.. image:: images/labview/ni_logo.png
+.. image:: images/labview/ni-logo.png
 
 .. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Game Tools </docs/getting-started/getting-started-frc-control-system/frc-game-tools>`.
 
@@ -182,4 +182,3 @@ Restart
 .. image:: images/labview/labview_restart.png
 
 Select "Reboot Now" after closing any open programs.
-
