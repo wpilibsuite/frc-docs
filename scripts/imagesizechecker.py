@@ -9,9 +9,10 @@ def verify_image_size(file, max_size):
     if file.path.endswith(IMAGE_FORMATS):
         file_stat = file.stat()
         size_valid = file_stat.st_size <= max_size
-        print("OK  " if size_valid else "ERR. FILE SIZE TOO LARGE  ", end="")
-        print(" File Size: " + str(file_stat.st_size), end="")
-        print("  " + file.path)
+        if not size_valid:
+            print("ERR. FILE SIZE TOO LARGE  ", end="")
+            print(" File Size: " + str(file_stat.st_size), end="")
+            print("  " + file.path)
 
         return size_valid
     return True
