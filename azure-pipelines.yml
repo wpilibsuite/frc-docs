@@ -111,7 +111,7 @@ jobs:
           versionSpec: '3.6'
           architecture: 'x64'
 
-      - script: python scripts/imagesizechecker.py source 500
+      - script: make sizecheck
         displayName: 'Check Image Sizes'
 
   - job: Translations
