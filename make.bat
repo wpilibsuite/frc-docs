@@ -14,7 +14,7 @@ set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
 set LANGMAP=es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
 set SIZECHECKER=python -m scripts.imagesizechecker
-set SIZEMAX=300
+set SIZEMAX=500
 
 if "%1" == "" goto help
 

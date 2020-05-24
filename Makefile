@@ -10,7 +10,7 @@ LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
 LANGMAP       = es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
 SIZECHECKER   = python scripts.imagesizechecker
-SIZEMAX       = 300
+SIZEMAX       = 500
 
 
 # Put it first so that "make" without argument is like "make help".
