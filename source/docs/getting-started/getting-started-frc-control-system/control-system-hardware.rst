@@ -10,7 +10,7 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 --------------------------
 
-.. figure:: images/FRC-Control-System-Layout.svg
+.. figure:: images/frc-control-system-layout.svg
 
   Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
 
