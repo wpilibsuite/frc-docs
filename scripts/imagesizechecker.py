@@ -40,7 +40,8 @@ def main():
     if oversized_count == 0:
         print("\nfile sizes valid.")
     else:
-        raise(Exception("\n{} files are too large.".format(oversized_count)))
+        print("\n{} files are too large.".format(oversized_count))
+        exit(1)
 
 
 if __name__ == '__main__':
