@@ -6,39 +6,37 @@ Minimal robot program
 
 .. tabs::
 
-    .. code-tab:: java
+  .. code-tab:: java
 
-      public class Robot extends SampleRobot {
+    public class Robot extends SampleRobot {
+      public void operatorControl() {
+      double counter = 0.0;
+      while (isOperatorControl() && isEnabled()) {
+        SmartDashboard.putNumber("Counter", counter++);
+        Timer.delay(0.10);
+      }
+    }
 
-      	public void operatorControl() {
-        double counter = 0.0;
-        while (isOperatorControl() && isEnabled()) {
-          SmartDashboard.putNumber("Counter", counter++");
-          Timer.delay(0.10);
+  .. code-tab:: c++
+
+    #include "WPILib.h"
+
+    class Robot: public SampleRobot
+    {
+    public:
+      Robot() {
+      }
+      void OperatorControl()
+      {
+        float counter = 0.0;
+        while (IsOperatorControl() && IsEnabled()) {
+          SmartDashboard::PutNumber("Counter", counter++);
+          Wait(0.10);
         }
       }
+    };
 
-    .. code-tab:: c++
-
-      #include "WPILib.h"
-
-      class Robot: public SampleRobot
-      {
-      public:
-        Robot() {
-        }
-
-        void OperatorControl()
-        {
-          float counter = 0.0;
-          while (IsOperatorControl() && IsEnabled()) {
-            SmartDashboard::PutNumber("Counter", counter++);
-            Wait(0.10);
-          }
-        }
-      };
-
-      START_ROBOT_CLASS(Robot);
+    START_ROBOT_CLASS(Robot);
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 10 times per second to verify that the connection is working.
 
