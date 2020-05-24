@@ -1,19 +1,20 @@
 Windows Firewall Configuration
 ==============================
 
-Many of the programming tools used in FRC need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs. This document describes procedures for Windows 7, but future versions should be similar.
+Many of the programming tools used in FRC need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs. This document describes procedures for Windows 10.
 
 Disabling Windows Firewall
 --------------------------
 
 The easiest solution is to disable the Windows Firewall. Teams should beware that this does make the PC potentially more vulnerable to malware attacks if connecting to the internet.
 
-Control Panel
-^^^^^^^^^^^^^
+Windows Search
+^^^^^^^^^^^^^^
 
 .. image:: images/windows-firewall-configuration-1.png
 
-Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Defender Firewall``.
+Open the Start Menu and type ``Windows Defender Firewall`` and click on the first item.
+
 
 Turn Windows Firewall on or off
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,7 +40,7 @@ Open Control Panel
 
 .. image:: images/windows-firewall-configuration-1.png
 
-Click ``Start`` -> ``Control Panel`` to open the Control Panel. Click the dropdown next to ``View by:`` and select ``Small icons`` then click ``Windows Defender Firewall``.
+Open the Start Menu and type ``Windows Defender Firewall`` and click on the first item.
 
 Allow a program...
 ^^^^^^^^^^^^^^^^^^
@@ -53,4 +54,4 @@ Allowed Programs
 
 .. image:: images/windows-firewall-configuration-6.png
 
-For each FRC program you are having an issue with, make sure that it appears in the list and that it has a check in each of the 3 columns. If you need to change a setting, you made need to click the ``Change settings`` button in the top right before changing the settings. If the program is not in the list at all, click the ``Allow another program...`` button and browse to the location of the program to add it.
+For each FRC program you are having an issue with, make sure that it appears in the list and that it has a check in each column. If you need to change a setting, you made need to click the ``Change settings`` button in the top right before changing the settings. If the program is not in the list at all, click the ``Allow another program...`` button and browse to the location of the program to add it.
