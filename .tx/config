@@ -1898,9 +1898,21 @@ source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/changing-d
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--wpilib-tools--smartdashboard--choosing-an-autonomous-program-from-smartdashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.po
+source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--wpilib-tools--smartdashboard--displaying-expressions]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/displaying-expressions.po
 source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/displaying-expressions.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--wpilib-tools--smartdashboard--displaying-status-of-commands-and-subsystems]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.po
+source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.pot
 source_lang = en
 type = PO
 
@@ -1910,9 +1922,21 @@ source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--wpilib-tools--smartdashboard--setting-robot-preferences-from-smartdashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.po
+source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--wpilib-tools--smartdashboard--smartdashboard-intro]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.po
 source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/smartdashboard-intro.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--wpilib-tools--smartdashboard--testing-commands]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/testing-commands.po
+source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/testing-commands.pot
 source_lang = en
 type = PO
 
