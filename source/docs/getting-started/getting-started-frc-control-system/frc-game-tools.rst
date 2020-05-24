@@ -205,7 +205,6 @@ If prompted, Select "Reboot Now" after closing any open programs.
 
 .. |Additional Software| image:: images/update-suite/additional-software.png
 .. |Product List| image:: images/update-suite/product-list.png
-.. |Product Information| image:: images/update-suite/product-information.png
 .. |License Agreements| image:: images/update-suite/license-agreements.png
 .. |License Agreements Page 2| image:: images/labview/labview_license_2.png
 .. |Installation Summary| image:: images/update-suite/installation-summary.png
