@@ -21,7 +21,7 @@ def iterate_image_sizes(path, max_size):
     oversized_count = 0
     for entry in os.scandir(path):
         if entry.is_file():
-            if verify_image_size(entry, max_size):
+            if not verify_image_size(entry, max_size):
                 oversized_count += 1
         elif entry.is_dir():
             oversized_count += iterate_image_sizes(entry.path, max_size)
