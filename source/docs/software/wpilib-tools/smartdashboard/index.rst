@@ -13,4 +13,6 @@ SmartDashboard
    displaying-status-of-commands-and-subsystems
    setting-robot-preferences-from-smartdashboard
    verifying-smartdashboard-is-working
+   stale-data-smartdashboard
+   smartdashboard-namespace
    test-mode-and-live-window/index
