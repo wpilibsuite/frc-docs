@@ -77,9 +77,9 @@ master_doc = "index"
 
 # Specify files to ignore during SizeCheck
 
-IMAGE_SIZE_EXCLUSIONS = [
+IMAGE_SIZE_EXCLUSIONS = (
     "docs/getting-started/getting-started-frc-control-system/images/control-system-hardware/FRC-Control-System-Layout.svg"
-]
+)
 
 
 # -- Options for HTML output -------------------------------------------------

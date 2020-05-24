@@ -9,7 +9,7 @@ BUILDDIR      = build
 LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
 LANGMAP       = es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
-SIZECHECKER   = python scripts/imagesizechecker.py
+SIZECHECKER   = python scripts.imagesizechecker
 SIZEMAX       = 300
 
 

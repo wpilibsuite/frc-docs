@@ -1,12 +1,17 @@
 import os
 import argparse
+import importlib
 
 IMAGE_FORMATS = ('.png', '.jpg', '.jpeg', '.svg')
 KILOBYTE_SIZE = 1000
 
 
-def verify_image_size(file, max_size):
-    if file.path.endswith(IMAGE_FORMATS):# and not file.path.endswith(EXCLUSIONS):
+def clean_module_path(path):
+    return (path[:-len(".py")] if path.endswith(".py") else path).replace("/", ".").replace("\\", ".")
+
+
+def verify_image_size(file, max_size, excluded_files):
+    if file.path.endswith(IMAGE_FORMATS) and not file.path.endswith(excluded_files):
         file_size = file.stat().st_size
 
         if not file_size <= max_size:
@@ -16,25 +21,36 @@ def verify_image_size(file, max_size):
     return True
 
 
-def iterate_image_sizes(path, max_size):
+def iterate_image_sizes(path, max_size, excluded_files):
     oversized_count = 0
     for entry in os.scandir(path):
         if entry.is_file():
-            if not verify_image_size(entry, max_size):
+            if not verify_image_size(entry, max_size, excluded_files):
                 oversized_count += 1
         elif entry.is_dir():
-            oversized_count += iterate_image_sizes(entry.path, max_size)
+            oversized_count += iterate_image_sizes(entry.path, max_size, excluded_files)
     return oversized_count
 
 
 def main():
-    arg_parser = argparse.ArgumentParser(description="Verifies image file size is valid")
-    arg_parser.add_argument("path", type=str, help="The path to scan in")
-    arg_parser.add_argument("max_size", type=int, help="The max size of a file in kilobytes")
+    arg_parser = argparse.ArgumentParser(description="verifies image file size is valid")
+    arg_parser.add_argument("path", type=str, help="the path to scan in")
+    arg_parser.add_argument("max-size", type=int, help="the max size of a file in kilobytes")
+    arg_parser.add_argument("--exclude-file", "-e", type=str, default=None,
+                            help="python file containing IMAGE_SIZE_EXCLUSIONS list")
 
     args = vars(arg_parser.parse_args())
 
-    oversized_count = iterate_image_sizes(args["path"], args["max_size"] * KILOBYTE_SIZE)
+    # Gets excluded files from conf.py
+    exclude_file = args["exclude_file"]
+    if exclude_file is not None:
+        excluded_files = importlib.import_module(clean_module_path(exclude_file)).IMAGE_SIZE_EXCLUSIONS
+    else:
+        excluded_files = list()
+
+
+    # Check how many images are too big
+    oversized_count = iterate_image_sizes(args["path"], args["max-size"] * KILOBYTE_SIZE, excluded_files)
 
     if oversized_count == 0:
         print("\nfile sizes valid.")
