@@ -35,8 +35,8 @@ Configure the firewall
 
 Alternatively, you can add exceptions to the Firewall for any FRC programs you are having issues with.
 
-Open Control Panel
-^^^^^^^^^^^^^^^^^^
+Windows Search
+^^^^^^^^^^^^^^
 
 .. image:: images/windows-firewall-configuration-1.png
 
