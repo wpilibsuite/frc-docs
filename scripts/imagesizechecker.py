@@ -6,15 +6,13 @@ KILOBYTE_SIZE = 1000
 
 
 def verify_image_size(file, max_size):
-    if file.path.endswith(IMAGE_FORMATS):
-        file_stat = file.stat()
-        size_valid = file_stat.st_size <= max_size
-        if not size_valid:
-            print("ERR. FILE SIZE TOO LARGE  ", end="")
-            print(" File Size: " + str(file_stat.st_size) + "     " + str(max_size), end="")
-            print("  " + file.path)
+    if file.path.endswith(IMAGE_FORMATS):# and not file.path.endswith(EXCLUSIONS):
+        file_size = file.stat().st_size
 
-        return size_valid
+        if not file_size <= max_size:
+            print("ERR. FILE SIZE TOO LARGE   File Size: {}   {}".format(file_size, file.path))
+            return False
+
     return True
 
 

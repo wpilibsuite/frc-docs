@@ -13,12 +13,16 @@ set SPHINXOPTS=-W --keep-going
 set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
 set LANGMAP=es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
+set SIZECHECKER=python scripts/imagesizechecker.py
+set SIZEMAX=300
 
 if "%1" == "" goto help
 
 if "%1" == "lint" goto lint
 
 if "%1" == "translate" goto translate
+
+if "%1" == "sizecheck" goto sizecheck
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -42,6 +46,10 @@ goto end
 
 :lint
 %LINTER% %LINTEROPTS%
+goto end
+
+:sizecheck
+%SIZECHECKER% %SOURCEDIR% %SIZEMAX%
 goto end
 
 :translate

@@ -75,6 +75,12 @@ exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
 
+# Specify files to ignore during SizeCheck
+
+IMAGE_SIZE_EXCLUSIONS = [
+    "docs/getting-started/getting-started-frc-control-system/images/control-system-hardware/FRC-Control-System-Layout.svg"
+]
+
 
 # -- Options for HTML output -------------------------------------------------
 
