@@ -47,7 +47,7 @@ Rather than having "hard-coded" values in the program the potentiometer settings
 Displaying the Preferences widget in SmartDashboard
 ---------------------------------------------------
 
-.. image:: images/setting-robot-preferences-from-smartdashboard/preferences-widgetpreferences-widget.png
+.. image:: images/setting-robot-preferences-from-smartdashboard/preferences-widget.png
 
 In the SmartDashboard, the Preferences display can be added to the display revealing the contents of the preferences file stored in the roboRIO flash memory.
 
