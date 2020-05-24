@@ -12,16 +12,16 @@ Sample program to reads and writes preference values
 
       public class Robot extends SampleRobot {
 
-      	Preferences prefs;
+        Preferences prefs;
 
-      	double armUpPosition;
-      	double armDownPosition;
+        double armUpPosition;
+        double armDownPosition;
 
-      	public void robotInit() {
-      		prefs = Preferences.getInstance();
-      		armUpPosition = prefs.getDouble("ArmUpPosition", 1.0);
-      		armDownPosition = prefs.getDouble("ArmDownPosition", 4.);
-      	}
+        public void robotInit() {
+          prefs = Preferences.getInstance();
+          armUpPosition = prefs.getDouble("ArmUpPosition", 1.0);
+          armDownPosition = prefs.getDouble("ArmDownPosition", 4.);
+        }
       }
 
     .. code-tab:: c++
