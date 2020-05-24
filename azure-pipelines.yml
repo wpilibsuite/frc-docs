@@ -103,6 +103,17 @@ jobs:
     - script: make linkcheck
       displayName: 'Link Check'
 
+  - job: Image Size Check
+    steps:
+      - task: UsePythonVersion@0
+        displayName: 'Select Python Version 3.6'
+        inputs:
+          versionSpec: '3.6'
+          architecture: 'x64'
+
+      - script: scripts/imagesizechecker.py source 500
+        displayName: 'Check Image Sizes'
+
   - job: Translations
     steps:
     - task: UsePythonVersion@0
