@@ -103,7 +103,7 @@ jobs:
     - script: make linkcheck
       displayName: 'Link Check'
 
-  - job: Image Size Check
+  - job: ImageSizeCheck
     steps:
       - task: UsePythonVersion@0
         displayName: 'Select Python Version 3.6'
