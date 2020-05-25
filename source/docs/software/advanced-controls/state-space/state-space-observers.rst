@@ -1,11 +1,31 @@
 State Observers and Kalman Filters
 ==================================
 
-State observers combine information about a system's behavior and external measurements to estimate the true state of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`docs/software/advanced-controls/filters/index:Filters` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
+State observers combine information about a system's behavior and external measurements to estimate the true :term:`state` of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`docs/software/advanced-controls/filters/index:Filters` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
 
 This image shows flywheel velocity measurements over time, run through a variety of different filters. Note that a well-tuned Kalman filter shows no measurement lag during flywheel spinup while still rejecting noisy data and reacting quickly to disturbances as balls pass through it. More on filters can be found in the :ref:`filters section <docs/software/advanced-controls/filters/index:Filters>`\.
 
 .. image:: images/filter_comparison.png
+
+Gaussian functions
+------------------
+
+Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
+
+.. figure:: images/normal-distribution.png
+  :width: 600
+
+The idea of variance and covariance is central to the function of a Kalman filter. Covariance is a measurement of how two random variables are correlated. In a system with a single state, the covariance matrix is simply :math:`\mathbf{\text{cov}(x_1, x_1)}`, or a matrix containing the variance :math:`\mathbf{\text{var}(x_1)}` of the state :math:`x_1`. The magnitude of this variance is the square of the standard deviation of the Gaussian function describing the current state estimate. Relatively large values for covariance might indicate noisy data, while small covariances might indicate that the filter is more confident about it's estimate. Remember that "large" and "small" values for variance or covariance are relative to the base unit being used -- for example, if :math:`\mathbf{x_1}` was measured in meters, :math:`\mathbf{\text{cov}(x_1, x_1)}` would be in meters squared.
+
+Covariance matrices are written in the following form:
+
+.. math::
+  \mathbf{\Sigma} &= \begin{bmatrix}
+    \text{cov}(x_1, x_1) & \text{cov}(x_1, x_2) & \ldots & \text{cov}(x_1, x_n) \\
+    \text{cov}(x_2, x_1) & \text{cov}(x_2, x_2) & \ldots & \text{cov}(x_1, x_n) \\
+    \vdots         & \vdots         & \ddots & \vdots \\
+    \text{cov}(x_n, x_1) & \text{cov}(x_n, x_2) & \ldots & \text{cov}(x_n, x_n) \\
+  \end{bmatrix}
 
 Kalman Filters
 --------------
@@ -13,11 +33,6 @@ Kalman Filters
 .. important:: It is important to develop an intuition for what a Kalman filter is actually doing. The book `Kalman and Bayesian Filters in Python by Roger Labbe <https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python>`__ provides a great visual and interactive introduction to Bayesian filters. The Kalman filters in WPILib use linear algebra to gentrify the math, but the ideas are similar to the single-dimensional case. We suggest reading through Chapter 4 to gain an intuition for what these filters are doing.
 
 To summarize, Kalman filters (and all Bayesian filters) have two parts: prediction and correction. Prediction projects our state estimate forward in time according to our system's dynamics, and correct steers the estimated state towards the measured state. While filters often preform both in the same timestep, it's not strictly necessary -- For example, WPILib's pose estimators call predict frequently, and correct only when new measurement data is available (for example, from a low-framerate vision system).
-
-Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
-
-.. figure:: images/normal-distribution.png
-  :width: 600
 
 The following shows the equations of a discrete-time Kalman filter:
 
@@ -42,25 +57,22 @@ The following shows the equations of a discrete-time Kalman filter:
     \mathbf{C} & \text{output matrix}      & \mathbf{y} & \text{output vector} \\
     \mathbf{D} & \text{feedthrough matrix} & \mathbf{\Gamma} & \text{process noise intensity vector} \\
     \mathbf{P} & \text{error covariance matrix} & \mathbf{Q} & \text{process noise covariance matrix} \\
-    \mathbf{K} & \text{Kalman gain matrix} & \mathbf{R} & \text{measurement noise covariance xmatrix}
+    \mathbf{K} & \text{Kalman gain matrix} & \mathbf{R} & \text{measurement noise covariance matrix}
   \end{array}
 
-What are Q and R?
------------------
+The state estimate :math:`\mathbf{x}`, together with :math:`\mathbf{P}`, describe the mean and covariance of the Gaussian function that describes our filter's estimate of the system's true state.
 
-In a system, covariance is a measurement of how two random variables are correlated. In a system with a single state, the covariance matrix is simply :math:`\mathbf{\text{cov}(x_1, x_1)}`, or a matrix containing the variance :math:`\mathbf{\text{var}(x_1)}` of the state :math:`x_1`. The magnitude of this variance is the square of the standard deviation of the Gaussian function describing the current state estimate. Relatively large values for covariance might indicate noisy data, while small covariances might indicate that the filter is more confident about it's estimate. Remember that "large" and "small" values for variance or covariance are relative to the base unit being used -- for example, if :math:`\mathbf{x_1}` was measured in meters, :math:`\mathbf{\text{cov}(x_1, x_1)}` would be in meters squared.
+Process and Measurement Noise Covariance Matrices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Covariance matrices are written in the following form:
+The process and measurement noise covariance matrices :math:`\mathbf{Q}` and :math:`\mathbf{R}` describe the variance of each of our states and measurements. Remember that for a Gaussian function, variance is the square of the function's standard deviation. In a WPILib, Q and R are diagonal matrices whose diagonals contain their respective variances. For example, a Kalman filter with states :math:`\begin{bmatrix}\text{position} \\ \text{velocity} \end{bmatrix}` and measurements :math:`\begin{bmatrix}\text{position} \end{bmatrix}` with state standard deviations :math:`\begin{bmatrix}0.1 \\ 1.0\end{bmatrix}` and measurement standard deviation :math:`\begin{bmatrix}0.01\end{bmatrix}` would have the following :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices:
 
 .. math::
-  \mathbf{\Sigma} &= \begin{bmatrix}
-    \text{cov}(x_1, x_1) & \text{cov}(x_1, x_2) & \ldots & \text{cov}(x_1, x_n) \\
-    \text{cov}(x_2, x_1) & \text{cov}(x_2, x_2) & \ldots & \text{cov}(x_1, x_n) \\
-    \vdots         & \vdots         & \ddots & \vdots \\
-    \text{cov}(x_n, x_1) & \text{cov}(x_n, x_2) & \ldots & \text{cov}(x_n, x_n) \\
-  \end{bmatrix}
+  Q = \begin{bmatrix}0.01 0 \\ 0 1.0\end{bmatrix},
+  R = \begin{bmatrix}0.0001\end{bmatrix}
 
-The state estimate :math:`\mathbf{x}`, together with :math:`\mathbf{P}`, describe the mean and covariance of the Gaussian function that describes our estimate of the system's true state.
+Error Covariance Matrix
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward. 
 
