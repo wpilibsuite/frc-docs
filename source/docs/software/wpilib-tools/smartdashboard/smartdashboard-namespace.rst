@@ -17,9 +17,9 @@ SmartDashboard values are created with key names that begin with ``SmartDashboar
 .. code-block:: java
 
   chooser = new SendableChooser();
-  chooser.addDefault("defaultAuto", new AutonomousCommand());
-  chooser.addObject("secondAuto", new AutonomousCommand());
-  chooser.addObject("thirdAuto", new AutonomousCommand());
+  chooser.setDefaultOption("defaultAuto", new AutonomousCommand());
+  chooser.addOption("secondAuto", new AutonomousCommand());
+  chooser.addOption("thirdAuto", new AutonomousCommand());
   SmartDashboard.putData("Chooser", chooser);
   SmartDashboard.putNumber("Arm position in degrees", 52.0);
   SmartDashboard.putString("Program Version", "V1.2");

@@ -19,7 +19,7 @@ Set up the SendableChooser in the robotInit() method
 
 Imagine that you have two autonomous programs to choose between and they are encapsulated in commands ``Pickup`` and ``ElevatorPickup``. To choose between them:
 
-1. Create a ``SendableChooser`` object and add instances of the two commands to it. There can be any number of commands, and the one added as a default (``addDefault``), becomes the one that is initially selected. Notice that each command is included in an ``addDefault()`` or ``addObject()`` method call on the ``SendableChooser`` instance.
+1. Create a ``SendableChooser`` object and add instances of the two commands to it. There can be any number of commands, and the one added as a default (``setDefaultOption``), becomes the one that is initially selected. Notice that each command is included in an ``setDefaultOption()`` or ``addOption()`` method call on the ``SendableChooser`` instance.
 2. When the autonomous period starts the ``SendableChooser`` object is polled to get the selected command and that command is scheduled.
 
 Run the scheduler during the autonomous period
