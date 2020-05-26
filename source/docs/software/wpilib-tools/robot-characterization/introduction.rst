@@ -58,9 +58,7 @@ The drivetrain characterization tool determines the best-fit parameters for the 
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the same modeling equation as is used in the simple motor characterization - however, the drivetrain characterizer is specifically set up to run on differential drives, and will characterize each side of the drive independently if desired.
 
-The drivetrain characterizer can also determine the effective trackwidth of your robot using a gyro.
-
-.. todo:: link to section on trackwidth
+The drivetrain characterizer can also determine the effective trackwidth of your robot using a gyro. More information on how to run the characterization is available in the :ref:`track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` article.
 
 Arm Characterization
 ^^^^^^^^^^^^^^^^^^^^
