@@ -116,9 +116,9 @@ source_file = build/gettext/docs/getting-started/getting-started-frc-control-sys
 source_lang = en
 type = PO
 
-[frc-docs.docs--getting-started--getting-started-frc-control-system--updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel.po
-source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel.pot
+[frc-docs.docs--getting-started--getting-started-frc-control-system--updating-and-configuring-pneumatics-control-module-and-power-distribution-panel]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.po
+source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.pot
 source_lang = en
 type = PO
 

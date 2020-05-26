@@ -11,7 +11,7 @@ The Raspberry Pi writes all detection information to NetworkTables, which can be
 
   - ``nb_objects`` – the number (double) of detected objects in the current frame.
   - ``object_classes`` – a string array of the class names of each object. These are in the same order as the coordinates.
-  - ``boxes`` – a double array containg the coordinates of every detected object. The coordinates are in the following format: [top_left__x1, top_left_y1, bottom_right_x1, bottom_right_y1, top_left_x2, top_left_y2, ... ]. There are four coordinates per box. A way to parse this array in Java is shown below.
+  - ``boxes`` – a double array containing the coordinates of every detected object. The coordinates are in the following format: [top_left__x1, top_left_y1, bottom_right_x1, bottom_right_y1, top_left_x2, top_left_y2, ... ]. There are four coordinates per box. A way to parse this array in Java is shown below.
 
 The below ``VisionSubsystem`` Java class parses the data from NetworkTables and stores it in a usable way.
 
