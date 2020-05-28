@@ -6,7 +6,11 @@ WPILib includes two new path following controllers for differential drivetrains:
 Linear Time-Varying Unicycle Controller
 ---------------------------------------
 
-Similar to the :ref:`docs/software/advanced-controls/trajectories/ramsete:Ramsete Controller`, the LTV (Linear Time-Varying) Unicycle Controller generates ``ChassisSpeeds`` (C++/Java) references to steer the robot along a trajectory. The system used by this controller has states :math:`\begin{bmatrix}x & y & \theta \end{bmatrix}^T` in the global frame, and linear and angular velocity inputs :math:`\begin{bmatrix}v & \omega \end{bmatrix}^T` in the robot frame. However, this controller utilizes tolerances grounded in reality to pick gains rather than the magical Beta and Zeta gains used by Ramsete.
+Similar to the :ref:`docs/software/advanced-controls/trajectories/ramsete:Ramsete Controller`, the LTV (Linear Time-Varying) Unicycle Controller generates ``ChassisSpeeds`` (C++/Java) references to steer the robot along a trajectory. Similar to Ramsete, the system used by this controller has states :math:`\begin{bmatrix}x & y & \theta \end{bmatrix}^T` in the global frame, and linear and angular velocity inputs :math:`\begin{bmatrix}v & \omega \end{bmatrix}^T` in the robot frame. However, this controller utilizes tolerances grounded in reality to pick gains rather than the magical Beta and Zeta gains used by Ramsete.
+
+.. note:: Field (global) and robot coordinate systems are defined as follows:
+
+.. image:: images/coordinate-systems.jpg
 
 The LTV Unicycle controller generates feedback gains using a Linear Quadratic Regulator to balance control effort and state excursion. Because the system has states :math:`\begin{bmatrix}x & y & \theta \end{bmatrix}^T` and inputs :math:`\begin{bmatrix}v & \omega \end{bmatrix}^T`, the LQR used to compute the controller's feedback gain takes maximum desired error tolerances for :math:`x`, :math:`y` and :math:`\theta` (in meters and radians) and maximum desired control effort (in meters per second and radians per second). Note that because the controller deals with cross-track error, a tight heading tolerance will penalize steering the robot back toward the trajectory. Furthermore, the control effort tolerances are the maximum effort that the controller will apply on top of feedforward to steer the robot along the trajectory, not the robot's maximum velocity.
 
