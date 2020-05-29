@@ -19,26 +19,30 @@ The top of your ``build.gradle`` file should now look similar to the code below.
 
 .. tabs::
 
-   .. code-tab:: java
+   .. group-tab:: Java
 
-      plugins {
-        id "java"
-        id "edu.wpi.first.GradleRIO" version "2020.3.2"
-      }
+      .. code-block:: groovy
 
-      wpi.maven.useDevelopment = true
-      wpi.wpilibVersion = '2020.+'
+         plugins {
+           id "java"
+           id "edu.wpi.first.GradleRIO" version "2020.3.2"
+         }
 
-   .. code-tab:: c++
+         wpi.maven.useDevelopment = true
+         wpi.wpilibVersion = '2020.+'
 
-      plugins {
-        id "cpp"
-        id "google-test-test-suite"
-        id "edu.wpi.first.GradleRIO" version "2020.3.2"
-      }
+   .. group-tab:: C++
 
-      wpi.maven.useDevelopment = true
-      wpi.wpilibVersion = '2020.+'
+      .. code-block:: groovy
+
+         plugins {
+           id "cpp"
+           id "google-test-test-suite"
+           id "edu.wpi.first.GradleRIO" version "2020.3.2"
+         }
+
+         wpi.maven.useDevelopment = true
+         wpi.wpilibVersion = '2020.+'
 
 Local Build
 -----------
@@ -54,23 +58,27 @@ The top of your ``build.gradle`` file should now look similar to the code below.
 
 .. tabs::
 
-   .. code-tab:: java
+   .. group-tab:: Java
 
-      plugins {
-        id "java"
-        id "edu.wpi.first.GradleRIO" version "2020.3.2"
-      }
+      .. code-block:: groovy
 
-      wpi.maven.useFrcMavenLocalDevelopment = true
-      wpi.wpilibVersion = '2020.424242.+'
+         plugins {
+           id "java"
+           id "edu.wpi.first.GradleRIO" version "2020.3.2"
+         }
 
-   .. code-tab:: c++
+         wpi.maven.useFrcMavenLocalDevelopment = true
+         wpi.wpilibVersion = '2020.424242.+'
 
-      plugins {
-        id "cpp"
-        id "google-test-test-suite"
-        id "edu.wpi.first.GradleRIO" version "2020.3.2"
-      }
+   .. group-tab:: C++
 
-      wpi.maven.useFrcMavenLocalDevelopment = true
-      wpi.wpilibVersion = '2020.424242.+'
+      .. code-block:: groovy
+
+         plugins {
+           id "cpp"
+           id "google-test-test-suite"
+           id "edu.wpi.first.GradleRIO" version "2020.3.2"
+         }
+
+         wpi.maven.useFrcMavenLocalDevelopment = true
+         wpi.wpilibVersion = '2020.424242.+'
