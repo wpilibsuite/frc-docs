@@ -43,7 +43,7 @@ The top of your ``build.gradle`` file should now look similar to the code below.
 Local Build
 -----------
 
-Building with a local build is very similar to building with a local build. First, you must have an initial build. The instructions can be found `here <https://github.com/wpilibsuite/allwpilib#building-wpilib>`__. Next, find the ``build.gradle`` file in your robot project and open it. Then, add the following code below the plugin section and replace ``YEAR`` with the year of the local version.
+Building with a local build is very similar to building with a local build. Ensure you have built and published WPILib by following the instructions attached `here <https://github.com/wpilibsuite/allwpilib#building-wpilib>`__. Next, find the ``build.gradle`` file in your robot project and open it. Then, add the following code below the plugin section and replace ``YEAR`` with the year of the local version.
 
 .. code-block :: text
 
