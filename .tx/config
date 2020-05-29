@@ -56,6 +56,18 @@ source_file = build/gettext/docs/contributing/frc-docs/translations.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--contributing--wpilib--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/wpilib/index.po
+source_file = build/gettext/docs/contributing/wpilib/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--wpilib--other-wpilib-versions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/wpilib/other-wpilib-versions.po
+source_file = build/gettext/docs/contributing/wpilib/other-wpilib-versions.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--getting-started--getting-started-frc-control-system--control-system-hardware]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/control-system-hardware.po
 source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/control-system-hardware.pot
@@ -1475,12 +1487,6 @@ type = PO
 [frc-docs.docs--software--wpilib-overview--new-for-2020]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/new-for-2020.po
 source_file = build/gettext/docs/software/wpilib-overview/new-for-2020.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--other-wpilib-versions]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/other-wpilib-versions.po
-source_file = build/gettext/docs/software/wpilib-overview/other-wpilib-versions.pot
 source_lang = en
 type = PO
 
