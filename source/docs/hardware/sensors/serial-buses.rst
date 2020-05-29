@@ -79,7 +79,9 @@ CAN Bus
 
 .. image:: images/roborio/roborio-can.svg
 
-Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
+Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers). One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.
+
+.. image:: images/serial-buses/can-bus-talon-srx-chain.png
 
 Several sensors primarily use the CAN bus. Some examples include:
 

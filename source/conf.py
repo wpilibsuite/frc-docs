@@ -30,15 +30,19 @@ version = '2020'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'hoverxref.extension',
     'notfound.extension'
 ]
+
+# Enable hover content on glossary term
+hoverxref_roles = ['term']
 
 # TODO Directives omit a warning
 todo_emit_warnings = False

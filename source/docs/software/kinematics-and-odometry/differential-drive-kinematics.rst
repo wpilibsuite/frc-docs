@@ -59,7 +59,7 @@ One can also use the kinematics object to convert individual wheel speeds (left 
       DifferentialDriveKinematics kinematics =
         new DifferentialDriveKinematics(Units.inchesToMeters(27.0));
 
-      // Example differential drive wheel speeeds: 2 meters per second
+      // Example differential drive wheel speeds: 2 meters per second
       // for the left side, 3 meters per second for the right side.
       var wheelSpeeds = new DifferentialDriveWheelSpeeds(2.0, 3.0);
 
@@ -77,7 +77,7 @@ One can also use the kinematics object to convert individual wheel speeds (left 
       // Creating my kinematics object: track width of 27 inches
       frc::DifferentialDriveKinematics kinematics{27_in};
 
-      // Example differential drive wheel speeeds: 2 meters per second
+      // Example differential drive wheel speeds: 2 meters per second
       // for the left side, 3 meters per second for the right side.
       frc::DifferentialDriveWheelSpeeds wheelSpeeds{2_mps, 3_mps};
 

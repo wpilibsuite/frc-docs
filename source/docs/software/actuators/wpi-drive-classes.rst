@@ -8,14 +8,14 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: images/diffdrive.jpg
+.. image:: /docs/getting-started/getting-started-frc-control-system/images/how-to-wire-a-robot/image1.jpg
    :width: 600
 
 These drive bases typically have two or more in-line traction or omni  wheels per side (e.g., 6WD or 8WD) and may also be known as  "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts  drivetrain is an example of a differential drive. These drivetrains are capable of driving forward/backward and can turn by driving the two sides in opposite directions causing the wheels to skid sideways. These drivetrains are not capable of sideways translational movement.
 
 Mecanum Drive
 ^^^^^^^^^^^^^
-.. image:: images/mecanumdrive.jpg
+.. image:: images/am-14u4-6in-mecanum-upgrade.jpg
    :width: 600
 
 Mecanum drive is a method of driving using specially designed wheels that allow the robot to drive in any direction without changing the orientation of the robot. A robot with a conventional drivetrain (all wheels pointing in the same direction) must turn in the direction it needs to drive. A mecanum robot can move in any direction without first turning and is called a holonomic drive. The wheels (shown on this robot) have rollers that cause the forces from driving to be applied at a 45 degree angle rather than straight forward as in the case of a conventional drive.
@@ -70,7 +70,7 @@ By default all RobotDrive objects enable Motor Safety. Depending on the mechanis
 
 Axis Conventions
 ^^^^^^^^^^^^^^^^
-.. image:: images/axisconventions.jpg
+.. image:: images/drive-axis.png
    :width: 600
 
 This library uses the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. Rotations follow the right-hand rule, so clockwise rotation around the Z axis is positive.

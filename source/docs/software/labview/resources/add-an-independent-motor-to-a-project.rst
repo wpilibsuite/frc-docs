@@ -15,9 +15,7 @@ Now, reference your motor (the name has to be exact) in the **Teleop.vi** using 
 
 .. image:: images/add-an-independent-motor-to-a-project/2.png
 
-For example, the next snippet tells the Lift Motor to move forward if button 4 is pressed on Joystick 0 and to remain motionless otherwise. For me, button 4 is the left bumper on my Xbox style controller ("Joystick 0"). For much more in-depth joystick button options, check out How to Use Joystick Buttons to Control Motors or Solenoids.
-
-.. todo:: add internal link to How to Use Joystick Buttons to Control Motors or Solenoids.
+For example, the next snippet tells the Lift Motor to move forward if button 4 is pressed on Joystick 0 and to remain motionless otherwise. For me, button 4 is the left bumper on my Xbox style controller ("Joystick 0"). For much more in-depth joystick button options, check out :ref:`How to Use Joystick Buttons to Control Motors or Solenoids <docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids:How to Use Joystick Buttons to Control Motors or Solenoids>`.
 
 .. image:: images/add-an-independent-motor-to-a-project/3.png
 
