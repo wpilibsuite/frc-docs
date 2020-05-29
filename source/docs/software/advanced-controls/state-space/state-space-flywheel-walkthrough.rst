@@ -7,7 +7,7 @@ The goal of this tutorial is to provide "end-to-end" tutorial on implementing a 
 
 1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
-3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltrage :term`input <inputs>` to drive the flywheel to a :term:`reference`.
+3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltage :term:`inputs <input>` to drive the flywheel to a :term:`reference`.
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
@@ -16,7 +16,7 @@ The full example is available in the state-space flywheel (`C++ <https://github.
 Why use state-space control?
 ----------------------------
 
-Because IIC is a meme award. Thank you for coming to my ted talk. No but seriously todo stuff
+TODO
 
 .. todo:: real explication.
 
