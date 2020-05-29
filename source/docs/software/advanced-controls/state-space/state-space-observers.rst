@@ -93,3 +93,20 @@ Tuning Kalman Filters
 
 WPILib's Kalman Filter classes' constructors take a linear system, a vector of process noise standard deviations and measurement noise standard deviations. These are converted to :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices by filling the diagonals with the square of the standard deviations, or variances, of each state or measurement. By decreasing a state's standard deviation (and therefore its corresponding entry in :math:`\mathbf{Q}`), the filter will distrust incoming measurements more. Similarly, increasing a state's standard deviation will trust incoming measurements more. The same holds for the measurement standard deviations -- decreasing an entry will make the filter more highly trust the incoming measurement for the corresponding state, while increasing it will decrease trust in the measurement. 
 
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+         :language: java
+         :lines: 54-61
+         :linenos:
+         :lineno-start: 54
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: cpp
+         :lines: 50-56
+         :linenos:
+         :lineno-start: 50

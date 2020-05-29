@@ -11,16 +11,16 @@ The goal of this tutorial is to provide "end-to-end" tutorial on implementing a 
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
-The full example is available in the state-space flywheel (`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__/`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__) and state-space flywheel system identification (`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__/`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__) example projects.
+The full example is available in the state-space flywheel /`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__) and state-space flywheel system identification (`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__) example projects.
 
-Why use state-space control?
+Why Use State-Space Control?
 ----------------------------
 
 TODO
 
 .. todo:: real explication.
 
-Modeling our flywheel
+Modeling Our Flywheel
 ---------------------
 
 The idea of modeling the :term:`dynamics` of physical systems using a system of equations is central to state-space control and modern control theory. :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
@@ -59,7 +59,7 @@ The second part of state-space notation relates the system's current :term:`stat
 
 Where :math:`\mathbf{y}` is the flywheel's velocity, as measured by a sensor of some kind.
 
-The ``LinearSystem`` class contains methods for easily creating state-space systems indentified using :term:`system identification`. This example shows a flywheel model with a kV of 1 and a kA of 0.5:
+The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`system identification`. This example shows a flywheel model with a kV of 1 and a kA of 0.5:
 
 .. tabs::
 
@@ -79,7 +79,7 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
          :linenos:
          :lineno-start: 36
 
-Modeling using flywheel Moment of Intertia and gearing
+Modeling Using Flywheel Moment of Intertia and Gearing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel `moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__, a measurement of a rotating body's resistance to angular acceleration or deceleration that can be thought of as angular mass. A full derivation of this model is presented in Section 8.2.1 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
@@ -115,6 +115,24 @@ Kalman filters are used to filter our velocity measurements using our state-spac
 
 The above graph shows two differently tuned Kalman filters, as well as a :ref:`single-pole IIR filter <docs/software/advanced-controls/filters/linear-filter:Linear Filters>` and a :ref:`docs/software/advanced-controls/filters/median-filter:Median Filter`. This data was collected with a shooter over ~5 seconds, and four balls were run through the shooter (as seen in the four dips in velocity). While there are no hard rules on choosing good state and measurement standard deviations, they should in general be tuned to trust the model enough to reject noise while reacting quickly to external disturbances. Because the feedback controller computes error using the :term:`x-hat` estimated by the Kalman filter, the controller will react to disturbances only as quickly the filter's state estimate changes. In the above chart, the orange plot (with a state standard deviation of 3.0 and measurement standard deviation of 0.2) produced a filter that reacted quickly to disturbances while rejecting noise, while the magenta filter was barely affected by the velocity dips. 
 
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+         :language: java
+         :lines: 54-61
+         :linenos:
+         :lineno-start: 54
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: cpp
+         :lines: 50-56
+         :linenos:
+         :lineno-start: 50
+
 Because Kalman filters use our state-space model in the :ref:`docs/software/advanced-controls/state-space/state-space-observers:Predict step`, it is important that our model is as accurate as possible. One way to verify this is to record a flywheel's input voltage and velocity over time, and replay this data by calling only ``predict`` on the Kalman filter. Then, the kV and kA gains (or moment of inertia and other constants) can be adjusted until the model closely matches the recorded data. 
 
 .. todo:: do we need to elaborate on this^ more?
@@ -144,7 +162,7 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
          :linenos:
          :lineno-start: 57
 
-Bringing it all together: LinearSystemLoop
+Bringing it All Together: LinearSystemLoop
 ------------------------------------------
 
 LinearSystemLoop combines our system, controller, and observer that we create earlier. The constructor shown will also instantiate a ``PlantInversionFeedforward``.
