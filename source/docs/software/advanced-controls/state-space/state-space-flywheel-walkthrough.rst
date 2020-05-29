@@ -7,7 +7,7 @@ The goal of this tutorial is to provide "end-to-end" tutorial on implementing a 
 
 1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
-3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltrage :term`input`\s to drive the flywheel to a :term:`reference`.
+3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltrage :term`input <inputs>` to drive the flywheel to a :term:`reference`.
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
@@ -33,13 +33,13 @@ Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`,
 
 Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the frc-characterization toolsuite, and then model it based on the motor and flywheel's moment of inertia.
 
-The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden state`\s in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`reference`\s by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
+The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden states <hidden state>` in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`references <reference>` by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
 
 For our flywheel, we care only about one state: its velocity. While we could chose to also model its acceleration, the inclusion of this state isn't necessary for our system. 
 
-Next, we identify the :term:`input`\s to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC), we have just one input: voltage applied to the motor. By choosing voltage as our input we can compensate for battery voltage sag as battery load increases. 
+Next, we identify the :term:`inputs <input>` to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC), we have just one input: voltage applied to the motor. By choosing voltage as our input we can compensate for battery voltage sag as battery load increases. 
 
-A continuous-time state-space system writes :term:`x-dot`, or the instantaneous rate of change of the system's :term:`system`\'s state, as proportional to the current :term:`state` and :term:`input`\s. Because our state is angular velocity, :math:`\mathbf{\dot{x}}` will be the flywheel's angular acceleration. 
+A continuous-time state-space system writes :term:`x-dot`, or the instantaneous rate of change of the system's :term:`system`\'s state, as proportional to the current :term:`state` and :term:`inputs <input>`. Because our state is angular velocity, :math:`\mathbf{\dot{x}}` will be the flywheel's angular acceleration. 
 
 Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`State-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` for more on continuous-time and discrete-time systems.
 
