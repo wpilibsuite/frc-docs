@@ -28,7 +28,7 @@ Recall that 2D space has two axes: x and y. We represent locations within this s
 
 In this image, the vectors representing states in state-space are arrows. From now on these vectors will be represented simply by a point at the vector's tip, but remember that the rest of the vector is still there.
 
-In addition to the state, inputs and :term:`output`\s are represented as vectors. Since the mapping from the current states and inputs to the change in state is a system of equations, it’s natural to write it in matrix form. This matrix equation can be written in state-space notation.
+In addition to the state, inputs and :term:`outputs <output>` are represented as vectors. Since the mapping from the current states and inputs to the change in state is a system of equations, it’s natural to write it in matrix form. This matrix equation can be written in state-space notation.
 
 What is state-space notation
 ----------------------------
@@ -127,7 +127,7 @@ The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :mat
 
 By adjusting the state excursion weight :math:`\mathbf{Q}` and :term:`control effort` weight :math:`\mathbf{R}`, the response of the system can be tuned to suit the application. 
 
-.. note:: LQR design's :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices don't need discretization, but the :math:`\mathbf{K}` calculated for continuous-time and discrete time :term:`system`\s will be different.
+.. note:: LQR design's :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices don't need discretization, but the :math:`\mathbf{K}` calculated for continuous-time and discrete time :term:`systems <system>` will be different.
 
 Bryson's Rule
 ~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ Picking these :math:`\mathbf{Q}` and :math:`\mathbf{R}` weights can be done usin
 where the weighting factor :math:`\rho` can be used to change the balance of :term:`control effort` and state excursion. Small values of :math:`\rho` penalize :term:`control effort`, while large values of :math:`\rho` penalize state excursion. The values of :math:`x_1, x_2...x_m` are the maximum desired :term:`error` tolerance for each state of the system, and :math:`u_1, u_2...u_n` are maximum desired :term:`control efforts <control effort>`for each input. 
 
 .. note::
-    Don't confuse Q and R with the elements we use to construct Q and R with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs restively. We fill Q with as many "q elements" as the :term:`system` has :term:`state`\s, and R with as may "r elements" as the :term:`system` has :term:`input`\s.
+    Don't confuse Q and R with the elements we use to construct :math:`\mathbf{Q}` and :math:`\mathbf{R}` with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs restively. We fill Q with as many "q elements" as the :term:`system` has :term:`states <state>`, and R with as may "r elements" as the :term:`system` has :term:`inputs <input>`.
 
 Increasing the q elements :math:`x_1, x_2...x_m` or decreasing :math:`\rho` would make the LQR penalize large errors less heavily, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
 
@@ -189,7 +189,7 @@ WPILib's state-space control is based on the ``LinearSystemLoop`` class. This cl
 
 - A ``LinearSystem`` representing the continuous-time state-space equations of the :term:`system`.
 - A :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurements <measurement>`.
-- A Linear-Quadratic Regulator, which combines feedback and feedforward to generate :term:`input`\s.
+- A Linear-Quadratic Regulator, which combines feedback and feedforward to generate :term:`inputs <input>`.
 
 As the system being controlled is in discrete domain, we follow the following steps at each update cycle:
 

@@ -51,7 +51,7 @@ To rewrite this in state-space notation using :term:`system identification`, we 
 .. math:: 
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA} \end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA} \end{bmatrix} \mathbf{u}
 
-The second part of state-space notation relates the system's current :term:`state` and :term:`input`\s to the :term:`output`. In the case of a flywheel, our output (or thing that our sensors can measure) is flywheel velocity, so :math:`\begin{bmatrix}C \end{bmatrix}` is just :math:`\begin{bmatrix}1 \end{bmatrix}`. The system feedthrough matrix :math:`\mathbf{D}`, which relates input to output, is often simply :math:`\begin{bmatrix}0 \end{bmatrix}` (except in exceptional cases).
+The second part of state-space notation relates the system's current :term:`state` and :term:`inputs <input>` to the :term:`output`. In the case of a flywheel, our output (or thing that our sensors can measure) is flywheel velocity, so :math:`\begin{bmatrix}C \end{bmatrix}` is just :math:`\begin{bmatrix}1 \end{bmatrix}`. The system feedthrough matrix :math:`\mathbf{D}`, which relates input to output, is often simply :math:`\begin{bmatrix}0 \end{bmatrix}` (except in exceptional cases).
 
 .. math:: 
     \mathbf{\dot{x}} &= \begin{bmatrix}\frac{-kV}{kA} \end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA} \end{bmatrix} \mathbf{u} \\

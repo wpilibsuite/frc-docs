@@ -13,7 +13,7 @@ State-Space Glossary
         Applies an :term:`input` to a :term:`plant` to drive the difference between a :term:`reference` and :term:`output`, or :term:`error`, to zero.
 
     Control Law
-        A mathematical formula that generates :term:`input`\s to drive a :term:`system` to a desired :term:`state`.
+        A mathematical formula that generates :term:`inputs <input>` to drive a :term:`system` to a desired :term:`state`.
 
     Error
         :term:`Reference` minus an output or state.
@@ -44,7 +44,7 @@ State-Space Glossary
         Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our, our :term:`output` vector would only include the :term:`system`\'s velocity.
 
     Measurement
-        Measurements are :term:`output`\s that are measured from a :term:`plant`, or physical system, using sensors.
+        Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
 
     Plant
         The system or collection of actuators being controlled. 
@@ -53,7 +53,7 @@ State-Space Glossary
         The desired :term:`state`. This value is used as the reference point for a :term:`controller` 's :term:`error` calculation.
 
     System
-        The physical thing being controlled. Has States, Inputs and Outputs associated with it. In state-space control, a System refers to a :term:`plant` as well as it's interactions with a controller and observer. Mathematically, a system maps inputs to outputs through a linear combination of :term:`state`\s.
+        The physical thing being controlled. Has States, Inputs and Outputs associated with it. In state-space control, a System refers to a :term:`plant` as well as it's interactions with a controller and observer. Mathematically, a system maps inputs to outputs through a linear combination of :term:`states <state>`.
 
     State
         A characteristic of a system that can be used to determine the system's future behavior. In state-space notation, the state of a system is written as a column vector describing it's position in state-space.
@@ -61,10 +61,10 @@ State-Space Glossary
             - Ex. A drivetrain system might have the states :math:`\begin{bmatrix}x \\ y \\ \theta \end{bmatrix}` to describe it's position on the field.
             - Ex. An elevator system might have the states :math:`\begin{bmatrix}position \\ velocity \end{bmatrix}` to describe its current height and velocity.
 
-        A :term:`system`\s state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
+        A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
     System Identification
-        The process of capturing a :term:`system`\s :term:`dynamics` in a mathematical model using measured data. The characterization toolsuite uses system identification to find kS, kV and kA terms.
+        The process of capturing a :term:`systems <system>` :term:`dynamics` in a mathematical model using measured data. The characterization toolsuite uses system identification to find kS, kV and kA terms.
 
     Observer
         In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems. 
