@@ -14,4 +14,4 @@ Getting Started
    how-to-wire-a-robot
    imaging-your-roborio
    radio-programming
-   updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel
+   updating-and-configuring-pneumatics-control-module-and-power-distribution-panel
