@@ -27,9 +27,10 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       if(!pressed) {
         intake.run();
         pressed = true;
-      } else {
-        pressed = false;
       }
+    }
+    else {
+      pressed = false;
     }
 
   .. code-tab:: c++
@@ -38,9 +39,9 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       if(!pressed) {
         Intake.Run();
         pressed = true;
-      } else {
-        pressed = false;
-      }
+      } 
+    } else {
+      pressed = false;
     }
 
 Subsystems and Commands
