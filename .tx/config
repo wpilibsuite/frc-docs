@@ -1970,12 +1970,6 @@ source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/smartdashb
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--wpilib-tools--smartdashboard--stale-data-smartdashboard]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/stale-data-smartdashboard.po
-source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/stale-data-smartdashboard.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--wpilib-tools--smartdashboard--testing-commands]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/smartdashboard/testing-commands.po
 source_file = build/gettext/docs/software/wpilib-tools/smartdashboard/testing-commands.pot
