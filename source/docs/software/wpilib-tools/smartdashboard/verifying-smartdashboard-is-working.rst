@@ -8,10 +8,9 @@ Minimal robot program
 
   .. code-tab:: java
 
-    public class Robot extends SampleRobot {
-      public void operatorControl() {
+    public class Robot extends TimedRobot {
       double counter = 0.0;
-      while (isOperatorControl() && isEnabled()) {
+      public void teleopPeriodic() {
         SmartDashboard.putNumber("Counter", counter++);
         Timer.delay(0.10);
       }
@@ -19,24 +18,13 @@ Minimal robot program
 
   .. code-tab:: c++
 
-    #include "WPILib.h"
+    #include "Robot.h"
 
-    class Robot: public SampleRobot
-    {
-    public:
-      Robot() {
-      }
-      void OperatorControl()
-      {
+    void Robot::TeleopPeriodic() {
         float counter = 0.0;
-        while (IsOperatorControl() && IsEnabled()) {
-          SmartDashboard::PutNumber("Counter", counter++);
-          Wait(0.10);
-        }
+        SmartDashboard::PutNumber("Counter", counter++);
+        Wait(0.10);
       }
-    };
-
-    START_ROBOT_CLASS(Robot);
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 10 times per second to verify that the connection is working.
 
