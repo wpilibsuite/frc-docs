@@ -27,8 +27,6 @@ The Kiosk has been tested on Windows 7, 8, and 10. It may work on other operatin
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/programming-radios-for-fms-offseason-1.png
-
 The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
 
 - Set a static IP of 10.TE.AM.1
@@ -37,6 +35,8 @@ The Radio Configuration Utility programs a number of configuration settings into
 - The LED configuration noted in the graphic above
 - 4Mb/s bandwidth limit on the outbound side of the wireless interface
 - QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (All other traffic).
+
+.. tip:: See the :ref:`Status Light Reference <docs/hardware/hardware-basics/status-lights-ref:OpenMesh Radio>` for details on the behavior of the radio status lights when configured.
 
 When programmed with the team version of the Radio Configuration - Utility, the user accounts will be left at (or set to) the firmware - defaults **for the DAPs only**:
 

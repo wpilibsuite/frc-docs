@@ -8,7 +8,7 @@ Welcome to the official documentation home for the *FIRST*\ |reg| Robotics Compe
 New to Programming?
 -------------------
 
-These pages cover the specifics of the WPILib libraries and the FRC Control System and do not describe the basics of using the supported programming languages. If would like resources on learning the supported programming languages check out the recommendations below:
+These pages cover the specifics of the WPILib libraries and the FRC Control System and do not describe the basics of using the supported programming languages. If you would like resources on learning the supported programming languages check out the recommendations below:
 
 .. note:: You can continue with this Getting Started section to get a functioning basic robot without knowledge of the programming language. To go beyond that, you will need to be familiar with the language you choose to program in.
 
@@ -24,7 +24,7 @@ Java
 ^^^^
 
 - `Code Academy <https://www.codecademy.com/learn/learn-java>`__
-- `Head First Java 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ is a a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
+- `Head First Java 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ is a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
 
 LabVIEW
 ^^^^^^^
