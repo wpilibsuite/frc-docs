@@ -27,7 +27,7 @@ While, as mentioned, all ultrasonics are functionally ping-response devices, a "
 Serial ultrasonics
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/ultrasonics-hardware/mb-lv-ez1-serial.jpg
+.. image:: images/ultrasonics-hardware/mb-lv-ez1-serial.png
 
 Some more-complicated ultrasonic sensors may communicate with the RIO over one of the :doc:`serial buses <serial-buses>`, such as RS-232.
 

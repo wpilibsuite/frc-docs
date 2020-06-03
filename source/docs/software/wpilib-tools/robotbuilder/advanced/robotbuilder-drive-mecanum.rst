@@ -6,7 +6,7 @@ Mecanum drive is a method of driving using specially designed wheels that allow 
 Mecanum Wheels
 --------------
 
-.. image:: images/am-14u4-6in-mecanum-upgrade.jpg
+.. image:: images/am-14u4-6in-mecanum-upgrade.png
 
 The wheels shown in this robot have rollers that cause the forces from driving to be applied at a 45 degree angle rather than straight forward as in the case of a conventional drive. You might guess that varying the speed of the wheels results in travel in any direction. You can look up how mecanum wheels work on various web sites on the internet.
 
