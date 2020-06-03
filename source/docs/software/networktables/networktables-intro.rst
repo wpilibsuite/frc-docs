@@ -50,7 +50,7 @@ The NetworkTables classes are instantiated automatically when your program start
 
       package edu.wpi.first.wpilibj.templates;
 
-      import edu.wpi.first.wpilij.TimedRobot;
+      import edu.wpi.first.wpilibj.TimedRobot;
       import edu.wpi.first.networktables.NetworkTable;
       import edu.wpi.first.networktables.NetworkTableEntry;
       import edu.wpi.first.networktables.NetworkTableInstance;

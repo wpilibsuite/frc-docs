@@ -25,7 +25,7 @@ I/O encapsulation makes for more predictable operation and quicker debugging whe
 Part 1: Project Explorer
 ------------------------
 
-The Project Explorer provides organization for all of the Vis and files you will use for your robot system.  Below is a description of the major components in the Project Explorer to help with the expansion of our system.  The most frequently used items have been bolded.
+The Project Explorer provides organization for all of the Vis and files you will use for your robot system.  Below is a description of the major components in the Project Explorer to help with the expansion of our system.  The most frequently used items have been marked in bold.
 
 .. image:: images/command-and-control-tutorial/project-explorer-1.png
 
@@ -178,6 +178,8 @@ The Immediate case updates the motors to the set point defined by the command. T
 
 Stop Driving.vi
 ^^^^^^^^^^^^^^^
+
+.. image:: images/command-and-control-tutorial/stop-driving.jpg
 
 Zero the drive motors, making the robot stationary.
 

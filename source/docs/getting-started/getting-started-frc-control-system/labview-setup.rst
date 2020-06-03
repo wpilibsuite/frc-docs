@@ -48,6 +48,8 @@ Teams are permitted to install the software on as many team computers as needed,
 Welcome
 ^^^^^^^
 
+.. image:: images/labview/labview_welcome.png
+
 Starting Install
 ^^^^^^^^^^^^^^^^
 
