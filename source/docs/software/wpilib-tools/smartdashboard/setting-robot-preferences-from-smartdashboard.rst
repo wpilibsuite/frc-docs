@@ -8,37 +8,37 @@ Sample program to reads and writes preference values
 
 .. tabs::
 
-    .. code-tab:: java
+  .. code-tab:: java
 
-      public class Robot extends SampleRobot {
+    public class Robot extends TimedRobot {
 
-        Preferences prefs;
+      Preferences prefs;
 
-        double armUpPosition;
-        double armDownPosition;
+      double armUpPosition;
+      double armDownPosition;
 
-        public void robotInit() {
-          prefs = Preferences.getInstance();
-          armUpPosition = prefs.getDouble("ArmUpPosition", 1.0);
-          armDownPosition = prefs.getDouble("ArmDownPosition", 4.);
-        }
+      public void robotInit() {
+        prefs = Preferences.getInstance();
+        armUpPosition = prefs.getDouble("ArmUpPosition", 1.0);
+        armDownPosition = prefs.getDouble("ArmDownPosition", 4.);
       }
+    }
 
-    .. code-tab:: c++
+  .. code-tab:: c++
 
-      class Robot: public SampleRobot {
+    class Robot: public TimedRobot {
 
-        Preferences *prefs;
+      Preferences *prefs;
 
-        double armUpPosition;
-        double armDownPosition;
+      double armUpPosition;
+      double armDownPosition;
 
-        public void RobotInit() {
-          prefs = Preferences::GetInstance();
-          armUpPosition = prefs->GetDouble("ArmUpPosition", 1.0);
-          armDownPosition = prefs->GetDouble("ArmDownPosition", 4.);
-        }
+      public void RobotInit() {
+        prefs = Preferences::GetInstance();
+        armUpPosition = prefs->GetDouble("ArmUpPosition", 1.0);
+        armDownPosition = prefs->GetDouble("ArmDownPosition", 4.);
       }
+    }
 
 Often potentiometers are used to measure the angle of an arm or the position of some other shaft. In this case, the arm has two positions, ``ArmUpPosition`` and ``ArmDownPosition``. Usually programmers create constants in the program that are the two pot values that correspond to the positions of the arm. When the potentiometer needs to be replaced or adjusted then the program needs to be edited and reloaded onto the robot.
 

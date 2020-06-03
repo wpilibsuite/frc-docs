@@ -42,26 +42,32 @@ LiveWindow data is automatically grouped by subsystem. The data is viewable in t
 
 .. code-block:: java
 
-  drivetrainLeft = new Talon(1, 2);
-  LiveWindow.addActuator("Drive train", "Left", (Talon) drivetrainLeft);
-  drivetrainRight = new Talon(1, 1);
-  LiveWindow.addActuator("Drive train", "Right", (Talon) drivetrainRight);
-  drivetrainRobotDrive = new RobotDrive(drivetrainLeft, drivetrainRight);
+  drivetrainLeft = new PWMVictorSPX(1);
+  drivetrainLeft.setName("Drive train", "Left");
+
+  drivetrainRight = new PWMVictorSPX(1);
+  drivetrainRight.setName("Drive train", "Right";
+
+  drivetrainRobotDrive = new DifferentialDrive(drivetrainLeft, drivetrainRight);
   drivetrainRobotDrive.setSafetyEnabled(false);
   drivetrainRobotDrive.setExpiration(0.1);
-  drivetrainRobotDrive.setSensitivity(0.5);
-  drivetrainRobotDrive.setMaxOutput(1.0);
-  drivetrainUltrasonic = new AnalogChannel(1, 3);
-  LiveWindow.addSensor("Drive train", "Ultrasonic", drivetrainUltrasonic);
-  elevatorMotor = new Victor(1, 6);
-  LiveWindow.addActuator("Elevator", "Motor", (Victor) elevatorMotor);
-  elevatorPot = new AnalogChannel(1, 4);
-  LiveWindow.addSensor("Elevator", "Pot", elevatorPot);
-  wristPot = new AnalogChannel(1, 2);
-  LiveWindow.addSensor("Wrist", "Pot", wristPot);
-  wristMotor = new Victor(1, 3);
-  LiveWindow.addActuator("Wrist", "Motor", (Victor) wristMotor);
-  clawMotor = new Victor(1, 5);
-  LiveWindow.addActuator("Claw", "Motor", (Victor) clawMotor);
+
+  drivetrainUltrasonic = new AnalogInput(3);
+  drivetrainUltrasonic.setName("Drive train", "Ultrasonic");
+
+  elevatorMotor = new PWMVictorSPX(6);
+  elevatorMotor.setName("Elevator", "Motor");
+
+  elevatorPot = new AnalogInput(4);
+  elevatorPot.setName("Elevator", "Pot");
+
+  wristPot = new AnalogInput(2);
+  wristPot.setName("Wrist", "Pot");
+
+  wristMotor = new PWMVictorSPX(3);
+  wristMotor.setName("Wrist", "Motor");
+
+  clawMotor = new PWMVictorSPX(5);
+  clawMotor.setName("Claw", "Motor");
 
 Values that correspond to actuators are not only displayed, but can be set using sliders created in the SmartDashboard in Test mode.
