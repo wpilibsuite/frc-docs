@@ -27,6 +27,7 @@ The FRCVision image comes with all the necessary libraries to make your own visi
 
          if time == 0: # There is an error
             continue
+
 .. note:: OpenCV reads in the image as **BGR**, not **RGB** for historical reasons. Use ``cv2.cvtColor`` if you want to change it to RGB.
 
 Below is an example of an image that might be grabbed from CameraServer.
