@@ -63,7 +63,7 @@ Photoelectric proximity switches are another type of no-contact proximity switch
 
 Since photoelectric proximity switches rely on measuring the amount of reflected light, they are often inconsistent in their triggering range between different materials - accordingly, most photoelectric sensors have an adjustable activation point (typically controller by turning a screw somewhere on the sensor body).  On the other hand, photoelectric sensors are also extremely versatile, as they can detect a greater variety of objects than the other types of no-contact switches.
 
-Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor. Pictured above is a `beam break sensor with an IR LED transmitter and IR reciver <https://www.adafruit.com/product/2167>`__.
+Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor. Pictured above is a `beam break sensor with an IR LED transmitter and IR receiver <https://www.adafruit.com/product/2167>`__.
 
 .. image:: images/proximity-switches-hardware/ir-beam-break-sensor-to-roborio.svg
 

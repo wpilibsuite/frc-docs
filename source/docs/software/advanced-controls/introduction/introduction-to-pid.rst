@@ -94,7 +94,7 @@ The below figure shows a block diagram for a :term:`system` controlled by a PI c
    :alt: Block diagram of a PI controller
    :align: center
 
-When the :term:`system` is close the :term:`setpoint` in steady-state, the proportional term may be too small to pull the :term:`output` all the way to the :term:`setpoint`, and the derivative term is zero. This cab result in :term:`steady-state error` as shown in figure 2.4
+When the :term:`system` is close the :term:`setpoint` in steady-state, the proportional term may be too small to pull the :term:`output` all the way to the :term:`setpoint`, and the derivative term is zero. This can result in :term:`steady-state error` as shown in figure 2.4
 
 .. image:: images/introduction-to-pid-pi-controller-steadystate.png
    :alt: PI controller with steady-state

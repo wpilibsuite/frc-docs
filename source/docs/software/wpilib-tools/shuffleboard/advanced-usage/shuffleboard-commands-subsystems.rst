@@ -6,7 +6,7 @@ When using the command-based framework Shuffleboard makes it easier to understan
 Displaying Subsystems
 ---------------------
 
-To see the status of a subsystem while the robot is operating in either autonomous or teloperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
+To see the status of a subsystem while the robot is operating in either autonomous or teleoperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
 
 .. tabs::
 

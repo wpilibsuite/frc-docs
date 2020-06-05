@@ -78,10 +78,10 @@ from gradle as noted:
 The path to your Shuffleboard plugin folder will most likely be ``~/Shuffleboard/plugins``.
 
 The ``deployPlugin`` task takes four parameters, the ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
-specifying what to copy. The group and description parameters to specifiy what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
+specifying what to copy. The group and description parameters to specify what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
 
 In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied to.
-Finally, the ``include`` field ensures all files with the ``.jar`` extention is also copied.
+Finally, the ``include`` field ensures all files with the ``.jar`` extension is also copied.
 
 After deploying, Shuffleboard will cache the path of the plugin so it can be automatically loaded the next time Shuffleboard loads. It may be necessary to click on ``Clear Cache`` under the plugins menu to remove a plugin or reload a plugin into Shuffleboard.
 
