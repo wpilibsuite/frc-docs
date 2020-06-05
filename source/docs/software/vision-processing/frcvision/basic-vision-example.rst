@@ -29,12 +29,6 @@ This is an example of a basic vision setup that posts the target's location in t
          # Table for vision output information
          vision_nt = NetworkTables.getTable('Vision')
 
-         # Preallocate memory because allocating in a loop is expensive
-         input_img = np.zeros((height, width, 3), dtype = np.uint8)
-         hsv_img = np.zeros((height, width, 3), dtype = np.uint8)
-         binary_img = np.zeros((height, width, 3), dtype = np.uint8)
-         output_img = np.zeros((height, width, 3), dtype = np.uint8)
-
          # Wait for NetworkTables to start
          time.sleep(0.5)
 

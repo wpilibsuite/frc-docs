@@ -1,7 +1,7 @@
 Using CameraServer
 ==================
 
-Grabbing frames from CameraServer
+Grabbing Frames from CameraServer
 ---------------------------------
 
 The FRCVision image comes with all the necessary libraries to make your own vision processing system. In order to get the current frame from the camera, you can use the CameraServer library. For information about CameraServer, the :ref:`docs/software/vision-processing/introduction/cameraserver-class:Read and Process Video: CameraServer Class`.
@@ -22,16 +22,16 @@ The FRCVision image comes with all the necessary libraries to make your own visi
 
       sink = cs.getVideo()
 
-      # Preallocate memory so we don't have to allocate memory each iteration
-      input_img = np.zeros(shape=(width, height, 3), dtype=np.int8)
-
       while True:
          time, input_img = cvSink.grabFrame(input_img)
 
          if time == 0: # There is an error
             continue
-.. note::
-   OpenCV reads in the image as **BGR**, not **RGB** for historical reasons. Use ``cv2.cvtColor`` if you want to change it to RGB.
+.. note:: OpenCV reads in the image as **BGR**, not **RGB** for historical reasons. Use ``cv2.cvtColor`` if you want to change it to RGB.
+
+Below is an example of an image that might be grabbed from CameraServer.
+
+.. image:: images/using-cameraserver-1.jpg
 
 Sending frames to CameraServer
 ------------------------------
@@ -46,9 +46,7 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
       # CameraServer initialization code here
       #
 
-      # Preallocate memory so we don't have to allocate memory each iteration
       output = cs.putVideo("Name", width, height)
-      output_img = np.zeros(shape=(width, height, 3), dtype=np.uint8)
 
       while True:
          time, input_img = cvSink.grabFrame(input_img)
@@ -64,3 +62,7 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
          output.putFrame(processed_img)
 
 As an example, the processing code could outline the target in red, and show the corners in yellow for debugging purposes.
+
+Below is an example of a fully processed image that would be sent back to CameraServer and displayed on the Driver Station computer.
+
+.. image:: images/using-cameraserver-2.jpg

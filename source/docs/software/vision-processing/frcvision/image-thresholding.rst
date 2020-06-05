@@ -22,8 +22,7 @@ You can use OpenCV to convert a BGR image matrix to HSV.
 
       hsv_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2HSV)
 
-.. note::
-   OpenCV's hue range is from 1° to 180° instead of the common 1° to 360°. In order to convert a common hue value to OpenCV, divide by 2.
+.. note:: OpenCV's hue range is from 1° to 180° instead of the common 1° to 360°. In order to convert a common hue value to OpenCV, divide by 2.
 
 Thresholding
 ------------
@@ -40,8 +39,7 @@ By thresholding the image using HSV, you can seperate the image into the vision 
 
       binary_img = cv2.inRange(hsv_img, (min_hue, min_sat, min_val), (max_hue, max_sat, max_val))
 
-.. note::
-   These values may have to be tuned on an per-venue basis, as ambient lighting may differ across venues. It is recommended to allow editing of these values through NetworkTables in order to facilitate on-the-fly editing.
+.. note:: These values may have to be tuned on an per-venue basis, as ambient lighting may differ across venues. It is recommended to allow editing of these values through NetworkTables in order to facilitate on-the-fly editing.
 
 After thresholding, your image should look like this.
 
