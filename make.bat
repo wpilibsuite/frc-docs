@@ -14,6 +14,7 @@ set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
 set LANGMAP=es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
 set SIZECHECKER=python -m scripts.imagesizechecker
+set CONFEXCLUDE=--exclude-file source/conf.py
 set SIZEMAX=500
 
 if "%1" == "" goto help
@@ -49,7 +50,7 @@ goto end
 goto end
 
 :sizecheck
-%SIZECHECKER% %SOURCEDIR% %SIZEMAX%
+%SIZECHECKER% %SOURCEDIR% %SIZEMAX% %CONFEXCLUDE%
 goto end
 
 :translate

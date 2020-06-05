@@ -9,7 +9,8 @@ BUILDDIR      = build
 LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
 LANGMAP       = es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
-SIZECHECKER   = python scripts.imagesizechecker
+SIZECHECKER   = python3 -m scripts.imagesizechecker
+CONFEXCLUDE   = --exclude-file source/conf.py
 SIZEMAX       = 500
 
 
@@ -21,7 +22,7 @@ lint:
 	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)
 
 sizecheck:
-   @$(SIZECHECKER) $(SOURCEDIR) $(SIZEMAX)
+   @$(SIZECHECKER) $(SOURCEDIR) $(SIZEMAX) $(CONFEXCLUDE)
 
 translate:
 	@$(SPHINXBUILD) -M gettext "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
