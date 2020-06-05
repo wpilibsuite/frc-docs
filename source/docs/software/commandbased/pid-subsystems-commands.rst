@@ -79,7 +79,7 @@ The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsyst
   .. code-tab:: c++
 
     // The subsystem will track to a setpoint of 5.
-    examplePIDSubsyste.SetSetpoint(5);
+    examplePIDSubsystem.SetSetpoint(5);
 
 enable() and disable()
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +150,7 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 PIDCommand
 ----------
 
-The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommmand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
@@ -187,7 +187,7 @@ When subclassing ``PIDCommand``, additional modifications (e.g. enabling continu
 measurementSource
 ~~~~~~~~~~~~~~~~~
 
-The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Pasing in the ``measurementSource`` function in ``PIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``PIDSubsystem``.
+The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``PIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``PIDSubsystem``.
 
 When subclassing ``PIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 

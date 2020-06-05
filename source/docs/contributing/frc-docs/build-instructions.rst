@@ -52,7 +52,7 @@ Open up a Powershell Window or terminal and navigate to the frc-docs directory t
     PS C:\Users\Example\Documents> git clone https://github.com/wpilibsuite/frc-docs.git
     Cloning into 'frc-docs'...
     remote: Enumerating objects: 217, done.
-    remote: Counting ojbects: 100% (217/217), done.
+    remote: Counting objects: 100% (217/217), done.
     remote: Compressing objects: 100% (196/196), done.
     remote: Total 2587 (delta 50), reused 68 (delta 21), pack-reused 2370
     Receiving objects: 100% (2587/2587), 42.68MiB | 20.32 MiB/s, done.

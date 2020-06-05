@@ -8,7 +8,7 @@ Setting the PID Constants
 
 .. image:: images/pid-subsystem-1.png
 
-Make sure the Elevator PID subsystem has been created in the RobotBuiler. In the case of our elevator we use a proportional constant of 6.0 and 0 for the I and D terms. Once it's all set, generate Java/C++ code for the project using the Export menu or the Java/C++ toolbar menu.
+Make sure the Elevator PID subsystem has been created in the RobotBuilder. In the case of our elevator we use a proportional constant of 6.0 and 0 for the I and D terms. Once it's all set, generate Java/C++ code for the project using the Export menu or the Java/C++ toolbar menu.
 
 Add Constants for Elevator Preset Positions
 -------------------------------------------
