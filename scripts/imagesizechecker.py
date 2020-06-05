@@ -15,6 +15,7 @@ def verify_image_size(file, max_size, excluded_files):
         file_size = file.stat().st_size
 
         if not file_size <= max_size:
+            # TODO clean up prints
             print("ERR. FILE SIZE TOO LARGE   File Size: {}   {}".format(file_size, file.path))
             return False
 
