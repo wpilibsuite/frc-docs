@@ -8,6 +8,8 @@ This article contains instructions on building projects using a development buil
 Development Build
 -----------------
 
+Development builds are the per-commit build hosted everytime a commit is pushed to the `allwpilib <https://github.com/wpilibsuite/allwpilib/>`__ repository. These builds are then hosted on `artifactory <https://frcmaven.wpi.edu/artifactory/webapp/#/home>`__.
+
 In order to build a project using a development build, find the ``build.gradle`` file and open it. Then, add the following code below the plugin section and replace ``YEAR`` with the year of the development version.
 
 .. code-block :: text
@@ -47,7 +49,7 @@ The top of your ``build.gradle`` file should now look similar to the code below.
 Local Build
 -----------
 
-Building with a local build is very similar to building with a local build. Ensure you have built and published WPILib by following the instructions attached `here <https://github.com/wpilibsuite/allwpilib#building-wpilib>`__. Next, find the ``build.gradle`` file in your robot project and open it. Then, add the following code below the plugin section and replace ``YEAR`` with the year of the local version.
+Building with a local build is very similar to building with a development build. Ensure you have built and published WPILib by following the instructions attached `here <https://github.com/wpilibsuite/allwpilib#building-wpilib>`__. Next, find the ``build.gradle`` file in your robot project and open it. Then, add the following code below the plugin section and replace ``YEAR`` with the year of the local version.
 
 .. code-block :: text
 
