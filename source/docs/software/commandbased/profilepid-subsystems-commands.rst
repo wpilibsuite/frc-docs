@@ -83,7 +83,7 @@ The ``setGoal()`` method can be used to set the setpoint of the ``PIDSubsystem``
   .. code-tab:: c++
 
     // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
-    examplePIDSubsyste.SetGoal({5_m, 3_mps});
+    examplePIDSubsystem.SetGoal({5_m, 3_mps});
 
 enable() and disable()
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +185,7 @@ When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. enabling
 measurementSource
 ~~~~~~~~~~~~~~~~~
 
-The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Pasing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
+The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 

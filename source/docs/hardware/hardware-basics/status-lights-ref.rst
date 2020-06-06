@@ -458,7 +458,7 @@ Status LEDs During Normal Operation
 +------------------------------+----------------+--------------------------------------------+
 | LEDs Alternate               | Off/Fast Red   | Fault Detected                             |
 +------------------------------+----------------+--------------------------------------------+
-| LEDs Alternate               | Red/Orange     | Damanged Hardware                          |
+| LEDs Alternate               | Red/Orange     | Damaged Hardware                           |
 +------------------------------+----------------+--------------------------------------------+
 | LEDs Strobe towards (M-)     | Off/Red        | Forward Limit Switch or Forward Soft Limit |
 +------------------------------+----------------+--------------------------------------------+
