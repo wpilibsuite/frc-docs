@@ -84,7 +84,7 @@ The steps to getting the values and, in this program, printing them are:
 
 Program output
 --------------
-.. image:::: images/reading-array-values-published-by-networktables-2.png
+.. image:: images/reading-array-values-published-by-networktables-2.png
    :alt: Image of Riolog showing the values
 
 In this case the program is only looking at the array of areas, but in a real example all the values would more likely be used.

@@ -12,7 +12,7 @@ Using the ProfiledPIDController class
 
 .. note:: In C++, the ``ProfiledPIDController`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-.. note:: Much of the functionality of ``ProfiledPIDController`` is effectively identical to that of ``PIDController``.  Accordingly, this article will only cover features that are substantially-changed to accomodate the motion profiling functionality.  For information on standard ``PIDController`` features, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
+.. note:: Much of the functionality of ``ProfiledPIDController`` is effectively identical to that of ``PIDController``.  Accordingly, this article will only cover features that are substantially-changed to accommodate the motion profiling functionality.  For information on standard ``PIDController`` features, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
 
 Constructing a ProfiledPIDController
@@ -27,7 +27,7 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
   .. code-tab:: java
 
     // Creates a ProfiledPIDController
-    // Max velocty is 5 meters per second
+    // Max velocity is 5 meters per second
     // Max acceleration is 10 meters per second
     ProfiledPIDController controller = new ProfiledPIDController(
       kP, kI, kD,
@@ -36,7 +36,7 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
   .. code-tab:: c++
 
     // Creates a ProfiledPIDController
-    // Max velocty is 5 meters per second
+    // Max velocity is 5 meters per second
     // Max acceleration is 10 meters per second
     frc::ProfiledPIDController<units::meters> controller(
       kP, kI, kD,

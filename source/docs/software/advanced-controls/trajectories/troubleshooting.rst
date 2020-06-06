@@ -95,6 +95,8 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/advanced-controls/trajectories/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
+.. image:: images/track-width-logger.png
+
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.

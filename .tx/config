@@ -116,9 +116,9 @@ source_file = build/gettext/docs/getting-started/getting-started-frc-control-sys
 source_lang = en
 type = PO
 
-[frc-docs.docs--getting-started--getting-started-frc-control-system--updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel.po
-source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-moduleand-power-distribution-panel.pot
+[frc-docs.docs--getting-started--getting-started-frc-control-system--updating-and-configuring-pneumatics-control-module-and-power-distribution-panel]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.po
+source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.pot
 source_lang = en
 type = PO
 
@@ -644,6 +644,12 @@ source_file = build/gettext/docs/software/basic-programming/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--basic-programming--robot-code-ci]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/basic-programming/robot-code-ci.po
+source_file = build/gettext/docs/software/basic-programming/robot-code-ci.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--can-devices--can-addressing]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/can-devices/can-addressing.po
 source_file = build/gettext/docs/software/can-devices/can-addressing.pot
@@ -968,6 +974,18 @@ source_file = build/gettext/docs/software/driverstation/driver-station-best-prac
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--driverstation--driver-station-errors-warnings]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-errors-warnings.po
+source_file = build/gettext/docs/software/driverstation/driver-station-errors-warnings.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--driverstation--driver-station-labview-dashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-labview-dashboard.po
+source_file = build/gettext/docs/software/driverstation/driver-station-labview-dashboard.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--driverstation--driver-station-log-viewer]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/driver-station-log-viewer.po
 source_file = build/gettext/docs/software/driverstation/driver-station-log-viewer.pot
@@ -992,6 +1010,12 @@ source_file = build/gettext/docs/software/driverstation/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--driverstation--manually-setting-the-driver-station-to-start-custom-dashboard]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard.po
+source_file = build/gettext/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--driverstation--programming-radios-for-fms-offseason]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/programming-radios-for-fms-offseason.po
 source_file = build/gettext/docs/software/driverstation/programming-radios-for-fms-offseason.pot
@@ -1001,6 +1025,12 @@ type = PO
 [frc-docs.docs--software--driverstation--troubleshooting-dashboard-connectivity]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/troubleshooting-dashboard-connectivity.po
 source_file = build/gettext/docs/software/driverstation/troubleshooting-dashboard-connectivity.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--driverstation--using-the-labview-dashboard-with-c__-java-code]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.po
+source_file = build/gettext/docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.pot
 source_lang = en
 type = PO
 

@@ -20,7 +20,7 @@ Beware that if :math:`K_i` is too large, integral windup can occur. Following a 
 Actuator Saturation
 -------------------
 
-A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been termporarily reduced.
+A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been temporarily reduced.
 
 We'll try to explain this through a bit of math. Let's say we have a controller :math:`u = k(r - x)` where :math:`u` is the :term:`control effort`, :math:`k` is the gain, :math:`r` is the :term:`reference`, and :math:`x` is the current state. Let :math:`u_{max}` be the limit of the actuator's output which is less than the uncapped value of :math:`u` and :math:`k_{max}` be the associated maximum gain. We will now compare the capped and uncapped controllers for the same :term:`reference` and current :term:`state`.
 
@@ -29,4 +29,4 @@ We'll try to explain this through a bit of math. Let's say we have a controller 
    k_{max}(r - x) &< k(r - x) \\
    k_{max} &< k
 
-For the inequality to hold, :math:`k_{max}` must be less than the original value for :math:`k`. This reduced gain is evident in a :term:`system response` when there is a linear change in state instead of an exponetial one as it approaches the :term:`reference`. This is due to the :term:`control effort` no longer following a decaying exponential plot. Onnce the :term:`system` is closer to the :term:`reference`, the controller will stop saturating and produce realistic controller values again.
+For the inequality to hold, :math:`k_{max}` must be less than the original value for :math:`k`. This reduced gain is evident in a :term:`system response` when there is a linear change in state instead of an exponential one as it approaches the :term:`reference`. This is due to the :term:`control effort` no longer following a decaying exponential plot. Once the :term:`system` is closer to the :term:`reference`, the controller will stop saturating and produce realistic controller values again.
