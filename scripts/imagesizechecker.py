@@ -42,13 +42,15 @@ def main():
 
     args = vars(arg_parser.parse_args())
 
-    print('Beginning Valid Size Check With Size {}KB In Directory "{}"'.format(args["max-size"], args["path"]))
+    print("Running SizeCheck")
+    print("Specified Size: {}KB".format(args["max-size"]))
+    print("Scan Directory: {}".format(args["path"]))
 
     # Gets excluded files from conf.py
     exclude_file = args["exclude_file"]
     if exclude_file is not None:
         excluded_files = list(importlib.import_module(clean_module_path(exclude_file)).IMAGE_SIZE_EXCLUSIONS)
-        print('Excluding Files From File: "{}"'.format(exclude_file))
+        print("Exclusion Config: {}".format(exclude_file))
     else:
         excluded_files = list()
 
@@ -57,9 +59,9 @@ def main():
     oversized_count = iterate_image_sizes(args["path"], args["max-size"] * KILOBYTE_SIZE, excluded_files)
 
     if oversized_count == 0:
-        print("\nfile sizes valid.")
+        print("\nNo files bigger than {}KB have been found.".format(args["max-size"]))
     else:
-        print("\n{} files are too large.".format(oversized_count))
+        print("\n{} files are bigger than {}KB.".format(oversized_count, args["max-size"]))
         exit(1)
 
 
