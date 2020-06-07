@@ -6,7 +6,6 @@ WPILib Overview
 
    known-issues
    what-is-wpilib
-   top-wpilib-contributors
    vscode-basics
    wpilib-commands-vscode
    creating-robot-program
