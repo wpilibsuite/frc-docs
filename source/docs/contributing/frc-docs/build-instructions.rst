@@ -81,7 +81,7 @@ To ensure translations are updated concurrently, you must update the transifex c
 Image Size Check
 ^^^^^^^^^^^^^^^^
 
-To makes sure all images which aren't excluded are under 500KB, run the size check by running ``.\make sizecheck``. This check will fail CI if it fails.
+Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
 Building HTML
 ^^^^^^^^^^^^^

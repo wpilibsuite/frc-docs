@@ -50,7 +50,7 @@ This ensures that translations are updated concurrently by updating the transife
 
 ``.\make sizecheck`` or ``make sizecheck``
 
-This checks all image are under 500KB
+This checks all images are under 500KB
 
 ### Building HTML
 
