@@ -1,4 +1,4 @@
-Top Contributors
+Top frc-docs Contributors
 ================
 
 .. ghcontributors:: wpilibsuite/frc-docs
