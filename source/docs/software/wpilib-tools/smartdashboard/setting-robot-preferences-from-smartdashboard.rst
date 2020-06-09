@@ -28,13 +28,13 @@ Sample program to reads and writes preference values
 
     class Robot: public TimedRobot {
 
-      Preferences *prefs;
+      frc::Preferences *prefs;
 
       double armUpPosition;
       double armDownPosition;
 
       public void RobotInit() {
-        prefs = Preferences::GetInstance();
+        prefs = frc::Preferences::GetInstance();
         armUpPosition = prefs->GetDouble("ArmUpPosition", 1.0);
         armDownPosition = prefs->GetDouble("ArmDownPosition", 4.);
       }

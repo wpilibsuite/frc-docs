@@ -22,11 +22,11 @@ Minimal robot program
 
     void Robot::TeleopPeriodic() {
         float counter = 0.0;
-        SmartDashboard::PutNumber("Counter", counter++);
+        frc::SmartDashboard::PutNumber("Counter", counter++);
         Wait(0.10);
       }
 
-This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 10 times per second to verify that the connection is working.
+This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 50 times per second to verify that the connection is working. However, to minimize bandwidth usage, NetworkTables by default will throttle the updates to 10 times per second.
 
 SmartDashboard output for the sample program
 --------------------------------------------
