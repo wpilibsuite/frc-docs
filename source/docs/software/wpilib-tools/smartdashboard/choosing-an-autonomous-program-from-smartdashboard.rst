@@ -8,42 +8,105 @@ With the SmartDashboard you can simply display a widget on the screen to choose 
 Creating the SendableChooser object
 -----------------------------------
 
-.. image:: images/choosing-an-autonomous-program-from-smartdashboard/creating-sendablechooser.png
+In ``RobotContainer``, create a variable to hold a reference to a ``SendableChooser`` objectTwo or more commands can be created and stored in new variables. Using the ``SendableChooser``, one can choose between them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as options.
 
-Create a variable to hold a reference to a ``SendableChooser`` object. This example also uses a ``RobotBuilder`` variable to hold the Autonomous command.
+.. tabs::
 
-Set up the SendableChooser in the robotInit() method
-----------------------------------------------------
+  .. group-tab:: Java
 
-.. image:: images/choosing-an-autonomous-program-from-smartdashboard/setup-sendablechooser.png
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+      :language: java
+      :lines: 43-52
 
-Imagine that you have two autonomous programs to choose between and they are encapsulated in commands ``Pickup`` and ``ElevatorPickup``. To choose between them:
+  .. group-tab:: C++ (Header)
 
-1. Create a ``SendableChooser`` object and add instances of the two commands to it. There can be any number of commands, and the one added as a default (``setDefaultOption``), becomes the one that is initially selected. Notice that each command is included in an ``setDefaultOption()`` or ``addOption()`` method call on the ``SendableChooser`` instance.
-2. When the autonomous period starts the ``SendableChooser`` object is polled to get the selected command and that command is scheduled.
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
+      :language: c++
+      :lines: 41-47
+
+Set up the SendableChooser
+--------------------------
+
+Imagine that you have two autonomous programs to choose between and they are encapsulated in commands ``SimpleAuto`` and ``ComplexAuto``. To choose between them:
+
+In ``RobotContainer``, create a ``SendableChooser`` object and add instances of the two commands to it. There can be any number of commands, and the one added as a default (``setDefaultOption``), becomes the one that is initially selected. Notice that each command is included in an ``setDefaultOption()`` or ``addOption()`` method call on the ``SendableChooser`` instance.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+      :language: java
+      :lines: 74-79
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 21-26
+
+Start the autonomous command when the autonomous period starts
+--------------------------------------------------------------
+
+In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` object is polled to get the selected command and that command must be scheduled.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+      :language: java
+      :lines: 67-68,77-81
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+      :language: c++
+      :lines: 38-44
 
 Run the scheduler during the autonomous period
 ----------------------------------------------
 
-.. image:: images/choosing-an-autonomous-program-from-smartdashboard/run-scheduler.png
+In ``Robot.java``, this will run the scheduler every driver station update period (about every 20ms) and cause the selected autonomous command to run.
 
-RobotBuilder will generate code automatically that runs the scheduler every driver station update period (about every 20ms). This will cause the selected autonomous command to run.
+.. note:: Running the scheduler can occur in the ``autonomousPeriodic()`` function or ``robotPeriodic()``, both will function similarly in autonomous mode.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+      :language: java
+      :lines: 44,49-50
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+      :language: c++
+      :lines: 23
+
+Cancel the autonomous command when teleop begins
+------------------------------------------------
+
+In ``Robot.java``, when the teleop period begins, the autonomous command will be canceled.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+      :language: java
+      :lines: 91-99
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+      :language: c++
+      :lines: 48-57
 
 SmartDashboard Display
 ----------------------
 
 .. image:: images/choosing-an-autonomous-program-from-smartdashboard/smartdashboard-display.png
 
-When the SmartDashboard is run, the choices from the SendableChooser are automatically displayed. You can simply pick an option before the autonomous period begins and the corresponding command will run.
-
-Creating a SendableChooser in C++
----------------------------------
-
-.. image:: images/choosing-an-autonomous-program-from-smartdashboard/sendablechooser-c++.png
-
-This is an example of creating a ``SendableChooser`` object and using it to select between a Defensive and Offensive autonomous command to run when the autonomous period of the match starts. Just as in the Java example:
-
-1. Create variables to hold the ``autonomousCommand`` pointer and the ``SendableChooser`` pointer.
-2. The ``SendableChooser`` is created and initialized in the ``RobotInit()`` method.
-3. In the ``AutonomousInit()`` method just before the Autonomous code starts running, the chosen command is retrieved from the SmartDashboard and scheduled.
-4. In the ``AutonomousPeriodic()`` method, the scheduler is repeatedly run.
+When the SmartDashboard is run, the choices from the ``SendableChooser`` are automatically displayed. You can simply pick an option before the autonomous period begins and the corresponding command will run.
