@@ -44,8 +44,12 @@ If the display of the value is not appearing, verify that the team number is cor
 Using OutlineViewer to verify that the program is working
 ---------------------------------------------------------
 
+You can verify that the robot program is generating SmartDashboard values by using the OutlineViewer program. This is a java program, ``OutlineViewer.jar``, that is located in ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows).
+
+OutlineViewer is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/macOS/Linux installation guides <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`. In Visual Studio Code, press **Ctrl + Shift + P** and type WPILib or click the WPILib logo in the top right to launch the WPILib Command Palette and select **Start Tool**, then select **OutlineViewer**.
+
+In the host box, enter your roboRIO hostname (``roboRIO-####.local`` where ``####`` is your team number with no leading zeroes). Then, click ``Start Client``.
+
+Look at the second row in the table, the value ``SmartDashboard/Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``41.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
+
 .. image:: images/verifying-smartdashboard-is-working/outlineviewer.png
-
-You can verify that the robot program is generating SmartDashboard values by using the OutlineViewer program. This is a java program, OutlineViewer.jar that is located in the ``USERHOME\wpilib\tools`` folder. It is run with the command: ``java -jar OutlineViewer-with-dependencies.jar``. In the host box, enter your roboRIO hostname (``roboRIO-####.local`` where ``####`` is your team number with no leading zeroes). Then click ``Start Client``.
-
-Look at the second row in the table, the value ``SmartDashboard/Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``41.0`` in this case). If you don't see this variable in the OutlineViewer then you should look for something wrong with the robot program or the network configuration.
