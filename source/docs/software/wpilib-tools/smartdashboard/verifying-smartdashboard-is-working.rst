@@ -10,7 +10,7 @@ Minimal robot program
 
     public class Robot extends TimedRobot {
       double counter = 0.0;
-      
+
       public void teleopPeriodic() {
         SmartDashboard.putNumber("Counter", counter++);
       }
@@ -39,7 +39,7 @@ Verifying the IP address in SmartDashboard
 
 .. image:: images/verifying-smartdashboard-is-working/verifying-ip-address.png
 
-If the display of the value is not appearing, verify that the team number is correctly set as shown in this picture. You get to the preferences dialog by selecting ``File``, then ``Preferences``.
+If the display of the value is not appearing, verify that the team number is correctly set as shown in this picture. The preferences dialog can be viewed by selecting ``File``, then ``Preferences``.
 
 Using OutlineViewer to verify that the program is working
 ---------------------------------------------------------
