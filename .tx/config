@@ -14,6 +14,18 @@ source_file = build/gettext/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--contributing--allwpilib--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/allwpilib/index.po
+source_file = build/gettext/docs/contributing/allwpilib/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--allwpilib--top-contributors]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/allwpilib/top-contributors.po
+source_file = build/gettext/docs/contributing/allwpilib/top-contributors.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--contributing--frc-docs--build-instructions]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/frc-docs/build-instructions.po
 source_file = build/gettext/docs/contributing/frc-docs/build-instructions.pot
