@@ -1,8 +1,6 @@
 RobotBuilder Created Code
 =========================
 
-.. todo:: Add code tabs for C++
-
 The Layout of a RobotBuilder Generated Project
 ----------------------------------------------
 
