@@ -30,16 +30,15 @@ WPILib
 
 There are many changes and additions to the main WPILib library for 2020. Most notably, there is a new version of the command-based framework with several major enhancements, a new (synchronous) PIDController, a GUI simulator, and kinematics classes have been added for closed loop driving. The full change log can be read below.
 
-.. todo:: Add links to the specific usage guides for LinearDigitalFilter, and PIDController.
-
 - The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/wpilibsuite/design-docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java).
 - The command-based frameworks are now separate vendor libraries, rather then built into WPILib itself.
 
-- LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value
+- LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value.
 
   - Takes a double in the ``Calculate()`` method instead of a ``PIDSource`` in the constructor
   - ``PIDGet()`` was replaced with ``Calculate()``
   - Both of these changes make it easy to compose the LinearFilter class with the new PIDController class
+  - More details about the new LinearFilter can be found in :ref:`this article <docs/software/advanced-controls/filters/linear-filter:Linear Filters>`
 
 - PIDController has been rewritten; the old PIDController along with PIDSource and PIDOutput have been deprecated. The new version of PIDController is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java) while the deprecated version remains in the old namespace and package.
 
@@ -48,6 +47,7 @@ There are many changes and additions to the main WPILib library for 2020. Most n
   - ``PIDSource`` is no longer used.  Instead, pass the sensor value directly to ``Calculate()``.
   - ``PIDOutput`` is no longer used.  Instead, call ``Set()`` with the output of ``Calculate()``.
   - Percent tolerance has been removed. Absolute tolerance is provided via ``SetTolerance()``.
+  - More details about the new PIDController can be found in :ref:`this article <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`.
 
 - Added kinematics classes for Swerve, Mecanum, and DifferentialDrive. These classes can be used to implement closed loop driving of these drive types.
 - Added odometry classes for Swerve, Mecanum, and DifferentialDrive. These are needed for closed loop feedback control on global pose (as opposed to just PID on the two drivetrain sides, which can accrue error since there are multiple ending positions a robot can be in for a given set of encoder measurements)
