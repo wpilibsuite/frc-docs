@@ -1262,6 +1262,114 @@ source_file = build/gettext/docs/software/vision-processing/index.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--vision-processing--axis-camera--axis-m1013-camera-compatibility]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/axis-m1013-camera-compatibility.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/axis-m1013-camera-compatibility.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--axis-camera--calibration]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/calibration.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/calibration.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--axis-camera--camera-settings]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/camera-settings.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/camera-settings.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--axis-camera--configuring-an-axis-camera]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/configuring-an-axis-camera.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/configuring-an-axis-camera.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--axis-camera--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/index.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--axis-camera--using-the-axis-camera-at-single-network-events]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.po
+source_file = build/gettext/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--basic-vision-example]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/basic-vision-example.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/basic-vision-example.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--image-thresholding]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/image-thresholding.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/image-thresholding.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/index.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--installing-the-image-to-your-microsd-card]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/installing-the-image-to-your-microsd-card.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/installing-the-image-to-your-microsd-card.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--morphological-operations]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/morphological-operations.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/morphological-operations.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--the-raspberry-pi-frc-console]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/the-raspberry-pi-frc-console.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/the-raspberry-pi-frc-console.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--using-a-coprocessor-for-vision-processing]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--using-cameraserver]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/using-cameraserver.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/using-cameraserver.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--using-the-raspberry-pi-for-frc]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/using-the-raspberry-pi-for-frc.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/using-the-raspberry-pi-for-frc.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--walkthrough-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/walkthrough-video.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/walkthrough-video.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--what-you-need-to-get-the-pi-image-running]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/what-you-need-to-get-the-pi-image-running.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/what-you-need-to-get-the-pi-image-running.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--vision-processing--frcvision--working-with-contours]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/frcvision/working-with-contours.po
+source_file = build/gettext/docs/software/vision-processing/frcvision/working-with-contours.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--vision-processing--grip--generating-code-from-grip]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/grip/generating-code-from-grip.po
 source_file = build/gettext/docs/software/vision-processing/grip/generating-code-from-grip.pot
@@ -1298,33 +1406,9 @@ source_file = build/gettext/docs/software/vision-processing/introduction/2017-vi
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--vision-processing--introduction--axis-m1013-camera-compatibility]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/axis-m1013-camera-compatibility.po
-source_file = build/gettext/docs/software/vision-processing/introduction/axis-m1013-camera-compatibility.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--introduction--calibration]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/calibration.po
-source_file = build/gettext/docs/software/vision-processing/introduction/calibration.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--introduction--camera-settings]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/camera-settings.po
-source_file = build/gettext/docs/software/vision-processing/introduction/camera-settings.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--vision-processing--introduction--cameraserver-class]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/cameraserver-class.po
 source_file = build/gettext/docs/software/vision-processing/introduction/cameraserver-class.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--introduction--configuring-an-axis-camera]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/configuring-an-axis-camera.po
-source_file = build/gettext/docs/software/vision-processing/introduction/configuring-an-axis-camera.pot
 source_lang = en
 type = PO
 
@@ -1352,69 +1436,27 @@ source_file = build/gettext/docs/software/vision-processing/introduction/target-
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--vision-processing--introduction--using-multiple-cameras]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/using-multiple-cameras.po
-source_file = build/gettext/docs/software/vision-processing/introduction/using-multiple-cameras.pot
+[frc-docs.docs--software--vision-processing--introduction--what-is-vision]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/what-is-vision.po
+source_file = build/gettext/docs/software/vision-processing/introduction/what-is-vision.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--vision-processing--introduction--using-the-axis-camera-at-single-network-events]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.po
-source_file = build/gettext/docs/software/vision-processing/introduction/using-the-axis-camera-at-single-network-events.pot
+[frc-docs.docs--software--vision-processing--roborio--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/roborio/index.po
+source_file = build/gettext/docs/software/vision-processing/roborio/index.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--vision-processing--introduction--using-the-cameraserver-on-the-roborio]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/using-the-cameraserver-on-the-roborio.po
-source_file = build/gettext/docs/software/vision-processing/introduction/using-the-cameraserver-on-the-roborio.pot
+[frc-docs.docs--software--vision-processing--roborio--using-multiple-cameras]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/roborio/using-multiple-cameras.po
+source_file = build/gettext/docs/software/vision-processing/roborio/using-multiple-cameras.pot
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--vision-processing--introduction--using-the-microsoft-lifecam]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.po
-source_file = build/gettext/docs/software/vision-processing/introduction/using-the-microsoft-lifecam.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/index.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--installing-the-image-to-your-microsd-card]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/installing-the-image-to-your-microsd-card.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--the-raspberry-pi-frc-console]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/the-raspberry-pi-frc-console.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--using-a-coprocessor-for-vision-processing]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/using-a-coprocessor-for-vision-processing.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/using-a-coprocessor-for-vision-processing.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--using-the-raspberry-pi-for-frc]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/using-the-raspberry-pi-for-frc.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/using-the-raspberry-pi-for-frc.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--walkthrough-video]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/walkthrough-video.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/walkthrough-video.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--vision-processing--raspberry-pi--what-you-need-to-get-the-pi-image-running]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.po
-source_file = build/gettext/docs/software/vision-processing/raspberry-pi/what-you-need-to-get-the-pi-image-running.pot
+[frc-docs.docs--software--vision-processing--roborio--using-the-cameraserver-on-the-roborio]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio.po
+source_file = build/gettext/docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio.pot
 source_lang = en
 type = PO
 

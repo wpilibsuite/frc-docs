@@ -1,5 +1,5 @@
-Vision with Raspberry Pi
-========================
+Vision with FRCVision
+=====================
 
 .. toctree::
    :maxdepth: 1
@@ -10,3 +10,8 @@ Vision with Raspberry Pi
    what-you-need-to-get-the-pi-image-running
    installing-the-image-to-your-microsd-card
    the-raspberry-pi-frc-console
+   using-cameraserver
+   image-thresholding
+   morphological-operations
+   working-with-contours
+   basic-vision-example
