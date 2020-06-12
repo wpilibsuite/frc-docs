@@ -78,7 +78,7 @@ master_doc = "index"
 
 IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
-    "docs/software/vision-processing/raspberry-pi/diagrams/vision-code-on-a-coprocessor.drawio.svg",
+    "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/getting-started/getting-started-frc-control-system/images/frc-control-system-layout.svg"
 ]
