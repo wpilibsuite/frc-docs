@@ -46,6 +46,12 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 This ensures that translations are updated concurrently by updating the transifex configuration file.
 
+### Image Size Check
+
+``.\make sizecheck`` or ``make sizecheck``
+
+This checks all images are under 500KB
+
 ### Building HTML
 
 ``.\make html`` or ``make html``
