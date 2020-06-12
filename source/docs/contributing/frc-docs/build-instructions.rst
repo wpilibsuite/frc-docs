@@ -78,6 +78,11 @@ Translate Check
 
 To ensure translations are updated concurrently, you must update the transifex configuration file. This can be done by running the ``.\make translate`` command. This **must** be done to to pass the buildbot.
 
+Image Size Check
+^^^^^^^^^^^^^^^^
+
+Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
+
 Building HTML
 ^^^^^^^^^^^^^
 
