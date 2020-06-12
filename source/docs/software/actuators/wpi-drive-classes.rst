@@ -15,7 +15,7 @@ These drive bases typically have two or more in-line traction or omni  wheels pe
 
 Mecanum Drive
 ^^^^^^^^^^^^^
-.. image:: images/am-14u4-6in-mecanum-upgrade.jpg
+.. image:: images/am-14u4-6in-mecanum-upgrade.png
    :width: 600
 
 Mecanum drive is a method of driving using specially designed wheels that allow the robot to drive in any direction without changing the orientation of the robot. A robot with a conventional drivetrain (all wheels pointing in the same direction) must turn in the direction it needs to drive. A mecanum robot can move in any direction without first turning and is called a holonomic drive. The wheels (shown on this robot) have rollers that cause the forces from driving to be applied at a 45 degree angle rather than straight forward as in the case of a conventional drive.
