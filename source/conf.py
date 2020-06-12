@@ -32,7 +32,6 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
