@@ -2,7 +2,7 @@
 ![Build Status](https://dev.azure.com/wpilib/Documentation/_apis/build/status/wpilibsuite.frc-docs?branchName=master)
 
 # frc-docs
-Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/). 
+Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/).
 
 The website is available under the following domains, it is preferred to use the WPILib domain URL:
 - https://docs.wpilib.org/en/latest/
@@ -21,12 +21,11 @@ Ensure the repository is cloned with ``git clone --depth 1 https://github.com/wp
 - **Windows**
   - [Python 3.6 or greater](https://www.python.org/downloads/)
   - [MiKTeX](https://miktex.org/download)
-  - [GraphViz](https://graphviz.gitlab.io/_pages/Download/Download_windows.html)
   - [Perl](http://strawberryperl.com/)
 
 - **Linux (Ubuntu)**
   - ``sudo apt-get install -y python3``
-  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz librsvg2-bin``
+  - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin``
 
 Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
 
