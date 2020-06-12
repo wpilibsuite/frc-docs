@@ -1,7 +1,7 @@
 Translations
 ============
 
-frc-docs supports translations using the web-based `Transifex <https://www.transifex.com>`__ utility. frc-docs is currently testing Spanish Mexico (es_MX) translation support. We hope to support Chinese (zh_CN), French Canada (fr_CA), Hebrew Israel (he_IL), and Turkish (tr_TR) in the future. Translators that are fluent in *both* English and one of the specified languages would be greatly appreciated to contribute to the translations.
+frc-docs supports translations using the web-based `Transifex <https://www.transifex.com>`__ utility. frc-docs is currently testing Spanish Mexico (es_MX) and French Canada (fr_CA) translation support. We hope to support Chinese (zh_CN), Hebrew Israel (he_IL), and Turkish (tr_TR) in the future. Translators that are fluent in *both* English and one of the specified languages would be greatly appreciated to contribute to the translations.
 
 Workflow
 --------
