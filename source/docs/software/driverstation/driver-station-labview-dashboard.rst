@@ -26,7 +26,7 @@ Camera Image and Controls
 
 .. image:: images/driver-station-labview-dashboard/camera-image-and-controls.png
 
-The left pane is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
+The left pane is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/axis-camera/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
 
 1. Camera Image Display
 2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
@@ -65,7 +65,7 @@ Camera
 
 .. image:: images/driver-station-labview-dashboard/camera.png
 
-The camera tab is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/introduction/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
+The camera tab is used to display a video feed from an Axis camera or USB camera located on the robot. For instructions on setting up the Axis Camera to work with this display :ref:`see here <docs/software/vision-processing/axis-camera/configuring-an-axis-camera:Configuring an Axis Camera>`. There are also some controls and indicators related to the camera below the tab area:
 
 1. Camera Image Display
 2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera (Axis camera). Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.

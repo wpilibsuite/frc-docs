@@ -15,7 +15,6 @@ Windows
 
 - `Python 3.6 or greater <https://www.python.org/downloads/>`__
 - `MiKTeX <https://miktex.org/download>`__
-- `GraphViz <https://graphviz.gitlab.io/_pages/Download/Download_windows.html>`__
 - `Perl <http://strawberryperl.com/>`__
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
@@ -23,10 +22,6 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 .. image:: images/build-instructions-1.png
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
-
-Ensure that the GraphViz ``bin`` folder is correctly linked in your `Path <https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho/44272417#44272417>`__. By default, this folder is located at ``C:\Program Files (x86)\Graphviz2.38\bin``.
-
-.. image:: images/build-instructions-2.png
 
 Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
 
@@ -39,7 +34,7 @@ Linux (Ubuntu)
     $ sudo apt install python3 python3-pip
     $ python3 -m pip install -U pip setuptools wheel
     $ python3 -m pip install -r source/requirements.txt
-    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng graphviz librsvg2-bin
+    $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
 
 Building
 --------
@@ -77,6 +72,11 @@ Translate Check
 ^^^^^^^^^^^^^^^
 
 To ensure translations are updated concurrently, you must update the transifex configuration file. This can be done by running the ``.\make translate`` command. This **must** be done to to pass the buildbot.
+
+Image Size Check
+^^^^^^^^^^^^^^^^
+
+Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
 Building HTML
 ^^^^^^^^^^^^^

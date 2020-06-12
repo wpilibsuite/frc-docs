@@ -32,7 +32,6 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinx.ext.graphviz',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
@@ -74,6 +73,15 @@ exclude_patterns = ['.png', '.jpg', 'docs/beta/*']
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
+
+# Specify files to ignore during SizeCheck
+
+IMAGE_SIZE_EXCLUSIONS = [
+    "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
+    "docs/software/vision-processing/raspberry-pi/diagrams/vision-code-on-a-coprocessor.drawio.svg",
+    "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
+    "docs/getting-started/getting-started-frc-control-system/images/frc-control-system-layout.svg"
+]
 
 
 # -- Options for HTML output -------------------------------------------------

@@ -131,7 +131,7 @@ We often see problems with the Drivers Station. You should:
 Handy Tools
 -----------
 
-.. image:: images/preemptive-troubleshooting/tools.svg
+.. image:: images/preemptive-troubleshooting/tools.png
   :width: 500
 
 There never seems to be enough light inside robots, at least not enough to scrutinize the critical connection points, so consider using a handheld LED flashlight to inspect the connections on your robot. They're available from home depot or any hardware/automotive store.
