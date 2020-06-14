@@ -4,35 +4,36 @@ Transformations
 Translation2d
 -------------
 
-Transformations for :code:`Translation2d` are similar to transformations or operations that can be performed on a vector or point.
+Operations on a ``Translation2d`` perform operations to the vector represented by the ``Translation2d``.
 
-- :code:`plus(Translation2d other)`: Translates this Translation2d along the vector represented by :code:`other`. Equivalent to vector addition.
-- :code:`minus(Translation2d other)`: Translates this Translation2d along the vector represented by :code:`other` multiplied by a scalar of -1. Equivalent to vector subtraction.
-- :code:`unaryMinus()`: Rotates this Translation2d by 180 degrees.
-- :code:`rotateBy(Rotation2d other)`: Rotates this point about the origin by the rotation represented by :code:`other` counterclockwise.
-- :code:`times(double scalar)`: Multiplies the vector represented by this Translation2d by a scalar.
-- :code:`div(double scalar)`: Divides the vector represented by this Translation2d by a scalar.
+- Addition: Addition between two ``Translation2d`` a and b can be performed using ``plus`` in Java, or the ``+`` operator in C++. Addition adds the two vectors.
+- Subtraction: Subtraction between two ``Translation2d`` can be performed using ``minus`` in Java, or the binary ``-`` operator in C++. Subtraction subtracts the two vectors.
+- Multiplication: Multiplication of a ``Translation2d`` and a scalar can be performed using ``times`` in Java, or the ``*`` operator in C++. This multiplies the vector by the scalar.
+- Division: Division of a ``Translation2d`` and a scalar can be performed using ``div`` in Java, or the ``/`` operator in C++. This divides the vector by the scalar.
+- Rotation: Rotation of a ``Translation2d`` by a rotation :math:`\theta` can be performed by using ``rotateBy``. This is equivalent to multiplying the vector by the matrix :math:`\begin{bmatrix} cos\theta & -sin\theta \\ sin\theta & cos\theta \end{bmatrix}`
+- Additionally, you can rotate a ``Translation2d`` by 180 degrees by using ``unaryMinus`` in Java, or the unary ``-`` operator in C++.
 
 Rotation2d
 ----------
 
 Transformations for :code:`Rotation2d` are just arithmetic operations on the angle measure represented by the :code:`Rotation2d`.
 
-- :code:`plus(Rotation2d other)`: Adds the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
-- :code:`minus(Rotation2d other)`: Subtracts the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
-- :code:`unaryMinus()`: Multiplies the rotation component by a scalar of -1.
-- :code:`times(double scalar)`: Multiplies the rotation component by a scalar.
-- :code:`div(double scalar)`: Divides the rotation component by a scalar.
+- ``plus`` (Java) or ``+`` (C++): Adds the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
+- ``minus`` (Java) or binary ``-`` (C++): Subtracts the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
+- ``unaryMinus`` (Java) or unary ``-`` (C++): Multiplies the rotation component by a scalar of -1.
+- ``times`` (Java) or ``*`` (C++) : Multiplies the rotation component by a scalar.
+- ``div`` (Java) or ``/``: Divides the rotation component by a scalar.
 
 Transform2d and Twist2d
 -----------------------
 
-WPILib provides 2 classes to represent transformations to a pose, :code:`Translation2d` and :code:`Twist2d`.
+WPILib provides 2 classes to represent transformations to a pose, :code:`Transform2d` and :code:`Twist2d`. ``Pose2d``, ``Transform2d``, and ``Twist2d`` can all represent a vector :math:`\begin{bmatrix} x \\ y \\ \theta \end{bmatrix}`. 
 
-:code:`Translation2d` represents a **relative** transformation. It has an translation and a rotation component. Transforming a :code:`Pose2d` by a :code:`Translation2d` rotates the translation component by the rotation of the pose, and then adds the rotated translation component and the rotation component to the pose.
+:code:`Transform2d` represents a **relative** transformation. It has an translation and a rotation component. Transforming a :code:`Pose2d` by a :code:`Transform2d` rotates the translation component of the transform by the rotation of the pose, and then adds the rotated translation component and the rotation component to the pose. In other words, ``Pose2d.plus(Transform2d)`` returns :math:`\begin{bmatrix} x_p \\ y_p \\ \theta_p \end{bmatrix}+\begin{bmatrix} cos\theta_p & -sin\theta_p & 0 \\ sin\theta_p & cos\theta_p & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_t \\ y_t \\ \theta_t \end{bmatrix}`
 
-:code:`Twist2d` represents a change in distance along an arc. Usually, this class is used to represent the movement of a drivetrain, where the x component is the forward distance driven, the y component is the distance driven to the side (left positive), and the θ component is the distance turned.
+:code:`Twist2d` represents a change in distance along an arc. Usually, this class is used to represent the movement of a drivetrain, where the x component is the forward distance driven, the y component is the distance driven to the side (left positive), and the :math:`\theta` component is the distance turned. The underlying math behind finding the pose exponential (new pose after moving the pose forward along the curvature of the twist) can be found `here <https://file.tavsys.net/control/controls-engineering-in-frc.pdf#%5B%7B%22num%22%3A55%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C85.04%2C237.29%2Cnull%5D>`_.
 
 .. note:: For non-holonomic drivetrains, the y component of a :code:`Twist2d` should always be 0.
 
-Both classes can be used to transform a Pose2d. Twist2d is used in WPILib's odometry classes, while Transform2d can be used to estimate the robot's global position from vision data.
+Both classes can be used to estimate robot location. Twist2d is used in WPILib's odometry classes to update the robot's pose based on movement, while Transform2d can be used to estimate the robot's global position from vision data.
+
