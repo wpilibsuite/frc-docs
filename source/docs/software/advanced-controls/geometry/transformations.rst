@@ -16,10 +16,10 @@ Operations on a ``Translation2d`` perform operations to the vector represented b
 Rotation2d
 ----------
 
-Transformations for :code:`Rotation2d` are just arithmetic operations on the angle measure represented by the :code:`Rotation2d`.
+Transformations for ``Rotation2d`` are just arithmetic operations on the angle measure represented by the ``Rotation2d``.
 
-- ``plus`` (Java) or ``+`` (C++): Adds the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
-- ``minus`` (Java) or binary ``-`` (C++): Subtracts the rotation component of :code:`other` to this :code:`Rotation2d`'s rotation component
+- ``plus`` (Java) or ``+`` (C++): Adds the rotation component of ``other`` to this ``Rotation2d``'s rotation component
+- ``minus`` (Java) or binary ``-`` (C++): Subtracts the rotation component of ``other`` to this ``Rotation2d``'s rotation component
 - ``unaryMinus`` (Java) or unary ``-`` (C++): Multiplies the rotation component by a scalar of -1.
 - ``times`` (Java) or ``*`` (C++) : Multiplies the rotation component by a scalar.
 - ``div`` (Java) or ``/``: Divides the rotation component by a scalar.
@@ -27,13 +27,12 @@ Transformations for :code:`Rotation2d` are just arithmetic operations on the ang
 Transform2d and Twist2d
 -----------------------
 
-WPILib provides 2 classes to represent transformations to a pose, :code:`Transform2d` and :code:`Twist2d`. ``Pose2d``, ``Transform2d``, and ``Twist2d`` can all represent a vector :math:`\begin{bmatrix} x \\ y \\ \theta \end{bmatrix}`. 
+WPILib provides 2 classes that can transform to a pose, ``Transform2d`` and ``Twist2d``. ``Pose2d``, ``Transform2d``, and ``Twist2d`` can all represent a vector :math:`\begin{bmatrix} x \\ y \\ \theta \end{bmatrix}`.
 
-:code:`Transform2d` represents a **relative** transformation. It has an translation and a rotation component. Transforming a :code:`Pose2d` by a :code:`Transform2d` rotates the translation component of the transform by the rotation of the pose, and then adds the rotated translation component and the rotation component to the pose. In other words, ``Pose2d.plus(Transform2d)`` returns :math:`\begin{bmatrix} x_p \\ y_p \\ \theta_p \end{bmatrix}+\begin{bmatrix} cos\theta_p & -sin\theta_p & 0 \\ sin\theta_p & cos\theta_p & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_t \\ y_t \\ \theta_t \end{bmatrix}`
+``Transform2d`` represents a **relative** transformation. It has an translation and a rotation component. Transforming a ``Pose2d`` by a ``Transform2d`` rotates the translation component of the transform by the rotation of the pose, and then adds the rotated translation component and the rotation component to the pose. In other words, ``Pose2d.plus(Transform2d)`` returns :math:`\begin{bmatrix} x_p \\ y_p \\ \theta_p \end{bmatrix}+\begin{bmatrix} cos\theta_p & -sin\theta_p & 0 \\ sin\theta_p & cos\theta_p & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_t \\ y_t \\ \theta_t \end{bmatrix}`
 
-:code:`Twist2d` represents a change in distance along an arc. Usually, this class is used to represent the movement of a drivetrain, where the x component is the forward distance driven, the y component is the distance driven to the side (left positive), and the :math:`\theta` component is the distance turned. The underlying math behind finding the pose exponential (new pose after moving the pose forward along the curvature of the twist) can be found `here <https://file.tavsys.net/control/controls-engineering-in-frc.pdf#%5B%7B%22num%22%3A55%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C85.04%2C237.29%2Cnull%5D>`_.
+``Twist2d`` represents a change in distance along an arc. Usually, this class is used to represent the movement of a drivetrain, where the x component is the forward distance driven, the y component is the distance driven to the side (left positive), and the :math:`\theta` component is the distance turned. The underlying math behind finding the pose exponential (new pose after moving the pose forward along the curvature of the twist) can be found `here <https://file.tavsys.net/control/controls-engineering-in-frc.pdf#%5B%7B%22num%22%3A55%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C85.04%2C237.29%2Cnull%5D>`_.
 
-.. note:: For non-holonomic drivetrains, the y component of a :code:`Twist2d` should always be 0.
+.. note:: For non-holonomic drivetrains, the y component of a ``Twist2d`` should always be 0.
 
 Both classes can be used to estimate robot location. Twist2d is used in WPILib's odometry classes to update the robot's pose based on movement, while Transform2d can be used to estimate the robot's global position from vision data.
-

@@ -19,6 +19,6 @@ Robot Coordinate System
 
 The robot coordinate system (or local coordinate system) is a relative coordinate system where the robot is the origin. The direction the robot is facing is the positive x axis, and the positive y axis is perpendicular, following the right hand rule. Positive :math:`theta` is counter-clockwise.
 
-.. note:: WPILib's :code:`Gyro` class is clockwise-positive, so you have to invert the reading in order to get the rotation with either coordinate system.
+.. note:: WPILib's ``Gyro`` class is clockwise-positive, so you have to invert the reading in order to get the rotation with either coordinate system.
 
 .. image:: diagrams/coordinate-systems-2.drawio.svg
