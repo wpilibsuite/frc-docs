@@ -464,6 +464,30 @@ source_file = build/gettext/docs/software/advanced-controls/filters/slew-rate-li
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--geometry--coordinate-systems]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/geometry/coordinate-systems.po
+source_file = build/gettext/docs/software/advanced-controls/geometry/coordinate-systems.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--geometry--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/geometry/index.po
+source_file = build/gettext/docs/software/advanced-controls/geometry/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--geometry--pose]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/geometry/pose.po
+source_file = build/gettext/docs/software/advanced-controls/geometry/pose.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--geometry--transformations]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/geometry/transformations.po
+source_file = build/gettext/docs/software/advanced-controls/geometry/transformations.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--advanced-controls--introduction--control-system-basics]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/control-system-basics.po
 source_file = build/gettext/docs/software/advanced-controls/introduction/control-system-basics.pot

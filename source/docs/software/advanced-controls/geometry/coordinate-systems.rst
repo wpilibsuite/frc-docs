@@ -12,7 +12,7 @@ The field coordinate system (or global coordinate system) is an absolute coordin
 
 Below is an example of a field coordinate system overlayed on the 2020 FRC field.
 
-.. image:: images/coordinate-systems-1.png
+.. image:: images/coordinate-systems-1.jpg
 
 Robot Coordinate System
 -----------------------
