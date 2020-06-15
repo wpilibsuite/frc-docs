@@ -212,7 +212,7 @@ RobotMap - Generation of Actuator and Sensor Objects
             public class RobotMap {
                 public static Jaguar DRIVE_TRAIN_LEFT_MOTOR;    // (1)
                 public static Jaguar DRIVE_TRAIN_RIGHT_MOTOR;
-                public static RobotDrive DRIVE_TRAIN_ROBOT_DRIVE;
+                public static DifferentialDrive DRIVE_TRAIN_DIFFERENTIAL_DRIVE;
                 public static Ultrasonic DRIVE_TRAIN_ULTRASONIC;
                 public static Victor ELEVATOR_MOTOR;
                 public static AnalogChannel ELEVATOR_POTENTIOMETER;
@@ -227,12 +227,12 @@ RobotMap - Generation of Actuator and Sensor Objects
                     DRIVE_TRAIN_RIGHT_MOTOR = new Jaguar(1, 2);    // (2)
                     LiveWindow.addActuator("Drive Train ", "Right Motor", DRIVE_TRAIN_RIGHT_MOTOR);
 
-                    DRIVE_TRAIN_ROBOT_DRIVE = new RobotDrive(DRIVE_TRAIN_LEFT_MOTOR, DRIVE_TRAIN_RIGHT_MOTOR);
+                    DRIVE_TRAIN_ROBOT_DRIVE = new DifferentialDrive(DRIVE_TRAIN_LEFT_MOTOR, DRIVE_TRAIN_RIGHT_MOTOR);
 
-                    DRIVE_TRAIN_ROBOT_DRIVE.setSafetyEnabled(false);    // (3)
-                    DRIVE_TRAIN_ROBOT_DRIVE.setExpiration(0.1);
-                    DRIVE_TRAIN_ROBOT_DRIVE.setSensitivity(0.5);
-                    DRIVE_TRAIN_ROBOT_DRIVE.setMaxOutput(1.0);
+                    DRIVE_TRAIN_DIFFERENTIAL_DRIVE.setSafetyEnabled(false);    // (3)
+                    DRIVE_TRAIN_DIFFERENTIAL_DRIVE.setExpiration(0.1);
+                    DRIVE_TRAIN_DIFFERENTIAL_DRIVE.setSensitivity(0.5);
+                    DRIVE_TRAIN_DIFFERENTIAL_DRIVE.setMaxOutput(1.0);
 
                     DRIVE_TRAIN_ULTRASONIC = new Ultrasonic(1, 3);
 
