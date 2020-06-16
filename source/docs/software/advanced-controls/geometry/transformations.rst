@@ -10,7 +10,7 @@ Operations on a ``Translation2d`` perform operations to the vector represented b
 - Subtraction: Subtraction between two ``Translation2d`` can be performed using ``minus`` in Java, or the binary ``-`` operator in C++. Subtraction subtracts the two vectors.
 - Multiplication: Multiplication of a ``Translation2d`` and a scalar can be performed using ``times`` in Java, or the ``*`` operator in C++. This multiplies the vector by the scalar.
 - Division: Division of a ``Translation2d`` and a scalar can be performed using ``div`` in Java, or the ``/`` operator in C++. This divides the vector by the scalar.
-- Rotation: Rotation of a ``Translation2d`` by a rotation :math:`\theta` can be performed by using ``rotateBy``. This is equivalent to multiplying the vector by the matrix :math:`\begin{bmatrix} cos\theta & -sin\theta \\ sin\theta & cos\theta \end{bmatrix}`
+- Rotation: Rotation of a ``Translation2d`` by a counter-clockwise rotation :math:`\theta` about the origin can be performed by using ``rotateBy``. This is equivalent to multiplying the vector by the matrix :math:`\begin{bmatrix} cos\theta & -sin\theta \\ sin\theta & cos\theta \end{bmatrix}`
 - Additionally, you can rotate a ``Translation2d`` by 180 degrees by using ``unaryMinus`` in Java, or the unary ``-`` operator in C++.
 
 Rotation2d
