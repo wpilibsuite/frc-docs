@@ -6,7 +6,7 @@ In FRC, there are two main coordinate systems that we use for representing objec
 Field Coordinate System
 -----------------------
 
-The field coordinate system (or global coordinate system) is an absolute coordinate system where a point on the field is designated as the origin. Positive :math:`theta` is in the counter-clockwise direction, and the positive x-axis points away your alliance's driver station wall, and the positive y-axis is perpendicular and to the left of the positive x-axis.
+The field coordinate system (or global coordinate system) is an absolute coordinate system where a point on the field is designated as the origin. Positive :math:`theta` is in the counter-clockwise direction, and the positive x-axis points away from your alliance's driver station wall, and the positive y-axis is perpendicular and to the left of the positive x-axis.
 
 .. image:: diagrams/coordinate-systems-1.drawio.svg
 
