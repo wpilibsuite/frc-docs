@@ -10,7 +10,7 @@ The field coordinate system (or global coordinate system) is an absolute coordin
 
 .. image:: diagrams/coordinate-systems-1.drawio.svg
 
-Below is an example of a field coordinate system overlayed on the 2020 FRC field.
+Below is an example of a field coordinate system overlayed on the 2020 FRC field. The red axes shown are for the red alliance, and the blue axes shown are for the blue alliance.
 
 .. image:: images/coordinate-systems-1.jpg
 
