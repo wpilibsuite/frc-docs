@@ -78,6 +78,11 @@ Image Size Check
 
 Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
+Image Usage Check
+^^^^^^^^^^^^^^^^^
+
+Please run ``.\make imgusagechecker`` to verify that all images are being used. This check *will* fail CI if it fails.
+
 Building HTML
 ^^^^^^^^^^^^^
 

@@ -111,6 +111,29 @@ jobs:
       - script: make sizecheck
         displayName: 'Check Image Sizes'
 
+  - job: ImageUsageCheck
+    steps:
+      - task: UsePythonVersion@0
+        displayName: 'Select Python Version 3.6'
+        inputs:
+          versionSpec: '3.6'
+          architecture: 'x64'
+
+      - script: python -m pip install --upgrade pip setuptools wheel
+        displayName: 'Install and Upgrade Pip'
+
+      - script: pip install -r source/requirements.txt
+        displayName: 'Install Python Requirements'
+
+      - script: sudo apt-get update
+        displayName: 'Update System Packages'
+
+      - script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
+        displayName: 'Install LateX'
+
+      - script: make imgusagecheck
+        displayName: 'Check Image Usage'
+
   - job: Translations
     steps:
     - task: UsePythonVersion@0

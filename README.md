@@ -51,6 +51,12 @@ This ensures that translations are updated concurrently by updating the transife
 
 This checks all images are under 500KB
 
+### Image Usage Check
+
+``.\make imgusagecheck`` or ``make imgusagecheck``
+
+This checks that all images are being used.
+
 ### Building HTML
 
 ``.\make html`` or ``make html``
