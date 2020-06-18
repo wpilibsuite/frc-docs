@@ -506,6 +506,12 @@ source_file = build/gettext/docs/software/advanced-controls/introduction/introdu
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--advanced-controls--introduction--pid-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/pid-video.po
+source_file = build/gettext/docs/software/advanced-controls/introduction/pid-video.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--advanced-controls--introduction--tuning-pid-controller]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/tuning-pid-controller.po
 source_file = build/gettext/docs/software/advanced-controls/introduction/tuning-pid-controller.pot
