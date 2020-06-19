@@ -57,7 +57,7 @@ def main():
 
     for file_path in source_hashes.keys():
         posix_path = file_path.replace('\\', '/').lower()
-        if re.compile(excluded_regex).search(posix_path) is None:
+        if re.search(excluded_regex, posix_path) is None:
             if source_hashes[file_path] not in output_hashes.values():
                 print(file_path + " is not currently used!")
                 err = True
