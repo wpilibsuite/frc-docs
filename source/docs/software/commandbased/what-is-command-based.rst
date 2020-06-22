@@ -28,8 +28,7 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
         intake.run();
         pressed = true;
       }
-    }
-    else {
+    } else {
       pressed = false;
     }
 
