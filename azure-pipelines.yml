@@ -29,9 +29,6 @@ jobs:
     - script: sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
       displayName: 'Install LateX'
 
-    - script: sudo apt-get install -qy --force-yes graphviz
-      displayName: 'Install GraphViz'
-
     - script: make html
       displayName: 'Compile HTML'
 
@@ -102,6 +99,17 @@ jobs:
 
     - script: make linkcheck
       displayName: 'Link Check'
+
+  - job: ImageSizeCheck
+    steps:
+      - task: UsePythonVersion@0
+        displayName: 'Select Python Version 3.6'
+        inputs:
+          versionSpec: '3.6'
+          architecture: 'x64'
+
+      - script: make sizecheck
+        displayName: 'Check Image Sizes'
 
   - job: Translations
     steps:

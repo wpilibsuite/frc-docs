@@ -15,7 +15,7 @@ These drive bases typically have two or more in-line traction or omni  wheels pe
 
 Mecanum Drive
 ^^^^^^^^^^^^^
-.. image:: images/am-14u4-6in-mecanum-upgrade.jpg
+.. image:: images/am-14u4-6in-mecanum-upgrade.png
    :width: 600
 
 Mecanum drive is a method of driving using specially designed wheels that allow the robot to drive in any direction without changing the orientation of the robot. A robot with a conventional drivetrain (all wheels pointing in the same direction) must turn in the direction it needs to drive. A mecanum robot can move in any direction without first turning and is called a holonomic drive. The wheels (shown on this robot) have rollers that cause the forces from driving to be applied at a 45 degree angle rather than straight forward as in the case of a conventional drive.
@@ -205,3 +205,62 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
+
+Using the MecanumDrive class to control Mecanum Drive robots
+------------------------------------------------------------
+
+MecanumDrive is a method provided for the control of holonomic drivetrains with Mecanum wheels, such as the Kit of Parts chassis with the mecanum drive upgrade kit, as shown above. Instantiating a MecanumDrive is as simple as so:
+
+.. tabs::
+
+  .. tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
+      :language: java
+      :lines: 31-45
+      :linenos:
+      :lineno-start: 31
+
+  .. tab:: C++
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+      :language: cpp
+      :lines: 33-46
+      :linenos:
+      :lineno-start: 33
+
+Mecanum Drive Modes
+^^^^^^^^^^^^^^^^^^^
+.. note::
+    The drive axis conventions are different from common joystick axis conventions. See the `Axis Conventions`_ above for more information.
+
+The MecanumDrive class contains two different default modes of driving your robot's motors.
+
+  - driveCartesian: Angles are measured clockwise from the positive X axis. The robot's speed is independent from its angle or rotation rate.
+
+  - drivePolar: Angles are measured counter-clockwise from straight ahead. The speed at which the robot drives (translation) is independent from its angle or rotation rate.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        public void teleopPeriodic() {
+            m_robotDrive.driveCartesian(m_stick.getX(), m_stick.getY(), m_stick.getZ());
+            m_robotDrive.drivePolar(m_stick.getX(), m_stick.getY(), m_stick.getZ());
+        }
+
+    .. code-tab:: c++
+
+        void TeleopPeriodic() override {
+            m_robotDrive.driveCartesian(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.drivePolar(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
+        }
+
+Field-Oriented Driving
+^^^^^^^^^^^^^^^^^^^^^^
+
+A 4th parameter can be supplied to the ``driveCartesian(double ySpeed, double xSpeed, double zRotation, double gyroAngle)`` method, the angle returned from a Gyro sensor. This will adjust the rotation value supplied. This is particularly useful with mecanum drive since, for the purposes of steering, the robot really has no front, back or sides. It can go in any direction. Adding the angle in degrees from a gyro object will cause the robot to move away from the drivers when the joystick is pushed forwards, and towards the drivers when it is pulled towards them, regardless of what direction the robot is facing.
+
+The use of field-oriented driving makes often makes the robot much easier to drive, especially compared to a "robot-oriented" drive system where the controls are reversed when the robot is facing the drivers.
+
+Just remember to get the gyro angle each time ``driveCartesian()`` is called.
