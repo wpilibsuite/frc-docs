@@ -5,7 +5,7 @@ WPILib Example Projects
 
 WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs. All of these examples are available in VS Code by entering Control+Shift+P, then selecting `WPILib: Create a new project` and choosing example.
 
-.. image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
 
 Basic Examples
 --------------

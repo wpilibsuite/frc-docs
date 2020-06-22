@@ -22,6 +22,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: WPILib Programming Basics
 
    docs/software/wpilib-overview/index
+   docs/software/vscode-overview/index
    docs/software/labview/index
    docs/software/actuators/index
    docs/software/sensors/index
