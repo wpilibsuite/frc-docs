@@ -18,17 +18,23 @@ Links
 
 Links must be preserved in their original syntax. To translate a link, you can replace the TRANSLATE ME text (this will be replaced with the english title) with the appropriate translation.
 
-An example is shown below
+An example of the original text may be
 
 .. code-block:: text
 
-   For complete wiring instructions/diagrams, please see the :doc:`TRANSLATE ME <Wiring the FRC Control System document>`.
+   For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System Document <Wiring the FRC Control System document>`.
+
+where the ``Wiring the FRC Control System Document`` then gets translated.
+
+.. code-block:: text
+
+   For complete wiring instructions/diagrams, please see the :doc:`TRANSLATEED TEXT <Wiring the FRC Control System document>`.
 
 Another example is below
 
 .. code-block:: text
 
-  For complete wiring instructions/diagrams, please see the :ref:`TRANSLATE ME <docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:How to Wire an FRC Robot>`
+  For complete wiring instructions/diagrams, please see the :ref:`TRANSLATE TEXT <docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:How to Wire an FRC Robot>`
 
 Publishing Translations
 -----------------------
