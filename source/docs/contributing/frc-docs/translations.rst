@@ -18,7 +18,7 @@ Links
 
 Links must be preserved in their original syntax. To translate a link, you can replace the TRANSLATE ME text (this will be replaced with the english title) with the appropriate translation.
 
-Given the following English text, you can
+An example is shown below
 
 .. code-block:: text
 
