@@ -32,7 +32,7 @@ C++ robot simulation requires that a native compiler to be installed. For Window
 
 Ensure the ``Desktop Development with C++`` option is checked in the Visual Studio installer for simulation support.
 
-.. image:: images/vs-build-tools.png
+.. image:: images/vscode-desktop-support.png
    :alt: Screenshot of the Visual Studio build tools option
 
 Running Robot Simulation
