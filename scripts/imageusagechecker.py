@@ -9,8 +9,12 @@ IMAGE_FORMATS = ['.png', '.jpg', '.svg']
 
 
 def clean_module_path(path):
-    return (path[:-len(".py")] if path.endswith(".py") else path).replace("/", ".").replace("\\", ".")
+    if path.endswith(".py"):
+        path = path.replace("/", ".")
+    else:
+        path = path.replace("\\", "/")
 
+    return path[:-len(".py")]
 
 def build_hashes(dir):
     located_files = {}
