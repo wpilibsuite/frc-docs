@@ -350,6 +350,30 @@ source_file = build/gettext/docs/networking/networking-utilities/portforwarding.
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--2020-overview--2020-Game-Data]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/2020-overview/2020-Game-Data.po
+source_file = build/gettext/docs/software/2020-overview/2020-Game-Data.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--2020-overview--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/2020-overview/index.po
+source_file = build/gettext/docs/software/2020-overview/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--2020-overview--known-issues]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/2020-overview/known-issues.po
+source_file = build/gettext/docs/software/2020-overview/known-issues.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--2020-overview--new-for-2020]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/2020-overview/new-for-2020.po
+source_file = build/gettext/docs/software/2020-overview/new-for-2020.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--actuators--addressable-leds]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/actuators/addressable-leds.po
 source_file = build/gettext/docs/software/actuators/addressable-leds.pot
@@ -1532,39 +1556,15 @@ source_file = build/gettext/docs/software/vscode-overview/vscode-basics.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--software--vscode-overview--what-is-wpilib]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vscode-overview/what-is-wpilib.po
+source_file = build/gettext/docs/software/vscode-overview/what-is-wpilib.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--software--vscode-overview--wpilib-commands-vscode]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/vscode-overview/wpilib-commands-vscode.po
 source_file = build/gettext/docs/software/vscode-overview/wpilib-commands-vscode.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--2020-Game-Data]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/2020-Game-Data.po
-source_file = build/gettext/docs/software/wpilib-overview/2020-Game-Data.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--index]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/index.po
-source_file = build/gettext/docs/software/wpilib-overview/index.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--known-issues]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/known-issues.po
-source_file = build/gettext/docs/software/wpilib-overview/known-issues.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--new-for-2020]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/new-for-2020.po
-source_file = build/gettext/docs/software/wpilib-overview/new-for-2020.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-overview--what-is-wpilib]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-overview/what-is-wpilib.po
-source_file = build/gettext/docs/software/wpilib-overview/what-is-wpilib.pot
 source_lang = en
 type = PO
 
