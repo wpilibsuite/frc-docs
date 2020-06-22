@@ -22,7 +22,7 @@ Given the following English text, you can
 
 .. code-block:: text
 
-   For complete wiring instructions/diagrams, please see the :doc:`TRANSLATE ME <Wiring the FRC Control System` document>`.
+   For complete wiring instructions/diagrams, please see the :doc:`TRANSLATE ME <Wiring the FRC Control System document>`.
 
 Another example is below
 
