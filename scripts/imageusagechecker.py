@@ -54,12 +54,14 @@ def main():
 
         excluded_regex = "|".join(list(globs))
     else:
-        excluded_regex = list()
+        excluded_regex = ""
 
     err = False
 
     print("Starting Image Scan\n")
 
+    # It may be useful to use the Sphinx implementation in the future
+    # https://github.com/sphinx-doc/sphinx/blob/275d93b5068a4b6af4c912d5bebb2df928416060/sphinx/util/matching.py#L67
     for file_path in source_hashes.keys():
         posix_path = file_path.replace('\\', '/').lower()
         if re.search(excluded_regex, posix_path) is None:
