@@ -51,7 +51,10 @@ def main():
     exclude_file = args["exclude_file"]
 
     if exclude_file is not None:
-        excluded_regex = "|".join(list(importlib.import_module(clean_module_path(exclude_file)).exclude_patterns))
+        module_path = clean_module_path(exclude_file)
+        globs = importlib.import_module(module_path).exclude_patterns()
+
+        excluded_regex = "|".join(list(globs))
     else:
         excluded_regex = list()
 
