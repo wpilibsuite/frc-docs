@@ -9,8 +9,8 @@ trigger:
       - master
 
 variables:
-  pythonVersion: 3.6
-  architecture: x64
+  pythonVersion: '3.6'
+  architecture: 'x64'
 
 jobs:
   - job: Build
