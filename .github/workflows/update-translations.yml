@@ -19,7 +19,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r source/requirements.txt
       - name: Pull Translations
-        run: tx pull -l fr_CA,es_MX --mode onlyreviewed --use-git-timestamps
+        run: tx pull -l fr_CA,es_MX --mode onlyreviewed --force
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Create Pull Request
