@@ -1,0 +1,18 @@
+# Steps for installing requirements
+
+parameters:
+  pythonVersion: ''
+  architecture: ''
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Select Python Version'
+  inputs:
+  versionSpec: ${{ parameters.pythonVersion }}
+  architecture: ${{ parameters.architecture }}
+
+- script: python -m pip install --upgrade pip setuptools wheel
+  displayName: 'Install and Upgrade Pip'
+
+- script: pip install -r source/requirements.txt
+  displayName: 'Install Python Requirements'

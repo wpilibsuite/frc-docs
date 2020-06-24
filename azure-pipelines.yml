@@ -8,20 +8,17 @@ trigger:
     include:
       - master
 
+variables:
+  pythonVersion: 3.6
+  architecture: x64
+
 jobs:
   - job: Build
     steps:
-    - task: UsePythonVersion@0
-      displayName: 'Select Python Version 3.6'
-      inputs:
-        versionSpec: '3.6'
-        architecture: 'x64'
-
-    - script: python -m pip install --upgrade pip setuptools wheel
-      displayName: 'Install and Upgrade Pip'
-
-    - script: pip install -r source/requirements.txt
-      displayName: 'Install Python Requirements'
+    - template: .azure-templates/steps-requirements.yml
+      parameters:
+        pythonVersion: ${{ variables.pythonVersion }}
+        architecture: ${{ variables.architecture }}
 
     - script: sudo apt-get update
       displayName: 'Update System Packages'
@@ -62,34 +59,20 @@ jobs:
 
   - job: LintCheck
     steps:
-    - task: UsePythonVersion@0
-      displayName: 'Select Python Version 3.6'
-      inputs:
-        versionSpec: '3.6'
-        architecture: 'x64'
-
-    - script: python -m pip install --upgrade pip setuptools wheel
-      displayName: 'Install and Upgrade Pip'
-
-    - script: pip install -r source/requirements.txt
-      displayName: 'Install Python Requirements'
+    - template: .azure-templates/steps-requirements.yml
+      parameters:
+        pythonVersion: ${{ variables.pythonVersion }}
+        architecture: ${{ variables.architecture }}
 
     - script: make lint
       displayName: 'Lint Check'
 
   - job: LinkCheck
     steps:
-    - task: UsePythonVersion@0
-      displayName: 'Select Python Version 3.6'
-      inputs:
-        versionSpec: '3.6'
-        architecture: 'x64'
-
-    - script: python -m pip install --upgrade pip setuptools wheel
-      displayName: 'Install and Upgrade Pip'
-
-    - script: pip install -r source/requirements.txt
-      displayName: 'Install Python Requirements'
+    - template: .azure-templates/steps-requirements.yml
+      parameters:
+        pythonVersion: ${{ variables.pythonVersion }}
+        architecture: ${{ variables.architecture }}
 
     - script: sudo apt-get update
       displayName: 'Update System Packages'
@@ -103,27 +86,20 @@ jobs:
   - job: ImageSizeCheck
     steps:
       - task: UsePythonVersion@0
-        displayName: 'Select Python Version 3.6'
+        displayName: 'Select Python Version'
         inputs:
-          versionSpec: '3.6'
-          architecture: 'x64'
+          versionSpec: ${{ variables.pythonVersion }}
+          architecture: ${{ variables.pythonVersion }}
 
       - script: make sizecheck
         displayName: 'Check Image Sizes'
 
   - job: Translations
     steps:
-    - task: UsePythonVersion@0
-      displayName: 'Select Python Version 3.6'
-      inputs:
-        versionSpec: '3.6'
-        architecture: 'x64'
-
-    - script: python -m pip install --upgrade pip setuptools wheel
-      displayName: 'Install and Upgrade Pip'
-
-    - script: pip install -r source/requirements.txt
-      displayName: 'Install Python Requirements'
+    - template: .azure-templates/steps-requirements.yml
+      parameters:
+        pythonVersion: ${{ variables.pythonVersion }}
+        architecture: ${{ variables.architecture }}
 
     - script: sudo apt-get update
       displayName: 'Update System Packages'
