@@ -5,6 +5,7 @@ Advanced Controls Introduction
    :maxdepth: 1
 
    control-system-basics
+   pid-video
    introduction-to-pid
    tuning-pid-controller
    controls-glossary
