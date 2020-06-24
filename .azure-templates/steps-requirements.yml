@@ -8,8 +8,8 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Select Python Version'
   inputs:
-  versionSpec: ${{ parameters.pythonVersion }}
-  architecture: ${{ parameters.architecture }}
+    versionSpec: ${{ parameters.pythonVersion }}
+    architecture: ${{ parameters.architecture }}
 
 - script: python -m pip install --upgrade pip setuptools wheel
   displayName: 'Install and Upgrade Pip'
