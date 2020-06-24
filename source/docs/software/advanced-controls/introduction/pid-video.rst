@@ -1,6 +1,6 @@
 PID Introduction Video by WPI
 =============================
-Did you ever have trouble designing a robot system to move quickly, then stop at exactly the desired position. This can come up with driving fixed distances or speeds, operating arms and elevators, or any other motor controlled system that needs to operate to specific set points. In this video WPI Professor Dmitry Berenson talks about robot controls and how PID controls work.
+Have you ever had trouble designing a robot system to move quickly and then stop at exactly a desired position? Challenges like this can arise when driving fixed distances or speeds, operating an arm or elevator, or any other motor controlled system that requires specific motion. In this video, WPI Professor Dmitry Berenson talks about robot controls and how PID controls work.
 
 .. raw:: html
 
