@@ -88,8 +88,8 @@ jobs:
       - task: UsePythonVersion@0
         displayName: 'Select Python Version'
         inputs:
-          versionSpec: ${{ variables.pythonVersion }}
-          architecture: ${{ variables.pythonVersion }}
+          versionSpec: '${{ variables.pythonVersion }}'
+          architecture: '${{ variables.pythonVersion }}'
 
       - script: make sizecheck
         displayName: 'Check Image Sizes'
