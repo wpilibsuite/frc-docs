@@ -1730,12 +1730,6 @@ source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/rob
 source_lang = en
 type = PO
 
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-drive-mecanum]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.pot
-source_lang = en
-type = PO
-
 [frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-drive-tank]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.po
 source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.pot
