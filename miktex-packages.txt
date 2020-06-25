@@ -175,7 +175,7 @@ miktex-mspack-bin-x64-2.9
 miktex-mthelp-bin-x64-2.9
 miktex-mtprint-bin-x64-2.9
 miktex-omega
-miktex-omega-bin-x64-2.9
+miktex-omegaware-bin-x64-2.9
 miktex-pdftex
 miktex-pdftex-bin-x64-2.9
 miktex-pixman-bin-x64-2.9
