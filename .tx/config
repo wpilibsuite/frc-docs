@@ -218,6 +218,12 @@ source_file = build/gettext/docs/hardware/hardware-tutorials/sensors.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--hardware--hardware-tutorials--transmissions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/hardware-tutorials/transmissions.po
+source_file = build/gettext/docs/hardware/hardware-tutorials/transmissions.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--hardware--sensors--accelerometers-hardware]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/sensors/accelerometers-hardware.po
 source_file = build/gettext/docs/hardware/sensors/accelerometers-hardware.pot
@@ -497,6 +503,12 @@ type = PO
 [frc-docs.docs--software--advanced-controls--introduction--introduction-to-pid]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/introduction-to-pid.po
 source_file = build/gettext/docs/software/advanced-controls/introduction/introduction-to-pid.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--introduction--pid-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/pid-video.po
+source_file = build/gettext/docs/software/advanced-controls/introduction/pid-video.pot
 source_lang = en
 type = PO
 
