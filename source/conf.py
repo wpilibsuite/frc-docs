@@ -37,7 +37,8 @@ extensions = [
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
     'hoverxref.extension',
-    'notfound.extension'
+    'notfound.extension',
+    'sphinxcontrib.spelling'
 ]
 
 # Enable hover content on glossary term
@@ -62,6 +63,16 @@ linkcheck_workers = 1
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
+
+# Specify spellchecker language, we only want to run for English
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+
+# Specify our unique words, these include FRC specific titles
+spelling_word_list_filename='assets/unique_words.txt'
+
+# Print misspelled words
+spelling_show_suggestions=True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
