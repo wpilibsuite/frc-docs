@@ -69,7 +69,7 @@ spelling_lang='en_US'
 tokenizer_lang='en_US'
 
 # Specify our unique words, these include FRC specific titles
-spelling_word_list_filename='unique_words.txt'
+spelling_word_list_filename='assets/unique_words.txt'
 
 # Print misspelled words
 spelling_show_suggestions=True
