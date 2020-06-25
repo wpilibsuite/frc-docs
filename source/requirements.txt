@@ -10,3 +10,4 @@ transifex-client==0.13.10
 sphinx-intl==2.0.1
 sphinxcontrib-svg2pdfconverter==1.1.0
 sphinx-hoverxref==0.4b1
+sphinxcontrib-spelling==5.1.2
