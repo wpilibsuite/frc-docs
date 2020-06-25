@@ -27,7 +27,7 @@ Transformations for ``Rotation2d`` are just arithmetic operations on the angle m
 Transform2d and Twist2d
 -----------------------
 
-WPILib provides 2 classes, ``Transform2d``, which represents a transformation to a pose, and ``Twist2d`` which represents a movement along an arc. ``Transform2d`` and ``Twist2d`` all have x, y and :math:`\theta` components.
+WPILib provides 2 classes, ``Transform2d`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Transform2d.html>`_, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Transform2d.html>`_), which represents a transformation to a pose, and ``Twist2d`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Twist2d.html>`_, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/structfrc_1_1Twist2d.html>`_) which represents a movement along an arc. ``Transform2d`` and ``Twist2d`` all have x, y and :math:`\theta` components.
 
 ``Transform2d`` represents a **relative** transformation. It has an translation and a rotation component. Transforming a ``Pose2d`` by a ``Transform2d`` rotates the translation component of the transform by the rotation of the pose, and then adds the rotated translation component and the rotation component to the pose. In other words, ``Pose2d.plus(Transform2d)`` returns :math:`\begin{bmatrix} x_p \\ y_p \\ \theta_p \end{bmatrix}+\begin{bmatrix} cos\theta_p & -sin\theta_p & 0 \\ sin\theta_p & cos\theta_p & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_t \\ y_t \\ \theta_t \end{bmatrix}`
 
