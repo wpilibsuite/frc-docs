@@ -57,6 +57,7 @@ vsix
 yaml
 
 boolean
+datasheet
 gamepad
 potentiometer
 pneumatics
