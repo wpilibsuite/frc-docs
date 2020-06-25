@@ -56,6 +56,18 @@ source_file = build/gettext/docs/contributing/frc-docs/translations.pot
 source_lang = en
 type = PO
 
+[frc-docs.docs--contributing--wpilib--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/wpilib/index.po
+source_file = build/gettext/docs/contributing/wpilib/index.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--contributing--wpilib--other-wpilib-versions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/contributing/wpilib/other-wpilib-versions.po
+source_file = build/gettext/docs/contributing/wpilib/other-wpilib-versions.pot
+source_lang = en
+type = PO
+
 [frc-docs.docs--getting-started--getting-started-frc-control-system--control-system-hardware]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/getting-started/getting-started-frc-control-system/control-system-hardware.po
 source_file = build/gettext/docs/getting-started/getting-started-frc-control-system/control-system-hardware.pot
@@ -203,6 +215,12 @@ type = PO
 [frc-docs.docs--hardware--hardware-tutorials--sensors]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/hardware-tutorials/sensors.po
 source_file = build/gettext/docs/hardware/hardware-tutorials/sensors.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--hardware--hardware-tutorials--transmissions]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/hardware/hardware-tutorials/transmissions.po
+source_file = build/gettext/docs/hardware/hardware-tutorials/transmissions.pot
 source_lang = en
 type = PO
 
@@ -485,6 +503,12 @@ type = PO
 [frc-docs.docs--software--advanced-controls--introduction--introduction-to-pid]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/introduction-to-pid.po
 source_file = build/gettext/docs/software/advanced-controls/introduction/introduction-to-pid.pot
+source_lang = en
+type = PO
+
+[frc-docs.docs--software--advanced-controls--introduction--pid-video]
+file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/advanced-controls/introduction/pid-video.po
+source_file = build/gettext/docs/software/advanced-controls/introduction/pid-video.pot
 source_lang = en
 type = PO
 
@@ -1679,12 +1703,6 @@ type = PO
 [frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-custom-components]
 file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.po
 source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.pot
-source_lang = en
-type = PO
-
-[frc-docs.docs--software--wpilib-tools--robotbuilder--advanced--robotbuilder-drive-mecanum]
-file_filter = source/locale/<lang>/LC_MESSAGES/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.po
-source_file = build/gettext/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-mecanum.pot
 source_lang = en
 type = PO
 

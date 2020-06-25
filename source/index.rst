@@ -87,6 +87,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Contributing
 
    docs/contributing/frc-docs/index
+   docs/contributing/wpilib/index
 
 .. toctree::
    :maxdepth: 1
