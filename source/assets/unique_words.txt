@@ -1,28 +1,62 @@
+Grossman
+Shalit
+
+Acer
+CANifier
+Copperforge
+Docker
+Dockerfile
+Eigen
 Ethernet
+FRC
 frc-docs
 GitHub
 Gradle
+GRIP
+IntelliSense
 LabVIEW
+Lasershark
+Lenovo
 Logitech
 macOS
+Mad Catz
 mindsensors
+navX
+NVIDIA
+NVIDIA® Jetson
 PathWeaver
 PowerShell
+reStructuredText
 roboRIO
+ScreenSteps
+Supervisely
 VS Code
 Weidmuller
+WinPE
+Wi-Fi
+Xbox
 
 CAN
 LED
+mDNS
+MXP
 PoE
 PWM
+QoS
 
 exe
 gz
+html
 io
 iso
+json
 png
+py
 txt
 vsix
+yaml
 
+boolean
+gamepad
+potentiometer
 pneumatics
