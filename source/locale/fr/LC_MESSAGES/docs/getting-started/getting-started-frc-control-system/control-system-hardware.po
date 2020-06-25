@@ -7,15 +7,16 @@
 # Dalton Smith <daltzsmith@gmail.com>, 2020
 # Kaitlyn Kenwell <purbleguy@gmail.com>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andy Chang, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-23 21:28+0000\n"
+"POT-Creation-Date: 2020-06-25 00:44+0000\n"
 "PO-Revision-Date: 2020-04-25 01:59+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Andy Chang, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,3 +90,28 @@ msgstr ""
 "détaillées pour le roboRIO peuvent être trouvées dans le `roboRIO User "
 "Manual <https://www.ni.com/pdf/manuals/374474a.pdf>`__ et dans les `roboRIO "
 "technical specifications <https://www.ni.com/pdf/manuals/374661a.pdf>`__."
+
+#: ../../source/docs/getting-started/getting-started-frc-control-system/control-system-hardware.rst:30
+msgid ""
+"The Power Distribution Panel (PDP) is designed to distribute power from a "
+"12VDC battery to various robot components through auto-resetting circuit "
+"breakers and a small number of special function fused connections. The PDP "
+"provides 8 output pairs rated for 40A continuous current and 8 pairs rated "
+"for 30A continuous current. The PDP provides dedicated 12V connectors for "
+"the roboRIO, as well as connectors for the Voltage Regulator Module and "
+"Pneumatics Control Module. It also includes a CAN interface for logging "
+"current, temperature, and battery voltage. For more detailed information, "
+"see the `PDP User Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__."
+msgstr ""
+"Le Panneau de Distribution de Puissance (PDP) est conçu pour distribuer "
+"l'énergie d'une batterie 12VDC à divers composants de robot à travers des "
+"disjoncteurs à réinitialisation automatique et quelques connexions protégé à"
+" fonction spéciales. Le PDP fournit 8 paires de sorties évalué pour 40A "
+"courant continu et 8 paires évalué pour 30A courant continu. Le PDP fournit "
+"des connecteurs 12V dédiés pour le roboRIO ainsi que des connecteurs pour le"
+" régulateur de tension et pour le module de contrôle pneumatique. Ça inclut "
+"aussi un interface CAN pour enregistrer le courant, le température, et le "
+"tension de la batterie. Pour de l'information plus détaillée, veuillez voir "
+"le `Manuel de l'Utilisateur <https://www.ctr-"
+"electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__."
