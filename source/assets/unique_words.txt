@@ -61,3 +61,5 @@ datasheet
 gamepad
 potentiometer
 pneumatics
+setpoint
+waypoint
