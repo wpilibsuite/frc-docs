@@ -12,7 +12,6 @@ set BUILDDIR=build
 set SPHINXOPTS=-W --keep-going
 set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
-set LANGMAP=es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr
 set SIZECHECKER=python -m scripts.imagesizechecker
 set CONFEXCLUDE=--exclude-file source/conf.py
 set SIZEMAX=500
@@ -20,8 +19,6 @@ set SIZEMAX=500
 if "%1" == "" goto help
 
 if "%1" == "lint" goto lint
-
-if "%1" == "translate" goto translate
 
 if "%1" == "sizecheck" goto sizecheck
 
@@ -52,13 +49,6 @@ goto end
 :sizecheck
 %SIZECHECKER% %SOURCEDIR% %SIZEMAX% %CONFEXCLUDE%
 goto end
-
-:translate
-%SPHINXBUILD% -M gettext %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% || exit /b
-DEL .tx\config
-sphinx-intl create-txconfig  || exit /b
-@echo lang_map = %LANGMAP%>> .tx\config  || exit /b
-sphinx-intl update-txconfig-resources --transifex-project-name frc-docs
 
 :end
 popd
