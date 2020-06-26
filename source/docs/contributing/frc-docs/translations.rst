@@ -39,7 +39,7 @@ Another example is below
 Publishing Translations
 -----------------------
 
-Translations will be merged to the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository on a weekly basis.
+Translations are pulled and build automatically every day.
 
 Accuracy
 --------
