@@ -60,6 +60,9 @@ linkcheck_timeout = 30
 linkcheck_retries = 3
 linkcheck_workers = 1
 
+# Specify a standard user agent, as Sphinx default is blocked on some sites
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0'
+
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
 
@@ -75,7 +78,6 @@ exclude_patterns = ['docs/beta/*']
 master_doc = "index"
 
 # Specify files to ignore during SizeCheck
-
 IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
@@ -113,7 +115,7 @@ user_options = [
 ]
 
 def setup(app):
-  app.add_stylesheet('css/frc-rtd.css')
+  app.add_css_file('css/frc-rtd.css')
 
 # -- Options for latex generation --------------------------------------------
 
