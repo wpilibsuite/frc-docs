@@ -9,5 +9,6 @@ This section covers advanced control features in WPILib, such as various feedbac
    video-walkthrough
    introduction/index
    filters/index
+   geometry/index
    controllers/index
    trajectories/index
