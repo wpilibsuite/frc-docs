@@ -39,7 +39,7 @@ Another example is below
 Publishing Translations
 -----------------------
 
-Translations are pulled and build automatically every day.
+Translations are pulled from Transifex and published automatically each day.
 
 Accuracy
 --------
