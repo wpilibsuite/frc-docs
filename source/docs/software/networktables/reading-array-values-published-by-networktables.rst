@@ -14,9 +14,9 @@ Verify the network table keys being published
 .. image:: images/reading-array-values-published-by-networktables-1.png
    :alt: Image of OutlineViewer with the network table keys
 
-You can verify the names of the network table keys used for publishing the values by using the Network Table Viewer application.
-It is a java program in your user directory in the wpilib/tools folder. The application is started by selecting the "WPILib" menu
-in eclipse then "OutlineViewer". In this example, wth the image processing program running (GRIP) you can see the values being put
+You can verify the names of the network table keys used for publishing the values by using the Outline Viewer application.
+It is a java program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu
+in Visual Studio Code then Start Tool then "OutlineViewer". In this example, with the image processing program running (GRIP) you can see the values being put
 into NetworkTables.
 
 In this case the values are stored in a table called GRIP and a sub-table called myContoursReport. You can see that the values are
@@ -88,5 +88,5 @@ Program output
    :alt: Image of Riolog showing the values
 
 In this case the program is only looking at the array of areas, but in a real example all the values would more likely be used.
-Using the Riolog in eclipse or the DriverStation log you can see the values as they are retrieved. This program is using a sample
+Using the Riolog in VS Code or the Driver Station log you can see the values as they are retrieved. This program is using a sample
 static image so they areas don't change, but you can imagine with a camera on your robot, the values would be changing constantly.
