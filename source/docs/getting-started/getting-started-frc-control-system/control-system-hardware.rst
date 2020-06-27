@@ -15,7 +15,7 @@ Overview of Control System
   Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
 
 NI roboRIO
-----------------------------
+----------
 
 .. image:: images/control-system-hardware/roborio.png
 
