@@ -383,22 +383,22 @@ The ``withInterrupt()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/j
     // Will be interrupted if m_limitSwitch.get() returns true
     button.WhenPressed(command.WithInterrupt([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
-whenFinished
-^^^^^^^^^^^^
+andThen
+^^^^^^^
 
-The ``whenFinished()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#whenFinished(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#a935487276747ed668967259856b90165>`__) adds a method to be executed after the command ends:
+The ``andThen()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(java.lang.Runnable)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Command.html#ade79bfb9d4ad670cdcb35369c0081b37>`__) adds a method to be executed after the command ends:
 
 .. tabs::
 
   .. code-tab:: java
 
     // Will print "hello" after ending
-    button.whenPressed(command.whenFinished(() -> System.out.println("hello")));
+    button.whenPressed(command.andThen(() -> System.out.println("hello")));
 
   .. code-tab:: c++
 
     // Will print "hello" after ending
-    button.WhenPressed(command.WhenFinished([] { std::cout << "hello"; }));
+    button.WhenPressed(command.AndThen([] { std::cout << "hello"; }));
 
 beforeStarting
 ^^^^^^^^^^^^^^
@@ -416,18 +416,6 @@ The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/FRC/roborio/rel
 
     // Will print "hello" before starting
     button.WhenPressed(command.BeforeStarting([] { std::cout << "hello"; }));
-
-andThen (Java only)
-^^^^^^^^^^^^^^^^^^^
-
-.. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a sequential command group the ordinary way instead.
-
-The ``andThen()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a sequential command group containing the command, followed by the list of commands passed as arguments:
-
-.. code-block:: java
-
-   // Will be the sequence fooCommand -> barCommand -> bazCommand
-   button.whenPressed(fooCommand.andThen(barCommand, bazCommand));
 
 alongWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^
