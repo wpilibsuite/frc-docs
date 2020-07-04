@@ -50,7 +50,7 @@ def main():
 
     if exclude_file is not None:
         module_path = clean_module_path(exclude_file)
-        globs = importlib.import_module(module_path).exclude_patterns()
+        globs = importlib.import_module(module_path).exclude_patterns
 
         excluded_regex = "|".join(list(globs))
     else:
