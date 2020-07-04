@@ -1,6 +1,6 @@
 Sensing and Sensors
 ===================
-WPI Professor Craig Putnam discusses commonly used sensors and how they apply to various robotics applications.
+Without sensors and sensing robots are really radio controlled vehicles. Sensors allow the robots to understand the internal operation of the robots mechanical systems as well as the ability to interact with the environment around the robot. In these videos, WPI Professor Craig Putnam describes a number of classes of sensors, how they are used, and provides guidance on what sensors are best for your applications.
 
 .. raw:: html
 

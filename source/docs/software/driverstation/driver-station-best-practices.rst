@@ -4,7 +4,7 @@ Driver Station Best Practices
 This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found here: https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429 and a mirror of the document can be found `here. <assets/Driver_Station_Best_Practices_March_14_2018.pdf>`_
 
 
-Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.
+Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy offseason project. Read on to find lessons learned by many teams over thousands of matches.
 
 Prior To Departing For The Competition
 --------------------------------------
@@ -29,7 +29,7 @@ Prior To Departing For The Competition
 
 5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
 6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
-7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("crapware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
+7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
 8. Avoid managed Windows 10 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
 9. Laptop battery / power
 
@@ -39,7 +39,7 @@ Prior To Departing For The Competition
       i. Right click on the battery/charging icon in the tray, then select Power Options.
       ii. Edit the plan settings of your power plan.
       iii. Click the Change advanced power settings link.
-      iv. Scroll down in the advanced settings and disable the USB selective suspendsetting for both Battery and Plugged in.
+      iv. Scroll down in the advanced settings and disable the USB selective suspend setting for both Battery and Plugged in.
 
    c. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
 
@@ -62,7 +62,7 @@ Before Each Match
 -----------------
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
-2. Close programs that aren’t needed during the match – e.g., Eclipse or LabView – when you are competing.
+2. Close programs that aren’t needed during the match – e.g., Visual Studio Code or LabView – when you are competing.
 3. Bring your laptop charger to the field. Power is provided for you in each player station.
 4. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
 5. Ensure joysticks and controllers are assigned to the correct USB ports.

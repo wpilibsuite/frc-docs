@@ -141,9 +141,9 @@ To access the current heading measured by the gyroscope, we include the followin
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 174-181
+      :lines: 173-180
       :linenos:
-      :lineno-start: 174
+      :lineno-start: 173
 
   .. group-tab:: C++ (Source)
 
