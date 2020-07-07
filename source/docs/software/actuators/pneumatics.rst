@@ -125,11 +125,11 @@ One can connect a pressure sensor to measure the pressure stored in a pneumatic 
 
         AnalogInput pressureSensor = new AnalogInput(/* the AnalogIn port*/ 2);
 
-        //scaled units in the 0V-5V range
+        // scaled units in the 0V-5V range
         double volts = pressureSensor.getVoltage();
 
     .. code-tab:: c++
-        frc::AnalogInput pressureSensor {2};
+        frc::AnalogInput pressureSensor{2};
 
-        //scaled units in the 0V-5V range
+        // scaled units in the 0V-5V range
         double volts = pressureSensor.GetVoltage();
