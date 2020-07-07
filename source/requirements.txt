@@ -8,3 +8,4 @@ sphinxcontrib-ghcontributors==0.2.2
 sphinx-notfound-page==0.4
 sphinxcontrib-svg2pdfconverter==1.1.0
 sphinx-hoverxref==0.5b1
+sphinxext-opengraph==0.2.0

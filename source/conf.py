@@ -36,9 +36,15 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'sphinxext.opengraph',
     'hoverxref.extension',
     'notfound.extension'
 ]
+
+# Configure OpenGraph support
+ogp_site_url = 'https://frc-docs--711.org.readthedocs.build/en/711/'
+ogp_site_name = 'FIRST Robotics Competition Documentation'
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/frc-docs/master/source/assets/wpilibDocsLogo.png"
 
 # Enable hover content on glossary term
 hoverxref_roles = ['term']
