@@ -44,7 +44,7 @@ extensions = [
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'
 ogp_site_name = 'FIRST Robotics Competition Documentation'
-ogp_image = "https://docs.wpilib.org/en/latest/_static/wpilibDocsLogo.png"
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
 
 # Enable hover content on glossary term
 hoverxref_roles = ['term']
