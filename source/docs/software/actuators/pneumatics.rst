@@ -112,3 +112,24 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
         exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+
+
+Pressure Sensors
+----------------
+
+To read the pressure stored in the pneumatic system, connecting an analog pressure sensor is possible. These sensors connect to the Analog ports on the roboRIO, and can be read by the AnalogInput class in WPILib.
+.. tabs:
+
+    .. code-tab:: java
+        import edu.wpi.first.wpilibj.AnalogInput;
+
+        AnalogInput pressureSensor = new AnalogInput(/* the AnalogIn port*/ 2);
+
+        //scaled units in the 0V-5V range
+        double volts = pressureSensor.getVoltage();
+
+    .. code-tab:: c++
+        frc::AnalogInput pressureSensor {2};
+
+        //scaled units in the 0V-5V range
+        double volts = pressureSensor.GetVoltage();
