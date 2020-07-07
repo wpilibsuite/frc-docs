@@ -117,7 +117,7 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
 Pressure Sensors
 ----------------
 
-To read the pressure stored in the pneumatic system, connecting an analog pressure sensor is possible. These sensors connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput class in WPILib.
+One can connect a pressure sensor to measure the pressure stored in a pneumatic system. These sensors connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput class in WPILib.
 .. tabs:
 
     .. code-tab:: java
