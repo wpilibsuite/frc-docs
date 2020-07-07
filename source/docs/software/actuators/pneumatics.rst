@@ -118,9 +118,11 @@ Pressure Transducers
 ----------------
 
 One can connect a pressure transducer to measure the pressure stored in a pneumatic system. These transducers connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput class in WPILib.
-.. tabs:
+
+.. tabs::
 
     .. code-tab:: java
+    
         import edu.wpi.first.wpilibj.AnalogInput;
 
         AnalogInput pressureTransducer = new AnalogInput(/* the AnalogIn port*/ 2);
