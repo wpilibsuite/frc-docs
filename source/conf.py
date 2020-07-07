@@ -42,7 +42,7 @@ extensions = [
 ]
 
 # Configure OpenGraph support
-ogp_site_url = 'https://frc-docs--711.org.readthedocs.build/en/711/'
+ogp_site_url = 'https://docs.wpilib.org/en/latest/'
 ogp_site_name = 'FIRST Robotics Competition Documentation'
 ogp_image = "https://raw.githubusercontent.com/wpilibsuite/frc-docs/master/source/assets/wpilibDocsLogo.png"
 
