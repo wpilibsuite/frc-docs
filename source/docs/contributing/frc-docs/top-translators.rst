@@ -1,6 +1,14 @@
 Top Translators
 ===============
 
+French
+^^^^^^
+
 .. toptranslators::
    :locale: fr
-   :limit: 10
+
+Spanish
+^^^^^^^
+
+.. toptranslators::
+   :locale: es
