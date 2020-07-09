@@ -37,9 +37,14 @@ extensions = [
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
     'sphinxext.opengraph',
+    'sphinxext.toptranslators',
     'hoverxref.extension',
     'notfound.extension'
 ]
+
+# Configure TopTranslators support
+top_translators_git = "https://github.com/wpilibsuite/frc-docs-translations.git"
+top_translators_locale_dir = "locale"
 
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'
