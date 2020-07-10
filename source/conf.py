@@ -37,6 +37,7 @@ extensions = [
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
     'sphinxext.opengraph',
+    'sphinxext.toptranslators',
     'hoverxref.extension',
     'notfound.extension'
 ]
