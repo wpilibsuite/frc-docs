@@ -46,6 +46,11 @@ ogp_site_url = 'https://docs.wpilib.org/en/latest/'
 ogp_site_name = 'FIRST Robotics Competition Documentation'
 ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
 
+# Enables ChiefDelphi support
+ogp_custom_meta_tags = [
+    '<meta property="og:ignore_canonical" content="true" />',
+]
+
 # Enable hover content on glossary term
 hoverxref_roles = ['term']
 
