@@ -4,11 +4,13 @@ Top Translators
 French
 ^^^^^^
 
-.. toptranslators::
+.. toptranslators:: wpilibsuite/frc-docs-translations
    :locale: fr
+   :hide_contributions: true
 
 Spanish
 ^^^^^^^
 
-.. toptranslators::
+.. toptranslators:: wpilibsuite/frc-docs-translations
    :locale: es
+   :hide_contributions: true

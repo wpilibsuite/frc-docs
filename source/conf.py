@@ -42,10 +42,6 @@ extensions = [
     'notfound.extension'
 ]
 
-# Configure TopTranslators support
-top_translators_git = "https://github.com/wpilibsuite/frc-docs-translations.git"
-top_translators_locale_dir = "locale"
-
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'
 ogp_site_name = 'FIRST Robotics Competition Documentation'
