@@ -50,6 +50,7 @@ ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/w
 # Enables ChiefDelphi support
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
+    '<meta name="theme-color" content="#AC2B37" />',
 ]
 
 # Enable hover content on glossary term
