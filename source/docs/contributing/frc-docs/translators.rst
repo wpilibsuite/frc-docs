@@ -1,5 +1,5 @@
-Top Translators
-===============
+Translators
+===========
 
 French
 ^^^^^^

@@ -10,4 +10,4 @@ Contributing to frc-docs
    drawio-saving-instructions
    translations
    top-contributors
-   top-translators
+   translators
