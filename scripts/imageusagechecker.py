@@ -3,7 +3,7 @@ import sys
 import hashlib
 import argparse
 import importlib
-import re
+import pathlib
 
 IMAGE_FORMATS = ['.png', '.jpg', '.svg']
 
@@ -52,9 +52,8 @@ def main():
         module_path = clean_module_path(exclude_file)
         globs = importlib.import_module(module_path).exclude_patterns
 
-        excluded_regex = "|".join(list(globs))
     else:
-        excluded_regex = ""
+        globs = []
 
     err = False
 
@@ -63,8 +62,8 @@ def main():
     # It may be useful to use the Sphinx implementation in the future
     # https://github.com/sphinx-doc/sphinx/blob/275d93b5068a4b6af4c912d5bebb2df928416060/sphinx/util/matching.py#L67
     for file_path in source_hashes.keys():
-        posix_path = file_path.replace('\\', '/').lower()
-        if re.search(excluded_regex, posix_path) is None:
+        path = PureWindowsPath(file_path)
+        if not any(path.match(match) for match in globs):
             if source_hashes[file_path] not in output_hashes.values():
                 print(file_path + " is not currently used!")
                 err = True
