@@ -137,7 +137,7 @@ One can connect a pressure transducer to measure the pressure stored in a pneuma
         double psi = pressureTransducer.get();
 
     .. code-tab:: c++
-    
+
         // product-specific voltage->pressure conversion, see product manual
         // in this case, 250(V/5)-25
         // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
