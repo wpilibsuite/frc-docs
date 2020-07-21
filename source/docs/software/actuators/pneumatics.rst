@@ -117,21 +117,33 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
 Pressure Transducers
 --------------------
 
-One can connect a pressure transducer to measure the pressure stored in a pneumatic system. These transducers connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput class in WPILib.
+One can connect a pressure transducer to measure the pressure stored in a pneumatic system. These transducers connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput or AnalogPotentiometer classes in WPILib.
 
 .. tabs::
 
     .. code-tab:: java
 
         import edu.wpi.first.wpilibj.AnalogInput;
+        import edu.wpi.first.wpilibj.AnalogPotentiometer;
 
-        AnalogInput pressureTransducer = new AnalogInput(/* the AnalogIn port*/ 2);
+        // product-specific voltage->pressure conversion, see product manual
+        // in this case, 250(V/5)-25
+        // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
+        // so if r is the raw AnalogPotentiometer output, the pressure is 250r-25
+        double scale = 250, offset = -25;
+        AnalogPotentiometer pressureTransducer = new AnalogPotentiometer(/* the AnalogIn port*/ 2, scale, offset);
 
-        // scaled units in the 0V-5V range
-        double volts = pressureTransducer.getVoltage();
+        // scaled values in psi units
+        double psi = pressureTransducer.get();
 
     .. code-tab:: c++
-        frc::AnalogInput pressureTransducer{2};
+    
+        // product-specific voltage->pressure conversion, see product manual
+        // in this case, 250(V/5)-25
+        // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
+        // so if r is the raw AnalogPotentiometer output, the pressure is 250r-25
+        double scale = 250, offset = -25;
+        frc::AnalogPotentiometer pressureTransducer {/* the AnalogIn port*/ 2, scale, offset};
 
-        // scaled units in the 0V-5V range
-        double volts = pressureTransducer.GetVoltage();
+        // scaled values in psi units
+        double psi = pressureTransducer.Get();
