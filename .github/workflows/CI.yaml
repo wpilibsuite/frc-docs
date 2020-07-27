@@ -74,7 +74,7 @@ jobs:
         make sizecheck
   update-release:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && github.repository_owner	== 'wpilibsuite'
     steps:
     - uses: actions/checkout@v2
     - name: Update Release
