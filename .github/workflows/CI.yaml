@@ -7,7 +7,7 @@ on:
     branches:
       - "*"
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
       with:
         name: frc-docs-pdf
         path: build/latex/firstroboticscompetition.pdf
-  Check Links:
+  check-links:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -49,7 +49,7 @@ jobs:
     - name: Check Links
       run: |
         make linkcheck
-  Check Linting:
+  check-linting:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -62,7 +62,7 @@ jobs:
     - name: Check Lint
       run: |
         make lint
-  Check Image Size:
+  check-image-size:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
