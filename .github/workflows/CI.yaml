@@ -81,5 +81,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: '2021'
         rm: true
-      if: github.event_name == 'push' && github.repository_owner	== 'wpilibsuite'
+      if: github.event_name == 'push'
     
