@@ -27,15 +27,15 @@ jobs:
       run: |
         make latexpdf
     - name: Archive HTML
-        uses: actions/upload-artifact@v2
-        with:
-          name: frc-docs-html
-          path: build/html/
-    - name: archive PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: frc-docs-pdf
-          path: build/latex/firstroboticscompetition.pdf
+      uses: actions/upload-artifact@v2
+      with:
+        name: frc-docs-html
+        path: build/html/
+    - name: Archive PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: frc-docs-pdf
+        path: build/latex/firstroboticscompetition.pdf
   Check Links:
     runs-on: ubuntu-latest
     steps:
