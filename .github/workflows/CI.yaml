@@ -72,3 +72,14 @@ jobs:
     - name: Check Image Size
       run: |
         make sizecheck
+  update-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: eine/tip@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: '2021'
+        rm: true
+      if: github.event_name == 'push' && github.repository_owner	== 'wpilibsuite'
+    
