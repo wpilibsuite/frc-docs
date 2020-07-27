@@ -79,6 +79,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Update Release
       uses: softprops/action-gh-release@v1
-      tag_name: 2021
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: 2021
