@@ -23,14 +23,14 @@ jobs:
     - name: Build HTML
       run: |
         make html
-    - name: Build PDF
-      run: |
-        make latexpdf
     - name: Archive HTML
       uses: actions/upload-artifact@v2
       with:
         name: frc-docs-html
         path: build/html/
+    - name: Build PDF
+      run: |
+        make latexpdf
     - name: Archive PDF
       uses: actions/upload-artifact@v2
       with:
