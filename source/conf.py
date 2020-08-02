@@ -106,6 +106,10 @@ IMAGE_SIZE_EXCLUSIONS = [
 #
 html_theme = "sphinx_rtd_theme"
 
+# Use HTML4 writer since ReadTheDocs theme does not support the new HTML5 writer
+# TODO, replace this when sphinx_rtd_theme is updated to better support HTML5
+html4_writer = True
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
