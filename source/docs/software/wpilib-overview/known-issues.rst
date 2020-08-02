@@ -6,6 +6,19 @@ This article details known issues (and workarounds) for FRC Control System Softw
 Open Issues
 -----------
 
+Chinese characters in Driver Station Log
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Issue:** Rarely, the driver station log will show Chinese characters instead of the English text. This appears to only happen when Windows is set to a language other then English.
+
+.. image:: images/known-issues/DS-chinese.jpg
+
+**Workaround:**
+There are two workarounds
+
+  #. Copy and paste the Chinese characters into notepad, and the English text will be shown.
+  #. Temporarily change the Windows language to English.
+
 macOS Simulation fails to launch in Visual Studio Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
