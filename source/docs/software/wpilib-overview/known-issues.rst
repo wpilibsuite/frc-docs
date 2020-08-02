@@ -14,7 +14,7 @@ Chinese characters in Driver Station Log
 .. image:: images/known-issues/DS-chinese.jpg
 
 **Workaround:**
-There are two workarounds
+There are two known workarounds:
 
   #. Copy and paste the Chinese characters into notepad, and the English text will be shown.
   #. Temporarily change the Windows language to English.
