@@ -22,6 +22,8 @@ Libraries
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
 
+`PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
+
 `Rev Robotics Color Sensor V3 <http://www.revrobotics.com/rev-31-1557/>`__ - Library for Rev Robotics Color Sensor included in 2020 Kit of Parts
 
 `Rev Robotics SPARK MAX <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
