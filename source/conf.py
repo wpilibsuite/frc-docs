@@ -66,7 +66,7 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
