@@ -28,7 +28,7 @@ Rearranging tiles in a list
 .. figure:: images/list-4.png
    :alt:
 
-Tiles in a list an be rearranged by right-clicking on the tile to be moved and selecting:
+Tiles in a list can be rearranged by right-clicking on the tile to be moved and selecting:
 
 1. "Move up" to move the tile before the previous tile
 2. "Move down" to move the tile after the next tile
