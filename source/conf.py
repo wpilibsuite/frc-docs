@@ -44,7 +44,7 @@ extensions = [
 ]
 
 # Configure linkcheck diff branch
-linkcheckdiff_branch = 'master'
+linkcheckdiff_branch = 'origin/master'
 
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'
