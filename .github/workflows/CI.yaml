@@ -46,9 +46,14 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
-    - name: Check Links
+    - name: Check Links (All)
+      if: github.repository_owner	== 'wpilibsuite'
       run: |
         make linkcheck
+    - name: Check Links (Diff)
+      if: github.repository_owner	!= 'wpilibsuite'
+      run: |
+        make linkcheckdiff
   check-linting:
     runs-on: ubuntu-latest
     steps:

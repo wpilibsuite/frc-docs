@@ -10,3 +10,4 @@ sphinxcontrib-svg2pdfconverter==1.1.0
 sphinx-hoverxref==0.5b1
 sphinxext-opengraph==0.3.0
 sphinxext-toptranslators==0.1.1
+git+git://github.com/wpilibsuite/sphinxext-linkcheckdiff.git
