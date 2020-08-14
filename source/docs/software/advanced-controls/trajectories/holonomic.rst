@@ -10,7 +10,7 @@ The holonomic drive controller should be instantiated with 2 PID controllers and
 
 The 2 PID controllers are controllers that should correct for error in the field-relative x and y directions respectively. For example, if the first 2 arguments are ``PIDController(1, 0, 0)`` and ``PIDController(1.2, 0, 0)`` respectively, the holonomic drive controller will add an additional meter per second in the x direction for every meter of error in the x direction and will add an additional 1.2 meters per second in the y direction for every meter of error in the y direction.
 
-The final parameter is a ``ProfiledPIDController`` for the rotation of the robot. Because the rotation dynamics of a holonomic drivetrain are decoupled from movement in the x and y directions, users can set custom rotation references while following a trajectory. These rotation references are profiled according to the parameters set in the ``ProfiledPIDController``.
+The final parameter is a ``ProfiledPIDController`` for the rotation of the robot. Because the rotation dynamics of a holonomic drivetrain are decoupled from movement in the x and y directions, users can set custom heading references while following a trajectory. These heading references are profiled according to the parameters set in the ``ProfiledPIDController``.
 
 .. tabs::
    .. code-tab:: java
@@ -36,11 +36,11 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
 
 Getting Adjusted Velocities
 ---------------------------
-The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and a desired rotation target.
+The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal is comprised of a desired pose, linear velocity, and heading.
 
-.. note:: The "goal pose" represents the position that the robot should be at at a particular timestmap when tracking the trajectory. It does NOT represent the final endpoint of the trajectory.
+.. note:: The "goal pose" represents the position that the robot should be at at a particular timestamp when tracking the trajectory. It does NOT represent the trajectory's endpoint.
 
-The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired rotation target as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. For its ease, users should use the latter method when tracking trajectories.
+The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
 
 .. tabs::
    .. code-tab:: java
