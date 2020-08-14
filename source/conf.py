@@ -38,9 +38,13 @@ extensions = [
     'sphinxcontrib.rsvgconverter',
     'sphinxext.opengraph',
     'sphinxext.toptranslators',
+    'sphinxext.linkcheckdiff',
     'hoverxref.extension',
-    'notfound.extension'
+    'notfound.extension',
 ]
+
+# Configure linkcheck diff branch
+linkcheckdiff_branch = 'origin/master'
 
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'

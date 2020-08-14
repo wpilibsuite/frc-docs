@@ -40,15 +40,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - uses: actions/setup-python@v2
       with:
         python-version: 3.7
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
-    - name: Check Links
+    - name: Check Links (All)
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       run: |
         make linkcheck
+    - name: Check Links (Diff)
+      if: github.event_name == 'pull_request'
+      run: |
+        make linkcheckdiff
   check-linting:
     runs-on: ubuntu-latest
     steps:
