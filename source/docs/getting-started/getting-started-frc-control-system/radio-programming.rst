@@ -46,7 +46,7 @@ The Radio Configuration Utility programs a number of configuration settings into
 - DHCP server enabled. Serves out:
 
   - 10.TE.AM.11 - 10.TE.AM.111 on the wired side
-  - 10.TE.AM.130 - 10.TE.AM.230 on the wireless side
+  - 10.TE.AM.138 - 10.TE.AM.237 on the wireless side
   - Subnet mask of 255.255.255.0
   - Broadcast address 10.TE.AM.255
 
