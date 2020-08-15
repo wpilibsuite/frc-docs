@@ -1,6 +1,6 @@
 Holonomic Drive Controller
 ==========================
-The holonomic drive controller is a trajectory tracker for robots with holonomic drivetrains (i.e. swerve and mecanum). This can be used to accurately track trajectories with correction for minor disturbances.
+The holonomic drive controller is a trajectory tracker for robots with holonomic drivetrains (e.g. swerve, mecanum, etc.). This can be used to accurately track trajectories with correction for minor disturbances.
 
 Constructing a Holonomic Drive Controller
 -----------------------------------------
