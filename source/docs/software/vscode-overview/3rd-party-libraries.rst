@@ -26,6 +26,12 @@ Libraries
 
 `Rev Robotics SPARK MAX <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
 
+Community Libraries
+-------------------
+
+`PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
+
+
 WPILib Command Libraries
 ------------------------
 

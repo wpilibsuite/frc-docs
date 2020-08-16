@@ -36,8 +36,25 @@ extensions = [
     'sphinxcontrib.ghcontributors',
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
+    'sphinxext.opengraph',
+    'sphinxext.toptranslators',
+    'sphinxext.linkcheckdiff',
     'hoverxref.extension',
-    'notfound.extension'
+    'notfound.extension',
+]
+
+# Configure linkcheck diff branch
+linkcheckdiff_branch = 'origin/master'
+
+# Configure OpenGraph support
+ogp_site_url = 'https://docs.wpilib.org/en/latest/'
+ogp_site_name = 'FIRST Robotics Competition Documentation'
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
+
+# Enables ChiefDelphi support
+ogp_custom_meta_tags = [
+    '<meta property="og:ignore_canonical" content="true" />',
+    '<meta name="theme-color" content="#AC2B37" />',
 ]
 
 # Enable hover content on glossary term
@@ -53,12 +70,15 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
 linkcheck_retries = 3
 linkcheck_workers = 1
+
+# Specify a standard user agent, as Sphinx default is blocked on some sites
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0'
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -75,7 +95,6 @@ exclude_patterns = ['docs/beta/*']
 master_doc = "index"
 
 # Specify files to ignore during SizeCheck
-
 IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
@@ -113,7 +132,7 @@ user_options = [
 ]
 
 def setup(app):
-  app.add_stylesheet('css/frc-rtd.css')
+  app.add_css_file('css/frc-rtd.css')
 
 # -- Options for latex generation --------------------------------------------
 

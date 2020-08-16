@@ -1,5 +1,5 @@
 ![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)
-![Build Status](https://dev.azure.com/wpilib/Documentation/_apis/build/status/wpilibsuite.frc-docs?branchName=master)
+![CI](https://github.com/wpilibsuite/frc-docs/workflows/CI/badge.svg)
 
 # frc-docs
 Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/).
@@ -38,12 +38,6 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 ``.\make lint`` or ``make lint``
 
 **Note**: Due to a bug with the linter on Windows machines, this command is currently only usable on Linux systems.
-
-### Translate Check
-
-``.\make translate`` or ``make translate``
-
-This ensures that translations are updated concurrently by updating the transifex configuration file.
 
 ### Image Size Check
 

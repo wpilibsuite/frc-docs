@@ -11,7 +11,7 @@ The dockerfile is used to build an ECR image used by the training instance. The 
 - TensorFlow for GPU
 - Python 2 and 3
 - Coral retraining scripts
-- `WPILib scripts <https://github.com/wpilibsuite/DetectCoral/tree/dev/container/coral>`__
+- `WPILib scripts <https://github.com/wpilibsuite/DetectCoral/tree/dc17f4abdc101612ca163857bde363a082cd6ee2/container/coral>`__
 
 Data
 ----
