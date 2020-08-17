@@ -6,7 +6,7 @@ Many of the programming tools used in FRC need network access for various reason
 Disabling Windows Firewall
 --------------------------
 
-.. important:: Disabling your firewall requires administrator privelages to the PC. Additionally note that disabling the firewall is not recommended for computers that often connect to the internet.
+.. important:: Disabling your firewall requires administrator privileges to the PC. Additionally note that disabling the firewall is not recommended for computers that connect to the internet.
 
 The easiest solution is to disable the Windows Firewall. Teams should beware that this does make the PC potentially more vulnerable to malware attacks if connecting to the internet.
 
@@ -87,7 +87,7 @@ Alternatively, you can add exceptions to the Firewall for any FRC programs you a
 
    .. group-tab:: Windows 7
 
-      Click :guilabel:`Start` -> :guilabel`Control Panel` to open the Control Panel. Click the dropdown next to :guilabel:`View by:` and select :guilabel:`Small icons` then click :guilabel:`Windows Defender Firewall`.
+      Click :guilabel:`Start` -> :guilabel:`Control Panel` to open the Control Panel. Click the dropdown next to :guilabel:`View by:` and select :guilabel:`Small icons` then click :guilabel:`Windows Defender Firewall`.
 
       .. image:: images/windows-firewall-configuration-1.png
 
