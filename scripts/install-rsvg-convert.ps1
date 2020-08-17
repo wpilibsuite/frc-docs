@@ -7,6 +7,9 @@ $DOWNLOAD_URL = 'https://github.com/miyako/console-rsvg-convert/releases/downloa
 $PATH_BASE = 'C:\rsvg-convert\'
 $EXECUTABLE_PATH = $PATH_BASE + 'x64-static\'
 
+echo "Creating Directory"
+New-Item -ItemType Directory -Force -Path $PATH_BASE | Out-Null
+
 if (!(gwmi win32_operatingsystem | select osarchitecture).osarchitecture -eq "64-bit") {
     Read-Host -Prompt "This script is only available for 64 bit machines"
     return
@@ -14,14 +17,25 @@ if (!(gwmi win32_operatingsystem | select osarchitecture).osarchitecture -eq "64
 
 echo "Downloading RSVG-Convert"
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$client = new-object System.Net.WebClient
+try {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $client = new-object System.Net.WebClient
 
-$client.DownloadFile($DOWNLOAD_URL, $PATH_BASE + 'rsvg-convert.zip')
+    $client.DownloadFile($DOWNLOAD_URL, $PATH_BASE + 'rsvg-convert.zip')
+} catch {
+    echo ($PATH_BASE + 'rsvg-convert.zip')
+    Read-Host -Prompt "Downloading file failed!"
+    return   
+}
 
 echo "Extracting"
 
-Expand-Archive -Force ($PATH_BASE + 'rsvg-convert.zip') $PATH_BASE
+try {
+    Expand-Archive -Force ($PATH_BASE + 'rsvg-convert.zip') $PATH_BASE
+} catch {
+    Read-Host -Prompt "Error extracting file!"
+    return
+}
 
 $arrPath = $env:Path -split ';'
 
