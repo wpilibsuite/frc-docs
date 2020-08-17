@@ -55,9 +55,9 @@ The easiest solution is to disable the Windows Firewall. Teams should beware tha
 Whitelisting Apps
 -----------------
 
-.. tabs::
+Alternatively, you can add exceptions to the Firewall for any FRC programs you are having issues with.
 
-   Alternatively, you can add exceptions to the Firewall for any FRC programs you are having issues with.
+.. tabs::
 
    .. group-tab:: Windows 10
 
