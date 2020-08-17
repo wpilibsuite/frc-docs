@@ -1,3 +1,9 @@
+if (Get-Command "rsvg-convert" -ErrorAction SilentlyContinue) 
+{ 
+    Read-Host -Prompt "rsvg-convert is already available on your system!"
+    return
+}
+
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Start-Process PowerShell -Verb RunAs "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
     exit;
