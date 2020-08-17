@@ -53,7 +53,7 @@ This checks all images are under 500KB
 
 ``.\make latexpdf`` or ``make latexpdf``
 
-**Note**: Due to a lack of librsvg2 support on Windows, SVG output may be broken on Windows builds.
+**Note**: Run the ``scripts/install-rsvg-convert.ps1`` script in powershell to ensure ``rsvg-convert`` is installed.
 
 ### Building EPUB
 
