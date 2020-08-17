@@ -37,7 +37,7 @@ The easiest solution is to disable the Windows Firewall. Teams should beware tha
       Then click on the **On** toggle to turn it off.
 
       .. image:: images/windows-firewall/disable-firewall-toggle.png
-      
+
    .. group-tab:: Windows 7
 
       .. image:: images/windows-firewall-configuration-1.png

@@ -39,7 +39,7 @@ Ping fails
 .. tabs::
 
    .. group-tab:: Windows 10
-      
+
       .. image:: images/roborio-troubleshooting/win10-dhcp.png
          :alt: Windows 10 image of the adapter setting
 
