@@ -83,7 +83,7 @@ Alternatively, you can add exceptions to the Firewall for any FRC programs you a
 
       For each FRC program you are having an issue with, make sure that it appears in the list and that it has a check in each of the 3 columns. If you need to change a setting, you made need to click the :guilabel:`Change settings` button in the top right before changing the settings. If the program is not in the list at all, click the :guilabel:`Allow another program...` button and browse to the location of the program to add it.
 
-      .. image:: images/windows-firewall-configuration-6.png
+      .. image:: images/windows-firewall/allow-through-firewall.png
 
    .. group-tab:: Windows 7
 
