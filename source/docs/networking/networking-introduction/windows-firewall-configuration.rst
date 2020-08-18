@@ -46,7 +46,7 @@ The easiest solution is to disable the Windows Firewall. Teams should beware tha
 
       .. image:: images/windows-firewall-configuration-2.png
 
-      In the left pane, click :guilabel`Turn Windows Defender Firewall on or off`, and click yes. Enter your Administrator password if a dialog appears.
+      In the left pane, click :guilabel:`Turn Windows Defender Firewall on or off`, and click yes. Enter your Administrator password if a dialog appears.
 
       .. image:: images/windows-firewall-configuration-3.png
 
