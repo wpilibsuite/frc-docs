@@ -36,4 +36,4 @@ C++/Java Teams
 
 A number of software components were broken out of WPILib in 2017 and are now maintained by third parties. See `this blog <https://www.firstinspires.org/robotics/frc/blog/2017-control-system-update>`__ for more details.
 
-A directory of available 3rd party software that plugs in to WPILib can be found on :ref:`docs/software/wpilib-overview/3rd-party-libraries:3rd Party Libraries`.
+A directory of available 3rd party software that plugs in to WPILib can be found on :ref:`docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries`.

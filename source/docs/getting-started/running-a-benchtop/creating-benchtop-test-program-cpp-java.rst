@@ -220,15 +220,15 @@ Test Mode
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestPeriodic`` is provided here for example.
 
-.. |Command Palette| image:: /docs/software/wpilib-overview/images/creating-robot-program/command-palette.png
-.. |WPILib Commands| image:: /docs/software/wpilib-overview/images/creating-robot-program/wpilib-commands.png
-.. |Create New Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
-.. |New Project Creator| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator.png
-.. |New Project Configured| image:: /docs/software/wpilib-overview/images/creating-robot-program/new-project-creator-configured.png
-.. |Opened Robot Project| image:: /docs/software/wpilib-overview/images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image:: /docs/software/wpilib-overview/images/creating-robot-program/cpp-configurations.png
+.. |Command Palette| image:: /docs/software/vscode-overview/images/creating-robot-program/command-palette.png
+.. |WPILib Commands| image:: /docs/software/vscode-overview/images/creating-robot-program/wpilib-commands.png
+.. |Create New Project| image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
+.. |New Project Creator| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
+.. |New Project Configured| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
+.. |Opened Robot Project| image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
+.. |C++ Configurations| image:: /docs/software/vscode-overview/images/creating-robot-program/cpp-configurations.png
 
 Deploying the Project to a Robot
 --------------------------------
 
-Please see the instructions :ref:`here <docs/software/wpilib-overview/deploying-robot-code:Building and Deploying Robot Code>` for deploying the program onto a robot.
+Please see the instructions :ref:`here <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>` for deploying the program onto a robot.

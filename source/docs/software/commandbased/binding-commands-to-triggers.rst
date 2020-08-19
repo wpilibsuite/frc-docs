@@ -70,7 +70,7 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
 
 After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1JoystickButton.html>`__):
 
-.. warning:: There is an issue with using JoystickButtons and POVButtons in C++. Take a look at the :ref:`known issues <docs/software/wpilib-overview/known-issues:C++ Command Based JoystickButton and POVButton not functioning>` page for more information.
+.. warning:: There is an issue with using JoystickButtons and POVButtons in C++. Take a look at the :ref:`known issues <docs/2020-overview/known-issues:C++ Command Based JoystickButton and POVButton not functioning>` page for more information.
 
 .. tabs::
 
