@@ -102,6 +102,8 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/getting-started/getting-started-frc-control-system/images/frc-control-system-layout.svg"
 ]
 
+# Required to display LaTeX in hover content
+hoverxref_mathjax = True
 
 # -- Options for HTML output -------------------------------------------------
 
