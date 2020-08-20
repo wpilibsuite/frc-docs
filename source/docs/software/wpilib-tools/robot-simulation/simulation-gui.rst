@@ -36,6 +36,7 @@ Learning the Layout
 9. **FMS** - This is used for simulating many of the common FMS systems.
 10. **Joysticks** - This is joysticks that the robot code can directly pull from.
 11. **Other Devices** - This includes devices that do not fall into any of the other categories, such as the ADXRS450 gyro that is included in the Kit of Parts.
+12. **Mechanism2D** - This shows the live drawing of the chosen mechanism.
 
 Adding a System Joystick to Joysticks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
