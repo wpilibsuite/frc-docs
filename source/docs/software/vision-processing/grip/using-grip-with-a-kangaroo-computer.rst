@@ -55,5 +55,5 @@ program detected that met the requirements of the Filter Contours operation.
 Considerations
 --------------
 The Kangaroo runs Windows 10, so care must to be taken to make sure GRIP will keep running on the robot during a match or testing.
-For example, it should not try to do a Windows Update, Virus scan refresh, go to sleep, ect. Once configured, it has the advantage
+For example, it should not try to do a Windows Update, Virus scan refresh, go to sleep, etc. Once configured, it has the advantage
 of being a normal Intel Architecture and should give predictable performance since it is running only one application.

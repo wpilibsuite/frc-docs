@@ -32,5 +32,5 @@ Inference with the Google Coral
 .. image:: images/frcvision-upload-py.png
    :alt: Button to upload Python script
 
-12. Real time labelling can be found on an MJPEG stream located at http://frcvision.local:1182
+12. Real time labeling can be found on an MJPEG stream located at http://frcvision.local:1182
 13. The information about the detected objects is put to NetworkTables.
