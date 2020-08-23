@@ -80,3 +80,15 @@ jobs:
     - name: Check Image Size
       run: |
         make sizecheck
+  check-spelling:
+    name: Check Spelling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v1
+      - name: misspell
+        uses: reviewdog/action-misspell@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          locale: "US"
+          reporter: "github-check"

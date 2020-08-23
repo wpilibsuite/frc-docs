@@ -1,4 +1,4 @@
-name: misspell
+name: misspell-fixer
 
 on:
   - push
