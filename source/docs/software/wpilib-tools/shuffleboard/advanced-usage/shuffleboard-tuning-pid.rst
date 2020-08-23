@@ -28,4 +28,6 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 4. The setpoint value that corresponds the to the pot value when the wrist has reached the desired value
 5. Enables the PID controller - that is, starts it looping at regular intervals reading the pot value, computing the error, applying the P, I, and D terms and setting the motor value.
 
+.. note:: It's important to note that the enable option does not affect the `PIDController <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop.
+
 Try various values to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
