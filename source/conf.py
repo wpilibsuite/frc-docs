@@ -37,14 +37,25 @@ extensions = [
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
     'sphinxext.opengraph',
+    'sphinxext.toptranslators',
+    'sphinxext.linkcheckdiff',
     'hoverxref.extension',
-    'notfound.extension'
+    'notfound.extension',
 ]
+
+# Configure linkcheck diff branch
+linkcheckdiff_branch = 'origin/master'
 
 # Configure OpenGraph support
 ogp_site_url = 'https://docs.wpilib.org/en/latest/'
 ogp_site_name = 'FIRST Robotics Competition Documentation'
 ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
+
+# Enables ChiefDelphi support
+ogp_custom_meta_tags = [
+    '<meta property="og:ignore_canonical" content="true" />',
+    '<meta name="theme-color" content="#AC2B37" />',
+]
 
 # Enable hover content on glossary term
 hoverxref_roles = ['term']
@@ -59,7 +70,7 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*']
+linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
@@ -91,6 +102,8 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/getting-started/getting-started-frc-control-system/images/frc-control-system-layout.svg"
 ]
 
+# Required to display LaTeX in hover content
+hoverxref_mathjax = True
 
 # -- Options for HTML output -------------------------------------------------
 

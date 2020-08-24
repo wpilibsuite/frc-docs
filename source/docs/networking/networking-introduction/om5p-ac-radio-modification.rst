@@ -5,7 +5,7 @@ The intended use case for the OM5P-AC radio does not subject it to the same shoc
 
 .. warning:: It takes significant pressure applied to the bottom of the case to cause a reboot in this manner. Most FRC radio reboot issues can be traced to the power path in some form. We recommend mitigating this risk via strategic mounting of the radio rather than opening and modifying the radio (and risk damaging delicate internal components):
 
-- Avoid using the "mounting tab" features on the bottom of the radio)
+- Avoid using the "mounting tab" features on the bottom of the radio.
 - You may wish to mount the radio to allow for some shock absorption. A little can go a long way, mounting the radio using hook and loop fastener or to a robot surface with a small amount of flex (plastic or sheet metal sheet, etc.) can significantly reduce the forces experienced by the radio.
 
 Opening the Radio

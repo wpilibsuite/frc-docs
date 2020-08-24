@@ -1,5 +1,5 @@
 ![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)
-![Build Status](https://dev.azure.com/wpilib/Documentation/_apis/build/status/wpilibsuite.frc-docs?branchName=master)
+![CI](https://github.com/wpilibsuite/frc-docs/workflows/CI/badge.svg)
 
 # frc-docs
 Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/).
@@ -53,7 +53,7 @@ This checks all images are under 500KB
 
 ``.\make latexpdf`` or ``make latexpdf``
 
-**Note**: Due to a lack of librsvg2 support on Windows, SVG output may be broken on Windows builds.
+**Note**: Run the ``scripts/install-rsvg-convert.ps1`` script in powershell to ensure ``rsvg-convert`` is installed.
 
 ### Building EPUB
 

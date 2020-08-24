@@ -36,9 +36,21 @@ If there is an IP address in the step above, try pinging this IP address using t
 Ping fails
 ^^^^^^^^^^
 
-.. image:: images/roborio-troubleshooting/control-panel-dhcp.png
+.. tabs::
 
-If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Obtain an Address Automatically** (also known as DHCP). To check this, click **Start -> Control Panel -> Network Connections -> Change adapter settings**, then right click on the appropriate interface (usually Local Area Connection for Ethernet or Wireless Network Connection for wireless) and select **Properties**. Click **Internet Protocol Version 4**, then click **Properties**. Make sure both radio buttons are set to **Obtain automatically**.
+   .. group-tab:: Windows 10
+
+      .. image:: images/roborio-troubleshooting/win10-dhcp.png
+         :alt: Windows 10 image of the adapter setting
+
+      If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
+
+   .. group-tab:: Windows 7
+
+      .. image:: images/roborio-troubleshooting/control-panel-dhcp.png
+         :alt: Windows 7 image of the adapter setting
+
+      If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Obtain an Address Automatically** (also known as DHCP). To check this, click :guilabel:`Start` -> :guilabel:`Control Panel` -> :guilabel:`Network Connections` -> :guilabel:`Change adapter settings`, then right click on the appropriate interface (usually Local Area Connection for Ethernet or Wireless Network Connection for wireless) and select :guilabel:`Properties`. Click :guilabel:`Internet Protocol Version 4`, then click :guilabel:`Properties`. Make sure both radio buttons are set to :guilabel:`Obtain automatically`.
 
 Other things to check
 ---------------------

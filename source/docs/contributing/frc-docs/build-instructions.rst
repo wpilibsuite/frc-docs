@@ -25,6 +25,8 @@ Once Python is installed, open up Powershell. Then navigate to the frc-docs dire
 
 Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
 
+Lastly, you need to install ``rsvg-convert`` by running the ``scripts/install-rsvg-convert.ps1`` script in powershell. This requires administrator access.
+
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
 

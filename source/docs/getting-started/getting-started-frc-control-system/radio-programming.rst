@@ -46,7 +46,7 @@ The Radio Configuration Utility programs a number of configuration settings into
 - DHCP server enabled. Serves out:
 
   - 10.TE.AM.11 - 10.TE.AM.111 on the wired side
-  - 10.TE.AM.130 - 10.TE.AM.230 on the wireless side
+  - 10.TE.AM.138 - 10.TE.AM.237 on the wireless side
   - Subnet mask of 255.255.255.0
   - Broadcast address 10.TE.AM.255
 
@@ -67,8 +67,6 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 `FRC Radio Configuration 20.0.0 Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
-
-.. warning:: Version 19.1.1 corrects an issue with applying the Bandwidth Limit present in version 19.1.0. Teams should install the new version, then re-program their radio (there is no need to re-flash the firmware).
 
 Install the software
 --------------------
