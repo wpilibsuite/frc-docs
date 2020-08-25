@@ -30,7 +30,7 @@ All simulation classes (with the exception of the differential drive simulator) 
 Usage in User Code
 ------------------
 
-The following is available from the WPILib :code:`elevatorsim` example project.
+The following is available from the WPILib :code:`elevatorsimulation` `example project <https://github.com/mcm001/allwpilib/tree/state-space-v2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__.
 
 In addition to standard objects such as motors and encoders, we instantiate our elevator simulator using known constants such as carriage mass and gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the distance and rate read by our our :code:`Encoder`.
 
