@@ -38,7 +38,7 @@ In FRC, pressure is created using a pneumatic compressor and stored in pneumatic
 
     .. code-tab:: c++
 
-        frc::Compressor c {0};
+        frc::Compressor c{0};
 
         c.SetClosedLoopControl(true);
         c.SetClosedLoopControl(false);
@@ -75,7 +75,7 @@ Single solenoids in WPILib are controlled using the Solenoid class. To construct
 
     .. code-tab:: c++
 
-        frc::Solenoid exampleSolenoid {1};
+        frc::Solenoid exampleSolenoid{1};
 
         exampleSolenoid.Set(true);
         exampleSolenoid.Set(false);
@@ -106,8 +106,8 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
 
    .. code-tab:: c++
 
-        frc::DoubleSolenoid exampleDouble {1, 2};
-        frc::DoubleSolenoid exampleDouble {/* The PCM CAN ID */ 9, 1, 2};
+        frc::DoubleSolenoid exampleDouble{1, 2};
+        frc::DoubleSolenoid anotherDoubleSolenoid{/* The PCM CAN ID */ 9, 1, 2};
 
         exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
@@ -143,7 +143,7 @@ One can connect a pressure transducer to measure the pressure stored in a pneuma
         // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
         // so if r is the raw AnalogPotentiometer output, the pressure is 250r-25
         double scale = 250, offset = -25;
-        frc::AnalogPotentiometer pressureTransducer {/* the AnalogIn port*/ 2, scale, offset};
+        frc::AnalogPotentiometer pressureTransducer{/* the AnalogIn port*/ 2, scale, offset};
 
         // scaled values in psi units
         double psi = pressureTransducer.Get();
