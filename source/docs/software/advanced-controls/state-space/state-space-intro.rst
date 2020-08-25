@@ -28,7 +28,7 @@ Recall that 2D space has two axes: x and y. We represent locations within this s
 
 In this image, the vectors representing states in state-space are arrows. From now on these vectors will be represented simply by a point at the vector's tip, but remember that the rest of the vector is still there.
 
-In addition to the state, inputs and :term:`outputs <output>` are represented as vectors. Since the mapping from the current states and inputs to the change in state is a system of equations, it’s natural to write it in matrix form. This matrix equation can be written in state-space notation.
+In addition to the :term:`state`, :term:`inputs <Input>` and :term:`outputs <output>` are represented as vectors. Since the mapping from the current states and inputs to the change in state is a system of equations, it’s natural to write it in matrix form. This matrix equation can be written in state-space notation.
 
 What is state-space notation
 ----------------------------
