@@ -31,7 +31,7 @@ We will use this field image as an example for the whole process of image proces
 
 .. image:: images/image-thresholding-2.jpg
 
-By thresholding the image using HSV, you can seperate the image into the vision target (foreground), and the other things that the camera sees (background). The following code example converts a HSV image into a binary image by thresholding with HSV values.
+By thresholding the image using HSV, you can separate the image into the vision target (foreground), and the other things that the camera sees (background). The following code example converts a HSV image into a binary image by thresholding with HSV values.
 
 .. tabs::
 

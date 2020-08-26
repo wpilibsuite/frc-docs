@@ -51,7 +51,7 @@ When creating your own dataset, it is often easier to take frames from a video r
 .. image:: images/supervisely-custom-upload.png
    :alt: Custom upload dialog on Supervisely
 
-5. Click into your newly import Dataset. Use the ``rectangle tool`` to draw appropriate boxes around the objects which you wish to label. Make sure to choose the correct class while you are labelling. The class selector is in the top left of your screen.
+5. Click into your newly import Dataset. Use the ``rectangle tool`` to draw appropriate boxes around the objects which you wish to label. Make sure to choose the correct class while you are labeling. The class selector is in the top left of your screen.
 
 .. image:: images/supervisely-labeling.png
    :alt: Custom upload dialog on Supervisely

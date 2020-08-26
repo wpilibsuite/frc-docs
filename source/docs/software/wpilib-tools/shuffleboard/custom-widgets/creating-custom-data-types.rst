@@ -31,7 +31,7 @@ Your custom data class must also implement the ``asMap()`` method that returns t
       }
    }
 
-It is also good practise to override the default ``equals`` and ``hashcode`` methods to ensure that different objects are considered equivalent when their fields are the same.
+It is also good practice to override the default ``equals`` and ``hashcode`` methods to ensure that different objects are considered equivalent when their fields are the same.
 The ``asMap()`` method should return the data represented in a simple Map object as it will be mapped to the NetworkTable entry it corresponds to. In this case, we can represent the point as its X and Y coordinates and return a ``Map`` containing them.
 
 .. code-block:: java
