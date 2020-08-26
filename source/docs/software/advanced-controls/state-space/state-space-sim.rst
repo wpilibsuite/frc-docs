@@ -5,25 +5,25 @@ Because state-space notation allows us to compactly represent the :term:`dynamic
 
 - In normal user code:
  
- - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings.
- - Motor outputs are set.
+ - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
+ - Motor outputs are set
 
 - In simulation periodic code:
  
- - The simulation's :term:`state` estimate is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop.
- - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep.
+ - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
+ - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
 
 WPILib's Simulation Classes
 ---------------------------
 
 The following physics simulation classes are available in WPILib:
 
-- LinearSystemSim, for modeling systems with linear dynamics.
+- LinearSystemSim, for modeling systems with linear dynamics
 - FlywheelSim
 - DifferentialDrivetrainSim
 - ElevatorSim, which models gravity
 - SingleJointedArmSim, which models gravity
-- BatterySim, which simply estimates battery voltage sag based on drawn currents.
+- BatterySim, which simply estimates battery voltage sag based on drawn currents
 
 All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateXhat(xhat, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
 
