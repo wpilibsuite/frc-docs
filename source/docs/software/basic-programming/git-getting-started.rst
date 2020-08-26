@@ -91,8 +91,9 @@ Now you'll want to open a powershell window and navigate to your project directo
 
 .. image:: images/image7.png
 
-In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections. 
-.. note: Replace the filepath ("C:\Users\ExampleUser9007\Documents\Example Folder") with the one you want to create the repo in, and replace the remote URL (https://github.com/ExampleUser9007/ExampleRepo.git) with the URL for the repo you created in the previous steps.
+In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
+
+.. note:: Replace the filepath ("C:\Users\ExampleUser9007\Documents\Example Folder") with the one you want to create the repo in, and replace the remote URL (https://github.com/ExampleUser9007/ExampleRepo.git) with the URL for the repo you created in the previous steps.
 
 .. code-block:: console
 
