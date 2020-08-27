@@ -93,6 +93,8 @@ Now you'll want to open a powershell window and navigate to your project directo
 
 In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
 
+.. note:: Replace the filepath ("C:\Users\ExampleUser9007\Documents\Example Folder") with the one you want to create the repo in, and replace the remote URL (https://github.com/ExampleUser9007/ExampleRepo.git) with the URL for the repo you created in the previous steps.
+
 .. code-block:: console
 
     > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
@@ -106,6 +108,8 @@ In the below example, we created a file called ``README.md`` with the contents o
      create mode 100644 README.md
     > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
     > git push -u origin master
+
+For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/getting-started/running-a-benchtop/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
 
 Commits
 -------
