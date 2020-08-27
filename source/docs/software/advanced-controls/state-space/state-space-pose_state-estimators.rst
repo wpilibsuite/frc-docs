@@ -29,7 +29,7 @@ The following example shows the use of the ``DifferentialDrivePoseEstimator``:
 Tuning Pose Estimators
 ----------------------
 
-All pose estimators offer user-customizable standard deviations for prediction and measurements. MORE STUFF ABOUT PICKING GOOD NUMBERS GOES HERE
+All pose estimators offer user-customizable standard deviations for model and measurements. These standard deviations determine how much the filter "trusts" each of these states. For example, increasing the standard deviation for measurements (as one might do for a noisy signal) would lead to the estimator trusting its state estimate more than the incoming measurements. On the field, this might mean that the filter can reject noisy vision data well, at the cost of being slow to correct for model deviations. While these values can be estimated beforehand, they very much depend on the unique setup of each robot and global measurement method.
 
 The Differential Drive State Estimator
 --------------------------------------

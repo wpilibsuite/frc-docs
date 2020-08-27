@@ -16,9 +16,7 @@ The full example is available in the state-space flywheel /`Java <https://github
 Why Use State-Space Control?
 ----------------------------
 
-TODO
-
-.. todo:: real explication.
+State-space and model-based control is powerful for a number of reasons. Because we focus on creating an accurate model of our system we're controlling, we can also accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
 
 Modeling Our Flywheel
 ---------------------

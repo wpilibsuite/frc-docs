@@ -46,6 +46,9 @@ State-Space Glossary
     Measurement
         Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
 
+    Model
+        A mathematical representation of a physical :term:`system`.
+
     Plant
         The system or collection of actuators being controlled. 
 
