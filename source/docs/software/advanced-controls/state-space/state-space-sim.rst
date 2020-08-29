@@ -4,12 +4,12 @@ Physics Simulation with WPILib
 Because state-space notation allows us to compactly represent the :term:`Dynamics` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying any existing code. The basic flow of such simulators is as follows:
 
 - In normal user code:
- 
+
  - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
  - Motor outputs are set
 
 - In simulation periodic code:
- 
+
  - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
  - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
 
@@ -56,7 +56,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
          :linenos:
          :lineno-start: 36
 
-Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator. 
+Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator.
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
 

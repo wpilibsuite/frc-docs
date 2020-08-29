@@ -74,7 +74,7 @@ The process and measurement noise covariance matrices :math:`\mathbf{Q}` and :ma
 Error Covariance Matrix
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward. 
+The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward.
 
 Predict step
 ------------
@@ -86,12 +86,12 @@ Correct step
 
 In the correct step, our state estimate is updated to include new measurement information. This new information is weighted against the state estimate :math:`\mathbf{\hat{x}}` by the Kalman gain :math:`\mathbf{K}`. Large values of :math:`\mathbf{K}` more highly weight incoming measurements, while smaller values of :math:`\mathbf{K}` more highly weight our state prediction. Because :math:`\mathbf{K}` is related to :math:`\mathbf{P}`, larger values of :math:`\mathbf{P}` will increase :math:`\mathbf{K}` and more heavily weight measurements. If, for example, a filter is predicted for a long duration, the large :math:`\mathbf{P}` would heavily weight the new information.
 
-Finally, the error covariance :math:`\mathbf{P}` decreases to increase our confidence in the state estimate. 
+Finally, the error covariance :math:`\mathbf{P}` decreases to increase our confidence in the state estimate.
 
 Tuning Kalman Filters
 ---------------------
 
-WPILib's Kalman Filter classes' constructors take a linear system, a vector of process noise standard deviations and measurement noise standard deviations. These are converted to :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices by filling the diagonals with the square of the standard deviations, or variances, of each state or measurement. By decreasing a state's standard deviation (and therefore its corresponding entry in :math:`\mathbf{Q}`), the filter will distrust incoming measurements more. Similarly, increasing a state's standard deviation will trust incoming measurements more. The same holds for the measurement standard deviations -- decreasing an entry will make the filter more highly trust the incoming measurement for the corresponding state, while increasing it will decrease trust in the measurement. 
+WPILib's Kalman Filter classes' constructors take a linear system, a vector of process noise standard deviations and measurement noise standard deviations. These are converted to :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices by filling the diagonals with the square of the standard deviations, or variances, of each state or measurement. By decreasing a state's standard deviation (and therefore its corresponding entry in :math:`\mathbf{Q}`), the filter will distrust incoming measurements more. Similarly, increasing a state's standard deviation will trust incoming measurements more. The same holds for the measurement standard deviations -- decreasing an entry will make the filter more highly trust the incoming measurement for the corresponding state, while increasing it will decrease trust in the measurement.
 
 .. tabs::
 

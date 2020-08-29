@@ -81,12 +81,12 @@ Unlike the :ref:`docs/software/advanced-controls/trajectories/ramsete:Ramsete Co
                 kinematics,
                 kDt);
 
-        feedforward = new PlantInversionFeedforward<>( 
+        feedforward = new PlantInversionFeedforward<>(
                 Nat.N10(), Nat.N2(), controller::getDynamics, kDt);
 
         estimator = new DifferentialDriveStateEstimator(
                 plant,
-                MatrixUtils.zeros(Nat.N10()), 
+                MatrixUtils.zeros(Nat.N10()),
                 new MatBuilder<>(Nat.N10(), Nat.N1()).fill(
                     0.002, 0.002, 0.0001, 1.5, 1.5, 0.5, 0.5, 10.0, 10.0, 2.0), // model state standard deviations
                 new MatBuilder<>(Nat.N3(), Nat.N1()).fill(0.0001, 0.005, 0.005), // encoder and gyro measurement standard deviations
@@ -211,4 +211,4 @@ Unlike the :ref:`docs/software/advanced-controls/trajectories/ramsete:Ramsete Co
 State Space Drivetrain Controllers in the Command-Based Framework
 -----------------------------------------------------------------
 
-For ease of use, ``LTVDiffDriveCommand`` and ``LTVUnicycleCommand`` classes are built in to WPILib. 
+For ease of use, ``LTVDiffDriveCommand`` and ``LTVUnicycleCommand`` classes are built in to WPILib. TODO expand on this.
