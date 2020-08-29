@@ -69,9 +69,6 @@ State-Space Glossary
     System Identification
         The process of capturing a :term:`systems <system>` :term:`Dynamics` in a mathematical model using measured data. The characterization toolsuite uses system identification to find kS, kV and kA terms.
 
-    Observer
-        In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
-
     x-dot
         :math:`\dot{\mathbf{x}}`, or x-dot: the derivative of the :term:`state` vector :math:`\mathbf{x}`. If the :term:`system` had just a velocity :term:`state`, then :math:`\dot{\mathbf{x}}` would represent the :term:`system`\'s acceleration.
 

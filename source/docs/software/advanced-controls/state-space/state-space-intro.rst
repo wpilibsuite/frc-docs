@@ -17,7 +17,7 @@ If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or it
 Vocabulary
 ----------
 
-For the background vocabulary that will be used throught this article, see the :ref:`Glossary <docs/software/advanced-controls/state-space/state-space-glossary:State-Space Glossary>`.
+For the background vocabulary that will be used throughout this article, see the :ref:`Glossary <docs/software/advanced-controls/state-space/state-space-glossary:State-Space Glossary>`.
 
 What is state-space?
 --------------------
@@ -69,7 +69,7 @@ Recall that we can model the motion of a flywheel connected to a brushed DC moto
 
 We can convert this equation to state-space notation. We can create a system with one state (velocity), one :term:`input` (voltage), and one :term:`output` (velocity). Recalling that the first derivative of velocity is acceleration, we can write our equation as follows, replacing velocity with :math:`\mathbf{x}` and acceleration with :math:`\mathbf{\dot{x}}`:
 
-.. math:: 
+.. math::
     \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot \mathbf{x} + \frac{1}{kA} \cdot V
 
 That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.

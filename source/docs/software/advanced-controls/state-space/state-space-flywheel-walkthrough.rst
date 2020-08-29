@@ -42,7 +42,7 @@ Modeling with System identification
 
 To rewrite this in state-space notation using :term:`System Identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space notation example -- Flywheel from kV and kA>`, where we rewrote the equation :math:`V = kV \cdot v + kA \cdot a` in terms of :math:`a` as :math:`\mathbf{a} = \mathbf{\dot{v}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V`, where :math:`v` is flywheel velocity, :math:`\dot{v}` and :math:`a` are acceleration, and :math:`V` is voltage. Rewriting this with the standard convention of :math:`x` for the state vector and :math:`u` for inputs, we find:
 
-.. math:: 
+.. math::
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA} \end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA} \end{bmatrix} \mathbf{u}
 
 The second part of state-space notation relates the system's current :term:`state` and :term:`inputs <input>` to the :term:`output`. In the case of a flywheel, our output (or thing that our sensors can measure) is flywheel velocity, so :math:`\begin{bmatrix}C \end{bmatrix}` is just :math:`\begin{bmatrix}1 \end{bmatrix}`. The system feedthrough matrix :math:`\mathbf{D}`, which relates input to output, is often simply :math:`\begin{bmatrix}0 \end{bmatrix}` (except in exceptional cases).
