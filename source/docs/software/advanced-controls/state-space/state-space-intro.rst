@@ -8,11 +8,11 @@ From PID to model-based control
 
 When tuning PID controllers, we focus on fiddling with controller parameters relating to the current, past, and future :term:`error` (P, I and D terms) rather than the underlying system states. While this approach works in a lot of situations, it is an incomplete view of the world.
 
-Model-based control focus on developing an accurate model of the system they are trying to control. These models help inform :term:`gains <gain>` picked for feedback controllers based on the physical responses of the system, rather than an arbitrary proportional :term:`gain` derived through testing. This allows us not only to predict ahead of time how a system will react, but also test our controllers without a physical robot and save time debugging simple bugs.
+Model-based control focus on developing an accurate model of the system they are trying to control. These models help inform :term:`gains <Gain>` picked for feedback controllers based on the physical responses of the system, rather than an arbitrary proportional :term:`Gain` derived through testing. This allows us not only to predict ahead of time how a system will react, but also test our controllers without a physical robot and save time debugging simple bugs.
 
 .. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 4 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__
 
-If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used FRC-Characterization to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
+If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used FRC-Characterization to pick PID :term:`gains <Gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <Gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
 
 Vocabulary
 ----------
@@ -106,24 +106,24 @@ Feedback Control and LQR
 
 In the case of a DC motor, with just a mathematical model and knowledge of all current states of the system(i.e., angular velocity), we can predict all future states given the future voltage inputs. But if the system is disturbed in any way that isn’t modeled by our equations, like a load or unexpected friction,the angular velocity of the motor will deviate from the model over time. To combat this, we can give the motor corrective commands to account for model uncertainty. 
 
-A PID controller is a form of feedback control. State-space control often uses the :term:`control law` :math:`\mathbf{u} = \mathbf{K(r - x)}`, where K is some controller :term:`gain` matrix, r is the :term:`reference` state and x is the current state in state-space. The difference between these two vectors, :math:`r - x`, is known as :term:`error`. This :term:`control law` is essentially a multidimensional proportional controller. Because model-based control means that we can predict the future states of a system given an initial condition and future control inputs, we can pick a mathematically optimal :term:`gain` matrix K. 
+A PID controller is a form of feedback control. State-space control often uses the :term:`Control Law` :math:`\mathbf{u} = \mathbf{K(r - x)}`, where K is some controller :term:`Gain` matrix, r is the :term:`reference` state and x is the current state in state-space. The difference between these two vectors, :math:`r - x`, is known as :term:`error`. This :term:`Control Law` is essentially a multidimensional proportional controller. Because model-based control means that we can predict the future states of a system given an initial condition and future control inputs, we can pick a mathematically optimal :term:`Gain` matrix K. 
 
 Let's start with the open loop pendulum example. The case where K is the zero matrix would mean that no control :term:`input` is applied, and the phase portrait would look identical to the one above. Let's pick a K of [[2, 0], [0, 2]], where are :term:`input` to the pendulum is angular acceleration. This K would mean that for every degree of position :term:`error`, the angular acceleration would be 1 degree per second squared; similarly, we accelerate by 1 degree per second squared for every degree per second of :term:`error`. Try following an arrow from somewhere in state-space inwards -- no matter the initial conditions, the state will settle at the :term:`reference` rather than circle endlessly with pure feedforward. 
 
 .. image:: images/pendulum-closed-loop.png
 
-But with a real system, how can we choose an optimal :term:`gain` matrix K? While we can manually choose :term:`gains <gain>` and simulate the system response, or use tools like pole placement, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
+But with a real system, how can we choose an optimal :term:`Gain` matrix K? While we can manually choose :term:`gains <Gain>` and simulate the system response, or use tools like pole placement, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
 
 The Linear-Quadratic Regulator
 ------------------------------
 
-Linear-Quadratic Regulators works by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{\dot{x} = Ax + Bu}`.
+Linear-Quadratic Regulators works by finding a :term:`Control Law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{\dot{x} = Ax + Bu}`.
 
 .. math::
     J = \int\limits_0^\infty \left(\mathbf{x}^T\mathbf{Q}\mathbf{x} +
     \mathbf{u}^T\mathbf{R}\mathbf{u}\right) dt
 
-The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`.
+The :term:`Control Law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`.
 
 By adjusting the state excursion weight :math:`\mathbf{Q}` and :term:`control effort` weight :math:`\mathbf{R}`, the response of the system can be tuned to suit the application. 
 
@@ -155,9 +155,9 @@ Where the weighting factor :math:`\rho` can be used to change the balance of :te
 .. note::
     Don't confuse Q and R with the elements we use to construct :math:`\mathbf{Q}` and :math:`\mathbf{R}` with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs restively. We fill Q with as many "q elements" as the :term:`system` has :term:`states <state>`, and R with as may "r elements" as the :term:`system` has :term:`inputs <input>`.
 
-Increasing the q elements :math:`x_1, x_2...x_m` or decreasing :math:`\rho` would make the LQR penalize large errors less heavily, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
+Increasing the q elements :math:`x_1, x_2...x_m` or decreasing :math:`\rho` would make the LQR penalize large errors less heavily, and the resulting :term:`Control Law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
 
-Similarly, decreasing the q elements :math:`x_1, x_2...x_m` or increasing :math:`\rho` would make the LQR penalize large errors more heavily, and the resulting :term:`control law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing the r elements :math:`u_1, u_2...u_n`.
+Similarly, decreasing the q elements :math:`x_1, x_2...x_m` or increasing :math:`\rho` would make the LQR penalize large errors more heavily, and the resulting :term:`Control Law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing the r elements :math:`u_1, u_2...u_n`.
 
 LQR: example application
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -167,9 +167,9 @@ Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a 
 .. math::
     \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
 
-We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and constrain our :term:`control effort` to :math:`r = [12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`gain` of K = ~13. This K :term:`gain` acts as the proportional component of a PID loop on flywheel's velocity. 
+We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and constrain our :term:`control effort` to :math:`r = [12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`Gain` of K = ~13. This K :term:`Gain` acts as the proportional component of a PID loop on flywheel's velocity. 
 
-Let's play with :math:`q` and :math:`r`. We except that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` K drops from ~13 to ~6. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:\mathbf{K}`.
+Let's play with :math:`q` and :math:`r`. We except that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`Gain` K drops from ~13 to ~6. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
 
 A Time Domain Graph Will Go Here
 
@@ -180,7 +180,7 @@ Linearization is a tool used to approximate nonlinear functions and state-space 
 
 .. image:: images/linear-sin-x.jpg
 
-We can also linearize state-space systems with nonlinear :term:`dynamics`. We do this by picking a point :math:`\mathbf{x}` in state-space and using this as the input to our nonlinear functions. Like in the above example, this works well for states near the point about which the system was linearized, but can quickly diverge further from that state. 
+We can also linearize state-space systems with nonlinear :term:`Dynamics`. We do this by picking a point :math:`\mathbf{x}` in state-space and using this as the input to our nonlinear functions. Like in the above example, this works well for states near the point about which the system was linearized, but can quickly diverge further from that state. 
 
 WPILib's LinearSystemLoop
 -------------------------
@@ -188,12 +188,12 @@ WPILib's LinearSystemLoop
 WPILib's state-space control is based on the ``LinearSystemLoop`` class. This class contains all the components needed to control a mechanism using state-space control. It contains the following members:
 
 - A ``LinearSystem`` representing the continuous-time state-space equations of the :term:`system`.
-- A :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurements <measurement>`.
+- A :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurements <Measurement>`.
 - A Linear-Quadratic Regulator, which combines feedback and feedforward to generate :term:`inputs <input>`.
 
 As the system being controlled is in discrete domain, we follow the following steps at each update cycle:
 
-- ``correct(measurement, nextReference)`` "fuses" the measurement and Kalman Filter :math:`\hat{\mathbf{x}}` (:term:`x-hat`) to steer the estimated state back to reality using :term:`measurements <measurement>` of what the :term:`plant` is actually doing. This updated state estimate is used by the Linear-Quadratic Regulator to generate an updated :term:`input` :math:`\mathbf{u}` to drive the system towards the next :term:`reference`.
+- ``correct(measurement, nextReference)`` "fuses" the measurement and Kalman Filter :math:`\hat{\mathbf{x}}` (:term:`x-hat`) to steer the estimated state back to reality using :term:`measurements <Measurement>` of what the :term:`plant` is actually doing. This updated state estimate is used by the Linear-Quadratic Regulator to generate an updated :term:`input` :math:`\mathbf{u}` to drive the system towards the next :term:`reference`.
 
 - ``predict()`` uses the state-space model to predict where the the :term:`system`\'s :term:`state` :math:`\hat{\mathbf{x}}` (:term:`x-hat`) will be in the future based on applied inputs. The predict step is analogous to estimating a pendulum's (or other :term:`systems <system>`) next state by following the arrows in a phase portrait.
 

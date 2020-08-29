@@ -22,7 +22,7 @@ State-Space Glossary
         A proportional value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A gain less than one would negate the input.
 
     Hidden State
-        A :term:`state` that cannot be directly measured, but whose :term:`dynamics` can be related to other states. 
+        A :term:`state` that cannot be directly measured, but whose :term:`Dynamics` can be related to other states. 
 
     Input
         Any :term:`input` to the :term:`plant` (or physical system) that can change the :term:`plant`\'s state. Think about inputs as being put *into* the physical system being controlled.
@@ -67,7 +67,7 @@ State-Space Glossary
         A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
     System Identification
-        The process of capturing a :term:`systems <system>` :term:`dynamics` in a mathematical model using measured data. The characterization toolsuite uses system identification to find kS, kV and kA terms.
+        The process of capturing a :term:`systems <system>` :term:`Dynamics` in a mathematical model using measured data. The characterization toolsuite uses system identification to find kS, kV and kA terms.
 
     Observer
         In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems. 

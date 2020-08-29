@@ -5,7 +5,7 @@ State-Space Controller Walkthrough
 
 The goal of this tutorial is to provide "end-to-end" tutorial on implementing a state-space controller for a flywheel.  By following this tutorial, readers will learn how to:
 
-1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
+1. Create an accurate state-space model of a flywheel using :term:`System Identification` or CAD software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
 3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltage :term:`inputs <input>` to drive the flywheel to a :term:`reference`.
 
@@ -16,12 +16,8 @@ The full example is available in the state-space flywheel /`Java <https://github
 Why Use State-Space Control?
 ----------------------------
 
-State-space and model-based control is powerful for a number of reasons. Because we focus on creating an accurate model of our system we're controlling, we can also accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
-
-Modeling Our Flywheel
----------------------
-
-The idea of modeling the :term:`dynamics` of physical systems using a system of equations is central to state-space control and modern control theory. :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
+State-space and model-based control is powerful for a number of reasons. Because we focus on creating an accurate model of our system we're controlling, we can also accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <Gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
+dmc6e-space control and modern control theory. :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
 
 .. math::
     \dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u} \\
@@ -29,9 +25,9 @@ The idea of modeling the :term:`dynamics` of physical systems using a system of 
 
 Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`, :math:`\mathbf{x}` is the system's current state, :math:`\mathbf{u}` is the :term:`input` to the system, and :math:`\mathbf{y}` is the sytem's :term:`output`.
 
-Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the frc-characterization toolsuite, and then model it based on the motor and flywheel's moment of inertia.
+Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`System Identification` using the frc-characterization toolsuite, and then model it based on the motor and flywheel's moment of inertia.
 
-The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden states <hidden state>` in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`references <reference>` by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
+The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden states <Hidden State>` in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`references <reference>` by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
 
 For our flywheel, we care only about one state: its velocity. While we could chose to also model its acceleration, the inclusion of this state isn't necessary for our system. 
 
@@ -44,7 +40,7 @@ Next, we will model our flywheel as a continuous-time state-space system. WPILib
 Modeling with System identification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space notation example -- Flywheel from kV and kA>`, where we rewrote the equation :math:`V = kV \cdot v + kA \cdot a` in terms of :math:`a` as :math:`\mathbf{a} = \mathbf{\dot{v}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V`, where :math:`v` is flywheel velocity, :math:`\dot{v}` and :math:`a` are acceleration, and :math:`V` is voltage. Rewriting this with the standard convention of :math:`x` for the state vector and :math:`u` for inputs, we find:
+To rewrite this in state-space notation using :term:`System Identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space notation example -- Flywheel from kV and kA>`, where we rewrote the equation :math:`V = kV \cdot v + kA \cdot a` in terms of :math:`a` as :math:`\mathbf{a} = \mathbf{\dot{v}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V`, where :math:`v` is flywheel velocity, :math:`\dot{v}` and :math:`a` are acceleration, and :math:`V` is voltage. Rewriting this with the standard convention of :math:`x` for the state vector and :math:`u` for inputs, we find:
 
 .. math:: 
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA} \end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA} \end{bmatrix} \mathbf{u}
@@ -57,7 +53,7 @@ The second part of state-space notation relates the system's current :term:`stat
 
 Where :math:`\mathbf{y}` is the flywheel's velocity, as measured by a sensor of some kind.
 
-The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`system identification`. This example shows a flywheel model with a kV of 1 and a kA of 0.5:
+The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`System Identification`. This example shows a flywheel model with a kV of 1 and a kA of 0.5:
 
 .. tabs::
 
