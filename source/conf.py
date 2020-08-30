@@ -45,7 +45,7 @@ extensions = [
 ]
 
 # Redirect branch
-rediraffe_branch = 'd3c1fcd'
+rediraffe_branch = 'origin/master'
 
 # File containing redirects
 rediraffe_redirects = 'redirects.txt'
