@@ -37,11 +37,21 @@ extensions = [
     'sphinxcontrib.remoteliteralinclude',
     'sphinxcontrib.rsvgconverter',
     'sphinxext.opengraph',
+    'sphinxext.rediraffe',
     'sphinxext.toptranslators',
     'sphinxext.linkcheckdiff',
     'hoverxref.extension',
     'notfound.extension',
 ]
+
+# Redirect branch
+rediraffe_branch = 'd3c1fcd'
+
+# File containing redirects
+rediraffe_redirects = 'redirects.txt'
+
+# Required accuracy for redirect writer
+rediraffe_auto_redirect_perc = 80
 
 # Configure linkcheck diff branch
 linkcheckdiff_branch = 'origin/master'
