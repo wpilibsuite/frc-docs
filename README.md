@@ -24,7 +24,7 @@ Ensure the repository is cloned with ``git clone --depth 1 https://github.com/wp
   - [Perl](http://strawberryperl.com/)
 
 - **Linux (Ubuntu)**
-  - ``sudo apt-get install -y python3``
+  - ``sudo apt-get install -y python3 python3-pip``
   - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin``
 
 Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
