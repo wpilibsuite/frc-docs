@@ -150,7 +150,7 @@ The default values of the options have been selected to match the use case of mo
 
 1. Robot Name: This is a string that gets appended to the SSID used by the radio. This allows you to have multiple networks with the same team number and still be able to distinguish them.
 2. Firewall: If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
-3. BW Limit: If this box is checked, the radio enforces a 4MB/s bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
+3. BW Limit: If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
 
 .. note:: Firewall and BW Limit only apply to the OpenMesh radios. These options have no effect on D-Link radios.
 
