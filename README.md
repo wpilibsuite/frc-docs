@@ -45,6 +45,14 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 This checks all images are under 500KB
 
+### Redirects Check
+
+Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``. To verify that there are no invalid redirects. Run:
+
+``.\make rediraffecheckdiff`` or ``make rediraffecheckdiff``
+
+Additionally, an HTML build may need to be ran to verify that all redirects build properly.
+
 ### Building HTML
 
 ``.\make html`` or ``make html``

@@ -75,6 +75,13 @@ Image Size Check
 
 Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
+Redirect Check
+^^^^^^^^^^^^^^
+
+Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``. To verify that there are no invalid redirects. Run:
+
+Type the command ``.\make rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
+
 Building HTML
 ^^^^^^^^^^^^^
 

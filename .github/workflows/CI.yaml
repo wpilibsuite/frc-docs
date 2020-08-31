@@ -89,3 +89,19 @@ jobs:
         with:
           locale: "US"
           reporter: "github-check"
+  check-redirects:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout master
+      run: |
+        git fetch origin master --depth=1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        pip install -r source/requirements.txt
+    - name: Check redirects
+      run: |
+        make rediraffecheckdiff
