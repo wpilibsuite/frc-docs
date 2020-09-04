@@ -8,7 +8,6 @@ This section provides an introduction to and describes WPILib support for state-
 
    state-space-intro
    state-space-flywheel-walkthrough
-   state-space-sim
    state-space-observers
    state-space-pose_state-estimators
    state-space-debugging

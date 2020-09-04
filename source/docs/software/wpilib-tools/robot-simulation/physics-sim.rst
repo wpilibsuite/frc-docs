@@ -1,17 +1,16 @@
 Physics Simulation with WPILib
 ==============================
 
-Because state-space notation allows us to compactly represent the :term:`dynamics <Dynamics>` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying any existing code. The basic flow of such simulators is as follows:
+Because state-space notation allows us to compactly represent the :term:`dynamics <Dynamics>` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying existing non-simulation user code. The basic flow of such simulators is as follows:
 
 - In normal user code:
 
- - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
- - Motor outputs are set
-
+   - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings 
+   - Motor outputs are set
 - In simulation periodic code:
 
- - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
- - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
+   - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
+   - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
 
 WPILib's Simulation Classes
 ---------------------------
