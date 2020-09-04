@@ -74,7 +74,20 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: WPILib Hardware
 
    docs/hardware/hardware-basics/index
+<<<<<<< HEAD
+<<<<<<< HEAD
    docs/hardware/hardware-tutorials/index
+   docs/hardware/sensors/index
+   docs/hardware/control/index
+   docs/hardware/mechanical/index
+   docs/hardware/motors/index
+   docs/hardware/pneumatics/index
+=======
+>>>>>>> bd058ed... Move KOP resources to dedicated folder
+=======
+   docs/hardware/kit-of-parts/index
+>>>>>>> 063f0c1... Apply changes from code review
+   docs/hardware/robot-quick-build/index
    docs/hardware/sensors/index
 
 .. toctree::
