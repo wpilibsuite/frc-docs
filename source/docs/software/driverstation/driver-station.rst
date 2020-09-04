@@ -179,4 +179,4 @@ Driver Station Key Shortcuts
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 
-.. warning:: When connected to FMS in a match, teams mush press the Team Station E-Stop button to emergency stop their robot as FMS ignores DS enable/disable and E-Stop signals and key shortcuts.
+.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
