@@ -211,4 +211,4 @@ Unlike the :ref:`docs/software/advanced-controls/trajectories/ramsete:Ramsete Co
 State Space Drivetrain Controllers in the Command-Based Framework
 -----------------------------------------------------------------
 
-For ease of use, ``LTVDiffDriveCommand`` and ``LTVUnicycleCommand`` classes are built in to WPILib. TODO expand on this.
+For ease of use, ``LTVDiffDriveCommand`` and ``LTVUnicycleCommand`` classes are built in to WPILib. 
