@@ -23,8 +23,6 @@ Divide the Robot into Subsystems
 
 Your robot is naturally made up of a number of smaller systems like the drive trains, arms, shooters, collectors, manipulators, wrist joints, etc. You should look at the design of your robot and break it up into smaller, separately operated subsystems. In this particular example there is an elevator, a minibot alignment device, a gripper, and a camera system. In addition one might include the drive base. Each of these parts of the robot are separately controlled and make good candidates for subsystems.
 
-.. todo:: add link
-
 For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>`.
 
 Adding each Subsystem to the Project
