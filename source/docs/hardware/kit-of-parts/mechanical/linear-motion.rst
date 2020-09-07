@@ -66,7 +66,7 @@ Load Ratings
 Well, I really like the wheels. Now what?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can get MadeWell wheels through the Bishop Wisecarver website using your FIRST voucher. MadeWell wheels come in either carbon steel or stainless steel and must be purchased in sets of four. Click `here <https://www.bwc.com/catalog/product/view/id/12/s/madewell2-759c1880f1de77238da6f3a5d2fb6ef2/category/3/>`_ to navigate to the website!
+You can get MadeWell wheels through the Bishop Wisecarver website using your FIRST voucher. MadeWell wheels come in either carbon steel or stainless steel and must be purchased in sets of four. Click `here <https://www.bwc.com/madewell-radial-wheels.html>`_ to navigate to the website!
 
 Okay, so now that you have a better understanding of how you can use guide wheels in your build let’s get you better acquainted with the 1,2, 3s of DualVee track.
 

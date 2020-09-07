@@ -3,7 +3,7 @@ MB1013 HRLV-MaxSonar-EZ Ultrasonic Sensor
 
 .. image:: images/mb1013-hrlv-maxsonar-ez-ultrasonic-sensor/sensor.png
 
-Below we have a tutorial to help you get started with the `MaxBotix MB1013 ultrasonic sensor <https://www.maxbotix.com/Ultrasonic_Sensors/MB1013.htm>`__! This will hopefully give you a basic understanding of how ultrasonic sensors work and will help you set up your ultrasonic sensor to read analog voltage.
+Below we have a tutorial to help you get started with the `MaxBotix MB1013 ultrasonic sensor <https://www.maxbotix.com/Ultrasonic_Sensors/ultrasonic_sensors-mb1013-htm.htm>`__! This will hopefully give you a basic understanding of how ultrasonic sensors work and will help you set up your ultrasonic sensor to read analog voltage.
 
 Take a look at this sensor’s `data sheet <https://www.maxbotix.com/documents/HRLV-MaxSonar-EZ_Datasheet.pdf>`__ for more information on the sensor’s specs!
 
