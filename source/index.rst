@@ -76,10 +76,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
-   docs/hardware/control/index
-   docs/hardware/mechanical/index
-   docs/hardware/motors/index
-   docs/hardware/pneumatics/index
    docs/hardware/kit-of-parts/index
    docs/hardware/robot-quick-build/index
    docs/hardware/sensors/index
