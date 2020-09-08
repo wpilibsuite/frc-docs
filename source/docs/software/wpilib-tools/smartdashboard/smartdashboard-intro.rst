@@ -29,6 +29,8 @@ The first time you launch the SmartDashboard you should be prompted for your tea
 
 .. note:: SmartDashboard will take a moment to configure itself for the team number, do not be alarmed.
 
+.. tip:: By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but to look for NetworkTables at a different IP address, run ``java -jar smartdashboard.jar -i [IP address]`` from the WPIlib directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ~ is ``C:\Users\Public``). For example, when using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`, run ``java -jar smartdashboard.jar -i localhost``.
+
 Locating the Save File
 ----------------------
 
