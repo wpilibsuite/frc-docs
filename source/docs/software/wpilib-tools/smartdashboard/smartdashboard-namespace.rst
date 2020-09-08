@@ -24,7 +24,7 @@ SmartDashboard values are created with key names that begin with ``SmartDashboar
   SmartDashboard.putNumber("Arm position in degrees", 52.0);
   SmartDashboard.putString("Program Version", "V1.2");
 
-The ``Arm position`` is created with the ``putNumber()`` call. The ``AutonomousCommand`` is written with a ``putData("Autonomous Command", command)`` that is not shown in the above code fragement. The chooser is created as a ``SendableChooser`` object and the string value, ``Program Version`` is created with the ``putString()`` call.
+The ``Arm position`` is created with the ``putNumber()`` call. The ``AutonomousCommand`` is written with a ``putData("Autonomous Command", command)`` that is not shown in the above code fragment. The chooser is created as a ``SendableChooser`` object and the string value, ``Program Version`` is created with the ``putString()`` call.
 
 View of the SmartDashboard
 --------------------------

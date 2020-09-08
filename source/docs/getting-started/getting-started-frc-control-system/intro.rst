@@ -29,7 +29,7 @@ Java
 LabVIEW
 ^^^^^^^
 
-- `National Instruments Learn LabVIEW <http://www.ni.com/academic/students/learn-labview/>`__
+- `NI Learn LabVIEW <http://www.ni.com/academic/students/learn-labview/>`__
 
 0 to Robot
 ----------

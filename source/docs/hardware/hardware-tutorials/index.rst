@@ -9,3 +9,4 @@ Hardware Tutorials
    motors
    sensors
    pneumatics
+   transmissions

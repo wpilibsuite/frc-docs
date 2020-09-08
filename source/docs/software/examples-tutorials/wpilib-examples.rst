@@ -5,7 +5,7 @@ WPILib Example Projects
 
 WPILib example projects demonstrate a large number of library features and use patterns.  Projects range from simple demonstrations of a single functionality to complete, competition-capable robot programs. All of these examples are available in VS Code by entering Control+Shift+P, then selecting `WPILib: Create a new project` and choosing example.
 
-.. image:: /docs/software/wpilib-overview/images/creating-robot-program/create-new-project.png
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
 
 Basic Examples
 --------------
@@ -35,6 +35,7 @@ These examples demonstrate WPILib implementations of common robot controls.  Sen
 * **GyroMecanum** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyromecanum>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroMecanum>`__): Demonstrates field-oriented control of a mecanum robot through the ``MecanumDrive`` class in conjunction with a gyro.
 * **MecanumBot** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/MecanumBot>`__): Demonstrates an advanced mecanum drive implementation, including encoder-and-gyro odometry through the ``MecanumDriveOdometry`` class, and composition with PID velocity control through the ``MecanumDriveKinematics`` and ``PIDController`` classes.
 * **PotentiometerPID** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/potentiometerpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/PotentiometerPID>`__): Demonstrates the use of the ``PIDController`` class and a potentiometer to control the position of an elevator mechanism.
+* **RamseteController** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteController>`__): Demonstrates the use of the ``RamseteController`` class to follow a trajectory during the autonomous period.
 * **SwerveBot** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SwerveBot>`__): Demonstrates an advanced swerve drive implementation, including encoder-and-gyro odometry through the ``SwerveDriveOdometry`` class, and composition with PID position and velocity control through the ``SwerveDriveKinematics`` and ``PIDController`` classes.
 * **UltrasonicPID** (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/UltrasonicPID>`__): Demonstrates the use of the ``PIDController`` class in conjunction with an ultrasonic sensor to drive to a set distance from an object.
 

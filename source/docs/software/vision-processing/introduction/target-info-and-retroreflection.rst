@@ -1,12 +1,18 @@
 Target Info and Retroreflection
 ===============================
 
-Many FRC games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets. Note that for official dimensions and drawings of all field components, please see the Official Field Drawings.
+Many FRC games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets.
+
+.. note:: For official dimensions and drawings of all field components, please see the Official Field Drawings.
 
 Targets
 -------
 
-.. image:: images/target-info-and-retroreflection/targets.png
+.. image:: images/target-info-and-retroreflection/target-diagram.png
+  :width: 350
+
+.. image:: images/target-info-and-retroreflection/target-output.png
+  :width: 350
 
 Each 2016 vision target consists of a 1' 8" wide, 1' tall U-shape made of 2" wide retroreflective material (3M 8830 Silver Marking Film). The targets are located immediately adjacent to the bottom of each high goal. When properly lit, the retroreflective tape produces a bright and/or color-saturated marker.
 
@@ -24,7 +30,7 @@ Examples of Retroreflection
 
 .. image:: images/target-info-and-retroreflection/raised-pavement-marker.jpg
   :width: 350
-.. image:: images/target-info-and-retroreflection/vest.jpg
+.. image:: images/target-info-and-retroreflection/vest.png
   :width: 350
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles, and pedestrians.

@@ -11,12 +11,12 @@ The dockerfile is used to build an ECR image used by the training instance. The 
 - TensorFlow for GPU
 - Python 2 and 3
 - Coral retraining scripts
-- `WPILib scripts <https://github.com/wpilibsuite/DetectCoral/tree/dev/container/coral>`__
+- `WPILib scripts <https://github.com/wpilibsuite/DetectCoral/tree/dc17f4abdc101612ca163857bde363a082cd6ee2/container/coral>`__
 
 Data
 ----
 
-Images should be labelled in Supervisely. They should be downloaded as ``jpeg + json``, in a tar file. When the user calls ``estimator.fit("s3://bucket")``, SageMaker automatically downloads the content of that folder/bucket to ``/opt/ml/input/data/training`` inside of the training instance.
+Images should be labeled in Supervisely. They should be downloaded as ``jpeg + json``, in a tar file. When the user calls ``estimator.fit("s3://bucket")``, SageMaker automatically downloads the content of that folder/bucket to ``/opt/ml/input/data/training`` inside of the training instance.
 
 The tar is converted to the 2 records and ``.pbtxt`` used by the retraining script by the ``tar_to_record.sh`` script. It automatically finds the ONLY tar in the specified folder and extracts it. It then uses ``json_to_csv.py`` to convert the jsons to 2 large csv files. ``generate_tfrecord.py`` converts the csv files into .record files. Finally, the ``meta.json`` file is parsed by ``parse_meta.py`` to create the ``.pbtxt`` file, which is a label map.
 

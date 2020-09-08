@@ -25,6 +25,8 @@ Once Python is installed, open up Powershell. Then navigate to the frc-docs dire
 
 Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
 
+Lastly, you need to install ``rsvg-convert`` by running the ``scripts/install-rsvg-convert.ps1`` script in powershell. This requires administrator access.
+
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
 
@@ -68,15 +70,17 @@ Link Check
 
 The link checker makes sure that all links in the documentation resolve. This **will** fail the buildbot if it does not pass. To check, run ``.\make linkcheck``
 
-Translate Check
-^^^^^^^^^^^^^^^
-
-To ensure translations are updated concurrently, you must update the transifex configuration file. This can be done by running the ``.\make translate`` command. This **must** be done to to pass the buildbot.
-
 Image Size Check
 ^^^^^^^^^^^^^^^^
 
 Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
+
+Redirect Check
+^^^^^^^^^^^^^^
+
+Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``. To verify that there are no invalid redirects. Run:
+
+Type the command ``.\make rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
 
 Building HTML
 ^^^^^^^^^^^^^

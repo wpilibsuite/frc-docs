@@ -5,7 +5,7 @@ These steps apply to position PID controllers. Velocity PID controllers typicall
 
 1. Set :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
 2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
-3. Increase :math:`K_d` as much as possible without introducting jittering in the :term:`system response`.
+3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
 
 Plot the position :term:`setpoint`, velocity :term:`setpoint`, measured position, and measured velocity. The velocity :term:`setpoint` can be obtained via numerical differentiation of the position :term:`setpoint` (i.e., :math:`v_{desired,k} = \frac{r_k - r_{k-1}}{\Delta t}`). Increase :math:`K_p` until the position tracks well, then increase :math:`K_d` until the velocity tracks well.
 

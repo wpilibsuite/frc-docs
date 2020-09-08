@@ -27,9 +27,9 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       if(!pressed) {
         intake.run();
         pressed = true;
-      } else {
-        pressed = false;
       }
+    } else {
+      pressed = false;
     }
 
   .. code-tab:: c++
@@ -38,9 +38,9 @@ In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperativ
       if(!pressed) {
         Intake.Run();
         pressed = true;
-      } else {
-        pressed = false;
       }
+    } else {
+      pressed = false;
     }
 
 Subsystems and Commands
@@ -60,7 +60,7 @@ How Commands Are Run
 
 .. note:: For a more detailed explanation, see :doc:`command-scheduler`.
 
-Commands are run by the ``CommandScheduler``, a singleton class that is at the core of the command-based library. The ``CommandScheduler`` is in charge of polling buttons for new commands to schedule, checking the resources required by those commands to avoid conflicts, executing currently-scheduled commands, and removing commands that have finished or been interrupted. The scheduler’s ``run()`` method may be called from any place in the user’s code; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
+Commands are run by the ``CommandScheduler``(`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__), a singleton class that is at the core of the command-based library. The ``CommandScheduler`` is in charge of polling buttons for new commands to schedule, checking the resources required by those commands to avoid conflicts, executing currently-scheduled commands, and removing commands that have finished or been interrupted. The scheduler’s ``run()`` method may be called from any place in the user’s code; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
 
 Multiple commands can run concurrently, as long as they do not require the same resources on the robot. Resource management is handled on a per-subsystem basis: commands may specify which subsystems they interact with, and the scheduler will never schedule more than one command requiring a given subsystem at a time. This ensures that, for example, users will not end up with two different pieces of code attempting to set the same motor controller to different output values. If a new command is scheduled that requires a subsystem that is already in use, it will either interrupt the currently-running command that requires that subsystem (if the command has been scheduled as interruptible), or else it will not be scheduled.
 
@@ -76,6 +76,6 @@ It is often desirable to build complex commands from simple pieces. This is achi
 Creating a Robot Project
 ========================
 
-Creating a project is detailed in :ref:`docs/software/wpilib-overview/creating-robot-program:Creating a Robot Program`. Select "Template" then your programming language then "New Command Robot" to create a basic Command-Based Robot program.
+Creating a project is detailed in :ref:`docs/software/vscode-overview/creating-robot-program:Creating a Robot Program`. Select "Template" then your programming language then "New Command Robot" to create a basic Command-Based Robot program.
 
-When you create a New Command Robot project, the new command based vendor library is automatically imported. If you imported a 2019 project or created a different type of project, the old command library is imported, and it is necessary to import the new command based vendor library per :doc:`/docs/software/wpilib-overview/3rd-party-libraries` and remove the old command library.
+When you create a New Command Robot project, the new command based vendor library is automatically imported. If you imported a 2019 project or created a different type of project, the old command library is imported, and it is necessary to import the new command based vendor library per :doc:`/docs/software/vscode-overview/3rd-party-libraries` and remove the old command library.

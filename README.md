@@ -1,5 +1,5 @@
 ![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)
-![Build Status](https://dev.azure.com/wpilib/Documentation/_apis/build/status/wpilibsuite.frc-docs?branchName=master)
+![CI](https://github.com/wpilibsuite/frc-docs/workflows/CI/badge.svg)
 
 # frc-docs
 Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/).
@@ -24,7 +24,7 @@ Ensure the repository is cloned with ``git clone --depth 1 https://github.com/wp
   - [Perl](http://strawberryperl.com/)
 
 - **Linux (Ubuntu)**
-  - ``sudo apt-get install -y python3``
+  - ``sudo apt-get install -y python3 python3-pip``
   - ``sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin``
 
 Ensure the Python requirements are installed via running ``python3 -m pip install -r source/requirements.txt``
@@ -39,17 +39,19 @@ Ensure the Python requirements are installed via running ``python3 -m pip instal
 
 **Note**: Due to a bug with the linter on Windows machines, this command is currently only usable on Linux systems.
 
-### Translate Check
-
-``.\make translate`` or ``make translate``
-
-This ensures that translations are updated concurrently by updating the transifex configuration file.
-
 ### Image Size Check
 
 ``.\make sizecheck`` or ``make sizecheck``
 
 This checks all images are under 500KB
+
+### Redirects Check
+
+Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``. To verify that there are no invalid redirects. Run:
+
+``.\make rediraffecheckdiff`` or ``make rediraffecheckdiff``
+
+Additionally, an HTML build may need to be ran to verify that all redirects build properly.
 
 ### Building HTML
 
@@ -59,7 +61,7 @@ This checks all images are under 500KB
 
 ``.\make latexpdf`` or ``make latexpdf``
 
-**Note**: Due to a lack of librsvg2 support on Windows, SVG output may be broken on Windows builds.
+**Note**: Run the ``scripts/install-rsvg-convert.ps1`` script in powershell to ensure ``rsvg-convert`` is installed.
 
 ### Building EPUB
 

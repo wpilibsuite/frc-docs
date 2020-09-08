@@ -3,7 +3,7 @@ Binding Commands to Triggers
 
 Apart from autonomous commands, which are scheduled at the start of the autonomous period, and default commands, which are automatically scheduled whenever their subsystem is not currently in-use, the most common way to run a command is by binding it to a triggering event, such as a button being pressed by a human operator. The command-based paradigm makes this extremely easy to do.
 
-As mentioned earlier, command-based is a `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is “declared” once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or cancelling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
+As mentioned earlier, command-based is a `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is “declared” once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or canceling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
 
 Command binding is done through the ``Trigger`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Trigger.html>`__) and its various ``Button`` subclasses (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1Button.html>`__).
 
@@ -37,12 +37,12 @@ This binding schedules a command when a trigger changes from active to inactive 
 toggleWhenActive/toggleWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and cancelling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are *not* a highly-recommended option for user control, as they require the driver to mentally keep track of the robot state.
+This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are *not* a highly-recommended option for user control, as they require the driver to mentally keep track of the robot state.
 
 cancelWhenActive/cancelWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This binding cancels a command when a trigger changes from inactive to active (or, accordingly, when a button is initially pressed). the command is canceled on the iteration when the state changes, and will not be canceled again unless the trigger becomes inactive and then active again (or the button is released and re-pressed). Note that cancelling a command that is not currently running has no effect.
+This binding cancels a command when a trigger changes from inactive to active (or, accordingly, when a button is initially pressed). the command is canceled on the iteration when the state changes, and will not be canceled again unless the trigger becomes inactive and then active again (or the button is released and re-pressed). Note that canceling a command that is not currently running has no effect.
 
 Binding a command to a joystick button
 --------------------------------------
@@ -70,7 +70,7 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
 
 After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1JoystickButton.html>`__):
 
-.. warning:: There is an issue with using JoystickButtons and POVButtons in C++. Take a look at the :ref:`known issues <docs/software/wpilib-overview/known-issues:C++ Command Based JoystickButton and POVButton not functioning>` page for more information.
+.. warning:: There is an issue with using JoystickButtons and POVButtons in C++. Take a look at the :ref:`known issues <docs/2020-overview/known-issues:C++ Command Based JoystickButton and POVButton not functioning>` page for more information.
 
 .. tabs::
 

@@ -52,11 +52,11 @@ Radio Detection Times
 
 .. code-block::
 
-  WARNING<Code>44008 occured at FRC_NetworkCommunications
+  WARNING<Code>44008 occurred at FRC_NetworkCommunications
   <radioLostEvents> 19.004<radioSeenEvents> 0.000
   FRC: Robot radio dectection times
 
-  WARNING<Code>44008 occured at FRC_NetworkCommunications
+  WARNING<Code>44008 occurred at FRC_NetworkCommunications
   <radioLostEvents> 2.501,422.008<radioSeenEvents> 0.000,147.005
   FRC: Robot radio dectection times.
 
@@ -67,7 +67,7 @@ No Robot Code
 
 .. code-block::
 
-  Warning<Code>44003 occured at Driver Station
+  Warning<Code>44003 occurred at Driver Station
   <time>2/8/2013 9:50:13 AM<unique#>8
   FRC: No robot code is currently running.
 

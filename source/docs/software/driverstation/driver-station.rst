@@ -177,4 +177,6 @@ Driver Station Key Shortcuts
   * `Enter` - Disable the Robot
   * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
 
-.. Note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
+.. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
+
+.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.

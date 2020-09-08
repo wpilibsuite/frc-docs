@@ -6,7 +6,7 @@ This article provides a summary of changes from the :ref:`original command-based
 Package Location
 ----------------
 
-The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still available in the original location. The new framework must be installed using the instructions: :ref:`docs/software/wpilib-overview/3rd-party-libraries:WPILib Command Libraries`.
+The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still available in the original location. The new framework must be installed using the instructions: :ref:`docs/software/vscode-overview/3rd-party-libraries:WPILib Command Libraries`.
 
 Major Architectural Changes
 ---------------------------
@@ -78,6 +78,6 @@ Changes to PIDSubsystem/PIDCommand
 .. note:: For more information, see :doc:`pid-subsystems-commands`, and :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`
 
 * Following the changes to PIDController, these classes now run synchronously from the main robot loop.
-* The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modifier after construction with ``getController()``.
+* The ``PIDController`` is now injected through the constructor, removing many of the forwarding methods.  It can be modified after construction with ``getController()``.
 * ``PIDCommand`` is intended largely for inline use, as shown in the GyroDriveCommands example (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__).
 * If users wish to use PIDCommand more "traditionally," overriding the protected ``returnPIDInput()`` and ``usePIDOutput(double output)`` methods has been replaced by modifying the protected ``m_measurement`` and ``m_useOutput`` fields.  Similarly, rather than calling ``setSetpoint``, users can modify the protected ``m_setpoint`` field.

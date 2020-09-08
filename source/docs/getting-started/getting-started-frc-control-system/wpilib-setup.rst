@@ -192,7 +192,7 @@ WPILib Installation Guide
       .. figure:: images/mac/SecurityPreferencesAllow.png
             :alt:
 
-      4) Rerun the build that caused the inital dialog to appear
+      4) Rerun the build that caused the initial dialog to appear
       5) A similar dialog will appear but will have a *Open* button. Press the *Open* button
 
       .. figure:: images/mac/GatekeeperWarningOpen.png
