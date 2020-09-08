@@ -37,15 +37,21 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
-      :language: java
-      :lines: 74-79
+    // Add commands to the autonomous command chooser
+    m_chooser.setDefaultOption("Simple Auto", m_simpleAuto);
+    m_chooser.addOption("Complex Auto", m_complexAuto);
+
+    // Put the chooser on the dashboard
+    Shuffleboard.putData(m_chooser);
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 21-26
+    // Add commands to the autonomous command chooser
+    m_chooser.SetDefaultOption("Simple Auto", &m_simpleAuto);
+    m_chooser.AddOption("Complex Auto", &m_complexAuto);
+
+    // Put the chooser on the dashboard
+    frc::SmartDashboard::PutData(m_chooser);
 
 Start the autonomous command when the autonomous period starts
 --------------------------------------------------------------
