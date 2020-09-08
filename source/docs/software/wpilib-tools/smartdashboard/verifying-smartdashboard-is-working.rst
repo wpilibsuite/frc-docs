@@ -1,6 +1,22 @@
 Verifying SmartDashboard is working
 ===================================
 
+Window title connection indicator
+---------------------------------
+
+SmartDashboard will automatically include the connection status and IP address of the NetworkTables source in the title of the window.
+
+.. image:: images/verifying-smartdashboard-is-working/connection-indicator-disconnected.png
+  :width: 350
+
+.. image:: images/verifying-smartdashboard-is-working/connection-indicator-connected.png
+  :width: 350
+
+Connection indicator widget
+---------------------------
+
+SmartDashboard includes a connection indicator widget which will turn red or green depending on the connection to NetworkTables, usually provided by the roboRIO. For instructions to add this widget, look at :ref:`Adding a Connection Indicator <docs/software/wpilib-tools/smartdashboard/smartdashboard-intro:Adding a Connection Indicator>` in the SmartDashboard Intro.
+
 Minimal robot program
 ---------------------
 
@@ -8,22 +24,22 @@ Minimal robot program
 
   .. code-tab:: java
 
-    public class Robot extends TimedRobot {
-      double counter = 0.0;
+      public class Robot extends TimedRobot {
+        double counter = 0.0;
 
-      public void teleopPeriodic() {
-        SmartDashboard.putNumber("Counter", counter++);
+        public void teleopPeriodic() {
+          SmartDashboard.putNumber("Counter", counter++);
+        }
       }
-    }
 
   .. code-tab:: c++
 
-    #include "Robot.h"
-    float counter = 0.0;
+      #include "Robot.h"
+      float counter = 0.0;
 
-    void Robot::TeleopPeriodic() {
-        frc::SmartDashboard::PutNumber("Counter", counter++);
-    }
+      void Robot::TeleopPeriodic() {
+          frc::SmartDashboard::PutNumber("Counter", counter++);
+      }
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 50 times per second to verify that the connection is working. However, to minimize bandwidth usage, NetworkTables by default will throttle the updates to 10 times per second.
 
