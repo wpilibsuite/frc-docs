@@ -35,23 +35,23 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
 
 .. tabs::
 
-  .. group-tab:: Java
+  .. code-tab:: java
 
-    // Add commands to the autonomous command chooser
-    m_chooser.setDefaultOption("Simple Auto", m_simpleAuto);
-    m_chooser.addOption("Complex Auto", m_complexAuto);
+      // Add commands to the autonomous command chooser
+      m_chooser.setDefaultOption("Simple Auto", m_simpleAuto);
+      m_chooser.addOption("Complex Auto", m_complexAuto);
 
-    // Put the chooser on the dashboard
-    Shuffleboard.putData(m_chooser);
+      // Put the chooser on the dashboard
+      Shuffleboard.putData(m_chooser);
 
-  .. group-tab:: C++ (Source)
+  .. code-tab:: c++
 
-    // Add commands to the autonomous command chooser
-    m_chooser.SetDefaultOption("Simple Auto", &m_simpleAuto);
-    m_chooser.AddOption("Complex Auto", &m_complexAuto);
+      // Add commands to the autonomous command chooser
+      m_chooser.SetDefaultOption("Simple Auto", &m_simpleAuto);
+      m_chooser.AddOption("Complex Auto", &m_complexAuto);
 
-    // Put the chooser on the dashboard
-    frc::SmartDashboard::PutData(m_chooser);
+      // Put the chooser on the dashboard
+      frc::SmartDashboard::PutData(m_chooser);
 
 Start the autonomous command when the autonomous period starts
 --------------------------------------------------------------
