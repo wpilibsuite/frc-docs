@@ -64,7 +64,9 @@ Both Shuffleboard and SmartDashboard can be used with WPILib simulation.
 Shuffleboard
 ^^^^^^^^^^^^
 
-Shuffleboard is automatically configured to look for a NetworkTable instance from the robotRIO **or from `localhost`**, so once the simulation is loaded, Shuffleboard will connect automatically.
+Shuffleboard is automatically configured to look for a NetworkTable instance from the robotRIO but **not from other sources**. To connect to Shuffleboard, open Shuffleboard preferences from the File menu and select ``NetworkTables`` under ``Plugins`` on the left navigation bar. In the ``Server`` field, type in the IP address of the NetworkTables host. For a standard simulation configuration, use``localhost``.
+
+.. image:: images/shuffleboard-networktables.png
 
 SmartDashboard
 ^^^^^^^^^^^^^^
