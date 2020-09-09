@@ -71,4 +71,4 @@ Shuffleboard is automatically configured to look for a NetworkTable instance fro
 SmartDashboard
 ^^^^^^^^^^^^^^
 
-SmartDashboard is automatically configured to look for a NetworkTable instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, run ``java -jar smartdashboard.jar -i localhost`` from the WPILib tools directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ~ is ``C:\Users\Public``). When using SmartDashboard with NetworkTables sources from other IP addresses, run ``java -jar smartdashboard.jar -i [IP address]``.
+SmartDashboard is automatically configured to look for a NetworkTable instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, run ``java -jar smartdashboard.jar -ip localhost`` from the WPILib tools directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ~ is ``C:\Users\Public``). When using SmartDashboard with NetworkTables sources from other IP addresses, run ``java -jar smartdashboard.jar -ip [IP address]``.
