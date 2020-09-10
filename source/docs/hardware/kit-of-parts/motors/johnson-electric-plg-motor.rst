@@ -84,7 +84,9 @@ Medium Manufacturing – drill press
 
 The detail described in this section is best fabricated with wood, UHMW, or similar plastic material and represents a recommended minimum size.  It is suggested to use a drill press to assure hole precision and to drill the large motor pockets with a 1-1/8” (28mm) Forstner bit.  This bit is available at most hardware stores but is typically not found in Forstner bit kits.  It is a worthwhile purchase as it is also useful for drilling bearing holes in softer materials.
 
-.. figure:: images/johnson-electric-plg-motor/JE8.png
+.. figure:: images/johnson-electric-plg-motor/JE8a.png
+
+.. figure:: images/johnson-electric-plg-motor/JE8b.png
 
 .. figure:: images/johnson-electric-plg-motor/JE9.png
   :width: 30%
