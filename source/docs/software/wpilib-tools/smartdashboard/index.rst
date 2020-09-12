@@ -8,7 +8,6 @@ SmartDashboard
    displaying-expressions
    changing-display-properties
    changing-display-widget-type
-   testing-commands
    choosing-an-autonomous-program-from-smartdashboard
    displaying-status-of-commands-and-subsystems
    setting-robot-preferences-from-smartdashboard
