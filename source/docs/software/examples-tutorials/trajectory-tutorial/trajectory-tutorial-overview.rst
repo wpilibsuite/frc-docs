@@ -39,6 +39,6 @@ To follow this tutorial, you will need ready access to the following materials:
 
 2. A driver-station computer configured with:
 
-  * :ref:`FRC Driver Station <docs/getting-started/getting-started-frc-control-system/frc-game-tools:Installing the FRC Game Tools>`.
-  * :ref:`WPILib <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`.
+  * :ref:`FRC Driver Station <docs/zero-to-robot/step-two-installing-dependencies/frc-game-tools:Installing the FRC Game Tools>`.
+  * :ref:`WPILib <docs/zero-to-robot/step-two-installing-dependencies/wpilib-setup:WPILib Installation Guide>`.
   * :ref:`The FRC-Characterization Toolsuite <docs/software/wpilib-tools/robot-characterization/introduction:Installing and Launching the Toolsuite>`.

@@ -12,10 +12,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Programming and Electrical Basics
+   :caption: Getting Started
+   :titlesonly:
 
-   docs/getting-started/getting-started-frc-control-system/index
-   docs/getting-started/running-a-benchtop/index
+   docs/zero-to-robot/introduction
+   docs/zero-to-robot/step-one-building-robot/index
+   docs/zero-to-robot/step-two-installing-dependencies/index
+   docs/zero-to-robot/step-three-programming-robot/index
 
 .. toctree::
    :maxdepth: 1

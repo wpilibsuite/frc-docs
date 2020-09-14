@@ -9,7 +9,7 @@ Task:
 Overview
 --------
 
-Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/getting-started/getting-started-frc-control-system/index:Getting Started` page.
+Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/zero-to-robot/introduction:Getting Started` page.
 
 .. note:: The image version in the documentation may not be updated yet. You should use the latest image available after installing the latest Beta Update.
 

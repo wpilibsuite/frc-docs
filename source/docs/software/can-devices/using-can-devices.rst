@@ -15,6 +15,6 @@ Supported CAN peripherals include:
 - The Power Distribution Panel (PDP)
 - The Pneumatics Control Module (PCM)
 
-For instructions on wiring CAN devices, see the relevant section of the :ref:`robot wiring guide <docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:CAN Devices>`.
+For instructions on wiring CAN devices, see the relevant section of the :ref:`robot wiring guide <docs/zero-to-robot/step-one-building-robot/how-to-wire-a-robot:CAN Devices>`.
 
 CAN devices generally have their own WPILib classes.  The following sections will describe the use of several of these classes.

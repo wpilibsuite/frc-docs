@@ -54,6 +54,7 @@ Temporary Items
 
 ### VisualStudioCode ###
 .vscode/*
+source/.vscode/*
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
