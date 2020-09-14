@@ -1,5 +1,5 @@
 Built-in Widgets
-==========================
+================
 
 Shuffleboard provides a number of built-in plugins that handle common tasks for FRC use, such as camera streams, all widgets, and NetworkTables connections.
 
@@ -44,4 +44,4 @@ NetworkTables Plugin
 
 The NetworkTables plugin provides data sources backed by ntcore. Since the ``LiveWindow`` and ``SmartDashboard`` classes in WPILib use NetworkTables to send the data to the driver station, this plugin will need to be loaded in order to use those classes.
 
-This plugin handles the connection and reconnection to NetworkTables automatically, users of shuffleboard and writers of custom plugins will not have to worry about the intricacies of the NT protocl.
+This plugin handles the connection and reconnection to NetworkTables automatically, users of shuffleboard and writers of custom plugins will not have to worry about the intricacies of the NT protocol.
