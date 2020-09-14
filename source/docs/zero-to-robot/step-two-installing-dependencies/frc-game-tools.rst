@@ -156,7 +156,7 @@ NI Activation Wizard
 
 .. image:: images/update-suite/ni-activation-wizard.png
 
-Log into your `ni.com <https:/ni.com>`__ account. If you don’t have an account, you may need to `create an account <https://lumen.ni.com/nicif/create.xhtml>`__.
+Log into your `ni.com <https://ni.com>`__ account. If you don’t have an account, you may need to `create an account <https://lumen.ni.com/nicif/create.xhtml>`__.
 
 NI Activation Wizard (2)
 ------------------------
