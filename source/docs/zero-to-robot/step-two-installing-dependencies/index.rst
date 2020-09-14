@@ -18,7 +18,7 @@ Configuration Tooling
 
 .. toctree::
    :maxdepth: 1
-   
+
    imaging-your-roborio
    configuring-pcm-pdp
    radio-programming

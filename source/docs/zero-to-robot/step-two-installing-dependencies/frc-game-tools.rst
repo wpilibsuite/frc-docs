@@ -11,7 +11,7 @@ The LabVIEW runtime components required for the Driver Station and Utilities are
 
 .. note:: No components from the LabVIEW Software for FRC package are required for running either the Driver Station or Utilities.
 
-.. note:: 
+.. note::
    The Driver Station will only work on Windows 7, Windows 8,
    Windows 8.1, and Windows 10. It will not work on Windows XP.
 
@@ -69,7 +69,7 @@ Starting Install
    .. tab:: Offline Installer (Windows 7, 8, & 8.1)
 
       Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
-      
+
       Right click on the downloaded iso file and select :guilabel:`Extract to`.
 
       .. image:: images/labview/extract-iso.png
@@ -165,7 +165,7 @@ NI Activation Wizard (2)
 
 Enter your teams FRC Serial Number. This is obtained through the following steps.
 
-- Log in to https://www.firstinspires.org with a lead mentor account. 
+- Log in to https://www.firstinspires.org with a lead mentor account.
 - Navigate to :guilabel:`My Dashboard` and click on your team.
 - Click the blue :guilabel:`Payment & Product` button and select :guilabel:`Passwords/Voucher Codes` from the drop-down menu.
 
