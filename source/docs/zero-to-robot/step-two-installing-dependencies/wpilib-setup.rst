@@ -44,7 +44,7 @@ Go ahead and select :guilabel:`Download VS Code for Single Install`. This will b
 
 This showcases a list of options included with the WPILib installation. It's advised to just leave the default options selected.
 
-You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privelages. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access.
+You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access.
 
 Select the option that is appropriate for you, and you'll presented with the following installation screen.
 
