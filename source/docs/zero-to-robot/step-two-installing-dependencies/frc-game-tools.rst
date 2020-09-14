@@ -142,7 +142,7 @@ Detail Progress
 .. image:: images/update-suite/detail-progress.png
    :alt: Detail Progress
 
-   Detail Progress
+FRC Game Tools is now installing!
 
 Installation Summary
 --------------------

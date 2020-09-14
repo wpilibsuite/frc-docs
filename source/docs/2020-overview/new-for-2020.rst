@@ -3,7 +3,7 @@ New for 2020
 
 A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes.
 
-.. important:: Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2020 </docs/zero-to-robot/step-two-installing-dependencies/wpilib-setup>`, any 2019 projects must be :doc:`imported </docs/software/wpilib-overview/importing-gradle-project>` to be compatible.
+.. important:: Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2020 </docs/zero-to-robot/step-two-installing-dependencies/wpilib-setup>`, any 2019 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
 Major Features - All Languages
 ------------------------------

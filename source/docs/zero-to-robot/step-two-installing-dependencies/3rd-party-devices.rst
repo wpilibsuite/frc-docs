@@ -1,6 +1,8 @@
 3rd Party Devices
 =================
 
+Configuration and Utility of various 3rd party devices can be found on the vendors respective part page. The below list showcases a list of various vendor software pages.
+
 .. note:: To configure CTRE CAN devices such as the PCM and PDP, use `CTRE Phoenix Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html>`_
 
 `Analog Devices ADIS16448 IMU <https://github.com/juchong/ADIS16448-roboRIO-Driver>`__ - Driver for ADIS16448 IMU. More info `here <https://wiki.analog.com/first/first_robotics_donation_resources#adis16448_imu_board_for_first_robotics>`__

@@ -1,14 +1,14 @@
 Programming your Radio
 ======================
 
-This guide will show you how to use the FRC Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
+This guide will show you how to use the FRC Radio Configuration Utility software to configure your robot's wireless bridge for use **outside** of FRC events.
 
 Before you begin using the software:
 
 1. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
 2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge.
 
-.. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
+.. warning:: Ensure the radio is wired to the 12V 2A terminals on the VRM (center-pin positive).
 
 Pre-Requisites
 --------------
@@ -110,7 +110,7 @@ Use the pop-up window to select the which ethernet interface the configuration u
 Open Mesh Firmware Note
 -----------------------
 
-For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware. OM5P-AC radios in the 2019 KoP should not need an update.
+For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware.
 
 If you do not need to update or re-load the firmware, skip the next step.
 
@@ -150,17 +150,9 @@ Select Options
 
 The default values of the options have been selected to match the use case of most teams, however, you may wish to customize these options to your specific scenario:
 
-<<<<<<< HEAD:source/docs/zero-to-robot/step-two-installing-dependencies/radio-programming.rst
-1. **Robot Name:** This is a string that gets appended to the SSID used by the radio. This allows you to have multiple networks with the same team number and still be able to distinguish them.
-2. **Firewall:** If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
-3. **BW Limit:** If this box is checked, the radio enforces a 4MB/s bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
-=======
 1. Robot Name: This is a string that gets appended to the SSID used by the radio. This allows you to have multiple networks with the same team number and still be able to distinguish them.
 2. Firewall: If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
 3. BW Limit: If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
->>>>>>> upstream/master:source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst
-
-.. note:: Firewall and BW Limit only apply to the OpenMesh radios. These options have no effect on D-Link radios.
 
 .. warning:: The :guilabel:`Firewall` option configures the radio to emulate the field firewall. This means that you will not be able to deploy code wirelessly with this option enabled.
 

@@ -15,7 +15,7 @@ If you are attempting to troubleshoot the USB connection, try pinging the roboRI
 
 If this ping succeeds, but the .local ping fails, it is likely that either the roboRIO hostname is configured incorrectly, or you are connected to a DNS server which is attempting to resolve the .local address.
 
-- Verify that your roboRIO has been :ref:`imaged for your team number <docs/zero-to-robot\step-two-installing-dependencies/imaging-your-roborio:Imaging your roboRIO>`. This sets the hostname used by mDNS.
+- Verify that your roboRIO has been :ref:`imaged for your team number <docs/zero-to-robot/step-two-installing-dependencies/imaging-your-roborio:Imaging your roboRIO>`. This sets the hostname used by mDNS.
 - Disconnect your computer from all other networks including Ethernet and WiFi. It is possible that one of these networks contains a DNS server that is attempting to resolve the .local address.
 
 Ethernet Connection

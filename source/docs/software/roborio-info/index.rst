@@ -4,7 +4,7 @@ roboRIO
 .. toctree::
    :maxdepth: 1
 
-   /docs/zero-to-robot\step-two-installing-dependencies/imaging-your-roborio
+   /docs/zero-to-robot/step-two-installing-dependencies/imaging-your-roborio
    roborio-web-dashboard
    roborio-ftp
    roborio-ssh
