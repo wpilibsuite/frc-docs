@@ -11,4 +11,4 @@ sphinx-hoverxref==0.5b1
 sphinxext-opengraph==0.3.0
 sphinxext-toptranslators==0.1.1
 sphinxext-linkcheckdiff==0.1.0
-sphinxext-rediraffe==0.2.1
+sphinxext-rediraffe==0.2.3
