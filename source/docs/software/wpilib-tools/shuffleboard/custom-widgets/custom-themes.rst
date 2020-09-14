@@ -75,11 +75,11 @@ Note that ``base.css`` internally imports ``material.css``, and
 Source code for the CSS files distributed with shuffleboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- :ref:`material.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css`
-- :ref:`base.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css`
-- :ref:`light.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/light.css`
-- :ref:`dark.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css`
-- :ref:`midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css`
+-  _material.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css
+-  _base.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css
+-  _light.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/light.css
+-  _dark.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css
+-  _midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css
 
 Material design color swatches
 """"""""""""""""""""""""""""""
