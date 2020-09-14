@@ -57,3 +57,8 @@
 "docs/software/vision-processing/raspberry-pi/index.rst" "docs/software/vision-processing/frcvision/index.rst"
 "docs/software/wpilib-overview/deploying-robot-code.rst" "docs/software/vscode-overview/deploying-robot-code.rst"
 "docs/software/wpilib-overview/index.rst" "docs/software/vscode-overview/index.rst"
+"docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst" "docs/zero-to-robot/step-one-building-robot/how-to-wire-a-robot.rst"
+"docs/getting-started/getting-started-frc-control-system/imaging-your-roborio.rst" "docs/zero-to-robot/step-two-installing-dependencies/imaging-your-roborio.rst"
+"docs/getting-started/getting-started-frc-control-system/labview-setup.rst" "docs/zero-to-robot/step-two-installing-dependencies/labview-setup.rst"
+"docs/getting-started/getting-started-frc-control-system/radio-programming.rst" "docs/zero-to-robot/step-two-installing-dependencies/radio-programming.rst"
+"docs/getting-started/getting-started-frc-control-system/wpilib-setup.rst" "docs/zero-to-robot/step-two-installing-dependencies/wpilib-setup.rst"
