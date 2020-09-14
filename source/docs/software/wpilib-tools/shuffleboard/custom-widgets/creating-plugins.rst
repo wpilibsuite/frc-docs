@@ -3,7 +3,7 @@ Creating a Plugin
 
 Overview
 --------
-Plugins provide the ability to create custom widgets, layouts, data sources/types, and custom themes. Shuffleboard provides the following built-in plugins:
+Plugins provide the ability to create custom widgets, layouts, data sources/types, and custom themes. Shuffleboard provides the following :ref:`built-in plugins docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst`:
 
 - NetworkTables Plugin: To connect to data published over NetworkTables
 - Base Plugin: To display custom FRC data types in custom widgets
