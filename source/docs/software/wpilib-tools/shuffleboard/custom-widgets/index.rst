@@ -8,5 +8,5 @@ Shuffleboard - Custom Widgets
    creating-plugins
    creating-custom-data-types
    creating-a-new-widget
-   creating-themes
+   custom-themes
    widget-types
