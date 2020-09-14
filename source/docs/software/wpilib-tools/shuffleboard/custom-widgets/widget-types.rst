@@ -44,9 +44,7 @@ There are also two annotations to help define widgets:
 AbstractWidget
 --------------
 
-This class implements ``getProperties()``, ``getSources()``, ``addSource()``, and ``titleProperty()``. It also defines a method ``exportProperties(Property<?>...)`` method so subclasses can easy add custom widget properties, or properties for the JavaFX components in the widget. Most of the `widgets in the base plugin`_ use this.
-
-.. _widgets in the base plugin: https://github.com/wpilibsuite/shuffleboard/tree/master/plugins/base/src/main/java/edu/wpi/first/shuffleboard/plugin/base/widget
+This class implements ``getProperties()``, ``getSources()``, ``addSource()``, and ``titleProperty()``. It also defines a method ``exportProperties(Property<?>...)`` method so subclasses can easy add custom widget properties, or properties for the JavaFX components in the widget. Most of the `widgets in the base plugin <https://github.com/wpilibsuite/shuffleboard/tree/master/plugins/base/src/main/java/edu/wpi/first/shuffleboard/plugin/base/widget>`_ use this.
 
 SingleTypeWidget
 ----------------
