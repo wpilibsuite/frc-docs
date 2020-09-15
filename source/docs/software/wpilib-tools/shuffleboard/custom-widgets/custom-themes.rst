@@ -24,7 +24,7 @@ example, a theoretical “Yellow” theme could be placed in
 All the stylesheets in the directory will be treated as part of the
 theme.
 
-Loading themes via plugins
+Loading Themes via Plugins
 --------------------------
 
 Custom themes can also be defined by plugins. This makes them easier to
@@ -48,7 +48,7 @@ plugin is in, the theme will not be able to be used.
 
    }
 
-Modifying or extending shuffleboard’s default themes
+Modifying or Extending Shuffleboard’s Default Themes
 ----------------------------------------------------
 
 Shuffleboard’s Material Light and Material Dark themes provide a lot of
@@ -72,8 +72,8 @@ Note that ``base.css`` internally imports ``material.css``, and
 ``base.css``, so importing ``light.css`` will implicitly import both
 ``base.css`` and ``material.css`` as well.
 
-Source code for the CSS files distributed with shuffleboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Source Code for the CSS Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  _material.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css
 -  _base.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css
@@ -81,8 +81,8 @@ Source code for the CSS files distributed with shuffleboard
 -  _dark.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css
 -  _midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css
 
-Material design color swatches
-""""""""""""""""""""""""""""""
+Material Design Color Swatches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The material design CSS uses color swatch variables for almost
 everything. These variables can be set from custom CSS files, reducing
@@ -95,8 +95,8 @@ overrides these with shades of red. ``-swatch-<|light|dark>-gray``
 defines three levels of gray to use for various background or text
 colors.
 
-Overriding the swatch colors
-""""""""""""""""""""""""""""
+Overriding the Swatch Colors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Replacing the blue shades in the light theme with red
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
