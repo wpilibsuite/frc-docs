@@ -29,7 +29,32 @@ The first time you launch the SmartDashboard you should be prompted for your tea
 
 .. note:: SmartDashboard will take a moment to configure itself for the team number, do not be alarmed.
 
-.. tip:: By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but to look for NetworkTables at a different IP address, run ``java -jar smartdashboard.jar -ip [IP address]`` from the WPILib tools directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ~ is ``C:\Users\Public``). For example, when using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`, run ``java -jar smartdashboard.jar -ip localhost``.
+Setting a Custom NetworkTables Server Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but it's sometimes useful to look for NetworkTables at a different IP address. This can be accomplished with adding a ``-ip`` parameter to the startup options of the ``smartdashboard.jar``. This file can be found in he WPILib tools directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ``~`` is ``C:\Users\Public``).
+
+.. image:: images/smartdashboard-intro-custom-networktables-location.png
+
+Then, open a Powershell or Bash window on Windows or Terminal window on macOS and run the following commands:
+
+.. tabs::
+
+  .. tab:: Windows
+
+    .. code-block:: powershell
+
+      frcvars2020
+      java -jar smartdashboard.jar -ip [IP address]
+
+  .. tab:: macOS
+
+    .. code-block:: bash
+
+      java -jar smartdashboard.jar -ip [IP address]
+
+This option is incredibly useful for using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`. Simply run ``java -jar smartdashboard.jar -ip localhost`` and SmartDashboard will detect your locally hosted robot!
+
 
 Locating the Save File
 ----------------------
