@@ -70,7 +70,7 @@ Recall that we can model the motion of a flywheel connected to a brushed DC moto
 We can convert this equation to state-space notation. We can create a system with one state (velocity), one :term:`input` (voltage), and one :term:`output` (velocity). Recalling that the first derivative of velocity is acceleration, we can write our equation as follows, replacing velocity with :math:`\mathbf{x}`, acceleration with :math:`\mathbf{\dot{x}}`, and voltage :math:`\mathbf{V}` with :math:`\mathbf{u}`:
 
 .. math::
-    \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot \mathbf{x} + \frac{1}{kA} \cdot u
+    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} u
 
 That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.
 
@@ -153,7 +153,7 @@ Picking these :math:`\mathbf{Q}` and :math:`\mathbf{R}` weights can be done usin
 Where the weighting factor :math:`\rho` can be used to change the balance of :term:`control effort` and state excursion. Small values of :math:`\rho` penalize :term:`control effort`, while large values of :math:`\rho` penalize state excursion. The values of :math:`x_1, x_2...x_m` are the maximum desired :term:`error` tolerance for each state of the system, and :math:`u_1, u_2...u_n` are maximum desired :term:`control efforts <control effort>` for each input.
 
 .. note::
-    Don't confuse Q and R with the elements we use to construct :math:`\mathbf{Q}` and :math:`\mathbf{R}` with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs restively. We fill Q with as many "q elements" as the :term:`system` has :term:`states <state>`, and R with as may "r elements" as the :term:`system` has :term:`inputs <input>`.
+    Don't confuse Q and R with the elements we use to construct :math:`\mathbf{Q}` and :math:`\mathbf{R}` with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs respectively. We fill Q with as many "q elements" as the :term:`system` has :term:`states <state>`, and R with as may "r elements" as the :term:`system` has :term:`inputs <input>`.
 
 Increasing the q elements :math:`x_1, x_2...x_m` or decreasing :math:`\rho` would make the LQR penalize large errors less heavily, and the resulting :term:`Control Law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
 
@@ -165,7 +165,7 @@ LQR: example application
 Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 2.9 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 0.3 \frac{\text{volts}}{\text{radians per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
 .. math::
-    \mathbf{\dot{x}} = [\frac{-kV}{kA}] \cdot v + \frac{1}{kA} \cdot V
+    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} v + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} V
 
 We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and constrain our :term:`control effort` to :math:`r = [12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`Gain` of K = ~13. This K :term:`Gain` acts as the proportional component of a PID loop on flywheel's velocity.
 
