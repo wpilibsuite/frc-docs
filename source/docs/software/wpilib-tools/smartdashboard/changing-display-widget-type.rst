@@ -3,22 +3,22 @@ Changing the Display Widget Type for a Value
 
 One can change the type of widget that displays values with the SmartDashboard. The allowable widgets depend on the type of the value being displayed.
 
-Set edit mode
--------------
+Setting Edit Mode
+-----------------
 
 .. image:: images/changing-display-widget-type/set-edit-mode.png
 
 Make sure that the SmartDashboard is in edit mode. This is done by selecting ``Editable`` from the ``View menu``.
 
-Choose the new widget type
---------------------------
+Choosing Widget Type
+--------------------
 
 .. image:: images/changing-display-widget-type/choose-new-widget-type.png
 
 Right-click on the widget and select ``Change to...``. Then, pick the type of widget to use for the particular value. In this case we choose ``LinePlot``.
 
-New widget type is shown for the value
---------------------------------------
+Showing New Widget Type
+-----------------------
 
 .. image:: images/changing-display-widget-type/new-widget-type-shown.png
 

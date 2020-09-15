@@ -1,10 +1,10 @@
-Setting robot preferences from SmartDashboard
-=============================================
+Setting Robot Preferences
+=========================
 
-The Robot Preferences class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, etc. that you would like to change without having to rebuild the program. The values can be viewed on the SmartDashboard and read and written by the robot program.
+The Robot Preferences (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Preferences.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Preferences.html>`__) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, etc. that you would like to change without having to rebuild the program. The values can be viewed on the SmartDashboard and read and written by the robot program.
 
-Sample program to reads and writes preference values
-----------------------------------------------------
+Reading and Writing Preferences
+-------------------------------
 
 .. tabs::
 
@@ -44,15 +44,15 @@ Often potentiometers are used to measure the angle of an arm or the position of 
 
 Rather than having "hard-coded" values in the program the potentiometer settings can be stored in the preferences file and read by the program when it starts. In this case the values are read on program startup in the ``robotInit()`` method. These values are automatically read from the preferences file stored in the roboRIO flash memory.
 
-Displaying the Preferences widget in SmartDashboard
----------------------------------------------------
+Displaying Preferences in SmartDashboard
+----------------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/preferences-widget.png
 
 In the SmartDashboard, the Preferences display can be added to the display revealing the contents of the preferences file stored in the roboRIO flash memory.
 
-Viewing and editing the preference values
------------------------------------------
+Viewing and Editing Preferences
+-------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/view-edit-preferences-values.png
 

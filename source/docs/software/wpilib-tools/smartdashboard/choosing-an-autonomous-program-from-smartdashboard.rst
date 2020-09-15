@@ -1,5 +1,5 @@
-Choosing an autonomous program from SmartDashboard
-==================================================
+Choosing an Autonomous Program
+==============================
 
 Often teams have more than one autonomous program, either for competitive reasons or for testing new software. Programs often vary by adding things like time delays, different strategies, etc. The methods to choose the strategy to run usually involves switches, joystick buttons, knobs or other hardware based inputs.
 
@@ -7,7 +7,7 @@ With the SmartDashboard you can simply display a widget on the screen to choose 
 
 .. note:: The code snippets shown below are part of the HatchbotTraditional example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
 
-Creating the SendableChooser object
+Creating the SendableChooser Object
 -----------------------------------
 
 In ``RobotContainer``, create a variable to hold a reference to a ``SendableChooser`` objectTwo or more commands can be created and stored in new variables. Using the ``SendableChooser``, one can choose between them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as options.
@@ -26,7 +26,7 @@ In ``RobotContainer``, create a variable to hold a reference to a ``SendableChoo
       :language: c++
       :lines: 41-47
 
-Set up the SendableChooser
+Setting up SendableChooser
 --------------------------
 
 Imagine that you have two autonomous programs to choose between and they are encapsulated in commands ``SimpleAuto`` and ``ComplexAuto``. To choose between them:
@@ -53,8 +53,8 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
       // Put the chooser on the dashboard
       frc::SmartDashboard::PutData(m_chooser);
 
-Start the autonomous command when the autonomous period starts
---------------------------------------------------------------
+Starting an Autonomous Command
+------------------------------
 
 In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` object is polled to get the selected command and that command must be scheduled.
 
@@ -72,8 +72,8 @@ In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` ob
       :language: c++
       :lines: 38-44
 
-Run the scheduler during the autonomous period
-----------------------------------------------
+Running the Scheduler during Autonomous
+---------------------------------------
 
 In ``Robot.java``, this will run the scheduler every driver station update period (about every 20ms) and cause the selected autonomous command to run.
 
@@ -93,8 +93,8 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
       :language: c++
       :lines: 23
 
-Cancel the autonomous command when teleop begins
-------------------------------------------------
+Cancelling the Autonomous Command
+---------------------------------
 
 In ``Robot.java``, when the teleop period begins, the autonomous command will be canceled.
 

@@ -7,7 +7,7 @@ There is a hierarchical structure in the name space creating a set of tables and
 
 For informational purposes, the names and values can be displayed using the OutlineViewer application that is installed in the same location as the SmartDashboard. It will display all the NetworkTable keys and values as they are updated.
 
-SmartDashboard data values
+SmartDashboard Data Values
 --------------------------
 
 .. image:: images/smartdashboard-namespace/data-values.png
@@ -26,8 +26,8 @@ SmartDashboard values are created with key names that begin with ``SmartDashboar
 
 The ``Arm position`` is created with the ``putNumber()`` call. The ``AutonomousCommand`` is written with a ``putData("Autonomous Command", command)`` that is not shown in the above code fragment. The chooser is created as a ``SendableChooser`` object and the string value, ``Program Version`` is created with the ``putString()`` call.
 
-View of the SmartDashboard
---------------------------
+View of SmartDashboard
+----------------------
 
 .. image:: images/smartdashboard-namespace/view-smartdashboard.png
 

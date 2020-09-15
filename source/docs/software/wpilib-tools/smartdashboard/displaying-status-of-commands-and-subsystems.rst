@@ -1,9 +1,9 @@
-Displaying the status of Commands and Subsystems
+Displaying the Status of Commands and Subsystems
 ================================================
 
 If you are using the command-based programming features of WPILib, you will find that they are very well integrated with SmartDashboard. It can help diagnose what the robot is doing at any time and it gives you control and a view of what's currently running.
 
-The SmartDashboard command system displays
+The SmartDashboard Command System Displays
 ------------------------------------------
 
 .. image:: images/displaying-status-of-commands-and-subsystems/command-system-displays.png
@@ -17,22 +17,22 @@ With SmartDashboard you can display the status of the commands and subsystems in
 
 In the following examples, you'll see what the screen would look like when there are commands running, and the code that produces this display.
 
-The scheduler display showing a few commands running
-----------------------------------------------------
+Scheduler with Commands Running
+-------------------------------
 
 .. image:: images/displaying-status-of-commands-and-subsystems/commands-running.png
 
 This is the scheduler status when there are two commands running, ``ExampleCommand`` and ``newCommand``. This replaces the ``No commands running.`` message from the previous screen image. You can see commands displayed on the dashboard as the program runs and various commands are triggered.
 
-Displaying the Scheduler status
+Displaying the Scheduler Status
 -------------------------------
 
 .. image:: images/displaying-status-of-commands-and-subsystems/display-scheduler.png
 
 You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``RobotInit`` method in your RobotProgram as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
 
-Displaying the status of a subsystem
-------------------------------------
+Displaying Subsystem Status
+---------------------------
 
 .. image:: images/displaying-status-of-commands-and-subsystems/display-subsystem.png
 
@@ -45,8 +45,8 @@ Writing the code to display a subsystem
 
 In this example we are writing the command instance, ``exampleSubsystem`` and instance of the ``ExampleSubsystem`` class to the SmartDashboard. This causes the display shown in the previous image. The text field will either contain a few dashes, ``---`` indicating that no command is current using this subsystem, or the name of the command currently using this subsystem.
 
-Adding a button to activate a command
--------------------------------------
+Activating Commands with a Button
+---------------------------------
 
 .. image:: images/displaying-status-of-commands-and-subsystems/add-command-button.png
 
