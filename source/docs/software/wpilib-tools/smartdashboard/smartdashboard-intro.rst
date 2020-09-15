@@ -32,29 +32,11 @@ The first time you launch the SmartDashboard you should be prompted for your tea
 Setting a Custom NetworkTables Server Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but it's sometimes useful to look for NetworkTables at a different IP address. This can be accomplished with adding a ``-ip`` parameter to the startup options of the ``smartdashboard.jar``. This file can be found in he WPILib tools directory (``~/wpilib/YYYY/tools`` where YYYY is the year and ``~`` is ``C:\Users\Public``).
+By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but it's sometimes useful to look for NetworkTables at a different IP address. To connect to SmartDashboard from a host other than the roboRIO, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host.
 
-.. image:: images/smartdashboard-intro-custom-networktables-location.png
+This option is incredibly useful for using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`. Simply add ``localhost`` to the ``Team Number`` field and SmartDashboard will detect your locally-hosted robot!
 
-Then, open a Powershell or Bash window on Windows or Terminal window on macOS and run the following commands:
-
-.. tabs::
-
-  .. tab:: Windows
-
-    .. code-block:: powershell
-
-      frcvars2020
-      java -jar smartdashboard.jar -ip [IP address]
-
-  .. tab:: macOS
-
-    .. code-block:: bash
-
-      java -jar smartdashboard.jar -ip [IP address]
-
-This option is incredibly useful for using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`. Simply run ``java -jar smartdashboard.jar -ip localhost`` and SmartDashboard will detect your locally hosted robot!
-
+.. image:: images/smartdashboard-networktables.png
 
 Locating the Save File
 ----------------------
