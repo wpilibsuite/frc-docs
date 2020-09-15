@@ -93,7 +93,7 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
       :language: c++
       :lines: 23
 
-Cancelling the Autonomous Command
+Canceling the Autonomous Command
 ---------------------------------
 
 In ``Robot.java``, when the teleop period begins, the autonomous command will be canceled.
