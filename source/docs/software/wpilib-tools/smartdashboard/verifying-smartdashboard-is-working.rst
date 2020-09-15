@@ -57,8 +57,8 @@ Verifying the IP address in SmartDashboard
 
 If the display of the value is not appearing, verify that the team number is correctly set as shown in this picture. The preferences dialog can be viewed by selecting ``File``, then ``Preferences``.
 
-Using OutlineViewer to verify that the program is working
----------------------------------------------------------
+Verifying Program using OutlineViewer
+-------------------------------------
 
 You can verify that the robot program is generating SmartDashboard values by using the OutlineViewer program. This is a java program, ``OutlineViewer.jar``, that is located in ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows).
 
