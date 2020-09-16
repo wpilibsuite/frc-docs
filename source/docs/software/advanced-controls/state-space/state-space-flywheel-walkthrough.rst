@@ -16,8 +16,12 @@ The full example is available in the state-space flywheel /`Java <https://github
 Why Use State-Space Control?
 ----------------------------
 
-State-space and model-based control is powerful for a number of reasons. Because we focus on creating an accurate model of our system we're controlling, we can also accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <Gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
-dmc6e-space control and modern control theory. :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
+Because state-space control focuses on creating an accurate model of our system, we can accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <Gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
+
+Modeling Our Flywheel
+---------------------
+
+:ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
 
 .. math::
     \dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u} \\
