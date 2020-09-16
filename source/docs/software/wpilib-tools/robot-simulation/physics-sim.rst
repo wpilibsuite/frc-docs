@@ -24,7 +24,7 @@ The following physics simulation classes are available in WPILib:
 - SingleJointedArmSim, which models gravity
 - BatterySim, which simply estimates battery voltage sag based on drawn currents
 
-All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateXhat(xhat, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
+All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
 
 Usage in User Code
 ------------------
