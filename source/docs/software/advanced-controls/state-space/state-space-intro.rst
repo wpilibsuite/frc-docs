@@ -137,10 +137,10 @@ Picking these :math:`\mathbf{Q}` and :math:`\mathbf{R}` weights can be done usin
 .. math::
     \begin{array}{cc}
         \mathbf{Q} = \begin{bmatrix}
-            \frac{\rho}{x_{1,max}^2} & 0 & \ldots & 0 \\
-            0 & \frac{\rho}{x_{2,max}^2} & & \vdots \\
+            \frac{1}{x_{1,max}^2} & 0 & \ldots & 0 \\
+            0 & \frac{1}{x_{2,max}^2} & & \vdots \\
             \vdots & & \ddots & 0 \\
-            0 & \ldots & 0 & \frac{\rho}{x_{n,max}^2}
+            0 & \ldots & 0 & \frac{1}{x_{n,max}^2}
         \end{bmatrix} &
         \mathbf{R} = \begin{bmatrix}
             \frac{1}{u_{1,max}^2} & 0 & \ldots & 0 \\
@@ -150,14 +150,12 @@ Picking these :math:`\mathbf{Q}` and :math:`\mathbf{R}` weights can be done usin
         \end{bmatrix}
     \end{array}
 
-Where the weighting factor :math:`\rho` can be used to change the balance of :term:`control effort` and state excursion. Small values of :math:`\rho` penalize :term:`control effort`, while large values of :math:`\rho` penalize state excursion. The values of :math:`x_1, x_2...x_m` are the maximum desired :term:`error` tolerance for each state of the system, and :math:`u_1, u_2...u_n` are maximum desired :term:`control efforts <control effort>` for each input.
-
 .. note::
     Don't confuse Q and R with the elements we use to construct :math:`\mathbf{Q}` and :math:`\mathbf{R}` with using Bryson's rule! Q and R are matrices with dimensionality states by states and states by inputs restively. We fill Q with as many "q elements" as the :term:`system` has :term:`states <state>`, and R with as may "r elements" as the :term:`system` has :term:`inputs <input>`.
 
-Increasing the q elements :math:`x_1, x_2...x_m` or decreasing :math:`\rho` would make the LQR penalize large errors less heavily, and the resulting :term:`Control Law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
+Increasing the q elements :math:`x_1, x_2...x_m` would make the LQR penalize large errors less heavily, and the resulting :term:`Control Law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing the r elements :math:`u_1, u_2...u_n`.
 
-Similarly, decreasing the q elements :math:`x_1, x_2...x_m` or increasing :math:`\rho` would make the LQR penalize large errors more heavily, and the resulting :term:`Control Law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing the r elements :math:`u_1, u_2...u_n`.
+Similarly, decreasing the q elements :math:`x_1, x_2...x_m` would make the LQR penalize large errors more heavily, and the resulting :term:`Control Law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing the r elements :math:`u_1, u_2...u_n`.
 
 LQR: example application
 ~~~~~~~~~~~~~~~~~~~~~~~~
