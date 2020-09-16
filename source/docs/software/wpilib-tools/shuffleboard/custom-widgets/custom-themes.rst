@@ -69,8 +69,8 @@ The ``-swatch-<100|200|300|400|500>`` variables define progressively darker shad
 Overriding the Swatch Colors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Replacing the blue shades in the light theme with red
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Replacing blue with red (light)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -84,8 +84,8 @@ Replacing the blue shades in the light theme with red
        -swatch-500: hsb(0, 80%, 58%);
    }
 
-Replacing the red shades in the dark theme with blue
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Replacnig red with blue (dark)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
