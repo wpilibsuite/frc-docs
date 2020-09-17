@@ -84,7 +84,7 @@ Replacing blue with red (light)
        -swatch-500: hsb(0, 80%, 58%);
    }
 
-Replacnig red with blue (dark)
+Replacing red with blue (dark)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
