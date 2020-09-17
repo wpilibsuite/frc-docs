@@ -55,3 +55,22 @@ Your console output in Visual Studio Code should look like the below. However, t
 .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava``. It's important to note that C++ simulation is not available through command-line at this time.
 
 .. note:: macOS users should be aware of the :ref:`simulation fails to launch known issue <docs/2020-overview/known-issues:macOS Simulation fails to launch in Visual Studio Code>`
+
+Running Robot Dashboards
+------------------------
+
+Both Shuffleboard and SmartDashboard can be used with WPILib simulation.
+
+Shuffleboard
+^^^^^^^^^^^^
+
+Shuffleboard is automatically configured to look for a NetworkTable instance from the robotRIO but **not from other sources**. To connect to Shuffleboard, open Shuffleboard preferences from the File menu and select ``NetworkTables`` under ``Plugins`` on the left navigation bar. In the ``Server`` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
+
+.. image:: images/shuffleboard-networktables.png
+
+SmartDashboard
+^^^^^^^^^^^^^^
+
+SmartDashboard is automatically configured to look for a NetworkTable instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
+
+.. image:: images/smartdashboard-networktables.png
