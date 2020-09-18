@@ -5,7 +5,7 @@ Because state-space notation allows us to compactly represent the :term:`dynamic
 
 - In normal user code:
 
-   - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings 
+   - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
    - Motor outputs are set
 - In simulation periodic code:
 
@@ -50,7 +50,7 @@ In addition to standard objects such as motors and encoders, we instantiate our 
          :lines: 58-66
          :linenos:
          :lineno-start: 36
-         
+
 Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID control loop to drive our elevator to a setpoint 30 inches off the ground.
 
 .. tabs::
@@ -70,7 +70,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
          :lines: 89-99
          :linenos:
          :lineno-start: 36
-         
+
 Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator.
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
