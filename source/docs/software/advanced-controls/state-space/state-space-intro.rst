@@ -160,16 +160,16 @@ Similarly, decreasing the q elements :math:`x_1, x_2...x_m` would make the LQR p
 LQR: example application
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 2.9 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 0.3 \frac{\text{volts}}{\text{radians per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
+Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 1.5 \frac{\text{volts}}{\text{radians per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
 .. math::
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} v + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} V
 
-We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and constrain our :term:`control effort` to :math:`r = [12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`Gain` of K = ~13. This K :term:`Gain` acts as the proportional component of a PID loop on flywheel's velocity.
+We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and an :math:`\mathbf{r}` of :math:`[12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`Gain` of K = ~81. This K :term:`Gain` acts as the proportional component of a PID loop on flywheel's velocity.
 
-Let's play with :math:`q` and :math:`r`. We except that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`Gain` K drops from ~13 to ~6. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
+Let's play with :math:`q` and :math:`r`. We except that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`Gain` K drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
 
-A Time Domain Graph Will Go Here
+.. image:: images/flywheel-lqr-ex.jpg
 
 Linearization
 -------------
