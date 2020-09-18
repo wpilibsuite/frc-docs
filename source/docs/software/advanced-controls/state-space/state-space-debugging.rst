@@ -1,4 +1,4 @@
-Debugging State-space Models and Controllers
+Debugging State-Space Models and Controllers
 ============================================
 
 Checking Signs

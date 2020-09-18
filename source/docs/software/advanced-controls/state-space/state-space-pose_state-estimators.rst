@@ -1,4 +1,4 @@
-WPILib Pose and State estimators
+WPILib Pose and State Estimators
 ================================
 
 WPILib includes pose and state estimators for differential, swerve and mecanum drivetrains. These estimators are designed to be drop-in replacements for the existing :ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and Odometry>` classes, with added features that utilize an Extended :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:Kalman Filters>` to fuse latency-compensated robot pose estimates with encoder and gyro measurements. These estimators can account for encoder drift and noisy vision data. These estimators can behave identically to their corresponding odometry classes if only ``update`` is called on these estimators.

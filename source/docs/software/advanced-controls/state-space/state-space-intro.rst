@@ -1,4 +1,4 @@
-Introduction to state-space control
+Introduction to State-Space Control
 ===================================
 
 .. note:: This article is from `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
