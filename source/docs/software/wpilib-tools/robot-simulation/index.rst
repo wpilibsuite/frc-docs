@@ -8,4 +8,3 @@ Robot Simulation
    introduction
    simulation-gui
    physics-sim
-   state-space-glossary
