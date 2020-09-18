@@ -43,6 +43,14 @@ In addition to standard objects such as motors and encoders, we instantiate our 
          :linenos:
          :lineno-start: 36
 
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/mcm001/allwpilib/state-space-v2-stage-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+         :language: cpp
+         :lines: 58-66
+         :linenos:
+         :lineno-start: 36
+         
 Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID control loop to drive our elevator to a setpoint 30 inches off the ground.
 
 .. tabs::
@@ -55,6 +63,14 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
          :linenos:
          :lineno-start: 36
 
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/mcm001/allwpilib/state-space-v2-stage-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+         :language: cpp
+         :lines: 89-99
+         :linenos:
+         :lineno-start: 36
+         
 Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator.
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
@@ -66,5 +82,13 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
       .. remoteliteralinclude:: https://raw.githubusercontent.com/mcm001/allwpilib/state-space-v2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 68-81
+         :linenos:
+         :lineno-start: 36
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/mcm001/allwpilib/state-space-v2-stage-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+         :language: cpp
+         :lines: 71-87
          :linenos:
          :lineno-start: 36
