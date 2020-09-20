@@ -80,7 +80,11 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
+# Units excluded, tracking https://github.com/wpilibsuite/frc-docs/issues/834
+linkcheck_ignore = [r'.*kauailabs.com.*',
+                    r'.*frcvision.local.*',
+                    r'.*andymark.com.*',
+                    r'.*http://nholthaus.github.io/units/.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
