@@ -68,7 +68,7 @@ Layout the Core Control System Components
 .. image:: images/how-to-wire-a-robot/image1.jpg
 
 
-Layout the components on the board. One layout that should work is shown in the images/how-to-wire-a-robot above.
+Lay out the components on the board. An example layout is shown in the image above.
 
 .. image:: images/how-to-wire-a-robot/image2.png
 
