@@ -1,7 +1,7 @@
 State Observers and Kalman Filters
 ==================================
 
-State observers combine information about a system's behavior and external measurements to estimate the true :term:`state` of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`docs/software/advanced-controls/filters/index:Filters` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
+State observers combine information about a system's behavior and external measurements to estimate the true :term:`state` of the system. A common observer used for linear systems is the Kalman Filter. Kalman filters are advantageous over other :ref:`filters <docs/software/advanced-controls/filters/index:Filters>` as they fuse measurements from one or more sensors with a state-space model of the system to optimally estimate a system's state.
 
 This image shows flywheel velocity measurements over time, run through a variety of different filters. Note that a well-tuned Kalman filter shows no measurement lag during flywheel spinup while still rejecting noisy data and reacting quickly to disturbances as balls pass through it. More on filters can be found in the :ref:`filters section <docs/software/advanced-controls/filters/index:Filters>`\.
 
@@ -74,7 +74,7 @@ The process and measurement noise covariance matrices :math:`\mathbf{Q}` and :ma
 Error Covariance Matrix
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward.
+The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large, our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. In the prediction step, :math:`\mathbf{P}` grows at a rate proportional to the process noise covariance :math:`\mathbf{Q}` and process noise intensity vector :math:`\mathbf{\Gamma}` to show how our certainty about the system's state decreases as we project the model forward.
 
 Predict step
 ------------
@@ -104,6 +104,12 @@ WPILib's Kalman Filter classes' constructors take a linear system, a vector of p
          :lineno-start: 54
 
    .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: cpp
+         :lines: 8-22
+         :linenos:
+         :lineno-start: 8
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: cpp

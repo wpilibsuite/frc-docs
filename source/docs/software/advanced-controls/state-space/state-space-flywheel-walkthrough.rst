@@ -11,7 +11,7 @@ The goal of this tutorial is to provide "end-to-end" instructions on implementin
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
-The full example is available in the state-space flywheel /`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__) and state-space flywheel system identification (`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__) example projects.
+The full example is available in the state-space flywheel (`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__) and state-space flywheel system identification (`Java <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__) example projects.
 
 Why Use State-Space Control?
 ----------------------------
@@ -21,7 +21,7 @@ Because state-space control focuses on creating an accurate model of our system,
 Modeling Our Flywheel
 ---------------------
 
-:ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` that continuous state-space systems are modeled using the following system of equations:
+:ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` that continuous state-space systems are modeled using the following system of equations:
 
 .. math::
     \dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u} \\
@@ -35,11 +35,11 @@ The first step of building up our state-space system is picking our system's sta
 
 For our flywheel, we care only about one state: its velocity. While we could chose to also model its acceleration, the inclusion of this state isn't necessary for our system.
 
-Next, we identify the :term:`inputs <input>` to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC), we have just one input: voltage applied to the motor. By choosing voltage as our input we can compensate for battery voltage sag as battery load increases.
+Next, we identify the :term:`inputs <input>` to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC), we have just one input: voltage applied to the motor. By choosing voltage as our input (over something like motor duty cycle), we can compensate for battery voltage sag as battery load increases.
 
 A continuous-time state-space system writes :term:`x-dot`, or the instantaneous rate of change of the system's :term:`system`\'s state, as proportional to the current :term:`state` and :term:`inputs <input>`. Because our state is angular velocity, :math:`\mathbf{\dot{x}}` will be the flywheel's angular acceleration.
 
-Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`State-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is state-space notation>` for more on continuous-time and discrete-time systems.
+Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`state-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` for more on continuous-time and discrete-time systems.
 
 Modeling with System Identification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ The second part of state-space notation relates the system's current :term:`stat
 
 Where :math:`\mathbf{y}` is the flywheel's velocity, as measured by a sensor of some kind.
 
-The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`system identification`. This example shows a flywheel model with a kV of 1 and a kA of 0.5:
+The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`system identification`. This example shows a flywheel model with a kV of 0.023 and a kA of 0.001:
 
 .. tabs::
 
@@ -73,18 +73,26 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: cpp
+         :lines: 8-23
+         :linenos:
+         :lineno-start: 8
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40eae3ab109b8ebf3010b7cd29a8b4d7fde0a050/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: cpp
          :lines: 36-42
          :linenos:
          :lineno-start: 36
 
-Modeling Using Flywheel Moment of Intertia and Gearing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Modeling Using Flywheel Moment of Inertia and Gearing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel `moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__, a measurement of a rotating body's resistance to angular acceleration or deceleration that can be thought of as angular mass. A full derivation of this model is presented in Section 8.2.1 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
-The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and moment of inertia. The moment of inertia can be calculated using CAD software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/3b283ab9aaf9d23d7870b9c3723d03760a0bd378/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/3b283ab9aaf9d23d7870b9c3723d03760a0bd378/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__. Note that the gearing is written as output over input -- that is, if the flywheel spins slower than the motors, this number should be greater than one.
+The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and moment of inertia. The moment of inertia can be calculated using CAD software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/3b283ab9aaf9d23d7870b9c3723d03760a0bd378/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/3b283ab9aaf9d23d7870b9c3723d03760a0bd378/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__). 
 
-.. note:: The C++ LinearSystem class uses :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library` to prevent unit mixups and assert dimensionality.
+.. note:: For WPILib's state-space classes, gearing is written as output over input -- that is, if the flywheel spins slower than the motors, this number should be greater than one.
+
+.. note:: The C++ LinearSystem class uses :ref:`the C++ Units Library <docs/software/basic-programming/cpp-units:The C++ Units Library>` to prevent unit mixups and assert dimensionality.
 
 .. tabs::
 
@@ -135,7 +143,7 @@ Because Kalman filters use our state-space model in the :ref:`docs/software/adva
 
 .. todo:: do we need to elaborate on this^ more?
 
-Linear-Quadratic Regulators and Plant Inversion feedforward
+Linear-Quadratic Regulators and Plant Inversion Feedforward
 -----------------------------------------------------------
 
 :ref:`docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator` finds a feedback controller to drive our flywheel :term:`system` to its :term:`reference`. Because our flywheel has just one state, the control law picked by our LQR will be in the form :math:`\mathbf{u = K (r - x)}` where :math:`\mathbf{K}` is a 1x1 matrix; in other words, the control law picked by LQR is simply a proportional controller, or a PID controller with only a P gain. This gain is chosen by our LQR based on the state excursion and control efforts we pass it. More on tuning LQR controllers can be found in the :ref:`LQR application example <docs/software/advanced-controls/state-space/state-space-intro:LQR: example application>`.
@@ -163,7 +171,7 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
 Bringing it All Together: LinearSystemLoop
 ------------------------------------------
 
-LinearSystemLoop combines our system, controller, and observer that we create earlier. The constructor shown will also instantiate a ``PlantInversionFeedforward``.
+LinearSystemLoop combines our system, controller, and observer that we created earlier. The constructor shown will also instantiate a ``PlantInversionFeedforward``.
 
 .. tabs::
 
