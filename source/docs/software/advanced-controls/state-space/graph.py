@@ -97,11 +97,11 @@ import matplotlib.pyplot as plt
 fig, (ax1, ax2) = plt.subplots(2)
 
 ax1.plot(t1, x1data, label = f"q = [1], r = [12], K={round(K1[0, 0])}")
-ax2.plot(t1, u1data, label = f"q = [1], r = [12], K={round(K1[0, 0])}")
 ax1.plot(t1, x2data, label = f"q = [0.1], r = [12], K={round(K2[0, 0])}")
+ax2.plot(t1, u1data, label = f"q = [1], r = [12], K={round(K1[0, 0])}")
 ax2.plot(t1, u2data, label = f"q = [0.1], r = [12], K={round(K2[0, 0])}")
 
-ax1.set(title="Flywheel velocity and voltage over time, reference = 10rad/s",ylabel="Flywheel Velocity (rad/s)")
+ax1.set(title="Flywheel velocity and voltage over time, reference = 5rad/s",ylabel="Flywheel Velocity (rad/s)")
 ax2.set(ylabel="Voltage (V)", xlabel="Time (s)")
 
 ax1.legend()
