@@ -17,14 +17,14 @@ C++
 
 - `LearnCPP <https://www.learncpp.com/>`__
 - `Programming: Principles and Practice Using C++ 2nd Edition <https://www.amazon.com/dp/B00KPTEH8C>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
-- `C++ Primer Plus 6th Edition <https://www.amazon.com/dp/0321776402/>`__ (ISBN-10: 0321776402).
+- `C++ Primer Plus 6th Edition <https://www.amazon.com/dp/0321928423/>`__ (ISBN-10: 0321776402).
 
 
 Java
 ^^^^
 
 - `Code Academy <https://www.codecademy.com/learn/learn-java>`__
-- `Head First Java 2nd Edition <https://www.amazon.com/dp/B009KCUX3S>`__ is a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
+- `Head First Java 2nd Edition <https://www.amazon.com/dp/0596009208/>`__ is a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
 
 LabVIEW
 ^^^^^^^
