@@ -3,7 +3,7 @@ State-Space Controller Walkthrough
 
 .. note:: Before following this tutorial, readers are recommended to have read an :ref:`docs/software/advanced-controls/state-space/state-space-intro:Introduction to state-space control`.
 
-The goal of this tutorial is to provide "end-to-end" tutorial on implementing a state-space controller for a flywheel.  By following this tutorial, readers will learn how to:
+The goal of this tutorial is to provide "end-to-end" instructions on implementing a state-space controller for a flywheel.  By following this tutorial, readers will learn how to:
 
 1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
