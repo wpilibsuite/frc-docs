@@ -74,9 +74,9 @@ The process and measurement noise covariance matrices :math:`\mathbf{Q}` and :ma
 Error Covariance Matrix
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large, our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state. 
+The error covariance matrix :math:`\mathbf{P}` describes the covariance of the state estimate :math:`\mathbf{\hat{x}}`. Informally, :math:`\mathbf{P}` describes our certainty about the estimated :term:`state`. If :math:`\mathbf{P}` is large, our uncertainty about the true state is large. Conversely, a :math:`\mathbf{P}` with smaller elements would imply less uncertainty about our true state.
 
-Ws we project the model forward, :math:`\mathbf{P}` increases as our certainty about the system's true state decreases.
+As we project the model forward, :math:`\mathbf{P}` increases as our certainty about the system's true state decreases.
 
 Predict step
 ------------
