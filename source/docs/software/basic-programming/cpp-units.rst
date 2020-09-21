@@ -31,7 +31,7 @@ Container types correspond to an actual quantity dimensioned according to some u
 
 Whenever a specific quantity of a unit is used (as a variable or a method parameter), it will be an instance of the container type.  By default, container types will store the actual value as a ``double`` - advanced users may change this by calling the ``unit_t`` template manually.
 
-A full list of unit and container types can be found in the `documentation <https://nholthaus.github.io/units/namespaces.html>`__.
+A full list of unit and container types can be found in the `documentation <https://github.com/nholthaus/units#namespaces>`__.
 
 Creating Instances of Units
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
