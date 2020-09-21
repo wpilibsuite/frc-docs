@@ -84,7 +84,7 @@ linkcheck_anchors = False
 linkcheck_ignore = [r'.*kauailabs.com.*',
                     r'.*frcvision.local.*',
                     r'.*andymark.com.*',
-                    r'.*nholthaus.github.io.*']
+                    r'.*http://nholthaus.github.io/units/.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
