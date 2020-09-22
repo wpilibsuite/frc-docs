@@ -76,7 +76,7 @@ Starting Install
 
      .. image:: images/labview/extract-iso.png
 
-     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
+     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt appears.
 
 NI Package Manager License
 --------------------------
