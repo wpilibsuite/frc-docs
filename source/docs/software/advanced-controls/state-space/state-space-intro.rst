@@ -60,9 +60,9 @@ Note that while a system's continuous-time and discrete-time matrices A, B, C, a
 
 .. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally where necessary.
 
-.. note:: Since a microcontroller performs discrete steps, there is a sample delay that introduces phase loss in the controller. Large amounts of phase loss can make a stable controller in the continuous-time domain become unstable in the discrete domain. The easiest way to combat phase loss and increase performance is to decrease the time between updates. WPILib's ``Notifier`` class can be used if updates faster than the main robot loop are desired.
+.. note:: Since we control our systems using processors like the RoboRIO that work in discrete timesteps, we often use the discrete-time form of our systems in our controllers and observers. In this form, the state is updated only at discrete timesteps (for example, every time a robot's main loop is executed), and is held constant between these updates. This means that we can only react to disturbances as quickly as our state estimate is updated. Updating our estimate more quickly can help improve performance, up to a point. WPILib's ``Notifier`` class can be used if updates faster than the main robot loop are desired.
 
-State-space notation example -- Flywheel from kV and kA
+State-space Notation Example: Flywheel from kV and kA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :ref:`Recall <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model the motion of a flywheel connected to a brushed DC motor with the equation :math:`V = kV \cdot v + kA \cdot a`, where V is voltage output, v is the flywheel's angular velocity and a is its angular acceleration. This equation can be rewritten as :math:`a = \frac{V - kV \cdot v}{kA}`, or :math:`a = \frac{-kV}{kA} \cdot v + \frac{1}{kA} \cdot V`. Notice anything familiar? This equation relates the angular acceleration of the flywheel to its angular velocity and the voltage applied.
@@ -74,7 +74,7 @@ We can convert this equation to state-space notation. We can create a system wit
 
 That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.
 
-Visualizing State-space responses: phase portrait
+Visualizing State-Space Responses: Phase Portrait
 -------------------------------------------------
 
 A `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ can help give a visual intuition for the response of a system in state-space. The vectors on the graph have their roots at some point :math:`\mathbf{x}` in state-space, and point in the direction of :math:`\mathbf{\dot{x}}`, the direction that the system will evolve over time. This example shows a model of a pendulum with the states of angle and angular velocity.
@@ -170,6 +170,22 @@ We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec
 Let's play with :math:`q` and :math:`r`. We know that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` K drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
 
 .. image:: images/flywheel-lqr-ex.jpg
+
+LQR and Measurement Latency Compensation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Oftentimes, our sensors have a delay associated with their measurements. This is especially apparent with some brushless motor controllers such as the NEO, which use a 40-tap FIR filter with a delay of 19.5ms. Furthermore, accessing sensor readings over CAN adds additional overhead, as we have to wait for status frames from motor controllers. However, this has an upper limit somewhere near 10ms between frames. As such, we can expect a CAN motor controller to have somewhere between 10ms and 30ms of lag associated with it in the worst case.
+
+This lag means that our LQR is generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below. However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in frc-characterization.
+
+.. math::
+    \mathbf{K_{compensated}} = \mathbf{K} \cdot \left(\mathbf{A} - \mathbf{BK}\right)^{\text{delay} / dt}
+
+Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially advances the gains by one timestep. In this case, we multiply by :math:`\left(\mathbf{A} - \mathbf{BK}\right)^{\text{delay} / dt}` to advance the gains by measurement's delay.
+
+.. image:: images/latency-comp-lqr.jpg
+
+.. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control. 
 
 Linearization
 -------------
