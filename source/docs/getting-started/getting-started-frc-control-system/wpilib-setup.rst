@@ -92,7 +92,7 @@ WPILib Installation Guide
       Unzip and untar the file by looking at the file in the explorer and
       double-clicking on it, once or twice to unzip (remove the .gz extension)
       and again to untar it (remove the .tar extension). When finished it
-      should like like the folder shown below.
+      should look like the folder shown below.
 
       .. figure:: images/mac/UntarredRelease.png
           :alt:
@@ -125,7 +125,7 @@ WPILib Installation Guide
       Before using VS Code for WPILib development there are a number of
       extensions that need to be installed. Start up VS Code and type the
       shortcut Cmd-Shift-P to bring up the list of commands available. Start
-      typing "Install from VSIX into the search box. Choose that command. In
+      typing "Install from VSIX" into the search box. Choose that command. In
       the file selection box select Cpp.vsix.
 
       .. figure:: images/mac/InstallFromVSIX.png
