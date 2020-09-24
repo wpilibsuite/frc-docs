@@ -92,7 +92,7 @@ WPILib Installation Guide
       Unzip and untar the file by looking at the file in the explorer and
       double-clicking on it, once or twice to unzip (remove the .gz extension)
       and again to untar it (remove the .tar extension). When finished it
-      should like the folder shown below.
+      should look like the folder shown below.
 
       .. figure:: images/mac/UntarredRelease.png
           :alt:
