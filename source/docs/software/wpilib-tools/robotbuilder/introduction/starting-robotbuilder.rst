@@ -22,4 +22,4 @@ Option 2 - Running from the Script
 
 The install process installs the tools to ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows).
 
-Inside this folder you will find .vbs (Windows) and .py (macOS/Linux) files that you can use to launch each tool. These scripts help launch the tools using the correct JDK and are what you should use to launch the tools.
+Inside this folder you will find ``.vbs`` (Windows) and ``.py`` (macOS/Linux) files that you can use to launch each tool. These scripts help launch the tools using the correct JDK and are what you should use to launch the tools.

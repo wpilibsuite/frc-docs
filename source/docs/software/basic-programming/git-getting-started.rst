@@ -226,9 +226,9 @@ Updating a Fork
 Gitignore
 ---------
 
-.. important:: It is extremely important that teams **do not** modify the .gitignore file that is included with their robot project. This can lead to offline deployment not working.
+.. important:: It is extremely important that teams **do not** modify the ``.gitignore`` file that is included with their robot project. This can lead to offline deployment not working.
 
-A .gitignore file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
+A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
 
 Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__
 

@@ -86,7 +86,7 @@ Copy Files Dialog
 
 .. image:: images/imaging-your-classmate/copy-files-dialog.png
 
-Choose “No” and select your .7z image
+Choose “No” and select your ``.7z`` image
 
 Prepare Drive
 ^^^^^^^^^^^^^
