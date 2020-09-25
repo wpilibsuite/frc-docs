@@ -191,6 +191,23 @@ For the specifics of saving a diagram as a ``.svg`` with metadata, take a look a
 
 .. warning:: Make sure you don't modify any file that is in a ``diagrams`` folder, or ends in ``.drawio.svg`` in any program other than draw.io, otherwise you might risk breaking the metadata of the file, making it uneditable.
 
+File Extensions
+---------------
+
+File extensions should use code formatting. For example, use:
+
+.. code-block:: text
+
+   ``.png``
+
+instead of:
+
+.. code-block:: text
+
+   .png
+   ".png"
+   "``.png``"
+
 Table of Contents (TOC)
 -----------------------
 

@@ -29,7 +29,7 @@ Visual Studio Code
 
 .. image:: images/control-system-software/visual-studio-code.png
 
-Visual Studio Code is the supported development environment for C++ and Java, two of the three supported languages used for programming an FRC robot. Both are object-oriented text based programming languages. A program in C++ (for FRC) consists of a number of header (.h) and implementation (.cpp) files where as a program in Java consists of .java files contained in one or more packages. A guide to getting started with C++ for FRC, including the installation and configuration of Visual Studio Code can be found :doc:`here <offline-installation-preparations>`.
+Visual Studio Code is the supported development environment for C++ and Java, two of the three supported languages used for programming an FRC robot. Both are object-oriented text based programming languages. A program in C++ (for FRC) consists of a number of header (.h) and implementation (.cpp) files where as a program in Java consists of ``.java`` files contained in one or more packages. A guide to getting started with C++ for FRC, including the installation and configuration of Visual Studio Code can be found :doc:`here <offline-installation-preparations>`.
 
 FRC Driver Station Powered by NI LabVIEW (Windows Only)
 -------------------------------------------------------

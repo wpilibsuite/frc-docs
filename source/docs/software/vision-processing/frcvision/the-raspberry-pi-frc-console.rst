@@ -118,7 +118,7 @@ The running application can be changed by selecting one of the choices in the dr
 -   Custom application which doesn't upload anything to the rPi and assumes that the developer wants to have a custom program
     and script.
 -   Java, C++ or Python pre-installed sample programs that can be edited into your own application.
--   Java, C++, or Python uploaded program. Java programs require a .jar file with the compiled program and C++ programs require
+-   Java, C++, or Python uploaded program. Java programs require a ``.jar`` file with the compiled program and C++ programs require
     an rPi executable to be uploaded to the rPI.
 
 .. figure:: images/the-raspberry-pi-frc-console/application-2.png

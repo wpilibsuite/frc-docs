@@ -92,7 +92,7 @@ By running ``gradle deployPlugin`` from the command line, the jar file will auto
 Manually Adding Plugin
 ----------------------
 The other way to add a plugin to Shuffleboard is to compile it to a jar file and add it from Shuffleboard.
-First, compile your plugin into a .jar file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
+First, compile your plugin into a ``.jar`` file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
 
 .. image:: images/loading-plugin.png
 
