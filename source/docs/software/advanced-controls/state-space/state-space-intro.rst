@@ -172,6 +172,8 @@ For example, we might use the following Q and R for an elevator system with posi
 
       .. code-block:: C++
 
+         #include <array>
+
          // q's elements
          std::array<double, 2> qElms{0.1, 0.5);
 
