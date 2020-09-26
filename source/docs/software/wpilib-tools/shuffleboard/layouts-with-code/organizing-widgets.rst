@@ -10,8 +10,6 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
 
 ``withPosition`` sets the row and column of the top-left corner of the widget. Rows and columns are both 0-indexed, so the topmost row is number 0 and the leftmost column is also number 0. If the position of any widget in a tab is specified, every widget should also have its position set to avoid overlapping widgets.
 
-.. note:: In order for the size to be applied position must also be specified. Be sure to call ``withPosition`` when using ``withSize``.
-
 .. tabs::
 
    .. code-tab:: java
@@ -40,7 +38,6 @@ If there are many widgets in a tab with related data, it can be useful to place 
       ShuffleboardLayout elevatorCommands = Shuffleboard.getTab("Commands")
         .getLayout("Elevator", BuiltInLayouts.kList)
         .withSize(2, 2)
-        .withPosition(0, 0)
         .withProperties(Map.of("Label position", "HIDDEN")); // hide labels for commands
 
       elevatorCommands.add(new ElevatorDownCommand());
@@ -56,7 +53,6 @@ If there are many widgets in a tab with related data, it can be useful to place 
       frc::ShuffleboardLayout& elevatorCommands = frc::Shuffleboard::GetTab("Commands")
         .GetLayout("Elevator", frc::BuiltInLayouts::kList)
         .WithSize(2, 2)
-        .WithPosition(0, 0)
         .WithProperties(properties);
 
       ElevatorDownCommand* elevatorDown = new ElevatorDownCommand();
