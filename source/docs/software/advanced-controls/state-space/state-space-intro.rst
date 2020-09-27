@@ -129,7 +129,7 @@ A PID controller is a form of feedback control. State-space control often uses t
 ..math::
      \mathbf{u} = \mathbf{K(r - x)}
 
-This :term:`control law` is a proportional controller for each state of our system. Proportional controllers create software-defined springs that pull our system's state toward our refereence state in state-space. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
+This :term:`control law` is a proportional controller for each state of our system. Proportional controllers create software-defined springs that pull our system's state toward our reference state in state-space. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
 
 Let's show an example of this control law in action. We'll use the pendulum system from above, where the swinging pendulum circled the origin in state-space. The case where :math:`\mathbf{K}` is the zero matrix (a matrix with all zeros) would be like picking P and D gains of zero -- no control :term:`input` would be applied, and the phase portrait would look identical to the one above. 
 
