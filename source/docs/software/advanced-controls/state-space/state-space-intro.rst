@@ -22,7 +22,7 @@ For the background vocabulary that will be used throughout this article, see the
 Introduction to Linear Algebra
 ------------------------------
 
-For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of `3Blue1Brown's *Essence of linear algebra* series <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__ (*Vectors, what even are they?*, *Linear combinations, span, and basis vectors*, *Linear transformations and matrices*, and *Matrix multiplication as composition*).
+For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of `3Blue1Brown's Essence of linear algebra series <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__ (Vectors, what even are they?, Linear combinations, span, and basis vectors, Linear transformations and matrices, and Matrix multiplication as composition).
 
 What is State-Space?
 --------------------
@@ -42,7 +42,7 @@ State-space notation is a set of matrix equations which describe how a system wi
 
 State-space control can deal with continuous-time and discrete-time systems. In the continuous-time case, the rate of change of the system's state :math:`\mathbf{\dot{x}}` is expressed as a linear combination of the current state :math:`\mathbf{x}` and input :math:`\mathbf{u}`. 
 
-In contrast, discrete-time systems expresses the state of the system at our next timestep :math:`\mathbf(x)_{k+1}` based on the current state :math:`\mathbf(x)_k` and input :math:`\mathbf{u}_k`, where :math:`k` is the current timestep and :math:`k+1` is the next timestep.
+In contrast, discrete-time systems expresses the state of the system at our next timestep :math:`\mathbf{x}_{k+1}` based on the current state :math:`\mathbf{x}_k` and input :math:`\mathbf{u}_k`, where :math:`k` is the current timestep and :math:`k+1` is the next timestep.
 
 In both the continuous- and discrete-time forms, the :term:`output` vector :math:`\mathbf{y}` is expressed as a linear combination of the current :term:`state` and :term:`input`. In many cases, the output is a subset of the system's state, and has no contribution from the current input.
 
@@ -92,13 +92,6 @@ Visualizing State-Space Responses: Phase Portrait
 
 A `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ can help give a visual intuition for the response of a system in state-space. The vectors on the graph have their roots at some point :math:`\mathbf{x}` in state-space, and point in the direction of :math:`\mathbf{\dot{x}}`, the direction that the system will evolve over time. This example shows a model of a pendulum with the states of angle and angular velocity.
 
-.. .. raw:: html
-
-..     <div style="text-align: center; margin-bottom: 2em;">
-..     <iframe width="100%" height="350" src="https://raw.githubusercontent.com/mcm001/state-space-animations/master/videos/phase-space/720p30/PendulumCirclingOrigin.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-..     </div>
-
-
 To trace a potential trajectory that a system could take through state-space, choose a point to start at and follow the arrows around. In this example, we might start at :math:`[-2, 0]`. From there, the velocity increases as we swing through vertical and starts to decrease until we reach the opposite extreme of the swing. This cycle of spinning about the origin repeats indefinitely.
 
 .. image:: images/pendulum-markedup.jpg
@@ -126,14 +119,14 @@ In the case of a DC motor, with just a mathematical model and knowledge of all c
 
 A PID controller is a form of feedback control. State-space control often uses the following :term:`control law`, where K is some controller :term:`gain` matrix, :math:`\mathbf{r}` is the :term:`reference` state, and :math:`\mathbf{x}` is the current state in state-space. The difference between these two vectors, :math:`\mathbf{r-x}`, is the :term:`error`. 
 
-..math::
+.. math::
      \mathbf{u} = \mathbf{K(r - x)}
 
 This :term:`control law` is a proportional controller for each state of our system. Proportional controllers create software-defined springs that pull our system's state toward our reference state in state-space. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
 
 Let's show an example of this control law in action. We'll use the pendulum system from above, where the swinging pendulum circled the origin in state-space. The case where :math:`\mathbf{K}` is the zero matrix (a matrix with all zeros) would be like picking P and D gains of zero -- no control :term:`input` would be applied, and the phase portrait would look identical to the one above. 
 
-To add some feedbac, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where our :term:`input` to the pendulum is angular acceleration. This K would mean that for every radian of position :term:`error`, the angular acceleration would be 2 radians per second squared; similarly, we accelerate by 2 radians per second squared for every radian per second of :term:`error`. Try following an arrow from somewhere in state-space inwards -- no matter the initial conditions, the state will settle at the :term:`reference` rather than circle endlessly with pure feedforward.
+To add some feedback, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where our :term:`input` to the pendulum is angular acceleration. This K would mean that for every radian of position :term:`error`, the angular acceleration would be 2 radians per second squared; similarly, we accelerate by 2 radians per second squared for every radian per second of :term:`error`. Try following an arrow from somewhere in state-space inwards -- no matter the initial conditions, the state will settle at the :term:`reference` rather than circle endlessly with pure feedforward.
 
 .. image:: images/pendulum-closed-loop.png
 
