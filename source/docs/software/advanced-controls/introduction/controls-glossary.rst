@@ -35,7 +35,7 @@ Controls Glossary
       A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system's <system>` future behavior. In state-space notation, the state of a system is written as a column vector describing it's position in state-space.
 
             - Ex. A drivetrain system might have the states :math:`\begin{bmatrix}x \\ y \\ \theta \end{bmatrix}` to describe it's position on the field.
-            - Ex. An elevator system might have the states :math:`\begin{bmatrix}position \\ velocity \end{bmatrix}` to describe its current height and velocity.
+            - Ex. An elevator system might have the states :math:`\begin{bmatrix} \text{position} \\ \text{velocity} \end{bmatrix}` to describe its current height and velocity.
 
         A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
@@ -50,6 +50,9 @@ Controls Glossary
 
    observer
       In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
+
+   moment of inertia
+      A measurement of a rotating body's resistance to angular acceleration or deceleration. Angular moment of inertia can be thought of as angular mass. See also: `Moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__.
 
    control input
       The input of a :term:`plant` used for the purpose of controlling it

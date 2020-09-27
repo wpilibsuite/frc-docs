@@ -19,6 +19,11 @@ Vocabulary
 
 For the background vocabulary that will be used throughout this article, see the :ref:`Glossary <docs/software/advanced-controls/state-space/state-space-glossary:State-Space Glossary>`.
 
+Introduction to Linear Algebra
+------------------------------
+
+For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of `3Blue1Brown's *Essence of linear algebra* series <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__ (*Vectors, what even are they?*, *Linear combinations, span, and basis vectors*, *Linear transformations and matrices*, and *Matrix multiplication as composition*).
+
 What is State-Space?
 --------------------
 
@@ -33,9 +38,15 @@ In addition to the :term:`state`, :term:`inputs <input>` and :term:`outputs <out
 What is State-Space Notation?
 -----------------------------
 
-State-space notation is a set of matrix equations which describe how a system will evolve over time. These equations relate the change in state :math:`\dot{\mathbf{x}}`, and the :term:`output` :math:`\mathbf{y}`, to linear combinations of the current state vector :math:`\mathbf{x}` and :term:`input` vector :math:`\mathbf{u}`. See section 4.2 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ for an introduction to linear combinations. The core idea of linear transformations is that we are simply summing or scaling the elements of :math:`\mathbf{x}` and :math:`\mathbf{u}`. For example, an operation involving an exponent or trigonometric function would not be considered a linear transformation.
+State-space notation is a set of matrix equations which describe how a system will evolve over time. These equations relate the change in state :math:`\dot{\mathbf{x}}`, and the :term:`output` :math:`\mathbf{y}`, to linear combinations of the current state vector :math:`\mathbf{x}` and :term:`input` vector :math:`\mathbf{u}`.
 
-State-space control can deal with continuous-time and discrete-time systems. A continuous-time system is modeled by a system of differential equations (as seen in the continuous-time case below). However, modern computer processors such as the RoboRIO run in discrete "steps," making it impossible to precisely model a system that is constantly evaluated. A continuous-time state-space system can be converted into a discrete-time system through a process called discretization. A discrete-time system expresses the state of the system at our next timestep based on the previous state and inputs, as opposed to the state derivative :math:`\dot{\mathbf{x}}`.
+State-space control can deal with continuous-time and discrete-time systems. In the continuous-time case, the rate of change of the system's state :math:`\mathbf{\dot{x}}` is expressed as a linear combination of the current state :math:`\mathbf{x}` and input :math:`\mathbf{u}`. 
+
+In contrast, discrete-time systems expresses the state of the system at our next timestep :math:`\mathbf(x)_{k+1}` based on the current state :math:`\mathbf(x)_k` and input :math:`\mathbf{u}_k`, where :math:`k` is the current timestep and :math:`k+1` is the next timestep.
+
+In both the continuous- and discrete-time forms, the :term:`output` vector :math:`\mathbf{y}` is expressed as a linear combination of the current :term:`state` and :term:`input`. In many cases, the output is a subset of the system's state, and has no contribution from the current input.
+
+When modeling systems, we often first find the continuous-time representation, as physics lets us easily represent the rate of change of a system's state as a linear combination of its current state and inputs. The discrete-time form is often used on robots so that we can easily find the next state of our system given the current state. Systems are often modeled first as continuous-time systems, and later converted to discrete-time systems.
 
 The following two sets of equations are the standard form of continuous-time and discrete-time state-space notation:
 
@@ -56,11 +67,13 @@ The following two sets of equations are the standard form of continuous-time and
       \mathbf{D} & \text{feedthrough matrix} &  &  \\
     \end{array}
 
-Note that while a system's continuous-time and discrete-time matrices A, B, C, and D have the same names, they are not equivalent. The continuous-time matrices describes the rate of change of the state, :math:`\mathbf{\hat{x}}`, while the discrete-time matrices describe the system's state and the next timestep as a function of the current state and input. The discrete-time form is often used on robots so that we can easily find the next state of our system given the current state. Systems are often modeled first as continuous-time systems, and later converted to discrete-time systems.
-
-.. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally where necessary.
+A continuous-time state-space system can be converted into a discrete-time system through a process called discretization. 
 
 .. note:: In the discrete-time form, the system's state is held constant between updates. This means that we can only react to disturbances as quickly as our state estimate is updated. Updating our estimate more quickly can help improve performance, up to a point. WPILib's ``Notifier`` class can be used if updates faster than the main robot loop are desired.
+
+.. note:: While a system's continuous-time and discrete-time matrices A, B, C, and D have the same names, they are not equivalent. The continuous-time matrices describes the rate of change of the state, :math:`\mathbf{x}`, while the discrete-time matrices describe the system's state at the next timestep as a function of the current state and input.
+
+.. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally to the discrete-time form where necessary.
 
 State-space Notation Example: Flywheel from kV and kA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +83,7 @@ State-space Notation Example: Flywheel from kV and kA
 We can convert this equation to state-space notation. We can create a system with one state (velocity), one :term:`input` (voltage), and one :term:`output` (velocity). Recalling that the first derivative of velocity is acceleration, we can write our equation as follows, replacing velocity with :math:`\mathbf{x}`, acceleration with :math:`\mathbf{\dot{x}}`, and voltage :math:`\mathbf{V}` with :math:`\mathbf{u}`:
 
 .. math::
-    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} u
+    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} \mathbf{u}
 
 That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.
 
@@ -97,7 +110,9 @@ For more on differential equations and phase portraits, see `3Blue1Brown's Diffe
 Visualizing Feedforward
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This phase portrait shows the "open loop" responses of the system -- that is, how it will react if we were to let the state evolve naturally. If we want to, say, balance the pendulum horizontal (at :math:`(\frac{\pi}{2}, 0)` in state space), we would need to somehow apply a control :term:`input` to counteract the open loop tendency of the pendulum to swing downward. This is what feedforward is trying to do -- make it so that our phase portrait will have an equilibrium at the :term:`reference` position (or setpoint) in state-space. Looking at our phase portrait from before, we can see that at :math:`(\frac{\pi}{2}, 0)` in state space, gravity is pulling the pendulum down with some torque T, and producing some downward angular acceleration with magnitude :math:`\frac{\tau}{i}`, where I is angular `moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__ of the pendulum. If we want to create an equilibrium at our :term:`reference` of :math:`(\frac{\pi}{2}, 0)`, we would need to apply an :term:`input` that produces a :math:`\mathbf{\dot{x}}` is equal in magnitude and opposite in direction to the :math:`\mathbf{\dot{x}}` produced by the system's open-loop response to due to gravity. The math for this will be presented later. Here is the phase portrait where we apply a constant :term:`input` that opposes the force of gravity at :math:`(\frac{\pi}{2}, 0)`:
+This phase portrait shows the "open loop" responses of the system -- that is, how it will react if we were to let the state evolve naturally. If we want to, say, balance the pendulum horizontal (at :math:`(\frac{\pi}{2}, 0)` in state space), we would need to somehow apply a control :term:`input` to counteract the open loop tendency of the pendulum to swing downward. This is what feedforward is trying to do -- make it so that our phase portrait will have an equilibrium at the :term:`reference` position (or setpoint) in state-space.
+
+Looking at our phase portrait from before, we can see that at :math:`(\frac{\pi}{2}, 0)` in state space, gravity is pulling the pendulum down with some torque T, and producing some downward angular acceleration with magnitude :math:`\frac{\tau}{i}`, where I is angular :term:`moment of inertia` of the pendulum. If we want to create an equilibrium at our :term:`reference` of :math:`(\frac{\pi}{2}, 0)`, we would need to apply an :term:`input` can counteract the system's natural tendency to swing downward. The goal here is to solve the equation :math:`\mathbf{0 = Ax + Bu}` for :math:`\mathbf{u}`. Below is shown a phase portrait where we apply a constant :term:`input` that opposes the force of gravity at :math:`(\frac{\pi}{2}, 0)`:
 
 .. image:: images/pendulum-balance.png
 
@@ -109,11 +124,12 @@ Feedback Control
 
 In the case of a DC motor, with just a mathematical model and knowledge of all current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. But if the system is disturbed in any way that isn’t modeled by our equations, like a load or unexpected friction, the angular velocity of the motor will deviate from the model over time. To combat this, we can give the motor corrective commands using a feedback controller. 
 
-A PID controller is a form of feedback control. State-space control often uses the :term:`control law` :math:`\mathbf{u} = \mathbf{K(r - x)}`, where K is some controller :term:`gain` matrix, r is the :term:`reference` state and x is the current state in state-space. The difference between these two vectors, :math:`r - x`, is known as :term:`error`. 
+A PID controller is a form of feedback control. State-space control often uses the following :term:`control law`, where K is some controller :term:`gain` matrix, :math:`\mathbf{r}` is the :term:`reference` state, and :math:`\mathbf{x}` is the current state in state-space. The difference between these two vectors, :math:`\mathbf{r-x}`, is the :term:`error`. 
 
-.. note:: A :term:`control law` is just an equation that tells us what our :term:`input` should be, given the system's :term:`state` and :term:`reference`. 
+..math::
+     \mathbf{u} = \mathbf{K(r - x)}
 
-This :term:`control law` is essentially a multidimensional proportional controller, as our input is related to our error by a proportional :term:`gain`. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
+This :term:`control law` is a proportional controller for each state of our system. Proportional controllers create software-defined springs that pull our system's state toward our refereence state in state-space. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
 
 Let's show an example of this control law in action. We'll use the pendulum system from above, where the swinging pendulum circled the origin in state-space. The case where :math:`\mathbf{K}` is the zero matrix (a matrix with all zeros) would be like picking P and D gains of zero -- no control :term:`input` would be applied, and the phase portrait would look identical to the one above. 
 
@@ -129,12 +145,13 @@ The Linear-Quadratic Regulator
 Because model-based control means that we can predict the future states of a system given an initial condition and future control inputs, we can pick a mathematically optimal :term:`gain` matrix :math:`\mathbf{K}`. To do this, we first have to define what a "good" or "bad" :math:`\mathbf{K}` would look like. We do this by summing the square of error and control input over time, which gives us a number representing how "bad" our control law will be. If we minimize this sum, we will have arrived at the optimal control law.
 
 LQR: Definition
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Linear-Quadratic Regulators work by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{\dot{x} = Ax + Bu}`.
 
 .. math::
     J = \int\limits_0^\infty \left(\mathbf{x}^T\mathbf{Q}\mathbf{x} +
+
     \mathbf{u}^T\mathbf{R}\mathbf{u}\right) dt
 
 The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`.
@@ -142,7 +159,7 @@ The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :mat
 .. note:: LQR design's :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices don't need discretization, but the :math:`\mathbf{K}` calculated for continuous-time and discrete time :term:`systems <system>` will be different.
 
 LQR: tuning
-~~~~~~~~~~
+~~~~~~~~~~~
 
 Like PID controllers can be tuned by adjusting their gains, we also want to change how our control law balances our error and input. For example, a spaceship might want to minimize the fuel it expends to reach a given reference, while a high-speed robotic arm might need to react quickly to disturbances.
 
@@ -183,23 +200,27 @@ For example, we might use the following Q and R for an elevator system with posi
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 1.5 \frac{\text{volts}}{\text{radians per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
+Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 1.5 \frac{\text{volts}}{\text{radian per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
 .. math::
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} v + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} V
 
-We arbitrarily choose a desired state excursion of :math:`q = [0.1 \text{rad/sec}]`, and an :math:`\mathbf{r}` of :math:`[12 \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`gain` of K = ~81. This K :term:`gain` acts as the proportional component of a PID loop on flywheel's velocity.
+We arbitrarily choose a desired state excursion (maximum error) of :math:`q = [0.1\ \text{rad/sec}]`, and an :math:`\mathbf{r}` of :math:`[12\ \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`gain` of :math:`\mathbf{K} = ~81`. This K :term:`gain` acts as the proportional component of a PID loop on flywheel's velocity.
 
-Let's adjust :math:`q` and :math:`r`. We know that increasing the q elements or decreasing the r elements we give Bryson's rule would make our controller more heavily penalize :term:`control effort`, analogous to trying to conserve fuel in a space ship or drive a car more conservatively. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` K drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
+Let's adjust :math:`\mathbf{q}` and :math:`\mathbf{r}`. We know that increasing the q elements or decreasing the :math:`\mathbf{r}` elements we use to create :math:`\mathbf{Q}` and :math:`\mathbf{R}` would make our controller more heavily penalize :term:`control effort`, analogous to trying to driving a car more conservatively to improve fuel economy. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` matrix :math:`\mathbf{K}` drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
+
+The following graph shows the flywheel's angular velocity and applied voltage over time with two different :term:`gain`\s. We can see how a higher :term:`gain` will make the system reach the reference more quickly (at t = 0.8 seconds), while keeping our motor saturated at 12V for longer. This is exactly the same as increasing the P gain of a PID controller by a factor of ~8x.
 
 .. image:: images/flywheel-lqr-ex.jpg
 
 LQR and Measurement Latency Compensation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Oftentimes, our sensors have a delay associated with their measurements. This is especially apparent with some brushless motor controllers such as the NEO, which use a 40-tap FIR filter with a delay of 19.5ms. Furthermore, accessing sensor readings over CAN adds additional overhead, as we have to wait for status frames from motor controllers. However, this has an upper limit somewhere near 10ms between frames. As such, we can expect a CAN motor controller to have somewhere between 10ms and 30ms of lag associated with it in the worst case.
+Oftentimes, our sensors have a delay associated with their measurements. For example the Spark MAX motor controller over CAN can have up to 30ms of delay associated with velocity measurements.
 
-This lag means that our LQR is generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below. However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in frc-characterization.
+This lag means that our feedback controller will be generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below. 
+
+However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in frc-characterization.
 
 .. math::
     \mathbf{K_{compensated}} = \mathbf{K} \cdot \left(\mathbf{A} - \mathbf{BK}\right)^{\text{delay} / dt}
@@ -210,6 +231,8 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 .. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control. 
 
+.. note:: The SPARK Max motor controller uses a 40-tap FIR filter with a delay of 19.5ms, and status frames are by default sent every 20ms.
+
 Linearization
 -------------
 
@@ -218,20 +241,3 @@ Linearization is a tool used to approximate nonlinear functions and state-space 
 .. image:: images/linear-sin-x.jpg
 
 We can also linearize state-space systems with nonlinear :term:`dynamics`. We do this by picking a point :math:`\mathbf{x}` in state-space and using this as the input to our nonlinear functions. Like in the above example, this works well for states near the point about which the system was linearized, but can quickly diverge further from that state.
-
-WPILib's LinearSystemLoop
--------------------------
-
-WPILib's state-space control is based on the ``LinearSystemLoop`` class. This class contains all the components needed to control a mechanism using state-space control. It contains the following members:
-
-- A ``LinearSystem`` representing the continuous-time state-space equations of the :term:`system`.
-- A :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:State Observers and Kalman Filters>`, used to filter noise from sensor :term:`measurements <measurement>`.
-- A Linear-Quadratic Regulator, which combines feedback and feedforward to generate :term:`inputs <input>`.
-
-As the system being controlled is in discrete domain, we follow the following steps at each update cycle:
-
-- ``correct(measurement, nextReference)`` "fuses" the measurement and Kalman Filter :math:`\hat{\mathbf{x}}` (:term:`x-hat`) to steer the estimated state back to reality using :term:`measurements <measurement>` of what the :term:`plant` is actually doing. This updated state estimate is used by the Linear-Quadratic Regulator to generate an updated :term:`input` :math:`\mathbf{u}` to drive the system towards the next :term:`reference`.
-
-- ``predict()`` uses the state-space model to predict where the the :term:`system`\'s :term:`state` :math:`\hat{\mathbf{x}}` (:term:`x-hat`) will be in the future based on applied inputs. The predict step is analogous to estimating a pendulum's (or other :term:`systems <system>`) next state by following the arrows in a phase portrait.
-
-- The updated :term:`input` is set to motors or other physical actuator.
