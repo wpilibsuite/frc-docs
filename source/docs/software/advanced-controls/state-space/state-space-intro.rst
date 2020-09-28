@@ -40,7 +40,7 @@ What is State-Space Notation?
 
 State-space notation is a set of matrix equations which describe how a system will evolve over time. These equations relate the change in state :math:`\dot{\mathbf{x}}`, and the :term:`output` :math:`\mathbf{y}`, to linear combinations of the current state vector :math:`\mathbf{x}` and :term:`input` vector :math:`\mathbf{u}`.
 
-State-space control can deal with continuous-time and discrete-time systems. In the continuous-time case, the rate of change of the system's state :math:`\mathbf{\dot{x}}` is expressed as a linear combination of the current state :math:`\mathbf{x}` and input :math:`\mathbf{u}`. 
+State-space control can deal with continuous-time and discrete-time systems. In the continuous-time case, the rate of change of the system's state :math:`\mathbf{\dot{x}}` is expressed as a linear combination of the current state :math:`\mathbf{x}` and input :math:`\mathbf{u}`.
 
 In contrast, discrete-time systems expresses the state of the system at our next timestep :math:`\mathbf{x}_{k+1}` based on the current state :math:`\mathbf{x}_k` and input :math:`\mathbf{u}_k`, where :math:`k` is the current timestep and :math:`k+1` is the next timestep.
 
@@ -67,7 +67,7 @@ The following two sets of equations are the standard form of continuous-time and
       \mathbf{D} & \text{feedthrough matrix} &  &  \\
     \end{array}
 
-A continuous-time state-space system can be converted into a discrete-time system through a process called discretization. 
+A continuous-time state-space system can be converted into a discrete-time system through a process called discretization.
 
 .. note:: In the discrete-time form, the system's state is held constant between updates. This means that we can only react to disturbances as quickly as our state estimate is updated. Updating our estimate more quickly can help improve performance, up to a point. WPILib's ``Notifier`` class can be used if updates faster than the main robot loop are desired.
 
@@ -115,16 +115,16 @@ Feedback Control and LQR
 Feedback Control
 ~~~~~~~~~~~~~~~~
 
-In the case of a DC motor, with just a mathematical model and knowledge of all current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. But if the system is disturbed in any way that isn’t modeled by our equations, like a load or unexpected friction, the angular velocity of the motor will deviate from the model over time. To combat this, we can give the motor corrective commands using a feedback controller. 
+In the case of a DC motor, with just a mathematical model and knowledge of all current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. But if the system is disturbed in any way that isn’t modeled by our equations, like a load or unexpected friction, the angular velocity of the motor will deviate from the model over time. To combat this, we can give the motor corrective commands using a feedback controller.
 
-A PID controller is a form of feedback control. State-space control often uses the following :term:`control law`, where K is some controller :term:`gain` matrix, :math:`\mathbf{r}` is the :term:`reference` state, and :math:`\mathbf{x}` is the current state in state-space. The difference between these two vectors, :math:`\mathbf{r-x}`, is the :term:`error`. 
+A PID controller is a form of feedback control. State-space control often uses the following :term:`control law`, where K is some controller :term:`gain` matrix, :math:`\mathbf{r}` is the :term:`reference` state, and :math:`\mathbf{x}` is the current state in state-space. The difference between these two vectors, :math:`\mathbf{r-x}`, is the :term:`error`.
 
 .. math::
      \mathbf{u} = \mathbf{K(r - x)}
 
 This :term:`control law` is a proportional controller for each state of our system. Proportional controllers create software-defined springs that pull our system's state toward our reference state in state-space. In the case that the system being controlled has position and velocity states, the :term:`control law` above will behave as a PD controller, which also tries to drive position and velocity error to zero.
 
-Let's show an example of this control law in action. We'll use the pendulum system from above, where the swinging pendulum circled the origin in state-space. The case where :math:`\mathbf{K}` is the zero matrix (a matrix with all zeros) would be like picking P and D gains of zero -- no control :term:`input` would be applied, and the phase portrait would look identical to the one above. 
+Let's show an example of this control law in action. We'll use the pendulum system from above, where the swinging pendulum circled the origin in state-space. The case where :math:`\mathbf{K}` is the zero matrix (a matrix with all zeros) would be like picking P and D gains of zero -- no control :term:`input` would be applied, and the phase portrait would look identical to the one above.
 
 To add some feedback, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where our :term:`input` to the pendulum is angular acceleration. This K would mean that for every radian of position :term:`error`, the angular acceleration would be 2 radians per second squared; similarly, we accelerate by 2 radians per second squared for every radian per second of :term:`error`. Try following an arrow from somewhere in state-space inwards -- no matter the initial conditions, the state will settle at the :term:`reference` rather than circle endlessly with pure feedforward.
 
@@ -211,7 +211,7 @@ LQR and Measurement Latency Compensation
 
 Oftentimes, our sensors have a delay associated with their measurements. For example the Spark MAX motor controller over CAN can have up to 30ms of delay associated with velocity measurements.
 
-This lag means that our feedback controller will be generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below. 
+This lag means that our feedback controller will be generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below.
 
 However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in frc-characterization.
 
@@ -222,7 +222,7 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 .. image:: images/latency-comp-lqr.jpg
 
-.. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control. 
+.. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control.
 
 .. note:: The SPARK Max motor controller uses a 40-tap FIR filter with a delay of 19.5ms, and status frames are by default sent every 20ms.
 
