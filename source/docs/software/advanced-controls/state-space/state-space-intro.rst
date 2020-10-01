@@ -143,9 +143,7 @@ LQR: Definition
 Linear-Quadratic Regulators work by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{\dot{x} = Ax + Bu}`.
 
 .. math::
-    J = \int\limits_0^\infty \left(\mathbf{x}^T\mathbf{Q}\mathbf{x} +
-
-    \mathbf{u}^T\mathbf{R}\mathbf{u}\right) dt
+    J = \int\limits_0^\infty \left(\mathbf{x}^T\mathbf{Q}\mathbf{x} + \mathbf{u}^T\mathbf{R}\mathbf{u}\right) dt
 
 The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`.
 
