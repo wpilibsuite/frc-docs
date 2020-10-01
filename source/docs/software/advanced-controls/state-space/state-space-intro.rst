@@ -46,7 +46,7 @@ In contrast, discrete-time systems expresses the state of the system at our next
 
 In both the continuous- and discrete-time forms, the :term:`output` vector :math:`\mathbf{y}` is expressed as a linear combination of the current :term:`state` and :term:`input`. In many cases, the output is a subset of the system's state, and has no contribution from the current input.
 
-When modeling systems, we often first find the continuous-time representation, as physics lets us easily represent the rate of change of a system's state as a linear combination of its current state and inputs. The discrete-time form is often used on robots so that we can easily find the next state of our system given the current state. Systems are often modeled first as continuous-time systems, and later converted to discrete-time systems.
+When modeling systems, we first derive the continuous-time representation because the equations of motion are naturally written as the rate of change of a system's state as a linear combination of its current state and inputs. We convert this representation to discrete-time on the robot because we update the system in discrete timesteps there instead of continuously.
 
 The following two sets of equations are the standard form of continuous-time and discrete-time state-space notation:
 
