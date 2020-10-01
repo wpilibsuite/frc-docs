@@ -76,7 +76,7 @@ A continuous-time state-space system can be converted into a discrete-time syste
 .. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally to the discrete-time form where necessary.
 
 State-space Notation Example: Flywheel from kV and kA
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :ref:`Recall <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model the motion of a flywheel connected to a brushed DC motor with the equation :math:`V = kV \cdot v + kA \cdot a`, where V is voltage output, v is the flywheel's angular velocity and a is its angular acceleration. This equation can be rewritten as :math:`a = \frac{V - kV \cdot v}{kA}`, or :math:`a = \frac{-kV}{kA} \cdot v + \frac{1}{kA} \cdot V`. Notice anything familiar? This equation relates the angular acceleration of the flywheel to its angular velocity and the voltage applied.
 
