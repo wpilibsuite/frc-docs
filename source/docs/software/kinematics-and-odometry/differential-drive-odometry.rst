@@ -20,7 +20,7 @@ The ``DifferentialDriveOdometry`` class requires one mandatory argument and one 
       // our starting pose is 5 meters along the long end of the field and in the
       // center of the field along the short end, facing forward.
       DifferentialDriveOdometry m_odometry = new DifferentialDriveOdometry(
-        getGyroHeading(), new Pose2d(5.0, 13.5, new Rotation2d());
+        getGyroHeading(), new Pose2d(5.0, 13.5, new Rotation2d()));
 
    .. code-tab:: c++
 
