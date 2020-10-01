@@ -1,6 +1,8 @@
 Developing with allwpilib
 =========================
 
+.. important:: This document contains information for developers *of* WPILib. This is not for programming FRC robots.
+
 This is a list of links to the various documentation for the `allwpilib <https://github.com/wpilibsuite/allwpilib>`__ repository.
 
 Core Repository
