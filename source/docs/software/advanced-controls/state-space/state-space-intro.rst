@@ -130,7 +130,7 @@ To add some feedback, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where 
 
 .. image:: images/pendulum-closed-loop.png
 
-But how can we choose an optimal :term:`gain` matrix K for our system? While we can manually choose :term:`gains <gain>` and simulate the system response, or tune it on-robot like a PID controller might be, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
+But how can we choose an optimal :term:`gain` matrix K for our system? While we can manually choose :term:`gains <gain>` and simulate the system response or tune it on-robot like a PID controller, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
 
 The Linear-Quadratic Regulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
