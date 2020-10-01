@@ -29,7 +29,7 @@ The ``MecanumDriveOdometry`` class requires two mandatory arguments and one opti
       // our starting pose is 5 meters along the long end of the field and in the
       // center of the field along the short end, facing forward.
       MecanumDriveOdometry m_odometry = new MecanumDriveOdometry(m_kinematics,
-        getGyroHeading(), new Pose2d(5.0, 13.5, new Rotation2d());
+        getGyroHeading(), new Pose2d(5.0, 13.5, new Rotation2d()));
 
    .. code-tab:: c++
 
