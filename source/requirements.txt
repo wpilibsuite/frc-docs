@@ -12,3 +12,4 @@ sphinxext-opengraph==0.3.0
 sphinxext-toptranslators==0.1.1
 sphinxext-linkcheckdiff==0.1.0
 sphinxext-rediraffe==0.2.3
+sphinx-version-warning==1.1.2
