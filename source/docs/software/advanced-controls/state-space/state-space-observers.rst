@@ -68,7 +68,7 @@ Process and Measurement Noise Covariance Matrices
 The process and measurement noise covariance matrices :math:`\mathbf{Q}` and :math:`\mathbf{R}` describe the variance of each of our states and measurements. Remember that for a Gaussian function, variance is the square of the function's standard deviation. In a WPILib, Q and R are diagonal matrices whose diagonals contain their respective variances. For example, a Kalman filter with states :math:`\begin{bmatrix}\text{position} \\ \text{velocity} \end{bmatrix}` and measurements :math:`\begin{bmatrix}\text{position} \end{bmatrix}` with state standard deviations :math:`\begin{bmatrix}0.1 \\ 1.0\end{bmatrix}` and measurement standard deviation :math:`\begin{bmatrix}0.01\end{bmatrix}` would have the following :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices:
 
 .. math::
-  Q = \begin{bmatrix}0.01 0 \\ 0 1.0\end{bmatrix},
+  Q = \begin{bmatrix}0.01 & 0 \\ 0 & 1.0\end{bmatrix},
   R = \begin{bmatrix}0.0001\end{bmatrix}
 
 Error Covariance Matrix
