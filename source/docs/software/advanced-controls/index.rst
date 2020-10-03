@@ -12,3 +12,4 @@ This section covers advanced control features in WPILib, such as various feedbac
    geometry/index
    controllers/index
    trajectories/index
+   state-space/index
