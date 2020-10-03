@@ -56,6 +56,7 @@ jobs:
     - name: Check Links (Diff)
       if: github.event_name == 'pull_request'
       run: |
+        SPHINXOPTS="-W --keep-going --color"
         make linkcheckdiff
   check-linting:
     runs-on: ubuntu-latest
