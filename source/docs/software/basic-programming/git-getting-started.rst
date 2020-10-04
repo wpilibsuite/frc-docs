@@ -109,7 +109,7 @@ In the below example, we created a file called ``README.md`` with the contents o
     > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
     > git push -u origin master
 
-For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/getting-started/running-a-benchtop/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
+For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
 
 Commits
 -------

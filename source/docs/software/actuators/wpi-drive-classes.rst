@@ -8,7 +8,7 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: /docs/getting-started/getting-started-frc-control-system/images/how-to-wire-a-robot/image1.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/image1.jpg
    :width: 600
 
 These drive bases typically have two or more in-line traction or omni  wheels per side (e.g., 6WD or 8WD) and may also be known as  "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts  drivetrain is an example of a differential drive. These drivetrains are capable of driving forward/backward and can turn by driving the two sides in opposite directions causing the wheels to skid sideways. These drivetrains are not capable of sideways translational movement.

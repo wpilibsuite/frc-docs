@@ -6,7 +6,7 @@ Task: Choose, acquire, and install the software required for developing FRC soft
 Overview
 --------
 
-The FRC Control System can be programmed in LabVIEW, Java or C/C++. Teams should use the language they have been assigned for the Beta test. Documentation for installation can be found on the :ref:`docs/getting-started/getting-started-frc-control-system/index:Getting Started` page.
+The FRC Control System can be programmed in LabVIEW, Java or C/C++. Teams should use the language they have been assigned for the Beta test. Documentation for installation can be found on the :ref:`docs/zero-to-robot/introduction:Getting Started` page.
 
 .. note:: For this task, there is supplemental documentation provided in TeamForge for all languages. See the Documents and File Releases sections on TeamForge.
 

@@ -1,5 +1,5 @@
-Getting Started with a Benchtop Robot
-=====================================
+Step 3: Programming your Robot
+==============================
 
 .. toctree::
     :maxdepth: 1
