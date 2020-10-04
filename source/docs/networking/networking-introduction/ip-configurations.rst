@@ -1,7 +1,9 @@
 IP Configurations
 =================
 
-.. note:: This document describes the IP configuration used at events, both on the fields and in the pits, potential issues and workaround configurations.
+This document describes the IP configuration used at events, both on the fields and in the pits, potential issues and workaround configurations.
+
+.. note:: Static IP may be necessary for devices such as co-processors, where fixed addresses may be necessary. Devices such as the roboRIO and Driver Station should remain in a DHCP configuration
 
 TE.AM IP Notation
 -----------------
