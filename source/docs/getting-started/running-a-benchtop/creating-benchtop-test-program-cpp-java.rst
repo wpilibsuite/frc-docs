@@ -185,11 +185,11 @@ Joystick Control for teleoperation
     .. code-tab:: java
 
         @Override
-            public void teleopInit() {
+        public void teleopInit() {
         }
 
         @Override
-            public void teleopPeriodic() {
+        public void teleopPeriodic() {
             m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());
         }
 
