@@ -61,7 +61,7 @@ WPILib Installation Guide
 
       .. image:: images/windows/DesktopIcon.png
 
-      Both of these reference the specific year as the WPIlib C++ tools will now support side-by-side installs of multiple environments from different seasons.
+      Both of these reference the specific year as the WPILib C++ tools will now support side-by-side installs of multiple environments from different seasons.
 
   .. tab :: macOS
 
