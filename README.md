@@ -1,6 +1,6 @@
 ![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)
 ![CI](https://github.com/wpilibsuite/frc-docs/workflows/CI/badge.svg)
-![Link Check](https://github.com/wpilibsuite/frc-docs/workflows/link-check/badge.svg)
+![Link Check](https://github.com/wpilibsuite/frc-docs/workflows/Link%20Check/badge.svg)
 
 # frc-docs
 Welcome to frc-docs! This repository contains the various source articles for the frc-docs website. frc-docs is licensed under Creative Commons, with assets such as the FIRST logo under trademark and copyright of [FIRST](https://www.firstinspires.org/).
