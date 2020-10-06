@@ -14,7 +14,7 @@ The Importance of Graphs
 
 Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s and :term:`output`\s over time is important when debugging state-space controllers and observers. One common approach is to send this data over NetworkTables and use tools such as :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`, which allow us to both graph the data in real-time as well as save it to a CSV file for plotting later with tools such as Google Sheets, Excel or Python.
 
-.. note:: By default, NetworkTables is limited to a 10hz update rate. For testing and debugging state-space systems, this can be bypassed with the following code snippet to submit data at up to 100hz:
+.. note:: By default, NetworkTables is limited to a 10hz update rate. For testing, this can be bypassed with the following code snippet to submit data at up to 100hz:
 
 .. tabs::
 
