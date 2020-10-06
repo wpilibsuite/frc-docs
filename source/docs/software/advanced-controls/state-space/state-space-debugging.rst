@@ -14,17 +14,20 @@ The Importance of Graphs
 
 Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s and :term:`output`\s over time is important when debugging state-space controllers and observers. One common approach is to send this data over NetworkTables and use tools such as :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`, which allow us to both graph the data in real-time as well as save it to a CSV file for plotting later with tools such as Google Sheets, Excel or Python.
 
-.. note:: By default, NetworkTables is limited to a 10hz update rate. For testing, this can be bypassed with the following code snippet to submit data at up to 100hz:
+.. note:: By default, NetworkTables is limited to a 10hz update rate. For testing, this can be bypassed with the following code snippet to submit data at up to 100hz. This code should be run periodically to forcibly publish new data.
+
+.. danger:: This will send extra data (at up to 100hz) over NetworkTables, which can cause lag with both user code and robot dashboards. This will also increase network utilization. It is often a good idea to disable this during competitions.
 
 .. tabs::
 
     .. code-tab:: java
-
-        NetworkTableInstance.getDefault().flush();
+        @Override
+        public void robotPeriodic() {
+            NetworkTableInstance.getDefault().flush();
+        }
 
     .. code-tab:: c++
-
-        NetworkTableInstance::GetDefault().Flush();
-
-This will send extra data (at up to 100hz) over NetworkTables, which can cause lag with both user code and robot dashboards. It is often a good idea to disable this during competitions.
+        void RobotPeriodic() {
+            NetworkTableInstance::GetDefault().Flush();
+        }
 
