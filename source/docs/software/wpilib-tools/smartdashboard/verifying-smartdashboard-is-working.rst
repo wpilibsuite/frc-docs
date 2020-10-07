@@ -62,7 +62,7 @@ Verifying Program using OutlineViewer
 
 You can verify that the robot program is generating SmartDashboard values by using the OutlineViewer program. This is a java program, ``OutlineViewer.jar``, that is located in ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows).
 
-OutlineViewer is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/macOS/Linux installation guides <docs/getting-started/getting-started-frc-control-system/wpilib-setup:WPILib Installation Guide>`. In Visual Studio Code, press **Ctrl + Shift + P** and type WPILib or click the WPILib logo in the top right to launch the WPILib Command Palette and select **Start Tool**, then select **OutlineViewer**.
+OutlineViewer is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/macOS/Linux installation guides <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`. In Visual Studio Code, press **Ctrl + Shift + P** and type WPILib or click the WPILib logo in the top right to launch the WPILib Command Palette and select **Start Tool**, then select **OutlineViewer**.
 
 In the host box, enter your roboRIO hostname (``roboRIO-####.local`` where ``####`` is your team number with no leading zeroes). Then, click ``Start Client``.
 
