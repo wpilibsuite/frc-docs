@@ -44,7 +44,7 @@ Next, we will model our flywheel as a continuous-time state-space system. WPILib
 Modeling with System Identification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space Notation Example: Flywheel from kV and kA>`, where we rewrote the folllwing equation in terms of :math:`\mathbf{a}`.
+To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space Notation Example: Flywheel from kV and kA>`, where we rewrote the following equation in terms of :math:`\mathbf{a}`.
 
 .. math::
     V = kV \cdot \mathbf{v} + kA \cdot \mathbf{a}\\
