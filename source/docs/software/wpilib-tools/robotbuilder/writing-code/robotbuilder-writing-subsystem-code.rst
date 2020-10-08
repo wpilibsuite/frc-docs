@@ -66,7 +66,7 @@ Adding Subsystem Capabilities
          victor->Set(0);
       }
 
-Add methods to the claw.java that will open, close, and stop the claw from moving. Those will be used by commands that actually operate the claw. The comments have been removed from this file to make it easier to see the changes for this document. Notice that a member variable called "victor" is created by RobotBuilder so it can be used throughout the subsystem. Each of your dragged-in palette items will have a member variable with the name given in RobotBuilder.
+Add methods to the claw.Java that will open, close, and stop the claw from moving. Those will be used by commands that actually operate the claw. The comments have been removed from this file to make it easier to see the changes for this document. Notice that a member variable called "victor" is created by RobotBuilder so it can be used throughout the subsystem. Each of your dragged-in palette items will have a member variable with the name given in RobotBuilder.
 
 Adding the Method Declarations to the Header File (C++ Only)
 ------------------------------------------------------------

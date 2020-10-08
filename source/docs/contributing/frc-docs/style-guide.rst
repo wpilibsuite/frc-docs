@@ -3,7 +3,7 @@
 Style Guide
 ===========
 
-This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see `the WPILib Github <https://github.com/wpilibsuite/styleguide>`__
+This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see `the WPILib GitHub <https://github.com/wpilibsuite/styleguide>`__
 
 Filenames
 ---------

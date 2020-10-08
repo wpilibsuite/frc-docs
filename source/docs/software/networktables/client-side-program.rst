@@ -49,11 +49,11 @@ Building the program
 --------------------
 When building and running the program you will need some additional libraries to include with your client-side program. These are:
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-java/ (ntcore java files)
+https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-java/ (ntcore Java files)
 
 https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-jni/ (ntcore native libs for all desktop platforms)
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil java files)
+https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil Java files)
 
 .. note:: The desktop platform jar is for Windows, macOS, and Linux.
 
