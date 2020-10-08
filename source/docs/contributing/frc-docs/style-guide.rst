@@ -159,7 +159,7 @@ They should follow the naming scheme of ``short-description.png``, where the nam
 They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to storage and accessibility concerns.
 
 .. note:: Accessibility is important! Images should be marked with a ``:alt:`` directive.
-          
+
           .. code-block:: ReST
 
              .. images:: images/my-document/my-image.png
