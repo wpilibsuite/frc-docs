@@ -31,9 +31,9 @@ DashboardCmdLine
 
 Locate the line beginning with ``DashboardCmdLine``.
 
-Replace the string after ``=`` with ``Java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
+Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
 
-.. tip:: If the dashboard ``jar`` file was located at ``C:\Users\USERNAME\frc\dashboard.jar``, one should replace the string after ``=`` with ``Java -jar "C:\\Users\\USERNAME\\frc\\dashboard.jar"``
+.. tip:: If the dashboard ``jar`` file was located at ``C:\Users\USERNAME\frc\dashboard.jar``, one should replace the string after ``=`` with ``java -jar "C:\\Users\\USERNAME\\frc\\dashboard.jar"``
 
 Launch Driver Station
 ---------------------
