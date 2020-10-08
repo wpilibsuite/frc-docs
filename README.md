@@ -17,4 +17,4 @@ The WPILib Mission is to enable FIRST Robotics teams to focus on writing game-sp
 
 We're happy to have you contributing to frc-docs, whether it's; writing articles, fixing code, new extensions, or adding translations!
 
-All the information needed to contribute to frc-docs is located in the ![contributing](https://docs.wpilib.org/en/latest/docs/contributing/frc-docs/index.html) section on frc-docs. Additionally, please ensure that all contributions follow the WPILib ![Code of Conduct](https://github.com/wpilibsuite/allwpilib/blob/master/CODE_OF_CONDUCT.md).
+All the information needed to contribute to frc-docs is located in the [contributing](https://docs.wpilib.org/en/latest/docs/contributing/frc-docs/index.html) section on frc-docs. Additionally, please ensure that all contributions follow the WPILib [Code of Conduct](https://github.com/wpilibsuite/allwpilib/blob/master/CODE_OF_CONDUCT.md).
