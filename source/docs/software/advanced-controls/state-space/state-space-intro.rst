@@ -153,7 +153,7 @@ Like PID controllers can be tuned by adjusting their gains, we also want to chan
 
 We can weight error and control effort in our LQR with :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices. In our cost function (which describes how "bad" our control law will perform), :math:`\mathbf{Q}` and :math:`\mathbf{R}` weight our error and control input relative to each other. In the spaceship example from above, we might use a :math:`\mathbf{Q}` with relatively small numbers to show that we don't want to highly penalize error, while our :math:`\mathbf{R}` might be large to show that expending fuel is undesirable.
 
-With WPILib, the LQR class takes a vector of desired maximum state excursions and control efforts and converts them internally to full matrices with Bryson's rule. We often use lowercase :math:`\mathbf{q}` and :math:`\mathbf{r}` to refer to these vectors, and :math:`\mathbf{Q}` and :math:`\mathbf{R}` to refer to the matrices.
+With WPILib, the LQR class takes a vector of desired maximum state excursions and control efforts and converts them internally to full Q and R matrices with Bryson's rule. We often use lowercase :math:`\mathbf{q}` and :math:`\mathbf{r}` to refer to these vectors, and :math:`\mathbf{Q}` and :math:`\mathbf{R}` to refer to the matrices.
 
 Increasing the :math:`\mathbf{q}` elements would make the LQR less heavily weight large errors, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing :math:`\mathbf{q}`\'s elements.
 
