@@ -72,7 +72,7 @@ It also must include a ``@ParametrizedController`` annotation that points to the
    import edu.wpi.first.shuffleboard.api.widget.SimpleAnnotatedWidget;
 
    /*
-    * If the FXML file and Java file are in the same package, that is the java file is in src/main/java and the
+    * If the FXML file and Java file are in the same package, that is the Java file is in src/main/java and the
     * FXML file is under src/main/resources or your code equivalent package, the relative path will work
     * However, if they are in different packages, an absolute path will be required.
    */

@@ -3,7 +3,7 @@
 Style Guide
 ===========
 
-This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see `the WPILib Github <https://github.com/wpilibsuite/styleguide>`__
+This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see `the WPILib GitHub <https://github.com/wpilibsuite/styleguide>`__
 
 Filenames
 ---------
@@ -36,6 +36,10 @@ Use the following case for these terms:
 - LabVIEW (not labview or LabView)
 - Visual Studio Code (VS Code) (not vscode, VScode, vs code, etc)
 - macOS (not Mac OS, Mac OSX, Mac OS X, Mac, Mac OS, etc.)
+- GitHub (not github, Github, etc)
+- PowerShell (not powershell, Powershell, etc)
+- Linux (not linux)
+- Java (not java)
 
 Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets>`_.
 

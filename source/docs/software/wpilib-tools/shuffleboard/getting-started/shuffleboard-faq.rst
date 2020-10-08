@@ -9,7 +9,7 @@ Frequently Asked Questions
 How do I report issues, bugs or feature requests with Shuffleboard?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Bugs, issues, and feature requests can be added on the Shuffleboard Github page by creating an issue. We will try to address them as they are entered into the system. Please try to look at existing issues before creating new ones to make sure you aren't duplicating something that has already been reported or work that is planned. You can find the issues on the `Shuffleboard GitHub page <https://github.com/wpilibsuite/shuffleboard>`__.
+Bugs, issues, and feature requests can be added on the Shuffleboard GitHub page by creating an issue. We will try to address them as they are entered into the system. Please try to look at existing issues before creating new ones to make sure you aren't duplicating something that has already been reported or work that is planned. You can find the issues on the `Shuffleboard GitHub page <https://github.com/wpilibsuite/shuffleboard>`__.
 
 How can I add my own widgets or other extensions to Shuffleboard?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

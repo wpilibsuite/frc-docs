@@ -110,9 +110,9 @@ weeks the project team will be posting updates to GRIP as more features are adde
 camera and web cameras) and image inputs. There is no provision for output yet although Network Tables and ROS (Robot Operating
 System) are planned.
 
-You can either download a pre-built release of the code from the github page "Releases" section
+You can either download a pre-built release of the code from the GitHub page "Releases" section
 (https://github.com/WPIRoboticsProjects/GRIP) or you can clone the source repository and built it yourself. Directions on
 building GRIP are on the project page. There is also additional documentation on the project wiki.
 
 So, please play with GRiP and give us feedback here on the forum. If you find bugs, you can either post them here or as a
-Github project issue on the project page.
+GitHub project issue on the project page.
