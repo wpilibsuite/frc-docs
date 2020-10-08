@@ -13,9 +13,17 @@ Before you begin using the software:
 Prerequisites
 -------------
 
-.. important:: Please note that the radio configuration utility requires Java 8, not Java 11 that is included with the WPILib installation. This can be installed alongside the WPILib Java by downloading and running the following installer with administrator privileges. Download `here <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot>`__.
+.. important::. Teams planning on using the tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot->`__.
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
+
+Download the latest FRC Radio Configuration Utility Installer from the following links:
+ 
+`FRC Radio Configuration 20.0.0 <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_
+
+`FRC Radio Configuration 20.0.0 Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_
+
+.. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
 Application Notes
 -----------------
@@ -58,17 +66,6 @@ At home only:
 
 .. warning:: It is not possible to modify the configuration manually.
 
-Download the Software
----------------------
-
-Download the latest FRC Radio Configuration Utility Installer from the following links:
-
-`FRC Radio Configuration 20.0.0 <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_
-
-`FRC Radio Configuration 20.0.0 Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_
-
-.. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
-
 Install the Software
 --------------------
 
@@ -85,14 +82,14 @@ Launch the software
 
 Use the Start menu or desktop shortcut to launch the program.
 
-.. note:: If you need to locate the program, it is installed to ``C:\Program Files\FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:\Program Files (x86)\FRC Radio Configuration Utility``
+.. note:: If you need to locate the program, it is installed to ``C:\Program Files (x86)\FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:\Program Files\FRC Radio Configuration Utility``
 
 Allow the program to make changes, if prompted
 ----------------------------------------------
 
 .. image:: images/radio-programming/allow-changes.png
 
-If the your computer is running Windows Vista or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
+If your computer is running Windows or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
 Select the network interface
 ----------------------------
@@ -105,7 +102,7 @@ Use the pop-up window to select the which ethernet interface the configuration u
 2. Select the interface you want to use from the drop-down list.
 3. Click :guilabel:`OK`.
 
-Open-Mesh Firmware Note
+Open Mesh Firmware Note
 -----------------------
 
 For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware. OM5P-AC radios in the 2019 KoP should not need an update.
@@ -114,7 +111,7 @@ If you do not need to update or re-load the firmware, skip the next step.
 
 .. warning:: Radios used in 2019 **do not** need to be updated before configuring, the 2020 tool uses the same 2019 firmware.
 
-Loading FRC Firmware to Open-Mesh Radio
+Loading FRC Firmware to Open Mesh Radio
 ---------------------------------------
 
 .. image:: images/radio-programming/openmesh-firmware.png
@@ -122,7 +119,7 @@ Loading FRC Firmware to Open-Mesh Radio
 If you need to load the FRC firmware (or reset the radio), you can do so using the FRC Radio Configuration Utility.
 
 1. Follow the instructions above to install the software, launch the program and select the Ethernet interface.
-2. Make sure the Open-Mesh radio is selected in the Radio dropdown.
+2. Make sure the Open Mesh radio is selected in the Radio dropdown.
 3. Make sure the radio is connected to the PC via Ethernet.
 4. Unplug the power from the radio. (If using a PoE cable, this will also be unplugging the Ethernet to the PC, this is fine)
 5. Press the Load Firmware button
@@ -151,7 +148,7 @@ The default values of the options have been selected to match the use case of mo
 2. **Firewall:** If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
 3. **BW Limit:** If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
 
-.. note:: Firewall and BW Limit only apply to the Open-Mesh radios. These options have no effect on D-Link radios.
+.. note:: Firewall and BW Limit only apply to the Open Mesh radios. These options have no effect on D-Link radios.
 
 .. warning:: The "Firewall" option configures the radio to emulate the field firewall. This means that you will not be able to deploy code wirelessly with this option enabled. This is useful for simulating blocked ports that may exist at competitions.
 
@@ -173,7 +170,7 @@ Throughout the configuration process, the window will indicate:
 2. The overall progress of the configuration process.
 3. All steps executed so far.
 
-Configuration completed
+Configuration Completed
 -----------------------
 
 .. image:: images/radio-programming/config-completed.png
