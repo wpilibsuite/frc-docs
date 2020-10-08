@@ -96,7 +96,7 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
 
 .. note:: For WPILib's state-space classes, gearing is written as output over input -- that is, if the flywheel spins slower than the motors, this number should be greater than one.
 
-.. note:: The C++ LinearSystem class uses :ref:`the C++ Units Library <docs/software/basic-programming/cpp-units:The C++ Units Library>` to prevent unit mixups and assert dimensionality.
+.. note:: The C++ LinearSystem class uses :ref:`the C++ Units Library <docs/software/advanced-controls/prereqs/cpp-units:The C++ Units Library>` to prevent unit mixups and assert dimensionality.
 
 .. tabs::
 

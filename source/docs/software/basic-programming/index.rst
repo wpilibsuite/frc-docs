@@ -5,5 +5,4 @@ Basic Programming
    :maxdepth: 1
 
    git-getting-started.rst
-   cpp-units
    robot-code-ci

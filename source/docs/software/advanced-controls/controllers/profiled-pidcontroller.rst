@@ -10,7 +10,7 @@ This combination of functionality (a motion profile for generating setpoints com
 Using the ProfiledPIDController class
 -------------------------------------
 
-.. note:: In C++, the ``ProfiledPIDController`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+.. note:: In C++, the ``ProfiledPIDController`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/advanced-controls/prereqs/cpp-units:The C++ Units Library`.
 
 .. note:: Much of the functionality of ``ProfiledPIDController`` is effectively identical to that of ``PIDController``.  Accordingly, this article will only cover features that are substantially-changed to accommodate the motion profiling functionality.  For information on standard ``PIDController`` features, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 

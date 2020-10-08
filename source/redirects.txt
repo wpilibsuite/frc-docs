@@ -73,3 +73,4 @@
 "docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.rst" "docs/zero-to-robot/step-2/index.rst"
 "docs/getting-started/running-a-benchtop/index.rst" "docs/zero-to-robot/step-3/index.rst"
 "docs/getting-started/getting-started-frc-control-system/intro.rst" "docs/zero-to-robot/introduction.rst"
+"docs/software/basic-programming/cpp-units.rst" "docs/software/advanced-controls/prereqs/cpp-units.rst"

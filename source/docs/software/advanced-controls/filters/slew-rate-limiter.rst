@@ -10,7 +10,7 @@ Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class 
 Creating a SlewRateLimiter
 --------------------------
 
-.. note:: The C++ ``SlewRateLimiter`` class is templated on the unit type of the input.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+.. note:: The C++ ``SlewRateLimiter`` class is templated on the unit type of the input.  For more information on C++ units, see :ref:`docs/software/advanced-controls/prereqs/cpp-units:The C++ Units Library`.
 
 .. note:: Because filters have "memory", each input stream requires its own filter object.  Do *not* attempt to use the same filter object for multiple input streams.
 
