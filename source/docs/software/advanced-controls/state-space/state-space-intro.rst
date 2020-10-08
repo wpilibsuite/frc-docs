@@ -153,7 +153,7 @@ Like PID controllers can be tuned by adjusting their gains, we also want to chan
 
 We can weight error and control effort in our LQR with :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices. In our cost function (which describes how "bad" our control law will perform), :math:`\mathbf{Q}` and :math:`\mathbf{R}` weight our error and control input relative to each other. In the spaceship example from above, we might use a :math:`\mathbf{Q}` with relatively small numbers to show that we don't want to highly penalize error, while our :math:`\mathbf{R}` might be large to show that expending fuel is undesirable.
 
-With WPILib, the LQR class takes a vector of desired maximum state excursions and control efforts and converts them internally to full Q and R matrices with Bryson's rule. We often use lowercase :math:`\mathbf{q}` and :math:`\mathbf{r}` to refer to these vectors, and :math:`\mathbf{Q}` and :math:`\mathbf{R}` to refer to the matrices.
+With WPILib, the LQR class takes a vector of desired maximum state excursions and control efforts and converts them internally to full matrices with Bryson's rule. We often use lowercase :math:`\mathbf{q}` and :math:`\mathbf{r}` to refer to these vectors, and :math:`\mathbf{Q}` and :math:`\mathbf{R}` to refer to the matrices.
 
 Increasing the :math:`\mathbf{q}` elements would make the LQR less heavily weight large errors, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing :math:`\mathbf{q}`\'s elements.
 
@@ -166,24 +166,31 @@ For example, we might use the following Q and R for an elevator system with posi
    .. group-tab:: Java
 
       .. code-block:: Java
-
-         // q's elements
-         Vector<N2> qElms = VecBuilder.fill(0.1, 0.5);
-
-         // r's elements
-         Vector<N1> rElms = VecBuilder.fill(12.0);
+      
+         LinearSystem<N2, N1, N1> elevatorSystem = <our elevator>;
+         LinearQuadtraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(system,
+             // q's elements
+             VecBuilder.fill(0.1, 0.5)
+             // r's elements
+             VecBuilder.fill(12.0),
+             // our dt
+             0.020);
 
    .. group-tab:: C++
 
       .. code-block:: C++
+      
+          LinearSystem<2, 1, 1> elevatorSystem = <our elevator>;
+          LinearQuadraticRegulator<2, 1> controller{
+              elevatorSystem,
+              // q's elements
+              {0.02, 0.4},
+              // r's elements
+              {12.0},
+              // our dt
+              0.00505_s};
 
-         #include <array>
-
-         // q's elements
-         std::array<double, 2> qElms{0.1, 0.5);
-
-         // r's elements
-         std::array<double, 1> rElms{12.0};
+         
 
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
