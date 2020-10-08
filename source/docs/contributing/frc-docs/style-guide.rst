@@ -83,7 +83,7 @@ Lists
 
 Lists should have a new line in between each indent level. The highest indent should have ``0`` indentation, and subsequent sublists should have an indentation starting at the first character of the previous indentation.
 
-.. code-block:: text
+.. code-block:: ReST
 
    - Block one
    - Block two
@@ -110,13 +110,13 @@ Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives
 
 Use
 
-.. code-block:: text
+.. code-block:: ReST
 
    .. warning:: This is a warning!
 
 NOT
 
-.. code-block:: text
+.. code-block:: ReST
 
    .. warning::
       This is a warning!
@@ -126,13 +126,13 @@ Links
 
 It is preferred to format links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
 
-.. code-block:: text
+.. code-block:: ReST
 
    Hi there, `this is a link <https://example.com>`__ and it's pretty cool!
 
 However, in some cases where the same link must be referenced multiple times, the syntax below is accepted.
 
-.. code-block:: text
+.. code-block:: ReST
 
    Hi there, `this is a link`_ and it's pretty cool!
 
@@ -145,18 +145,25 @@ Images should be created with ``1`` new line separating content and directive.
 
 All images (including vectors) should be less than ``500`` kilobytes in size. Please make use of a smaller resolution and more efficient compression algorithms.
 
-.. code-block:: text
+.. code-block:: ReST
 
-   .. image:: images/image-1.png
+   .. image:: images/my-article/my-image.png
 
 Image Files
 ^^^^^^^^^^^
 
-Image files should be stored in the document directory, sub-directory of ``images``
+Image files should be stored in the document directory, sub-directory of ``document-name/images``
 
-They should follow the naming scheme of ``document-title-1.png`` so on and so forth.
+They should follow the naming scheme of ``short-description.png``, where the name of the image is a short description of what the image shows. This should be less than ``24`` characters.
 
-They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to lack of Sphinx support.
+They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unacceptable due to storage and accessibility concerns.
+
+.. note:: Accessibility is important! Images should be marked with a ``:alt:`` directive.
+
+          .. code-block:: ReST
+
+             .. images:: images/my-document/my-image.png
+                :alt: An example image
 
 Vector Images
 ^^^^^^^^^^^^^
@@ -167,9 +174,9 @@ Simply use them as you would with any other image.
 
 .. note:: Ensure that any embedded images in the vector do not bloat the vector to exceed the 500KB limit.
 
-.. code-block:: text
+.. code-block:: ReST
 
-   .. image:: images/image-1.svg
+   .. image:: images/my-document/my-image.svg
 
 Draw.io Diagrams
 ^^^^^^^^^^^^^^^^
@@ -178,9 +185,9 @@ Draw.io (also known as `diagrams.net <https://app.diagrams.net/>`__) diagrams ar
 
 Simply use them like you would any other vector image, or any other image.
 
-.. code-block:: text
+.. code-block:: ReST
 
-   .. images:: diagrams/diagram-1.drawio.svg
+   .. images:: diagrams/my-document/diagram-1.drawio.svg
 
 Draw.io Files
 ~~~~~~~~~~~~~
@@ -218,7 +225,7 @@ The category ``index.rst`` file can then be added added to the root index file l
 Examples
 --------
 
-.. code-block:: text
+.. code-block:: ReST
 
    Title
    =====
