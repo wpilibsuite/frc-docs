@@ -168,10 +168,10 @@ For example, we might use the following Q and R for an elevator system with posi
       .. code-block:: Java
 
          // q's elements
-         Vector<2> qElms = VecBuilder.fill(0.1, 0.5);
+         Vector<N2> qElms = VecBuilder.fill(0.1, 0.5);
 
          // r's elements
-         Vector<1> rElms = VecBuilder.fill(12.0);
+         Vector<N1> rElms = VecBuilder.fill(12.0);
 
    .. group-tab:: C++
 
