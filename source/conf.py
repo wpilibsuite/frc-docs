@@ -131,6 +131,10 @@ IMAGE_SIZE_EXCLUSIONS = [
 # Required to display LaTeX in hover content
 hoverxref_mathjax = True
 
+# Use MathJax3 for better page loading times
+mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
