@@ -166,7 +166,7 @@ For example, we might use the following Q and R for an elevator system with posi
    .. group-tab:: Java
 
       .. code-block:: Java
-      
+
          LinearSystem<N2, N1, N1> elevatorSystem = <our elevator>;
          LinearQuadtraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(system,
              // q's elements
@@ -179,7 +179,7 @@ For example, we might use the following Q and R for an elevator system with posi
    .. group-tab:: C++
 
       .. code-block:: C++
-      
+
           LinearSystem<2, 1, 1> elevatorSystem = <our elevator>;
           LinearQuadraticRegulator<2, 1> controller{
               elevatorSystem,
@@ -189,8 +189,6 @@ For example, we might use the following Q and R for an elevator system with posi
               {12.0},
               // our dt
               0.00505_s};
-
-         
 
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
