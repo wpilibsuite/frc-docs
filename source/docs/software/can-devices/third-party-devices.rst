@@ -6,7 +6,7 @@ offer expansive feature-sets, vendor CAN devices require similarly
 expansive code libraries to operate.  As a result, these libraries are
 not maintained as an official part of WPILib, but are instead maintained
 by the vendors themselves.  For a guide to installing third-party
-libraries, see :ref:`3rd Party Libraries <docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries>`
+libraries, see :ref:`3rd Party Libraries <docs/zero-to-robot/step-2/3rd-party-libraries:3rd Party Libraries>`
 
 A list of common third-party CAN devices from various vendors, along with links to corresponding external documentation, is provided below:
 
