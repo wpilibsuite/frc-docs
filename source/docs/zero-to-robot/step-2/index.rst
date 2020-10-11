@@ -8,8 +8,8 @@ Step 2: Installing Software
 
    control-system-software
    labview-setup
-   offline-installation-preparations
    frc-game-tools
    imaging-your-roborio
    radio-programming
    wpilib-setup
+   3rd-party-libraries

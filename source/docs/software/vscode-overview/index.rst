@@ -10,7 +10,6 @@ VS Code Overview
    deploying-robot-code
    viewing-console-output
    debugging-robot-program
-   3rd-party-libraries
    importing-eclipse-project
    importing-gradle-project
    using-test-mode
