@@ -12,6 +12,9 @@ SIZECHECKER   = python3 -m scripts.imagesizechecker
 CONFEXCLUDE   = --exclude-file source/conf.py
 SIZEMAX       = 500
 
+ifeq ($(CI), true)
+	SPHINXOPTS += --color
+endif
 
 # Put it first so that "make" without argument is like "make help".
 help:
