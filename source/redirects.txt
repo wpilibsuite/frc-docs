@@ -74,4 +74,4 @@
 "docs/getting-started/running-a-benchtop/index.rst" "docs/zero-to-robot/step-3/index.rst"
 "docs/getting-started/getting-started-frc-control-system/intro.rst" "docs/zero-to-robot/introduction.rst"
 "docs/software/vscode-overview/3rd-party-libraries.rst" "docs/software/zero-to-robot/step-2/3rd-party-libraries.rst"
-"docs/software/zero-to-robot/step-2/offline-installation-preparations.rst" "docs/software/zero-to-robot/step-2/index.rst"
+"docs/zero-to-robot/step-2/offline-installation-preparations.rst" "docs/software/zero-to-robot/step-2/index.rst"
