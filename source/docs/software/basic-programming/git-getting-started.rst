@@ -93,7 +93,7 @@ Now you'll want to open a PowerShell window and navigate to your project directo
 
 In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
 
-.. note:: Replace the filepath ("C:\Users\ExampleUser9007\Documents\Example Folder") with the one you want to create the repo in, and replace the remote URL (https://github.com/ExampleUser9007/ExampleRepo.git) with the URL for the repo you created in the previous steps.
+.. note:: Replace the filepath ``"C:\Users\ExampleUser9007\Documents\Example Folder"`` with the one you want to create the repo in, and replace the remote URL (https://github.com/ExampleUser9007/ExampleRepo.git) with the URL for the repo you created in the previous steps.
 
 .. code-block:: console
 
@@ -109,7 +109,7 @@ In the below example, we created a file called ``README.md`` with the contents o
     > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
     > git push -u origin master
 
-For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
+For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`. Replace ``echo "# ExampleRepo" >> README.md`` and ``git add README.md`` with ``git add .`` to add all existing files in the project.
 
 Commits
 -------
