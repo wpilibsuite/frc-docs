@@ -109,7 +109,7 @@ In the below example, we created a file called ``README.md`` with the contents o
     > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
     > git push -u origin master
 
-For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`. Replace ``echo "# ExampleRepo" >> README.md`` and ``git add README.md`` with ``git add .`` to add all existing files in the project.
+For FRC Robot projects, the above commands, with the modifications below, should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`. In the instructions above, Replace ``echo "# ExampleRepo" >> README.md`` and ``git add README.md`` with ``git add .`` to add all existing files in the project.
 
 Commits
 -------
