@@ -98,7 +98,7 @@ If a directory is empty, a file needs to be created in order for git to have som
 .. tabs::
 
    .. tab:: Empty Directory
-   
+
       .. code-block:: console
 
          > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
