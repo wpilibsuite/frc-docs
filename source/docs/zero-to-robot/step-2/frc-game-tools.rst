@@ -7,7 +7,7 @@ The FRC Game Tools contains the following software components:
 
 - LabVIEW Update
 - FRC Driver Station
-- FRC Utilities.
+- FRC Utilities
 
 The LabVIEW runtime components required for the Driver Station and Utilities are included in this package.
 
