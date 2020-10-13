@@ -16,7 +16,7 @@ The LabVIEW runtime components required for the Driver Station and Utilities are
 Requirements
 ------------
 
-- Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows XP is not supported. Windows 10 is the recommended OS.
+- Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows 10 is the recommended OS.
 - Download the update from `NI <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__.
 
 .. image:: images/labview/offline-installer.png
@@ -75,14 +75,14 @@ NI Package Manager License
 
 .. image:: images/labview/ni-package-license.png
 
-If you see this screen, click :guilabel:`Next`. This screen just confirms that you agree to NI Package Manager License agreement.
+If you see this screen, click :guilabel:`Next`. This screen confirms that you agree to NI Package Manager License agreement.
 
 Disable Windows Fast Startup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/labview_fast_startup.png
 
-It's recommended to leave this screen as-is, as Windows Fast Startup can cause issues with the NI drivers require to image the roboRIO. Go ahead and click :guilabel:`Next`.
+It is recommended to leave this screen as-is, as Windows Fast Startup can cause issues with the NI drivers required to image the roboRIO. Go ahead and click :guilabel:`Next`.
 
 NI Package Manager Review
 ^^^^^^^^^^^^^^^^^^^^^^^^^
