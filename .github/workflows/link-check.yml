@@ -1,0 +1,19 @@
+name: Link Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 4 * * *'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: pip install -r source/requirements.txt
+    - name: Check Links
+      run: make linkcheck

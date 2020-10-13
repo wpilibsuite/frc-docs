@@ -9,11 +9,11 @@ Task:
 Overview
 --------
 
-Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/getting-started/getting-started-frc-control-system/index:Getting Started` page.
+Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/zero-to-robot/introduction:Getting Started` page.
 
 .. note:: The image version in the documentation may not be updated yet. You should use the latest image available after installing the latest Beta Update.
 
-Next we will verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/getting-started/running-a-benchtop/index:Getting Started with a Benchtop Robot` page.
+Next we will verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/zero-to-robot/step-3/index:Getting Started with a Benchtop Robot` page.
 
 
 Desired Feedback

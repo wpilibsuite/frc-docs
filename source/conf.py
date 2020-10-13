@@ -42,7 +42,23 @@ extensions = [
     'sphinxext.linkcheckdiff',
     'hoverxref.extension',
     'notfound.extension',
+    'versionwarning.extension',
 ]
+
+versionwarning_messages = {
+    "latest": """
+        The documentation you are currently viewing is for upcoming changes to WPILib.
+        Please see the <a href="https://docs.wpilib.org" id="versionwarning_href">stable</a> version for the current release of WPILib.
+        <script>
+            document.getElementById("versionwarning_href").setAttribute("href", location.href.replace("/latest/", "/stable/"))
+        </script>
+        """
+}
+
+
+versionwarning_admonition_type = 'warning'
+versionwarning_banner_title = 'Warning!'
+versionwarning_body_selector = 'div[class="document"]'
 
 # Redirect branch
 rediraffe_branch = 'origin/master'
@@ -109,11 +125,15 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
-    "docs/getting-started/getting-started-frc-control-system/images/frc-control-system-layout.svg"
+    "docs/zero-to-robot/step-1/images/frc-control-system-layout.svg"
 ]
 
 # Required to display LaTeX in hover content
 hoverxref_mathjax = True
+
+# Use MathJax3 for better page loading times
+mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+
 
 # -- Options for HTML output -------------------------------------------------
 

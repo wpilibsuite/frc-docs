@@ -1,11 +1,7 @@
 name: CI
-on:
-  pull_request:
-    branches:
-      - "*"
-  push:
-    branches:
-      - "*"
+
+on: [pull_request, push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,12 +45,7 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
-    - name: Check Links (All)
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      run: |
-        make linkcheck
-    - name: Check Links (Diff)
-      if: github.event_name == 'pull_request'
+    - name: Check Links
       run: |
         make linkcheckdiff
   check-linting:

@@ -15,7 +15,7 @@ Verify the network table keys being published
    :alt: Image of OutlineViewer with the network table keys
 
 You can verify the names of the network table keys used for publishing the values by using the Outline Viewer application.
-It is a java program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu
+It is a Java program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu
 in Visual Studio Code then Start Tool then "OutlineViewer". In this example, with the image processing program running (GRIP) you can see the values being put
 into NetworkTables.
 

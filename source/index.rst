@@ -11,11 +11,14 @@ FIRST Robotics Competition Control System
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/2020-overview/new-for-2020:New for 2020>` document.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Programming and Electrical Basics
+   :maxdepth: 1
+   :titlesonly:
+   :caption: Zero to Robot
 
-   docs/getting-started/getting-started-frc-control-system/index
-   docs/getting-started/running-a-benchtop/index
+   docs/zero-to-robot/introduction
+   docs/zero-to-robot/step-1/index
+   docs/zero-to-robot/step-2/index
+   docs/zero-to-robot/step-3/index
 
 .. toctree::
    :maxdepth: 1

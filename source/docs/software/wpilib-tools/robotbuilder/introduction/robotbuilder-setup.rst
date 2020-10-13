@@ -18,7 +18,7 @@ The properties that describe the robot are:
 
 **Java Package** - The name of the generated Java package used when generating the project code
 
-**Export Directory** - The folder that the java project is generated into when Export to Java is selected
+**Export Directory** - The folder that the Java project is generated into when Export to Java is selected
 
 **Export Subsystems** - Checked if RobotBuilder should export the Subsystem classes from your project
 

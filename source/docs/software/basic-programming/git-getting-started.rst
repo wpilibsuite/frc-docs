@@ -3,7 +3,7 @@ Git Version Control Introduction
 
 .. important:: A more in-depth guide on Git is available on the `Git website <https://git-scm.com/book/en/v2>`__.
 
-`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
+`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separate testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
@@ -51,14 +51,14 @@ Git repositories usually consist of:
 Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
 .. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to Github
 
-Creating a Github Account
+Creating a GitHub Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go ahead and create a Github account by visiting the `website <https://github.com>`_ and following the own screen prompts.
+Go ahead and create a GitHub account by visiting the `website <https://github.com>`_ and following the own screen prompts.
 
 .. image:: images/image1.png
 
@@ -87,7 +87,7 @@ You should see a screen similar to this
 
 .. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code.
 
-Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial on powershell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
+Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
 .. image:: images/image7.png
 
@@ -109,14 +109,14 @@ In the below example, we created a file called ``README.md`` with the contents o
     > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
     > git push -u origin master
 
-For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/getting-started/running-a-benchtop/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
+For FRC Robot projects, the above commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`.
 
 Commits
 -------
 
 Repositories are primarily composed of commits. Commits are saved states or *versions* of code.
 
-In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
+In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to PowerShell and type the following commands.
 
 .. code-block:: console
 

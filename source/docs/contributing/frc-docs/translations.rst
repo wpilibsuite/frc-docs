@@ -34,7 +34,7 @@ Another example is below
 
 .. code-block:: text
 
-  For complete wiring instructions/diagrams, please see the :ref:`TRANSLATE TEXT <docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot:How to Wire an FRC Robot>`
+  For complete wiring instructions/diagrams, please see the :ref:`TRANSLATE TEXT <docs/zero-to-robot/step-1/how-to-wire-a-robot:How to Wire an FRC Robot>`
 
 Publishing Translations
 -----------------------

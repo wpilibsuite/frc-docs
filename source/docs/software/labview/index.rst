@@ -5,7 +5,7 @@ FRC LabVIEW Programming
    :maxdepth: 2
    :titlesonly:
 
-   /docs/getting-started/getting-started-frc-control-system/labview-setup
-   /docs/getting-started/getting-started-frc-control-system/frc-game-tools
+   /docs/zero-to-robot/step-2/labview-setup
+   /docs/zero-to-robot/step-2/frc-game-tools
    creating-robot-programs/index
    resources/index

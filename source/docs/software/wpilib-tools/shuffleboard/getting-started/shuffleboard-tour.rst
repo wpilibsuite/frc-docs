@@ -9,7 +9,7 @@ Shuffleboard is a dashboard for FRC based on newer technologies such as JavaFX t
 -  Layouts are saved and the previous layout is instantiated by default when you run shuffleboard again.
 -  There is a **record and playback** feature that lets you review the data sent by your robot program after it finishes. That way you can carefully review the actions of the robot if something goes wrong.
 -  **Graph widgets are available for numeric data** and you can drag data onto a graph to see multiple points at the same time and on the same scale.
--  You can extend Shuffleboard by writing your own widgets that are specific to your team's requirements. Documentation on extending it are on the `Shuffleboard Github Wiki <https://github.com/wpilibsuite/shuffleboard/wiki>`__.
+-  You can extend Shuffleboard by writing your own widgets that are specific to your team's requirements. Documentation on extending it are on the `Shuffleboard GitHub Wiki <https://github.com/wpilibsuite/shuffleboard/wiki>`__.
 
 .. figure:: images/shuffleboard-tabs.png
    :alt:
