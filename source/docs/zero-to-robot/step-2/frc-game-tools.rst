@@ -26,7 +26,7 @@ If you wish to install on other machines offline, click :guilabel:`Individual Of
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-.. note:: LabVIEW teams have already completed this step, do not repeat it.
+.. important:: LabVIEW teams have already completed this step, do not repeat it.
 
 Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
 
