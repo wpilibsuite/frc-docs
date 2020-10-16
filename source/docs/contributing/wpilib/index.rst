@@ -13,7 +13,7 @@ Core Repository
    Overview <https://github.com/wpilibsuite/allwpilib>
    Styleguide & wpiformat <https://github.com/wpilibsuite/styleguide/blob/master/README.md>
    Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/master/README-CMAKE.md>
-   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/master/OTHER-WPILIB-VERSIONS.md>
+   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/master/OtherVersions.md>
    Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/master/CONTRIBUTING.md#coding-guidelines>
 
 NetworkTables
