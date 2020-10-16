@@ -167,23 +167,30 @@ For example, we might use the following Q and R for an elevator system with posi
 
       .. code-block:: Java
 
-         // q's elements
-         Vector<2> qElms = VecBuilder.fill(0.1, 0.5);
-
-         // r's elements
-         Vector<1> rElms = VecBuilder.fill(12.0);
+         // Example system -- must be changed to match your robot.
+         LinearSystem<N2, N1, N1> elevatorSystem = LinearSystemId.identifyPositionSystem(5, 0.5);
+         LinearQuadraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(elevatorSystem,
+             // q's elements
+             VecBuilder.fill(0.02, 0.4),
+             // r's elements
+             VecBuilder.fill(12.0),
+             // our dt
+             0.020);
 
    .. group-tab:: C++
 
       .. code-block:: C++
 
-         #include <array>
-
-         // q's elements
-         std::array<double, 2> qElms{0.1, 0.5);
-
-         // r's elements
-         std::array<double, 1> rElms{12.0};
+         // Example system -- must be changed to match your robot.
+          LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
+          LinearQuadraticRegulator<2, 1> controller{
+              elevatorSystem,
+              // q's elements
+              {0.02, 0.4},
+              // r's elements
+              {12.0},
+              // our dt
+              0.020_s};
 
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
