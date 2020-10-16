@@ -57,6 +57,7 @@
 "docs/software/vision-processing/raspberry-pi/index.rst" "docs/software/vision-processing/frcvision/index.rst"
 "docs/software/wpilib-overview/deploying-robot-code.rst" "docs/software/vscode-overview/deploying-robot-code.rst"
 "docs/software/wpilib-overview/index.rst" "docs/software/vscode-overview/index.rst"
+"docs/contributing/wpilib/other-wpilib-versions.rst" "docs/contributing/wpilib/index.rst"
 "docs/getting-started/getting-started-frc-control-system/control-system-hardware.rst" "docs/zero-to-robot/step-1/control-system-hardware.rst"
 "docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst" "docs/zero-to-robot/step-1/how-to-wire-a-robot.rst"
 "docs/getting-started/getting-started-frc-control-system/control-system-software.rst" "docs/zero-to-robot/step-2/control-system-software.rst"
