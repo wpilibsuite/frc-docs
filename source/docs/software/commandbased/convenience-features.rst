@@ -453,6 +453,20 @@ The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/release/doc
    // Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
    button.whenPressed(fooCommand.deadlineWith(barCommand, bazCommand));
 
+withName (Java only)
+^^^^^^^^^^^^^^^^^^^^
+
+.. note:: This decorator is not supported in C++ due to technical constraints - users should set the name of the command inside their command class instead.
+
+.. todo:: Add link to release documentation when release is made.
+
+The ``withName()`` decorator adds a name to a command.
+
+.. code-block:: java
+
+   // This command will be called "My Command".
+   var command = new PrintCommand("Hello robot!").withName("My Command");
+
 perpetually
 ^^^^^^^^^^^
 
