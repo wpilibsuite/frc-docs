@@ -95,4 +95,3 @@ Command-Line Interface (Online)
 
 Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter `gradlew vendordep --url=<url>` where `<url>` is the vendor JSON URL. This will add the vendor library dependency JSON file to the **vendordeps** folder of the project. Vendor libraries can be updated the same way.
 
-.. note:: Installing vendor libraries via the command-line will only add the library to the current project, and will not add the library to the general `wpilib` folder. A `build` operation while online will add the library to the general `wpilib` folder, regardless of the library installation method.
