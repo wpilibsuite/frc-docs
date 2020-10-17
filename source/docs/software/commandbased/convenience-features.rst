@@ -460,7 +460,7 @@ withName (Java only)
 
 .. todo:: Add link to release documentation when release is made.
 
-The ``withName()`` decorator adds a name to a command.
+The ``withName()`` decorator adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__.
 
 .. code-block:: java
 
