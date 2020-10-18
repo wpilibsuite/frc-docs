@@ -22,7 +22,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Programming Basics
+   :caption: Programming Basics
 
    docs/software/what-is-wpilib
    docs/2020-overview/index
@@ -43,7 +43,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Software Tools
+   :caption: Software Tools
 
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
@@ -55,7 +55,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Advanced Programming
+   :caption: Advanced Programming
 
    docs/software/vision-processing/index
    docs/software/commandbased/index
@@ -67,14 +67,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Examples and Tutorials
+   :caption: Examples and Tutorials
 
    docs/software/examples-tutorials/wpilib-examples
    docs/software/examples-tutorials/trajectory-tutorial/index
 
 .. toctree::
    :maxdepth: 1
-   :caption: WPILib Hardware
+   :caption: Hardware
 
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
