@@ -5,5 +5,5 @@
    :maxdepth: 1
 
    known-issues
-   new-for-2020
-   2020-Game-Data
+   yearly-changelog
+   yearly-changelog
