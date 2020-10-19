@@ -1,6 +1,8 @@
 Setpoint Command
 ================
 
+.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+
 A common use case in robot programs is to drive an actuator to a particular angle or position that is measured using a potentiometer or encoder. This happens so often that there is a shortcut in RobotBuilder to do this task. It is called the Setpoint command and it's one of the choices on the palette or the right-click context menu that can be inserted under "Commands".
 
 Start with a PIDSubsystem
