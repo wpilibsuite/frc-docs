@@ -6,4 +6,4 @@
 
    known-issues
    yearly-changelog
-   yearly-changelog
+   2020-Game-Data
