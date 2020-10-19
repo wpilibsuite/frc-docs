@@ -453,6 +453,18 @@ The ``deadlineWith()`` `decorator <https://first.wpi.edu/FRC/roborio/release/doc
    // Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
    button.whenPressed(fooCommand.deadlineWith(barCommand, bazCommand));
 
+withName (Java only)
+^^^^^^^^^^^^^^^^^^^^
+
+.. note:: This decorator is not supported in C++ due to technical constraints - users should set the name of the command inside their command class instead.
+
+The ``withName()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__.
+
+.. code-block:: java
+
+   // This command will be called "My Command".
+   var command = new PrintCommand("Hello robot!").withName("My Command");
+
 perpetually
 ^^^^^^^^^^^
 
