@@ -458,9 +458,7 @@ withName (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should set the name of the command inside their command class instead.
 
-.. todo:: Add link to release documentation when release is made.
-
-The ``withName()`` decorator adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__.
+The ``withName()`` `decorator <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__.
 
 .. code-block:: java
 
