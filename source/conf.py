@@ -43,7 +43,6 @@ extensions = [
     'hoverxref.extension',
     'notfound.extension',
     'versionwarning.extension',
-    'sphinx_panels',
 ]
 
 versionwarning_messages = {
