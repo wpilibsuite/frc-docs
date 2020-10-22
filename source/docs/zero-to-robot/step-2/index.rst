@@ -13,3 +13,4 @@ Step 2: Installing Software
    imaging-your-roborio
    radio-programming
    wpilib-setup
+   step-2-next-steps
