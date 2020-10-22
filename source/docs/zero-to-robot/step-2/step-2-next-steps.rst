@@ -1,7 +1,7 @@
 Next Steps
 ==========
 
-Congratulations! You should now have a working software development environment! The next section of this tutorial showcases programming a robot in the VS Code Integrated Development Environment (IDE). It's advised to read through the :ref:`VS Code section <docs/software/vscode-overview/index:VS Code Overview>` to familiarize yourself with the IDE. 
+Congratulations! You should now have a working software development environment! The next section of this tutorial showcases programming a robot in the VS Code Integrated Development Environment (IDE). It's advised to read through the :ref:`VS Code section <docs/software/vscode-overview/index:VS Code Overview>` to familiarize yourself with the IDE.
 
 Specific articles that are advised to be read are:
 
