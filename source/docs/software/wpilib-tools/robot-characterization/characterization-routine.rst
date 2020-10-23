@@ -18,6 +18,8 @@ This should open the data logger GUI.
 .. image:: images/data-logger-gui.png
    :alt: The data logger user interface
 
+.. note:: The logger allows you to change the previously selected test type through the Test Type dropdown. Also, the Angular Mode, Trackwidth, and Rotation Wheel Features will do nothing unless you have selected Drivetrain as your Test Type.
+
 Connect to the Robot
 --------------------
 

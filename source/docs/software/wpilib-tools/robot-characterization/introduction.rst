@@ -112,7 +112,7 @@ Once the toolsuite has been installed, launch a new drive characterization proje
 
    frc-characterization drive new
 
-The new project GUI should open momentarily. To launch other characterization projects, simply replace ``drive`` with the desired characterization type.
+The new project GUI should open momentarily. To launch other characterization projects, simply replace ``drive`` with the desired characterization type (``arm``, ``elevator``, ``simple-motor``).
 
 While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing ``new`` with ``logger`` or ``analyzer``.
 

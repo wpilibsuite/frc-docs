@@ -11,19 +11,7 @@ First, select the desired project location on the new project GUI:
 .. image:: images/selecting-project-location.png
    :alt: Selecting the project location in the robot characterization GUI
 
-Select Project Type
--------------------
-
-Next, select your project type from the drop-down menu:
-
-.. image:: images/selecting-project-type.png
-   :alt: Selecting the project type in the robot characterization GUI
-
-- **Simple** projects use encoders plugged into the RIO's DIO ports, and measure voltage with the PDP.
-- **Talon** projects use encoders plugged into a Talon SRX, and measure voltage with the Talon.
-- **SparkMax (Brushed)** projects use encoders plugged into a SparkMax motor controller with a *brushed* motor, and measure voltage with the Spark.
-- **SparkMax (Brushless/Neo)** projects use the internal encoder of a NEO motor, and measure voltage with the SparkMax motor controller.
-- More project types may be added in the future.
+.. note:: The project type dropdown now chooses between the different types of characterization tests as the previous motor setups have been integrated into the config file.
 
 Configure Project Parameters
 ----------------------------
@@ -48,6 +36,8 @@ Accordingly, you can also load an existing config file (config files are project
 
 .. image:: images/loading-config-file.png
    :alt: Loading a saved configuration file
+
+.. note:: Now is also a good time to set the Team Number box and modify the units and units per rotation if necessary (units per rotation is NOT equivalent to the wheel diameter from last year's tool). These units should facilitate a rough validation of the measurements recorded by the robot (e.g. using rotations for a flywheel to see if the recorded rotations seem to match what you saw).
 
 Generate Project
 ----------------
