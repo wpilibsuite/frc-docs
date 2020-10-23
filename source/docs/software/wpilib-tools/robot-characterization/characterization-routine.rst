@@ -74,3 +74,5 @@ After all four tests have been completed, the :guilabel:`Save Data` button will 
    :alt: Saving the test data
 
 This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename if the :guilabel:`Add Timestamp` button is checked.
+
+.. note:: You can run a preliminary check on the quality of the characterization data by enabling prints on Driver Station. After exiting autonmous in each test, the console should output ``Collected : n in t seconds`` where ``n`` should be ``200 * t`` (rounded). More information can be found :ref:`here <docs/software/wpilib-tools/robot-characterization/viewing-diagnostics:Template Lag>`
