@@ -34,7 +34,7 @@ To specify the correct settings for your PID controller, use the following optio
 - **Has Slave:** Whether there is a motor controller slaved to the controller running the control loop, if the control loop is being run on a peripheral device. This changes the effective loop period.
 - **Slave Update Period:** The rate at which the slave (if present) is updated. By default, this is 100Hz (every 0.01s) for Talons and Sparks, but can be changed.
 
-.. note:: If you select a smart motor controller as the preset (e.g. TalonSRX, Spark MAX, etc.) the Convert Gains checkbox will be automateically checked. This means the tool will convert your gains so that they can be used through the smart motor controller's PID methods. Therefore, if you would like to use WPILib's PID Loops, you must uncheck that box.
+.. note:: If you select a smart motor controller as the preset (e.g. TalonSRX, Spark MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically checked. This means the tool will convert your gains so that they can be used through the smart motor controller's PID methods. Therefore, if you would like to use WPILib's PID Loops, you must uncheck that box.
 
 Specify Optimality Criteria
 ---------------------------
@@ -49,7 +49,7 @@ As a rule, smaller values for the ``Max Acceptable Error`` and larger values for
 The ``Max Acceptable Control Effort`` should never exceed 12V, as that corresponds to full battery voltage, and ideally should be somewhat lower than this.
 
 Select Loop Type
------------------------------
+----------------
 
 It is typical to control mechanisms with both position and velocity PIDs, depending on application. Either can be selected using the drop-down ``Loop Type`` menu.
 
