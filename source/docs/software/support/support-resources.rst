@@ -14,7 +14,6 @@ In addition to this site there are a few other places teams may check for docume
 -  `FIRST Inspires Technical Resources Page <https://www.firstinspires.org/resource-library?flagged=All&combine=&field_content_type_value%5B0%5D=first_robotics_competition&field_resource_library_tags_tid=171&sort_by=created_1>`__
 -  `CTRE Product Pages <https://www.ctr-electronics.com/control-system.html>`__
 
-
 Forums
 ------
 
@@ -27,7 +26,7 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 NI Phone Support
 ----------------
 
-Have a LabVIEW, roboRIO, or Driver Station question? NI provides phone support for FRC teams during the build season at `+1 (866) 511-6285 <tel:+1-866-511-6285>`__ 1:00-7:00 PM CST Monday - Friday.
+Have a LabVIEW, roboRIO, or Driver Station question? NI provides phone support for FRC teams during the build season at `+1 (866) 511-6285 <tel:+18665116285>`__ 1:00-7:00 PM CST Monday - Friday.
 
 CTRE Support
 ------------
