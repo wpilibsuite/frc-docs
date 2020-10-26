@@ -51,7 +51,7 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
       m_chooser.AddOption("Complex Auto", &m_complexAuto);
 
       // Put the chooser on the dashboard
-      frc::SmartDashboard::PutData(m_chooser);
+      frc::SmartDashboard::PutData(&m_chooser);
 
 Starting an Autonomous Command
 ------------------------------
