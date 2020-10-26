@@ -107,11 +107,11 @@ If a directory is empty, a file needs to be created in order for git to have som
          > echo "# ExampleRepo" >> README.md
          > git add README.md
          > git commit -m "First commit"
-         [master (root-commit) fafafa] First commit
+         [main (root-commit) fafafa] First commit
           1 file changed, 1 insertions(+), 0 deletions(-)
           create mode 100644 README.md
          > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
-         > git push -u origin master
+         > git push -u origin main
 
    .. tab:: Existing Project
 
@@ -122,11 +122,11 @@ If a directory is empty, a file needs to be created in order for git to have som
          Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
          > git add .
          > git commit -m "First commit"
-         [master (root-commit) fafafa] First commit
+         [main (root-commit) fafafa] First commit
           1 file changed, 1 insertions(+), 0 deletions(-)
           create mode 100644 README.md
          > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
-         > git push -u origin master
+         > git push -u origin main
 
 Commits
 -------
@@ -139,7 +139,7 @@ In the previous example, we created a file called README.md. Open that file in y
 
     > git add README.md
     > git commit -m "Adds a description to the repository"
-    [master bcbcbc] Adds a description to the repository
+    [main bcbcbc] Adds a description to the repository
      1 file changed, 2 insertions(+), 0 deletions(-)
     > git push
 
@@ -183,7 +183,7 @@ Branches are a similar to parallel worlds to Git. They start off the same, and t
 
 .. image:: diagrams/branches.drawio.svg
 
-In the above example, Master was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
+In the above example, main was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
 
 Creating a Branch
 ^^^^^^^^^^^^^^^^^
