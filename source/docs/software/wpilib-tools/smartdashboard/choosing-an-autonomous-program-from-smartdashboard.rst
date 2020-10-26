@@ -42,7 +42,7 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
       m_chooser.addOption("Complex Auto", m_complexAuto);
 
       // Put the chooser on the dashboard
-      Shuffleboard.putData(m_chooser);
+      SmartDashboard.putData(m_chooser);
 
   .. code-tab:: c++
 
