@@ -62,11 +62,19 @@ In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` ob
 
   .. group-tab:: Java
 
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+      :language: java
+      :lines: 106-108
+
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
       :language: java
       :lines: 67-68,77-81
 
   .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 57-60
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
       :language: c++
