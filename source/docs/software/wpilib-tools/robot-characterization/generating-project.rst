@@ -37,7 +37,22 @@ Accordingly, you can also load an existing config file (config files are project
 .. image:: images/loading-config-file.png
    :alt: Loading a saved configuration file
 
-.. note:: Now is also a good time to set the Team Number box and modify the units and units per rotation if necessary (units per rotation is NOT equivalent to the wheel diameter from last year's tool). These units should facilitate a rough validation of the measurements recorded by the robot (e.g. using rotations for a flywheel to see if the recorded rotations seem to match what you saw).
+Setting Units
+-------------
+
+Now is also a good time to set the Team Number box and modify the units and units per rotation if necessary (units per rotation is NOT equivalent to the wheel diameter from last year's tool).
+
+The ``Unit Type`` field lets you choose between various rotational and translational units (rotations, radians, degrees, feet, meters, and inches). You should choose a unit that facilitates a rough validation of the recorded measurements.
+For example, you could choose rotations when testing a flywheel to see if the tool's recorded rotations seem reasonable, or you could choose feet when testing a drive base to see if the recorded distance seems reasonable.
+
+.. image:: images/select-units.png
+   :alt: Setting the units of the data collection
+
+On the other hand, the ``Units per Rotation`` entry is how many of the previously specified units are recorded per rotation of the shaft. Do note that rotational units (rotations, radians, and degrees) have predefined/unmutable units per rotations.
+In contrast, translational units (meters, feet, inches) require that you specify the conversion, such as a wheel with a 3-inch diameter can be converted to 9.42 inches per rotation (:math:`\pi * 3`).
+
+.. image:: images/units-per-rotations.png
+   :alt: Settings the units per rotation of the data collection
 
 Generate Project
 ----------------
