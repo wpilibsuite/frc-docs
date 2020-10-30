@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below *The Mechanism* section to see information on adding an external library.
+Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below :ref:`The Mechanism <docs/software/vscode-overview/3rd-party-libraries:The Mechanism>` section to see information on adding an external library.
 
 The Mechanism
 -------------
