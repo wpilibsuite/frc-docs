@@ -54,8 +54,6 @@ Your console output in Visual Studio Code should look like the below. However, t
 
 .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava``. It's important to note that C++ simulation is not available through command-line at this time.
 
-.. note:: macOS users should be aware of the :ref:`simulation fails to launch known issue <docs/yearly-overview/known-issues:macOS Simulation fails to launch in Visual Studio Code>`
-
 Running Robot Dashboards
 ------------------------
 
