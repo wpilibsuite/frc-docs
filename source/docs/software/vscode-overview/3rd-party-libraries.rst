@@ -8,15 +8,6 @@ The Mechanism
 
 In support of this effort NI (for LabVIEW) and FIRST/WPI (for Java/C++) have developed mechanisms that should make it easy for vendors to plug their code into the WPILib software and for teams to use that code once it has been installed. A brief description of how the system works for each language can be found below.
 
-The Mechanism - LabVIEW
-^^^^^^^^^^^^^^^^^^^^^^^
-
-For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2016\vi.lib\Rock Robotics\WPI\Third Party``.
-
-For a library to insert VI’s in these palettes, they simply make a subfolder in one of these three "Third Party" folders containing their VIs and they will be added automatically. To control the appearance of the palette (have some VI’s not show up, set the Icon for the folder, etc.) there is a process to create a ``dir.mnu`` file for your directory. We will be working on documenting that process shortly.
-
-To use installed "Third Party" libraries, simply locate the VIs in one of these 3 locations and drag them into your project as you would with any other VI.
-
 The Mechanism - Java/C++
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,6 +16,13 @@ For Java and C++ a JSON file describing the vendor library is installed on your 
 The JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors choosing to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
 .. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a “vendordeps” folder in your project and copy any desired vendor JSON files from the “wpilib/YYYY” folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
+
+The Mechanism - LabVIEW
+^^^^^^^^^^^^^^^^^^^^^^^
+
+For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2016\vi.lib\Rock Robotics\WPI\Third Party``.
+
+To use installed "Third Party" libraries, simply locate the VIs in one of these 3 locations and drag them into your project as you would with any other VI.
 
 Adding an Offline-Installed Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
