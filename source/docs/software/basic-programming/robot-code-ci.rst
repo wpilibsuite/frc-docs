@@ -1,11 +1,11 @@
 Setting up CI for Robot Code using GitHub Actions
 =================================================
 
-An important aspect of working in a team environment is being able to test code that is pushed to a central repository such as GitHub. For example, a project manager or lead developer might want to run a set of unit tests before merging a pull request or might want to ensure that all code on the master branch of a repository is in working order.
+An important aspect of working in a team environment is being able to test code that is pushed to a central repository such as GitHub. For example, a project manager or lead developer might want to run a set of unit tests before merging a pull request or might want to ensure that all code on the main branch of a repository is in working order.
 
 `GitHub Actions <https://github.com/features/actions>`_ is a service that allows for teams and individuals to build and run unit tests on code on various branches and on pull requests. These types of services are more commonly known as "Continuous Integration" services. This tutorial will show you how to setup GitHub Actions on robot code projects.
 
-.. note:: This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this `introduction guide <docs/software/basic-programming/git-getting-started:Git Version Control Introduction>`_.
+.. note:: This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this :doc:`introduction guide <git-getting-started>`.
 
 Creating the Action
 -------------------
@@ -22,12 +22,12 @@ You will now be greeted with a text editor. Replace all the default text with th
     name: CI
 
     # Controls when the action will run. Triggers the workflow on push or pull request
-    # events but only for the master branch.
+    # events but only for the main branch.
     on:
       push:
-        branches: [ master ]
+        branches: [ main ]
       pull_request:
-        branches: [ master ]
+        branches: [ main ]
 
     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
     jobs:
@@ -37,7 +37,7 @@ You will now be greeted with a text editor. Replace all the default text with th
         runs-on: ubuntu-latest
 
         # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2020-18.04
+        container: wpilib/roborio-cross-ubuntu:2021-18.04
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
@@ -57,7 +57,7 @@ Then, save changes by clicking the "Start commit" button on the top-right corner
 .. image:: images/robot-ci/image2.png
 
 
-GitHub will now automatically run a build whenever a commit is pushed to master or a pull request is opened. To monitor the status of any build, you can click on the "Actions" tab on the top of the screen.
+GitHub will now automatically run a build whenever a commit is pushed to main or a pull request is opened. To monitor the status of any build, you can click on the "Actions" tab on the top of the screen.
 
 .. image:: images/robot-ci/image3.png
 
@@ -68,14 +68,14 @@ Here is a breakdown of the YAML file above. Although a strict understanding of e
 .. code-block:: yaml
 
     # Controls when the action will run. Triggers the workflow on push or pull request
-    # events but only for the master branch.
+    # events but only for the main branch.
     on:
       push:
-        branches: [ master ]
+        branches: [ main ]
       pull_request:
-        branches: [ master ]
+        branches: [ main ]
 
-This block of code dictates when the Action will run. Currently, the action will run when commits are pushed to master or when pull requests are opened against master.
+This block of code dictates when the Action will run. Currently, the action will run when commits are pushed to main or when pull requests are opened against main.
 
 .. code-block:: yaml
 
@@ -87,7 +87,7 @@ This block of code dictates when the Action will run. Currently, the action will
         runs-on: ubuntu-latest
 
         # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2020-18.04
+        container: wpilib/roborio-cross-ubuntu:2021-18.04
 
 Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one "build" job.
 
@@ -112,7 +112,7 @@ Each job has certain steps that will be executed. This job has three steps. The 
 
 Adding a Build Status Badge to a README.md File
 -----------------------------------------------
-It is helpful to add a CI status badge to the top of your repository's README file to quickly check the status of the latest build on master. To do this, click on the "Actions" tab at the top of the screen and select the "CI" tab on the left side of the screen. Then, click on the "Create status badge" button on the top right and copy the status badge Markdown code.
+It is helpful to add a CI status badge to the top of your repository's README file to quickly check the status of the latest build on main. To do this, click on the "Actions" tab at the top of the screen and select the "CI" tab on the left side of the screen. Then, click on the "Create status badge" button on the top right and copy the status badge Markdown code.
 
 .. image:: images/robot-ci/image4.png
 
