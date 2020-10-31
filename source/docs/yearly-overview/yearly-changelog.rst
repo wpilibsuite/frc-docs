@@ -28,12 +28,10 @@ New Command-Based Library
 
 - Added a ``simulationPeriodic()`` method to Subsystem. This method runs periodically during simulation, in addition to the regular ``periodic()`` method.
 
-General Library
-^^^^^^^^^^^^^^^
+Scheduling Functions
+^^^^^^^^^^^^^^^^^^^^
 
 - Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues.
-
-An example of scheduling functions is:
 
 .. tabs::
 
@@ -101,7 +99,10 @@ An example of scheduling functions is:
 
 teleopPeriodic() in this example runs every 20ms, and the controller update is run every 10ms with an offset of 10ms from when TeleopPeriodic() runs so that their timeslots don't conflict.
 
-- Added a toggle() function to Solenoid and DoubleSolenoid. For example,
+General Library
+^^^^^^^^^^^^^^^
+
+- Added a ``toggle()`` function to Solenoid and DoubleSolenoid. For example,
 
 .. tabs::
 
@@ -124,7 +125,7 @@ can be replaced with
    .. code-tab:: java
 
       if (button.getRawButtonPressed(1)) {
-         solenoid.set(!solenoid.get());
+         solenoid.toggle();
       }
 
    .. code-tab:: cpp
