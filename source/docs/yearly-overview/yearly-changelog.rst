@@ -1,7 +1,7 @@
 New for 2021
 ============
 
-A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
+A number of improvements have been made to FRC Control System software for 2021. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
 Major Features (All Languages)
 ------------------------------
@@ -30,7 +30,110 @@ New Command-Based Library
 
 General Library
 ^^^^^^^^^^^^^^^
-- Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` (C++) / ``SpeedController[]`` (Java), allowing the list to be constructed dynamically.
+
+- Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues.
+
+An example of scheduling functions is:
+
+.. tabs::
+
+    .. group-tab:: Java
+
+        .. code-block:: java
+
+            public class Robot {
+                private Joystick m_joystick = new Joystick(0);
+                private Encoder m_encoder = new Encoder(1, 2);
+                private Spark m_motor = new Spark(1);
+                private PIDController m_controller = new PIDController(1.0, 0.0, 0.5, 0.01);
+
+                public Robot() {
+                    addPeriodic(() -> {
+                        m_motor.set(m_controller.calculate(m_encoder.getRate()));
+                    }, 0.01, 0.01);
+                }
+
+                @Override
+                public teleopPeriodic() {
+                    if (m_joystick.getRawButtonPressed(1)) {
+                        if (m_controller.getSetpoint() == 0.0) {
+                            m_controller.setSetpoint(30.0);
+                        } else {
+                            m_controller.setSetpoint(0.0);
+                        }
+                    }
+                }
+
+    .. group-tab:: C++ (Header)
+
+        .. code-block:: cpp
+
+            class Robot {
+                private:
+                    frc::Joystick m_joystick{0};
+                    frc::Encoder m_encoder{1, 2};
+                    frc::Spark m_motor{1};
+                    frc2::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
+
+                    Robot();
+
+                    void TeleopPeriodic() override;
+
+    .. group-tab:: C++ (Source)
+
+        .. code-block:: cpp
+
+            void Robot::Robot() {
+                AddPeriodic([&] {
+                    m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
+                }, 10_ms, 10_ms);
+            }
+
+            void Robot::TeleopPeriodic() {
+                if (m_joystick.GetRawButtonPressed(1)) {
+                    if (m_controller.GetSetpoint() == 0.0) {
+                        m_controller.SetSetpoint(30.0);
+                    } else {
+                        m_controller.SetSetpoint(0.0);
+                    }
+                }
+            }
+
+teleopPeriodic() in this example runs every 20ms, and the controller update is run every 10ms with an offset of 10ms from when TeleopPeriodic() runs so that their timeslots don't conflict.
+
+- Added a toggle() function to Solenoid and DoubleSolenoid. For example,
+
+.. tabs::
+
+    .. code-tab:: java
+
+       if (button.getRawButtonPressed(1)) {
+          solenoid.set(!solenoid.get());
+       }
+
+    .. code-tab:: cpp
+
+       if (button.GetRawButtonPressed(1)) {
+          solenoid.Set(!solenoid.Get());
+       }
+
+can be replaced with
+
+.. tabs::
+
+   .. code-tab:: java
+
+      if (button.getRawButtonPressed(1)) {
+         solenoid.set(!solenoid.get());
+      }
+
+   .. code-tab:: cpp
+
+      if (button.GetRawButtonPressed(1)) {
+         solenoid.Toggle();
+      }  
+
+- Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` (C++) / ``SpeedController[]`` (Java), allowing the list to be constructed dynamically. (Teams shouldn't use this directly. This is only intended for bindings in languages like Python.)
 
 - Added methods (``isOperatorControlEnabled()`` and ``isAutonomousEnabled()``) to check game and enabled state together.
 
@@ -39,6 +142,8 @@ General Library
 - Added a static method ``fromHSV(int h, int s, int v)`` to create a ``Color`` instance from HSV values.
 
 - Added RT priority constructor to ``Notifier`` in C++. This makes the thread backing the Notifier run at real-time priority, reducing timing jitter.
+
+- Added a constructor to ``Translation2d`` that takes in a distance and angle. This is effectively converting from polar coordinates to Cartesian coordinates.
 
 - Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and ``MaxVelocityConstraint`` to allow constraining trajectory velocity in a certain region of the field.
 
@@ -60,9 +165,9 @@ General Library
 
 - Fixed theta controller continuous input in swerve examples. This fixes the behavior where the shortest path is not used during drivetrain rotation.
 
-- Deprecated ``units.h``, use individual units headers instead.
+- Deprecated ``units.h``, use individual units headers instead which speeds compile times.
 
-- Added support for scheduling functions more often than the robot loop via addPeriodic() in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues.
+- Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See https://docs.wpilib.org/en/latest/docs/software/advanced-controls/state-space/state-space-intro.html for more.
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -74,8 +179,9 @@ Breaking Changes
 Simulation
 ----------
 
-- Add joystick simulation support.
+- Added joystick simulation support.
 - Added Mechanism2D for simulating mechanisms.
+- Added simulation physics classes for common robot mechanisms (DrivetrainSim, ElevatorSim, SingleJointedArmSim, and FlywheelSim)
 
 Shuffleboard
 ------------
@@ -90,36 +196,28 @@ SmartDashboard
 
 - Host IP can be specified in configuration.
 
-
-FRC Raspberry Pi Image
-----------------------
-
-Any changes this summer?
-
 PathWeaver
 ----------
 
 - Added support for reversed splines
 
-OutlineViewer
--------------
-
-Any changes this summer?
-
 GradleRIO
 ---------
 
-Any changes this summer?
+- Added a ``vendordep`` task for downloading vendor JSONs or fetching them from the user `wpilib` folder
+- Added a ``gradlerio.vendordep.folder.path`` property to set a non-default location for the vendor JSON folder
+- Renamed the ``wpi`` task (that prints current versions of WPILib and tools) to `wpiVersions`
 
 CSCore
 ------
 
-Any changes this summer?
+- Now only lists streamable devices on Linux platforms.
 
 WPILib All in One Installer
 ---------------------------
 
-- Rewrote to be easier to use on all platforms.
+- Rewrote to support macOS and Linux, and to be easier to use
+  - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
 
 Visual Studio Code Extension
 ----------------------------
@@ -130,9 +228,11 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Updated to be compatible with the new commandbased framework
+- Updated to be compatible with the new command based framework and PID Controller
+- C++: use uniform initialization of objects in header
+- C++: fix case of includes so that code compiles on case-sensitive filesystems
 
 Robot Characterization
 ----------------------
 
-Any changes this summer?
+- Added LQR latency compensation
