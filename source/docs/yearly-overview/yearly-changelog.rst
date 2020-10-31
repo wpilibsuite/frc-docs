@@ -132,7 +132,7 @@ can be replaced with
 
       if (button.GetRawButtonPressed(1)) {
          solenoid.Toggle();
-      }  
+      }
 
 - Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` (C++) / ``SpeedController[]`` (Java), allowing the list to be constructed dynamically. (Teams shouldn't use this directly. This is only intended for bindings in languages like Python.)
 
