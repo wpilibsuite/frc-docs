@@ -6,7 +6,7 @@ Motor controllers come in two main flavors: CAN and PWM. A CAN controller can se
 Using PWM Speed Controllers
 ---------------------------
 
-PWM speed controllers can be controlled in the same was as a CAN speed controller. For a more detailed background on *how* they work, see :doc:`pwm-controllers`. To use a PWM speed controller, simply use the appropriate speed controller class provided by WPI and supply it the port the speed controller(s) are plugged into on the roboRIO. All approved motor controllers have WPI classes provided for them.
+PWM speed controllers can be controlled in the same way as a CAN speed controller. For a more detailed background on *how* they work, see :doc:`pwm-controllers`. To use a PWM speed controller, simply use the appropriate speed controller class provided by WPI and supply it the port the speed controller(s) are plugged into on the roboRIO. All approved motor controllers have WPI classes provided for them.
 
 .. tabs::
 
