@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below *The Mechanism* section to see information on adding an external library.
+Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below :ref:`The Mechanism <docs/software/vscode-overview/3rd-party-libraries:The Mechanism>` section to see information on adding an external library.
 
 The Mechanism
 -------------
@@ -73,8 +73,6 @@ Libraries
 
 `Rev Robotics SPARK MAX <https://www.revrobotics.com/sparkmax-software/>`__ - SPARK MAX Library
 
-`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibNewCommands/WPILibNewCommands.json>`__
-
 Community Libraries
 -------------------
 
@@ -87,6 +85,7 @@ WPILib Command Libraries
 The WPILib :doc:`old </docs/software/old-commandbased/index>` and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
 
 `Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibOldCommands/WPILibOldCommands.json>`__
+`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibNewCommands/WPILibNewCommands.json>`__
 
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
 
