@@ -19,7 +19,11 @@ In the resulting file dialog, select the JSON file you want to analyze. If the f
 Running Feedforward Analysis
 ----------------------------
 
-Once a data file has been selected, the ``Analyze Data`` button becomes available in the ``Feedforward Analysis`` frame. Click it.
+Once a data file has been selected, the ``Analyze Data`` button, ``Units`` entry, and ``Units per rotation`` entry become available in the ``Feedforward Analysis`` frame. We can now set the units of the analysis to match the units that our program will be using.
+
+Now click the :guilabel:`Analyze Data` button.
+
+.. note:: If you would like to change units, you will have to press the :guilabel:`Analyze Data` and the :guilabel:`Calculate Optimal Controller Gains` (if you've pressed it) buttons.
 
 .. image:: images/analyzing-data.png
    :alt: Analyzing data for feedforward

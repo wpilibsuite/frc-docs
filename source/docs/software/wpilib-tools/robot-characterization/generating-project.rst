@@ -11,19 +11,7 @@ First, select the desired project location on the new project GUI:
 .. image:: images/selecting-project-location.png
    :alt: Selecting the project location in the robot characterization GUI
 
-Select Project Type
--------------------
-
-Next, select your project type from the drop-down menu:
-
-.. image:: images/selecting-project-type.png
-   :alt: Selecting the project type in the robot characterization GUI
-
-- **Simple** projects use encoders plugged into the RIO's DIO ports, and measure voltage with the PDP.
-- **Talon** projects use encoders plugged into a Talon SRX, and measure voltage with the Talon.
-- **SparkMax (Brushed)** projects use encoders plugged into a SparkMax motor controller with a *brushed* motor, and measure voltage with the Spark.
-- **SparkMax (Brushless/Neo)** projects use the internal encoder of a NEO motor, and measure voltage with the SparkMax motor controller.
-- More project types may be added in the future.
+.. note:: The project type dropdown now chooses between the different types of characterization tests as the previous motor setups have been integrated into the config file.
 
 Configure Project Parameters
 ----------------------------
@@ -48,6 +36,23 @@ Accordingly, you can also load an existing config file (config files are project
 
 .. image:: images/loading-config-file.png
    :alt: Loading a saved configuration file
+
+Setting Units
+-------------
+
+Now is also a good time to set the Team Number box and modify the units and units per rotation if necessary (units per rotation is NOT equivalent to the wheel diameter from last year's tool).
+
+The ``Unit Type`` field lets you choose between various rotational and translational units (rotations, radians, degrees, feet, meters, and inches). You should choose a unit that facilitates a rough validation of the recorded measurements.
+For example, you could choose rotations when testing a flywheel to see if the tool's recorded rotations seem reasonable, or you could choose feet when testing a drive base to see if the recorded distance seems reasonable.
+
+.. image:: images/select-units.png
+   :alt: Setting the units of the data collection
+
+On the other hand, the ``Units per Rotation`` entry is how many of the previously specified units are recorded per rotation of the shaft. Do note that rotational units (rotations, radians, and degrees) have predefined/unmutable units per rotations.
+In contrast, translational units (meters, feet, inches) require that you specify the conversion, such as a wheel with a 3-inch diameter can be converted to 9.42 inches per rotation (:math:`\pi * 3`).
+
+.. image:: images/units-per-rotations.png
+   :alt: Settings the units per rotation of the data collection
 
 Generate Project
 ----------------

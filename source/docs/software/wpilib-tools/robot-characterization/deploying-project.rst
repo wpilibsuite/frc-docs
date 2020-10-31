@@ -3,6 +3,8 @@ Deploying a Project
 
 Once a project has been generated, it is time to deploy it to the robot. This can be done in two ways.
 
+.. warning:: To ensure the safety of robot hardware, it is highly recommended that you visually inspect the generated ``Robot.java`` file to make sure it has no potentially harmful errors before deploying the program.
+
 Option 1: Using the ``Deploy Project`` Button
 ---------------------------------------------
 
