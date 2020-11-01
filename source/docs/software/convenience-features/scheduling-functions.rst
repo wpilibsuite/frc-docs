@@ -34,6 +34,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
                         }
                     }
                 }
+              }
 
     .. group-tab:: C++ (Header)
 
@@ -49,6 +50,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
               Robot();
 
               void TeleopPeriodic() override;
+            };
 
     .. group-tab:: C++ (Source)
 
