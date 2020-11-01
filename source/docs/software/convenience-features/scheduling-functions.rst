@@ -1,6 +1,6 @@
 Scheduling Functions at Custom Frequencies
 ==========================================
-In order to be able to run certain functions at a rate that is faster than the default ``TimedRobot`` periodic update rate (20 ms), an ``addPeriodic()`` method has been added to ``TimedRobot``. Previously, teams had to make a ``Notifier`` to run feedback controllers more often than the ``TimedRobot`` loop period of 20 ms (running ``TimedRobot`` more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the ``TimedRobot`` periodic functions, eliminating potential thread safety issues.
+``TimedRobot``'s ``addPeriodic()`` method allows one to run custom methods at a rate faster than the default ``TimedRobot`` periodic update rate (20 ms). Previously, teams had to make a ``Notifier`` to run feedback controllers more often than the ``TimedRobot`` loop period of 20 ms (running ``TimedRobot`` more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the ``TimedRobot`` periodic functions, eliminating potential thread safety issues.
 
 The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda (the function to run), along with the requested period and an optional offset from the common starting time. The optional third argument is useful for scheduling a function in a different timeslot relative to the other ``TimedRobot`` periodic methods.
 
