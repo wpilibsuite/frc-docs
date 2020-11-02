@@ -13,6 +13,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :titlesonly:
+   :caption: FRC Beta Test
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
    :caption: Zero to Robot
 
    docs/zero-to-robot/introduction

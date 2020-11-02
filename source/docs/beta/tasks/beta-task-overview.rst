@@ -3,6 +3,8 @@ Beta Task Overview
 
 This document provides an overview of the Tasks assigned for the Control System Beta Test. Further details on each Task can be found in the subsequent pages of this section.
 
+.. note:: For the 2021 FRC Beta Test, some of you may not have access to physical robot hardware. We recognize this will inhibit your ability to complete some tasks. Teams without hardware should skip Task 2, merely ensure they can build their 2020 robot code for Task 3 and focus on Task 4, testing new features to the extent possible using simulation.
+
 Task 0 - Background and Preparation
 -----------------------------------
 
