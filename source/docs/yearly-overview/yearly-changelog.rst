@@ -28,111 +28,12 @@ New Command-Based Library
 
 - Added a ``simulationPeriodic()`` method to Subsystem. This method runs periodically during simulation, in addition to the regular ``periodic()`` method.
 
-Scheduling Functions
-^^^^^^^^^^^^^^^^^^^^
-
-- Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues.
-
-.. tabs::
-
-    .. group-tab:: Java
-
-        .. code-block:: java
-
-            public class Robot {
-                private Joystick m_joystick = new Joystick(0);
-                private Encoder m_encoder = new Encoder(1, 2);
-                private Spark m_motor = new Spark(1);
-                private PIDController m_controller = new PIDController(1.0, 0.0, 0.5, 0.01);
-
-                public Robot() {
-                    addPeriodic(() -> {
-                        m_motor.set(m_controller.calculate(m_encoder.getRate()));
-                    }, 0.01, 0.01);
-                }
-
-                @Override
-                public teleopPeriodic() {
-                    if (m_joystick.getRawButtonPressed(1)) {
-                        if (m_controller.getSetpoint() == 0.0) {
-                            m_controller.setSetpoint(30.0);
-                        } else {
-                            m_controller.setSetpoint(0.0);
-                        }
-                    }
-                }
-
-    .. group-tab:: C++ (Header)
-
-        .. code-block:: cpp
-
-            class Robot {
-                private:
-                    frc::Joystick m_joystick{0};
-                    frc::Encoder m_encoder{1, 2};
-                    frc::Spark m_motor{1};
-                    frc2::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
-
-                    Robot();
-
-                    void TeleopPeriodic() override;
-
-    .. group-tab:: C++ (Source)
-
-        .. code-block:: cpp
-
-            void Robot::Robot() {
-                AddPeriodic([&] {
-                    m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
-                }, 10_ms, 10_ms);
-            }
-
-            void Robot::TeleopPeriodic() {
-                if (m_joystick.GetRawButtonPressed(1)) {
-                    if (m_controller.GetSetpoint() == 0.0) {
-                        m_controller.SetSetpoint(30.0);
-                    } else {
-                        m_controller.SetSetpoint(0.0);
-                    }
-                }
-            }
-
-teleopPeriodic() in this example runs every 20ms, and the controller update is run every 10ms with an offset of 10ms from when TeleopPeriodic() runs so that their timeslots don't conflict.
-
 General Library
 ^^^^^^^^^^^^^^^
 
-- Added a ``toggle()`` function to Solenoid and DoubleSolenoid. For example,
+- Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues. See an example :ref:`here <docs/software/convenience-features/scheduling-functions:Scheduling Functions at Custom Frequencies>`.
 
-.. tabs::
-
-    .. code-tab:: java
-
-       if (button.getRawButtonPressed(1)) {
-          solenoid.set(!solenoid.get());
-       }
-
-    .. code-tab:: cpp
-
-       if (button.GetRawButtonPressed(1)) {
-          solenoid.Set(!solenoid.Get());
-       }
-
-can be replaced with
-
-.. tabs::
-
-   .. code-tab:: java
-
-      if (button.getRawButtonPressed(1)) {
-         solenoid.toggle();
-      }
-
-   .. code-tab:: cpp
-
-      if (button.GetRawButtonPressed(1)) {
-         solenoid.Toggle();
-      }
+- Added a ``toggle()`` function to Solenoid and DoubleSolenoid.
 
 - Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` (C++) / ``SpeedController[]`` (Java), allowing the list to be constructed dynamically. (Teams shouldn't use this directly. This is only intended for bindings in languages like Python.)
 
@@ -191,6 +92,7 @@ Shuffleboard
 - Graphing Widget now uses ChartFX, a high performance graphing library
 - Fix decimal digit formatting with large numbers
 - Size and position can now be set separately in the Shuffleboard API
+- Analog Input can now be viewed with a Text Widget
 
 SmartDashboard
 --------------
