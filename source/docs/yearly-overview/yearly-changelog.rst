@@ -69,7 +69,7 @@ General Library
 
 - Deprecated ``units.h``, use individual units headers instead which speeds compile times.
 
-- Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See https://docs.wpilib.org/en/latest/docs/software/advanced-controls/state-space/state-space-intro.html for more.
+- Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See :ref:`Introduction to State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` for more information.
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
