@@ -3,19 +3,13 @@ New for 2021
 
 A number of improvements have been made to FRC Control System software for 2021. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
-Major Features (All Languages)
-------------------------------
+Major Features
+--------------
 
 - A WebSocket interface has been added to allow remote access to the robot simulator
 - WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
   - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
   - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
-
-Major Features (Java/C++)
--------------------------
-
-- **Holonomic Drive Controller**
-  - A controller that teams with holonomic drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This also supports custom ``Rotation2d`` heading inputs that are separate from the trajectory because heading dynamics are decoupled from translational movement in holonomic drivetrains.
 
 WPILib
 ------
@@ -41,6 +35,9 @@ New Command-Based Library
 
 General Library
 ^^^^^^^^^^^^^^^
+
+- **Holonomic Drive Controller**
+  - A controller that teams with holonomic drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This also supports custom ``Rotation2d`` heading inputs that are separate from the trajectory because heading dynamics are decoupled from translational movement in holonomic drivetrains.
 
 - Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues. See an example :ref:`here <docs/software/convenience-features/scheduling-functions:Scheduling Functions at Custom Frequencies>`.
 
