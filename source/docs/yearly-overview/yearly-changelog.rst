@@ -36,7 +36,7 @@ New Command-Based Library
 General Library
 ^^^^^^^^^^^^^^^
 
-- **Holonomic Drive Controller**
+- Holonomic Drive Controller
   - A controller that teams with holonomic drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This also supports custom ``Rotation2d`` heading inputs that are separate from the trajectory because heading dynamics are decoupled from translational movement in holonomic drivetrains.
 
 - Added support for scheduling functions more often than the robot loop via ``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to run feedback controllers more often than the TimedRobot loop period of 20ms (running TimedRobot more often than this is not advised). Now, users can run feedback controllers more often than the main robot loop, but synchronously with the TimedRobot periodic functions so there aren't any thread safety issues. See an example :ref:`here <docs/software/convenience-features/scheduling-functions:Scheduling Functions at Custom Frequencies>`.
