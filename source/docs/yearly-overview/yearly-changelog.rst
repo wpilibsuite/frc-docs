@@ -7,6 +7,9 @@ Major Features (All Languages)
 ------------------------------
 
 - A WebSocket interface has been added to allow remote access to the robot simulator
+- WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
+  - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
+  - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
 
 Major Features (Java/C++)
 -------------------------
@@ -116,12 +119,6 @@ CSCore
 ------
 
 - Now only lists streamable devices on Linux platforms.
-
-WPILib All in One Installer
----------------------------
-
-- Rewrote to support macOS and Linux, and to be easier to use
-  - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
 
 Visual Studio Code Extension
 ----------------------------
