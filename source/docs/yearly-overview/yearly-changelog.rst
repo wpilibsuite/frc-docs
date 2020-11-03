@@ -33,7 +33,7 @@ New Command-Based Library
 
 - Watchdog and epoch reporting has been added to the command scheduler. This will let teams know exactly which command or subsystem is responsible for a loop overrun if one occurs.
 
-- A withName() command decorator has been added for Java teams. This lets teams set the name of a particular command using the `decorator pattern <docs/software/commandbased/convenience-features:Command Decorator Features>`.
+- A ``withName()`` command decorator has been added for Java teams. This lets teams set the name of a particular command using the `decorator pattern <docs/software/commandbased/convenience-features:Command Decorator Features>`.
 
 - Added a ``NetworkButton`` class, allowing users to use a boolean ``NetworkTableEntry`` as a button to trigger commands.
 
