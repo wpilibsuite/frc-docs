@@ -74,3 +74,7 @@
 "docs/getting-started/getting-started-frc-control-system/updating-and-configuring-pneumatics-control-module-and-power-distribution-panel.rst" "docs/zero-to-robot/step-2/index.rst"
 "docs/getting-started/running-a-benchtop/index.rst" "docs/zero-to-robot/step-3/index.rst"
 "docs/getting-started/getting-started-frc-control-system/intro.rst" "docs/zero-to-robot/introduction.rst"
+"docs/2020-overview/2020-Game-Data.rst" "docs/yearly-overview/2020-Game-Data.rst"
+"docs/2020-overview/index.rst" "docs/yearly-overview/index.rst"
+"docs/2020-overview/known-issues.rst" "docs/yearly-overview/known-issues.rst"
+"docs/2020-overview/new-for-2020.rst" "docs/yearly-overview/yearly-changelog.rst"

@@ -8,7 +8,7 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/2020-overview/new-for-2020:New for 2020>` document.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
    :maxdepth: 1
@@ -33,7 +33,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Programming Basics
 
    docs/software/what-is-wpilib
-   docs/2020-overview/index
+   docs/yearly-overview/index
    docs/software/vscode-overview/index
    docs/software/labview/index
    docs/software/actuators/index

@@ -1,9 +1,9 @@
-2020 Overview
+2021 Overview
 =============
 
 .. toctree::
    :maxdepth: 1
 
    known-issues
-   new-for-2020
+   yearly-changelog
    2020-Game-Data
