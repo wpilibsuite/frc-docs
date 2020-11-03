@@ -17,6 +17,14 @@ Major Features (Java/C++)
 WPILib
 ------
 
+Breaking Changes
+^^^^^^^^^^^^^^^^
+
+- ``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)
+
+- Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
+
+
 New Command-Based Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -70,13 +78,6 @@ General Library
 - Deprecated ``units.h``, use individual units headers instead which speeds compile times.
 
 - Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See :ref:`Introduction to State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` for more information.
-
-Breaking Changes
-^^^^^^^^^^^^^^^^
-
-- ``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)
-
-- Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
 
 Simulation
 ----------
