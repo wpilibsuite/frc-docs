@@ -6,7 +6,7 @@ Task: Test any new features or heavily modified code
 Overview
 --------
 
-The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2020 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
+The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2021 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
 
 **LabVIEW**
 
