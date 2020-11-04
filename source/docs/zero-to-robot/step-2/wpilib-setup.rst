@@ -62,7 +62,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
 - Select Existing VS Code Download
 
-  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code.
+  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
 - Download VS Code for All Platforms
 
