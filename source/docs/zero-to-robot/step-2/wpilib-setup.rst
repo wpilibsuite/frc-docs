@@ -49,12 +49,14 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 
 This next screen involves downloading VS Code. Unfortunately, due to licensing reasons, VS Code can not be bundled with the installer.
 
+.. important:: In this screen the options refer to VS Code installers (not VS Code itself). If selected, the system-relevant installer will be run in later steps of the WPILib installation.
+
 .. image:: images/wpilib-setup/installer-vscode-download.png
    :alt: Overview of VS Code download options
 
 - Download VS Code for Single Install
 
-  - This downloads VS Code only for the current platform, which is also the smallest download.
+  - This downloads the VS Code installer only for the current platform, which is also the smallest download.
 
 - Skip installing VS Code
 
@@ -62,11 +64,11 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
 - Select Existing VS Code Download
 
-  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code.
+  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip installer file of VS Code.
 
 - Download VS Code for All Platforms
 
-  - This option downloads VS Code for all platforms, which is useful for sharing the copy of the installer.
+  - This option downloads VS Code installers for all platforms, which is useful for sharing the copy of the installer.
 
 Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~60MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
