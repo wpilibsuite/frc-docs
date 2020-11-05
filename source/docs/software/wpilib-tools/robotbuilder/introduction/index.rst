@@ -11,6 +11,6 @@ RobotBuilder - Introduction
    robotbuilder-creating-subsystem
    robotbuilder-creating-command
    robotbuilder-autonomous-command
-   robotbuilder-testing-with-smartdashboard
+   robotbuilder-testing-with-shuffleboard
    robotbuilder-operator-interface-to-command
    robotbuilder-created-code
