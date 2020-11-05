@@ -20,8 +20,8 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Create a new class/command** - Clicking this command in the palette will not do anything. This command is triggered by right-clicking on the desired folder in the Navigation Pane and selecting the appropriate option.
 - **WPILib: Debug Robot Code** - Build and deploy robot code to roboRIO in debug mode and start debugging
 - **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
-- **WPILib: Import a WPILib Eclipse Project** - Open a wizard to help you create a new VS Code project from an existing WPILib Eclipse project from a previous season.
-- **WPILib: Import a WPILib 2019 Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2019
+- **WPILib: Import a WPILib Eclipse Project** - Open a wizard to help you create a new VS Code project from an existing WPILib Eclipse project from a previous season. Further documentation is at :doc:`importing eclipse project </docs/software/vscode-overview/importing-eclipse-project>`
+- **WPILib: Import a WPILib 2020 Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2020. Further documentation is at :doc:`importing gradle project </docs/software/vscode-overview/importing-gradle-project>`
 - **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. SmartDashboard, Shuffleboard, etc.). Note that this is done by default by the offline installer
 - **WPILib: Manage Vendor Libraries** - Install/update 3rd party libraries
 - **WPILib: Open WPILib Command Palette** - This command is used to open a WPILib Command Palette (equivalent of hitting Ctrl+Shift+P and typing WPILib)
