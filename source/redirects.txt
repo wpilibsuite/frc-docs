@@ -78,3 +78,4 @@
 "docs/2020-overview/index.rst" "docs/yearly-overview/index.rst"
 "docs/2020-overview/known-issues.rst" "docs/yearly-overview/known-issues.rst"
 "docs/2020-overview/new-for-2020.rst" "docs/yearly-overview/yearly-changelog.rst"
+"docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst" "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-autonomous-command.rst"

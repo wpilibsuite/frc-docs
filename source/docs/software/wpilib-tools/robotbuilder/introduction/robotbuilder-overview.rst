@@ -104,7 +104,7 @@ Commands make it simple to develop autonomous programs. You simply specify which
 
 Select the robot at the root of the RobotBuilder project (1), then edit the Autonomous Command property (2) to choose the command to run. It's that simple!
 
-For more information see :doc:`Setting the Default Autonomous Command <robotbuilder-default-autonomous-command>`.
+For more information see :doc:`Setting the Autonomous Commands <robotbuilder-autonomous-command>`.
 
 Generating Code
 ---------------
