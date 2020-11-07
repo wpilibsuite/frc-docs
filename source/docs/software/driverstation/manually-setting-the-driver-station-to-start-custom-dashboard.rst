@@ -29,11 +29,24 @@ DashboardCmdLine
 
 .. image:: images/manually-setting-the-driver-station-to-start-smartdashboard/dashboard-cmd-line.png
 
-Locate the line beginning with ``DashboardCmdLine``.
+Locate the line beginning with ``DashboardCmdLine``. Modify it to point to the dashboard to launch when the driver station starts
+
+LabVIEW Custom Dashboard
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Replace the string after ``=`` with ``"C:\\PATH\\TO\\DASHBOARD.exe"`` where the path specified is the path to the dashboard ``exe`` file. Save the ``FRC DS Data Storage`` file.
+
+Java Dashboard
+^^^^^^^^^^^^^^
 
 Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
 
-.. tip:: If the dashboard ``jar`` file was located at ``C:\Users\USERNAME\frc\dashboard.jar``, one should replace the string after ``=`` with ``java -jar "C:\\Users\\USERNAME\\frc\\dashboard.jar"``
+.. tip:: Shuffleboard and Smartdashboard require Java 11.
+
+Dashboard from WPILib installer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Replace the string after ``=`` with ``wscript "C:\\Users\\Public\\wpilib\\YYYY\\tools\\DASHBOARD.vbs"`` where ``YYYY`` is the year and ``DASHBOARD.vbs`` is either ``Shuffleboard.vbs`` or ``Smartdashboard.vbs``. Save the ``FRC DS Data Storage`` file.
 
 Launch Driver Station
 ---------------------
