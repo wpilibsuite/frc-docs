@@ -25,7 +25,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. group-tab:: Windows 7
 
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`.
+      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
 
       .. image:: images/wpilib-setup/extract-windows-7.png
 
@@ -37,7 +37,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. group-tab:: Linux
 
-      Linux users should extract and launch the application from the downloaded ``.tar.gz``.
+      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``.
 
 Running the Installer
 ---------------------
