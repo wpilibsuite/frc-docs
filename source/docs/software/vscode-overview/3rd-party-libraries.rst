@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below :ref:`The Mechanism <docs/software/vscode-overview/3rd-party-libraries:The Mechanism>` section to see information on adding an external library.
+Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below section to see information on adding an external library.
 
 The Mechanism
 -------------
@@ -20,12 +20,15 @@ The JSON file allows specification of complex libraries with multiple components
 The Mechanism - LabVIEW
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2016\vi.lib\Rock Robotics\WPI\Third Party``.
+For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it’s 2020, the directory would be ``LabVIEW 2019``.
 
 To use installed "Third Party" libraries, simply locate the VIs in one of these 3 locations and drag them into your project as you would with any other VI.
 
-Adding an Offline-Installed Library
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Managing VS Code Libraries
+--------------------------
+
+Adding Offline Libraries
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/3rd-party-libraries/adding-offline-library.png
 
