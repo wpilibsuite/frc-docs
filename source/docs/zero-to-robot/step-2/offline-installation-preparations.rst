@@ -5,6 +5,8 @@ Offline Installation Preparation
 
 This article contains instructions/links to components you will want to gather if you need to do offline installation of the FRC\ |reg| Control System software.
 
+.. tip:: This document compiles all the download links from the following documents to make it easier to install on offline computers or on multiple computers. If you are you installing on a single computer that is connected to the internet, you can skip this page.
+
 Documentation
 -------------
 
@@ -29,6 +31,8 @@ C++/Java Teams
 ^^^^^^^^^^^^^^
 
 -  `C++/Java WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
+
+.. note:: After downloading the C++/Java WPILib installer, run it once while connected to the internet and download VS Code for all platforms and save the downloaded VS Code zip file for future offline installations.
 
 3rd Party Libraries/Software
 ----------------------------
