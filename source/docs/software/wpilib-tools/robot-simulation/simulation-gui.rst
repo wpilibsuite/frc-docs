@@ -45,6 +45,8 @@ To add a joystick from the list of system joysticks, simply click and drag a sho
 .. image:: images/sim-gui-dragging-joysticks.png
    :alt: Dragging a joystick from System Joysticks to Joysticks
 
+.. note:: The FRC Driver Station does special mapping to joysticks connected and the WPILib does not "map" these by default. You can turn on this behavior by pressing the "Map gamepad" toggle underneath the "Joysticks" menu.
+
 Modifying ADXRS450 Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
