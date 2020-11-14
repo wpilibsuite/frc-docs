@@ -9,11 +9,11 @@ Task:
 Overview
 --------
 
-Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/zero-to-robot/step-2/index:Step 2: Installing Software` page.
+Before using the roboRIO controller with the Beta software, it must be imaged with the new image and configured with your FRC team number. As part of the purpose of this Beta test is to test the documentation and its ease of use, no direct links to setup instructions will be provided. Instructions for configuring the roboRIO are available on the :ref:`docs/zero-to-robot/step-3/index:Step 3: Preparing Robot` page.
 
 .. note:: The image version in the documentation may not be updated yet. You should use the latest image available after installing the latest Beta Update.
 
-Next verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/zero-to-robot/step-3/index:Step 3: Programming your Robot` page.
+Next verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/zero-to-robot/step-4/index:Step 4: Programming your Robot` page.
 
 Desired Feedback
 ----------------

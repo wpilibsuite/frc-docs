@@ -15,7 +15,7 @@ If you are attempting to troubleshoot the USB connection, try pinging the roboRI
 
 If this ping succeeds, but the .local ping fails, it is likely that either the roboRIO hostname is configured incorrectly, or you are connected to a DNS server which is attempting to resolve the .local address.
 
-- Verify that your roboRIO has been :ref:`imaged for your team number <docs/zero-to-robot/step-2/imaging-your-roborio:Imaging your roboRIO>`. This sets the hostname used by mDNS.
+- Verify that your roboRIO has been :ref:`imaged for your team number <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`. This sets the hostname used by mDNS.
 - Disconnect your computer from all other networks including Ethernet and WiFi. It is possible that one of these networks contains a DNS server that is attempting to resolve the .local address.
 
 Ethernet Connection
@@ -31,7 +31,7 @@ Ping the roboRIO IP address
 If there is an IP address in the step above, try pinging this IP address using the command prompt as described above. If this works, you have an issue resolving the mDNS address on your PC. The two most common causes are not having an mDNS resolver installed on the system and a DNS server on the network that is trying to resolve the .local address using regular DNS.
 
 - Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Game Tools. For more information on mDNS resolvers, see the :doc:`roboRIO Networking article <networking-basics>`.
-- Disconnect your computer from any other networks and make sure you have the OM5P-AN configured as an access point, using the :ref:`FRC Radio Configuration Utility <docs/zero-to-robot/step-2/radio-programming:Programming your Radio>`. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
+- Disconnect your computer from any other networks and make sure you have the OM5P-AN configured as an access point, using the :ref:`FRC Radio Configuration Utility <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
 
 Ping fails
 ^^^^^^^^^^
