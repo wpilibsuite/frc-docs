@@ -7,8 +7,8 @@ Step 2: Installing Software
    :maxdepth: 1
 
    control-system-software
-   labview-setup
    offline-installation-preparations
+   labview-setup
    frc-game-tools
    imaging-your-roborio
    radio-programming
