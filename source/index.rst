@@ -27,6 +27,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/zero-to-robot/step-1/index
    docs/zero-to-robot/step-2/index
    docs/zero-to-robot/step-3/index
+   docs/zero-to-robot/step-4/index
 
 .. toctree::
    :maxdepth: 1
