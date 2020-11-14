@@ -27,12 +27,12 @@ LabVIEW Teams
 
 -  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
-C++/Java Teams
+Java/C++ Teams
 ^^^^^^^^^^^^^^
 
--  `C++/Java WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
+-  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
 
-.. note:: After downloading the C++/Java WPILib installer, run it once while connected to the internet and download VS Code for all platforms and save the downloaded VS Code zip file for future offline installations.
+.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and download VS Code for all platforms and save the downloaded VS Code zip file for future offline installations.
 
 3rd Party Libraries/Software
 ----------------------------
