@@ -41,7 +41,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 Setting the Entire Strip to One Color
 -------------------------------------
 
-Color can be set to an individual led on the strip using two methods.``setRGB`` which takes RGB values as an input and ``setHSV()`` which takes HSV values as an input.
+Color can be set to an individual led on the strip using two methods. ``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes HSV values as an input.
 
 Using RGB Values
 ^^^^^^^^^^^^^^^^
