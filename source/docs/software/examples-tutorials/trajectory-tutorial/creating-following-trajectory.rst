@@ -11,7 +11,7 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 82-140
+      :lines: 82-143
       :linenos:
       :lineno-start: 82
 
@@ -19,7 +19,7 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 48-90
+      :lines: 48-93
       :linenos:
       :lineno-start: 48
 
@@ -104,9 +104,28 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 Creating the RamseteCommand
 ---------------------------
 
-.. todo:: link to ``relativeTo`` api docs once they're uploaded
+We will first reset our robot's pose to the starting pose of the trajectory. This ensures that the robot's location on the coordinate system and the trajectory's starting position are the same.
 
-.. note:: It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method.  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+      :language: java
+      :lines: 137-139
+      :linenos:
+      :lineno-start: 137
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 87-89
+      :linenos:
+      :lineno-start: 87
+
+
+It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/Trajectory.html#transformBy(edu.wpi.first.wpilibj.geometry.Transform2d)>`_,  `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
 
 Now that we have a trajectory, we can create a command that, when executed, will follow that trajectory.  To do this, we use the ``RamseteCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1RamseteCommand.html>`__)
 
@@ -124,7 +143,7 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
     .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 74-90
+      :lines: 74-85
       :linenos:
       :lineno-start: 74
 
