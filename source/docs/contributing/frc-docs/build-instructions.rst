@@ -78,9 +78,13 @@ Please run ``.\make sizecheck`` to verify that all images are below 500KB. This 
 Redirect Check
 ^^^^^^^^^^^^^^
 
-Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``. To verify that there are no invalid redirects. Run:
+Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``.
 
-Type the command ``.\make rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
+The redirect writer will automatically add renamed/moved files to the redirects file. Run ``.\make rediraffewritediff``.
+
+.. note:: if a file is both moved and substantially changed, the redirect writer will not add it to the ``redirects.txt`` file, and the ``redirects.txt`` file will need to be manually updated.
+
+The redirect checker makes sure that there are valid redirects for all files. This **will** fail the buildbot if it does not pass. To check, run ``.\make rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
 
 Building HTML
 ^^^^^^^^^^^^^
