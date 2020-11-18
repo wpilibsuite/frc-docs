@@ -64,9 +64,9 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Download VS Code for All Platforms
+- Download VS Code for Offline Installs
 
-  - This option downloads VS Code for all platforms, which is useful for sharing the copy of the installer.
+  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
 Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~60MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
