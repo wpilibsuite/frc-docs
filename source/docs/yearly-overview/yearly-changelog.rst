@@ -132,6 +132,7 @@ RobotBuilder
 - C++: use uniform initialization of objects in header
 - C++: fix case of includes so that code compiles on case-sensitive filesystems
 - Use project name as default for save file
+- Fix export of wiring file
 
 Robot Characterization
 ----------------------
