@@ -131,6 +131,7 @@ RobotBuilder
 - Updated to be compatible with the new command based framework and PID Controller
 - C++: use uniform initialization of objects in header
 - C++: fix case of includes so that code compiles on case-sensitive filesystems
+- Use project name as default for save file
 
 Robot Characterization
 ----------------------
