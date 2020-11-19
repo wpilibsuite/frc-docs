@@ -4,7 +4,7 @@ Scheduling Functions at Custom Frequencies
 
 The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda (the function to run), along with the requested period and an optional offset from the common starting time. The optional third argument is useful for scheduling a function in a different timeslot relative to the other ``TimedRobot`` periodic methods.
 
-.. note:: The units for the period and offset are seconds in Java. In C++, the `units library <docs/software/basic-programming/cpp-units:The C++ Units Library>`_ can be used to specify a period and offset in any time unit.
+.. note:: The units for the period and offset are seconds in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify a period and offset in any time unit.
 
 .. tabs::
 
