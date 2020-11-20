@@ -228,6 +228,23 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 .. note:: The SPARK Max motor controller uses a 40-tap FIR filter with a delay of 19.5ms, and status frames are by default sent every 20ms.
 
+The code below shows how to adjust the LQR controller's K gain for sensor input delays:
+
+.. tabs::
+   .. code-tab:: java
+
+      // Adjust our LQR's controller for 25 ms of sensor input delay. We
+      // provide the linear system, discretization timestep, and the sensor
+      // input delay as arguments.
+      controller.latencyCompensate(elevatorSystem, 0.02, 0.025);
+
+   .. code-tab:: c++
+
+      // Adjust our LQR's controller for 25 ms of sensor input delay. We
+      // provide the linear system, discretization timestep, and the sensor
+      // input delay as arguments.
+      controller.LatencyCompensate(elevatorSystem, 20_ms, 25_ms);
+
 Linearization
 -------------
 
