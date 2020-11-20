@@ -78,3 +78,8 @@
 "docs/2020-overview/index.rst" "docs/yearly-overview/index.rst"
 "docs/2020-overview/known-issues.rst" "docs/yearly-overview/known-issues.rst"
 "docs/2020-overview/new-for-2020.rst" "docs/yearly-overview/yearly-changelog.rst"
+"docs/zero-to-robot/step-2/imaging-your-roborio.rst" "docs/zero-to-robot/step-3/imaging-your-roborio.rst"
+"docs/zero-to-robot/step-2/radio-programming.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
+"docs/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java.rst" "docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst"
+"docs/zero-to-robot/step-3/creating-benchtop-test-program-labview.rst" "docs/zero-to-robot/step-4/creating-benchtop-test-program-labview.rst"
+"docs/zero-to-robot/step-3/running-benchtop-test.rst" "docs/zero-to-robot/step-4/running-benchtop-test.rst"

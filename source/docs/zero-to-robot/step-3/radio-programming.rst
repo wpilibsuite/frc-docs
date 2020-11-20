@@ -125,7 +125,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 5. Press the Load Firmware button
 6. When prompted, plug in the radio power. The software should detect the radio, load the firmware and prompt you when complete.
 
-.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Troubleshooting: Disabling Network Adapters <docs/zero-to-robot/step-2/radio-programming:Troubleshooting: Disabling Network Adapters>` for more info.
+.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Troubleshooting: Disabling Network Adapters <docs/zero-to-robot/step-3/radio-programming:Troubleshooting: Disabling Network Adapters>` for more info.
 
    Teams may also see this error with foreign language Operating Systems. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
 
