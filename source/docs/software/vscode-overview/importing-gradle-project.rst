@@ -10,7 +10,7 @@ Launching the Import Wizard
 
 .. image:: images/importing-previous-project/ImportPopup.png
 
-When you open a previous year's project, you will be prompted to import that project. Click yes.
+When you open a previous year's project, you will be prompted to import that project. Click :guilabel:`yes`.
 
 Alternately, you can chose to import it from the menu. Press Ctrl+Shift+P and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020 Gradle project" and select it from the dropdown as shown below.
 
@@ -27,7 +27,7 @@ You'll be presented with the WPILib Project Importer window. This is similar to 
 5. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
 6. **Enable Desktop Support**: If this is checked, simulation and unit test support is enabled. However, there are some cases where this will do some unexpected things. In addition, all vendor libraries need desktop support which not all libraries do.
 
-Click "Upgrade Project" to begin the upgrade.
+Click :guilabel:`Import Project` to begin the upgrade.
 
 The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the Ctrl-O (or Command-O for macOS) shortcut.
 
@@ -36,7 +36,7 @@ The gradle project will be upgraded and copied into the new project directory. Y
 C++ Configurations (C++ Only)
 -----------------------------
 
-For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click :guilabel:`Yes` to set up IntelliSense.
 
 .. image:: images/importing-eclipse-project/cpp-configurations.png
 
