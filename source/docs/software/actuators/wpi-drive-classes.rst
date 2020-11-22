@@ -195,10 +195,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
         public void teleopPeriodic() {
             // Tank drive with a given left and right rates
             myDrive.tankDrive(leftStick.getY(), rightStick.getY());
-            
+
             // Arcade drive with a given forward and turn rate
             myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
-            
+
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
             myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
         }
@@ -208,10 +208,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
         void TeleopPeriodic() override {
             // Tank drive with a given left and right rates
             myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
-            
+
             // Arcade drive with a given forward and turn rate
             myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
-            
+
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
