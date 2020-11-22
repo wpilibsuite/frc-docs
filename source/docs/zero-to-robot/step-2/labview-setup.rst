@@ -5,7 +5,7 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 .. image:: images/labview/ni-logo.png
 
-.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install from the DVD and should proceed to :doc:`Installing the FRC Game Tools </docs/zero-to-robot/step-2/frc-game-tools>`.
+.. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install LabVIEW and should proceed to :doc:`Installing the FRC Game Tools </docs/zero-to-robot/step-2/frc-game-tools>`.
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
@@ -30,7 +30,7 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW 2020 installer from https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html
+Either locate and insert the LabVIEW USB Drive or download the LabVIEW for FRC 2020 installer from https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html. Be sure to select the correct version from the drop-down.
 
 .. image:: images/labview/offline-installer.png
 
@@ -45,18 +45,13 @@ NI LabVIEW requires a license. Each season’s license is active until January 3
 
 Teams are permitted to install the software on as many team computers as needed, subject to the restrictions and license terms that accompany the applicable software, and provided that only team members or mentors use the software, and solely for FRC. Rights to use LabVIEW are governed solely by the terms of the license agreements that are shown during the installation of the applicable software.
 
-Welcome
-^^^^^^^
-
-.. image:: images/labview/labview_welcome.png
-
 Starting Install
 ^^^^^^^^^^^^^^^^
 
 .. tabs::
   .. tab:: Online Installer
 
-     Run the downloaded exe file to start the install process. Click “Yes” if a Windows Security prompt
+     Run the downloaded exe file to start the install process. Click :guilabel:`Yes` if a Windows Security prompt
 
   .. tab:: Offline Installer (Windows 10)
 
@@ -73,14 +68,14 @@ Starting Install
 
      .. image:: images/labview/extract-iso.png
 
-     Run install.exe from the extracted folder. Click “Yes” if a Windows Security prompt Click “Yes” if a Windows Security prompt appears.
+     Run install.exe from the extracted folder. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/ni-package-license.png
 
-If you see this screen, click "Next"
+If you see this screen, click :guilabel:`Next`
 
 
 Disable Windows Fast Startup
@@ -88,14 +83,14 @@ Disable Windows Fast Startup
 
 .. image:: images/labview/labview_fast_startup.png
 
-If you see this screen, click "Next"
+If you see this screen, click :guilabel:`Next`
 
 NI Package Manager Review
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/labview_package_manager_review.png
 
-If you see this screen, click "Next"
+If you see this screen, click :guilabel:`Next`
 
 NI Package Manager Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,38 +103,38 @@ Product List
 ^^^^^^^^^^^^
 .. image:: images/labview/labview_product_list.png
 
-Click "Next"
+Click :guilabel:`Next`
 
 Additional Packages
 ^^^^^^^^^^^^^^^^^^^
 .. image:: images/labview/labview_additional_software.png
 
-Click "Next"
+Click :guilabel:`Next`
 
 License agreements
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/labview_license_1.png
 
-Check "I accept..." then Click "Next"
+Check "I accept..." then Click :guilabel:`Next`
 
 .. image:: images/labview/labview_license_2.png
 
-Check "I accept..." then Click "Next"
+Check "I accept..." then Click :guilabel:`Next`
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/labview_product_info.png
 
-Click "Next"
+Click :guilabel:`Next`
 
 Start Installation
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/labview/labview_start_install.png
 
-Click "Next"
+Click :guilabel:`Next`
 
 Overall Progress
 ^^^^^^^^^^^^^^^^
@@ -162,7 +157,7 @@ NI Activation Wizard
 
 .. image:: images/labview/ni_activation_login.png
 
-Log into your ni.com account. If you don't have an account, select 'Create account' to create a free account.
+Log into your ni.com account. If you don't have an account, select :guilabel:`Create account` to create a free account.
 
 .. image:: images/labview/ni_activation_keys.png
 
@@ -172,7 +167,7 @@ The serial number you entered at the "User Information" screen should appear in 
 
 .. image:: images/labview/ni_activation_success.png
 
-If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select “Try Again”. The items shown above are not expected to activate. If everything activated successfully, click “Next”.
+If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Next`.
 
 .. image:: images/labview/ni_activation_finish.png
 
@@ -183,4 +178,4 @@ Restart
 
 .. image:: images/labview/labview_restart.png
 
-Select "Reboot Now" after closing any open programs.
+Select :guilabel:`Reboot Now` after closing any open programs.

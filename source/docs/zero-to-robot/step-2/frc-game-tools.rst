@@ -26,11 +26,11 @@ If you wish to install on other machines offline, click :guilabel:`Individual Of
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
-.. important:: LabVIEW teams have already completed this step, do not repeat it.
+.. important:: LabVIEW teams have already completed this step, do not repeat it. LabVIEW teams should skip to the :ref:`docs/zero-to-robot/step-2/frc-game-tools:installation` section.
 
-Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2020 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select Uninstall.
+Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2021 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software", and select :guilabel:`Uninstall`.
 
-.. note:: It is only necessary to uninstall previous versions when installing a new year's tools. For example, uninstall the 2019 tools before installing the 2020 tools. It is not necessary to uninstall before upgrading to a new update of the 2020 game tools.
+.. note:: It is only necessary to uninstall previous versions when installing a new year's tools. For example, uninstall the 2020 tools before installing the 2021 tools. It is not necessary to uninstall before upgrading to a new update of the 2021 game tools.
 
 .. image:: images/labview/uninstall_old_control_panel.png
 
@@ -73,28 +73,28 @@ Extraction
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/ni-package-license.png
+.. image:: images/update-suite/ni-package-license.png
 
 If you see this screen, click :guilabel:`Next`. This screen confirms that you agree to NI Package Manager License agreement.
 
 Disable Windows Fast Startup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_fast_startup.png
+.. image:: images/update-suite/labview_fast_startup.png
 
 It is recommended to leave this screen as-is, as Windows Fast Startup can cause issues with the NI drivers required to image the roboRIO. Go ahead and click :guilabel:`Next`.
 
 NI Package Manager Review
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/labview_package_manager_review.png
+.. image:: images/update-suite/labview_package_manager_review.png
 
 If you see this screen, click :guilabel:`Next`.
 
 NI Package Manager Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/labview/ni-package-install.png
+.. image:: images/update-suite/ni-package-install.png
 
 Installation progress of the NI Package Manager will be tracked in this window.
 
@@ -132,13 +132,6 @@ Detail Progress
 
 This screen showcases the installation process, go ahead and press :guilabel:`Next` when it's finished.
 
-Installation Summary
-^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/update-suite/installation-summary.png
-
-Click :guilabel:`Close`
-
 NI Activation Wizard
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -158,7 +151,7 @@ If your products activate successfully, an :guilabel:`Activation Successful` mes
 
 .. image:: images/update-suite/ni-activation-wizard-4.png
 
-Click “Close”.
+Click :guilabel:`Close`.
 
 NI Update Service
 ^^^^^^^^^^^^^^^^^
@@ -166,6 +159,8 @@ NI Update Service
 .. image:: images/labview/ni_update_enable.png
 
 You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
+
+.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
 
 Reboot to Complete Installation
 -------------------------------
