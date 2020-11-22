@@ -1,9 +1,22 @@
 RobotBuilder Overview
 =====================
 
+.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+
+RobotBuilder is an application designed to aid the robot development process. RobotBuilder can help you:
+
+    Generating boilerplate code.
+    Organize your robot and figure out what its key subsystems are.
+    Check that you have enough channels for all of your sensors and actuators.
+    Generate wiring diagrams.
+    Easily modify your operator interface.
+    More...
+
 Creating a program with RobotBuilder is a very straight forward procedure by following a few steps that are the same for any robot. This lesson describes the steps that you can follow. You can find more details about each of these steps in subsequent sections of the document.
 
 In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
+
+.. note:: RobotBuilder generates code using the old Command Framework. For more details on the old framework see :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
 
 Divide the Robot into Subsystems
 --------------------------------
@@ -11,8 +24,6 @@ Divide the Robot into Subsystems
 .. image:: images/robotbuilder-overview-1.png
 
 Your robot is naturally made up of a number of smaller systems like the drive trains, arms, shooters, collectors, manipulators, wrist joints, etc. You should look at the design of your robot and break it up into smaller, separately operated subsystems. In this particular example there is an elevator, a minibot alignment device, a gripper, and a camera system. In addition one might include the drive base. Each of these parts of the robot are separately controlled and make good candidates for subsystems.
-
-.. todo:: add link
 
 For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>`.
 

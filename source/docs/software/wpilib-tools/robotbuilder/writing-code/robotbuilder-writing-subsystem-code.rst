@@ -1,6 +1,8 @@
 Writing the Code for a Subsystem
 ================================
 
+.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+
 Adding code to create an actual working subsystem is very straightforward. For simple subsystems that don't use feedback it turns out to be extremely simple. In this section we will look at an example of a Claw subsystem that operates the motor for some amount of time to open or close a claw on the robot arm.
 
 RobotBuilder Representation of the Claw Subsystem
@@ -75,10 +77,10 @@ Adding the Method Declarations to the Header File (C++ Only)
 
    .. code-tab:: cpp
 
-      #ifndef CLAW_H
-      #define CLAW_H
-      #include "Commands/Subsystem.h"
-      #include "WPILib.h"
+      #pragma once
+
+      #include "frc/commands/Subsystem.h"
+      #include "frc/Victor.h"
 
       class Claw: public Subsystem {
       private:
@@ -95,8 +97,6 @@ Adding the Method Declarations to the Header File (C++ Only)
          void Close();
          void Stop();
       };
-
-      #endif
 
 In addition to adding the methods to the class implementation file, Claw.cpp, the declarations for the methods need to be added to the header file, Claw.h. Those declarations that must be added are shown here.
 

@@ -10,8 +10,17 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=build
 set SPHINXOPTS=-W --keep-going
+set LINTER=doc8
+set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
+set SIZECHECKER=python -m scripts.imagesizechecker
+set CONFEXCLUDE=--exclude-file source/conf.py
+set SIZEMAX=500
 
 if "%1" == "" goto help
+
+if "%1" == "lint" goto lint
+
+if "%1" == "sizecheck" goto sizecheck
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -31,6 +40,15 @@ goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+goto end
+
+:lint
+%LINTER% %LINTEROPTS%
+goto end
+
+:sizecheck
+%SIZECHECKER% %SOURCEDIR% %SIZEMAX% %CONFEXCLUDE%
+goto end
 
 :end
 popd

@@ -1,7 +1,9 @@
 Git Version Control Introduction
 ================================
 
-`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
+.. important:: A more in-depth guide on Git is available on the `Git website <https://git-scm.com/book/en/v2>`__.
+
+`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separate testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
@@ -16,7 +18,7 @@ Prerequisites
 You have to download and install Git from the following links:
 
 - `Windows <https://git-scm.com/download/win>`_
-- `Mac OS X <https://git-scm.com/download/mac>`_
+- `macOS <https://git-scm.com/download/mac>`_
 - `Linux <https://git-scm.com/download/linux>`_
 
 .. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path>`__
@@ -49,14 +51,14 @@ Git repositories usually consist of:
 Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `Github <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
-.. note:: There are various providers that can host repositories. `Gitlab <http://gitlab.com/>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <http://www.cloudforge.com/>`_ are a few alternatives to Github
+.. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to Github
 
-Creating a Github Account
+Creating a GitHub Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go ahead and create a Github account by visiting the `website <https://github.com>`_ and following the own screen prompts.
+Go ahead and create a GitHub account by visiting the `website <https://github.com>`_ and following the own screen prompts.
 
 .. image:: images/image1.png
 
@@ -85,26 +87,63 @@ You should see a screen similar to this
 
 .. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code.
 
-Now you'll want to open a powershell window and navigate to your project directory. An excellent tutorial on powershell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
+Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
 .. image:: images/image7.png
 
-In the below example, we created a file called ``README.md`` with the contents of ``# Example Repo``. More details on the various commands can be found in the subsequent sections.
+If a directory is empty, a file needs to be created in order for git to have something to track. In the below Empty Directory example, we created a file called ``README.md`` with the contents of ``# Example Repo``. For FRC Robot projects, the below Existing Project commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`. More details on the various commands can be found in the subsequent sections.
 
-.. image:: images/image8.png
+.. note:: Replace the filepath ``"C:\Users\ExampleUser9007\Documents\Example Folder"`` with the one you want to create the repo in, and replace the remote URL ``https://github.com/ExampleUser9007/ExampleRepo.git`` with the URL for the repo you created in the previous steps.
+
+.. tabs::
+
+   .. tab:: Empty Directory
+
+      .. code-block:: console
+
+         > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
+         > git init
+         Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
+         > echo "# ExampleRepo" >> README.md
+         > git add README.md
+         > git commit -m "First commit"
+         [main (root-commit) fafafa] First commit
+          1 file changed, 1 insertions(+), 0 deletions(-)
+          create mode 100644 README.md
+         > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
+         > git push -u origin main
+
+   .. tab:: Existing Project
+
+      .. code-block:: console
+
+         > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
+         > git init
+         Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
+         > git add .
+         > git commit -m "First commit"
+         [main (root-commit) fafafa] First commit
+          1 file changed, 1 insertions(+), 0 deletions(-)
+          create mode 100644 README.md
+         > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
+         > git push -u origin main
 
 Commits
 -------
 
 Repositories are primarily composed of commits. Commits are saved states or *versions* of code.
 
-In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to powershell and type the following commands.
+In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to PowerShell and type the following commands.
 
-1. ``git add README.md``
-2. ``git commit -m "example commit"``
-3. ``git push``
+.. code-block:: console
 
-.. image:: images/image9.png
+    > git add README.md
+    > git commit -m "Adds a description to the repository"
+    [main bcbcbc] Adds a description to the repository
+     1 file changed, 2 insertions(+), 0 deletions(-)
+    > git push
+
+.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://chris.beams.io/posts/git-commit/>`_.
 
 Git Pull
 ^^^^^^^^
@@ -142,25 +181,9 @@ Branches
 
 Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
 
-.. graphviz::
+.. image:: diagrams/branches.drawio.svg
 
-   digraph branches {
-      "Example Repo" [ shape=cylinder]
-      FeatureA [ shape=ellipse]
-      FeatureB [ shape=ellipse]
-      FeatureC [ shape=ellipse]
-      "Example Repo" -> FeatureA
-      "Example Repo" -> FeatureB
-      "Example Repo" -> FeatureC
-      "Update File 1" [ shape=box]
-      FeatureA -> "Update File 1"
-      "Update File 2" [ shape=box]
-      FeatureB -> "Update File 2"
-      "Update File 3" [ shape=box]
-      FeatureC -> "Update File 3"
-   }
-
-In the above example, FeatureB was merged into FeatureA. This is what is called a merge. You are "merging" the changes from one branch into another.
+In the above example, main was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
 
 Creating a Branch
 ^^^^^^^^^^^^^^^^^
@@ -181,23 +204,7 @@ In scenarios where you want to copy one branches history into another, you can m
 
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
-.. graphviz::
-
-   digraph branches {
-      "Example Repo" [ shape=cylinder]
-      FeatureA [ shape=ellipse]
-      FeatureB [ shape=ellipse]
-      FeatureC [ shape=ellipse]
-      "Example Repo" -> FeatureA
-      "Example Repo" -> FeatureB
-      "Example Repo" -> FeatureC
-      "Update File 1" [ shape=box]
-      FeatureA -> "Update File 1"
-      "Update File 2" [ shape=box]
-      FeatureB -> "Update File 2"
-      "Update File 3" [ shape=box]
-      FeatureC -> "Update File 3"
-   }
+.. image:: diagrams/merge-conflict.drawio.svg
 
 However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
 
@@ -236,9 +243,9 @@ Updating a Fork
 Gitignore
 ---------
 
-.. important:: It is extremely important that teams **do not** modify the .gitignore file that is included with their robot project. This can lead to offline deployment not working.
+.. important:: It is extremely important that teams **do not** modify the ``.gitignore`` file that is included with their robot project. This can lead to offline deployment not working.
 
-A .gitignore file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
+A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
 
 Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__
 
@@ -262,3 +269,5 @@ Additional Information
 ----------------------
 
 A much more in-depth tutorial can be found at the official `git <https://git-scm.com/docs/gittutorial>`__ website.
+
+A guide for correcting common mistakes can be found at the git `flight rules <https://github.com/k88hudson/git-flight-rules/blob/master/README.md>`_ repository.

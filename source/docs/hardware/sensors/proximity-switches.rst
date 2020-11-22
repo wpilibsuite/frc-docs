@@ -17,49 +17,59 @@ Types of proximity switches
 
 There are several types of proximity switches that are commonly-used in FRC:
 
- - `Mechanical proximity switches ("limit switches")`_
- - `Magnetic proximity switches`_
- - `Inductive proximity switches`_
- - `Photoelectric proximity switches`_
+ - `Mechanical Proximity Switches ("limit switches")`_
+ - `Magnetic Proximity Switches`_
+ - `Inductive Proximity Switches`_
+ - `Photoelectric Proximity Switches`_
+ - `Time-of-flight Proximity Switches`_
 
-Mechanical proximity switches ("limit switches")
+Mechanical Proximity Switches ("limit switches")
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: add picture
+.. image:: images/proximity-switches-hardware/limit-switch-to-roborio.svg
 
 Mechanical proximity switches (more commonly known as "limit switches") are probably the most-commonly used proximity switch in FRC, due to their simplicity, ease-of-use, and low cost.  A limit switch is quite simply a switch attached to a mechanical arm.  The switch is activated when an object pushes against the switch arm, actuating the switch.
 
 Limit switches vary in size, the geometry of the switch-arm, and in the amount of "throw" required to activate the switch.  While limit switches are quite cheap, their mechanical actuation is sometimes less-reliable than no-contact alternatives.  However, they are also extremely versatile, as they can be triggered by any physical object capable of moving the switch arm.
 
-Magnetic proximity switches
+Magnetic Proximity Switches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: add picture
+.. image:: images/proximity-switches-hardware/hall-effect-sensor-to-roborio.svg
 
 Magnetic proximity switches are activated when a magnet comes within a certain range of the sensor.  Accordingly, they are "no-contact" switches - they do not require contact with the object being sensed.
 
-There are two major types of magnetic proximity switches - reed switches and hall-effect sensors.  In a reed switch, the magnetic field causes a pair of flexible metal contacts (the "reeds") to touch each other, closing the circuit.  A hall-effect sensor, on the other hand, detects the induced voltage transversely across a current-carrying conductor.  Hall-effect sensors are generally the cheaper and more-reliable of the two.
+There are two major types of magnetic proximity switches - reed switches and hall-effect sensors.  In a reed switch, the magnetic field causes a pair of flexible metal contacts (the "reeds") to touch each other, closing the circuit.  A hall-effect sensor, on the other hand, detects the induced voltage transversely across a current-carrying conductor.  Hall-effect sensors are generally the cheaper and more-reliable of the two. Pictured above is the `Hall effect sensor from West Coast Products <https://www.wcproducts.com/wcp-0971>`__.
 
 Magnetic proximity switches may be either "unipolar," "bipolar," or "omnipolar."  A unipolar switch activates and deactivates depending on the presence of a given pole of the magnet (either north or south, depending on the switch).  A bipolar switch activates from the proximity of one pole, and deactivates from the proximity of the opposite pole.  An omnipolar switch will activate in the presence of either pole, and deactivates when no magnet is present.
 
 While magnetic proximity switches are often more reliable than their mechanical counterparts, they require the user to mount a magnet on the object to be sensed - thus, they are mostly used for sensing mechanism location.
 
-Inductive proximity switches
+Inductive Proximity Switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. todo:: add picture
+.. image:: images/proximity-switches-hardware/inductive-proximity-switch.png
 
 Inductive proximity switches are activated when a conductor of any sort comes within a certain range of the sensor.  Like magnetic proximity switches, they are "no-contact" switches.
 
 Inductive proximity switches are used for many of the same purposes as magnetic proximity switches.  Their more-general nature (activating in the presence of any conductor, rather than just a magnet) can be either a help or a hindrance, depending on the nature of the application.
 
-Photoelectric proximity switches
+Photoelectric Proximity Switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. todo:: add picture
+.. image:: images/proximity-switches-hardware/ir-digital-obstacle-sensor-to-roborio.svg
 
-Photoelectric proximity switches are the last type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold.
+Photoelectric proximity switches are another type of no-contact proximity switch in widespread use in FRC.  Photoelectric proximity switches contain a light source (usually an IR laser) and a photoelectric sensor that activates the switch when the detected light (which bounces off of the sensor target) exceeds a given threshold. One such sensor is the `IR Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured below.
 
 Since photoelectric proximity switches rely on measuring the amount of reflected light, they are often inconsistent in their triggering range between different materials - accordingly, most photoelectric sensors have an adjustable activation point (typically controller by turning a screw somewhere on the sensor body).  On the other hand, photoelectric sensors are also extremely versatile, as they can detect a greater variety of objects than the other types of no-contact switches.
 
-Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor.
+Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor. Pictured above is a `beam break sensor with an IR LED transmitter and IR receiver <https://www.adafruit.com/product/2167>`__.
+
+.. image:: images/proximity-switches-hardware/ir-beam-break-sensor-to-roborio.svg
+
+Time-of-flight Proximity Switches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/proximity-switches-hardware/time-of-flight-i2c-distance-sensor-to-roborio.svg
+
+Time-of-flight Proximity Switches are newer to the market and are not commonly found in FRC. They use a concentrated light source, such as a small laser, and measure the time between the emission of light and when the receiver detects it. Using the speed of light, it can produce a very accurate distance measurement for a very small target area. Range on this type of sensor can range greatly, between 30mm to around 1000mm for the `VL53L0X sensor <https://www.adafruit.com/product/3317>`__ pictured above. There are also longer range version available. More information about time of flight sensors can be found in `this article <https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout>`__ and more about the circuitry can be found in `this article <https://www.allaboutcircuits.com/technical-articles/how-do-time-of-flight-sensors-work-pmdtechnologies-tof-3D-camera/>`__.

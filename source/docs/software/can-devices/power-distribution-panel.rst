@@ -6,21 +6,21 @@ The Power Distribution Panel (PDP) can use its CAN connectivity to communicate a
 Creating a PDP Object
 ---------------------
 
-To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (`Java <http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__, `C++ <http://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):
+To use the PDP, create an instance of the :code:`PowerDistributionPanel` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):
 
 .. tabs::
 
-    .. code-tab:: c++
-
-        PowerDistributionPanel examplePDP{1};
-
     .. code-tab:: java
 
-        PowerDistributionPanel examplePDP = new PowerDistributionPanel(1);
+        PowerDistributionPanel examplePDP = new PowerDistributionPanel(0);
+
+    .. code-tab:: c++
+
+        PowerDistributionPanel examplePDP{0};
 
 Note: it is not necessary to create a PowerDistributionPanel object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
-.. warning:: To work with the current versions of C++ and Java WPILib, the CAN ID for the PDP *must* be 0.
+.. warning:: To enable voltage and current logging in the Driver Station, the CAN ID for the PDP *must* be 0.
 
 Reading the Bus Voltage
 -----------------------
@@ -35,9 +35,7 @@ Reading the Bus Voltage
 
         examplePDP.GetVoltage();
 
-.. todo:: link to page on brownout protection after it's ported
-
-Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner.
+Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/roborio-info/roborio-brownouts>` for more information.
 
 Reading the Temperature
 -----------------------

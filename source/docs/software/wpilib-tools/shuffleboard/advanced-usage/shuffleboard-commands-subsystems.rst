@@ -6,7 +6,7 @@ When using the command-based framework Shuffleboard makes it easier to understan
 Displaying Subsystems
 ---------------------
 
-To see the status of a subsystem while the robot is operating in either autonomous or teloperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
+To see the status of a subsystem while the robot is operating in either autonomous or teleoperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
 
 .. tabs::
 
@@ -46,11 +46,11 @@ Using commands and subsystems makes very modular robot programs that can easily 
 
    .. code-tab:: java
 
-      SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7);
+      SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7));
 
    .. code-tab:: cpp
 
-      SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7);
+      SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7));
 
 Shuffleboard will display the command name and a button to execute the command. In this way individual commands and command groups can easily be tested without needing special test code in a robot program. In the image below there are a number of commands contained in a Shuffleboard list. Pressing the button once runs the command and pressing it again stops the command. To use this feature the robot must be enabled in teleop mode.
 

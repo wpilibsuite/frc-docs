@@ -3,36 +3,44 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FIRST Robotics Competition Documentation
-========================================
+.. include:: <isonum.txt>
 
-Welcome to the FIRST Robotics Competition Documentation! This documentation will be the Official FIRST® Robotics Competition documentation for the 2020 season and beyond. It is important to recognize that while most of these documents are identical to their `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ predecessors, various tweaks have been made to clean up and update the articles. This includes using features that are only available in the 2020 release of WPILib. It's advised to continue using `ScreenSteps <https://wpilib.screenstepslive.com/s/4485>`__ until the official WPILib release for 2020. Teams that are in the closed beta program *should* use this website, as it contains all of the changes that will be in the beta. Information on contributing to this website can be found at the :doc:`contributing <docs/contributing/contribution-guidelines>` page.
+FIRST Robotics Competition Control System
+===========================================
 
-New teams may wish to familiarize themselves with the different components of the FRC :doc:`Software <docs/software/getting-started/control-system-software>` and :doc:`Hardware <docs/hardware/getting-started/control-system-hardware>`. These pages introduce the various components of the software and hardware elements that make up building a FRC robot. After reviewing these pages, information on setting up and using this software/hardware can be found in their appropriate sections in the left-hand navigation menu.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: WPILib Software
+   :maxdepth: 1
+   :titlesonly:
+   :caption: FRC Beta Test
 
-   docs/software/getting-started/index
-   docs/software/wpilib-overview/index
-   docs/software/getting-started-with-benchtop/index
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :caption: Zero to Robot
+
+   docs/zero-to-robot/introduction
+   docs/zero-to-robot/step-1/index
+   docs/zero-to-robot/step-2/index
+   docs/zero-to-robot/step-3/index
+   docs/zero-to-robot/step-4/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Programming Basics
+
+   docs/software/what-is-wpilib
+   docs/yearly-overview/index
+   docs/software/vscode-overview/index
    docs/software/labview/index
-   docs/software/driverstation/index
-   docs/software/roborio-info/index
    docs/software/actuators/index
    docs/software/sensors/index
    docs/software/can-devices/index
-   docs/software/vision-processing/index
-   docs/software/old-commandbased/index
-   docs/software/commandbased/index
-   docs/software/networktables/index
-   docs/software/wpilib-tools/shuffleboard/index
-   docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/path-planning/index
-   docs/software/wpilib-tools/robotbuilder/index
    docs/software/basic-programming/index
-   docs/software/advanced-programming/index
    docs/software/support/support-resources
 
 .. toctree::
@@ -43,32 +51,58 @@ New teams may wish to familiarize themselves with the different components of th
    WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
 
 .. toctree::
-   :maxdepth: 2
-   :caption: WPILib Hardware
-   :titlesonly:
+   :maxdepth: 1
+   :caption: Software Tools
 
-   docs/hardware/getting-started/index
+   docs/software/driverstation/index
+   docs/software/wpilib-tools/shuffleboard/index
+   docs/software/wpilib-tools/smartdashboard/index
+   docs/software/wpilib-tools/pathweaver/index
+   docs/software/wpilib-tools/robotbuilder/index
+   docs/software/wpilib-tools/robot-simulation/index
+   docs/software/wpilib-tools/robot-characterization/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced Programming
+
+   docs/software/vision-processing/index
+   docs/software/commandbased/index
+   docs/software/old-commandbased/index
+   docs/software/kinematics-and-odometry/index
+   docs/software/networktables/index
+   docs/software/roborio-info/index
+   docs/software/advanced-controls/index
+   docs/software/convenience-features/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Examples and Tutorials
+
+   docs/software/examples-tutorials/wpilib-examples
+   docs/software/examples-tutorials/trajectory-tutorial/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Hardware
+
+   docs/hardware/hardware-basics/index
+   docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
 
-   docs/networking/networking-basics
-   docs/networking/ip-configurations
-   docs/networking/roborio-network-troubleshooting
-   docs/networking/windows-firewall-configuration
-   docs/networking/measuring-bandwidth-usage
-   docs/networking/om5p-ac-radio-modification
+   docs/networking/networking-introduction/index
+   docs/networking/networking-utilities/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Contributing
 
-   docs/contributing/contribution-guidelines
-   docs/contributing/style-guide
-   docs/contributing/build-instructions
-   docs/contributing/top-contributors
+   docs/contributing/frc-docs/index
+   docs/contributing/wpilib/index
 
 .. toctree::
    :maxdepth: 1

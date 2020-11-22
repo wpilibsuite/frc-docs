@@ -206,7 +206,7 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 Resetting an encoder
 ^^^^^^^^^^^^^^^^^^^^
 
-To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/sensors/encoders-software:Homing an encodered mechanism>` routine:
+To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/sensors/encoders-software:Homing a mechanism>` routine:
 
 .. tabs::
 
@@ -388,10 +388,10 @@ More-advanced implementations can use more-complicated control loops.  Closing a
 PID Control
 ^^^^^^^^^^^
 
-Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).  For more information on PID control, see :ref:`docs/software/advanced-programming/common-control-algorithms:Common Control Algorithms`.
+Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).
 
-Homing an encodered mechanism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Homing a mechanism
+^^^^^^^^^^^^^^^^^^
 
 Since encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
 

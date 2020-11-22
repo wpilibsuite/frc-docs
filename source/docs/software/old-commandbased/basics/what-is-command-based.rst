@@ -1,7 +1,7 @@
 What is Command-Based Programming?
 ==================================
 
-.. important:: This documentation describes the use of the legacy command-based library, which has been deprecated. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
+.. important:: This documentation describes the use of the legacy command-based library. While this documentation has been preserved to help teams that have yet to do so, teams are strongly encouraged to migrate to the :ref:`new command-based library <docs/software/commandbased/index:Command-Based Programming>`.
 
 WPILib supports a method of writing programs called "Command-based programming". Command-based programming is a design pattern to help you organize your robot programs. Some of the characteristics of robot programs that might be different from other desktop programs are:
 
@@ -49,7 +49,7 @@ There are three main ways commands are scheduled:
 2. Automatically by the scheduler based on :doc:`button/trigger actions <../commands/running-commands-joystick-input>` specified in the code (typically defined in the OI class but checked by the Scheduler).
 3. Automatically when a previous command completes (:doc:`default commands <../commands/default-commands>` and :doc:`command groups  <../commands/creating-groups-commands>`).
 
-Each time the driver station gets new data, the periodic method of your robot program is called. It runs a Scheduler that checks the trigger conditions to see if any commands need to be scheduled or cancelled.
+Each time the driver station gets new data, the periodic method of your robot program is called. It runs a Scheduler that checks the trigger conditions to see if any commands need to be scheduled or canceled.
 
 When a command is scheduled, the Scheduler checks to make sure that no other commands are using the same subsystems that the new command requires. If one or more of the subsystems is currently in use, and the current command is interruptible, it will be interrupted and the new command will be scheduled. If the current command is not interruptible, the new command will fail to be scheduled.
 

@@ -19,19 +19,10 @@ Tuning the PIDController
 ------------------------
 .. image:: images/PID-tuning-with-SmartDashboard/tuning-pid-controller.png
 
-Tuning the PID controller can be difficult and there are many articles that describe techniques that can be used. It is best to start with the P value first. To try different values fill in a low number for P, enter a setpoint determined earlier in this document, and note how fast the mechanism responds. If it responds too slowly, perhaps never reaching the setpoint, increase P. If it responds too quickly, perhaps oscillating, reduce the P value. Repeat this process until you get a response that is as fast as possible without oscillation. It's possible that having a P term is all that's needed to achieve adequate control of your mechanism.
+Tuning the PID controller can be difficult and there are many articles that describe techniques that can be used. It is best to start with the P value first. To try different values fill in a low number for P, enter a setpoint determined earlier in this document, and note how fast the mechanism responds. If it responds too slowly, perhaps never reaching the setpoint, increase P. If it responds too quickly, perhaps oscillating, reduce the P value. Repeat this process until you get a response that is as fast as possible without oscillation. It's possible that having a P term is all that's needed to achieve adequate control of your mechanism. Further information is located in the :doc:`/docs/software/advanced-controls/introduction/tuning-pid-controller` document.
 
 Once you have determined P, I, and D values they can be inserted into the program. You'll find them either in the properties for the PIDSubsystem in RobotBuilder or in the constructor for the PID Subsystem in your code.
 
 The F (feedforward) term is used for controlling velocity with a PID controller.
 
-.. todo:: add link to pid article when ported
-
 You can find more information in Operating the robot with feedback from sensors.
-
-Practice Tuning in FRCSim
--------------------------
-
-With the FRCSim, you can experiment with PID and practice tuning in simulation! This means no broken couplers or time consuming uploads!
-
-A video on tuning PID with SmartDashboard in simulation can be found on the official WPILib channel `here <https://www.youtube.com/watch?v=yqD9iHiR3j8>`__

@@ -44,7 +44,7 @@ This example could be helpful if you need to have one motor do different things 
 - button 4 - move forward at 1/4 speed
 - trigger - full speed ahead! (forward at full speed)
 
-We would then take the boolean array from the "JoystickGetValues.vi" and wire it to a "Boolean Array to Number" node (Numeric Palette-Conversion Pallette).  This converts the boolean array to a number that we can use.  Wire this numeric to a case structure.
+We would then take the boolean array from the "JoystickGetValues.vi" and wire it to a "Boolean Array to Number" node (Numeric Palette-Conversion Palette).  This converts the boolean array to a number that we can use.  Wire this numeric to a case structure.
 
 Each case corresponds to a binary representation of the values in the array.  In this example, each case corresponds to a one-button combination.  We added six cases: 0 (all buttons off), 1 (button 0 on), 2 (button 1 on), 4 (button 2 on), 8 (button 3 on), and 16 (button 4 on).  Notice we skipped value 3.  3 would correspond to buttons 0 and 1 pressed at the same time.  We did not define this in our requirements so we'll let the default case handle it.
 
@@ -54,11 +54,11 @@ https://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/
 
 There are also 3 Community Tutorials on case structures here:
 
-https://forums.ni.com/docs/DOC-11621
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-1/ta-p/3505945?profile.language=en
 
-https://forums.ni.com/docs/DOC-11622
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-2/ta-p/3505933?profile.language=en
 
-https://forums.ni.com/docs/DOC-11623
+https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-3/ta-p/3505979?profile.language=en
 
 .. image:: images/how-to-use-joystick-buttons-to-control-motors-or-solenoids/2.png
 

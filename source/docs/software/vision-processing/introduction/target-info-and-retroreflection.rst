@@ -1,19 +1,25 @@
 Target Info and Retroreflection
 ===============================
 
-Many FRC games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets. Note that for official dimensions and drawings of all field components, please see the Official Field Drawings.
+Many FRC games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets.
+
+.. note:: For official dimensions and drawings of all field components, please see the Official Field Drawings.
 
 Targets
 -------
 
-.. image:: images/target-info-and-retroreflection/targets.png
+.. image:: images/target-info-and-retroreflection/target-diagram.png
+  :width: 350
+
+.. image:: images/target-info-and-retroreflection/target-output.png
+  :width: 350
 
 Each 2016 vision target consists of a 1' 8" wide, 1' tall U-shape made of 2" wide retroreflective material (3M 8830 Silver Marking Film). The targets are located immediately adjacent to the bottom of each high goal. When properly lit, the retroreflective tape produces a bright and/or color-saturated marker.
 
 Retroreflectivity vs. Reflectivity
 ----------------------------------
 
-.. image:: images/target-info-and-retroreflection/retroreflectivity-vs-reflectivity.png
+.. image:: diagrams/retroreflectivity-vs-reflectivity.drawio.svg
 
 Highly reflective materials are generally mirrored so that light "bounces off" at a supplementary angle. As shown above-left, the blue and red angles sum to 180 degrees. An equivalent explanation is that the light reflects about the surface normal the green line drawn perpendicular to the surface. Notice that a light pointed at the surface will return to the light source only if the blue angle is ~90 degrees.
 
@@ -22,11 +28,14 @@ Retro-reflective materials are not mirrored, but it will typically have either s
 Examples of Retroreflection
 ---------------------------
 
-.. image:: images/target-info-and-retroreflection/examples-of-retroreflection.png
+.. image:: images/target-info-and-retroreflection/raised-pavement-marker.jpg
+  :width: 350
+.. image:: images/target-info-and-retroreflection/vest.png
+  :width: 350
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles, and pedestrians.
 
-Initially, retro-reflection may not seem like a useful property for nighttime safety, but when the light and eye are near one another, as shown below, the reflected light returns to the eye, and the material shines brightly even at large distances. Due to the small angle between the driver’s eyes and vehicle headlights, retro-reflective materials can greatly increase visibility of distant objects during nighttime driving.
+Initially, retro-reflection may not seem like a useful property for nighttime safety, but when the light and eye are near one another, as shown above, the reflected light returns to the eye, and the material shines brightly even at large distances. Due to the small angle between the driver’s eyes and vehicle headlights, retro-reflective materials can greatly increase visibility of distant objects during nighttime driving.
 
 Demonstration
 -------------
@@ -43,11 +52,11 @@ Experiment with different light sources. The material is hundreds of times more 
 Lighting
 --------
 
-.. image:: images/target-info-and-retroreflection/lighting.jpg
+.. image:: images/target-info-and-retroreflection/lighting.png
 
 We have seen that the retro-reflective tape will not shine unless a light source is directed at it, and the light source must pass very near the camera lens or the observer’s eyes. While there are a number of ways to accomplish this, a very useful type of light source to investigate is the ring flash, or ring light, shown above. It places the light source directly on or around the camera lens and provides very even lighting. Because of their bright output and small size, LEDs are particularly useful for constructing this type of device.
 
-As shown above, inexpensive circular arrangements of LEDs are available in a variety of colors and sizes and are easy to attach to the Axis cameras. While not designed for diffuse even lighting, they work quite well for causing retro-reflective tape to shine. A small green LED ring is available through FIRST Choice. Other similar LED rings are available from suppliers such as SuperBrightLEDs.
+As shown above, inexpensive circular arrangements of LEDs are available in a variety of colors and sizes and are easy to attach to cameras, and some can even be powered off of a Raspberry Pi. While not designed for diffuse even lighting, they work quite well for causing retro-reflective tape to shine. A small green LED ring is available through FIRST Choice. Other similar LED rings are available from suppliers such as SuperBrightLEDs.
 
 Sample Images
 -------------

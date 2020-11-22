@@ -33,7 +33,7 @@ The controls work as follows:
 2. The play/pause controls starts and stops the playback
 3. The square stop button stops playback and resumes showing current robot values
 4. The right double-arrow skips forward to the next changed data value
-5. The scrubber is a slider that allow direct positioning to any point in time to view different parts of the recording
+5. The slider allows for direct positioning to any point in time to view different parts of the recording
 6. The loop switch turns on playback looping, that is, the playback will run over and over until stopped
 7. The time shows the current point within the recording and the total time of the recording
 

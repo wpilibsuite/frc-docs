@@ -1,13 +1,20 @@
 # Minimal makefile for Sphinx documentation
 #
-
 # You can set these variables from the command line.
+
 SPHINXOPTS    = -W --keep-going
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
+SIZECHECKER   = python3 -m scripts.imagesizechecker
+CONFEXCLUDE   = --exclude-file source/conf.py
+SIZEMAX       = 500
+
+ifeq ($(CI), true)
+	SPHINXOPTS += --color
+endif
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -15,6 +22,9 @@ help:
 
 lint:
 	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)
+
+sizecheck:
+	@$(SIZECHECKER) $(SOURCEDIR) $(SIZEMAX) $(CONFEXCLUDE)
 
 .PHONY: help lint Makefile
 

@@ -10,3 +10,4 @@ Actuators
    pwm-controllers
    wpi-drive-classes
    servos
+   addressable-leds

@@ -1,281 +1,262 @@
-PID control through PIDSubsystems and PIDCommands
+PID Control through PIDSubsystems and PIDCommands
 =================================================
 
-One of the most common control algorithms used in FRC is the `PID
-controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib
-offers its own :code:`PIDController` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__) to help teams implement this
-functionality on their robots. To further help teams
-integrate PID control into a command-based robot project, the
-command-based library includes several convenience wrappers for the
-``PIDController`` object. There are two basic wrappers: PIDSubsystems,
-which integrate the PID controller into a subsystem, and PIDCommands,
-which integrate the PID controller into a command. Moreover, each
-wrapper comes in one of two varieties: synchronous, which run from the
-main robot loop, and asynchronous, which run in their own thread. While
-the asynchronous versions offer more functionality and potentially
-tighter control, new/inexperienced users are encouraged to use the
-synchronous versions to avoid having to deal with thread safety issues.
+.. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
+
+.. note:: Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
+
+One of the most common control algorithms used in FRC is the `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own :ref:`PIDController <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
 
 PIDSubsystems
 -------------
 
-.. code-block:: java
-
-   SynchronousPIDSubsystem(PIDController controller)
-
-.. code-block:: java
-
-   AsynchronousPIDSubsystem(PIDController controller)
-
-The PIDSubsystem classes allow users to conveniently create a subsystem
-with a built-in PIDController.
+The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
 Creating a PIDSubsystem
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a PIDSubsystem, users should subclass one of the two
-PIDSubsystem classes:
+When subclassing ``PIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
-.. code-block:: java
+getMeasurement()
+~~~~~~~~~~~~~~~~
 
-   import edu.wpi.first.wpilibj.experimental.controller.PIDController;
+.. tabs::
 
-   public class ExamplePIDSubsystem extends SynchronousPIDSubsystem {
+  .. code-tab:: java
 
-     public ExamplePIDSubsystem() {
-       // This would set the internal controller's gains (P, I, and D) to 0.
-       super(new PIDController(0, 0, 0))
-     }
+    protected abstract double getMeasurement();
 
-     @Override
-     public void useOutput(double output) {
-       // Code to use the output of the PID loop goes here.  Users should generally add some sort of
-       // feedforward to the loop output in this method before sending it to a motor.
-     }
+  .. code-tab:: c++
 
-     @Override
-     public double getReference() {
-       // This should return the reference (setpoint) for the PID loop
-     }
+    virtual double GetMeasurement() = 0;
 
-     @Override
-     public double getMeasurement() {
-       // This should return the measurement of the process variable
-     }
-   }
+The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
 
-Additional settings can be applied to the :code:`PIDController` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PIDController.html>`__)
-by calling the ``getController`` method from the constructor.
+Users should override this method to return whatever sensor reading they wish to use as their process variable measurement.
+
+useOutput()
+~~~~~~~~~~~
+
+.. tabs::
+
+  .. code-tab:: java
+
+    protected abstract void useOutput(double output, double setpoint);
+
+  .. code-tab:: c++
+
+    virtual void UseOutput(double output, double setpoint) = 0;
+
+
+The ``useOutput()`` method consumes the output of the PID controller, and the current setpoint (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.
+
+Users should override this method to pass the final computed control output to their subsystem's motors.
+
+Passing In the Controller
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base class through the superclass constructor call of their subclass.  This serves to specify the PID gains, as well as the period (if the user is using a non-standard main robot loop period).
+
+Additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
 Using a PIDSubsystem
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
-What does a PIDSubsystem look like when used in practice? The following
-examples are taken from the FrisbeeBot example project:
+Once an instance of a ``PIDSubsystem`` subclass has been created, it can be used by commands through the following methods:
 
-.. todo:: Link to FrisbeeBot example after merge
+setSetpoint()
+~~~~~~~~~~~~~
 
-.. code-block:: java
+The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsystem``.  The subsystem will automatically track to the setpoint using the defined output:
 
-   package edu.wpi.first.wpilibj.examples.frisbeebot.subsystems;
+.. tabs::
 
-   import edu.wpi.first.wpilibj.Encoder;
-   import edu.wpi.first.wpilibj.Spark;
-   import edu.wpi.first.wpilibj.experimental.command.SynchronousPIDSubsystem;
-   import edu.wpi.first.wpilibj.experimental.controller.PIDController;
+  .. code-tab:: java
 
-   import static edu.wpi.first.wpilibj.examples.frisbeebot.Constants.ShooterConstants.*;
+    // The subsystem will track to a setpoint of 5.
+    examplePIDSubsystem.setSetpoint(5);
 
-   public class ShooterSubsystem extends SynchronousPIDSubsystem {
+  .. code-tab:: c++
 
-     private Spark m_shooterMotor = new Spark(kShooterMotorPort);
-     private Spark m_feederMotor = new Spark(kFeederMotorPort);
-     private Encoder m_shooterEncoder = new Encoder(kEncoderPorts[0], kEncoderPorts[1],
-         kEncoderReversed);
+    // The subsystem will track to a setpoint of 5.
+    examplePIDSubsystem.SetSetpoint(5);
 
-     public ShooterSubsystem() {
-       super(new PIDController(kP, kI, kD));
-       getController().setAbsoluteTolerance(kShooterToleranceRPS);
-       m_shooterEncoder.setDistancePerPulse(kEncoderDistancePerPulse);
-     }
+enable() and disable()
+~~~~~~~~~~~~~~~~~~~~~~
 
-     @Override
-     public void useOutput(double output) {
-       // Use a feedforward of the form kS + kV * velocity
-       m_shooterMotor.set(output + kSFractional + kVFractional * kShooterTargetRPS);
-     }
+The ``enable()`` and ``disable()`` methods enable and disable the PID control of the ``PIDSubsystem``.  When the subsystem is enabled, it will automatically run the control loop and track the setpoint.  When it is disabled, no control is performed.
 
-     @Override
-     public double getReference() {
-       return kShooterTargetRPS;
-     }
+Additionally, the ``enable()`` method resets the internal ``PIDController``, and the ``disable()`` method calls the user-defined `useOutput()`_ method with both output and setpoint set to ``0``.
 
-     @Override
-     public double getMeasurement() {
-       return m_shooterEncoder.getRate();
-     }
+Full PIDSubsystem Example
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-     public boolean atReference() {
-       return m_controller.atReference();
-     }
+What does a ``PIDSubsystem`` look like when used in practice? The following examples are taken from the FrisbeeBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):
 
-     public void runFeeder() {
-       m_feederMotor.set(kFeederSpeed);
-     }
+.. tabs::
 
-     public void stopFeeder() {
-       m_feederMotor.set(0);
-     }
+  .. group-tab:: Java
 
-     @Override
-     public void disable() {
-       super.disable();
-       // Turn off motor when we disable, since useOutput(0) doesn't stop the motor due to our
-       // feedforward
-       m_shooterMotor.set(0);
-     }
-   }
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-Notice that the ``disable()`` method has been overridden, even though
-the superclass has an implementation - this is because the default
-implementation (for both synchronous and asynchronous) calls
-``useOutput(0);``, which may not necessarily set the motor output to
-zero depending on the type of feedforward implemented by the user.
+  .. group-tab:: C++ (Header)
 
-Using a PIDSubsystem with commands can be very simple:
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-.. code-block:: java
+  .. group-tab:: C++ (Source)
 
-   // Spin up the shooter when the 'A' button is pressed
-   driverController.getButton(Button.kA.value)
-       .whenPressed(new InstantCommand(m_shooter::enable, m_shooter));
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/subsystems/ShooterSubsystem.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
 
-   // Turn off the shooter when the 'B' button is pressed
-   driverController.getButton(Button.kB.value)
-       .whenPressed(new InstantCommand(m_shooter::disable, m_shooter));
+Using a ``PIDSubsystem`` with commands can be very simple:
 
-PIDCommands
------------
+.. tabs::
 
-.. code-block:: java
+  .. group-tab:: Java
 
-   SynchronousPIDCommand(PIDController controller,
-                         DoubleSupplier measurementSource,
-                         double reference,
-                         DoubleConsumer useOutput,
-                         Subsystem... requirements)
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
+      :language: java
+      :lines: 85-91
+      :linenos:
+      :lineno-start: 85
 
-.. code-block:: java
+  .. group-tab:: C++ (Header)
 
-   AsynchronousPIDCommand(PIDController controller,
-                          DoubleSupplier measurementSource,
-                          double reference,
-                          DoubleConsumer useOutput,
-                          Subsystem... requirements)
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
+      :language: c++
+      :lines: 73-77
+      :linenos:
+      :lineno-start: 73
 
-The PIDCommand classes allow users to easily create commands with a
-built-in PIDController.
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 32-36
+      :linenos:
+      :lineno-start: 32
+
+PIDCommand
+----------
+
+The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
 
 Creating a PIDCommand
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
-As with PIDSubsystem, users can create a PIDCommmand by subclassing one
-of the two PIDCommand classes.
+A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
-.. code-block:: java
+In either case, a ``PIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
-   import edu.wpi.first.wpilibj.experimental.controller.PIDController;
+.. tabs::
 
-   public class ExamplePIDCommand extends SynchronousPIDCommand {
+  .. group-tab:: Java
 
-     public ExamplePIDCommand() {
-       super(new PIDController(0, 0, 0), //Creates a PIDController with all gains set to 0
-           () -> { /*This should return the measurement of the process variable*/ },
-           () -> { /*This should return the reference (setpoint) for the controller*/ },
-           (output) -> { /*Code to use the output of the PID loop goes here*/ },
-           requiredSubsystem /*PIDCommands should declare their requirements*/);
-     }
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
+      :language: java
+      :lines: 29-51
+      :linenos:
+      :lineno-start: 29
 
-   }
+  .. group-tab:: C++
 
-However, as with many of the other command classes in the command-based
-library, users may want to save code by defining a PIDCommand
-:ref:`inline <inlined-commands>`:
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
+      :language: c++
+      :lines: 29-43
+      :linenos:
+      :lineno-start: 29
 
-.. code-block:: java
+controller
+~~~~~~~~~~
 
-   new PIDCommand(new PIDController(0, 0, 0), //Creates a PIDController with all gains set to 0
-       () -> { /*This should return the measurement of the process variable*/ },
-       () -> { /*This should return the reference (setpoint) for the controller*/ },
-       (output) -> { /*Code to use the output of the PID loop goes here*/ },
-       requiredSubsystem /*PIDCommands should declare their requirements*/);
+The ``controller`` parameter is the ``PIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains and the period for the controller (if the user is using a nonstandard main robot loop period).
 
-Using a PIDCommand
-~~~~~~~~~~~~~~~~~~
+When subclassing ``PIDCommand``, additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-What does a PIDCommand look like when used in practice? The following
-examples are from the GyroDriveCommands example project:
+measurementSource
+~~~~~~~~~~~~~~~~~
 
-.. todo:: Link to GyroDriveCommands example after merge
+The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``PIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``PIDSubsystem``.
 
-.. code-block:: java
+When subclassing ``PIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
-   package edu.wpi.first.wpilibj.examples.gyrodrivecommands.commands;
+setpointSource
+~~~~~~~~~~~~~~
 
-   import edu.wpi.first.wpilibj.examples.gyrodrivecommands.subsystems.DriveSubsystem;
-   import edu.wpi.first.wpilibj.experimental.command.SynchronousPIDCommand;
-   import edu.wpi.first.wpilibj.experimental.controller.PIDController;
+The ``setpointSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the current setpoint for the control loop.  If only a constant setpoint is needed, an overload exists that takes a constant setpoint rather than a supplier.
 
-   import static edu.wpi.first.wpilibj.examples.gyrodrivecommands.Constants.DriveConstants.*;
+When subclassing ``PIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_setpoint`` field.
 
-   /**
-    * A command that will turn the robot to the specified angle.
-    */
-   public class TurnToAngle extends SynchronousPIDCommand {
+useOutput
+~~~~~~~~~
 
-     public TurnToAngle(double targetAngleDegrees, DriveSubsystem drive) {
-       super(new PIDController(kTurnP, kTurnI, kTurnD),
-           // Close loop on heading
-           drive::getHeading,
-           // Set reference to target
-           targetAngleDegrees,
-           // Pipe output to turn robot
-           (output) -> drive.arcadeDrive(0, output),
-           // Require the drive
-           drive);
+The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``PIDSubsystem``.
 
-       // Set the input range of the controller to match the gyro output
-       getController().setInputRange(-180, 180);
-       // Set the controller to be continuous (because it is an angle controller)
-       getController().setContinuous();
-       // Set the controller tolerance - the delta tolerance ensures the robot is stationary at the
-       // setpoint before it is considered as having reached the reference
-       getController().setAbsoluteTolerance(kTurnToleranceDeg, kTurnRateToleranceDegPerS);
-     }
+When subclassing ``PIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 
-     @Override
-     public boolean isFinished() {
-       // End when the controller is at the reference.
-       return getController().atReference();
-     }
-   }
+requirements
+~~~~~~~~~~~~
 
-And, for an :ref:`inlined <inlined-commands>`  example:
+Like all inlineable commands, ``PIDCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-.. code-block:: java
+Full PIDCommand Example
+^^^^^^^^^^^^^^^^^^^^^^^
 
-   // Stabilize robot to drive straight with gyro when left bumper is held
-   driverController.getButton(Button.kBumperLeft.value).whenHeld(
-       new SynchronousPIDCommand(
-           new PIDController(kStabilizationP, kStabilizationI, kStabilizationD),
-           // Close the loop on the turn rate
-           m_robotDrive::getTurnRate,
-           // Setpoint is 0
-           0,
-           // Pipe the output to the turning controls
-           (output) ->
-               m_robotDrive.arcadeDrive(driverController.getY(GenericHID.Hand.kLeft), output),
-           // Require the robot drive
-           m_robotDrive
-       )
-   );
+What does a ``PIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
+      :language: java
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+  .. group-tab:: C++ (Header)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngle.cpp
+      :language: c++
+      :lines: 8-
+      :linenos:
+      :lineno-start: 8
+
+And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline Command Definitions>`  example:
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+      :language: java
+      :lines: 70-81
+      :linenos:
+      :lineno-start: 70
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 37-53
+      :linenos:
+      :lineno-start: 37

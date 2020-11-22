@@ -17,7 +17,7 @@ This document walks through the approach used by the example code provided in La
 Original Image
 --------------
 
-The image shown below is the starting image for the example described here. The image was taken using the green ring light available in FIRST Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
+The image shown below is the starting image for the example described here. The image was taken using the green ring light available in *FIRST*\ |reg| Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
 
 .. image:: images/identifying-and-processing-the-targets/original-image.png
 
@@ -84,30 +84,35 @@ The resulting coordinates are close to what you may want, but the Y axis is inve
 
 .. image:: images/identifying-and-processing-the-targets/position.png
 
+Field of View
+^^^^^^^^^^^^^
+
+You can use known constants and the position of the target on the coordinate plane to determine your distance, yaw, and pitch from the target. However, in order to calculate these, you must determine your FOV (field of view). In order to empirically determine vertical field of view, set your camera a set distance away from an flat surface, and measure the distance between the topmost and bottommost row of pixels.
+
+.. math:: \frac{1}{2}FOV_{vertical}=tan\left(\frac{\frac{1}{2}distance_{y}}{distance_{z}}\right)
+
+You can find the horizontal FOV using the same method, but using the distance between the first and last column of pixels.
+
+Pitch and Yaw
+^^^^^^^^^^^^^
+
+Finding the pitch and yaw of the target relative to your robot is simple once you know your FOVs and the location of your target in the aiming coordinate system.
+
+.. math::
+   pitch=\frac{A_y}{2}FOV_{vertical}
+
+.. math::
+   yaw=\frac{A_x}{2}FOV_{horizontal}
+
 Distance
 ^^^^^^^^
 
-The target distance is computed with knowledge about the target size and the camera optics. The approach uses information about the camera lens view angle and the width of the camera field of view. Shown below-left, a given camera takes in light within the blue pyramid extending from the focal point of the lens. Unless the lens is modified, the view angle is constant and equal to 2Θ. As shown to the right, the values are related through the trigonometric relationship of:
+If your target is at a significantly different height than your robot, you can use known constants, such as the physical height of the target and your camera, as well as the angle your camera is mounted, to calculate the distance between your camera and the target.
 
-.. math:: \tan \theta = \frac{w}{d}
+.. math::
+   distance=\frac{height_{target}-height_{camera}}{tan(angle_{camera}+pitch)}
 
-The datasheets for the cameras can be found at the following links: `Axis 206 <https://www.axis.com/files/datasheet/ds_206_33168_en_0904_lo.pdf>`_, `Axis M1011, Axis M1013 <https://netcam.cz/produkty/ip-kamery/pdf/axis-M1013-ds.pdf>`_, `LifeCam HD-3000 <https://www.microsoft.com/accessories/en-us/products/webcams/lifecam-hd-3000/t3h-00011#techspecs-connect>`_. These give rough horizontal view angles for the lenses. Remember that this is for entire field of view, and is therefore :math:`2 \theta`. The 2016 code uses the vertical field-of-view and it is therefore highly recommend to perform calibration (as described in the next article) to determine the appropriate view angle for your camera (empirically determined values for each camera type are included in the code as a reference).
+Another option is to create a lookup table for area to distance, or to estimate the inverse variation constant of area and distance. However, this method is less accurate.
 
-.. image:: images/identifying-and-processing-the-targets/distance.png
-
-Distance Continued
-^^^^^^^^^^^^^^^^^^
-
-The next step is to use the information we have about the target to find the width of the field of view  the blue rectangle shown above. This is possible because we know the target rectangle size in both pixels and feet, and we know the FOV rectangle width in pixels. We can use the relationships of:
-
-.. math:: \frac{T_{\mathrm{ft}}}{T_{\mathrm{pixel}}} = \frac{\textit{FOV}_{\mathrm{ft}}}{\textit{FOV}_{\mathrm{pixel}}}
-
-and
-
-.. math:: \textit{FOV}_{\mathrm{ft}} = 2 w = 2 d \tan \theta
-
-to create an equation to solve for :math:`d`, the distance from the target:
-
-.. math:: d = \frac{T_{\mathrm{ft}} \cdot \textit{FOV}_{\mathrm{pixel}}}{2 T_{\mathrm{pixel}} \tan \theta}
-
-Notice that the datasheets give approximate view angle information. When testing, it was found that the calculated distance to the target tended to be a bit short. Using a tape measure to measure the distance and treating the angle as the unknown it was found that view angles of 41.7\ |deg| for the 206, 37.4\ |deg| for the M1011, and 49\ |deg| for the M1013 gave better results. Information on performing your own distance calibration is included in the next article.
+.. note::
+   For best results for the above methods of estimating angle and distance, you can calibrate your camera using OpenCV to get rid of any distortions that may be affecting accuracy by reprojecting the pixels of the target using the calibration matrix.

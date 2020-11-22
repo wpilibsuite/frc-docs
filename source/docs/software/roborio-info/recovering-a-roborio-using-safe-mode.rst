@@ -6,7 +6,7 @@ Occasionally a roboRIO may become corrupted to the point that it cannot be recov
 Booting into Safe Mode
 ----------------------
 
-.. image:: images/recovering-a-roborio-using-safe-mode-1.png
+.. image:: images/roborio-safe-mode.svg
 
 To boot the roboRIO into Safe Mode:
 
@@ -17,7 +17,7 @@ To boot the roboRIO into Safe Mode:
 Recovering the roboRIO
 ----------------------
 
-The roboRIO can now be imaged by using the roboRIO Imaging Tool as described in :ref:`Imaging your roboRIO <docs/software/getting-started/imaging-your-roborio:Imaging your roboRIO>`.
+The roboRIO can now be imaged by using the roboRIO Imaging Tool as described in :ref:`Imaging your roboRIO <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`.
 
 About Safe Mode
 ---------------

@@ -18,11 +18,7 @@ Installing the SmartDashboard
 
 .. image:: images/smartdashboard-intro-2.png
 
-The SmartDashboard is now packaged with the C++ and Java language updates and can be launched directly from the Driver Station by selecting the **Java** or **C++** buttons on the Setup tab.
-
-.. note:: If using the Classmate PC or other PC where the DS is run from a separate account from the C++\Java tools install (e.g. Driver and Developer) the buttons shown above may not work.
-
-You can utilize the SmartDashboard in this type of setup in one of two ways. The first way is to set the type to **Default** and modify the DS INI file to launch the appropriate dashboard, details can be found in this article. The second option is to copy the :code:`C:\Users\Developer\wpilib\tools` directory to :code:`C:\Users\Driver\wpilib\tools`. When using this second method it is recommended to make sure that the Dashboard under both the Driver and Developer accounts point to the same save file (see Locating the Save File) below.
+The SmartDashboard is packaged with the WPILib Installer and can be launched directly from the Driver Station by selecting the **SmartDashboard** button on the Setup tab.
 
 Configuring the Team Number
 ---------------------------
@@ -33,14 +29,21 @@ The first time you launch the SmartDashboard you should be prompted for your tea
 
 .. note:: SmartDashboard will take a moment to configure itself for the team number, do not be alarmed.
 
+Setting a Custom NetworkTables Server Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, SmartDashboard will look for NetworkTables instances running on a connected RoboRIO, but it's sometimes useful to look for NetworkTables at a different IP address. To connect to SmartDashboard from a host other than the roboRIO, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host.
+
+This option is incredibly useful for using SmartDashboard with :doc:`WPILib simulation </docs/software/wpilib-tools/robot-simulation/introduction>`. Simply add ``localhost`` to the ``Team Number`` field and SmartDashboard will detect your locally-hosted robot!
+
+.. image:: images/smartdashboard-networktables.png
+
 Locating the Save File
 ----------------------
 
 .. image:: images/smartdashboard-intro-4.png
 
 Users may wish to customize the save location of the SmartDashboard. To do this click the box next to **Save File** then browse to the folder where you would like to save the configuration. Files saved in the installation directories for the WPILib components will likely be overwritten on updates to the tools.
-
-.. important:: It is recommended that this folder be inside the users home directory and not inside the sunspotfrcsdk or workbench directories.
 
 Adding a Connection Indicator
 -----------------------------
@@ -52,6 +55,6 @@ It is often helpful to see if the SmartDashboard is connected to the robot. To a
 Adding Widgets to the SmartDashboard
 ------------------------------------
 
-.. image:: images/smartdashboard-intro-6.png
+.. image:: images/smartdashboard-intro-1.png
 
 Widgets are automatically added to the SmartDashboard for each "key" sent by the robot code. For instructions on adding robot code to write to the SmartDashboard see :doc:`Displaying Expressions from Within the Robot Program <displaying-expressions>`.

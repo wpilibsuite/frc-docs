@@ -14,49 +14,30 @@ Data types for NetworkTables are either boolean, numeric, or string. Numeric val
 
 There are some default tables that are created automatically when the program starts up:
 
-+---------------+---------------+
-| Table name    | Use           |
-+===============+===============+
-| /SmartDashboa | Used to store |
-| rd            | values        |
-|               | written to    |
-|               | the           |
-|               | SmartDashboar |
-|               | d             |
-|               | or            |
-|               | Shuffleboard  |
-|               | using the     |
-|               | ``SmartDashbo |
-|               | ard.put()``   |
-|               | set of        |
-|               | methods.      |
-+---------------+---------------+
-| /LiveWindow   | Used to store |
-|               | Test mode     |
-|               | (Test on the  |
-|               | Driver        |
-|               | Station)      |
-|               | values.       |
-|               | Typically     |
-|               | these are     |
-|               | Subsystems    |
-|               | and the       |
-|               | associated    |
-|               | sensors and   |
-|               | actuators.    |
-+---------------+---------------+
-| /FMSInfo      | Information   |
-|               | about the     |
-|               | currently     |
-|               | running match |
-|               | that comes    |
-|               | from the      |
-|               | Driver        |
-|               | Station and   |
-|               | the Field     |
-|               | Management    |
-|               | System.       |
-+---------------+---------------+
++-----------------+--------------------------+
+| Table name      | Use                      |
++=================+==========================+
+| /SmartDashboard | Used to store values     |
+|                 | written to the           |
+|                 | SmartDashboard or        |
+|                 | Shuffleboard using the   |
+|                 | ``SmartDashboard.put()`` |
+|                 | set of methods.          |
++-----------------+--------------------------+
+| /LiveWindow     | Used to store Test mode  |
+|                 | (Test on the Driver      |
+|                 | Station) values.         |
+|                 | Typically these are      |
+|                 | Subsystems and the       |
+|                 | associated sensors and   |
+|                 | actuators.               |
++-----------------+--------------------------+
+| /FMSInfo        | Information about the    |
+|                 | currently running match  |
+|                 | that comes from the      |
+|                 | Driver Station and the   |
+|                 | Field Management System  |
++-----------------+--------------------------+
 
 Writing a simple NetworkTable program
 -------------------------------------
@@ -69,7 +50,7 @@ The NetworkTables classes are instantiated automatically when your program start
 
       package edu.wpi.first.wpilibj.templates;
 
-      import edu.wpi.first.wpilij.TimedRobot;
+      import edu.wpi.first.wpilibj.TimedRobot;
       import edu.wpi.first.networktables.NetworkTable;
       import edu.wpi.first.networktables.NetworkTableEntry;
       import edu.wpi.first.networktables.NetworkTableInstance;

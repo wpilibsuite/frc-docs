@@ -3,7 +3,7 @@ FRC Driver Station Powered by NI LabVIEW
 
 This article describes the use and features of the FRC Driver Station Powered by NI LabVIEW.
 
-For information on installing the Driver Station software see :ref:`this document <installing_FRC_update_suite>`.
+For information on installing the Driver Station software see :ref:`this document <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
 
 Starting the FRC Driver Station
 -------------------------------
@@ -28,9 +28,9 @@ Status Pane
 
 The Status Pane of the Driver Station is located in the center of the display and is always visible regardless of the tab selected. It displays a selection of critical information about the state of the DS and robot:
 
-1. Team # - The Team number the DS is currently configured for. This should match your FRC team number, to change the number see the Setup Tab.
-2. Battery Voltage - If the DS is connected and communicating with the roboRIO this displays current battery voltage as a number and with a small chart of voltage over time in the battery icon. The background of the numeric indicator will turn red when the roboRIO brownout is triggered. See roboRIO Brownout and Understanding Current Draw for more information.
-3. Major Status Indicators - These three indicators display major status items for the DS. The "Communications" indicates whether the DS is currently communicating with the FRC Network Communications Task on the roboRIO (this year it is split in half for the TCP and UDP communication). The "Robot Code" indicator shows whether the team Robot Code is currently running (determined by whether or not the Driver Station Task in the robot code is updating the battery voltage), The "Joysticks" indicator shows if at least one joystick is plugged in and recognized by the DS.
+1. Team # - The Team number the DS is currently configured for. This should match your FRC team number. To change the team number see the Setup Tab.
+2. Battery Voltage - If the DS is connected and communicating with the roboRIO this displays current battery voltage as a number and with a small chart of voltage over time in the battery icon. The background of the numeric indicator will turn red when the roboRIO brownout is triggered. See :doc:`/docs/software/roborio-info/roborio-brownouts` for more information.
+3. Major Status Indicators - These three indicators display major status items for the DS. The "Communications" indicates whether the DS is currently communicating with the FRC Network Communications Task on the roboRIO (it is split in half for the TCP and UDP communication). The "Robot Code" indicator shows whether the team Robot Code is currently running (determined by whether or not the Driver Station Task in the robot code is updating the battery voltage), The "Joysticks" indicator shows if at least one joystick is plugged in and recognized by the DS.
 4. Status String - The Status String provides an overall status message indicating the state of the robot, some examples are "No Robot Communication", "No Robot Code", "Emergency Stopped", and "Teleoperated Enabled". When the roboRIO brownout is triggered this will display "Voltage Brownout".
 
 Operation Tab
@@ -41,7 +41,7 @@ Operation Tab
 The Operations Tab is used to control the mode of the robot and provide additional key status indicators while the robot is running.
 
 1. Robot Mode - This section controls the Robot Mode. Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab).
-2. Enable/Disable - These controls enable and disable the robot. You can also use the key combination ``[]\`` (the 3 keys above the enter key on most keyboards) to Enable the robot, and the ``Enter`` key to Disable the robot. The Spacebar will Emergency Stop the Robot
+2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_
 3. Elapsed Time - Indicates the amount of time the robot has been enabled
 4. PC Battery - Indicates current state of DS PC battery and whether the PC is plugged in
 5. PC CPU% - Indicates the CPU Utilization of the DS PC
@@ -60,18 +60,22 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 1. DS Version - Indicates the Driver Station Version number
 2. roboRIO Image Version - String indicating the version of the roboRIO Image
 3. WPILib Version - String indicating the version of WPILib in use
-4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the webdash plugin has not been installed using CTRE Phoenix Lifeboat
+4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the CTRE Phoenix framework has not been loaded
 5. Memory Stats - This section shows stats about the roboRIO memory
 6. Connection Indicators - The top half of these indicators show connection status to various components.
+
     - "Enet Link" indicates the computer has something connected to the ethernet port.
     - "Robot Radio" indicates the ping status to the robot wireless bridge at 10.XX.YY.1.
     - "Robot" indicates the ping status to the roboRIO using mDNS (with a fallback of a static 10.TE.AM.2 address).
     - "FMS" indicates if the DS is receiving packets from FMS (this is NOT a ping indicator).
+
 7. Network Indicators - The second section of indicators indicates status of network adapters and firewalls. These are provided for informational purposes, communication may be established with one or more unlit indicators in this section
+
     - "Enet" indicates the IP address of the detected Ethernet adapter
     - "WiFi" indicates if a wireless adapter has been detected as enabled
     - "USB" indicates if a roboRIO USB connection has been detected
     - "Firewall" indicates if any firewalls are detected as enabled. Enabled firewalls will show in orange ( Dom = Domain, Pub = Public, Prv = Private)
+
 8. Reboot roboRIO - This button attempts to perform a remote reboot of the roboRIO (after clicking through a confirmation dialog)
 9. Restart Robot Code - This button attempts to restart the code running on the robot (but not restart the OS)
 
@@ -83,7 +87,7 @@ Setup Tab
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
 1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
-2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java Eclipse plugins.
+2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java WPILib installation.
 3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
 5. Audio Control - This button controls whether audio tones are sounded when the Practice Mode is used.
@@ -117,3 +121,62 @@ Example: The image above shows 4 devices:
 - A Locked, but disconnected "MadCatz GamePad (Controller)" which is a MadCatz Xbox 360 Controller
 
 In this example, unplugging the Logitech Extreme 3D joystick will result in the F310 Gamepad moving up to slot 1. Plugging in the MadCatz Gamepad (even if the devices in Slots 1 and 2 are removed and those slots are empty) will result in it occupying Slot 3.
+
+CAN/Power Tab
+--------------
+
+.. image:: images/driver-station/ds-can-power-tab.png
+
+
+
+The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
+
+1. Comms Faults - Indicates the number of Comms faults that have occurred since the DS has been connected
+2. 12V Faults - Indicates the number of input power faults (Brownouts) that have occurred since the DS has been connected
+3. 6V/5V/3.3V Faults - Indicates the number of faults (typically cause by short circuits) that have occurred on the User Voltage Rails since the DS has been connected
+4. CAN Bus Utilization - Indicates the percentage utilization of the CAN bus
+5. CAN faults - Indicates the counts of each of the 4 types of CAN faults since the DS has been connected
+
+If a fault is detected, the indicator for this tab (shown in blue in the image above) will turn red.
+
+
+Messages Tab
+------------
+
+.. image:: images/driver-station/ds-messages-tab.png
+
+The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO. The messages are filtered by severity. By default, only Errors are displayed.
+
+To access settings for the Messages tab, click the Gear icon. This will display a menu that will allow you to select the detail level (Errors, Errors+Warnings or Errors+Warnings+Prints), Clear the box, launch a larger Console window for viewing messages, or launch the DS Log Viewer.
+
+Charts Tab
+----------
+
+.. image:: images/driver-station/ds-charts-tab.png
+
+The Charts tab plots and displays advanced indicators of robot status to help teams diagnose robot issues:
+
+1. The top graph charts trip time in milliseconds in green (against the axis on the right) and lost packets per second in orange (against the axis on the left)
+2. The bottom graph plots battery voltage in yellow (against the axis on the left), roboRIO CPU in red (against the axis on the right), DS Requested mode as a continuous line on the bottom of the chart and robot mode as a discontinuous line above it.
+3. This key shows the colors used for the DS Requested and Robot Reported modes in the bottom chart.
+4. Chart scale - These controls change the time scale of the DS Charts
+5. This button launches the :doc:`DS Log File Viewer <driver-station-log-viewer>`
+
+The DS Requested mode is the mode that the Driver Station is commanding the robot to be in. The Robot Reported mode is what code is actually running based on reporting methods contained in the coding frameworks for each language.
+
+Both Tab
+--------
+
+The last tab on the right side is the Both tab which displays Messages and Charts side by side
+
+Driver Station Key Shortcuts
+----------------------------
+
+  * `F1` - Force a Joystick refresh.
+  * `[` + `]` + `\\` - Enable the robot (the 3 keys above Enter on most keyboards)
+  * `Enter` - Disable the Robot
+  * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+
+.. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
+
+.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
