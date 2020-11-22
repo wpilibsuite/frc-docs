@@ -5,7 +5,7 @@ This guide will show you how to use the FRC Radio Configuration Utility software
 
 Before you begin using the software:
 
-1. :ref:'Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>'
+1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
 2. Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
@@ -190,6 +190,6 @@ If an error occurs during the configuration process, follow the instructions in 
 Troubleshooting
 ---------------
 
-- :ref:'Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>'
+- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
 - Make sure you wait long enough the power light has stayed solid for 10 seconds.
 - Make sure you have the correct network interface.
