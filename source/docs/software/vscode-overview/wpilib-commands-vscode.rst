@@ -16,7 +16,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Change Language Setting** - Change whether the currently open project is C++ or Java.
 - **WPILib: Change Run Commands Except Deploy/Debug in Offline Mode Setting** - Change whether GradleRIO is running in Online Mode for commands other then deploy/debug (will attempt to automatically pull dependencies from online). Defaults to enabled (online mode).
 - **WPILib: Change Run Deploy/Debug Command in Offline Mode Setting** - Change whether GradleRIO is running in Online Mode for deploy/debug (will attempt to automatically pull dependencies from online). Defaults to disabled (offline mode).
-- **WPILib: Change Select Default Simulate Extension Setting** - Change whether simulate extensions are selected automatically (will only occur if the build defines a single simulation extension)
+- **WPILib: Change Select Default Simulate Extension Setting** - Change whether simulation extensions are enabled by default (will only occur if the build defines a single simulation extension)
 - **WPILib: Change Skip Tests On Deploy Setting** - Change whether to skip tests on deploy. Defaults to disabled (tests are run on deploy)
 - **WPILib: Change Stop Simulation on Entry Setting** - Change whether to stop robot code on entry when running simulation. Defaults to disabled (don't stop on entry).
 - **WPILib: Check for WPILib Updates** - Check for an update to the WPILib extensions
