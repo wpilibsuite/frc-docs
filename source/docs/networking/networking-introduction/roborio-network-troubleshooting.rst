@@ -36,7 +36,7 @@ Ping Fails
       If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Obtain an Address Automatically** (also known as DHCP). To check this, click :guilabel:`Start` -> :guilabel:`Control Panel` -> :guilabel:`Network Connections` -> :guilabel:`Change adapter settings`, then right click on the appropriate interface (usually Local Area Connection for Ethernet or Wireless Network Connection for wireless) and select :guilabel:`Properties`. Click :guilabel:`Internet Protocol Version 4`, then click :guilabel:`Properties`. Make sure both radio buttons are set to :guilabel:`Obtain automatically`.
 
 USB Connection Troubleshooting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 If you are attempting to troubleshoot the USB connection, try pinging the roboRIO's IP address. As long as there is only one roboRIO connected to the PC, it should be configured as 172.22.11.2. If this ping fails, make sure you have the roboRIO connected and powered, and that you have installed the NI FRC Game Tools. The game tools installs the roboRIO drivers needed for the USB connection.
 
@@ -46,14 +46,14 @@ If this ping succeeds, but the .local ping fails, it is likely that either the r
 - :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
 
 Ethernet Connection
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 .. image:: images/roborio-troubleshooting/roborio-ip-address.png
 
 If you are troubleshooting an Ethernet connection, it may be helpful to first make sure that you can connect to the roboRIO using the USB connection. Using the USB connection, open the :ref:`roboRIO webdashboard <docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` and verify that the roboRIO has an IP address on the ethernet interface. If you are tethering to the roboRIO directly this should be a self-assigned ``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should be an address of the form ``10.TE.AM.XX`` where TEAM is your four digit FRC team number. If the only IP address here is the USB address, verify the physical roboRIO ethernet connection.
 
 Disabling Network Adapters
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 This is not always the same as turning the adapters off with a physical button or putting the PC into airplane mode. The following steps provide more detail on how to disable adapters.
 
@@ -96,6 +96,6 @@ On the left pane, click :guilabel:`Change Adapter Settings`.
 For each adapter other than the one connected to the radio, right click on the adapter and select :guilabel:`Disable` from the menu.
 
 Proxies
-^^^^^^^
+-------
 
 - Proxies. Having a proxy enabled may cause issues with the roboRIO networking.
