@@ -165,6 +165,8 @@ user_options = [
 
 def setup(app):
   app.add_css_file('css/frc-rtd.css')
+  if app.config.language in rtl_locale:
+    app.add_css_file('css/frc-rtl.css')
 
 # -- Options for latex generation --------------------------------------------
 
@@ -199,3 +201,4 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 
 gettext_compact = False
 locale_dirs = ['locale/']
+rtl_locale = ['he']
