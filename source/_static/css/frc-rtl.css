@@ -9,6 +9,9 @@ body {
 .fa:before {
   transform: scale(-1, 1);
 }
+.rst-content div[class^=highlight] pre {
+  direction: ltr;
+}
 
 .link-bar-container {
   margin-right: 320px;
