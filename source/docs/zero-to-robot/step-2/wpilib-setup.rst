@@ -84,6 +84,23 @@ Select the option that is appropriate for you, and you'll presented with the fol
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer!
 
+Post-Installation
+-----------------
+
+Some operating systems require some final action to complete installation.
+
+.. tabs::
+
+   .. group-tab:: macOS
+
+      After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the launcher.
+
+   .. group-tab:: Linux
+
+      Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      
+      .. image:: images/wpilib-setup/linux-enable-launching.png
+
 What is Installed?
 ------------------
 
