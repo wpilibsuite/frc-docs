@@ -98,7 +98,7 @@ Some operating systems require some final action to complete installation.
    .. group-tab:: Linux
 
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
-      
+
       .. image:: images/wpilib-setup/linux-enable-launching.png
 
 What is Installed?
