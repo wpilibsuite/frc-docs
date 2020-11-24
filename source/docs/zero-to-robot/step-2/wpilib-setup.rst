@@ -93,7 +93,8 @@ Some operating systems require some final action to complete installation.
 
    .. group-tab:: macOS
 
-      After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the launcher.
+      After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the dock.
+      Eject WPILibInstaller image from the desktop.
 
    .. group-tab:: Linux
 
