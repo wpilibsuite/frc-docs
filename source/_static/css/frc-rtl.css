@@ -12,6 +12,10 @@ body {
 .rst-content div[class^=highlight] pre, .highlighttable {
   direction: ltr;
 }
+.rst-content code, .rst-content tt {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
 
 .link-bar-container {
   margin-right: 320px;
