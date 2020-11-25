@@ -9,7 +9,7 @@ body {
 .fa:before {
   transform: scale(-1, 1);
 }
-.rst-content div[class^=highlight] pre {
+.rst-content div[class^=highlight] pre, .highlighttable {
   direction: ltr;
 }
 

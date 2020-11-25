@@ -165,7 +165,11 @@ user_options = [
 
 def setup(app):
   app.add_css_file('css/frc-rtd.css')
-  if app.config.language in rtl_locale:
+ 
+  # Right-to-left support
+  is_rtl = app.config.language in rtl_locale
+  app.config.hoverxref_tooltip_side = 'left' if is_rtl else 'right'
+  if is_rtl:
     app.add_css_file('css/frc-rtl.css')
 
 # -- Options for latex generation --------------------------------------------
