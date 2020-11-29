@@ -1,4 +1,4 @@
-C++ Api Documentation
+C++ API Documentation
 ======================
 
 .. raw:: html
@@ -18,4 +18,4 @@ C++ Api Documentation
 
 Oops. Your browser doesn't support Javascript.
 
-The C++ Api Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>`_.
+The C++ API Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>`_.

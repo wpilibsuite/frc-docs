@@ -1,4 +1,4 @@
-Java Api Documentation
+Java API Documentation
 ======================
 
 .. raw:: html
@@ -18,4 +18,4 @@ Java Api Documentation
 
 Oops. Your browser doesn't support Javascript.
 
-The Java Api Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/java/index.html <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>`_.
+The Java API Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/java/index.html <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>`_.
