@@ -13,6 +13,9 @@ Java Api Documentation
         }
     </script>
 
+.. image:: assets/cat-redirect.jpg
+   :alt: Cat Yawning
+
 Oops. Your browser doesn't support Javascript.
 
 The Java Api Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/java/index.html <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>`_.
