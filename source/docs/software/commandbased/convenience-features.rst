@@ -167,23 +167,23 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/
   .. code-tab:: java
 
     new StartEndCommand(
-        // Start driving forward at the start of the command
-        () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
-        // Stop driving at the end of the command
-        () -> m_robotDrive.arcadeDrive(0, 0),
-        // Requires the drive subsystem
-        m_robotDrive
+        // Start a flywheel spinning at 50% power
+        () -> m_shooter.shooterSpeed(0.5),
+        // Stop the flywheel at the end of the command
+        () -> m_shooter.shooterSpeed(0.0),
+        // Requires the shooter subsystem
+        m_shooter
     )
 
   .. code-tab:: c++
 
     frc2::StartEndCommand(
-      // Start driving forward at the start of the command
-      [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
-      // Stop driving at the end of the command
-      [this] { m_drive.ArcadeDrive(0, 0); },
-      // Requires the drive subsystem
-      {&m_drive}
+      // Start a flywheel spinning at 50% power
+      [this] { m_shooter.shooterSpeed(0.5); },
+      // Stop the flywheel at the end of the command
+      [this] { m_shooter.shooterSpeed(0.0); },
+      // Requires the shooter subsystem
+      {&m_shooter}
     )
 
 FunctionalCommand
