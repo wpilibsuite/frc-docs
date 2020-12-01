@@ -194,9 +194,9 @@ Voltage Regulator Module Power
 
 .. image:: images/how-to-wire-a-robot/image11.jpg
 
-Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (:math:`1 mm^2`) red and black wire:
+Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
-1. Strip ~5/16" (8 mm) on the end of the red and black 18 AWG (:math:`1 mm^2`) wire.
+1. Strip ~5/16" (8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
 3. Measure the length required to reach the "12Vin" terminals on the VRM. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
 4. Cut and strip ~5/16" (8 mm) from the end of the wire.
