@@ -13,9 +13,6 @@ C++ API Documentation
         }
     </script>
 
-.. image:: assets/cat-redirect.jpg
-   :alt: Cat Yawning
-
 Oops. Your browser doesn't support JavaScript.
 
 The C++ API Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>`_.
