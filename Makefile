@@ -14,6 +14,7 @@ SIZEMAX       = 500
 
 ifeq ($(CI), true)
 	SPHINXOPTS += --color
+	SPHINXOPTS += -j 2
 endif
 
 # Put it first so that "make" without argument is like "make help".
