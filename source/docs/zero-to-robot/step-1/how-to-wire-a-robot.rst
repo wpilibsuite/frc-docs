@@ -36,10 +36,10 @@ Locate the following control system components and tools
       - 6 AWG (16 :math:`mm^2`) Red wire
       - 10 AWG (6 :math:`mm^2`) Red/Black wire
       - 18 AWG (1 :math:`mm^2`) Red/Black wire
-      - 22AWG (0.5 :math:`mm^2`) Yellow/Green twisted CAN cable
+      - 22 AWG (0.5 :math:`mm^2`) Yellow/Green twisted CAN cable
       - 16x 10-12 AWG (4 - 6 :math:`mm^2`) (Yellow) ring terminals
         (8x quick disconnect pairs if using integrated wire controllers)
-      - 2x Andersen SB50 battery connectors
+      - 2x Anderson SB50 battery connectors
       - 6 AWG (16 :math:`mm^2`) Terminal lugs
       - 12V Battery
       - Red/Black Electrical tape
@@ -167,7 +167,7 @@ Weidmuller Connectors
 
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
-- Wire should be 16 AWG (1.5 :math:`mm^2`) to 24 AWG (0.25 :math:`mm^2`)(consult rules to verify required gauge for power wiring)
+- Wire should be 16 AWG (1.5 :math:`mm^2`) to 24 AWG (0.25 :math:`mm^2`) (consult rules to verify required gauge for power wiring)
 - Wire ends should be stripped approximately 5/16 (~8 mm)"
 - To insert or remove the wire, press down on the corresponding "button" to open the terminal
 
@@ -364,6 +364,6 @@ Requires: Zip ties
 Connect Battery
 ---------------
 
-Connect the battery to the robot side of the Andersen connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
+Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 
 If stuff blinks, you probably did it right. From here, you should connect to the roboRIO and try uploading your code!
