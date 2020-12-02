@@ -45,7 +45,7 @@ After the masking operation, a particle report operation is used to examine the 
 Coverage Area
 ^^^^^^^^^^^^^
 
-The Area score is calculated by comparing the area of the particle compared to the area of the bounding box drawn around the particle. The area of the retroreflective strips is 80 square inches (516 cm^2). The area of the rectangle that contains the target is 240 square inches (0.15 m^2). This means that the ideal ratio between area and bounding box area is 1/3. Area ratios close to 1/3 will produce a score near 100, as the ratio diverges from 1/3 the score will approach 0.
+The Area score is calculated by comparing the area of the particle compared to the area of the bounding box drawn around the particle. The area of the retroreflective strips is 80 square inches (516 :math:`cm^2`). The area of the rectangle that contains the target is 240 square inches (0.15 :math:`m^2`). This means that the ideal ratio between area and bounding box area is 1/3. Area ratios close to 1/3 will produce a score near 100, as the ratio diverges from 1/3 the score will approach 0.
 
 Aspect Ratio
 ^^^^^^^^^^^^

@@ -37,7 +37,7 @@ Locate the following control system components and tools
       - 10 AWG (6 :math:`mm^2`) Red/Black wire
       - 18 AWG (1 :math:`mm^2`) Red/Black wire
       - 22AWG (0.5 :math:`mm^2`) Yellow/Green twisted CAN cable
-      - 16x 10-12 AWG (4 - 6 :math:`mm^2`)(Yellow) ring terminals
+      - 16x 10-12 AWG (4 - 6 :math:`mm^2`) (Yellow) ring terminals
         (8x quick disconnect pairs if using integrated wire controllers)
       - 2x Andersen SB50 battery connectors
       - 6 AWG (16 :math:`mm^2`) Terminal lugs
@@ -55,7 +55,7 @@ Locate the following control system components and tools
       - 5 mm Hex key (3/16" may work if metric is unavailable)
       - 1/16" Hex key
       - Wire cutters, strippers, and crimpers
-      - 7/16” (11 mm) box end wrench or nut driver
+      - 7/16” (11 mm may work if imperial is unavailable) box end wrench or nut driver
 
 Create the Base for the Control System
 --------------------------------------
@@ -90,7 +90,7 @@ Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 1/16" Allen,
 Attach terminal lugs to battery connector:
 
 1. Using a 1/16" Allen wrench, remove the two screws securing the PDP terminal cover.
-2. Using a 5 mm Allen wrench (3/16" will work if metric is not available), remove the negative (-) bolt and washer from the PDP and fasten the negative terminal of the battery connector.
+2. Using a 5 mm Allen wrench (3/16"), remove the negative (-) bolt and washer from the PDP and fasten the negative terminal of the battery connector.
 3. Using a 7/16" (11 mm) box end wrench, remove the nut on the "Batt" side of the main breaker and secure the positive terminal of the battery connector
 
 Wire Breaker to PDP
@@ -101,7 +101,7 @@ Wire Breaker to PDP
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
 
-Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
+Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
 
 1. Cut, strip, and crimp the terminal to the 2nd end of the red 6 AWG (16 :math:`mm^2`) wire.
 2. Using the 7/16" (11 mm) box end, secure the wire to the "AUX" side of the 120A main breaker.
@@ -168,7 +168,7 @@ Weidmuller Connectors
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
 - Wire should be 16 AWG (1.5 :math:`mm^2`) to 24 AWG (0.25 :math:`mm^2`)(consult rules to verify required gauge for power wiring)
-- Wire ends should be stripped approximately 5/16"
+- Wire ends should be stripped approximately 5/16 (~8 mm)"
 - To insert or remove the wire, press down on the corresponding "button" to open the terminal
 
 After making the connection check to be sure that it is clean and secure:
@@ -248,7 +248,7 @@ roboRIO to PCM CAN
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (show in the next step).
+.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (shown in the next step).
 
 1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the roboRIO (Yellow->YEL, Green->GRN).
@@ -262,7 +262,7 @@ PCM to PDP CAN
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (show in this step).
+.. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (shown in this step).
 
 1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the PCM.
@@ -292,7 +292,7 @@ Robot Signal Light
 
 .. image:: images/how-to-wire-a-robot/image18.jpg
 
-Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`)red wire, very small flat screwdriver
+Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`) red wire, very small flat screwdriver
 
 1. Cut one end off of the 2 pin cable and strip both wires
 2. Insert the black wire into the center, "N" terminal and tighten the terminal.
