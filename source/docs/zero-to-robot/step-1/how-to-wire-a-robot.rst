@@ -163,7 +163,7 @@ Weidmuller Connectors
     </div>
 
 
-.. warning:: The correct strip length is ~5/16" (8 mm), not the 5/8" (16 mm) mentioned in the video.
+.. warning:: The correct strip length is ~5/16" (~8 mm), not the 5/8" (~16 mm) mentioned in the video.
 
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
@@ -184,7 +184,7 @@ roboRIO Power
 Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
 
 1. Insert the 10A and 20A mini fuses in the PDP in the locations shown on the silk screen (and in the image above)
-2. Strip ~5/16" (8 mm) on both the red and black 18 AWG (1 :math:`mm^2`) wire and connect to the "Vbat Controller PWR" terminals on the PDB
+2. Strip ~5/16" (~8 mm) on both the red and black 18 AWG (1 :math:`mm^2`) wire and connect to the "Vbat Controller PWR" terminals on the PDB
 3. Measure the required length to reach the power input on the roboRIO. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
 4. Cut and strip the wire.
 5. Using a very small flat screwdriver connect the wires to the power input connector of the roboRIO (red to V, black to C). Also make sure that the power connector is screwed down securely to the roboRIO.
@@ -196,10 +196,10 @@ Voltage Regulator Module Power
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
-1. Strip ~5/16" (8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
+1. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
 3. Measure the length required to reach the "12Vin" terminals on the VRM. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
-4. Cut and strip ~5/16" (8 mm) from the end of the wire.
+4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
 5. Connect the wire to the VRM 12Vin terminals.
 
 Pneumatics Control Module Power (Optional)
@@ -211,10 +211,10 @@ Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^
 
 .. note: The PCM is an optional component used for controlling pneumatics on the robot.
 
-1. Strip ~5/16" (8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
+1. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
 2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
 3. Measure the length required to reach the "Vin" terminals on the PCM. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
-4. Cut and strip ~5/16" (8 mm) from the end of the wire.
+4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
 5. Connect the wire to the PCM 12Vin terminals.
 
 Radio Power and Ethernet
@@ -250,9 +250,9 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 
 .. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (show in the next step).
 
-1. Strip ~5/16" (8 mm) off of each of the CAN wires.
+1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the roboRIO (Yellow->YEL, Green->GRN).
-3. Measure the length required to reach the CAN terminals of the PCM (either of the two available pairs). Cut and strip ~5/16" (8 mm) off this end of the wires.
+3. Measure the length required to reach the CAN terminals of the PCM (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
 PCM to PDP CAN
@@ -264,9 +264,9 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 
 .. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (show in this step).
 
-1. Strip ~5/16" (8 mm) off of each of the CAN wires.
+1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
 2. Insert the wires into the appropriate CAN terminals on the PCM.
-3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (8 mm) off this end of the wires.
+3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
 .. note: The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain.

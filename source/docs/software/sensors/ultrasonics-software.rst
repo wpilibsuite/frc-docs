@@ -54,7 +54,7 @@ Other ultrasonic sensors offered by third-parties may use more complicated commu
 Using ultrasonics in code
 -------------------------
 
-Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code will drive the robot forward until the ultrasonic measures a distance of 12 inches (30 cm) to the nearest object, and then stop:
+Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code will drive the robot forward until the ultrasonic measures a distance of 12 inches (~30 cm) to the nearest object, and then stop:
 
 .. tabs::
 
