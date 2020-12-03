@@ -37,7 +37,21 @@ This binding schedules a command when a trigger changes from active to inactive 
 toggleWhenActive/toggleWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are *not* a highly-recommended option for user control, as they require the driver to mentally keep track of the robot state.
+This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  If possible using two buttons one to turn on and another to turn off is preferred.  Using a StartEndCommand or a ConditionalCommand is a good way to specify the commands that you want to be want to be toggled between.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    myButton.toggleWhenPressed(new StartEndCommand(mySubsystem::onMethod,
+        mySubsystem::offMethod,
+        mySubsystem));
+
+  .. code-tab:: c++
+
+    myButton.ToggleWhenPressed(StartEndCommand([&] { mySubsystem.OnMethod(); },
+        [&] { mySubsystem.OffMethod(); },
+        mySubsystem));
 
 cancelWhenActive/cancelWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
