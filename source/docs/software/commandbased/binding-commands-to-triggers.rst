@@ -51,7 +51,7 @@ This binding toggles a command, scheduling it when a trigger changes from inacti
 
     myButton.ToggleWhenPressed(StartEndCommand([&] { mySubsystem.OnMethod(); },
         [&] { mySubsystem.OffMethod(); },
-        mySubsystem));
+        {&mySubsystem}));
 
 cancelWhenActive/cancelWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
