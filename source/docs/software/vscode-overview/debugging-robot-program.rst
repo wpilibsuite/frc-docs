@@ -39,7 +39,7 @@ Another way to debug your program is to use print statements in your code and vi
 
     .. code-tab:: c++
 
-        fmt::print("example");
+        wpi::outs() << "example\n";
 
 Debugging with Network Tables
 -----------------------------
