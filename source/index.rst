@@ -61,6 +61,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/robot-characterization/index
+   docs/software/wpilib-tools/outlineviewer/index
 
 .. toctree::
    :maxdepth: 1

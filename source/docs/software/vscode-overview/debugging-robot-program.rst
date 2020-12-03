@@ -5,8 +5,6 @@ Inevitably, a program will not behave in the way we expect it to behave.  When t
 
 A debugger is a tool used to control program flow and monitor variables in order to assist in debugging a program. This section will describe how to set up a debug session for an FRC robot program.
 
-.. note:: For beginning users who need to debug their programs but do not know/have time to learn how to use a debugger, it is often possible to debug a program simply by printing the relevant program state to the console.  However, it is strongly recommended that students eventually learn to use a debugger.
-
 Running the Debugger
 --------------------
 
@@ -28,9 +26,10 @@ Setting a Breakpoint
 
 Click in the left margin of the source code window (to the left of the line number) to set a breakpoint in your user program: A small red circle indicates the breakpoint has been set on the corresponding line.
 
-Debugging with Console
-----------------------
-Another way to debug your program is to use print statements in your code and view them using the RioLog in Visual Studio Code or the Driver Station.
+Debugging with Print Statements
+-------------------------------
+
+Another way to debug your program is to use print statements in your code and view them using the RioLog in Visual Studio Code or the Driver Station.  Print statements should be added with care as they are not very efficient especially when used in high quantities.  They should be removed for competition as they can cause loop overruns. 
 
 .. tabs::
 
@@ -40,12 +39,20 @@ Another way to debug your program is to use print statements in your code and vi
 
     .. code-tab:: c++
 
-        void RobotInit() {}
+        fmt::print("example");
+
+Debugging with Network Tables
+-----------------------------
+
+:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
 
 Learn More
 ----------
 
-To learn more about debugging with VS Code see this `link <https://code.visualstudio.com/docs/editor/debugging>`__.
+- To learn more about debugging with VS Code see this `link <https://code.visualstudio.com/docs/editor/debugging>`__.
+- Some of the features mentioned in this VS Code `article <https://code.visualstudio.com/docs/editor/editingevolved>`__ will help you understand and diagnose problems with your code.  The Quick Fix (yellow light bulb) feature can be very helpful with a variety of problems including what to import.
+- One of the best ways to prevent having to debug so many issues is to do Unit Testing.
+- Verifying that your robot works in :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` is also a great way to prevent having to do complex debugging on the actual robot.
 
 .. |Setting a Breakpoint| image:: images/debugging-robot-program/setting-a-breakpoint.png
 .. |Start Debugging| image:: images/debugging-robot-program/start-debugging.png
