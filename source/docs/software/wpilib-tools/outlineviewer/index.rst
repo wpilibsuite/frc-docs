@@ -1,3 +1,16 @@
 OutlineViewer
 =============
 
+.. image:: images/outline-viewer.png
+
+OutlineViewer is a utility used to view, modify and add to the contents of the NetworkTables for debugging purposes. It displays all key value pairs currently in the NetworkTables and can be used to modify the value of existing keys or add new keys to the table. OutlineViewer is included in the C++ and Java language updates. Teams may need to install the Java Runtime Environment to use the OutlineViewer on computers not set up for Java programming.
+
+In Visual Studio Code, press Ctrl + Shift + P and type WPILib or click the WPILib logo in the top right to launch the WPILib Command Palette and select Start Tool, then select OutlineViewer.
+
+To connect to your robot, open OutlineViewer and set the “Server Location” to be your team number. After you click start, OutlineViewer will connect.  If you have trouble connecting to OutlineViewer please see the :ref:`Dashboard Troubleshooting Steps <docs/software/driverstation/troubleshooting-dashboard-connectivity:Troubleshooting Dashboard Connectivity>`.
+
+.. image:: images/outlineviewer.png
+
+To additional key/value pairs to NetworkTables right click on where you want it to go and choose the corresponding data type.
+
+LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish the same functionality as OutlineViewer.
