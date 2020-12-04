@@ -45,7 +45,7 @@ Configure Data Properties
 
 .. image:: images/measuring-bandwidth-usage-5.png
 
-Press ``Ctrl+Q`` to bring up the Properties window. Click on the dropdown next to ``Scale`` and select ``1.0``. Then click on the ``Graph`` tab.
+Press :kbd:`Ctrl+Q` to bring up the Properties window. Click on the dropdown next to ``Scale`` and select ``1.0``. Then click on the ``Graph`` tab.
 
 Configure Graph Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
