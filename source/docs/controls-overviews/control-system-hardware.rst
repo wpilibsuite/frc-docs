@@ -3,7 +3,7 @@
 FRC Control System Hardware Overview
 ====================================
 
-The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function, a brief listing of critical connections, and a link to more documentation if available.
+The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function and a link to more documentation.
 
 .. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System </docs/zero-to-robot/step-1/how-to-wire-a-robot>` document.
 
@@ -19,7 +19,7 @@ NI roboRIO
 
 .. image:: images/control-system-hardware/roborio.png
 
-The NI-roboRIO is the main robot controller used for FRC. The roboRIO includes a dual-core ARM Cortex™-A9 processor and FPGA which runs both trusted elements for control and safety as well as team-generated code. Integrated controller I/O includes a variety of communication protocols (Ethernet, USB, CAN, SPI, I2C, and serial) as well as PWM, servo, digital I/O, and analog I/O channels used to connect to robot peripherals for sensing and control.The roboRIO should connect to the dedicated 12V port on the Power Distribution Panel for power. Wired communication is available via USB or Ethernet. Detailed information on the roboRIO can be found in the `roboRIO User Manual <https://www.ni.com/pdf/manuals/374474a.pdf>`__ and in the `roboRIO technical specifications <https://www.ni.com/pdf/manuals/374661a.pdf>`__.
+The NI-roboRIO is the main robot controller used for FRC. The roboRIO serves as the "brain" for the robot running team-generated code that commands all of the other hardware.  Detailed information on the roboRIO can be found in the `roboRIO User Manual <https://www.ni.com/pdf/manuals/374474a.pdf>`__ and in the `roboRIO technical specifications <https://www.ni.com/pdf/manuals/374661a.pdf>`__.
 
 Power Distribution Panel
 ------------------------
@@ -29,14 +29,6 @@ Power Distribution Panel
 
 The Power Distribution Panel (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://www.ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__.
 
-Pneumatics Control Module
--------------------------
-
-.. image:: images/control-system-hardware/pneumatics-control-module.png
-  :width: 500
-
-The PCM is a device that contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM is enabled/disabled by the roboRIO over the CAN interface. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. The device also collects diagnostic information such as solenoid states, pressure switch state, and compressor state. The module includes diagnostic LED’s for both CAN and the individual solenoid channels. For more information see the `PCM User Manual <https://www.ctr-electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__.
-
 Voltage Regulator Module
 ------------------------
 
@@ -44,6 +36,50 @@ Voltage Regulator Module
   :width: 500
 
 The VRM is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras. The two connector pairs associated with each label have a combined rating of what the label indicates (e.g. 5V/500mA total for both pairs not for each pair). The 12V/2A limit is a peak rating, the supply should not be loaded with more than 1.5A continuous current draw. For more information, see the `VRM User Manual <https://www.ctr-electronics.com/VRM%20User's%20Guide.pdf>`__.
+
+OpenMesh OM5P-AN or OM5P-AC Radio
+---------------------------------
+
+.. image:: images/control-system-hardware/openmesh-radio.png
+
+Either the OpenMesh OM5P-AN or OpenMesh OM5P-AC wireless radio is used as the robot radio to provide wireless communication functionality to the robot. The device can be configured as an Access Point for direct connection of a laptop for use at home. It can also be configured as a bridge for use on the field. The robot radio should be powered by one of the 12V/2A outputs on the VRM and connected to the roboRIO controller over Ethernet. For more information, see :ref:`Programming your Radio <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`.
+
+The OM5P-AN `is no longer available for purchase <https://www.firstinspires.org/robotics/frc/blog/radio-silence>`__. The OM5P-AC is slightly heavier, has more cooling grates, and has a rough surface texture compared to the OM5P-AN.
+
+120A Circuit Breaker
+--------------------
+
+.. image:: images/control-system-hardware/circuit-breaker.png
+  :width: 500
+
+The 120A Main Circuit Breaker serves two roles on the robot: the main robot power switch and a protection device for downstream robot wiring and components. The 120A circuit breaker is wired to the positive terminals of the robot battery and Power Distribution boards. For more information, please see the `Cooper Bussmann 18X Series Datasheet (PN: 185120F) <http://www.cooperindustries.com/content/dam/public/bussmann/Transportation/Circuit%20Protection/resources/datasheets/BUS_Tns_DS_18X_CIRCUITBREAKER.pdf>`__
+
+Snap Action Circuit Breakers
+----------------------------
+
+.. image:: images/control-system-hardware/snap-action-circuit-breaker.png
+  :width: 500
+
+The Snap Action circuit breakers, MX5-A40 and VB3 series, are used with the Power Distribution Panel to limit current to branch circuits. The MX5-A40 40A MAXI style circuit breaker is used with the larger channels on the Power Distribution Panel to power loads which draw current up to 40A continuous. The VB3 series are used with the smaller channels on the PDP to power circuits drawing current of 30A or less continuous. For more information, see the Datasheets for the `MX5 series <http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__ and `VB3 Series <http://www.snapaction.net/pdf/vb3.pdf>`__.
+
+Robot Battery
+-------------
+
+.. image:: images/control-system-hardware/robot-battery.png
+  :width: 500
+
+The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the datasheet for the `MK ES17-12 <https://www.mkbattery.com/application/files/2515/3308/8109/ES17-12.pdf>`__.
+
+.. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
+
+
+Pneumatics Control Module
+-------------------------
+
+.. image:: images/control-system-hardware/pneumatics-control-module.png
+  :width: 500
+
+The PCM is a device that contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM is enabled/disabled by the roboRIO over the CAN interface. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. The device also collects diagnostic information such as solenoid states, pressure switch state, and compressor state. The module includes diagnostic LED’s for both CAN and the individual solenoid channels. For more information see the `PCM User Manual <https://www.ctr-electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__.
 
 Motor Controllers
 -----------------
@@ -165,6 +201,7 @@ Microsoft Lifecam HD3000
 
 The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into the roboRIO. The camera is capable of capturing up to 1280x720 video at 30 FPS. For more information about the camera, see the `Microsoft product page <https://www.microsoft.com/accessories/en-us/business/lifecam-hd-3000-for-business/t4h-00002>`__. For more information about using the camera with the roboRIO, see the :ref:`Vision Processing <docs/software/vision-processing/index:Vision Processing>` section of this documentation.
 
+<<<<<<< HEAD:source/docs/controls-overviews/control-system-hardware.rst
 OpenMesh OM5P-AN or OM5P-AC Radio
 ---------------------------------
 
@@ -200,6 +237,8 @@ The power supply for an FRC robot is a single 12V 18Ah battery. The batteries us
 
 .. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
 
+=======
+>>>>>>> d67eae1... changed order of overview and roboRIO:source/docs/zero-to-robot/step-1/control-system-hardware.rst
 Image Credits
 -------------
 
