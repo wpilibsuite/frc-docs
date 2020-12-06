@@ -11,6 +11,6 @@ To connect to your robot, open OutlineViewer and set the “Server Location” t
 
 .. image:: images/outlineviewer.png
 
-To additional key/value pairs to NetworkTables right click on where you want it to go and choose the corresponding data type.
+To add additional key/value pairs to NetworkTables, right click on a location and choose the corresponding data type.
 
 LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish the same functionality as OutlineViewer.
