@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 WPILib Commands in Visual Studio Code
 =====================================
 This document contains a complete list of the commands provided by the WPILib VS Code Extension and what they do.
@@ -35,7 +33,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Reset Ask for WPILib Updates Flag** - This will clear the flag on the current project, allowing you to re-prompt to update a project to the latest WPILib version if you previously chose to not update.
 - **WPILib: Run a command in Gradle** - This lets you run an arbitrary command in the GradleRIO command environment
 - **WPILib: Set Team Number** - Used to modify the team number associated with a project. This is only needed if you need to change the team number from the one initially specified when creating the project.
-- **WPILib: Set VS Code Java Home to FRC\ |reg| Home** - Set the VS Code Java Home variable to point to the Java Home discovered by the FRC extension. This is needed if not using the offline installer to make sure the intellisense settings are in sync with the WPILib build settings.
+- **WPILib: Set VS Code Java Home to FRC Home** - Set the VS Code Java Home variable to point to the Java Home discovered by the FRC extension. This is needed if not using the offline installer to make sure the intellisense settings are in sync with the WPILib build settings.
 - **WPILib: Show Log Folder** - Shows the folder where the WPILib extension stores internal logs. This may be useful when debugging/reporting an extension issue to the WPILib developers
 - **WPILib: Simulate Robot Code on Desktop** - This builds the current robot code project on your PC and starts it running in simulation. This requires Desktop Support to be set to Enabled.
 - **WPILib: Start RioLog** - This starts the RioLog display used to view console output from a robot program
