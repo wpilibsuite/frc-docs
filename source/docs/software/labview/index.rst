@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 FRC\ |reg| LabVIEW Programming
-=======================
+==============================
 
 .. toctree::
    :maxdepth: 2

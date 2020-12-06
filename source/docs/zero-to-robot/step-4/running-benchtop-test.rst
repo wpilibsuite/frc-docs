@@ -20,7 +20,7 @@ Running your benchtop testing program while tethered to the Driver Station via e
 The roboRIO should be powered on and connected to the PC over Ethernet or USB.
 
 Starting the FRC\ |reg| Driver Station
--------------------------------
+--------------------------------------
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
 

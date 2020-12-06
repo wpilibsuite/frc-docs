@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 Installing the FRC\ |reg| Game Tools
-=============================
+====================================
 
 The FRC Game Tools contains the following software components:
 

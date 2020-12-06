@@ -4,7 +4,7 @@ The Raspberry PI
 ================
 
 FRC\ |reg| Console
------------
+------------------
 
 The FRC image for the Raspberry PI includes a console that can be viewed in any web browser that makes it easy to:
 

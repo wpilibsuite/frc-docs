@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 FRC\ |reg| CAN Device Specifications
-=============================
+====================================
 
 This document seeks to describe the basic functions of the current FRC
 CAN system and the requirements for any new CAN devices seeking to work

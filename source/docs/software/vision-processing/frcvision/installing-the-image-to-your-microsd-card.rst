@@ -4,7 +4,7 @@ Installing the image to your MicroSD card
 =========================================
 
 Getting the FRC\ |reg| Raspberry PI image
-----------------------------------
+-----------------------------------------
 
 The image is stored on the GitHub release page for the FRC PI-gen repository:
 https://github.com/wpilibsuite/FRCVision-pi-gen/releases.
