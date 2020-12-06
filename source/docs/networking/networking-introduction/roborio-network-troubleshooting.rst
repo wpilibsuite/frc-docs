@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 roboRIO Network Troubleshooting
 ===============================
 
-The roboRIO and FRC tools use dynamic IP addresses (DHCP) for network connectivity. This article describes steps for troubleshooting networking connectivity between your PC and your roboRIO
+The roboRIO and FRC\ |reg| tools use dynamic IP addresses (DHCP) for network connectivity. This article describes steps for troubleshooting networking connectivity between your PC and your roboRIO
 
 Ping the roboRIO using mDNS
 ---------------------------

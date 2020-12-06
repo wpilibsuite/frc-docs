@@ -1,4 +1,6 @@
-How to Wire an FRC Robot
+.. include:: <isonum.txt>
+
+How to Wire an FRC\ |reg| Robot
 ========================
 
 .. note::

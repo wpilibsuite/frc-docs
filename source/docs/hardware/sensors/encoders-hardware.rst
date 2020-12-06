@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 Encoders - Hardware
 ===================
 
 .. note:: This section covers encoder hardware.  For a software guide to encoders, see :ref:`docs/software/sensors/encoders-software:Encoders - Software`.
 
-Quadrature encoders are by far the most common method for measuring rotational motion in FRC, and for good reason - they are cheap, easy-to-use, and reliable.  As they produce digital signals, they are less-prone to noise and interference than analog devices (such as :doc:`potentiometers <analog-potentiometers-hardware>`).
+Quadrature encoders are by far the most common method for measuring rotational motion in FRC\ |reg|, and for good reason - they are cheap, easy-to-use, and reliable.  As they produce digital signals, they are less-prone to noise and interference than analog devices (such as :doc:`potentiometers <analog-potentiometers-hardware>`).
 
 The term "quadrature" refers to the method by which the motion is measured/encoded.  A quadrature encoder produces two square-wave pulses that are 90-degrees out-of-phase from each other, as seen in the picture below:
 

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Actuator Overview
 ==================
 This section discusses the control of motors and pneumatics through speed controllers, solenoids and pneumatics, and their interface with C++ and Java WPILib.
@@ -11,7 +13,7 @@ A speed controller is responsible on your robot for making motors move. For brus
 
 .. warning:: Connecting a BRUSHLESS motor controller straight to power, such as to a conventional brushed motor controller, will destroy the motor!
 
-FRC Legal Motor Controllers
+FRC\ |reg| Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Speed controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC Legal speed controllers as of January 2020:
 

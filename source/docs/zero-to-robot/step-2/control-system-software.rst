@@ -1,4 +1,6 @@
-FRC Software Component Overview
+.. include:: <isonum.txt>
+
+FRC\ |reg| Software Component Overview
 ===============================
 
 The FRC control system consists of a wide variety of mandatory and optional software components. These elements are designed to assist you in the design, development, and debugging of your robot code as well as assist with control robot operation and to provide feedback when troubleshooting. For each software component this document will provide a brief overview of its purpose, a link to the package download, if appropriate, and a link to further documentation where available.

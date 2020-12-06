@@ -1,6 +1,6 @@
 .. include:: <isonum.txt>
 
-Installing LabVIEW for FRC (LabVIEW only)
+Installing LabVIEW for FRC\ |reg| (LabVIEW only)
 =========================================
 
 .. image:: images/labview/ni-logo.png

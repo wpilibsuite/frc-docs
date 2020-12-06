@@ -1,4 +1,6 @@
-Local and Global Variables in LabVIEW for FRC
+.. include:: <isonum.txt>
+
+Local and Global Variables in LabVIEW for FRC\ |reg|
 =============================================
 
 .. image:: images/ni-logo.png

@@ -1,6 +1,9 @@
+.. include:: <isonum.txt>
+
 The Raspberry PI
 ================
-FRC Console
+
+FRC\ |reg| Console
 -----------
 
 The FRC image for the Raspberry PI includes a console that can be viewed in any web browser that makes it easy to:
@@ -13,6 +16,7 @@ The FRC image for the Raspberry PI includes a console that can be viewed in any 
 
 Setting the rPI to be Read-Only vs. Writable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The rPI is normally set to Read-Only which means that the file system cannot be changed. This ensures that if power is removed
 without first shutting down the rPi the file system isn't corrupted. When settings are changed (following sections), the new
 settings cannot be saved while the rPI file system is  set as Read-Only. Buttons are provided that allow the file system to be
@@ -21,6 +25,7 @@ rPI cannot be press, check the Read-Only status of the system.
 
 Status of the network connection to the rPI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There is a label in the top right corner of the console that indicates if the rPi is currently connected. It will change from
 Connected to Disconnected if there is no longer a network connection to the rPi.
 
@@ -28,6 +33,7 @@ Connected to Disconnected if there is no longer a network connection to the rPi.
 
 System status
 -------------
+
 .. figure:: images/the-raspberry-pi-frc-console/system-status.png
 
 The system status shows what the CPU on the rPI is doing at any time. There are two columns of status values, on being a 1 second
@@ -40,6 +46,7 @@ average and the other a 5 second average. Shown is:
 
 Vision Status
 -------------
+
 .. figure:: images/the-raspberry-pi-frc-console/vision-status.png
 
 Allows monitoring of the task which is running the camera code in the rPI, either one of the default programs or your own
@@ -49,6 +56,7 @@ because in this example the rPI is simply connected to a laptop with no Network 
 
 Network Settings
 ----------------
+
 The rPI network settings have options to connect to the PI:
 
 -   DHCP - the default name resolution usually used by the roboRIO. The default name is raspberry.local.
@@ -63,6 +71,7 @@ regardless of the options selected above.
 
 Vision Settings
 ---------------
+
 .. figure:: images/the-raspberry-pi-frc-console/vision-settings-1.png
 
 The Vision Settings are to set the parameters for each camera and whether the rPI should be a NetworkTables client or server.
@@ -80,6 +89,7 @@ modes (combinations of Width, Height, and frame rates) that are supported by thi
 
 Getting the current settings to persist over reboots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The rPi will load all the camera settings on startup. Editing the camera configuration in the above screen is temporary. To make
 the values persist click on the "Load Source Config From Camera" button and the current settings will be filled in on the camera
 settings fields. Then click "Save" at the bottom of the page. Note: you must set the file system Writeable in order to save the
@@ -93,10 +103,12 @@ will overwrite the ones from the text field.
 
 Application
 ------------
+
 The Application tab shows the application that is currently running on the rPi.
 
 Vision workflows
 ^^^^^^^^^^^^^^^^
+
 There is a sample vision program using OpenCV in each of the supported languages, C++, Java, or Python. Each sample program can
 capture and stream video from the rPi. In addition, the samples have some minimal OpenCV. They are all set up to be extended to
 replace the provided OpenCV sample code with the code needed for the robot application. The rPi Application tab supports a number

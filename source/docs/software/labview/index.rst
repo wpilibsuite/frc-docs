@@ -1,4 +1,6 @@
-FRC LabVIEW Programming
+.. include:: <isonum.txt>
+
+FRC\ |reg| LabVIEW Programming
 =======================
 
 .. toctree::

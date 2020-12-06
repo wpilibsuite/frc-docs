@@ -1,5 +1,7 @@
+.. include:: <isonum.txt>
+
 LabVIEW Examples and Tutorials
-======================================
+==============================
 
 .. image:: images/ni-logo.png
 
@@ -14,7 +16,7 @@ Popular Tutorials
 `Basic Motor Control Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2014-Basic-Motor-Control-Tutorial/ta-p/3504064?profile.language=en>`__
 
 -  Setup your roboRIO motor hardware and software
--  Learn to setup the FRC Control System and FRC Robot Project
+-  Learn to setup the FRC\ |reg| Control System and FRC Robot Project
 -  `See more on Motor Control <https://forums.ni.com/t5/FIRST-Robotics-Competition/Basic-Motor-Control-Tutorial/ta-p/3733426?profile.language=en>`__
 
 `Image Processing Tutorial <https://forums.ni.com/t5/FIRST-Robotics-Competition/FRC-2015-Image-Processing-Tutorial/ta-p/3490518?profile.language=en>`__

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Serial Buses
 ============
 
@@ -16,7 +18,7 @@ The roboRIO supports many basic types of serial communications:
 - `USB Host`_
 - `CAN Bus`_
 
-Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
+Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
 I2C
 ---

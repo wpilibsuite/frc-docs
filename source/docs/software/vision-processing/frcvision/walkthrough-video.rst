@@ -1,5 +1,8 @@
-A Video Walkthrough of using FRC Vision with the Raspberry Pi
+.. include:: <isonum.txt>
+
+A Video Walkthrough of using FRC\ |reg| Vision with the Raspberry Pi
 =============================================================
+
 At the "RSN Spring Conference, Presented by WPI" in 2020, Peter Johnson from the WPILib team gave a presentation on FRC Vision with a Raspberry Pi.
 
 .. raw:: html

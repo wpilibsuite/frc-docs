@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 OM5P-AC Radio Modification
 ==========================
 
-The intended use case for the OM5P-AC radio does not subject it to the same shocks and forces as it sees in the FRC environment. If the radio is subjected to significant pressure on the bottom of the case, it is possible to cause a radio reboot by shorting a metal shield at the bottom of the radio to some exposed metal leads on the bottom of the board. This article details a modification to the radio to prevent this scenario.
+The intended use case for the OM5P-AC radio does not subject it to the same shocks and forces as it sees in the FRC\ |reg| environment. If the radio is subjected to significant pressure on the bottom of the case, it is possible to cause a radio reboot by shorting a metal shield at the bottom of the radio to some exposed metal leads on the bottom of the board. This article details a modification to the radio to prevent this scenario.
 
 .. warning:: It takes significant pressure applied to the bottom of the case to cause a reboot in this manner. Most FRC radio reboot issues can be traced to the power path in some form. We recommend mitigating this risk via strategic mounting of the radio rather than opening and modifying the radio (and risk damaging delicate internal components):
 

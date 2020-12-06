@@ -1,4 +1,6 @@
-FRC CAN Device Specifications
+.. include:: <isonum.txt>
+
+FRC\ |reg| CAN Device Specifications
 =============================
 
 This document seeks to describe the basic functions of the current FRC
@@ -181,6 +183,6 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
--  Provide software library support for LabVIEW, C++, and Java or arrange with FIRST or FIRSTs Control System Partners to provide such interfaces.
+-  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRSTs Control System Partners to provide such interfaces.
 
 .. |image0| image:: images/can-addressing/can-id-example.png

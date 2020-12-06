@@ -1,4 +1,6 @@
-FRC Driver Station Powered by NI LabVIEW
+.. include:: <isonum.txt>
+
+FRC\ |reg| Driver Station Powered by NI LabVIEW
 ========================================
 
 This article describes the use and features of the FRC Driver Station Powered by NI LabVIEW.
