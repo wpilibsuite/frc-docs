@@ -32,7 +32,7 @@ Opening the RioLog View
 
 |Opening Riolog View|
 
-By default, the RioLog view will open automatically at the end of each roboRIO deploy. To launch the RioLog view manually, press Ctrl+Shift+P to open the command palette and start typing "RioLog", then select the WPILib: Start RioLog option.
+By default, the RioLog view will open automatically at the end of each roboRIO deploy. To launch the RioLog view manually, press :kbd:`Ctrl+Shift+P` to open the command palette and start typing "RioLog", then select the WPILib: Start RioLog option.
 
 Riolog Window
 ~~~~~~~~~~~~~

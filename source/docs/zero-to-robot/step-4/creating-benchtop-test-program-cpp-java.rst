@@ -6,7 +6,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 Creating a New WPILib Project
 -----------------------------
 
-Bring up the Visual Studio Code command palette with :kbd:`Control+Shift+P`:
+Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`:
 
 |Command Palette|
 
@@ -40,7 +40,7 @@ Once all the above have been configured, click "Generate Project" and the robot 
 Opening The New Project
 -----------------------
 
-After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl-K` then :kbd:`Ctrl-O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
+After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 

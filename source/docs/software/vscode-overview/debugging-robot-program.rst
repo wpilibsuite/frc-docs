@@ -7,70 +7,53 @@ A debugger is a tool used to control program flow and monitor variables in order
 
 .. note:: For beginning users who need to debug their programs but do not know/have time to learn how to use a debugger, it is often possible to debug a program simply by printing the relevant program state to the console.  However, it is strongly recommended that students eventually learn to use a debugger.
 
-Breakpoints
------------
-
-A "breakpoint" is a line of code at which the debugger will stop the program execution so that the user can examine the program state.  This is extremely useful while debugging, as it allows the user to pause the program at specific points in problematic code to determine where exactly the program is deviating from the expected behavior.
-
-Setting a Breakpoint
-~~~~~~~~~~~~~~~~~~~~
-
-|Setting a Breakpoint|
-
-Double-click in the left margin of the source code window to set a breakpoint in your user program: A small red circle indicates the breakpoint has been set on the corresponding line.
-
-Viewing Program State
-~~~~~~~~~~~~~~~~~~~~~
-
-|Debug Tab|
-
-When the program is stopped at a breakpoint, various pieces of program state can be viewed from the debug tab.  The Debug tab is accessed by clicking on the debug icon on the far left pane.  Within the debug tab, the program state can be viewed from an assortment of "panes."
-
-The Variables Pane
-^^^^^^^^^^^^^^^^^^
-
-|Variables Pane|
-
-The Variables view shows the current values of variables. To see a variable that is not displayed, select the “Watch” pane and enter the variable name. This will show the variable’s value if it’s in-scope. Clicking on the arrows next to a variable name will expand the tree and show its `fields <https://en.wikipedia.org/wiki/Field_(computer_science)>`__.
-
-Watch Pane
-^^^^^^^^^^
-
-|Watch Pane|
-
-The Watch Pane can be used to monitor specific variables or expressions while debugging. To add an expression, right-click and select Add Expression.
-
-Call Stack
-^^^^^^^^^^
-
-|Call Stack|
-
-The Call Stack pane is used to display the current `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ of the running program. This can be used to monitor the current call hierarchy of the program while debugging.
-
-Breakpoint Pane
-^^^^^^^^^^^^^^^
-
-|Breakpoint Pane|
-
-The Breakpoint Pane displays all of the current breakpoints. To temporarily disable a breakpoint without permanently removing it, click the corresponding checkbox.
-
 Running the Debugger
 --------------------
 
-|Start Debugging|
+.. image:: images/debugging-robot-program/start-debugging.png
+    :alt: Shows running the debugger via the Command Palette.
 
-Press Ctrl+Shift+P and type WPILib or click on the WPILib Menu item to open the Command palette with WPILib pre-populated. Type Debug and select the Debug Robot Code menu item to start debugging. The code will download to the roboRIO and begin debugging.
+Press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click on the :guilabel:`WPILib Menu Item` to open the Command palette with WPILib pre-populated. Type Debug and select the Debug Robot Code menu item to start debugging. The code will download to the roboRIO and begin debugging.
 
-The debugger will automatically pause at the first breakpoint it encounters.  The user can then tell the debugger when to proceed to the next breakpoint.
+Breakpoints
+-----------
 
-Debugging with Console
-----------------------
-Another way to debug your program is to use System.out.println statements in your code and receive them using the RioLog in Visual Studio Code.
+A "breakpoint" is a line of code at which the debugger will pause the program execution so that the user can examine the program state.  This is extremely useful while debugging, as it allows the user to pause the program at specific points in problematic code to determine where exactly the program is deviating from the expected behavior.
 
-.. |Setting a Breakpoint| image:: images/debugging-robot-program/setting-a-breakpoint.png
-.. |Debug Tab| image:: images/debugging-robot-program/debug-tab.png
-.. |Variables Pane| image:: images/debugging-robot-program/variables-pane.png
-.. |Watch Pane| image:: images/debugging-robot-program/watch-pane.png
-.. |Call Stack| image:: images/debugging-robot-program/call-stack.png
-.. |Breakpoint Pane| image:: images/debugging-robot-program/breakpoint-pane.png
-.. |Start Debugging| image:: images/debugging-robot-program/start-debugging.png
+The debugger will automatically pause at the first breakpoint it encounters.
+
+Setting a Breakpoint
+^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/debugging-robot-program/setting-a-breakpoint.png
+    :alt: Shows where to place the cursor to create a breakpoint.
+
+Click in the left margin of the source code window (to the left of the line number) to set a breakpoint in your user program: A small red circle indicates the breakpoint has been set on the corresponding line.
+
+Debugging with Print Statements
+-------------------------------
+
+Another way to debug your program is to use print statements in your code and view them using the RioLog in Visual Studio Code or the Driver Station.  Print statements should be added with care as they are not very efficient especially when used in high quantities.  They should be removed for competition as they can cause loop overruns.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        System.out.print("example");
+
+    .. code-tab:: c++
+
+        wpi::outs() << "example\n";
+
+Debugging with Network Tables
+-----------------------------
+
+:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or OutlineViewer.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
+
+Learn More
+----------
+
+- To learn more about debugging with VS Code see this `link <https://code.visualstudio.com/docs/editor/debugging>`__.
+- Some of the features mentioned in this VS Code `article <https://code.visualstudio.com/docs/editor/editingevolved>`__ will help you understand and diagnose problems with your code.  The Quick Fix (yellow light bulb) feature can be very helpful with a variety of problems including what to import.
+- One of the best ways to prevent having to debug so many issues is to do Unit Testing.
+- Verifying that your robot works in :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` is also a great way to prevent having to do complex debugging on the actual robot.
