@@ -30,8 +30,8 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 
 .. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this fuctionality.
 
-Implementing Enable Functionality in the New PIDController
-----------------------------------------------------------
+Enable Functionality in the New PIDController
+---------------------------------------------
 
 The following example demonstrates how to create a button on your dashboard that will enable/disable the PIDController.
 
