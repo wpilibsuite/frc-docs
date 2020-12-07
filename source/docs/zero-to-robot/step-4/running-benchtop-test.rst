@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Running your Benchtop Test Program
 ==================================
 
@@ -22,7 +24,7 @@ Starting the FRC Driver Station
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
 
-The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
+The FRC\ |reg| Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
 Setting Up the Driver Station
 -----------------------------

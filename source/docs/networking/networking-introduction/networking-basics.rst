@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Networking Basics
 =================
 
@@ -37,7 +39,7 @@ then passing the returned data back to the private IP that requested it. This al
 .. image:: diagrams/nat.drawio.svg
 
 .. note::
-   For the FRC networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
+   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
 
 
 How are these addresses assigned?

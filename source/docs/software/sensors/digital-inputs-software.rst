@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Digital Inputs - Software
 =========================
 
@@ -109,7 +111,7 @@ As almost all switches on the robot will be used through a :code:`DigitalInput`,
 Limiting the motion of a mechanism
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Nearly all motorized mechanisms (such as arms and elevators) in FRC should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
+Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
 
 .. tabs::
 

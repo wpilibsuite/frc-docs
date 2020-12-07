@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Using the Axis Camera at Single Network Events
 ==============================================
 
@@ -23,7 +25,7 @@ Creating a Dashboard Project
 
 .. image:: images/using-the-axis-camera-at-single-network-events/creating-a-dashboard-project.png
 
-From the LabVIEW Splash screen, select "FRC Dashboard Project". Name the project as desired, then click Finish.
+From the LabVIEW Splash screen, select "FRC\ |reg| Dashboard Project". Name the project as desired, then click Finish.
 
 Locating Loop 2 - Camera IP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

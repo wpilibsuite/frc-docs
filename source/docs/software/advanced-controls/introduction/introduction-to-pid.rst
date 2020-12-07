@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Introduction to PID
 ===================
 
@@ -77,7 +79,7 @@ If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` is z
 Integral Term
 -------------
 
-.. important:: Integral gain is generally not recommended for FRC use. There are better approaches to fix :term:`steady-state error` like using feedforwards or constraining when the integral control acts using other knowledge of the :term:`system`.
+.. important:: Integral gain is generally not recommended for FRC\ |reg| use. There are better approaches to fix :term:`steady-state error` like using feedforwards or constraining when the integral control acts using other knowledge of the :term:`system`.
 
 The *Integral* term accumulates the area between the :term:`setpoint` and :term:`output` plots over time (i.e., the integral of position :term:`error`) and adds the current total to the :term:`control input`. Accumulating the area between two curves is called integration.
 

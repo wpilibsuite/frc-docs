@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 Accelerometers - Hardware
 ==========================
 
 Accelerometers are common sensors used to measure acceleration.
 
-In principle, precise measurements of acceleration can be double-integrated and used to track position (similarly to how the measurement of turn rate from a gyroscope can be integrated to determine heading) - however, in practice, accelerometers that are available within the legal FRC price range are not nearly accurate for this use.  However, accelerometers are still useful for a number of tasks in FRC.
+In principle, precise measurements of acceleration can be double-integrated and used to track position (similarly to how the measurement of turn rate from a gyroscope can be integrated to determine heading) - however, in practice, accelerometers that are available within the legal FRC\ |reg| price range are not nearly accurate for this use.  However, accelerometers are still useful for a number of tasks in FRC.
 
 The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
 
