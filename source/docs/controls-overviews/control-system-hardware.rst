@@ -19,7 +19,7 @@ NI roboRIO
 
 .. image:: images/control-system-hardware/roborio.png
 
-The :doc:`NI-roboRIO <roborio-introduction>` is the main robot controller used for FRC. The roboRIO serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
+The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO Introduction>` is the main robot controller used for FRC. The roboRIO serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
 
 Power Distribution Panel
 ------------------------
