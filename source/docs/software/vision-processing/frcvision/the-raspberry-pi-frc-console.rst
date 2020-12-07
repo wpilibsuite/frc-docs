@@ -3,10 +3,10 @@
 The Raspberry PI
 ================
 
-FRC\ |reg| Console
-------------------
+FRC Console
+-----------
 
-The FRC image for the Raspberry PI includes a console that can be viewed in any web browser that makes it easy to:
+The FRC\ |reg| image for the Raspberry PI includes a console that can be viewed in any web browser that makes it easy to:
 
 -   Look at the Raspberry PI status
 -   View the status of the background process running the camera

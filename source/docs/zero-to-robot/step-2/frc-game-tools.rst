@@ -1,9 +1,9 @@
 .. include:: <isonum.txt>
 
-Installing the FRC\ |reg| Game Tools
-====================================
+Installing the FRC Game Tools
+=============================
 
-The FRC Game Tools contains the following software components:
+The FRC\ |reg| Game Tools contains the following software components:
 
 - LabVIEW Update
 - FRC Driver Station

@@ -19,12 +19,12 @@ Running your benchtop testing program while tethered to the Driver Station via e
 
 The roboRIO should be powered on and connected to the PC over Ethernet or USB.
 
-Starting the FRC\ |reg| Driver Station
---------------------------------------
+Starting the FRC Driver Station
+-------------------------------
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
 
-The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
+The FRC\ |reg| Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
 Setting Up the Driver Station
 -----------------------------
