@@ -15,7 +15,7 @@ Tank Drive Tutorial
 
 3. In the Project Explorer window, open up the ``Robot Main.vi``.
 
-4. Push Ctrl + E to see the block diagram.  It should look like the following image:
+4. Push :kbd:`Ctrl+E` to see the block diagram.  It should look like the following image:
 
 .. image:: images/tank-drive-tutorial/block-diagram.png
 

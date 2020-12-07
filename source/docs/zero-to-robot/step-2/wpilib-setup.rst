@@ -60,11 +60,11 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - Skips installing VS Code. Useful for advanced installations or configurations. Generally not recommended.
 
-- Select Existing VS Code Download
+- Use Downloaded Offline Installer
 
   - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Download VS Code for Offline Installs
+- Download VS Code for Offline Install
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
@@ -75,14 +75,20 @@ Go ahead and select :guilabel:`Download VS Code for Single Install`. This will b
 
 This showcases a list of options included with the WPILib installation. It's advised to just leave the default options selected.
 
-You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access.
+You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
 
 Select the option that is appropriate for you, and you'll presented with the following installation screen.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
 
-Congratulations, the WPILib development environment and tooling is now installed on your computer!
+After installation is complete, you will be presented with the finished screen.
+
+.. image:: images/wpilib-setup/installer-finish.png
+   :alt: Installer finished screen.
+
+
+Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
 Post-Installation
 -----------------

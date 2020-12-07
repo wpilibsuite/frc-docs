@@ -10,9 +10,10 @@ A debugger is a tool used to control program flow and monitor variables in order
 Running the Debugger
 --------------------
 
-|Start Debugging|
+.. image:: images/debugging-robot-program/start-debugging.png
+    :alt: Shows running the debugger via the Command Palette.
 
-Press Ctrl+Shift+P and type WPILib or click on the WPILib Menu item to open the Command palette with WPILib pre-populated. Type Debug and select the Debug Robot Code menu item to start debugging. The code will download to the roboRIO and begin debugging.
+Press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click on the :guilabel:`WPILib Menu Item` to open the Command palette with WPILib pre-populated. Type Debug and select the Debug Robot Code menu item to start debugging. The code will download to the roboRIO and begin debugging.
 
 Breakpoints
 -----------
@@ -22,9 +23,10 @@ A "breakpoint" is a line of code at which the debugger will pause the program ex
 The debugger will automatically pause at the first breakpoint it encounters.
 
 Setting a Breakpoint
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
-|Setting a Breakpoint|
+.. image:: images/debugging-robot-program/setting-a-breakpoint.png
+    :alt: Shows where to place the cursor to create a breakpoint.
 
 Click in the left margin of the source code window (to the left of the line number) to set a breakpoint in your user program: A small red circle indicates the breakpoint has been set on the corresponding line.
 
@@ -46,7 +48,7 @@ Another way to debug your program is to use print statements in your code and vi
 Debugging with Network Tables
 -----------------------------
 
-:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
+:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or :ref:`OutlineViewer <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
 
 Learn More
 ----------
@@ -55,6 +57,3 @@ Learn More
 - Some of the features mentioned in this VS Code `article <https://code.visualstudio.com/docs/editor/editingevolved>`__ will help you understand and diagnose problems with your code.  The Quick Fix (yellow light bulb) feature can be very helpful with a variety of problems including what to import.
 - One of the best ways to prevent having to debug so many issues is to do Unit Testing.
 - Verifying that your robot works in :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` is also a great way to prevent having to do complex debugging on the actual robot.
-
-.. |Setting a Breakpoint| image:: images/debugging-robot-program/setting-a-breakpoint.png
-.. |Start Debugging| image:: images/debugging-robot-program/start-debugging.png

@@ -12,7 +12,7 @@ Launching the Import Wizard
 
 When you open a previous year's project, you will be prompted to import that project. Click :guilabel:`yes`.
 
-Alternately, you can chose to import it from the menu. Press Ctrl+Shift+P and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020 Gradle project" and select it from the dropdown as shown below.
+Alternately, you can chose to import it from the menu. Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020 Gradle project" and select it from the dropdown as shown below.
 
 .. image:: images/importing-previous-project/ImportGradleMenu.png
 
@@ -29,7 +29,7 @@ You'll be presented with the WPILib Project Importer window. This is similar to 
 
 Click :guilabel:`Import Project` to begin the upgrade.
 
-The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the Ctrl-O (or Command-O for macOS) shortcut.
+The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
 
 .. image:: images/importing-eclipse-project/opening-project.png
 

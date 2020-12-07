@@ -85,7 +85,7 @@ You should see a screen similar to this
 
 .. image:: images/image6.png
 
-.. note:: The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in Visual Studio Code.
+.. note:: The keyboard shortcut :kbd:`Ctrl+~` can be used to open a terminal in Visual Studio Code.
 
 Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
