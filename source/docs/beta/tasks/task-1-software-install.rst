@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Task 1: Software Installation
 =============================
 
-Task: Choose, acquire, and install the software required for developing FRC software in the language you have been assigned (C++, Java or LabVIEW).
+Task: Choose, acquire, and install the software required for developing FRC\ |reg| software in the language you have been assigned (C++, Java or LabVIEW).
 
 Overview
 --------

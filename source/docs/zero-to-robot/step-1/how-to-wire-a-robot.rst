@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 How to Wire an FRC Robot
 ========================
 
@@ -13,7 +15,7 @@ Overview
 .. figure:: images/frc-control-system-layout.svg
   :width: 600
 
-  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+  Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 Gather Materials
 ----------------

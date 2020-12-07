@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Target Info and Retroreflection
 ===============================
 
-Many FRC games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets.
+Many FRC\ |reg| games have retroreflective tape attached to field elements to aid in vision processing. This document describes the Vision Targets from the 2016 FRC game and the visual properties of the material making up the targets.
 
 .. note:: For official dimensions and drawings of all field components, please see the Official Field Drawings.
 

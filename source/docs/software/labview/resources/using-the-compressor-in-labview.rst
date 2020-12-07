@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Using the Compressor in LabVIEW
 ===============================
 
@@ -7,7 +9,7 @@ This snippet shows how to set up your roboRIO project to use the Pneumatic Contr
 
 For more information, check out the following links:
 
-:download:`FRC Pneumatics Manual <files/2015-frc-pneumatics-manual.pdf>`
+:download:`FRC\ |reg| Pneumatics Manual <files/2015-frc-pneumatics-manual.pdf>`
 
 `PCM User's Guide <https://ctr-electronics.com/PCM%20User's%20Guide.pdf>`__
 

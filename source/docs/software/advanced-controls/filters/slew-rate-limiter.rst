@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Slew Rate Limiter
 =================
 
-A common use for filters in FRC is to soften the behavior of control inputs (for example, the joystick inputs from your driver controls).  Unfortunately, a simple low-pass filter is poorly-suited for this job; while a low-pass filter will soften the response of an input stream to sudden changes, it will also wash out fine control detail and introduce phase lag.  A better solution is to limit the rate-of-change of the control input directly.  This is performed with a *slew rate limiter* - a filter that caps the maximum rate-of-change of the signal.
+A common use for filters in FRC\ |reg| is to soften the behavior of control inputs (for example, the joystick inputs from your driver controls).  Unfortunately, a simple low-pass filter is poorly-suited for this job; while a low-pass filter will soften the response of an input stream to sudden changes, it will also wash out fine control detail and introduce phase lag.  A better solution is to limit the rate-of-change of the control input directly.  This is performed with a *slew rate limiter* - a filter that caps the maximum rate-of-change of the signal.
 
 A slew rate limiter can be thought of as a sort of primitive motion profile.  In fact, the slew rate limiter is the first-order equivalent of the :ref:`Trapezoidal Motion Profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` supported by WPILib - it is precisely the limiting case of trapezoidal motion when the acceleration constraint is allowed to tend to infinity.  Accordingly, the slew rate limiter is a good choice for applying a de-facto motion profile to a stream of velocity setpoints (or voltages, which are usually approximately proportional to velocity).  For input streams that control positions, it is usually better to use a proper trapezoidal profile.
 

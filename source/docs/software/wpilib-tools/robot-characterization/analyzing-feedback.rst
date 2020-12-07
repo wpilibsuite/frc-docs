@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Feedback Analysis
 =================
 
@@ -17,7 +19,7 @@ Enter Controller Parameters
 
 .. note:: The "Spark Max" preset assumes that the user has configured the controller to operate in the units of analysis with the Spark Max API's position/velocity scaling factor feature.
 
-The calculated feedforward gains are *dimensioned quantities*. Unfortunately, not much attention is often paid to the units of PID gains in FRC controls, and so the various typical options for PID controller implementations differ in their unit conventions (which are often not made clear to the user).
+The calculated feedforward gains are *dimensioned quantities*. Unfortunately, not much attention is often paid to the units of PID gains in FRC\ |reg| controls, and so the various typical options for PID controller implementations differ in their unit conventions (which are often not made clear to the user).
 
 To specify the correct settings for your PID controller, use the following options.
 

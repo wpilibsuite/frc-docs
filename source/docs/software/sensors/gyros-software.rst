@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Gyroscopes - Software
 =====================
 
@@ -53,7 +55,7 @@ The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/FRC/roborio/release/d
 Third-party gyros
 -----------------
 
-While WPILib provides native support for a the ADXRS450 gyro available in the kit of parts and for any analog gyro, there are a few popular AHRS (Attitude and Heading Reference System) devices commonly used in FRC that include accelerometers and require more complicated communications.  These are generally controlled through vendor libraries.
+While WPILib provides native support for a the ADXRS450 gyro available in the kit of parts and for any analog gyro, there are a few popular AHRS (Attitude and Heading Reference System) devices commonly used in FRC\ |reg| that include accelerometers and require more complicated communications.  These are generally controlled through vendor libraries.
 
 Using gyros in code
 -------------------

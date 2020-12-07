@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Viewing Console Output
 ======================
 
@@ -13,7 +15,7 @@ Opening the Console Viewer
 
 |Opening Console Viewer|
 
-To open Console Viewer, first open the FRC Driver Station. Then, click on the gear at the top of the message viewer window (1) and select "View Console".
+To open Console Viewer, first open the FRC\ |reg| Driver Station. Then, click on the gear at the top of the message viewer window (1) and select "View Console".
 
 Console Viewer Window
 ~~~~~~~~~~~~~~~~~~~~~

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Trajectory Tutorial Overview
 ============================
 
@@ -21,7 +23,7 @@ The full robot code for this tutorial can be found in the RamseteCommand Example
 Why Trajectory Following?
 -------------------------
 
-FRC games often feature autonomous tasks that require a robot to effectively and accurately move from a known starting location to a known scoring location.  Historically, the most common solution for this sort of task in FRC has been a "drive-turn-drive" approach - that is, drive forward by a known distance, turn by a known angle, and drive forward by another known distance.
+FRC\ |reg| games often feature autonomous tasks that require a robot to effectively and accurately move from a known starting location to a known scoring location.  Historically, the most common solution for this sort of task in FRC has been a "drive-turn-drive" approach - that is, drive forward by a known distance, turn by a known angle, and drive forward by another known distance.
 
 While the "drive-turn-drive" approach is certainly functional, in recent years teams have begun tracking smooth trajectories which require the robot to drive and turn at the same time.  While this is a fundamentally more-complicated technical task, it offers significant benefits: in particular, since the robot no longer has to stop to change directions, the paths can be driven much faster, allowing a robot to score more game pieces during the autonomous period.
 

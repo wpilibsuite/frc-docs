@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Trackers - Reporting Bugs
 =========================
 
@@ -8,7 +10,7 @@ Teamforge Bug Tracker
 
 .. image:: images/trackers-reporting-bugs/report-bug.png
 
-The bug tracker is used for reporting bugs you discover in WPILib or other FRC software. If you are not sure if particular behavior is a bug or not, err on the side of reporting the bug (or at least posting in the Discussion section).
+The bug tracker is used for reporting bugs you discover in WPILib or other FRC\ |reg| software. If you are not sure if particular behavior is a bug or not, err on the side of reporting the bug (or at least posting in the Discussion section).
 
 On the Trackers tab, click on Bugs to reach the Bug Tracker. To Submit a new bug, click Submit New Artifact.  The fields of the artifact are:
 

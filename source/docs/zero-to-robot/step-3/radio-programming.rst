@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Programming your Radio
 ======================
 
-This guide will show you how to use the FRC Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
+This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
 Before you begin using the software:
 
