@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Imaging your roboRIO
 ====================
 
-.. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
+.. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC\ |reg| Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +95,8 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 
 - Try running the roboRIO Imaging Tool as Administrator by right-clicking on the Desktop icon to launch it.
 - Try accessing the roboRIO webpage with a web-browser at ``http://172.22.11.2/`` and/or verify that the NI network adapter appears in your list of Network Adapters in the Control Panel. If not, try re-installing the NI FRC Game Tools or try a different PC.
+- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
 - Make sure your firewall is turned off.
-- Try a different PC
 - Some teams have experienced an issue where imaging fails if the device name of the computer you're using has a dash (``-``) in it. Try renaming the computer (or using a different PC).
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
+- Try a different PC

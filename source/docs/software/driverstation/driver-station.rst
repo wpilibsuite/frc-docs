@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 FRC Driver Station Powered by NI LabVIEW
 ========================================
 
-This article describes the use and features of the FRC Driver Station Powered by NI LabVIEW.
+This article describes the use and features of the FRC\ |reg| Driver Station Powered by NI LabVIEW.
 
 For information on installing the Driver Station software see :ref:`this document <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
 

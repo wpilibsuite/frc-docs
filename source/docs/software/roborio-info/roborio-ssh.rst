@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 roboRIO User Accounts and SSH
 =============================
 
-.. note:: **This document contains advanced topics not required for typical FRC programming**
+.. note:: **This document contains advanced topics not required for typical FRC\ |reg| programming**
 
  The roboRIO image contains a number of accounts, this article will highlight the two used
  for FRC and provide some detail about their purpose. It will also describe how to connect

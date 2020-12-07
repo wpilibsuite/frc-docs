@@ -69,7 +69,7 @@ Adding an Offline-Installed Library
 
 .. image:: images/3rd-party-libraries/adding-offline-library.png
 
-To add a vendor library that has been installed by an offline installer, press **Ctrl+Shift+P** and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing **Manage Vendor Libraries**, then select it from the menu. Select the option to **Install new libraries (offline)**.
+To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing **Manage Vendor Libraries**, then select it from the menu. Select the option to **Install new libraries (offline)**.
 
 .. image:: images/3rd-party-libraries/library-installer-steptwo.png
 
@@ -95,4 +95,4 @@ Command-Line Interface (Online)
 
 Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
 
-The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``$FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=$FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.
+The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.

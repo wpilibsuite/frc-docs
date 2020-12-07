@@ -1,5 +1,5 @@
 FRC LabVIEW Programming
-=======================
+==============================
 
 .. toctree::
    :maxdepth: 2

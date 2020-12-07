@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Built-in Plugins
 ================
 
-Shuffleboard provides a number of built-in plugins that handle common tasks for FRC use, such as camera streams, all widgets, and NetworkTables connections.
+Shuffleboard provides a number of built-in plugins that handle common tasks for FRC\ |reg| use, such as camera streams, all widgets, and NetworkTables connections.
 
 Base Plugin
 -----------

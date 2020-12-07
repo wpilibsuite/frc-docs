@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 SmartDashboard Introduction
 ===========================
 
@@ -25,7 +27,7 @@ Configuring the Team Number
 
 .. image:: images/smartdashboard-intro-3.png
 
-The first time you launch the SmartDashboard you should be prompted for your team number. To change the team number after this: click **File > Preferences** to open the Preferences dialog. Double-click the box to the right of **Team Number** and enter your FRC Team Number, then click outside the box to save.
+The first time you launch the SmartDashboard you should be prompted for your team number. To change the team number after this: click **File > Preferences** to open the Preferences dialog. Double-click the box to the right of **Team Number** and enter your FRC\ |reg| Team Number, then click outside the box to save.
 
 .. note:: SmartDashboard will take a moment to configure itself for the team number, do not be alarmed.
 

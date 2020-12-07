@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Programming Radios for FMS Offseason
 ====================================
 
-When using the FMS Offseason software, the typical networking setup is to use a single access point with a single SSID and WPA key. This means that the radios should all be programmed to connect to this network, but with different IPs for each team. The Team version of the FRC Bridge Configuration Utility has an FMS-Lite mode that can be used to do this configuration.
+When using the FMS Offseason software, the typical networking setup is to use a single access point with a single SSID and WPA key. This means that the radios should all be programmed to connect to this network, but with different IPs for each team. The Team version of the FRC\ |reg| Bridge Configuration Utility has an FMS-Lite mode that can be used to do this configuration.
 
 Before you begin using the software:
 

@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 New for 2021
 ============
 
-A number of improvements have been made to FRC Control System software for 2021. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
+A number of improvements have been made to FRC\ |reg| Control System software for 2021. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
 .. important:: Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2021 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2020 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 

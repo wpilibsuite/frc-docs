@@ -1,8 +1,12 @@
+.. include:: <isonum.txt>
+
 Installing the image to your MicroSD card
 =========================================
+
 Getting the FRC Raspberry PI image
 ----------------------------------
-The image is stored on the GitHub release page for the FRC PI-gen repository:
+
+The image is stored on the GitHub release page for the FRC\ |reg| PI-gen repository:
 https://github.com/wpilibsuite/FRCVision-pi-gen/releases.
 
 In addition to the instructions on this page, see the documentation on the GitHub web page (below).
@@ -14,6 +18,7 @@ of the list of releases.
 
 Copy the image to your MicroSD card
 -----------------------------------
+
 Download and install Etcher (https://www.balena.io/etcher/) to image the micro SD card. The micro SD card needs to be at least
 4 GB. Note: a micro SD to USB dongle such as https://www.amazon.com/gp/product/B0779V61XB works well for writing to micro SD cards.
 
@@ -26,6 +31,7 @@ click "Flash". Expect the process to take about 3 minutes on a fairly fast lapto
 
 Testing the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 1.  Put the micro SD card in a rPi 3 and apply power.
 2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://frcvision.local/`` to open the web dashboard.
     On the first bootup the filesystem will be writable, but later bootups will default to read only, so it's necessary to click
@@ -33,6 +39,7 @@ Testing the Raspberry PI
 
 Logging into the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Most tasks with the rPi can be done from the web console interface. Sometimes for advanced use such as program development on the
 rPi it is necessary to log in. To log in, use the default Raspberry PI password:
 ::

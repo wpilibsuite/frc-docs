@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Status Light Quick Reference
 ============================
 
-Many of the components of the FRC Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
+Many of the components of the FRC\ |reg| Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
 
 Robot Signal Light (RSL)
 ------------------------

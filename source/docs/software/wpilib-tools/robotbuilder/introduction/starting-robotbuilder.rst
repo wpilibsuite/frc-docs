@@ -15,7 +15,7 @@ Option 1 - Starting from Visual Studio Code
 
 .. image:: images/starting-robotbuilder-1.png
 
-Press **Ctrl + Shift + P** and type WPILib or click the WPILib logo in the top right to launch the WPILib Command Palette and select **Start Tool**, then select **Robot Builder**.
+Press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the :guilabel:`WPILib logo` in the top right to launch the WPILib Command Palette and select **Start Tool**, then select **Robot Builder**.
 
 Option 2 - Running from the Script
 ----------------------------------

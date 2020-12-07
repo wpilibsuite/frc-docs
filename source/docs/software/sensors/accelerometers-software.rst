@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Accelerometers - Software
 =========================
 
@@ -161,7 +163,7 @@ Using accelerometers in code
 
 .. note:: Accelerometers, as their name suggests, measure acceleration.  Precise accelerometers can be used to determine position through double-integration (since acceleration is the second derivative of position), much in the way that gyroscopes are used to determine heading.  However, the accelerometers available for use in FRC are not nearly high-enough quality to be used this way.
 
-It is recommended to use accelerometers in FRC for any application which needs a rough measurement of the current acceleration.  This can include detecting collisions with other robots or field elements, so that vulnerable mechanisms can be automatically retracted.  They may also be used to determine when the robot is passing over rough terrain for an autonomous routine (such as traversing the defenses in FIRST Stronghold).
+It is recommended to use accelerometers in FRC\ |reg| for any application which needs a rough measurement of the current acceleration.  This can include detecting collisions with other robots or field elements, so that vulnerable mechanisms can be automatically retracted.  They may also be used to determine when the robot is passing over rough terrain for an autonomous routine (such as traversing the defenses in FIRST Stronghold).
 
 For detecting collisions, it is often more robust to measure the jerk than the acceleration.  The jerk is the derivative (or rate of change) of acceleration, and indicates how rapidly the forces on the robot are changing - the sudden impulse from a collision causes a sharp spike in the jerk.  Jerk can be determined by simply taking the difference of subsequent acceleration measurements, and dividing by the time between them:
 

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Camera Settings
 ===============
 
@@ -31,7 +33,7 @@ Resolution
 
 Image sizes shared by the supported cameras are 160x120, 320x240, and 640x480. The M1011 and 1013 have additional sizes, but they aren’t built into WPILib. The largest image size has four times as many pixels that are one-fourth the size of the middle size image. The large image has sixteen times as many pixels as the small image.
 
-The tape used on the target is 4 inches wide, and for good processing, you will want that 4 inch feature to be at least two pixels wide. Using the distance equations above, we can see that a medium size image should be fine up to the point where the field of view is around 640 inches, a little over 53 feet, which is nearly double the width of the FRC field. This occurs at around 60 feet away, longer than the length of the field. The small image size should be usable for processing to a distance of about 30 feet or a little over mid-field.
+The tape used on the target is 4 inches (~10 cm) wide, and for good processing, you will want that 4 inch (~10 cm) feature to be at least two pixels wide. Using the distance equations above, we can see that a medium size image should be fine up to the point where the field of view is around 640 inches (~16 m), a little over 53 feet (~16 m), which is nearly double the width of the FRC\ |reg| field. This occurs at around 60 feet (~18 m) away, longer than the length of the field. The small image size should be usable for processing to a distance of about 30 feet (~9 m) or a little over mid-field.
 
 Image size also impacts the time to decode and to process. Smaller images will be roughly four times faster than the next size up. If the robot or target is moving, it is quite important to minimize image processing time since this will add to the delay between the target location and perceived location. If both robot and target are stationary, processing time is typically less important.
 

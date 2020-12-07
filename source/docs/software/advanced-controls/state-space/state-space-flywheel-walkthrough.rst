@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 State-Space Controller Walkthrough
 ==================================
 
@@ -35,7 +37,7 @@ The first step of building up our state-space system is picking our system's sta
 
 For our flywheel, we care only about one state: its velocity. While we could chose to also model its acceleration, the inclusion of this state isn't necessary for our system.
 
-Next, we identify the :term:`inputs <input>` to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC), we have just one input: voltage applied to the motor. By choosing voltage as our input (over something like motor duty cycle), we can compensate for battery voltage sag as battery load increases.
+Next, we identify the :term:`inputs <input>` to our system. Inputs can be thought of as things we can put "into" our system to change its state. In the case of the flywheel (and many other single-jointed mechanisms in FRC\ |reg|), we have just one input: voltage applied to the motor. By choosing voltage as our input (over something like motor duty cycle), we can compensate for battery voltage sag as battery load increases.
 
 A continuous-time state-space system writes :term:`x-dot`, or the instantaneous rate of change of the system's :term:`system`\'s state, as proportional to the current :term:`state` and :term:`inputs <input>`. Because our state is angular velocity, :math:`\mathbf{\dot{x}}` will be the flywheel's angular acceleration.
 
