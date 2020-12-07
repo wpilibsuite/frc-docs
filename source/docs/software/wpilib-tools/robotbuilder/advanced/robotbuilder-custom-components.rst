@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Adding Custom Components
 ========================
 
@@ -10,7 +12,7 @@ Custom Component Structure
 
 .. image:: images/custom-components-1.png
 
-Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year.
+Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC\ |reg| year.
 
 There are seven files and one folder that are needed for a custom component. The folder contains the files describing the component and how to export it. It should have the same name as the component (e.g."Kiwi Drive" for a kiwi drive controller, "Robot Drive 6" for a six-motor drive controller, etc.). The files should have the same names and extensions as the ones shown here. Other files can be in the folder along with these seven, but the seven must be present for RobotBuilder to recognize the custom component.
 

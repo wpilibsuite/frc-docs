@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Proximity Switches - Hardware
 =============================
 
@@ -15,7 +17,7 @@ Proximity switches can be either "normally-open," in which activating the switch
 Types of proximity switches
 ---------------------------
 
-There are several types of proximity switches that are commonly-used in FRC:
+There are several types of proximity switches that are commonly-used in FRC\ |reg|:
 
  - `Mechanical Proximity Switches ("limit switches")`_
  - `Magnetic Proximity Switches`_

@@ -1,5 +1,8 @@
+.. include:: <isonum.txt>
+
 What you need to get the Pi image running
 =========================================
+
 To start using the Raspberry Pi as a video or image coprocessor you need the following:
 
 -   A Raspberry Pi 3 B, Raspberry Pi 3 B+, or a Raspberry Pi 4 B
@@ -12,4 +15,4 @@ To start using the Raspberry Pi as a video or image coprocessor you need the fol
 
 .. figure:: images/what-you-need-to-get-the-pi-image-running/usb-dongle.png
 
-Shown is an inexpensive USB dongle that will write the FRC image to the  MicroSD card.
+Shown is an inexpensive USB dongle that will write the FRC\ |reg| image to the  MicroSD card.

@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Coordinate Systems
 ==================
 
-In FRC, there are two main coordinate systems that we use for representing objects' positions.
+In FRC\ |reg|, there are two main coordinate systems that we use for representing objects' positions.
 
 Field Coordinate System
 -----------------------

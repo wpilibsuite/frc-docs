@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 What is Vision?
 ===============
 
-Vision in FRC uses a camera connected to the robot in order to help teams score and drive, during both the autonomous and teleoperated periods.
+Vision in FRC\ |reg| uses a camera connected to the robot in order to help teams score and drive, during both the autonomous and teleoperated periods.
 
 Vision Methods
 --------------

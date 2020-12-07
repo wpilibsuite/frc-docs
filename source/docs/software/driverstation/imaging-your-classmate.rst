@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 Imaging your Classmate (Veteran Image Download)
 ===============================================
 
 .. note:: Veteran teams are not required to re-image their classmate
 
-This document describes the procedure for creating a bootable USB drive to restore the FRC image on a Classmate computer. If you do not wish to re-image your Classmate then you can start with the appropriate document for C++/Java, LabVIEW, or DS only.
+This document describes the procedure for creating a bootable USB drive to restore the FRC\ |reg| image on a Classmate computer. If you do not wish to re-image your Classmate then you can start with the appropriate document for C++/Java, LabVIEW, or DS only.
 
 Prerequisites
 -------------

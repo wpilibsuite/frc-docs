@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Creating a Pathweaver Project
 =============================
 PathWeaver is the tool used to draw the paths for a robot to follow. The paths for a single program are stored in a PathWeaver project.
@@ -20,7 +22,7 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 
 **Output directory:** The directory where the paths are stored for deployment to your robot. If you specified the top level project folder of our robot project in the previous step (as recommended) filling in the project directory is optional.
 
-**Game:** The game (which FRC game is being used) will cause the correct field image overlay to be used. You can also create your own field images and the procedure will be described later in this series.
+**Game:** The game (which FRC\ |reg| game is being used) will cause the correct field image overlay to be used. You can also create your own field images and the procedure will be described later in this series.
 
 **Length Unit:** The units to be used in describing your robot and for the field measurements when visualizing trajectories using PathWeaver. It's best to use units of meters, as this is what is recommended when following WPILib trajectories.
 

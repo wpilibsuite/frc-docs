@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Known Issues
 ============
 
-This article details known issues (and workarounds) for FRC Control System Software.
+This article details known issues (and workarounds) for FRC\ |reg| Control System Software.
 
 Open Issues
 -----------

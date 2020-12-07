@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Creating your Benchtop Test Program (LabVIEW)
 =============================================
 
-This document covers how to create, build and load an FRC LabVIEW program onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Driver Station and that you have configured and imaged your roboRIO as described previously.
+This document covers how to create, build and load an FRC\ |reg| LabVIEW program onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Driver Station and that you have configured and imaged your roboRIO as described previously.
 
 Creating a Project
 ------------------
