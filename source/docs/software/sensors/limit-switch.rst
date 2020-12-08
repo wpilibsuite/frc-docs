@@ -20,7 +20,7 @@ Controlling a Motor with Two Limit Switches
      public void robotInit() {
           var toplimitSwitch = new DigitalInput(0);
           var bottomlimitSwitch = new DigitalInput(1);
-          var motor = new PWMSpeedController​(0);
+          PWMVictorSPX motor = new PWMVictorSPX(0);
      }
 
      public void teleopPeriodic() {
