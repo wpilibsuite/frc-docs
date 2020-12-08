@@ -25,7 +25,7 @@ Controlling a Motor with Two Limit Switches
      public void teleopPeriodic() {
          setMotorSpeed(joystick.getRawAxis(2));
      }
-     
+
      public void setMotorSpeed(double speed)) {
          if (speed > 0) {
              if (toplimitSwitch.get()) {
@@ -55,11 +55,11 @@ Controlling a Motor with Two Limit Switches
      frc::DigitalInput bottomlimitSwitch {1};
      frc::PWMVictorSPX motor {0};
      frc::Joystick joystick {0};
-     
+
      void TeleopPeriodic() {
          SetMotorSpeed(joystick.GetRawAxis(3));
      }
-     
+
      void SetMotorSpeed(double speed) {
          if (speed > 0) {
              if (toplimitSwitch.Get()) {
