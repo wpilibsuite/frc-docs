@@ -13,3 +13,4 @@ Sensors
    analog-inputs-software
    analog-potentiometers-software
    digital-inputs-software
+   limit-switch
