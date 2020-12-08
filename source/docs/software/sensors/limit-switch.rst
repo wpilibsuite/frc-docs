@@ -10,7 +10,7 @@ Values Provided
 
 Limit switches can have "normally opened" or "normally closed" outputs. Normally open means that the switch will report low (0 value) until the switch is closed and then it will output high (1 value).  Normally closed works in the opposite way (high until closed then low).  The usual way of wiring the switch is between a digital input signal connection and ground. The digital input has pull-up resistors that will make the input be high (1 value) when the switch is open, but when the switch closes the value goes to 0 since the input is now connected to ground. The switch shown here has both normally open and normally closed outputs.  To learn more about limit switch hardware see this :ref:`article <docs/hardware/sensors/proximity-switches:Mechanical Proximity Switches ("limit switches")>`.
 
-Controling a Motor with Two Limit Switches
+Controlling a Motor with Two Limit Switches
 ------------------------------------------
 
 .. tabs::
