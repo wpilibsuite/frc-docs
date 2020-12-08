@@ -63,7 +63,7 @@ The following example demonstrates how to create a button on your dashboard that
     frc2::NetworkButton(shooterEnable).WhenPressed(frc2::InstantCommand([&] { m_shooter.Enable(); }));
 
     // Timed Robot Example
-    if (shooterEnable.getBoolean()) {
+    if (shooterEnable.GetBoolean()) {
       // Calculates the output of the PID algorithm based on the sensor reading
       // and sends it to a motor
       motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
