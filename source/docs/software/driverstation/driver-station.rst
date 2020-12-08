@@ -23,8 +23,6 @@ The DS should be set to your team number in order to connect to your robot. In o
 
 PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to DHCP.
 
-.. note:: An IP address can also be entered in the :guilabel:`Team Number` box for use in rare situations.  This is not recommended for normal use!
-
 Status Pane
 -----------
 
@@ -90,7 +88,7 @@ Setup Tab
 
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
-1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
+1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at.  An IP address or full mDNS name can also be entered here.  Clicking on the dropdown arrow will show all roboRIO names with the team number from the box.  Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
 2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java WPILib installation.
 3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
