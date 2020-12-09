@@ -15,6 +15,8 @@ Viewing the PIDController in LiveWindow
 
 In Test mode, the PID Subsystems display their P, I, and D parameters that are set in the code. The P, I, and D values are the weights applied to the computed error (P), sum of errors over time (I), and the rate of change of errors (D). Each of those terms is multiplied by the weights and added together to form the motor value. Choosing the optimal P, I, and D values can be difficult and requires some amount of experimentation. The Test mode on the robot allows the values to be modified, and the mechanism response observed.
 
+.. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example :ref:`here <docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid:Enable Functionality in the New PIDController>` on how to retain this fuctionality.
+
 Tuning the PIDController
 ------------------------
 .. image:: images/PID-tuning-with-SmartDashboard/tuning-pid-controller.png
@@ -25,4 +27,4 @@ Once you have determined P, I, and D values they can be inserted into the progra
 
 The F (feedforward) term is used for controlling velocity with a PID controller.
 
-You can find more information in Operating the robot with feedback from sensors.
+More information can be found at :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
