@@ -102,7 +102,7 @@ linkcheck_ignore = [r'.*kauailabs.com.*',
                     r'.*ti.com/lit/an/spma033a/spma033a.pdf.*']
 
 # Sets linkcheck timeout in seconds
-linkcheck_timeout = 45
+linkcheck_timeout = 30
 linkcheck_retries = 3
 linkcheck_workers = 1
 
