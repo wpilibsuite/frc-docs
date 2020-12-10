@@ -75,6 +75,13 @@ The power supply for an FRC robot is a single 12V 18Ah battery. The batteries us
 
 .. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
 
+Robot Signal Light
+------------------
+
+.. image:: images/control-system-hardware/robot-signal-light.png
+  :width: 500
+
+The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
 
 Pneumatics Control Module
 -------------------------
