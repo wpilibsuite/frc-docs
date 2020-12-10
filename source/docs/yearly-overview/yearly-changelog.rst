@@ -11,6 +11,7 @@ Major Features
 --------------
 
 - A WebSocket interface has been added to allow remote access to the robot simulator
+- A new robot data visualizer -- Glass -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
 - WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
   - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
   - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
@@ -24,6 +25,8 @@ Breaking Changes
 - ``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)
 
 - Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
+
+- The ``Field2d`` class was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
 
 
 New Command-Based Library
@@ -57,6 +60,10 @@ General Library
 
 - Added RT priority constructor to ``Notifier`` in C++. This makes the thread backing the Notifier run at real-time priority, reducing timing jitter.
 
+- Added a ``DriverStation.getInstance().isJoystickConnected(int)`` method to check if a joystick is connected to the Driver Station.
+
+- Added a ``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` method to silence the warning when a joystick is not connected. This setting has no effect (i.e. warnings will continue to be printed) when the robot is connected to a real FMS.
+
 - Added a constructor to ``Translation2d`` that takes in a distance and angle. This is effectively converting from polar coordinates to Cartesian coordinates.
 
 - Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and ``MaxVelocityConstraint`` to allow constraining trajectory velocity in a certain region of the field.
@@ -74,6 +81,8 @@ General Library
 - Added X and Y component getters in ``Pose2d`` - ``getX()`` and ``getY()`` in Java, ``X()`` and ``Y()`` in C++.
 
 - Added implicit conversion from ``degree_t`` to ``Rotation2d`` in C++. This allows teams to use a degree value (i.e. ``47_deg``) wherever a ``Rotation2d`` is required.
+
+- Fixed bug in path following examples where odometry was not being reset to the starting pose of the trajectory.
 
 - Fixed some spline generation bugs for advanced users who were using control vectors directly.
 
@@ -141,3 +150,4 @@ Robot Characterization
 ----------------------
 
 - Added LQR latency compensation
+- The tool backend was improved to be more approachable for developers. Configuration and JSON files from the old tool will no longer work with the new version.
