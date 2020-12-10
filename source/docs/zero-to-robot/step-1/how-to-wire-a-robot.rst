@@ -67,12 +67,12 @@ For a benchtop test board, cut piece of 1/4” or 1/2" (6-12 mm) material (wood 
 Layout the Core Control System Components
 -----------------------------------------
 
-.. image:: images/how-to-wire-a-robot/image1.jpg
+.. image:: images/how-to-wire-a-robot/layout.jpg
 
 
 Lay out the components on the board. An example layout is shown in the image above.
 
-.. image:: images/how-to-wire-a-robot/image2.png
+.. image:: images/how-to-wire-a-robot/ziptie.png
 
 
 Fasten Components
@@ -83,7 +83,7 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 Attach Battery Connector to PDP
 -------------------------------
 
-.. image:: images/how-to-wire-a-robot/image3.jpg
+.. image:: images/how-to-wire-a-robot/terminal-lug.jpg
 
 Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 1/16" Allen, 5 mm Allen,
 7/16" (11 mm) Box end
@@ -98,7 +98,7 @@ Attach terminal lugs to battery connector:
 Wire Breaker to PDP
 -------------------
 
-.. image:: images/how-to-wire-a-robot/image4.jpg
+.. image:: images/how-to-wire-a-robot/circuit-breaker.jpg
 
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
