@@ -103,7 +103,7 @@ linkcheck_ignore = [r'.*kauailabs.com.*',
                     r'.*wpilibpi.local.*']
 
 # Sets linkcheck timeout in seconds
-linkcheck_timeout = 45
+linkcheck_timeout = 30
 linkcheck_retries = 3
 linkcheck_workers = 1
 
