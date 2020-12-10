@@ -50,7 +50,7 @@ Another way to debug your program is to use print statements in your code and vi
 Debugging with Network Tables
 -----------------------------
 
-:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or OutlineViewer.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
+:doc:`Network Tables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  Network Tables can be viewed with your favorite Dashboard or OutlineViewer.  One advantage of Network Tables is that tools like :doc:`Shuffleboard </docs/software/wpilib-tools/dashboards/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
 
 Learn More
 ----------

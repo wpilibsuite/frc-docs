@@ -14,7 +14,7 @@ Starting the FRC Driver Station
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
-.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/wpilib-tools/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`.
+.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/wpilib-tools/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/wpilib-tools/dashboards/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/wpilib-tools/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`.
 
 Setting Up the Driver Station
 -----------------------------

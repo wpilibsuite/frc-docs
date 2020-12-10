@@ -15,7 +15,7 @@ SmartDashboard will automatically include the connection status and IP address o
 Connection Indicator Widget
 ---------------------------
 
-SmartDashboard includes a connection indicator widget which will turn red or green depending on the connection to NetworkTables, usually provided by the roboRIO. For instructions to add this widget, look at :ref:`Adding a Connection Indicator <docs/software/wpilib-tools/smartdashboard/smartdashboard-intro:Adding a Connection Indicator>` in the SmartDashboard Intro.
+SmartDashboard includes a connection indicator widget which will turn red or green depending on the connection to NetworkTables, usually provided by the roboRIO. For instructions to add this widget, look at :ref:`Adding a Connection Indicator <docs/software/wpilib-tools/dashboards/smartdashboard/smartdashboard-intro:Adding a Connection Indicator>` in the SmartDashboard Intro.
 
 Robot Program Example
 ---------------------

@@ -26,7 +26,7 @@ Breaking Changes
 
 - Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
 
-- The ``Field2d`` class was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
+- The ``Field2d`` class was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/dashboards/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
 
 
 New Command-Based Library
