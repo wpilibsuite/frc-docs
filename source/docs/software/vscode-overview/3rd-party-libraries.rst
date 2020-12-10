@@ -69,7 +69,7 @@ Adding an Offline-Installed Library
 
 .. image:: images/3rd-party-libraries/adding-offline-library.png
 
-To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing **Manage Vendor Libraries**, then select it from the menu. Select the option to **Install new libraries (offline)**.
+To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette.  Begin typing "Manage Vendor Libraries", then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
 
 .. image:: images/3rd-party-libraries/library-installer-steptwo.png
 
