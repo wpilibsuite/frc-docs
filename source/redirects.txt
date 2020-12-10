@@ -84,3 +84,6 @@
 "docs/zero-to-robot/step-3/creating-benchtop-test-program-labview.rst" "docs/zero-to-robot/step-4/creating-benchtop-test-program-labview.rst"
 "docs/zero-to-robot/step-3/running-benchtop-test.rst" "docs/zero-to-robot/step-4/running-benchtop-test.rst"
 "docs/software/old-commandbased/commands/limit-switches-control-behavior.rst" "docs/software/sensors/limit-switch.rst"
+"docs/software/driverstation/driver-station-labview-dashboard.rst" "docs/software/labview-dashboard/driver-station-labview-dashboard.rst"
+"docs/software/driverstation/troubleshooting-dashboard-connectivity.rst" "docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst"
+"docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.rst" "docs/software/labview-dashboard/using-the-labview-dashboard-with-c++-java-code.rst"
