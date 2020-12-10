@@ -99,7 +99,7 @@ linkcheck_anchors = False
 linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
 
 # Sets linkcheck timeout in seconds
-linkcheck_timeout = 30
+linkcheck_timeout = 45
 linkcheck_retries = 3
 linkcheck_workers = 1
 
@@ -125,7 +125,7 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
-    "docs/zero-to-robot/step-1/images/frc-control-system-layout.svg"
+    "docs/controls-overviews/images/frc-control-system-layout.svg"
 ]
 
 # Required to display LaTeX in hover content
