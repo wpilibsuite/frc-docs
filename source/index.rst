@@ -31,6 +31,13 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
+   :caption: Control System Overviews
+
+   docs/controls-overviews/control-system-hardware
+   docs/controls-overviews/control-system-software
+
+.. toctree::
+   :maxdepth: 1
    :caption: Programming Basics
 
    docs/software/what-is-wpilib

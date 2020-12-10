@@ -5,7 +5,7 @@ FRC Control System Hardware Overview
 
 The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function, a brief listing of critical connections, and a link to more documentation if available.
 
-.. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System <how-to-wire-a-robot>` document.
+.. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System </docs/zero-to-robot/step-1/how-to-wire-a-robot>` document.
 
 Overview of Control System
 --------------------------
@@ -180,7 +180,7 @@ The OM5P-AN `is no longer available for purchase <https://www.firstinspires.org/
 .. image:: images/control-system-hardware/circuit-breaker.png
   :width: 500
 
-The 120A Main Circuit Breaker serves two roles on the robot: the main robot power switch and a protection device for downstream robot wiring and components. The 120A circuit breaker is wired to the positive terminals of the robot battery and Power Distribution boards. For more information, please see the `Cooper Bussmann 18X Series Datasheet (PN: 185120F) <http://www.cooperindustries.com/content/dam/public/bussmann/Transportation/Circuit%20Protection/resources/datasheets/BUS_Tns_DS_18X_CIRCUITBREAKER.pdf>`__
+The 120A Main Circuit Breaker serves two roles on the robot: the main robot power switch and a protection device for downstream robot wiring and components. The 120A circuit breaker is wired to the positive terminals of the robot battery and Power Distribution boards. For more information, please see the `Cooper Bussmann 18X Series Datasheet (PN: 185120F) <https://www.ti.com/lit/an/spma033a/spma033a.pdf>`__
 
 Snap Action Circuit Breakers
 ----------------------------
