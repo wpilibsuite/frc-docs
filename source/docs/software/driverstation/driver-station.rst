@@ -21,7 +21,7 @@ Setting Up the Driver Station
 
 .. image:: images/driver-station/ds-setup.png
 
-The DS must be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
+The DS should be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
 
 PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to DHCP.
 
@@ -131,8 +131,6 @@ CAN/Power Tab
 
 .. image:: images/driver-station/ds-can-power-tab.png
 
-
-
 The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
 
 1. Comms Faults - Indicates the number of Comms faults that have occurred since the DS has been connected
@@ -142,7 +140,6 @@ The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab con
 5. CAN faults - Indicates the counts of each of the 4 types of CAN faults since the DS has been connected
 
 If a fault is detected, the indicator for this tab (shown in blue in the image above) will turn red.
-
 
 Messages Tab
 ------------
