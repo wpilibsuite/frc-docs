@@ -121,7 +121,7 @@ TalonFX Motor Controller
 .. image:: images/control-system-hardware/talonfx.png
   :width: 500
 
-The `TalonFX Motor Controller<http://www.ctr-electronics.com/talon-fx.html>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <http://www.ctr-electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__.
+The `TalonFX Motor Controller <http://www.ctr-electronics.com/talon-fx.html>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <http://www.ctr-electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__.
 
 SPARK Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
