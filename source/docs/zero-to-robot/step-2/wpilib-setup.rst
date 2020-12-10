@@ -25,7 +25,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. group-tab:: Windows 7
 
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`.
+      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
 
       .. image:: images/wpilib-setup/extract-windows-7.png
 
@@ -37,7 +37,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. group-tab:: Linux
 
-      Linux users should extract and launch the application from the downloaded ``.tar.gz``.
+      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``.
 
 Running the Installer
 ---------------------
@@ -60,13 +60,13 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - Skips installing VS Code. Useful for advanced installations or configurations. Generally not recommended.
 
-- Select Existing VS Code Download
+- Use Downloaded Offline Installer
 
-  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code.
+  - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Download VS Code for All Platforms
+- Download VS Code for Offline Install
 
-  - This option downloads VS Code for all platforms, which is useful for sharing the copy of the installer.
+  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
 Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~60MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
@@ -75,14 +75,38 @@ Go ahead and select :guilabel:`Download VS Code for Single Install`. This will b
 
 This showcases a list of options included with the WPILib installation. It's advised to just leave the default options selected.
 
-You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access.
+You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
 
 Select the option that is appropriate for you, and you'll presented with the following installation screen.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
 
-Congratulations, the WPILib development environment and tooling is now installed on your computer!
+After installation is complete, you will be presented with the finished screen.
+
+.. image:: images/wpilib-setup/installer-finish.png
+   :alt: Installer finished screen.
+
+
+Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
+
+Post-Installation
+-----------------
+
+Some operating systems require some final action to complete installation.
+
+.. tabs::
+
+   .. group-tab:: macOS
+
+      After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the dock.
+      Eject WPILibInstaller image from the desktop.
+
+   .. group-tab:: Linux
+
+      Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+
+      .. image:: images/wpilib-setup/linux-enable-launching.png
 
 What is Installed?
 ------------------

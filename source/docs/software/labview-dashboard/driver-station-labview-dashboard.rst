@@ -1,7 +1,9 @@
-FRC Driver Station LabVIEW Dashboard
-====================================
+.. include:: <isonum.txt>
 
-The Dashboard application installed and launched by the FRC Driver Station is a LabVIEW program designed to provide teams with basic feedback from their robot, with the ability to expand and customize the information to suit their needs. This Dashboard application uses Network Tables and contains a variety of tools that teams may find useful.
+FRC LabVIEW Dashboard
+=====================
+
+The Dashboard application installed and launched by the FRC\ |reg| Driver Station is a LabVIEW program designed to provide teams with basic feedback from their robot, with the ability to expand and customize the information to suit their needs. This Dashboard application uses Network Tables and contains a variety of tools that teams may find useful.
 
 LabVIEW Dashboard
 -----------------

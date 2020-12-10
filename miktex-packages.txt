@@ -120,7 +120,7 @@ miktex-devnag-bin-x64-2.9
 miktex-dict-english
 miktex-dict-french
 miktex-dict-german
-miktex-doc-2.9
+miktex-doc
 miktex-dvicopy-bin-x64-2.9
 miktex-dvipdfmx
 miktex-dvipdfmx-bin-x64-2.9
@@ -188,7 +188,7 @@ miktex-ps2pk-bin-x64-2.9
 miktex-psutils-bin-x64-2.9
 miktex-qt5-bin-x64
 miktex-runtime-bin-x64-2.9
-miktex-tdsutil-bin-x64-2.9
+miktex-tdsutil-bin-x64
 miktex-teckit-bin-x64-2.9
 miktex-tex
 miktex-tex-bin-x64-2.9

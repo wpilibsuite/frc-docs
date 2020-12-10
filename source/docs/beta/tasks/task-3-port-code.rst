@@ -1,7 +1,7 @@
 Task 3: Port Existing Robot Code to New System
 ==============================================
 
-Task: Port previous season's robot code to new system. Optionally, compete with the robot at an offseason event.
+Task: Port previous season's robot code to new system.
 
 Overview
 --------

@@ -26,8 +26,45 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 2. A slider that moves the wrist motor in either direction with 0 as stopped. The positive and negative values correspond to moving up or down.
 3. The PID constants as described above (F is a feedforward value that is used for speed PID loops)
 4. The setpoint value that corresponds the to the pot value when the wrist has reached the desired value
-5. Enables the PID controller - that is, starts it looping at regular intervals reading the pot value, computing the error, applying the P, I, and D terms and setting the motor value.
+5. Enables the PID controller - No longer working, see below.
 
-.. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. Users who wish to retain this functionality can retrieve the value from NetworkTables and implement the feature themselves.
+Try various PID gains to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
 
-Try various values to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
+.. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this fuctionality.
+
+Enable Functionality in the New PIDController
+---------------------------------------------
+
+The following example demonstrates how to create a button on your dashboard that will enable/disable the PIDController.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    ShuffleboardTab tab = Shuffleboard.getTab("Shooter");
+    NetworkTableEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
+
+    // Command Example assumed to be in a PIDSubsystem
+    new NetworkButton(shooterEnable).whenPressed(new InstantCommand(m_shooter::enable));
+
+    // Timed Robot Example
+    if (shooterEnable.getBoolean()) {
+      // Calculates the output of the PID algorithm based on the sensor reading
+      // and sends it to a motor
+      motor.set(pid.calculate(encoder.getDistance(), setpoint));
+    }
+
+  .. code-tab:: c++
+
+    frc::ShuffleboardTab& tab = frc::Shuffleboard::GetTab("Shooter");
+    nt::NetworkTableEntry shooterEnable = tab.Add("Shooter Enable", false).GetEntry();
+
+    // Command-based assumed to be in a PIDSubsystem
+    frc2::NetworkButton(shooterEnable).WhenPressed(frc2::InstantCommand([&] { m_shooter.Enable(); }));
+
+    // Timed Robot Example
+    if (shooterEnable.GetBoolean()) {
+      // Calculates the output of the PID algorithm based on the sensor reading
+      // and sends it to a motor
+      motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
+    }

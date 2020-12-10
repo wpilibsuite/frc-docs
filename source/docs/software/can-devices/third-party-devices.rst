@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Third-Party CAN Devices
 =======================
 
-A number of FRC vendors offer their own CAN peripherals.  As CAN devices
+A number of FRC\ |reg| vendors offer their own CAN peripherals.  As CAN devices
 offer expansive feature-sets, vendor CAN devices require similarly
 expansive code libraries to operate.  As a result, these libraries are
 not maintained as an official part of WPILib, but are instead maintained

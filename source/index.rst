@@ -8,7 +8,15 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2019 to 2020 is available on the :ref:`New for 2020 <docs/2020-overview/new-for-2020:New for 2020>` document.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :caption: FRC Beta Test
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
 
 .. toctree::
    :maxdepth: 1
@@ -19,13 +27,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/zero-to-robot/step-1/index
    docs/zero-to-robot/step-2/index
    docs/zero-to-robot/step-3/index
+   docs/zero-to-robot/step-4/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Programming Basics
 
    docs/software/what-is-wpilib
-   docs/2020-overview/index
+   docs/yearly-overview/index
    docs/software/vscode-overview/index
    docs/software/labview/index
    docs/software/actuators/index
@@ -48,10 +57,12 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
+   docs/software/labview-dashboard/index
    docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/robot-characterization/index
+   docs/software/wpilib-tools/outlineviewer/index
 
 .. toctree::
    :maxdepth: 1
@@ -64,6 +75,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/networktables/index
    docs/software/roborio-info/index
    docs/software/advanced-controls/index
+   docs/software/convenience-features/index
 
 .. toctree::
    :maxdepth: 1

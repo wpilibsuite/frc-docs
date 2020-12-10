@@ -37,7 +37,21 @@ This binding schedules a command when a trigger changes from active to inactive 
 toggleWhenActive/toggleWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are *not* a highly-recommended option for user control, as they require the driver to mentally keep track of the robot state.
+This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a `StartEndCommand <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__ or a `ConditionalCommand <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__ is a good way to specify the commands that you want to be want to be toggled between.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    myButton.toggleWhenPressed(new StartEndCommand(mySubsystem::onMethod,
+        mySubsystem::offMethod,
+        mySubsystem));
+
+  .. code-tab:: c++
+
+    myButton.ToggleWhenPressed(StartEndCommand([&] { mySubsystem.OnMethod(); },
+        [&] { mySubsystem.OffMethod(); },
+        {&mySubsystem}));
 
 cancelWhenActive/cancelWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,8 +83,6 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
 .. note:: When creating a ``JoystickButton`` with an XboxController, it is usually a good idea to use the button enum (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1XboxController.html#a1034633d4be2db9277b3864efa55b99b>`__) to get the button number corresponding to a given button.
 
 After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1JoystickButton.html>`__):
-
-.. warning:: There is an issue with using JoystickButtons and POVButtons in C++. Take a look at the :ref:`known issues <docs/2020-overview/known-issues:C++ Command Based JoystickButton and POVButton not functioning>` page for more information.
 
 .. tabs::
 

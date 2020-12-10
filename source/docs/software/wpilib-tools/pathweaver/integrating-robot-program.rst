@@ -5,6 +5,8 @@ The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into robot 
 
 The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods in ``TrajectoryUtil`` can be used to create a trajectory from a JSON file stored on the roboRIO file system.
 
+.. important:: To be compatible with the ``Field2d`` view in the simulator GUI, the coordinates for the exported JSON have changed. Previously (before 2021), the range of the y-coordinate was from -27 feet to 0 feet whereas now, the range of the y-coordinate is from 0 feet to 27 feet (with 0 being at the bottom of the screen and 27 feet being at the top). This should not affect teams who are correctly :ref:`resetting their odometry to the starting pose of the trajectory <docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` before path following.
+
 .. note:: PathWeaver places JSON files in ``src/main/deploy/paths`` which will automatically be placed on the roboRIO file system in ``/home/lvuser/deploy/paths`` and can be accessed using getDeployDirectory as shown below.
 
 .. tabs::
@@ -12,9 +14,10 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
    .. code-tab:: java
 
       String trajectoryJSON = "paths/YourPath.wpilib.json";
+      Trajectory trajectory = new Trajectory();
       try {
         Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
-        Trajectory trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+        trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
       } catch (IOException ex) {
         DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
       }
@@ -32,3 +35,5 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
        wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
 
        frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+
+.. note:: In the examples above, ``YourPath`` should be replaced with the name of your path.

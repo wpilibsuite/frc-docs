@@ -1,12 +1,14 @@
+.. include:: <isonum.txt>
+
 Programming your Radio
 ======================
 
-This guide will show you how to use the FRC Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
+This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
 Before you begin using the software:
 
-1. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
-2. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge.
+1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
+2. Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
@@ -125,7 +127,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 5. Press the Load Firmware button
 6. When prompted, plug in the radio power. The software should detect the radio, load the firmware and prompt you when complete.
 
-.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Troubleshooting: Disabling Network Adapters <docs/zero-to-robot/step-2/radio-programming:Troubleshooting: Disabling Network Adapters>` for more info.
+.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
 
    Teams may also see this error with foreign language Operating Systems. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
 
@@ -187,45 +189,9 @@ Configuration Errors
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
 
-Troubleshooting: Disabling Network Adapters
--------------------------------------------
+Troubleshooting
+---------------
 
-If you get an error message about "NPF adapter" when attempting to load firmware, you need to disable all other adapters. This is not always the same as turning the adapters off with a physical button or putting the PC into airplane mode. The following steps provide more detail on how to disable adapters.
-
-.. tabs::
-
-   .. group-tab:: Windows 10
-
-      .. image:: images/radio-programming/start-menu-win10.png
-
-      Open the Settings application by clicking on the settings icon.
-
-      .. image:: images/radio-programming/settings-network-internet.png
-
-      Choose the :guilabel:`Network & Internet` category.
-
-      .. image:: images/radio-programming/settings-change-adapter.png
-
-      Click on :guilabel:`Change adapter options`.
-
-   .. group-tab:: Windows 7
-
-      .. image:: images/radio-programming/open-control-panel.png
-
-      Open the Control Panel by going to :guilabel:`Start` -> :guilabel:`Control Panel`
-
-      .. image:: images/radio-programming/network-internet.png
-
-      Choose the :guilabel:`Network and Internet` category.
-
-      .. image:: images/radio-programming/network-and-sharing-center.png
-
-      Click :guilabel:`Network and Sharing Center`
-
-.. image:: images/radio-programming/adapter-settings.png
-
-On the left pane, click :guilabel:`Change Adapter Settings`.
-
-.. image:: images/radio-programming/disable-network-adapter.png
-
-For each adapter other than the one connected to the radio, right click on the adapter and select :guilabel:`Disable` from the menu.
+- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
+- Make sure you wait long enough the power light has stayed solid for 10 seconds.
+- Make sure you have the correct network interface.

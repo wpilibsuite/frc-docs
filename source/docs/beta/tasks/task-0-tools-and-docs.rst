@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Task 0: Beta Test Tools and Documentation Familiarization
 =========================================================
 
-Task: Learn about the tools and documentation sources for the FRC Beta
+Task: Learn about the tools and documentation sources for the FRC\ |reg| Beta
 
 Beta Test Tools
 ---------------

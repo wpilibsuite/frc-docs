@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Status Light Quick Reference
 ============================
 
-Many of the components of the FRC Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
+Many of the components of the FRC\ |reg| Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
 
 Robot Signal Light (RSL)
 ------------------------
@@ -490,6 +492,11 @@ B/C CAL Blink Codes
 +----------------------+-----------------+
 | Off                  | Coast Mode      |
 +----------------------+-----------------+
+
+Spark-MAX speed controller
+--------------------------
+
+.. image:: images/status-lights/sparkMAXLight.png
 
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Using the Axis Camera at Single Network Events
 ==============================================
 
@@ -23,21 +25,21 @@ Creating a Dashboard Project
 
 .. image:: images/using-the-axis-camera-at-single-network-events/creating-a-dashboard-project.png
 
-From the LabVIEW Splash screen, select "FRC Dashboard Project". Name the project as desired, then click Finish.
+From the LabVIEW Splash screen, select "FRC\ |reg| Dashboard Project". Name the project as desired, then click Finish.
 
 Locating Loop 2 - Camera IP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/using-the-axis-camera-at-single-network-events/locating-loop-2-camera-ip.png
 
-Double click on ``Dashboard Main.vi`` in the project explorer to open it and press Ctrl+e to see the block diagram. Scroll down to the loop with the comment that says Loop 2 and locate the "Camera IP" input.
+Double click on ``Dashboard Main.vi`` in the project explorer to open it and press :kbd:`Ctrl+E` to see the block diagram. Scroll down to the loop with the comment that says Loop 2 and locate the "Camera IP" input.
 
 Editing the Camera IP
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/using-the-axis-camera-at-single-network-events/editing-the-camera-ip.png
 
-Delete the Camera IP node, right click on the broken wire and click Create Constant (connect the constant to the wire if necessary). In the box, enter the mDNS name of your camera with a ``.local`` suffix (e.g. ``axis-cameraTEAM.local`` where ``TEAM`` is replaced with your team number). The example above shows a sample name for team 9999. Then click File->Save or Ctrl+S to save the VI.
+Delete the Camera IP node, right click on the broken wire and click Create Constant (connect the constant to the wire if necessary). In the box, enter the mDNS name of your camera with a ``.local`` suffix (e.g. ``axis-cameraTEAM.local`` where ``TEAM`` is replaced with your team number). The example above shows a sample name for team 9999. Then click File->Save or :kbd:`Ctrl+S` to save the VI.
 
 .. note:: You may also wish to make a minor modification to the Front Panel to verify that you are running the right dashboard later.
 
@@ -65,4 +67,4 @@ Modifying LabVIEW Robot Code
 
 .. image:: images/using-the-axis-camera-at-single-network-events/modifying-labview-robot-code.png
 
-In the Project Explorer, locate ``Vision Processing.VI`` and double click to open it. Then press Ctrl+e to open the Block Diagram. Locate the string ``axis-camera.local`` near the left of the image and replace with ``axis-cameraTEAM.local``. Also make sure the constant is set to ``False`` to use the Axis camera instead of USB.
+In the Project Explorer, locate ``Vision Processing.VI`` and double click to open it. Then press :kbd:`Ctrl+E` to open the Block Diagram. Locate the string ``axis-camera.local`` near the left of the image and replace with ``axis-cameraTEAM.local``. Also make sure the constant is set to ``False`` to use the Axis camera instead of USB.

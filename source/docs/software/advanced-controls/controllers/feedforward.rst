@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Feedforward Control in WPILib
 =============================
 
@@ -9,7 +11,7 @@ There are two types of feedforwards: model-based feedforward and feedforward for
 
 .. note:: The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:`frc-characterization toolsuite <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>` - the characterization toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  The toolsuite will indicate the appropriate units for each of the gains.
 
-WPILib provides a number of classes to help users implement accurate feedforward control for their mechanisms.  In many ways, an accurate feedforward is more important than feedback to effective control of a mechanism.  Since most FRC mechanisms closely obey well-understood system equations, starting with an accurate feedforward is both easy and hugely beneficial to accurate and robust mechanism control.
+WPILib provides a number of classes to help users implement accurate feedforward control for their mechanisms.  In many ways, an accurate feedforward is more important than feedback to effective control of a mechanism.  Since most FRC\ |reg| mechanisms closely obey well-understood system equations, starting with an accurate feedforward is both easy and hugely beneficial to accurate and robust mechanism control.
 
 WPILib currently provides the following three helper classes for feedforward control:
 

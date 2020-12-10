@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Windows Firewall Configuration
 ==============================
 
-Many of the programming tools used in FRC need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs.
+Many of the programming tools used in FRC\ |reg| need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs.
 
 Disabling Windows Firewall
 --------------------------

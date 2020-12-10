@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Step 3: Creating a Drive Subsystem
 ==================================
 
@@ -110,7 +112,7 @@ We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object
 Configuring the Gyroscope
 -------------------------
 
-The gyroscope measures the rate of change of the robot's heading (which can then be integrated to provide a measurement of the robot's heading relative to when it first turned on).  In our example, we use the `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-pages/001/first.html>`__, which has been included in the kit of parts for several years:
+The gyroscope measures the rate of change of the robot's heading (which can then be integrated to provide a measurement of the robot's heading relative to when it first turned on).  In our example, we use the `Analog Devices ADXRS450 FRC\ |reg| Gyro Board <https://www.analog.com/en/landing-pages/001/first.html>`__, which has been included in the kit of parts for several years:
 
 .. tabs::
 

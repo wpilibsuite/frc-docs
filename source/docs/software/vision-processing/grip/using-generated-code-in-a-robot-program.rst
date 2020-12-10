@@ -1,6 +1,9 @@
+.. include:: <isonum.txt>
+
 Using Generated Code in a Robot Program
 =======================================
-GRIP generates a class that can be added to an FRC program that runs on a roboRIO and without a lot of additional code, drive
+
+GRIP generates a class that can be added to an FRC\ |reg| program that runs on a roboRIO and without a lot of additional code, drive
 the robot based on the output.
 
 Included here is a complete sample program that uses a GRIP pipeline that drives a robot towards a piece of retroreflective

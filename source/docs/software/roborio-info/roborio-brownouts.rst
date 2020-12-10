@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 roboRIO Brownout and Understanding Current Draw
 ===============================================
 
@@ -64,7 +66,7 @@ The key to avoiding a brownout condition is to proactively plan for the current 
 Measuring Current Draw using the PDP
 ------------------------------------
 
-The FRC Driver Station works in conjunction with the roboRIO and PDP to extract logged data from the PDP and log it on your DS PC. A viewer for this data is still under development.
+The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP to extract logged data from the PDP and log it on your DS PC. A viewer for this data is still under development.
 
 In the meantime, teams can use their robot code and manual logging, a LabVIEW front panel or the SmartDashboard to visualize current draw on their robot as mechanisms are developed. In LabVIEW, you can read the current on a PDP channel using the PDP Channel Current VI found on the Power pallet. For C++ and Java teams, use the PowerDistributionPanel class as described in the Power Distribution Panel article. Plotting this information over time (easiest with a LV Front Panel or with the SmartDashboard by using a Graph indicator can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
 

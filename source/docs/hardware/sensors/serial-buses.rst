@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Serial Buses
 ============
 
@@ -16,7 +18,7 @@ The roboRIO supports many basic types of serial communications:
 - `USB Host`_
 - `CAN Bus`_
 
-Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
+Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
 I2C
 ---
@@ -51,7 +53,7 @@ The RS-232 bus can also be used through the `MXP expansion port`_.
 
 The RoboRIO RS-232 serial port uses RS-232 signaling levels (+/- 15v). The MXP serial port uses CMOS signaling levels (+/- 3.3v).
 
-.. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-2/imaging-your-roborio:Imaging your roboRIO>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
+.. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
 
 One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 

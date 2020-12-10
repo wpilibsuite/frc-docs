@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Measuring Bandwidth Usage
 =========================
 
-On the FRC Field (and at home when the radio is configured using the FRC Bridge Configuration Utility) each team is limited to 4Mb/s of network traffic (see the `FMS Whitepaper <https://wpilib.screenstepslive.com/s/fms/m/whitepaper/l/608744-fms-whitepaper>`__ for more details). The FMS Whitepaper provides information on determining the bandwidth usage of the Axis camera, but some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
+On the FRC\ |reg| Field (and at home when the radio is configured using the FRC Bridge Configuration Utility) each team is limited to 4Mb/s of network traffic (see the `FMS Whitepaper <https://wpilib.screenstepslive.com/s/fms/m/whitepaper/l/608744-fms-whitepaper>`__ for more details). The FMS Whitepaper provides information on determining the bandwidth usage of the Axis camera, but some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
 
 Measuring Bandwidth Using the Performance Monitor (Win 7 only)
 --------------------------------------------------------------
@@ -45,7 +47,7 @@ Configure Data Properties
 
 .. image:: images/measuring-bandwidth-usage-5.png
 
-Press ``Ctrl+Q`` to bring up the Properties window. Click on the dropdown next to ``Scale`` and select ``1.0``. Then click on the ``Graph`` tab.
+Press :kbd:`Ctrl+Q` to bring up the Properties window. Click on the dropdown next to ``Scale`` and select ``1.0``. Then click on the ``Graph`` tab.
 
 Configure Graph Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
