@@ -2,11 +2,8 @@
 
 Actuator Overview
 ==================
-<<<<<<< HEAD
-This section discusses the control of motors and pneumatics and their interface with C++ and Java in WPILib.
-=======
+
 This section discusses the control of motors and pneumatics through motor controllers, solenoids and pneumatics, and their interface with C++ and Java WPILib.
->>>>>>> 42d3797... Rearranged MC order, added TalonFX, Venom, NIDEC
 
 Motor Controllers
 -----------------
@@ -14,8 +11,12 @@ A motor controller is responsible on your robot for making motors move. For brus
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 .. note:: Another name for a Motor Controller is a Speed Controller.
 >>>>>>> 42d3797... Rearranged MC order, added TalonFX, Venom, NIDEC
+=======
+.. note:: Another name for a motor controller is a speed controller.
+>>>>>>> 9b0841c... Motor Controller capitalization to match manual
 
 .. .. hint::
 ..     One can make a quick, non-competition-legal motor controller by removing the motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents to the motor's leads. Make sure that the voltage supplied by the drill will not damage the motor, but note that the 775 is fine at up to 24 volts.

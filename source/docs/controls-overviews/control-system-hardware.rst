@@ -104,7 +104,7 @@ Talon SRX
 .. image:: images/control-system-hardware/talonsrx-motor-controller.png
   :width: 500
 
-The `Talon SRX motor controller <https://www.ctr-electronics.com/talon-srx.html>`__ is a “smart motor controller” from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <http://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__.
+The `Talon SRX Motor Controller <https://www.ctr-electronics.com/talon-srx.html>`__ is a “smart motor controller” from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <http://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__.
 
 Victor SPX
 ^^^^^^^^^^
@@ -120,7 +120,7 @@ SPARK MAX Motor Controller
 .. image:: images/control-system-hardware/spark-max-motor-controller.png
   :width: 400
 
-The `SPARK MAX motor controller <https://www.revrobotics.com/rev-11-2158/>`__ from REV Robotics has advanced brushed and brushless DC motor control including the REV Robotics NEO Brushless Motor.  The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only).
+The `SPARK MAX Motor Controller <https://www.revrobotics.com/rev-11-2158/>`__ from REV Robotics has advanced brushed and brushless DC motor control including the REV Robotics NEO Brushless Motor.  The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only).
 
 TalonFX Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,7 +128,7 @@ TalonFX Motor Controller
 .. image:: images/control-system-hardware/talonfx.png
   :width: 500
 
-The `TalonFX motor controller <http://www.ctr-electronics.com/talon-fx.html>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <http://www.ctr-electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__.
+The `TalonFX Motor Controller <http://www.ctr-electronics.com/talon-fx.html>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <http://www.ctr-electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__.
 
 SPARK Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -136,7 +136,7 @@ SPARK Motor Controller
 .. image:: images/control-system-hardware/spark-motor-controller.png
   :width: 400
 
-The `SPARK motor controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions.
+The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions.
 
 Victor SP
 ^^^^^^^^^
@@ -144,14 +144,14 @@ Victor SP
 .. image:: images/control-system-hardware/victor-sp-motor-controller.png
   :width: 500
 
-The `Victor SP motor controller <https://www.ctr-electronics.com/downloads/pdf/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
+The `Victor SP Motor Controller <https://www.ctr-electronics.com/downloads/pdf/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
 
 Talon Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/control-system-hardware/talon-motor-controller.png
 
-The `Talon motor controller <https://ctr-electronics.com/Talon_User_Manual_1_1.pdf>`__ from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
+The `Talon Motor Controller <https://ctr-electronics.com/Talon_User_Manual_1_1.pdf>`__ from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
 
 Victor 888 Motor Controller / Victor 884 Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +167,7 @@ Jaguar Motor Controller
 .. image:: images/control-system-hardware/jaguar-motor-controller.png
   :width: 500
 
-The `Jaguar motor controller <https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581>`__ from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
+The `Jaguar Motor Controller <https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581>`__ from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
 DMC-60 and DMC-60C Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,7 +185,7 @@ Venom Motor Controller
 .. image:: images/control-system-hardware/venom.png
   :width: 500
 
-The `Venom motor controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original CIM.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
+The `Venom Motor Controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original CIM.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
 
 Nidec Dynamo BLDC Motor with Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -201,7 +201,7 @@ SD540B and SD540C Motor Controllers
 .. image:: images/control-system-hardware/sd540b-pwm.png
   :width: 500
 
-The SD540B and SD540C motor controllers from Mindsensors are controlled using PWM and CAN respectively. Limit switches may be wired directly to the SD540 to limit motor travel in one or both directions.  For more information see the `Mindsensors FRC page <http://www.mindsensors.com/68-frc>`__
+The SD540B and SD540C Motor Controllers from Mindsensors are controlled using PWM and CAN respectively. Limit switches may be wired directly to the SD540 to limit motor travel in one or both directions.  For more information see the `Mindsensors FRC page <http://www.mindsensors.com/68-frc>`__
 
 Spike H-Bridge Relay
 --------------------
