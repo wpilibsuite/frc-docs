@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 FRC Software Component Overview
 ===============================
 
-The FRC software consists of a wide variety of mandatory and optional components. These elements are designed to assist you in the design, development, and debugging of your robot code as well as assist with control robot operation and to provide feedback when troubleshooting. For each software component this document will provide a brief overview of its purpose, a link to the package download, if appropriate, and a link to further documentation where available.
+The FRC\ |reg| software consists of a wide variety of mandatory and optional components. These elements are designed to assist you in the design, development, and debugging of your robot code as well as assist with control robot operation and to provide feedback when troubleshooting. For each software component this document will provide a brief overview of its purpose, a link to the package download, if appropriate, and a link to further documentation where available.
 
 Operating System Compatibility
 ------------------------------
@@ -39,7 +41,7 @@ LabVIEW Dashboard (Windows Only)
 
 .. image:: images/control-system-software/frc-labview-dashboard.png
 
-The LabVIEW Dashboard is automatically launched by the FRC Driver Station by default. The purpose of the Dashboard is to provide feedback about the operation of the robot using tabbed display with a variety of built in features.  More information about the FRC Default Dashboard software can be found :ref:`here <docs/software/driverstation/driver-station-labview-dashboard:FRC Driver Station LabVIEW Dashboard>`.
+The LabVIEW Dashboard is automatically launched by the FRC Driver Station by default. The purpose of the Dashboard is to provide feedback about the operation of the robot using tabbed display with a variety of built in features.  More information about the FRC Default Dashboard software can be found :ref:`here <docs/software/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.
 
 SmartDashboard
 ^^^^^^^^^^^^^^
@@ -54,6 +56,13 @@ Shuffleboard
 .. image:: images/control-system-software/shuffleboard.png
 
 Shuffleboard has the same features as SmartDashboard. It also improves on the setup and visualization of your data with new features and a modern design at the cost of being less resource efficient.  Additional documentation on Shuffleboard can be found :ref:`here <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`.
+
+LiveWindow
+----------
+
+.. image:: images/control-system-software/livewindow-smartdashboard.png
+
+LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use with the Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found :ref:`here <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index:SmartDashboard: Test Mode and Live Window>`.
 
 FRC roboRIO Imaging Tool (Windows Only)
 ---------------------------------------
@@ -75,13 +84,6 @@ FRC Driver Station Log Viewer (Windows Only)
 .. image:: images/control-system-software/frc-log-viewer.png
 
 The FRC Driver Station Log Viewer is used to view logs created by the FRC Driver Station. These logs contain a variety of information important for understanding what happened during a practice session or FRC match. More information about the FRC Driver Station Log Viewer and understanding the logs can be found :ref:`here <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`
-
-LiveWindow
-----------
-
-.. image:: images/control-system-software/livewindow-smartdashboard.png
-
-LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use with the Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found :ref:`here <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index:SmartDashboard: Test Mode and Live Window>`.
 
 RobotBuilder
 ------------
