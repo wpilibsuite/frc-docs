@@ -11,7 +11,7 @@ This section discusses connectivity between the robot and LabVIEW dashboard
 Recognizing LabVIEW Dashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/troubleshooting-dashboard-connectivity-1.png
+.. image:: images/troubleshooting-dashboard-connectivity/black-diamonds.png
 
 If you have an indicator on your dashboard that you expect to be changing it may be fairly trivial to recognize if the Dashboard is connected. If not, there is a way to check without making any changes to your robot code. On the Variables tab of the Dashboard, the variables are shown with a black diamond when they are not synced with the robot. Once the Dashboard connects to the robot and these variables are synced, the diamond will disappear.
 
@@ -32,7 +32,7 @@ This section discusses connectivity between the robot and Java SmartDashboard
 Recognizing SmartDashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/troubleshooting-dashboard-connectivity-3.png
+.. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
 
 The typical way to recognize connectivity with the Java SmartDashboard is to add a Connection Indicator widget and to make sure your code is writing at least one key during initialization or disabled to trigger the connection indicator. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
 

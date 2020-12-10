@@ -14,6 +14,8 @@ Starting the FRC Driver Station
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
+.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/wpilib-tools/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`.
+
 Setting Up the Driver Station
 -----------------------------
 
@@ -89,7 +91,7 @@ Setup Tab
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
 1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
-2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java WPILib installation.
+2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. :guilabel:`Default` launches the file pointed to by the "FRC DS Data Storage.ini" (for more information about setting a :ref:`custom dashboard <docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard:Manually Setting the Driver Station to Start Custom Dashboard>` ), by default this is Dashboard.exe in the Program Files (x86)\\FRC Dashboard folder. :guilabel:`LabVIEW` attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. :guilabel:`SmartDashboard` and :guilabel:`Shuffleboard` launch the respective dashboards included with the C++ and Java WPILib installation.  :guilabel:`Remote` launches another dashboard from the "DashboardRemoteIP" field in the "FRC DS Data Storage.ini" file.
 3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
 5. Audio Control - This button controls whether audio tones are sounded when the Practice Mode is used.
