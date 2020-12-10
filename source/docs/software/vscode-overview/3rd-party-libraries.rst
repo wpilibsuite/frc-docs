@@ -30,6 +30,9 @@ Managing VS Code Libraries
 Adding Offline Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+VS Code
+~~~~~~~
+
 .. image:: images/3rd-party-libraries/adding-offline-library.png
 
 To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries`, then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
@@ -37,6 +40,13 @@ To add a vendor library that has been installed by an offline installer, press :
 .. image:: images/3rd-party-libraries/library-installer-steptwo.png
 
 Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
+
+Command-line
+~~~~~~~~~~~~
+
+Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
+
+The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.
 
 Checking for Updates (Offline)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,21 +62,6 @@ Removing a Library Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
-
-Adding a 3rd-party Library
---------------------------
-
-VS Code
-^^^^^^^
-
-To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette.  Begin typing "Manage Vendor Libraries", then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
-
-Command-line
-^^^^^^^^^^^^
-
-Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
-
-The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.
 
 Libraries
 ---------
