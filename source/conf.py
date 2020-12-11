@@ -177,11 +177,18 @@ def setup(app):
 
   import re
   def redirect_api_docs_links(app, docname, source):
+    if app.builder.out_suffix != ".html":
+        print(app.builder.out_suffix)
+        return
     if "API_DOCUMENTATION_REDIRECTER" in source[0]:
         return
+
+    def new_text(match):
+        return r"<" + "./" + ("../" * (docname.count("/") + docname.count("\\"))) +  r"api-docs-redirect.html?path=\1&hash=\2>"
+
     source[0] = re.sub(
-        r"<\s*https://first\.wpi\.edu/FRC/roborio/release/docs/(.*?)\s*>",
-        r"<" + "./" + ("../" * (docname.count("/") + docname.count("\\"))) +  r"api-docs-redirect.html?path=\1>",
+        r"<\s*https://first\.wpi\.edu/FRC/roborio/release/docs/(.*?)(|#.*?)\s*>",
+        r"<" + "./" + ("../" * (docname.count("/") + docname.count("\\"))) +  r"api-docs-redirect.html?path=\1&hash=\2>",
         source[0]
     )
 
