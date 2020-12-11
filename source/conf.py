@@ -169,15 +169,15 @@ user_options = [
 def setup(app):
   app.add_css_file('css/frc-rtd.css')
  
+  # Local Api Docs support
+  app.add_js_file('js/api-docs-redirect.js')
+
   # Right-to-left support
   is_rtl = app.config.language in rtl_locale
   app.config.hoverxref_tooltip_side = 'left' if is_rtl else 'right'
   if is_rtl:
     app.add_css_file('css/frc-rtl.css')
     
-  # Local Api Docs support
-  app.add_js_file('js/api-docs-redirect.js')
-
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
