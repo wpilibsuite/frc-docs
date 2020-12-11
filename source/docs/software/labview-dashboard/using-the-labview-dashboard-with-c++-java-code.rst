@@ -8,7 +8,52 @@ Drive Tab
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/drive-tab.png
 
-Most of the indicators on the Drive tab utilize arrays.
+The :guilabel:`Select Autonomous...` dropdown can be used so show the available autonomous routines and choose one to run for the match.
+
+.. tabs::
+
+    .. code-tab:: java
+
+       SmartDashboard.putStringArray("Auto List", ["Drive Forwards", "Drive Backwards", "Shoot"]);
+       
+       // At the beginning of auto
+       String autoName = SmartDashboard.getString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
+       switch(autoName) {
+          case "Drive Forwards":
+            // auto here
+          case "Drive Backwards":
+            // auto here
+          case "Shoot":
+            // auto here
+       }
+
+    .. code-tab:: c++
+
+       frc::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
+
+Sending to the "Gyro" network table entry will populate the gyro here.
+
+.. tabs::
+
+    .. code-tab:: java
+
+       SmartDashboard.putNumber("Gyro", drivetrain.getHeading());
+
+    .. code-tab:: c++
+
+       frc::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
+
+There are four outputs that show the motor power to the drivetrain.  This is configured for 2 motors per side and a tank style drivetrain.  This is done by setting "RobotDrive Motors" like the example below.
+
+.. tabs::
+
+    .. code-tab:: java
+
+       SmartDashboard.putNumberArray("RobotDrive Motors", [drivetrain.getLeftFront(), drivetrain.getRightFront(), drivetrain.getLeftBack(), drivetrain.getRightBack()]);
+
+    .. code-tab:: c++
+
+       frc::SmartDashboard::PutNumberArray("Gyro", [drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()]);
 
 Basic Tab
 ---------
@@ -16,11 +61,6 @@ Basic Tab
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/basic-tab.png
 
 The Basic tab uses a number of keys in the a "DB" sub-table to send/receive Dashboard data. The LED's are output only, the other fields are all bi-directional (send or receive).
-
-Labels
-^^^^^^
-
-The labels are currently sent as an array. C++ and Java SmartDashboard classes do not currently support sending arrays.
 
 Strings
 ^^^^^^^
@@ -37,7 +77,7 @@ The strings are labeled top-to-bottom, left-to-right from "DB/String 0" to "DB/S
 
     .. code-tab:: c++
 
-       SmartDashboard::PutString("DB/String 0", "My 21 Char TestString");
+       frc::SmartDashboard::PutString("DB/String 0", "My 21 Char TestString");
 
 To read string data entered on the Dashboard:
 
@@ -49,7 +89,7 @@ To read string data entered on the Dashboard:
 
     .. code-tab:: c++
 
-       std::string dashData = SmartDashboard::GetString("DB/String 0", "myDefaultData");
+       std::string dashData = frc::SmartDashboard::GetString("DB/String 0", "myDefaultData");
 
 Buttons and LEDs
 ^^^^^^^^^^^^^^^^
@@ -66,7 +106,7 @@ The Buttons and LEDs are boolean values and are labeled top-to-bottom from "DB/B
 
     .. code-tab:: c++
 
-       SmartDashboard::PutBoolean("DB/Button 0", true);
+       frc::SmartDashboard::PutBoolean("DB/Button 0", true);
 
 To read from the Buttons: (default value is false)
 
@@ -78,7 +118,7 @@ To read from the Buttons: (default value is false)
 
     .. code-tab:: c++
 
-       bool buttonValue = SmartDashboard::GetBoolean("DB/Button 0", false);
+       bool buttonValue = frc::SmartDashboard::GetBoolean("DB/Button 0", false);
 
 Sliders
 ^^^^^^^
@@ -95,7 +135,7 @@ The Sliders are bi-directional analog (double) controls/indicators with a range 
 
     .. code-tab:: c++
 
-       SmartDashboard::PutNumber("DB/Slider 0", 2.58);
+       frc::SmartDashboard::PutNumber("DB/Slider 0", 2.58);
 
 To read values from the Dashboard into the robot program: (default value of 0.0)
 
@@ -107,4 +147,4 @@ To read values from the Dashboard into the robot program: (default value of 0.0)
 
     .. code-tab:: c++
 
-       double dashData = SmartDashboard::GetNumber("DB/Slider 0", 0.0);
+       double dashData = frc::SmartDashboard::GetNumber("DB/Slider 0", 0.0);
