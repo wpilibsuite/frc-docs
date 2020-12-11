@@ -37,5 +37,3 @@ API Documentation
 The C++ API Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>`_.
 
 The Java API Documentation is available at `https://first.wpi.edu/FRC/roborio/release/docs/java/index.html <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>`_.
-
-    

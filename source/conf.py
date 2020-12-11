@@ -184,7 +184,8 @@ def setup(app):
         return
 
     def new_text(match):
-        return r"<" + "./" + ("../" * (docname.count("/") + docname.count("\\"))) +  r"api-docs-redirect.html?path=\1&hash=\2>"
+        rel_path = "./" + ("../" * (docname.count("/") + docname.count("\\")))
+        return "<" + rel_path + r"api-docs-redirect.html?path=\1" + (r"&hash=\2" if match.group(2) else "") + ">"
 
     source[0] = re.sub(
         r"<\s*https://first\.wpi\.edu/FRC/roborio/release/docs/(.*?)(|#.*?)\s*>",
