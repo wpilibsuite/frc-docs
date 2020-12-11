@@ -21,10 +21,10 @@ API Documentation
         } else if (match) {
             // Redirecting from local docs
             [documentation_url_base, sep] = match;
-            window.location.href = documentation_url_base + sep + path + hash;
+            window.location.replace(documentation_url_base + sep + path + hash);
         } else {
             // Redirecting from online docs
-            window.location.href = "https://first.wpi.edu/FRC/roborio/release/docs/" + path + hash;
+            window.location.replace("https://first.wpi.edu/FRC/roborio/release/docs/" + path + hash);
         }
     </script>
 

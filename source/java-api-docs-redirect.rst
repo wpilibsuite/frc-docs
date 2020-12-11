@@ -7,7 +7,7 @@ WPILib Java API Documentation
 
     <script>
         hash = window.location.hash || "";
-        window.location.href = "./api-docs-redirect.html?path=java" + hash;
+        window.location.replace("./api-docs-redirect.html?path=java" + hash);
     </script>
 
 Oops. Your browser doesn't support JavaScript.
