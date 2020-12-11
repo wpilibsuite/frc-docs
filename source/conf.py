@@ -178,7 +178,6 @@ def setup(app):
   if is_rtl:
     app.add_css_file('css/frc-rtl.css')
 
-
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
