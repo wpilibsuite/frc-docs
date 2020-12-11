@@ -54,8 +54,8 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :maxdepth: 1
    :caption: API Docs
 
-   java-api-docs-redirect
-   cpp-api-docs-redirect
+   WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
 
 .. toctree::
    :maxdepth: 1

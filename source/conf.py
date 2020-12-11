@@ -174,28 +174,9 @@ def setup(app):
   app.config.hoverxref_tooltip_side = 'left' if is_rtl else 'right'
   if is_rtl:
     app.add_css_file('css/frc-rtl.css')
-
-  import re
-  def redirect_api_docs_links(app, docname, source):
-    try:
-        if app.builder.out_suffix != ".html":
-            return
-    except:
-        return
-    if "API_DOCUMENTATION_REDIRECTER" in source[0]:
-        return
-
-    def new_text(match):
-        rel_path = "./" + ("../" * (docname.count("/") + docname.count("\\")))
-        return "<" + rel_path + r"api-docs-redirect.html?path=" + match.group(1) + (r"&hash=" + match.group(2) if match.group(2) else "") + ">"
-
-    source[0] = re.sub(
-        r"<\s*https://first\.wpi\.edu/FRC/roborio/release/docs/(.*?)(|#.*?)\s*>",
-        new_text,
-        source[0]
-    )
-
-  app.connect("source-read", redirect_api_docs_links)
+    
+  # Local Api Docs support
+  app.add_js_file('js/api-docs-redirect.js')
 
 # -- Options for latex generation --------------------------------------------
 
