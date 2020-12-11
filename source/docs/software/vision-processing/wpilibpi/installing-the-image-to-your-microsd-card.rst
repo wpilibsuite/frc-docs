@@ -7,7 +7,7 @@ Getting the FRC Raspberry PI image
 ----------------------------------
 
 The image is stored on the GitHub release page for the FRC\ |reg| PI-gen repository:
-https://github.com/wpilibsuite/FRCVision-pi-gen/releases.
+https://github.com/wpilibsuite/WPILibPi/releases.
 
 In addition to the instructions on this page, see the documentation on the GitHub web page (below).
 
@@ -33,7 +33,7 @@ Testing the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  Put the micro SD card in a rPi 3 and apply power.
-2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://frcvision.local/`` to open the web dashboard.
+2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://wpilibpi.local/`` to open the web dashboard.
     On the first bootup the filesystem will be writable, but later bootups will default to read only, so it's necessary to click
     the "writable" button to make changes.
 

@@ -5,7 +5,7 @@ Vision Processing
    :maxdepth: 2
 
    introduction/index
-   frcvision/index
+   wpilibpi/index
    grip/index
    roborio/index
    axis-camera/index
