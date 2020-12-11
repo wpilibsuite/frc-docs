@@ -175,6 +175,18 @@ def setup(app):
   if is_rtl:
     app.add_css_file('css/frc-rtl.css')
 
+  import re
+  def redirect_api_docs_links(app, docname, source):
+    if "API_DOCUMENTATION_REDIRECTER" in source[0]:
+        return
+    source[0] = re.sub(
+        r"<\s*https://first\.wpi\.edu/FRC/roborio/release/docs/(.*?)\s*>",
+        r"<" + "./" + ("../" * (docname.count("/") + docname.count("\\"))) +  r"api-docs-redirect.html?path=\1>",
+        source[0]
+    )
+
+  app.connect("source-read", redirect_api_docs_links)
+
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'

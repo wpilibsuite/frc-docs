@@ -54,8 +54,8 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :maxdepth: 1
    :caption: API Docs
 
-   WPILib Java API Docs <java-api-docs-redirect.rst>
-   WPILib C++ API Docs <cpp-api-docs-redirect.rst>
+   java-api-docs-redirect
+   cpp-api-docs-redirect
 
 .. toctree::
    :maxdepth: 1

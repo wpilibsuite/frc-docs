@@ -1,16 +1,13 @@
-Java API Documentation
-======================
+WPILIB Java API Documentation
+=============================
+
+.. API_DOCUMENTATION_REDIRECTER
 
 .. raw:: html
 
     <script>
-        match = window.location.href.match(/.*wpilib(?<sep>\/|\\)[0-9]{4}\k<sep>documentation/);
-        if (match) {
-            [documentation_url_base, sep] = match;
-            window.location.href = documentation_url_base + sep + "java" + sep + "index.html";
-        } else {
-            window.location.href = "https://first.wpi.edu/FRC/roborio/release/docs/java/index.html";
-        }
+        hash = window.location.hash || "";
+        window.location.href = "./api-docs-redirect.html?path=java" + hash;
     </script>
 
 Oops. Your browser doesn't support JavaScript.
