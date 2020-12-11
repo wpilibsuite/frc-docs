@@ -177,7 +177,8 @@ def setup(app):
   app.config.hoverxref_tooltip_side = 'left' if is_rtl else 'right'
   if is_rtl:
     app.add_css_file('css/frc-rtl.css')
-    
+
+
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = 'xelatex'
