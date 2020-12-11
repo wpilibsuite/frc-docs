@@ -2,8 +2,11 @@
 
 A Video Walkthrough of using WPILibPi with the Raspberry Pi
 ===========================================================
+<<<<<<< HEAD
 
 .. note:: The video mentions FRCVision which is the old name of WPILibPi.
+=======
+>>>>>>> 551a972 (Replaced FRCVision)
 
 At the "RSN Spring Conference, Presented by WPI" in 2020, Peter Johnson from the WPILib team gave a presentation on FRC\ |reg| Vision with a Raspberry Pi.
 
