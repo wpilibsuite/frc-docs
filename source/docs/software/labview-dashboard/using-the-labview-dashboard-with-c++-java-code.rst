@@ -15,7 +15,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
     .. code-tab:: java
 
        SmartDashboard.putStringArray("Auto List", ["Drive Forwards", "Drive Backwards", "Shoot"]);
-       
+
        // At the beginning of auto
        String autoName = SmartDashboard.getString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
        switch(autoName) {
