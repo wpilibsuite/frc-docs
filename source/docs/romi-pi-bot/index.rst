@@ -1,6 +1,8 @@
 Getting Started with Romi
 =========================
 
+.. warning:: The Romi documentation for WPILib is WIP!
+
 `Romi <https://www.pololu.com/category/202/romi-chassis-and-accessories>`__ is a differential-drive robot platform with the following capabilities.
 
 - 2WD drive base with fixed ball caster
@@ -16,4 +18,4 @@ Getting Started with Romi
    :maxdepth: 1
 
    kit-of-parts
-   romi-web-ui
+   imaging-romi
