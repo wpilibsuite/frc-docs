@@ -177,8 +177,10 @@ def setup(app):
 
   import re
   def redirect_api_docs_links(app, docname, source):
-    if app.builder.out_suffix != ".html":
-        print(app.builder.out_suffix)
+    try:
+        if app.builder.out_suffix != ".html":
+            return
+    except:
         return
     if "API_DOCUMENTATION_REDIRECTER" in source[0]:
         return
