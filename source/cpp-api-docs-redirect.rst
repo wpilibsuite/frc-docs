@@ -1,4 +1,4 @@
-WPILIB C++ API Documentation
+WPILib C++ API Documentation
 ============================
 
 .. API_DOCUMENTATION_REDIRECTER

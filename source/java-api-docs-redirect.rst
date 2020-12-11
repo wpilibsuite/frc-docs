@@ -1,4 +1,4 @@
-WPILIB Java API Documentation
+WPILib Java API Documentation
 =============================
 
 .. API_DOCUMENTATION_REDIRECTER
