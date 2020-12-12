@@ -8,28 +8,32 @@ Adding Commands and Subsystems to the Project
 Adding Subsystems to the Project
 --------------------------------
 
-.. image:: images/adding-commands-subsystems/image1.png
+.. image:: images/adding-commands-subsystems/creating-subsystem.png
+   :alt: Right Clicking on the Subsystems folder to create a Subsystem.
 
 To add a subsystem, right-click on the desired folder and select **Create a new class/command** in the drop down menu. Then select **Subsystem (Old)** or **PID Subsystem (Old)**.
 
 Naming the Subsystem
 --------------------
 
-.. image:: images/adding-commands-subsystems/image2.png
+.. image:: images/adding-commands-subsystems/naming-subsystem.png
+   :alt: Entering a name for the subsystem.
 
 Fill in a name for the subsystem. This will become the resultant class name for the subsystem so the name has to be a valid class name for your language.
 
 Subsystem Created in Project
 ----------------------------
 
-.. image:: images/adding-commands-subsystems/image3.png
+.. image:: images/adding-commands-subsystems/project-tree.png
+   :alt: View of the project tree where the new subsystem was created.
 
 You can see the new subsystem created in the Subsystems folder in the project. To learn more about creating subsystems, see the :doc:`Simple Subsystems <../subsystems/simple-subsystems>` article.
 
 Adding a Command to the Project
 -------------------------------
 
-.. image:: images/adding-commands-subsystems/image4.png
+.. image:: images/adding-commands-subsystems/creating-command.png
+   :alt: Creating a new command by right clicking the commands folder.
 
 A command can be created for the project using steps similar to creating a subsystem. First right-click on the folder name in the project, then select **Create a new class/command** in the drop down menu. Then select **Command (Old)**, **Instant Command (Old)**, **TimedCommand (Old)**, **Command Group (Old)**:
 
@@ -41,13 +45,15 @@ A command can be created for the project using steps similar to creating a subsy
 Set the Command Name
 --------------------
 
-.. image:: images/adding-commands-subsystems/image5.png
+.. image:: images/adding-commands-subsystems/command-name.png
+   :alt: Naming the command.
 
 Enter the Command name into the dialog box. This will be the class name for the Command so it must be a valid class name for your language.
 
 Command Created in the Project
 ------------------------------
 
-.. image:: images/adding-commands-subsystems/image6.png
+.. image:: images/adding-commands-subsystems/command-tree.png
+   :alt: Show the command created in the project tree.
 
 You can see that the Command has been created in the Commands folder in the project in the Project Explorer window. To learn more about creating commands, see the :doc:`Creating Simple Commands article<../commands/creating-simple-commands>`.
