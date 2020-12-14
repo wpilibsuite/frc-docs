@@ -17,11 +17,12 @@ Controlling a Motor with Two Limit Switches
      PWMVictorSPX motor = new PWMVictorSPX(0);
      Joystick joystick = new Joystick(0);
 
+     @Override
      public void teleopPeriodic() {
          setMotorSpeed(joystick.getRawAxis(2));
      }
 
-     public void setMotorSpeed(double speed)) {
+     public void setMotorSpeed(double speed) {
          if (speed > 0) {
              if (toplimitSwitch.get()) {
                  // We are going up and top limit is tripped so stop
