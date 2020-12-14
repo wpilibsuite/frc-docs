@@ -7,10 +7,14 @@ Getting the FRC Raspberry PI image
 ----------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The image is stored on the GitHub release page for the WPILibPi repository:
 =======
 The image is stored on the GitHub release page for the FRC\ |reg| PI-gen repository:
 >>>>>>> 551a972 (Replaced FRCVision)
+=======
+The image is stored on the GitHub release page for the WPILibPi repository:
+>>>>>>> 7940c93 (Review changes)
 https://github.com/wpilibsuite/WPILibPi/releases.
 
 In addition to the instructions on this page, see the documentation on the GitHub web page (below).
