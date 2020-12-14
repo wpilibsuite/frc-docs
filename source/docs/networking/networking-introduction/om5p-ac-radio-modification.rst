@@ -44,8 +44,15 @@ Remove Lid
 
 To begin removing the lid, slide it forward (lifting slightly) until the screw holders hit the case front (you may need to apply pressure on the latch areas while doing this.
 
+<<<<<<< HEAD
 .. image:: images/om5p-ac-radio-modification/barrel-jack.png
    :alt: The barrel jack corner that needs to be rotated away from.
+||||||| parent of 2c86ec7 (more alt text and image renames)
+.. image:: images/om5p-ac-radio-modification-5.png
+=======
+.. image:: images/om5p-ac-radio-modification/barrel-jack.png
+   :alt: Shows the barrel jack corner that needs to be rotated away from.
+>>>>>>> 2c86ec7 (more alt text and image renames)
 
 Next, begin rotating the lid slightly away from the barrel jack side, as shown while continuing to lift. This will unhook the lid from the small triangle visible in the top right corner. Continue to rotate slightly in this direction while pushing the top left corner towards the barrel jack (don't try to lift further in this step) to unhook a similar feature in the top left corner. Then lift the lid completely away from the body.
 
@@ -60,8 +67,15 @@ Remove Board
 .. image:: images/om5p-ac-radio-modification/grab-ethernet.png
    :alt: Grab the Ethernet port to help lift the board.
 
+<<<<<<< HEAD
 .. image:: images/om5p-ac-radio-modification/board.png
    :alt: The board lifted slightly out of the case.
+||||||| parent of 2c86ec7 (more alt text and image renames)
+.. image:: images/om5p-ac-radio-modification-8.png
+=======
+.. image:: images/om5p-ac-radio-modification/board.png
+   :alt: Shows the board lifted slightly out of the case.
+>>>>>>> 2c86ec7 (more alt text and image renames)
 
 To remove the board, we recommend grasping one or both network ports with your fingers (as shown) and pushing inward (toward the front of the radio) and upward until the network ports and barrel jack are free from the case.
 
@@ -75,8 +89,15 @@ Tilt the board up (towards the short grey antenna cable) to expose the metal shi
 Apply Tape
 ----------
 
+<<<<<<< HEAD
 .. image:: images/om5p-ac-radio-modification/electrical-tape.png
    :alt: Applying electrical tape at the front of the shield near the Ethernet ports.
+||||||| parent of 2c86ec7 (more alt text and image renames)
+.. image:: images/om5p-ac-radio-modification-10.png
+=======
+.. image:: images/om5p-ac-radio-modification/electrical-tape.png
+   :alt: Shows applying electrical tape at the front of the shield near the Ethernet ports.
+>>>>>>> 2c86ec7 (more alt text and image renames)
 
 Apply a piece of electrical tape to the metal shield in the area just inside of the network port/barrel jack openings. This will prevent the exposed leads on the underside of the board from short circuiting on this plate.
 
