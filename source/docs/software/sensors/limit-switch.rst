@@ -52,7 +52,7 @@ Controlling a Motor with Two Limit Switches
      frc::Joystick joystick {0};
 
      void TeleopPeriodic() {
-         SetMotorSpeed(joystick.GetRawAxis(3));
+         SetMotorSpeed(joystick.GetRawAxis(2));
      }
 
      void SetMotorSpeed(double speed) {
