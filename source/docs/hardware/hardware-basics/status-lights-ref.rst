@@ -244,8 +244,8 @@ Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
-Jaguar speed controllers
-------------------------
+Jaguar Motor Controller
+-----------------------
 
 .. image:: images/status-lights/jaguar-status-light.png
   :width: 400
@@ -362,8 +362,8 @@ REV Robotics SPARK
 
 .. image:: images/status-lights/sparkLight.png
 
-Talon speed controllers
------------------------
+Talon Motor Controller
+----------------------
 
 .. image:: images/status-lights/talonsr-status-light.png
 
@@ -387,7 +387,7 @@ Talon speed controllers
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Victor888 Speed Controller
+Victor888 Motor Controller
 --------------------------
 
 .. image:: images/status-lights/victor888-status-light.svg
@@ -407,8 +407,8 @@ Victor888 Speed Controller
 | Red/Green | Blinking | Calibration mode         |
 +-----------+----------+--------------------------+
 
-Victor-SP speed controllers
----------------------------
+Victor SP Motor Controller
+--------------------------
 
 .. image:: images/status-lights/victorSPLight.png
   :width: 600
@@ -434,7 +434,7 @@ Status
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Talon SRX speed controller
+Talon SRX Motor Controller
 --------------------------
 
 .. image:: images/status-lights/talon-srx-status-lights.png
@@ -493,7 +493,7 @@ B/C CAL Blink Codes
 | Off                  | Coast Mode      |
 +----------------------+-----------------+
 
-Spark-MAX speed controller
+SPARK MAX Motor Controller
 --------------------------
 
 .. image:: images/status-lights/sparkMAXLight.png

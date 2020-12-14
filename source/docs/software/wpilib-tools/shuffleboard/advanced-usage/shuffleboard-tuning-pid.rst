@@ -20,7 +20,7 @@ Tuning the PID controller consists of picking constants that will give good perf
 
 .. image:: images/tuning-pid-1.png
 
-This is the test mode picture of a wrist subsystem that has a potentiometer as the sensor (pot) and a speed controller connected to the motor. It has a number of areas that correspond to the PIDSubsystem.
+This is the test mode picture of a wrist subsystem that has a potentiometer as the sensor (pot) and a motor controller connected to the motor. It has a number of areas that correspond to the PIDSubsystem.
 
 1. The analog input voltage value from the potentiometer. This is the sensor input value.
 2. A slider that moves the wrist motor in either direction with 0 as stopped. The positive and negative values correspond to moving up or down.
