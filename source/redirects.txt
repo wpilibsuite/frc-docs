@@ -88,3 +88,4 @@
 "docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.rst" "docs/software/labview-dashboard/using-the-labview-dashboard-with-c++-java-code.rst"
 "docs/zero-to-robot/step-1/control-system-hardware.rst" "docs/controls-overviews/control-system-hardware.rst"
 "docs/zero-to-robot/step-2/control-system-software.rst" "docs/controls-overviews/control-system-software.rst"
+"docs/software/actuators/using-speed-controllers.rst" "docs/software/actuators/using-motor-controllers.rst"
