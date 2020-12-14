@@ -108,6 +108,8 @@ Some operating systems require some final action to complete installation.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
 
+.. note:: The shortcuts are now placed on the desktop in a folder called "YYYY WPILib Tools" where ``YYYY`` is the year.
+
 What is Installed?
 ------------------
 
