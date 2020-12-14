@@ -2,6 +2,7 @@ Median Filter
 =============
 
 .. image:: images/medianfilter.png
+  :alt: A graph with two peaks with the input closely following the target signal.
 
 A `robust <https://en.wikipedia.org/wiki/Robust_statistics>`__ alternative to the :ref:`moving-average filter <docs/software/advanced-controls/filters/linear-filter:movingAverage>` is the *median filter*.  Where a moving average filter takes the arithmetic *mean* of the input over a moving sample window, a median filter (per the name) takes a median instead.
 
