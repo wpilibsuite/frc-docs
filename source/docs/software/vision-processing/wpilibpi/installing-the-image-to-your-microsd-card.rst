@@ -6,7 +6,7 @@ Installing the image to your MicroSD card
 Getting the FRC Raspberry PI image
 ----------------------------------
 
-The image is stored on the GitHub release page for the FRC\ |reg| PI-gen repository:
+The image is stored on the GitHub release page for the WPILibPi repository:
 https://github.com/wpilibsuite/WPILibPi/releases.
 
 In addition to the instructions on this page, see the documentation on the GitHub web page (below).
