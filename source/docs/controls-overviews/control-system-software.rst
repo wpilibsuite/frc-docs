@@ -24,7 +24,7 @@ Visual Studio Code
 
 .. image:: images/control-system-software/visual-studio-code.png
 
-Visual Studio Code is the supported development environment for C++ and Java (the other two supported languages). Both are object-oriented text based programming languages. A guide to getting started with C++ for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
+Visual Studio Code is the supported development environment for C++ and Java (the other two supported languages). Both are object-oriented text based programming languages. A guide to getting started with C++ or Java for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
 
 FRC Driver Station Powered by NI LabVIEW (Windows Only)
 -------------------------------------------------------
@@ -69,7 +69,7 @@ FRC roboRIO Imaging Tool (Windows Only)
 
 .. image:: /docs/zero-to-robot/step-3/images/imaging-your-roborio/roborio-imaging-tool.png
 
-This tool is used to format and setup an roboRIO-FRC device for use in FRC. Installation instructions can be found :ref:`here <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here </docs/zero-to-robot/step-3/imaging-your-roborio>`.
+This tool is used to format and setup a roboRIO for use in FRC. Installation instructions can be found :ref:`here <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here </docs/zero-to-robot/step-3/imaging-your-roborio>`.
 
 FRC Radio Configuration Utility (Windows Only)
 ----------------------------------------------
