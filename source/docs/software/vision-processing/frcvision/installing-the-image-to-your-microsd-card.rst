@@ -47,9 +47,3 @@ rPi it is necessary to log in. To log in, use the default Raspberry PI password:
   Username: pi
    Password: raspberry
 
-Known issues with this release (errata). These will be fixed in the next release.
-
--   Downloading the Java example program on the web dashboard does not work. Grab it manually from /home/pi/zips instead
-    (using ssh).
--   Console output enable button on the web dashboard doesn't persist correctly through a rPi reboot (it needs to be disabled
-    and re-enabled to again get console output).
