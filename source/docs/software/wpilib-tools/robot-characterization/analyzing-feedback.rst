@@ -34,7 +34,7 @@ To specify the correct settings for your PID controller, use the following optio
 - **Post-Encoder Gearing:** This specifies the gearing between the encoder and the mechanism itself. This is necessary for control loops that do not allow user-specified unit scaling in their PID computations (e.g. those running on Talons). This will be disabled if not relevant.
 - **Encoder EPR:** This specifies the edges-per-revolution (not cycles per revolution) of the encoder used, which is needed in the same cases as Post-Encoder Gearing.
 - **Has Follower:** Whether there is a motor controller following the controller running the control loop, if the control loop is being run on a peripheral device. This changes the effective loop period.
-- **Follower Update Period:** The rate at which the follower (if present) is updated. By default, this is 100Hz (every 0.01s) for the Talon and the SPARK, but can be changed.
+- **Follower Update Period:** The rate at which the follower (if present) is updated. By default, this is 100Hz (every 0.01s) for the Talon SRX, Talon FX and the SPARK MAX, but can be changed.
 
 .. note:: If you select a smart motor controller as the preset (e.g. TalonSRX, SPARK MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically checked. This means the tool will convert your gains so that they can be used through the smart motor controller's PID methods. Therefore, if you would like to use WPILib's PID Loops, you must uncheck that box.
 

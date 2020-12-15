@@ -2,7 +2,7 @@
 
 Actuator Overview
 ==================
-This section discusses the control of motors and pneumatics through motor controllers, solenoids and pneumatics, and their interface with C++ and Java WPILib.
+This section discusses the control of motors and pneumatics and their interface with C++ and Java in WPILib.
 
 Motor Controllers
 -----------------
