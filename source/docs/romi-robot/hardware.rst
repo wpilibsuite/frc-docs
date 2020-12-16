@@ -1,7 +1,7 @@
 Romi Hardware & Assembly
 ========================
 
-.. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
+.. warning:: We are working hard on getting the Romi documentation complete. The documentation here should be enough to get your robot assembled and working. Please check back often for updates.
 
 To get started with the Romi, you will need to have the necessary hardware.
 
@@ -45,11 +45,16 @@ The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together 
 .. image:: images/hardware/assembly-caster-suspension.jpg
    :alt: A rubber band can be used to stiffen the suspension of the optional front ball caster if desired.
 
-7. The chassis works with four or six AA batteries (we recommend using rechargeable AA NiMH cells). The correct orientation for the batteries is indicated by the battery-shaped holes in the Romi chassis as well as the + and - indicators in the chassis itself.
+7. Install the standoffs to support the Raspberry Pi board. Two standoffs (thread side down) mount in the holes on the side of the Romi board closest to the "Romi 32U4" label as shown in the picture. The nuts for these standoffs are inside the battery compartment. The other two standoffs go into the holes on the opposite side of the board. To attach them, you will need a needle-nose pliers to hold the nut while you screw in the standoffs.
+
+8. The chassis works with four or six AA batteries (we recommend using rechargeable AA NiMH cells). The correct orientation for the batteries is indicated by the battery-shaped holes in the Romi chassis as well as the + and - indicators in the chassis itself.
 
 .. image:: images/hardware/assembly-batteries.png
    :alt: Installing the batteries and battery cover on the Romi chassis.
 
-Need Raspberry Pi Steps!
+9. Attach the Raspberry Pi board upside down, carefully aligning the 2x20 pin connector on the Pi with the 2x20 pin socket on the Romi. Push with even pressure taking care to not bend any of the pins. Once inserted, use the supplied screws to fasten the Raspberry Pi board to the standoffs that were installed in a previous step. 
+
+.. image:: images/hardware/assembly-pi.jpg
+   :alt: Installing the standoffs and Raspberry Pi on the Romi chassis.
 
 The assembly of your Romi chassis is now complete!
