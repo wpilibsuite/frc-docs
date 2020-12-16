@@ -32,6 +32,7 @@ What is State-Space?
 Recall that 2D space has two axes: x and y. We represent locations within this space as a pair of numbers packaged in a vector, and each coordinate is a measure of how far to move along the corresponding axis. State-space is a `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ with an axis for each state variable, and we represent locations within it the same way we do for 2D space: with a list of numbers in a vector. Each element in the vector corresponds to a state of the system. This example shows two example state vectors in the state-space of an elevator model with the states :math:`[\text{position}, \text{velocity}]`:
 
 .. image:: images/state-space-graph.png
+    :alt: Shows two vectors in state space with their corresponding arrows.
 
 In this image, the vectors representing states in state-space are arrows. From now on these vectors will be represented simply by a point at the vector's tip, but remember that the rest of the vector is still there.
 
