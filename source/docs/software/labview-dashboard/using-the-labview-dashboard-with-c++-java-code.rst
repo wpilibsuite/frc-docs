@@ -29,7 +29,18 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
 
     .. code-tab:: c++
 
-       frc::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
+       frc::SmartDashboard::PutStringArray("Auto List", ["Drive Forwards", "Drive Backwards", "Shoot"]);
+
+       // At the beginning of auto
+       String autoName = SmartDashboard.GetString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
+       switch(autoName) {
+          case "Drive Forwards":
+            // auto here
+          case "Drive Backwards":
+            // auto here
+          case "Shoot":
+            // auto here
+       }
 
 Sending to the "Gyro" network table entry will populate the gyro here.
 
