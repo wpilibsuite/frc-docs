@@ -1,0 +1,55 @@
+Romi Hardware & Assembly
+========================
+
+.. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
+
+To get started with the Romi, you will need to have the necessary hardware.
+
+1. `Romi Kit from Pololu <https://www.pololu.com/product/4022>`__ – Use coupon code ``FIRSTROMI548249`` for a discount.
+2. `Raspberry Pi <https://www.amazon.com/gp/product/B07BFH96M3/>`__ – 3B+ or 4
+3. `16GB (or larger) Micro SD card <https://www.amazon.com/dp/B073K14CVB/>`__ and adapter to connect to a computer
+4. `6 AA batteries <https://www.amazon.com/gp/product/B07TW9T8JW/>`__ – Rechargeable is best
+
+Assembly
+--------
+
+The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together before it can be used. Once you have all to do is:
+
+1. Align the motor clips with the chassis as indicated and press them firmly into the chassis until the bottom of the clips are even with the bottom of the chassis (you may hear several clicks).
+
+.. image:: images/hardware/assembly-motor-clips.png
+   :alt: Installing the motor clips on the Romi chassis.
+
+2. Push the Mini Plastic Gearmotors into the motor clips until they snap into place. Note that the motor blocks the clip release, so if you need to remove a motor bracket later, you will first need to remove the motor. The Mini Plastic Gearmotors that come with the kit have extended motor shafts to enable quadrature encoders for position feedback.
+
+.. image:: images/hardware/assembly-motors.png
+   :alt: Installing the motors on the Romi chassis.
+
+3. Press the wheels onto the output shafts of the motors until the motor shaft is flush with the outer face of the wheel. One way to do this is to set the wheel on a flat surface and line the chassis up with it so that the flat part of the motor’s D-shaft lines up correctly with the wheel. Then, lower the chassis, pressing the motor shaft into the wheel until it contacts the surface.
+
+.. image:: images/hardware/assembly-wheels.png
+   :alt: Attaching the wheels on the Romi chassis.
+
+4. Flip the chassis upside down and place the three rollers for the rear ball caster into the cutouts in the chassis. Place the 1″ plastic ball on top of the three rollers. Then push the ball caster retention clip over the ball and into the chassis so the three legs snap into their respective holes.
+
+.. image:: images/hardware/assembly-caster-rear.png
+   :alt: Installing the rear ball caster on the Romi chassis.
+
+5. Repeat for the front ball caster so there is a caster on the front and the back of the robot.
+
+.. image:: images/hardware/assembly-caster-front.png
+   :alt: Installing the front ball caster on the Romi chassis.
+
+6. Optional: The front ball caster is supported by a flexible arm that acts as a suspension system. If you want to make it stiffer, you can wrap a rubber band around the two hooks located on either side of the ball caster on the top side of the chassis.
+
+.. image:: images/hardware/assembly-caster-suspension.jpg
+   :alt: A rubber band can be used to stiffen the suspension of the optional front ball caster if desired.
+
+7. The chassis works with four or six AA batteries (we recommend using rechargeable AA NiMH cells). The correct orientation for the batteries is indicated by the battery-shaped holes in the Romi chassis as well as the + and - indicators in the chassis itself.
+
+.. image:: images/hardware/assembly-batteries.png
+   :alt: Installing the batteries and battery cover on the Romi chassis.
+
+Need Raspberry Pi Steps!
+
+The assembly of your Romi chassis is now complete!

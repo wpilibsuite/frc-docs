@@ -101,9 +101,9 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Romi Bot
+   :caption: Romi Robot
 
-   docs/romi-pi-bot/index
+   docs/romi-robot/index
 
 .. toctree::
    :maxdepth: 1
