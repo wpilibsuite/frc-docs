@@ -14,6 +14,7 @@ Log Viewer UI
 -------------
 
 .. image:: images/driver-station-log-viewer/logviewer.png
+   :alt: Overview of the home Log Viewer screen.
 
 The Log Viewer contains a number of controls and displays to aid in the analysis of the Driver Station log files:
 
@@ -35,6 +36,7 @@ Using the Graph display
 -----------------------
 
 .. image:: images/driver-station-log-viewer/graphdisplay.png
+   :alt: The different parts of the graph screen and some of the basic signals.
 
 The Graph Display contains the following information:
 
@@ -52,6 +54,7 @@ Event List
 ----------
 
 .. image:: images/driver-station-log-viewer/eventlist.png
+   :alt: Event List that is gotten to by the tab at the top center.
 
 The Event List tab displays a list of events (warnings and errors) recorded by the Driver Station. The events and detail displayed are determined by the currently active filter (images shows "All Events, All Info" filter active).
 
@@ -68,6 +71,7 @@ Identifying Logs from Matches
 -----------------------------
 
 .. image:: images/driver-station-log-viewer/identifyinglogs.png
+   :alt: To identify a log from a match look for the "FMS Connected" message then the match number.
 
 A common task when working with the Driver Station Logs is to identify which logs came from competition matches. Logs which were taken during a match can now be identified using the FMS Connected event which will display the match type (Practice, Qualification or Elimination), match number, and the current time according to the FMS server. In this example, you can see that the FMS server time and the time of the Driver Station computer are fairly close, approximately 7 seconds apart.
 
@@ -84,6 +88,7 @@ When diagnosing robot issues, there is no substitute for thorough knowledge of t
 ~~~~~~~~~~~~
 
 .. image:: images/driver-station-log-viewer/normallog.png
+   :alt: A normal graph and a couple of harmless events.
 
 This is an example of a normal match log. The errors and warnings contained in the first box are from when the DS first started and can be ignored. This is confirmed by observing that these events occurred prior to the "FMS Connected:" event. The last event shown can also be ignored, it is also from the robot first connecting to the DS (it occurs 3 seconds after connecting to FMS) and occurs roughly 30 seconds before the match started.
 
@@ -91,6 +96,7 @@ Disconnected from FMS
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/driver-station-log-viewer/disconnectedfromfms.png
+   :alt: A disconnect can cause the log to be split into two pieces but will at least haved events showing the disconnect.
 
 When the DS disconnects from FMS, and therefore the robot, during the match it may segment the log into pieces. The key indicators to this failure are the last event of the first log, indicating that the connection to FMS is now "bad" and the second event from the 2nd log which is a new FMS connected message followed by the DS immediately transitioning into Teleop Enabled. The most common cause of this type of failure is an ethernet cable with no latching tab or a damaged ethernet port on the DS computer.
 
@@ -98,6 +104,7 @@ roboRIO Reboot
 ~~~~~~~~~~~~~~
 
 .. image:: images/driver-station-log-viewer/roborioreboot.png
+   :alt: A roboRIO reboot is most evident by a "Time since robot boot" message.
 
 The "Time since robot boot" message is the primary indicator in a connection failure caused by the roboRIO rebooting. In this log the DS loses connection with the roboRIO at 3:01:36 as indicated by the first event. The second event indicates that the ping initiated after the connection failed was successful to all devices other than the roboRIO. At 3:01:47 the roboRIO begins responding to pings again, one additional ping fails at 3:01:52. At 3:02:02 the Driver Station connects to the roboRIO and the roboRIO reports that it has been up for 3.682 seconds. This is a clear indicator that the roboRIO has rebooted. The code continues to load and at 3:02:24 the code reports an error communicating with the camera. A warning is also reported indicating that no robot code is running right before the code finishes starting up.
 
@@ -105,6 +112,7 @@ Ethernet cable issue on robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/driver-station-log-viewer/ethernetcableissue.png
+   :alt: This issue is evident because the driverstation could connect to the radio but not the roboRIO yet the roboRIO hadn't rebooted.
 
 An issue with the ethernet cable on the robot is primarily indicated by the ping to the roboRIO going to bad and Radio Lost and Radio Seen events when the roboRIO reconnects. The "Time since robot boot" message when the roboRIO reconnects will also indicate that the roboRIO has not rebooted. In this example, the robot Ethernet cable was disconnected at 3:31:38. The ping status indicates that the radio is still connected. When the robot reconnects at 3:32:08 the "Tim since robot boot" is 1809 seconds indicating that the roboRIO clearly did not reboot. At 3:32:12 the robot indicates that it lost the radio 24.505 seconds ago and it returned 0.000 seconds ago. These points are plotted as vertical lines on the graph, yellow for radio lost and green for radio seen. Note that the times are slightly offset from the actual events as shown via the disconnection and connection, but help to provide additional information about what is occurring.
 
@@ -112,5 +120,6 @@ Radio reboot
 ~~~~~~~~~~~~
 
 .. image:: images/driver-station-log-viewer/radioreboot.png
+   :alt: The ping here shows the roboRIO and the radio as BAD.
 
 A reboot of the robot radio is typically characterized by a loss of connection to the radio for ~40-45 seconds. In this example, the radio briefly lost power at 3:22:44, causing it to start rebooting. The event at 3:22:45 indicates that the ping to the radio failed. At 3:23:11, the DS regains communication with the roboRIO and the roboRIO indicates it has been up for 1272.775 seconds, ruling out a roboRIO reboot. Note that the network switch on the radio comes back up very quickly so a momentary power loss may not result in a "radio lost"/"radio seen" event pair. A longer disturbance may result in radio events being logged by the DS. In that case, the distinguishing factor which points towards a radio reboot is the ping status of the radio from the DS. If the radio resets, the radio will be unreachable. If the issue is a cabling or connection issue on the robot, the radio ping should remain "GOOD".

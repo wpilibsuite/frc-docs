@@ -11,6 +11,7 @@ Starting the FRC Driver Station
 -------------------------------
 
 .. image:: images/driver-station/ds-icon.png
+  :alt: This is the FRC Driver Station icon.
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
@@ -20,6 +21,7 @@ Setting Up the Driver Station
 -----------------------------
 
 .. image:: images/driver-station/ds-setup.png
+  :alt: The team number box on the setup (gear) tab.
 
 The DS should be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
 
@@ -29,6 +31,7 @@ Status Pane
 -----------
 
 .. image:: images/driver-station/ds-status-pane.png
+  :alt: This is the pane in the center of the Driver station that is always visible.
 
 The Status Pane of the Driver Station is located in the center of the display and is always visible regardless of the tab selected. It displays a selection of critical information about the state of the DS and robot:
 
@@ -41,6 +44,7 @@ Operation Tab
 -------------
 
 .. image:: images/driver-station/ds-operation-tab.png
+  :alt: This is the first tab from the top on the left hand side.
 
 The Operations Tab is used to control the mode of the robot and provide additional key status indicators while the robot is running.
 
@@ -58,6 +62,7 @@ Diagnostics Tab
 ---------------
 
 .. image:: images/driver-station/ds-diagnostics-tab.png
+  :alt: This is the second tab from the top on the left hand side.
 
 The Diagnostics Tab contains additional status indicators that teams can use to diagnose issues with their robot:
 
@@ -87,6 +92,7 @@ Setup Tab
 ---------
 
 .. image:: images/driver-station/ds-setup-tab.png
+  :alt: This is the third tab from the top on the left hand side.
 
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
@@ -100,6 +106,7 @@ USB Devices Tab
 ---------------
 
 .. image:: images/driver-station/ds-usb-tab.png
+  :alt: This is the fourth tab from the top on the left hand side.
 
 The USB Devices tab includes the information about the USB Devices connected to the DS
 
@@ -112,6 +119,7 @@ Re-Arranging and Locking Devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/driver-station/ds-usb-rearrange.png
+  :alt: USB Order box where you can click and drag to rearrange the joysticks.
 
 The Driver Station has the capability of "locking" a USB device into a specific slot. This is done automatically if the device is dragged to a new position and can also be triggered by double clicking on the device. "Locked" devices will show up with an underline under the device. A locked device will reserve it's slot even when the device is not connected to the computer (shown as grayed out and underlined). Devices can be unlocked (and unconnected devices removed) by double clicking on the entry.
 
@@ -130,6 +138,7 @@ CAN/Power Tab
 --------------
 
 .. image:: images/driver-station/ds-can-power-tab.png
+  :alt: This is the fifth tab from the top on the left hand side.
 
 The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
 
@@ -145,6 +154,7 @@ Messages Tab
 ------------
 
 .. image:: images/driver-station/ds-messages-tab.png
+  :alt: This is the first tab from the top on the right hand side.
 
 The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO. The messages are filtered by severity. By default, only Errors are displayed.
 
@@ -154,6 +164,7 @@ Charts Tab
 ----------
 
 .. image:: images/driver-station/ds-charts-tab.png
+  :alt: This is the second tab from the top on the right hand side.
 
 The Charts tab plots and displays advanced indicators of robot status to help teams diagnose robot issues:
 

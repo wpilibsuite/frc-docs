@@ -15,7 +15,8 @@ Command-based programming supports all these goals easily to make the robot prog
 Commands and Subsystems
 -----------------------
 
-.. image:: images/what-is-commandbased/image1.png
+.. image:: images/what-is-commandbased/clouds.png
+   :alt: Subsystems and Commands clouds with examples.
 
 Programs based on the WPILib Command Template are organized around two fundamental concepts: **Subsystems** and **Commands**.
 
@@ -27,21 +28,24 @@ Programs based on the WPILib Command Template are organized around two fundament
 How Commands Work
 -----------------
 
-.. image:: images/what-is-commandbased/image2.png
+.. image:: images/what-is-commandbased/command-flow.png
+   :alt: Flow of how an example command works.
 
 Commands let you break up the tasks of operating the robot into small chunks. Each command has an execute() method that does some work and an isFinished() method that tells if it is done. This happens on every update from the driver station or about every 20ms. Commands can be grouped together and executed sequentially, starting the next one in the group as the previous one finishes.
 
 Concurrency
 -----------
 
-.. image:: images/what-is-commandbased/image3.png
+.. image:: images/what-is-commandbased/concurrency.png
+   :alt: Show a concurrency example with two commands running simultaneously.
 
 Sometimes it is desirable to have several operations happening concurrently. In the previous example you might want to set the wrist position while the elevator is moving up. In this case, a command group can start a parallel command (or command group) running.
 
 How It Works - Scheduling Commands
 ----------------------------------
 
-.. image:: images/what-is-commandbased/image4.png
+.. image:: images/what-is-commandbased/scheduling.png
+   :alt: The scheduling process for how commands are executed.
 
 There are three main ways commands are scheduled:
 

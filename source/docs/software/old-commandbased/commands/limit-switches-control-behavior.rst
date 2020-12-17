@@ -8,7 +8,7 @@ Limit switches are often used to control mechanisms on robots. While limit switc
 Values Provided
 ---------------
 
-.. image:: images/using-limit-switches/image1.png
+.. image:: images/using-limit-switches/limitswitch.png
 
 Limit switches can have "normally opened" or "normally closed" outputs. The usual way of wiring the switch is between a digital input signal connection and ground. The digital input has pull-up resistors that will make the input be high (1 value) when the switch is open, but when the switch closes the value goes to 0 since the input is now connected to ground. The switch shown here has both normally open and normally closed outputs.
 

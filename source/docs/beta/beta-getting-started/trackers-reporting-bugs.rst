@@ -9,6 +9,7 @@ Teamforge Bug Tracker
 ---------------------
 
 .. image:: images/trackers-reporting-bugs/report-bug.png
+   :alt: The bug tracker and the fields needed to report a bug.
 
 The bug tracker is used for reporting bugs you discover in WPILib or other FRC\ |reg| software. If you are not sure if particular behavior is a bug or not, err on the side of reporting the bug (or at least posting in the Discussion section).
 
@@ -28,6 +29,7 @@ GitHub Issues
 -------------
 
 .. image:: images/trackers-reporting-bugs/github-issues.png
+   :alt: The Github issues tab for the different projects in wpilibsuite.
 
 For bugs in WPILib C++/Java/Java dashboards/etc., please locate the appropriate repository from the `WPILibSuite GitHub <https://github.com/wpilibsuite>`__ organization and report the bug there. To Report a bug, click the **Issues** tab and select **New issue**.
 

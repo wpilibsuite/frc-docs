@@ -19,7 +19,8 @@ Windows
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 
-.. image:: images/build-instructions-1.png
+.. image:: images/python-path.png
+    :alt: Showing where to click the box to add Python to PATH.
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 

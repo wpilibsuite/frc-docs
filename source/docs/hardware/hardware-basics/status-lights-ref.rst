@@ -9,6 +9,7 @@ Robot Signal Light (RSL)
 ------------------------
 
 .. image:: images/status-lights/rsl.svg
+  :alt: Robot Signal Light with wiring.
   :width: 400
 
 +----------+----------------------------------------------------------+
@@ -23,6 +24,7 @@ roboRIO
 -------
 
 .. image:: images/status-lights/roborio-status-lights.svg
+  :alt: roboRIO status lights highlighted.
   :width: 400
 
 +------------+----------------+-----------------------------------------------------------------------------------+
@@ -67,6 +69,7 @@ OpenMesh Radio
 --------------
 
 .. image:: images/status-lights/openmesh-radio-status-lights.png
+  :alt: Radio with the Wifi, Eth Link (2), and Power ports labeled.
   :width: 600
 
 +----------+---------------+------------------------------+
@@ -92,6 +95,7 @@ Power Distribution Panel
 ------------------------
 
 .. image:: images/status-lights/pdp-status-lights.svg
+  :alt: The location of the "STAT" and "COMM" lights on the PDP.
   :width: 600
 
 PDP Status/Comm LEDs
@@ -128,6 +132,7 @@ Voltage Regulator Module
 ------------------------
 
 .. image:: images/status-lights/vrm-status-lights.svg
+  :alt: Highlights the VRM 12V and 5V lights.
   :width: 400
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
@@ -136,6 +141,7 @@ Pneumatics Control Module (PCM)
 -------------------------------
 
 .. image:: images/status-lights/pcm-status-lights.svg
+  :alt: Highlights both the "Status" and "Comp" lights in the middle and the individual channel lights on the sides.
   :width: 400
 
 PCM Status LED
@@ -375,6 +381,7 @@ Digilent DMC-60
 ---------------
 
 .. image:: images/status-lights/dmc60c-status-lights.png
+  :alt: The 5 LEDs in each of the corners plus the center.
 
 The DMC60C contains four RGB (Red, Green, and Blue) LEDs and one Brake/Coast CAL LED. The four RGB LEDs are located in the corners and are used to indicate status during normal operation, as well as when a fault occurs. The Brake/Coast CAL LED is located in the center of the triangle, which is located at the center of the housing, and is used to indicate the current Brake/Coast setting. When the center LED is off, the device is operating in coast mode. When the center LED is illuminated, the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle, and then releasing the button.
 
@@ -435,8 +442,12 @@ Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
-Venom Motor Controller
-----------------------
+Jaguar speed controllers
+------------------------
+
+.. image:: images/status-lights/jaguar-status-light.png
+  :alt: The single LED in the center.
+  :width: 400
 
 .. image:: images/status-lights/venom.png
   :alt: The LED blink codes for the Venom.
@@ -445,6 +456,7 @@ Mindsensors SD540B (PWM)
 ------------------------
 
 .. image:: images/status-lights/sd540b-status-lights.png
+  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
   :width: 600
 
 +----------------+-------+---------------------------------+
@@ -465,6 +477,7 @@ Mindsensors SD540C (CAN Bus)
 ----------------------------
 
 .. image:: images/status-lights/sd540c-status-lights.png
+  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
   :width: 600
 
 +----------------+------------------+---------------------------------------------------------+
@@ -485,6 +498,7 @@ REV Robotics Servo Power Module
 -------------------------------
 
 .. image:: images/status-lights/rev-robotics-servo-power-module.png
+  :alt: One power LED and a status LED for each channel all down the center.
   :width: 400
 
 Status LEDs
@@ -506,10 +520,158 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 
 - 6V Power LED off, dim or flickering with power applied = Over-current shutdown
 
+REV Robotics SPARK
+------------------
+
+.. image:: images/status-lights/sparkLight.png
+  :alt: LED status codes with timescale.
+
+Talon speed controllers
+-----------------------
+
+.. image:: images/status-lights/talonsr-status-light.png
+  :alt: Talon SR has a single LED next to the break/coast dip switch.
+
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to reverse output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | No CAN devices are connected                                           |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Disabled state, PWM signal lost, FRC robot disabled, or                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Off                  | No input power to Talon                                                |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Flashing | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
+
+Victor888 Speed Controller
+--------------------------
+
+.. image:: images/status-lights/victor888-status-light.svg
+  :alt: A single LED in the corner.
+  :width: 600
+
++-----------+----------+--------------------------+
+| Green     | Solid    | Full forward output      |
+|           +----------+--------------------------+
+|           | Blinking | Successful calibration   |
++-----------+----------+--------------------------+
+| Red       | Solid    | Full reverse output      |
+|           +----------+--------------------------+
+|           | Blinking | Unsuccessful calibration |
++-----------+----------+--------------------------+
+| Orange    | Solid    | Neutral/brake            |
++-----------+----------+--------------------------+
+| Red/Green | Blinking | Calibration mode         |
++-----------+----------+--------------------------+
+
+Victor-SP speed controllers
+---------------------------
+
+.. image:: images/status-lights/victorSPLight.png
+  :alt: Two LEDs on the sides at the center.
+  :width: 600
+
+Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
+
+Status
+^^^^^^
+
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | FRC robot disabled, PWM signal lost, or                                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Blinking | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
+
+Talon SRX speed controller
+--------------------------
+
+.. image:: images/status-lights/talon-srx-status-lights.png
+  :alt: Two LEDs on the sides at the center.
+  :width: 600
+
+Status LEDs During Normal Operation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------+----------------+--------------------------------------------+
+| LEDs                         | Colors         | Talon SRX State                            |
++==============================+================+============================================+
+| Both                         | Blinking Green | Forward throttle is applied.               |
+|                              |                | Blink rate is proportional to Duty Cycle.  |
++------------------------------+----------------+--------------------------------------------+
+| Both                         | Blinking Red   | Reverse throttle is applied.               |
+|                              |                | Blink rate is proportional to Duty Cycle.  |
++------------------------------+----------------+--------------------------------------------+
+| None                         | None           | No power is being applied to Talon SRX     |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Orange     | CAN bus detected, robot disabled           |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Slow Red   | CAN bus/PWM is not detected                |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Fast Red   | Fault Detected                             |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Red/Orange     | Damaged Hardware                           |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Strobe towards (M-)     | Off/Red        | Forward Limit Switch or Forward Soft Limit |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Strobe towards (M+)     | Off/Red        | Reverse Limit Switch or Reverse Soft Limit |
++------------------------------+----------------+--------------------------------------------+
+| LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
++------------------------------+----------------+--------------------------------------------+
+
+Status LEDs During Calibration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------+------------------------+
+| Status LEDs Blink Code | Talon SRX State        |
++========================+========================+
+| Flashing Red/Green     | Calibration Mode       |
++------------------------+------------------------+
+| Blinking Green         | Successful Calibration |
++------------------------+------------------------+
+| Blinking Red           | Failed Calibration     |
++------------------------+------------------------+
+
+B/C CAL Blink Codes
+^^^^^^^^^^^^^^^^^^^
+
++----------------------+-----------------+
+| B/C CAL Button Color | Talon SRX State |
++======================+=================+
+| Solid Red            | Brake Mode      |
++----------------------+-----------------+
+| Off                  | Coast Mode      |
++----------------------+-----------------+
+
+Spark-MAX speed controller
+--------------------------
+
+.. image:: images/status-lights/sparkMAXLight.png
+  :alt: LED Status table.
+
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------
 
 .. image:: images/status-lights/spikeRelay1Light.png
+  :alt: Single LED in the corner.
   :width: 600
 
 +-----------------------------------------+-----------------+---------------+-------------------------------------+
@@ -532,6 +694,7 @@ Spike relay configured as for one or two solenoids
 --------------------------------------------------
 
 .. image:: images/status-lights/spikeRelay2Light.png
+  :alt: Single LED in the corner.
   :width: 600
 
 +-----------------------------------------+-----------------+---------------+--------------------------------+
