@@ -51,12 +51,7 @@ Ethernet Connection
 -------------------
 
 .. image:: images/roborio-troubleshooting/roborio-ip-address.png
-<<<<<<< HEAD
    :alt: The IP address from the roboRIO webdashboard.
-||||||| parent of 2c86ec7 (more alt text and image renames)
-=======
-   :alt: Shows the IP address from the roboRIO webdashboard.
->>>>>>> 2c86ec7 (more alt text and image renames)
 
 If you are troubleshooting an Ethernet connection, it may be helpful to first make sure that you can connect to the roboRIO using the USB connection. Using the USB connection, open the :ref:`roboRIO webdashboard <docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` and verify that the roboRIO has an IP address on the ethernet interface. If you are tethering to the roboRIO directly this should be a self-assigned ``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should be an address of the form ``10.TE.AM.XX`` where TEAM is your four digit FRC team number. If the only IP address here is the USB address, verify the physical roboRIO ethernet connection.
 
