@@ -59,7 +59,7 @@ Network Settings
 
 The rPI network settings have options to connect to the PI:
 
--   DHCP - the default name resolution usually used by the roboRIO. The default name is raspberry.local.
+-   DHCP - the default name resolution usually used by the roboRIO. The default name is wpilibpi.local.
 -   Static - where a fixed IP address, network mask, and router settings are filled in explicitly
 -   DHCP with Static Fallback - DHCP with Static Fallback - the PI will try to get an IP address via DHCP, but if it can't find a
     DHCP server, it will use the provided static IP address and parameters
