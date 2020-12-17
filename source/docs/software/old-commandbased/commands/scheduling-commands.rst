@@ -19,7 +19,7 @@ Command Life Cycle
 ------------------
 
 .. image:: images/scheduling-commands/life-cycle.png
-   :alt: Differnt stages a command goes through.
+   :alt: Different stages a command goes through.
 
 The work in command-based programs occurs whenever the ``Scheduler.Run`` (C++) or ``Scheduler.run`` (Java) method is called. This is typically called on each driver station update which occurs every 20 ms or 50 times per second. The pseudo code illustrates what happens on each call to the run method.
 

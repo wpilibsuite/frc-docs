@@ -56,7 +56,7 @@ You will now be greeted with a text editor. Replace all the default text with th
 Then, save changes by clicking the "Start commit" button on the top-right corner of the screen. You can amend the default commit message if you wish to do so. Then, click the green "Commit new file" button.
 
 .. image:: images/robot-ci/commit-new-file.png
-  :alt: Commiting a new file.
+  :alt: Committing a new file.
 
 
 GitHub will now automatically run a build whenever a commit is pushed to main or a pull request is opened. To monitor the status of any build, you can click on the "Actions" tab on the top of the screen.
