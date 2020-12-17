@@ -23,7 +23,7 @@ Please ensure you download the Romi version and not the standard release of WPIL
 Imaging
 ^^^^^^^
 
-Imaging is identical to the standard :doc:`WPILibPi Installation </docs/software/vision-processing/frcvision/installing-the-image-to-your-microsd-card>`.
+Imaging is identical to the standard :doc:`WPILibPi Installation </docs/software/vision-processing/wpilibpi/installing-the-image-to-your-microsd-card>`.
 
 Wireless Network Setup
 ^^^^^^^^^^^^^^^^^^^^^^
