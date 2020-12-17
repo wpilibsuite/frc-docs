@@ -7,7 +7,7 @@ To get started with the Romi, you will need to have the necessary hardware.
 
 1. `Romi Kit from Pololu <https://www.pololu.com/product/4022>`__ – Use coupon code ``FIRSTROMI548249`` for a discount.
 2. `Raspberry Pi <https://www.amazon.com/gp/product/B07BFH96M3/>`__ – 3B+ or 4
-3. `16GB (or larger) Micro SD card <https://www.amazon.com/dp/B073K14CVB/>`__ and adapter to connect to a computer
+3. `4GB (or larger) Micro SD card <https://www.amazon.com/dp/B073K14CVB/>`__ and adapter to connect to a computer
 4. `6 AA batteries <https://www.amazon.com/gp/product/B07TW9T8JW/>`__ – Rechargeable is best
 
 Assembly
