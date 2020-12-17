@@ -45,7 +45,7 @@ How It Works - Scheduling Commands
 ----------------------------------
 
 .. image:: images/what-is-commandbased/scheduling.png
-   :alt: Shows the scheduling process for how commands are executed.
+   :alt: The scheduling process for how commands are executed.
 
 There are three main ways commands are scheduled:
 

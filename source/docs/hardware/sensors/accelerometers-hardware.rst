@@ -19,7 +19,7 @@ Single-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/accelerometers-hardware/adxl193-single-axis-accelerometer-to-roborio.svg
-  :alt: Shows the three wire connection from the Accelerometer to the Analog In port of the roboRIO.
+  :alt: The three wire connection from the Accelerometer to the Analog In port of the roboRIO.
 
 As per their name, single-axis accelerometers measure acceleration along a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Single-axis accelerometers generally output an analog voltage corresponding to the measured acceleration, and so connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports.
 
@@ -27,7 +27,7 @@ Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/accelerometers-hardware/triple-axis-accelerometer-to-roborio.svg
-  :alt: Shows the triple axis accelerometer hooked up to three different Analog In channels.
+  :alt: The triple axis accelerometer hooked up to three different Analog In channels.
 
 Multi-axis accelerometers measure acceleration along multiple spacial axes.  The roboRIO's built-in accelerometer is a three-axis accelerometer.
 
