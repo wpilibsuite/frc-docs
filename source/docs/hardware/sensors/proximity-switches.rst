@@ -76,7 +76,7 @@ Since photoelectric proximity switches rely on measuring the amount of reflected
 Photoelectric sensors are also often often used in a "beam break" configuration, in which the emitter is separate from the sensor.  These typically activate when an object is interposed between the emitter and the sensor. Pictured above is a `beam break sensor with an IR LED transmitter and IR receiver <https://www.adafruit.com/product/2167>`__.
 
 .. image:: images/proximity-switches-hardware/ir-beam-break-sensor-to-roborio.svg
-   :alt: Connecting a beam break reciever and transmitter each to one DIO channel on the roboRIO.
+   :alt: Connecting a beam break receiver and transmitter each to one DIO channel on the roboRIO.
 
 Time-of-flight Proximity Switches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
