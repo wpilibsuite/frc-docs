@@ -30,7 +30,7 @@ The Project Homepage
 --------------------
 
 .. image:: images/accessing-the-beta-project/project-home.png
-   :alt: Shows the project homepage and graphs.
+   :alt: The project homepage and graphs.
 
 The project homepage contains some statistics and Project News. Throughout the beta, the Project News section may be updated with the latest information from the *FIRST* technical staff. The top ribbon contains tabs allowing you to navigate to the different sections of the project:
 

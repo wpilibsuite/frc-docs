@@ -95,7 +95,7 @@ Power Distribution Panel
 ------------------------
 
 .. image:: images/status-lights/pdp-status-lights.svg
-  :alt: Shows the location of the "STAT" and "COMM" lights on the PDP.
+  :alt: The location of the "STAT" and "COMM" lights on the PDP.
   :width: 600
 
 PDP Status/Comm LEDs
@@ -388,7 +388,7 @@ Digilent DMC-60
 ---------------
 
 .. image:: images/status-lights/dmc60c-status-lights.png
-  :alt: Shows the 5 LEDs in each of the corners plus the center.
+  :alt: The 5 LEDs in each of the corners plus the center.
 
 The DMC60C contains four RGB (Red, Green, and Blue) LEDs and one Brake/Coast CAL LED. The four RGB LEDs are located in the corners and are used to indicate status during normal operation, as well as when a fault occurs. The Brake/Coast CAL LED is located in the center of the triangle, which is located at the center of the housing, and is used to indicate the current Brake/Coast setting. When the center LED is off, the device is operating in coast mode. When the center LED is illuminated, the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle, and then releasing the button.
 
@@ -449,8 +449,24 @@ Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
+<<<<<<< HEAD
 Venom Motor Controller
 ----------------------
+||||||| parent of d0e54ce (Added some more alt fixed shows)
+Jaguar speed controllers
+------------------------
+
+.. image:: images/status-lights/jaguar-status-light.png
+  :alt: Shows the single LED in the center.
+  :width: 400
+=======
+Jaguar speed controllers
+------------------------
+
+.. image:: images/status-lights/jaguar-status-light.png
+  :alt: The single LED in the center.
+  :width: 400
+>>>>>>> d0e54ce (Added some more alt fixed shows)
 
 .. image:: images/status-lights/venom.png
   :alt: The LED blink codes for the Venom.
@@ -459,7 +475,7 @@ Mindsensors SD540B (PWM)
 ------------------------
 
 .. image:: images/status-lights/sd540b-status-lights.png
-  :alt: Shows the two LEDs on the top one at each end and the LED on the side next to the connector.
+  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
   :width: 600
 
 +----------------+-------+---------------------------------+
@@ -480,7 +496,7 @@ Mindsensors SD540C (CAN Bus)
 ----------------------------
 
 .. image:: images/status-lights/sd540c-status-lights.png
-  :alt: Shows the two LEDs on the top one at each end and the LED on the side next to the connector.
+  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
   :width: 600
 
 +----------------+------------------+---------------------------------------------------------+
@@ -501,7 +517,7 @@ REV Robotics Servo Power Module
 -------------------------------
 
 .. image:: images/status-lights/rev-robotics-servo-power-module.png
-  :alt: Shows one power LED and a status LED for each channel all down the center.
+  :alt: One power LED and a status LED for each channel all down the center.
   :width: 400
 
 Status LEDs

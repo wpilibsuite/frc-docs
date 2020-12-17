@@ -24,7 +24,7 @@ Monitoring Project Sections
 ---------------------------
 
 .. image:: images/monitoring-via-email-notifications/monitoring-section.png
-   :alt: This image shows monitoring entire sections.
+   :alt: Monitoring entire sections.
 
 It is also possible to set up for entire sections of the site. To set up this monitoring:
 
@@ -39,7 +39,7 @@ Monitoring Settings
 -------------------
 
 .. image:: images/monitoring-via-email-notifications/monitoring-settings.png
-   :alt: This shows how the monitoring emails are configured.
+   :alt: How the monitoring emails are configured.
 
 You can set your overall notification settings to e-mail you per change or to send you a daily digest email with all changes. To do this:
 
