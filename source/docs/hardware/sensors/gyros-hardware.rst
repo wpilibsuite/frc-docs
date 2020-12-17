@@ -22,7 +22,7 @@ Single-axis Gyros
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.svg
-  :alt: Shows the Analog Devices 1-axis Gyro plugged into the SPI port of the roboRIO.
+  :alt: The Analog Devices 1-axis Gyro plugged into the SPI port of the roboRIO.
   :width: 400
 
 As per their name, single-axis gyros measure rotation rate around a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Some single-axis gyros can output an analog voltage corresponding to the measured rate of rotation, and so connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports. Other single-axis gyros, such as as the `ADXRS450 <https://wiki.analog.com/first/first_robotics_donation_resources>`__ pictured above, use the :ref:`SPI port <docs/hardware/sensors/serial-buses:SPI>` on the roboRIO instead.
@@ -39,7 +39,7 @@ Three-axis Gyros
 Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
 
 .. image:: images/gyros-hardware/drive-yaw-pitch-roll.svg
-  :alt: This shows each of the 3 axis: yaw, pitch, and roll and how they relate to robot movement.
+  :alt: The 3 axis: yaw, pitch, and roll and how they relate to robot movement.
   :width: 400
 
 .. note:: The coordinate system shown above is often used for three axis gyros, as it is a convention in avionics. Note that other coordinate systems are used in mathematics and referenced throughout WPILib. Please refer to the :ref:`Drive class axis diagram<docs/software/actuators/wpi-drive-classes:Axis Conventions>` for axis referenced in software.

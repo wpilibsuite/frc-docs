@@ -24,7 +24,7 @@ I2C
 ---
 
 .. image:: images/roborio/roborio-i2c.svg
-   :alt: Shows the I2C port on the roboRIO.
+   :alt: The I2C port on the roboRIO.
 
 .. image:: images/serial-buses/i2c-pinout.png
    :alt: I2C roboRIO port pin specifcations.

@@ -13,7 +13,7 @@ Running the Debugger
 --------------------
 
 .. image:: images/debugging-robot-program/start-debugging.png
-    :alt: Shows running the debugger via the Command Palette.
+    :alt: Running the debugger via the Command Palette.
 
 Press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click on the :guilabel:`WPILib Menu Item` to open the Command palette with WPILib pre-populated. Type Debug and select the Debug Robot Code menu item to start debugging. The code will download to the roboRIO and begin debugging.
 
@@ -28,7 +28,7 @@ Setting a Breakpoint
 ^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/debugging-robot-program/setting-a-breakpoint.png
-    :alt: Shows where to place the cursor to create a breakpoint.
+    :alt: Where to place the cursor to create a breakpoint.
 
 Click in the left margin of the source code window (to the left of the line number) to set a breakpoint in your user program: A small red circle indicates the breakpoint has been set on the corresponding line.
 

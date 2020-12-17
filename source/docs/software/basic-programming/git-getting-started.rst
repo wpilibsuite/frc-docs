@@ -191,7 +191,7 @@ Branches
 Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
 
 .. image:: diagrams/branches.drawio.svg
-   :alt: Shows a branch workflow state diagram.
+   :alt: A branch workflow state diagram.
 
 In the above example, main was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
 
@@ -215,7 +215,7 @@ In scenarios where you want to copy one branches history into another, you can m
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
 .. image:: diagrams/merge-conflict.drawio.svg
-   :alt: Shows a merge workflow state diagram.
+   :alt: A merge workflow state diagram.
 
 However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
 

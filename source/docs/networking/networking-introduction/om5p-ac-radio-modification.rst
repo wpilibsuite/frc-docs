@@ -45,7 +45,7 @@ Remove Lid
 To begin removing the lid, slide it forward (lifting slightly) until the screw holders hit the case front (you may need to apply pressure on the latch areas while doing this.
 
 .. image:: images/om5p-ac-radio-modification/barrel-jack.png
-   :alt: Shows the barrel jack corner that needs to be rotated away from.
+   :alt: The barrel jack corner that needs to be rotated away from.
 
 Next, begin rotating the lid slightly away from the barrel jack side, as shown while continuing to lift. This will unhook the lid from the small triangle visible in the top right corner. Continue to rotate slightly in this direction while pushing the top left corner towards the barrel jack (don't try to lift further in this step) to unhook a similar feature in the top left corner. Then lift the lid completely away from the body.
 
@@ -61,7 +61,7 @@ Remove Board
    :alt: Grab the Ethernet port to help lift the board.
 
 .. image:: images/om5p-ac-radio-modification/board.png
-   :alt: Shows the board lifted slightly out of the case.
+   :alt: The board lifted slightly out of the case.
 
 To remove the board, we recommend grasping one or both network ports with your fingers (as shown) and pushing inward (toward the front of the radio) and upward until the network ports and barrel jack are free from the case.
 
@@ -76,7 +76,7 @@ Apply Tape
 ----------
 
 .. image:: images/om5p-ac-radio-modification/electrical-tape.png
-   :alt: Shows applying electrical tape at the front of the shield near the Ethernet ports.
+   :alt: Applying electrical tape at the front of the shield near the Ethernet ports.
 
 Apply a piece of electrical tape to the metal shield in the area just inside of the network port/barrel jack openings. This will prevent the exposed leads on the underside of the board from short circuiting on this plate.
 

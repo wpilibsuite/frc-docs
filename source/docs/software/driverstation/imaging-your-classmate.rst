@@ -19,6 +19,7 @@ Download the Computer Image
 ---------------------------
 
 .. image:: images/imaging-your-classmate/download-the-computer-image.png
+   :alt: Image of portal website showing each of the different classmate computers and their image.
 
 Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/>`__. There are several computer images available, one for each model. On the download site, select the option that matches your computer by clicking the button below the image. Due to the limited size of the hard drive in the E09, it is supported with a DS/Utilities image only and does not have the IDEs for LabVIEW or C++/Java installed. All other images have the LabVIEW base installation already present.
 
@@ -36,6 +37,7 @@ RMPrep
 ------
 
 .. image:: images/imaging-your-classmate/rmprep.png
+   :alt: Using RMPrep with a USB drive.
 
 Start/Run RMprepUSB
 
@@ -45,6 +47,7 @@ Set Partition Size
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-partition-size.png
+   :alt: Highlights the "Partition Size" box.
 
 Set Partition Size to MAX
 
@@ -52,6 +55,7 @@ Set Volume Label
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-volume-label.png
+   :alt: Hightlights the "Volume Label" box to the right of the partition size.
 
 Set Volume Label to Generic
 
@@ -59,6 +63,7 @@ Set Bootloader Option
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-bootloader-option.png
+   :alt: 
 
 Select Bootloader Option “WinPE v2/WinPE v3/Vista/Win7 bootable”
 

@@ -56,7 +56,7 @@ Example Flowchart
 -----------------
 
 .. image:: images/synchronizing-two-commands/flowchart.png
-   :alt: Shows an example command flow.
+   :alt: An example command flow.
 
 .. note:: There is no dependency coming from the commands scheduled using "Add Parallel" either or both of these commands could still be running when the MoveBallToShooter command is reached.
 
