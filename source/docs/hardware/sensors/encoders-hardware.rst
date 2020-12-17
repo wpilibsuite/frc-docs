@@ -10,7 +10,7 @@ Quadrature encoders are by far the most common method for measuring rotational m
 The term "quadrature" refers to the method by which the motion is measured/encoded.  A quadrature encoder produces two square-wave pulses that are 90-degrees out-of-phase from each other, as seen in the picture below:
 
 .. image:: images/encoders-hardware/encoding-direction.png
-  :alt: Shows the signal pattern in both directions and how using two channels allows us to tell the direction.
+  :alt: The signal pattern in both directions and how using two channels allows us to tell the direction.
 
 Thus, across both channels, there are four total "edges" per period (hence "quad").  The use of two out-of-phase pulses allows the direction of motion to be unambiguously determined from which pulse "leads" the other.
 
@@ -40,7 +40,7 @@ On-shaft encoders
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/amt10x-encoders-to-roborio.svg
-  :alt: This shows how to connect both the AMT103 and the AMT102 encoders to two DIO ports each.
+  :alt: How to connect both the AMT103 and the AMT102 encoders to two DIO ports each.
   :width: 600
 
 On-shaft encoders (such as the `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.

@@ -49,7 +49,7 @@ The easiest solution is to disable the Windows Firewall. Teams should beware tha
    .. group-tab:: Windows 7
 
       .. image:: images/windows-firewall/small-icons.png
-         :alt: Shows "Small icons" in the upper right and "Windows Firewall" in the lower right.
+         :alt: "Small icons" in the upper right and "Windows Firewall" in the lower right.
 
       Click :guilabel:`Start` -> :guilabel:`Control Panel` to open the Control Panel. Click the dropdown next to :guilabel:`View by:` and select :guilabel:`Small icons` then click :guilabel:`Windows Firewall`.
 
@@ -107,7 +107,7 @@ Alternatively, you can add exceptions to the Firewall for any FRC programs you a
       Click :guilabel:`Start` -> :guilabel:`Control Panel` to open the Control Panel. Click the dropdown next to :guilabel:`View by:` and select :guilabel:`Small icons` then click :guilabel:`Windows Defender Firewall`.
 
       .. image:: images/windows-firewall/small-icons.png
-         :alt: Shows "Small icons" in the upper right and "Windows Firewall" in the lower right.
+         :alt: "Small icons" in the upper right and "Windows Firewall" in the lower right.
 
       In the left pane, click :guilabel:`Allow a program or feature through Windows Defender Firewall`
 

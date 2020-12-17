@@ -118,7 +118,7 @@ Adding a Build Status Badge to a README.md File
 It is helpful to add a CI status badge to the top of your repository's README file to quickly check the status of the latest build on main. To do this, click on the "Actions" tab at the top of the screen and select the "CI" tab on the left side of the screen. Then, click on the "Create status badge" button on the top right and copy the status badge Markdown code.
 
 .. image:: images/robot-ci/badge.png
-  :alt: Shows where to click on "Copy status badge Markdown"
+  :alt: Where to click on "Copy status badge Markdown"
 
 Finally, paste the Markdown code you copied at the top of your README file, commit, and push your changes. Now, you should see the GitHub Actions status badge on your main repository page.
 

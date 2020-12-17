@@ -69,14 +69,12 @@ Layout the Core Control System Components
 -----------------------------------------
 
 .. image:: images/how-to-wire-a-robot/layout.jpg
-  :alt: Shows a basic wiring layout.
-
+  :alt: A basic wiring layout.
 
 Lay out the components on the board. An example layout is shown in the image above.
 
 .. image:: images/how-to-wire-a-robot/ziptie.png
   :alt: Using zipties to secure components down.
-
 
 Fasten Components
 -----------------
@@ -204,7 +202,7 @@ Voltage Regulator Module Power
 ------------------------------
 
 .. image:: images/how-to-wire-a-robot/vrm-power.jpg
-  :alt: Shows power going from the PDP to the VRM.
+  :alt: Power going from the PDP to the VRM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
@@ -218,7 +216,7 @@ Pneumatics Control Module Power (Optional)
 ------------------------------------------
 
 .. image:: images/how-to-wire-a-robot/pcm-power.jpg
-  :alt: Shows power going from the PDP to the PCM.
+  :alt: Power going from the PDP to the PCM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
 
