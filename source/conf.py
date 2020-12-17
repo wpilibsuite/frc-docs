@@ -99,7 +99,8 @@ linkcheck_anchors = False
 linkcheck_ignore = [r'.*kauailabs.com.*',
                     r'.*wpilibpi.local.*',
                     r'.*andymark.com.*',
-                    r'.*ti.com/lit/an/spma033a/spma033a.pdf.*']
+                    r'.*ti.com/lit/an/spma033a/spma033a.pdf.*',
+                    r'.*wpilibpi.local.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
