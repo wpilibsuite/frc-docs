@@ -40,7 +40,7 @@ It is very important to change the default password associated with your Romi. S
 32U4 Control Board
 ------------------
 
-With the Raspberry Pi now imaged, we can use it to image the 32U4 Control Board. Before turning the Romi on, use a USB A to micro-B cable to connect one of the Raspberry Pi's USB ports to the micro USB port on the 32U4 Control Board. Next, turning the Romi on, connect to its Wifi network, open a web browser, and connect to the web dashboard. On the ``Romi`` configuration page, press the ``Update Firmware`` button. 
+With the Raspberry Pi now imaged, we can use it to image the 32U4 Control Board. Before turning the Romi on, use a USB A to micro-B cable to connect one of the Raspberry Pi's USB ports to the micro USB port on the 32U4 Control Board. Next, turning the Romi on, connect to its Wifi network, open a web browser, and connect to the web dashboard. On the ``Romi`` configuration page, press the ``Update Firmware`` button.
 
 .. image:: images/imaging-romi/firmware-upload-before.png
    :alt: The firmware update button before updating firmware
