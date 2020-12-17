@@ -13,7 +13,7 @@ To get started with the Romi, you will need to have the necessary hardware.
 Assembly
 --------
 
-The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together before it can be used. Once you have all to do is:
+The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together before it can be used. Once you have gathered all the materials you can begin assembly:
 
 1. Align the motor clips with the chassis as indicated and press them firmly into the chassis until the bottom of the clips are even with the bottom of the chassis (you may hear several clicks).
 
