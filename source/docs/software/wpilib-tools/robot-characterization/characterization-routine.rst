@@ -56,11 +56,11 @@ Follow the instructions in the pop-up windows after pressing each test button.
 Trackwidth
 ^^^^^^^^^^
 
-The Trackwidth test will spin your robot in an attempt to measure the distance between your wheels.
+The trackwidth test will spin your robot to determine an empirical trackwidth. It compares how far the wheel encoders drove against the reported rotation from the gyroscope.
 
 .. note:: If your robot is having trouble turning during the Trackwidth test you should increase the :guilabel:`Rotation Wheel voltage (V):` value and run the test again.
 
-.. note:: Trackwidth values for high friction wheels (like pneumatic tires) may be measured incorrectly and a measured value should be used.
+.. note:: Trackwidth values for high friction wheels (like pneumatic tires) may be significantly different from the measured value.
 
 The entire routine should look something like this:
 
