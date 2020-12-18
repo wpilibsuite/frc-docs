@@ -1,5 +1,5 @@
-Vision with FRCVision
-=====================
+Vision with WPILibPi
+====================
 
 .. toctree::
    :maxdepth: 1

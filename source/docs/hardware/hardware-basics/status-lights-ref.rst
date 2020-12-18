@@ -180,6 +180,197 @@ PCM Solenoid Channel LEDs
 
 These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
+Talon SRX & Victor SPX & Talon FX Motor Controllers
+---------------------------------------------------
+
+.. image:: images/status-lights/talon-srx-status-lights.png
+  :width: 600
+
+Status LEDs During Normal Operation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------+----------------+--------------------------------------------+
+| LEDs                         | Colors         | Talon SRX State                            |
++==============================+================+============================================+
+| Both                         | Blinking Green | Forward throttle is applied.               |
+|                              |                | Blink rate is proportional to Duty Cycle.  |
++------------------------------+----------------+--------------------------------------------+
+| Both                         | Blinking Red   | Reverse throttle is applied.               |
+|                              |                | Blink rate is proportional to Duty Cycle.  |
++------------------------------+----------------+--------------------------------------------+
+| None                         | None           | No power is being applied to Talon SRX     |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Orange     | CAN bus detected, robot disabled           |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Slow Red   | CAN bus/PWM is not detected                |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Off/Fast Red   | Fault Detected                             |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Alternate               | Red/Orange     | Damaged Hardware                           |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Strobe towards (M-)     | Off/Red        | Forward Limit Switch or Forward Soft Limit |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Strobe towards (M+)     | Off/Red        | Reverse Limit Switch or Reverse Soft Limit |
++------------------------------+----------------+--------------------------------------------+
+| LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
++------------------------------+----------------+--------------------------------------------+
+| LEDs Strobe towards (M+)     | Off/Orange     | Thermal Fault / Shutoff (Talon FX Only)    |
++------------------------------+----------------+--------------------------------------------+
+
+Status LEDs During Calibration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------+------------------------+
+| Status LEDs Blink Code | Talon SRX State        |
++========================+========================+
+| Flashing Red/Green     | Calibration Mode       |
++------------------------+------------------------+
+| Blinking Green         | Successful Calibration |
++------------------------+------------------------+
+| Blinking Red           | Failed Calibration     |
++------------------------+------------------------+
+
+B/C CAL Blink Codes
+^^^^^^^^^^^^^^^^^^^
+
++----------------------+-----------------+
+| B/C CAL Button Color | Talon SRX State |
++======================+=================+
+| Solid Red            | Brake Mode      |
++----------------------+-----------------+
+| Off                  | Coast Mode      |
++----------------------+-----------------+
+
+SPARK-MAX Motor Controller
+--------------------------
+
+.. image:: images/status-lights/sparkMAXLight.png
+
+REV Robotics SPARK
+------------------
+
+.. image:: images/status-lights/sparkLight.png
+
+Victor-SP Motor Controller
+--------------------------
+
+.. image:: images/status-lights/victorSPLight.png
+  :width: 600
+
+Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
+
+Status
+^^^^^^
+
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | FRC robot disabled, PWM signal lost, or                                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Blinking | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
+
+Talon Motor Controller
+----------------------
+
+.. image:: images/status-lights/talonsr-status-light.png
+
++-----------+----------+------------------------------------------------------------------------+
+| Green     | Solid    | Full forward output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to forward output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Red       | Solid    | Full reverse output                                                    |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Proportional to reverse output voltage                                 |
++-----------+----------+------------------------------------------------------------------------+
+| Orange    | Solid    | No CAN devices are connected                                           |
+|           +----------+------------------------------------------------------------------------+
+|           | Blinking | Disabled state, PWM signal lost, FRC robot disabled, or                |
+|           |          | signal in deadband range (+/- 4% output)                               |
++-----------+----------+------------------------------------------------------------------------+
+| Off                  | No input power to Talon                                                |
++-----------+----------+------------------------------------------------------------------------+
+| Red/Green | Flashing | Ready for calibration. Several green flashes indicates successful      |
+|           |          | calibration, and red several times indicates unsuccessful calibration. |
++-----------+----------+------------------------------------------------------------------------+
+
+Victor888 Motor Controller
+--------------------------
+
+.. image:: images/status-lights/victor888-status-light.svg
+  :width: 600
+
++-----------+----------+--------------------------+
+| Green     | Solid    | Full forward output      |
+|           +----------+--------------------------+
+|           | Blinking | Successful calibration   |
++-----------+----------+--------------------------+
+| Red       | Solid    | Full reverse output      |
+|           +----------+--------------------------+
+|           | Blinking | Unsuccessful calibration |
++-----------+----------+--------------------------+
+| Orange    | Solid    | Neutral/brake            |
++-----------+----------+--------------------------+
+| Red/Green | Blinking | Calibration mode         |
++-----------+----------+--------------------------+
+
+Jaguar Motor Controller
+-----------------------
+
+.. image:: images/status-lights/jaguar-status-light.png
+  :width: 400
+
++------------------------------+------------------------------------------------+
+| LED State                    | Module Status                                  |
++==============================+================================================+
+| Normal Operating Conditions                                                   |
++------------------------------+------------------------------------------------+
+| Solid Yellow                 | Neutral (speed set to 0)                       |
++------------------------------+------------------------------------------------+
+| Fast Flashing Green          | Forward                                        |
++------------------------------+------------------------------------------------+
+| Fast Flashing Red            | Reverse                                        |
++------------------------------+------------------------------------------------+
+| Solid Green                  | Full-speed forward                             |
++------------------------------+------------------------------------------------+
+| Solid Red                    | Full-speed reverse                             |
++------------------------------+------------------------------------------------+
+| Fault Conditions                                                              |
++------------------------------+------------------------------------------------+
+| Slow Flashing Yellow         | Loss of servo or Network link                  |
++------------------------------+------------------------------------------------+
+| Fast Flashing Yellow         | Invalid CAN ID                                 |
++------------------------------+------------------------------------------------+
+| Slow Flashing Red            | Voltage, Temperature, or                       |
+|                              | Limit Switch fault condition                   |
++------------------------------+------------------------------------------------+
+| Slow Flashing Red and Yellow | Current fault condition                        |
++------------------------------+------------------------------------------------+
+| Calibration or CAN Conditions                                                 |
++------------------------------+------------------------------------------------+
+| Flashing Red and Green       | Calibration mode active                        |
++------------------------------+------------------------------------------------+
+| Flashing Red and Yellow      | Calibration mode failure                       |
++------------------------------+------------------------------------------------+
+| Flashing Green and Yellow    | Calibration mode success                       |
++------------------------------+------------------------------------------------+
+| Slow Flashing Green          | CAN ID assignment mode                         |
++------------------------------+------------------------------------------------+
+| Fast Flashing Yellow         | Current CAN ID (count flashes to determine ID) |
++------------------------------+------------------------------------------------+
+| Flashing Yellow              | CAN ID invalid (that is, Set to 0)             |
+|                              | awaiting valid ID assignment                   |
++------------------------------+------------------------------------------------+
+
 Digilent DMC-60
 ---------------
 
@@ -244,53 +435,11 @@ Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
-Jaguar Motor Controller
------------------------
+Venom Motor Controller
+----------------------
 
-.. image:: images/status-lights/jaguar-status-light.png
-  :width: 400
-
-+------------------------------+------------------------------------------------+
-| LED State                    | Module Status                                  |
-+==============================+================================================+
-| Normal Operating Conditions                                                   |
-+------------------------------+------------------------------------------------+
-| Solid Yellow                 | Neutral (speed set to 0)                       |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Green          | Forward                                        |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Red            | Reverse                                        |
-+------------------------------+------------------------------------------------+
-| Solid Green                  | Full-speed forward                             |
-+------------------------------+------------------------------------------------+
-| Solid Red                    | Full-speed reverse                             |
-+------------------------------+------------------------------------------------+
-| Fault Conditions                                                              |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Yellow         | Loss of servo or Network link                  |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Yellow         | Invalid CAN ID                                 |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Red            | Voltage, Temperature, or                       |
-|                              | Limit Switch fault condition                   |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Red and Yellow | Current fault condition                        |
-+------------------------------+------------------------------------------------+
-| Calibration or CAN Conditions                                                 |
-+------------------------------+------------------------------------------------+
-| Flashing Red and Green       | Calibration mode active                        |
-+------------------------------+------------------------------------------------+
-| Flashing Red and Yellow      | Calibration mode failure                       |
-+------------------------------+------------------------------------------------+
-| Flashing Green and Yellow    | Calibration mode success                       |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Green          | CAN ID assignment mode                         |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Yellow         | Current CAN ID (count flashes to determine ID) |
-+------------------------------+------------------------------------------------+
-| Flashing Yellow              | CAN ID invalid (that is, Set to 0)             |
-|                              | awaiting valid ID assignment                   |
-+------------------------------+------------------------------------------------+
+.. image:: images/status-lights/venom.png
+  :alt: The LED blink codes for the Venom.
 
 Mindsensors SD540B (PWM)
 ------------------------
@@ -356,147 +505,6 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 +-----------------------+----------------+
 
 - 6V Power LED off, dim or flickering with power applied = Over-current shutdown
-
-REV Robotics SPARK
-------------------
-
-.. image:: images/status-lights/sparkLight.png
-
-Talon Motor Controller
-----------------------
-
-.. image:: images/status-lights/talonsr-status-light.png
-
-+-----------+----------+------------------------------------------------------------------------+
-| Green     | Solid    | Full forward output                                                    |
-|           +----------+------------------------------------------------------------------------+
-|           | Blinking | Proportional to forward output voltage                                 |
-+-----------+----------+------------------------------------------------------------------------+
-| Red       | Solid    | Full reverse output                                                    |
-|           +----------+------------------------------------------------------------------------+
-|           | Blinking | Proportional to reverse output voltage                                 |
-+-----------+----------+------------------------------------------------------------------------+
-| Orange    | Solid    | No CAN devices are connected                                           |
-|           +----------+------------------------------------------------------------------------+
-|           | Blinking | Disabled state, PWM signal lost, FRC robot disabled, or                |
-|           |          | signal in deadband range (+/- 4% output)                               |
-+-----------+----------+------------------------------------------------------------------------+
-| Off                  | No input power to Talon                                                |
-+-----------+----------+------------------------------------------------------------------------+
-| Red/Green | Flashing | Ready for calibration. Several green flashes indicates successful      |
-|           |          | calibration, and red several times indicates unsuccessful calibration. |
-+-----------+----------+------------------------------------------------------------------------+
-
-Victor888 Motor Controller
---------------------------
-
-.. image:: images/status-lights/victor888-status-light.svg
-  :width: 600
-
-+-----------+----------+--------------------------+
-| Green     | Solid    | Full forward output      |
-|           +----------+--------------------------+
-|           | Blinking | Successful calibration   |
-+-----------+----------+--------------------------+
-| Red       | Solid    | Full reverse output      |
-|           +----------+--------------------------+
-|           | Blinking | Unsuccessful calibration |
-+-----------+----------+--------------------------+
-| Orange    | Solid    | Neutral/brake            |
-+-----------+----------+--------------------------+
-| Red/Green | Blinking | Calibration mode         |
-+-----------+----------+--------------------------+
-
-Victor SP Motor Controller
---------------------------
-
-.. image:: images/status-lights/victorSPLight.png
-  :width: 600
-
-Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
-
-Status
-^^^^^^
-
-+-----------+----------+------------------------------------------------------------------------+
-| Green     | Solid    | Full forward output                                                    |
-|           +----------+------------------------------------------------------------------------+
-|           | Blinking | Proportional to forward output voltage                                 |
-+-----------+----------+------------------------------------------------------------------------+
-| Red       | Solid    | Full reverse output                                                    |
-|           +----------+------------------------------------------------------------------------+
-|           | Blinking | Proportional to forward output voltage                                 |
-+-----------+----------+------------------------------------------------------------------------+
-| Orange    | Solid    | FRC robot disabled, PWM signal lost, or                                |
-|           |          | signal in deadband range (+/- 4% output)                               |
-+-----------+----------+------------------------------------------------------------------------+
-| Red/Green | Blinking | Ready for calibration. Several green flashes indicates successful      |
-|           |          | calibration, and red several times indicates unsuccessful calibration. |
-+-----------+----------+------------------------------------------------------------------------+
-
-Talon SRX Motor Controller
---------------------------
-
-.. image:: images/status-lights/talon-srx-status-lights.png
-  :width: 600
-
-Status LEDs During Normal Operation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+------------------------------+----------------+--------------------------------------------+
-| LEDs                         | Colors         | Talon SRX State                            |
-+==============================+================+============================================+
-| Both                         | Blinking Green | Forward throttle is applied.               |
-|                              |                | Blink rate is proportional to Duty Cycle.  |
-+------------------------------+----------------+--------------------------------------------+
-| Both                         | Blinking Red   | Reverse throttle is applied.               |
-|                              |                | Blink rate is proportional to Duty Cycle.  |
-+------------------------------+----------------+--------------------------------------------+
-| None                         | None           | No power is being applied to Talon SRX     |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Alternate               | Off/Orange     | CAN bus detected, robot disabled           |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Alternate               | Off/Slow Red   | CAN bus/PWM is not detected                |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Alternate               | Off/Fast Red   | Fault Detected                             |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Alternate               | Red/Orange     | Damaged Hardware                           |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Strobe towards (M-)     | Off/Red        | Forward Limit Switch or Forward Soft Limit |
-+------------------------------+----------------+--------------------------------------------+
-| LEDs Strobe towards (M+)     | Off/Red        | Reverse Limit Switch or Reverse Soft Limit |
-+------------------------------+----------------+--------------------------------------------+
-| LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
-+------------------------------+----------------+--------------------------------------------+
-
-Status LEDs During Calibration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+------------------------+------------------------+
-| Status LEDs Blink Code | Talon SRX State        |
-+========================+========================+
-| Flashing Red/Green     | Calibration Mode       |
-+------------------------+------------------------+
-| Blinking Green         | Successful Calibration |
-+------------------------+------------------------+
-| Blinking Red           | Failed Calibration     |
-+------------------------+------------------------+
-
-B/C CAL Blink Codes
-^^^^^^^^^^^^^^^^^^^
-
-+----------------------+-----------------+
-| B/C CAL Button Color | Talon SRX State |
-+======================+=================+
-| Solid Red            | Brake Mode      |
-+----------------------+-----------------+
-| Off                  | Coast Mode      |
-+----------------------+-----------------+
-
-SPARK MAX Motor Controller
---------------------------
-
-.. image:: images/status-lights/sparkMAXLight.png
 
 Spike relay configured as a motor, light, or solenoid switch
 ------------------------------------------------------------

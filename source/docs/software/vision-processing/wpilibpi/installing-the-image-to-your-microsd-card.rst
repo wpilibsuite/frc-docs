@@ -6,8 +6,8 @@ Installing the image to your MicroSD card
 Getting the FRC Raspberry PI image
 ----------------------------------
 
-The image is stored on the GitHub release page for the FRC\ |reg| PI-gen repository:
-https://github.com/wpilibsuite/FRCVision-pi-gen/releases.
+The image is stored on the GitHub release page for the WPILibPi `repository
+<https://github.com/wpilibsuite/WPILibPi/releases>`__.
 
 In addition to the instructions on this page, see the documentation on the GitHub web page (below).
 
@@ -33,7 +33,7 @@ Testing the Raspberry PI
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  Put the micro SD card in a rPi 3 and apply power.
-2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://frcvision.local/`` to open the web dashboard.
+2.  Connect the rPi 3 ethernet to a LAN or PC. Open a web browser and connect to ``http://wpilibpi.local/`` to open the web dashboard.
     On the first bootup the filesystem will be writable, but later bootups will default to read only, so it's necessary to click
     the "writable" button to make changes.
 
@@ -47,9 +47,3 @@ rPi it is necessary to log in. To log in, use the default Raspberry PI password:
   Username: pi
    Password: raspberry
 
-Known issues with this release (errata). These will be fixed in the next release.
-
--   Downloading the Java example program on the web dashboard does not work. Grab it manually from /home/pi/zips instead
-    (using ssh).
--   Console output enable button on the web dashboard doesn't persist correctly through a rPi reboot (it needs to be disabled
-    and re-enabled to again get console output).

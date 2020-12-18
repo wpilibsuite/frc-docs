@@ -64,6 +64,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/driverstation/index
    docs/software/wpilib-tools/shuffleboard/index
    docs/software/wpilib-tools/smartdashboard/index
+   docs/software/wpilib-tools/glass/index
    docs/software/labview-dashboard/index
    docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
@@ -90,6 +91,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
    docs/software/examples-tutorials/wpilib-examples
    docs/software/examples-tutorials/trajectory-tutorial/index
+   docs/software/examples-tutorials/drivesim-tutorial/index
 
 .. toctree::
    :maxdepth: 1
@@ -98,6 +100,12 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Romi Robot
+
+   docs/romi-robot/index
 
 .. toctree::
    :maxdepth: 1

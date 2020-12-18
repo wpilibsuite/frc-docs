@@ -11,7 +11,7 @@ Major Features
 --------------
 
 - A WebSocket interface has been added to allow remote access to the robot simulator
-- A new robot data visualizer -- Glass -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
+- A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
 - WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
   - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
   - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
