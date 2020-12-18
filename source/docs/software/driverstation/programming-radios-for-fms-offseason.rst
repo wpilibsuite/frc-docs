@@ -50,14 +50,16 @@ When programmed with the team version of the Radio Configuration - Utility, the 
 Download the software
 ---------------------
 
-.. image:: images/programming-radios-for-fms-offseason-2.png
+.. image:: images/programming-radios-for-fms-offseason/teamforge-download.png
+   :alt: Download the Radio Configuration Utility from the TeamForge site.
 
 Download the latest FRC Radio Configuration Utility Installer from the `WPILib project File Releases <https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__.
 
 Install the software
 --------------------
 
-.. image:: images/programming-radios-for-fms-offseason-3.png
+.. image:: images/programming-radios-for-fms-offseason/radio-exe.png
+   :alt: Launch the downloaded FRC Radio Configuration .exe file.
 
 Double click on FRC_Radio_Configuration_MM_DD_YY.exe to launch the installer. Follow the prompts to complete the installation.
 
@@ -66,7 +68,8 @@ Part of the installation prompts will include installing WinPCap if it is not al
 Launch the software
 -------------------
 
-.. image:: images/programming-radios-for-fms-offseason-4.png
+.. image:: images/programming-radios-for-fms-offseason/shortcut.png
+   :alt: Click on the FRC Radio Configuration start menu shortcut.
 
 Use the Start menu or desktop shortcut to launch the program.
 
@@ -75,35 +78,40 @@ Use the Start menu or desktop shortcut to launch the program.
 Allow the program to make changes, if prompted
 ----------------------------------------------
 
-.. image:: images/programming-radios-for-fms-offseason-5.png
+.. image:: images/programming-radios-for-fms-offseason/uac.png
+   :alt: User Account Control dialog allowing the program to make changes.
 
 If the your computer is running Windows Vista or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer.  Click "Yes" if the prompt appears.
 
 Enter FMS-Lite Mode
 -------------------
 
-.. image:: images/programming-radios-for-fms-offseason-6.png
+.. image:: images/programming-radios-for-fms-offseason/tools-fmslite.png
+   :alt: Click on "Tools" then "FMS-Lite Mode".
 
 Click ``Tools`` -> ``FMS-Lite Mode`` to enter FMS-Lite Mode.
 
 Enter SSID
 ----------
 
-.. image:: images/programming-radios-for-fms-offseason-7.png
+.. image:: images/programming-radios-for-fms-offseason/ssid.png
+   :alt: Enter the network SSID in the dialog box.
 
 Enter the SSID (name) of your wireless network in the box and click OK.
 
 Enter WPA Key
 -------------
 
-.. image:: images/programming-radios-for-fms-offseason-8.png
+.. image:: images/programming-radios-for-fms-offseason/wpa.png
+   :alt: Enter the WPA Key (password) for this SSID.
 
 Enter the WPA key for your network in the box and click OK. Leave the box blank if you are using an unsecured network.
 
 Program Radios
 --------------
 
-.. image:: images/programming-radios-for-fms-offseason-9.png
+.. image:: images/programming-radios-for-fms-offseason/program-radio.png
+   :alt: Program the radio through the utility like normal for all of the radios at your event.
 
 The Kiosk is now ready to program any number of radios to connect to the network entered. To program each radio, connect the radio to the Kiosk, set the Team Number in the box, and click Configure.
 
