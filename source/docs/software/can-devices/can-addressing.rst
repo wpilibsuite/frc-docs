@@ -132,7 +132,8 @@ a particular type. Devices should default to device ID 0 to match other
 components of the FRC Control System. Device 0x3F may be reserved for
 device specific broadcast messages.
 
-|image0|
+.. image:: images/can-addressing/can-id-example.png
+   :alt: CAN addressing bit mapping.
 
 Protected Frames
 ----------------
@@ -184,5 +185,3 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
 -  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRSTs Control System Partners to provide such interfaces.
-
-.. |image0| image:: images/can-addressing/can-id-example.png
