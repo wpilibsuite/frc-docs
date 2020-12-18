@@ -39,7 +39,7 @@ Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
 2. Using your computer, connect to the Romi WiFi network using the SSID ``WPILibPi`` with the WPA2 passphrase ``WPILib2021!``.
 
-3. Open a web browser and connect to the Raspberry Pi dashboard at either ``http://10.0.0.2/`` or http://wpilibpi.local/.
+3. Open a web browser and connect to the Raspberry Pi dashboard at either ``http://10.0.0.2/`` or ``http://wpilibpi.local/``.
 
 .. note:: The image boots up read-only by default, so it is necessary to click the ``Writable`` button to make changes. Once done making changes, click the ``Read-Only`` button to prevent memory corruption.
 
