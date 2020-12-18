@@ -53,6 +53,15 @@ Follow the instructions in the pop-up windows after pressing each test button.
 .. image:: images/running-the-test.png
    :alt: Running the various tests
 
+Trackwidth
+^^^^^^^^^^
+
+The Trackwidth test will spin your robot in an attempt to measure the distance between your wheels.
+
+.. note:: If your robot is having trouble turning during the Trackwidth test you should increase the :guilabel:`Rotation Wheel voltage (V):` value and run the test again.
+
+.. note:: Trackwidth values for high friction wheels (like pneumatic tires) may be measured incorrectly and a measured value should be used.
+
 The entire routine should look something like this:
 
 .. raw:: html
