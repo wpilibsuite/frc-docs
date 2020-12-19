@@ -9,6 +9,7 @@ Changing Camera Settings
 ------------------------
 
 .. image:: images/camera-settings/changing-camera-settings.png
+   :alt: Camera Setting page of the AXIS web UI.
 
 To change the camera settings on any of the supported Axis cameras (206, M1011, M1013), browse to the camera's webpage by entering its address (usually 10.TE.AM.11) in a web browser. Click Setup near the top right corner of the page. On the M1013, the settings listed below are split between the Video Stream page and the Camera Settings page, both listed under the Video section.
 
@@ -21,6 +22,7 @@ Compression
 -----------
 
 .. image:: images/camera-settings/compression.png
+   :alt: Three images with different compression settings of 0, 30, and 100.
 
 The Axis camera returns images in BMP, JPEG, or MJPEG format. BMP images are quite large and take more time to transmit to the cRIO and laptop. Therefore the WPILib implementations typically use MJPEG (motion JPEG). The compression setting ranges from 0 to 100, with 0 being very high quality images with very little compression, and 100 being very low quality images with very high compression. The camera default is 30, and it is a good compromise, with few artifacts that will degrade image processing.
 
@@ -30,6 +32,7 @@ Resolution
 ----------
 
 .. image:: images/camera-settings/resolution.png
+   :alt: Under image appearance there is a dropdown for setting the resolution.
 
 Image sizes shared by the supported cameras are 160x120, 320x240, and 640x480. The M1011 and 1013 have additional sizes, but they aren’t built into WPILib. The largest image size has four times as many pixels that are one-fourth the size of the middle size image. The large image has sixteen times as many pixels as the small image.
 
@@ -43,6 +46,7 @@ Frame Rate
 ----------
 
 .. image:: images/camera-settings/frame-rate.png
+   :alt: The Video Stream section allows the user to set a maximum frame rate.
 
 The Axis Cameras have a max framerate of 30 frames per second. If desired, a limit can be set lower to reduce bandwidth consumption.
 
@@ -55,6 +59,7 @@ White Balance
 -------------
 
 .. image:: images/camera-settings/white-balance.png
+   :alt: White balance controls how the camera blends the component colors.
 
 If the color of the light shine is being used to identify the marker, be sure to control the camera settings that affect the image coloring. The most important setting is white balance. It controls how the camera blends the component colors of the sensor in order to produce an image that matches the color processing of the human brain. The camera has five or six named presets, an auto setting that constantly adapts to the environment, and a hold setting -- for custom calibration.
 
@@ -66,6 +71,7 @@ Exposure
 --------
 
 .. image:: images/camera-settings/exposure.png
+   :alt: The Image Appearance section has a bunch of settings that can be tuned as described below.
 
 The brightness or exposure of the image also has an impact on the colors being reported. The issue is that as overall brightness increases, color saturation will start to drop. Lets look at an example to see how this occurs. A saturated red object placed in front of the camera will return an RGB measurement high in red and low in the other two e.g. (220, 20, 30). As overall white lighting increases, the RGB value increases to (240, 40, 50), then (255, 80, 90), then (255, 120, 130), and then (255, 160, 170). Once the red component is maximized, additional light can only increase the blue and green, and acts to dilute the measured color and lower the saturation. If the point is to identify the red object, it is useful to adjust the exposure to avoid diluting your principal color. The desired image will look somewhat dark except for the colored shine.
 

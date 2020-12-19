@@ -35,6 +35,7 @@ Open Putty
 ^^^^^^^^^^
 
 .. image:: images/open-putty.png
+   :alt: Putty UI highlighting the Host Name field, the SSH radio button and the Open button.
 
 Open Putty (clicking OK at any security prompt). Then set the following settings:
 
@@ -50,5 +51,6 @@ Log In
 ^^^^^^
 
 .. image:: images/log-in.png
+   :alt: PuTTY terminal window logged in to the roboRIO.
 
 When you see the prompt, enter the desired username (see above for description) then press enter. At the password prompt press enter (password for both accounts is blank).
