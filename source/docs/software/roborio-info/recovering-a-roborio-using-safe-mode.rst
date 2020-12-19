@@ -7,6 +7,7 @@ Booting into Safe Mode
 ----------------------
 
 .. image:: images/roborio-safe-mode.svg
+   :alt: A roboRIO with the status light and the reset button highlighted.
 
 To boot the roboRIO into Safe Mode:
 
