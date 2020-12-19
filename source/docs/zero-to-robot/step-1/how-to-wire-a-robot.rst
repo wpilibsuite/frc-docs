@@ -12,7 +12,7 @@ How to Wire an FRC Robot
 Overview
 --------
 
-.. figure:: images/frc-control-system-layout.svg
+.. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
   :alt: Detailed diagram of all of the components and how they are connected.
   :width: 600
 

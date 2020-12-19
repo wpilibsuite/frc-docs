@@ -34,7 +34,8 @@ An :code:`AnalogInput` may be initialized as follows:
 Oversampling and Averaging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|Oversampling and Averaging|
+.. image:: images/analog-inputs-software/oversampling-averaging.png
+   :alt: The Analog to Digital converter reads the signal and passes it to oversampling, averaging, and an accumulator.
 
 The FPGA's analog input modules supports both oversampling and averaging.  These behaviors are highly similar, but differ in a few important ways.  Both may be used at the same time.
 
@@ -226,5 +227,3 @@ Using analog inputs in code
 The :code:`AnalogInput` class can be used to write code for a wide variety of sensors (including potentiometers, accelerometers, gyroscopes, ultrasonics, and more) that return their data as an analog voltage.  However, if possible it is almost always more convenient to use one of the other existing WPILib classes that handles the lower-level code (reading the analog voltages and converting them to meaningful units) for you.  Users should only directly use :code:`AnalogInput` as a "last resort."
 
 Accordingly, for examples of how to effectively use analog sensors in code, users should refer to the other pages of this chapter that deal with more-specific classes.
-
-.. |Oversampling and Averaging| image:: images/analog-inputs-software/oversampling-averaging.png
