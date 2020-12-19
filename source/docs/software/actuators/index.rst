@@ -6,7 +6,7 @@ Actuators
 
    overview
    pneumatics
-   using-speed-controllers
+   using-motor-controllers
    pwm-controllers
    wpi-drive-classes
    servos

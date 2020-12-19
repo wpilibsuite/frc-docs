@@ -241,7 +241,7 @@ B/C CAL Blink Codes
 | Off                  | Coast Mode      |
 +----------------------+-----------------+
 
-Spark-MAX speed controller
+SPARK-MAX Motor Controller
 --------------------------
 
 .. image:: images/status-lights/sparkMAXLight.png
@@ -251,8 +251,8 @@ REV Robotics SPARK
 
 .. image:: images/status-lights/sparkLight.png
 
-Victor-SP speed controllers
----------------------------
+Victor-SP Motor Controller
+--------------------------
 
 .. image:: images/status-lights/victorSPLight.png
   :width: 600
@@ -278,8 +278,8 @@ Status
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Talon speed controllers
------------------------
+Talon Motor Controller
+----------------------
 
 .. image:: images/status-lights/talonsr-status-light.png
 
@@ -303,7 +303,7 @@ Talon speed controllers
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Victor888 Speed Controller
+Victor888 Motor Controller
 --------------------------
 
 .. image:: images/status-lights/victor888-status-light.svg
@@ -323,8 +323,8 @@ Victor888 Speed Controller
 | Red/Green | Blinking | Calibration mode         |
 +-----------+----------+--------------------------+
 
-Jaguar speed controllers
-------------------------
+Jaguar Motor Controller
+-----------------------
 
 .. image:: images/status-lights/jaguar-status-light.png
   :width: 400

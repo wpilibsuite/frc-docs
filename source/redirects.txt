@@ -88,6 +88,7 @@
 "docs/software/driverstation/using-the-labview-dashboard-with-c++-java-code.rst" "docs/software/labview-dashboard/using-the-labview-dashboard-with-c++-java-code.rst"
 "docs/zero-to-robot/step-1/control-system-hardware.rst" "docs/controls-overviews/control-system-hardware.rst"
 "docs/zero-to-robot/step-2/control-system-software.rst" "docs/controls-overviews/control-system-software.rst"
+"docs/software/actuators/using-speed-controllers.rst" "docs/software/actuators/using-motor-controllers.rst"
 "docs/software/vision-processing/frcvision/basic-vision-example.rst" "docs/software/vision-processing/wpilibpi/basic-vision-example.rst"
 "docs/software/vision-processing/frcvision/image-thresholding.rst" "docs/software/vision-processing/wpilibpi/image-thresholding.rst"
 "docs/software/vision-processing/frcvision/index.rst" "docs/software/vision-processing/wpilibpi/index.rst"
