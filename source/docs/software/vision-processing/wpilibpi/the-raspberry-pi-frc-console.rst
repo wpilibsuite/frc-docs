@@ -87,6 +87,8 @@ Camera 0" and clicking on the name reveals the current camera view and the assoc
 Manipulating the camera settings is reflected in the current camera view. The bottom of the page shows all the possible camera
 modes (combinations of Width, Height, and frame rates) that are supported by this camera.
 
+.. note:: If the camera image is not visible on the :guilabel:`Open Stream` screen then check the supported video modes at the bottom of the page.  Then go back to 'Vision Settings' and click on the camera in question and verify that the pixel format, width, height, and FPS are listed in the supported video modes.
+
 Getting the current settings to persist over reboots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
