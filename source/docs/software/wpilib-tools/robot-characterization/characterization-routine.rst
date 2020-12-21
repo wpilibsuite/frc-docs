@@ -60,7 +60,7 @@ The trackwidth test will spin your robot to determine an empirical trackwidth. I
 
 .. note:: If your robot is having trouble turning during the Trackwidth test you should increase the :guilabel:`Rotation Wheel voltage (V):` value until your robot is smoothly turning and run the test again.
 
-.. note:: Trackwidth values for high friction wheels (like pneumatic tires) may be significantly different from the measured value, but should still be used over the measured value.
+.. note:: For high-friction wheels (like pneumatic tires), the empirical trackwidth calculated by frc-characterization may be significantly different from the real trackwidth (e.g., off by a factor of 2). The empirical value should be preferred over the real one in robot code.
 
 The entire routine should look something like this:
 
