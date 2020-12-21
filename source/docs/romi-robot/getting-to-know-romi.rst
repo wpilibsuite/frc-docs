@@ -11,13 +11,13 @@ The Romi has the following built-in hardware/peripherals:
 - 2x geared motors with encoders
 - 1x Inertial Measurement Unit (IMU)
 - 3x LEDs (green, yellow, red)
-- 3x pushbuttons (marked A, B and C)
+- 3x pushbuttons (marked A, B, and C)
 - 5x configurable GPIO channels
 
 Motors, Wheels and Encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The motors used on the Romi have a 120:1 gear reduction, and a no-load speed of 150 RPM at 4.5V. The wheels have a diameter of 70mm (2.75").
+The motors used on the Romi have a 120:1 gear reduction, and a no-load output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-in safety clutch might start slipping at lower torques. The wheels have a diameter of 70mm (2.75").
 
 The encoders are connected directly to the motor output shaft and have 12 Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 counts per wheel revolution.
 
@@ -26,7 +26,7 @@ Inertial Measurement Unit
 
 The Romi includes an STMicroelectronics LSM6DS33 Inertial Measurement Unit (IMU) which contains a 3-axis gyro and a 3-axis accelerometer.
 
-The accelerometer has selectable sensitivity of 2G, 4G, 8G and 16G. The gyro has selectable sensitivity of 125 Degrees Per Second (DPS), 250 DPS, 500 DPS, 1000 DPS and 2000 DPS.
+The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro has selectable sensitivity of 125 Degrees Per Second (DPS), 250 DPS, 500 DPS, 1000 DPS and 2000 DPS.
 
 The Romi Web UI also provides a means to calibrate the gyro and measure its zero-offsets before use with robot code.
 
