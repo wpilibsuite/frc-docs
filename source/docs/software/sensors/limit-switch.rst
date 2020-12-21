@@ -27,8 +27,7 @@ Controlling a Motor with Two Limit Switches
              if (toplimitSwitch.get()) {
                  // We are going up and top limit is tripped so stop
                  motor.set(0);
-             }
-             else {
+             } else {
                  // We are going up but top limit is not tripped so go at commanded speed
                  motor.set(speed);
              }
@@ -63,8 +62,7 @@ Controlling a Motor with Two Limit Switches
                  // We are going up but top limit is not tripped so go at commanded speed
                  motor.Set(speed);
              }
-         }
-         else {
+         } else {
              if (bottomlimitSwitch.Get()) {
                  // We are going down and bottom limit is tripped so stop
                  motor.Set(0);
