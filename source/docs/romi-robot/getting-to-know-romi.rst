@@ -17,7 +17,9 @@ The Romi has the following built-in hardware/peripherals:
 Motors, Wheels and Encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The motors used on the Romi have a 120:1 gear reduction, and a no-load output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-in safety clutch might start slipping at lower torques. The wheels have a diameter of 70mm (2.75").
+The motors used on the Romi have a 120:1 gear reduction, and a no-load output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-in safety clutch might start slipping at lower torques.
+
+The wheels have a diameter of 70mm (2.75"). They have a trackwidth of 145mm (5.71").
 
 The encoders are connected directly to the motor output shaft and have 12 Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 counts per wheel revolution.
 
