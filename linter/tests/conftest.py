@@ -1,10 +1,10 @@
 import pytest
 import doc8
 
+
 def pytest_configure(config):
-    config.addinivalue_line(
-        "markers", "path: set file(s) to use in test"
-    )
+    config.addinivalue_line("markers", "path: set file(s) to use in test")
+
 
 @pytest.fixture
 def result(request):

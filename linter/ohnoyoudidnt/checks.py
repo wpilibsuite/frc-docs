@@ -85,9 +85,10 @@ def clean_text(text: str) -> str:
 
 class CheckFilenames(ContentCheck):
     """
-        - make sure filenames are valid
-        - make sure directory names are valid
+    - make sure filenames are valid
+    - make sure directory names are valid
     """
+
     FILE_CODE = "WUMBO001"
     DIR_CODE = "WUMBO002"
     REPORTS = frozenset([FILE_CODE, DIR_CODE])
@@ -109,8 +110,9 @@ class CheckFilenames(ContentCheck):
 
 class CheckTermSpellings(ContentCheck):
     """
-        - make sure terms are spelled correctly
+    - make sure terms are spelled correctly
     """
+
     CODE = "WUMBO003"
     REPORTS = frozenset([CODE])
 
@@ -145,15 +147,15 @@ class CheckTermSpellings(ContentCheck):
             for pattern, correct_spelling, *extra in self.SPELLINGS:
                 for match in pattern.findall(line):
                     if match != correct_spelling:
-                        # print(match, ":", line)
                         yield n.line, self.CODE, f"{extra[0] if extra else correct_spelling} spelled incorrectly"
 
 
 class CheckHeadingUnderscores(ContentCheck):
     """
-        - make sure correct heading is used
-        - make sure heading underline length is correct
+    - make sure correct heading is used
+    - make sure heading underline length is correct
     """
+
     HEADING_CODE = "WUMBO004"
     LEN_CODE = "WUMBO005"
     REPORTS = frozenset([HEADING_CODE, LEN_CODE])
@@ -190,15 +192,15 @@ class CheckHeadingUnderscores(ContentCheck):
 
 class CheckDoubleNewlines(ContentCheck):
     """
-        - make sure there are no double new lines
+    - make sure there are no double new lines
     """
+
     CODE = "WUMBO006"
     REPORTS = frozenset([CODE])
 
     def report_iter(self, parsed_file: ParsedFile):
         for line_num, (curr_line, next_line) in enumerate(
-            windowed(map(str.strip, parsed_file.contents.split("\n")), 2),
-            start=1
+            windowed(map(str.strip, parsed_file.contents.split("\n")), 2), start=1
         ):
             if curr_line == next_line == "":
                 yield line_num, self.CODE, "Double newline found"
@@ -206,8 +208,9 @@ class CheckDoubleNewlines(ContentCheck):
 
 class CheckTrademarks(ContentCheck):
     """
-        - make sure the first instance of terms are trademarked
+    - make sure the first instance of terms are trademarked
     """
+
     CODE = "WUMBO007"
     REPORTS = frozenset([CODE])
 
@@ -216,34 +219,25 @@ class CheckTrademarks(ContentCheck):
         "FRC",
     ]
 
-    TRADEMARKEE_REGICES = {tmee : re.compile(tmee + r"(\b|reg)") for tmee in TRADEMARKEES}
+    TRADEMARKEE_REGICES = {
+        tmee: re.compile(tmee + r"(\b|reg)") for tmee in TRADEMARKEES
+    }
 
     def report_iter(self, parsed_file: ParsedFile):
-        # if "imaging-your-roborio" in parsed_file.filename:
-        #     import code
-        #     code.interact(local={**locals(), **globals()})
         done = set()
 
-        title_nodes = set(parsed_file.document.traverse(nodes.title))
         for paragraph in filter(
-            lambda x: not ( isinstance(x, nodes.title) or isinstance(x, nodes.Invisible)),
+            lambda x: not (
+                isinstance(x, nodes.title) or isinstance(x, nodes.Invisible)
+            ),
             parsed_file.document.traverse(nodes.TextElement),
         ):
             if not paragraph.line:
                 continue
             p_text = clean_text(paragraph.astext())
 
-            # for title_ref in paragraph.traverse(nodes.title_reference):
-            #     p_text = p_text.replace(title_ref.astext(), "")
-
             for trademarkee in done.symmetric_difference(self.TRADEMARKEES):
-                # tmee_pos = p_text.find(trademarkee)
 
-                # if "iver Station can be launched by double-clicking the icon on the Desktop o" in p_text:
-                #     import code
-                #     code.interact(local={**locals(), **globals()})
-
-                # tmee_pos = re.search(trademarkee + r"(\b|reg)", p_text)
                 tmee_pos = self.TRADEMARKEE_REGICES[trademarkee].search(p_text)
                 if tmee_pos:
                     tmee_pos = tmee_pos.span()[0]
@@ -259,8 +253,9 @@ class CheckTrademarks(ContentCheck):
 
 class CheckFIRSTItalicized(ContentCheck):
     """
-        - make sure FIRST is italicized
+    - make sure FIRST is italicized
     """
+
     CODE = "WUMBO008"
     REPORTS = frozenset([CODE])
 
@@ -283,8 +278,9 @@ class CheckFIRSTItalicized(ContentCheck):
 
 class CheckBlankLineAfterHeader(ContentCheck):
     """
-        - make sure headers are followed by a blank line
+    - make sure headers are followed by a blank line
     """
+
     CODE = "WUMBO009"
     REPORTS = frozenset([CODE])
 
@@ -303,8 +299,9 @@ class CheckBlankLineAfterHeader(ContentCheck):
 
 class CheckBlankLineAfterDirective(ContentCheck):
     """
-        - make sure directives without options are followed by a blank line
+    - make sure directives without options are followed by a blank line
     """
+
     CODE = "WUMBO010"
     REPORTS = frozenset([CODE])
 
@@ -328,51 +325,11 @@ class CheckBlankLineAfterDirective(ContentCheck):
                         yield line_num + 1, self.CODE, "Blank line found after directive with options"
 
 
-# class CheckIndentation(ContentCheck):
-#     """
-#         - indentation
-#     """
-#     CODE = "WUMBO011"
-#     REPORTS = frozenset([CODE])
-
-#     def report_iter(self, parsed_file: ParsedFile):
-
-#         curr_indent = 0
-#         in_code_block = False
-#         code_block_indent = 0
-
-#         for line_num, (indent, line) in enumerate(
-#             map(
-#                 lambda s: (len(s) - len(s.lstrip()), s.strip()),
-#                 parsed_file.contents.split("\n"),
-#             )
-#         ):
-#             if not line.strip():
-#                 continue
-#             if in_code_block:
-#                 if indent <= code_block_indent:
-#                     in_code_block = False
-#                 else:
-#                     curr_indent = indent
-#                     continue
-
-#             if line.strip().startswith(".. code-block") or line.strip().startswith(
-#                 ".. code-tab"
-#             ):
-#                 in_code_block = True
-#                 code_block_indent = indent
-
-#             if not (
-#                 indent == curr_indent + 3 or (indent <= curr_indent and indent % 3 == 0)
-#             ):
-#                 yield line_num + 1, self.CODE, "Indent level mismatch"
-
-#             curr_indent = indent
-
 class CheckIndentation(ContentCheck):
     """
-        - indentation
+    - indentation
     """
+
     CODE = "WUMBO011"
     REPORTS = frozenset([CODE])
 
@@ -398,32 +355,34 @@ class CheckIndentation(ContentCheck):
                     in_code_block = False
                 else:
                     continue
-    
-            if (
-                line.strip().startswith(".. code-block")
-                or line.strip().startswith(".. code-tab")
+
+            if line.strip().startswith(".. code-block") or line.strip().startswith(
+                ".. code-tab"
             ):
                 in_code_block = True
                 code_block_indent = indent
                 continue
 
             if indent in indents:
-                indents = indents[:indents.index(indent) + 1]
+                indents = indents[: indents.index(indent) + 1]
                 is_prev_unordered_list = line.strip().startswith("- ")
                 continue
 
-            if indent == indents[-1] + 3 or (indent == indents[-1] + 2 and is_prev_unordered_list):
+            if indent == indents[-1] + 3 or (
+                indent == indents[-1] + 2 and is_prev_unordered_list
+            ):
                 indents.append(indent)
                 is_prev_unordered_list = line.strip().startswith("- ")
                 continue
 
-
             yield line_num + 1, self.CODE, "Indent level mismatch"
+
 
 class CheckInteriorSpaces(ContentCheck):
     """
-        - make sure sentences only have 1 space separating them
+    - make sure sentences only have 1 space separating them
     """
+
     CODE = "WUMBO012"
     REPORTS = frozenset([CODE])
 
@@ -444,8 +403,9 @@ class CheckInteriorSpaces(ContentCheck):
 
 class CheckImageAlt(ContentCheck):
     """
-        - make sure all images have alt text
+    - make sure all images have alt text
     """
+
     CODE = "WUMBO013"
     REPORTS = frozenset([CODE])
 
@@ -463,9 +423,6 @@ class CheckImageAlt(ContentCheck):
                     else:
                         section_line = 0
 
-                # if not section_line:
-                #     import code
-                #     code.interact(local=locals())
                 for idx, line in enumerate(
                     lines[section_line:], start=section_line + 1
                 ):
@@ -475,8 +432,9 @@ class CheckImageAlt(ContentCheck):
 
 class CheckSingleLineParagraph(ContentCheck):
     """
-        - make sure all paragraphs are on a single line
+    - make sure all paragraphs are on a single line
     """
+
     CODE = "WUMBO014"
     REPORTS = frozenset([CODE])
 
@@ -487,9 +445,6 @@ class CheckSingleLineParagraph(ContentCheck):
             for p in parsed_file.document.traverse(nodes.paragraph)
             if p.line != None and not isinstance(p.parent, nodes.Part)
         )
-
-        # if "status-lights-ref" in parsed_file.filename:
-        #     __import__("code").interact(local={**locals(), **globals()})
 
         for p_line_num in p_line_nums:
             if p_line_num + 1 not in p_line_nums:

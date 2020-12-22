@@ -18,5 +18,5 @@ setup(
         "more_itertools>=8.6.0",
         "doc8>=0.8.1",
         "docutils>=0.16",
-    ]
+    ],
 )
