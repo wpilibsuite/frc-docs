@@ -75,7 +75,7 @@ Each command can be run from Shuffleboard or Smartdashboard. This is useful for 
 
 By creating buttons, each command can be tested individually. If all the commands work individually, you can be pretty sure that the robot will work as a whole.
 
-For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-smartdashboard>`.
+For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-shuffleboard>`.
 
 Adding Operator Interface Components
 ------------------------------------
