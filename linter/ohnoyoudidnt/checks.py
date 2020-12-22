@@ -101,10 +101,10 @@ class CheckFilenames(ContentCheck):
     def report_iter(self, parsed_file: ParsedFile):
         *dirnames, filename = Path(parsed_file.filename).parts
         if not all(map(self.check_name, dirnames)):
-            yield 0, self.DIR_CODE, "Invalid directory name in path"
+            yield 1, self.DIR_CODE, "Invalid directory name in path"
 
         if not (filename.endswith(".rst") and self.check_name(filename[:-5])):
-            yield 0, self.FILE_CODE, "Invalid file name"
+            yield 1, self.FILE_CODE, "Invalid file name"
 
 
 class CheckTermSpellings(ContentCheck):
@@ -197,7 +197,8 @@ class CheckDoubleNewlines(ContentCheck):
 
     def report_iter(self, parsed_file: ParsedFile):
         for line_num, (curr_line, next_line) in enumerate(
-            windowed(map(str.strip, parsed_file.contents.split("\n")), 2)
+            windowed(map(str.strip, parsed_file.contents.split("\n")), 2),
+            start=1
         ):
             if curr_line == next_line == "":
                 yield line_num, self.CODE, "Double newline found"

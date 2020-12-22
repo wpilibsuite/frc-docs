@@ -13,3 +13,8 @@ python -m pip install .
 ```bash
 make lint
 ```
+
+## Contribution Guidelines
+### Checks
+- Checks can never yield a line number < 1
+- Checks must compile regex patterns once per import, not once per file
