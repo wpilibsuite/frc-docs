@@ -396,8 +396,10 @@ class CheckIndentation(ContentCheck):
             if in_code_block:
                 if indent <= code_block_indent:
                     in_code_block = False
-                continue
-            elif (
+                else:
+                    continue
+    
+            if (
                 line.strip().startswith(".. code-block")
                 or line.strip().startswith(".. code-tab")
             ):
