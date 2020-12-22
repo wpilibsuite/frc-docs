@@ -308,18 +308,21 @@ class CheckBlankLineAfterDirective(ContentCheck):
     CODE = "WUMBO010"
     REPORTS = frozenset([CODE])
 
+    REGEX = re.compile(r"^\.\. [A-Za-z0-9-]+::")
+
     def report_iter(self, parsed_file: ParsedFile):
         for line_num, (curr_line, next_line) in enumerate(
             windowed(map(str.rstrip, parsed_file.contents.split("\n")), 2)
         ):
-            if curr_line.strip().startswith(".. ") and "::" in curr_line.strip():
+            if self.REGEX.search(curr_line.strip()):
                 if next_line.strip() and not next_line.strip().startswith(":"):
                     yield line_num + 1, self.CODE, "No blank line after directive without options"
 
         for line_num, (prev_line, curr_line, next_line) in enumerate(
             windowed(map(str.rstrip, parsed_file.contents.split("\n")), 3)
         ):
-            if prev_line.strip().startswith(".. ") and "::" in prev_line.strip():
+            # if prev_line.strip().startswith(".. ") and "::" in prev_line.strip():
+            if self.REGEX.search(prev_line.strip()):
                 if not curr_line.strip():
                     if next_line.strip().startswith(":"):
                         yield line_num + 1, self.CODE, "Blank line found after directive with options"
@@ -374,8 +377,7 @@ class CheckInteriorSpaces(ContentCheck):
     CODE = "WUMBO012"
     REPORTS = frozenset([CODE])
 
-    plain_pattern = re.compile(r"FIRST")
-    italic_pattern = re.compile(r"\*FIRST\*")
+    REGEX = re.compile(r".  [A-Za-z0-9]")
 
     def report_iter(self, parsed_file: ParsedFile):
 
@@ -386,7 +388,7 @@ class CheckInteriorSpaces(ContentCheck):
                 continue
             line_num = paragraph.line
             line = lines[line_num - 1]
-            if line.find(".  ") != -1:
+            if self.REGEX.search(line):
                 yield line_num, self.CODE, "Double space found"
 
 
@@ -433,8 +435,11 @@ class CheckSingleLineParagraph(ContentCheck):
         p_line_nums = set(
             p.line
             for p in parsed_file.document.traverse(nodes.paragraph)
-            if p.line != None
+            if p.line != None and not isinstance(p.parent, nodes.Part)
         )
+
+        # if "status-lights-ref" in parsed_file.filename:
+        #     __import__("code").interact(local={**locals(), **globals()})
 
         for p_line_num in p_line_nums:
             if p_line_num + 1 not in p_line_nums:
