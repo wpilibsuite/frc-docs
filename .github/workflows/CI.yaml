@@ -67,7 +67,7 @@ jobs:
         pip install ./linter
     - name: Remove unchanged files
       run: |
-        ( git diff --name-only origin/master ; git ls-files ) | sort | uniq -u | xargs rm
+        ( git diff --name-only origin/master ; git ls-files ) | sort | uniq -u | grep -v "^Makefile$" | xargs rm
     - name: Check Lint
       run: |
         make lint
