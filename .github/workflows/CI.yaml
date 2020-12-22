@@ -59,6 +59,9 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
+    - name: Install linter
+      run: |
+        pip install ./linter
     - name: Check Lint
       run: |
         make lint
