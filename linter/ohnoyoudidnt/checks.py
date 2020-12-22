@@ -328,6 +328,47 @@ class CheckBlankLineAfterDirective(ContentCheck):
                         yield line_num + 1, self.CODE, "Blank line found after directive with options"
 
 
+# class CheckIndentation(ContentCheck):
+#     """
+#         - indentation
+#     """
+#     CODE = "WUMBO011"
+#     REPORTS = frozenset([CODE])
+
+#     def report_iter(self, parsed_file: ParsedFile):
+
+#         curr_indent = 0
+#         in_code_block = False
+#         code_block_indent = 0
+
+#         for line_num, (indent, line) in enumerate(
+#             map(
+#                 lambda s: (len(s) - len(s.lstrip()), s.strip()),
+#                 parsed_file.contents.split("\n"),
+#             )
+#         ):
+#             if not line.strip():
+#                 continue
+#             if in_code_block:
+#                 if indent <= code_block_indent:
+#                     in_code_block = False
+#                 else:
+#                     curr_indent = indent
+#                     continue
+
+#             if line.strip().startswith(".. code-block") or line.strip().startswith(
+#                 ".. code-tab"
+#             ):
+#                 in_code_block = True
+#                 code_block_indent = indent
+
+#             if not (
+#                 indent == curr_indent + 3 or (indent <= curr_indent and indent % 3 == 0)
+#             ):
+#                 yield line_num + 1, self.CODE, "Indent level mismatch"
+
+#             curr_indent = indent
+
 class CheckIndentation(ContentCheck):
     """
         - indentation
@@ -337,9 +378,11 @@ class CheckIndentation(ContentCheck):
 
     def report_iter(self, parsed_file: ParsedFile):
 
-        curr_indent = 0
+        indents = [0]
         in_code_block = False
         code_block_indent = 0
+
+        is_prev_unordered_list = False
 
         for line_num, (indent, line) in enumerate(
             map(
@@ -349,26 +392,31 @@ class CheckIndentation(ContentCheck):
         ):
             if not line.strip():
                 continue
+
             if in_code_block:
                 if indent <= code_block_indent:
                     in_code_block = False
-                else:
-                    curr_indent = indent
-                    continue
-
-            if line.strip().startswith(".. code-block") or line.strip().startswith(
-                ".. code-tab"
+                continue
+            elif (
+                line.strip().startswith(".. code-block")
+                or line.strip().startswith(".. code-tab")
             ):
                 in_code_block = True
                 code_block_indent = indent
+                continue
 
-            if not (
-                indent == curr_indent + 3 or (indent <= curr_indent and indent % 3 == 0)
-            ):
-                yield line_num + 1, self.CODE, "Indent level mismatch"
+            if indent in indents:
+                indents = indents[:indents.index(indent) + 1]
+                is_prev_unordered_list = line.strip().startswith("- ")
+                continue
 
-            curr_indent = indent
+            if indent == indents[-1] + 3 or (indent == indents[-1] + 2 and is_prev_unordered_list):
+                indents.append(indent)
+                is_prev_unordered_list = line.strip().startswith("- ")
+                continue
 
+
+            yield line_num + 1, self.CODE, "Indent level mismatch"
 
 class CheckInteriorSpaces(ContentCheck):
     """
