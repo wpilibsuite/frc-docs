@@ -92,7 +92,7 @@ class CheckFilenames(ContentCheck):
     DIR_CODE = "WUMBO002"
     REPORTS = frozenset([FILE_CODE, DIR_CODE])
 
-    _FILENAME_REGEX = re.compile(r"([a-z0-9](|-[a-z0-9]))+")
+    _FILENAME_REGEX = re.compile(r"[a-z0-9]([a-z0-9]|-[a-z0-9])+")
 
     @staticmethod
     def check_name(name: str) -> bool:
@@ -226,7 +226,7 @@ class CheckTrademarks(ContentCheck):
 
         title_nodes = set(parsed_file.document.traverse(nodes.title))
         for paragraph in filter(
-            lambda x: x not in title_nodes,
+            lambda x: not ( isinstance(x, nodes.title) or isinstance(x, nodes.Invisible)),
             parsed_file.document.traverse(nodes.TextElement),
         ):
             if not paragraph.line:
@@ -312,14 +312,14 @@ class CheckBlankLineAfterDirective(ContentCheck):
         for line_num, (curr_line, next_line) in enumerate(
             windowed(map(str.rstrip, parsed_file.contents.split("\n")), 2)
         ):
-            if curr_line.strip().startswith(".. "):
+            if curr_line.strip().startswith(".. ") and "::" in curr_line.strip():
                 if next_line.strip() and not next_line.strip().startswith(":"):
                     yield line_num + 1, self.CODE, "No blank line after directive without options"
 
         for line_num, (prev_line, curr_line, next_line) in enumerate(
             windowed(map(str.rstrip, parsed_file.contents.split("\n")), 3)
         ):
-            if prev_line.strip().startswith(".. "):
+            if prev_line.strip().startswith(".. ") and "::" in prev_line.strip():
                 if not curr_line.strip():
                     if next_line.strip().startswith(":"):
                         yield line_num + 1, self.CODE, "Blank line found after directive with options"
