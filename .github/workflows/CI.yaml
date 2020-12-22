@@ -62,6 +62,9 @@ jobs:
     - name: Install linter
       run: |
         pip install ./linter
+    - name: Remove unchanged files
+      run: |
+        ( git ls-files --modified ; git ls-files ) | sort | uniq -u | xargs rm
     - name: Check Lint
       run: |
         make lint
