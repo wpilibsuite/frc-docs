@@ -9,7 +9,7 @@ Launching the Import Wizard
 |Launching Import Wizard|
 
 
-Press Ctrl+Shift+P and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib Eclipse project" and select it from the dropdown.
+Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib Eclipse project" and select it from the dropdown.
 
 |Eclipse Project Importer|
 
@@ -23,7 +23,7 @@ You'll be presented with the WPILib Eclipse Project Upgrade window. This is simi
 
 Click "Upgrade Project" to begin the upgrade.
 
-The eclipse project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the Ctrl-O (or Command-O for macOS) shortcut.
+The eclipse project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or Command-O for macOS) shortcut.
 
 |Opening Project|
 

@@ -96,7 +96,11 @@ todo_include_todos = False
 linkcheck_anchors = False
 
 # Linkcheck Exclusions
-linkcheck_ignore = [r'.*kauailabs.com.*', r'.*frcvision.local.*', r'.*andymark.com.*']
+linkcheck_ignore = [r'.*kauailabs.com.*',
+                    r'.*wpilibpi.local.*',
+                    r'.*andymark.com.*',
+                    r'.*ti.com/lit/an/spma033a/spma033a.pdf.*',
+                    r'.*wpilibpi.local.*']
 
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
@@ -123,9 +127,9 @@ master_doc = "index"
 # Specify files to ignore during SizeCheck
 IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
-    "docs/software/vision-processing/frcvision/diagrams/vision-code-on-a-coprocessor.drawio.svg",
+    "docs/software/vision-processing/wpilibpi/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
-    "docs/zero-to-robot/step-1/images/frc-control-system-layout.svg"
+    "docs/controls-overviews/images/frc-control-system-layout.svg"
 ]
 
 # Required to display LaTeX in hover content
@@ -165,6 +169,15 @@ user_options = [
 
 def setup(app):
   app.add_css_file('css/frc-rtd.css')
+ 
+  # Local Api Docs support
+  app.add_js_file('js/api-docs-redirect.js')
+
+  # Right-to-left support
+  is_rtl = app.config.language in rtl_locale
+  app.config.hoverxref_tooltip_side = 'left' if is_rtl else 'right'
+  if is_rtl:
+    app.add_css_file('css/frc-rtl.css')
 
 # -- Options for latex generation --------------------------------------------
 
@@ -199,3 +212,4 @@ sphinx_tabs_valid_builders = ['epub', 'linkcheck']
 
 gettext_compact = False
 locale_dirs = ['locale/']
+rtl_locale = ['he']

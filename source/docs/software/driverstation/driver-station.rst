@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 FRC Driver Station Powered by NI LabVIEW
 ========================================
 
-This article describes the use and features of the FRC Driver Station Powered by NI LabVIEW.
+This article describes the use and features of the FRC\ |reg| Driver Station Powered by NI LabVIEW.
 
 For information on installing the Driver Station software see :ref:`this document <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
 
@@ -12,12 +14,14 @@ Starting the FRC Driver Station
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
+.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/wpilib-tools/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`.
+
 Setting Up the Driver Station
 -----------------------------
 
 .. image:: images/driver-station/ds-setup.png
 
-The DS must be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
+The DS should be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
 
 PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to DHCP.
 
@@ -87,7 +91,7 @@ Setup Tab
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
 1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
-2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. Default launches the file pointed to by the "FRC DS Data Storage.ini" file, by default this is Dashboard.exe in the Program Files\\FRC Dashboard folder. LabVIEW attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. SmartDashboard and Shuffleboard launch the respective dashboards included with the C++ and Java WPILib installation.
+2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. :guilabel:`Default` launches the file pointed to by the "FRC DS Data Storage.ini" (for more information about setting a :ref:`custom dashboard <docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard:Manually Setting the Driver Station to Start Custom Dashboard>` ), by default this is Dashboard.exe in the Program Files (x86)\\FRC Dashboard folder. :guilabel:`LabVIEW` attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. :guilabel:`SmartDashboard` and :guilabel:`Shuffleboard` launch the respective dashboards included with the C++ and Java WPILib installation.  :guilabel:`Remote` launches another dashboard from the "DashboardRemoteIP" field in the "FRC DS Data Storage.ini" file.
 3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
 5. Audio Control - This button controls whether audio tones are sounded when the Practice Mode is used.
@@ -127,8 +131,6 @@ CAN/Power Tab
 
 .. image:: images/driver-station/ds-can-power-tab.png
 
-
-
 The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
 
 1. Comms Faults - Indicates the number of Comms faults that have occurred since the DS has been connected
@@ -138,7 +140,6 @@ The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab con
 5. CAN faults - Indicates the counts of each of the 4 types of CAN faults since the DS has been connected
 
 If a fault is detected, the indicator for this tab (shown in blue in the image above) will turn red.
-
 
 Messages Tab
 ------------

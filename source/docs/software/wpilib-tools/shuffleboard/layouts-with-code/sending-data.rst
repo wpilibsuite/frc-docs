@@ -55,7 +55,7 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
 Sending sensors, motors, etc
 ----------------------------
 
-Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, speed controllers, and SendableChoosers) can be added to any tab
+Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, motor controllers, and SendableChoosers) can be added to any tab
 
 .. tabs::
 

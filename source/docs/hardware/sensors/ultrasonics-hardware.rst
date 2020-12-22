@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 Ultrasonics - Hardware
 ======================
 
 .. note:: This section covers ultrasonic sensor hardware.  For a software guide to ultrasonics, see :ref:`docs/software/sensors/ultrasonics-software:Ultrasonics - Software`.
 
-Ultrasonic rangefinders are some of the most common rangefinders used in FRC.  They are cheap, easy-to-use, and fairly reliable.  Ultrasonic rangefinders work by emitting a pulse of high-frequency sound, and then measuring how long it takes the echo to reach the sensor after bouncing off the target.  From the measured time and the speed of sound in air, it is possible to calculate the distance to the target.
+Ultrasonic rangefinders are some of the most common rangefinders used in FRC\ |reg|.  They are cheap, easy-to-use, and fairly reliable.  Ultrasonic rangefinders work by emitting a pulse of high-frequency sound, and then measuring how long it takes the echo to reach the sensor after bouncing off the target.  From the measured time and the speed of sound in air, it is possible to calculate the distance to the target.
 
 Types of ultrasonics
 --------------------

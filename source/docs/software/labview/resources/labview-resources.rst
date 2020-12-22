@@ -1,9 +1,11 @@
+.. include:: <isonum.txt>
+
 LabVIEW Resources
 =================
 
 .. image:: images/ni-logo.png
 
-.. note:: To learn more about programming in LabVIEW and specifically programming FRC robots in LabVIEW, check out the following resources.
+.. note:: To learn more about programming in LabVIEW and specifically programming FRC\ |reg| robots in LabVIEW, check out the following resources.
 
 LabVIEW Basics
 --------------

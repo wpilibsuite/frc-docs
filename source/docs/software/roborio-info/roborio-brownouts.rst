@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 roboRIO Brownout and Understanding Current Draw
 ===============================================
 
@@ -30,7 +32,7 @@ When the voltage drops below 6.3V, the controller will enter the brownout protec
 
 The controller will take the following steps to attempt to preserve the battery voltage:
 
--  PWM outputs will be disabled. For PWM outputs which have set their neutral value (all speed controllers in WPILib) a single neutral pulse will be sent before the output is disabled.
+-  PWM outputs will be disabled. For PWM outputs which have set their neutral value (all motor controllers in WPILib) a single neutral pulse will be sent before the output is disabled.
 -  6V, 5V, 3.3V User Rails disabled (This includes the 6V outputs on the PWM pins, the 5V pins in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank)
 -  GPIO configured as outputs go to High-Z
 -  Relay Outputs are disabled (driven low)
@@ -64,7 +66,7 @@ The key to avoiding a brownout condition is to proactively plan for the current 
 Measuring Current Draw using the PDP
 ------------------------------------
 
-The FRC Driver Station works in conjunction with the roboRIO and PDP to extract logged data from the PDP and log it on your DS PC. A viewer for this data is still under development.
+The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP to extract logged data from the PDP and log it on your DS PC. A viewer for this data is still under development.
 
 In the meantime, teams can use their robot code and manual logging, a LabVIEW front panel or the SmartDashboard to visualize current draw on their robot as mechanisms are developed. In LabVIEW, you can read the current on a PDP channel using the PDP Channel Current VI found on the Power pallet. For C++ and Java teams, use the PowerDistributionPanel class as described in the Power Distribution Panel article. Plotting this information over time (easiest with a LV Front Panel or with the SmartDashboard by using a Graph indicator can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
 

@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 RobotBuilder Overview
 =====================
 
@@ -12,7 +14,7 @@ RobotBuilder is an application designed to aid the robot development process. Ro
 
 Creating a program with RobotBuilder is a very straight forward procedure by following a few steps that are the same for any robot. This lesson describes the steps that you can follow. You can find more details about each of these steps in subsequent sections of the document.
 
-In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
+In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC\ |reg| Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
 
 .. note:: RobotBuilder generates code using the new Command Framework. For more details on the old framework see :ref:`Command Based Programming <docs/software/commandbased/index:Command-Based Programming>`.
 
@@ -32,7 +34,7 @@ Adding each Subsystem to the Project
 
 Each subsystem will be added to the "Subsystems" folder in the RobotBuilder and given a meaningful name. For each of the subsystems there are several attributes that get filled in to specify more information about the subsystems. In addition there are two types of subsystems that you might want to create:
 
-1. PIDSubsystems - often it is desirable to control a subsystems operation with a PID controller. This is code in your program that makes the subsystem element, for example arm angle, more quickly to a desired position then stop when reaching it. PIDSubsystems have the PID Controller code built-in and are often more convenient then adding it yourself. PIDSubsystems have a sensor that determines when the device has reached the target position and an actuator (speed controller) that is driven to the setpoint.
+1. PIDSubsystems - often it is desirable to control a subsystems operation with a PID controller. This is code in your program that makes the subsystem element, for example arm angle, more quickly to a desired position then stop when reaching it. PIDSubsystems have the PID Controller code built-in and are often more convenient then adding it yourself. PIDSubsystems have a sensor that determines when the device has reached the target position and an actuator (motor controller) that is driven to the setpoint.
 2. Regular subsystem - these subsystems don't have an integrated PID controller and are used for subsystems without PID control for feedback or for subsystems requiring more complex control than can be handled with the default embedded PID controller.
 
 As you look through more of this documentation the differences between the subsystem types will become more apparent.

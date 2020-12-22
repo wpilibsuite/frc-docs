@@ -1,7 +1,9 @@
+.. include:: <isonum.txt>
+
 Strategies for Vision Programming
 =================================
 
-Using computer vision is a great way of making your robot be responsive to the elements on the field and make it much more autonomous. Often in FRC games there are bonus points for autonomously shooting balls or other game pieces into goals or navigating to locations on the field. Computer vision is a great way of solving many of these problems. And if you have autonomous code that can do the challenge, then it can be used during the teleop period as well to help the human drivers.
+Using computer vision is a great way of making your robot be responsive to the elements on the field and make it much more autonomous. Often in FRC\ |reg| games there are bonus points for autonomously shooting balls or other game pieces into goals or navigating to locations on the field. Computer vision is a great way of solving many of these problems. And if you have autonomous code that can do the challenge, then it can be used during the teleop period as well to help the human drivers.
 
 There are many options for choosing the components for vision processing and where the vision program should run. WPILib and associated tools support a number of options and give teams a lot of flexibility to decide what to do. This article will attempt to give you some insight into many of the choices and tradeoffs that are available.
 
@@ -39,7 +41,7 @@ Vision Code on Coprocessor
 
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
 
-Coprocessors such as the Raspberry Pi are ideal for supporting vision code (see :ref:`docs/software/vision-processing/frcvision/using-the-raspberry-pi-for-frc:Using the Raspberry Pi for FRC`). The advantage is that they can run full speed and not interfere with the robot program. In this case, the camera is probably connected to the coprocessor or (in the case of Ethernet cameras) an Ethernet switch on the robot. The program can be written in any language; Python is a good choice because of its simple bindings to OpenCV and NetworkTables. Some teams have used high performance vision coprocessors such as the Nvidia Jetson for fastest speed and highest resolution, although this approach generally requires advanced Linux and programming knowledge.
+Coprocessors such as the Raspberry Pi are ideal for supporting vision code (see :ref:`docs/software/vision-processing/wpilibpi/using-the-raspberry-pi-for-frc:Using the Raspberry Pi for FRC`). The advantage is that they can run full speed and not interfere with the robot program. In this case, the camera is probably connected to the coprocessor or (in the case of Ethernet cameras) an Ethernet switch on the robot. The program can be written in any language; Python is a good choice because of its simple bindings to OpenCV and NetworkTables. Some teams have used high performance vision coprocessors such as the Nvidia Jetson for fastest speed and highest resolution, although this approach generally requires advanced Linux and programming knowledge.
 
 This approach takes a bit more programming expertise as well as a small amount of additional weight, but otherwise it brings the best of both worlds compared to the other two approaches, as coprocessors are much faster than the roboRIO and the image processing can be performed with minimal latency or bandwidth use.
 

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+body, .rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend {
+  font-family: 'Heebo', sans-serif;
+}
+body {
+  direction: rtl;
+}
+.fa:before {
+  transform: scale(-1, 1);
+}
+.rst-content div[class^=highlight] pre, .highlighttable {
+  direction: ltr;
+}
+.rst-content code, .rst-content tt {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+.link-bar-container {
+  margin-right: 320px;
+  margin-left: 0;
+}
+#link-bar li, .wy-nav-top i {
+  float: right;
+}
+
+.wy-nav-side, .rst-versions {
+  right: 0;
+  left: unset;
+}
+.wy-nav-content-wrap {
+  margin-right: 320px;
+  margin-left: 0;
+}
+@media screen and (max-width: 768px) {
+  .wy-nav-side, .rst-versions {
+    right: -300px;
+  }
+  .wy-nav-content-wrap {
+    margin-right: 0;
+  }
+  .wy-nav-side.shift, .rst-versions.shift {
+    right: 0;
+    left: unset;
+  }
+  .wy-nav-content-wrap.shift {
+    right: 85%;
+    left: unset;
+  }
+}
+
+.rst-content .admonition-title:before {
+  margin-right: 0;
+  margin-left: 4px;
+}
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+  float: left;
+}
+.float-right {
+  float: left;
+}
+.float-left {
+  float: right;
+}
+
+.rst-versions .rst-current-version {
+  text-align: left;
+}
+.rst-versions .rst-current-version .fa-book, .rst-versions .rst-current-version .icon-book {
+  float: right;
+}
+.rst-other-versions {
+  text-align: right;
+}

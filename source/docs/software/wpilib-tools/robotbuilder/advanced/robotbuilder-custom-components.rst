@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Adding Custom Components
 ========================
 
@@ -10,7 +12,7 @@ Custom Component Structure
 
 .. image:: images/custom-components-1.png
 
-Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC year.
+Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC\ |reg| year.
 
 There are seven files and one folder that are needed for a custom component. The folder contains the files describing the component and how to export it. It should have the same name as the component (e.g."Kiwi Drive" for a kiwi drive controller, "Robot Drive 6" for a six-motor drive controller, etc.). The files should have the same names and extensions as the ones shown here. Other files can be in the folder along with these seven, but the seven must be present for RobotBuilder to recognize the custom component.
 
@@ -32,7 +34,7 @@ The types of component RobotBuilder supports (these are case-sensitive):
 
 - Command
 - Subsystem
-- PIDOutput (speed controller)
+- PIDOutput (motor controller)
 - PIDSource (sensor that implements PIDSource e.g. analog potentiometer, encoder)
 - Sensor (sensor that does not implement PIDSource e.g. limit switch)
 - Controller (robot drive, PID controller, etc.)
@@ -48,7 +50,7 @@ The properties relevant for a custom component:
 - StringProperty: used when a component needs a string e.g. the name of the component
 - BooleanProperty: used when a component needs a boolean value e.g. putting a button on the SmartDashboard
 - DoubleProperty: used when a component needs a number value e.g. PID constantsChoicesProperty
-- ChildSelectionProperty: used when you need to choose a child component e.g. speed controllers in a RobotDrive
+- ChildSelectionProperty: used when you need to choose a child component e.g. motor controllers in a RobotDrive
 - TypeSelectionProperty: used when you need to choose any component of the given type from anywhere in the program e.g. input and output for a PID command
 
 The fields for each property are described below:

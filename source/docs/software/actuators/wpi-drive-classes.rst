@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Using the WPILib Classes to Drive your Robot
 ======================================================
 
@@ -44,11 +46,11 @@ Motor Safety
 
 Motor Safety is a mechanism in WPILib that takes the concept of a watchdog and breaks it out into one watchdog (Motor Safety timer) for each individual actuator. Note that this protection mechanism is in addition to the System Watchdog which is controlled by the Network Communications code and the FPGA and will disable all actuator outputs if it does not receive a valid data packet for 125ms.
 
-The purpose of the Motor Safety mechanism is the same as the purpose of a watchdog timer, to disable mechanisms which may cause harm to themselves, people or property if the code locks up and does not properly update the actuator output. Motor Safety breaks this concept out on a per actuator basis so that you can appropriately determine where it is necessary and where it is not. Examples of mechanisms that should have motor safety enabled are systems like drive trains and arms. If these systems get latched on a particular value they could cause damage to their environment or themselves. An example of a mechanism that may not need motor safety is a spinning flywheel for a shooter. If this mechanism gets latched on a particular value it will simply continue spinning until the robot is disabled. By default Motor Safety is enabled for RobotDrive objects and disabled for all other speed controllers and servos.
+The purpose of the Motor Safety mechanism is the same as the purpose of a watchdog timer, to disable mechanisms which may cause harm to themselves, people or property if the code locks up and does not properly update the actuator output. Motor Safety breaks this concept out on a per actuator basis so that you can appropriately determine where it is necessary and where it is not. Examples of mechanisms that should have motor safety enabled are systems like drive trains and arms. If these systems get latched on a particular value they could cause damage to their environment or themselves. An example of a mechanism that may not need motor safety is a spinning flywheel for a shooter. If this mechanism gets latched on a particular value it will simply continue spinning until the robot is disabled. By default Motor Safety is enabled for RobotDrive, DifferentialDrive, KilloughDrive, and MecanumDrive objects and disabled for all other motor controllers and servos.
 
-The Motor Safety feature operates by maintaining a timer that tracks how long it has been since the feed() method has been called for that actuator. Code in the Driver Station class initiates a comparison of these timers to the timeout values for any actuator with safety enabled every 5 received packets (100ms nominal). The set() methods of each speed controller class and the set() and setAngle() methods of the servo class call feed() to indicate that the output of the actuator has been updated.
+The Motor Safety feature operates by maintaining a timer that tracks how long it has been since the feed() method has been called for that actuator. Code in the Driver Station class initiates a comparison of these timers to the timeout values for any actuator with safety enabled every 5 received packets (100ms nominal). The set() methods of each motor controller class and the set() and setAngle() methods of the servo class call feed() to indicate that the output of the actuator has been updated.
 
-The Motor Safety interface of speed controllers can be interacted with by the user using the following methods:
+The Motor Safety interface of motor controllers can be interacted with by the user using the following methods:
 
 .. tabs::
 
@@ -122,7 +124,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
 Multi-Motor DifferentialDrive with SpeedControllerGroups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many FRC drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single SpeedController, using the SpeedControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the SpeedController group constructor (it takes an arbitrary number of inputs).
+Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single SpeedController, using the SpeedControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the SpeedController group constructor (it takes an arbitrary number of inputs).
 
 .. tabs::
 
@@ -180,29 +182,39 @@ Drive Modes
     - Arcade Drive, which controls a forward and turn speed
     - Curvature Drive, a subset of Arcade Drive, which makes your robot handle like a car with constant-curvature turns.
 
-As stated above, the DifferentialDrive class contains three default methods for controlling skid-steer or WCD robots. Note that you can create your own methods of controlling the robot's driving and have them call tankDrive() with the derived inputs for left and right motors.
+The DifferentialDrive class contains three default methods for controlling skid-steer or WCD robots. Note that you can create your own methods of controlling the robot's driving and have them call tankDrive() with the derived inputs for left and right motors.
 
 The Tank Drive mode is used to control each side of the drivetrain independently (usually with an individual joystick axis controlling each). This example shows how to use the Y-axis of two separate joysticks to run the drivetrain in Tank mode. Construction of the objects has been omitted, for above for drivetrain construction and here for Joystick construction.
 
 The Arcade Drive mode is used to control the drivetrain using speed/throttle and rotation rate. This is typically used either with two axes from a single joystick, or split across joysticks (often on a single gamepad) with the throttle coming from one stick and the rotation from another. This example shows how to use a single joystick with the Arcade mode. Construction of the objects has been omitted, for above for drivetrain construction and here for Joystick construction.
 
-Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain using speed/throttle and rotation rate. The difference is that the rotation control is attempting to control radius of curvature instead of rate of heading change. This mode also has a quick-turn parameter that is used to engage a sub-mode that allows for turning in place. This example shows how to use a single joystick with the Curvature mode. Construction of the objects has been omitted, for above for drivetrain construction and here for Joystick construction.
+Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain using speed/throttle and rotation rate. The difference is that the rotation control input controls the radius of curvature instead of rate of heading change, much like the steering wheel of a car. This mode also supports turning in place, which is enabled when the third :code:`boolean` parameter is true.
 
 .. tabs::
 
     .. code-tab:: java
 
         public void teleopPeriodic() {
+            // Tank drive with a given left and right rates
             myDrive.tankDrive(leftStick.getY(), rightStick.getY());
+
+            // Arcade drive with a given forward and turn rate
             myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
-            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.GetButton(1));
+
+            // Curvature drive with a given forward and turn rate, as well as a quick-turn button
+            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
+            // Tank drive with a given left and right rates
             myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
+
+            // Arcade drive with a given forward and turn rate
             myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
+
+            // Curvature drive with a given forward and turn rate, as well as a quick-turn button
             myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
 

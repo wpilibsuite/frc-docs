@@ -1,6 +1,9 @@
+.. include:: <isonum.txt>
+
 Using GRIP with a Kangaroo Computer
 ===================================
-A recently available computer called the Kangaroo looks like a great platform for running GRIP on FRC robots. Some of the specs
+
+A recently available computer called the Kangaroo looks like a great platform for running GRIP on FRC\ |reg| robots. Some of the specs
 for this processor include:
 
 -   Quad core 1.4Ghz Atom processor
@@ -26,6 +29,7 @@ on boot and many other details.
 
 Setup
 -----
+
 .. figure:: images/using-grip-with-a-kangaroo-computer/setup.png
 
 The nice thing about this setup is that you just need to plug in a monitor, keyboard, mouse and (in this case) the Microsoft web
@@ -38,6 +42,7 @@ The USB hub is connected to the camera and mouse.
 
 Sample GRIP program
 -------------------
+
 .. figure:: images/using-grip-with-a-kangaroo-computer/sample-grip-program.png
 
 Attached is the sample program running on the Kangaroo detecting the red heart on the little foam robot in the image (left panel).
@@ -46,6 +51,7 @@ solidity. At the end of the pipeline, the values are being published to NetworkT
 
 Viewing Contours Report in NetworkTables
 ----------------------------------------
+
 .. figure:: images/using-grip-with-a-kangaroo-computer/viewing-contours-report-in-networktables.png
 
 This is the output from the OutlineViewer (<username>/WPILib/tools/OutlineViewer.jar), running on a different computer as a server
@@ -54,6 +60,7 @@ program detected that met the requirements of the Filter Contours operation.
 
 Considerations
 --------------
+
 The Kangaroo runs Windows 10, so care must to be taken to make sure GRIP will keep running on the robot during a match or testing.
 For example, it should not try to do a Windows Update, Virus scan refresh, go to sleep, etc. Once configured, it has the advantage
 of being a normal Intel Architecture and should give predictable performance since it is running only one application.

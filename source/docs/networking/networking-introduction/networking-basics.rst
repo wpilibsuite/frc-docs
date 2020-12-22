@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 Networking Basics
 =================
 
@@ -37,7 +39,7 @@ then passing the returned data back to the private IP that requested it. This al
 .. image:: diagrams/nat.drawio.svg
 
 .. note::
-   For the FRC networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
+   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
 
 
 How are these addresses assigned?
@@ -165,7 +167,7 @@ If using the USB interface, no network setup is required (you do need the :ref:`
 Ethernet/Wireless
 -----------------
 
-The :ref:`docs/zero-to-robot/step-2/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
+The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
 
 Summary
 -------
