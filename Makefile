@@ -7,7 +7,7 @@ SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 LINTER        = doc8
-LINTEROPTS    = --ignore D001 --extension .rst # D001 is linelength
+LINTEROPTS    = --ignore D001 # D001 is linelength
 SIZECHECKER   = python3 -m scripts.imagesizechecker
 CONFEXCLUDE   = --exclude-file source/conf.py
 SIZEMAX       = 500
@@ -21,7 +21,7 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 lint:
-	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)
+	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)/docs
 
 sizecheck:
 	@$(SIZECHECKER) $(SOURCEDIR) $(SIZEMAX) $(CONFEXCLUDE)
