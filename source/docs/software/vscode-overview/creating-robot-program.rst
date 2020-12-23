@@ -141,19 +141,23 @@ Creating a New WPILib Project
 
 Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`:
 
-|Command Palette|
+.. image:: images/creating-robot-program/command-palette.png
+   :alt: The WPILib Command Palette.
 
 Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
 
-|WPILib Commands|
+.. image:: images/creating-robot-program/wpilib-commands.png
+   :alt: All of the WPILib Commands.
 
 Now, select the "Create a new project" command:
 
-|Create New Project|
+.. image:: images/creating-robot-program/create-new-project.png
+   :alt: Highlights the "WPILib: Create a new project" command.
 
 This will bring up the "New Project Creator Window:"
 
-|New Project Creator|
+.. image:: images/creating-robot-program/new-project-creator.png
+   :alt: The new project creator screen.
 
 The elements of the New Project Creator Window are explained below:
 
@@ -172,7 +176,8 @@ Once all the above have been configured, click "Generate Project" and the robot 
 
 An example after all options are selected is shown below.
 
-|New Project Configured|
+.. image:: images/creating-robot-program/new-project-creator-configured.png
+   :alt: The new project creator screen filled out.
 
 Opening The New Project
 -----------------------
@@ -181,20 +186,13 @@ After successfully creating your project, VS Code will give the option of openin
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
-|Opened Robot Project|
+.. image:: images/creating-robot-program/opened-robot-project.png
+   :alt: Opening a file in the VS Code editor.
 
 C++ Configurations (C++ Only)
 -----------------------------
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-|C++ Configurations|
-
-
-.. |Command Palette| image:: images/creating-robot-program/command-palette.png
-.. |WPILib Commands| image:: images/creating-robot-program/wpilib-commands.png
-.. |Create New Project| image:: images/creating-robot-program/create-new-project.png
-.. |New Project Creator| image:: images/creating-robot-program/new-project-creator.png
-.. |New Project Configured| image:: images/creating-robot-program/new-project-creator-configured.png
-.. |Opened Robot Project| image:: images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image:: images/creating-robot-program/cpp-configurations.png
+.. image:: images/creating-robot-program/cpp-configurations.png
+   :alt: Choosing "Yes" when asked to refresh C++ configurations.
