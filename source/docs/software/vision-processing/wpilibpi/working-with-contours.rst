@@ -30,7 +30,8 @@ In cases where there is only one vision target, you can just take the largest co
 
 If you draw the contour you just found, it should look something like this:
 
-.. image:: images/working-with-contours-1.jpg
+.. image:: images/using-cameraserver/red-outline.jpg
+   :alt: Retroreflective tape outlined in red by the image processing algorithm.
 
 Extracting Information from Contours
 ------------------------------------

@@ -20,6 +20,7 @@ Original Image
 The image shown below is the starting image for the example described here. The image was taken using the green ring light available in *FIRST*\ |reg| Choice combined with an additional ring light of a different size. Additional sample images are provided with the vision code examples.
 
 .. image:: images/identifying-and-processing-the-targets/original-image.png
+   :alt: Sample image using a green ring light showing the retroreflective tape.
 
 What is HSL/HSV?
 ----------------
@@ -36,6 +37,7 @@ In this initial step, pixel values are compared to constant color or brightness 
 Notice that in addition to the target, other bright parts of the image (overhead light and tower lighting) are also caught by the masking step.
 
 .. image:: images/identifying-and-processing-the-targets/masking.png
+   :alt: Masked version of the image above showing the "bright" parts of the image.
 
 Particle Analysis
 -----------------
@@ -63,6 +65,7 @@ X/Y Profiles
 ^^^^^^^^^^^^
 
 .. image:: images/identifying-and-processing-the-targets/xy-profiles.png
+   :alt: A graph and LabVIEW plot showing X/Y Profiles.
 
 The edge score describes whether the particle matches the appropriate profile in both the X and Y directions. As shown, it is calculated using the row and column averages across the bounding box extracted from the original image and comparing that to a profile mask. The score ranges from 0 to 100 based on the number of values within the row or column averages that are between the upper and lower limit values.
 
@@ -83,6 +86,7 @@ The resulting coordinates are close to what you may want, but the Y axis is inve
 .. math:: A_{x,y} = \left(P_{x,y} - \frac{\textit{resolution}_{x,y}}{2}\right) / \frac{\textit{resolution}_{x,y}}{2}
 
 .. image:: images/identifying-and-processing-the-targets/position.png
+   :alt: Two images one of a pixel based axis and another from -1 to 1 that can be directly used with motors for aiming.
 
 Field of View
 ^^^^^^^^^^^^^

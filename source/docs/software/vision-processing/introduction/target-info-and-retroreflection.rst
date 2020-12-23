@@ -11,9 +11,11 @@ Targets
 -------
 
 .. image:: images/target-info-and-retroreflection/target-diagram.png
+  :alt: Game manual picture of the 2016 game tower and it's retroreflective tape targets.
   :width: 350
 
 .. image:: images/target-info-and-retroreflection/target-output.png
+  :alt: Low brightness picture of the same tower with illuminated retroreflective tape.
   :width: 350
 
 Each 2016 vision target consists of a 1' 8" wide, 1' tall U-shape made of 2" wide retroreflective material (3M 8830 Silver Marking Film). The targets are located immediately adjacent to the bottom of each high goal. When properly lit, the retroreflective tape produces a bright and/or color-saturated marker.
@@ -22,6 +24,7 @@ Retroreflectivity vs. Reflectivity
 ----------------------------------
 
 .. image:: diagrams/retroreflectivity-vs-reflectivity.drawio.svg
+  :alt: How light bounces off of retroreflective and reflective surfaces.
 
 Highly reflective materials are generally mirrored so that light "bounces off" at a supplementary angle. As shown above-left, the blue and red angles sum to 180 degrees. An equivalent explanation is that the light reflects about the surface normal the green line drawn perpendicular to the surface. Notice that a light pointed at the surface will return to the light source only if the blue angle is ~90 degrees.
 
@@ -31,8 +34,10 @@ Examples of Retroreflection
 ---------------------------
 
 .. image:: images/target-info-and-retroreflection/raised-pavement-marker.jpg
+  :alt: Center line divider retroreflective markers on the road.
   :width: 350
 .. image:: images/target-info-and-retroreflection/vest.png
+  :alt: A retroreflective work vest.
   :width: 350
 
 This material should be relatively familiar as it is often used to enhance nighttime visibility of road signs, bicycles, and pedestrians.
@@ -55,6 +60,7 @@ Lighting
 --------
 
 .. image:: images/target-info-and-retroreflection/lighting.png
+  :alt: A green ring light around a camera.
 
 We have seen that the retro-reflective tape will not shine unless a light source is directed at it, and the light source must pass very near the camera lens or the observer’s eyes. While there are a number of ways to accomplish this, a very useful type of light source to investigate is the ring flash, or ring light, shown above. It places the light source directly on or around the camera lens and provides very even lighting. Because of their bright output and small size, LEDs are particularly useful for constructing this type of device.
 
