@@ -12,7 +12,8 @@ Unlike RGB, HSV allows you to not only filter based on the colors of the pixels,
 * Saturation: Measures the intensity of color of the pixel.
 * Value: Measures the brighness of the pixel.
 
-.. image:: images/image-thresholding-1.png
+.. image:: images/image-thresholding/hsv-color-wheel.png
+   :alt: The effects hue, saturation, and value each have on a color.
 
 You can use OpenCV to convert a BGR image matrix to HSV.
 
@@ -29,7 +30,8 @@ Thresholding
 
 We will use this field image as an example for the whole process of image processing.
 
-.. image:: images/image-thresholding-2.jpg
+.. image:: images/image-thresholding/target.jpg
+   :alt: A low brightness image with the retroreflective tape showing green.
 
 By thresholding the image using HSV, you can separate the image into the vision target (foreground), and the other things that the camera sees (background). The following code example converts a HSV image into a binary image by thresholding with HSV values.
 
@@ -43,6 +45,7 @@ By thresholding the image using HSV, you can separate the image into the vision 
 
 After thresholding, your image should look like this.
 
-.. image:: images/image-thresholding-3.jpg
+.. image:: images/image-thresholding/after-thresholding.jpg
+   :alt: After thresholding most of the rest or the image is masked out and the green tape is returned at white.
 
 As you can see, the thresholding process may not be 100% clean. You can use morphological operations to deal with the noise.
