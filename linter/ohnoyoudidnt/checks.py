@@ -318,7 +318,6 @@ class CheckBlankLineAfterDirective(ContentCheck):
         for line_num, (prev_line, curr_line, next_line) in enumerate(
             windowed(map(str.rstrip, parsed_file.contents.split("\n")), 3)
         ):
-            # if prev_line.strip().startswith(".. ") and "::" in prev_line.strip():
             if self.REGEX.search(prev_line.strip()):
                 if not curr_line.strip():
                     if next_line.strip().startswith(":"):
@@ -356,9 +355,11 @@ class CheckIndentation(ContentCheck):
                 else:
                     continue
 
-            if line.strip().startswith(".. code-block") or line.strip().startswith(
-                ".. code-tab"
-            ) or line.strip().startswith(".. code"):
+            if (
+                line.strip().startswith(".. code-block")
+                or line.strip().startswith(".. code-tab")
+                or line.strip().startswith(".. code")
+            ):
                 in_code_block = True
                 code_block_indent = indent
                 continue
