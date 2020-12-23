@@ -358,7 +358,7 @@ class CheckIndentation(ContentCheck):
 
             if line.strip().startswith(".. code-block") or line.strip().startswith(
                 ".. code-tab"
-            ):
+            ) or line.strip().startswith(".. code"):
                 in_code_block = True
                 code_block_indent = indent
                 continue
