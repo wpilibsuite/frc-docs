@@ -22,6 +22,7 @@ The list of hardware (sent over LiveWindow automatically) that has widgets is be
 Here is an example of the widget for gyroscopes:
 
  .. image:: images/gyro.png
+    :alt: Gyro widget with both text and dial visualizations of the current gyro angle. Current Gyro Angle in degrees is -60.9704.
 
 Sendable Chooser Widget
 -----------------------
@@ -58,6 +59,7 @@ The :guilabel:`PID Controller` widget allows you to quickly tune PID values for 
 This allows you to quickly tune P, I, and D values for various setpoints.
 
 .. image:: images/pid.png
+   :alt: PID widget for the Elevator PID Controller. P = 3.0, I = 0.001, D = 0.050, Setpoint = 0.0.
 
 FMSInfo Widget
 --------------
