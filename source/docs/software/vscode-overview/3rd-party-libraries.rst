@@ -34,10 +34,12 @@ VS Code
 ~~~~~~~
 
 .. image:: images/3rd-party-libraries/adding-offline-library.png
+   :alt: Using the Manage Vendor Libraries option of the WPILib Command Palette.
 
 To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries`, then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
 
 .. image:: images/3rd-party-libraries/library-installer-steptwo.png
+   :alt: Select the libraries to add.
 
 Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
 

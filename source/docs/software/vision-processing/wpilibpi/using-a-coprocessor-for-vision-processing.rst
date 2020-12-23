@@ -25,6 +25,7 @@ images, processes them, and publishes the results, usually target location infor
 by the robot program for steering and aiming.
 
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
+   :alt: Network diagram with the coprocessor and roboRIO on the same network.
 
 Streaming camera data to the dashboard
 --------------------------------------
