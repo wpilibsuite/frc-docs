@@ -62,9 +62,6 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
-    - name: Install linter
-      run: |
-        pip install ./linter
     - name: Remove unchanged files
       run: |
         ( git diff --name-only origin/master ; git ls-files ) | sort | uniq -u | grep "^.*\.rst$" | xargs rm
