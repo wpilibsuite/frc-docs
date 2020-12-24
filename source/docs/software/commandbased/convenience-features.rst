@@ -295,6 +295,8 @@ The ``WaitCommand`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs
 
 This is often useful as a component of a command group.
 
+``WaitCommand`` can also be subclassed to create a more complicated command that runs for a period of time. If ``WaitCommand`` is used in this method, the user must ensure that the ``WaitCommand``'s ``Initialize``, ``End``, and ``IsFinished`` methods are still called in order for the WaitCommand's timer to work.
+
 WaitUntilCommand
 ^^^^^^^^^^^^^^^^
 
