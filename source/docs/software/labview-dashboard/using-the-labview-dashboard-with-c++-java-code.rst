@@ -14,7 +14,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
 
     .. code-tab:: java
 
-       SmartDashboard.putStringArray("Auto List", ["Drive Forwards", "Drive Backwards", "Shoot"]);
+       SmartDashboard.putStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
 
        // At the beginning of auto
        String autoName = SmartDashboard.getString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
@@ -29,7 +29,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
 
     .. code-tab:: c++
 
-       frc::SmartDashboard::PutStringArray("Auto List", ["Drive Forwards", "Drive Backwards", "Shoot"]);
+       frc::SmartDashboard::PutStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
 
        // At the beginning of auto
        String autoName = SmartDashboard.GetString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
@@ -60,11 +60,11 @@ There are four outputs that show the motor power to the drivetrain.  This is con
 
     .. code-tab:: java
 
-       SmartDashboard.putNumberArray("RobotDrive Motors", [drivetrain.getLeftFront(), drivetrain.getRightFront(), drivetrain.getLeftBack(), drivetrain.getRightBack()]);
+       SmartDashboard.putNumberArray("RobotDrive Motors", {drivetrain.getLeftFront(), drivetrain.getRightFront(), drivetrain.getLeftBack(), drivetrain.getRightBack()});
 
     .. code-tab:: c++
 
-       frc::SmartDashboard::PutNumberArray("Gyro", [drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()]);
+       frc::SmartDashboard::PutNumberArray("Gyro", {drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()});
 
 Basic Tab
 ---------
