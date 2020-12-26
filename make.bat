@@ -43,7 +43,7 @@ goto end
 goto end
 
 :lint
-%LINTER% %LINTEROPTS%
+%LINTER% %LINTEROPTS% %SOURCEDIR%\docs
 goto end
 
 :sizecheck
