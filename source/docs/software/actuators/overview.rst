@@ -8,27 +8,15 @@ This section discusses the control of motors and pneumatics through motor contro
 Motor Controllers
 -----------------
 A motor controller is responsible on your robot for making motors move. For brushed DC motors such as CIMs or 775s, the motor controller regulates the voltage that the motor receives, much like a light bulb. For brushless motor controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-.. note:: Another name for a Motor Controller is a Speed Controller.
->>>>>>> 42d3797... Rearranged MC order, added TalonFX, Venom, NIDEC
-=======
 .. note:: Another name for a motor controller is a speed controller.
->>>>>>> 9b0841c... Motor Controller capitalization to match manual
 
-.. .. hint::
-..     One can make a quick, non-competition-legal motor controller by removing the motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents to the motor's leads. Make sure that the voltage supplied by the drill will not damage the motor, but note that the 775 is fine at up to 24 volts.
+.. hint:: One can make a quick, non-competition-legal motor controller by removing the motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents to the motor's leads. Make sure that the voltage supplied by the drill will not damage the motor, but note that the 775 is fine at up to 24 volts.
 
 .. warning:: Connecting a BRUSHLESS motor controller straight to power, such as to a conventional brushed motor controller, will destroy the motor!
 
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-<<<<<<< HEAD
-
-=======
->>>>>>> 42d3797... Rearranged MC order, added TalonFX, Venom, NIDEC
 Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of January 2020:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
