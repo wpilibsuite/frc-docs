@@ -25,7 +25,7 @@ Deviation from this behavior is a sign of an :ref:`error <docs/software/wpilib-t
 Voltage-Domain Diagnostics
 --------------------------
 
-The ``Voltage-Domain`` Diagnostics button plots velocity and acceleration versus voltage. Velocity is ploted for the quasistatic test, and acceleration is plotted for the dynamic test. For a typical drive characterization, the plots should resemble this (again, other mechanisms will be similar)
+The :guilabel:`Voltage-Domain` Diagnostics button plots velocity and acceleration versus voltage. Velocity is ploted for the quasistatic test, and acceleration is plotted for the dynamic test. For a typical drive characterization, the plots should resemble this (again, other mechanisms will be similar)
 
 .. image:: images/voltagedomainplots.png
    :alt: Voltage domain plots picture
@@ -42,7 +42,7 @@ However, if your robot or mechanism has low mass compared to the motor power, th
 3D Diagnostics
 --------------
 
-The ``3D Diagnostics`` button will generate a 3d plot of voltage over the entire velocity-acceleration plane (this may be an adjusted voltage to remove the nonlinearity in mechanisms with nonlinear equations, such as arms).
+The :guilabel:`3D Diagnostics` button will generate a 3d plot of voltage over the entire velocity-acceleration plane (this may be an adjusted voltage to remove the nonlinearity in mechanisms with nonlinear equations, such as arms).
 
 .. image:: images/3ddiagnosticplot.png
    :alt: Picture of the 3D diagnostic plot
@@ -73,7 +73,7 @@ Motion Threshold Too Low
 .. image:: images/lowthreshold-voltage.png
    :alt: Voltage domain plot with threshold too low
 
-The presence of a "leading tail" (emphasized by added red circle) on the time-domain and voltage-domain plots indicates that the ``Motion Threshold`` setting is too low, and thus data points from before the robot begins to move are being included.
+The presence of a "leading tail" (emphasized by added red circle) on the time-domain and voltage-domain plots indicates that the :guilabel:`Motion Threshold` setting is too low, and thus data points from before the robot begins to move are being included.
 
 To solve this, increase the setting and re-analyze the data.
 
