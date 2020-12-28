@@ -65,6 +65,7 @@ Shuffleboard
 Shuffleboard is automatically configured to look for a NetworkTable instance from the robotRIO but **not from other sources**. To connect to Shuffleboard, open Shuffleboard preferences from the File menu and select ``NetworkTables`` under ``Plugins`` on the left navigation bar. In the ``Server`` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: images/shuffleboard-networktables.png
+   :alt: The Shuffleboard server configuration option.
 
 SmartDashboard
 ^^^^^^^^^^^^^^
@@ -72,3 +73,4 @@ SmartDashboard
 SmartDashboard is automatically configured to look for a NetworkTable instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: images/smartdashboard-networktables.png
+   :alt: Configuring the "Team Number" field in SmartDashboard to "localhost" allows it to be used in simulation.

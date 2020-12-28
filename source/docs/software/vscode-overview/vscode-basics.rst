@@ -8,7 +8,8 @@ Microsoft's Visual Studio Code is the new supported IDE for C++ and Java develop
 Welcome Page
 ------------
 
-|Welcome Screen|
+.. image:: images/vscode-basics/vscode-welcome-screen.png
+   :alt: Initial page that comes up when starting VS Code with links to recent projects.
 
 When Visual Studio Code first opens, you are presented with a Welcome page. On this page you will find some quick links that allow you to customize Visual Studio Code as well as a number of links to help documents and videos that may help you learn about the basics of the IDE as well as some tips and tricks.
 
@@ -29,7 +30,8 @@ In the following example "wpilib" is typed into the search box after activating 
 WPILib Extension
 ----------------
 
-|WPILib Commands|
+.. image:: images/vscode-basics/wpilib-extension-commands.png
+   :alt: Clicking on the WPILib icon in the upper right that activates the Command Palette.
 
 The WPILib extension provides the FRC\ |reg| specific functionality related to creating projects and project components, building and downloading code to the roboRIO and more. You can access the WPILib commands one of two ways:
 
@@ -39,6 +41,3 @@ The WPILib extension provides the FRC\ |reg| specific functionality related to c
 .. note:: It is **not** recommended to install the `Visual Studio IntelliCode <https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode>`_ plugin with the FRC installation of VS Code as it is known to break IntelliSense in odd ways.
 
 For more information about specific WPILib extension commands, see the other articles in this chapter.
-
-.. |Welcome Screen| image:: images/vscode-basics/vscode-welcome-screen.png
-.. |WPILib Commands| image:: images/vscode-basics/wpilib-extension-commands.png

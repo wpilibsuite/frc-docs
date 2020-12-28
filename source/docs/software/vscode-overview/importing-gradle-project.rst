@@ -14,14 +14,17 @@ Launching the Import Wizard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/importing-previous-project/ImportPopup.png
+   :alt: Click yes to the Import popup that automatically appears when loading an old project.
 
 When you open a previous year's project, you will be prompted to import that project. Click :guilabel:`yes`.
 
 Alternately, you can chose to import it from the menu. Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020 Gradle project" and select it from the dropdown as shown below.
 
 .. image:: images/importing-previous-project/ImportGradleMenu.png
+   :alt: Import from the Command Palette.
 
 .. image:: images/importing-previous-project/VSCodeImport.png
+   :alt: The Project Importer Screen.
 
 You'll be presented with the WPILib Project Importer window. This is similar to the process of creating a new project and the window and the steps are shown below.  This window contains the following elements:
 
@@ -37,6 +40,7 @@ Click :guilabel:`Import Project` to begin the upgrade.
 The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
 
 .. image:: images/importing-eclipse-project/opening-project.png
+   :alt: Project Successfully Created dialog box.
 
 C++ Configurations (C++ Only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,6 +48,7 @@ C++ Configurations (C++ Only)
 For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click :guilabel:`Yes` to set up IntelliSense.
 
 .. image:: images/importing-eclipse-project/cpp-configurations.png
+   :alt: Clicking "Yes" on the "No C++ configurations. Yes to refresh." popup.
 
 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^

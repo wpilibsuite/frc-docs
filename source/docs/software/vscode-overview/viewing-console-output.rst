@@ -13,14 +13,16 @@ Console Viewer
 Opening the Console Viewer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|Opening Console Viewer|
+.. image:: images/viewing-console-output/opening-console-viewer.png
+   :alt: Clicking the gear icon on the Driver Station to open the Console Viewer Window.
 
 To open Console Viewer, first open the FRC\ |reg| Driver Station. Then, click on the gear at the top of the message viewer window (1) and select "View Console".
 
 Console Viewer Window
 ~~~~~~~~~~~~~~~~~~~~~
 
-|Console Viewer Window|
+.. image:: images/viewing-console-output/console-viewer-window.png
+   :alt: The Console Viewer Window is an expansion of the Driver Station console log on the right hand side.
 
 The Console Viewer window displays the output from our robot program in green.  The gear in the top right can clear the window and set the level of messages displayed.
 
@@ -32,14 +34,16 @@ The Riolog plugin is a VS Code view that can be used to view the NetConsole outp
 Opening the RioLog View
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|Opening Riolog View|
+.. image:: images/viewing-console-output/opening-riolog-view.png
+   :alt: Starting the RioLog from the Command Palette.
 
 By default, the RioLog view will open automatically at the end of each roboRIO deploy. To launch the RioLog view manually, press :kbd:`Ctrl+Shift+P` to open the command palette and start typing "RioLog", then select the WPILib: Start RioLog option.
 
 Riolog Window
 ~~~~~~~~~~~~~
 
-|Riolog Window|
+.. image:: images/viewing-console-output/riolog-window.png
+   :alt: The RioLog window that appears when deploying code.
 
 The RioLog view should appear in the top pane. The Riolog contains a number of controls for manipulating the console:
 
@@ -53,8 +57,3 @@ The RioLog view should appear in the top pane. The Riolog contains a number of c
 - **Show/Don't Show Timestamps** - Shows or hides timestamps on messages in the window
 - **Save Log** - Copies the log contents into a file you can save and view or open later with the RioLog viewer (see Switch to Viewer above)
 - **Set Team Number** - Sets the team number of the roboRIO to connect to the console stream on, set automatically if RioLog is launched by the deploy process
-
-.. |Opening Console Viewer| image:: images/viewing-console-output/opening-console-viewer.png
-.. |Console Viewer Window| image:: images/viewing-console-output/console-viewer-window.png
-.. |Opening Riolog View| image:: images/viewing-console-output/opening-riolog-view.png
-.. |Riolog Window| image:: images/viewing-console-output/riolog-window.png

@@ -10,16 +10,19 @@ Starting PathWeaver
 
 PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the Visual Studio Code interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on "PathWeaver" as shown below.
 
-.. image:: images/pathweaver-1.png
+.. image:: images/creating-pathweaver-project/start-tool.png
+   :alt: Choosing "Start Tool" after clicking the "..." in the upper right corner.
 
-.. image:: images/pathweaver-2.png
+.. image:: images/creating-pathweaver-project/pick-tool.png
+   :alt: Picking a WPILib tool.
 
 Creating the Project
 --------------------
 
 To create a PathWeaver project, click on "Create project" and then fill out the project creation form. Notice that hovering over any of the fields in the form will display more information about what is required.
 
-.. image:: images/pathweaver-3.png
+.. image:: images/creating-pathweaver-project/create-project.png
+   :alt: The initial PathWeaver screen that allows you to set up a new project.
 
 **Project Directory:** This is normally the top level project directory that contains the build.gradle and src files for your robot program. Choosing this directory is the expected way to use PathWeaver and will cause it to locate all the output files in the correct directories for automatic path deployment to your robot.
 
@@ -40,7 +43,8 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 PathWeaver User Interface
 -------------------------
 
-.. image:: images/pathweaver-4.png
+.. image:: images/creating-pathweaver-project/user-interface.png
+   :alt: Example pathweaver user interface and path.
 
 The PathWeaver user interface consists of the following:
 

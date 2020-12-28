@@ -75,6 +75,7 @@ Modifying ADXRS450 Inputs
 Using the ADXRS450 object is a fantastic way to test gyro based outputs. This will show up in the "Other Devices" menu. A drop down menu is then exposed that shows various options such as "Connected", "Angle", and "Rate". All of these values are values that you can change, and that your robot code and use on-the-fly.
 
 .. image:: images/sim-gui-using-gyro.png
+   :alt: The "Connected", "Angle", and "Rate" options can be modified to test a gyro.
 
 Determining Simulation from Robot Code
 --------------------------------------

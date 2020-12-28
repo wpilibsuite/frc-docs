@@ -10,7 +10,8 @@ RobotBuilder works very well for creating robot programs that just use WPILib fo
 Custom Component Structure
 --------------------------
 
-.. image:: images/custom-components-1.png
+.. image:: images/robotbuilder-custom-components/kiwi.png
+   :alt: An example custom component.
 
 Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is ``C:\Users\Public`` on Windows and YYYY is the FRC\ |reg| year.
 
@@ -19,7 +20,7 @@ There are seven files and one folder that are needed for a custom component. The
 PaletteDescription.yaml
 -----------------------
 
-.. image:: images/custom-components-2.png
+.. image:: images/robotbuilder-custom-components/palettedescription.png
 
 Line-by-line:
 
@@ -55,19 +56,19 @@ The properties relevant for a custom component:
 
 The fields for each property are described below:
 
-.. image:: images/custom-components-3.png
+.. image:: images/robotbuilder-custom-components/properties.png
 
 Validators.yaml
 ---------------
 
-.. image:: images/custom-components-4.png
+.. image:: images/robotbuilder-custom-components/validators.png
 
 You may have noticed "KiwiDriveValidator" in the validators entry of each of the motor properties in PaletteDescription.yaml. It's not a built-in validator, so it had to be defined in Validators.yaml. This example validator is very simple - it just makes sure that each of the named fields has a different value than the others.
 
 Built-in Validators and Validator Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/custom-components-5.png
+.. image:: images/robotbuilder-custom-components/types.png
 
 The built-in validators are very useful (especially the UniqueValidators for port/channel use), but sometimes a custom validator is needed, like in the previous step
 
@@ -79,7 +80,7 @@ The built-in validators are very useful (especially the UniqueValidators for por
 C++ Export.yaml
 ---------------
 
-.. image:: images/custom-components-6.png
+.. image:: images/robotbuilder-custom-components/export.png
 
 A line-by-line breakdown of the file:
 
@@ -99,7 +100,7 @@ If your team uses Java, this file can be empty.
 Java Export.yaml
 ----------------
 
-.. image:: images/custom-components-7.png
+.. image:: images/robotbuilder-custom-components/java-export.png
 
 Very similar to the C++ export file; the only difference should be the Construction line. This example expects a KiwiDrive class with the constructor
 
@@ -138,14 +139,14 @@ If you have variables with spaces in the name (such as "Motor 1", "Right Front M
 help.html
 ---------
 
-.. image:: images/custom-components-8.png
+.. image:: images/robotbuilder-custom-components/help.png
 
 A HTML file giving information on the component. It is better to have this be as detailed as possible, though it certainly isn't necessary if the programmer(s) are familiar enough with the component, or if it's so simple that there's little point in a detailed description.
 
 config.txt
 ----------
 
-.. image:: images/custom-components-9.png
+.. image:: images/robotbuilder-custom-components/config.png
 
 A configuration file to hold miscellaneous information about the component. Currently, this only has the section of the palette to put the component in.
 
