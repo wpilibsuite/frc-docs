@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
-FRC Control System Hardware Overview
-====================================
+Control System Hardware Overview
+================================
 
 The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function and a link to more documentation.
 
