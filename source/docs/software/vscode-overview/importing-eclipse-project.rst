@@ -6,12 +6,13 @@ To make it easy for teams to use existing projects with the new IDE, WPILib incl
 Launching the Import Wizard
 ---------------------------
 
-|Launching Import Wizard|
-
+.. image:: images/importing-eclipse-project/launching-import-wizard.png
+   :alt: Import Eclipse from the Command Palette.
 
 Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib Eclipse project" and select it from the dropdown.
 
-|Eclipse Project Importer|
+.. image:: images/importing-eclipse-project/eclipse-project-importer.png
+   :alt: Eclipse Project Importer screen.
 
 You'll be presented with the WPILib Eclipse Project Upgrade window. This is similar to the process of creating a new project and the window and the steps are shown below.  This window contains the following elements:
 
@@ -25,16 +26,13 @@ Click "Upgrade Project" to begin the upgrade.
 
 The eclipse project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or Command-O for macOS) shortcut.
 
-|Opening Project|
+.. image:: images/importing-eclipse-project/opening-project.png
+   :alt: VS Code "Project successfully created" dialog box.
 
 C++ Configurations (C++ Only)
 -----------------------------
 
 For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-|C++ Configurations|
-
-.. |Launching Import Wizard| image:: images/importing-eclipse-project/launching-import-wizard.png
-.. |Eclipse Project Importer| image:: images/importing-eclipse-project/eclipse-project-importer.png
-.. |Opening Project| image:: images/importing-eclipse-project/opening-project.png
-.. |C++ Configurations| image:: images/importing-eclipse-project/cpp-configurations.png
+.. image:: images/importing-eclipse-project/cpp-configurations.png
+   :alt: Clicking "Yes" on the "No C++ configurations. Yes to refresh." popup.

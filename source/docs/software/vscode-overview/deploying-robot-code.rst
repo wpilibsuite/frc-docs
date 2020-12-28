@@ -10,7 +10,9 @@ To build and deploy a robot project, do one of:
 3. Right-click on the build.gradle file in the project hierarchy and select "Build Robot Code"
 
 .. image:: images/deploying-robot-code/building-code-options.png
+   :alt: The locations to deploy robot code within VS Code.
 
 Deploy robot code by selecting "Deploy Robot Code" from any of the three locations from the previous instructions. That will build (if necessary) and deploy the robot program to the roboRIO. If successful, we will see a "Build Successful" message (1) and the RioLog will open with the console output from the robot program as it runs (2).
 
 .. image:: images/deploying-robot-code/build-successful.png
+   :alt: The RioLog window open along with the "Build Successful" message.

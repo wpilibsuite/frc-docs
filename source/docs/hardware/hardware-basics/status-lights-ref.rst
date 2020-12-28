@@ -190,6 +190,7 @@ Talon SRX & Victor SPX & Talon FX Motor Controllers
 ---------------------------------------------------
 
 .. image:: images/status-lights/talon-srx-status-lights.png
+  :alt: The Status LEDs are in the center of both sides of the motor controller.
   :width: 600
 
 Status LEDs During Normal Operation
@@ -251,17 +252,20 @@ SPARK-MAX Motor Controller
 --------------------------
 
 .. image:: images/status-lights/sparkMAXLight.png
+   :alt: Blink codes for the SPARK-MAX controller.
 
 REV Robotics SPARK
 ------------------
 
 .. image:: images/status-lights/sparkLight.png
+   :alt: LED Status codes for the SPARK controller.
 
 Victor-SP Motor Controller
 --------------------------
 
 .. image:: images/status-lights/victorSPLight.png
-  :width: 600
+   :alt: The Status LEDs are in the center of each side of the motor controller.
+   :width: 600
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
 
@@ -288,6 +292,7 @@ Talon Motor Controller
 ----------------------
 
 .. image:: images/status-lights/talonsr-status-light.png
+   :alt: A single multicolor LED is in the bottom right corner.
 
 +-----------+----------+------------------------------------------------------------------------+
 | Green     | Solid    | Full forward output                                                    |
@@ -313,7 +318,8 @@ Victor888 Motor Controller
 --------------------------
 
 .. image:: images/status-lights/victor888-status-light.svg
-  :width: 600
+   :alt: The multicolor LED in the bottom right corner.
+   :width: 600
 
 +-----------+----------+--------------------------+
 | Green     | Solid    | Full forward output      |
