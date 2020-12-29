@@ -1,7 +1,7 @@
 Analyzing Data
 ==============
 
-Once we have data from a characterization run, we can analyze it. To launch the data analyzer, click on the ``Launch Data Analyzer`` button.
+Once we have data from a characterization run, we can analyze it. To launch the data analyzer, click on the :guilabel:`Launch Data Analyzer` button.
 
 .. image:: images/launching-data-analyzer.png
    :alt: Launching the data analyzer
@@ -9,7 +9,7 @@ Once we have data from a characterization run, we can analyze it. To launch the 
 Loading your Data File
 ----------------------
 
-Now it's time to load the data file we saved from the logger tool. Click on ``Select Data File``.
+Now it's time to load the data file we saved from the logger tool. Click on :guilabel:`Select Data File`.
 
 .. image:: images/selecting-data-file.png
    :alt: Selecting the existing data file
@@ -19,7 +19,7 @@ In the resulting file dialog, select the JSON file you want to analyze. If the f
 Running Feedforward Analysis
 ----------------------------
 
-Once a data file has been selected, the ``Analyze Data`` button, ``Units`` entry, and ``Units per rotation`` entry become available in the ``Feedforward Analysis`` frame. We can now set the units of the analysis to match the units that our program will be using.
+Once a data file has been selected, the :guilabel:`Analyze Data` button, :guilabel:`Units` entry, and :guilabel:`Units per rotation` entry become available in the :guilabel:`Feedforward Analysis` frame. We can now set the units of the analysis to match the units that our program will be using.
 
 Now click the :guilabel:`Analyze Data` button.
 
