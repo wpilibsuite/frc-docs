@@ -143,11 +143,16 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Updated to be compatible with the new command based framework and PID Controller
+- Updated to be compatible with the new command based framework and PID Controller.
+
+   - Due to the major changes in templates, RobotBuilder will not accept a save file from a previous year. You must regenerate the yaml save file and export to a new directory.
+
 - C++: use uniform initialization of objects in header
 - C++: fix case of includes so that code compiles on case-sensitive filesystems
 - Use project name as default for save file
 - Fix export of wiring file
+- Fix line-endings for scripts so they work on MacOS/Linux
+- Add XboxController
 
 Robot Characterization
 ----------------------
