@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FIRST Robotics Competition'
-copyright = '2021, FIRST'
+copyright = '2021, FIRST and other WPILib Contributors'
 author = 'WPILib'
 version = '2021'
 

@@ -1,10 +1,9 @@
 name: Publish Stable
 on:
-# later, uncomment this and possibly comment out the manual trigger
   push:
     branches:
       - master
-# workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   publish:
