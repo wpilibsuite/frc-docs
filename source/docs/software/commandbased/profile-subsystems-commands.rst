@@ -83,7 +83,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
       :language: java
       :lines: 8-
       :linenos:
@@ -91,7 +91,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
       :language: c++
       :lines: 8-
       :linenos:
@@ -99,7 +99,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 8-
       :linenos:
@@ -111,7 +111,7 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
       :language: java
       :lines: 63-69
       :linenos:
@@ -119,7 +119,7 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
       :language: c++
       :lines: 33-40
       :linenos:
@@ -145,7 +145,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
       :language: java
       :lines: 28-42
       :linenos:
@@ -153,7 +153,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
       :language: c++
       :lines: 36-48
       :linenos:
@@ -183,7 +183,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
       :language: java
       :lines: 8-
       :linenos:
@@ -191,7 +191,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
       :language: c++
       :lines: 8-
       :linenos:
@@ -199,7 +199,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
       :language: c++
       :lines: 8-
       :linenos:
@@ -211,7 +211,7 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/RobotContainer.java
       :language: java
       :lines: 68-87
       :linenos:
@@ -219,7 +219,7 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
       :language: c++
       :lines: 44-62
       :linenos:

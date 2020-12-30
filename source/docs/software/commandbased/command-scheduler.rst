@@ -92,15 +92,15 @@ A typical use-case for these methods is adding markers in an event log whenever 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging/RobotContainer.java
       :language: java
-      :lines: 48-54
+      :lines: 50-56
       :linenos:
-      :lineno-start: 48
+      :lineno-start: 50
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://github.com/wpilibsuite/allwpilib/raw/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging/cpp/RobotContainer.cpp
       :language: c++
       :lines: 22-41
       :linenos:

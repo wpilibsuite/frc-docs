@@ -1,6 +1,6 @@
 .. include:: <isonum.txt>
 
-ombining Feedforward and PID Control
+Combining Feedforward and PID Control
 =====================================
 
 .. todo:: link to conceptual article when available

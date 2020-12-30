@@ -4,6 +4,7 @@ roboRIO
 .. toctree::
    :maxdepth: 1
 
+   roborio-introduction
    /docs/zero-to-robot/step-3/imaging-your-roborio
    roborio-web-dashboard
    roborio-ftp
