@@ -8,6 +8,8 @@
 FIRST Robotics Competition Control System
 ===========================================
 
+.. important:: We are currently working on publishing the 2021 release of WPILib! Please check back soon for any updates!
+
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
