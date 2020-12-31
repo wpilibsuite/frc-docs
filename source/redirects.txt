@@ -104,3 +104,5 @@
 "docs/software/vision-processing/frcvision/working-with-contours.rst" "docs/software/vision-processing/wpilibpi/working-with-contours.rst"
 "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-default-autonomous-command.rst" "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-autonomous-command.rst"
 "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.rst" "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-shuffleboard.rst"
+"docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst" "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst"
+"docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.rst" "docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-writing-pidsubsystem-code.rst"

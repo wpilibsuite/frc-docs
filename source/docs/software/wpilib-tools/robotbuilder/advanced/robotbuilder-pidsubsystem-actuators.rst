@@ -37,4 +37,4 @@ There a number of parameters for the PIDSubsystem but only a few need to be fill
 1. The Input and Output components will have been filled in automatically from the previous step when the actuator and sensor were dragged into the PIDSubsystem
 2. The P, I, and D values need to be filled in to get the desired sensitivity and stability of the component
 
-See :doc:`Writing the Code for a PIDSubsystem <../writing-code/robotbuilder-writing-pidsubsystem-code>`
+See :doc:`Writing the Code for a PIDSubsystem <robotbuilder-writing-pidsubsystem-code>`
