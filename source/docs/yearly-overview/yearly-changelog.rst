@@ -11,8 +11,11 @@ Major Features
 --------------
 
 - A WebSocket interface has been added to allow remote access to the robot simulator
+
 - A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
-- WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
+
+- WPILibInstaller has been rewritten to support macOS and Linux, and to be easier to use.
+
   - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
   - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
 
@@ -88,7 +91,7 @@ General Library
 
 - Fixed theta controller continuous input in swerve examples. This fixes the behavior where the shortest path is not used during drivetrain rotation.
 
-- Deprecated ``units.h``, use individual units headers instead which speeds compile times.
+- Deprecated ``units.h``, use individual :ref:`units headers <docs/software/basic-programming/cpp-units:Using the Units Library>` instead which speeds compile times.
 
 - Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See :ref:`Introduction to State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` for more information.
 
@@ -140,11 +143,16 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
-- Updated to be compatible with the new command based framework and PID Controller
+- Updated to be compatible with the new command based framework and PID Controller.
+
+   - Due to the major changes in templates, RobotBuilder will not accept a save file from a previous year. You must regenerate the yaml save file and export to a new directory.
+
 - C++: use uniform initialization of objects in header
 - C++: fix case of includes so that code compiles on case-sensitive filesystems
 - Use project name as default for save file
 - Fix export of wiring file
+- Fix line-endings for scripts so they work on MacOS/Linux
+- Add XboxController
 
 Robot Characterization
 ----------------------

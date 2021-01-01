@@ -12,4 +12,3 @@
    default-commands
    synchronizing-two-commands
    scheduling-commands
-   limit-switches-control-behavior

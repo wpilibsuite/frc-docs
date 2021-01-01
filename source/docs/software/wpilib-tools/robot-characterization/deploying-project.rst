@@ -8,7 +8,7 @@ Once a project has been generated, it is time to deploy it to the robot. This ca
 Option 1: Using the ``Deploy Project`` Button
 ---------------------------------------------
 
-Pressing the ``Deploy Project`` button on the GUI will attempt to use GradleRIO to deploy the project to your robot. The GUI will always *assume* that the project is located in the ``characterization-project`` subfolder of the chosen project location.
+Pressing the :guilabel:`Deploy Project` button on the GUI will attempt to use GradleRIO to deploy the project to your robot. The GUI will always *assume* that the project is located in the ``characterization-project`` subfolder of the chosen project location.
 
 .. image:: images/deploying-project.png
    :alt: The deploy project button

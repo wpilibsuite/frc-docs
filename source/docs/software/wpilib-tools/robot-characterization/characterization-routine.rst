@@ -8,7 +8,7 @@ Once the characterization code has been deployed, we can now run the characteriz
 Launch the Data Logger
 ----------------------
 
-To launch the data logger, press the ``Launch Data Logger`` button.
+To launch the data logger, press the :guilabel:`Launch Data Logger` button.
 
 .. image:: images/launch-logger.png
    :alt: The Launch Data Logger button
@@ -23,7 +23,7 @@ This should open the data logger GUI.
 Connect to the Robot
 --------------------
 
-Next, we must connect to the robot. Press the ``Connect to Robot`` button. The status indicated next to the button should change to ``Connecting...`` while the tool attempts to connect to the robot's NetworkTables server.
+Next, we must connect to the robot. Press the :guilabel:`Connect to Robot` button. The status indicated next to the button should change to ``Connecting...`` while the tool attempts to connect to the robot's NetworkTables server.
 
 .. image:: images/connecting-to-robot.png
    :alt: Connecting to the robot
@@ -60,7 +60,7 @@ The trackwidth test will spin your robot to determine an empirical trackwidth. I
 
 .. note:: If your robot is having trouble turning during the Trackwidth test you should increase the :guilabel:`Rotation Wheel voltage (V):` value until your robot is smoothly turning and run the test again.
 
-.. note:: Trackwidth values for high friction wheels (like pneumatic tires) may be significantly different from the measured value, but should still be used over the measured value.
+.. note:: For high-friction wheels (like pneumatic tires), the empirical trackwidth calculated by frc-characterization may be significantly different from the real trackwidth (e.g., off by a factor of 2). The empirical value should be preferred over the real one in robot code.
 
 The entire routine should look something like this:
 
@@ -68,9 +68,9 @@ The entire routine should look something like this:
 
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;"> <iframe src="https://www.youtube-nocookie.com/embed/FN2xqoB1sfU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> </div>
 
-After all four tests have been completed, the ``Save Data`` button will become activated.
+After all four tests have been completed, the :guilabel:`Save Data` button will become activated.
 
 .. image:: images/save-data.png
    :alt: Saving the test data
 
-This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename if the ``Add Timestamp`` button is checked.
+This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename if the :guilabel:`Add Timestamp` button is checked.
