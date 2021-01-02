@@ -82,7 +82,7 @@ ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
     '<meta name="theme-color" content="#AC2B37" />',
     '<link rel="manifest" href="_static/manifest.json"></link>',
-    '<script src="_static/js/manup.js"></script>',
+    '<script src="_static/js/manup.min.js"></script>',
 ]
 
 # Enable hover content on glossary term
