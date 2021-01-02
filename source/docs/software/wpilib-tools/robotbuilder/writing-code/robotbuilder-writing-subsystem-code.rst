@@ -119,7 +119,7 @@ Adding Subsystem Capabilities
           return m_limitswitch.Get();
       }
 
-Add methods to the claw.java/cpp that will open, close, and stop the claw from moving and get the claw limit switch. Those will be used by commands that actually operate the claw.
+Add methods to the ``claw.java`` or ``claw.cpp`` that will open, close, and stop the claw from moving and get the claw limit switch. Those will be used by commands that actually operate the claw.
 
 .. note:: The comments have been removed from this file to make it easier to see the changes for this document.
 
