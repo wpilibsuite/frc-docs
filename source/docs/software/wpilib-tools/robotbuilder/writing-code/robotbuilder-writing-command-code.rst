@@ -15,7 +15,7 @@ Generated CloseClaw Class
 
 .. tabs::
 
-   .. tab:: Java
+   .. group-tab:: Java
 
       .. code-block:: java
         :linenos:
@@ -80,7 +80,7 @@ Generated CloseClaw Class
         }
 
 
-   .. tab:: C++
+   .. group-tab:: C++
 
       .. code-block:: cpp
          :linenos:

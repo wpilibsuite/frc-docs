@@ -15,7 +15,7 @@ Adding Subsystem Capabilities
 
 .. tabs::
 
-   .. tab:: Java
+   .. group-tab:: Java
 
       .. code-block:: java
         :linenos:
@@ -79,7 +79,7 @@ Adding Subsystem Capabilities
 
          }
 
-   .. tab:: C++
+   .. group-tab:: C++
 
       .. code-block:: cpp
          :linenos:
@@ -140,7 +140,7 @@ Adding the Method Declarations to the Header File (C++ Only)
 
 .. tabs::
 
-   .. tab:: C++
+   .. group-tab:: C++
 
       .. code-block:: cpp
          :linenos:
