@@ -139,6 +139,11 @@ Visual Studio Code Extension
 
 - Updated Java and C++ language extensions
 - Driverstation sim extension is enabled by default
+- Project importer will retain the commands version used in the original project
+- Clarify the text on the new project and project importer screens
+- Avoid corrupting binary files on import
+- Fix link order in C++ build.gradle-project
+- Update "Change Select Default Simulate Extension Setting" command to work with multiple sim extensions
 
 RobotBuilder
 ------------
