@@ -142,7 +142,7 @@ Visual Studio Code Extension
 - Project importer will retain the commands version used in the original project
 - Clarify the text on the new project and project importer screens
 - Avoid corrupting binary files on import
-- Fix link order in C++ build.gradle-project
+- Fix link order in C++ ``build.gradle`` projects
 - Update "Change Select Default Simulate Extension Setting" command to work with multiple sim extensions
 
 RobotBuilder
