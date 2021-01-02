@@ -14,7 +14,7 @@ The properties that describe the robot are:
 
 **Autonomous Command Parameters** - Parameters for the Autonomous Command
 
-**Team Number** - the team number is used for downloading the robot programs
+**Team Number** - The team number for the project, which will be used to locate the robot when deploying code.
 
 **Use Default Java Package** - If checked RobotBuilder will use the default package (frc.robot). Otherwise you can specify a custom package name to be used.
 
