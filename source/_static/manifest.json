@@ -1,0 +1,18 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "FIRST Robotics Competition Documentation",
+    "short_name": "FIRST Robotics ",
+    "scope": "/en/stable/",
+    "display": "browser",
+    "start_url": "https://docs.wpilib.org/en/stable/",
+    "background_color": "#000000",
+    "theme_color": "#AC2B37",
+    "description": "Welcome to the FIRST ® Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the New for 2021 document. Zero to Robot, Introduction, Step 1...",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [],
+    "url": "https://docs.wpilib.org/en/stable/",
+    "screenshots": []
+}
