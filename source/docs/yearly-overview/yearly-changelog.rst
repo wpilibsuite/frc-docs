@@ -146,6 +146,7 @@ RobotBuilder
 - Updated to be compatible with the new command based framework and PID Controller.
 
    - Due to the major changes in templates, RobotBuilder will not accept a save file from a previous year. You must regenerate the yaml save file and export to a new directory.
+   - A version of RobotBuilder that still exports to the old command based framework has included with the installer and is called RobotBuilder-Old
 
 - C++: use uniform initialization of objects in header
 - C++: fix case of includes so that code compiles on case-sensitive filesystems
