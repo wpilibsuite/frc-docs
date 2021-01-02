@@ -3,6 +3,19 @@ Getting to know your Romi
 
 .. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
 
+Directional Conventions
+-----------------------
+
+The front of the Romi is where the Raspberry Pi USB ports, GPIO pins and suspended caster wheel are.
+
+.. image:: images/getting-to-know-romi/romi-front-view.png
+   :alt: Romi Front View
+
+In all Romi documentation, references to driving forward use the above definition of "front".
+
+.. image:: images/getting-to-know-romi/romi-forward.png
+   :alt: Romi Forward Driving Direction
+
 Hardware, Sensors and GPIO
 --------------------------
 
@@ -22,6 +35,8 @@ The motors used on the Romi have a 120:1 gear reduction, and a no-load output sp
 The wheels have a diameter of 70mm (2.75"). They have a trackwidth of 141mm (5.55").
 
 The encoders are connected directly to the motor output shaft and have 12 Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 counts per wheel revolution.
+
+.. note:: By default, the encoders count up when the Romi moves forward.
 
 Inertial Measurement Unit
 ^^^^^^^^^^^^^^^^^^^^^^^^^

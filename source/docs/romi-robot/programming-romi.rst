@@ -47,3 +47,5 @@ If all goes well, you should see a line in the console output that reads "HALSim
 .. image:: images/programming-romi/romi-vscode-connected.png
 
 Your Romi code is now running!
+
+.. note:: By default, the Romi templates and examples are set up so that positive drive values correspond to the Romi moving forward. Since forward movement on a Joystick produces negative values, you will need to invert the values in appropriate places (e.g. the ``xSpeed`` parameter to ``arcadeDrive`` on a ``DifferentialDrive`` object).
