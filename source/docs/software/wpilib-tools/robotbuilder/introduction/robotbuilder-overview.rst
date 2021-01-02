@@ -69,7 +69,7 @@ Testing each Command
 
 .. image:: images/robotbuilder-overview-4.png
 
-Each command can be run from Shuffleboard or Smartdashboard. This is useful for testing commands before you add them to the operator interface or to a command group. As long as you leave the "Button on SmartDashboard" property checked, a button will be created on the SmartDashboard. When you press the button, the command will run and you can check that it performs the desired action.
+Each command can be run from Shuffleboard or SmartDashboard. This is useful for testing commands before you add them to the operator interface or to a command group. As long as you leave the "Button on SmartDashboard" property checked, a button will be created on the SmartDashboard. When you press the button, the command will run and you can check that it performs the desired action.
 
 By creating buttons, each command can be tested individually. If all the commands work individually, you can be pretty sure that the robot will work as a whole.
 
