@@ -59,7 +59,7 @@ Commands are distinct goals that the robot will perform. These commands are adde
 - Command groups - these commands are a combination of other commands running both in a sequential order and in parallel. Use these to build up more complicated actions after you have a number of basic commands implemented.
 - Setpoint commands - setpoint commands move a PID Subsystem to a fixed setpoint, or the desired location.
 - PID commands - these commands have a built-in PID controller to be used with a regular subsystem.
-- Conditional Commands - these commands select one of two commands to run at the time of initialization.
+- Conditional commands - these commands select one of two commands to run at the time of initialization.
 
 
 For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
