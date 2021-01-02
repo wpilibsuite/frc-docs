@@ -172,6 +172,7 @@ def setup(app):
  
   # Local Api Docs support
   app.add_js_file('js/api-docs-redirect.js')
+  app.add_js_file('js/manup.min.js')
 
   # Right-to-left support
   is_rtl = app.config.language in rtl_locale
