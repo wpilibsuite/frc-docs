@@ -1,7 +1,7 @@
 Writing the Code for a Subsystem
 ================================
 
-Adding code to create an actual working subsystem is very straightforward. For simple subsystems that don't use feedback it turns out to be extremely simple. In this section we will look at an example of a Claw subsystem. The Claw subsystem also has a limit switch to determine if an object is in the grip.
+Adding code to create an actual working subsystem is very straightforward. For simple subsystems that don't use feedback it turns out to be extremely simple. In this section we will look at an example of a `Claw` subsystem. The `Claw` subsystem also has a limit switch to determine if an object is in the grip.
 
 RobotBuilder Representation of the Claw Subsystem
 -------------------------------------------------
@@ -160,6 +160,6 @@ Adding the Method Declarations to the Header File (C++ Only)
 
       };
 
-In addition to adding the methods to the class implementation file, Claw.cpp, the declarations for the methods need to be added to the header file, Claw.h. Those declarations that must be added are shown here.
+In addition to adding the methods to the class implementation file, ``Claw.cpp``, the declarations for the methods need to be added to the header file, ``Claw.h``. Those declarations that must be added are shown here.
 
 To add the behavior to the claw subsystem to handle opening and closing you need to :doc:`define commands <../introduction/robotbuilder-creating-command>`.
