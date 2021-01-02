@@ -123,7 +123,7 @@ Add methods to the claw.java/cpp that will open, close, and stop the claw from m
 
 .. note:: The comments have been removed from this file to make it easier to see the changes for this document.
 
-Notice that member variable called "motor" and "limitswitch" are created by RobotBuilder so it can be used throughout the subsystem. Each of your dragged-in palette items will have a member variable with the name given in RobotBuilder.
+Notice that member variable called ``motor`` and ``limitswitch`` are created by RobotBuilder so it can be used throughout the subsystem. Each of your dragged-in palette items will have a member variable with the name given in RobotBuilder.
 
 Adding the Method Declarations to the Header File (C++ Only)
 ------------------------------------------------------------
