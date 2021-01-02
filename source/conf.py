@@ -81,6 +81,8 @@ ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/w
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
     '<meta name="theme-color" content="#AC2B37" />',
+    '<link rel="manifest" href="_static/manifest.json"></link>',
+    '<script src="_static/js/manup.js"></script>',
 ]
 
 # Enable hover content on glossary term
