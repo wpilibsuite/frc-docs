@@ -162,9 +162,9 @@ The elements of the New Project Creator Window are explained below:
 3. **Base Folder**: If this is a template project, this specifies the type of template that will be used.
 4. **Project Location**: This determines the folder in which the robot project will be located.
 5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
-6. **Create New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
 7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
+8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
 
 Once all the above have been configured, click "Generate Project" and the robot project will be created.
 
