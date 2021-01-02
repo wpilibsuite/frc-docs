@@ -15,7 +15,12 @@ Option 1 - Starting from Visual Studio Code
 
 Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette.  Select :guilabel:`Start Tool`, then select :guilabel:`Robot Builder`.
 
-Option 2 - Running from the Script
+Option 2 - Shortcuts
+--------------------
+
+Shortcuts are installed to the Windows Start Menu and the ``2021 WPILib Tools`` folder on the desktop.
+
+Option 3 - Running from the Script
 ----------------------------------
 
 .. image:: images/starting-robotbuilder-2.png
