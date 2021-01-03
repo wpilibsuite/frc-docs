@@ -24,7 +24,7 @@ Open DS Data Storage file
 
 .. image:: images/manually-setting-the-driver-station-to-start-smartdashboard/open-ds-data-storage-file.png
 
-Browse to ``C:\Users\Public\Documents\FRC`` and double click on ``FRC\ |reg| DS Data Storage`` to open it.
+Browse to ``C:\Users\Public\Documents\FRC`` and double click on ``FRC DS Data Storage`` to open it.
 
 DashboardCmdLine
 ----------------

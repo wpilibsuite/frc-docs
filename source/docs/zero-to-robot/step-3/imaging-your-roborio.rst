@@ -3,7 +3,7 @@
 Imaging your roboRIO
 ====================
 
-.. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC\ |reg| Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
+.. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^

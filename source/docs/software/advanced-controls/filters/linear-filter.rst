@@ -37,7 +37,7 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
 
     // Creates a new Single-Pole IIR filter
     // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC\ |reg| main loop period
+    // Period is 0.02 seconds - this is the standard FRC main loop period
     LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
 
   .. code-tab:: c++
