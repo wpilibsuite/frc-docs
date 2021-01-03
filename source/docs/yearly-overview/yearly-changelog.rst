@@ -128,6 +128,15 @@ GradleRIO
 - Added a ``vendordep`` task for downloading vendor JSONs or fetching them from the user `wpilib` folder
 - Added a ``gradlerio.vendordep.folder.path`` property to set a non-default location for the vendor JSON folder
 - Renamed the ``wpi`` task (that prints current versions of WPILib and tools) to `wpiVersions`
+- Added the ability to set environment variables during simulation
+
+   - To set the environment variable ``HALSIMWS_HOST`` use:
+
+      .. code:: groovy
+
+         sim {
+           envVar "HALSIMWS_HOST", "10.0.0.2"
+         }
 
 CSCore
 ------
@@ -165,3 +174,5 @@ Robot Characterization
 
 - Added LQR latency compensation
 - The tool backend was improved to be more approachable for developers. Configuration and JSON files from the old tool will no longer work with the new version.
+- Deploy code in a new thread to avoid causing the GUI to hang.
+
