@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Manually Setting the Driver Station to Start Custom Dashboard
 =============================================================
 

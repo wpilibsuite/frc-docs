@@ -30,7 +30,7 @@ Launching the Imaging Tool
 
 .. image:: images/imaging-your-roborio/launching-the-imaging-tool.png
 
-The roboRIO imaging tool and latest image are installed with the NI FRC Game Tools. Launch the imaging tool by double clicking on the shortcut on the Desktop. If you have difficulties imaging your roboRIO, you may need to try right-clicking on the icon and selecting Run as Administrator instead.
+The roboRIO imaging tool and latest image are installed with the NI FRC\ |reg| Game Tools. Launch the imaging tool by double clicking on the shortcut on the Desktop. If you have difficulties imaging your roboRIO, you may need to try right-clicking on the icon and selecting Run as Administrator instead.
 
 .. note:: The roboRIO imaging tool is also located at ``C:\Program Files (x86)\National Instruments\LabVIEW YYYY\project\roboRIO Tool`` where YYYY is the current year - 1. If it's 2020, the directory would be ``LabVIEW 2019``.
 

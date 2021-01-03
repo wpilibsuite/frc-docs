@@ -8,7 +8,7 @@ Wiring Best Practices
 Vibration/Shock
 ------------------
 
-An FRC Robot is an incredibly rough environment when it comes to vibrations and shock loads. While many of the FRC specific electronics are extensively tested for mechanical robustness in these conditions, a few components, such as the radio, are not specifically designed for use on a mobile platform. Taking steps to reduce the shock and vibration these components are exposed to may help reduce failures. Some suggestions that may reduce mechanical failures:
+An FRC\ |reg| Robot is an incredibly rough environment when it comes to vibrations and shock loads. While many of the FRC specific electronics are extensively tested for mechanical robustness in these conditions, a few components, such as the radio, are not specifically designed for use on a mobile platform. Taking steps to reduce the shock and vibration these components are exposed to may help reduce failures. Some suggestions that may reduce mechanical failures:
 
 - Vibration Isolation - Make sure to isolate any components which create excessive vibration, such as compressors, using "vibration isolators". This will help reduce vibration on the robot which can loosen fasteners and cause premature fatigue failure on some electronic
   components.

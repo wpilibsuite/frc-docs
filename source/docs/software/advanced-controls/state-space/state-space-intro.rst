@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Introduction to State-Space Control
 ===================================
 

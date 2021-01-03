@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Linear Filters
 ==============
 

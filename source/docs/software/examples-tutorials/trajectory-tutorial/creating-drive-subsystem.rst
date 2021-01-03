@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Step 3: Creating a Drive Subsystem
 ==================================
 

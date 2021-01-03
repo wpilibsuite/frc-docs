@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Using the Compressor in LabVIEW
 ===============================
 

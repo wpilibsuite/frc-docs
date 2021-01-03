@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Control System Basics
 =====================
 
