@@ -1,5 +1,3 @@
-.. include:: <isonum.txt>
-
 Translations
 ============
 
@@ -24,7 +22,7 @@ An example of the original text may be
 
 .. code-block:: text
 
-   For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC\ |reg| Control System Document <Wiring the FRC Control System document>`.
+   For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System Document <Wiring the FRC Control System document>`.
 
 where the ``Wiring the FRC Control System Document`` then gets translated.
 
