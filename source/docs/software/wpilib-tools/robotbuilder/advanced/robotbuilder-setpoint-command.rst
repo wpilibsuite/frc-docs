@@ -10,7 +10,7 @@ Start with a PIDSubsystem
 
 .. image:: images/setpoint-command-1.png
 
-Suppose in a robot there is a wrist joint with a potentiometer that measures the angle. First :doc:`create a PIDSubsystem <../writing-code/robotbuilder-writing-pidsubsystem-code>` that include the motor that moves the wrist joint and the potentiometer that measures the angle. The PIDSubsystem should have all the PID constants filled in and working properly.
+Suppose in a robot there is a wrist joint with a potentiometer that measures the angle. First :doc:`create a PIDSubsystem <robotbuilder-writing-pidsubsystem-code>` that include the motor that moves the wrist joint and the potentiometer that measures the angle. The PIDSubsystem should have all the PID constants filled in and working properly.
 
 It is important to set the **Tolerance** parameter. This controls how far off the current value can be from the setpoint and be considered on target. This is the criteria that the SetpointCommand uses to move onto the next command.
 

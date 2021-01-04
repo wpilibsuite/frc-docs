@@ -1,8 +1,6 @@
 Starting RobotBuilder
 =====================
 
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
-
 .. note:: RobotBuilder is a Java program and as such should be able to run on any platform that is supported by Java. We have been running RobotBuilder on macOS, Windows, and various versions of Linux successfully.
 
 Getting RobotBuilder
@@ -17,7 +15,12 @@ Option 1 - Starting from Visual Studio Code
 
 Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette.  Select :guilabel:`Start Tool`, then select :guilabel:`Robot Builder`.
 
-Option 2 - Running from the Script
+Option 2 - Shortcuts
+--------------------
+
+Shortcuts are installed to the Windows Start Menu and the ``2021 WPILib Tools`` folder on the desktop.
+
+Option 3 - Running from the Script
 ----------------------------------
 
 .. image:: images/starting-robotbuilder-2.png

@@ -3,22 +3,18 @@
 RobotBuilder Overview
 =====================
 
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
-
 RobotBuilder is an application designed to aid the robot development process. RobotBuilder can help you:
 
-    Generating boilerplate code.
-    Organize your robot and figure out what its key subsystems are.
-    Check that you have enough channels for all of your sensors and actuators.
-    Generate wiring diagrams.
-    Easily modify your operator interface.
-    More...
+- Generating boilerplate code.
+- Organize your robot and figure out what its key subsystems are.
+- Check that you have enough channels for all of your sensors and actuators.
+- Generate wiring diagrams.
+- Easily modify your operator interface.
+- More...
 
 Creating a program with RobotBuilder is a very straight forward procedure by following a few steps that are the same for any robot. This lesson describes the steps that you can follow. You can find more details about each of these steps in subsequent sections of the document.
 
-In addition to the text documentation provided here, a `series of videos about RobotBuilder and many other FRC\ |reg| Robotics Engineering topics <https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available.
-
-.. note:: RobotBuilder generates code using the old Command Framework. For more details on the old framework see :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
+.. note:: RobotBuilder generates code using the new Command Framework. For more details on the new framework see :ref:`Command Based Programming <docs/software/commandbased/index:Command-Based Programming>`.
 
 Divide the Robot into Subsystems
 --------------------------------
@@ -55,11 +51,16 @@ In this example there is an Elevator subsystem that uses a motor and a potentiom
 Adding Commands That Describe Subsystem Goals
 ---------------------------------------------
 
-Commands are distinct goals that the robot will perform. These commands are added by dragging the command under the "Commands" folder. When creating a command, there are 3 primary choices (shown on the palette on the left of the picture):
+Commands are distinct goals that the robot will perform. These commands are added by dragging the command under the "Commands" folder. When creating a command, there are 7 choices (shown on the palette on the left of the picture):
 
 - Normal commands - these are the most flexible command, you have to write all of the code to perform the desired actions necessary to accomplish the goal.
+- Timed commands - these commands are a simplified version of a command that ends after a timeout
+- Instant commands - these commands are a simplified versio of a command that runs for one iteration and then ends
 - Command groups - these commands are a combination of other commands running both in a sequential order and in parallel. Use these to build up more complicated actions after you have a number of basic commands implemented.
 - Setpoint commands - setpoint commands move a PID Subsystem to a fixed setpoint, or the desired location.
+- PID commands - these commands have a built-in PID controller to be used with a regular subsystem.
+- Conditional commands - these commands select one of two commands to run at the time of initialization.
+
 
 For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
 
@@ -68,11 +69,11 @@ Testing each Command
 
 .. image:: images/robotbuilder-overview-4.png
 
-Each command can be run from the SmartDashboard. This is useful for testing commands before you add them to the operator interface or to a command group. As long as you leave the "Button on SmartDashboard" property checked, a button will be created on the SmartDashboard. When you press the start button, the command will run and you can check that it performs the desired action.
+Each command can be run from Shuffleboard or SmartDashboard. This is useful for testing commands before you add them to the operator interface or to a command group. As long as you leave the "Button on SmartDashboard" property checked, a button will be created on the SmartDashboard. When you press the button, the command will run and you can check that it performs the desired action.
 
 By creating buttons, each command can be tested individually. If all the commands work individually, you can be pretty sure that the robot will work as a whole.
 
-For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-smartdashboard>`.
+For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-shuffleboard>`.
 
 Adding Operator Interface Components
 ------------------------------------
@@ -101,15 +102,15 @@ Developing Autonomous Commands
 
 Commands make it simple to develop autonomous programs. You simply specify which command should run when the robot enters the autonomous period and it will automatically be scheduled. If you have tested commands as discussed above, this should simply be a matter of choosing which command should run.
 
-Select the robot at the root of the RobotBuilder project, then edit the Autonomous Command property to choose the command to run. It's that simple!
+Select the robot at the root of the RobotBuilder project (1), then edit the Autonomous Command property (2) to choose the command to run. It's that simple!
 
-For more information see :doc:`Setting the Default Autonomous Command <robotbuilder-default-autonomous-command>`.
+For more information see :doc:`Setting the Autonomous Commands <robotbuilder-autonomous-command>`.
 
 Generating Code
 ---------------
 
 .. image:: images/robotbuilder-overview-8.png
 
-At any point in the process outlined above you can have RobotBuilder generate a C++ or Java program that will represent the project you have created. This is done by specifying the location of the project in the project properties (1), then clicking the appropriate toolbar button to generate the code.
+At any point in the process outlined above you can have RobotBuilder generate a C++ or Java program that will represent the project you have created. This is done by specifying the location of the project in the project properties (1), then clicking the appropriate toolbar button to generate the code (2).
 
 For more information see :ref:`Generating RobotBuilder Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code:Generating Code for a Project>`.

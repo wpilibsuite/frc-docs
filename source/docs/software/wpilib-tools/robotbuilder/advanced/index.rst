@@ -6,7 +6,7 @@ RobotBuilder - Advanced
 .. toctree::
    :maxdepth: 1
 
+   robotbuilder-writing-pidsubsystem-code
    robotbuilder-pidsubsystem-actuators
    robotbuilder-setpoint-command
-   robotbuilder-drive-tank
    robotbuilder-custom-components
