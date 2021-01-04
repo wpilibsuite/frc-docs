@@ -10,7 +10,9 @@ A number of improvements have been made to FRC\ |reg| Control System software fo
 Major Features
 --------------
 
-- Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Robot code runs in the desktop simulator environment and talks to the Romi via a new hardware-level WebSocket interface.
+- A hardware-level `WebSocket interface <https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>` has been added to allow remote access to robot code being simulated in a desktop environment.
+
+- Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi robot code runs in the desktop simulator environment and talks to the Romi via the new WebSocket interface.
 
 - A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
 
