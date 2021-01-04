@@ -10,7 +10,7 @@ A number of improvements have been made to FRC\ |reg| Control System software fo
 Major Features
 --------------
 
-- Support for the :doc:`Romi </docs/romi-robot>` robot platform. Robot code runs in the desktop simulator environment and talks to the Romi via a new hardware-level WebSocket interface.
+- Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Robot code runs in the desktop simulator environment and talks to the Romi via a new hardware-level WebSocket interface.
 
 - A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
 
@@ -176,4 +176,3 @@ Robot Characterization
 - Added LQR latency compensation
 - The tool backend was improved to be more approachable for developers. Configuration and JSON files from the old tool will no longer work with the new version.
 - Deploy code in a new thread to avoid causing the GUI to hang.
-
