@@ -66,7 +66,7 @@ The Raspberry Pi can now be used to write the firmware image to the 32U4 Control
 #. Turn off the Romi
 #. Connect a USB A to micro-B cable from one of the Raspberry Pi's USB ports to the micro USB port on the 32U4 Control Board.
 #. Turn on the Romi and connect to its Wifi network and connect to the web dashboard as in the previous steps.
-#. On the ``Romi`` configuration page, press the ``Update Firmware`` button.
+#. On the ``Romi`` configuration page, press the :guilabel:`Update Firmware` button.
 
 .. image:: images/imaging-romi/firmware-upload-before.png
    :alt: The firmware update button before updating firmware
