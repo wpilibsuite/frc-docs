@@ -7,7 +7,7 @@ How to Wire an FRC Robot
 
    This document details the wiring of a basic electronics board for bench-top testing.
 
-   Some images shown in this section reflect the setup for a Robot Control System using Spark motor controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
+   Some images shown in this section reflect the setup for a Robot Control System using SPARK Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
 
 Overview
 --------
@@ -31,7 +31,7 @@ Locate the following control system components and tools
       - Voltage Regulator Module (VRM)
       - OpenMesh radio (with power cable and Ethernet cable)
       - Robot Signal Light (RSL)
-      - 4x Victor SPX or other speed controllers
+      - 4x Victor SPX or other motor controllers
       - 2x PWM y-cables
       - 120A Circuit breaker
       - 4x 40A Circuit breaker
@@ -150,10 +150,10 @@ For Victor SPX or other wire integrated motor controllers (top image):
 
 For terminal motor controllers (bottom image):
 
-1. Cut red and black wire to appropriate length to reach from one of the 40A (larger) Wago terminal pairs to the input side of the speed controller (with a little extra for the length that will be inserted into the terminals on each end)
+1. Cut red and black wire to appropriate length to reach from one of the 40A (larger) Wago terminal pairs to the input side of the motor controller (with a little extra for the length that will be inserted into the terminals on each end)
 2. Strip one end of each of the wires, then insert into the Wago terminals.
 3. Strip the other end of each wire, and crimp on a ring or fork terminal
-4. Attach the terminal to the speed controller input terminals (red to +, black to -)
+4. Attach the terminal to the motor controller input terminals (red to +, black to -)
 
 Weidmuller Connectors
 ---------------------
@@ -332,7 +332,7 @@ For integrated wire controllers (including Victor SPX):
 1. Strip the white and green wires from the controller
 2. Connect the motor wires to the controller output wires (it is recommended to connect the red wire to the white M+ output). The images/how-to-wire-a-robot above show examples using quick disconnect terminals.
 
-For Sparks or other non-integrated-wire controllers:
+For the SPARK or other non-integrated-wire controllers:
 
 1. Crimp a ring/fork terminal on each of the motor wires.
 2. Attach the wires to the output side of the motor controller (red to +, black to -)

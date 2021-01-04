@@ -36,7 +36,7 @@ A command can be created for the project using steps similar to creating a subsy
 - **Command** -  A basic command that operates on a subsystem
 - **Instant Command** - A command that runs and completes instantly
 - **Timed Command** - A command that runs for a specified time duration
-- **Command Group** - A command that is runs other commands
+- **Command Group** - A command that runs other commands
 
 Set the Command Name
 --------------------

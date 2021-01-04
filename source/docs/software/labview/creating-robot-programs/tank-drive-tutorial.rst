@@ -9,7 +9,7 @@ Tank Drive Tutorial
 
 **Solution:** There are four components to consider when setting up tank drive for your robot.  The first thing you will want to do is make sure the tank drive.vi is used instead of the arcade drive.vi or whichever drive VI you were utilizing previously.  The second item to consider is how you want your joysticks to map to the direction you want to drive.  In tank drive, the left joystick is used to control the left motors and the right joystick is used to control the right motors.  For example, if you want to make your robot turn right by pushing up on the left joystick and down on the right joystick you will need to set your joystick’s accordingly in LabVIEW (this is shown in more detail below).  Next, you will want to confirm the PWM lines that you are wired into, are the same ones your joysticks will be controlling.  Lastly, make sure your motor controllers match the motor controllers specified in LabVIEW.  The steps below will discuss these ideas in more detail:
 
-1. Open LabVIEW and double click ``FRC\ |reg| roboRIO Project``.
+1. Open LabVIEW and double click ``FRC roboRIO Project``.
 
 .. image:: images/tank-drive-tutorial/roboRIO-project.png
 
@@ -25,7 +25,7 @@ Tank Drive Tutorial
 
   - Replace Arcade Drive with the tank drive.vi.  This can be found by right clicking on the block diagram >> WPI Robotics Library >> Robot Drive >>  and clicking the Tank Drive VI.
 
-  - Find the Index Array function that is after the Get Values.vi.  You will need to create two numeric constants and wire each into one of the index inputs.  You can determine what the values of each index should be by looking at the USB Devices tab in the FRC Driver Station.  Move the two joysticks to determine which number (index) they are tied to.  You will likely want to use the Y-axis index for each joystick.  This is because it is intuitive to push up on the joystick when you want the motors to go forward, and down when you when them to go in reverse.  If you select the X-axis index for each, then you will have to move the joystick left or right (x-axis directions) to get the robot motors to move.  In my setup, I’ve selected index 1 for my left motors Y-axis control and index 5 as the right motors Y-axis control.  You can see the adjustments in LabVIEW in the following image:
+  - Find the Index Array function that is after the Get Values.vi.  You will need to create two numeric constants and wire each into one of the index inputs.  You can determine what the values of each index should be by looking at the USB Devices tab in the FRC\ |reg| Driver Station.  Move the two joysticks to determine which number (index) they are tied to.  You will likely want to use the Y-axis index for each joystick.  This is because it is intuitive to push up on the joystick when you want the motors to go forward, and down when you when them to go in reverse.  If you select the X-axis index for each, then you will have to move the joystick left or right (x-axis directions) to get the robot motors to move.  In my setup, I’ve selected index 1 for my left motors Y-axis control and index 5 as the right motors Y-axis control.  You can see the adjustments in LabVIEW in the following image:
 
 .. image:: images/tank-drive-tutorial/block-diagram-2.png
 

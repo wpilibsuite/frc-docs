@@ -9,12 +9,6 @@ CAN has many advantages over other methods of connection between the robot contr
 
 - CAN is bi-directional, so CAN motor controllers can send data back to the RIO, again facilitating a more expansive feature-set than can be offered by PWM Controllers.
 
-Supported CAN peripherals include:
-
-- CAN speed controllers
-- The Power Distribution Panel (PDP)
-- The Pneumatics Control Module (PCM)
-
 For instructions on wiring CAN devices, see the relevant section of the :ref:`robot wiring guide <docs/zero-to-robot/step-1/how-to-wire-a-robot:CAN Devices>`.
 
 CAN devices generally have their own WPILib classes.  The following sections will describe the use of several of these classes.

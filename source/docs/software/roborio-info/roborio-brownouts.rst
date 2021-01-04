@@ -32,7 +32,7 @@ When the voltage drops below 6.3V, the controller will enter the brownout protec
 
 The controller will take the following steps to attempt to preserve the battery voltage:
 
--  PWM outputs will be disabled. For PWM outputs which have set their neutral value (all speed controllers in WPILib) a single neutral pulse will be sent before the output is disabled.
+-  PWM outputs will be disabled. For PWM outputs which have set their neutral value (all motor controllers in WPILib) a single neutral pulse will be sent before the output is disabled.
 -  6V, 5V, 3.3V User Rails disabled (This includes the 6V outputs on the PWM pins, the 5V pins in the DIO connector bank, the 5V pins in the Analog bank, the 3.3V pins in the SPI and I2C bank and the 5V and 3.3V pins in the MXP bank)
 -  GPIO configured as outputs go to High-Z
 -  Relay Outputs are disabled (driven low)

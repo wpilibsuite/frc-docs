@@ -1,0 +1,35 @@
+name: Publish Stable
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'wpilibsuite' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Merge
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git config pull.ff only
+
+          git fetch origin master
+          (git checkout master && git pull) || git checkout -b master origin/master
+
+          git fetch origin stable
+          (git checkout stable && git pull) || git checkout -b stable origin/stable
+
+          if git merge-base --is-ancestor master stable; then
+            echo "No merge is necessary"
+            exit 0
+          fi;
+
+          git merge --ff-only master
+
+          git push origin stable

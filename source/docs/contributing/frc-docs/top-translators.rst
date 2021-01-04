@@ -40,3 +40,11 @@ Turkish
    :locale: tr
    :limit: 20
    :hide_contributions: true
+
+Hebrew
+^^^^^^
+
+.. toptranslators:: wpilibsuite/frc-docs-translations
+   :locale: he
+   :limit: 20
+   :hide_contributions: true

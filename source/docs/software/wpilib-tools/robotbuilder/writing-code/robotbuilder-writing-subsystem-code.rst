@@ -10,7 +10,7 @@ RobotBuilder Representation of the Claw Subsystem
 
 .. image:: images/writing-subsystem-code-1.png
 
-The claw at the end of a robot arm is a subsystem operated by a single Victor speed controller. There are three things we want the claw to do, start opening, start closing, and stop moving. This is the responsibility of the subsystem. The timing for opening and closing will be handled by a command later in this tutorial.
+The claw at the end of a robot arm is a subsystem operated by a single Victor Motor Controller. There are three things we want the claw to do, start opening, start closing, and stop moving. This is the responsibility of the subsystem. The timing for opening and closing will be handled by a command later in this tutorial.
 
 Adding Subsystem Capabilities
 -----------------------------

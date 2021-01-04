@@ -24,7 +24,7 @@ Adding Sensors and Actuators to the PIDSubsystem
 
 Add the missing components for the PIDSubsystem
 
-1. Drag in the actuator (a speed controller) to the particular subsystem - in this case the Elevator
+1. Drag in the actuator (a motor controller) to the particular subsystem - in this case the Elevator
 2. Drag the sensor that will be used for feedback to the subsystem, in this case the sensor is a potentiometer that might give elevator height feedback.
 
 Fill in the PIDSubsystem Parameters

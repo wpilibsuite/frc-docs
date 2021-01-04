@@ -1,9 +1,7 @@
-.. include:: <isonum.txt>
-
 Introduction to State-Space Control
 ===================================
 
-.. note:: This article is from `Controls Engineering in FRC\ |reg| <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
+.. note:: This article is from `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
 
 From PID to Model-Based Control
 -------------------------------
@@ -228,7 +226,7 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 .. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control.
 
-.. note:: The SPARK Max motor controller uses a 40-tap FIR filter with a delay of 19.5ms, and status frames are by default sent every 20ms.
+.. note:: The SPARK MAX motor controller uses a 40-tap FIR filter with a delay of 19.5ms, and status frames are by default sent every 20ms.
 
 The code below shows how to adjust the LQR controller's K gain for sensor input delays:
 

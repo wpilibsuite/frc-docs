@@ -10,11 +10,18 @@ A number of improvements have been made to FRC\ |reg| Control System software fo
 Major Features
 --------------
 
-- A WebSocket interface has been added to allow remote access to the robot simulator
+- A hardware-level `WebSocket interface <https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>` has been added to allow remote access to robot code being simulated in a desktop environment.
+
+- Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi robot code runs in the desktop simulator environment and talks to the Romi via the new WebSocket interface.
+
 - A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
-- WPILibInstaller has been rewritten to support macOS and Linux, and to  be easier to use.
-  - Installer is notarized on macOS, no need for Gatekeeper bypass steps.
+
+- The WPILib installer has been rewritten to support macOS and Linux and to improve ease of use.
+
+  - The macOS installer is notarized, eliminating the need for Gatekeeper bypass.
   - Please see the :ref:`installation instructions <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from previous years.
+
+- Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See :ref:`Introduction to State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` for more information.
 
 WPILib
 ------
@@ -26,7 +33,7 @@ Breaking Changes
 
 - Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
 
-- The ``Field2d`` class was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
+- The ``Field2d`` class (added midway through the 2020 season) was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
 
 
 New Command-Based Library
@@ -34,7 +41,7 @@ New Command-Based Library
 
 - Watchdog and epoch reporting has been added to the command scheduler. This will let teams know exactly which command or subsystem is responsible for a loop overrun if one occurs.
 
-- A ``withName()`` command decorator has been added for Java teams. This lets teams set the name of a particular command using the :ref:`decorator pattern <docs/software/commandbased/convenience-features:withName (Java only)>`.
+- Added a ``withName()`` command decorator for Java teams. This lets teams set the name of a particular command using the :ref:`decorator pattern <docs/software/commandbased/convenience-features:withName (Java only)>`.
 
 - Added a ``NetworkButton`` class, allowing users to use a boolean ``NetworkTableEntry`` as a button to trigger commands.
 
@@ -88,15 +95,13 @@ General Library
 
 - Fixed theta controller continuous input in swerve examples. This fixes the behavior where the shortest path is not used during drivetrain rotation.
 
-- Deprecated ``units.h``, use individual units headers instead which speeds compile times.
-
-- Added support for model-based control with Kalman filters, extended Kalman filters, unscented Kalman filters, and linear-quadratic regulators. See :ref:`Introduction to State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` for more information.
+- Deprecated ``units.h``, use individual :ref:`units headers <docs/software/basic-programming/cpp-units:Using the Units Library>` instead which speeds compile times.
 
 Simulation
 ----------
 
-- Added joystick simulation support.
-- Added Mechanism2D for simulating mechanisms.
+- Added keyboard virtual joystick simulation support.
+- Added Mechanism2D for visualizing mechanisms in simulation.
 - Added simulation physics classes for common robot mechanisms (DrivetrainSim, ElevatorSim, SingleJointedArmSim, and FlywheelSim)
 
 Shuffleboard
@@ -104,7 +109,7 @@ Shuffleboard
 
 - Number Slider now displays the text value
 - Graphing Widget now uses ChartFX, a high performance graphing library
-- Fix decimal digit formatting with large numbers
+- Fixed decimal digit formatting with large numbers
 - Size and position can now be set separately in the Shuffleboard API
 - Analog Input can now be viewed with a Text Widget
 
@@ -125,6 +130,15 @@ GradleRIO
 - Added a ``vendordep`` task for downloading vendor JSONs or fetching them from the user `wpilib` folder
 - Added a ``gradlerio.vendordep.folder.path`` property to set a non-default location for the vendor JSON folder
 - Renamed the ``wpi`` task (that prints current versions of WPILib and tools) to `wpiVersions`
+- Added the ability to set environment variables during simulation
+
+   - To set the environment variable ``HALSIMWS_HOST`` use:
+
+      .. code:: groovy
+
+         sim {
+           envVar "HALSIMWS_HOST", "10.0.0.2"
+         }
 
 CSCore
 ------
@@ -134,20 +148,33 @@ CSCore
 Visual Studio Code Extension
 ----------------------------
 
+- Visual Studio Code has been updated to 1.52.1
 - Updated Java and C++ language extensions
-- Driverstation sim extension is enabled by default
+- Driverstation sim extension is now enabled by default
+- Project importer now retains the commands version used in the original project
+- Clarified the text on the new project and project importer screens
+- Fixed import corrupting binary files
+- Fixed link order in C++ ``build.gradle`` projects
+- Updated "Change Select Default Simulate Extension Setting" command to work with multiple sim extensions
 
 RobotBuilder
 ------------
 
-- Updated to be compatible with the new command based framework and PID Controller
+- Updated to be compatible with the new command based framework and PID Controller.
+
+   - Due to the major changes in templates, RobotBuilder will not accept a save file from a previous year. You must regenerate the yaml save file and export to a new directory.
+   - A version of RobotBuilder that still exports to the old command based framework has included with the installer and is called RobotBuilder-Old
+
 - C++: use uniform initialization of objects in header
-- C++: fix case of includes so that code compiles on case-sensitive filesystems
+- C++: fixed case of includes so that code compiles on case-sensitive filesystems
 - Use project name as default for save file
-- Fix export of wiring file
+- Fixed export of wiring file
+- Fixed line-endings for scripts so they work on MacOS/Linux
+- Added XboxController
 
 Robot Characterization
 ----------------------
 
 - Added LQR latency compensation
 - The tool backend was improved to be more approachable for developers. Configuration and JSON files from the old tool will no longer work with the new version.
+- Deploy code in a new thread to avoid causing the GUI to hang.

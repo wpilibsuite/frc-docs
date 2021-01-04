@@ -108,7 +108,7 @@ If you already have the toolsuite installed, be sure to update it regularly to b
 
    pip install --upgrade frc-characterization
 
-.. note:: If you would like to use the beta version of this tool, you must type ``pip install --pre frc-characterization`` instead.
+.. note:: If you would like to use the beta version of this tool, you must type ``pip install --pre --upgrade frc-characterization`` instead.
 
 Once the toolsuite has been installed, launch a new drive characterization project to ensure that it works by running the following command from powershell or a terminal window.
 
