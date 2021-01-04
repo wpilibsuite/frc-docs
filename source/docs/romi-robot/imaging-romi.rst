@@ -43,7 +43,7 @@ Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
 .. note:: The image boots up read-only by default, so it is necessary to click the ``Writable`` button to make changes. Once done making changes, click the ``Read-Only`` button to prevent memory corruption.
 
-4. Select ``Writable`` at the top of the dashboard web page.
+4. Select :guilabel:`Writable` at the top of the dashboard web page.
 
 5. Change the default password for your Romi by setting a new password in the ``WPA2 Passphrase`` field.
 
