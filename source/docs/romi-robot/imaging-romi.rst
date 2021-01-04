@@ -16,7 +16,7 @@ Raspberry Pi
 Download
 ^^^^^^^^
 
-The Raspberry Pi firmware is based on the WPILibPi (formerly FRCVision) and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
+The Raspberry Pi firmware is based on WPILibPi (formerly FRCVision) and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
 
 `Romi WPILibPi <https://github.com/wpilibsuite/WPILibPi/releases>`__
 
