@@ -47,7 +47,7 @@ Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
 5. Change the default password for your Romi by setting a new password in the ``WPA2 Passphrase`` field.
 
-6. Press the ``Save`` button at the bottom of the page to save changes.
+6. Press the :guilabel:`Save` button at the bottom of the page to save changes.
 
 7. Change the network SSID to a unique name if you plan on operating your Romi on wireless network with other Romis.
 
