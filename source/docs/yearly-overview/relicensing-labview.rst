@@ -7,19 +7,19 @@ For the 2021 season we have chosen to remain on LabVIEW for FRC\ |reg| 2020 (bas
 
 License Manager
 ---------------
-Locate and run the NI License Manager software, either from the Start menu, or from Program Files (x86)\National Instruments\Shared\License Manager. Then click **Local Licenses** in the top menu bar.
+Locate and run the NI License Manager software, either from the Start menu, or from ``Program Files (x86)\National Instruments\Shared\License Manager``. Then click :guilabel:`Local Licenses` in the top menu bar.
 
 .. image:: /docs/yearly-overview/images/relicensing-labview/license-manager.jpg
 
-Deactivate software
+Deactivate Software
 --------------------
-For each item that shows a green dot, right click and select **Deactivate**
+For each item that shows a green dot, right click and select :guilabel:`Deactivate`
 
 .. image:: /docs/yearly-overview/images/relicensing-labview/deactivate.jpg
 
-Reactivate software
+Reactivate Software
 -------------------
-Click Activate Software to launch the activation window. Enter your new license key (found in the Lead Mentor Dashboard for your team) in each of the boxes and select Activate.
+Click :guilabel:`Activate Software` to launch the activation window. Enter your new license key (found in the Lead Mentor Dashboard for your team) in each of the boxes and select :guilabel:`Activate`.
 
 .. image:: /docs/yearly-overview/images/relicensing-labview/activate.jpg
 
