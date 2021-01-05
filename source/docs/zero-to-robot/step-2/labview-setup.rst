@@ -9,6 +9,8 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
+.. warning:: The version of LabVIEW used for the 2021 season is the same as the version used for the 2020 season. If you already have LabVIEW installed, it does not need to be re-installed. Instead see :ref:`docs/yearly-overview/relicensing-labview:Re-licensing LabVIEW for 2021 Season` for info on re-licensing your software.
+
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
