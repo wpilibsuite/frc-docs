@@ -22,7 +22,7 @@ All Teams
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
-
+.. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version is still the latest available.
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
