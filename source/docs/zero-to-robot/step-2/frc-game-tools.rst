@@ -19,6 +19,8 @@ Requirements
 - Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows 10 is the recommended OS.
 - Download the FRC Game Tools from `NI <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__.
 
+.. note:: The dropdown on this page will still say 2020 because the software is still based on LabVIEW for FRC 2020, this will still download the 2021 installer with the 2021 DS and roboRIO image versions.
+
 .. image:: images/labview/offline-installer.png
 
 If you wish to install on other machines offline, click :guilabel:`Individual Offline Installers` before clicking :guilabel:`Download` to download the full installer.
