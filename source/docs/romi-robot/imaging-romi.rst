@@ -1,8 +1,6 @@
 Imaging your Romi
 =================
 
-.. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
-
 The Romi has 2 microprocessor boards:
 
 #. A **Raspberry Pi** that handles high level communication with the robot program running on the desktop and

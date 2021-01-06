@@ -1,8 +1,6 @@
 The Romi Web UI
 ===============
 
-.. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
-
 The Romi Web UI comes installed as part of the WPILibPi Raspberry Pi image. It is accessible by clicking on the Romi tab in the navigation bar of the main WPILibPi Web UI.
 
 .. image:: images/web-ui/romi-ui-tab-arrow.png

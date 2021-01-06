@@ -1,8 +1,6 @@
 Romi Hardware & Assembly
 ========================
 
-.. warning:: We are working hard on getting the Romi documentation complete. The documentation here should be enough to get your robot assembled and working. Please check back often for updates.
-
 To get started with the Romi, you will need to have the necessary hardware.
 
 1. `Romi Kit from Pololu <https://www.pololu.com/product/4022>`__ – Use coupon code ``FIRSTROMI548249`` for a discount.
