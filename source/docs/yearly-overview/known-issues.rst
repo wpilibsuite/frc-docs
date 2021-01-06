@@ -8,12 +8,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-No Encoder Noise for Certain Simulation Classes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** The position getters for certain simulation classes (``ElevatorSim`` in C++, ``SingleJointedArmSim`` in C++ and Java) will not add measurement noise as configured in the constructor.
-
-**Workaround:** Use the ``getOutput(0)`` (Java) / ``GetOutput(0)`` (C++) method on the simulation class instead.
-
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
