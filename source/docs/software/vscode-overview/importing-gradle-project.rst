@@ -279,6 +279,11 @@ build.gradle
 3. (Optional) add ``simulation wpi.deps.sim.driverstation(wpi.platforms.desktop, XXXX)`` where XXXX is false for Java and true for C++. This allows the driver station to be used in simulation
 4. (Optional) add the websocket and simulation configuration blocks to support websockets simulation (i.e. Romi)
 
+imgui.ini
+^^^^^^^^^
+
+Delete ``imgui.ini`` (the Simulator GUI ini file) if it exists. The 2020 file format is not compatible with the 2021 format. The file will be regenerated when the Simulator GUI is run).
+
 Update 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
