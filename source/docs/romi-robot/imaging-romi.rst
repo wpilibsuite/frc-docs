@@ -37,7 +37,9 @@ Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
 1. Turn the Romi on by sliding the power switch on the Romi 32U4 board to the on position. The first time it is started with a new image it will take approximately 2-3 minutes to boot while it resizes the file system and reboots. Subsequent times it will boot in less than a minute.
 
-2. Using your computer, connect to the Romi WiFi network using the SSID ``WPILibPi`` with the WPA2 passphrase ``WPILib2021!``.
+2. Using your computer, connect to the Romi WiFi network using the SSID ``WPILibPi-<number>`` (where ``<number>`` is based on the Raspberry Pi serial number) with the WPA2 passphrase ``WPILib2021!``.
+
+.. note:: If powering on the Raspberry Pi in an environment with multiple WPILibPi-running Raspberry Pis, the SSID for a particular Raspberry Pi is also announced audibly through the headphone port. The default SSID is also written to the ``/boot/default-ssid.txt`` file, which can be read by inserting the SD card (via a reader) into a computer and opening the ``boot`` partition.
 
 3. Open a web browser and connect to the Raspberry Pi dashboard at either ``http://10.0.0.2/`` or ``http://wpilibpi.local/``.
 
