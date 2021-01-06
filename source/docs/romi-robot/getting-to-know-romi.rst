@@ -1,8 +1,6 @@
 Getting to know your Romi
 =========================
 
-.. warning:: We are working hard on getting the Romi documentation complete. Please check back later.
-
 Directional Conventions
 -----------------------
 
