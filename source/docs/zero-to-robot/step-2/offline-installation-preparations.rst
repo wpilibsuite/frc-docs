@@ -18,11 +18,10 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2020 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2021 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
-.. note:: The dropdown on the Game Tools page will say 2020 because the software is still based on LabVIEW for FRC 2020, this will download the 2021 installer with the 2021 DS and roboRIO image versions.
 .. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version remains the latest available.
 
 LabVIEW Teams
