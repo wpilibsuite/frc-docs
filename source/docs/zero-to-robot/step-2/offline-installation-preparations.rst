@@ -22,15 +22,15 @@ All Teams
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
-.. note:: The dropdown on the Game Tools page will still say 2020 because the software is still based on LabVIEW for FRC 2020, this will still download the 2021 installer with the 2021 DS and roboRIO image versions.
-.. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version is still the latest available.
+.. note:: The dropdown on the Game Tools page will say 2020 because the software is still based on LabVIEW for FRC 2020, this will download the 2021 installer with the 2021 DS and roboRIO image versions.
+.. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version remains the latest available.
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
 -  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
-.. note:: The dropdown on this page will still say 2020 because the software is still based on LabVIEW for FRC 2020, the 2021 version is identical to what was used in 2020. If you already have the 2020 version installed see :ref:`docs/yearly-overview/relicensing-labview:Re-licensing LabVIEW for 2021 Season` for info on re-licensing your installation.
+.. note:: The dropdown on this page will say 2020 because the 2021 base LabVIEW version is identical to what was used in 2020. If you already have the 2020 version installed see :ref:`docs/yearly-overview/relicensing-labview:Re-licensing LabVIEW for 2021 Season` for info on re-licensing your installation.
 
 Java/C++ Teams
 ^^^^^^^^^^^^^^
