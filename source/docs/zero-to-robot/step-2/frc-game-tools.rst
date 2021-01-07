@@ -16,8 +16,6 @@ The LabVIEW runtime components required for the Driver Station and Utilities are
 Requirements
 ------------
 
-.. warning:: The 2021 FRC Game Tools are not yet available (as of 1/6/21), they are expected to be available on the afternoon of 1/7 at the link indicated below.
-
 - Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows 10 is the recommended OS.
 - Download the FRC Game Tools from `NI <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__.
 
