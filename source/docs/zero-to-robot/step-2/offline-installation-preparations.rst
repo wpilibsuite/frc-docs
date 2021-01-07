@@ -17,7 +17,6 @@ Installers
 
 All Teams
 ^^^^^^^^^
-.. warning:: The 2021 FRC Game Tools are not yet available (as of 1/6/21), they are expected to be available on the afternoon of 1/7 at the link indicated below.
 
 -  `2021 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
