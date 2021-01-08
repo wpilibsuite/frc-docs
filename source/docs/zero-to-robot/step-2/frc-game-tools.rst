@@ -17,7 +17,7 @@ Requirements
 ------------
 
 - Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows 10 is the recommended OS.
-- Download the FRC Game Tools from `NI <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__.
+- Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
 
