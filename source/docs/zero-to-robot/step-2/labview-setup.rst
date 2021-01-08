@@ -32,7 +32,7 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the LabVIEW for FRC 2020 installer from `NI <https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html>`__. Be sure to select the correct version from the drop-down.
+Either locate and insert the LabVIEW USB Drive or download the `LabVIEW for FRC 2020 installer <https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html>`__ from NI. Be sure to select the correct version from the drop-down.
 
 .. image:: images/labview/offline-installer.png
 
