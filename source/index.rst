@@ -8,6 +8,8 @@
 FIRST Robotics Competition Control System
 ===========================================
 
+.. important:: The Control System team and NI is aware of an issue preventing roboRIOs being imaged with the 2021 image. Thank you for your patience.
+
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
