@@ -108,7 +108,7 @@ Some operating systems require some final action to complete installation.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
 
-.. note:: Installing desktop tools and rebooting will create a folder on the desktop called YYYY WPILib Tools, where YYYY is the current year. Desktop tool shortcuts are not available on Linux and MacOS.
+.. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and MacOS.
 
 What is Installed?
 ------------------
