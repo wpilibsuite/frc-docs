@@ -43,7 +43,10 @@ The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together 
 .. image:: images/hardware/assembly-caster-suspension.jpg
    :alt: A rubber band can be used to stiffen the suspension of the optional front ball caster if desired.
 
-7. Install the standoffs to support the Raspberry Pi board. Two standoffs (thread side down) mount in the holes on the side of the Romi board closest to the "Romi 32U4" label as shown in the picture. The nuts for these standoffs are inside the battery compartment. The other two standoffs go into the holes on the opposite side of the board. To attach them, you will need a needle-nose pliers to hold the nut while you screw in the standoffs.
+7. Install the standoffs to support the Raspberry Pi board. Two standoffs (thread side down) mount in the holes on the side of the Romi board closest to the "Romi 32U4" label as shown in the picture. The nuts for these standoffs are inside the battery compartment. The other two standoffs go into the holes on the opposite side of the board. To attach them, you will need a needle-nose pliers to hold the nut while you screw in the standoffs. The circled holes in the image below show where the standoffs should go.
+
+.. image:: images/hardware/assembly-raspberry-pi.png
+   :alt: Mounting holes for the Raspberry Pi
 
 8. The chassis works with four or six AA batteries (we recommend using rechargeable AA NiMH cells). The correct orientation for the batteries is indicated by the battery-shaped holes in the Romi chassis as well as the + and - indicators in the chassis itself.
 
