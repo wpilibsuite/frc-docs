@@ -16,7 +16,7 @@ The FPGA handles encoders either through a counter module or an encoder module, 
 The Encoder class
 -----------------
 
-WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
 
 Initializing an encoder
 ^^^^^^^^^^^^^^^^^^^^^^^

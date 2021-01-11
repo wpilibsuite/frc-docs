@@ -12,8 +12,8 @@ TimedRobot
 ~~~~~~~~~~
 
 Documentation:
-`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
-- `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1TimedRobot.html>`__
+`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
+- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1TimedRobot.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
@@ -105,8 +105,8 @@ IterativeRobotBase
 ~~~~~~~~~~~~~~~~~~
 
 Documentation:
-`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/IterativeRobotBase.html>`__
-- `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1IterativeRobotBase.html>`__
+`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/IterativeRobotBase.html>`__
+- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1IterativeRobotBase.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/IterativeRobotBase.java>`__
@@ -120,8 +120,8 @@ RobotBase
 ~~~~~~~~~
 
 Documentation:
-`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/RobotBase.html>`__
-- `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1RobotBase.html>`__
+`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__
+- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1RobotBase.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__
