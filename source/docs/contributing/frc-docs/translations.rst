@@ -9,7 +9,7 @@ Workflow
 Here are some steps to follow for translating frc-docs.
 
 1. Sign up for `Transifex <https://www.transifex.com/>`__ and ask to join the `frc-docs project <https://www.transifex.com/wpilib/frc-docs>`__, and request access to the language you'd like to contribute to.
-2. Join the Github `discussions <https://github.com/wpilibsuite/allwpilib/discussions>`__! This is a direct means of communication with the WPILib team. You can use this to ask us questions in a fast and streamlined fashion.
+2. Join GitHub `discussions <https://github.com/wpilibsuite/allwpilib/discussions>`__! This is a direct means of communication with the WPILib team. You can use this to ask us questions in a fast and streamlined fashion.
 3. You may be contacted and asked questions involving contributing languages before being granted access to the frc-docs translation project.
 4. Translate your language!
 
