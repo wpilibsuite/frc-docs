@@ -35,6 +35,7 @@ Breaking Changes
 
 - The ``Field2d`` class (added midway through the 2020 season) was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
 
+- PWM Speed Controllers ``get()`` method has been modified to return the same value as was ``set()`` regardless of inversion. The value that still stakes into account the inversion can be retrieved with the ``getSpeed()`` method. This affects the following classes ``DMC60``, ``Jaguar``, ``PWMSparkMax``, ``PWMTalonFX``, ``PWMTalonSRX``, ``PWMVenom``, ``PWMVictorSPX``, ``SD540``, ``Spark``, ``Talon``, ``Victor``, and ``VictorSP`` classes.
 
 New Command-Based Library
 ^^^^^^^^^^^^^^^^^^^^^^^^^
