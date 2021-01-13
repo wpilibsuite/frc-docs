@@ -89,8 +89,25 @@ The elements in the array that is returned by this method are the same order in 
       // individual SwerveModuleState components.
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
 
+Module angle optimization
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / ``Optimize()`` (C++) method that is used to "optimize" the speed and angle setpoint of a given ``SwerveModuleState`` to minimize the change in heading. For example, if the angular setpoint of a certain module from inverse kinematics is 90 degrees, but your current angle is -89 degrees, this method will automatically negate the speed of the module setpoint and make the angular setpoint -90 degrees to reduce the distance the module has to travel.
+
+This method takes two parameters: the desired state (usually from the ``toSwerveModuleStates`` method) and the current angle. It will return the new optimized state which you can use as the setpoint in your feedback control loop.
+
+.. tabs::
+   .. code-tab:: java
+
+      var frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
+         new Rotation2d(m_turningEncoder.getDistance()));
+
+   .. code-tab:: c++
+
+      auto flOptimized = frc::SwerveModuleState::Optimize(fl,
+         units::radian_t(m_turningEncoder.GetDistance()));
+
 Field-oriented drive
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
 
 .. tabs::
@@ -122,7 +139,7 @@ Field-oriented drive
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
 
 Using custom centers of rotation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
 
 .. note:: Because all robots are a rigid frame, the provided ``vx`` and ``vy`` velocities from the ``ChassisSpeeds`` object will still apply for the entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` object will be measured from the center of rotation.
