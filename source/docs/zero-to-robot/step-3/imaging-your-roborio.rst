@@ -5,6 +5,8 @@ Imaging your roboRIO
 
 .. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
+.. important:: An issue was discovered with the roboRIO image version 2021_v3.1 included in the initial release of the 2021 NI Game Tools that prevents successful imaging of roboRIOs. Teams that downloaded the installer prior to the morning of January 11, 2021 should :doc:`re-download and re-install</docs/zero-to-robot/step-2/frc-game-tools>` the latest installer (no need to uninstall first). The new version is 2021 f1. Users with the correct version installed will not see 2021_v3.1 as an option in the roboRIO imaging tool.
+
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,7 +53,7 @@ Updating Firmware
 
 .. image:: images/imaging-your-roborio/updating-firmware.png
 
-roboRIO firmware must be at least v5.0 to work with the 2019 image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
+roboRIO firmware must be at least v5.0 to work with the 2019 or later image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
 To update roboRIO firmware:
 
