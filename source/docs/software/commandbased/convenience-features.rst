@@ -201,7 +201,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/d
         // Start driving forward at the start of the command
         () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
         // Stop driving at the end of the command
-        () -> m_robotDrive.arcadeDrive(0, 0),
+        interrupted -> m_robotDrive.arcadeDrive(0, 0),
         // End the command when the robot's driven distance exceeds the desired value
         () -> m_robotDrive.getAverageEncoderDistance() >= kAutoDriveDistanceInches,
         // Require the drive subsystem
@@ -216,7 +216,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/d
       // Start driving forward at the start of the command
       [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
       // Stop driving at the end of the command
-      [this] { m_drive.ArcadeDrive(0, 0); },
+      [this] (bool interrupted) { m_drive.ArcadeDrive(0, 0); },
       // End the command when the robot's driven distance exceeds the desired value
       [this] { return m_drive.GetAverageEncoderDistance() >= kAutoDriveDistanceInches; },
       // Requires the drive subsystem
