@@ -141,7 +141,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
 -----------------------------------------------------------
-The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim`` (Java) / ``CreateKitbotSim`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
+The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
 
  - The type and number of motors on one side of the drivetrain.
  - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
