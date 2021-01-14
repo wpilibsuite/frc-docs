@@ -47,7 +47,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       // Create the simulation model of our drivetrain.
       frc::sim::DifferentialDrivetrainSim m_driveSim{
-        DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+        frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
         7.29,               // 7.29:1 gearing reduction.
         7.5_kg_sq_m,        // MOI of 7.5 kg m^2 (from CAD model).
         60_kg,              // The mass of the robot is 60 kg.
@@ -112,6 +112,11 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       #include <frc/simulation/DifferentialDrivetrainSim.h>
       #include <frc/system/plant/LinearSystemId.h>
+      #include <units/acceleration.h>
+      #include <units/angular_acceleration.h>
+      #include <units/angular_velocity.h>
+      #include <units/voltage.h>
+      #include <units/velocity.h>
 
       ...
 
@@ -120,7 +125,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
       static constexpr auto KvLinear = 1.98_V / 1_mps;
       static constexpr auto KaLinear = 0.2_V / 1_mps_sq;
       static constexpr auto KvAngular = 1.5_V / 1_rad_per_s;
-      static constexpr auto KaAngular = 0.3_V / 1_rad_per_s;
+      static constexpr auto KaAngular = 0.3_V / 1_rad_per_s_sq;
 
       // Create the simulation model of our drivetrain.
       frc::sim::DifferentialDrivetrainSim m_driveSim{
@@ -128,7 +133,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         frc::LinearSystemId::IdentifyDrivetrainSystem(
           KvLinear, KaLinear, KvAngular, KaAngular),
         0.7112_m,           // The track width is 0.7112 meters.
-        DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+        frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
         7.29,               // 7.29:1 gearing reduction.
         3_in,               // The robot uses 3" radius wheels.
 
