@@ -52,8 +52,8 @@ There are three main steps to updating the model:
         // the [-1, 1] PWM signal to voltage by multiplying it by the
         // robot controller voltage.
         m_driveSim.SetInputs(
-          units::volt_t(m_leftMotor.get()) * frc::RobotController::GetInputVoltage(),
-          units::volt_t(m_rightMotor.get()) * frc::RobotController::GetInputVoltage());
+          m_leftMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()),
+          m_rightMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()));
 
         // Advance the model by 20 ms. Note that if you are running this
         // subsystem in a separate thread or have changed the nominal timestep
@@ -65,7 +65,7 @@ There are three main steps to updating the model:
         m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().to<double>());
         m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().to<double>());
         m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().to<double>());
-        m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees().to<double>());
+        m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees());
       }
 
 .. important:: If the right side of your drivetrain is inverted, you MUST negate the right voltage in the ``SetInputs()`` call to ensure that positive voltages correspond to forward movement.

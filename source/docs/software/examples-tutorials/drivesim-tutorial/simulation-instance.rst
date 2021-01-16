@@ -70,4 +70,4 @@ Similar to the ``EncoderSim`` class, simulated gyroscope classes also exist for 
       // Create the simulated gyro object, used for setting the gyro
       // angle. Like EncoderSim, this does not need to be commented out
       // when deploying code to the roboRIO.
-      frc::AnalogGyroSim m_gyroSim{m_gyro};
+      frc::sim::AnalogGyroSim m_gyroSim{m_gyro};
