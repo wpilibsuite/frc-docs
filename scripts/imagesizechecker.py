@@ -2,21 +2,30 @@ import os
 import argparse
 import importlib
 
-IMAGE_FORMATS = ('.png', '.jpg', '.jpeg', '.svg')
+IMAGE_FORMATS = (".png", ".jpg", ".jpeg", ".svg")
 KILOBYTE_SIZE = 1000
 
 
 def clean_module_path(path):
-    return (path[:-len(".py")] if path.endswith(".py") else path).replace("/", ".").replace("\\", ".")
+    return (
+        (path[: -len(".py")] if path.endswith(".py") else path)
+        .replace("/", ".")
+        .replace("\\", ".")
+    )
 
 
 def verify_image_size(file, max_size, excluded_files):
-    if file.path.lower().endswith(IMAGE_FORMATS) and \
-            not file.path.replace('\\', '/').lower().endswith(tuple(excluded_files)):
+    if file.path.lower().endswith(IMAGE_FORMATS) and not file.path.replace(
+        "\\", "/"
+    ).lower().endswith(tuple(excluded_files)):
         file_size = file.stat().st_size
 
         if not file_size <= max_size:
-            print("FILE SIZE IS TOO LARGE   File Size: {}  Path: {}".format(file_size, file.path))
+            print(
+                "FILE SIZE IS TOO LARGE   File Size: {}  Path: {}".format(
+                    file_size, file.path
+                )
+            )
             return False
 
     return True
@@ -34,11 +43,20 @@ def iterate_image_sizes(path, max_size, excluded_files):
 
 
 def main():
-    arg_parser = argparse.ArgumentParser(description="verifies image file size is valid")
+    arg_parser = argparse.ArgumentParser(
+        description="verifies image file size is valid"
+    )
     arg_parser.add_argument("path", type=str, help="the path to scan in")
-    arg_parser.add_argument("max-size", type=int, help="the max size of a file in kilobytes")
-    arg_parser.add_argument("--exclude-file", "-e", type=str, default=None,
-                            help="python file containing IMAGE_SIZE_EXCLUSIONS list")
+    arg_parser.add_argument(
+        "max-size", type=int, help="the max size of a file in kilobytes"
+    )
+    arg_parser.add_argument(
+        "--exclude-file",
+        "-e",
+        type=str,
+        default=None,
+        help="python file containing IMAGE_SIZE_EXCLUSIONS list",
+    )
 
     args = vars(arg_parser.parse_args())
 
@@ -49,21 +67,28 @@ def main():
     # Gets excluded files from conf.py
     exclude_file = args["exclude_file"]
     if exclude_file is not None:
-        excluded_files = list(importlib.import_module(clean_module_path(exclude_file)).IMAGE_SIZE_EXCLUSIONS)
+        excluded_files = list(
+            importlib.import_module(
+                clean_module_path(exclude_file)
+            ).IMAGE_SIZE_EXCLUSIONS
+        )
         print("Exclusion Config: {}".format(exclude_file))
     else:
         excluded_files = list()
 
-
     # Check how many images are too big
-    oversized_count = iterate_image_sizes(args["path"], args["max-size"] * KILOBYTE_SIZE, excluded_files)
+    oversized_count = iterate_image_sizes(
+        args["path"], args["max-size"] * KILOBYTE_SIZE, excluded_files
+    )
 
     if oversized_count == 0:
         print("\nNo files bigger than {}KB have been found.".format(args["max-size"]))
     else:
-        print("\n{} files are bigger than {}KB.".format(oversized_count, args["max-size"]))
+        print(
+            "\n{} files are bigger than {}KB.".format(oversized_count, args["max-size"])
+        )
         exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

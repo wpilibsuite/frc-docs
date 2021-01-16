@@ -97,3 +97,13 @@ jobs:
     - name: Check redirects
       run: |
         make rediraffecheckdiff
+  check-formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - uses: psf/black@stable
+      with:
+        args: ". --check"
