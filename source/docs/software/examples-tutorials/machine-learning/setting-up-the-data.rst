@@ -3,6 +3,8 @@
 Setting Up the Data
 ====================
 
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://www.tensorflow.org/tutorials>`__ solution in the meantime.
+
 Machine learning works by "learning" the important features of objects by evaluating thousands of pictures. The pictures have boxes drawn around the important objects such as game pieces. Each kind of object to be detected is called a class. WPILib provides a pre-labeled dataset. You can also add additional images to the provided dataset, but you will need to label them.
 
 Getting Data

@@ -3,7 +3,7 @@
 Machine Learning
 ================
 
-.. Warning:: We are aware that you will get an exception while trying to train your model with the Jupyter notebook. The WPILib team and Amazon are working hard on a solution and hope to have something in the next few days. Until we do, you will not be able to train your models. We will post the status here as it changes, so please check back often. We are very sorry that this issue occurred and hope to get it resolved as quickly as possible.
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://www.tensorflow.org/tutorials>`__ solution in the meantime.
 
 This technology experiment is a way for teams to automatically detect game pieces and other interesting objects with machine learning. It uses Amazon Web Services to train and test, so teams do not need to own especially powerful computers.
 
