@@ -107,3 +107,22 @@ jobs:
     - uses: psf/black@stable
       with:
         args: ". --check"
+  check-includes:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout master
+      run: |
+        git fetch origin master --depth=1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        pip install -r source/requirements.txt
+    - name: Remove unchanged files
+      run: |
+        ( git diff --name-only origin/master ; git ls-files ) | sort | uniq -u | grep "^.*\.rst$" | xargs rm
+    - name: Check remote literal includes
+      run: |
+        make includecheck

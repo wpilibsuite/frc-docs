@@ -13,6 +13,7 @@ set SPHINXOPTS=-W --keep-going
 set LINTER=doc8
 set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
 set SIZECHECKER=python -m scripts.imagesizechecker
+set INCLDCHECKER=python -m scripts.verify-literal-check source master
 set CONFEXCLUDE=--exclude-file source/conf.py
 set SIZEMAX=500
 
@@ -21,6 +22,8 @@ if "%1" == "" goto help
 if "%1" == "lint" goto lint
 
 if "%1" == "sizecheck" goto sizecheck
+
+if "%1" == "includecheck" goto includecheck
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -48,6 +51,10 @@ goto end
 
 :sizecheck
 %SIZECHECKER% %SOURCEDIR% %SIZEMAX% %CONFEXCLUDE%
+goto end
+
+:includecheck
+%INCLDCHECKER%
 goto end
 
 :end

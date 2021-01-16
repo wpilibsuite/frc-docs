@@ -9,6 +9,7 @@ BUILDDIR      = build
 LINTER        = doc8
 LINTEROPTS    = --ignore D001 # D001 is linelength
 SIZECHECKER   = python3 -m scripts.imagesizechecker
+INCLDCHECKER  = python3 -m scripts.verify-literal-check source master
 CONFEXCLUDE   = --exclude-file source/conf.py
 SIZEMAX       = 500
 
@@ -22,6 +23,9 @@ help:
 
 lint:
 	@$(LINTER) $(LINTEROPTS) $(SOURCEDIR)
+
+includecheck:
+	@$(INCLDCHECKER)
 
 sizecheck:
 	@$(SIZECHECKER) $(SOURCEDIR) $(SIZEMAX) $(CONFEXCLUDE)
