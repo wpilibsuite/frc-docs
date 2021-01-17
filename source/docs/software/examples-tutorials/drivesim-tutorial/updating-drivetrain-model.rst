@@ -32,10 +32,10 @@ There are three main steps to updating the model:
         m_driveSim.update(0.02);
 
         // Update all of our sensors.
-        m_leftEncoderSim.setDistance(m_driveSim.getLeftPosition());
-        m_leftEncoderSim.setRate(m_driveSim.getLeftVelocity());
-        m_rightEncoderSim.setDistance(m_driveSim.getRightPosition());
-        m_rightEncoderSim.setRate(m_driveSim.getRightVelocity());
+        m_leftEncoderSim.setDistance(m_driveSim.getLeftPositionMeters());
+        m_leftEncoderSim.setRate(m_driveSim.getLeftVelocityMetersPerSecond());
+        m_rightEncoderSim.setDistance(m_driveSim.getRightPositionMeters());
+        m_rightEncoderSim.setRate(m_driveSim.getRightVelocityMetersPerSecond());
         m_gyroSim.setAngle(-m_driveSim.getHeading().getDegrees());
       }
 
