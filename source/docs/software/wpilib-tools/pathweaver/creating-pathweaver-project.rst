@@ -24,7 +24,9 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 
 **Game:** The game (which FRC\ |reg| game is being used) will cause the correct field image overlay to be used. You can also create your own field images and the procedure will be described later in this series.
 
-**Length Unit:** The units to be used in describing your robot and for the field measurements when visualizing trajectories using PathWeaver. It's best to use units of meters, as this is what is recommended when following WPILib trajectories.
+**Length Unit:** The units to be used in describing your robot and for the field measurements when visualizing trajectories using PathWeaver.
+
+**Export Unit:** The units to be used when exporting the paths and waypoints. If you are planning to use WPILib Trajectories, then you should choose :guilabel:`Always Meters`. Choosing :guilabel:`Same as Project` will export in the same units as :guilabel:`Length Unit` above.
 
 **Max Velocity:** The max speed of the robot for trajectory tracking. This does not need to be the maximum attainable speed of the robot, but just the max speed that you want to run trajectories at.
 
