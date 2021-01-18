@@ -62,7 +62,7 @@ Glass
 
 .. image:: images/control-system-software/glass.png
 
-:ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantage is the field view and pose visualization and advanced signal plotting tools.
+:ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
 
 LiveWindow
 ----------
