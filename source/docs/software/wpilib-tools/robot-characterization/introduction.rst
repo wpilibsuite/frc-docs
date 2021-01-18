@@ -85,7 +85,7 @@ Prerequisites
 
 To use the Robot Characterization Toolsuite, you must have Python 3.7 installed on your computer, as well as the standard WPILib programming toolsuite.
 
-`Python 3.7 <https://www.python.org/downloads/>`__
+`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__
 
 .. warning:: Do not install Python from the Microsoft Store. Please use the link above to download and install Python.
 
