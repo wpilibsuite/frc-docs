@@ -3,7 +3,7 @@
 Testing
 =======
 
-.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://www.tensorflow.org/tutorials>`__ solution in the meantime.
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
 
 These steps are for testing your model in SageMaker, before you load it onto your Raspberry Pi with Google Coral. It will use your model to annotate a video, and output the video for you to view. This is useful if you think you may have under or over fitted, or if you think you may not have enough data to develop a strong model.
 

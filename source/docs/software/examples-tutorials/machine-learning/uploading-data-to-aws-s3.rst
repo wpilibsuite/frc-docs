@@ -3,7 +3,7 @@
 Uploading the Data to AWS S3
 ============================
 
-.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://www.tensorflow.org/tutorials>`__ solution in the meantime.
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
 
 Amazon Web Services (AWS) S3 is Amazon's cloud storage service. You must upload your dataset to S3 in order to use for training with Amazon servers.
 

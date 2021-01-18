@@ -3,7 +3,7 @@
 Understanding Precision
 =======================
 
-.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://www.tensorflow.org/tutorials>`__ solution in the meantime.
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
 
 With a lot of ML projects accuracy is fairly straightforward. But when doing object detection, there are a lot of nuances once you start to think about it.  I will give you a quick overview of what goes into the calculations and what we are reporting.  There are a lot of good articles that go into the subject deeper if you get interested.
 
