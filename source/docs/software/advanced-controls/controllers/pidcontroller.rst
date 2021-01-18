@@ -31,7 +31,7 @@ In order to use WPILib's PID control functionality, users must first construct a
   .. code-tab:: c++
 
     // Creates a PIDController with gains kP, kI, and kD
-    frc2::PIDController pid(kP, kI, kD);
+    frc2::PIDController pid{kP, kI, kD};
 
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 
