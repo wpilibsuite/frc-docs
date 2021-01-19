@@ -136,7 +136,7 @@ Solenoids can be switched from one output to the other (known as toggling) by us
       // In subsystem
       public void toggleSolenoids() {
          exampleSingle.toggle();
-         exampleDouble.toggle();        
+         exampleDouble.toggle();
       }
 
    .. code-tab:: c++
