@@ -128,7 +128,7 @@ Solenoids can be switched from one output to the other (known as toggling) by us
       Solenoid exampleSingle = new Solenoid(0);
       DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);
 
-      // Initalize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
       exampleDouble.set(kReverse);
 
       YButton.whenPressed(m_intake::toggleSolenoids);
@@ -144,7 +144,7 @@ Solenoids can be switched from one output to the other (known as toggling) by us
       frc::Solenoid exampleSingle{0};
       frc::DoubleSolenoid exampleDouble{1, 2};
 
-      // Initalize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
       exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
 
       YButton.WhenPressed([&] { m_intake.ToggleSolenoids(); });
