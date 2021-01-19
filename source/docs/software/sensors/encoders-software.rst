@@ -127,13 +127,13 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
 
     .. code-tab:: java
 
-        // Configures an encoder to return a distance of 4 for every 256 pulses
-        encoder.setDistancePerPulse(4./256.);
+        // Gets the distance traveled
+        encoder.getDistance();
 
     .. code-tab:: c++
 
-        // Configures an encoder to return a distance of 4 for every 256 pulses
-        encoder.SetDistancePerPulse(4./256.);
+        // Gets the distance traveled
+        encoder.GetDistance();
 
 Rate
 ~~~~
@@ -262,7 +262,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         @Override
         public void autonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.getDistance < 5) {
+            if(encoder.getDistance() < 5) {
                 drive.tankDrive(.5, .5);
             } else {
                 drive.tankDrive(0, 0);
@@ -294,7 +294,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
         void Robot:AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.GetDistance < 5) {
+            if(encoder.GetDistance() < 5) {
                 drive.TankDrive(.5, .5);
             } else {
                 drive.TankDrive(0, 0);
