@@ -3,6 +3,8 @@
 Using Inference Output
 ======================
 
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
+
 The Raspberry Pi writes all detection information to NetworkTables, which can be used by your robot code. Below is a Java example for parsing and using this data.
 
 **NetworkTables Format**

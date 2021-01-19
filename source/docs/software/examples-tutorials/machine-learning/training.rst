@@ -3,6 +3,8 @@
 Training
 ========
 
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
+
 Training on AWS with the provided dataset should take about 2 hours and cost roughly $1. If you add more images or add new labeling classes the cost and time will be higher.
 
 Train with AWS

@@ -3,6 +3,8 @@
 Adding More Data
 ================
 
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
+
 These steps detail how to record a new video, upload it to Supervisely, and label the frames. You can skip this article if you want to use the WPILib dataset directly.
 
 .. note:: If you cannot access Supervisely, you can use the WPILib dataset directly in later steps.
