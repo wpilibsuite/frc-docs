@@ -23,7 +23,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. image:: images/wpilib-setup/extract-windows-10.png
 
-      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Windows 7" tab.
 
    .. group-tab:: Windows 7
 
