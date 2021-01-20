@@ -123,6 +123,8 @@ Solenoids can be switched from one output to the other (known as toggling) by us
 .. note::
    Since a DoubleSolenoid defaults to off you will have to set it before it can be toggled.
 
+.. tabs::
+
    .. code-tab:: java
 
       Solenoid exampleSingle = new Solenoid(0);
