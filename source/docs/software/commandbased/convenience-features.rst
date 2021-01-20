@@ -141,7 +141,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rel
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
     new RunCommand(() -> m_robotDrive.arcadeDrive(
-        driverController.getY(GenericHID.Hand.kLeft),
+        -driverController.getY(GenericHID.Hand.kLeft),
         driverController.getX(GenericHID.Hand.kRight)),
         m_robotDrive)
 
@@ -152,7 +152,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rel
     frc2::RunCommand(
       [this] {
         m_drive.ArcadeDrive(
-            m_driverController.GetY(frc::GenericHID::kLeftHand),
+            -m_driverController.GetY(frc::GenericHID::kLeftHand),
             m_driverController.GetX(frc::GenericHID::kRightHand));
       },
       {&m_drive}))
