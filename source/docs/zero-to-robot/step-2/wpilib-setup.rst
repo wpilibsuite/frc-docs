@@ -23,6 +23,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. image:: images/wpilib-setup/extract-windows-10.png
 
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Windows 7" tab.
+
    .. group-tab:: Windows 7
 
       You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
