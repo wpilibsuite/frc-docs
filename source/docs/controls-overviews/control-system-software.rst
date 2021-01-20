@@ -57,6 +57,13 @@ Shuffleboard
 
 Shuffleboard has the same features as SmartDashboard. It also improves on the setup and visualization of your data with new features and a modern design at the cost of being less resource efficient.  Additional documentation on Shuffleboard can be found :ref:`here <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`.
 
+Glass
+^^^^^
+
+.. image:: images/control-system-software/glass.png
+
+:ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
+
 LiveWindow
 ----------
 
