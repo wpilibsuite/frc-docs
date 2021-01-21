@@ -12,47 +12,23 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
    .. code-tab:: java
 
-      Spark spark = new Spark(
-         // The RIO PWM port this is connected to
-         0
-      );
+      Spark spark = new Spark(0); // 0 is the RIO PWM port this is connected to
 
-      spark.set(
-         // the output of the motor, between -1 and 1
-         -0.75
-      );
+      spark.set(-0.75); // the % output of the motor, between -1 and 1
 
-      VictorSP victor = new VictorSP(
-         // The RIO PWM port this is connected to
-         0
-      );
+      VictorSP victor = new VictorSP(0); // 0 is the RIO PWM port this is connected to
 
-      victor.set(
-         // the output of the motor, between -1 and 1
-         0.6
-      );
+      victor.set(0.6); // the % output of the motor, between -1 and 1
 
    .. code-tab:: c++
 
-      frc::Spark spark{
-         // The RIO PWM port this is connected to
-         0
-      };
+      frc::Spark spark{0}; // 0 is the RIO PWM port this is connected to
 
-      spark.Set(
-         // the output of the motor, between -1 and 1
-         -0.75
-      );
+      spark.Set(-0.75); // the % output of the motor, between -1 and 1
 
-      frc::VictorSP victor{
-         // The RIO PWM port this is connected to
-         0
-      };
+      frc::VictorSP victor{0}; // 0 is the RIO PWM port this is connected to
 
-      victor.set(
-         // the output of the motor, between -1 and 1
-         0.6
-      );
+      victor.Set(0.6); // the % output of the motor, between -1 and 1
 
 
 CAN Motor Controllers
@@ -68,4 +44,4 @@ For information regarding the SPARK MAX CAN Motor Controller, which can be used 
 CTRE CAN Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the third party CTR documentation on the Phoenix software for more detailed information. The documentation is available `here. <https://phoenix-documentation.readthedocs.io/en/latest/>`_
+Please refer to the third party CTRE documentation on the Phoenix software for more detailed information. The documentation is available `here. <https://phoenix-documentation.readthedocs.io/en/latest/>`_
