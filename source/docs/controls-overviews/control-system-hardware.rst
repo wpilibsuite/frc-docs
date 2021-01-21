@@ -11,7 +11,7 @@ Overview of Control System
 --------------------------
 
 .. figure:: images/frc-control-system-layout.svg
-  :target: images/frc-control-system-layout.svg
+  :width: 500
 
   Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
 
