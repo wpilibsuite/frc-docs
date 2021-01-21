@@ -9,7 +9,7 @@ Choosing a Base Class
 To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are three choices available for the base class:
 
 TimedRobot
-~~~~~~~~~~
+^^^^^^^^^^
 
 Documentation:
 `Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
@@ -19,7 +19,9 @@ Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__
 
-The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()` and :code:`periodic()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated).
+The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()` and :code:`periodic()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SendableChooser.html>`__
+
+.. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
 .. tabs::
 
@@ -89,6 +91,8 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
+.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
+
 .. tabs::
 
    .. code-tab:: java
@@ -101,23 +105,8 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
 
       Robot() : frc::TimedRobot(30_ms) {}
 
-IterativeRobotBase
-~~~~~~~~~~~~~~~~~~
-
-Documentation:
-`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/IterativeRobotBase.html>`__
-- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1IterativeRobotBase.html>`__
-
-Source:
-`Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/IterativeRobotBase.java>`__
-- `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/IterativeRobotBase.cpp>`__
-
-This is identical to TimedRobot, except the main robot loop is not run automatically - users are required to implement it inside of the :code:`startCompetition()` method.  This gives more freedom for advanced users to handle the loop timing in different ways, but is also less-convenient.
-
-Rather than checking the mode and calling the various :code:`init()` and :code:`periodic()` methods themselves, user implementations can simply call the :code:`loopFunc()` method from their main loop implementation.  However, the :code:`robotInit()` method must be called manually.
-
 RobotBase
-~~~~~~~~~
+^^^^^^^^^
 
 Documentation:
 `Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__
@@ -127,10 +116,36 @@ Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__
 
-The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method.
+The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method. The template by default showcases how to process the different operation modes (teleop, auto, etc).
+
+.. note:: A ``RobotBase Skeleton`` template is available that offers a blank ``startCompetition()`` method.
+
+Command Robot
+^^^^^^^^^^^^^
+
+Teams using ``Command Robot`` or ``Old Command Robot`` should see the :ref:`Command-Based Programming Tutorial <docs/software/commandbased/index:Command-Based Programming>` or :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
+
+Romi
+^^^^
+
+Teams using a :ref:`Romi <docs/romi-robot/index:Getting Started with Romi>` should use the ``Romi - Timed`` or ``Romi - Command Bot`` template.
+
+Romi - Timed
+~~~~~~~~~~~~
+
+The ``Romi - Timed`` template provides a ``RomiDrivetrain`` class that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
+
+This class also provides functions for retrieving and resetting the Romi's onboard encoders.
+
+Romi - Command Bot
+~~~~~~~~~~~~~~~~~~
+
+The ``Romi - Command Bot`` template provides a ``RomiDrivetrain`` subsystem that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
+
+This subsystem also provides functions for retrieving and resetting the Romi's onboard encoders.
 
 Not Using a Base Class
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 If desired, users can omit a base class entirely and simply write their program in a :code:`main()` method, as they would for any other program.  This is *highly* discouraged - users should not "reinvent the wheel" when writing their robot code - but it is supported for those who wish to have absolute control over their program flow.
 
@@ -141,19 +156,19 @@ Creating a New WPILib Project
 
 Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`:
 
-|Command Palette|
+.. image:: images/creating-robot-program/command-palette.png
 
 Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
 
-|WPILib Commands|
+.. image:: images/creating-robot-program/wpilib-commands.png
 
-Now, select the "Create a new project" command:
+Now, select the :guilabel:`Create a new project` command:
 
-|Create New Project|
+.. image:: images/creating-robot-program/create-new-project.png
 
 This will bring up the "New Project Creator Window:"
 
-|New Project Creator|
+.. image:: images/creating-robot-program/new-project-creator.png
 
 The elements of the New Project Creator Window are explained below:
 
@@ -172,7 +187,7 @@ Once all the above have been configured, click "Generate Project" and the robot 
 
 An example after all options are selected is shown below.
 
-|New Project Configured|
+.. image:: images/creating-robot-program/new-project-creator-configured.png
 
 Opening The New Project
 -----------------------
@@ -181,20 +196,11 @@ After successfully creating your project, VS Code will give the option of openin
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
-|Opened Robot Project|
+.. image:: images/creating-robot-program/opened-robot-project.png
 
 C++ Configurations (C++ Only)
 -----------------------------
 
-For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click :guilabel:`Yes` to set up IntelliSense.
 
-|C++ Configurations|
-
-
-.. |Command Palette| image:: images/creating-robot-program/command-palette.png
-.. |WPILib Commands| image:: images/creating-robot-program/wpilib-commands.png
-.. |Create New Project| image:: images/creating-robot-program/create-new-project.png
-.. |New Project Creator| image:: images/creating-robot-program/new-project-creator.png
-.. |New Project Configured| image:: images/creating-robot-program/new-project-creator-configured.png
-.. |Opened Robot Project| image:: images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image:: images/creating-robot-program/cpp-configurations.png
+.. image:: images/creating-robot-program/cpp-configurations.png
