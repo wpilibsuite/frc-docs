@@ -143,3 +143,46 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         // l and r velocity: 0.1   m/s
         // l and r position: 0.005 m
         {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
+
+Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
+-----------------------------------------------------------
+The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
+
+ - The type and number of motors on one side of the drivetrain.
+ - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The diameter of the wheels installed on the drivetrain.
+ - The moment of inertia of the drive base (optional).
+ - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
+
+You can calculate the measurement noise of your sensors by taking multiple data points of the state you are trying to measure and calculating the standard deviation using a tool like Python. For example, to calculate the standard deviation in your encoders' velocity estimate, you can move your robot at a constant velocity, take multiple measurements, and calculate their standard deviation from the known mean. If this process is too tedious, the values used in the example below should be a good representation of average noise from encoders.
+
+.. note:: The standard deviation of the noise for a measurement has the same units as that measurement. For example, the standard deviation of the velocity noise has units of m/s.
+
+.. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
+
+.. tabs::
+   .. code-tab:: java
+
+      private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
+        KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
+        KitbotGearing.k12p75,        // 12.75:1
+        KitbotWheelSize.kSixInch,    // 6" diameter wheels.
+        null                         // No measurement noise.
+      );
+
+   .. code-tab:: c++
+
+      #include <frc/simulation/DifferentialDrivetrainSim.h>
+
+      ...
+
+      frc::sim::DifferentialDrivetrainSim m_driveSim =
+        frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
+          frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
+          frc::sim::DifferentialDrivetrainSim::KitbotGearing::k12p75,       // 12.75:1
+          frc::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
+      );
+
+.. note:: You can use the ``KitbotMotor``, ``KitbotGearing``, and ``KitbotWheelSize`` enum (Java) / struct (C++) to get commonly used configurations of the Kit of Parts Chassis.
+
+.. important:: Constructing your ``DifferentialDrivetrainSim`` instance in this way is just an approximation and is intended to get teams quickly up and running with simulation. Using empirical values measured from your physical robot will always yield more accurate results.
