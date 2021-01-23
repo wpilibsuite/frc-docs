@@ -115,6 +115,41 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
 
+Toggling Solenoids
+------------------
+
+Solenoids can be switched from one output to the other (known as toggling) by using the `.toggle()` method.
+
+.. note::
+   Since a DoubleSolenoid defaults to off you will have to set it before it can be toggled.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      Solenoid exampleSingle = new Solenoid(0);
+      DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);
+
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      exampleDouble.set(kReverse);
+
+      if (m_controller.getYButtonPressed()) {
+         exampleSingle.toggle();
+         exampleDouble.toggle();
+      }
+
+   .. code-tab:: c++
+
+      frc::Solenoid exampleSingle{0};
+      frc::DoubleSolenoid exampleDouble{1, 2};
+
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+
+      if (m_controller.GetYButtonPressed()) {
+         exampleSingle.Toggle();
+         exampleDouble.Toggle();
+      }
 
 Pressure Transducers
 --------------------
