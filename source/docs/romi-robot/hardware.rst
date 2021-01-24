@@ -56,6 +56,8 @@ The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together 
 
 9. Attach the Raspberry Pi board upside down, carefully aligning the 2x20 pin connector on the Pi with the 2x20 pin socket on the Romi. Push with even pressure taking care to not bend any of the pins. Once inserted, use the supplied screws to fasten the Raspberry Pi board to the standoffs that were installed in a previous step.
 
+.. note:: Two of the screws will require placing a nut in a hexagonal hole inside the battery compartment.  The locations are shown by the blue circles in the image above.
+
 .. image:: images/hardware/assembly-pi.jpg
    :alt: Installing the standoffs and Raspberry Pi on the Romi chassis.
 
