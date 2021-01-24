@@ -1,9 +1,11 @@
 Widgets for the Command-Based Framework
 =======================================
+
 Glass also has several widgets that are specific to the :ref:`command-based framework <docs/software/commandbased/index:Command-Based Programming>`. These include widgets to schedule commands, view actively running commands on a specific subsystem, or view the state of the :ref:`command scheduler <docs/software/commandbased/command-scheduler:The Command Scheduler>`.
 
 Command Selector Widget
 -----------------------
+
 The :guilabel:`Command Selector`  widget allows you to start and cancel a specific instance of a command (sent over NetworkTables) from Glass. For example, you can create an instance of ``MyCommand`` and send it to SmartDashboard:
 
 .. tabs::
@@ -30,6 +32,7 @@ The widget has two states. When the command is not running, a :guilabel:`Run` bu
 
 Subsystem Widget
 ----------------
+
 The :guilabel:`Subsystem` widget can be used to see the default command and the currently scheduled command on a specific subsystem. If you are using the ``SubsystemBase`` base class, your subsystem will be automatically sent to NetworkTables over LiveWindow. To view this widget, look under the :guilabel:`LiveWindow` main table name in the :guilabel:`NetworkTables` menu.
 
 .. image:: images/subsystem.png
@@ -37,6 +40,7 @@ The :guilabel:`Subsystem` widget can be used to see the default command and the 
 
 Command Scheduler Widget
 ------------------------
+
 The :guilabel:`Command Scheduler` widget allows you to see all currently scheduled commands. In addition, any of these commands can be canceled from the GUI.
 
 .. image:: images/scheduler.png
