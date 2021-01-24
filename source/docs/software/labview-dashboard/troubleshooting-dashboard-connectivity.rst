@@ -24,17 +24,17 @@ If the Dashboard does not connect to the Robot (after the Driver Station has con
 
 2. If that doesn't work, restart the Robot Code using the Restart Robot Code button on the Diagnostics tab of the Driver Station
 
-SmartDashboard / Shuffleboard / Glass Connectivity
---------------------------------------------------
+Recognizing Connectivity
+------------------------
 
-This section discusses connectivity between the robot and Java SmartDashboard
+This section discusses connectivity between the robot and SmartDashboard
 
 Recognizing SmartDashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
 
-The typical way to recognize connectivity with the Java SmartDashboard is to add a Connection Indicator widget and to make sure your code is writing at least one key during initialization or disabled to trigger the connection indicator. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
+The typical way to recognize connectivity with the SmartDashboard is to add a Connection Indicator widget and to make sure your code is writing at least one key during initialization or disabled to trigger the connection indicator. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
 
 Recognizing Shuffleboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
