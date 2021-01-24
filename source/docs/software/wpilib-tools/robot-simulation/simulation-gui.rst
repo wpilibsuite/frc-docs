@@ -88,3 +88,18 @@ In cases where vendor libraries do not compile when running the robot simulation
       }
 
 .. note:: Reassigning value types in C++ requires move or copy assignment; vendors classes that both do not support the SIM and lack a move or copy assignment operator cannot be worked around with conditional allocation unless a pointer is used, instead of a value type.
+
+Viewing the Robot Pose
+----------------------
+
+After sending the ``Field2d`` instance over NetworkTables, the :guilabel:`Field2d` widget can be added to the simulation GUI by selecting :guilabel:`NetworkTables` in the menu bar, choosing the table name that the instance was sent over, and then clicking on the :guilabel:`Field` button.
+
+.. image:: ../glass/images/select-field2d.png
+
+Once the widget appears, you can resize and place it on the simulation GUI workspace as you desire. Right-clicking the top of the widget will allow you to customize the name of the widget, select a custom field image, select a custom robot image, and choose the dimensions of the field and robot.
+
+When selecting :guilabel:`Choose image...` you can choose to either select an image file or a PathWeaver JSON file as long as the image file is in the same directory.  Choosing the JSON file will automatically import the correct location of the field in the image and the correct size of the field.
+
+.. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/wpilib-tools/pathweaver/introduction:Introduction to PathWeaver>`.
+
+.. image:: ../glass/images/field2d-options.png

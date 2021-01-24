@@ -1,9 +1,11 @@
 The Field2d Widget
 ==================
+
 Glass supports displaying your robot's position on the field using the :guilabel:`Field2d` widget. An instance of the ``Field2d`` class should be created, sent over NetworkTables, and updated periodically with the latest robot pose in your robot code.
 
 Sending Robot Pose from User Code
 ---------------------------------
+
 To send your robot's position (usually obtained by :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>` or a pose estimator), a ``Field2d`` instance must be created in robot code and sent over NetworkTables. The instance must then be updated periodically with the latest robot pose.
 
 .. tabs::
@@ -46,6 +48,7 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 
 Viewing the Robot Pose in Glass
 -------------------------------
+
 After sending the ``Field2d`` instance over NetworkTables, the :guilabel:`Field2d` widget can be added to Glass by selecting :guilabel:`NetworkTables` in the menu bar, choosing the table name that the instance was sent over, and then clicking on the :guilabel:`Field` button.
 
 .. image:: images/select-field2d.png
