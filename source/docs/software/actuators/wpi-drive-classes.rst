@@ -40,7 +40,7 @@ When driving robots, it is often desirable to manipulate the joystick inputs suc
 Input Deadband
 ^^^^^^^^^^^^^^
 
-By default, the Differential Drive class applies an input deadband of .02. This means that input values with a magnitude below .02 (after any squaring as described above) will be set to 0. In most cases these small inputs result from imperfect joystick centering and are not sufficient to cause drivetrain movement, the deadband helps reduce unnecessary motor heating that may result from applying these small values to the drivetrain. To change the deadband, use the `setDeadband()` method.
+By default, the Differential Drive class applies an input deadband of 0.02. This means that input values with a magnitude below 0.02 (after any squaring as described above) will be set to 0. In most cases these small inputs result from imperfect joystick centering and are not sufficient to cause drivetrain movement, the deadband helps reduce unnecessary motor heating that may result from applying these small values to the drivetrain. To change the deadband, use the `setDeadband()` method.
 
 Maximum Output
 ^^^^^^^^^^^^^^
