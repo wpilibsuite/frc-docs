@@ -120,4 +120,6 @@ The new project GUI should open momentarily. To launch other characterization pr
 
 While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing ``new`` with ``logger`` or ``analyzer``.
 
+.. important:: It is highly recommended that you utilize the new project GUI to launch the logger and analyzer tools for more effective unit conversions rather than launching the logger and analyzer from the CLI.
+
 For more information on CLI usage, enter ``frc-characterization -h``.
