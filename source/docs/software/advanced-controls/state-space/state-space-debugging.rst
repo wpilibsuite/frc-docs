@@ -21,12 +21,14 @@ Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s 
 .. tabs::
 
    .. code-tab:: java
+
       @Override
       public void robotPeriodic() {
          NetworkTableInstance.getDefault().flush();
       }
 
    .. code-tab:: c++
+
       void RobotPeriodic() {
          NetworkTableInstance::GetDefault().Flush();
       }
