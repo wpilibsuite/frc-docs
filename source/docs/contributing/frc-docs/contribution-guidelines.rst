@@ -35,7 +35,7 @@ The location for new articles can be a pretty opinionated subject. Standalone ar
 Where to place sections?
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sections are quite tricky, as they contain a large amount of content. We advise the author to open an `issue <https://github.com/wpilibsuite/frc-docs>`__ to gather discussion before opening up a PR.
+Sections are quite tricky, as they contain a large amount of content. We advise the author to open an `issue <https://github.com/wpilibsuite/frc-docs/issues>`__ to gather discussion before opening up a PR.
 
 Linking Other Articles
 ^^^^^^^^^^^^^^^^^^^^^^
