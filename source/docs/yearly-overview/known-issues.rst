@@ -8,6 +8,16 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+macOS Mojave Simulation Crash
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Issue:** The simulation GUI fails to launch on macOS Mojave (10.14.x) due to a dynamic linker error (example below):
+
+.. code-block::
+
+   dyld: lazy symbol binding failed: Symbol not found: _objc_opt_respondsToSelector
+
+**Workaround:** Use a `development build of WPILib <https://github.com/wpilibsuite/allwpilib/blob/master/OtherVersions.md#development-build>`__ until the next version is released.
+
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

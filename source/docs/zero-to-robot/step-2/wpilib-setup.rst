@@ -10,6 +10,8 @@ You can download the latest release of the installer from `GitHub <https://githu
 
 .. note:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed.
 
+.. important:: The minimum supported macOS version is Mojave (10.14.x).
+
 Extracting the Installer
 ------------------------
 
