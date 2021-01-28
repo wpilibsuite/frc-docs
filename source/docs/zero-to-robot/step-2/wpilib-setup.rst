@@ -41,7 +41,13 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. group-tab:: Linux
 
-      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``.
+      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``. Ubuntu treats executables in the file explorer as shared libraries, so double-clicking won't run them. Run the following commands in a terminal instead with ``<version>`` replaced with the version you're installing.
+
+      .. code-block:: console
+
+          $ tar -xf WPILib_Linux-<version>.tar.gz
+          $ cd WPILib_Linux-<version>/
+          $ ./WPILibInstaller
 
 Running the Installer
 ---------------------
