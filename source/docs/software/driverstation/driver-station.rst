@@ -64,7 +64,7 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 1. DS Version - Indicates the Driver Station Version number
 2. roboRIO Image Version - String indicating the version of the roboRIO Image
 3. WPILib Version - String indicating the version of WPILib in use
-4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the CTRE Phoenix framework has not been loaded
+4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the CTRE Phoenix Framework has not been loaded
 5. Memory Stats - This section shows stats about the roboRIO memory
 6. Connection Indicators - The top half of these indicators show connection status to various components.
 
