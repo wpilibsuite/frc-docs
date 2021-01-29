@@ -15,11 +15,11 @@ A list of common third-party CAN devices from various vendors, along with links 
 Cross-the-Road Electronics
 --------------------------
 
-Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include: 
+Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include:
 
-- `Phoenix Device Software Documentation <https://docs.ctre-phoenix.com/>`__ 
+- `Phoenix Device Software Documentation <https://docs.ctre-phoenix.com/>`__
 
-- `Phoenix Device Software Examples <https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages>`__ 
+- `Phoenix Device Software Examples <https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages>`__
 
 CTRE Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^
