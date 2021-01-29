@@ -14,7 +14,7 @@ Mozilla Firefox are recommended for the best experience.
  devices should be done with software provided by the device vendor. For
  CTRE devices previously serviced using the webdashboard, the appropriate
  software is `CTRE Phoenix
- Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
+ Tuner <https://docs.ctre-phoenix.com/en/stable/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
 
 Opening the WebDash
 -------------------
