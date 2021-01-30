@@ -97,7 +97,7 @@ Additionally, the ``enable()`` method resets the internal ``ProfiledPIDControlle
 Full ProfiledPIDSubsystem Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-What does a PIDSubsystem look like when used in practice? The following examples are taken from the ArmBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ArmBot>`__):
+What does a PIDSubsystem look like when used in practice? The following examples are taken from the ArmBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ArmBot>`__):
 
 .. tabs::
 
@@ -213,7 +213,7 @@ Like all inlineable commands, ``ProfiledPIDCommand`` allows the user to specify 
 Full ProfiledPIDCommand Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-What does a ``ProfiledPIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
+What does a ``ProfiledPIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 
 .. tabs::
 

@@ -13,10 +13,10 @@ Core Repository
    :maxdepth: 1
 
    Overview <https://github.com/wpilibsuite/allwpilib>
-   Styleguide & wpiformat <https://github.com/wpilibsuite/styleguide/blob/master/README.md>
-   Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/master/README-CMAKE.md>
-   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/master/OtherVersions.md>
-   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/master/CONTRIBUTING.md#coding-guidelines>
+   Styleguide & wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/README.md>
+   Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/main/README-CMAKE.md>
+   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>
+   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/main/CONTRIBUTING.md#coding-guidelines>
 
 NetworkTables
 -------------
@@ -24,4 +24,4 @@ NetworkTables
 .. toctree::
    :maxdepth: 1
 
-   NetworkTables 3 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/master/ntcore/doc/networktables3.adoc>
+   NetworkTables 3 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables3.adoc>

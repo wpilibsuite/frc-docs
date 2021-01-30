@@ -134,7 +134,7 @@ Complete Usage Example
 
 .. note:: In this example, the profile is re-computed every timestep.  This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 
-A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__):
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__):
 
 .. tabs::
 

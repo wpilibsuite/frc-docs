@@ -11,11 +11,11 @@ Plugins provide the ability to create custom widgets, layouts, data sources/type
 - Base Plugin: To display custom FRC\ |reg| data types in custom widgets
 - CameraServer Plugin: To view streams from the CameraServer
 
-.. tip:: An example custom Shuffleboard plugin which creates a custom data type and a simple widget for displaying it can be found `here <https://github.com/wpilibsuite/shuffleboard/tree/master/example-plugins/custom-data-and-widget>`__.
+.. tip:: An example custom Shuffleboard plugin which creates a custom data type and a simple widget for displaying it can be found `here <https://github.com/wpilibsuite/shuffleboard/tree/main/example-plugins/custom-data-and-widget>`__.
 
 Create a Custom Plugin
 ----------------------
-In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
+In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
 
 .. tabs::
 

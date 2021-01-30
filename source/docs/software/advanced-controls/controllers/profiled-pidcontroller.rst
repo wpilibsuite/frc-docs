@@ -97,7 +97,7 @@ The returned setpoint might then be used as in the following example:
 Complete Usage Example
 ----------------------
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
 
 .. tabs::
 
