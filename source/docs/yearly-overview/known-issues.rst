@@ -8,16 +8,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-macOS Mojave Simulation Crash
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** The simulation GUI fails to launch on macOS Mojave (10.14.x) due to a dynamic linker error (example below):
-
-.. code-block::
-
-   dyld: lazy symbol binding failed: Symbol not found: _objc_opt_respondsToSelector
-
-**Workaround:** Use a `development build of WPILib <https://github.com/wpilibsuite/allwpilib/blob/master/OtherVersions.md#development-build>`__ until the next version is released.
-
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -58,6 +48,19 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java Network Tables clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
+
+Fixed in WPILib 2021.2.2
+------------------------
+
+macOS Mojave Simulation Crash
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Issue:** The simulation GUI fails to launch on macOS Mojave (10.14.x) due to a dynamic linker error (example below):
+
+.. code-block::
+
+   dyld: lazy symbol binding failed: Symbol not found: _objc_opt_respondsToSelector
+
+**Solution:** Upgrade to WPILib 2021.2.2 by using the latest installer or the "Check for WPILib Updates" feature in VS Code.
 
 Fixed in Game Tools 2021 f1
 ---------------------------
