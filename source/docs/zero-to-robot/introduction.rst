@@ -28,7 +28,7 @@ C++
 LabVIEW
 ^^^^^^^
 
-- `NI Learn LabVIEW <http://www.ni.com/academic/students/learn-labview/>`__
+- `NI Learn LabVIEW <https://www.ni.com/getting-started/labview-basics/>`__
 
 Zero to Robot
 -------------
