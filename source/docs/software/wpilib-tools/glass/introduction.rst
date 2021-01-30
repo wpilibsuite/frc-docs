@@ -21,7 +21,7 @@ An example of the ``Dark`` style setting is below:
 
 .. image:: images/glass-dark-mode.png
 
-.. note:: The default zoom setting of 100% may cause text to appear too big on certain macOS Retina displays. Please reduce the zoom level to 75% or 50% to mitigate this issue.
+.. note:: In Glass v2021.2.1 and below, the default zoom setting of 100% may cause text to appear too big on certain macOS Retina displays. Please reduce the zoom level to 75% or 50% or upgrade to v2021.2.2 or later to mitigate this issue.
 
 Clearing Application Data
 -------------------------
