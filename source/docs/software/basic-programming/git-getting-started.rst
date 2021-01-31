@@ -234,6 +234,17 @@ Forks
 
 Forks can be treated similarly to branches. You can merge the upstream (original repository) into the origin (forked repository).
 
+Cloning an Existing Repo
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the situation that a repository is already created and stored on a remote, you can clone it using
+
+.. code-block:: console
+
+   git clone https://github.com/myrepo.git
+
+where ``myrepo.git`` is replaced with your git repo. If you follow this, you can skip to :ref:commits <docs/software/basic-programming/git-getting-started:Commits>`.
+
 Updating a Fork
 ^^^^^^^^^^^^^^^
 
