@@ -12,6 +12,8 @@ LabVIEW Basics
 
 NI provides `tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programing model used in LabVIEW.
 
+.. todo:: Use student videos if kevin gets the link fixed
+
 NI FRC Tutorials
 ----------------
 
