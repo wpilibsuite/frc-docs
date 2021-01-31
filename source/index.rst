@@ -10,6 +10,86 @@ FIRST Robotics Competition Control System
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
+.. panels::
+    :container: container-lg pb-3
+    :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-2
+    :header: text-center
+    :body: text-center
+
+    :column: + p-1
+    **Zero to Robot**
+
+    ^^^
+
+    *Zero to Robot is the getting started guide for rookie and veteran teams alike!*
+
+    +++
+
+    .. link-button:: /docs/zero-to-robot/introduction
+       :type: ref
+       :text: Get Started
+       :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+    :column: + p-1
+
+    **Dashboards**
+
+    ^^^
+
+    *Dashboards are integral to robot development and diagnostics!*
+
+    +++
+
+    .. link-button:: /hiddentocs/dashboards
+       :type: ref
+       :text: Dashboards
+       :classes: btn-outline-primary btn-block stretched-link
+    ---
+    :column: + p-1
+
+    **Basic Tutorials**
+
+    ^^^
+
+    *Follow through various robot tutorials to learn more what WPILib offers!*
+
+    +++
+
+    .. link-button:: /hiddentocs/dashboards
+       :type: ref
+       :text: Learn
+       :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+    :column: + p-1
+    **Vision Processing**
+
+    ^^^
+
+    *Resources on viewing and processing camera feeds with OpenCV!*
+
+    +++
+
+    .. link-button:: /hiddentocs/dashboards
+       :type: ref
+       :text: Learn
+       :classes: btn-outline-primary btn-block stretched-link
+    ---
+    :column: + p-1
+
+    **Advanced Controls**
+    ^^^
+
+    *Learn more about advanced controls such as trajectory generation and following!*
+
+    +++
+
+    .. link-button:: /hiddentocs/dashboards
+       :type: ref
+       :text: Learn
+       :classes: btn-outline-primary btn-block stretched-link
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
