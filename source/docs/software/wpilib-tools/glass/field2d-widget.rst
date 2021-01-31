@@ -11,7 +11,7 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 .. tabs::
    .. code-tab:: java
 
-      private Field2d m_field;
+      private final Field2d m_field = new Field2d();
 
       public Drivetrain() {
         ...
