@@ -24,7 +24,6 @@ TensorFlow Object Detection CSV
 Tensorflow object detection CSV
 
 ::
-   
    test
    |   _annotations.csv
    |   image1.jpg
