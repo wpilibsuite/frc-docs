@@ -12,7 +12,7 @@ Supervisely
 
 ..
 
-	Taken from https://raw.githubusercontent.com/wpilibsuite/frc-docs/master/source/docs/software/examples-tutorials/machine-learning/setting-up-the-data.rst for temperary use
+   Taken from https://raw.githubusercontent.com/wpilibsuite/frc-docs/master/source/docs/software/examples-tutorials/machine-learning/setting-up-the-data.rst for temperary use
 
 1. `Supervisely <https://supervise.ly/>`__ is the web tool we use for labeling our data. Create a supervise.ly account to access our dataset. On the supervise.ly website, the Signup box is in the top right corner. Provide the necessary details, then click "CREATE AN ACCOUNT".
 2. Create a Workspace for your team. In your workspace, by click 'Members' on the left and then 'INVITE' at the top. After typing in your teammates' details, they should be able to view the workspace.
@@ -24,15 +24,15 @@ TensorFlow Object Detection CSV
 Tensorflow object detection CSV
 
 ::
-	
-	test
-	|	_annotations.csv
-	|	image1.jpg
-	|	image2.jpg
-	|	image3.jpg
-	train
-	|	_annnotations.csv
-	|	image1.jpg
-	|	image2.jpg
-	|	image3.jpg
+   
+   test
+   |   _annotations.csv
+   |   image1.jpg
+   |   image2.jpg
+   |   image3.jpg
+   train
+   |   _annnotations.csv
+   |   image1.jpg
+   |   image2.jpg
+   |   image3.jpg
 
