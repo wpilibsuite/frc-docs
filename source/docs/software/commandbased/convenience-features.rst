@@ -98,11 +98,11 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.2.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
       :language: java
-      :lines: 25-49
+      :lines: 20-45
       :linenos:
-      :lineno-start: 25
+      :lineno-start: 20
 
   .. group-tab:: C++ (Header)
 
