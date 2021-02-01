@@ -8,6 +8,27 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
 
 .. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
+.. tabs::
+   .. code-tab:: java
+
+      // Using the default constructor of RamseteController. Here
+      // the gains are initialized to 2.0 and 0.7.
+      RamseteController controller1 = new RamseteController();
+
+      // Using the secondary constructor of RamseteController where
+      // the user can choose any other gains.
+      RamseteController controller2 = new RamseteController(2.1, 0.8);
+
+   .. code-tab:: c++
+
+      // Using the default constructor of RamseteController. Here
+      // the gains are initialized to 2.0 and 0.7.
+      frc::RamseteController controller1;
+
+      // Using the secondary constructor of RamseteController where
+      // the user can choose any other gains.
+      frc::RamseteController controller2{2.1, 0.8};
+
 Getting Adjusted Velocities
 ---------------------------
 The Ramsete controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
