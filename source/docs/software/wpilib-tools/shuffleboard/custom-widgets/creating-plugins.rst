@@ -97,5 +97,6 @@ The other way to add a plugin to Shuffleboard is to compile it to a jar file and
 First, compile your plugin into a ``.jar`` file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
 
 .. image:: images/loading-plugin.png
+   :alt: Manually adding custom plugins
 
 From the plugins window, choose the "Load plugin" button in the bottom right, and select your jar file.
