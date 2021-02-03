@@ -280,12 +280,13 @@ PWM Cables
 
 .. note:: This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
 
-Requires: 4x PWM cables (if using non-integrated wire controllers), 4x SPARK MAX PWM adapters (if using SPARK MAX), 2x PWM Y-cable (Optional)
+Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if controllers without integrated wires or adapters, otherwise optional), 2x PWM Y-cable (Optional)
 
 Option 1 (Direct connect):
 
 1. If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter with a 3 pin connector with black/white wires).
-2. Attach a PWM extension cable (pins on one end, socket on the other) between the controller or adapter and the roboRIO. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black). On the roboRIO side, the black wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
+2. If needed, attach PWM extension cables to the controller or adapter. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black).
+3. Attach the other end of the cable to the roboRIO with the black wire towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
 Option 2 (Y-cable):
 
