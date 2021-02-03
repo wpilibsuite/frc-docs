@@ -278,7 +278,7 @@ PWM Cables
 
 .. image:: images/how-to-wire-a-robot/image17.jpg
 
-.. note:: This section details how to wire the SPARK MAX controllers using PWM signalling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
+.. note:: This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
 
 Requires: 4x PWM cables (if using non-integrated wire controllers), 4x SPARK MAX PWM adapters (if using SPARK MAX), 2x PWM Y-cable (Optional)
 
@@ -373,7 +373,7 @@ Connect Battery
 
 Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 
-If stuff blinks, you probably did it right. 
+If stuff blinks, you probably did it right.
 
 Before moving on, if using SPARK MAX controllers, there is one more configuration step to complete. The SPARK MAX motor controllers are configured to control a brushless motor by default (you can verify this by checking that the light on the controller is blinking either magenta or cyan). To change to to brushed mode, press and hold the mode button for 3-4 seconds until the status LED changes color. The LED should change to either blue or yellow, indicating that the controller is in brushed mode. The two color options reflect brake or coast mode, for more info on this see the SPARK MAX Quickstart guide in the tip below.
 
