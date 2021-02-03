@@ -334,7 +334,7 @@ For each CIM motor:
 
 For integrated wire controllers including SPARK MAX (top image):
 
-1. Strip the red and black wires (or white and green wires) from the controller (the SPARK MAX white wire is unused for brushed motors such as the CIM, it should be secured and the end should be insulated such as with electrical tape).
+1. Strip the red and black wires (or white and green wires) from the controller (the SPARK MAX white wire is unused for brushed motors such as the CIM, it should be secured and the end should be insulated such with electrical tape or other insulation method).
 2. Connect the motor wires to the matching controller output wires (for controllers with white/green, connect red to white and green to black). The images above show an example using quick disconnect terminals which are provided in the Rookie KOP.
 
 For the SPARK or other non-integrated-wire controllers (bottom image):
@@ -373,7 +373,9 @@ Connect Battery
 
 Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 
-If stuff blinks, you probably did it right. Before moving on, if using SPARK MAX controllers, there is one more configuration step to complete. The SPARK MAX motor controllers are configured to control a brushless motor by default (you can verify this by checking that the light on the controller is blinking either magenta or cyan). To change to to brushed mode, press and hold the mode button for 3-4 seconds until the status LED changes color. The LED should change to either blue or yellow, indicating that the controller is in brushed mode.
+If stuff blinks, you probably did it right. 
+
+Before moving on, if using SPARK MAX controllers, there is one more configuration step to complete. The SPARK MAX motor controllers are configured to control a brushless motor by default (you can verify this by checking that the light on the controller is blinking either magenta or cyan). To change to to brushed mode, press and hold the mode button for 3-4 seconds until the status LED changes color. The LED should change to either blue or yellow, indicating that the controller is in brushed mode. The two color options reflect brake or coast mode, for more info on this see the SPARK MAX Quickstart guide in the tip below.
 
 .. tip:: For more information on the SPARK MAX motor controllers, including how to test your motors/controllers without writing any code by using the REV Hardware Client, see the `SPARK MAX Quickstart guide <https://docs.revrobotics.com/sparkmax/gs-sm>`__.
 
