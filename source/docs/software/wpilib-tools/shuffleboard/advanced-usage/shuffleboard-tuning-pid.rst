@@ -18,7 +18,8 @@ Tuning the PID Controller
 
 Tuning the PID controller consists of picking constants that will give good performance. Shuffleboard helps this process by displaying the details of a PID subsystem with a user interface for setting constant values and testing how well it operates. This is displayed while the robot is operating in test mode (done by setting "Test" in the driver station).
 
-.. image:: images/tuning-pid-1.png
+.. image:: images/shuffleboard-tuning-pid/pid-subsystem.png
+  :alt: Covers each section of the PIDController Subsystem widget.
 
 This is the test mode picture of a wrist subsystem that has a potentiometer as the sensor (pot) and a motor controller connected to the motor. It has a number of areas that correspond to the PIDSubsystem.
 
