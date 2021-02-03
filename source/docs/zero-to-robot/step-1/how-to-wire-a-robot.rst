@@ -7,7 +7,7 @@ How to Wire an FRC Robot
 
    This document details the wiring of a basic electronics board for bench-top testing.
 
-   Some images shown in this section reflect the setup for a Robot Control System using SPARK Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
+   Some images shown in this section reflect the setup for a Robot Control System using Victor SPX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
 
 Overview
 --------
@@ -31,7 +31,7 @@ Locate the following control system components and tools
       - Voltage Regulator Module (VRM)
       - OpenMesh radio (with power cable and Ethernet cable)
       - Robot Signal Light (RSL)
-      - 4x Victor SPX or other motor controllers
+      - 4x SPARK MAX or other motor controllers
       - 2x PWM y-cables
       - 120A Circuit breaker
       - 4x 40A Circuit breaker
@@ -144,9 +144,9 @@ Motor Controller Power
 
 Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG (4 - 6 :math:`mm^2`) wire, 10 or 12 AWG (4 - 6 :math:`mm^2`) fork/ring terminals (terminal controllers only), wire crimper
 
-For Victor SPX or other wire integrated motor controllers (top image):
+For SPARK MAX or other wire integrated motor controllers (top image):
 
-- Cut and strip the red and black power input wires wire, then insert into one of the 40A (larger) Wago terminal pairs.
+- Cut and strip the red and black power input wires, then insert into one of the 40A (larger) Wago terminal pairs.
 
 For terminal motor controllers (bottom image):
 
@@ -278,16 +278,22 @@ PWM Cables
 
 .. image:: images/how-to-wire-a-robot/image17.jpg
 
-Requires: 4x PWM cables (if using non-integrated wire controllers), 2x PWM Y-cable (Optional)
+.. note:: This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
+
+Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if controllers without integrated wires or adapters, otherwise optional), 2x PWM Y-cable (Optional)
 
 Option 1 (Direct connect):
 
-- Connect the PWM cables from each controller directly to the roboRIO. For Victor SPX's and other PWM/CAN controllers, the green wire (black wire for non-integrated controllers) should be towards the outside of the roboRIO. For controllers without integrated wires, make sure the controller side of the black wire is located according to the markings on the controller. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
+1. If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter with a 3 pin connector with black/white wires).
+2. If needed, attach PWM extension cables to the controller or adapter. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black).
+3. Attach the other end of the cable to the roboRIO with the black wire towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
 Option 2 (Y-cable):
 
-1. Connect 1 PWM Y-cable to the PWM cables for the controllers controlling one side of the robot. The brown wire on the Y-cable should match the green/black wire on the PWM cable.
-2. Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and the right side to PWM 1 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
+1. If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter with a 3 pin connector with black/white wires).
+2. If needed, attach PWM extension cables between the controller or adapter and the PWM Y-cable. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black).
+3. Connect 1 PWM Y-cable to the 2 PWM cables for the controllers controlling each side of the robot. The brown wire on the Y-cable should match the black wire on the PWM cable.
+4. Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and the right side to PWM 1 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
 Robot Signal Light
 ------------------
@@ -327,12 +333,12 @@ For each CIM motor:
 
 - Strip the ends of the red and black wires from the CIM
 
-For integrated wire controllers (including Victor SPX):
+For integrated wire controllers including SPARK MAX (top image):
 
-1. Strip the white and green wires from the controller
-2. Connect the motor wires to the controller output wires (it is recommended to connect the red wire to the white M+ output). The images/how-to-wire-a-robot above show examples using quick disconnect terminals.
+1. Strip the red and black wires (or white and green wires) from the controller (the SPARK MAX white wire is unused for brushed motors such as the CIM, it should be secured and the end should be insulated such with electrical tape or other insulation method).
+2. Connect the motor wires to the matching controller output wires (for controllers with white/green, connect red to white and green to black). The images above show an example using quick disconnect terminals which are provided in the Rookie KOP.
 
-For the SPARK or other non-integrated-wire controllers:
+For the SPARK or other non-integrated-wire controllers (bottom image):
 
 1. Crimp a ring/fork terminal on each of the motor wires.
 2. Attach the wires to the output side of the motor controller (red to +, black to -)
@@ -368,4 +374,10 @@ Connect Battery
 
 Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 
-If stuff blinks, you probably did it right. From here, you should connect to the roboRIO and try uploading your code!
+If stuff blinks, you probably did it right.
+
+Before moving on, if using SPARK MAX controllers, there is one more configuration step to complete. The SPARK MAX motor controllers are configured to control a brushless motor by default. You can verify this by checking that the light on the controller is blinking either cyan or magenta (indicating brushless brake or brushless coast respectively). To change to to brushed mode, press and hold the mode button for 3-4 seconds until the status LED changes color. The LED should change to either blue or yellow, indicating that the controller is in brushed mode (brake or coast respectively). To change the brake or coast mode, which control how quickly the motor slows down when a neutral signal is applied, press the mode button briefly.
+
+.. tip:: For more information on the SPARK MAX motor controllers, including how to test your motors/controllers without writing any code by using the REV Hardware Client, see the `SPARK MAX Quickstart guide <https://docs.revrobotics.com/sparkmax/gs-sm>`__.
+
+From here, you should connect to the roboRIO and try uploading your code!
