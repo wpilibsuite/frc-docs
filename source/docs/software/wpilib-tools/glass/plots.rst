@@ -13,7 +13,7 @@ A new plot widget can be created by selecting the :guilabel:`Plot` button on the
 Manipulating Plots
 ------------------
 
-You can click and drag on the plot to move around and scroll on top of the plot to zoom the y axes in and out. Furthermore, right-clicking on the plot will present you with a plethora of options, including whether you want to display secondary and tertiary y axes, if you wish to lock certain axes, etc.
+You can click and drag on the plot to move around and scroll on top of the plot to zoom the y axes in and out. Furthermore, right-clicking on the plot will present you with a plethora of options, including whether you want to display secondary and tertiary y axes, if you wish to lock certain axes, etc. Double-clicking on the plot area will automatically scale the y axes based on the plot data.
 
 .. image:: images/plot-options.png
 
