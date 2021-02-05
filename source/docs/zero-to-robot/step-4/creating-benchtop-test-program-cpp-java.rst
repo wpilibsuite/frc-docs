@@ -8,19 +8,23 @@ Creating a New WPILib Project
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`:
 
-|Command Palette|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/command-palette.png
+    :alt: Opening the Command Palette.
 
 Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
 
-|WPILib Commands|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/wpilib-commands.png
+    :alt: Typing WPILib to filter for just the WPILib commands.
 
 Now, select the "Create a new project" command:
 
-|Create New Project|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
+    :alt: Choose "WPILib: Create a new project".
 
 This will bring up the "New Project Creator Window:"
 
-|New Project Creator|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
+    :alt: The different parts of the new project creation window.
 
 The elements of the New Project Creator Window are explained below:
 
@@ -44,14 +48,16 @@ After successfully creating your project, VS Code will give the option of openin
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
-|Opened Robot Project|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
+    :alt: The robo.java code shown after opening a new project.
 
 C++ Configurations (C++ Only)
 -----------------------------
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-|C++ Configurations|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/cpp-configurations.png
+    :alt: You must choose "Yes" to refrest the C++ configurations.
 
 Imports/Includes
 ----------------
@@ -196,14 +202,6 @@ Test Mode
          :lineno-start: 42
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
-
-.. |Command Palette| image:: /docs/software/vscode-overview/images/creating-robot-program/command-palette.png
-.. |WPILib Commands| image:: /docs/software/vscode-overview/images/creating-robot-program/wpilib-commands.png
-.. |Create New Project| image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
-.. |New Project Creator| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
-.. |New Project Configured| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
-.. |Opened Robot Project| image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image:: /docs/software/vscode-overview/images/creating-robot-program/cpp-configurations.png
 
 Deploying the Project to a Robot
 --------------------------------
