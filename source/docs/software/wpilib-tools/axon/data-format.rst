@@ -22,7 +22,6 @@ TensorFlow Object Detection CSV
 -------------------------------
 
 Tensorflow object detection CSV
-
 ::
    test
    |   _annotations.csv
