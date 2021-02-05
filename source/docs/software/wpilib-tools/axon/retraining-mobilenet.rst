@@ -21,7 +21,8 @@ To create a project, click the add project button, below the add dataset button.
 
 .. image:: images/axon-mobilenet-2.png
 
-A dialog will appear, asking you to name the project. Pick a name and click create. When you create your project, you will see it above the button to the left. 
+A dialog will appear, asking you to name the project. Pick a name and click create. When you create your project, you will see it above the button to the left.
+
 Click on the project, and you will be taken to its page.
 
 Start retraining
