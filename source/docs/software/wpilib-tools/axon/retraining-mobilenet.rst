@@ -30,9 +30,13 @@ Start retraining
 At the top of the project window, there are several parameters to specify how you want the model to be retrained. 
 
 Epochs: The number of times the dataset will be passed through the model during training. 
+
 Batch Size: The amount of images to use in each training iteration. 
+
 Evaluation Frequency: The amount of epochs to run before each evaluation of the models precision. 
+
 Percent Evaluation: The percent of the dataset to be reserved exclusively for evaluation of the models precision during training.
+
 Datasets: The datasets you would wish to retrain with.
 Edit these input parameters to fit your needs, and tick the checkboxes of the desired datasets from the dropdown. 
 
