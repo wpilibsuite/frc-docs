@@ -12,6 +12,7 @@ Table of Contents
    :maxdepth: 1
 
    data-format
+   retraining-mobilenet
 
 
 Software Requirements
