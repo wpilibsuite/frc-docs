@@ -8,6 +8,25 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Invalid build due to missing main or GradleRIO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Rarely, a users gradle cache will get broken and they will get shown errors similar to the following:
+
+.. code-block:: console
+
+   Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: ‘2020.3.2’] as it does not provide a plugin with id ‘edu.wpi.first.GradleRIO’
+
+or
+
+.. code-block:: console
+
+   Could not find or load main class org.gradle.wrapper.GradleWrapperMain
+
+**Workaround:**
+
+Delete your gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to `view hidden files <https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5>`__. This issue has only shown up on Windows so far, please `report https://github.com/wpilibsuite/frc-docs/issues/new>`__ this issue if you get it on an alternative OS.
+
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
