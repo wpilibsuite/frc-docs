@@ -9,7 +9,7 @@ Open Issues
 -----------
 
 Invalid build due to missing GradleRIO
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** Rarely, a users gradle cache will get broken and they will get shown errors similar to the following:
 
