@@ -8,7 +8,7 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-Invalid build due to missing main or GradleRIO
+Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** Rarely, a users gradle cache will get broken and they will get shown errors similar to the following:
@@ -16,12 +16,6 @@ Invalid build due to missing main or GradleRIO
 .. code-block:: console
 
    Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: ‘2020.3.2’] as it does not provide a plugin with id ‘edu.wpi.first.GradleRIO’
-
-or
-
-.. code-block:: console
-
-   Could not find or load main class org.gradle.wrapper.GradleWrapperMain
 
 **Workaround:**
 
