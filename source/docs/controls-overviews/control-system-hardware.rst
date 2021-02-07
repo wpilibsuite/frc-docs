@@ -213,7 +213,7 @@ SD540B and SD540C Motor Controllers
 .. image:: images/control-system-hardware/sd540b-pwm.png
   :width: 500
 
-The SD540B and SD540C Motor Controllers from Mindsensors are controlled using PWM and CAN respectively. Limit switches may be wired directly to the SD540 to limit motor travel in one or both directions.  For more information see the `Mindsensors FRC page <http://www.mindsensors.com/68-frc>`__
+The SD540B and SD540C Motor Controllers from Mindsensors are controlled using PWM. CAN control is no longer available for the SD540C due to lack of manufacturer support. Limit switches may be wired directly to the SD540 to limit motor travel in one or both directions.  For more information see the `Mindsensors FRC page <http://www.mindsensors.com/68-frc>`__
 
 Spike H-Bridge Relay
 --------------------
