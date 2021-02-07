@@ -13,8 +13,8 @@ There are three main steps to updating the model:
 .. tabs::
    .. code-tab:: java
 
-      private Spark m_leftMotor = new Spark(0);
-      private Spark m_rightMotor = new Spark(1);
+      private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
+      private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
 
       public Drivetrain() {
         ...
@@ -44,8 +44,8 @@ There are three main steps to updating the model:
 
    .. code-tab:: c++
 
-      frc::Spark m_leftMotor{0};
-      frc::Spark m_rightMotor{1};
+      frc::PWMSparkMax m_leftMotor{0};
+      frc::PWMSparkMax m_rightMotor{1};
 
       Drivetrain() {
         ...
