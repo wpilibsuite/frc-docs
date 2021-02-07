@@ -1,6 +1,6 @@
 sphinx_rtd_theme==0.5.1
 sphinx==3.4.3
-sphinx-tabs==2.0.0
+git+git://github.com/executablebooks/sphinx-tabs@fix-pdf-rinohtype#egg=sphinx-tabs
 latex==0.7.0
 doc8==0.8.1
 sphinxcontrib-remoteliteralinclude==0.0.4
