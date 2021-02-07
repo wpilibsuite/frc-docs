@@ -151,6 +151,8 @@ Talon Motor Controller
 
 .. image:: images/control-system-hardware/talon-motor-controller.png
 
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
+
 The `Talon Motor Controller <https://ctr-electronics.com/Talon_User_Manual_1_1.pdf>`__ from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
 
 Victor 888 Motor Controller / Victor 884 Motor Controller
@@ -158,6 +160,8 @@ Victor 888 Motor Controller / Victor 884 Motor Controller
 
 .. image:: images/control-system-hardware/victor-888-motor-controller.png
   :width: 400
+
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
 The `Victor 884 <https://content.vexrobotics.com/docs/ifi-v884-users-manual-9-25-06.pdf>`__ and `Victor 888 <https://content.vexrobotics.com/docs/217-2769-Victor888UserManual.pdf>`__ motor controllers from VEX Robotics are variable speed PWM motor controllers for use in FRC. The Victor 888 replaces the Victor 884, which is also usable in FRC.
 
@@ -167,6 +171,8 @@ Jaguar Motor Controller
 .. image:: images/control-system-hardware/jaguar-motor-controller.png
   :width: 500
 
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
+
 The `Jaguar Motor Controller <https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581>`__ from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
 DMC-60 and DMC-60C Motor Controller
@@ -175,9 +181,11 @@ DMC-60 and DMC-60C Motor Controller
 .. image:: images/control-system-hardware/dmc-60c-motor-controller.png
   :width: 500
 
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
+
 The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features integrated thermal sensing and protection including current-foldback to prevent overheating and damage, and four multi-color LEDs to indicate speed, direction, and status for easier debugging. For more information, see the `DMC-60 reference manual <https://reference.digilentinc.com/_media/dmc-60/dmc60_rm.pdf>`__
 
-The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. This enables closed loop control features and other intelligent control options. For more information see the `DMC-60C Product Page <https://reference.digilentinc.com/dmc-60c/start/>`__
+The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due to the manufacturer discontinuing this product, the DMC-60C is only usable with CAN. For more information see the `DMC-60C Product Page <https://reference.digilentinc.com/dmc-60c/start/>`__
 
 Venom Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -193,7 +201,7 @@ Nidec Dynamo BLDC Motor with Controller
 .. image:: images/control-system-hardware/nidec-dynamo.png
   :width: 500
 
-The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller leagl in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <https://andymark-weblinc.netdna-ssl.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
+The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <https://andymark-weblinc.netdna-ssl.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
 
 SD540B and SD540C Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
