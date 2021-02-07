@@ -61,6 +61,14 @@ To add a joystick from the list of system joysticks, simply click and drag a sho
 
 .. note:: The FRC\ |reg| Driver Station does special mapping to gamepads connected and the WPILib simulator does not "map" these by default. You can turn on this behavior by pressing the "Map gamepad" toggle underneath the "Joysticks" menu.
 
+Using the Keyboard as a Joystick
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You add a keyboard to the list of system joysticks by clicking and dragging one of the keyboard items (e.g. Keyboard 0) just like a joystick above.  To edit the settings of the keyboard go to the :guilabel:`DS` item in the menu bar then choose :guilabel:`Keyboard 0 Settings`.  This allows you to control which keyboard buttons control which axis.  This is a common example of how to make the keyboard similar to a split sticks arcade drive on an Xbox controller (uses axis 1 & 4):
+
+.. image:: images/xboxkeyboard.png
+   :alt: How to configure the keyboard so it acts similar to an Xbox controller.
+
 Modifying ADXRS450 Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
