@@ -13,6 +13,9 @@ There are three main steps to updating the model:
 .. tabs::
    .. code-tab:: java
 
+      private Spark m_leftMotor = new Spark(0);
+      private Spark m_rightMotor = new Spark(1);
+
       public Drivetrain() {
         ...
         m_leftEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
@@ -40,6 +43,9 @@ There are three main steps to updating the model:
       }
 
    .. code-tab:: c++
+
+      frc::Spark m_leftMotor{0};
+      frc::Spark m_rightMotor{1};
 
       Drivetrain() {
         ...
