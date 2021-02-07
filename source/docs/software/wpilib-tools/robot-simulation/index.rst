@@ -6,9 +6,9 @@ Robot Simulation
 
    introduction
    simulation-gui
-   /docs/software/dashboard/glass/widgets
-   /docs/software/dashboard/glass/command-based-widgets
-   /docs/software/dashboard/glass/field2d-widget
-   /docs/software/dashboard/glass/plots
+   /docs/software/wpilib-tools/glass/widgets
+   /docs/software/wpilib-tools/glass/command-based-widgets
+   /docs/software/wpilib-tools/glass/field2d-widget
+   /docs/software/wpilib-tools/glass/plots
    video-walkthrough
    physics-sim
