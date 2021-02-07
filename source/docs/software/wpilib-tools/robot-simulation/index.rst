@@ -8,3 +8,4 @@ Robot Simulation
    introduction
    simulation-gui
    physics-sim
+   unit-testing
