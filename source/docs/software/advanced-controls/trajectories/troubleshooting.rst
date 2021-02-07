@@ -101,7 +101,7 @@ Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.
 
-1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0:
+1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0. Teams using ``RamseteController`` directly can just pass ``0, 0``s into the constructor.
 
 .. tabs::
 
