@@ -101,7 +101,7 @@ Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.
 
-1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0. Teams using ``RamseteController`` directly can just pass ``0, 0``s into the constructor.
+1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0.
 
 .. tabs::
 
@@ -121,7 +121,9 @@ If your feedforwards are bad then the P controllers for each side of the robot w
       :linenos:
       :lineno-start: 80
 
-2. (Java only) Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. This is a bit more involved, because we can't just set the gains (b and zeta) to 0. Pass the following into your ``RamseteCommand``:
+2. (Java only) Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. This is a bit more involved, because we can't just set the gains (b and zeta) to 0. Pass the following into your ``RamseteCommand``.
+
+.. note:: Teams using ``RamseteController`` directly can just pass ``0, 0``s into the constructor.
 
 .. tabs::
 
