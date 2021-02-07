@@ -18,6 +18,8 @@ The Encoder class
 
 WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
 
+.. important:: The ``Encoder`` class is only used for encoders that are plugged directly into the roboRIO! Please reference the appropriate vendors' documentation for using encoders plugged into motor controllers.
+
 Initializing an encoder
 ^^^^^^^^^^^^^^^^^^^^^^^
 
