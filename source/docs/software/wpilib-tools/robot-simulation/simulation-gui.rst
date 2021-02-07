@@ -5,7 +5,7 @@ Simulation Specific User Interface Elements
 
 WPILib has extended robot simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robot's inputs and outputs.
 
-.. note:: The Simulation GUI is very similar in many ways to the Glass Dashboard.  Some of the following pages will link to Glass sections that describe elements common to both GUIs.
+.. note:: The Simulation GUI is very similar in many ways to :ref:`Glass <docs/software/wpilib-tools/glass/introduction:Introduction to Glass>`.  Some of the following pages will link to Glass sections that describe elements common to both GUIs.
 
 Running the GUI
 ---------------
