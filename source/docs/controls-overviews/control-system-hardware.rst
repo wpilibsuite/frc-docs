@@ -136,6 +136,8 @@ SPARK Motor Controller
 .. image:: images/control-system-hardware/spark-motor-controller.png
   :width: 400
 
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
+
 The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions.
 
 Victor SP
@@ -143,6 +145,8 @@ Victor SP
 
 .. image:: images/control-system-hardware/victor-sp-motor-controller.png
   :width: 500
+
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
 The `Victor SP Motor Controller <https://www.ctr-electronics.com/downloads/pdf/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
 
@@ -185,7 +189,7 @@ DMC-60 and DMC-60C Motor Controller
 
 The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features integrated thermal sensing and protection including current-foldback to prevent overheating and damage, and four multi-color LEDs to indicate speed, direction, and status for easier debugging. For more information, see the `DMC-60 reference manual <https://reference.digilentinc.com/_media/dmc-60/dmc60_rm.pdf>`__
 
-The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due to the manufacturer discontinuing this product, the DMC-60C is only usable with CAN. For more information see the `DMC-60C Product Page <https://reference.digilentinc.com/dmc-60c/start/>`__
+The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due to the manufacturer discontinuing this product, the DMC-60C is only usable with PWM. For more information see the `DMC-60C Product Page <https://reference.digilentinc.com/dmc-60c/start/>`__
 
 Venom Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -217,6 +221,8 @@ Spike H-Bridge Relay
 .. image:: images/control-system-hardware/spike-relay.png
   :width: 300
 
+.. warning:: While this relay is still legal for FRC use, the manufacturer has discontinued this product.
+
 The Spike H-Bridge Relay from VEX Robotics is a device used for controlling power to motors or other custom robot electronics. When connected to a motor, the Spike provides On/Off control in both the forward and reverse directions. The Spike outputs are independently controlled so it can also be used to provide power to up to 2 custom electronic circuits. The Spike H-Bridge Relay should be connected to a relay output of the roboRIO and powered from the Power Distribution Panel. For more information, see the `Spike User’s Guide <https://content.vexrobotics.com/docs/spike-blue-guide-sep05.pdf>`__.
 
 Servo Power Module
@@ -232,6 +238,8 @@ Axis M1013/M1011/206 Ethernet Camera
 
 .. image:: images/control-system-hardware/axis-camera.png
   :width: 300
+
+.. warning:: While this camera is legal for FRC use, the manufacturer has discontinued support.
 
 The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for capturing images for vision processing and/or sending video back to the Driver Station laptop. The camera should be wired to a 5V power output on the Voltage Regulator Module and an open ethernet port on the robot radio. For more information, see :ref:`Configuring an Axis Camera <docs/software/vision-processing/axis-camera/configuring-an-axis-camera:Configuring an Axis Camera>` and the `Axis 206 <https://www.axis.com/en-us/products/axis-206>`__, `Axis M1011 <https://www.axis.com/en-us/products/axis-m1011>`__, `Axis M1013 pages <https://www.axis.com/en-us/products/axis-m1013>`__.
 
