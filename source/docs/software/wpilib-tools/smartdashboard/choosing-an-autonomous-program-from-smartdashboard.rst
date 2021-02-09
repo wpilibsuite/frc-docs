@@ -124,5 +124,6 @@ SmartDashboard Display
 ----------------------
 
 .. image:: images/choosing-an-autonomous-program-from-smartdashboard/smartdashboard-display.png
+  :alt: SendableChooser shows two selectable autos: Simple Auto and Complex Auto.
 
 When the SmartDashboard is run, the choices from the ``SendableChooser`` are automatically displayed. You can simply pick an option before the autonomous period begins and the corresponding command will run.

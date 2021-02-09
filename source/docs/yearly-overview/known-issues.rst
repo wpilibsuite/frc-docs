@@ -14,6 +14,7 @@ Chinese characters in Driver Station Log
 **Issue:** Rarely, the driver station log will show Chinese characters instead of the English text. This appears to only happen when Windows is set to a language other then English.
 
 .. image:: images/known-issues/DS-chinese.jpg
+  :alt: Chinese character appearing in the Driver Station log window.
 
 **Workaround:**
 There are two known workarounds:

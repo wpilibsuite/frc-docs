@@ -22,18 +22,21 @@ When you download the WPILib installer, it is distributed as a disk image file `
       Windows 10 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
+         :alt: The menu after right clicking on an .iso file to choose "Mount".
 
    .. group-tab:: Windows 7
 
       You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
 
       .. image:: images/wpilib-setup/extract-windows-7.png
+         :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
 
    .. group-tab:: macOS
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
+         :alt: Show the macOS screen after double clicking the DMG file.
 
    .. group-tab:: Linux
 
@@ -107,6 +110,7 @@ Some operating systems require some final action to complete installation.
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
+         :alt: Menu that pops up after right click the desktop icon in Linux.
 
 What is Installed?
 ------------------
@@ -148,6 +152,7 @@ WPILib is designed to install to different folders for different years, so that 
         6. Repeat steps 3-6 in the Systems Variable pane.
 
      .. image:: images/wpilib-setup/EnvironmentVariables.png
+      :alt: The "System Properties", "Environment Variables", and "Edit Environment Variables" screens.
 
   .. tab:: macOS
 

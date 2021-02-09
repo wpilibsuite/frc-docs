@@ -48,6 +48,7 @@ Displaying Preferences in SmartDashboard
 ----------------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/preferences-widget.png
+  :alt: To add preferences to the display choose View->Add...->Robot Preferences.
 
 In the SmartDashboard, the Preferences display can be added to the display revealing the contents of the preferences file stored in the roboRIO flash memory.
 
@@ -55,5 +56,6 @@ Viewing and Editing Preferences
 -------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/view-edit-preferences-values.png
+  :alt: Editing the robot preferences via the SmartDashboard widget.
 
 The values are shown here with the default values from the code. This was read from the robot through the NetworkTables interface built into SmartDashboard. If the values need to be adjusted they can be edited here and saved. The next time the robot program starts up the new values will be loaded in the ``robotInit()`` method. Each subsequent time the robot starts, the new values will be retrieved without having to edit and recompile/reload the robot program.
