@@ -106,3 +106,4 @@
 "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-smartdashboard.rst" "docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-testing-with-shuffleboard.rst"
 "docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst" "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst"
 "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.rst" "docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-writing-pidsubsystem-code.rst"
+"docs/software/wpilib-tools/robot-simulation/video-walkthrough.rst" "docs/software/wpilib-tools/robot-simulation/index.rst"
