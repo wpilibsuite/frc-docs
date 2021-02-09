@@ -34,4 +34,4 @@ You can set the number of seconds that are shown in the graph by changing the "V
 In addition to setting the visible time the graph can selectively turn sources on and off by turning the switch on and off for each of the sources shown in the properties window (see below).
 
 .. image:: images/shuffleboard-graphs/graph-properties.png
-   :alt: Right click to view the properites of each graph.
+   :alt: Right click to view the properties of each graph.
