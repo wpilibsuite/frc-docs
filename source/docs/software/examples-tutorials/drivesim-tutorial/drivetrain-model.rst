@@ -7,7 +7,7 @@ Creating a ``DifferentialDrivetrainSim`` from Physical Measurements
 One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through CAD software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The moment of inertia of the drivetrain (this can be obtained from a CAD model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
  - The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
  - The radius of the drive wheels.
@@ -72,7 +72,7 @@ This constructor takes the following parameters:
  - A linear system representing the drivetrain -- this can be created using the characterization gains.
  - The track width (distance between the left and right wheels).
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The radius of the drive wheels.
  - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
 
@@ -149,7 +149,7 @@ Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
 The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
 
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The diameter of the wheels installed on the drivetrain.
  - The moment of inertia of the drive base (optional).
  - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
