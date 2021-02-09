@@ -6,7 +6,7 @@ Encoders - Software
 .. note:: This section covers encoders in software.  For a hardware guide to encoders, see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`.
 
 .. image:: images/encoders-software/encoding-direction.png
-    :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) recieves a pulse first.
+    :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
 
 Encoders are devices used to measure motion (usually, the rotation of a shaft).  The encoders used in FRC\ |reg| are known as "quadrature encoders."  These encoders produce square-wave signals on two channels that are a quarter-period out-of-phase (hence the term, "quadrature").  The pulses are used to measure the rotation, and the direction of motion can be determined from which channel "leads" the other.
 

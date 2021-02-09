@@ -190,7 +190,7 @@ The serial number you entered at the "User Information" screen should appear in 
 .. note:: If this is the first time activating the 2020 software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
 
 .. image:: images/labview/ni_activation_success.png
-   :alt: Screen details the activation sucess of each package.
+   :alt: Screen details the activation success of each package.
 
 If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Next`.
 
