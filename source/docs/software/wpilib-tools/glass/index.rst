@@ -6,7 +6,7 @@ Glass is a new dashboard and robot data visualization tool. Its GUI is extremely
 .. note:: Glass will not be available within the list of dashboards in the NI Driver Station for 2021.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    introduction
    networktables-connection

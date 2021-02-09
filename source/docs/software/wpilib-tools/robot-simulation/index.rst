@@ -2,7 +2,7 @@ Robot Simulation
 ================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    introduction
    simulation-gui
@@ -10,5 +10,4 @@ Robot Simulation
    /docs/software/wpilib-tools/glass/command-based-widgets
    /docs/software/wpilib-tools/glass/field2d-widget
    /docs/software/wpilib-tools/glass/plots
-   video-walkthrough
    physics-sim
