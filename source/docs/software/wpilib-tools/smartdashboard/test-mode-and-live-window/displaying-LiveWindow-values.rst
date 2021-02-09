@@ -48,6 +48,8 @@ Adding the Necessary Code to your Program
 
 Viewing the Display in SmartDashboard
 -----------------------------------------
+
 .. image:: images/displaying-LiveWindow-values/view-display.png
+    :alt: Modifying the components of a subsystem in SmartDashboard.
 
 The sensors and actuators added to the LiveWindow will be displayed grouped by subsystem. The subsystem name is just an arbitrary grouping the helping to organize the display of the sensors. Actuators can be operated by operating the slider for the two motor controllers.
