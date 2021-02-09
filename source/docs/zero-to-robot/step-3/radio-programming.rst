@@ -40,6 +40,7 @@ Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
+  :alt: Lists the names of each of the status lights on the two legal radios.
 
 The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
 
@@ -74,6 +75,7 @@ Install the Software
 --------------------
 
 .. image:: images/radio-programming/radio-installer.png
+  :alt: The radio configuration installer .exe file in windows explorer.
 
 Double click on ``FRC_Radio_Configuration_VERSION.exe`` to launch the installer. Follow the prompts to complete the installation.
 
@@ -83,6 +85,7 @@ Launch the software
 -------------------
 
 .. image:: images/radio-programming/radio-launch.png
+  :alt: The FRC Radio Configuration Utility in the start menu.
 
 Use the Start menu or desktop shortcut to launch the program.
 
@@ -92,6 +95,7 @@ Allow the program to make changes, if prompted
 ----------------------------------------------
 
 .. image:: images/radio-programming/allow-changes.png
+  :alt: User Account Control dialog that pops up when running the config utility.
 
 If your computer is running Windows or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
@@ -99,6 +103,7 @@ Select the network interface
 ----------------------------
 
 .. image:: images/radio-programming/select-network-connection.png
+  :alt: Each of the Parts of the Network Interfaces selection pop up.
 
 Use the pop-up window to select the which ethernet interface the configuration utility will use to communicate with the wireless bridge. On Windows machines, ethernet interfaces are typically named "Local Area Connection". The configuration utility can not program a bridge over a wireless connection.
 
@@ -119,6 +124,7 @@ Loading FRC Firmware to Open Mesh Radio
 ---------------------------------------
 
 .. image:: images/radio-programming/openmesh-firmware.png
+  :alt: Highlighting the radio dropdown and the Load Firmware button on the main configuration utility screen.
 
 If you need to load the FRC firmware (or reset the radio), you can do so using the FRC Radio Configuration Utility.
 
@@ -137,6 +143,7 @@ Select Radio and Operating Mode
 -------------------------------
 
 .. image:: images/radio-programming/select-bridge-model-mode.png
+  :alt: Highlights the Radio and Mode dropdown boxes.
 
 1. Select which radio you are configuring using the drop-down list.
 2. Select which operating mode you want to configure. For most cases, the default selection of 2.4GHz Access Point will be sufficient. If your computers support it, the 5GHz AP mode is recommended, as 5GHz is less congested in many environments.
@@ -145,6 +152,7 @@ Select Options
 --------------
 
 .. image:: images/radio-programming/select-options.png
+  :alt: Setting the robot name will change the SSID.  The checkboxes make the radio more similar to competition operation.
 
 The default values of the options have been selected to match the use case of most teams, however, you may wish to customize these options to your specific scenario:
 
@@ -160,6 +168,7 @@ Starting the Configuration Process
 ----------------------------------
 
 .. image:: images/radio-programming/start-config.png
+  :alt: At the bottom of the screen is instructions for completing the configuration process.
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
 
@@ -167,6 +176,7 @@ Configuration Progress
 ----------------------
 
 .. image:: images/radio-programming/config-in-progress.png
+  :alt: The progress bar dialog while the configuration is working.
 
 Throughout the configuration process, the window will indicate:
 
@@ -178,6 +188,7 @@ Configuration Completed
 -----------------------
 
 .. image:: images/radio-programming/config-completed.png
+  :alt: A pop up dialog indicating the programming was successful.
 
 Once the configuration is complete:
 
@@ -188,6 +199,7 @@ Configuration Errors
 --------------------
 
 .. image:: images/radio-programming/config-errors.png
+  :alt: A error dialog pop up.
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
 

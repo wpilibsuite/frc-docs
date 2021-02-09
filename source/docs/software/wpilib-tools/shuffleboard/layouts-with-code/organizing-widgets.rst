@@ -61,4 +61,5 @@ If there are many widgets in a tab with related data, it can be useful to place 
       elevatorCommands.Add("Elevator Down", elevatorDown);
       elevatorCommands.Add("Elevator Up", elevatorUp);
 
-.. image:: images/organizing-widgets-1.png
+.. image:: images/organizing-widgets/organized.png
+  :alt: Commands buttons organized by the order they are added for the Elevator and Claw subsystems.
