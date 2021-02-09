@@ -449,24 +449,8 @@ Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
-<<<<<<< HEAD
 Venom Motor Controller
 ----------------------
-||||||| parent of d0e54ce (Added some more alt fixed shows)
-Jaguar speed controllers
-------------------------
-
-.. image:: images/status-lights/jaguar-status-light.png
-  :alt: Shows the single LED in the center.
-  :width: 400
-=======
-Jaguar speed controllers
-------------------------
-
-.. image:: images/status-lights/jaguar-status-light.png
-  :alt: The single LED in the center.
-  :width: 400
->>>>>>> d0e54ce (Added some more alt fixed shows)
 
 .. image:: images/status-lights/venom.png
   :alt: The LED blink codes for the Venom.
