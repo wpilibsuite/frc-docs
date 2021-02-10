@@ -36,7 +36,7 @@ To provide a "clean slate" for each test, we need to implement a function to des
     public void activate(double speed) {
       if(piston.get() == DoubleSolenoid.Value.kForward) {
         motor.set(speed);
-      else { // if piston isn't open, do nothing
+      } else { // if piston isn't open, do nothing
         motor.set(0);
       }
     }
@@ -59,25 +59,25 @@ Now let's write the unit test to assert that everything works:
    .. code-tab:: Java
    // src/test/frc/robot/subsystems/IntakeTest.java
 
-   public class IntakeTest {
+    public class IntakeTest {
     public static final DELTA = 1e-2; // acceptable difference
     Intake intake;
     PWMSim simMotor;
-    PCMSim simPcm;
+    PCMSim simPCM;
 
     @Before // this method will run before each test
     void setup() {
       assert HAL.initialize(500, 0); // initialize the HAL, crash if failed
       intake = new Intake(); // create our intake
       simMotor = new PWMSim(IntakeConstants.MOTOR_PORT); // create our simulation PWM
-      simPcm = new PCMSim(); // default PCM
+      simPCM = new PCMSim(); // default PCM
     }
 
     @After // this method will run after each test
     void shutdown() {
       intake.close(); // destroy our intake object
       simMotor.resetData();
-      simPcm.resetData();
+      simPCM.resetData();
     }
 
 
