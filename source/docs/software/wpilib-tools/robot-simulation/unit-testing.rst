@@ -13,7 +13,7 @@ To provide a "clean slate" for each test, we need to implement a function to des
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       import edu.wpi.first.wpilibj.DoubleSolenoid;
       import edu.wpi.first.wpilibj.PWMSparkMax;
@@ -67,7 +67,7 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
 .. note:: Comparison of floating-point values isn't accurate, so comparing them should be done with an acceptable error parameter (``DELTA``).
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       import static org.junit.Assert.*;
 
