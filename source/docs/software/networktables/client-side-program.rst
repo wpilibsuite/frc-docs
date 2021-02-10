@@ -12,7 +12,7 @@ A basic client program looks like the following example.
    .. code-tab:: java
 
       package networktablesdesktopclient;
-      
+
       import edu.wpi.first.networktables.NetworkTable;
       import edu.wpi.first.networktables.NetworkTableEntry;
       import edu.wpi.first.networktables.NetworkTableInstance;
