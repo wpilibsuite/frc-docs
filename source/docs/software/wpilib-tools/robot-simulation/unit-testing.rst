@@ -1,12 +1,12 @@
 Unit Testing
 ============
 
-Unit testing is a method of testing code by dividing the code into the smallest "units" possible and testing each unit. In robot code, this can mean testing the code for each subsystem individually.
-There are many unit testing frameworks for most languages. Java robot projects have `JUnit 4<https://junit.org/junit4/>`__ available by default, and C++ robot projects have `Google Test<https://github.com/google/googletest/blob/master/docs/primer.md>`__.
+Unit testing is a method of testing code by dividing the code into the smallest "units" possible and testing each unit. In robot code, this can mean testing the code for each subsystem individually. There are many unit testing frameworks for most languages. Java robot projects have `JUnit 4<https://junit.org/junit4/>`__ available by default, and C++ robot projects have `Google Test<https://github.com/google/googletest/blob/master/docs/primer.md>`__.
 
 Let's write our subsystem code, and then we'll write a test for it.
 
 Our subsystem will be an Infinite Recharge intake mechanism containing a piston and a motor: the piston deploys/retracts the intake, and the motor will pull the Power Cells inside. Since it won't do anything, we don't want the motor to run if the intake mechanism isn't deployed.
+
 To provide a "clean slate" for each test, we need to implement a function to destroy the object and free all hardware allocations. In Java, this is done by implementing `AutoCloseable` and `.close()`. In C++, this is done with a destructor. Inside this function, we destroy each hardware object by calling its `.close()` method in Java or its destructor in C++.
 
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
