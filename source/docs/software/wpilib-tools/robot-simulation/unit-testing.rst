@@ -51,10 +51,6 @@ To provide a "clean slate" for each test, we need to implement a function to des
         }
       }
 
-   .. code-tab:: C++
-   // TODO
-
-
 Writing Tests
 ^^^^^^^^^^^^^
 
@@ -110,9 +106,6 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
           assertEquals(0.5, simMotor.getSpeed(), DELTA);
         }
       }
-
-   .. code-tab:: C++
-   // TODO
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
 
