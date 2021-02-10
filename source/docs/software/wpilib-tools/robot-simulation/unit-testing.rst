@@ -7,6 +7,7 @@ There are many unit testing frameworks for most languages. Java robot projects h
 Let's write our subsystem code, and then we'll write a test for it.
 
 Our subsystem will be an Infinite Recharge intake mechanism containing a piston and a motor: the piston deploys/retracts the intake, and the motor will pull the Power Cells inside. Since it won't do anything, we don't want the motor to run if the intake mechanism isn't deployed.
+To provide a "clean slate" for each test, we need to implement a function to destroy the object and free all hardware allocations. In Java, this is done by implementing `AutoCloseable` and `.close()`. In C++, this is done with a destructor. Inside this function, we destroy each hardware object by calling its `.close()` method in Java or its destructor in C++.
 
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
@@ -14,7 +15,7 @@ Our subsystem will be an Infinite Recharge intake mechanism containing a piston 
    .. code-tab:: Java
    // src/main/frc/robot/subsystems/Intake.java
 
-   public class Intake {
+   public class Intake implements AutoCloseable {
     private PWMSparkMax motor;
     private DoubleSolenoid piston;
 
@@ -38,6 +39,11 @@ Our subsystem will be an Infinite Recharge intake mechanism containing a piston 
       else { // if piston isn't open, do nothing
         motor.set(0);
       }
+    }
+
+    public void close() throws Exception {
+      piston.close();
+      motor.close();
     }
    }
 
@@ -67,6 +73,14 @@ Now let's write the unit test to assert that everything works:
       simPcm = new PCMSim(); // default PCM
     }
 
+    @After // this method will run after each test
+    void shutdown() {
+      intake.close(); // destroy our intake object
+      simMotor.resetData();
+      simPcm.resetData();
+    }
+
+
     @Test // marks this method as a test
     void doesntWorkWhenClosed() {
      intake.retract(); // close the intake
@@ -86,6 +100,6 @@ Now let's write the unit test to assert that everything works:
    // TODO
 
 
-Each test contains at least one assertion (``assert*()``/``EXPECT_*()``). These assertions verify a certain condition and fail the test if the condition isn't met.
+Each test contains at least one assertion (``assert*()``/``EXPECT_*()``). These assertions verify a condition and fail the test if the condition isn't met.
 
 Both JUnit and GoogleTest have multiple __assertion__ types, but the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given.
