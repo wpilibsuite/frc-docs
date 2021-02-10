@@ -54,9 +54,9 @@ To provide a "clean slate" for each test, we need to implement a function to des
 Writing Tests
 ^^^^^^^^^^^^^
 
-Tests are placed inside the `test` source set: `/src/test/java/` and `/src/test/native/` for Java and C++ tests, respectively. Each test class contains at least one test method marked with ``@org.junit.Test``, each method represents a test case. Additional methods for opening resources (such as our ``Intake`` object) before each test and closing them after are respectively marked with ``@org.junit.Before`` and ``@org.junit.After``.
+Tests are placed inside the ``test`` source set: ``/src/test/java/`` and ``/src/test/native/`` for Java and C++ tests, respectively. Each test class contains at least one test method marked with ``@org.junit.Test``, each method represents a test case. Additional methods for opening resources (such as our ``Intake`` object) before each test and closing them after are respectively marked with ``@org.junit.Before`` and ``@org.junit.After``.
 
-Each test method should contain at least one __assertion__ (``assert*()``/``EXPECT_*()``). These assertions verify a condition at runtime and fail the test if the condition isn't met. If there is more than one assertion in a test method, the first failed assertion will crash the test - execution won't reach the later assertions.
+Each test method should contain at least one *assertion* (``assert*()``/``EXPECT_*()``). These assertions verify a condition at runtime and fail the test if the condition isn't met. If there is more than one assertion in a test method, the first failed assertion will crash the test - execution won't reach the later assertions.
 
 Both JUnit and GoogleTest have multiple assertion types, but the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given. In JUnit (Java), these assertions are static methods and can be used without qualification by adding the static star import ``import static org.junit.Asssert.*``. In Google Test (C++), assertions are macros from the ``"gtest/gtest.h"`` header.
 
