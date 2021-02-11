@@ -47,10 +47,6 @@ Simply copy the necessary source and/or headers into your robot project. You can
 
 .. code-block:: groovy
 
-   nativeUtils.platformConfigs.named("linuxathena").configure {
-      it.cppCompiler.args.remove('-g')
-   }
-
    nativeUtils.platformConfigs.named("linuxx86-64").configure {
       it.linker.args.add('-lstdc++fs') // links in C++ filesystem library
    }
