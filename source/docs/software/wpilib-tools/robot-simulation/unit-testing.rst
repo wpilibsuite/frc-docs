@@ -8,7 +8,7 @@ Writing Testable Code
 
 Our subsystem will be an Infinite Recharge intake mechanism containing a piston and a motor: the piston deploys/retracts the intake, and the motor will pull the Power Cells inside. Since it won't do anything, we don't want the motor to run if the intake mechanism isn't deployed.
 
-To provide a "clean slate" for each test, we need to implement a function to destroy the object and free all hardware allocations. In Java, this is done by implementing `AutoCloseable` and `.close()`. In C++, this is done with a destructor. Inside this function, we destroy each hardware object by calling its `.close()` method in Java or its destructor in C++.
+To provide a "clean slate" for each test, we need to have a function to destroy the object and free all hardware allocations. In Java, this is done by implementing the ``AutoCloseable`` interface and its ``.close()`` method, destroying each member object by calling its ``.close()`` method - an object without a ``.close()`` method probably doesn't need to be closed. In C++, the default destructor will be called automatically when the object goes out of scope and will call destructors of member objects.
 
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
@@ -51,6 +51,54 @@ To provide a "clean slate" for each test, we need to implement a function to des
         }
       }
 
+   .. group-tab:: C++ (Source)
+      .. code-block:: cpp
+
+      #include <frc2/command/SubsystemBase.h>
+      #include <frc/DoubleSolenoid.h>
+      #include <frc/PWMSparkMax.h>
+
+      #include "Constants.h"
+
+      class Intake : public frc2::SubsystemBase {
+       public:
+        Intake();
+        ~Intake();
+
+        void Deploy();
+        void Retract();
+        void Activate(double speed);
+
+       private:
+        frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
+        frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
+      };
+
+   .. group-tab:: C++ (Header)
+      .. code-block:: cpp
+
+      #include "subsystems/Intake.h"
+
+      Intake::Intake() = default;
+      Intake::~Intake() = default;
+
+      void Intake::Deploy() {
+          piston.Set(frc::DoubleSolenoid::Value::kForward);
+      }
+
+      void Intake::Retract() {
+          piston.Set(frc::DoubleSolenoid::Value::kReverse);
+          motor.Set(0);
+      }
+
+      void Intake::Activate(double speed) {
+          if (piston.Get() == frc::DoubleSolenoid::Value::kForward) {
+              motor.Set(speed);
+          } else { // if piston isn't open, do nothing
+              motor.Set(0);
+          }
+      }
+
 Writing Tests
 ^^^^^^^^^^^^^
 
@@ -58,7 +106,7 @@ Tests are placed inside the ``test`` source set: ``/src/test/java/`` and ``/src/
 
 Each test method should contain at least one *assertion* (``assert*()``/``EXPECT_*()``). These assertions verify a condition at runtime and fail the test if the condition isn't met. If there is more than one assertion in a test method, the first failed assertion will crash the test - execution won't reach the later assertions.
 
-Both JUnit and GoogleTest have multiple assertion types, but the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given. In JUnit (Java), these assertions are static methods and can be used without qualification by adding the static star import ``import static org.junit.Asssert.*``. In Google Test (C++), assertions are macros from the ``"gtest/gtest.h"`` header.
+Both JUnit and GoogleTest have multiple assertion types, but the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given. In JUnit (Java), these assertions are static methods and can be used without qualification by adding the static star import ``import static org.junit.Asssert.*``. In Google Test (C++), assertions are macros from the ``<gtest/gtest.h>`` header.
 
 .. note:: Comparison of floating-point values isn't accurate, so comparing them should be done with an acceptable error parameter (``DELTA``).
 
@@ -107,12 +155,43 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
         }
       }
 
+   .. code-tab:: cpp
+
+   #include <gtest/gtest.h>
+
+   #include <frc/simulation/PWMSim.h>
+   #include <frc/simulation/PCMSim.h>
+
+   #include "subsystems/Intake.h"
+   #include "Constants.h"
+
+   constexpr double DELTA = 1e-2;
+
+   class IntakeTest : public testing::Test {
+    protected:
+     Intake intake;
+     frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT};
+     frc::sim::PCMSim simPCM;
+   };
+
+   TEST_F(IntakeTest, DoesntWorkWhenClosed) {
+     intake.Retract(); // close the intake
+     intake.Activate(0.5); // try to activate the motor
+     EXPECT_EQ(0.0, simMotor.GetSpeed(), DELTA); // make sure that the value set to the motor is 0
+   }
+
+   TEST_F(IntakeTest, WorksWhenOpen) {
+     intake.Deploy();
+     intake.Activate(0.5);
+     EXPECT_EQ(0.5, simMotor.GetSpeed(), DELTA);
+   }
+
 For more advanced usage of JUnit and Google Test, see the framework docs.
 
 Running Tests
 ^^^^^^^^^^^^^
 
-For the tests to run, make sure that your ``build.gradle`` file contains the following block:
+For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
 .. code-block:: groovy
 
@@ -120,6 +199,6 @@ For the tests to run, make sure that your ``build.gradle`` file contains the fol
      useJUnit()
   }
 
-Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED`` label after the test name in the output. A HTML document will be generated in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failied test a link to render the document in your browser will be printed in the terminal output.
+Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label after the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failied test a link to render the document in your browser will be printed in the terminal output.
 
 By default, Gradle runs the tests whenever robot code is built, including deploys. This will increase deploy time, and failing tests will cause the build and deploy to fail. To prevent this from happening, you can use :guilabel:`Change Skip Tests On Deploy Setting` from the Command Palette to configure whether to run tests when deploying.
