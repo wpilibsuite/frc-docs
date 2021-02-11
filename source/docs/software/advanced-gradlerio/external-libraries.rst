@@ -52,7 +52,6 @@ Simply copy the necessary source and/or headers into your robot project. You can
    }
 
    nativeUtils.platformConfigs.named("linuxx86-64").configure {
-      it.cppCompiler.args.remove('-g')
       it.linker.args.add('-lstdc++fs') // links in C++ filesystem library
    }
 
