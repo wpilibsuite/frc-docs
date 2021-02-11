@@ -135,9 +135,9 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         // Create a linear system from our characterization gains.
         frc::LinearSystemId::IdentifyDrivetrainSystem(
           KvLinear, KaLinear, KvAngular, KaAngular),
+        0.7112_m,           // The track width is 0.7112 meters.
         frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
         7.29,               // 7.29:1 gearing reduction.
-        0.7112_m,           // The track width is 0.7112 meters.
         3_in,               // The robot uses 3" radius wheels.
 
         // The standard deviations for measurement noise:
