@@ -20,7 +20,7 @@ The following example shows the use of the ``DifferentialDrivePoseEstimator``:
 
    .. code-tab:: cpp
 
-      #include "frc/estimator/DifferentialDrivePoseEstimator.h
+      #include "frc/estimator/DifferentialDrivePoseEstimator.h"
       #include "frc/StateSpaceUtil.h"
 
       frc::DifferentialDrivePoseEstimator estimator{
