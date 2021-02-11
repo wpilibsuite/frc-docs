@@ -157,34 +157,34 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
 
    .. code-tab:: cpp
 
-   #include <gtest/gtest.h>
+      #include <gtest/gtest.h>
 
-   #include <frc/simulation/PWMSim.h>
-   #include <frc/simulation/PCMSim.h>
+      #include <frc/simulation/PWMSim.h>
+      #include <frc/simulation/PCMSim.h>
 
-   #include "subsystems/Intake.h"
-   #include "Constants.h"
+      #include "subsystems/Intake.h"
+      #include "Constants.h"
 
-   constexpr double DELTA = 1e-2;
+      constexpr double DELTA = 1e-2;
 
-   class IntakeTest : public testing::Test {
-    protected:
-     Intake intake;
-     frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT};
-     frc::sim::PCMSim simPCM;
-   };
+      class IntakeTest : public testing::Test {
+       protected:
+        Intake intake;
+        frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT};
+        frc::sim::PCMSim simPCM;
+      };
 
-   TEST_F(IntakeTest, DoesntWorkWhenClosed) {
-     intake.Retract(); // close the intake
-     intake.Activate(0.5); // try to activate the motor
-     EXPECT_EQ(0.0, simMotor.GetSpeed(), DELTA); // make sure that the value set to the motor is 0
-   }
+      TEST_F(IntakeTest, DoesntWorkWhenClosed) {
+        intake.Retract(); // close the intake
+        intake.Activate(0.5); // try to activate the motor
+        EXPECT_EQ(0.0, simMotor.GetSpeed(), DELTA); // make sure that the value set to the motor is 0
+      }
 
-   TEST_F(IntakeTest, WorksWhenOpen) {
-     intake.Deploy();
-     intake.Activate(0.5);
-     EXPECT_EQ(0.5, simMotor.GetSpeed(), DELTA);
-   }
+      TEST_F(IntakeTest, WorksWhenOpen) {
+        intake.Deploy();
+        intake.Activate(0.5);
+        EXPECT_EQ(0.5, simMotor.GetSpeed(), DELTA);
+      }
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
 
