@@ -31,7 +31,7 @@ The simplest device that can be connected to a DIO port is a switch (such as a :
 A simple switch does not need to be powered, and thus only has two wires.  Switches should be wired between the *signal* and the *ground* pins of the DIO port.  When the switch circuit is open, the signal pin will float, and the pull-up resistor will ensure that it reads "high."  When the switch circuit is closed, it will connect directly to the ground rail, and thus read "low."
 
 .. image:: images/digital-inputs-hardware/limit-switch-to-roborio.svg
-   :alt: Connecting a NO limit switch to a DIO channel of the roboRIO.
+   :alt: Connecting a normally open limit switch to a DIO channel of the roboRIO.
 
 Connecting a powered sensor to a DIO port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -47,7 +47,7 @@ Connecting a sensor that uses multiple DIO ports
 Some sensors (such as :doc:`quadrature encoders <encoders-hardware>`) may need to connect to multiple DIO ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed.
 
 .. image:: images/digital-inputs-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
-   :alt: Connecting a E4T Optical Encoder to two different DIO ports.
+   :alt: Connecting a E4T Optical Encoder to two different DIO ports of the roboRIO.
 
 .. |ground| unicode:: 0x23DA
 
