@@ -244,7 +244,7 @@ CAN Devices
 -----------
 
 roboRIO to PCM CAN
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 .. image:: images/how-to-wire-a-robot/image15.jpg
 
@@ -258,7 +258,7 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
 PCM to PDP CAN
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 .. image:: images/how-to-wire-a-robot/image16.jpg
 
@@ -271,14 +271,14 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-.. note: The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain.
+.. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
 PWM Cables
 ----------
 
 .. image:: images/how-to-wire-a-robot/image17.jpg
 
-.. note:: This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
+This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is less complex and easier to troubleshoot than CAN operation. The SPARK MAXs (and many other FRC motor controllers) can also be wired using :ref:`CAN<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` which unlocks easier configuration, advanced functionality, better diagnostic data and reduces the amount of wire needed.
 
 Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if controllers without integrated wires or adapters, otherwise optional), 2x PWM Y-cable (Optional)
 
