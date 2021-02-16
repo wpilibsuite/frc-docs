@@ -200,12 +200,12 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
 
       TEST_F(IntakeTest, RetractTest) {
         intake.Retract();
-        EXPECT_EQ(frc::DoubleSolenoid::Value::kReverse, simPiston.Get());      
+        EXPECT_EQ(frc::DoubleSolenoid::Value::kReverse, simPiston.Get());
       }
 
       TEST_F(IntakeTest, DeployTest) {
         intake.Deploy();
-        EXPECT_EQ(frc::DoubleSolenoid::Value::kForward, simPiston.Get());      
+        EXPECT_EQ(frc::DoubleSolenoid::Value::kForward, simPiston.Get());
       }
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
