@@ -114,7 +114,8 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
       import static org.junit.Assert.*;
 
       import edu.wpi.first.hal.HAL;
-      import edu.wpi.first.wpilibj.simulation.PCMSim;
+      import edu.wpi.first.wpilibj.DoubleSolenoid;
+      import edu.wpi.first.wpilibj.simulation.DoubleSolenoidSim;
       import edu.wpi.first.wpilibj.simulation.PWMSim;
       import frc.robot.Constants.IntakeConstants;
       import org.junit.*;
@@ -123,14 +124,14 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
         public static final double DELTA = 1e-2; // acceptable difference
         Intake intake;
         PWMSim simMotor;
-        PCMSim simPCM;
+        DoubleSolenoidSim simPiston;
 
         @Before // this method will run before each test
         public void setup() {
           assert HAL.initialize(500, 0); // initialize the HAL, crash if failed
           intake = new Intake(); // create our intake
-          simMotor = new PWMSim(IntakeConstants.MOTOR_PORT); // create our simulation PWM
-          simPCM = new PCMSim(); // default PCM
+          simMotor = new PWMSim(IntakeConstants.MOTOR_PORT); // create our simulation PWM motor controller
+          simPiston = new DoubleSolenoidSim(IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV); // create our simulation solenoid
         }
 
         @After // this method will run after each test
@@ -151,14 +152,27 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
           intake.activate(0.5);
           assertEquals(0.5, simMotor.getSpeed(), DELTA);
         }
+
+        @Test
+        public void retractTest() {
+          intake.retract();
+          assertEquals(DoubleSolenoid.Value.kReverse, simPiston.get());
+        }
+
+        @Test
+        public void deployTest() {
+          intake.deploy();
+          assertEquals(DoubleSolenoid.Value.kForward, simPiston.get());
+        }
       }
 
    .. code-tab:: cpp
 
       #include <gtest/gtest.h>
 
+      #include <frc/DoubleSolenoid.h>
+      #include <frc/simulation/DoubleSolenoidSim.h>
       #include <frc/simulation/PWMSim.h>
-      #include <frc/simulation/PCMSim.h>
 
       #include "subsystems/Intake.h"
       #include "Constants.h"
@@ -169,7 +183,7 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
        protected:
         Intake intake; // create our intake
         frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT}; // create our simulation PWM
-        frc::sim::PCMSim simPCM; // default PCM
+        frc::sim::DoubleSolenoidSim simPiston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV}; // create our simulation solenoid
       };
 
       TEST_F(IntakeTest, DoesntWorkWhenClosed) {
@@ -182,6 +196,16 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
         intake.Deploy();
         intake.Activate(0.5);
         EXPECT_EQ(0.5, simMotor.GetSpeed(), DELTA);
+      }
+
+      TEST_F(IntakeTest, RetractTest) {
+        intake.Retract();
+        EXPECT_EQ(frc::DoubleSolenoid::Value::kReverse, simPiston.Get());      
+      }
+
+      TEST_F(IntakeTest, DeployTest) {
+        intake.Deploy();
+        EXPECT_EQ(frc::DoubleSolenoid::Value::kForward, simPiston.Get());      
       }
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
