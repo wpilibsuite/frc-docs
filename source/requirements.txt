@@ -3,7 +3,7 @@ sphinx==3.4.3
 sphinx-tabs==2.0.0
 latex==0.7.0
 doc8==0.8.1
-sphinxcontrib-remoteliteralinclude==0.0.4
+sphinxext-remoteliteralinclude==0.2.0
 sphinxcontrib-ghcontributors==0.2.2
 sphinx-notfound-page==0.6
 sphinxcontrib-svg2pdfconverter==1.1.1
