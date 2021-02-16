@@ -14,7 +14,9 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
 .. tabs::
    .. group-tab:: Java
+
       .. code-block:: java
+
          import edu.wpi.first.wpilibj.DoubleSolenoid;
          import edu.wpi.first.wpilibj.PWMSparkMax;
          import frc.robot.Constants.IntakeConstants;
@@ -52,6 +54,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
          }
 
    .. group-tab:: C++ (Source)
+
       .. code-block:: cpp
 
          #include <frc2/command/SubsystemBase.h>
@@ -72,6 +75,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
          };
 
    .. group-tab:: C++ (Header)
+
       .. code-block:: cpp
 
          #include "subsystems/Intake.h"
