@@ -57,7 +57,7 @@ Starting Install
 
   .. tab:: Offline Installer (Windows 10)
 
-     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click “Yes” if a Windows Security prompt
+     Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click "Yes" if a Windows Security prompt
 
      .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
 
@@ -169,7 +169,7 @@ The serial number you entered at the "User Information" screen should appear in 
 
 .. image:: images/labview/ni_activation_success.png
 
-If your products activate successfully, an “Activation Successful” message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Next`.
+If your products activate successfully, an "Activation Successful" message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Next`.
 
 .. image:: images/labview/ni_activation_finish.png
 

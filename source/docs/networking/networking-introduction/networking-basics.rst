@@ -19,7 +19,7 @@ Since there are only 4-billion addresses, and there are more than 4-billion comp
 Public vs Private IP Addresses
 ------------------------------
 
-To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” was implemented. In short, this means that there are ranges of IP Addresses that will never be assigned to web servers, and will only be used for local networks, such as those in your house.
+To be efficient with using IP Addresses, the idea of "Reserved IP Ranges" was implemented. In short, this means that there are ranges of IP Addresses that will never be assigned to web servers, and will only be used for local networks, such as those in your house.
 
 **Key point #2**: Unless you a directly connecting to your internet provider’s basic modem (no router function), your device will have an IP Address in one of these ranges. This means that at any local network, such as: your school, work office, home, etc., your device will 99% of the time have an IP address in a range listed below:
 
@@ -33,7 +33,7 @@ To be efficient with using IP Addresses, the idea of “Reserved IP Ranges” wa
 | C     | 16   | 192.168.0.0   | 192.168.255.255 | 65,536              |
 +-------+------+---------------+-----------------+---------------------+
 
-These reserved ranges let us assign one “unreserved IP Address” to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
+These reserved ranges let us assign one "unreserved IP Address" to an entire house, and then use multiple addresses in a reserved range to connect more than one computer to the internet. A process on the home’s internet router known as **NAT** (Network Address Translation), handles the process of keeping track which private IP is requesting data, using the public IP to request that data from the internet, and
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
 
 .. image:: diagrams/nat.drawio.svg
@@ -69,7 +69,7 @@ What is link-local?
 
 If a device does not have an IP address, then it cannot communicate on a network. This can become an issue if we have a device that is set to dynamically acquire its address from a DHCP server, but there is no DHCP server on the network. An example of this would be when you have a laptop directly connected to a roboRIO and both are set to dynamically acquire an IP address. Neither device is a DHCP server, and since they are the only two devices on the network, they will not be assigned IP addresses automatically.
 
-Link-local addresses give us a standard set of addresses that we can “fall-back” to if a device set to acquire dynamically is not able to acquire an address. If this happens, the device will assign itself an IP address in the ``169.254.xx.yy`` address range; this is a link-local address. In our roboRIO and computer example above, both devices will realize they haven’t been assigned an IP address and assign themselves a link-local address. Once they are both assigned addresses in the ``169.254.xx.yy`` range, they will be in the same network and will be able to communicate, even though they were set to dynamic and a DHCP server did not assign addresses.
+Link-local addresses give us a standard set of addresses that we can "fall-back" to if a device set to acquire dynamically is not able to acquire an address. If this happens, the device will assign itself an IP address in the ``169.254.xx.yy`` address range; this is a link-local address. In our roboRIO and computer example above, both devices will realize they haven’t been assigned an IP address and assign themselves a link-local address. Once they are both assigned addresses in the ``169.254.xx.yy`` range, they will be in the same network and will be able to communicate, even though they were set to dynamic and a DHCP server did not assign addresses.
 
 IP Addressing for FRC
 ---------------------

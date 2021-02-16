@@ -104,7 +104,7 @@ Talon SRX
 .. image:: images/control-system-hardware/talonsrx-motor-controller.png
   :width: 500
 
-The `Talon SRX Motor Controller <https://www.ctr-electronics.com/talon-srx.html>`__ is a “smart motor controller” from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <http://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__.
+The `Talon SRX Motor Controller <https://www.ctr-electronics.com/talon-srx.html>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <http://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__.
 
 Victor SPX
 ^^^^^^^^^^

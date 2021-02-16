@@ -21,7 +21,7 @@ Tank Drive Tutorial
 
 .. image:: images/tank-drive-tutorial/block-diagram.png
 
-5. Double click the “Teleop” vi inside of the Teleop Enabled case structure.  Look at its block diagram.  You will want to make two changes here:
+5. Double click the "Teleop" vi inside of the Teleop Enabled case structure.  Look at its block diagram.  You will want to make two changes here:
 
   - Replace Arcade Drive with the tank drive.vi.  This can be found by right clicking on the block diagram >> WPI Robotics Library >> Robot Drive >>  and clicking the Tank Drive VI.
 
@@ -29,11 +29,11 @@ Tank Drive Tutorial
 
 .. image:: images/tank-drive-tutorial/block-diagram-2.png
 
-6. Next you will want to go back to your “Robot Main.vi” and double click on the “Begin.vi.”
+6. Next you will want to go back to your "Robot Main.vi" and double click on the "Begin.vi."
 
 7. The first thing to confirm in this VI is that your left and right motors are connected to the same PWM lines in LabVIEW as they are on your PDP (Power Distribution Panel).
 
-8. The second thing to confirm in this VI is that the “Open 2 Motor.vi” has the correct motor controller selected (Talon, Jaguar, Victor, etc.).
+8. The second thing to confirm in this VI is that the "Open 2 Motor.vi" has the correct motor controller selected (Talon, Jaguar, Victor, etc.).
 
   For example, I am using Jaguar motor controllers and my motors are wired into PWM 8 and 9.  The image below shows the changes I need to make:
 

@@ -30,7 +30,7 @@ CameraServer sources are automatically discovered by looking at the
      /<camera name>
        streams=["url1", "url2", ...]
 
-For example, a camera named “Camera” with a server at
+For example, a camera named "Camera" with a server at
 ``roborio-0000-frc.local`` would have this table layout:
 
 ::

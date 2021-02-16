@@ -7,7 +7,7 @@ OutlineViewer is a utility used to view, modify and add to the contents of the N
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`OutlineViewer`.
 
-To connect to your robot, open OutlineViewer and set the “Server Location” to be your team number. After you click start, OutlineViewer will connect.  If you have trouble connecting to OutlineViewer please see the :ref:`Dashboard Troubleshooting Steps <docs/software/labview-dashboard/troubleshooting-dashboard-connectivity:Troubleshooting Dashboard Connectivity>`.
+To connect to your robot, open OutlineViewer and set the "Server Location" to be your team number. After you click start, OutlineViewer will connect.  If you have trouble connecting to OutlineViewer please see the :ref:`Dashboard Troubleshooting Steps <docs/software/labview-dashboard/troubleshooting-dashboard-connectivity:Troubleshooting Dashboard Connectivity>`.
 
 .. image:: images/outlineviewer.png
 
