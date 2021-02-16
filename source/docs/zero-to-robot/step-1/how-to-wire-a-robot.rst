@@ -57,12 +57,12 @@ Locate the following control system components and tools
       - 5 mm Hex key (3/16" may work if metric is unavailable)
       - 1/16" Hex key
       - Wire cutters, strippers, and crimpers
-      - 7/16” (11 mm may work if imperial is unavailable) box end wrench or nut driver
+      - 7/16" (11 mm may work if imperial is unavailable) box end wrench or nut driver
 
 Create the Base for the Control System
 --------------------------------------
 
-For a benchtop test board, cut piece of 1/4” or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
+For a benchtop test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
 Layout the Core Control System Components
 -----------------------------------------
@@ -103,7 +103,7 @@ Wire Breaker to PDP
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
 
-Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
+Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
 
 1. Cut, strip, and crimp the terminal to the 2nd end of the red 6 AWG (16 :math:`mm^2`) wire.
 2. Using the 7/16" (11 mm) box end, secure the wire to the "AUX" side of the 120A main breaker.
