@@ -66,7 +66,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
         void Retract();
         void Activate(double speed);
 
-       private:
+        private:
         frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
         frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
       };
