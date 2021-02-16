@@ -13,85 +13,85 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
 .. tabs::
-   .. code-tab:: java
+   .. group-tab:: Java
+      .. code-block:: java
+         import edu.wpi.first.wpilibj.DoubleSolenoid;
+         import edu.wpi.first.wpilibj.PWMSparkMax;
+         import frc.robot.Constants.IntakeConstants;
 
-      import edu.wpi.first.wpilibj.DoubleSolenoid;
-      import edu.wpi.first.wpilibj.PWMSparkMax;
-      import frc.robot.Constants.IntakeConstants;
+         public class Intake implements AutoCloseable {
+           private PWMSparkMax motor;
+           private DoubleSolenoid piston;
 
-      public class Intake implements AutoCloseable {
-        private PWMSparkMax motor;
-        private DoubleSolenoid piston;
+           public Intake() {
+             motor = new PWMSparkMax(IntakeConstants.MOTOR_PORT);
+             piston = new DoubleSolenoid(IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV);
+           }
 
-        public Intake() {
-          motor = new PWMSparkMax(IntakeConstants.MOTOR_PORT);
-          piston = new DoubleSolenoid(IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV);
-        }
+           public void deploy() {
+             piston.set(DoubleSolenoid.Value.kForward);
+           }
 
-        public void deploy() {
-          piston.set(DoubleSolenoid.Value.kForward);
-        }
+           public void retract() {
+             piston.set(DoubleSolenoid.Value.kReverse);
+             motor.set(0); // turn off the motor
+           }
 
-        public void retract() {
-          piston.set(DoubleSolenoid.Value.kReverse);
-          motor.set(0); // turn off the motor
-        }
+           public void activate(double speed) {
+             if (piston.get() == DoubleSolenoid.Value.kForward) {
+               motor.set(speed);
+             } else { // if piston isn't open, do nothing
+               motor.set(0);
+             }
+           }
 
-        public void activate(double speed) {
-          if (piston.get() == DoubleSolenoid.Value.kForward) {
-            motor.set(speed);
-          } else { // if piston isn't open, do nothing
-            motor.set(0);
-          }
-        }
-
-        public void close() throws Exception {
-          piston.close();
-          motor.close();
-        }
-      }
+           public void close() throws Exception {
+             piston.close();
+             motor.close();
+           }
+         }
 
    .. group-tab:: C++ (Source)
       .. code-block:: cpp
 
-      #include <frc2/command/SubsystemBase.h>
-      #include <frc/DoubleSolenoid.h>
-      #include <frc/PWMSparkMax.h>
+         #include <frc2/command/SubsystemBase.h>
+         #include <frc/DoubleSolenoid.h>
+         #include <frc/PWMSparkMax.h>
 
-      #include "Constants.h"
+         #include "Constants.h"
 
-      class Intake : public frc2::SubsystemBase {
-       public:
-        void Deploy();
-        void Retract();
-        void Activate(double speed);
+         class Intake : public frc2::SubsystemBase {
+          public:
+           void Deploy();
+           void Retract();
+           void Activate(double speed);
 
-        private:
-        frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
-        frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
-      };
+           private:
+           frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
+           frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
+         };
 
    .. group-tab:: C++ (Header)
       .. code-block:: cpp
 
-      #include "subsystems/Intake.h"
+         #include "subsystems/Intake.h"
 
-      void Intake::Deploy() {
-          piston.Set(frc::DoubleSolenoid::Value::kForward);
-      }
+         void Intake::Deploy() {
+             piston.Set(frc::DoubleSolenoid::Value::kForward);
+         }
 
-      void Intake::Retract() {
-          piston.Set(frc::DoubleSolenoid::Value::kReverse);
-          motor.Set(0); // turn off the motor
-      }
+         void Intake::Retract() {
+             piston.Set(frc::DoubleSolenoid::Value::kReverse);
+             motor.Set(0); // turn off the motor
+         }
 
-      void Intake::Activate(double speed) {
-          if (piston.Get() == frc::DoubleSolenoid::Value::kForward) {
-              motor.Set(speed);
-          } else { // if piston isn't open, do nothing
-              motor.Set(0);
-          }
-      }
+         void Intake::Activate(double speed) {
+             if (piston.Get() == frc::DoubleSolenoid::Value::kForward) {
+                 motor.Set(speed);
+             } else { // if piston isn't open, do nothing
+                 motor.Set(0);
+             }
+         }
 
 Writing Tests
 ^^^^^^^^^^^^^
