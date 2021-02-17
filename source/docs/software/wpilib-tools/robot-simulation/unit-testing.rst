@@ -47,6 +47,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
              }
            }
 
+           @Override
            public void close() throws Exception {
              piston.close();
              motor.close();
