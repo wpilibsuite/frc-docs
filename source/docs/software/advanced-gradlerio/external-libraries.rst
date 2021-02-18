@@ -3,7 +3,7 @@ Using External Libraries with Robot Code
 
 .. warning:: Using external libraries may have unintended behavior with your robot code! It is not recommended unless you are aware of what you are doing!
 
-Often a team might want to add external Java or C++ libraries for usage with their robot code. This article highlights adding Java libraries to your gradle dependencies, or the options that C++ teams have.
+Often a team might want to add external Java or C++ libraries for usage with their robot code. This article highlights adding Java libraries to your Gradle dependencies, or the options that C++ teams have.
 
 Java
 ----
