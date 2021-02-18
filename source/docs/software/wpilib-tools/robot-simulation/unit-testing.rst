@@ -214,6 +214,8 @@ For more advanced usage of JUnit and Google Test, see the framework docs.
 Running Tests
 ^^^^^^^^^^^^^
 
+.. note:: Tests will always be run in simulation on your desktop. For prerequisites and more info, see :doc:`the simulation introduction <introduction>`.
+
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
 .. code-block:: groovy
