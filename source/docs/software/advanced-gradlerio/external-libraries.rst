@@ -21,7 +21,7 @@ Robot projects by default do not have a ``repositories {}`` block in the ``build
       ...
    }
 
-``mavenCentral()`` can be replaced with whatever repository the library you want to import is using. Now you have to add the dependency on the library itself. This is done by adding the necessary line to your ``dependencies {}`` block. The below example showcases adding Apache Commons to your gradle project.
+``mavenCentral()`` can be replaced with whatever repository the library you want to import is using. Now you have to add the dependency on the library itself. This is done by adding the necessary line to your ``dependencies {}`` block. The below example showcases adding Apache Commons to your Gradle project.
 
 .. code-block:: groovy
 
