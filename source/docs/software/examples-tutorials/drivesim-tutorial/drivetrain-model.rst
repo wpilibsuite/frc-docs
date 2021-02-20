@@ -1,9 +1,11 @@
 Step 2: Creating a Drivetrain Model
 ===================================
+
 In order to accurately determine how your physical drivetrain will respond to given motor voltage inputs, an accurate model of your drivetrain must be created. This model is usually created by measuring various physical parameters of your real robot. In WPILib, this drivetrain simulation model is represented by the ``DifferentialDrivetrainSim`` class.
 
 Creating a ``DifferentialDrivetrainSim`` from Physical Measurements
 -------------------------------------------------------------------
+
 One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through CAD software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
  - The type and number of motors on one side of the drivetrain.
@@ -63,6 +65,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 Creating a ``DifferentialDrivetrainSim`` from Characterization Gains
 --------------------------------------------------------------------
+
 You can also use the gains produced by :ref:`robot characterization <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/examples-tutorials/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
 
 .. important:: You must need two sets of ``Kv`` and ``Ka`` gains from the characterization tool -- one from straight-line motion and the other from rotating in place. We will refer to these two sets of gains as linear and angular gains respectively.
@@ -96,9 +99,9 @@ You can calculate the measurement noise of your sensors by taking multiple data 
       private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
         // Create a linear system from our characterization gains.
         LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
-        0.7112,                  // The track width is 0.7112 meters.
         DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
         7.29,                    // 7.29:1 gearing reduction.
+        0.7112,                  // The track width is 0.7112 meters.
         Units.inchesToMeters(3), // The robot uses 3" radius wheels.
 
         // The standard deviations for measurement noise:
@@ -146,6 +149,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
 -----------------------------------------------------------
+
 The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
 
  - The type and number of motors on one side of the drivetrain.
