@@ -1,21 +1,21 @@
 The SimDevice API
 =================
 
-WPILib provides a way to manage simulation device data. This is in the form of the SimDevice API.
+WPILib provides a way to manage simulation device data in the form of the SimDevice API.
 
-Device Wrapper Classes
-----------------------
+Simulating Core WPILib Device Classes
+-------------------------------------
 
-Most WPILib base device classes (i.e Encoder, Ultrasonic, etc.) have wrapper classes named `EncoderSim`, `UltrasonicSim`, and the like. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation.
+Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have simulation classes named ``EncoderSim``, ``UltrasonicSim``, etc. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation.
 
-.. note: This example will use the `EncoderSim` class as an example. Use of other simulation classes will be almost identical.
+.. note: This example will use the ``EncoderSim`` class as an example. Use of other simulation classes will be almost identical.
 
-.. important: These classes will do nothing on a real robot.
+.. important: These simulation classes will do nothing on a real robot.
 
 Creating Simulation Device objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All simulation device classes have a constructor that accepts the regular object.
+All simulation device classes have a constructor that accepts the regular object, and an additional constructor or factory method to create a simulation object by the ports the device is connected to. The latter is especially useful for :doc:`unit testing <unit-testing>`.
 
 .. tabs::
    .. code-tab:: Java
@@ -26,14 +26,14 @@ All simulation device classes have a constructor that accepts the regular object
 
    .. code-tab:: C++
    // create a real encoder object on DIO 2,3
-   Encoder encoder {2, 3};
+   Encoder encoder{2, 3};
    // create a sim controller for the encoder
-   EncoderSim simEncoder {encoder};
+   EncoderSim simEncoder{encoder};
 
 Reading and Writing Device Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each simulation class has getter (`getXxx()`/`GetXxx()`) and setter (`setXxx(value)`) functions for each field `Xxx`. The getter functions will return the same as the getter of the regular device class.
+Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field `Xxx`. The getter functions will return the same as the getter of the regular device class.
 
 .. tabs::
    .. code-tab:: Java
@@ -49,38 +49,45 @@ Each simulation class has getter (`getXxx()`/`GetXxx()`) and setter (`setXxx(val
 Registering Callbacks
 ^^^^^^^^^^^^^^^^^^^^^
 
-In addition to the getters and setters, each field also has a `registerXxxCallback()` function that registers a callback to be run whenever the field value changes. These functions return a `CallbackStore` object, the callback can be canceled by calling `close()`. The callbacks accept a string parameter of the name of the field and a `HALValue` object containing the value. The value can be retrieved with `getInt()` etc.
+In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes. These functions return a ``CallbackStore`` object, the callback can be canceled by calling ``close()``. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the value. The value can be retrieved with ``getInt()`` etc.
 
-.. warning: The `HALValue.getType()` methods are **not** typesafe! For example, calling `getInt()` on a `HALValue` containing a `double` will return garbage.
+.. warning: The ``HALValue.getXxx()`` methods are **not** typesafe! For example, calling ``getInt()`` on a ``HALValue`` containing a ``double`` will produce unpredictable results.
 
-.. important: Make sure to keep a reference to the `CallbackStore` object to prevent it being garbage-collected, canceling the callback.
+.. important: Make sure to keep a reference to the ``CallbackStore`` object to prevent it being garbage-collected, canceling the callback.
 
 .. tabs::
    .. code-tab:: Java
    NotifyCallback callback = (String name, HALValue value) -> {
       System.out.println("Value of " + name + " is " + value.getInt());
    }
-   simEncoder.registerCountCallback(callback);
+   CallbackStore store = simEncoder.registerCountCallback(callback);
+   
+   store.close(); // cancel the callback
 
-   .. code-tab:: C++
-   // TODO
+Simulating Other Devices - The SimDeviceSim Class
+-------------------------------------------------
 
-Resetting Simulation Data
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. important: Vendors might implement their connection to the SimDevice API slightly different than described here. They might also provide a simulation class specific for their device class. See your vendor's documentation for more information as to what is supported and how.
 
-All data of a simulation object can be reset with the `resetData()` method.
+.. important: Do not confuse the ``SimDeviceSim`` class with the ``SimDevice`` class. ``SimDeviceSim`` is intended for team code while ``SimDevice`` is intended for vendors wanting to add simulation capabilities to their device classes.
 
-The SimDeviceSim class
-----------------------
+The `SimDeviceSim` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :ref:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
 
-.. important: Do not confuse the `SimDeviceSim` class with the `SimDevice` class. `SimDeviceSim` is intended for team code while `SimDevice` is intended for vendors wanting to add simulation capabilities to their device classes.
+The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the ::guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor.
 
-The `SimDeviceSim` class is practically a generic device simulation object; it should be used for devices that don't have specific simulation classes. These devices will also show up in the ::guilabel:`Other Devices` tab in the :ref:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
+.. important:: The key includes a prefix that is hidden by default in the SimGU, it can be shown by selecting the ::guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
-`SimValue` objects representing device fields can be constructed from the `SimDeviceSim` object. Type-specific `SimDouble`, `SimInt`, `SimLong`, `SimBoolean`, `SimEnum` classes also exist, and should be used instead of the generic `SimValue` class.
+.. tabs::
+   .. code-tab:: Java
+   SimDeviceSim device = new SimDeviceSim(deviceKey, index);
 
-For example, the ADXRS450 gyro doesn't have a dedicated simulation class, and shows up with its fields in :guilabel:`Other Devices`.
+   ..code-tab:: C++
+   SimDeviceSim device{deviceKey, index};
 
-.. image:: images/sim-gui-using-gyro.png
+Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object when either the device or field keys are unmatched will return ``null``.
 
-To access the simulation gyro angle, we can create a `SimDeviceSim` object and use it to get a `SimDouble` representing the `Angle` field of the gyro.
+.. tabs::
+   .. code-tab:: Java
+   SimDouble field = device.getDouble(fieldKey);
+   field.get();
+   field.set(value);
