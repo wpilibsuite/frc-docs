@@ -58,12 +58,12 @@ Locate the following control system components and tools
       - 5 mm Hex key (3/16" may work if metric is unavailable)
       - 1/16" Hex key
       - Wire cutters, strippers, and crimpers
-      - 7/16” (11 mm may work if imperial is unavailable) box end wrench or nut driver
+      - 7/16" (11 mm may work if imperial is unavailable) box end wrench or nut driver
 
 Create the Base for the Control System
 --------------------------------------
 
-For a benchtop test board, cut piece of 1/4” or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
+For a benchtop test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
 Layout the Core Control System Components
 -----------------------------------------
@@ -106,7 +106,7 @@ Wire Breaker to PDP
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
 
-Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
+Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
 
 1. Cut, strip, and crimp the terminal to the 2nd end of the red 6 AWG (16 :math:`mm^2`) wire.
 2. Using the 7/16" (11 mm) box end, secure the wire to the "AUX" side of the 120A main breaker.
@@ -255,7 +255,7 @@ CAN Devices
 -----------
 
 roboRIO to PCM CAN
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 .. image:: images/how-to-wire-a-robot/pcm-can.jpg
   :alt: Connecting CAN wire from the roboRIO to the PCM.
@@ -270,7 +270,7 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
 PCM to PDP CAN
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 .. image:: images/how-to-wire-a-robot/pdp-can.jpg
   :alt: Connecting the PCM CAN to the PDP.
@@ -284,7 +284,7 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-.. note: The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain.
+.. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
 PWM Cables
 ----------
@@ -292,7 +292,7 @@ PWM Cables
 .. image:: images/how-to-wire-a-robot/pwm.jpg
   :alt: PWM Cables going from the roboRIO to the Spark Motor Controller.
 
-.. note:: This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is simpler and easier to troubleshoot than CAN operation.
+This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is less complex and easier to troubleshoot than CAN operation. The SPARK MAXs (and many other FRC motor controllers) can also be wired using :ref:`CAN<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` which unlocks easier configuration, advanced functionality, better diagnostic data and reduces the amount of wire needed.
 
 Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if controllers without integrated wires or adapters, otherwise optional), 2x PWM Y-cable (Optional)
 

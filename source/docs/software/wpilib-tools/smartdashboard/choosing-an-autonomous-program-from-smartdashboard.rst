@@ -10,7 +10,7 @@ With the SmartDashboard you can simply display a widget on the screen to choose 
 Creating the SendableChooser Object
 -----------------------------------
 
-In ``RobotContainer``, create a variable to hold a reference to a ``SendableChooser`` objectTwo or more commands can be created and stored in new variables. Using the ``SendableChooser``, one can choose between them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as options.
+In ``RobotContainer``, create a variable to hold a reference to a ``SendableChooser`` object. Two or more commands can be created and stored in new variables. Using the ``SendableChooser``, one can choose between them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as options.
 
 .. tabs::
 

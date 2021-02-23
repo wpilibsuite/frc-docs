@@ -32,7 +32,7 @@ A ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rele
 ParallelDeadlineGroup
 ^^^^^^^^^^^^^^^^^^^^^
 
-A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the “deadline”) ends, interrupting all other commands in the group that are still running at that point.
+A ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ParallelDeadlineGroup.html>`__) also runs a set of commands concurrently. However, the deadline group ends when a *specific* command (the "deadline") ends, interrupting all other commands in the group that are still running at that point.
 
 Creating Command Groups
 -----------------------
@@ -125,7 +125,7 @@ As command groups are commands, they also must declare their requirements. Howev
 
 Additionally, requirements are enforced within all three types of parallel groups - a parallel group may *not* contain multiple commands that require the same subsystem.
 
-Some advanced users may find this overly-restrictive - for said users, the library offers a ``ScheduleCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ScheduleCommand.html>`__) that can be used to independently “branch off” from command groups to provide finer granularity in requirement management.
+Some advanced users may find this overly-restrictive - for said users, the library offers a ``ScheduleCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ScheduleCommand.html>`__) that can be used to independently "branch off" from command groups to provide finer granularity in requirement management.
 
 Restrictions on Command Group Components
 ----------------------------------------

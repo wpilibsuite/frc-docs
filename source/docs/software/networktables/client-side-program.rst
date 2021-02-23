@@ -10,7 +10,9 @@ A basic client program looks like the following example.
 .. tabs::
 
    .. code-tab:: java
+
       package networktablesdesktopclient;
+
       import edu.wpi.first.networktables.NetworkTable;
       import edu.wpi.first.networktables.NetworkTableEntry;
       import edu.wpi.first.networktables.NetworkTableInstance;
@@ -88,5 +90,6 @@ Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSI
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxraspbian"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
    }

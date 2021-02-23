@@ -21,7 +21,7 @@ In Java, a reference to a subroutine that can be passed as a parameter is called
 Lambda Expressions (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called "lambda expressions." A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
 
 Lambda Expressions (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +66,7 @@ Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` comman
 Included Command Types
 ----------------------
 
-The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__).
+The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used "out-of-the-box" via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__).
 
 ConditionalCommand
 ^^^^^^^^^^^^^^^^^^
@@ -342,9 +342,9 @@ The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/do
 Command Decorator Methods
 -------------------------
 
-The ``Command`` interface contains a number of defaulted “decorator”
+The ``Command`` interface contains a number of defaulted "decorator"
 methods which can be used to add additional functionality to existing
-commands. A “decorator” method is a method that takes an object (in this
+commands. A "decorator" method is a method that takes an object (in this
 case, a command) and returns an object of the same type (i.e. a command)
 with some additional functionality added to it. A list of the included
 decorator methods with brief examples is included below - for rigorous

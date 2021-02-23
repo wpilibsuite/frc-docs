@@ -15,7 +15,7 @@ For Java and C++ a JSON file describing the vendor library is installed on your 
 
 The JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors choosing to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
-.. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a “vendordeps” folder in your project and copy any desired vendor JSON files from the “wpilib/YYYY” folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
+.. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a "vendordeps" folder in your project and copy any desired vendor JSON files from the "wpilib/YYYY" folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
 
 The Mechanism - LabVIEW
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -65,7 +65,7 @@ Set Bootloader Option
 .. image:: images/imaging-your-classmate/set-bootloader-option.png
    :alt: Highlights the “WinPE v2/WinPE v3/Vista/Win7 bootable” radio button.
 
-Select Bootloader Option “WinPE v2/WinPE v3/Vista/Win7 bootable”
+Select Bootloader Option "WinPE v2/WinPE v3/Vista/Win7 bootable"
 
 Select Filesystem
 ^^^^^^^^^^^^^^^^^
@@ -81,7 +81,7 @@ Copy OS Files Option
 .. image:: images/imaging-your-classmate/copy-os-files-option.png
    :alt: Highlights the “Copy OS files after Format” checkbox.
 
-Ensure the “Copy OS files after Format” box is checked
+Ensure the "Copy OS files after Format" box is checked
 
 Locate Image
 ^^^^^^^^^^^^
@@ -89,7 +89,7 @@ Locate Image
 .. image:: images/imaging-your-classmate/locate-image.png
    :alt: Highlights the “Choose Folder/File” button.
 
-Select the “Choose Folder/File” button
+Select the "Choose Folder/File" button
 
 Copy Files Dialog
 ^^^^^^^^^^^^^^^^^
@@ -97,7 +97,7 @@ Copy Files Dialog
 .. image:: images/imaging-your-classmate/copy-files-dialog.png
    :alt: Choose "No" from the options of "Yes", "No", and "Cancel" of the dialog box.
 
-Choose “No” and select your ``.7z`` image
+Choose "No" and select your ``.7z`` image
 
 Prepare Drive
 ^^^^^^^^^^^^^
@@ -105,7 +105,7 @@ Prepare Drive
 .. image:: images/imaging-your-classmate/prepare-drive.png
    :alt: Click the “Prepare Drive” button.
 
-All configuration settings are now complete. Select “Prepare Drive” to begin the process
+All configuration settings are now complete. Select "Prepare Drive" to begin the process
 
 Confirmation Dialog 1
 ^^^^^^^^^^^^^^^^^^^^^
@@ -113,7 +113,7 @@ Confirmation Dialog 1
 .. image:: images/imaging-your-classmate/confirmation-dialog-1.png
    :alt: Click the "OK" button on the dialog.
 
-Click “OK” to execute the command on the selected USB Flash drive. A Command Prompt will open showing the progress
+Click "OK" to execute the command on the selected USB Flash drive. A Command Prompt will open showing the progress
 
 Confirmation Dialog 2
 ^^^^^^^^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ Confirmation Dialog 2
 .. image:: images/imaging-your-classmate/confirmation-dialog-2.png
    :alt: Click "OK" again that it is okay to erase all data on the drive.
 
-Click “OK” to format the USB drive
+Click "OK" to format the USB drive
 
 .. danger:: **ALL DATA ON THE DRIVE WILL BE ERASED!**
 
@@ -145,7 +145,7 @@ Eject Drive
 .. image:: images/imaging-your-classmate/eject-drive.png
    :alt: Click the “Eject Drive” button on the right hand side in the center.
 
-Press the “Eject Drive” button to safely remove the USB drive. The USB drive is now ready to be used to restore the image onto the PC.
+Press the "Eject Drive" button to safely remove the USB drive. The USB drive is now ready to be used to restore the image onto the PC.
 
 Hardware Setup
 --------------
@@ -163,7 +163,7 @@ Boot to USB
 
 1. Power on the Classmate and tap the F11 key on the keyboard. Tapping the F11 key during boot will bring up the boot menu.
 2. Use the up/down keys to select the **USB HDD:** entry on the menu, then press the right arrow to expand the listing
-3. Use the up/down arrow keys on the keyboard to select the USB device (it will be called “Generic Flash Disk”). Press the ENTER key when the USB device is highlighted.
+3. Use the up/down arrow keys on the keyboard to select the USB device (it will be called "Generic Flash Disk"). Press the ENTER key when the USB device is highlighted.
 
 **Acer ES1:**
 
@@ -178,8 +178,8 @@ Image the Classmate
 .. image::  images/imaging-your-classmate/image-the-classmate.png
    :alt: Two images of a command prompt where you type "1" then "Y".
 
-1. To confirm that you want to reimage the Classmate, type “1” and press ENTER.
-2. Then, type “Y” and press ENTER. The Classmate will begin re-imaging. The installation will take 15-30 minutes.
+1. To confirm that you want to reimage the Classmate, type "1" and press ENTER.
+2. Then, type "Y" and press ENTER. The Classmate will begin re-imaging. The installation will take 15-30 minutes.
 3. When the installation is complete, remove the USB drive.
 4. Restart the Classmate. The Classmate will boot into Windows.
 
@@ -194,16 +194,16 @@ Enter Setup
 ^^^^^^^^^^^
 
 1. Log into the Developer account.
-2. Click “Ask me later”.
-3. Click “OK”. The computer now enters a Set Up that may take a few minutes.
+2. Click "Ask me later".
+3. Click "OK". The computer now enters a Set Up that may take a few minutes.
 
 Activate Windows
 ^^^^^^^^^^^^^^^^
 
 1. Establish an Internet connection.
-2. Once you have an Internet connection, click the Start menu, right click “Computer” and click “Properties”.
-3. Scroll to the bottom section, “Windows activation”, and Click “Activate Windows now”
-4. Click “Activate Windows online now”. The activation may take a few minutes.
+2. Once you have an Internet connection, click the Start menu, right click "Computer" and click "Properties".
+3. Scroll to the bottom section, "Windows activation", and Click "Activate Windows now"
+4. Click "Activate Windows online now". The activation may take a few minutes.
 5. When the activation is complete, close all of the windows.
 
 Microsoft Security Essentials

@@ -73,8 +73,8 @@ API/Message Identifier
 The API or Message Identifier is a 10-bit value that identifies a
 particular command or message type. These identifiers are unique for
 each Manufacturer + Device Type combination (so an API identifier that
-may be a “Voltage Set” for a Luminary Micro Motor Controller may be a
-“Status Get” for a CTR Electronics Motor Controller or ``Current Get``
+may be a "Voltage Set" for a Luminary Micro Motor Controller may be a
+"Status Get" for a CTR Electronics Motor Controller or ``Current Get``
 for a CTR Power Distribution Module).
 
 The Message identifier is further broken down into 2 sub-fields: the

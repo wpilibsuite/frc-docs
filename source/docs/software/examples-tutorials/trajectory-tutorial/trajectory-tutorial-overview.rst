@@ -12,7 +12,7 @@ Trajectory Tutorial Overview
 The goal of this tutorial is to provide "end-to-end" instruction on implementing a trajectory-following autonomous routine for a differential-drive robot.  By following this tutorial, readers will learn how to:
 
 1. Accurately characterize their robot's drivetrain to obtain accurate feedforward calculations and approximate feedback gains.
-2. Configure a drive subsystem track the robot's pose using WPILib's odometry library.
+2. Configure a drive subsystem to track the robot's pose using WPILib's odometry library.
 3. Generate a simple trajectory through a set of waypoints using WPILib's ``TrajectoryGenerator`` class.
 4. Follow the generated trajectory in an autonomous routine using WPILib's ``RamseteCommand`` class with the calculated feedforward/feedback gains and pose.
 
