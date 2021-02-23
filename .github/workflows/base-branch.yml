@@ -1,0 +1,18 @@
+name: Check Base Branch
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - stable
+
+jobs:
+  check-base-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wpilibsuite/check-base-branch-action@v1.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          protected-branches: stable
+          default-branch: master
+          update-branch: true
