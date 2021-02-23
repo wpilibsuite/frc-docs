@@ -132,7 +132,7 @@ Voltage Regulator Module
 ------------------------
 
 .. image:: images/status-lights/vrm-status-lights.svg
-  :alt: Highlights the VRM 12V and 5V lights.
+  :alt: Highlights the position of the 12V and 5V status lights.
   :width: 400
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
