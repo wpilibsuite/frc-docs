@@ -103,6 +103,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
          new ScoreTube(m_wrist));
 
    .. code-tab:: c++
+   
       #include <frc2/command/SequentialCommandGroup.h>
       #include <frc2/command/ParallelCommandGroup.h>
 
