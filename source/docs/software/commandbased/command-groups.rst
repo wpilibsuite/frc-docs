@@ -93,7 +93,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
 
 .. tabs::
 
-   .. group-tab:: Java
+   .. code-tab:: java
 
       new SequentialCommandGroup(
          new DriveToGoal(m_drive),
@@ -102,11 +102,11 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
             new SetWristPosition(m_wrist)),
          new ScoreTube(m_wrist));
 
-   .. group-tab:: C++ (Header)
+   .. code-tab:: c++
       #include <frc2/command/SequentialCommandGroup.h>
       #include <frc2/command/ParallelCommandGroup.h>
-   
-   .. group-tab:: C++ (Source)
+
+      ...   
 
       frc2::SequentialCommandGroup{
          DriveToGoal(&m_drive),
