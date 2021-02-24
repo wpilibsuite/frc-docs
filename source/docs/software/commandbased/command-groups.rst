@@ -106,7 +106,7 @@ As mentioned earlier, command groups are `recursively composable <https://en.wik
       #include <frc2/command/SequentialCommandGroup.h>
       #include <frc2/command/ParallelCommandGroup.h>
 
-      ...   
+      ...
 
       frc2::SequentialCommandGroup{
          DriveToGoal(&m_drive),
