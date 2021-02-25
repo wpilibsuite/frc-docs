@@ -56,7 +56,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
            }
          }
 
-   .. group-tab:: C++ (Source)
+   .. group-tab:: C++ (Header)
 
       .. code-block:: cpp
 
@@ -77,7 +77,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
            frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
          };
 
-   .. group-tab:: C++ (Header)
+   .. group-tab:: C++ (Source)
 
       .. code-block:: cpp
 
