@@ -20,6 +20,30 @@ These docs serve to provide a learning ground for all *FIRST* Robotics Competiti
 
 Please see the :ref:`docs/contributing/frc-docs/style-guide:Style Guide` for information on styling your documentation.
 
+Release Process
+---------------
+
+frc-docs uses a special release process for handling the main site ``/stable/`` and the development site ``/latest/``. This flow is detailed below.
+
+During Season:
+- Commit made to ``master`` branch
+
+  - Updates ``/stable/`` and ``/latest/`` on the website
+
+End of Season:
+- Repository is tagged with year, for archival purposes
+
+Off-Season:
+- ``stable`` branch is locked to the last on-season commit
+- Commit made to ``master`` branch
+
+  - Only updates ``/latest/`` on the documentation site
+
+Creating a PR
+-------------
+
+PRs should be made to the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repo on GitHub. They should point to the ``master`` branch and *not* ``stable``.
+
 Creating New Content
 --------------------
 
