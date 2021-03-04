@@ -150,4 +150,46 @@ Additionally, there is a ``eclipseWtp`` option in the ``xml`` block. This stands
 wpiformat
 ---------
 
-.. todo:: add wpiformat information and prerequisites. Maybe clang-widy?
+Requirements
+^^^^^^^^^^^^
+
+- `Python 3.6 or higher <https://www.python.org/>`__
+- clang-format (included with `LLVM <https://llvm.org/downloads/>`__)
+
+.. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
+
+You can install wpiformat by typing ``pip3 install wpiformat``.
+
+Usage
+^^^^^
+
+wpiformat can be ran by typing ``wpiformat -clang 10``. This will format with ``clang-format``. You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-format`` configuration file. An example configuration file is provided below.
+
+Configuration File: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-format>`
+
+Below is an example GitHub Actions check that uses wpiformat
+
+.. code-block:: yaml
+
+   wpiformat:
+    name: "wpiformat"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fetch all history and metadata
+        run: |
+          git fetch --prune --unshallow
+          git checkout -b pr
+          git branch -f main origin/main
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install clang-format
+        run: sudo apt-get update -q && sudo apt-get install -y clang-format-10
+      - name: Install wpiformat
+        run: pip3 install wpiformat
+      - name: Run
+        run: wpiformat -clang 10
+      - name: Check Output
+        run: git --no-pager diff --exit-code HEAD
