@@ -154,7 +154,7 @@ Requirements
 ^^^^^^^^^^^^
 
 - `Python 3.6 or higher <https://www.python.org/>`__
-- clang-format (included with `LLVM <https://llvm.org/downloads/>`__)
+- clang-format (included with `LLVM <https://releases.llvm.org/download.html>`__)
 
 .. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
 
