@@ -55,7 +55,7 @@ Creating the repository
 
 You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
-.. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and `Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to Github
+.. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_ and `Bitbucket <https://bitbucket.org/>`_ are a few alternatives to Github.
 
 Creating a GitHub Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
