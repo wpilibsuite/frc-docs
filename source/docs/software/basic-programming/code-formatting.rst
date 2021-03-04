@@ -170,7 +170,7 @@ wpiformat can be ran by typing ``wpiformat`` in a console. This will format with
 
 An example styleguide is shown below:
 
-.. code-block:: none
+.. code-block:: text
 
    cppHeaderFileInclude {
       \.h$
