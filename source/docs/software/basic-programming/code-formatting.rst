@@ -158,14 +158,38 @@ Requirements
 
 .. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
 
-You can install wpiformat by typing ``pip3 install wpiformat``.
+You can install `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ by typing ``pip3 install wpiformat``.
 
 Usage
 ^^^^^
 
-wpiformat can be ran by typing ``wpiformat -clang 10``. This will format with ``clang-format``. You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-format`` configuration file. An example configuration file is provided below.
+wpiformat can be ran by typing ``wpiformat`` in a console. This will format with ``clang-format``. Three configuration files are required (``.clang-format``, ``.styleguide``, ``.styleguide-license``). These must exist in the project root.
 
-Configuration File: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-format>`
+- ``.clang-format``: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-format>`
+- ``.styleguide-license``: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.styleguide-license>`
+
+An example styleguide is shown below:
+
+.. code-block:: none
+
+   cppHeaderFileInclude {
+      \.h$
+      \.hpp$
+      \.inc$
+      \.inl$
+   }
+
+   cppSrcFileInclude {
+      \.cpp$
+   }
+
+   modifiableFileExclude {
+      gradle/
+   }
+
+.. note:: Teams can adapt ``.styleguide`` and ``.styleguide-license`` however they wish. It's important that these are not deleted, as they are required to run wpiformat!
+
+You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-format`` configuration file. An example configuration file is provided below.
 
 Below is an example GitHub Actions check that uses wpiformat
 
