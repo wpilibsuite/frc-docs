@@ -436,19 +436,19 @@ raceWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends, all others are interrupted:
+The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
 
 .. code-block:: java
 
    // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
-   button.whenPressed(oneSecCommand.raceWith(twoSecCommand, threeSecCommand));
+   button.whenPressed(twoSecCommand.raceWith(oneSecCommand, threeSecCommand));
 
 deadlineWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command as the deadline which when it ends will then interrupt any others not finished:
+The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
 
 .. code-block:: java
 
