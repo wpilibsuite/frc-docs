@@ -424,36 +424,36 @@ alongWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel command group the ordinary way instead.
 
-The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command group containing the command, along with all the other commands passed in as arguments:
+The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
 
 .. code-block:: java
 
-   // Will be a parallel command group containing fooCommand, barCommand, and bazCommand
-   button.whenPressed(fooCommand.alongWith(barCommand, bazCommand));
+   // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+   button.whenPressed(oneSecCommand.alongWith(twoSecCommand, threeSecCommand));
 
 raceWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command race containing the command, along with all the other commands passed in as arguments:
+The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
 
 .. code-block:: java
 
-   // Will be a parallel command race containing fooCommand, barCommand, and bazCommand
-   button.whenPressed(fooCommand.raceWith(barCommand, bazCommand));
+   // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+   button.whenPressed(twoSecCommand.raceWith(oneSecCommand, threeSecCommand));
 
 deadlineWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
+The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
 
 .. code-block:: java
 
-   // Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
-   button.whenPressed(fooCommand.deadlineWith(barCommand, bazCommand));
+   // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+   button.whenPressed(twoSecCommand.deadlineWith(oneSecCommand, threeSecCommand));
 
 withName (Java only)
 ^^^^^^^^^^^^^^^^^^^^
