@@ -23,6 +23,7 @@ Starting the FRC Driver Station
 -------------------------------
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
+    :alt: The Driver Station icon found on the desktop.
 
 The FRC\ |reg| Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
 
@@ -30,6 +31,7 @@ Setting Up the Driver Station
 -----------------------------
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-setup.png
+    :alt: Using the 3rd tab with the gear of the Driver Station to set the team number.
 
 The DS must be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
 
@@ -53,6 +55,7 @@ Operate the Robot
 -----------------
 
 .. image:: images/run-benchtop-test/run-robot.png
+    :alt: Highlights the different sections of the Drive Tab (1st)
 
 Click the Operation Tab
 

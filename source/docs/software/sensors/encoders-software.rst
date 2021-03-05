@@ -5,11 +5,13 @@ Encoders - Software
 
 .. note:: This section covers encoders in software.  For a hardware guide to encoders, see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`.
 
-|Encoding Direction|
+.. image:: images/encoders-software/encoding-direction.png
+    :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
 
 Encoders are devices used to measure motion (usually, the rotation of a shaft).  The encoders used in FRC\ |reg| are known as "quadrature encoders."  These encoders produce square-wave signals on two channels that are a quarter-period out-of-phase (hence the term, "quadrature").  The pulses are used to measure the rotation, and the direction of motion can be determined from which channel "leads" the other.
 
-|Encoder Modules|
+.. image:: images/encoders-software/encoder-modules.png
+    :alt: A Quadrature Decoder analyzing the A, B, and Index signals.
 
 The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
 
@@ -440,6 +442,3 @@ Since encoders measure *relative* distance, it is often important to ensure that
                 encoder.Reset();
             }
         }
-
-.. |Encoding Direction| image:: images/encoders-software/encoding-direction.png
-.. |Encoder Modules| image:: images/encoders-software/encoder-modules.png

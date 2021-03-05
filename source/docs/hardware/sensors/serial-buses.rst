@@ -24,8 +24,10 @@ I2C
 ---
 
 .. image:: images/roborio/roborio-i2c.svg
+   :alt: The I2C port on the roboRIO.
 
 .. image:: images/serial-buses/i2c-pinout.png
+   :alt: I2C roboRIO port pin specifcations.
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
@@ -35,7 +37,10 @@ SPI
 ---
 
 .. image:: images/roborio/roborio-spi.svg
+   :alt: Show the SPI port on the roboRIO.
+
 .. image:: images/serial-buses/spi-pinout.png
+   :alt: SPI roboRIO port pin specifcations.
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
 
@@ -45,7 +50,10 @@ RS-232
 ------
 
 .. image:: images/roborio/roborio-rs-232.svg
+   :alt: Location of the RS-232 port on the roboRIO.
+
 .. image:: images/serial-buses/rs232-pinout.png
+   :alt: roboRIO RS-232 port pin specifcations.
 
 To communicate to peripheral devices over RS-232, each pin should be wired to its corresponding pin on the device.
 
@@ -61,6 +69,7 @@ USB Host
 --------
 
 .. image:: images/roborio/roborio-usb-host.svg
+   :alt: Location of the two USB ports on the roboRIO at top center.
 
 Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be connected to devices, such as cameras or sensors, with a standard USB cable.
 
@@ -69,8 +78,10 @@ MXP Expansion Port
 ------------------
 
 .. image:: images/roborio/roborio-mxp.svg
+   :alt: Location of the MXP port on the roboRIO directly above the NI logo.
 
 .. image:: images/serial-buses/mxp-pinout.png
+   :alt: MXP pinout.
 
 Several of the serial buses are also available for use through the roboRIO's MXP Expansion Port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
 
@@ -80,10 +91,12 @@ CAN Bus
 -------
 
 .. image:: images/roborio/roborio-can.svg
+   :alt: Show the location of the CAN bus terminals in the top left corner of the roboRIO.
 
 Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers). One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.
 
 .. image:: images/serial-buses/can-bus-talon-srx-chain.png
+   :alt: A CAN bus topology between motor controllers.
 
 Several sensors primarily use the CAN bus. Some examples include:
 

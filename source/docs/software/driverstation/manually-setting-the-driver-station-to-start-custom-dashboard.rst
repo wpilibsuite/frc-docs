@@ -9,6 +9,7 @@ Set Driver Station to Default
 -----------------------------
 
 .. image:: images/manually-setting-the-driver-station-to-start-smartdashboard/set-ds-to-default.png
+   :alt: Click on the Setup tab (gear icon) and then change the "Dashboard Type".
 
 Open the Driver Station software, click on the Setup tab and set the Dashboard setting to Default. **Then close the Driver Station!**
 
@@ -21,6 +22,7 @@ Open DS Data Storage file
 -------------------------
 
 .. image:: images/manually-setting-the-driver-station-to-start-smartdashboard/open-ds-data-storage-file.png
+   :alt: Highlights the "FRC DS Data Storage.ini" file in Windows explorer.
 
 Browse to ``C:\Users\Public\Documents\FRC`` and double click on ``FRC DS Data Storage`` to open it.
 
@@ -28,6 +30,7 @@ DashboardCmdLine
 ----------------
 
 .. image:: images/manually-setting-the-driver-station-to-start-smartdashboard/dashboard-cmd-line.png
+   :alt: Modify the "DashboardCmdLine" entry to control where it looks for the file that it will start.
 
 Locate the line beginning with ``DashboardCmdLine``. Modify it to point to the dashboard to launch when the driver station starts
 

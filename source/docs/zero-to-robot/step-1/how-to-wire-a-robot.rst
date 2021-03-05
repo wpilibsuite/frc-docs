@@ -13,6 +13,7 @@ Overview
 --------
 
 .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
+  :alt: Detailed diagram of all of the components and how they are connected.
   :width: 600
 
   Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
@@ -67,13 +68,13 @@ For a benchtop test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or
 Layout the Core Control System Components
 -----------------------------------------
 
-.. image:: images/how-to-wire-a-robot/image1.jpg
-
+.. image:: images/how-to-wire-a-robot/layout.jpg
+  :alt: A basic wiring layout.
 
 Lay out the components on the board. An example layout is shown in the image above.
 
-.. image:: images/how-to-wire-a-robot/image2.png
-
+.. image:: images/how-to-wire-a-robot/ziptie.png
+  :alt: Using zipties to secure components down.
 
 Fasten Components
 -----------------
@@ -83,7 +84,8 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 Attach Battery Connector to PDP
 -------------------------------
 
-.. image:: images/how-to-wire-a-robot/image3.jpg
+.. image:: images/how-to-wire-a-robot/terminal-lug.jpg
+  :alt: Highlights the location of the terminal lugs on the PDP and circuit breaker.
 
 Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 1/16" Allen, 5 mm Allen,
 7/16" (11 mm) Box end
@@ -98,7 +100,8 @@ Attach terminal lugs to battery connector:
 Wire Breaker to PDP
 -------------------
 
-.. image:: images/how-to-wire-a-robot/image4.jpg
+.. image:: images/how-to-wire-a-robot/circuit-breaker.jpg
+  :alt: Show the circuit breaker wired to the PDP.
 
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
@@ -112,7 +115,8 @@ Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Usin
 Insulate PDP connections
 ------------------------
 
-.. image:: images/how-to-wire-a-robot/image5.jpg
+.. image:: images/how-to-wire-a-robot/insulate.jpg
+  :alt: Putting tape around the connectors to insulate them.
 
 Requires: 1/16" Allen, Electrical tape
 
@@ -138,9 +142,11 @@ To maximize pullout force and minimize connection resistance wires should not be
 Motor Controller Power
 ----------------------
 
-.. image:: images/how-to-wire-a-robot/image6.jpg
+.. image:: images/how-to-wire-a-robot/pdp-power.jpg
+  :alt: Wiring power from the PDP to motor controllers.
 
-.. image:: images/how-to-wire-a-robot/image7.jpg
+.. image:: images/how-to-wire-a-robot/spark-power.jpg
+  :alt: Wiring power to a Spark Motor Controller with ring terminals.
 
 Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG (4 - 6 :math:`mm^2`) wire, 10 or 12 AWG (4 - 6 :math:`mm^2`) fork/ring terminals (terminal controllers only), wire crimper
 
@@ -181,7 +187,8 @@ After making the connection check to be sure that it is clean and secure:
 roboRIO Power
 -------------
 
-.. image:: images/how-to-wire-a-robot/image8.jpg
+.. image:: images/how-to-wire-a-robot/roborio-power.jpg
+  :alt: Power coming from the PDP to the roboRIO.
 
 Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
 
@@ -194,7 +201,8 @@ Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG
 Voltage Regulator Module Power
 ------------------------------
 
-.. image:: images/how-to-wire-a-robot/image11.jpg
+.. image:: images/how-to-wire-a-robot/vrm-power.jpg
+  :alt: Power going from the PDP to the VRM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
@@ -207,7 +215,8 @@ Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^
 Pneumatics Control Module Power (Optional)
 ------------------------------------------
 
-.. image:: images/how-to-wire-a-robot/image12.jpg
+.. image:: images/how-to-wire-a-robot/pcm-power.jpg
+  :alt: Power going from the PDP to the PCM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
 
@@ -224,7 +233,8 @@ Radio Power and Ethernet
 
 .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the female end of the cable using an additional Ethernet cable as shown in the next step.
 
-.. image:: images/how-to-wire-a-robot/image13.jpg
+.. image:: images/how-to-wire-a-robot/radio-power.jpg
+  :alt: Connection power to the robot radio via a PoE cable.
 
 Requires: Small flat screwdriver (optional), Rev radio PoE cable
 
@@ -234,7 +244,8 @@ Requires: Small flat screwdriver (optional), Rev radio PoE cable
 roboRIO to Radio Ethernet
 -------------------------
 
-.. image:: images/how-to-wire-a-robot/image14.jpg
+.. image:: images/how-to-wire-a-robot/radio-ethernet.jpg
+  :alt: Connecting Ethernet from the roboRIO to the PoE cable.
 
 Requires: Ethernet cable
 
@@ -246,7 +257,8 @@ CAN Devices
 roboRIO to PCM CAN
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/how-to-wire-a-robot/image15.jpg
+.. image:: images/how-to-wire-a-robot/pcm-can.jpg
+  :alt: Connecting CAN wire from the roboRIO to the PCM.
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
@@ -260,7 +272,8 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 PCM to PDP CAN
 ^^^^^^^^^^^^^^
 
-.. image:: images/how-to-wire-a-robot/image16.jpg
+.. image:: images/how-to-wire-a-robot/pdp-can.jpg
+  :alt: Connecting the PCM CAN to the PDP.
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
@@ -276,7 +289,8 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 PWM Cables
 ----------
 
-.. image:: images/how-to-wire-a-robot/image17.jpg
+.. image:: images/how-to-wire-a-robot/pwm.jpg
+  :alt: PWM Cables going from the roboRIO to the Spark Motor Controller.
 
 This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is less complex and easier to troubleshoot than CAN operation. The SPARK MAXs (and many other FRC motor controllers) can also be wired using :ref:`CAN<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` which unlocks easier configuration, advanced functionality, better diagnostic data and reduces the amount of wire needed.
 
@@ -298,7 +312,8 @@ Option 2 (Y-cable):
 Robot Signal Light
 ------------------
 
-.. image:: images/how-to-wire-a-robot/image18.jpg
+.. image:: images/how-to-wire-a-robot/rsl.jpg
+  :alt: Robot Signal Light (rsl) wiring from roboRIO to RSL
 
 Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`) red wire, very small flat screwdriver
 
@@ -314,7 +329,8 @@ Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`
 Circuit Breakers
 ----------------
 
-.. image:: images/how-to-wire-a-robot/image19.jpg
+.. image:: images/how-to-wire-a-robot/40A-breaker.jpg
+  :alt: Installing 40A breakers in the PDP.
 
 Requires: 4x 40A circuit breakers
 
@@ -325,7 +341,8 @@ If working on a Robot Quick Build, stop here and insert the board into the robot
 Motor Power
 -----------
 
-.. image:: images/how-to-wire-a-robot/image20.jpg
+.. image:: images/how-to-wire-a-robot/motor-power.jpg
+  :alt: Connecting power from the motor to the motor controller.
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
 
@@ -346,7 +363,8 @@ For the SPARK or other non-integrated-wire controllers (bottom image):
 STOP
 ----
 
-.. image:: images/how-to-wire-a-robot/image21.png
+.. image:: images/how-to-wire-a-robot/stop.png
+  :alt: Giant red stop sign.
 
 .. danger:: Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
 
@@ -363,7 +381,8 @@ Before plugging in the battery, make sure all connections have been made with th
 Manage Wires
 ------------
 
-.. image:: images/how-to-wire-a-robot/image22.jpg
+.. image:: images/how-to-wire-a-robot/wires.jpg
+  :alt: Using zipties to make the wiring look more organized.
 
 Requires: Zip ties
 

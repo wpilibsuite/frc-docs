@@ -152,6 +152,7 @@ All images (including vectors) should be less than ``500`` kilobytes in size. Pl
 .. code-block:: ReST
 
    .. image:: images/my-article/my-image.png
+      :alt: Always add alt text here describing the image.
 
 Image Files
 ^^^^^^^^^^^
@@ -166,7 +167,7 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 
           .. code-block:: ReST
 
-             .. images:: images/my-document/my-image.png
+             .. image:: images/my-document/my-image.png
                 :alt: An example image
 
 Vector Images
@@ -181,6 +182,7 @@ Simply use them as you would with any other image.
 .. code-block:: ReST
 
    .. image:: images/my-document/my-image.svg
+      :alt: Always add alt text here describing the image.
 
 Draw.io Diagrams
 ^^^^^^^^^^^^^^^^
@@ -191,7 +193,8 @@ Simply use them like you would any other vector image, or any other image.
 
 .. code-block:: ReST
 
-   .. images:: diagrams/my-document/diagram-1.drawio.svg
+   .. image:: diagrams/my-document/diagram-1.drawio.svg
+      :alt: Always add alt text here describing the image.
 
 Draw.io Files
 ~~~~~~~~~~~~~

@@ -55,7 +55,8 @@ In this example some commands are added in parallel and others are added sequent
 Example Flowchart
 -----------------
 
-.. image:: images/synchronizing-two-commands/image1.png
+.. image:: images/synchronizing-two-commands/flowchart.png
+   :alt: An example command flow.
 
 .. note:: There is no dependency coming from the commands scheduled using "Add Parallel" either or both of these commands could still be running when the MoveBallToShooter command is reached.
 
@@ -64,7 +65,8 @@ Here is the code shown above represented as a flowchart.  Any command in the mai
 Waiting for a Command
 ---------------------
 
-.. image:: images/synchronizing-two-commands/image2.png
+.. image:: images/synchronizing-two-commands/waiting.png
+   :alt: A command waiting to go to the next state.
 
 If there are two commands that need to complete before the following commands are scheduled, they can be put into a command group by themselves, adding both in parallel. Then that command group can be scheduled sequentially from an enclosing command group. When a command group is scheduled sequentially, the commands inside it will all finish before the next outer command is scheduled. In this way you can be sure that an action consisting of multiple parallel commands has completed before going on to the next command.
 

@@ -1,7 +1,8 @@
 Counters
 ========
 
-|Counters|
+.. image:: images/counters/counters.png
+    :alt: IO Diagram showing the up/down pulses the counter is counting.
 
 The :code:`Counter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
 
@@ -365,5 +366,3 @@ Using counters in code
 ----------------------
 
 Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`docs/software/sensors/encoders-software:Encoders - Software`.
-
-.. |Counters| image:: images/counters/counters.png

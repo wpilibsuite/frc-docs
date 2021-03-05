@@ -96,6 +96,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
 .. image:: images/track-width-logger.png
+  :alt: Highlights the trackwidth section of characterization.
 
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^

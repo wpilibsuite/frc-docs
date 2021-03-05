@@ -11,7 +11,8 @@ Creating the Action
 -------------------
 The instructions for carrying out the CI process are stored in a YAML file. To create this, click on the "Actions" tab at the top of your repository. Then click on the "set up a workflow yourself" hyperlink.
 
-.. image:: images/robot-ci/image1.png
+.. image:: images/robot-ci/setup.png
+  :alt: Setup a workflow yourself.
 
 You will now be greeted with a text editor. Replace all the default text with the following:
 
@@ -54,12 +55,14 @@ You will now be greeted with a text editor. Replace all the default text with th
 
 Then, save changes by clicking the "Start commit" button on the top-right corner of the screen. You can amend the default commit message if you wish to do so. Then, click the green "Commit new file" button.
 
-.. image:: images/robot-ci/image2.png
+.. image:: images/robot-ci/commit-new-file.png
+  :alt: Committing a new file.
 
 
 GitHub will now automatically run a build whenever a commit is pushed to main or a pull request is opened. To monitor the status of any build, you can click on the "Actions" tab on the top of the screen.
 
-.. image:: images/robot-ci/image3.png
+.. image:: images/robot-ci/actions.png
+  :alt: View of the actions tab
 
 A Breakdown of the Actions YAML File
 ------------------------------------
@@ -114,8 +117,10 @@ Adding a Build Status Badge to a README.md File
 -----------------------------------------------
 It is helpful to add a CI status badge to the top of your repository's README file to quickly check the status of the latest build on main. To do this, click on the "Actions" tab at the top of the screen and select the "CI" tab on the left side of the screen. Then, click on the "Create status badge" button on the top right and copy the status badge Markdown code.
 
-.. image:: images/robot-ci/image4.png
+.. image:: images/robot-ci/badge.png
+  :alt: Where to click on "Copy status badge Markdown"
 
 Finally, paste the Markdown code you copied at the top of your README file, commit, and push your changes. Now, you should see the GitHub Actions status badge on your main repository page.
 
-.. image:: images/robot-ci/image5.png
+.. image:: images/robot-ci/repository.png
+  :alt: A picture of the repository with the badge created.

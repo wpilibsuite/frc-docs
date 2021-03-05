@@ -14,6 +14,7 @@ PCM Power and Control Wiring
 ----------------------------
 
 .. image:: images/wiring-pneumatics/pneumatics-subsystem.svg
+   :alt: Pneumatics wiring diagram showing all of the connections to the PCM.
 
 The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP. The PCM is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM, see :ref:`docs/zero-to-robot/step-1/how-to-wire-a-robot:Pneumatics Control Module Power (Optional)`
 
@@ -38,5 +39,6 @@ Solenoid Voltage Jumper
 ------------------------
 
 .. image:: images/wiring-pneumatics/pcm-jumper.svg
+   :alt: The "VSOL" jumper in the center of the PCM with the 12V and 24V showing the left and right positions of the jumper respectively.
 
 The PCM is capable of powering either 12V or 24V solenoids, but all solenoids connected to a single PCM must be the same voltage. The PCM ships with the jumper in the 12V position as shown in the image. To use 24V solenoids move the jumper from the left two pins (as shown in the image) to the right two pins. The overlay on the PCM also indicates which position corresponds to which voltage. You may need to use a tool such as a small screwdriver, small pair of pliers, or a pair of tweezers to remove the jumper.

@@ -7,9 +7,11 @@ Connection Indicator
 SmartDashboard will automatically include the connection status and IP address of the NetworkTables source in the title of the window.
 
 .. image:: images/verifying-smartdashboard-is-working/connection-indicator-disconnected.png
+  :alt: SmartDashboard disconnected.
   :width: 350
 
 .. image:: images/verifying-smartdashboard-is-working/connection-indicator-connected.png
+  :alt: SmartDashboard connected and showing the IP address.
   :width: 350
 
 Connection Indicator Widget
@@ -47,6 +49,7 @@ SmartDashboard Output for the Sample Program
 --------------------------------------------
 
 .. image:: images/verifying-smartdashboard-is-working/smartdashboard-output-sample-program.png
+  :alt: SmartDashboard showing the output of "counter" set up in the code above.
 
 The SmartDashboard display should look like this after about 6 seconds of the robot being enabled in Teleop mode. If it doesn't, then you need to check that the connection is correctly set up.
 
@@ -54,6 +57,7 @@ Verifying the IP address in SmartDashboard
 ------------------------------------------
 
 .. image:: images/verifying-smartdashboard-is-working/verifying-ip-address.png
+  :alt: Checking the "Team Number" property in the Preferences dialog box.
 
 If the display of the value is not appearing, verify that the team number is correctly set as shown in this picture. The preferences dialog can be viewed by selecting ``File``, then ``Preferences``.
 
@@ -69,3 +73,4 @@ In the "Server Location" box, enter your team number with no leading zeroes. The
 Look at the second row in the table, the value ``SmartDashboard/Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``41.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
 
 .. image:: images/verifying-smartdashboard-is-working/outlineviewer.png
+  :alt: Using OutlineViewer to view the NetworkTables data used by the program.

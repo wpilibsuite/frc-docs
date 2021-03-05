@@ -32,7 +32,8 @@ Checking Diagnostics
 
 Per the :ref:`FRC-Characterization guide <docs/software/wpilib-tools/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
-|Diagnostics|
+.. image:: images/voltage-domain-plots.png
+   :alt: Combined Voltage-Domain Plots.
 
 As our data look reasonably linear and our threshold seems to be set correctly, we may move on to the next step.
 
@@ -43,7 +44,8 @@ Record Feedforward Gains
 
 We now record the feedforward gains calculated by the tool:
 
-|Feedforward Gains|
+.. image:: images/ff-gains.png
+   :alt: Highlights where to get the kS, kV, kA, and r-squared results from in the center of the window.
 
 Since our wheel diameter was specified in meters, our feedforward gains are in the following units:
 
@@ -60,20 +62,17 @@ Calculate Feedback Gains
 
 We now :ref:`calculate the feedback gains <docs/software/wpilib-tools/robot-characterization/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the characterization tool:
 
-|Velocity Mode|
+.. image:: images/velocity-mode.png
+   :alt: How to specify velocity mode in the "Loop Type" dropdown.
 
 Since we will be using the WPILib PIDController for our velocity loop, we furthermore select the ``WPILib (2020-)`` option from the drop-down "presets" menu.  This is *very* important, as the feedback gains will not be in the correct units if we do not select the correct preset:
 
-|WPILib Preset|
+.. image:: images/wpilib-preset.png
+   :alt: Highlights choosing "WPILib (2020-)" from the "Gain Setting Preset" dropdown.
 
 Finally, we calculate and record the feedback gains for our control loop.  Since it is a velocity controller, only a P gain is required:
 
-|Feedback Gains|
+.. image:: images/fb-gains.png
+   :alt: Highlights the calculated kP and kD controller gains.
 
 Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.  Thus, our calculated gain means that, for each meter per second of velocity error, the controller will output an additional 8.5 volts.
-
-.. |Diagnostics| image:: images/voltage-domain-plots.png
-.. |Feedforward Gains| image:: images/ff-gains.png
-.. |Velocity Mode| image:: images/velocity-mode.png
-.. |WPILib Preset| image:: images/wpilib-preset.png
-.. |Feedback Gains| image:: images/fb-gains.png
