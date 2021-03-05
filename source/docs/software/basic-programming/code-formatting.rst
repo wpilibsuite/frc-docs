@@ -21,17 +21,7 @@ Necessary ``build.gradle`` changes are required to get Spotless functional. In t
       id 'com.diffplug.spotless' version '5.5.0'
    }
 
-Spotless uses ``mavenCentral`` for distribution, so this needs to get added to a ``repositories {}`` block of your ``build.gradle``.
-
-.. note:: Please ensure ``repositories`` is not nested in any other block in your ``build.gradle``.
-
-.. code-block:: groovy
-
-   repositories {
-      mavenCentral()
-   }
-
-then a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.
+Then ensure you add a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.
 
 .. code-block:: groovy
 
