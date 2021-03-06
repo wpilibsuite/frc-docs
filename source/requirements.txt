@@ -13,3 +13,4 @@ sphinxext-toptranslators==0.1.2
 sphinxext-linkcheckdiff==0.1.0
 sphinxext-rediraffe==0.2.5
 sphinx-version-warning==1.1.2
+sphinx-panels==0.5.2
