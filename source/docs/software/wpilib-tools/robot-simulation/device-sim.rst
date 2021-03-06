@@ -1,4 +1,4 @@
-The SimDevice API
+Device Simulation
 =================
 
 WPILib provides a way to manage simulation device data in the form of the SimDevice API.
@@ -33,7 +33,7 @@ All simulation device classes have a constructor that accepts the regular object
 Reading and Writing Device Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field `Xxx`. The getter functions will return the same as the getter of the regular device class.
+Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The getter functions will return the same as the getter of the regular device class.
 
 .. tabs::
    .. code-tab:: Java
@@ -53,7 +53,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
 
 .. warning: The ``HALValue.getXxx()`` methods are **not** typesafe! For example, calling ``getInt()`` on a ``HALValue`` containing a ``double`` will produce unpredictable results.
 
-.. important: Make sure to keep a reference to the ``CallbackStore`` object to prevent it being garbage-collected, canceling the callback.
+.. important: Make sure to keep a reference to the ``CallbackStore`` object to prevent it being garbage-collected, which will cancel the callback.
 
 .. tabs::
    .. code-tab:: Java
@@ -71,11 +71,11 @@ Simulating Other Devices - The SimDeviceSim Class
 
 .. important: Do not confuse the ``SimDeviceSim`` class with the ``SimDevice`` class. ``SimDeviceSim`` is intended for team code while ``SimDevice`` is intended for vendors wanting to add simulation capabilities to their device classes.
 
-The `SimDeviceSim` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :ref:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
+The ``SimDeviceSim`` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :ref:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
 
 The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the ::guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor.
 
-.. important:: The key includes a prefix that is hidden by default in the SimGU, it can be shown by selecting the ::guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
+.. important:: The key includes a prefix that is hidden by default in the SimGUI, it can be shown by selecting the ::guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
 .. tabs::
    .. code-tab:: Java
