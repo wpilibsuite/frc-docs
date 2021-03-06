@@ -47,6 +47,11 @@ Battery Best Practices
 
 Teams should purchase several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and because of the quick turn around time batteries may not have enough time to recharge.
 
+.. image:: images/robot-battery/battery-cart.jpg
+   :alt: A wooden bookcase like cart for storing and charging batteries.
+
+A multi bank battery charger allows you to charge more than one battery at a time.  Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
+
 It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.  Teams may also want to use something removeable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data.
 
 .. image:: images/robot-battery/battery-flag.jpg
