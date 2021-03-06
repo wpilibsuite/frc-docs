@@ -39,6 +39,8 @@ Creating Command Groups
 
 Users have several options for creating command groups. One way - similar to the previous implementation of the command-based library - is to subclass one of the command group classes. Consider the following from the Hatch Bot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
 
+.. warning:: In C++, Commands may be moved after being constructed, so it's unsafe to do lambda captures of ``this`` or member variables in a Command constructor.
+
 .. tabs::
 
   .. group-tab:: Java
