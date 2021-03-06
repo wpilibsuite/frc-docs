@@ -13,16 +13,16 @@ Great care should be taken when handling batteries.  **DO NOT CARRY A BATTERY BY
 .. image:: images/robot-battery/heatshrink.png
    :alt: One terminal of an FRC battery fully covered in heatshrink.
 
-It is a good idea to secure the battery with either a star washer or a nord lock washer as this will ensure the connection does not move.  This connection must also be wrapped, while some use electrical tape heatshrink that fits over the entire connection is recommended.
+It is a good idea to secure the battery with either a star washer or a nord lock washer as this will ensure the connection does not move.  This connection must also be wrapped; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
 
 Battery Longevity
 ^^^^^^^^^^^^^^^^^
 
-This battery is rated for about 1200 charge/recharge cycles, but for the high currents FRC subjects it to that lifespan is reduced to about 400 cycles.  These cycles are intended to be relatively limited discharge and deep cycling the battery (running it all the way down) can damage it.
+A battery is rated for about 1200 charge/recharge cycles, but for the high currents FRC subjects it to that lifespan is reduced to about 400 cycles.  These cycles are intended to be relatively limited discharge and deep cycling the battery (running it all the way down) can damage it.
 
-Batteries last the longest if they are kept fully charged when not it use.  Take care however to not leave them on a trickle charger for an extended period of time.
+Batteries last the longest if they are kept fully charged when not it use.  Take care to not leave them on a trickle charger for an extended period of time.
 
-Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.
+Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.  All retailers that sell batteries like car batteries should be able to dispose of it for you, some may charge a small fee.
 
 Battery Load Tester
 ^^^^^^^^^^^^^^^^^^^
@@ -45,18 +45,18 @@ A battery analyzer is used to give a detailed inspection of battery performance.
 Battery Best Practices
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Teams should purchase several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and because of the quick turn around time batteries may not have enough time to recharge.
+* Teams should purchase several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and there may not be enough time to recharge.
 
 .. image:: images/robot-battery/battery-cart.jpg
    :alt: A wooden bookcase like cart for storing and charging batteries.
 
-A multi bank battery charger allows you to charge more than one battery at a time.  Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
+* A multi bank battery charger allows you to charge more than one battery at a time.  Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
 
-It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.  Teams may also want to use something removeable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data.
+* It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.  Teams may also want to use something removeable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data.
 
 .. image:: images/robot-battery/battery-flag.jpg
    :alt: A battery flag is just a small piece of plastic that fits in the battery connector.
 
-Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged.
+* Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged.
 
-Only use a charged battery that has been verfied using methods above for competition matches.  If you are in a situation where you have run out of charged batteries, please ask a veteran team for help!  Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
+* Only use a charged battery that has been verfied using methods above for competition matches.  If you are in a situation where you have run out of charged batteries, please ask a veteran team for help!  Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
