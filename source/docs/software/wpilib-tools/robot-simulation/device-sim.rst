@@ -19,12 +19,14 @@ All simulation device classes have a constructor that accepts the regular object
 
 .. tabs::
    .. code-tab:: Java
+
       // create a real encoder object on DIO 2,3
       Encoder encoder = new Encoder(2, 3);
       // create a sim controller for the encoder
       EncoderSim simEncoder = new EncoderSim(encoder);
 
      .. code-tab:: C++
+
        // create a real encoder object on DIO 2,3
        Encoder encoder{2, 3};
        // create a sim controller for the encoder
@@ -37,11 +39,13 @@ Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXx
 
 .. tabs::
    .. code-tab:: Java
+
       simEncoder.setCount(100);
       encoder.getCount(); // 100
       simEncoder.getCount(); // 100
 
    .. code-tab:: C++
+ 
       simEncoder.SetCount(100);
       encoder.GetCount(); // 100
       simEncoder.GetCount(); // 100
@@ -59,6 +63,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
 
 .. tabs::
    .. code-tab:: Java
+
       NotifyCallback callback = (String name, HALValue value) -> {
          System.out.println("Value of " + name + " is " + value.getInt());
       }
@@ -67,6 +72,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
       store.close(); // cancel the callback
 
    .. code-tab:: C++
+
       NotifyCallback callback = (String name, HALValue value) {
          wpi::outs() << "Value of " << name << " is " << value.GetInt() << "\n";
       }
@@ -80,7 +86,7 @@ Simulating Other Devices - The SimDeviceSim Class
 
 .. important:: Do not confuse the ``SimDeviceSim`` class with the ``SimDevice`` class. ``SimDeviceSim`` is intended for team code while ``SimDevice`` is intended for vendors wanting to add simulation capabilities to their device classes.
 
-The ``SimDeviceSim`` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :ref:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
+The ``SimDeviceSim`` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :doc:`SimGUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`_.
 
 The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the ::guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor.
 
@@ -88,20 +94,24 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
 
 .. tabs::
    .. code-tab:: Java
+
       SimDeviceSim device = new SimDeviceSim(deviceKey, index);
 
    .. code-tab:: C++
+
       SimDeviceSim device{deviceKey, index};
 
 Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object when either the device or field keys are unmatched will return ``null``.
 
 .. tabs::
    .. code-tab:: Java
+
       SimDouble field = device.getDouble(fieldKey);
       field.get();
       field.set(value);
 
    .. code-tab:: C++
+
       SimDouble field = device.GetDouble(fieldKey);
       field.Get();
       field.Set(value);
