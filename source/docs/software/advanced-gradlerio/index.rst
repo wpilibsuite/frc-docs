@@ -1,5 +1,5 @@
-Advanced GradleRIO Configuration
-================================
+Advanced GradleRIO
+==================
 
 .. toctree::
    :maxdepth: 1
