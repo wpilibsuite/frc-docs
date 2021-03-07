@@ -1,7 +1,7 @@
 OutlineViewer
 =============
 
-.. image:: images/outline-viewer.png
+.. image:: /docs/controls-overviews/images/control-system-software/outline-viewer.png
 
 OutlineViewer is a utility used to view, modify and add to the contents of the NetworkTables for debugging purposes. It displays all key value pairs currently in the NetworkTables and can be used to modify the value of existing keys or add new keys to the table. OutlineViewer is included in the C++ and Java language updates. Teams may need to install the Java Runtime Environment to use the OutlineViewer on computers not set up for Java programming.
 

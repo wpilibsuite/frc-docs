@@ -8,7 +8,7 @@ This document covers how to create, build and load an FRC\ |reg| LabVIEW program
 Creating a Project
 ------------------
 
-.. image:: images/creating-benchtop-test-labview/labview-home.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/creating-a-project.png
    :alt: Creating a new roboRIO project from the LabVIEW home screen.
 
 Launch LabVIEW and click the FRC roboRIO Robot Project link in the Projects window to display the Create New FRC Robot Project dialog box.
@@ -16,7 +16,7 @@ Launch LabVIEW and click the FRC roboRIO Robot Project link in the Projects wind
 Configuring Project
 -------------------
 
-.. image:: images/creating-benchtop-test-labview/labview-create-project.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/configuring-project.png
    :alt: The different sections of the dialog for configuring a new LabVIEW project.
 
 Fill in the Create New FRC Project Dialog:
@@ -43,7 +43,7 @@ Running the Program
 Deploying the program
 ---------------------
 
-.. image:: images/creating-benchtop-test-labview/labview-benchtop-deploy-startup.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/deploying-the-program.png
    :alt: Right clicking on the robot build specification and choosing "build".  Then right clicking again and choosing "Run as startup".
 
 To run in the competition, you will need to deploy a program to your roboRIO. This allows the program to survive across reboots of the controller, but doesn't allow the same debugging features (front panel, probes, highlight execution) as running from the front panel. To deploy your program:

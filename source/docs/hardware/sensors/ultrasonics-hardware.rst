@@ -15,7 +15,7 @@ While all ultrasonic rangefinders operate on the "ping-response" principle outli
 Analog ultrasonics
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: images/ultrasonics-hardware/mb1013-ultrasonic-sensor-to-roborio.svg
+.. image:: images/analog-inputs-hardware/ultrasonic-sensor-to-roborio.svg
    :alt: Connecting a MB1013 to the analog in port of the roboRIO.
 
 Analog ultrasonics output a simple analog voltage corresponding to the distance to the target, and thus connect to an :doc:`analog input <analog-inputs-hardware>` port.  The user will need to calibrate the voltage-to-distance conversion in :ref:`software <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.

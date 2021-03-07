@@ -3,7 +3,7 @@
 LabVIEW Resources
 =================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 .. note:: To learn more about programming in LabVIEW and specifically programming FRC\ |reg| robots in LabVIEW, check out the following resources.
 

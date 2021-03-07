@@ -147,7 +147,7 @@ This screen showcases the installation process, go ahead and press :guilabel:`Ne
 NI Activation Wizard
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/update-suite/ni-activation-wizard.png
+.. image:: images/labview/ni_activation_login.png
    :alt: The NI user login screen.
 
 Log into your `ni.com <https://ni.com>`__ account. If you don’t have an account, select :guilabel:`Create account` to create a free account.
