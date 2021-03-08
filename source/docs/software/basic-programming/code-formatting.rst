@@ -137,6 +137,17 @@ Additionally, there is a ``eclipseWtp`` option in the ``xml`` block. This stands
 
 .. note:: A full list of configurations is available on the `Spotless README <https://github.com/diffplug/spotless>`__
 
+Issues with Line Endings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spotless will attempt to apply line endings per-OS, which means Git diffs will be constantly changing if two users are on different OSes (Unix vs Windows). It's recommended that teams who contribute to the same repository from multiple OSes utilize a ``.gitattributes`` file. The following should suffice for handling line endings.
+
+.. code-block:: text
+   *.gradle text eol=lf
+   *.java text eol=lf
+   *.md text eol=lf
+   *.xml text eol=lf
+
 wpiformat
 ---------
 
