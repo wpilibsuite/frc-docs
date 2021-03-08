@@ -9,7 +9,7 @@ Battery Connections
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/robot-battery/broken-terminal.png
-   :alt: One terminal of an FRC battery fully detatched from the battery.
+   :alt: One terminal of an FRC battery fully detached from the battery.
 
 Great care should be taken when handling batteries.  **DO NOT CARRY A BATTERY BY THE CABLES**.  The battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.  The picture above shows a battery that was handled by the cables causing the terminal to be ripped free of the battery.
 
