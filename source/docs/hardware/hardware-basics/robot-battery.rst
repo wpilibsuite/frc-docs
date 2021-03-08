@@ -11,7 +11,7 @@ Battery Connections
 .. image:: images/robot-battery/broken-terminal.png
    :alt: One terminal of an FRC battery fully detached from the battery.
 
-Great care should be taken when handling batteries.  **DO NOT CARRY A BATTERY BY THE CABLES**.  The battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.  The picture above shows a battery that was handled by the cables causing the terminal to be ripped free of the battery.
+**DO NOT CARRY A BATTERY BY THE CABLES**.  The battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.  The picture above shows a battery that was handled by the cables causing the terminal to be ripped free of the battery.
 
 .. image:: images/robot-battery/heatshrink.png
    :alt: One terminal of an FRC battery fully covered in heatshrink.
@@ -21,16 +21,16 @@ It is a good idea to secure the battery with either a #10 star washer or a nord 
 Battery Longevity
 ^^^^^^^^^^^^^^^^^
 
-A battery is rated for about 1200 charge/recharge cycles, but for the high currents FRC subjects it to that lifespan is reduced to about 400 cycles.  These cycles are intended to be relatively limited discharge and deep cycling the battery (running it all the way down) can damage it.
+A battery is rated for about 1200 charge/recharge cycles, but for the high currents FRC subjects it to that lifespan is reduced to about 400 cycles.  These cycles are intended to be relatively low discharge.  Deep cycling the battery (running it all the way down) can damage it.
 
-Batteries last the longest if they are kept fully charged when not it use.  Batteries drop roughly 0.1V every month of non-use
+Batteries last the longest if they are kept fully charged when not it use.  Batteries drop roughly 0.1V every month of non-use.
 
 .. image:: images/robot-battery/boiled.jpg
    :alt: An FRC battery that was boile by a high current dumb charger.
 
 Most modern chargers can charge the battery indefinitely without additional harm.  The picture above is from a high current dumb charger that boiled the acid until it produced steam and high pressure to open the safety vents.  As such a smart charger is highly recommended.
 
-Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.  All retailers that sell batteries like car batteries should be able to dispose of it for you, some may charge a small fee.
+Great care should be taken when handling batteries.  Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.  All retailers that sell batteries like car batteries should be able to dispose of it for you, some may charge a small fee.
 
 Batteries need to be kept away from both extreme heat and cold.  This generally means storing the batteries in a climate controlled area.
 
