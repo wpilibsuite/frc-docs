@@ -30,7 +30,7 @@ Batteries last the longest if they are kept fully charged when not it use.  Batt
 
 Most modern chargers can charge the battery indefinitely without additional harm.  The picture above is from a high current dumb charger that boiled the acid until it produced steam and high pressure to open the safety vents.  As such a smart charger is highly recommended.
 
-Great care should be taken when handling batteries.  Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.  All retailers that sell batteries like car batteries should be able to dispose of it for you, some may charge a small fee.
+Great care should be taken when handling batteries.  Dropping a battery may compromise its structural integrity and can lead to a bulge or crack in the battery case.  These batteries should be safely disposed of as soon as possible.  All retailers that sell batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee.
 
 Batteries need to be kept away from both extreme heat and cold.  This generally means storing the batteries in a climate controlled area.
 
