@@ -42,7 +42,7 @@ Battery Load Tester
 
 A battery load tester can be used as a quick way to determine the readiness of a battery.  It may provide information like: open-load voltage, voltage under load, internal resistance, and state of charge.  These metrics can be used to quickly confirm that a battery is ready for a match and even possibly help to identify some long term problems with the battery.
 
-While these batteries are called 12 volt batteries a fully charged battery should read around 13 volts.  Ideal internal resistance should be less than 0.015 Ohms; the manufacturer specification for most batteries is 0.011 Ohms.  If a battery gets higher than 0.02 Ohms it is a good idea to consider not using that battery for competition matches.
+While these batteries are called 12 volt batteries a fully charged battery should read around 13 volts.  Ideal internal resistance should be less than 0.015 Ohms.  The manufacturer specification for most batteries is 0.011 Ohms.  If a battery gets higher than 0.02 Ohms it is a good idea to consider not using that battery for competition matches.
 
 Battery Analyzer
 ^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ Experts agree that at the standard 7.5 amps of load current competition batterie
 Battery Best Practices
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* Teams should purchase several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and there may not be enough time to recharge.
+* Teams should consider purchasing several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and there may not be enough time to recharge.
 
 .. image:: images/robot-battery/battery-cart.jpg
    :alt: A wooden bookcase like cart for storing and charging batteries.
