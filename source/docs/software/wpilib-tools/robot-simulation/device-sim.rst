@@ -18,14 +18,14 @@ Creating Simulation Device objects
 All simulation device classes have a constructor that accepts the regular object, and an additional constructor or factory method to create a simulation object by the ports the device is connected to. The latter is especially useful for :doc:`unit testing <unit-testing>`.
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       // create a real encoder object on DIO 2,3
       Encoder encoder = new Encoder(2, 3);
       // create a sim controller for the encoder
       EncoderSim simEncoder = new EncoderSim(encoder);
 
-     .. code-tab:: C++
+     .. code-tab:: cpp
 
        // create a real encoder object on DIO 2,3
        Encoder encoder{2, 3};
@@ -38,13 +38,13 @@ Reading and Writing Device Data
 Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The getter functions will return the same as the getter of the regular device class.
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       simEncoder.setCount(100);
       encoder.getCount(); // 100
       simEncoder.getCount(); // 100
 
-   .. code-tab:: C++
+   .. code-tab:: cpp
 
       simEncoder.SetCount(100);
       encoder.GetCount(); // 100
@@ -62,7 +62,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
 .. important:: Make sure to keep a reference to the ``CallbackStore`` object to prevent it being garbage-collected, which will cancel the callback.
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       NotifyCallback callback = (String name, HALValue value) -> {
          System.out.println("Value of " + name + " is " + value.getInt());
@@ -71,7 +71,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
 
       store.close(); // cancel the callback
 
-   .. code-tab:: C++
+   .. code-tab:: cpp
 
       NotifyCallback callback = (String name, HALValue value) {
          wpi::outs() << "Value of " << name << " is " << value.GetInt() << "\n";
@@ -93,24 +93,24 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
 .. important:: The key includes a prefix that is hidden by default in the SimGUI, it can be shown by selecting the ::guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       SimDeviceSim device = new SimDeviceSim(deviceKey, index);
 
-   .. code-tab:: C++
+   .. code-tab:: cpp
 
       SimDeviceSim device{deviceKey, index};
 
 Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object when either the device or field keys are unmatched will return ``null``.
 
 .. tabs::
-   .. code-tab:: Java
+   .. code-tab:: java
 
       SimDouble field = device.getDouble(fieldKey);
       field.get();
       field.set(value);
 
-   .. code-tab:: C++
+   .. code-tab:: cpp
 
       SimDouble field = device.GetDouble(fieldKey);
       field.Get();
