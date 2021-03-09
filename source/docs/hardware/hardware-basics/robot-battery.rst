@@ -10,7 +10,7 @@ The Robot Battery assembly includes a COTS battery, with positive and negative l
 Always start your match with a fully charged battery - ask for help if it looks like you won't! 
 
 Battery Safety & Handling
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Battery assemblies are **delicate**, even though they don't look like it. 
 
@@ -127,7 +127,7 @@ Batteries need to be kept away from both extreme heat and cold.  This generally 
 
 
 Battery Characterization
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 A battery analyzer can be used to give a detailed inspection and comparison of battery performance.  
 
@@ -142,7 +142,7 @@ Most teams do not have Battery Analyzer setups.
 
 
 Battery Best Practices
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 - Only use a charged battery for competition matches.  If you are in a situation where you have run out of charged batteries, please ask a veteran team for help!  Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
