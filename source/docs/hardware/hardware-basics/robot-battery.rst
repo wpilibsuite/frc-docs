@@ -36,7 +36,7 @@ Most modern chargers can charge the battery indefinitely without additional harm
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
 Battery Construction & Tools
-----------------------------
+-----------------------------
 
 Battery Leads
 ^^^^^^^^^^^^^^^^^^^
@@ -52,7 +52,7 @@ Teams are strongly recommended to use either use properly rated tools and string
 
 
 Battery Connections
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 //TODO picture of fully tightened terminal
 
@@ -82,7 +82,7 @@ Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 
 
 Battery Evaluation Tools
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Voltmeter** or **Multimeter**
 
@@ -121,7 +121,7 @@ Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While
 
 
 Battery Characterization
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A battery analyzer can be used to give a detailed inspection and comparison of battery performance. 
 
