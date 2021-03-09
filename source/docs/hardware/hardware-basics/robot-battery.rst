@@ -35,8 +35,8 @@ Most modern chargers can charge the battery indefinitely without additional harm
 
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
-Battery Construction
---------------------
+Battery Construction & Tools
+----------------------------
 
 Battery Leads
 ^^^^^^^^^^^^^^^^^^^
@@ -65,20 +65,21 @@ This connection must also be wrapped for electrical safety; electrical tape will
   :alt: One terminal of an FRC battery fully covered in heatshrink.
 
 
-Battery Voltages
+Battery Chargers
 ^^^^^^^^^^^^^^^^^^^
 
-A "12V battery" is anything but 12V. 
+There are many good off the shelf battery chargers with 'maintenance modes' for 12V batteries. Teams are required to retrofit SB connectors onto chargers used at competitions. //TODO Cite rule
 
-Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
+Battery chargers may use no more than 6A charging current at competitions - most modern smart chargers for 12V SLA batteries do not use more than 6A, but this rating is generally shown on the box. //TODO cite rule
 
-Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
+Charging at lower amperages will avoid heat buildup, but take longer. 
 
-Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage. 
+Battery chargers must be retrofit to use SB50 connectors rather than stock clamp leads. //TODO cite rule
 
-(SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries.)
+The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of battery leads and then wrap each clamp in electrical tape. 
+SB Connector Contacts are available for smaller wire sizes, for a cleaner look, if the team has crimping capability.
+Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 
-See Characterization section below for sample battery voltage curves.
 
 Battery Evaluation Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,30 +106,18 @@ Ideal internal resistance should be less than 0.015 Ohms. The manufacturer speci
 If a battery shows significantly lower voltages at the higher test current loads, it may not be done charging, or it may need to be retired.
 
 
-Battery Chargers
-^^^^^^^^^^^^^^^^^^^
+Understanding Battery Voltages
+------------------------------
 
-There are many good off the shelf battery chargers with 'maintenance modes' for 12V batteries. Teams are required to retrofit SB connectors onto chargers used at competitions. //TODO Cite rule
+A "12V battery" is anything but 12V. 
 
-Battery chargers may use no more than 6A charging current at competitions - most modern smart chargers for 12V SLA batteries do not use more than 6A, but this rating is generally shown on the box. //TODO cite rule
+Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
 
-Charging at lower amperages will avoid heat buildup, but take longer. 
+Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-Battery chargers must be retrofit to use SB50 connectors rather than stock clamp leads. //TODO cite rule
+Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage. 
 
-The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of battery leads and then wrap each clamp in electrical tape. 
-SB Connector Contacts are available for smaller wire sizes, for a cleaner look, if the team has crimping capability.
-Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
-
-
-Battery Longevity
-^^^^^^^^^^^^^^^^^^^
-
-A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
-
-Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
-
-Batteries need to be kept away from both extreme heat and cold. This generally means storing the batteries in a climate controlled area, such as a classroomn closet, rather than a shipping container in a parking lot.
+(SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries.)
 
 
 Battery Characterization
@@ -146,8 +135,18 @@ At the standard 7.5 amps test load, competition batteries should have at least a
 Most teams do not have Battery Analyzer setups. 
 
 
+Battery Longevity
+^^^^^^^^^^^^^^^^^^^
+
+A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
+
+Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
+
+Batteries need to be kept away from both extreme heat and cold. This generally means storing the batteries in a climate controlled area, such as a classroomn closet, rather than a shipping container in a parking lot.
+
+
 Battery Best Practices
-^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 - Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
