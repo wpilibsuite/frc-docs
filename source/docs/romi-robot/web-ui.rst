@@ -95,7 +95,13 @@ Bridge mode allows your Romi robot to connect to a WiFi network instead of actin
 
 2. Click on :guilabel:`Network Settings`.
 
+.. image:: images/web-ui/romi-network-settings.png
+   :alt: Selecting Network Settings in the UI
+
 3. The following network settings must be applied:
+
+.. image:: images/web-ui/romi-bridge-mode.png
+   :alt: Picture of the necessary romi options listed below
 
 - **Ethernet**: DHCP
 - **WiFi Mode**: Bridge
