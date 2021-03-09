@@ -25,7 +25,7 @@ All simulation device classes have a constructor that accepts the regular object
       // create a sim controller for the encoder
       EncoderSim simEncoder = new EncoderSim(encoder);
 
-     .. code-tab:: cpp
+   .. code-tab:: cpp
 
        // create a real encoder object on DIO 2,3
        Encoder encoder{2, 3};
@@ -86,11 +86,11 @@ Simulating Other Devices - The SimDeviceSim Class
 
 .. important:: Do not confuse the ``SimDeviceSim`` class with the ``SimDevice`` class. ``SimDeviceSim`` is intended for team code while ``SimDevice`` is intended for vendors wanting to add simulation capabilities to their device classes.
 
-The ``SimDeviceSim`` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the ::guilabel:`Other Devices` tab of the :ref:`SimGUI<docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`.
+The ``SimDeviceSim`` class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the :guilabel:`Other Devices` tab of the :ref:`SimGUI<docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`.
 
-The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the ::guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor.
+The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the :guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor.
 
-.. important:: The key includes a prefix that is hidden by default in the SimGUI, it can be shown by selecting the ::guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
+.. important:: The key includes a prefix that is hidden by default in the SimGUI, it can be shown by selecting the :guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
 .. tabs::
    .. code-tab:: java
