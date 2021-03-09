@@ -3,9 +3,12 @@
 Robot Battery
 =============
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah battery. The batteries used for FRC are SLA [sealed lead acid] AGM [absorbent glass mat] batteries capable of meeting the high current demands of an FRC robot.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA AGM battery, capable of high momentary currents. 
 
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, so other teams & organizers can loan you equipment.
+SLA stands for Sealed Lead Acid, AGM stands for Absorbent Glass Mat.
+
+The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector.
+The Red/Pink SB50 is STRONGLY recommended.
 
 Always start your match with a fully charged battery - ask for help if it looks like you won't!
 
@@ -14,7 +17,8 @@ Battery Safety & Handling
 
 Battery assemblies are **delicate**, even though they don't look like it.
 
-**DO NOT CARRY A BATTERY BY THE CABLES**, and always avoid pulling by them. Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing!
+**DO NOT CARRY A BATTERY BY THE CABLES**, and always avoid pulling by them.
+Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing!
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
@@ -24,14 +28,17 @@ Even if it doesn't get broken, the battery will not be able to provide the same 
 //TODO is this a good place to talk about locking down the SB50 so you don't pull on wire, or is that handled on Common troubleshooting?
 
 Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open.
-While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid. This is why FIRST recommends teams have a battery spill kit available. //TODO add link?
+While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid.
+This is why FIRST recommends teams have a battery spill kit available. //TODO add link?
 
 Finally, certain older battery chargers can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
 
 .. image:: images/robot-battery/boiled.jpg
   :alt: An FRC battery that was boiled by a high current dumb charger.
 
-Most modern chargers can charge the battery indefinitely without additional harm. The picture above is from a high current charger with no maintenance mode that boiled the acid until it produced steam and high pressure that opened the safety vents. As such a modern smart charger is highly recommended.
+Most modern chargers can charge the battery indefinitely without additional harm.
+The picture above is from a high current charger with no maintenance mode that boiled the acid until it produced steam and high pressure that opened the safety vents.
+As such a modern smart charger is highly recommended.
 
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
@@ -58,8 +65,12 @@ Battery Connections
 
 //TODO picture of fully tightened terminal
 
-It is a good idea to secure the lugs with either a #10 star washer or a nord lock washer, in addition to a nylock nut, as this will ensure the connection does not move.
-Do not use a split ring lock washer, they do not increase joint strength.
+The terminals must not move. 
+It is a good idea to secure the lugs with either a #10 star washer or a nordlock washer system, in addition to a nylon locking nut. 
+
+Do not use the split ring lock washer, they do not increase joint strength.
+
+..warning:: The lug and tab must be in direct contact, copper to copper: do not put a washer of any kind separating them.
 
 This connection must also be wrapped for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
 
