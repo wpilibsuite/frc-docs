@@ -5,25 +5,25 @@ Robot Battery
 
 The power supply for an FRC\ |reg| robot is a single 12V 18Ah battery. The batteries used for FRC are SLA [sealed lead acid] AGM [absorbent glass mat] batteries capable of meeting the high current demands of an FRC robot.
 
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, so other teams & organizers can loan you equipment. 
+The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, so other teams & organizers can loan you equipment.
 
-Always start your match with a fully charged battery - ask for help if it looks like you won't! 
+Always start your match with a fully charged battery - ask for help if it looks like you won't!
 
 Battery Safety & Handling
 -------------------------
 
-Battery assemblies are **delicate**, even though they don't look like it. 
+Battery assemblies are **delicate**, even though they don't look like it.
 
 **DO NOT CARRY A BATTERY BY THE CABLES**, and always avoid pulling by them. Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing!
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
 
-Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`. 
+Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
-//TODO is this a good place to talk about locking down the SB50 so you don't pull on wire, or is that handled on Common troubleshooting? 
+//TODO is this a good place to talk about locking down the SB50 so you don't pull on wire, or is that handled on Common troubleshooting?
 
-Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open. 
+Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open.
 While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid. This is why FIRST recommends teams have a battery spill kit available. //TODO add link?
 
 Finally, certain older battery chargers can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
@@ -35,13 +35,15 @@ Most modern chargers can charge the battery indefinitely without additional harm
 
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
+.. warning:: **DO NOT** attempt to "repair" damaged or non-functional batteries.
+
 Battery Construction & Tools
 -----------------------------
 
 Battery Leads
 ^^^^^^^^^^^^^^^^^^^
 
-Standard 6AWG, SB50 battery leads normally come in the Kit of Parts, courtesy of AndyMark. Teams are highly encouraged to use these leads. 
+Standard 6AWG, SB50 battery leads normally come in the Kit of Parts, courtesy of AndyMark. Teams are highly encouraged to use these leads.
 
 //TODO cite rules here
 The leads must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. Teams are recommended to use the standard 6AWG, it is sufficient for almost all robots.
