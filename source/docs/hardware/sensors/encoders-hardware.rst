@@ -9,7 +9,7 @@ Quadrature encoders are by far the most common method for measuring rotational m
 
 The term "quadrature" refers to the method by which the motion is measured/encoded.  A quadrature encoder produces two square-wave pulses that are 90-degrees out-of-phase from each other, as seen in the picture below:
 
-.. image:: images/encoders-hardware/encoding-direction.png
+.. image:: /docs/software/sensors/images/encoders-software/encoding-direction.png
   :alt: The signal pattern in both directions and how using two channels allows us to tell the direction.
 
 Thus, across both channels, there are four total "edges" per period (hence "quad").  The use of two out-of-phase pulses allows the direction of motion to be unambiguously determined from which pulse "leads" the other.
@@ -57,7 +57,7 @@ Magnetic encoders require no mechanical coupling to the shaft at all; rather, th
 Encoder Wiring
 --------------
 
-.. image:: images/encoders-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
+.. image:: images/digital-inputs-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
   :alt: Wiring the E4T Optical Encoder to two DIO ports.
   :width: 400
 

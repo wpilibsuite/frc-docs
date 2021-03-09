@@ -26,7 +26,7 @@ As per their name, single-axis accelerometers measure acceleration along a singl
 Multi-axis accelerometers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/accelerometers-hardware/triple-axis-accelerometer-to-roborio.svg
+.. image:: images/analog-inputs-hardware/triple-axis-accelerometer-to-roborio.svg
   :alt: The triple axis accelerometer hooked up to three different Analog In channels.
 
 Multi-axis accelerometers measure acceleration along multiple spacial axes.  The roboRIO's built-in accelerometer is a three-axis accelerometer.

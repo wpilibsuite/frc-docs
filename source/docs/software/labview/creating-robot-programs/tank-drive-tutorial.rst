@@ -3,7 +3,7 @@
 Tank Drive Tutorial
 ===================
 
-.. image:: images/tank-drive-tutorial/ni-logo.png
+.. image:: images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 **Question:** How do I get my robot to drive with two joysticks using tank drive?
 

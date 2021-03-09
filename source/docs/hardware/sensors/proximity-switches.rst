@@ -30,7 +30,7 @@ There are several types of proximity switches that are commonly-used in FRC\ |re
 Mechanical Proximity Switches ("limit switches")
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/proximity-switches-hardware/limit-switch-to-roborio.svg
+.. image:: images/digital-inputs-hardware/limit-switch-to-roborio.svg
    :alt: A normally open limit switch connected to a channel of the roboRIO DIO.
 
 Mechanical proximity switches (more commonly known as "limit switches") are probably the most-commonly used proximity switch in FRC, due to their simplicity, ease-of-use, and low cost.  A limit switch is quite simply a switch attached to a mechanical arm, usually at the limits of travel.  The switch is activated when an object pushes against the switch arm, actuating the switch.
@@ -42,7 +42,7 @@ See this :ref:`article <docs/software/sensors/limit-switch:Programming Limit Swi
 Magnetic Proximity Switches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/proximity-switches-hardware/hall-effect-sensor-to-roborio.svg
+.. image:: images/digital-inputs-hardware/hall-effect-sensor-to-roborio.svg
    :alt: A magnetic proximity switch hooked up to a DIO channel of the roboRIO.
 
 Magnetic proximity switches are activated when a magnet comes within a certain range of the sensor.  Accordingly, they are "no-contact" switches - they do not require contact with the object being sensed.

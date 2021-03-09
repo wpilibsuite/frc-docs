@@ -1,7 +1,7 @@
 roboRIO Introduction
 ====================
 
-.. image:: images/roborio-introduction/roborio.png
+.. image:: /docs/controls-overviews/images/control-system-hardware/roborio.png
   :width: 500
 
 The roboRIO is designed specifically with FIRST in mind. The roboRIO has a basic architecture of a Real-Time processors + FPGA (field programmable gate array) but is more powerful, lighter, and smaller than some similar systems used in industry.

@@ -19,7 +19,7 @@ Different kernels can affect the image differently, such as only eroding or dila
 
 For reference, this is our binary image we created:
 
-.. image:: images/morphological-operations/reference.jpg
+.. image:: images/image-thresholding/after-thresholding.jpg
    :alt: Original binary image.
 
 Erosion
@@ -85,5 +85,5 @@ Closing is dilation followed by erosion. This process removes small holes or bre
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel)
 
-.. image:: images/morphological-operations/closing.jpg
+.. image:: images/image-thresholding/after-thresholding.jpg
    :alt: Little holes around the image have been removed but overall size of each object stayed roughly the same.

@@ -9,13 +9,15 @@ Creating the Button on Shuffleboard
 -----------------------------------
 
 .. image:: images/testing-with-smartdashboard-1.png
+   :alt: To create a button in Shuffleboard ensure the "Button on SmartDashboard" checkbox is checked.
 
 The button is created on the SmartDashboard by putting an instance of the command from the robot program to the dashboard. This is such a common operation that it has been added to RobotBuilder as a checkbox. When writing your commands, be sure that the box is checked, and buttons will be automatically generated for you.
 
 Operating the Buttons
 ---------------------
 
-.. image:: images/testing-with-smartdashboard-2.png
+.. image:: images/robotbuilder-overview-4.png
+   :alt: Each of the created buttons has its own widget in Shuffleboard.
 
 The buttons will be generated automatically and will appear on the dashboard screen. You can rearrange the buttons on Shuffleboard. In this example there are a number of commands, each with an associated button for testing. Pressing the commands button will run the command. Once it is pressed, pressing again it will interrupt the command causing the ``Interrupted()`` method to be called.
 

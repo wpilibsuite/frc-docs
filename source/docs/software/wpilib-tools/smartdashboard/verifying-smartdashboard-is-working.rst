@@ -72,5 +72,5 @@ In the "Server Location" box, enter your team number with no leading zeroes. The
 
 Look at the second row in the table, the value ``SmartDashboard/Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``41.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
 
-.. image:: images/verifying-smartdashboard-is-working/outlineviewer.png
+.. image:: /docs/software/wpilib-tools/outlineviewer/images/outlineviewer.png
   :alt: Using OutlineViewer to view the NetworkTables data used by the program.

@@ -3,7 +3,7 @@
 Local and Global Variables in LabVIEW for FRC
 =============================================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 This example serves as an introduction to local and global variables, how they are used in the default LabVIEW for FRC\ |reg| Robot Project, and how you might want to use them in your project.
 

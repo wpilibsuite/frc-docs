@@ -3,7 +3,7 @@
 Installing LabVIEW for FRC (LabVIEW only)
 =========================================
 
-.. image:: images/labview/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
    :alt: The old NI logo.
 
 .. note:: This installation is for teams programming in LabVIEW or using NI Vision Assistant only. C++ and Java teams not using these features do not need to install LabVIEW and should proceed to :doc:`Installing the FRC Game Tools </docs/zero-to-robot/step-2/frc-game-tools>`.
