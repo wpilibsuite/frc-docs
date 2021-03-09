@@ -64,7 +64,7 @@ This connection must also be wrapped for electrical safety; electrical tape will
 
 
 Battery Voltages
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 A "12V battery" is anything but 12V. 
 
 Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
@@ -101,7 +101,7 @@ If a battery shows significantly lower voltages at the higher test current loads
 
 
 Battery Chargers
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 There are many good off the shelf battery chargers with 'maintenance modes' for 12V batteries. Teams are required to retrofit SB connectors onto chargers used at competitions. //TODO Cite rule
 
@@ -117,7 +117,7 @@ Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 
 
 Battery Longevity
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 A battery is rated for about 1200 normal charge/recharge cycles.  The high currents required for an FRC match reduce that lifespan to about 400 cycles.  These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts.  Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
 
@@ -127,7 +127,7 @@ Batteries need to be kept away from both extreme heat and cold.  This generally 
 
 
 Battery Characterization
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 A battery analyzer can be used to give a detailed inspection and comparison of battery performance.  
 
@@ -142,7 +142,7 @@ Most teams do not have Battery Analyzer setups.
 
 
 Battery Best Practices
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 - Only use a charged battery for competition matches.  If you are in a situation where you have run out of charged batteries, please ask a veteran team for help!  Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
