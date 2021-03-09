@@ -110,8 +110,7 @@ Charging at lower amperages will avoid heat buildup, but take longer.
 Battery chargers must be retrofit to use SB50 connectors rather than stock clamp leads. //TODO cite rule
 
 The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of battery leads and then wrap each clamp in electrical tape. 
-SB Connector Contacts are available for smaller wire sizes, for a cleaner look, if the team has crimping capability. 
-
+SB Connector Contacts are available for smaller wire sizes, for a cleaner look, if the team has crimping capability.
 Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 
 
