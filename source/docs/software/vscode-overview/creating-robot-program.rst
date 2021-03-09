@@ -209,5 +209,5 @@ C++ Configurations (C++ Only)
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-.. image:: images/creating-robot-program/cpp-configurations.png
+.. image:: /docs/software/vscode-overview/images/importing-eclipse-project/cpp-configurations.png
    :alt: Choosing "Yes" when asked to refresh C++ configurations.
