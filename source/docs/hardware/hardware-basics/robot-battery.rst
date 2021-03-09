@@ -3,7 +3,7 @@
 Robot Battery
 =============
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA AGM battery, capable of high momentary currents. 
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA AGM battery, capable of high momentary currents.
 
 SLA stands for Sealed Lead Acid, AGM stands for Absorbent Glass Mat.
 
@@ -65,8 +65,8 @@ Battery Connections
 
 //TODO picture of fully tightened terminal
 
-The terminals must not move. 
-It is a good idea to secure the lugs with either a #10 star washer or a nordlock washer system, in addition to a nylon locking nut. 
+The terminals must not move after they are torqued.
+It is a good idea to secure the lugs with either a #10 star washer or a nordlock washer system, in addition to a nylon locking nut.
 
 Do not use the split ring lock washer, they do not increase joint strength.
 
