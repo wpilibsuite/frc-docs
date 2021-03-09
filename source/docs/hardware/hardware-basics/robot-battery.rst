@@ -48,7 +48,7 @@ Standard 6AWG, SB50 battery leads normally come in the Kit of Parts, courtesy of
 //TODO cite rules here
 The leads must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. Teams are recommended to use the standard 6AWG, it is sufficient for almost all robots.
 The Anderson SB Connector may be either a standard PINK or RED SB50, or another Anderson SB connector such as the SB120. Teams are *STRONGLY* recommended to use the standard RED or PINK SB50 for interoperability, as the other color housings will not intermate and you will be unable to borrow batteries, chargers, or other equipment.
-Terminals for the battery tabs are available online and through electrical supply houses, sold by the accepted wire size and the tab hole diameter, sometimes listed on catalogs as a "post diameter". 
+Terminals for the battery tabs are available online and through electrical supply houses, sold by the accepted wire size and the tab hole diameter, sometimes listed on catalogs as a "post diameter".
 
 Teams are strongly recommended to use either use properly rated tools and stringent quality control practices for the crimping process, or use vendor-made leads. //TODO do we talk about crimping anywhere that this should link to?
 
@@ -58,8 +58,8 @@ Battery Connections
 
 //TODO picture of fully tightened terminal
 
-It is a good idea to secure the lugs with either a #10 star washer or a nord lock washer, in addition to a nylock nut, as this will ensure the connection does not move. 
-Do not use a split ring lock washer, they do not increase joint strength. 
+It is a good idea to secure the lugs with either a #10 star washer or a nord lock washer, in addition to a nylock nut, as this will ensure the connection does not move.
+Do not use a split ring lock washer, they do not increase joint strength.
 
 This connection must also be wrapped for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
 
@@ -74,11 +74,11 @@ There are many good off the shelf battery chargers with 'maintenance modes' for 
 
 Battery chargers may use no more than 6A charging current at competitions - most modern smart chargers for 12V SLA batteries do not use more than 6A, but this rating is generally shown on the box. //TODO cite rule
 
-Charging at lower amperages will avoid heat buildup, but take longer. 
+Charging at lower amperages will avoid heat buildup, but take longer.
 
 Battery chargers must be retrofit to use SB50 connectors rather than stock clamp leads. //TODO cite rule
 
-The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of battery leads and then wrap each clamp in electrical tape. 
+The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of battery leads and then wrap each clamp in electrical tape.
 SB Connector Contacts are available for smaller wire sizes, for a cleaner look, if the team has crimping capability.
 Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 
@@ -92,7 +92,7 @@ A voltage reading will give you a good snapshot of what the Voc (Voltage open ci
 
 **Battery Charger**
 
-If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY. 
+If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY.
 
 Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off after a tough match, and being able to accept more charge.
 
@@ -111,13 +111,13 @@ If a battery shows significantly lower voltages at the higher test current loads
 Understanding Battery Voltages
 ------------------------------
 
-A "12V battery" is anything but 12V. 
+A "12V battery" is anything but 12V.
 
 Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
 
 Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage. 
+Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage.
 
 (SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries.)
 
@@ -125,7 +125,7 @@ Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While
 Battery Characterization
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A battery analyzer can be used to give a detailed inspection and comparison of battery performance. 
+A battery analyzer can be used to give a detailed inspection and comparison of battery performance.
 
 .. image:: images/robot-battery/cba-graph.jpg
   :alt: Graph from a common battery analyzer plotting volts and AmpHrs for many different batteries.
@@ -134,7 +134,7 @@ It will provide graphs of battery performance over time. This test takes signifi
 
 At the standard 7.5 amps test load, competition batteries should have at least a 11.5 amp hour rating. Anything less than that should only be used for practice or other less demanding use cases.
 
-Most teams do not have Battery Analyzer setups. 
+Most teams do not have Battery Analyzer setups.
 
 
 Battery Longevity
@@ -172,6 +172,6 @@ Battery Best Practices
 
 - Fastening down the robot-side and charger-side SB connectors will help reduce wire strain and protect electrical parts.
 
-- Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries. 
+- Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries.
 
 - Some teams sew battery carrying straps from old seatbelts or other flat nylon that fit around the battery to help prevent carrying by leads.
