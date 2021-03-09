@@ -5,7 +5,7 @@ Robot Battery
 
 The power supply for an FRC\ |reg| robot is a single 12V 18Ah battery. The batteries used for FRC are SLA [sealed lead acid] AGM [absorbent glass mat] batteries capable of meeting the high current demands of an FRC robot.
 
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, in order to share equipment with teams & organizers. 
+The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, so other teams & organizers can loan you equipment. 
 
 Always start your match with a fully charged battery - ask for help if it looks like you won't! 
 
@@ -17,9 +17,9 @@ Battery assemblies are **delicate**, even though they don't look like it.
 **DO NOT CARRY A BATTERY BY THE CABLES**, and always avoid pulling by them. Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing!
 
 .. image:: images/robot-battery/broken-terminal.png
-   :alt: One terminal of an FRC battery fully detached from the battery.
+  :alt: One terminal of an FRC battery fully detached from the battery.
 
-Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.  
+Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`. 
 
 //TODO is this a good place to talk about locking down the SB50 so you don't pull on wire, or is that handled on Common troubleshooting? 
 
@@ -29,11 +29,11 @@ While we do use AGM [absorbant glass mat] technology for safety, when a cell is 
 Finally, certain older battery chargers can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
 
 .. image:: images/robot-battery/boiled.jpg
-   :alt: An FRC battery that was boiled by a high current dumb charger.
+  :alt: An FRC battery that was boiled by a high current dumb charger.
 
-Most modern chargers can charge the battery indefinitely without additional harm.  The picture above is from a high current charger with no maintenance mode that boiled the acid until it produced steam and high pressure that opened the safety vents.  As such a modern smart charger is highly recommended.
+Most modern chargers can charge the battery indefinitely without additional harm. The picture above is from a high current charger with no maintenance mode that boiled the acid until it produced steam and high pressure that opened the safety vents. As such a modern smart charger is highly recommended.
 
-Damaged batteries should be safely disposed of as soon as possible.  All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
+Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
 
 Battery Leads
@@ -60,11 +60,12 @@ Do not use a split ring lock washer, they do not increase joint strength.
 This connection must also be wrapped for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
 
 .. image:: images/robot-battery/heatshrink.png
-   :alt: One terminal of an FRC battery fully covered in heatshrink.
+  :alt: One terminal of an FRC battery fully covered in heatshrink.
 
 
 Battery Voltages
 ^^^^^^^^^^^^^^^^^^^
+
 A "12V battery" is anything but 12V. 
 
 Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
@@ -90,12 +91,12 @@ Some chargers will cycle between "CHARGING" and "READY" periodically. This is a 
 
 **Load Tester**
 
-A battery load tester can be used as a quick way to determine the detailed readiness of a battery.  It may provide information like: open-load voltage, voltage under load, internal resistance, and state of charge.  These metrics can be used to quickly confirm that a battery is ready for a match and even possibly help to identify some long term problems with the battery.
+A battery load tester can be used as a quick way to determine the detailed readiness of a battery. It may provide information like: open-load voltage, voltage under load, internal resistance, and state of charge. These metrics can be used to quickly confirm that a battery is ready for a match and even possibly help to identify some long term problems with the battery.
 
 .. image:: images/robot-battery/load-tester.jpg
-   :alt: Output screen of a common load tester showing properties of the battery.
+  :alt: Output screen of a common load tester showing properties of the battery.
 
-Ideal internal resistance should be less than 0.015 Ohms.  The manufacturer specification for most batteries is 0.011 Ohms.  If a battery gets higher than 0.02 Ohms it is a good idea to consider not using that battery for competition matches.
+Ideal internal resistance should be less than 0.015 Ohms. The manufacturer specification for most batteries is 0.011 Ohms. If a battery gets higher than 0.02 Ohms it is a good idea to consider not using that battery for competition matches.
 
 If a battery shows significantly lower voltages at the higher test current loads, it may not be done charging, or it may need to be retired.
 
@@ -119,24 +120,24 @@ Vendors like AndyMark sell good chargers with SB50 leads pre-attached.
 Battery Longevity
 ^^^^^^^^^^^^^^^^^^^
 
-A battery is rated for about 1200 normal charge/recharge cycles.  The high currents required for an FRC match reduce that lifespan to about 400 cycles.  These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts.  Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
+A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
 
-Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger.  Batteries drop roughly 0.1V every month of non-use.
+Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
 
-Batteries need to be kept away from both extreme heat and cold.  This generally means storing the batteries in a climate controlled area, such as a classroomn closet, rather than a shipping container in a parking lot.
+Batteries need to be kept away from both extreme heat and cold. This generally means storing the batteries in a climate controlled area, such as a classroomn closet, rather than a shipping container in a parking lot.
 
 
 Battery Characterization
 ^^^^^^^^^^^^^^^^^^^^
 
-A battery analyzer can be used to give a detailed inspection and comparison of battery performance.  
+A battery analyzer can be used to give a detailed inspection and comparison of battery performance. 
 
 .. image:: images/robot-battery/cba-graph.jpg
-   :alt: Graph from a common battery analyzer plotting volts and AmpHrs for many different batteries.
+  :alt: Graph from a common battery analyzer plotting volts and AmpHrs for many different batteries.
 
-It will provide graphs of battery performance over time.  This test takes significant time (roughly two hours) so it is less suited to testing during competition.  It is recommended to run this test on each battery every year to monitor and track its performance.  This will determine how it should be used: matches, practice, testing, or disposed of.
+It will provide graphs of battery performance over time. This test takes significant time (roughly two hours) so it is less suited to testing during competition. It is recommended to run this test on each battery every year to monitor and track its performance. This will determine how it should be used: matches, practice, testing, or disposed of.
 
-At the standard 7.5 amps test load, competition batteries should have at least a 11.5 amp hour rating.  Anything less than that should only be used for practice or other less demanding use cases.
+At the standard 7.5 amps test load, competition batteries should have at least a 11.5 amp hour rating. Anything less than that should only be used for practice or other less demanding use cases.
 
 Most teams do not have Battery Analyzer setups. 
 
@@ -144,25 +145,25 @@ Most teams do not have Battery Analyzer setups.
 Battery Best Practices
 ^^^^^^^^^^^^^^^^^^^^
 
-- Only use a charged battery for competition matches.  If you are in a situation where you have run out of charged batteries, please ask a veteran team for help!  Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
+- Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
 - Wait for batteries to cool after the match before recharging at high currents
 
-- Teams should consider purchasing several new batteries each year to help keep their batteries fresh.  Elimination matches can require many batteries and there may not be enough time to recharge.
+- Teams should consider purchasing several new batteries each year to help keep their batteries fresh. Elimination matches can require many batteries and there may not be enough time to recharge.
 
 .. image:: images/robot-battery/battery-cart.jpg
-   :alt: A wooden bookcase like cart for storing and charging batteries.
+  :alt: A wooden bookcase like cart for storing and charging batteries.
 
-- A multi bank battery charger allows you to charge more than one battery at a time.  Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
+- A multi bank battery charger allows you to charge more than one battery at a time. Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
 
 - It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.
 
 - Teams may also want to use something removeable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data and when the last analyzer test was run.
 
 .. image:: images/robot-battery/battery-flag.jpg
-   :alt: A battery flag is just a small piece of plastic that fits in the battery connector.
+  :alt: A battery flag is just a small piece of plastic that fits in the battery connector.
 
-- Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged.  Battery flags can also be easily 3D printed.
+- Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged. Battery flags can also be easily 3D printed.
 
 - Fastening down the robot-side and charger-side SB connectors will help reduce wire strain and protect electrical parts.
 
