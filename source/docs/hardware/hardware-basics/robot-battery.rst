@@ -10,7 +10,7 @@ The Robot Battery assembly includes a COTS battery, with positive and negative l
 Always start your match with a fully charged battery - ask for help if it looks like you won't! 
 
 Battery Safety & Handling
-^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Battery assemblies are **delicate**, even though they don't look like it. 
 
@@ -35,6 +35,8 @@ Most modern chargers can charge the battery indefinitely without additional harm
 
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
+Battery Construction
+--------------------
 
 Battery Leads
 ^^^^^^^^^^^^^^^^^^^
@@ -70,14 +72,16 @@ A "12V battery" is anything but 12V.
 
 Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
 
-Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. 
+Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries. 
+Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage. 
+
+(SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries.)
 
 See Characterization section below for sample battery voltage curves.
 
-Battery Evaluation
-^^^^^^^^^^^^^^^^^^^
+Battery Evaluation Tools
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Voltmeter** or **Multimeter**
 
