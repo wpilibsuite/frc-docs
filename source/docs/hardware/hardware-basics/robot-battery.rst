@@ -5,7 +5,9 @@ Robot Battery
 
 The power supply for an FRC\ |reg| robot is a single 12V 18Ah battery. The batteries used for FRC are SLA [sealed lead acid] AGM [absorbent glass mat] batteries capable of meeting the high current demands of an FRC robot.
 
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. 
+The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink SB50 is STRONGLY recommended, in order to share equipment with teams & organizers. 
+
+Always start your match with a fully charged battery - ask for help if it looks like you won't! 
 
 Battery Safety & Handling
 ^^^^^^^^^^^^^^^^^^^
@@ -161,3 +163,9 @@ Battery Best Practices
    :alt: A battery flag is just a small piece of plastic that fits in the battery connector.
 
 - Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged.  Battery flags can also be easily 3D printed.
+
+- Fastening down the robot-side and charger-side SB connectors will help reduce wire strain and protect electrical parts.
+
+- Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries. 
+
+- Some teams sew battery carrying straps from old seatbelts or other flat nylon that fit around the battery to help prevent carrying by leads.
