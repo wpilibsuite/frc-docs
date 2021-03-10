@@ -59,7 +59,7 @@ Battery Connections
 ^^^^^^^^^^^^^^^^^^^^
 
 The terminals must not move after they are torqued (tightened).
-It is a good idea to secure the lugs with a real lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking nut. 
+It is a good idea to secure the lugs with a real lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking nut.
 Some batteries come with bolts in the package. They may be replaced with stronger alloy steel bolts.
 
 Using a split ring lock washer will not add to joint strength or reliability.
