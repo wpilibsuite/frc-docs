@@ -25,7 +25,18 @@ Securing the Battery to the Robot
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
    :width: 350
 
-In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense. Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
+In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot.
+This has happened in championship matches on the Einstein and everywhere else.
+Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection.
+10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
+Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
+
+Securing the Battery Connector & Main Power Leads
+-------------------------------------------------
+
+A loose robot-side battery connector (the large Anderson SB) can allow the main power leads to be tugged when the battery is replaced.
+If the main power leads are loose, that "tug" can get all the way back to the crimp lugs attached to the 120 Amp Circuit Breaker or Power Distribution Panel (PDP), bend the lug, and over time cause the lug end to break from fatigue.
+Putting a couple tie wraps attaching the main power leads to the chassis and bolting down the robot-side battery connector can prevent this, as well as make it easier to connect the battery.
 
 120 Amp Circuit Breaker
 -----------------------
@@ -38,9 +49,13 @@ In almost every event we see at least one robot where a not properly secured bat
 .. image:: images/preemptive-troubleshooting/preCheckBreaker-2.png
   :width: 350
 
-Apply a twisting force onto the cable to rotate the harness.  If you are successful then the screw is not tight enough.  Split washers might help here, but in the mean time, these require checking every few matches.
+Apply a strong twisting force to try to rotate the crimped lug.  If the lug rotates then the nut is not tight enough.  After tightening the nut, retest by once again trying to rotate the lug.
 
-Because the metal is just molded into the case, every once in awhile you will break off the bolt, ask any veteran team and they’ll tell you they go through a number of these every few seasons.  After tightening the nut, retest by once again trying to twist the cable.
+The original nut has a star locking feature, which can wear out over time: these may require checking every few matches, especially if your robot-side battery connector is not attached to the chassis.
+
+The nut is normally a relatively uncommon 1/4-28 thread: ensure this is correct if the nut is replaced.
+
+Because the metal is just molded into the case, every once in awhile you may break off the stud.  Many veteran teams start each season with a fresh main breaker, and carry spares.
 
 Power Distribution Panel (PDP)
 ------------------------------
@@ -48,7 +63,8 @@ Power Distribution Panel (PDP)
 .. image:: images/preemptive-troubleshooting/pdp-bolts.png
   :width: 500
 
-Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case. Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
+Make sure that split washers were placed under the PDP screws, but it is not easy to visually confirm, and sometimes you can’t.  You can check by removing the case.
+Also if you squeeze the red and black wires together, sometimes you can catch the really lose connections.
 
 Tug Testing
 -----------
