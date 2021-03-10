@@ -111,4 +111,14 @@ Bridge mode allows your Romi robot to connect to a WiFi network instead of actin
 
 Once the settings are applied, please reboot the Romi. You should now be able to navigate to ``wpilibpi.local`` in your web browser while connected to your specified network.
 
-.. danger:: Setting your Romi in Bridge mode can make it inaccessible if the settings are not correct! To resolve this, please ethernet into your Romi and correct your network settings. Alternatively, you can reimage your Romi.
+Unable to Access Romi
+^^^^^^^^^^^^^^^^^^^^^
+
+If the Romi has the correct bridge settings and you are unable to access it, we have a few workarounds.
+
+- Ethernet into the Romi
+- Reimage the Romi
+
+Some restricted networks can interfere with the hostname of the Romi resolving, you can workaround this by using `Angry IP Scanner <https://angryip.org/>`__ to find the IP address.
+
+.. warning:: Angry IP Scanner is flagged by some antivirus as spyware as it pings devices on your network! It is a safe application!
