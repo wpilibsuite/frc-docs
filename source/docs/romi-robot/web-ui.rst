@@ -111,4 +111,4 @@ Bridge mode allows your Romi robot to connect to a WiFi network instead of actin
 
 Once the settings are applied, please reboot the Romi. You should now be able to navigate to ``wpilibpi.local`` in your web browser while connected to your specified network.
 
-.. danger:: Setting your Romi in Bridge mode can make it inaccessible! To resolve this, please ethernet into your Romi and correct your network settings. Alternatively, you can reimage your Romi.
+.. danger:: Setting your Romi in Bridge mode can make it inaccessible if the settings are not correct! To resolve this, please ethernet into your Romi and correct your network settings. Alternatively, you can reimage your Romi.
