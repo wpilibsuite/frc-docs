@@ -28,9 +28,9 @@ Simulation device object can be constructed in two ways:
    .. code-tab:: cpp
 
        // create a real encoder object on DIO 2,3
-       Encoder encoder{2, 3};
+       frc::Encoder encoder{2, 3};
        // create a sim controller for the encoder
-       EncoderSim simEncoder{encoder};
+       frc::sim::EncoderSim simEncoder{encoder};
 
 Reading and Writing Device Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +53,7 @@ Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXx
 Registering Callbacks
 ^^^^^^^^^^^^^^^^^^^^^
 
-In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. In C++, save this object in the right scope - the callback will be canceled when the object goes out of scope and is destructed. In Java, keep a reference to the object so it isn't garbage-collected (the callback will be canceled if it is); and call  ``close()`` to cancel the callback. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. In C++, another ``param`` parameter can be used to pass in arbitrary data - in Java, this data should be captured in the lambda. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
+In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. In C++, save this object in the right scope - the callback will be canceled when the object goes out of scope and is destroyed. In Java, keep a reference to the object so it isn't garbage-collected (the callback will be canceled if it is); and call  ``close()`` to cancel the callback. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. In C++, another ``param`` parameter can be used to pass in arbitrary data - in Java, this data should be captured in the lambda. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
 
 .. warning:: Attempting to retrieve a value of a type from a ``HALValue`` containing a different type is undefined behavior.
 
@@ -76,7 +76,7 @@ In addition to the getters and setters, each field also has a ``registerXxxCallb
           wpi::outs() << "Value of " << name << " is " << value->data.v_int << '\n';
         }
       };
-      CallbackStore store = simEncoder.RegisterCountCallback(callback);
+      frc::sim::CallbackStore store = simEncoder.RegisterCountCallback(callback);
       // the callback will be canceled when ``store`` goes out of scope
 
 Simulating Other Devices - The SimDeviceSim Class
@@ -95,7 +95,7 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
 
    .. code-tab:: cpp
 
-      SimDeviceSim device{deviceKey, index};
+      frc::sim::SimDeviceSim device{deviceKey, index};
 
 Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object when either the device or field keys are unmatched will return ``null``.
 
@@ -108,6 +108,6 @@ Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing 
 
    .. code-tab:: cpp
 
-      SimDouble field = device.GetDouble(fieldKey);
+      hal::SimDouble field = device.GetDouble(fieldKey);
       field.Get();
       field.Set(value);
