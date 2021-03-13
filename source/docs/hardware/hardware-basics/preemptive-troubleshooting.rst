@@ -25,18 +25,12 @@ Securing the Battery to the Robot
 .. image:: images/preemptive-troubleshooting/preCheckConnecc.png
    :width: 350
 
-In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot.
-This has happened in championship matches on the Einstein and everywhere else.
-Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection.
-10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense.
-Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
+In almost every event we see at least one robot where a not properly secured battery connector (the large Anderson) comes apart and disconnects power from the robot. This has happened in championship matches on the Einstein and everywhere else. Its an easy to ensure that this doesn't happen to you by securing the two connectors by wrapping a tie wrap around the connection. 10 or 12 tie wraps for the piece of mind during an event is not a high price to pay to guarantee that you will not have the problem of this robot from an actual event after a bumpy ride over a defense. Also, secure your battery to the chassis with hook and loop tape or another method, especially in games with rough defense, obstacles or climbing.
 
 Securing the Battery Connector & Main Power Leads
 -------------------------------------------------
 
-A loose robot-side battery connector (the large Anderson SB) can allow the main power leads to be tugged when the battery is replaced.
-If the main power leads are loose, that "tug" can get all the way back to the crimp lugs attached to the 120 Amp Circuit Breaker or Power Distribution Panel (PDP), bend the lug, and over time cause the lug end to break from fatigue.
-Putting a couple tie wraps attaching the main power leads to the chassis and bolting down the robot-side battery connector can prevent this, as well as make it easier to connect the battery.
+A loose robot-side battery connector (the large Anderson SB) can allow the main power leads to be tugged when the battery is replaced. If the main power leads are loose, that "tug" can get all the way back to the crimp lugs attached to the 120 Amp Circuit Breaker or Power Distribution Panel (PDP), bend the lug, and over time cause the lug end to break from fatigue. Putting a couple tie wraps attaching the main power leads to the chassis and bolting down the robot-side battery connector can prevent this, as well as make it easier to connect the battery.
 
 120 Amp Circuit Breaker
 -----------------------

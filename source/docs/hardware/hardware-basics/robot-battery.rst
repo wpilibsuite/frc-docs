@@ -7,8 +7,7 @@ The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA AGM battery, c
 
 SLA stands for Sealed Lead Acid, AGM stands for Absorbent Glass Mat.
 
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector.
-The Red/Pink SB50 is STRONGLY recommended.
+The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink Anderson SB50 is STRONGLY recommended.
 
 Always start your match with a fully charged battery - ask for help if it looks like you won't!
 
@@ -23,9 +22,7 @@ Pulling on batteries by the cables may loosen, bend, or break the lug or battery
 
 Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
-Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open.
-While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid.
-This is why FIRST recommends teams have a battery spill kit available.
+Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open. While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid. This is why FIRST recommends teams have a battery spill kit available.
 
 Finally, certain older battery chargers without "maintenance mode" features can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
 
@@ -42,47 +39,44 @@ Battery Construction & Tools
 Battery Leads
 ^^^^^^^^^^^^^^^^^^^
 
-Standard 6AWG, SB50 battery leads normally come in the Kit of Parts, courtesy of AndyMark. Teams are encouraged to use these leads.
+Standard 6AWG, Pink/Red SB50 battery leads with #10 bolted (0.2" diameter bolt hole) crimp lugs often come in the Kit of Parts. Teams are encouraged to use these leads.
 
-The leads must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. 6AWG is sufficient for almost all robots.
+Battery leads must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. 6AWG is sufficient for almost all robots.
 
-The Anderson SB Connector may be either the standard PINK or RED SB50, or another Anderson SB connector such as a yellow SB50 or a red SB120.
-Teams are *STRONGLY* recommended to use the standard RED or PINK SB50 for interoperability, as the other colors and sizes of housings will not intermate and you will be unable to borrow batteries, chargers, or other equipment.
+The Anderson SB Connector may be the standard Pink/Red SB50, or another Anderson SB connector. Teams are *STRONGLY* recommended to use the Pink/Red SB50 for interoperability: the other colors and sizes of housings will not intermate, and you will be unable to borrow batteries or chargers.
 
-Terminals for the battery tabs are available online and through electrical supply houses, sold by the accepted wire size and the tab hole diameter, sometimes listed on catalogs as a "post diameter".
+Follow manufacturer's instructions to crimp contacts and assemble the leads into Anderson SB connectors. A small flathead screwdriver can help to insert the contacts (carefully push on the contact, not the wire insulation), or it can help to disengage the internal latch if the contact is in the wrong slot or upside down.
 
-Teams are strongly recommended to use either use properly rated tools and stringent quality control practices for the crimping process, or use vendor-made crimped leads.
+Bolt-on crimp lugs with 0.2" tab holes (compatible with #10 bolt) battery tabs are available online and through electrical supply houses, sold by the accepted wire size and the tab hole diameter, sometimes listed on catalogs as a "post diameter". Use a size that matches the lead wires.
 
-Bolt-on screw terminals are not recommended for this connection.
+Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes, ask local veteran teams for help, or use vendor-made crimped leads. *Bolt-on screw terminal lugs are not recommended for battery leads.*
 
-Battery Connections
-^^^^^^^^^^^^^^^^^^^^
+Battery Lug Connection
+^^^^^^^^^^^^^^^^^^^^^^^
 
-The terminals must not move after they are torqued (tightened).
-It is a good idea to secure the lugs with a real lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking nut.
-Some batteries come with bolts in the package. They may be replaced with stronger alloy steel bolts.
+A #10 or M5 nut & bolt connect the battery lead lug to the battery tab.
 
-Using a split ring lock washer will not add to joint strength or reliability.
+..warning:: The lug and tab must directly contact, copper to copper: do not put a washer of any kind separating them.
 
-..warning:: The lug and tab must be in direct contact, copper to copper: do not put a washer of any kind separating them.
+These connections must be very tight for reliability. Any movement of the lug while in operation may interrupt robot power, resulting in robot reboots and disconnections lasting 30 seconds or more.
+
+Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking ("nylock") nut. Using a split ring washer will not add to joint strength or reliability and is not required even if one is provided with your battery.
 
 This connection must also be wrapped for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
 
 .. image:: images/robot-battery/heatshrink.png
   :alt: One terminal of an FRC battery fully covered in heatshrink.
 
-
 Battery Chargers
 ^^^^^^^^^^^^^^^^^^^
 
-There are many good COTS "smart" battery chargers with 'maintenance mode' features for 12V SLA batteries.
+There are many good COTS "smart" battery chargers with 'maintenance mode' features designed for 12V SLA batteries.
 
 Chargers used at competition may only use a maximum of 6A per battery. Charging below 6 amps will avoid heat buildup, but take longer.
 
-Teams are required to use SB connectors on chargers used at competitions.
+Teams are required to use Anderson SB connectors on battery chargers used at competitions.
 
-The simplest way to add an SB50 to a COTS charger yourself is to use the original charger clamps on a set of COTS battery leads and then wrap each clamp in electrical tape.
-Alternatively, screw terminals or wire nuts can be used. SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
+The simplest way to add an SB connector to a COTS charger yourself is to use the original charger clamps on a set of COTS leads and then wrap each clamp in electrical tape. Alternatively, screw terminals or wire nuts can be used. SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
 
 ..warning:: Check the polarities with a multimeter before plugging in the first battery.
 
