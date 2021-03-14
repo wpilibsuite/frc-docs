@@ -66,7 +66,7 @@ Battery Chargers
 
 There are many good COTS "smart" battery chargers designed for 12V SLA batteries, rated for 6A or less per battery, with 'maintenance mode' features. Chargers rated over 6A are not allowed in FRC pits.
 
-Chargers used at competition are required to use Anderson SB connectors. Attaching a COTS SB connector battery lead using appropriately sized wire nuts or screw terminals is fast and simple. SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
+Chargers used at competition are required to use Anderson SB connectors. Attaching a COTS SB connector battery lead to the charger leads using appropriately sized wire nuts or screw terminals is fast and simple (be sure to cover any exposed copper with heat shrink or electrical tape). SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
 
 ..warning:: After attaching the SB, double check the charger polarities with a multimeter before plugging in the first battery.
 
@@ -135,7 +135,7 @@ Battery Best Practices
 
 - Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
-- Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty. 
+- Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty.
 
 - Teams should consider purchasing several new batteries each year to help keep their batteries fresh. Elimination matches can require many batteries and there may not be enough time to recharge.
 
