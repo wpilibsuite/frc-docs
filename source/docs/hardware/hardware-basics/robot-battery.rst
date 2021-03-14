@@ -3,7 +3,7 @@
 Robot Battery
 =============
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA [Sealed Lead Acid] AGM [Absorbent Glass Mat] battery, capable of high momentary currents. The Robot Battery assembly includes the COTS battery, lead cables, and SB connector.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA [Sealed Lead Acid] AGM [Absorbent Glass Mat] battery, capable of high momentary currents in excess of 180A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and SB connector.
 
 Battery Safety & Handling
 -------------------------
