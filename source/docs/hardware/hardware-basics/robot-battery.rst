@@ -31,19 +31,38 @@ Battery Construction & Tools
 -----------------------------
 
 Battery Leads
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
-Standard 6AWG, Pink/Red SB50 battery leads with #10 bolted (0.2" diameter bolt hole) crimp lugs often come in the Kit of Parts. Teams are encouraged to use these leads.
+Standard 6AWG copper, Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
 
-Battery lead cables must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. 6AWG is sufficient for almost all robots.
+Lead cables
+~~~~~~~~~~~
+
+Battery lead cables must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity.
+
+Tinned, annealed, or coated copper is allowed. Do not use CCA (copper clad aluminum), aluminum, or other non-copper base metal. The conductor metal is normally printed on the outside of the insulation with the other cable ratings.
+
+Wire size 6AWG is sufficient for almost all robots and fits standard SB50 contacts. A small number of teams adopt larger wire sizes for marginal performance benefits.
+
+Higher strand count wire (sometimes sold as "Flex" or "welding wire") has a smaller bend radius, which makes it easier to route, and a higher fatigue limit. There is no strand count requirement, but 84/25 (84 strand hookup wire) and 259/30 (259 strand welding wire) will both be *much* easier to work with than 19/0.0372 (19 strand hookup wire).
+
+The insulation of the +12V wire must be red, and the ground must be black. There is no explicit insulation temperature rating requirement, but any blackened or damaged insulation means the wire needs to be replaced: off hand, 90C is fine and 105C is plenty. There is no insulation voltage rating requirement, but lower is better in FRC: 120V is plenty, and exceeding 600V adds insulation thickness that increases bend radii with no performance benefit.
+
+SB Connector
+~~~~~~~~~~~~~
 
 The Anderson SB Connector may be the standard Pink/Red SB50, or another Anderson SB connector. Teams are *STRONGLY* recommended to use the Pink/Red SB50 for interoperability: the other colors and sizes of housings will not intermate, and you will be unable to borrow batteries or chargers.
 
-Follow manufacturer's instructions to crimp contacts and assemble the leads into Anderson SB connectors. A small flathead screwdriver can help to insert the contacts (carefully push on the contact, not the wire insulation), or it can help to disengage the internal latch if the contact is in the wrong slot or upside down.
+Follow manufacturer's instructions to crimp contacts and assemble the leads into Anderson SB connectors. Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams for help), or use vendor-made connectors. A small flathead screwdriver can help to insert the contacts (push on the contact, not on the wire insulation), or it can help to disengage the internal latch if the contact is in the wrong slot or upside down.
 
-Bolt-on crimp lugs with 0.2" tab holes (compatible with #10 bolt) battery tabs are available online and through electrical supply houses, sold by the accepted wire size and the tab hole diameter, sometimes listed on catalogs as a "post diameter". Use a size that matches the lead wires.
+Battery Lugs
+^^^^^^^^^^^^^
 
-Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes, ask local veteran teams for help, or use vendor-made crimped leads. *Bolt-on screw terminal lugs are not recommended for battery leads.*
+Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter").
+
+Follow manufacturer's instructions to crimp the lugs. Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams for help), or use vendor-made crimped leads.
+
+Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, check the terminal tightness periodically (at minimum, before each competition weekend).
 
 Battery Lead Lug Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
