@@ -205,26 +205,26 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
 
         public void teleopPeriodic() {
             // Tank drive with a given left and right rates
-            myDrive.tankDrive(leftStick.getY(), rightStick.getY());
+            myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
+            myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
+            myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
             // Tank drive with a given left and right rates
-            myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
+            myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(-driveStick.GetY(), driveStick.GetX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
+            myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
 
 Using the MecanumDrive class to control Mecanum Drive robots
@@ -266,15 +266,15 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(m_stick.getX(), m_stick.getY(), m_stick.getZ());
-            m_robotDrive.drivePolar(m_stick.getX(), m_stick.getY(), m_stick.getZ());
+            m_robotDrive.driveCartesian(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
+            m_robotDrive.drivePolar(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
-            m_robotDrive.drivePolar(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.driveCartesian(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.drivePolar(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
         }
 
 Field-Oriented Driving
