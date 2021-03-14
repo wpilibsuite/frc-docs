@@ -3,13 +3,7 @@
 Robot Battery
 =============
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA AGM battery, capable of high momentary currents.
-
-SLA stands for Sealed Lead Acid, AGM stands for Absorbent Glass Mat.
-
-The Robot Battery assembly includes a COTS battery, with positive and negative lead cables to an Anderson SB connector. The Red/Pink Anderson SB50 is STRONGLY recommended.
-
-Always start your match with a fully charged battery - ask for help if it looks like you won't!
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA [Sealed Lead Acid] AGM [Absorbent Glass Mat] battery, capable of high momentary currents. The Robot Battery assembly includes the COTS battery, lead cables, and SB connector.
 
 Battery Safety & Handling
 -------------------------
@@ -41,7 +35,7 @@ Battery Leads
 
 Standard 6AWG, Pink/Red SB50 battery leads with #10 bolted (0.2" diameter bolt hole) crimp lugs often come in the Kit of Parts. Teams are encouraged to use these leads.
 
-Battery leads must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. 6AWG is sufficient for almost all robots.
+Battery lead cables must be copper, minimum size 6AWG and maximum length 12" - there is no maximum size. 6AWG is sufficient for almost all robots.
 
 The Anderson SB Connector may be the standard Pink/Red SB50, or another Anderson SB connector. Teams are *STRONGLY* recommended to use the Pink/Red SB50 for interoperability: the other colors and sizes of housings will not intermate, and you will be unable to borrow batteries or chargers.
 
@@ -51,18 +45,18 @@ Bolt-on crimp lugs with 0.2" tab holes (compatible with #10 bolt) battery tabs a
 
 Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes, ask local veteran teams for help, or use vendor-made crimped leads. *Bolt-on screw terminal lugs are not recommended for battery leads.*
 
-Battery Lug Connection
-^^^^^^^^^^^^^^^^^^^^^^^
+Battery Lead Lug Connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A #10 or M5 nut & bolt connect the battery lead lug to the battery tab.
 
 ..warning:: The lug and tab must directly contact, copper to copper: do not put a washer of any kind separating them.
 
-These connections must be very tight for reliability. Any movement of the lug while in operation may interrupt robot power, resulting in robot reboots and disconnections lasting 30 seconds or more.
-
 Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking ("nylock") nut. Using a split ring washer will not add to joint strength or reliability and is not required even if one is provided with your battery.
 
-This connection must also be wrapped for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended.
+These connections must be very tight for reliability. Any movement of the lug while in operation may interrupt robot power, resulting in robot reboots and field disconnections lasting 30 seconds or more.
+
+This connection must also be completely covered for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended. High shrink ratios (minimum 3:1, recommend 4:1) will make it easier to apply the heatshrink. Adhesive lined heat shrink is allowed, but not recommended. Be sure *all* the copper is covered - heat shrink may be "touched up" with electrical tape if some copper shows.
 
 .. image:: images/robot-battery/heatshrink.png
   :alt: One terminal of an FRC battery fully covered in heatshrink.
@@ -70,15 +64,11 @@ This connection must also be wrapped for electrical safety; electrical tape will
 Battery Chargers
 ^^^^^^^^^^^^^^^^^^^
 
-There are many good COTS "smart" battery chargers with 'maintenance mode' features designed for 12V SLA batteries.
+There are many good COTS "smart" battery chargers designed for 12V SLA batteries, rated for 6A or less per battery, with 'maintenance mode' features. Chargers rated over 6A are not allowed in FRC pits.
 
-Chargers used at competition may only use a maximum of 6A per battery. Charging below 6 amps will avoid heat buildup, but take longer.
+Chargers used at competition are required to use Anderson SB connectors. Attaching a COTS SB connector battery lead using appropriately sized wire nuts or screw terminals is fast and simple. SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
 
-Teams are required to use Anderson SB connectors on battery chargers used at competitions.
-
-The simplest way to add an SB connector to a COTS charger yourself is to use the original charger clamps on a set of COTS leads and then wrap each clamp in electrical tape. Alternatively, screw terminals or wire nuts can be used. SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
-
-..warning:: Check the polarities with a multimeter before plugging in the first battery.
+..warning:: After attaching the SB, double check the charger polarities with a multimeter before plugging in the first battery.
 
 Some FRC vendors sell chargers with red SB50 connectors pre-attached.
 
@@ -145,14 +135,14 @@ Battery Best Practices
 
 - Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
-- Wait for batteries to cool after the match before recharging at high currents
+- Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty. 
 
 - Teams should consider purchasing several new batteries each year to help keep their batteries fresh. Elimination matches can require many batteries and there may not be enough time to recharge.
 
 .. image:: images/robot-battery/battery-cart.jpg
   :alt: A wooden bookcase like cart for storing and charging batteries.
 
-- A multi bank battery charger allows you to charge more than one battery at a time. Many teams build a robot cart for their batteries and the charger allowing for easy transport and storage.
+- A multi bank battery charger allows you to charge more than one battery at a time. Many teams build a robot cart for their batteries and chargers allowing for easy transport and storage.
 
 - It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.
 
@@ -163,7 +153,7 @@ Battery Best Practices
 
 - Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged. Battery flags can also be easily 3D printed.
 
-- Fastening down the robot-side and charger-side SB connectors will help reduce wire strain and protect electrical parts.
+- Fastening down the robot-side (and charger-side) SB connectors will help reduce wire strain and protect electrical parts.
 
 - Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries.
 
