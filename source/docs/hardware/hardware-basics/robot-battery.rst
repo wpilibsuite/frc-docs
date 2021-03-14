@@ -44,7 +44,7 @@ Wire size 6AWG is sufficient for almost all robots and fits standard SB50 contac
 
 Higher strand count wire (sometimes sold as "Flex" or "welding wire") has a smaller bend radius, which makes it easier to route, and a higher fatigue limit. There is no strand count requirement, but 84/25 (84 strand "flex" hookup wire) and 259/30 (259 strand "welding wire") will both be *much* easier to work with than 19/0.0372 (19 strand hookup wire).
 
-The insulation of the +12V wire must be red, and the ground must be black. There is no explicit insulation temperature rating requirement, but any blackened or damaged insulation means the wire needs to be replaced: off hand, 90C is fine and 105C is plenty. There is no insulation voltage rating requirement, but lower is better in FRC: 120V is plenty, and exceeding 600V adds insulation thickness that increases bend radii with no performance benefit.
+The insulation of the +12V wire must be red, and the ground must be black. There is no explicit insulation temperature rating requirement, but any blackened or damaged insulation means the wire needs to be replaced: off hand, 105C is plenty and lower will work for almost all robots. There is no insulation voltage rating requirement.
 
 SB Connector
 ~~~~~~~~~~~~~
