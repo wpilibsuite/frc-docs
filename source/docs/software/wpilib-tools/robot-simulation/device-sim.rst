@@ -6,7 +6,7 @@ WPILib provides a way to manage simulation device data in the form of the SimDev
 Simulating Core WPILib Device Classes
 -------------------------------------
 
-Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have simulation classes named ``EncoderSim``, ``UltrasonicSim``, etc. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation. Using them outside of simulation is undefined behavior - in the best case they will do nothing, worse cases might crash your code!
+Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have simulation classes named ``EncoderSim``, ``UltrasonicSim``, and so on. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation. Constructing them outside of simulation likely won't interfere with your code, but calling their functions and the like is undefined behavior - in the best case they will do nothing, worse cases might crash your code! Place functional simulation code in simulation-only functions (such as ``simulationPeriodic()``) or wrap them with ``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are ``constexpr`` in C++).
 
 .. note:: This example will use the ``EncoderSim`` class as an example. Use of other simulation classes will be almost identical.
 
@@ -53,7 +53,11 @@ Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXx
 Registering Callbacks
 ^^^^^^^^^^^^^^^^^^^^^
 
-In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. In C++, save this object in the right scope - the callback will be canceled when the object goes out of scope and is destroyed. In Java, keep a reference to the object so it isn't garbage-collected (the callback will be canceled if it is); and call  ``close()`` to cancel the callback. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. In C++, another ``param`` parameter can be used to pass in arbitrary data - in Java, this data should be captured in the lambda. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
+In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
+
+In Java, call ``close()`` on the ``CallbackStore`` object to cancel the callback. Keep a reference to the object so it doesn't get garbage-collected - otherwise the callback will be cancelled by GC. To provide arbitrary data to the callback, capture it in the lambda or use a method reference.
+
+In C++, save the ``CallbackStore`` object in the right scope - the callback will be cancelled when the object goes out of scope and is destroyed. Arbitary data can be passed to the callbacks via the ``param`` parameter.
 
 .. warning:: Attempting to retrieve a value of a type from a ``HALValue`` containing a different type is undefined behavior.
 
@@ -97,7 +101,7 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
 
       frc::sim::SimDeviceSim device{deviceKey, index};
 
-Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object when either the device or field keys are unmatched will return ``null``.
+Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object outside of simulation or when either the device or field keys are unmatched will return ``null`` - this can cause ``NullPointerException``s in Java or undefined behavior in C++.
 
 .. tabs::
    .. code-tab:: java
