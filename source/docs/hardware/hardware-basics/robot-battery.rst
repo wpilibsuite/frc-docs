@@ -3,15 +3,14 @@
 Robot Battery Basics
 ====================
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) AGM (Absorbent Glass Mat) battery, capable of high momentary currents well in excess of 180A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and SB connector.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) AGM (Absorbent Glass Mat) battery, capable of briefly supplying over 180A or arcing over 500A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and Anderson SB connector.
 
 Battery Safety & Handling
 -------------------------
 
-A healthy battery is **always** "On" and the terminals are **always** energized. If the polarities short together - for example, a wrench or aerosol can falls and bridge the gap between two bare terminals, causing all stored energy to be released in a dangerous arc. This risk drives a wide range of best practices: covering terminals in storage, only uncovering and working on one terminal or polarity at a time, only using Battery Leads as complete assemblies with SB contacts fully inserted, and covering the SB connector contacts with "battery tabs" once the Robot Battery is fully charged, among others.
+A healthy battery is **always** "On" and the terminals are **always** energized. If the polarities short together - for example, a wrench or aerosol can falls and bridges the gap between two bare terminals - all the stored energy will be released in a dangerous arc. This risk drives a wide range of best practices, such as covering terminals in storage, only uncovering and working on one terminal or polarity at a time, keeping SB contacts fully inserted in connectors, etc.
 
-**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them.
-Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing! Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
+**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them. Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing! Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
