@@ -33,7 +33,7 @@ Battery Construction & Tools
 Battery Leads
 ^^^^^^^^^^^^^
 
-Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity, and an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors. 
+Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity, and an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
 
 Lead Cables
 ~~~~~~~~~~~
@@ -56,7 +56,7 @@ Follow manufacturer's instructions to crimp contacts and assemble the leads into
 Battery Lugs
 ^^^^^^^^^^^^^
 
-Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard and Flex strand counts in their lug catalogs. Follow manufacturer's instructions to crimp the lugs.
+Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard (~19) and Flex (>80) strand counts in their lug catalogs. Follow manufacturer's instructions to crimp the lugs.
 
 Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal and check the terminal tightness periodically (at minimum, before each competition weekend,).
 
@@ -94,9 +94,9 @@ Battery Evaluation Tools
 
 If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY. Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off after a tough match, and being able to accept more charge.
 
-**Driver Station Display And Log**
+**Driver Station Display and Log**
 
-When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software. After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer: Using the Graph Display>`
+When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software. After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer:Using the Graph Display>`
 
 **Voltmeter** or **Multimeter**
 
@@ -152,7 +152,7 @@ Battery Best Practices
 
 - Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
 
-- Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made connectors.
+- Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made Battery Leads.
 
 - Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty.
 
