@@ -3,20 +3,20 @@
 Robot Battery
 =============
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA [Sealed Lead Acid] AGM [Absorbent Glass Mat] battery, capable of high momentary currents in excess of 180A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and SB connector.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) AGM (Absorbent Glass Mat) battery, capable of high momentary currents well in excess of 180A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and SB connector.
 
 Battery Safety & Handling
 -------------------------
 
-**DO NOT CARRY A BATTERY BY THE CABLES**, and always avoid pulling by them.
-Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing!
+A healthy battery is **ALWAYS** "On" and the terminals are **always** energized. If the polarities short together - for example, a wrench or aerosol can falls and bridges the gap between two bare terminals - they will release all their stored energy in a big, dangerous arc. This risk drives a wide range of best practices: covering terminals in storage, only uncovering and working on one terminal or polarity at a time, only using Battery Leads as complete assemblies with SB contacts fully inserted, and covering the SB connector contacts with "battery tabs" once the Robot Battery is fully charged, among others.
+
+**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them.
+Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing! Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
 
-Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
-
-Dropping the batteries can bend the internal plates, create bulges, or in the worst case - crack the battery case open. While we do use AGM [absorbant glass mat] technology for safety, when a cell is punctured it still will leak some liquid. This is why FIRST recommends teams have a battery spill kit available.
+Dropping the batteries can bend the internal plates and cause performance issues, create bulges, or in the worst case - crack the battery case open. While we do use AGM technology for safety, when a cell is punctured it may still leak a small amount of battery acid. This is one of the reasons FIRST recommends teams have a battery spill kit available.
 
 Finally, certain older battery chargers without "maintenance mode" features can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
 
@@ -33,7 +33,7 @@ Battery Construction & Tools
 Battery Leads
 ^^^^^^^^^^^^^
 
-Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity, and an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
+Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity, and an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors. 
 
 Lead Cables
 ~~~~~~~~~~~
@@ -51,16 +51,14 @@ SB Connector
 
 The Anderson SB Connector may be the standard Pink/Red SB50, or another Anderson SB connector. Teams are *STRONGLY* recommended to use the Pink/Red SB50 for interoperability: the other colors and sizes of housings will not intermate, and you will be unable to borrow batteries or chargers.
 
-Follow manufacturer's instructions to crimp contacts and assemble the leads into Anderson SB connectors. Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams for help), or use vendor-made connectors. A small flathead screwdriver can help to insert the contacts (push on the contact, not on the wire insulation), or it can help to disengage the internal latch if the contact is in the wrong slot or upside down.
+Follow manufacturer's instructions to crimp contacts and assemble the leads into Anderson SB connectors. A small flathead screwdriver can help to insert the contacts (push on the contact, not on the wire insulation), or it can help to disengage the internal latch if the contact is in the wrong slot or upside down.
 
 Battery Lugs
 ^^^^^^^^^^^^^
 
-Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard and Flex strand counts in their lug catalogs.
+Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard and Flex strand counts in their lug catalogs. Follow manufacturer's instructions to crimp the lugs.
 
-Follow manufacturer's instructions to crimp the lugs. Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made crimped leads.
-
-Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal and check the terminal tightness periodically (at minimum, before each competition weekend).
+Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal and check the terminal tightness periodically (at minimum, before each competition weekend,).
 
 Battery Lead Lug Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,24 +90,26 @@ Some FRC vendors sell chargers with red SB50 connectors pre-attached.
 Battery Evaluation Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Voltmeter** or **Multimeter**
-
-A voltage reading will give you a good snapshot of what the Voc (Voltage open circuit, or "float voltage") is. Anything from 13.0 to 14.0 may show up for charged batteries, but depends as much on the individual battery as it does on real state of charge. Below 13V, it's worth trying to charge it more.
-
 **Battery Charger**
 
-If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY.
+If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY. Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off after a tough match, and being able to accept more charge.
 
-Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off after a tough match, and being able to accept more charge.
+**Driver Station Display And Log**
+
+When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software. After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer: Using the Graph Display>`
+
+**Voltmeter** or **Multimeter**
+
+A voltage reading directly at the battery will give you a snapshot of what the Voc (Voltage open circuit, or "float voltage") is in the "Unloaded" state. Anything from 13.0 to 14.0 may show up for charged batteries, but depends as much on the individual battery as it does on real state of charge. Below 13V, it's worth trying to charge it more, but in general this is not a recommended method for understanding battery health: the open circuit voltage is not as useful as the combination of internal resistance and voltages at specific loads provided by a Load Tester (or Battery Analyzer).
 
 **Load Tester**
 
-A battery load tester can be used as a quick way to determine the detailed readiness of a battery. It may provide information like: open-load voltage, voltage under load, internal resistance, and state of charge. These metrics can be used to quickly confirm that a battery is ready for a match and even possibly help to identify some long term problems with the battery.
+A battery load tester can be used as a quick way to determine the detailed readiness of a battery. It may provide information like: open-load voltage, voltage under load, internal resistance, and state of charge. These metrics can be used to quickly confirm that a battery is ready for a match and even help to identify some long term problems with the battery.
 
 .. image:: images/robot-battery/beak.png
   :alt: Output screen of a common load tester showing properties of the battery.
 
-Ideal internal resistance should be less than 0.015 Ohms. The manufacturer specification for most batteries is 0.011 Ohms. If a battery gets higher than 0.02 Ohms it is a good idea to consider not using that battery for competition matches.
+Ideal internal resistance should be less than 0.015 Ohms. The manufacturer specification for most batteries is 0.011 Ohms. If a battery gets higher than 0.020 Ohms it is a good idea to consider not using that battery for competition matches.
 
 If a battery shows significantly lower voltages at the higher test current loads, it may not be done charging, or it may need to be retired.
 
@@ -122,9 +122,9 @@ Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc).
 
 Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-Depleted batteries will read between 11.5 and 12.5 volts on an idle robot. While batteries can be run lower, it will risk permanent battery damage.
+Depleted batteries will read between 11.7 and 12.5 volts on an idle robot. Try to swap the batteries before they start reaching brownout safety thresholds, as frequently entering low voltage ranges risks permanent battery damage.
 
-(SLA battery voltage and current performance also depends on temperature: cool batteries are happy batteries.)
+Battery voltage and current also depends on temperature: cool batteries are happy batteries.
 
 Battery Characterization
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -151,6 +151,8 @@ Battery Best Practices
 ----------------------
 
 - Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/roborio-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
+
+- Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made connectors.
 
 - Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty.
 
