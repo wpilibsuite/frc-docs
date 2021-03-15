@@ -17,7 +17,7 @@ The tape the should be covering the battery connection in these examples has bee
 
 Wiggle battery harness connector. Often these are loose because the screws loosen, or sometimes the crimp is not completely closed.  You will only catch the really bad ones though because often the electrical tape stiffens the connection to a point where it feels stiff. Using a voltmeter or Battery Beak will help with this.
 
-Apply considerable force onto the battery cable at 90 degrees to try to move the direction of the cable leaving the battery, if successful the connection was not tight enough to begin with and it should be redone.  This :ref:`article <docs/hardware/hardware-basics/robot-battery:Robot Battery>` has more detailed battery information.
+Apply considerable force onto the battery cable at 90 degrees to try to move the direction of the cable leaving the battery, if successful the connection was not tight enough to begin with and it should be redone.  This :ref:`article <docs/hardware/hardware-basics/robot-battery:Robot Battery Basics>` has more detailed battery information.
 
 Securing the Battery to the Robot
 ---------------------------------
