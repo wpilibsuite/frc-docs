@@ -5,7 +5,7 @@ An important aspect of working in a team environment is being able to test code 
 
 `GitHub Actions <https://github.com/features/actions>`_ is a service that allows for teams and individuals to build and run unit tests on code on various branches and on pull requests. These types of services are more commonly known as "Continuous Integration" services. This tutorial will show you how to setup GitHub Actions on robot code projects.
 
-.. note:: This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this :doc:`introduction guide <git-getting-started>`.
+.. note:: This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this :doc:`introduction guide </docs/software/basic-programming/git-getting-started>`.
 
 Creating the Action
 -------------------
