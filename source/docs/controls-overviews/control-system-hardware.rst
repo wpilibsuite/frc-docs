@@ -133,7 +133,7 @@ SPARK MAX Motor Controller
   :alt: SPARK MAX Motor Controller
   :width: 400
 
-The `SPARK MAX Motor Controller <https://www.revrobotics.com/rev-11-2158/>`__ from REV Robotics has advanced brushed and brushless DC motor control including the REV Robotics NEO Brushless Motor.  The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only).
+The `SPARK MAX Motor Controller <https://www.revrobotics.com/rev-11-2158/>`__ is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the `SPARK MAX User's Manual <https://docs.revrobotics.com/sparkmax/>`__.
 
 TalonFX Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,7 +153,7 @@ SPARK Motor Controller
 
 .. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
-The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions.
+The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions. For more information, see the `SPARK User's Manaul <https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__.
 
 Victor SP
 ^^^^^^^^^
