@@ -14,6 +14,7 @@ Creating Simulation Device objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Simulation device object can be constructed in two ways:
+
 - a constructor that accepts the regular hardware object.
 - a constructor or factory method that accepts the port/index/channel number that the device is connected to. These would be the same number that was used to construct the regular hardware object. This is especially useful for :doc:`unit testing <unit-testing>`.
 
