@@ -55,9 +55,9 @@ Registering Callbacks
 
 In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
 
-In Java, call ``close()`` on the ``CallbackStore`` object to cancel the callback. Keep a reference to the object so it doesn't get garbage-collected - otherwise the callback will be cancelled by GC. To provide arbitrary data to the callback, capture it in the lambda or use a method reference.
+In Java, call ``close()`` on the ``CallbackStore`` object to cancel the callback. Keep a reference to the object so it doesn't get garbage-collected - otherwise the callback will be canceled by GC. To provide arbitrary data to the callback, capture it in the lambda or use a method reference.
 
-In C++, save the ``CallbackStore`` object in the right scope - the callback will be cancelled when the object goes out of scope and is destroyed. Arbitary data can be passed to the callbacks via the ``param`` parameter.
+In C++, save the ``CallbackStore`` object in the right scope - the callback will be canceled when the object goes out of scope and is destroyed. Arbitrary data can be passed to the callbacks via the ``param`` parameter.
 
 .. warning:: Attempting to retrieve a value of a type from a ``HALValue`` containing a different type is undefined behavior.
 
