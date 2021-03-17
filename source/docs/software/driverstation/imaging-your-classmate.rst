@@ -13,7 +13,7 @@ Prerequisites
 1. E09, E11, E12, or E14 Classmate computer or Acer ES1 computer
 2. 16GB or larger USB drive
 3. 7-Zip software installed (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
-4. RMprepUSB software installed (download `here <https://www.rmprepusb.com/documents/release-2-0>`__). Scroll down the page and select the stable (Full) version download link. As of the writing of this document, the current stable version is 2.1.743e.
+4. RMprepUSB software installed (download `here <https://rmprepusb.com/>`__). Scroll down the page and select the stable (Full) version download link. As of the writing of this document, the current stable version is 2.1.745.
 
 Download the Computer Image
 ---------------------------
