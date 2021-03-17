@@ -107,3 +107,5 @@
 "docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst" "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst"
 "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-pidsubsystem-code.rst" "docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-writing-pidsubsystem-code.rst"
 "docs/software/wpilib-tools/robot-simulation/video-walkthrough.rst" "docs/software/wpilib-tools/robot-simulation/index.rst"
+"docs/software/basic-programming/code-formatting.rst" "docs/software/advanced-gradlerio/code-formatting.rst"
+"docs/software/basic-programming/robot-code-ci.rst" "docs/software/advanced-gradlerio/robot-code-ci.rst"
