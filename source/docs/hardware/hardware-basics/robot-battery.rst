@@ -64,7 +64,7 @@ Battery Lead Lug Connection
 
 A #10 or M5 nut & bolt connect the battery lead lug to the battery tab.
 
-..warning:: The lug and tab must directly contact, copper to copper: do not put a washer of any kind separating them.
+.. warning:: The lug and tab must directly contact, copper to copper: do not put a washer of any kind separating them.
 
 Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking ("nylock") nut. Using a split ring washer will not add to joint strength or reliability and is not required even if one is provided with your battery.
 
