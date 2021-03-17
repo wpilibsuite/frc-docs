@@ -82,7 +82,7 @@ There are many good COTS "smart" battery chargers designed for 12V SLA batteries
 
 Chargers used at competition are required to use Anderson SB connectors. Attaching a COTS SB connector battery lead to the charger leads using appropriately sized wire nuts or screw terminals is fast and simple (be sure to cover any exposed copper with heat shrink or electrical tape). SB Connector Contacts are also available for smaller wire sizes, if the team has crimping capability.
 
-..warning:: After attaching the SB, double check the charger polarities with a multimeter before plugging in the first battery.
+.. warning:: After attaching the SB, double check the charger polarities with a multimeter before plugging in the first battery.
 
 Some FRC vendors sell chargers with red SB50 connectors pre-attached.
 
