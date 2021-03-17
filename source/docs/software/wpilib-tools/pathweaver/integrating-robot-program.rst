@@ -36,6 +36,6 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
        frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
 
-.. note:: In the examples above, ``YourPath`` should be replaced with the name of your path.
+In the examples above, ``YourPath`` should be replaced with the name of your path.
 
 .. warning:: Loading a PathWeaver JSON from file can take up to 7 seconds per file so it is highly recommended that the robot load these paths on startup.
