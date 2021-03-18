@@ -38,4 +38,4 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
 In the examples above, ``YourPath`` should be replaced with the name of your path.
 
-.. warning:: Loading a PathWeaver JSON from file in Java can take up to 7 seconds per file so it is highly recommended that the robot load these paths on startup.
+.. warning:: Loading a PathWeaver JSON from file in Java can take multiple seconds so it is highly recommended that the robot load these paths on startup.
