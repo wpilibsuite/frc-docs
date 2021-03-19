@@ -39,6 +39,7 @@ Turkish
 .. toptranslators:: wpilibsuite/frc-docs-translations
    :locale: tr
    :limit: 20
+   :order: numerical
    :hide_contributions: true
 
 Hebrew
