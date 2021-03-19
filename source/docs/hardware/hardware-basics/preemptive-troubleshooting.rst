@@ -13,7 +13,7 @@ Check Battery Connections
 .. image:: images/preemptive-troubleshooting/preCheckBatt.png
   :width: 500
 
-The tape the should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
+The tape that should be covering the battery connection in these examples has been removed to illustrate what is going on. On your robots, the connections should be covered.
 
 Wiggle battery harness connector. Often these are loose because the screws loosen, or sometimes the crimp is not completely closed.  You will only catch the really bad ones though because often the electrical tape stiffens the connection to a point where it feels stiff. Using a voltmeter or Battery Beak will help with this.
 

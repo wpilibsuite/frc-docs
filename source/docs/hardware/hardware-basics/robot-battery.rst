@@ -15,9 +15,9 @@ A healthy battery is **always** "On" and the terminals are **always** energized.
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
 
-Dropping the batteries can bend the internal plates and cause performance issues, create bulges, or in the worst case - crack the battery case open. While we do use AGM technology for safety, when a cell is punctured it may still leak a small amount of battery acid. This is one of the reasons FIRST recommends teams have a battery spill kit available.
+Dropping the batteries can bend the internal plates and cause performance issues, create bulges, or even crack the battery case open. While we do use AGM technology for safety, when a cell is punctured it may still leak a small amount of battery acid. This is one of the reasons FIRST recommends teams have a battery spill kit available.
 
-Finally, certain older battery chargers without "maintenance mode" features can *overcharge* the battery, resulting in boiling off some of the battery acid - another reason for a spill kit.
+Finally, certain older battery chargers without "maintenance mode" features can *overcharge* the battery, resulting in boiling off some of the battery acid.
 
 .. image:: images/robot-battery/boiled.jpg
   :alt: An FRC battery that was boiled by a high current dumb charger.
@@ -55,9 +55,9 @@ Follow manufacturer's instructions to crimp contacts and assemble the leads into
 Battery Lugs
 ^^^^^^^^^^^^^
 
-Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard (~19) and Flex (>80) strand counts in their lug catalogs. Follow manufacturer's instructions to crimp the lugs.
+Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard (~19) and Flex (>80) strand counts in their lug catalogs. Some vendors also offer right angle lugs, in addition to more common straight styles. Follow manufacturer's instructions to crimp the lugs.
 
-Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal and check the terminal tightness periodically (at minimum, before each competition weekend,).
+Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal. Check the terminal tightness frequently because they may loosen over time.
 
 Battery Lead Lug Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,11 +66,17 @@ A #10 or M5 nut & bolt connect the battery lead lug to the battery tab.
 
 .. warning:: The lug and tab must directly contact, copper to copper: do not put a washer of any kind separating them.
 
+.. image:: images/robot-battery/tab-contact.jpg
+  :alt: One terminal of an FRC battery with socket head bolt and nylon locking (nylock) nut.
+
 Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking ("nylock") nut. Using a split ring washer will not add to joint strength or reliability and is not required even if one is provided with your battery.
+
+.. image:: images/robot-battery/loose-nordlock.jpg
+  ::alt:: One terminal of an FRC battery with socket head bolt, nordlock locking nuts, and nylon locking (nylock) nut. 
 
 These connections must be very tight for reliability. Any movement of the lug while in operation may interrupt robot power, resulting in robot reboots and field disconnections lasting 30 seconds or more.
 
-This connection must also be completely covered for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended. High shrink ratios (minimum 3:1, recommend 4:1) will make it easier to apply the heatshrink. Adhesive lined heat shrink is allowed, but not recommended. Be sure *all* the copper is covered - heat shrink may be "touched up" with electrical tape if some copper shows.
+This connection must also be completely covered for electrical safety; electrical tape will work, but heatshrink that fits over the entire connection is recommended. High shrink ratios (minimum 3:1, recommend 4:1) will make it easier to apply the heatshrink. Adhesive lined heat shrink is allowed. Be sure *all* the copper is covered! Heat shrink must be "touched up" with electrical tape if some copper shows.
 
 .. image:: images/robot-battery/heatshrink.png
   :alt: One terminal of an FRC battery fully covered in heatshrink.
@@ -140,7 +146,7 @@ At the standard 7.5 amps test load, competition batteries should have at least a
 Battery Longevity
 ^^^^^^^^^^^^^^^^^^^
 
-A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down to less than 6 volts) will damage it.
+A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down) will damage it.
 
 Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
 
@@ -153,7 +159,7 @@ Battery Best Practices
 
 - Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made Battery Leads.
 
-- Wait for batteries to cool after the match before recharging - the case should not be warm to the touch, fifteen minutes is usually plenty.
+- Wait for batteries to cool after the match before recharging: the case should not be warm to the touch, fifteen minutes is usually plenty.
 
 - Teams should consider purchasing several new batteries each year to help keep their batteries fresh. Elimination matches can require many batteries and there may not be enough time to recharge.
 
@@ -171,8 +177,11 @@ Battery Best Practices
 
 - Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged. Battery flags can also be easily 3D printed.
 
-- Fastening down the robot-side (and charger-side) SB connectors will help reduce wire strain and protect electrical parts.
-
 - Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries.
 
 - Some teams sew battery carrying straps from old seatbelts or other flat nylon that fit around the battery to help prevent carrying by leads.
+
+- Cable tie edge clips can be used with 90 degree crimp lugs to strain relieve battery leads. 
+
+.. image:: images/robot-batter/edge-clips.png
+  :alt: An example showing edge clips with zipties holding leads on a battery.
