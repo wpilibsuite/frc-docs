@@ -183,5 +183,5 @@ Battery Best Practices
 
 - Cable tie edge clips can be used with 90 degree crimp lugs to strain relieve battery leads.
 
-.. image:: images/robot-batter/edge-clips.png
+.. image:: images/robot-battery/edge-clip.png
   :alt: An example showing edge clips with zipties holding leads on a battery.
