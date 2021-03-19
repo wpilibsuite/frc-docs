@@ -11,4 +11,5 @@ Robot Simulation
    /docs/software/wpilib-tools/glass/field2d-widget
    /docs/software/wpilib-tools/glass/plots
    physics-sim
+   device-sim
    unit-testing
