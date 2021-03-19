@@ -7,6 +7,7 @@ Simple CameraServer Program
 The following program starts automatic capture of a USB camera like the Microsoft LifeCam that is connected to the roboRIO. In this mode, the camera will capture frames and send them to the dashboard. To view the images, create a CameraServer Stream Viewer widget using the "View", then "Add" menu in the dashboard. The images are unprocessed and just forwarded from the camera to the dashboard.
 
 .. image:: images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
+  :alt: By going to View then "Add..." then "CameraServer Stream Viewer" SmartDashboard adds a stream viewer widget.
 
 .. tabs::
 

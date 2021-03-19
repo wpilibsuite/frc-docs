@@ -30,6 +30,7 @@ What is State-Space?
 Recall that 2D space has two axes: x and y. We represent locations within this space as a pair of numbers packaged in a vector, and each coordinate is a measure of how far to move along the corresponding axis. State-space is a `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ with an axis for each state variable, and we represent locations within it the same way we do for 2D space: with a list of numbers in a vector. Each element in the vector corresponds to a state of the system. This example shows two example state vectors in the state-space of an elevator model with the states :math:`[\text{position}, \text{velocity}]`:
 
 .. image:: images/state-space-graph.png
+    :alt: Two vectors in state space with their corresponding arrows.
 
 In this image, the vectors representing states in state-space are arrows. From now on these vectors will be represented simply by a point at the vector's tip, but remember that the rest of the vector is still there.
 
@@ -95,6 +96,7 @@ A `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ can help giv
 To trace a potential trajectory that a system could take through state-space, choose a point to start at and follow the arrows around. In this example, we might start at :math:`[-2, 0]`. From there, the velocity increases as we swing through vertical and starts to decrease until we reach the opposite extreme of the swing. This cycle of spinning about the origin repeats indefinitely.
 
 .. image:: images/pendulum-markedup.jpg
+   :alt: Pendulum Phase Plot with arrows all around going roughly in a circle.
 
 Note that near the edges of the phase portrait, the X axis wraps around as a rotation of :math:`\pi` radians counter clockwise and a rotation of :math:`\pi` radians clockwise will end at the same point.
 
@@ -108,6 +110,7 @@ This phase portrait shows the "open loop" responses of the system -- that is, ho
 Looking at our phase portrait from before, we can see that at :math:`(\frac{\pi}{2}, 0)` in state space, gravity is pulling the pendulum down with some torque T, and producing some downward angular acceleration with magnitude :math:`\frac{\tau}{I}`, where I is angular :term:`moment of inertia` of the pendulum. If we want to create an equilibrium at our :term:`reference` of :math:`(\frac{\pi}{2}, 0)`, we would need to apply an :term:`input` can counteract the system's natural tendency to swing downward. The goal here is to solve the equation :math:`\mathbf{0 = Ax + Bu}` for :math:`\mathbf{u}`. Below is shown a phase portrait where we apply a constant :term:`input` that opposes the force of gravity at :math:`(\frac{\pi}{2}, 0)`:
 
 .. image:: images/pendulum-balance.png
+   :alt: Pendulum phase plot with equilibrium at (pi/2, 0).
 
 Feedback Control
 ~~~~~~~~~~~~~~~~
@@ -126,6 +129,7 @@ Let's show an example of this control law in action. We'll use the pendulum syst
 To add some feedback, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where our :term:`input` to the pendulum is angular acceleration. This K would mean that for every radian of position :term:`error`, the angular acceleration would be 2 radians per second squared; similarly, we accelerate by 2 radians per second squared for every radian per second of :term:`error`. Try following an arrow from somewhere in state-space inwards -- no matter the initial conditions, the state will settle at the :term:`reference` rather than circle endlessly with pure feedforward.
 
 .. image:: images/pendulum-closed-loop.png
+   :alt: Closed loop pendulum phase plot with reference at (pi/2, 0).
 
 But how can we choose an optimal :term:`gain` matrix K for our system? While we can manually choose :term:`gains <gain>` and simulate the system response or tune it on-robot like a PID controller, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
 
@@ -207,6 +211,7 @@ Let's adjust :math:`\mathbf{q}` and :math:`\mathbf{r}`. We know that increasing 
 The following graph shows the flywheel's angular velocity and applied voltage over time with two different :term:`gain`\s. We can see how a higher :term:`gain` will make the system reach the reference more quickly (at t = 0.8 seconds), while keeping our motor saturated at 12V for longer. This is exactly the same as increasing the P gain of a PID controller by a factor of ~8x.
 
 .. image:: images/flywheel-lqr-ex.jpg
+   :alt: Flywheel velocity and voltage over time.
 
 LQR and Measurement Latency Compensation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -223,6 +228,7 @@ However, we can model our controller to control where the system's :term:`state`
 Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially advances the gains by one timestep. In this case, we multiply by :math:`\left(\mathbf{A} - \mathbf{BK}\right)^{\text{delay} / dt}` to advance the gains by measurement's delay.
 
 .. image:: images/latency-comp-lqr.jpg
+   :alt: Flywheel velocity and voltage with dt=5.0ms and a 10.0ms delay.
 
 .. note:: This can have the effect of reducing :math:`\mathbf{K}` to zero, effectively disabling feedback control.
 
@@ -251,5 +257,6 @@ Linearization
 Linearization is a tool used to approximate nonlinear functions and state-space systems using linear ones. In two-dimensional space, linear functions are straight lines while nonlinear functions curve. A common example of a nonlinear function and its corresponding linear approximation is :math:`y=\sin{x}`. This function can be approximated by :math:`y=x` near zero. This approximation is accurate while near :math:`x=0`, but looses accuracy as we stray further from the linearization point. For example, the approximation :math:`\sin{x} \approx x` is accurate to within 0.02 within 0.5 radians of :math:`y = 0`, but quickly loses accuracy past that. In the following picture, we see :math:`y =\sin{x}`, :math:`y=x` and the difference between the approximation and the true value of :math:`\sin{x}` at :math:`x`.
 
 .. image:: images/linear-sin-x.jpg
+   :alt: Three plots showing sin(x), x, and sin(x) - x.
 
 We can also linearize state-space systems with nonlinear :term:`dynamics`. We do this by picking a point :math:`\mathbf{x}` in state-space and using this as the input to our nonlinear functions. Like in the above example, this works well for states near the point about which the system was linearized, but can quickly diverge further from that state.

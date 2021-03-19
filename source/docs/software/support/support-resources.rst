@@ -22,11 +22,7 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 -  `NI FRC Community Discussion Section <https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=discussions>`__ (roboRIO, LabVIEW and Driver Station software questions)
 -  `FIRST Inspires Control System Forum <https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/control-system?f=1338>`__ (wiring, hardware and Driver Station questions)
 -  `FIRST Inspires Programming Forum <https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/programming-aa>`__ (programming questions for C++, Java, or LabVIEW)
-
-NI Phone Support
-----------------
-
-Have a LabVIEW, roboRIO, or Driver Station question? NI provides phone support for FRC teams during the build season at `+1 (866) 511-6285 <tel:+18665116285>`__ 1:00-7:00 PM CST Monday - Friday.
+- `NI FRC Support Forum <https://forums.ni.com/t5/Support/ct-p/Support>`__
 
 CTRE Support
 ------------

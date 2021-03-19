@@ -17,6 +17,7 @@ USB Connection
 ~~~~~~~~~~~~~~
 
 .. image:: images/imaging-your-roborio/roborio-usb-client.svg
+   :alt: Highlights the USB Type B input at the top of the roboRIO.
 
 Connect a USB cable from the roboRIO USB Device port to the PC. This requires a USB Type A male (standard PC end) to Type B male cable (square with 2 cut corners), most commonly found as a printer USB cable.
 
@@ -31,6 +32,7 @@ Launching the Imaging Tool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-roborio/launching-the-imaging-tool.png
+   :alt: The roboRIO Imaging Tool desktop shortcut.
 
 The roboRIO imaging tool and latest image are installed with the NI FRC\ |reg| Game Tools. Launch the imaging tool by double clicking on the shortcut on the Desktop. If you have difficulties imaging your roboRIO, you may need to try right-clicking on the icon and selecting Run as Administrator instead.
 
@@ -40,7 +42,7 @@ roboRIO Imaging Tool
 ^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-roborio/roborio-imaging-tool.png
-
+   :alt: The roboRIO Imaging Tool main screen.
 
 After launching, the roboRIO Imaging Tool will scan for available roboRIOs and indicate any found in the top left box. The bottom left box will show information and settings for the roboRIO currently selected. The right hand pane contains controls for modifying the roboRIO settings:
 
@@ -52,6 +54,7 @@ Updating Firmware
 ~~~~~~~~~~~~~~~~~
 
 .. image:: images/imaging-your-roborio/updating-firmware.png
+   :alt: Numbers identifying the different parts of the Imaging Tool main screen for changing firmware.
 
 roboRIO firmware must be at least v5.0 to work with the 2019 or later image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
@@ -67,6 +70,7 @@ Imaging the roboRIO
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-roborio/imaging-the-roborio.png
+   :alt: Numbers identifying the different parts of the Imaging Tool main screen for formatting the target.
 
 1. Make sure the roboRIO is selected in the top left pane
 2. Select Format Target in the right pane
@@ -78,6 +82,7 @@ Imaging Progress
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-roborio/imaging-progress.png
+   :alt: Progress Bar along the bottom shows how long till completion.
 
 The imaging process will take approximately 3-10 minutes. A progress bar in the bottom left of the window will indicate progress.
 
@@ -85,6 +90,7 @@ Imaging Complete
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-roborio/imaging-complete.png
+   :alt: Dialog that pops up when imaging is complete listing IP address and DNS name.
 
 When the imaging completes you should see the dialog above. Click Ok, then click the Close button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
 

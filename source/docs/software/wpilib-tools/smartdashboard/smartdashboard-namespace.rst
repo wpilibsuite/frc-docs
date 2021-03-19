@@ -11,6 +11,7 @@ SmartDashboard Data Values
 --------------------------
 
 .. image:: images/smartdashboard-namespace/data-values.png
+  :alt: The SmartDashboard keys in NetworkTables always begin with "/SmartDashboard/*"
 
 SmartDashboard values are created with key names that begin with ``SmartDashboard/``. The above values viewed with OutlineViewer correspond to data put to the SmartDashboard with the following statements:
 
@@ -30,6 +31,7 @@ View of SmartDashboard
 ----------------------
 
 .. image:: images/smartdashboard-namespace/view-smartdashboard.png
+  :alt: SmartDashboard display of the values generated in the code above.
 
 The code from the previous step generates the table values as shown and the SmartDashboard display as shown here. The numbers correspond to the NetworkTable variables shown in the previous step.
 
@@ -37,6 +39,7 @@ LiveWindow Data Values
 ----------------------
 
 .. image:: images/smartdashboard-namespace/livewindow-data-values.png
+  :alt: Viewing all of the LiveWindow data in SmartDashboard when in Test mode.
 
 LiveWindow data is automatically grouped by subsystem. The data is viewable in the SmartDashboard when the robot is in Test mode (set on the Driver Station). If you are not writing a command based program, you can still cause sensors and actuators to be grouped for easy viewing by specifying the subsystem name. In the above display you can see the key names and the resultant output in Test mode on the SmartDashboard. All the strings start with ``/LiveWindow`` then the Subsystem name, then a group of values that are used to display each element. The code that generates this LiveWindow display is shown below:
 

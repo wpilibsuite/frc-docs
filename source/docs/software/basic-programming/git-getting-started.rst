@@ -62,36 +62,43 @@ Creating a GitHub Account
 
 Go ahead and create a GitHub account by visiting the `website <https://github.com>`_ and following the own screen prompts.
 
-.. image:: images/image1.png
+.. image:: images/git-getting-started/create-account.png
+   :alt: How to create a new GitHub account.
 
 Local Creation
 ~~~~~~~~~~~~~~
 
 After creating and verifying your account, you'll want to visit the homepage. It'll look similar to the shown image.
 
-.. image:: images/image2.png
+.. image:: images/git-getting-started/homepage.png
+   :alt: Showing the newly created account homepage.
 
 Click the plus icon in the top right.
 
-.. image:: images/image3.png
+.. image:: images/git-getting-started/plus.png
+   :alt: Location of the plus button.
 
 Then click *"New Repository"*
 
-.. image:: images/image4.png
+.. image:: images/git-getting-started/new-repository.png
+   :alt: Creating a new menu after clicking the plus button.
 
 Fill out the appropriate information, and then click *"Create repository"*
 
-.. image:: images/image5.png
+.. image:: images/git-getting-started/create-repository.png
+   :alt: Showing the "create repository" button
 
 You should see a screen similar to this
 
-.. image:: images/image6.png
+.. image:: images/git-getting-started/quick-setup.png
+   :alt: The quick setup screen after creating a repository.
 
 .. note:: The keyboard shortcut :kbd:`Ctrl+~` can be used to open a terminal in Visual Studio Code.
 
 Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
-.. image:: images/image7.png
+.. image:: images/git-getting-started/powershell.png
+   :alt: An empty powershell window.
 
 If a directory is empty, a file needs to be created in order for git to have something to track. In the below Empty Directory example, we created a file called ``README.md`` with the contents of ``# Example Repo``. For FRC\ |reg| Robot projects, the below Existing Project commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java:Creating a New WPILib Project>`. More details on the various commands can be found in the subsequent sections.
 
@@ -184,6 +191,7 @@ Branches
 Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
 
 .. image:: diagrams/branches.drawio.svg
+   :alt: A branch workflow state diagram.
 
 In the above example, main was branched (or duplicated) into the branch Feature 1 and someone checked out the branch, creating a local copy. Then, someone committed (or uploaded) their changes, merging them into the branch Feature 1. You are "merging" the changes from one branch into another.
 
@@ -207,6 +215,7 @@ In scenarios where you want to copy one branches history into another, you can m
 It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
 
 .. image:: diagrams/merge-conflict.drawio.svg
+   :alt: A merge workflow state diagram.
 
 However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
 

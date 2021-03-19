@@ -1,7 +1,7 @@
 How To Toggle Between Two Camera Modes
 ======================================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 This code shows how to use a button to toggle between two distinct camera modes. The code consists of four stages.
 

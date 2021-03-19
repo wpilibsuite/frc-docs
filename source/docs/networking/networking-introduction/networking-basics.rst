@@ -9,6 +9,7 @@ What is an IP Address?
 An IP address is a unique string of numbers, separated by periods that identifies each device on a network. Each IP address is divided up into 4 sections (octets) ranging from 0-255.
 
 .. image:: images/networking-basics/ip-address-parts.png
+   :alt: The octet breakdown of an IP address and how it totals 4 bytes.
 
 As shown above, this means that each IP address is a 32-bit address meaning there are 2\ :sup:`32` addresses, or nearly 4,300,000,000 addresses possible. However, most of these are used publicly for things like web servers.
 
@@ -37,6 +38,7 @@ These reserved ranges let us assign one "unreserved IP Address" to an entire hou
 then passing the returned data back to the private IP that requested it. This allows us to use the same reserved IP addresses for many local networks, without causing any conflicts. An image of this process is presented below.
 
 .. image:: diagrams/nat.drawio.svg
+   :alt: Devices on the private network send their traffic through the NAT device to communicate to the outside network and vice versa.
 
 .. note::
    For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
@@ -84,6 +86,7 @@ While on the field, the team should not notice any issues with having devices se
 In the pits, a team may encounter issues with mixing Static and DHCP devices for the following reason. As mentioned above, DHCP devices will fall back to a link-local address (``169.254.xx.yy``) if a server isn’t present. For static devices, the IP address will always be the same. If the DHCP server is not present and the roboRIO, driver station, and laptop fall back to link-local addresses, the statically set devices in the 10.TE.AM.xx range will be in a different network and not visible to those with link-local addresses. A visual description of this is provided below:
 
 .. image:: diagrams/mixing-static-dynamic.drawio.svg
+   :alt: How you can't mix link-local and static IP configurations.
 
 .. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
 

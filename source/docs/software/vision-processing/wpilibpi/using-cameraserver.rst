@@ -32,7 +32,8 @@ The WPILibPi image comes with all the necessary libraries to make your own visio
 
 Below is an example of an image that might be grabbed from CameraServer.
 
-.. image:: images/using-cameraserver-1.jpg
+.. image:: images/image-thresholding/target.jpg
+   :alt: 2020 game target with the retroreflective tape illuminated green.
 
 Sending frames to CameraServer
 ------------------------------
@@ -66,4 +67,5 @@ As an example, the processing code could outline the target in red, and show the
 
 Below is an example of a fully processed image that would be sent back to CameraServer and displayed on the Driver Station computer.
 
-.. image:: images/using-cameraserver-2.jpg
+.. image:: images/using-cameraserver/red-outline.jpg
+   :alt: Image above with the target outlined in red by the algorithm.
