@@ -47,8 +47,8 @@ Once your filter has been created, using it is easy - simply call the ``calculat
     // Calculates the next value of the output
     filter.Calculate(input);
 
-Using a SlewRateLimiter with a Robot Drive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using a SlewRateLimiter with DifferentialDrive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A typical use of a SlewRateLimiter is to limit the acceleration of a robot's drive.  This can be especially handy for robots that are very top-heavy, or that have very powerful drives.  To do this, apply a SlewRateLimiter to a value passed into your robot drive function:
 
