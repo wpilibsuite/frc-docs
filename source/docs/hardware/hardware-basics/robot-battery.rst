@@ -97,11 +97,13 @@ Battery Evaluation Tools
 
 **Battery Charger**
 
-If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY. Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off after a tough match, and being able to accept more charge.
+If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you can use that indicator to tell you whether you are READY. Some chargers will cycle between "CHARGING" and "READY" periodically. This is a "maintenance" behavior, sometimes associated with the battery cooling off and being able to accept more charge.
 
 **Driver Station Display and Log**
 
-When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software. After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer:Using the Graph Display>`
+When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software. 
+
+After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer:Using the Graph Display>`
 
 **Voltmeter** or **Multimeter**
 
@@ -179,7 +181,13 @@ Battery Best Practices
 
 - Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries.
 
+.. image:: images/robot-battery/sb50-handle.png
+  :alt: A plastic handle bolted on to an assembled SB50 connector.
+
 - Some teams sew battery carrying straps from old seatbelts or other flat nylon that fit around the battery to help prevent carrying by leads.
+
+.. image:: images/robot-battery/battery-strap.png
+  :alt: An example showing a 2" wide nylon strap, wrapped around the battery and sewn into a loop.
 
 - Cable tie edge clips can be used with 90 degree crimp lugs to strain relieve battery leads.
 
