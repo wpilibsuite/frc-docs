@@ -95,7 +95,7 @@ You have the option to change the name of the annotated output video produced by
 
 .. image:: images/axon-mobilenet-13.png
 
-Click the “Test” button, and you will see the test begin. 
+Click the “Test” button, and you will see the test begin.
 
 .. image:: images/axon-mobilenet-14.png
 
