@@ -11,7 +11,6 @@ Supervisely
 -----------
 
 ..
-
    Taken from https://raw.githubusercontent.com/wpilibsuite/frc-docs/master/source/docs/software/examples-tutorials/machine-learning/setting-up-the-data.rst for temperary use
 
 1. `Supervisely <https://supervise.ly/>`__ is the web tool we use for labeling our data. Create a supervise.ly account to access our dataset. On the supervise.ly website, the Signup box is in the top right corner. Provide the necessary details, then click "CREATE AN ACCOUNT".
