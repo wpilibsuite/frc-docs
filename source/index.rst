@@ -8,8 +8,6 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-.. warning:: Installers before ``2021.2.2`` **and** ``3/24/2021`` are unable to install VS Code! Please `redownload <https://github.com/wpilibsuite/allwpilib/releases>`__ the ``2021.2.2`` (or greater) release. We are greatly sorry for this inconvenience. Please see :doc:`Known Issues </docs/yearly-overview/known-issues>` for more information.
-
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
