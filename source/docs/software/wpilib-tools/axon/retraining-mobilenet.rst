@@ -30,15 +30,15 @@ Start retraining
 
 At the top of the project window, there are several parameters to specify how you want the model to be retrained.
 
-Epochs: The number of times the dataset will be passed through the model during training.
+**Epochs**: The number of times the dataset will be passed through the model during training.
 
-Batch Size: The amount of images to use in each training iteration.
+**Batch Size**: The amount of images to use in each training iteration.
 
-Evaluation Frequency: The amount of epochs to run before each evaluation of the models precision.
+**Evaluation Frequency**: The amount of epochs to run before each evaluation of the models precision.
 
-Percent Evaluation: The percent of the dataset to be reserved exclusively for evaluation of the models precision during training.
+**Percent Evaluation**: The percent of the dataset to be reserved exclusively for evaluation of the models precision during training.
 
-Datasets: The datasets you would wish to retrain with.
+**Datasets**: The datasets you would wish to retrain with.
 Edit these input parameters to fit your needs, and tick the checkboxes of the desired datasets from the dropdown.
 
 .. image:: images/axon-mobilenet-3.png
@@ -50,7 +50,7 @@ When an evaluation happens, a checkpoint is produced. This is a copy of the mode
 Exporting a checkpoint as a tflite
 ----------------------------------
 
-To export a checkpoint as a .tflite model for use, select the desired checkpoint by clicking the point on the graph.
+To export a checkpoint as a ``.tflite model`` for use, select the desired checkpoint by clicking the point on the graph.
 
 .. image:: images/axon-mobilenet-4.png
 
@@ -73,13 +73,13 @@ Click the download button, and your browser will download a tarfile containing t
 Testing an exported model
 -------------------------
 
-To test an exported model, open the testing dialog by clicking the “Test” button in the menu of the export you would like to test.
+To test an exported model, open the testing dialog by clicking the "Test" button in the menu of the export you would like to test.
 
 .. image:: images/axon-mobilenet-9.png
 
 .. image:: images/axon-mobilenet-10.png
 
-First, click the “Select Video” box, and click the “+” that will appear to upload a video.
+First, click the "Select Video" box, and click the "+" that will appear to upload a video.
 
 .. image:: images/axon-mobilenet-11.png
 
@@ -87,7 +87,7 @@ This will open a window that allows you to upload a `.mp4` file.
 
 .. image:: images/axon-mobilenet-12.png
 
-Drop a .mp4 in the dropzone, or click to select the file. Once the file is in the dropzone, click “Save”.
+Drop a .mp4 in the dropzone, or click to select the file. Once the file is in the dropzone, click "Save".
 
 When uploaded, you will see the video in the dropdown menu, allowing you to select it for the test.
 
@@ -95,11 +95,11 @@ You have the option to change the name of the annotated output video produced by
 
 .. image:: images/axon-mobilenet-13.png
 
-Click the “Test” button, and you will see the test begin.
+Click the "Test" button, and you will see the test begin.
 
 .. image:: images/axon-mobilenet-14.png
 
-The test uses your model to annotate the video, creating a stream for you to watch as it happens. Click the “View” button, and the stream will open in a separate tab.
+The test uses your model to annotate the video, creating a stream for you to watch as it happens. Click the "View" button, and the stream will open in a separate tab.
 
 When the test completes, you will see it at the bottom of the test dialog.
 
