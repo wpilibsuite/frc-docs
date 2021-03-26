@@ -8,6 +8,17 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+No such host is known in the WPILib Installer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following error message will show up when downloading VS Code with WPILib Installer version ``2021.2.1`` or earlier **or** version ``2021.2.2`` that was downloaded before ``3/24/2021``.
+
+.. code-block::
+
+   System.Net.Http.HttpRequestException: No such host is known.
+
+This is due to the VS Code download URL being changed. A hotfix has been published and users should redownload the ``2021.2.2`` release or later. This fix can be downloaded `here <https://github.com/wpilibsuite/allwpilib/releases>`__.
+
 Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
