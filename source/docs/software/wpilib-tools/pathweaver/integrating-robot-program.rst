@@ -13,28 +13,33 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
    .. code-tab:: java
 
-      String trajectoryJSON = "paths/YourPath.wpilib.json";
-      Trajectory trajectory = new Trajectory();
-      try {
-        Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
-        trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
-      } catch (IOException ex) {
-        DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
+      @Override
+      public void robotInit() {
+         String trajectoryJSON = "paths/YourPath.wpilib.json";
+         Trajectory trajectory = new Trajectory();
+         try {
+         Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
+         trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+         } catch (IOException ex) {
+         DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
+         }
       }
 
    .. code-tab:: c++
 
-       #include <frc/Filesystem.h>
-       #include <frc/trajectory/TrajectoryUtil.h>
-       #include <wpi/Path.h>
-       #include <wpi/SmallString.h>
+      void Robot::RobotInit() {
+         #include <frc/Filesystem.h>
+         #include <frc/trajectory/TrajectoryUtil.h>
+         #include <wpi/Path.h>
+         #include <wpi/SmallString.h>
 
-       wpi::SmallString<64> deployDirectory;
-       frc::filesystem::GetDeployDirectory(deployDirectory);
-       wpi::sys::path::append(deployDirectory, "paths");
-       wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
+         wpi::SmallString<64> deployDirectory;
+         frc::filesystem::GetDeployDirectory(deployDirectory);
+         wpi::sys::path::append(deployDirectory, "paths");
+         wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
 
-       frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+         frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+      }
 
 In the examples above, ``YourPath`` should be replaced with the name of your path.
 
