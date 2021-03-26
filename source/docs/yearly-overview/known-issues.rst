@@ -11,7 +11,7 @@ Open Issues
 No such host is known in the WPILib Installer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following error message will show up in installs when downloading VS Code before version ``2021.2.2`` **and** ``3/24/2021``.
+The following error message will show up when downloading VS Code with WPILib Installer version ``2021.2.1`` or earlier **or** version ``2021.2.2`` that was downloaded before ``3/24/2021``.
 
 .. code-block::
 
