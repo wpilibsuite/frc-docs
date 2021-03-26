@@ -33,10 +33,10 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
       #include <wpi/Path.h>
       #include <wpi/SmallString.h>
 
-      wpi::SmallString<64> deployDirectory;
       frc::Trajectory trajectory;
 
       void Robot::RobotInit() {
+         wpi::SmallString<64> deployDirectory;
          frc::filesystem::GetDeployDirectory(deployDirectory);
          wpi::sys::path::append(deployDirectory, "paths");
          wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
