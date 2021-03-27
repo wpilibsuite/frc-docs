@@ -3,7 +3,7 @@
 Introduction to Robot Characterization
 ======================================
 
-The characterization tools consist of a python application that runs on the user's PC and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over :term:`NetworkTables`, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
+The characterization tools consist of an application that runs on the user's PC and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over NetworkTables, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
 
 What is "Characterization?"
 ---------------------------
@@ -80,46 +80,14 @@ The elevator characterization tool determines the best-fit parameters for the eq
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is added to correctly account for the effect of gravity.
 
-Prerequisites
--------------
+Installing the System Identification Tool
+-----------------------------------------
 
-To use the Robot Characterization Toolsuite, you must have Python 3.7 installed on your computer, as well as the standard WPILib programming toolsuite.
+The system identification tool (also referred to as ``sysid``) is included with the WPILib Installer.
 
-`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__
+.. note:: The old Python characterization tool from previous years is no longer supported.
 
-.. warning:: Do not install Python from the Microsoft Store. Please use the link above to download and install Python.
+Launching the System Identification Tool
+----------------------------------------
 
-Installing and Launching the Toolsuite
---------------------------------------
-
-To install the Robot Characterization Toolsuite, open a console and enter the following command
-
-.. code-block:: console
-
-   pip install frc-characterization
-
-The toolsuite, and all of its dependencies, should be automatically downloaded and installed. If you are using a Windows machine and the command pip is not recognized, ensure that your python scripts folder `has been added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__.
-
-.. note:: If you are on Ubuntu, you will have to manually install tkinter with ``sudo apt-get install python3-tk``. You will also have to use the ``pip3`` command instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions.
-
-If you already have the toolsuite installed, be sure to update it regularly to benefit from bugfixes and new features additions:
-
-.. code-block:: console
-
-   pip install --upgrade frc-characterization
-
-.. note:: If you would like to use the beta version of this tool, you must type ``pip install --pre --upgrade frc-characterization`` instead.
-
-Once the toolsuite has been installed, launch a new drive characterization project to ensure that it works by running the following command from powershell or a terminal window.
-
-.. code-block:: console
-
-   frc-characterization drive new
-
-The new project GUI should open momentarily. To launch other characterization projects, simply replace ``drive`` with the desired characterization type (``arm``, ``elevator``, ``simple-motor``).
-
-While the new project GUI has buttons for launching both the logging tool and the analyzer tool, these can also be launched directly from the CLI by replacing ``new`` with ``logger`` or ``analyzer``.
-
-.. important:: It is highly recommended that you utilize the new project GUI to launch the logger and analyzer tools for more effective unit conversions rather than launching the logger and analyzer from the CLI.
-
-For more information on CLI usage, enter ``frc-characterization -h``.
+The system identification tool can be opened from the ``Start Tool`` option in VS Code or by using the desktop shortcut on Windows.
