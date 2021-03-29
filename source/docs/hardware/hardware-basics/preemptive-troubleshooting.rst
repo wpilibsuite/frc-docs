@@ -34,8 +34,8 @@ Securing the Battery Connector & Main Power Leads
 
 A loose robot-side battery connector (the large Anderson SB) can allow the main power leads to be tugged when the battery is replaced. If the main power leads are loose, that "tug" can get all the way back to the crimp lugs attached to the 120 Amp Circuit Breaker or Power Distribution Panel (PDP), bend the lug, and over time cause the lug end to break from fatigue. Putting a couple tie wraps attaching the main power leads to the chassis and bolting down the robot-side battery connector can prevent this, as well as make it easier to connect the battery.
 
-120 Amp Circuit Breaker
------------------------
+Main Breaker (120 Amp Circuit Breaker)
+---------------------------------------
 
 .. note:: Ensure nuts are tightened firmly and the breaker is attached to a rigid element.
 
@@ -53,7 +53,9 @@ The original nut has a star locking feature, which can wear out over time: these
 
 The nut is normally a relatively uncommon 1/4-28 thread: ensure this is correct if the nut is replaced.
 
-Because the metal is just molded into the case, every once in awhile you may break off the stud.  Many veteran teams start each season with a fresh main breaker, and carry spares.
+Because the metal stud is just molded into the case, every once in awhile you may break off the stud. Don't stress, just replace the assembly.
+
+When subjected to multiple competition seasons, the Main Breaker is susceptible to fatigue damage from vibration and use, and can start opening under impact. Each time the thermal fuse function is triggered, it can become progressively easier to trip. Many veteran teams start each season with a fresh main breaker, and carry spares.
 
 Power Distribution Panel (PDP)
 ------------------------------

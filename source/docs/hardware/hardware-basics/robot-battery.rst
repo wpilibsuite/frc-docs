@@ -10,7 +10,7 @@ Battery Safety & Handling
 
 A healthy battery is **always** "On" and the terminals are **always** energized. If the polarities short together - for example, a wrench or aerosol can falls and bridges the gap between two bare terminals - all the stored energy will be released in a dangerous arc. This risk drives a wide range of best practices, such as covering terminals in storage, only uncovering and working on one terminal or polarity at a time, keeping SB contacts fully inserted in connectors, etc.
 
-**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them. Pulling on batteries by the cables may loosen, bend, or break the lug or battery tab -- or even tear the entire tab out of the housing! Even if it doesn't get broken, the battery will not be able to provide the same amount of current if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
+**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them. Pulling on batteries by the cables will begin to damage the lugs, tabs, and the internal connection of the tab. Over time, fatigue damage can add up until the the entire tab tears out of the housing! Even if it isn't clearly broken, internal fatigue damage can increase the battery internal resistance, prematurely wearing out the battery. The battery will not be able to provide the same amount of current with increased internal resistance or if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
@@ -32,7 +32,7 @@ Battery Construction & Tools
 Battery Leads
 ^^^^^^^^^^^^^
 
-Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", with red or black insulation matched to polarity, and an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
+Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", color coded for polarity, with an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
 
 Lead Cables
 ~~~~~~~~~~~
@@ -43,7 +43,7 @@ Wire size 6AWG is sufficient for almost all robots and fits standard SB50 contac
 
 Higher strand count wire (sometimes sold as "Flex" or "welding wire") has a smaller bend radius, which makes it easier to route, and a higher fatigue limit. There is no strand count requirement, but 84/25 (84 strand "flex" hookup wire) and 259/30 (259 strand "welding wire") will both be *much* easier to work with than 19/0.0372 (19 strand hookup wire).
 
-The insulation of the +12V wire must be red, and the ground must be black. There is no explicit insulation temperature rating requirement, but any blackened or damaged insulation means the wire needs to be replaced: off hand, 105C is plenty and lower will work for almost all robots. There is no insulation voltage rating requirement, lower is better for thinner insulation.
+The insulation must be color-coded per the Game Manual: as of 2021, the +12Vdc wire must be red, white, brown, yellow, or black w/stripe and the ground wire (return wire) must be black or blue. There is no explicit insulation temperature rating requirement, but any blackened or damaged insulation means the wire needs to be replaced: off hand, 105C is plenty and lower will work for almost all robots. There is no insulation voltage rating requirement, lower is better for thinner insulation.
 
 SB Connector
 ~~~~~~~~~~~~~
@@ -55,7 +55,7 @@ Follow manufacturer's instructions to crimp contacts and assemble the leads into
 Battery Lugs
 ^^^^^^^^^^^^^
 
-Compression lugs ("crimp lugs") for #10 bolt battery tabs (~0.2" hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard (~19) and Flex (>80) strand counts in their lug catalogs. Some vendors also offer right angle lugs, in addition to more common straight styles. Follow manufacturer's instructions to crimp the lugs.
+Compression lugs ("crimp lugs") for #10 bolt (or M5) battery tabs (~0.2" or ~5mm hole diameter) are available online and through electrical supply houses, sold by the accepted wire sizes in AWG (or mm2) and post diameter ("bolt size", "hole diameter"). Higher end vendors will also distinguish between Standard (~19) and Flex (>80) strand counts in their lug catalogs. Some vendors also offer right angle lugs, in addition to more common straight styles. Follow manufacturer's instructions to crimp the lugs.
 
 Screw terminal lugs are legal, but not recommended. If using screw terminal lugs, use the correct tip size screwdriver to tighten the terminal. Check the terminal tightness frequently because they may loosen over time.
 
@@ -107,7 +107,7 @@ After you finish a driving session, you can :ref:`review the battery voltage in 
 
 **Voltmeter** or **Multimeter**
 
-A voltage reading directly at the battery will give you a snapshot of what the Voc (Voltage open circuit, or "float voltage") is in the "Unloaded" state. Anything from 13.0 to 14.0 may show up for charged batteries, but depends as much on the individual battery as it does on real state of charge. Below 13V, it's worth trying to charge it more, but in general this is not a recommended method for understanding battery health: the open circuit voltage is not as useful as the combination of internal resistance and voltages at specific loads provided by a Load Tester (or Battery Analyzer).
+A voltage reading directly at the battery will give you a snapshot of what the Voc (Voltage open circuit, or "float voltage") is in the "Unloaded" state. Anything from 12.7 to 13.5 may show up for charged batteries, but depends as much on the individual battery as it does on real state of charge. Below 12.9V, it can be worth trying to charge it more, but in general the Voc is not a recommended method for understanding battery health: the open circuit voltage is not as useful as the combination of internal resistance and voltages at specific loads provided by a Load Tester (or Battery Analyzer).
 
 **Load Tester**
 
@@ -123,13 +123,13 @@ If a battery shows significantly lower voltages at the higher test current loads
 Understanding Battery Voltages
 ------------------------------
 
-A "12V battery" is anything but 12V.
+A "12V battery" is anything but 12.0V.
 
-Fully charged, a battery can be anywhere from 13 to 14 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
+Fully charged, a battery can be anywhere from 12.7 to 13.5 volts open circuit (Voc). Open circuit voltage is measured with *nothing* connected.
 
-Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.5, and then connect it to your robot and power on, it will read lower, maybe 13.1 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
+Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.2, and then connect it to your robot and power on, it will read lower, maybe 12.9 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-Depleted batteries will read between 11.7 and 12.5 volts on an idle robot. Try to swap the batteries before they start reaching brownout safety thresholds, as frequently entering low voltage ranges risks permanent battery damage.
+Depleted batteries will read between 11.8 and 12.5 volts on an idle robot. Try to swap the batteries before the robot starts reaching brownout safety thresholds (or dwelling below 9V), as frequently entering low voltage ranges risks permanent battery damage.
 
 Battery voltage and current also depends on temperature: cool batteries are happy batteries.
 
@@ -179,7 +179,7 @@ Battery Best Practices
 
 - Using battery flags (a piece of plastic placed in the battery connector) is a common way to indicate that a battery has been charged. Battery flags can also be easily 3D printed.
 
-- Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries.
+- Handles for SB50 contacts can be purchased or 3D printed to help avoid pulling on the leads while connecting or disconnecting batteries. Do not use these handles to carry the weight of the battery.
 
 .. image:: images/robot-battery/sb50-handle.png
   :alt: A plastic handle bolted on to an assembled SB50 connector.
