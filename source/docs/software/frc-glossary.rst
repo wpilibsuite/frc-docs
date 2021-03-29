@@ -56,8 +56,8 @@ FRC Glossary
    match
       A two (2) minute and thirty (30) second period of time in which an :term:`alliance` plays a FRC game.
 
-   NT
-      NetworkTables, a way to communicate key / value pairs, of data, between programs.
+   NetworkTables
+      A way to communicate key / value pairs, of data, between programs.
 
    RP
       Ranking Point, a way of ordering teams rewarding specific objectives in addition to winning the match.
