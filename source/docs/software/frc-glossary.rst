@@ -20,11 +20,11 @@ FRC Glossary
    C++
       One of the three officially supported programming languages.
 
-   depricated
+   deprecated
       Software that will be maintained for at least 1 year, but may be removed after that.
 
    DHCP
-      Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addressess to all other devices.
+      Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addresses to all other devices.
 
    FMS
       Field Management System, the electronics core responsible for sensing and controlling the FIRST Robotics Competition field.
@@ -70,4 +70,3 @@ FRC Glossary
 
    trajectory
       A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field.
-   

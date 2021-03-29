@@ -33,7 +33,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Programming Basics
 
    docs/software/what-is-wpilib
-   docs/software/frc-glossary
    docs/yearly-overview/index
    docs/software/vscode-overview/index
    docs/software/labview/index
@@ -42,6 +41,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/can-devices/index
    docs/software/basic-programming/index
    docs/software/support/support-resources
+   docs/software/frc-glossary
 
 .. toctree::
    :maxdepth: 1
