@@ -3,7 +3,12 @@
 Robot Battery Basics
 ====================
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) AGM (Absorbent Glass Mat) battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and Anderson SB connector.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
+
+COTS Battery
+------------
+
+The Robot Rules in the Game Manual specify a Commercial Off The Shelf [COTS] non-spillable sealed lead acid battery meeting specific criteria, and gives examples of legal part numbers from a variety of vendors.
 
 Battery Safety & Handling
 -------------------------
@@ -15,7 +20,7 @@ A healthy battery is **always** "On" and the terminals are **always** energized.
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.
 
-Dropping the batteries can bend the internal plates and cause performance issues, create bulges, or even crack the battery case open. While we do use AGM technology for safety, when a cell is punctured it may still leak a small amount of battery acid. This is one of the reasons FIRST recommends teams have a battery spill kit available.
+Dropping the batteries can bend the internal plates and cause performance issues, create bulges, or even crack the battery case open. While most FRC batteries use Absorbent Glass Mat [AGM] or Gel technology for safety and performance, when a cell is punctured it may still leak a small amount of battery acid. This is one of the reasons FIRST recommends teams have a battery spill kit available.
 
 Finally, certain older battery chargers without "maintenance mode" features can *overcharge* the battery, resulting in boiling off some of the battery acid.
 
