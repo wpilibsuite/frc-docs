@@ -105,9 +105,9 @@ When the robot is plugged in and connected to the driver station laptop, the bat
 
 After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer:Using the Graph Display>`
 
-**Voltmeter** or **Multimeter**
+Hand-held **Voltmeter** or **Multimeter**
 
-A voltage reading directly at the battery will give you a snapshot of what the Voc (Voltage open circuit, or "float voltage") is in the "Unloaded" state. Anything from 12.7 to 13.5 may show up for charged batteries, but depends as much on the individual battery as it does on real state of charge. Below 12.9V, it can be worth trying to charge it more, but in general the Voc is not a recommended method for understanding battery health: the open circuit voltage is not as useful as the combination of internal resistance and voltages at specific loads provided by a Load Tester (or Battery Analyzer).
+A voltage reading from probes on the SB connector of a disconnected battery will give you a snapshot of what the Voc (Voltage open circuit, or "float voltage") is in the "Unloaded" state. In general the Voc is not a recommended method for understanding battery health: the open circuit voltage is not as useful as the combination of internal resistance and voltages at specific loads provided by a Load Tester (or Battery Analyzer).
 
 **Load Tester**
 
@@ -129,7 +129,7 @@ Fully charged, a battery can be anywhere from 12.7 to 13.5 volts open circuit (V
 
 Once a load (like a robot) is connected, and any amount of current is flowing, the battery voltage will drop. So if you check a battery with a Voltmeter, and it reads 13.2, and then connect it to your robot and power on, it will read lower, maybe 12.9 on the Driver Station display. Those numbers will vary with every battery and specific robot, see Characterization below. Once your robot starts running, it will pull more current, and the voltage will drop further.
 
-Depleted batteries will read between 11.8 and 12.5 volts on an idle robot. Try to swap the batteries before the robot starts reaching brownout safety thresholds (or dwelling below 9V), as frequently entering low voltage ranges risks permanent battery damage.
+Batteries reading 12.5V on an idle robot should be swapped and charged before a match. Always swap the batteries before the robot starts reaching brownout safety thresholds (dwelling at low voltages on the Driver Station display), as frequently entering low voltage ranges risks permanent battery damage; this behavior can happen at a variety of Voc states depending on battery health, battery manufacturer, and robot design. The battery State of Charge should be kept over 50% for battery longevity. 
 
 Battery voltage and current also depends on temperature: cool batteries are happy batteries.
 
