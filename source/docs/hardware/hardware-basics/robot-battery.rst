@@ -29,7 +29,7 @@ Finally, certain older battery chargers without "maintenance mode" features can 
 
 Damaged batteries should be safely disposed of as soon as possible. All retailers that sell large SLA batteries, like car batteries, should be able to dispose of it for you. They may charge a small fee, or provide a small "core charge refund", depending on your state law.
 
-.. warning:: **DO NOT** attempt to "repair" damaged or non-functional batteries.
+.. danger:: **DO NOT** attempt to "repair" damaged or non-functional batteries.
 
 Battery Construction & Tools
 -----------------------------
