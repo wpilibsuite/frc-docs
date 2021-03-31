@@ -153,7 +153,7 @@ At the standard 7.5 amps test load, competition batteries should have at least a
 Battery Longevity
 ^^^^^^^^^^^^^^^^^^^
 
-A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 11 or 12 volts. Deep cycling the battery (running it all the way down) will damage it.
+A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 12 or 12.5 volts. Deep cycling the battery (running it all the way down) will damage it.
 
 Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
 
