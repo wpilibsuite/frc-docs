@@ -74,7 +74,7 @@ A #10 or M5 nut & bolt connect the battery lead lug to the battery tab.
 .. image:: images/robot-battery/tab-contact.jpg
   :alt: One terminal of an FRC battery with socket head bolt and nylon locking (nylock) nut.
 
-Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a lock washer, such as a #10 star washer or a nordlock system, in addition to a nylon locking ("nylock") nut. Using a split ring washer will not add to joint strength or reliability and is not required even if one is provided with your battery.
+Some batteries come with tab bolts in the package: they may be used, or replaced with stronger alloy steel bolts. It is a good idea to add a functional lock washer, such as a #10 star washer or a nordlock washer system, in addition to a nylon locking ("nylock") nut. Only use one style of lock washer in each connection. Even if the manufacturer provides split ring lock washers in the package, you are not required to use them.
 
 .. image:: images/robot-battery/loose-nordlock.jpg
   :alt: One terminal of an FRC battery with socket head bolt, nordlock locking nuts, and nylon locking (nylock) nut.
