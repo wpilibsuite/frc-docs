@@ -62,7 +62,7 @@ Both Shuffleboard and SmartDashboard can be used with WPILib simulation.
 Shuffleboard
 ^^^^^^^^^^^^
 
-Shuffleboard is automatically configured to look for a NetworkTable instance from the robotRIO but **not from other sources**. To connect to Shuffleboard, open Shuffleboard preferences from the File menu and select ``NetworkTables`` under ``Plugins`` on the left navigation bar. In the ``Server`` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
+Shuffleboard is automatically configured to look for a NetworkTables instance from the robotRIO but **not from other sources**. To connect to Shuffleboard, open Shuffleboard preferences from the File menu and select ``NetworkTables`` under ``Plugins`` on the left navigation bar. In the ``Server`` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: images/shuffleboard-networktables.png
    :alt: Shuffleboard connection settings set to localhost.
@@ -70,7 +70,7 @@ Shuffleboard is automatically configured to look for a NetworkTable instance fro
 SmartDashboard
 ^^^^^^^^^^^^^^
 
-SmartDashboard is automatically configured to look for a NetworkTable instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
+SmartDashboard is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to SmartDashboard, open SmartDashboard preferences under the ``File`` menu and in the ``Team Number`` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: /docs/software/wpilib-tools/smartdashboard/images/smartdashboard-intro/smartdashboard-networktables.png
    :alt: SmartDashboard team number set to localhost.

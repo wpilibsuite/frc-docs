@@ -16,7 +16,7 @@ The graph widget shows line plots of the value that you selected. It will automa
 Adding Additional Data Values
 -----------------------------
 
-For related values it is often desirable to show multiple values on the same graph. To do that, simply drag additional values from the NetworkTable source view (left side of the Shuffleboard window) and drop it onto the graph and that value will be added as shown below. You can continue to drag additional values onto the graph.
+For related values it is often desirable to show multiple values on the same graph. To do that, simply drag additional values from the NetworkTables source view (left side of the Shuffleboard window) and drop it onto the graph and that value will be added as shown below. You can continue to drag additional values onto the graph.
 
 .. image:: images/shuffleboard-graphs/two-sources.png
    :alt: Graph shows two different data sources on the same graph.

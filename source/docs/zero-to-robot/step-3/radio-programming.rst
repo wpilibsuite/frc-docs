@@ -52,7 +52,7 @@ The Radio Configuration Utility programs a number of configuration settings into
 - QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are:
 
   - Robot Control and Status (UDP ``1110``, ``1115``, ``1150``)
-  - Robot TCP & Network Tables (TCP ``1735``, ``1740``)
+  - Robot TCP & :term:`NetworkTables` (TCP ``1735``, ``1740``)
   - Bulk (All other traffic). (disabled if BW limit is disabled)
 
 - DHCP server enabled. Serves out:

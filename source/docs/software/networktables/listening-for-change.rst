@@ -1,10 +1,10 @@
 Listening for value changes
 ===========================
-A common use case for NetworkTables is where a program on the Driver Station generates values that need to be sent to the robot. For example, imagine that some image processing code running on the Driver Station computes the heading and distance to a goal and sends those values to the robot. In this case it might be desirable for the robot program to be notified when new values arrive from the Driver Station. NetworkTables provides facilities to do that.
+A common use case for :term:`NetworkTables` is where a program on the Driver Station generates values that need to be sent to the robot. For example, imagine that some image processing code running on the Driver Station computes the heading and distance to a goal and sends those values to the robot. In this case it might be desirable for the robot program to be notified when new values arrive from the Driver Station. NetworkTables provides facilities to do that.
 
 Using a NetworkTable EntryListener
 ----------------------------------
-One of the more common cases for NetworkTables is waiting for a value to change on the robot. This is called an EntryListener because it notifies the robot program when a network table entry (single value) changes. The following code shows how to do this.
+One of the more common cases for NetworkTables is waiting for a value to change on the robot. This is called an EntryListener because it notifies the robot program when a NetworkTables entry (single value) changes. The following code shows how to do this.
 
 .. tabs::
 

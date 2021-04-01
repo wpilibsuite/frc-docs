@@ -26,7 +26,7 @@ a micro SD card, inserted into the Pi, and booted. By default it supports:
 
 -   A web interface for configuring it for the most common functions
 -   Supports an arbitrary number camera streams (defaults to one) that are published on the network interface
--   OpenCV, Network Tables, Camera Server, and language libraries for C++, Java, and Python custom programs
+-   OpenCV, :term:`NetworkTables`, Camera Server, and language libraries for C++, Java, and Python custom programs
 
 If the only requirement is to stream one or more cameras to the network (and dashboard) then no programming is required and can
 be completely set up through the web interface.

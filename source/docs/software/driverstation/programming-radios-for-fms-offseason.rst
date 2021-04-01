@@ -36,7 +36,7 @@ The Radio Configuration Utility programs a number of configuration settings into
 - Bridge the wired ports so they may be used interchangeably
 - The LED configuration noted in the graphic above
 - 4Mb/s bandwidth limit on the outbound side of the wireless interface
-- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (All other traffic).
+- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are Robot Control and Status (UDP 1110, 1115, 1150) >> Robot TCP & :term:`NetworkTables` (TCP 1735, 1740) >> Bulk (All other traffic).
 
 .. tip:: See the :ref:`Status Light Reference <docs/hardware/hardware-basics/status-lights-ref:OpenMesh Radio>` for details on the behavior of the radio status lights when configured.
 
