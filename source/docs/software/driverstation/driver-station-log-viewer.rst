@@ -32,7 +32,7 @@ The Log Viewer contains a number of controls and displays to aid in the analysis
 12. Filter Control - Drop-down to select the filter mode (filter modes explained below)
 13. Tab Control - Control to switch between the Graph (Data and Events vs. Time) and Event List displays.
 
-Using the Graph display
+Using the Graph Display
 -----------------------
 
 .. image:: images/driver-station-log-viewer/graphdisplay.png

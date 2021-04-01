@@ -10,3 +10,4 @@ Hardware - Basics
    wiring-pneumatics
    status-lights-ref
    preemptive-troubleshooting
+   robot-battery

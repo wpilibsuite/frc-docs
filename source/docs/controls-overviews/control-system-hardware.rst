@@ -79,9 +79,9 @@ Robot Battery
   :alt: Robot Battery
   :width: 500
 
-The power supply for an FRC robot is a single 12V 18Ah battery. The batteries used for FRC are sealed lead acid batteries capable of meeting the high current demands of an FRC robot. For more information, see the datasheet for the `MK ES17-12 <https://www.mkbattery.com/application/files/2515/3308/8109/ES17-12.pdf>`__.
+The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) battery, capable of meeting the high current demands of an FRC robot. For more information, see the :ref:`Robot Battery page. <docs/hardware/hardware-basics/robot-battery:Robot Battery Basics>`
 
-.. note:: Other battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
+.. note:: Multiple battery part numbers may be legal, consult the `FRC Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>`__ for a complete list.
 
 Robot Signal Light
 ------------------
