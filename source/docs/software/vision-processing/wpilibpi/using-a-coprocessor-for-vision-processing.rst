@@ -14,14 +14,14 @@ Strategy
 Generally the idea is to set up the coprocessor with the required software that generally includes:
 
 -   OpenCV - the open source computer vision library
--   Network tables - to commute the results of the image processing to the roboRIO program
+-   :term:`NetworkTables` - to commute the results of the image processing to the roboRIO program
 -   Camera server library - to handle the camera connections and publish streams that can be viewed on a dashboard
 -   The language library for whatever computer language is used for the vision program
 -   The actual vision program that does the object detection
 
 The coprocessor is connected to the roboRIO network by plugging it into the extra ethernet port on the network router or,
 for more connections, adding a small network switch to the robot. The cameras are plugged into the coprocessor, it acquires the
-images, processes them, and publishes the results, usually target location information, to network tables so it is can be consumed
+images, processes them, and publishes the results, usually target location information, to NetworkTables so it is can be consumed
 by the robot program for steering and aiming.
 
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg

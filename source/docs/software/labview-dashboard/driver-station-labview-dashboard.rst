@@ -3,7 +3,7 @@
 FRC LabVIEW Dashboard
 =====================
 
-The Dashboard application installed and launched by the FRC\ |reg| Driver Station is a LabVIEW program designed to provide teams with basic feedback from their robot, with the ability to expand and customize the information to suit their needs. This Dashboard application uses Network Tables and contains a variety of tools that teams may find useful.
+The Dashboard application installed and launched by the FRC\ |reg| Driver Station is a LabVIEW program designed to provide teams with basic feedback from their robot, with the ability to expand and customize the information to suit their needs. This Dashboard application uses :term:`NetworkTables` and contains a variety of tools that teams may find useful.
 
 LabVIEW Dashboard
 -----------------
@@ -20,7 +20,7 @@ The Dashboard is broken into two main sections. The left pane is for displaying 
 - Test tab for use with Test Mode in the LabVIEW framework
 - Commands tab for use with the new LabVIEW C&C Framework
 - Checklist tab that can be used to create task lists to complete before and/or between matches
-- Variables tab that displays the raw Network Tables variables in a tree view format
+- Variables tab that displays the raw NetworkTables variables in a tree view format
 
 The LabVIEW Dashboard also includes Record/Playback functionality, located in the bottom right. More detail about this feature is included below under `Record/Playback`_.
 
@@ -50,7 +50,7 @@ The center pane contains a section that provides feedback on the joysticks and d
 
 1. Displays X,Y and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
 2. Displays values being sent to motor controllers when using LabVIEW framework
-3. Displays a connection indicator for the NetworkTables (NT) data from the robot
+3. Displays a connection indicator for the NetworkTables data from the robot
 4. Displays a Gyro value
 5. Displays a text box that can be used to select Autonomous modes. Each language's code templates have examples of using this box to select from multiple autonomous programs.
 
@@ -120,7 +120,7 @@ Variables
 .. image:: images/driver-station-labview-dashboard/variables.png
    :alt: The "Variables" tab is the eighth on the right side.
 
-The Variables tab of the left pane shows all Network Tables variables in a tree display. The Variable Name (Key), Value and data type are shown for each variable. Information about the Network Tables bandwidth usage is also displayed in this tab. Entries will be shown with black diamonds if they are not currently synced with the robot.
+The Variables tab of the left pane shows all NetworkTables variables in a tree display. The Variable Name (Key), Value and data type are shown for each variable. Information about the NetworkTables bandwidth usage is also displayed in this tab. Entries will be shown with black diamonds if they are not currently synced with the robot.
 
 Record/Playback
 ---------------
@@ -128,7 +128,7 @@ Record/Playback
 .. image:: images/driver-station-labview-dashboard/record-playback.png
    :alt: Highlights the green triangle, red circle, and red square that control dashboard playback.
 
-The LabVIEW Dashboard includes a Record/Playback feature that allows you to record video and Network Tables data (such as the state of your Dashboard indicators) and play it back later.
+The LabVIEW Dashboard includes a Record/Playback feature that allows you to record video and NetworkTables data (such as the state of your Dashboard indicators) and play it back later.
 
 Recording
 ^^^^^^^^^

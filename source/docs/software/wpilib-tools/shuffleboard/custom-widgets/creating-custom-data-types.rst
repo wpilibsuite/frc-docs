@@ -31,7 +31,7 @@ Your custom data class must also implement the ``asMap()`` method that returns t
    }
 
 It is also good practice to override the default ``equals`` and ``hashcode`` methods to ensure that different objects are considered equivalent when their fields are the same.
-The ``asMap()`` method should return the data represented in a simple Map object as it will be mapped to the NetworkTable entry it corresponds to. In this case, we can represent the point as its X and Y coordinates and return a ``Map`` containing them.
+The ``asMap()`` method should return the data represented in a simple Map object as it will be mapped to the NetworkTables entry it corresponds to. In this case, we can represent the point as its X and Y coordinates and return a ``Map`` containing them.
 
 .. code-block:: java
 
@@ -122,7 +122,7 @@ We will use our MyPoint2D class as an example to see what a complex data type cl
 
 The following code above works as noted:
 
-The ``fromMap()`` method creates a new MyPoint2D using the values in the NetworkTable entry it is bound to.
+The ``fromMap()`` method creates a new MyPoint2D using the values in the NetworkTables entry it is bound to.
 The ``getOrDefault`` method will return 0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a new ``MyPoint2D`` object if no source is present.
 
 Exporting Data Type To Plugin

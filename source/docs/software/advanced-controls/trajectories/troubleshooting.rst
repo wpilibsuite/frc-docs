@@ -50,7 +50,7 @@ Poor trajectory tracking performance can be difficult to troubleshoot. Although 
 
 Because it can be so hard to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended for general poor tracking performance (e.g. the robot is off by few feet or more than twenty degrees). The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
-.. note:: The below examples put diagnostic values onto Network Tables. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
+.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
 
 Verify Odometry
 ^^^^^^^^^^^^^^^
@@ -217,7 +217,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         },
         {&m_drive});
 
-4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from Network Tables.
+4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from NetworkTables.
 5. If the desired and actual are off by *a lot* then you should check if the wheel diameter and ``encoderEPR`` you used for characterization were correct. If you've verified that your units and conversions are correct, then you should try recharacterizing on the same floor that you're testing on to see if you can get better data.
 
 Verify P Gain
