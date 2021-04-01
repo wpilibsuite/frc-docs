@@ -6,7 +6,7 @@ FRC Glossary
 .. glossary::
 
    accelerometer
-      A common sensors used to measure acceleration in one or more axis.
+      A common sensor used to measure acceleration in one or more axis.
 
    alliance
       A cooperative of up to four (4) FIRST\ |reg| Robotics Competition teams.
@@ -33,7 +33,7 @@ FRC Glossary
       The mechanism that powers the deployment of robot code to the roboRIO.
 
    gyroscope
-      A device that measures rate-of-rotation.  It can add up the rotation measurements to determine :term:`heading` of the robot. (“gyro”, for short)
+      A device that measures rate of rotation.  It can add up the rotation measurements to determine :term:`heading` of the robot. (“gyro”, for short)
 
    heading
       The direction the robot is pointed, usually expressed as an angle in degrees.
@@ -48,7 +48,7 @@ FRC Glossary
       Kit of Parts, the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
    KOP chassis
-      The `AM14U4 <https://www.andymark.com/products/am14u4-kit-of-parts-chassis>`__ chassis distributed to every team in the :term:`KOP`.
+      The `AM14U4 <https://www.andymark.com/products/am14u4-kit-of-parts-chassis>`__ chassis distributed to every team (that did not opt out) as part of the :term:`KOP`.
 
    LabVIEW
       One of the three officially supported programming languages.
