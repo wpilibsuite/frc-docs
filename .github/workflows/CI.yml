@@ -104,6 +104,6 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - uses: psf/black@stable
+    - uses: psf/black@20.8b1
       with:
         args: ". --check"
