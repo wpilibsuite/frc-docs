@@ -87,6 +87,8 @@ Encoder Accessor Method
 
 To access the values measured by the encoders, we include the following method:
 
+.. important:: The returned velocities **must** be in meters! Because we configured the distance per pulse on the encoders above, calling ``getRate()`` will automatically apply the conversion factor from encoder units to meters. If you are not using WPILib's ``Encoder`` class, you must perform this conversion either through the respective vendor's API or by manually multiplying by a conversion factor.
+
 .. tabs::
 
   .. group-tab:: Java
