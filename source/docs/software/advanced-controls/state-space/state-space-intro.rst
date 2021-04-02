@@ -17,7 +17,7 @@ If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or it
 Vocabulary
 ----------
 
-For the background vocabulary that will be used throughout this article, see the :ref:`Glossary <docs/software/advanced-controls/state-space/state-space-glossary:State-Space Glossary>`.
+For the background vocabulary that will be used throughout this article, see the :ref:`Glossary <docs/software/advanced-controls/controls-glossary:Controls Glossary>`.
 
 Introduction to Linear Algebra
 ------------------------------
