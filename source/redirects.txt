@@ -109,3 +109,5 @@
 "docs/software/wpilib-tools/robot-simulation/video-walkthrough.rst" "docs/software/wpilib-tools/robot-simulation/index.rst"
 "docs/software/basic-programming/code-formatting.rst" "docs/software/advanced-gradlerio/code-formatting.rst"
 "docs/software/basic-programming/robot-code-ci.rst" "docs/software/advanced-gradlerio/robot-code-ci.rst"
+"docs/software/advanced-controls/introduction/controls-glossary.rst" "docs/software/advanced-controls/controls-glossary.rst"
+"docs/software/advanced-controls/state-space/state-space-glossary.rst" "docs/software/advanced-controls/controls-glossary.rst"
