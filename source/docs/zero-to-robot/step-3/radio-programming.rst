@@ -8,7 +8,7 @@ This guide will show you how to use the FRC\ |reg| Radio Configuration Utility s
 Before you begin using the software:
 
 1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
-2. Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
+2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack and make sure no other devices are connected to your computer via ethernet.
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
@@ -97,7 +97,7 @@ Allow the program to make changes, if prompted
 .. image:: images/radio-programming/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
-If your computer is running Windows or Windows 7, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
+If your computer is running Windows, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
 Select the network interface
 ----------------------------
@@ -206,6 +206,9 @@ If an error occurs during the configuration process, follow the instructions in 
 Troubleshooting
 ---------------
 
-- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
-- Make sure you wait long enough the power light has stayed solid for 10 seconds.
-- Make sure you have the correct network interface.
+- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
+- Make sure you wait long enough that the power light has stayed solid for 10 seconds.
+- Make sure you have the correct network interface, and only one interface is listed in the drop-down.
+- Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
+- Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
+- If using a foreign language Operating System, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
