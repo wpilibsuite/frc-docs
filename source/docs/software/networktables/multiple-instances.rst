@@ -1,6 +1,7 @@
 Creating multiple instances of NetworkTables
 ============================================
-This feature is mainly useful for coprocessors and unit testing. It allows a single program to be a member of two completely independent :term:`Networktables` "networks" that contain completely different (and unrelated) sets of tables. For most general usage, you should use tables within the single instance, as all current dashboard programs can only connect to a single NetworkTables server at a time.
+
+This feature is mainly useful for coprocessors and unit testing. It allows a single program to be a member of two completely independent :term:`NetworkTables` "networks" that contain completely different (and unrelated) sets of tables. For most general usage, you should use tables within the single instance, as all current dashboard programs can only connect to a single NetworkTables server at a time.
 
 Normally the "default" instance is set up on the robot as a server, and used for communication with the dashboard program running on your driver station computer. This is what the SmartDashboard and LiveWindow classes use.
 
