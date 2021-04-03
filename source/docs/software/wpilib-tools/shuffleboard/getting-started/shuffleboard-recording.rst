@@ -6,7 +6,7 @@ Shuffleboard can log all widget updates during a session. Later the log file can
 Creating a Recording
 --------------------
 
-When shuffleboard starts it begins recording to all the NetworkTable values are recorded and continues until stopped by hitting the record/stop button in the recorder controls as shown below. If a new recording is desired, such as when a new piece of code or mechanical system is being tested, stop the current recording if it is running, and click the record button. Click the button again to stop recording and close the recording file. If the button is round (as shown) then click it to start a recording. If the button is a square, then a recoding is currently running so click it to stop the recording.
+When shuffleboard starts it begins recording to all the NetworkTables values are recorded and continues until stopped by hitting the record/stop button in the recorder controls as shown below. If a new recording is desired, such as when a new piece of code or mechanical system is being tested, stop the current recording if it is running, and click the record button. Click the button again to stop recording and close the recording file. If the button is round (as shown) then click it to start a recording. If the button is a square, then a recoding is currently running so click it to stop the recording.
 
 .. image:: images/shuffleboard-recording/record.png
    :alt: Highlights the record button with a filled in circle on it.

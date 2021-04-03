@@ -5,7 +5,7 @@ SmartDashboard uses NetworkTables to send data between the robot and the Dashboa
 
 There is a hierarchical structure in the name space creating a set of tables and subtables. SmartDashboard data is in the SmartDashboard subtable and LiveWindow data is in the LiveWindow subtable as shown below.
 
-For informational purposes, the names and values can be displayed using the OutlineViewer application that is installed in the same location as the SmartDashboard. It will display all the NetworkTable keys and values as they are updated.
+For informational purposes, the names and values can be displayed using the OutlineViewer application that is installed in the same location as the SmartDashboard. It will display all the NetworkTables keys and values as they are updated.
 
 SmartDashboard Data Values
 --------------------------
@@ -33,7 +33,7 @@ View of SmartDashboard
 .. image:: images/smartdashboard-namespace/view-smartdashboard.png
   :alt: SmartDashboard display of the values generated in the code above.
 
-The code from the previous step generates the table values as shown and the SmartDashboard display as shown here. The numbers correspond to the NetworkTable variables shown in the previous step.
+The code from the previous step generates the table values as shown and the SmartDashboard display as shown here. The numbers correspond to the NetworkTables variables shown in the previous step.
 
 LiveWindow Data Values
 ----------------------

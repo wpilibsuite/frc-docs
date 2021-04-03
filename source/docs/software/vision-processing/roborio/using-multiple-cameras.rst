@@ -4,7 +4,7 @@ Using Multiple Cameras
 Switching the Driver Views
 --------------------------
 
-If you're interested in just switching what the driver sees, and are using SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option ("Selected Camera Path") that reads the given NT key and changes the "Camera Choice" to that value (displaying that camera). The robot code then just needs to set the NT key to the correct camera name. Assuming "Selected Camera Path" is set to "CameraSelection", the following code uses the joystick 1 trigger button state to show camera1 and camera2.
+If you're interested in just switching what the driver sees, and are using SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option ("Selected Camera Path") that reads the given :term:`NetworkTables` key and changes the "Camera Choice" to that value (displaying that camera). The robot code then just needs to set the :term:`NetworkTables` key to the correct camera name. Assuming "Selected Camera Path" is set to "CameraSelection", the following code uses the joystick 1 trigger button state to show camera1 and camera2.
 
 .. tabs::
 
