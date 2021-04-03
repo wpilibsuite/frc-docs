@@ -8,4 +8,3 @@ Advanced Controls Introduction
    pid-video
    introduction-to-pid
    tuning-pid-controller
-   controls-glossary
