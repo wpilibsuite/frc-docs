@@ -128,7 +128,7 @@ Updating a Top-Level Dependency
 
 Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``
 
-Updating Hidden dependencies
+Updating Hidden Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run the following command: ``poetry lock``
