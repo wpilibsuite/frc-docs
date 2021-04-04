@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Sphinx = "==3.4.3"
 doc8 = "==0.8.1"
 docutils = "==0.16.0"
 latex = "==0.7.0"
+sphinx = "==3.4.3"
 sphinx-hoverxref = "==0.5b1"
 sphinx-notfound-page = "==0.6"
 sphinx-panels = "==0.5.2"
