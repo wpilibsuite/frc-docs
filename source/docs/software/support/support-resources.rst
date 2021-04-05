@@ -30,14 +30,14 @@ CTRE Support
 Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the e-mail address support@crosstheroadelectronics.com
 
 REV Robotics Support
-------------
+--------------------
 
-Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at 844-255-2267 or via the email address ` support@revrobotics.com <mailto:support@revrobotics.com`
+Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at 844-255-2267 or via the e-mail address ` support@revrobotics.com
 
 FIRST Team Support
-------------
+------------------
 
-Support for FIRST Teams is provided via email address firstroboticscompetition@firstinspires.org.
+Support for FIRST Teams is provided via e-mail address firstroboticscompetition@firstinspires.org
 
 Bug Reporting
 -------------
