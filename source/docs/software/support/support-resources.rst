@@ -32,7 +32,7 @@ Support for Cross The Road Electronics components (Pneumatics Control Module, Po
 REV Robotics Support
 --------------------
 
-Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at 844-255-2267 or via the e-mail address ` support@revrobotics.com
+Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at 844-255-2267 or via the e-mail address support@revrobotics.com
 
 FIRST Team Support
 ------------------
