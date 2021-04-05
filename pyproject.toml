@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "frc-docs"
+version = "9999"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.6"
+doc8 = "==0.8.1"
+docutils = "==0.16.0"
+latex = "==0.7.0"
+sphinx = "==3.4.3"
+sphinx-hoverxref = "==0.5b1"
+sphinx-notfound-page = "==0.6"
+sphinx-panels = "==0.5.2"
+sphinx-rtd-theme = "==0.5.1"
+sphinx-tabs = "==2.0.0"
+sphinx-version-warning = "==1.1.2"
+sphinxcontrib-ghcontributors = "==0.2.2"
+sphinxcontrib-svg2pdfconverter = "==1.1.1"
+sphinxext-linkcheckdiff = "==0.1.0"
+sphinxext-opengraph = "==0.4.1"
+sphinxext-rediraffe = "==0.2.5"
+sphinxext-remoteliteralinclude = "==0.2.0"
+sphinxext-toptranslators = "==0.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
