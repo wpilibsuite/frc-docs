@@ -516,23 +516,16 @@ CairoSVG = ["cairosvg (>=1.0)"]
 
 [[package]]
 name = "sphinxext-delta"
-version = "9999"
-description = ""
+version = "0.1.0"
+description = "Sphinx extension for listing changed Sphinx articles"
 category = "main"
 optional = false
 python-versions = ">=3.6"
-develop = false
 
 [package.dependencies]
 requests = "*"
 six = "*"
 sphinx = ">=2.0"
-
-[package.source]
-type = "git"
-url = "https://github.com/wpilibsuite/sphinxext-delta.git"
-reference = "main"
-resolved_reference = "74dcecde63ca36da62903d0c71c00b06ccbfc2a1"
 
 [[package]]
 name = "sphinxext-linkcheckdiff"
@@ -647,7 +640,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "cbf014aef61777d1231c6869778e698cbb9450b035f1e37c195151ea7161c3ad"
+content-hash = "fe83b77c4b22360dff71b6484eb29eda4859d2177f0caae639393d022915b338"
 
 [metadata.files]
 alabaster = [
@@ -878,7 +871,10 @@ sphinxcontrib-svg2pdfconverter = [
     {file = "sphinxcontrib-svg2pdfconverter-1.1.1.tar.gz", hash = "sha256:c5138cbb069150646fd9fd106034678cf8290f894fc62d580d8ccbdb7ac49481"},
     {file = "sphinxcontrib_svg2pdfconverter-1.1.1-py3-none-any.whl", hash = "sha256:869b52f48d2c1d189657aa4e37c8cf08704087ee4df023b97d4e1c5e0518b424"},
 ]
-sphinxext-delta = []
+sphinxext-delta = [
+    {file = "sphinxext-delta-0.1.0.tar.gz", hash = "sha256:b6e3c825022907f9eca9ca94f848641dc533d973534b988829bcdc09187a65b1"},
+    {file = "sphinxext_delta-0.1.0-py3-none-any.whl", hash = "sha256:fb25bc22631e824d72d3e8cc636e83e91e3975938781f0f5a2eb6df121a18330"},
+]
 sphinxext-linkcheckdiff = [
     {file = "sphinxext-linkcheckdiff-0.1.0.tar.gz", hash = "sha256:c134d21efafa6a21e209e8181d58df854cbdec7985a7c3eaa1cd6d24b35fabeb"},
     {file = "sphinxext_linkcheckdiff-0.1.0-py3-none-any.whl", hash = "sha256:8caf04db991e10b8a5026f1a602eb6a883e76a09e9619a4d358127735e38fef2"},
