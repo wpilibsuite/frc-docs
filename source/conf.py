@@ -35,6 +35,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinxcontrib.ghcontributors",
     "sphinxcontrib.rsvgconverter",
+    "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
@@ -85,6 +86,9 @@ ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
     '<meta name="theme-color" content="#AC2B37" />',
 ]
+
+# Set location of pages to be indexed by delta
+delta_doc_path = "source"
 
 # Enable hover content on glossary term
 hoverxref_roles = ["term"]

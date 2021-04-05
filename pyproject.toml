@@ -23,6 +23,7 @@ sphinxext-opengraph = "==0.4.1"
 sphinxext-rediraffe = "==0.2.5"
 sphinxext-remoteliteralinclude = "==0.2.0"
 sphinxext-toptranslators = "==0.1.2"
+sphinxext-delta = {git = "https://github.com/wpilibsuite/sphinxext-delta.git", rev = "main"}
 
 [tool.poetry.dev-dependencies]
 
