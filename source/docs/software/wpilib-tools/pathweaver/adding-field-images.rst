@@ -42,4 +42,4 @@ The field size is the width and length of the playable area of the field in the 
 
 The field units are case-insensitive and can be in meters, cm, mm, inches, feet, yards, or miles. Singular, plural, and abbreviations are supported (e.g. "meter","meters", and"m"are all valid for specifying meters)
 
-.. note:: When making a new field image a border (minimum of 20 pixels is recommended) should be left around the outside so that waypoints on the field edge are accessible.
+.. note:: When making a new field image, a border (minimum of 20 pixels is recommended) should be left around the outside so that waypoints on the field edge are accessible.
