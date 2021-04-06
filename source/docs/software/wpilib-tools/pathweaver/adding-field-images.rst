@@ -14,24 +14,24 @@ File Layout
 
    ~/PathWeaver
      /Games
-       /Custom Game
+      /Custom Game
          custom-game.json
          field-image.png
-       OtherGame.zip
+      OtherGame.zip
 
 JSON Format
 -----------
 .. code-block:: text
 
    {
-     "game": "game name",
-     "field-image": "relative/path/to/img.png",
-     "field-corners": {
-       "top-left": [x, y],
-       "bottom-right": [x, y]
-     },
-     "field-size": [width, length],
-     "field-unit": "unit name"
+      "game": "game name",
+      "field-image": "relative/path/to/img.png",
+      "field-corners": {
+         "top-left": [x, y],
+         "bottom-right": [x, y]
+      },
+      "field-size": [width, length],
+      "field-unit": "unit name"
    }
 
 The path to the field image is relative to the JSON file. For simplicity, the image file should be in the same directory as the JSON file.
@@ -41,3 +41,5 @@ The field corners are the X and Y coordinates of the top-left and bottom-right p
 The field size is the width and length of the playable area of the field in the provided units.
 
 The field units are case-insensitive and can be in meters, cm, mm, inches, feet, yards, or miles. Singular, plural, and abbreviations are supported (e.g. "meter","meters", and"m"are all valid for specifying meters)
+
+.. note:: When making a new field image, a border (minimum of 20 pixels is recommended) should be left around the outside so that waypoints on the field edge are accessible.
