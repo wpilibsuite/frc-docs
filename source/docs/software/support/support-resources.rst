@@ -27,7 +27,12 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 CTRE Support
 ------------
 
-Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the e-mail address support@crosstheroadelectronics.com
+Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the email address `support@crosstheroadelectronics.com <mailto:support@crosstheroadelectronics.com>`__
+
+REV Robotics Support
+--------------------
+
+Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__
 
 Bug Reporting
 -------------
