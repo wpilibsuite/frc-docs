@@ -12,6 +12,8 @@ The 2 PID controllers are controllers that should correct for error in the field
 
 The final parameter is a ``ProfiledPIDController`` for the rotation of the robot. Because the rotation dynamics of a holonomic drivetrain are decoupled from movement in the x and y directions, users can set custom heading references while following a trajectory. These heading references are profiled according to the parameters set in the ``ProfiledPIDController``.
 
+.. important:: If you are using the same instance of the ``HolonomicDriveController`` for multiple trajectories, you **must** call ``resetInitialHeading()`` (Java) / ``ResetInitialHeading()`` (C++) with the field-relative heading (the rotation component of your pose from odometry) of your robot. If you are only using one instance per trajectory, this is taken care of automatically.
+
 .. tabs::
    .. code-tab:: java
 
