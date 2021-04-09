@@ -57,7 +57,7 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
   .. code-tab:: java
 
     // Ordinary call with no ramping applied
-    drivetrain.arcadeDrive(forward, turn);
+    driveTrain.arcadeDrive(forward, turn);
 
     // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
     driveTrain.arcadeDrive(filter.calculate(forward), turn);
@@ -65,7 +65,8 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
   .. code-tab:: c++
 
     // Ordinary call with no ramping applied
-    drivetrain.ArcadeDrive(forward, turn);
+    driveTrain.ArcadeDrive(forward, turn);
 
     // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
-    driveTrain.ArcadeDrive(filter.Calculate(forward), turn);
+    // Note: Conversion to double required to interact with non-dimensioned ArcadeDrive method
+    driveTrain.ArcadeDrive(filter.Calculate(forward).to<double>(), turn);
