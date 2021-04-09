@@ -35,4 +35,4 @@ jobs:
       - name: Push
         if: ${{ env.PUBLISH_STABLE == 'True' }}
         run: |
-          git push
+          git push origin stable
