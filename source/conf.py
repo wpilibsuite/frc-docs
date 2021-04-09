@@ -62,7 +62,7 @@ versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'div[class="document"]'
 
 # Redirect branch
-rediraffe_branch = "origin/master"
+rediraffe_branch = "origin/main"
 
 # File containing redirects
 rediraffe_redirects = "redirects.txt"
@@ -71,13 +71,13 @@ rediraffe_redirects = "redirects.txt"
 rediraffe_auto_redirect_perc = 80
 
 # Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/master"
+linkcheckdiff_branch = "origin/main"
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/latest/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
 ogp_image = (
-    "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
+    "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
 )
 
 # Enables ChiefDelphi support
