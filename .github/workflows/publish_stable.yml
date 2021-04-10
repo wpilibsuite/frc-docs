@@ -2,7 +2,7 @@ name: Publish Stable
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -19,17 +19,20 @@ jobs:
           git config user.email github-actions@github.com
           git config pull.ff only
 
-          git fetch origin master
-          (git checkout master && git pull) || git checkout -b master origin/master
+          git fetch origin main
+          (git checkout main && git pull) || git checkout -b main origin/main
 
           git fetch origin stable
           (git checkout stable && git pull) || git checkout -b stable origin/stable
 
-          if git merge-base --is-ancestor master stable; then
+          if git merge-base --is-ancestor main stable; then
             echo "No merge is necessary"
             exit 0
           fi;
 
-          git merge --ff-only master
+          git merge --ff-only main
 
+      - name: Push
+        if: ${{ env.PUBLISH_STABLE == 'True' }}
+        run: |
           git push origin stable
