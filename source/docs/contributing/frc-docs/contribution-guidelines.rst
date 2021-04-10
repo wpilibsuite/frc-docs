@@ -26,7 +26,7 @@ Release Process
 frc-docs uses a special release process for handling the main site ``/stable/`` and the development site ``/latest/``. This flow is detailed below.
 
 During Season:
-- Commit made to ``master`` branch
+- Commit made to ``main`` branch
 
   - Updates ``/stable/`` and ``/latest/`` on the website
 
@@ -35,14 +35,14 @@ End of Season:
 
 Off-Season:
 - ``stable`` branch is locked to the last on-season commit
-- Commit made to ``master`` branch
+- Commit made to ``main`` branch
 
   - Only updates ``/latest/`` on the documentation site
 
 Creating a PR
 -------------
 
-PRs should be made to the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repo on GitHub. They should point to the ``master`` branch and *not* ``stable``.
+PRs should be made to the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repo on GitHub. They should point to the ``main`` branch and *not* ``stable``.
 
 Creating New Content
 --------------------
