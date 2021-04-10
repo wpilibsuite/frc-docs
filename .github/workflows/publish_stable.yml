@@ -33,6 +33,6 @@ jobs:
           git merge --ff-only main
 
       - name: Push
-        if: ${{ env.PUBLISH_STABLE == 'True' }}
+        if: ${{ secrets.PUBLISH_STABLE }}
         run: |
           git push origin stable
