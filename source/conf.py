@@ -13,7 +13,8 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('./_extensions/'))
+
+sys.path.insert(0, os.path.abspath("./_extensions/"))
 
 
 # -- Project information -----------------------------------------------------
@@ -46,7 +47,7 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
-    "sphinx_toctreeish"
+    "sphinx_toctreeish",
 ]
 
 versionwarning_messages = {
