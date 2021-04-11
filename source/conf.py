@@ -164,7 +164,7 @@ html_static_path = ["_static"]
 html_logo = "assets/wpilibDocsLogo.png"
 
 # URL favicon
-html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
+html_favicon = "https://raw.githubusercontent.com/wpilibsuite/frc-docs/main/source/assets/FIRSTicon_RGB_withTM.ico"
 
 html_theme_options = {
     "collapse_navigation": True,
