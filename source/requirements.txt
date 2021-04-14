@@ -29,7 +29,7 @@ shutilwhich==1.1.0
 six==1.15.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
 smmap==4.0.0; python_version >= "3.6"
 snowballstemmer==2.1.0; python_version >= "3.5"
-sphinx-hoverxref==0.5b1
+-e git://github.com/daltz333/sphinx-hoverxref@mathjax3#egg=sphinx_hoverxref
 sphinx-notfound-page==0.6
 sphinx-panels==0.5.2
 sphinx-rtd-theme==0.5.1

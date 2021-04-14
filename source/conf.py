@@ -144,6 +144,11 @@ IMAGE_SIZE_EXCLUSIONS = [
 # Required to display LaTeX in hover content
 hoverxref_mathjax = True
 
+# Development hoverXRef content
+hoverxref_project = 'frc-docs'
+hoverxref_version = 'latest'
+hoverxref_api_host = 'https://readthedocs.org'
+
 # Use MathJax3 for better page loading times
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
