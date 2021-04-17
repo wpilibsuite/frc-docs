@@ -3,14 +3,17 @@
 Joysticks
 =========
 
-FRC\ |reg| joysticks come in all shapes and sizes and virtually any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has two relevant subclasses for preconfigured joysticks but if not listed you could implement your own.  The first is ``Joystick`` which is useful for standar flight joysticks.  The second is ``XboxController`` which work for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).
+In FRC\ |reg| almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has two relevant subclasses for preconfigured joysticks but if not listed you could implement your own.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Each axis of the controller ranges from -1 to 1.
 
 The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
 
 Driver Station Joysticks
 ------------------------
 
-A joystick can be used with the Driver Station program to control the robot.  The startup routine will read whatever position the joysticks are in as the center position, therefore, when the station is turned on the joysticks must be at their center position. In general the Driver Station software will try to preserve the ordering of devices between runs but it is a good idea to note what order your devices should be in and check each time you start the Driver Station software that they are correct.  The :ref:`USB Devices Tab <docs/software/driverstation/driver-station:USB Devices Tab>` of the Driver Station is used to setup and configure the joystick for use with the robot.  Pressing a button on a joystick will cause its entry in the table to light up blue and have asterisks appear after the name. To reorder the joysticks simply click and drag.
+.. image:: docs/software/driverstation/images/driver-station/ds-usb-tab.png
+   :alt: The 4th tab down on the left hand side is the USB devices tab.
+
+A joystick can be used with the Driver Station program to control the robot.  The startup routine will read whatever position the joysticks are in as the center position, therefore, when the computer is turned on (or when the joystick is plugged in) the joysticks must be at their center position. In general the Driver Station software will try to preserve the ordering of devices between runs but it is a good idea to note what order your devices should be in and check each time you start the Driver Station software that they are correct.  The :ref:`USB Devices Tab <docs/software/driverstation/driver-station:USB Devices Tab>` of the Driver Station is used to setup and configure the joystick for use with the robot.  Pressing a button on a joystick will cause its entry in the table to light up blue and have asterisks appear after the name. To reorder the joysticks simply click and drag.
 
 When the Driver Station is in disabled mode it is routinely looking for status changes on the joystick devices, unplugged devices are removed from the list and new devices are opened and added. When not connected to the FMS, unplugging a joystick will force the Driver Station into disabled mode. To start using the joystick again plug the joystick back in, check that it shows up in the right spot, then re-enable the robot. While the Driver Station is in enabled mode it will not scan for new devices as this is a time consuming operation and timely update of signals from attached devices takes priority.
 
@@ -29,9 +32,9 @@ Joystick Class
 
    .. code-tab:: c++
 
-      Joystick exampleJoystick = new Joystick(0); // 0 is the USB Port to be used as indicated on the Driver Station
+      Joystick{0} exampleJoystick; // 0 is the USB Port to be used as indicated on the Driver Station
 
-The joystick class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the joystick that is used the user may need to set the specific X, Y, Z, and Throttle channels that your joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight stick.  
+The joystick class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the joystick that is used the user may need to set the specific X, Y, Z, and Throttle channels that your joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight stick.
 
 XboxController Class
 --------------------
@@ -44,7 +47,9 @@ XboxController Class
 
    .. code-tab:: c++
 
-      XboxController exampleXbox = new XboxController(0); // 0 is the USB Port to be used as indicated on the Driver Station
+      XboxController{0} exampleXbox; // 0 is the USB Port to be used as indicated on the Driver Station
+
+The XboxController class provides named indicies for each of the buttons that you can access with `XboxController.Button.kX.value`.  
 
 POV
 ---
@@ -53,6 +58,11 @@ POV
    :alt: The angles used by the code of the POV/D-pad with 0 at the top and continuing clockwise.
 
 On joysticks the POV is directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
+
+Custom Joystick Class
+---------------------
+
+A button and axis can be created using `.getRawButton(0)` and `.getRawAxis(0)` respectively.
 
 Joystick Usage
 --------------
