@@ -10,7 +10,7 @@ The command based way to use the these classes is detailed in the section: :ref:
 Driver Station Joysticks
 ------------------------
 
-.. image:: docs/software/driverstation/images/driver-station/ds-usb-tab.png
+.. image:: /docs/software/driverstation/images/driver-station/ds-usb-tab.png
    :alt: The 4th tab down on the left hand side is the USB devices tab.
 
 A joystick can be used with the Driver Station program to control the robot.  The startup routine will read whatever position the joysticks are in as the center position, therefore, when the computer is turned on (or when the joystick is plugged in) the joysticks must be at their center position. In general the Driver Station software will try to preserve the ordering of devices between runs but it is a good idea to note what order your devices should be in and check each time you start the Driver Station software that they are correct.  The :ref:`USB Devices Tab <docs/software/driverstation/driver-station:USB Devices Tab>` of the Driver Station is used to setup and configure the joystick for use with the robot.  Pressing a button on a joystick will cause its entry in the table to light up blue and have asterisks appear after the name. To reorder the joysticks simply click and drag.
@@ -49,7 +49,7 @@ XboxController Class
 
       XboxController{0} exampleXbox; // 0 is the USB Port to be used as indicated on the Driver Station
 
-The XboxController class provides named indicies for each of the buttons that you can access with `XboxController.Button.kX.value`.  
+The XboxController class provides named indicies for each of the buttons that you can access with `XboxController.Button.kX.value`.
 
 POV
 ---
