@@ -24,6 +24,8 @@ The FRC Driver Station USB Devices Tab contains indicators of the values of axes
 Joystick Class
 --------------
 
+.. image:: images/joystick/joystick.png
+
 .. tabs::
 
    .. code-tab:: java
@@ -32,12 +34,14 @@ Joystick Class
 
    .. code-tab:: c++
 
-      Joystick{0} exampleJoystick; // 0 is the USB Port to be used as indicated on the Driver Station
+      Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
 The joystick class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the joystick that is used the user may need to set the specific X, Y, Z, and Throttle channels that your joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight stick.
 
 XboxController Class
 --------------------
+
+.. image:: images/joystick/xbox.jpg
 
 .. tabs::
 
@@ -47,9 +51,9 @@ XboxController Class
 
    .. code-tab:: c++
 
-      XboxController{0} exampleXbox; // 0 is the USB Port to be used as indicated on the Driver Station
+      XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-The XboxController class provides named indicies for each of the buttons that you can access with `XboxController.Button.kX.value`.
+The XboxController class provides named indicies for each of the buttons that you can access with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 POV
 ---
@@ -59,11 +63,89 @@ POV
 
 On joysticks the POV is directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
-Custom Joystick Class
----------------------
-
-A button and axis can be created using `.getRawButton(0)` and `.getRawAxis(0)` respectively.
-
 Joystick Usage
 --------------
 
+An axis can be used with ``.getRawAxis(0)`` (if not using either of the classes above) that returns the current value.  Zero in this example is the index of axis as found in the Drive Station mentioned above.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      private final PWMSparkMax m_leftMotor = new PWMSparkMax(0);
+      private final PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
+      private final Joystick m_stick = new Joystick(0);
+
+      m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());
+
+   .. code-tab:: c++
+
+      frc::PWMVictorSPX m_leftMotor{0};
+      frc::PWMVictorSPX m_rightMotor{1};
+      frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
+      frc::Joystick m_stick{0};
+      
+      m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());
+
+Button Usage
+------------
+
+Unlike an axis you will usually want to use the ``pressed`` and ``released`` methods to respond to button input.  These will return true if the button has been activated since the last check.  This is helpful for taking an action once when the event occurs but not having to continuously do it while the button is held down.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      if(joystick.getRawButtonPressed(0)) {
+         turnIntakeOn(); // While held intake stays on
+      }
+      if(joystick.getRawButtonReleased(0)) {
+         turnIntakeOff(); // When released it turns off
+      }
+
+   .. code-tab:: c++
+
+      if(joystick.GetRawButtonPressed(0)) {
+         turnIntakeOn(); // While held intake stays on
+      }
+      if(joystick.GetRawButtonReleased(0)) {
+         turnIntakeOff(); // When released it turns off
+      }
+
+
+A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      boolean toggle = false;
+
+      if(joystick.getRawButtonPressed(0)) {
+         if(toggle){
+            // Current state is true so turn off
+            retractIntake();
+            toggle = false;
+         }else{
+            // Current state is false so turn on
+            deployIntake();
+            toggle = true;
+         }
+      }
+
+   .. code-tab:: c++
+
+      bool toggle{false};
+
+      if(joystick.GetRawButtonPressed(0)) {
+         if(toggle){
+            // Current state is true so turn off
+            retractIntake();
+            toggle = false;
+         }else{
+            // Current state is false so turn on
+            deployIntake();
+            toggle = true;
+         }
+      }
