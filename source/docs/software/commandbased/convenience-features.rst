@@ -238,7 +238,7 @@ The ``PrintCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/r
 
   .. code-tab:: c++
 
-    frc2::PrintCommand("This message will be printed!)
+    frc2::PrintCommand("This message will be printed!")
 
 ScheduleCommand
 ^^^^^^^^^^^^^^^
