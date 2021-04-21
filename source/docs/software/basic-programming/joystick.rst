@@ -85,7 +85,7 @@ An axis can be used with ``.getRawAxis(0)`` (if not using either of the classes 
       frc::PWMVictorSPX m_rightMotor{1};
       frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
       frc::Joystick m_stick{0};
-      
+
       m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());
 
 Button Usage
