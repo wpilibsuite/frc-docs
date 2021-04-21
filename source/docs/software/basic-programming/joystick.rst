@@ -21,8 +21,8 @@ When the robot is connected to the Field Management System at competition the Dr
 
 The FRC Driver Station USB Devices Tab contains indicators of the values of axes buttons and the POV that can be used to determine the mapping between physical joystick features and axis or button numbers. Simply click the joystick in the list to select it and the indicators will begin responding to the joystick input.
 
-Joystick Class
---------------
+``Joystick`` Class
+------------------
 
 .. image:: images/joystick/joystick.png
 
@@ -38,8 +38,8 @@ Joystick Class
 
 The joystick class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the joystick that is used the user may need to set the specific X, Y, Z, and Throttle channels that your joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight stick.
 
-XboxController Class
---------------------
+``XboxController`` Class
+------------------------
 
 .. image:: images/joystick/xbox.jpg
 
@@ -63,8 +63,8 @@ POV
 
 On joysticks the POV is directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
-Joystick Usage
---------------
+``Joystick`` Usage
+------------------
 
 An axis can be used with ``.getRawAxis(0)`` (if not using either of the classes above) that returns the current value.  Zero in this example is the index of axis as found in the Drive Station mentioned above.
 
