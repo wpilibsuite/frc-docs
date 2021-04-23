@@ -3,14 +3,16 @@
 Creating a client-side program
 ==============================
 
-If all you need to do is have your robot program communicate with GRIP or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build Network Tables programs for those (non-roboRIO) platforms.
+If all you need to do is have your robot program communicate with GRIP or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build :term:`NetworkTables` programs for those (non-roboRIO) platforms.
 
 A basic client program looks like the following example.
 
 .. tabs::
 
    .. code-tab:: java
+
       package networktablesdesktopclient;
+
       import edu.wpi.first.networktables.NetworkTable;
       import edu.wpi.first.networktables.NetworkTableEntry;
       import edu.wpi.first.networktables.NetworkTableInstance;
@@ -43,7 +45,7 @@ A basic client program looks like the following example.
 
 In this example an instance of NetworkTables is created and a NetworkTableEntry if created to reference the values of "x" and "y" from a table called "datatable".
 
-Then this instance is started as a NetworkTable client with the team number (the roboRIO is always the server). Additionally, if the program is running on the Driver Station computer, by using the startDSClient() method, NetworkTables will get the robot IP address from the Driver Station.
+Then this instance is started as a NetworkTables client with the team number (the roboRIO is always the server). Additionally, if the program is running on the Driver Station computer, by using the startDSClient() method, NetworkTables will get the robot IP address from the Driver Station.
 
 Then this sample program simply loops once a second and gets the values for x and y and prints them on the console. In a more realistic program, the client might be processing or generating values for the robot to consume.
 
@@ -88,5 +90,6 @@ Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSI
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
+       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxraspbian"
        runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
    }

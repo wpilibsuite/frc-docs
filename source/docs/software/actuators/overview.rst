@@ -7,6 +7,7 @@ This section discusses the control of motors and pneumatics through motor contro
 
 Motor Controllers
 -----------------
+
 A motor controller is responsible on your robot for making motors move. For brushed DC motors such as CIMs or 775s, the motor controller regulates the voltage that the motor receives, much like a light bulb. For brushless motor controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
 
 .. note:: Another name for a motor controller is a speed controller.
@@ -17,6 +18,7 @@ A motor controller is responsible on your robot for making motors move. For brus
 
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of January 2020:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
@@ -36,13 +38,20 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 
 Pneumatics
 ----------
+
 Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics`.
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Pneumatics Control Module (P/N: am-2858, 217-4243)
 
+Relays
+------
+
+A relay controls power to a motor or custom electronics in an On/Off fashion.
+
 FRC Legal Relay Modules
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 - Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
 - Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)

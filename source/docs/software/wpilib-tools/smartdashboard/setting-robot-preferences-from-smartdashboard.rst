@@ -1,7 +1,7 @@
 Setting Robot Preferences
 =========================
 
-The Robot Preferences (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Preferences.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Preferences.html>`__) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, etc. that you would like to change without having to rebuild the program. The values can be viewed on the SmartDashboard and read and written by the robot program.
+The Robot Preferences (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Preferences.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Preferences.html>`__) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, etc. that you would like to change without having to rebuild the program. The values can be viewed on the SmartDashboard and read and written by the robot program.
 
 Reading and Writing Preferences
 -------------------------------
@@ -48,6 +48,7 @@ Displaying Preferences in SmartDashboard
 ----------------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/preferences-widget.png
+  :alt: To add preferences to the display choose View->Add...->Robot Preferences.
 
 In the SmartDashboard, the Preferences display can be added to the display revealing the contents of the preferences file stored in the roboRIO flash memory.
 
@@ -55,5 +56,6 @@ Viewing and Editing Preferences
 -------------------------------
 
 .. image:: images/setting-robot-preferences-from-smartdashboard/view-edit-preferences-values.png
+  :alt: Editing the robot preferences via the SmartDashboard widget.
 
 The values are shown here with the default values from the code. This was read from the robot through the NetworkTables interface built into SmartDashboard. If the values need to be adjusted they can be edited here and saved. The next time the robot program starts up the new values will be loaded in the ``robotInit()`` method. Each subsequent time the robot starts, the new values will be retrieved without having to edit and recompile/reload the robot program.

@@ -1,6 +1,6 @@
 Reading array values published by NetworkTables
 ===============================================
-This article describes how to read values published by NetworkTables using a program running on the robot. This is useful when
+This article describes how to read values published by :term:`NetworkTables` using a program running on the robot. This is useful when
 using computer vision where the images are processed on your driver station laptop and the results stored into NetworkTables
 possibly using a separate vision processor like a raspberry pi, or a tool on the robot like GRIP, or a python program to do the
 image processing.
@@ -9,18 +9,18 @@ Very often the values are for one or more areas of interest such as goals or gam
 the example below, several x, y, width, height, and areas are returned by the image processor and the robot program can sort out
 which of the returned values are interesting through further processing.
 
-Verify the network table keys being published
+Verify the NetworkTables keys being published
 ---------------------------------------------
 .. image:: images/reading-array-values-published-by-networktables-1.png
-   :alt: Image of OutlineViewer with the network table keys
+   :alt: Image of OutlineViewer with the NetworkTables keys
 
-You can verify the names of the network table keys used for publishing the values by using the Outline Viewer application.
+You can verify the names of the NetworkTables keys used for publishing the values by using the Outline Viewer application.
 It is a Java program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu
 in Visual Studio Code then Start Tool then "OutlineViewer". In this example, with the image processing program running (GRIP) you can see the values being put
 into NetworkTables.
 
 In this case the values are stored in a table called GRIP and a sub-table called myContoursReport. You can see that the values are
-in brackets and there are 2 values in this case for each key. The network table key names are centerX, centerY, area, height and
+in brackets and there are 2 values in this case for each key. The NetworkTables key names are centerX, centerY, area, height and
 width.
 
 Both of the following examples are extremely simplified programs that just illustrate the use of NetworkTables. All the code is in
@@ -79,7 +79,7 @@ The steps to getting the values and, in this program, printing them are:
 2.  Initialize the subtable instance so that it can be used later for retrieving the values.
 3.  Read the array of values from NetworkTables. In the case of a communicating programs, it's possible that the program producing
     the output being read here might not yet be available when the robot program starts up. To avoid issues of the data not being
-    ready, a default array of values is supplied. This default value will be returned if the network table key hasn't yet been
+    ready, a default array of values is supplied. This default value will be returned if the NetworkTables key hasn't yet been
     published. This code will loop over the value of areas every 20ms.
 
 Program output

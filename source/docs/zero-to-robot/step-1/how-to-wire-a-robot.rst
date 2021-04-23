@@ -7,12 +7,13 @@ How to Wire an FRC Robot
 
    This document details the wiring of a basic electronics board for bench-top testing.
 
-   Some images shown in this section reflect the setup for a Robot Control System using SPARK Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, a second set of images shows the wiring steps for using PWM controllers with integrated wires.
+   Some images shown in this section reflect the setup for a Robot Control System using Victor SPX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
 
 Overview
 --------
 
 .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
+  :alt: Detailed diagram of all of the components and how they are connected.
   :width: 600
 
   Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
@@ -31,7 +32,7 @@ Locate the following control system components and tools
       - Voltage Regulator Module (VRM)
       - OpenMesh radio (with power cable and Ethernet cable)
       - Robot Signal Light (RSL)
-      - 4x Victor SPX or other motor controllers
+      - 4x SPARK MAX or other motor controllers
       - 2x PWM y-cables
       - 120A Circuit breaker
       - 4x 40A Circuit breaker
@@ -57,23 +58,23 @@ Locate the following control system components and tools
       - 5 mm Hex key (3/16" may work if metric is unavailable)
       - 1/16" Hex key
       - Wire cutters, strippers, and crimpers
-      - 7/16” (11 mm may work if imperial is unavailable) box end wrench or nut driver
+      - 7/16" (11 mm may work if imperial is unavailable) box end wrench or nut driver
 
 Create the Base for the Control System
 --------------------------------------
 
-For a benchtop test board, cut piece of 1/4” or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
+For a benchtop test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
 Layout the Core Control System Components
 -----------------------------------------
 
-.. image:: images/how-to-wire-a-robot/image1.jpg
-
+.. image:: images/how-to-wire-a-robot/layout.jpg
+  :alt: A basic wiring layout.
 
 Lay out the components on the board. An example layout is shown in the image above.
 
-.. image:: images/how-to-wire-a-robot/image2.png
-
+.. image:: images/how-to-wire-a-robot/ziptie.png
+  :alt: Using zipties to secure components down.
 
 Fasten Components
 -----------------
@@ -83,7 +84,8 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 Attach Battery Connector to PDP
 -------------------------------
 
-.. image:: images/how-to-wire-a-robot/image3.jpg
+.. image:: images/how-to-wire-a-robot/terminal-lug.jpg
+  :alt: Highlights the location of the terminal lugs on the PDP and circuit breaker.
 
 Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 1/16" Allen, 5 mm Allen,
 7/16" (11 mm) Box end
@@ -98,12 +100,13 @@ Attach terminal lugs to battery connector:
 Wire Breaker to PDP
 -------------------
 
-.. image:: images/how-to-wire-a-robot/image4.jpg
+.. image:: images/how-to-wire-a-robot/circuit-breaker.jpg
+  :alt: Show the circuit breaker wired to the PDP.
 
 
 Requires: 6 AWG (16 :math:`mm^2`) red wire, 2x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) box end
 
-Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the “AUX” side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
+Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) box end, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut, strip, and crimp the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDP.
 
 1. Cut, strip, and crimp the terminal to the 2nd end of the red 6 AWG (16 :math:`mm^2`) wire.
 2. Using the 7/16" (11 mm) box end, secure the wire to the "AUX" side of the 120A main breaker.
@@ -112,7 +115,8 @@ Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Usin
 Insulate PDP connections
 ------------------------
 
-.. image:: images/how-to-wire-a-robot/image5.jpg
+.. image:: images/how-to-wire-a-robot/insulate.jpg
+  :alt: Putting tape around the connectors to insulate them.
 
 Requires: 1/16" Allen, Electrical tape
 
@@ -138,15 +142,17 @@ To maximize pullout force and minimize connection resistance wires should not be
 Motor Controller Power
 ----------------------
 
-.. image:: images/how-to-wire-a-robot/image6.jpg
+.. image:: images/how-to-wire-a-robot/pdp-power.jpg
+  :alt: Wiring power from the PDP to motor controllers.
 
-.. image:: images/how-to-wire-a-robot/image7.jpg
+.. image:: images/how-to-wire-a-robot/spark-power.jpg
+  :alt: Wiring power to a Spark Motor Controller with ring terminals.
 
 Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG (4 - 6 :math:`mm^2`) wire, 10 or 12 AWG (4 - 6 :math:`mm^2`) fork/ring terminals (terminal controllers only), wire crimper
 
-For Victor SPX or other wire integrated motor controllers (top image):
+For SPARK MAX or other wire integrated motor controllers (top image):
 
-- Cut and strip the red and black power input wires wire, then insert into one of the 40A (larger) Wago terminal pairs.
+- Cut and strip the red and black power input wires, then insert into one of the 40A (larger) Wago terminal pairs.
 
 For terminal motor controllers (bottom image):
 
@@ -181,7 +187,8 @@ After making the connection check to be sure that it is clean and secure:
 roboRIO Power
 -------------
 
-.. image:: images/how-to-wire-a-robot/image8.jpg
+.. image:: images/how-to-wire-a-robot/roborio-power.jpg
+  :alt: Power coming from the PDP to the roboRIO.
 
 Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
 
@@ -194,7 +201,8 @@ Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG
 Voltage Regulator Module Power
 ------------------------------
 
-.. image:: images/how-to-wire-a-robot/image11.jpg
+.. image:: images/how-to-wire-a-robot/vrm-power.jpg
+  :alt: Power going from the PDP to the VRM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
@@ -207,7 +215,8 @@ Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^
 Pneumatics Control Module Power (Optional)
 ------------------------------------------
 
-.. image:: images/how-to-wire-a-robot/image12.jpg
+.. image:: images/how-to-wire-a-robot/pcm-power.jpg
+  :alt: Power going from the PDP to the PCM.
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
 
@@ -224,7 +233,8 @@ Radio Power and Ethernet
 
 .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the female end of the cable using an additional Ethernet cable as shown in the next step.
 
-.. image:: images/how-to-wire-a-robot/image13.jpg
+.. image:: images/how-to-wire-a-robot/radio-power.jpg
+  :alt: Connection power to the robot radio via a PoE cable.
 
 Requires: Small flat screwdriver (optional), Rev radio PoE cable
 
@@ -234,7 +244,8 @@ Requires: Small flat screwdriver (optional), Rev radio PoE cable
 roboRIO to Radio Ethernet
 -------------------------
 
-.. image:: images/how-to-wire-a-robot/image14.jpg
+.. image:: images/how-to-wire-a-robot/radio-ethernet.jpg
+  :alt: Connecting Ethernet from the roboRIO to the PoE cable.
 
 Requires: Ethernet cable
 
@@ -244,9 +255,10 @@ CAN Devices
 -----------
 
 roboRIO to PCM CAN
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
-.. image:: images/how-to-wire-a-robot/image15.jpg
+.. image:: images/how-to-wire-a-robot/pcm-can.jpg
+  :alt: Connecting CAN wire from the roboRIO to the PCM.
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
@@ -258,9 +270,10 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
 PCM to PDP CAN
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
-.. image:: images/how-to-wire-a-robot/image16.jpg
+.. image:: images/how-to-wire-a-robot/pdp-can.jpg
+  :alt: Connecting the PCM CAN to the PDP.
 
 Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
@@ -271,28 +284,36 @@ Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted
 3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
 4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-.. note: The PDP ships with the CAN bus terminating resistor jumper in the “ON” position. It is recommended to leave the jumper in this position and place any additional CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the bus). If you wish to place the PDP in the middle of the bus (utilizing both pairs of PDP CAN terminals) move the jumper to the “OFF” position and place your own 120 ohm terminating resistor at the end of your CAN bus chain.
+.. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
 PWM Cables
 ----------
 
-.. image:: images/how-to-wire-a-robot/image17.jpg
+.. image:: images/how-to-wire-a-robot/pwm.jpg
+  :alt: PWM Cables going from the roboRIO to the Spark Motor Controller.
 
-Requires: 4x PWM cables (if using non-integrated wire controllers), 2x PWM Y-cable (Optional)
+This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is less complex and easier to troubleshoot than CAN operation. The SPARK MAXs (and many other FRC motor controllers) can also be wired using :ref:`CAN<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` which unlocks easier configuration, advanced functionality, better diagnostic data and reduces the amount of wire needed.
+
+Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if controllers without integrated wires or adapters, otherwise optional), 2x PWM Y-cable (Optional)
 
 Option 1 (Direct connect):
 
-- Connect the PWM cables from each controller directly to the roboRIO. For Victor SPX's and other PWM/CAN controllers, the green wire (black wire for non-integrated controllers) should be towards the outside of the roboRIO. For controllers without integrated wires, make sure the controller side of the black wire is located according to the markings on the controller. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
+1. If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter with a 3 pin connector with black/white wires).
+2. If needed, attach PWM extension cables to the controller or adapter. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black).
+3. Attach the other end of the cable to the roboRIO with the black wire towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
 Option 2 (Y-cable):
 
-1. Connect 1 PWM Y-cable to the PWM cables for the controllers controlling one side of the robot. The brown wire on the Y-cable should match the green/black wire on the PWM cable.
-2. Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and the right side to PWM 1 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
+1. If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter with a 3 pin connector with black/white wires).
+2. If needed, attach PWM extension cables between the controller or adapter and the PWM Y-cable. On the controller side, match the colors or markings (some controllers may have green/yellow wiring, green should connect to black).
+3. Connect 1 PWM Y-cable to the 2 PWM cables for the controllers controlling each side of the robot. The brown wire on the Y-cable should match the black wire on the PWM cable.
+4. Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and the right side to PWM 1 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
 Robot Signal Light
 ------------------
 
-.. image:: images/how-to-wire-a-robot/image18.jpg
+.. image:: images/how-to-wire-a-robot/rsl.jpg
+  :alt: Robot Signal Light (rsl) wiring from roboRIO to RSL
 
 Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`) red wire, very small flat screwdriver
 
@@ -308,7 +329,8 @@ Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`
 Circuit Breakers
 ----------------
 
-.. image:: images/how-to-wire-a-robot/image19.jpg
+.. image:: images/how-to-wire-a-robot/40A-breaker.jpg
+  :alt: Installing 40A breakers in the PDP.
 
 Requires: 4x 40A circuit breakers
 
@@ -319,7 +341,8 @@ If working on a Robot Quick Build, stop here and insert the board into the robot
 Motor Power
 -----------
 
-.. image:: images/how-to-wire-a-robot/image20.jpg
+.. image:: images/how-to-wire-a-robot/motor-power.jpg
+  :alt: Connecting power from the motor to the motor controller.
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
 
@@ -327,12 +350,12 @@ For each CIM motor:
 
 - Strip the ends of the red and black wires from the CIM
 
-For integrated wire controllers (including Victor SPX):
+For integrated wire controllers including SPARK MAX (top image):
 
-1. Strip the white and green wires from the controller
-2. Connect the motor wires to the controller output wires (it is recommended to connect the red wire to the white M+ output). The images/how-to-wire-a-robot above show examples using quick disconnect terminals.
+1. Strip the red and black wires (or white and green wires) from the controller (the SPARK MAX white wire is unused for brushed motors such as the CIM, it should be secured and the end should be insulated such with electrical tape or other insulation method).
+2. Connect the motor wires to the matching controller output wires (for controllers with white/green, connect red to white and green to black). The images above show an example using quick disconnect terminals which are provided in the Rookie KOP.
 
-For the SPARK or other non-integrated-wire controllers:
+For the SPARK or other non-integrated-wire controllers (bottom image):
 
 1. Crimp a ring/fork terminal on each of the motor wires.
 2. Attach the wires to the output side of the motor controller (red to +, black to -)
@@ -340,7 +363,8 @@ For the SPARK or other non-integrated-wire controllers:
 STOP
 ----
 
-.. image:: images/how-to-wire-a-robot/image21.png
+.. image:: images/how-to-wire-a-robot/stop.png
+  :alt: Giant red stop sign.
 
 .. danger:: Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.
 
@@ -357,7 +381,8 @@ Before plugging in the battery, make sure all connections have been made with th
 Manage Wires
 ------------
 
-.. image:: images/how-to-wire-a-robot/image22.jpg
+.. image:: images/how-to-wire-a-robot/wires.jpg
+  :alt: Using zipties to make the wiring look more organized.
 
 Requires: Zip ties
 
@@ -368,4 +393,10 @@ Connect Battery
 
 Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 
-If stuff blinks, you probably did it right. From here, you should connect to the roboRIO and try uploading your code!
+If stuff blinks, you probably did it right.
+
+Before moving on, if using SPARK MAX controllers, there is one more configuration step to complete. The SPARK MAX motor controllers are configured to control a brushless motor by default. You can verify this by checking that the light on the controller is blinking either cyan or magenta (indicating brushless brake or brushless coast respectively). To change to to brushed mode, press and hold the mode button for 3-4 seconds until the status LED changes color. The LED should change to either blue or yellow, indicating that the controller is in brushed mode (brake or coast respectively). To change the brake or coast mode, which control how quickly the motor slows down when a neutral signal is applied, press the mode button briefly.
+
+.. tip:: For more information on the SPARK MAX motor controllers, including how to test your motors/controllers without writing any code by using the REV Hardware Client, see the `SPARK MAX Quickstart guide <https://docs.revrobotics.com/sparkmax/gs-sm>`__.
+
+From here, you should connect to the roboRIO and try uploading your code!

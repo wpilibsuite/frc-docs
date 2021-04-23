@@ -8,19 +8,23 @@ Creating a New WPILib Project
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`:
 
-|Command Palette|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/command-palette.png
+    :alt: Opening the Command Palette.
 
 Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands:
 
-|WPILib Commands|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/wpilib-commands.png
+    :alt: Typing WPILib to filter for just the WPILib commands.
 
 Now, select the "Create a new project" command:
 
-|Create New Project|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
+    :alt: Choose "WPILib: Create a new project".
 
 This will bring up the "New Project Creator Window:"
 
-|New Project Creator|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
+    :alt: The different parts of the new project creation window.
 
 The elements of the New Project Creator Window are explained below:
 
@@ -44,35 +48,36 @@ After successfully creating your project, VS Code will give the option of openin
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
-|Opened Robot Project|
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
+    :alt: The robo.java code shown after opening a new project.
 
 C++ Configurations (C++ Only)
 -----------------------------
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-|C++ Configurations|
+.. image:: /docs/software/vscode-overview/images/importing-eclipse-project/cpp-configurations.png
+    :alt: You must choose "Yes" to refrest the C++ configurations.
 
 Imports/Includes
 ----------------
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        import edu.wpi.first.wpilibj.Joystick;
-        import edu.wpi.first.wpilibj.PWMVictorSPX;
-        import edu.wpi.first.wpilibj.TimedRobot;
-        import edu.wpi.first.wpilibj.Timer;
-        import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 7-11
+         :linenos:
+         :lineno-start: 7
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        #include <frc/Joystick.h>
-        #include <frc/PWMVictorSPX.h>
-        #include <frc/TimedRobot.h>
-        #include <frc/Timer.h>
-        #include <frc/drive/DifferentialDrive.h>
-        #include <frc/livewindow/LiveWindow.h>
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 5-10
+         :linenos:
+         :lineno-start: 5
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMVictorSPX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
 
@@ -81,32 +86,27 @@ Defining the variables for our sample robot
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        public class Robot extends TimedRobot {
-        private final DifferentialDrive m_robotDrive = new DifferentialDrive(new PWMVictorSPX(0), new PWMVictorSPX(1));
-        private final Joystick m_stick = new Joystick(0);
-        private final Timer m_timer = new Timer();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 19-23
+         :linenos:
+         :lineno-start: 19
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        class Robot : public frc::TimedRobot
-        {
-        public:
-            Robot() {
-                m_robotDrive.SetExpiration(0.1);
-                m_timer.Start();
-            }
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 12-17
+         :linenos:
+         :lineno-start: 12
 
-
-        private:
-        // Robot drive system
-        frc::PWMVictorSPX m_left{0};
-        frc::PWMVictorSPX m_right{1};
-        frc::DifferentialDrive m_robotDrive{m_left, m_right};
-        frc::Joystick m_stick{0};
-        frc::LiveWindow& m_lw = *frc::LiveWindow::GetInstance();
-        frc::Timer m_timer;
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 46-54
+         :linenos:
+         :lineno-start: 46
 
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1. Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and time (m_timer). This section of the code does three things:
 
@@ -130,48 +130,28 @@ Robot Initialization
         void RobotInit() {}
 
 
-The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program gets a pointer to the ``LiveWindow`` instance (this is used in the test method discussed below). This method is omitted from the code, meaning the default version will be run (if we wanted to run something here we could provide the code above to override the default).
+The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program doesn't do anything. If we wanted to run something here we could provide the code above to override the default).
 
 Simple Autonomous Example
 -------------------------
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        @Override
-        public void autonomousInit() {
-            m_timer.reset();
-            m_timer.start();
-        }
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 32-48
+         :linenos:
+         :lineno-start: 32
 
-        @Override
-        public void autonomousPeriodic() {
-            // Drive for 2 seconds
-            if (m_timer.get() < 2.0) {
-                m_robotDrive.arcadeDrive(0.5, 0.0); // drive forwards half speed
-            } else {
-                m_robotDrive.stopMotor(); // stop robot
-            }
-        }
+   .. group-tab:: C++
 
-    .. code-tab:: c++
-
-        void AutonomousInit() override {
-            m_timer.Reset();
-            m_timer.Start();
-        }
-
-        void AutonomousPeriodic() override {
-            // Drive for 2 seconds
-            if (m_timer.Get() < 2.0) {
-                // Drive forwards half speed
-                m_robotDrive.ArcadeDrive(0.5, 0.0);
-            } else {
-                // Stop robot
-                m_robotDrive.ArcadeDrive(0.0, 0.0);
-            }
-        }
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 19-33
+         :linenos:
+         :lineno-start: 19
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we reset the ``Timer`` and then start it in this method.
 
@@ -182,25 +162,21 @@ Joystick Control for teleoperation
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        @Override
-        public void teleopInit() {
-        }
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 50-58
+         :linenos:
+         :lineno-start: 50
 
-        @Override
-        public void teleopPeriodic() {
-            m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());
-        }
+   .. group-tab:: C++
 
-
-    .. code-tab:: c++
-
-        void TeleopInit() override {}
-        void TeleopPeriodic() override {
-            // Drive with arcade style (use right stick)
-            m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());
-        }
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 35-40
+         :linenos:
+         :lineno-start: 35
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
@@ -209,24 +185,23 @@ Test Mode
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        @Override
-        public void testPeriodic() {}
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 60-67
+         :linenos:
+         :lineno-start: 60
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        void TestPeriodic() override {}
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 42-44
+         :linenos:
+         :lineno-start: 42
 
-Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestPeriodic`` is provided here for example.
-
-.. |Command Palette| image:: /docs/software/vscode-overview/images/creating-robot-program/command-palette.png
-.. |WPILib Commands| image:: /docs/software/vscode-overview/images/creating-robot-program/wpilib-commands.png
-.. |Create New Project| image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
-.. |New Project Creator| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
-.. |New Project Configured| image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
-.. |Opened Robot Project| image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
-.. |C++ Configurations| image:: /docs/software/vscode-overview/images/creating-robot-program/cpp-configurations.png
+Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
 Deploying the Project to a Robot
 --------------------------------

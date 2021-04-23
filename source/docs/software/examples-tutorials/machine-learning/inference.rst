@@ -3,6 +3,8 @@
 Inference
 =========
 
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
+
 Inference with the Google Coral
 
 1. Acquire a Raspberry Pi 3 or newer, and a `Google Coral USB Accelerator <https://www.amazon.com/dp/B07S214S5Y>`__.

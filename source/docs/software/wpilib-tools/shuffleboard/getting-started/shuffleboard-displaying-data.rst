@@ -59,7 +59,7 @@ Enable Test Mode in the Driver Station by clicking on the "Test" button and sett
 Getting data from the Sources view
 ----------------------------------
 
-Normally network table data automatically appears on one of the tabs and you just rearrange and use that data. Sometimes you might want to recover a value that was accidentally deleted from the tab or display a value that is not part of the SmartDashboard/ NetworkTable key. For these cases the values can be dragged onto a pane from NetworkTable view under Sources on the left side of the window. Choose the value that you want to display and just drag it to the pane and it will be automatically created with the default type of widget for the data type.
+Normally :term:`NetworkTables` data automatically appears on one of the tabs and you just rearrange and use that data. Sometimes you might want to recover a value that was accidentally deleted from the tab or display a value that is not part of the SmartDashboard / NetworkTables key. For these cases the values can be dragged onto a pane from NetworkTables view under Sources on the left side of the window. Choose the value that you want to display and just drag it to the pane and it will be automatically created with the default type of widget for the data type.
 
 .. figure:: images/data-sources.png
    :alt:

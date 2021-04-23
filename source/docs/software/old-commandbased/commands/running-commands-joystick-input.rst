@@ -8,7 +8,8 @@ Running Commands on Joystick Input
 The OI Class
 ------------
 
-.. image:: images/commands-joystick-input/image1.png
+.. image:: images/commands-joystick-input/oiclass.png
+   :alt: Location of the OI class in the tree view.
 
 The command based template contains a class called OI, located in ``OI.java``, where **Operator Interface** behaviors are typically defined.
 

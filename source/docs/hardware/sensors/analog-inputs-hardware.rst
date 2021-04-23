@@ -19,6 +19,7 @@ Connecting to roboRIO analog input ports
 .. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
 .. image:: images/roborio/roborio-aio.svg
+   :alt: The roboRIO, with the location of the Analog Inputs highlighted.
 
 The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 5V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
 
@@ -30,6 +31,7 @@ Connecting a sensor to a single analog input port
 Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports. They should be connected accordingly.
 
 .. image:: images/analog-inputs-hardware/ultrasonic-sensor-to-roborio.svg
+   :alt: Hooking a MB1013 distance sensor to an analog input on the roboRIO.
 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -37,6 +39,7 @@ Connecting a sensor to multiple analog input ports
 Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows an analog accelerometer that requires three digital input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
 
 .. image:: images/analog-inputs-hardware/triple-axis-accelerometer-to-roborio.svg
+   :alt: Hooking a triple axis accelerometer to three different analog input channels of the roboRIO.
 
 .. |ground| unicode:: 0x23DA
 

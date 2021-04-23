@@ -15,7 +15,7 @@ For Java and C++ a JSON file describing the vendor library is installed on your 
 
 The JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors choosing to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
-.. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a “vendordeps” folder in your project and copy any desired vendor JSON files from the “wpilib/YYYY” folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
+.. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a "vendordeps" folder in your project and copy any desired vendor JSON files from the "wpilib/YYYY" folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
 
 The Mechanism - LabVIEW
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,10 +34,12 @@ VS Code
 ~~~~~~~
 
 .. image:: images/3rd-party-libraries/adding-offline-library.png
+   :alt: Using the Manage Vendor Libraries option of the WPILib Command Palette.
 
 To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries`, then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
 
 .. image:: images/3rd-party-libraries/library-installer-steptwo.png
+   :alt: Select the libraries to add.
 
 Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
 
@@ -68,13 +70,13 @@ Libraries
 
 .. warning:: These are **not** links to directly plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature. Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.
 
-`Analog Devices ADIS16448 IMU <https://github.com/juchong/ADIS16448-roboRIO-Driver>`__ - Driver for ADIS16448 IMU. More info `here <https://wiki.analog.com/first/first_robotics_donation_resources#adis16448_imu_board_for_first_robotics>`__
+`Analog Devices ADIS16448 IMU <https://github.com/juchong/ADIS16448-roboRIO-Driver>`__ - Driver for ADIS16448 IMU. More info `here <https://wiki.analog.com/first/adis16448_imu_frc>`__
 
-`Analog Devices ADIS16470 IMU <https://github.com/juchong/ADIS16470-roboRIO-Driver>`__ - Driver for ADIS16470 IMU. More info `here <https://wiki.analog.com/first/first_robotics_donation_resources#adis16470_imu_board_for_first_robotics>`__
+`Analog Devices ADIS16470 IMU <https://github.com/juchong/ADIS16470-roboRIO-Driver>`__ - Driver for ADIS16470 IMU. More info `here <https://wiki.analog.com/first/adis16470_imu_frc>`__
 
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
 
-`CTRE Phoenix Toolsuite <https://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources>`__ - Contains CANCoder, Canifier, Pigeon, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+`CTRE Phoenix Framework <https://github.com/CrossTheRoadElec/Phoenix-Releases/releases>`__ - Contains CANcoder, CANifier, Pigeon IMU, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
 
@@ -94,7 +96,7 @@ WPILib Command Libraries
 
 The WPILib :doc:`old </docs/software/old-commandbased/index>` and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
 
-`Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibOldCommands/WPILibOldCommands.json>`__
-`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibNewCommands/WPILibNewCommands.json>`__
+`Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibOldCommands/WPILibOldCommands.json>`__
+`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
 
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.

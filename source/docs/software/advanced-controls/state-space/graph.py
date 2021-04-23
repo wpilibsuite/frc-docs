@@ -2,6 +2,7 @@ import control as ct
 import numpy as np
 import scipy as sp
 
+
 def lqr(*args, **kwargs):
     """Solves for the optimal linear-quadratic regulator (LQR).
     For a continuous system:
@@ -43,12 +44,11 @@ def lqr(*args, **kwargs):
         return np.linalg.solve(R + sys.B.T @ P @ sys.B, sys.B.T @ P @ sys.A + N.T)
 
 
-
 kv = 1.0
 ka = 1.5
 
-A = np.array([[-kv/ka]])
-B = np.array([[1/ka]])
+A = np.array([[-kv / ka]])
+B = np.array([[1 / ka]])
 C = np.array([[1]])
 D = np.array([[0]])
 
@@ -76,10 +76,10 @@ for i in range(120):
     u1 = K1 @ (ref - x1) + ff
     u2 = K2 @ (ref - x2) + ff
 
-    if(np.linalg.norm(u1) > 12):
+    if np.linalg.norm(u1) > 12:
         u1 = np.array([[12]])
-    
-    if(np.linalg.norm(u2) > 12):
+
+    if np.linalg.norm(u2) > 12:
         u2 = np.array([[12]])
 
     x1 = sysd.A @ x1 + sysd.B @ u1
@@ -94,14 +94,18 @@ for i in range(120):
     t1.append(i * 0.01)
 
 import matplotlib.pyplot as plt
+
 fig, (ax1, ax2) = plt.subplots(2)
 
-ax1.plot(t1, x1data, label = f"q = [1], r = [12], K={round(K1[0, 0])}")
-ax1.plot(t1, x2data, label = f"q = [0.1], r = [12], K={round(K2[0, 0])}")
-ax2.plot(t1, u1data, label = f"q = [1], r = [12], K={round(K1[0, 0])}")
-ax2.plot(t1, u2data, label = f"q = [0.1], r = [12], K={round(K2[0, 0])}")
+ax1.plot(t1, x1data, label=f"q = [1], r = [12], K={round(K1[0, 0])}")
+ax1.plot(t1, x2data, label=f"q = [0.1], r = [12], K={round(K2[0, 0])}")
+ax2.plot(t1, u1data, label=f"q = [1], r = [12], K={round(K1[0, 0])}")
+ax2.plot(t1, u2data, label=f"q = [0.1], r = [12], K={round(K2[0, 0])}")
 
-ax1.set(title="Flywheel velocity and voltage over time, reference = 5rad/s",ylabel="Flywheel Velocity (rad/s)")
+ax1.set(
+    title="Flywheel velocity and voltage over time, reference = 5rad/s",
+    ylabel="Flywheel Velocity (rad/s)",
+)
 ax2.set(ylabel="Voltage (V)", xlabel="Time (s)")
 
 ax1.legend()

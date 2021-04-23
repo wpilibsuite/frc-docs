@@ -1,7 +1,7 @@
 WPILib Installation Guide
 =========================
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentating operating systems will be shown.
+This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 Prerequisites
 -------------
@@ -9,6 +9,8 @@ Prerequisites
 You can download the latest release of the installer from `GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
 .. note:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed.
+
+.. important:: The minimum supported macOS version is Mojave (10.14.x).
 
 Extracting the Installer
 ------------------------
@@ -22,22 +24,33 @@ When you download the WPILib installer, it is distributed as a disk image file `
       Windows 10 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
+         :alt: The menu after right clicking on an .iso file to choose "Mount".
+
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Windows 7" tab.
 
    .. group-tab:: Windows 7
 
       You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
 
       .. image:: images/wpilib-setup/extract-windows-7.png
+         :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
 
    .. group-tab:: macOS
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
+         :alt: Show the macOS screen after double clicking the DMG file.
 
    .. group-tab:: Linux
 
-      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``.
+      Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``. Ubuntu treats executables in the file explorer as shared libraries, so double-clicking won't run them. Run the following commands in a terminal instead with ``<version>`` replaced with the version you're installing.
+
+      .. code-block:: console
+
+          $ tar -xf WPILib_Linux-<version>.tar.gz
+          $ cd WPILib_Linux-<version>/
+          $ ./WPILibInstaller
 
 Running the Installer
 ---------------------
@@ -87,6 +100,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
+.. important:: WPILib installs a separate version of VS Code than into an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2021``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
@@ -107,6 +121,9 @@ Some operating systems require some final action to complete installation.
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
+         :alt: Menu that pops up after right click the desktop icon in Linux.
+
+.. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and MacOS.
 
 What is Installed?
 ------------------
@@ -121,7 +138,7 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, Robot Builder, Outline Viewer, Pathweaver
+- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass
 
 - **WPILib Dependencies** - OpenCV, etc.
 
@@ -148,6 +165,7 @@ WPILib is designed to install to different folders for different years, so that 
         6. Repeat steps 3-6 in the Systems Variable pane.
 
      .. image:: images/wpilib-setup/EnvironmentVariables.png
+      :alt: The "System Properties", "Environment Variables", and "Edit Environment Variables" screens.
 
   .. tab:: macOS
 

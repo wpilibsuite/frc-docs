@@ -3,8 +3,6 @@
 Adding Custom Components
 ========================
 
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
-
 RobotBuilder works very well for creating robot programs that just use WPILib for motors, controllers, and sensors. But for teams that use custom classes, RobotBuilder doesn't have any support for those classes, so a few steps need to be taken to use them in RobotBuilder
 
 Custom Component Structure
@@ -92,7 +90,7 @@ This example expects a KiwiDrive class with the constructor
 
 .. code-block:: cpp
 
-   KiwiDrive(shared_ptr<SpeedController>, shared_ptr<SpeedController>, shared_ptr<SpeedController>)
+   KiwiDrive(SpeedController, SpeedController, SpeedController)
 
 If your team uses Java, this file can be empty.
 
@@ -164,4 +162,4 @@ icon.png
 
 The icon that shows up in the palette and the help page. This should be a 64x64 ``.png`` file.
 
-It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional. Photoshop ``.psd`` files of the icons and backgrounds are in `src/main/icons/icons <https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/icons/icons>`_ and png files of the icons and backgrounds are in `src/main/resources/icons <https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/resources/icons>`_.
+It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional. Photoshop ``.psd`` files of the icons and backgrounds are in `src/main/icons/icons <https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/icons/icons>`_ and png files of the icons and backgrounds are in `src/main/resources/icons <https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/resources/icons>`_.

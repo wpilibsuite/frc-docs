@@ -6,6 +6,7 @@ State observers combine information about a system's behavior and external measu
 This image shows flywheel velocity measurements over time, run through a variety of different filters. Note that a well-tuned Kalman filter shows no measurement lag during flywheel spinup while still rejecting noisy data and reacting quickly to disturbances as balls pass through it. More on filters can be found in the :ref:`filters section <docs/software/advanced-controls/filters/index:Filters>`\.
 
 .. image:: images/filter_comparison.png
+  :alt: Filter comparison between: Kalman, Median, and IIR.
 
 Gaussian Functions
 ------------------

@@ -84,7 +84,7 @@ build.gradle
 
          plugins {
              id "java"
-             id "edu.wpi.first.GradleRIO" version "2021.1.1"
+             id "edu.wpi.first.GradleRIO" version "2021.1.2"
          }
 
          sourceCompatibility = JavaVersion.VERSION_11
@@ -171,7 +171,7 @@ build.gradle
          plugins {
              id "cpp"
              id "google-test-test-suite"
-             id "edu.wpi.first.GradleRIO" version "2021.1.1"
+             id "edu.wpi.first.GradleRIO" version "2021.1.2"
          }
 
          // Define my targets (RoboRIO) and artifacts (deployable files)
@@ -274,10 +274,15 @@ build.gradle
              }
          }
 
-1. Change the GradleRIO version to the latest version (e.g. 2021.1.1 for the kickoff release)
+1. Change the GradleRIO version to the latest version (e.g. 2021.1.2 for the kickoff release)
 2. (C++ Only) move ``wpi.deps.vendor.cpp(it)`` above ``wpi.deps.wpilib(it)`` (2 places)
 3. (Optional) add ``simulation wpi.deps.sim.driverstation(wpi.platforms.desktop, XXXX)`` where XXXX is false for Java and true for C++. This allows the driver station to be used in simulation
 4. (Optional) add the websocket and simulation configuration blocks to support websockets simulation (i.e. Romi)
+
+imgui.ini
+^^^^^^^^^
+
+Delete ``imgui.ini`` (the Simulator GUI ini file) if it exists. The 2020 file format is not compatible with the 2021 format. The file will be regenerated when the Simulator GUI is run).
 
 Update 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

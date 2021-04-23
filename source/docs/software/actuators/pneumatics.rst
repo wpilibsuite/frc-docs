@@ -9,6 +9,7 @@ Using the FRC Control System to control Pneumatics
 .. note:: The Pneumatics Control Module (PCM) is a CAN-based device that provides complete control over the compressor and up to 8 solenoids per module. The PCM is integrated into WPILib through a series of classes that make it simple to use. The closed loop control of the Compressor and Pressure switch is handled by the PCM hardware and the Solenoids are handled by the upgraded Solenoid class that now controls the solenoid channels on the PCM. An additional PCM module can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the Solenoid and Compressor classes.
 
 .. image:: images/pneumatics-control-module.png
+    :alt: The Pneumatics Control Module (PCM).
     :width: 400
 
 The Pneumatics Control Module from CTR Electronics is responsible for regulating the robot's pressure using a pressure switch and a compressor and switching solenoids on and off. The PCM communicates with the roboRIO over CAN. For more information, see `FRC Control System Hardware Overview`
@@ -115,6 +116,41 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
 
+Toggling Solenoids
+------------------
+
+Solenoids can be switched from one output to the other (known as toggling) by using the `.toggle()` method.
+
+.. note::
+   Since a DoubleSolenoid defaults to off you will have to set it before it can be toggled.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      Solenoid exampleSingle = new Solenoid(0);
+      DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);
+
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      exampleDouble.set(kReverse);
+
+      if (m_controller.getYButtonPressed()) {
+         exampleSingle.toggle();
+         exampleDouble.toggle();
+      }
+
+   .. code-tab:: c++
+
+      frc::Solenoid exampleSingle{0};
+      frc::DoubleSolenoid exampleDouble{1, 2};
+
+      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+      exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+
+      if (m_controller.GetYButtonPressed()) {
+         exampleSingle.Toggle();
+         exampleDouble.Toggle();
+      }
 
 Pressure Transducers
 --------------------

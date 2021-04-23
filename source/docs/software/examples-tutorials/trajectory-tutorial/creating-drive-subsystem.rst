@@ -3,7 +3,7 @@ Step 3: Creating a Drive Subsystem
 
 Now that our drive is characterized, it is time to start writing our robot code *proper*.  As mentioned before, we will use the :ref:`command-based <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework for our robot code.  Accordingly, our first step is to write a suitable drive :ref:`subsystem <docs/software/commandbased/subsystems:Subsystems>` class.
 
-The full drive class from the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__) can be seen below.  The rest of the article will describe the steps involved in writing this class.
+The full drive class from the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__) can be seen below.  The rest of the article will describe the steps involved in writing this class.
 
 .. tabs::
 
@@ -86,6 +86,8 @@ Encoder Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 To access the values measured by the encoders, we include the following method:
+
+.. important:: The returned velocities **must** be in meters! Because we configured the distance per pulse on the encoders above, calling ``getRate()`` will automatically apply the conversion factor from encoder units to meters. If you are not using WPILib's ``Encoder`` class, you must perform this conversion either through the respective vendor's API or by manually multiplying by a conversion factor.
 
 .. tabs::
 

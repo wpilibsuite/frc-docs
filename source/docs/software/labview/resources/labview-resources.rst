@@ -3,14 +3,16 @@
 LabVIEW Resources
 =================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 .. note:: To learn more about programming in LabVIEW and specifically programming FRC\ |reg| robots in LabVIEW, check out the following resources.
 
 LabVIEW Basics
 --------------
 
-NI provides a `combination of videos <https://www.ni.com/academic/students/learn-labview/>`_ and `traditional text/picture tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programing model used in LabVIEW.
+NI provides `tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programing model used in LabVIEW.
+
+.. todo:: Add academic videos when link fixed www.ni.com/academic/students/learn-labview/
 
 NI FRC Tutorials
 ----------------

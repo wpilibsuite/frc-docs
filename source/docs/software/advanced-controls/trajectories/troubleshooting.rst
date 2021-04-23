@@ -50,7 +50,7 @@ Poor trajectory tracking performance can be difficult to troubleshoot. Although 
 
 Because it can be so hard to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended for general poor tracking performance (e.g. the robot is off by few feet or more than twenty degrees). The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
-.. note:: The below examples put diagnostic values onto Network Tables. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
+.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
 
 Verify Odometry
 ^^^^^^^^^^^^^^^
@@ -96,6 +96,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
 .. image:: images/track-width-logger.png
+  :alt: Highlights the trackwidth section of characterization.
 
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
@@ -216,7 +217,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         },
         {&m_drive});
 
-4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from Network Tables.
+4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from NetworkTables.
 5. If the desired and actual are off by *a lot* then you should check if the wheel diameter and ``encoderEPR`` you used for characterization were correct. If you've verified that your units and conversions are correct, then you should try recharacterizing on the same floor that you're testing on to see if you can get better data.
 
 Verify P Gain

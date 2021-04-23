@@ -15,33 +15,53 @@ A list of common third-party CAN devices from various vendors, along with links 
 Cross-the-Road Electronics
 --------------------------
 
-Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries:
+Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include:
+
+- `Phoenix Device Software Documentation <https://docs.ctre-phoenix.com/>`__
+
+- `Phoenix Device Software Examples <https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages>`__
 
 CTRE Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^
 
+- **Talon FX (with Falcon 500 Motor)**
+
+    - API Documentation (`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html>`__)
+    - `Hardware User's Manual <http://www.ctr-electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/talon-fx.html#product_tabs_technical_resources>`__
+
 - **Talon SRX**
 
     - API Documentation (`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__)
-    - `Technical Manual <https://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__
+    - `Hardware User's Manual <https://www.ctr-electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/talon-srx.html#product_tabs_technical_resources>`__
 
 - **Victor SPX**
 
     - API Documentation (`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__)
-    - `Technical Manual <https://www.ctr-electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>`__
+    - `Hardware User's Manual <https://www.ctr-electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/victor-spx.html#product_tabs_technical_resources>`__
 
 CTRE Sensors
 ^^^^^^^^^^^^
 
+- **CANcoder**
+
+    - API Documentation(`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__)
+    - `Hardware User's Manual <https://www.ctr-electronics.com/downloads/pdf/CANCoder%20User's%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/cancoder.html#product_tabs_technical_resources>`__
+
 - **Pigeon IMU**
 
     - API Documentation(`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__)
-    - `Technical Manual <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User's%20Guide.pdf>`__
+    - `Hardware User's Manual <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User's%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/gadgeteer-imu-module-pigeon.html#product_tabs_technical_resources>`__
 
 - **CANifier**
 
     - API Documentation (`Java <https://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1_c_a_nifier.html#ad9a05fae7065d3f39f7bc8a86f15b0a1>`__, `C++ <https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1_c_a_nifier.html#a706308fce1dea96785bf3ac845bafc02>`__)
-    - `Technical Manual <https://www.ctr-electronics.com/downloads/pdf/CANifier%20User's%20Guide.pdf>`__
+    - `Hardware User's Manual <https://www.ctr-electronics.com/downloads/pdf/CANifier%20User's%20Guide.pdf>`__
+    - `Other Resources <https://www.ctr-electronics.com/can-can-canifier-driver-led-driver-gpio.html#product_tabs_technical_resources>`__
 
 REV Robotics
 ------------

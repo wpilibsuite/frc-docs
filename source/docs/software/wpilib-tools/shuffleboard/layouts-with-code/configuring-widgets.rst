@@ -19,7 +19,8 @@ Call `withWidget` after `add` in the call chain:
 
 In this example, we configure the "Max Speed" widget to use a slider to modify the values instead of a basic text field.
 
-.. image:: images/widgets-1.png
+.. image:: images/configuring-widgets/maxspeed-negative.png
+    :alt: The max speed widget is placed but it correctly goes from -1 to 1.
 
 Setting widget properties
 -------------------------
@@ -35,7 +36,8 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
         .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
         .getEntry();
 
-.. image:: images/widgets-2.png
+.. image:: images/configuring-widgets/maxspeed.png
+    :alt: The max speed widget limited from 0 to 1.
 
 Notes
 -----

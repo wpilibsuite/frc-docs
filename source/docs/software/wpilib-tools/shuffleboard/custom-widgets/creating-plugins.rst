@@ -11,11 +11,11 @@ Plugins provide the ability to create custom widgets, layouts, data sources/type
 - Base Plugin: To display custom FRC\ |reg| data types in custom widgets
 - CameraServer Plugin: To view streams from the CameraServer
 
-.. tip:: An example custom Shuffleboard plugin which creates a custom data type and a simple widget for displaying it can be found `here <https://github.com/wpilibsuite/shuffleboard/tree/master/example-plugins/custom-data-and-widget>`__.
+.. tip:: An example custom Shuffleboard plugin which creates a custom data type and a simple widget for displaying it can be found `here <https://github.com/wpilibsuite/shuffleboard/tree/main/example-plugins/custom-data-and-widget>`__.
 
 Create a Custom Plugin
 ----------------------
-In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
+In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
 
 .. tabs::
 
@@ -97,5 +97,6 @@ The other way to add a plugin to Shuffleboard is to compile it to a jar file and
 First, compile your plugin into a ``.jar`` file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
 
 .. image:: images/loading-plugin.png
+   :alt: Manually adding custom plugins
 
 From the plugins window, choose the "Load plugin" button in the bottom right, and select your jar file.

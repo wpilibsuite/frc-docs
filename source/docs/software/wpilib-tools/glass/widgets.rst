@@ -1,5 +1,6 @@
 Glass Widgets
 =============
+
 Specialized widgets are available for certain types that exist in robot code. These include objects that are manually sent over NetworkTables such as ``SendableChooser`` instances, or hardware that is automatically sent over :ref:`LiveWindow <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values:Displaying LiveWindow Values>`.
 
 .. note:: Widget support in Glass is still in its infancy -- therefore, there are only a handful of widgets available. This list will grow as development work continues.
@@ -8,6 +9,7 @@ Specialized widgets are available for certain types that exist in robot code. Th
 
 Hardware Widgets
 ----------------
+
 Widgets for specific hardware (such as motor controllers) are usually available via LiveWindow. These can be accessed by selecting the :guilabel:`NetworkTables` menu option, clicking on :guilabel:`LiveWindow` and choosing the desired widget.
 
 .. image:: images/livewindow.png
@@ -26,6 +28,7 @@ Here is an example of the widget for gyroscopes:
 
 Sendable Chooser Widget
 -----------------------
+
 The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instance from robot code. It is often used to select autonomous modes. Like other dashboards, your ``SendableChooser`` instance simply needs to be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
 .. tabs::
@@ -45,6 +48,7 @@ The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTab
 
 PID Controller Widget
 ---------------------
+
 The :guilabel:`PID Controller` widget allows you to quickly tune PID values for a certain controller. A ``PIDController`` instance must be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
 .. tabs::
@@ -63,6 +67,7 @@ This allows you to quickly tune P, I, and D values for various setpoints.
 
 FMSInfo Widget
 --------------
+
 The :guilabel:`FMSInfo` widget is created by default when Glass connects to a robot. This widget displays basic information about the robot's enabled state, whether a Driver Station is connected, whether an FMS is connected, the game-specific data, etc. It can be viewed by selecting the :guilabel:`NetworkTables` menu item and clicking on :guilabel:`FMSInfo`.
 
 .. image:: images/fms-info.png

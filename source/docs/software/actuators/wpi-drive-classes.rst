@@ -10,7 +10,8 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/image1.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/layout.jpg
+   :alt: The wiring of a simple differential drive robot.
    :width: 600
 
 These drive bases typically have two or more in-line traction or omni  wheels per side (e.g., 6WD or 8WD) and may also be known as  "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts  drivetrain is an example of a differential drive. These drivetrains are capable of driving forward/backward and can turn by driving the two sides in opposite directions causing the wheels to skid sideways. These drivetrains are not capable of sideways translational movement.
@@ -18,6 +19,7 @@ These drive bases typically have two or more in-line traction or omni  wheels pe
 Mecanum Drive
 ^^^^^^^^^^^^^
 .. image:: images/am-14u4-6in-mecanum-upgrade.png
+   :alt: A four wheel Mecanum robot using the KOP chassis.
    :width: 600
 
 Mecanum drive is a method of driving using specially designed wheels that allow the robot to drive in any direction without changing the orientation of the robot. A robot with a conventional drivetrain (all wheels pointing in the same direction) must turn in the direction it needs to drive. A mecanum robot can move in any direction without first turning and is called a holonomic drive. The wheels (shown on this robot) have rollers that cause the forces from driving to be applied at a 45 degree angle rather than straight forward as in the case of a conventional drive.
@@ -27,19 +29,25 @@ When viewed from the top, the rollers on a mecanum drivetrain should form an 'X'
 Drive Class Conventions
 -----------------------
 
-.. note:: This article describes conventions and defaults used by the WPILib Drive classes (DifferentialDrive, MecanumDrive, and KilloughDrive). For further details on using these classes, see the subsequent articles.
-
 Motor Inversion
 ^^^^^^^^^^^^^^^
 
-By default, the class inverts the motor outputs for the right side of the drivetrain. Generally this will mean that no inversion needs to be done on the individual SpeedController objects. To disable this behavior, use the setRightSideInverted() method.
+By default, the class inverts the motor outputs for the right side of the drivetrain. Generally this will mean that no inversion needs to be done on the individual SpeedController objects. To disable this behavior, use the `setRightSideInverted()` method.
 
-Squaring Inputs & Input Deadband
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Squaring Inputs
+^^^^^^^^^^^^^^^
 
 When driving robots, it is often desirable to manipulate the joystick inputs such that the robot has finer control at low speeds while still using the full output range. One way to accomplish this is by squaring the joystick input, then reapplying the sign. By default the Differential Drive class will square the inputs. If this is not desired (e.g. if passing values in from a PIDController), use one of the drive methods with the squaredInputs parameter and set it to false.
 
-By default, the Differential Drive class applies an input deadband of .02. This means that input values with a magnitude below .02 (after any squaring as described above) will be set to 0. In most cases these small inputs result from imperfect joystick centering and are not sufficient to cause drivetrain movement, the deadband helps reduce unnecessary motor heating that may result from applying these small values to the drivetrain. To change the deadband, use the setDeadband() method.
+Input Deadband
+^^^^^^^^^^^^^^
+
+By default, the Differential Drive class applies an input deadband of 0.02. This means that input values with a magnitude below 0.02 (after any squaring as described above) will be set to 0. In most cases these small inputs result from imperfect joystick centering and are not sufficient to cause drivetrain movement, the deadband helps reduce unnecessary motor heating that may result from applying these small values to the drivetrain. To change the deadband, use the `setDeadband()` method.
+
+Maximum Output
+^^^^^^^^^^^^^^
+
+Sometimes drivers feel that their drivetrain is driving too fast and want to limit the output.  This can be accomplished with the `setMaxOutput()` method.  This maximum output is multiplied by result of the previous drive functions like deadband and squared inputs.
 
 Motor Safety
 ^^^^^^^^^^^^
@@ -73,16 +81,17 @@ By default all RobotDrive objects enable Motor Safety. Depending on the mechanis
 Axis Conventions
 ^^^^^^^^^^^^^^^^
 .. image:: images/drive-axis.png
+   :alt: Show the axis of the robot with X+ going forward.  Y+ to the right and Z+ downward.
    :width: 600
 
 This library uses the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. Rotations follow the right-hand rule, so clockwise rotation around the Z axis is positive.
 
 .. warning:: This convention is different than the convention for joysticks which typically have -Y as Up (commonly mapped to throttle) and +X as Right. Pay close attention to the examples below if you want help with typical Joystick->Drive mapping.
 
-Using the DifferentialDrive class to control Differential Drive (WCD) robots
-----------------------------------------------------------------------------
+Using the DifferentialDrive class to control Differential Drive robots
+----------------------------------------------------------------------
 
-.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive". The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
+.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive" (WCD). The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
 DifferentialDrive is a method provided for the control of "skid-steer" or "West Coast" drivetrains, such as the Kit of Parts chassis. Instantiating a DifferentialDrive is as simple as so:
 
@@ -196,26 +205,26 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
 
         public void teleopPeriodic() {
             // Tank drive with a given left and right rates
-            myDrive.tankDrive(leftStick.getY(), rightStick.getY());
+            myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(driveStick.getY(),driveStick.getX());
+            myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.curvatureDrive(driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
+            myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
             // Tank drive with a given left and right rates
-            myDrive.TankDrive(leftStick.GetY(), rightStick.GetY());
+            myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(-driveStick.GetY(), driveStick.GetX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.CurvatureDrive(driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
+            myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
 
 Using the MecanumDrive class to control Mecanum Drive robots
@@ -257,15 +266,15 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(m_stick.getX(), m_stick.getY(), m_stick.getZ());
-            m_robotDrive.drivePolar(m_stick.getX(), m_stick.getY(), m_stick.getZ());
+            m_robotDrive.driveCartesian(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
+            m_robotDrive.drivePolar(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
-            m_robotDrive.drivePolar(m_stick.GetX(), m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.driveCartesian(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.drivePolar(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
         }
 
 Field-Oriented Driving
@@ -276,3 +285,5 @@ A 4th parameter can be supplied to the ``driveCartesian(double ySpeed, double xS
 The use of field-oriented driving makes often makes the robot much easier to drive, especially compared to a "robot-oriented" drive system where the controls are reversed when the robot is facing the drivers.
 
 Just remember to get the gyro angle each time ``driveCartesian()`` is called.
+
+.. note:: Many teams also like to ramp the joysticks inputs over time to promote a smooth acceleration and reduce jerk.  This can be accomplished with a :ref:`Slew Rate Limiter <docs/software/advanced-controls/filters/slew-rate-limiter:Slew Rate Limiter>`.

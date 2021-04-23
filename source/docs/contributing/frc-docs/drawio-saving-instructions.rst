@@ -14,7 +14,7 @@ To export go to ``File - Export as - SVG...``. Make sure ``Include a copy of my 
 
 The export menu should look something like this:
 
-.. image:: images/drawio-saving-instructions-1.png
+.. image:: images/svg-export.png
    :alt: Image depicting the export menu
 
 Then just click ``Export`` then select where you would like to save the file and save it.

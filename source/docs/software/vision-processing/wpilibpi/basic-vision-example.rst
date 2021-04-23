@@ -13,9 +13,11 @@ This is an example of a basic vision setup that posts the target's location in t
       import cv2
       import json
       import numpy as np
+      import time
 
       def main():
-         config = json.load('/boot/frc.json')
+         with open('/boot/frc.json') as f:
+            config = json.load(f)
          camera = config['cameras'][0]
 
          width = camera['width']
@@ -29,18 +31,21 @@ This is an example of a basic vision setup that posts the target's location in t
          # Table for vision output information
          vision_nt = NetworkTables.getTable('Vision')
 
+         # Allocating new images is very expensive, always try to preallocate
+         img = np.zeros(shape=(240, 320, 3), dtype=np.uint8)
+
          # Wait for NetworkTables to start
          time.sleep(0.5)
 
          while True:
             start_time = time.time()
 
-            frame_time, input_img = sink.grabFrame(input_img)
+            frame_time, input_img = input_stream.grabFrame(img)
             output_img = np.copy(input_img)
 
             # Notify output of error and skip iteration
             if frame_time == 0:
-               output_stream.notifyError(sink.getError())
+               output_stream.notifyError(input_stream.getError())
                continue
 
             # Convert to HSV and threshold image
@@ -71,10 +76,12 @@ This is an example of a basic vision setup that posts the target's location in t
                x_list.append((center[0] - width / 2) / (width / 2))
                x_list.append((center[1] - width / 2) / (width / 2))
 
-            nt.putNumberArray('target_x', x_list)
-            nt.putNumberArray('target_y', y_list)
+            vision_nt.putNumberArray('target_x', x_list)
+            vision_nt.putNumberArray('target_y', y_list)
 
             processing_time = time.time() - start_time
             fps = 1 / processing_time
             cv2.putText(output_img, str(round(fps, 1)), (0, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255))
             output_stream.putFrame(output_img)
+
+      main()

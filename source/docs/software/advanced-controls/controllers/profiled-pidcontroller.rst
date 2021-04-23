@@ -5,7 +5,7 @@ Combining Motion Profiling and PID Control with ProfiledPIDController
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 
-This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/ProfiledPIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ProfiledPIDController.html>`__) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
+This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/ProfiledPIDController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1ProfiledPIDController.html>`__) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
 
 Using the ProfiledPIDController class
 -------------------------------------
@@ -74,30 +74,41 @@ The returned setpoint might then be used as in the following example:
 
   .. code-tab:: java
 
+    double lastSpeed = 0;
+    double lastTime = Timer.getFPGATimestamp();
+
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
     public void goToPosition(double goalPosition) {
+      double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime)
       motor.setVoltage(
           controller.calculate(encoder.getDistance(), goalPosition)
-          + feedforward.calculate(controller.getSetpoint().position,
-                                  controller.getSetpoint().velocity));
+          + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
+      lastSpeed = controller.getSetpoint().velocity;
+      lastTime = Timer.getFPGATimestamp();
     }
 
   .. code-tab:: c++
 
+    units::meters_per_second_t lastSpeed = 0_mps;
+    units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
+
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
-    void goToPosition(units::meter_t goalPosition) {
-      motor.setVoltage(
-          controller.Calculate(units::meter_t(encoder.GetDistance()), goalPosition)
-          + feedforward.Calculate(controller.GetSetpoint().position,
-                                  controller.GetSetpoint().velocity));
+    void GoToPosition(units::meter_t goalPosition) {
+      auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
+          (frc2::Timer::GetFPGATimestamp() - lastTime);
+      motor.SetVoltage(
+          controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition) +
+          feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
+      lastSpeed = controller.GetSetpoint().velocity;
+      lastTime = frc2::Timer::GetFPGATimestamp();
     }
 
 Complete Usage Example
 ----------------------
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
 
 .. tabs::
 

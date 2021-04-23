@@ -1,6 +1,8 @@
 Analyzing Data
 ==============
 
+.. important:: WPILib standarizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
+
 Once we have data from a characterization run, we can analyze it. To launch the data analyzer, click on the :guilabel:`Launch Data Analyzer` button.
 
 .. image:: images/launching-data-analyzer.png

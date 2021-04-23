@@ -51,8 +51,8 @@ Vision Status
 
 Allows monitoring of the task which is running the camera code in the rPI, either one of the default programs or your own
 program in Java, C++, or Python. You can also enable and view the console output to see messages coming from the background
-camera service. In this case there are number of messages about being unable to connect to network tables (NT: connect())
-because in this example the rPI is simply connected to a laptop with no Network Tables server running (usually the roboRIO.)
+camera service. In this case there are number of messages about being unable to connect to :term:`NetworkTables` (NT: connect())
+because in this example the rPI is simply connected to a laptop with no NetworkTables server running (usually the roboRIO.)
 
 Network Settings
 ----------------
@@ -86,6 +86,8 @@ Camera 0" and clicking on the name reveals the current camera view and the assoc
 
 Manipulating the camera settings is reflected in the current camera view. The bottom of the page shows all the possible camera
 modes (combinations of Width, Height, and frame rates) that are supported by this camera.
+
+.. note:: If the camera image is not visible on the :guilabel:`Open Stream` screen then check the supported video modes at the bottom of the page.  Then go back to 'Vision Settings' and click on the camera in question and verify that the pixel format, width, height, and FPS are listed in the supported video modes.
 
 Getting the current settings to persist over reboots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

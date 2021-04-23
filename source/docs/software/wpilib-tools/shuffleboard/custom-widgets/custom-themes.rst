@@ -5,7 +5,7 @@ Since shuffleboard is a JavaFX application, it has support for custom themes via
 
 Shuffleboard comes with three themes by default: Material Light, Material Dark, and Midnight. These are color variations on the same material design stylesheet. In addition, they inherit from a ``base.css`` stylesheet that defines styles for the custom components ,defined in shuffleboard or libraries that it uses; the base material design stylesheet only applies to the UI components built into JavaFX.
 
-There are two ways to define a custom theme: place the stylesheets in a directory with the name of the theme in ``~/Shuffleboard/themes``; for example, a theoretical “Yellow” theme could be placed in
+There are two ways to define a custom theme: place the stylesheets in a directory with the name of the theme in ``~/Shuffleboard/themes``; for example, a theoretical "Yellow" theme could be placed in
 
 ::
 
@@ -53,11 +53,11 @@ Note that ``base.css`` internally imports ``material.css``, and ``light.css``, `
 Source Code for the CSS Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  _material.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css
--  _base.css: https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css
--  _light.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/light.css
--  _dark.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css
--  _midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/master/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css
+-  _material.css: https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css
+-  _base.css: https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css
+-  _light.css: https://github.com/wpilibsuite/shuffleboard/blob/main/app/src/main/resources/edu/wpi/first/shuffleboard/app/light.css
+-  _dark.css: https://github.com/wpilibsuite/shuffleboard/blob/main/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css
+-  _midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/main/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css
 
 Material Design Color Swatches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

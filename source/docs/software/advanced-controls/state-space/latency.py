@@ -100,8 +100,8 @@ class Elevator(fct.System):
         kv = 0.011
         ka = 0.005515
 
-        A = np.array([[-kv/ka]])
-        B = np.array([[1/ka]])
+        A = np.array([[-kv / ka]])
+        B = np.array([[1 / ka]])
         C = np.array([[1]])
         D = np.array([[0]])
 
@@ -158,8 +158,11 @@ def main():
             r = np.array([[0.0]])
         refs.append(r)
 
-    fig, (ax1, ax2) = plt.subplots(2) 
-    ax1.set(title=f"Flywheel velocity and voltage with dt={DT * 1000}ms and a {DELAY * 1000}ms delay", ylabel="Flywheel Velocity (rad/s)")
+    fig, (ax1, ax2) = plt.subplots(2)
+    ax1.set(
+        title=f"Flywheel velocity and voltage with dt={DT * 1000}ms and a {DELAY * 1000}ms delay",
+        ylabel="Flywheel Velocity (rad/s)",
+    )
     ax2.set(ylabel="Voltage (V)", xlabel="Time (s)")
 
     elevator = Elevator(DT)
@@ -175,8 +178,16 @@ def main():
     # )
 
     ax1.plot(t, elevator.extract_row(ref_rec, 0), label="Reference")
-    ax1.plot(t, elevator.extract_row(x_rec, 0), label=f"Uncompensated (Kp = {round(elevator.K[0, 0], 4)})")
-    ax2.plot(t, elevator.extract_row(u_rec, 0), label=f"Uncompensated (Kp = {round(elevator.K[0, 0], 4)})")
+    ax1.plot(
+        t,
+        elevator.extract_row(x_rec, 0),
+        label=f"Uncompensated (Kp = {round(elevator.K[0, 0], 4)})",
+    )
+    ax2.plot(
+        t,
+        elevator.extract_row(u_rec, 0),
+        label=f"Uncompensated (Kp = {round(elevator.K[0, 0], 4)})",
+    )
 
     elevator = Elevator(DT, latency_comp=True)
     x_rec, ref_rec, u_rec, y_rec = elevator.generate_time_responses(t, refs)
@@ -190,11 +201,19 @@ def main():
     #     title=f"Flywheel with {round(DT * 1000)}ms sample period and {round(DELAY * 1000)}ms output lag (compensated)",
     # )
 
-    ax1.plot(t, elevator.extract_row(x_rec, 0), label=f"Compensated (Kp = {round(elevator.K[0, 0], 4)})")
-    ax2.plot(t, elevator.extract_row(u_rec, 0), label=f"Compensated (Kp = {round(elevator.K[0, 0], 4)})")
+    ax1.plot(
+        t,
+        elevator.extract_row(x_rec, 0),
+        label=f"Compensated (Kp = {round(elevator.K[0, 0], 4)})",
+    )
+    ax2.plot(
+        t,
+        elevator.extract_row(u_rec, 0),
+        label=f"Compensated (Kp = {round(elevator.K[0, 0], 4)})",
+    )
 
-    ax1.legend(loc='upper right')
-    ax2.legend(loc='upper right')
+    ax1.legend(loc="upper right")
+    ax2.legend(loc="upper right")
     plt.show()
 
 

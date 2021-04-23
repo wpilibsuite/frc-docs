@@ -13,6 +13,9 @@ There are three main steps to updating the model:
 .. tabs::
    .. code-tab:: java
 
+      private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
+      private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+
       public Drivetrain() {
         ...
         m_leftEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
@@ -32,14 +35,17 @@ There are three main steps to updating the model:
         m_driveSim.update(0.02);
 
         // Update all of our sensors.
-        m_leftEncoderSim.setDistance(m_driveSim.getLeftPosition());
-        m_leftEncoderSim.setRate(m_driveSim.getLeftVelocity());
-        m_rightEncoderSim.setDistance(m_driveSim.getRightPosition());
-        m_rightEncoderSim.setRate(m_driveSim.getRightVelocity());
+        m_leftEncoderSim.setDistance(m_driveSim.getLeftPositionMeters());
+        m_leftEncoderSim.setRate(m_driveSim.getLeftVelocityMetersPerSecond());
+        m_rightEncoderSim.setDistance(m_driveSim.getRightPositionMeters());
+        m_rightEncoderSim.setRate(m_driveSim.getRightVelocityMetersPerSecond());
         m_gyroSim.setAngle(-m_driveSim.getHeading().getDegrees());
       }
 
    .. code-tab:: c++
+
+      frc::PWMSparkMax m_leftMotor{0};
+      frc::PWMSparkMax m_rightMotor{1};
 
       Drivetrain() {
         ...
@@ -52,8 +58,8 @@ There are three main steps to updating the model:
         // the [-1, 1] PWM signal to voltage by multiplying it by the
         // robot controller voltage.
         m_driveSim.SetInputs(
-          units::volt_t(m_leftMotor.get()) * frc::RobotController::GetInputVoltage(),
-          units::volt_t(m_rightMotor.get()) * frc::RobotController::GetInputVoltage());
+          m_leftMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()),
+          m_rightMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()));
 
         // Advance the model by 20 ms. Note that if you are running this
         // subsystem in a separate thread or have changed the nominal timestep
@@ -65,7 +71,7 @@ There are three main steps to updating the model:
         m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().to<double>());
         m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().to<double>());
         m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().to<double>());
-        m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees().to<double>());
+        m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees());
       }
 
 .. important:: If the right side of your drivetrain is inverted, you MUST negate the right voltage in the ``SetInputs()`` call to ensure that positive voltages correspond to forward movement.

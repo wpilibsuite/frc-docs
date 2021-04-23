@@ -7,6 +7,8 @@ This article contains instructions/links to components you will want to gather i
 
 .. tip:: This document compiles all the download links from the following documents to make it easier to install on offline computers or on multiple computers. If you are you installing on a single computer that is connected to the internet, you can skip this page.
 
+.. note:: The order in which these tools are installed does not matter for Java and C++ teams.  LabVIEW should be installed before the FRC Game Tools or 3rd Party Libraries.
+
 Documentation
 -------------
 
@@ -18,14 +20,18 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2020 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2021 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 -  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
+
+.. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version remains the latest available.
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
 -  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
+
+.. note:: The dropdown on this page will say 2020 because the 2021 base LabVIEW version is identical to what was used in 2020. If you already have the 2020 version installed see :ref:`docs/yearly-overview/relicensing-labview:Re-licensing LabVIEW for 2021 Season` for info on re-licensing your installation.
 
 Java/C++ Teams
 ^^^^^^^^^^^^^^

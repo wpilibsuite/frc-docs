@@ -11,7 +11,7 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`__).
+Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/LinearFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1LinearFilter.html>`__).
 
 Creating a LinearFilter
 -----------------------
@@ -26,6 +26,7 @@ singlePoleIIR
 ^^^^^^^^^^^^^
 
 .. image:: images/singlepolefilter.png
+  :alt: A graph with two peaks with the input closely following the target signal.
 
 The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter (also known as `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of having an exponential impulse response).  This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
 
@@ -53,6 +54,7 @@ movingAverage
 ^^^^^^^^^^^^^
 
 .. image:: images/firfilter.png
+  :alt: A graph with two peaks with the input closely following the target signal.
 
 The ``movingAverage`` factory method creates a simple flat moving average filter.  This is the simplest possible low-pass FIR filter, and is useful in many of the same contexts as the single-pole IIR filter.  It is somewhat more costly to compute, but generally behaves in a somewhat nicer manner.
 
@@ -76,6 +78,7 @@ highPass
 ^^^^^^^^
 
 .. image:: images/highpassfilter.png
+   :alt: A graph with two peaks except the highpass only shows the rate of change centered around 0.
 
 The ``highPass`` factory method creates a simple first-order infinite impulse response high-pass filter.  This is the "counterpart" to the `singlePoleIIR`_.
 

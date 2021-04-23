@@ -1,7 +1,7 @@
-WPILib Pose and State Estimators
-================================
+WPILib Pose Estimators
+======================
 
-WPILib includes pose and state estimators for differential, swerve and mecanum drivetrains. These estimators are designed to be drop-in replacements for the existing :ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and Odometry>` classes, with added features that utilize an Extended :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:Kalman Filters>` to fuse latency-compensated robot pose estimates with encoder and gyro measurements. These estimators can account for encoder drift and noisy vision data. These estimators can behave identically to their corresponding odometry classes if only ``update`` is called on these estimators.
+WPILib includes pose estimators for differential, swerve and mecanum drivetrains. These estimators are designed to be drop-in replacements for the existing :ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and Odometry>` classes, with added features that utilize an Unscented :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-space-observers:Kalman Filters>` to fuse latency-compensated robot pose estimates with encoder and gyro measurements. These estimators can account for encoder drift and noisy vision data. These estimators can behave identically to their corresponding odometry classes if only ``update`` is called on these estimators.
 
 Pose estimators estimate robot position using a state-space system with the states :math:`\begin{bmatrix}x & y & \theta \end{bmatrix}^T`, which can represent robot position as a ``Pose2d``. WPILib includes ``DifferentialDrivePoseEstimator``, ``SwerveDrivePoseEstimator`` and ``MecanumDrivePoseEstimator`` to estimate robot position. In these, users call ``update`` periodically with encoder and gyro measurements (same as the odometry classes) to update the robot's estimated position. When the robot receives measurements of its field-relative position (encoded as a ``Pose2d``) from sensors such as computer vision or V-SLAM, the pose estimator latency-compensates the measurement to accurately estimate robot position.
 
@@ -19,7 +19,8 @@ The following example shows the use of the ``DifferentialDrivePoseEstimator``:
               new MatBuilder<>(Nat.N3(), Nat.N1()).fill(0.1, 0.1, 0.01)); // Global measurement standard deviations. X, Y, and theta.
 
    .. code-tab:: cpp
-      #include "frc/estimator/DifferentialDrivePoseEstimator.h
+
+      #include "frc/estimator/DifferentialDrivePoseEstimator.h"
       #include "frc/StateSpaceUtil.h"
 
       frc::DifferentialDrivePoseEstimator estimator{
@@ -32,10 +33,3 @@ Tuning Pose Estimators
 ----------------------
 
 All pose estimators offer user-customizable standard deviations for model and measurements. These standard deviations determine how much the filter "trusts" each of these states. For example, increasing the standard deviation for measurements (as one might do for a noisy signal) would lead to the estimator trusting its state estimate more than the incoming measurements. On the field, this might mean that the filter can reject noisy vision data well, at the cost of being slow to correct for model deviations. While these values can be estimated beforehand, they very much depend on the unique setup of each robot and global measurement method.
-
-The Differential Drive State Estimator
---------------------------------------
-
-The ``DifferentialDriveStateEstimator`` (C++/Java) is a more advanced estimator, which includes u-error estimation and encoder distance measurements to more accurately estimate robot position. U-error can account for unmodeled dynamics by estimating the voltage being lost to wheel drag or scrub. The ``DifferentialDriveStateEstimator`` uses a system with the states :math:`\begin{bmatrix} x & y & \theta & \text{vel}_l & \text{vel}_r & \text{dist}_l & \text{dist}_r & \text{voltError}_l & \text{voltError}_r & \text{headingError} \end{bmatrix}^T`, outputs left and right voltages, and can take inputs from either vision (as :math:`\begin{bmatrix}x & y & \theta \end{bmatrix}^T`) or encoders and gyros (as  :math:`\begin{bmatrix} \text{dist}_l & \text{dist}_r & \theta \end{bmatrix}^T`).
-
-For the ``DifferentialDriveStateEstimator``, it is important that the state-space model is accurate to the physical hardware. Characterization using the frc-characterization drivetrain tools to find linear and angular kV and kA, combined with ``LinearSystem``'s ``identifyDrivetrainSystem`` (Java)/``IdentifyDrivetrainSystem`` (C++), is an easy way to accurately create a state-space model of your robot's drivetrain.

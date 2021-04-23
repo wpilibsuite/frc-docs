@@ -8,8 +8,6 @@
 FIRST Robotics Competition Control System
 ===========================================
 
-.. important:: The documentation has been updated for the 2021 WPILib release. We are currently working on publishing the 2021 release of WPILib! Please check back soon for any updates! The 2020 documentation is still available `here <https://docs.wpilib.org/en/2020/index.html>`__
-
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
 
 .. toctree::
@@ -43,13 +41,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/can-devices/index
    docs/software/basic-programming/index
    docs/software/support/support-resources
+   docs/software/frc-glossary
 
 .. toctree::
    :maxdepth: 1
    :caption: API Docs
 
-   WPILib Java API Docs <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>
-   WPILib C++ API Docs <https://first.wpi.edu/FRC/roborio/release/docs/cpp/index.html>
+   WPILib Java API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html>
 
 .. toctree::
    :maxdepth: 1
@@ -76,6 +75,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
+   docs/software/advanced-gradlerio/index
    docs/software/advanced-controls/index
    docs/software/convenience-features/index
 

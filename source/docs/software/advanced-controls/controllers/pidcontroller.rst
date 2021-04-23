@@ -7,7 +7,7 @@ PID Control in WPILib
 
 .. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 
-WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
+WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 Using the PIDController Class
 -----------------------------
@@ -31,7 +31,7 @@ In order to use WPILib's PID control functionality, users must first construct a
   .. code-tab:: c++
 
     // Creates a PIDController with gains kP, kI, and kD
-    frc2::PIDController pid(kP, kI, kD);
+    frc2::PIDController pid{kP, kI, kD};
 
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 

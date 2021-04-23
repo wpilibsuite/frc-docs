@@ -1,5 +1,8 @@
 A Video Walkthrough of Machine Learning
 =======================================
+
+.. danger:: Unfortunately, this documentation is outdated and the methods described here are no longer functional. We are currently working on an a successor project and advise teams to research into a `tensorflow <https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the meantime.
+
 At the "RSN Spring Conference, Presented by WPI" in 2020, Brad Miller, Austin Shalit, Frank Grossman, and Grant Perkins from the WPILib team gave a presentation on Machine Learning in FRC.
 
 .. raw:: html

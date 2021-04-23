@@ -11,6 +11,7 @@ Signing In
 ----------
 
 .. image:: images/accessing-the-beta-project/login.png
+   :alt: Logging in to the collab TeamForge site.
 
 Open your web browser and browse to `<https://usfirst.collab.net>`__. Near the top left corner of the page enter the username and password provided in the Beta test email you received, then click "Log In".
 
@@ -18,6 +19,7 @@ Opening the Beta Project
 ------------------------
 
 .. image:: images/accessing-the-beta-project/project-list.png
+   :alt: The view from the project tab.
 
 Your user account should already be added to the Beta Project. To view the project:
 
@@ -28,6 +30,7 @@ The Project Homepage
 --------------------
 
 .. image:: images/accessing-the-beta-project/project-home.png
+   :alt: The project homepage and graphs.
 
 The project homepage contains some statistics and Project News. Throughout the beta, the Project News section may be updated with the latest information from the *FIRST* technical staff. The top ribbon contains tabs allowing you to navigate to the different sections of the project:
 

@@ -10,14 +10,16 @@ This is accomplished by a class called Scheduler. It has a ``run()`` method that
 Command-Based Program Anatomy
 -----------------------------
 
-.. image:: images/scheduling-commands/image1.png
+.. image:: images/scheduling-commands/anatomy.png
+   :alt: Full anatomy of the different parts of a command based program.
 
 This shows a typical command-based Robot program and all the code needed to ensure that commands are scheduled correctly. The ``Scheduler.run`` method causes one pass through the scheduler which will let each currently active command run through its ``execute()`` and ``isFinished()`` methods. Ignore the ``log()`` methods in the Java example.
 
 Command Life Cycle
 ------------------
 
-.. image:: images/scheduling-commands/image2.png
+.. image:: images/scheduling-commands/life-cycle.png
+   :alt: Different stages a command goes through.
 
 The work in command-based programs occurs whenever the ``Scheduler.Run`` (C++) or ``Scheduler.run`` (Java) method is called. This is typically called on each driver station update which occurs every 20 ms or 50 times per second. The pseudo code illustrates what happens on each call to the run method.
 
@@ -58,7 +60,8 @@ Imagine that in a robot design, there is a claw, attached to a wrist joint and a
 When do command groups finish?
 ------------------------------
 
-.. image:: images/scheduling-commands/image3.png
+.. image:: images/scheduling-commands/finish.png
+   :alt: How commands finish.
 
 A command group finishes when all the commands started in that group finish. This is true regardless of the type of commands that are added to the group. For example, if a number of commands are added in parallel and sequentially, the group is finished when all the commands added to the group are finished. As each command is added to a command group, it is put on a list. As those child commands finish, they are taken off the list. The command group is finished when the list of child commands is empty.
 
@@ -87,7 +90,8 @@ It is occasionally useful to make sure that there are no running commands in the
 The "requires" method
 ---------------------
 
-.. image:: images/scheduling-commands/image4.png
+.. image:: images/scheduling-commands/requires.png
+   :alt: How requires works.
 
 If you have multiple commands that use the same subsystem it makes sense that they don't run at the same time. For example, if there is a Claw subsystem with OpenClaw and CloseClaw commands, they can't both run at the same time. Each command that uses the Claw subsystem declares that by 1 calling the ``requires()`` method (Java) or ``Requires()`` method (C++). When one of the commands is running, say from a joystick button press, and you try to run another command that also requires the Claw, the second one preempts the first one. Suppose that OpenClaw was running, and you press the button to run the CloseClaw command. The OpenClaw command is interrupted - 2 it's interrupted method is called on the next run cycle and the CloseClaw command is scheduled. If you think about it, this is almost always the desired behavior. If you pressed a button to start opening the claw and you change your mind and want to close it, it makes sense for the OpenClaw command to be stopped and the CloseClaw to be started.
 

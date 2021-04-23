@@ -5,18 +5,22 @@ Encoders - Software
 
 .. note:: This section covers encoders in software.  For a hardware guide to encoders, see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`.
 
-|Encoding Direction|
+.. image:: images/encoders-software/encoding-direction.png
+    :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
 
 Encoders are devices used to measure motion (usually, the rotation of a shaft).  The encoders used in FRC\ |reg| are known as "quadrature encoders."  These encoders produce square-wave signals on two channels that are a quarter-period out-of-phase (hence the term, "quadrature").  The pulses are used to measure the rotation, and the direction of motion can be determined from which channel "leads" the other.
 
-|Encoder Modules|
+.. image:: images/encoders-software/encoder-modules.png
+    :alt: A Quadrature Decoder analyzing the A, B, and Index signals.
 
 The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
 
 The Encoder class
 -----------------
 
-WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+
+.. important:: The ``Encoder`` class is only used for encoders that are plugged directly into the roboRIO! Please reference the appropriate vendors' documentation for using encoders plugged into motor controllers.
 
 Initializing an encoder
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,13 +131,13 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
 
     .. code-tab:: java
 
-        // Configures an encoder to return a distance of 4 for every 256 pulses
-        encoder.setDistancePerPulse(4./256.);
+        // Gets the distance traveled
+        encoder.getDistance();
 
     .. code-tab:: c++
 
-        // Configures an encoder to return a distance of 4 for every 256 pulses
-        encoder.SetDistancePerPulse(4./256.);
+        // Gets the distance traveled
+        encoder.GetDistance();
 
 Rate
 ~~~~
@@ -262,7 +266,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         @Override
         public void autonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.getDistance < 5) {
+            if(encoder.getDistance() < 5) {
                 drive.tankDrive(.5, .5);
             } else {
                 drive.tankDrive(0, 0);
@@ -294,7 +298,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
         void Robot:AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.GetDistance < 5) {
+            if(encoder.GetDistance() < 5) {
                 drive.TankDrive(.5, .5);
             } else {
                 drive.TankDrive(0, 0);
@@ -438,6 +442,3 @@ Since encoders measure *relative* distance, it is often important to ensure that
                 encoder.Reset();
             }
         }
-
-.. |Encoding Direction| image:: images/encoders-software/encoding-direction.png
-.. |Encoder Modules| image:: images/encoders-software/encoder-modules.png

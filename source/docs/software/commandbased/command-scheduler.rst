@@ -1,7 +1,7 @@
 The Command Scheduler
 =====================
 
-The ``CommandScheduler`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__) is the class responsible for actually running commands.  Each iteration (ordinarily once per 20ms), the scheduler polls all registered buttons, schedules commands for execution accordingly, runs the command bodies of all scheduled commands, and ends those commands that have finished or are interrupted.
+The ``CommandScheduler`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__) is the class responsible for actually running commands.  Each iteration (ordinarily once per 20ms), the scheduler polls all registered buttons, schedules commands for execution accordingly, runs the command bodies of all scheduled commands, and ends those commands that have finished or are interrupted.
 
 The ``CommandScheduler`` also runs the ``periodic()`` method of each registered ``Subsystem``.
 
@@ -18,8 +18,9 @@ The ``schedule()`` Method
 -------------------------
 
 .. image:: diagrams/scheduler.drawio.svg
+  :alt: Flow diagram showing how a scheduled command is evaluated to be run.
 
-To schedule a command, users call the ``schedule()`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command (and, optionally, a specification as to whether that command is interruptible), and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
+To schedule a command, users call the ``schedule()`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command (and, optionally, a specification as to whether that command is interruptible), and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
 
 The Scheduler Run Sequence
 --------------------------
@@ -27,8 +28,9 @@ The Scheduler Run Sequence
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
 .. image:: diagrams/scheduler-run-sequence.drawio.svg
+  :alt: Flow diagram that show the sequence of each individual command.
 
-What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration.
+What does a single iteration of the scheduler's ``run()`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration.
 
 Step 1: Run Subsystem Periodic Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,24 +71,24 @@ Occasionally, it is desirable to have the scheduler execute a custom action when
 onCommandInitialize
 ^^^^^^^^^^^^^^^^^^^
 
-The ``onCommandInitialize`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__) runs a specified action whenever a command is initialized.
+The ``onCommandInitialize`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__) runs a specified action whenever a command is initialized.
 
 onCommandExecute
 ^^^^^^^^^^^^^^^^
 
-The ``onCommandExecute`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__) runs a specified action whenever a command is executed.
+The ``onCommandExecute`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__) runs a specified action whenever a command is executed.
 
 onCommandFinish
 ^^^^^^^^^^^^^^^
 
-The ``onCommandFinish`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
+The ``onCommandFinish`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
 
 onCommandInterrupt
 ^^^^^^^^^^^^^^^^^^
 
-The ``onCommandInterrupt`` method (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
+The ``onCommandInterrupt`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
 
-A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the SchedulerEventLogging example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):
+A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the SchedulerEventLogging example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):
 
 .. tabs::
 

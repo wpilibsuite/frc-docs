@@ -1,7 +1,7 @@
 Using the LabVIEW Dashboard with C++/Java Code
 ==============================================
 
-The default LabVIEW Dashboard utilizes Network Tables to pass values and is therefore compatible with C++ and Java robot programs. This article covers the keys and value ranges to use to work with the Dashboard.
+The default LabVIEW Dashboard utilizes :term:`NetworkTables` to pass values and is therefore compatible with C++ and Java robot programs. This article covers the keys and value ranges to use to work with the Dashboard.
 
 Drive Tab
 ---------
@@ -42,7 +42,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
             // auto here
        }
 
-Sending to the "Gyro" network table entry will populate the gyro here.
+Sending to the "Gyro" NetworkTables entry will populate the gyro here.
 
 .. tabs::
 
