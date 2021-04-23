@@ -11,20 +11,20 @@ Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-docs re
 Windows
 ^^^^^^^
 
-.. note:: The vast majority of contributors will **not** need TexLive. It is only required for building the PDF artifact.
+.. note:: The majority of MikTeX packages are not required for building HTML, additional packages may be required for building PDF and EPUB.
 
 - `Python 3.6 or greater <https://www.python.org/downloads/>`__
-- `TexLive <https://www.tug.org/texlive/acquire-iso.html>`__ (We recommend installing via the ISO, since the individual TexLive mirrors are slow)
+- `MiKTeX <https://miktex.org/download>`__
 - `Perl <http://strawberryperl.com/>`__
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 
 .. image:: images/python-path.png
-   :alt: Showing where to click the box to add Python to PATH.
+    :alt: Showing where to click the box to add Python to PATH.
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 
-.. note:: ``rsvg-convert`` is only required for PDF builds.
+Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
 
 Lastly, you need to install ``rsvg-convert`` by running the ``scripts/install-rsvg-convert.ps1`` script in powershell. This requires administrator access.
 
