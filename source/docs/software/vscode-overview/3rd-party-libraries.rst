@@ -94,7 +94,9 @@ Community Libraries
 WPILib Command Libraries
 ------------------------
 
-The WPILib :doc:`old </docs/software/old-commandbased/index>` and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
+.. note:: The project template for the Old Command Library has been removed. New projects are no longer able to be created for this, and users are highly recommended to migrate to the new library.
+
+The WPILib old and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
 
 `Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibOldCommands/WPILibOldCommands.json>`__
 `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__

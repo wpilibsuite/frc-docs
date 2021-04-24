@@ -123,7 +123,7 @@ The :code:`RobotBase` class is the most minimal base-class offered, and is gener
 Command Robot
 ^^^^^^^^^^^^^
 
-Teams using ``Command Robot`` or ``Old Command Robot`` should see the :ref:`Command-Based Programming Tutorial <docs/software/commandbased/index:Command-Based Programming>` or :ref:`[Old] Command Based Programming <docs/software/old-commandbased/index:[Old] Command Based Programming>`.
+Teams using ``Command Robot`` should see the :ref:`Command-Based Programming Tutorial <docs/software/commandbased/index:Command-Based Programming>`.
 
 Romi
 ^^^^
