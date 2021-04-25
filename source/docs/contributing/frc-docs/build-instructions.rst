@@ -11,7 +11,7 @@ Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-docs re
 Windows
 ^^^^^^^
 
-.. note:: MikTeX and ``rsvg-convert`` is not required for building HTML, it is only required for Windows PDF builds.
+.. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
 - `Python 3.6 or greater <https://www.python.org/downloads/>`__
 - `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
