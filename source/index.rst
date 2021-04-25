@@ -74,7 +74,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
    docs/software/vision-processing/index
    docs/software/commandbased/index
-   docs/software/old-commandbased/index
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
