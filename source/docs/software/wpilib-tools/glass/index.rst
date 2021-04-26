@@ -13,4 +13,5 @@ Glass is a new dashboard and robot data visualization tool. Its GUI is extremely
    widgets
    command-based-widgets
    field2d-widget
+   mech2d-widget
    plots
