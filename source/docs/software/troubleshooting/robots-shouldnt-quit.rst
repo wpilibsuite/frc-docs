@@ -3,7 +3,8 @@ Robots Should Not Quit, But Yours Did!
 
 ``Robots should not quit, but yours did!``
 
-When your robot code hits an unexpected error, you will see this message show up in some console output (Driver Station or rioLog). You'll probably also notice your robot abruptly stop, or possibly never move. These unexpected errors are called *unhandled exceptions*.
+When your robot code hits an unexpected error, you will see this message show up in some console output (Driver Station or RioLog). You'll probably also notice your robot abruptly stop, or possibly never move. These unexpected errors are called *unhandled exceptions*.
+
 
 When an unhandled exception occurs, it means that your code has one or more bugs which need to be fixed.
 
@@ -412,4 +413,3 @@ In the example, the left motor controllers are plugged into PWM ports ``0`` and 
       .. code-block:: C++
 
          //TODO
-
