@@ -5,7 +5,6 @@ Reading Stacktraces
 
 When your robot code hits an unexpected error, you will see this message show up in some console output (Driver Station or RioLog). You'll probably also notice your robot abruptly stop, or possibly never move. These unexpected errors are called *unhandled exceptions*.
 
-
 When an unhandled exception occurs, it means that your code has one or more bugs which need to be fixed.
 
 This article will explore some of the tools and techniques involved in finding and fixing those bugs.
@@ -15,10 +14,9 @@ What's a "Stack Trace"?
 
 The ``unexpected error has occurred`` message is a signal that a *stack trace* has been printed out.
 
-In C++ and Java, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
+In Java and C++, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
 
 A *stack trace* prints information about what was on this stack when the unhandled exception occurred. This points you to the lines of code which were running just before the problem happened. While it doesn't always point you to the exact *root cause* of your issue, it's usually the best place to start looking.
-
 
 What's an "Unhandled Exception"?
 --------------------------------
@@ -87,7 +85,37 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
    .. group-tab:: C++
 
-      Coming Soon!
+      Java will usually produce stack traces automatically when programs run into issues. C++ will require more digging to extract the same info. Usually, a single-step debugger will need to be hooked up to the executing robot program. 
+
+      Stack traces can be found in the debugger tab of VS Code:
+
+      .. image:: images/reading-stacktraces/cpp_vscode_dbg_tab.png
+         :alt: VS Code Stack Trace location
+
+      Stack traces in C++ will generally look similar to this:
+
+      .. image:: images/reading-stacktraces/cpp_null_stacktrace.png
+         :alt: Stack Trace associated with a null-related error
+
+      There's a few important things to pick out of here:
+
+
+      * The code execution is currently paused.
+
+      * The reason it paused was one thread having an ``exception``
+
+      * The error happened while running line ``20`` inside of ``Robot.cpp``
+
+         * ``RobotInit`` was the name of the method executing when the error happened.
+
+      * ``RobotInit`` is a function in the ``Robot::`` namespace (AKA, your team's code)
+
+      * ``RobotInit`` was called from a number of functions from the ``frc::`` namespace (AKA, the WPILib libraries)
+
+
+      This "call stack" window represents the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
+      
+      The examples in this page assume you are running code examples in simulation, with the debugger connected and watching for unexpected errors. Similar techniques should apply while running on a real robot.
 
 
 Perform Code Analysis
@@ -109,7 +137,7 @@ Frequent testing and careful code changes help make this particular strategy mor
 Run the Single Step Debugger
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single-step debugger <docs/software/vscode-overview/debugging-robot-program:Debugging a Robot Program>` is a great option in this case - it allows you to inspect the series of events *leading up to* the unhandled exception.
+Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single-step debugger <docs/software/vscode-overview/debugging-robot-program:Debugging a Robot Program>` is a great option in this case - it allows you to inspect the series of events leading up to the unhandled exception.
 
 Search for More Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,8 +157,8 @@ Common Examples & Patterns
 
 There are a number of common issues which result in runtime exceptions.
 
-``null``/``NULL``
-^^^^^^^^^^^^^^^^^
+Null Pointers and References
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Both C++ and Java have the concept of "null" - a reference which has not yet been initialized, and does not refer to anything meaningful.
 
@@ -157,8 +185,19 @@ For example, consider the following code:
    .. group-tab:: C++
 
       .. code-block:: C++
+         :lineno-start: 17
 
-         //TODO
+         class Robot : public frc::TimedRobot {
+            public:
+               void RobotInit() override { 
+                  motorRef->SetInverted(false);
+               }
+
+            private:
+               frc::PWMVictorSPX m_armMotor{0};
+               frc::PWMVictorSPX * motorRef;
+         };
+
 
 When run, you'll see output that looks like this:
 
@@ -189,9 +228,20 @@ When run, you'll see output that looks like this:
 
       .. code-block:: text
 
-          TODO
+         Exception has occurred: W32/0xc0000005
+         Unhandled exception thrown: read access violation.
+         this->motorRef was nullptr.
 
-      More info coming soon!
+      In Simulation, this will show up in a debugger window that points to line 20 in the above buggy code.
+
+      You can view the full stack trace by clicking the debugger tab in VS Code:
+
+      .. image:: images/reading-stacktraces/cpp_null_stacktrace.png
+         :alt: Stack Trace associated with a null-related error
+
+      The error is specific - our member variable ``motorRef`` was declared, but never assigned a value. Therefor, when we attempt to use it to call a method using the ``->`` operator, the exception occurs. 
+
+      The exception states its type was ``nullptr``.
 
 Fixing Null Object Issues
 """""""""""""""""""""""""
@@ -220,14 +270,26 @@ A functional implementation could look like this:
    .. group-tab:: C++
 
       .. code-block:: C++
+         :lineno-start: 17
 
-         //TODO
+         class Robot : public frc::TimedRobot {
+            public:
+               void RobotInit() override { 
+                  motorRef = &m_armMotor;
+                  motorRef->SetInverted(false);
+               }
+
+            private:
+               frc::PWMVictorSPX m_armMotor{0};
+               frc::PWMVictorSPX * motorRef;
+         };
+
 
 
 Divide by Zero
 ^^^^^^^^^^^^^^
 
-It is not generally possible to divide an integer by zero, and expect reasonable results. Most processors (including the RoboRIO) will raise an Unhandled Exception.
+It is not generally possible to divide an integer by zero, and expect reasonable results. Most processors (including the roboRIO) will raise an Unhandled Exception.
 
 For example, consider the following code:
 
@@ -252,8 +314,20 @@ For example, consider the following code:
    .. group-tab:: C++
 
       .. code-block:: C++
+          :lineno-start: 17
 
-         //TODO
+            class Robot : public frc::TimedRobot {
+               public:
+               void RobotInit() override { 
+                  armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+               }
+
+               private:
+                  int armLengthRatio;
+                  int elbowToWrist_in = 39;
+                  int shoulderToElbow_in;
+
+            };
 
 When run, you'll see output that looks like this:
 
@@ -280,9 +354,21 @@ When run, you'll see output that looks like this:
 
    .. group-tab:: C++
 
+
       .. code-block:: text
 
-          TODO
+         Exception has occurred: W32/0xc0000094
+         Unhandled exception at 0x00007FF71B223CD6 in frcUserProgram.exe: 0xC0000094: Integer division by zero.
+
+      In Simulation, this will show up in a debugger window that points to line 20 in the above buggy code.
+
+      You can view the full stack trace by clicking the debugger tab in VS Code:
+
+      .. image:: images/reading-stacktraces/cpp_div_zero_stacktrace.png
+         :alt: Stack Trace associated with a divide by zero error
+
+      Looking at the message, we see the error is described as ``Integer division by zero``. If you look at the two variables which are used on the right-hand side of the ``=`` operator on line 20, you might notice one of them has not been initialized. This means its value is, by default, zero. And, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
+
 
 
 Fixing Divide By Zero Issues
@@ -316,8 +402,20 @@ A functional implementation could look like this:
    .. group-tab:: C++
 
       .. code-block:: C++
+          :lineno-start: 17
 
-         //TODO
+            class Robot : public frc::TimedRobot {
+               public:
+               void RobotInit() override { 
+                  armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+               }
+
+               private:
+                  int armLengthRatio;
+                  int elbowToWrist_in = 39;
+                  int shoulderToElbow_in; = 3
+
+            };
 
 Alternatively, if zero *is* a valid value, adding ``if/else`` statements around the calculation can help you define alternate behavior to avoid making the processor perform a division by zero.
 
@@ -338,22 +436,35 @@ For example, consider the following code:
       .. code-block:: Java
           :lineno-start: 19
 
-            PWMSparkMax leftFrontDTMotor;
-            PWMSparkMax leftRearDTMotor;
+            PWMSparkMax leftFrontMotor;
+            PWMSparkMax leftRearMotor;
 
             @Override
             public void robotInit() {
 
-               leftFrontDTMotor = new PWMSparkMax(0);
-               leftRearDTMotor = new PWMSparkMax(0);
+               leftFrontMotor = new PWMSparkMax(0);
+               leftRearMotor = new PWMSparkMax(0);
 
             }
 
    .. group-tab:: C++
 
       .. code-block:: C++
+         :lineno-start: 17
 
-         //TODO
+         class Robot : public frc::TimedRobot {
+            public:
+               void RobotInit() override { 
+                  m_frontLeftMotor.Set(0.5);
+                  m_rearLeftMotor.Set(0.25);
+               }
+
+            private:
+               frc::PWMVictorSPX m_frontLeftMotor{0};
+               frc::PWMVictorSPX m_rearLeftMotor{0};
+
+            };
+
 
 When run, you'll see output that looks like this:
 
@@ -386,9 +497,15 @@ When run, you'll see output that looks like this:
 
    .. group-tab:: C++
 
+      In C++, you won't specifically see a stacktrace from this issue. Instead, you'll get messages which look like the following:
+
       .. code-block:: text
 
-          TODO
+         ********** Robot program starting **********
+         Not loading CameraServerShared
+         Error at frc::PWM::PWM [PWM.cpp:32]: HAL: Resource already allocated, Minimum Value: 0, MaximumValue: 20, Requested Value: 0
+
+      The key thing to notice here is the string, ``HAL: Resource already allocated``. That string is your primary clue that something in code has incorrectly "doubled up" on pin usage.
 
 
 Fixing HAL Resource Already Allocated Issues
@@ -405,14 +522,14 @@ In the example, the left motor controllers are plugged into PWM ports ``0`` and 
       .. code-block:: Java
           :lineno-start: 19
 
-            PWMSparkMax leftFrontDTMotor;
-            PWMSparkMax leftRearDTMotor;
+            PWMSparkMax leftFrontMotor;
+            PWMSparkMax leftRearMotor;
 
             @Override
             public void robotInit() {
 
-               leftFrontDTMotor = new PWMSparkMax(0);
-               leftRearDTMotor = new PWMSparkMax(1);
+               leftFrontMotor = new PWMSparkMax(0);
+               leftRearMotor = new PWMSparkMax(1);
 
             }
 
@@ -420,4 +537,17 @@ In the example, the left motor controllers are plugged into PWM ports ``0`` and 
 
       .. code-block:: C++
 
-         //TODO
+         :lineno-start: 17
+         
+         class Robot : public frc::TimedRobot {
+            public:
+               void RobotInit() override { 
+                  m_frontLeftMotor.Set(0.5);
+                  m_rearLeftMotor.Set(0.25);
+               }
+
+            private:
+               frc::PWMVictorSPX m_frontLeftMotor{0};
+               frc::PWMVictorSPX m_rearLeftMotor{1};
+
+            };
