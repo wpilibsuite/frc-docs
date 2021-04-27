@@ -225,7 +225,7 @@ A functional implementation could look like this:
 Divide by Zero
 ^^^^^^^^^^^^^^
 
-It is not generally possible to divide an integer by zero, and expect reasonable results. Most processors (including the RoboRIO) will cause an Unhandled Exception.
+It is not generally possible to divide an integer by zero, and expect reasonable results. Most processors (including the RoboRIO) will raise an Unhandled Exception.
 
 For example, consider the following code:
 
