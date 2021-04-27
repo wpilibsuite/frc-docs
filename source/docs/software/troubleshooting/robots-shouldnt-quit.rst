@@ -383,7 +383,7 @@ When run, you'll see output that looks like this:
 
 This stack trace shows that a``edu.wpi.first.hal.util.UncleanStatusException`` has occurred. It also gives the helpful message: ``HAL: Resource already allocated``.
 
-Looking at our stack trace, we see that the error *actually* happened deep within some WPILib content. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:26``.
+Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:26``.
 
 Taking a peek at the code, we see line 26 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefor, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
