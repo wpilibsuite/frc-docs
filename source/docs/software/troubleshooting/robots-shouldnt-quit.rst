@@ -10,14 +10,14 @@ When an unhandled exception occurs, it means that your code has one or more bugs
 
 This article will explore some of the tools and techniques involved in finding and fixing those bugs.
 
-What's a Stack Trace?
----------------------
+What's a "Stack Trace"?
+-----------------------
 
-The ``Robots should not quit`` message is a signal that a *stack trace* has been printed out. 
+The ``Robots should not quit`` message is a signal that a *stack trace* has been printed out.
 
 In C++ and Java, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
 
-A *stack trace* prints information about what was on this stack when the unhandled exception occurred. This points you to the lines of code which were running just before the problem happened. While it doesn't always point you to the *exact root cause* of your issue, it's usually the best place to start looking.
+A *stack trace* prints information about what was on this stack when the unhandled exception occurred. This points you to the lines of code which were running just before the problem happened. While it doesn't always point you to the exact *root cause* of your issue, it's usually the best place to start looking.
 
 
 What's an "Unhandled Exception"?
@@ -33,7 +33,7 @@ So How Do I Fix My Issue?
 Read the Stack Trace
 ^^^^^^^^^^^^^^^^^^^^
 
-To start, search above the ``Robots should not quit`` for the stack trace. 
+To start, search above the ``Robots should not quit`` for the stack trace.
 
 .. tabs::
 
@@ -56,7 +56,7 @@ To start, search above the ``Robots should not quit`` for the stack trace.
       * There was an ``Error``
 
       * The error was due to an ``Unhandled exception``
-         
+
       * The exception was a ``java.lang.NullPointerException``
 
       * The error happened while running line ``24`` inside of ``Robot.java``
@@ -67,7 +67,7 @@ To start, search above the ``Robots should not quit`` for the stack trace.
 
       * ``robotInit`` was called from a number of functions from the ``edu.wpi.first.wpilibj`` package (AKA, the WPILib libraries)
 
-      The list of indented lines starting with the word ``at`` represent the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it. 
+      The list of indented lines starting with the word ``at`` represent the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
 
       For example, If the error happened deep inside your codebase, you might see more entries on the stack:
 
@@ -95,7 +95,7 @@ Perform Code Analysis
 
 Once you've found the stack trace, and found the line of code which is triggering the unhandled exception, you can start the process of determining root cause.
 
-Often, just looking at (or near) the problematic line of code will be fruitful. You may notice things you forgot, or lines which don't match an example you're referencing. 
+Often, just looking at (or near) the problematic line of code will be fruitful. You may notice things you forgot, or lines which don't match an example you're referencing.
 
 .. note:: Developers who have lots of experience working with code will often have more luck looking at code than newer folks. That's ok, don't be discouraged! The experience will come with time.
 
@@ -104,7 +104,7 @@ A key strategy for analyzing code is to ask the following questions:
  * When was the last time the code "worked" (IE, didn't have this particular error)?
  * What has changed in the code between the last working version, and now?
 
-Frequent testing and careful code changes help make this particular strategy more effective. 
+Frequent testing and careful code changes help make this particular strategy more effective.
 
 Run the Single Step Debugger
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,7 +127,7 @@ If all else fails, you can seek out advice and help from others (both in-person 
 Common Examples & Patterns
 --------------------------
 
-There are a number of common issues which result in runtime exceptions. 
+There are a number of common issues which result in runtime exceptions.
 
 ``Null``/``NULL``
 ^^^^^^^^^^^^^^^^^
@@ -185,18 +185,18 @@ When run, you'll see output that looks like this:
 
           TODO
 
-Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 24, and the exception involved "Null Pointer". 
+Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 24, and the exception involved "Null Pointer".
 
 By going to line 24, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
 
-Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 24. Inspecting the ``armMotorCtrl`` object at that point would show that it is null. 
+Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 24. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
 
 Fixing Null Object Issues
 """""""""""""""""""""""""
 
-Generally, you will want to ensure each reference has been initialized before using it. In this case, there is a missing line of code to instantiate the ``armMotorCtrl`` before calling the ``setInverted()`` method. 
+Generally, you will want to ensure each reference has been initialized before using it. In this case, there is a missing line of code to instantiate the ``armMotorCtrl`` before calling the ``setInverted()`` method.
 
-A functional implementation could look like this: 
+A functional implementation could look like this:
 
 .. tabs::
 
@@ -209,7 +209,7 @@ A functional implementation could look like this:
 
             @Override
             public void robotInit() {
-                
+
                 armMotorCtrl = new PWMSparkMax(0);
                 armMotorCtrl.setInverted(true);
 
@@ -287,9 +287,9 @@ Fixing Div/0 Issues
 
 Divide By Zero issues can be fixed in a number of ways. It's important to start by thinking about what a zero in the denominator of your calculation _means_. Is it plausible? Why did it happen in the particular case you saw?
 
-Sometimes, you just need to use a different number other than 0. 
+Sometimes, you just need to use a different number other than 0.
 
-A functional implementation could look like this: 
+A functional implementation could look like this:
 
 .. tabs::
 
