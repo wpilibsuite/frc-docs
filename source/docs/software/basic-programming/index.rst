@@ -6,3 +6,4 @@ Basic Programming
 
    git-getting-started.rst
    cpp-units
+   reading-stacktraces

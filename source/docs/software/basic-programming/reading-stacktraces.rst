@@ -1,7 +1,7 @@
-Robots Should Not Quit, But Yours Did!
-======================================
+Reading Stacktraces
+===================
 
-``Robots should not quit, but yours did!``
+``An unexpected error has occurred.``
 
 When your robot code hits an unexpected error, you will see this message show up in some console output (Driver Station or RioLog). You'll probably also notice your robot abruptly stop, or possibly never move. These unexpected errors are called *unhandled exceptions*.
 
@@ -13,7 +13,7 @@ This article will explore some of the tools and techniques involved in finding a
 What's a "Stack Trace"?
 -----------------------
 
-The ``Robots should not quit`` message is a signal that a *stack trace* has been printed out.
+The ``unexpected error has occurred`` message is a signal that a *stack trace* has been printed out.
 
 In C++ and Java, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
 
@@ -33,7 +33,7 @@ So How Do I Fix My Issue?
 Read the Stack Trace
 ^^^^^^^^^^^^^^^^^^^^
 
-To start, search above the ``Robots should not quit`` for the stack trace.
+To start, search above the ``unexpected error has occurred`` for the stack trace.
 
 .. tabs::
 
@@ -176,7 +176,7 @@ When run, you'll see output that looks like this:
                 at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
                 at java.base/java.lang.Thread.run(Thread.java:834)
 
-        Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): Robots should not quit, but yours did!
+        Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
    .. group-tab:: C++
@@ -269,7 +269,7 @@ When run, you'll see output that looks like this:
                at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
                at java.base/java.lang.Thread.run(Thread.java:834)
 
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): Robots should not quit, but yours did!
+         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
    .. group-tab:: C++
@@ -372,7 +372,7 @@ When run, you'll see output that looks like this:
                at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:407)
                at frc.robot.Main.main(Main.java:23)
 
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): Robots should not quit, but yours did!
+         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
    .. group-tab:: C++
