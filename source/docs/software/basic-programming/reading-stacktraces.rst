@@ -85,7 +85,7 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
    .. group-tab:: C++
 
-      Java will usually produce stack traces automatically when programs run into issues. C++ will require more digging to extract the same info. Usually, a single-step debugger will need to be hooked up to the executing robot program. 
+      Java will usually produce stack traces automatically when programs run into issues. C++ will require more digging to extract the same info. Usually, a single-step debugger will need to be hooked up to the executing robot program.
 
       Stack traces can be found in the debugger tab of VS Code:
 
@@ -114,7 +114,7 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
 
       This "call stack" window represents the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
-      
+
       The examples in this page assume you are running code examples in simulation, with the debugger connected and watching for unexpected errors. Similar techniques should apply while running on a real robot.
 
 
@@ -189,7 +189,7 @@ For example, consider the following code:
 
          class Robot : public frc::TimedRobot {
             public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   motorRef->SetInverted(false);
                }
 
@@ -239,7 +239,7 @@ When run, you'll see output that looks like this:
       .. image:: images/reading-stacktraces/cpp_null_stacktrace.png
          :alt: Stack Trace associated with a null-related error
 
-      The error is specific - our member variable ``motorRef`` was declared, but never assigned a value. Therefor, when we attempt to use it to call a method using the ``->`` operator, the exception occurs. 
+      The error is specific - our member variable ``motorRef`` was declared, but never assigned a value. Therefor, when we attempt to use it to call a method using the ``->`` operator, the exception occurs.
 
       The exception states its type was ``nullptr``.
 
@@ -274,7 +274,7 @@ A functional implementation could look like this:
 
          class Robot : public frc::TimedRobot {
             public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   motorRef = &m_armMotor;
                   motorRef->SetInverted(false);
                }
@@ -318,7 +318,7 @@ For example, consider the following code:
 
             class Robot : public frc::TimedRobot {
                public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
                }
 
@@ -406,7 +406,7 @@ A functional implementation could look like this:
 
             class Robot : public frc::TimedRobot {
                public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
                }
 
@@ -454,7 +454,7 @@ For example, consider the following code:
 
          class Robot : public frc::TimedRobot {
             public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   m_frontLeftMotor.Set(0.5);
                   m_rearLeftMotor.Set(0.25);
                }
@@ -538,10 +538,10 @@ In the example, the left motor controllers are plugged into PWM ports ``0`` and 
       .. code-block:: C++
 
          :lineno-start: 17
-         
+
          class Robot : public frc::TimedRobot {
             public:
-               void RobotInit() override { 
+               void RobotInit() override {
                   m_frontLeftMotor.Set(0.5);
                   m_rearLeftMotor.Set(0.25);
                }
