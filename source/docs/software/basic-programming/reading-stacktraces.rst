@@ -93,9 +93,9 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 Perform Code Analysis
 ^^^^^^^^^^^^^^^^^^^^^
 
-Once you've found the stack trace, and found the line of code which is triggering the unhandled exception, you can start the process of determining root cause.
+Once you've found the stack trace, and found the lines of code which are triggering the unhandled exception, you can start the process of determining root cause.
 
-Often, just looking at (or near) the problematic line of code will be fruitful. You may notice things you forgot, or lines which don't match an example you're referencing.
+Often, just looking in (or near) the problematic location in code will be fruitful. You may notice things you forgot, or lines which don't match an example you're referencing.
 
 .. note:: Developers who have lots of experience working with code will often have more luck looking at code than newer folks. That's ok, don't be discouraged! The experience will come with time.
 
@@ -114,7 +114,7 @@ Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single
 Search for More Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Google <https://google.com>`_ is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, and how it often comes about.
+`Google <https://google.com>`_ is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, how it comes about, and potential fixes.
 
 Seeking Outside Help
 ^^^^^^^^^^^^^^^^^^^^
@@ -129,7 +129,7 @@ Common Examples & Patterns
 
 There are a number of common issues which result in runtime exceptions.
 
-``Null``/``NULL``
+``null``/``NULL``
 ^^^^^^^^^^^^^^^^^
 
 Both C++ and Java have the concept of "null" - a reference which has not yet been initialized, and does not refer to anything meaningful.
@@ -179,17 +179,19 @@ When run, you'll see output that looks like this:
         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
+      Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 24, and the exception involved "Null Pointer".
+
+      By going to line 24, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
+
+      Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 24. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
+
    .. group-tab:: C++
 
       .. code-block:: text
 
           TODO
 
-Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 24, and the exception involved "Null Pointer".
-
-By going to line 24, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
-
-Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 24. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
+      More info coming soon!
 
 Fixing Null Object Issues
 """""""""""""""""""""""""
@@ -272,18 +274,19 @@ When run, you'll see output that looks like this:
          Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
+      Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 25. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has not been initialized. This means its value is, by default, zero. And, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
+
+      Alternatively, by running the single-step debugger and stopping on line 25, you could inspect the value of all variables to discover ``shoulderToElbow_in`` has a value of ``0``.
+
    .. group-tab:: C++
 
       .. code-block:: text
 
           TODO
 
-Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 25. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has not been initialized. This means its value is, by default, zero. And, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
 
-Alternatively, by running the single-step debugger and stopping on line 25, you could inspect the value of all variables to discover ``shoulderToElbow_in`` has a value of ``0``.
-
-Fixing Div/0 Issues
-"""""""""""""""""""
+Fixing Divide By Zero Issues
+""""""""""""""""""""""""""""
 
 Divide By Zero issues can be fixed in a number of ways. It's important to start by thinking about what a zero in the denominator of your calculation _means_. Is it plausible? Why did it happen in the particular case you saw?
 
@@ -375,19 +378,23 @@ When run, you'll see output that looks like this:
          Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
+      This stack trace shows that a``edu.wpi.first.hal.util.UncleanStatusException`` has occurred. It also gives the helpful message: ``HAL: Resource already allocated``.
+
+      Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:26``.
+
+      Taking a peek at the code, we see line 26 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefor, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
+
    .. group-tab:: C++
 
       .. code-block:: text
 
           TODO
 
-This stack trace shows that a``edu.wpi.first.hal.util.UncleanStatusException`` has occurred. It also gives the helpful message: ``HAL: Resource already allocated``.
 
-Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:26``.
+Fixing HAL Resource Already Allocated Issues
+""""""""""""""""""""""""""""""""""""""""""""
 
-Taking a peek at the code, we see line 26 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefor, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
-
-Thankfully, ``HAL: Resource already allocated`` are some of the most straightforward errors to fix. Just spend a bit of time looking at the electrical wiring on the robot, and compare that to what's in code.
+``HAL: Resource already allocated`` are some of the most straightforward errors to fix. Just spend a bit of time looking at the electrical wiring on the robot, and compare that to what's in code.
 
 In the example, the left motor controllers are plugged into PWM ports ``0`` and ``1``. Therefore, corrected code would look like this:
 
