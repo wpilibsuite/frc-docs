@@ -28,7 +28,7 @@ Creating a SlewRateLimiter is simple:
   .. code-tab:: c++
 
     // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
-    frc::SlewRateLimiter<units::volts> filter{0.5_v / 1_s};
+    frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
 
 Using a SlewRateLimiter
 -----------------------
