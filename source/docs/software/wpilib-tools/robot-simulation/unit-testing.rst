@@ -182,8 +182,6 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
       #include "subsystems/Intake.h"
       #include "Constants.h"
 
-      constexpr double DELTA = 1e-2; // acceptable deviation range
-
       class IntakeTest : public testing::Test {
        protected:
         Intake intake; // create our intake
@@ -194,13 +192,13 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
       TEST_F(IntakeTest, DoesntWorkWhenClosed) {
         intake.Retract(); // close the intake
         intake.Activate(0.5); // try to activate the motor
-        EXPECT_EQ(0.0, simMotor.GetSpeed(), DELTA); // make sure that the value set to the motor is 0
+        EXPECT_DOUBLE_EQ(0.0, simMotor.GetSpeed()); // make sure that the value set to the motor is 0
       }
 
       TEST_F(IntakeTest, WorksWhenOpen) {
         intake.Deploy();
         intake.Activate(0.5);
-        EXPECT_EQ(0.5, simMotor.GetSpeed(), DELTA);
+        EXPECT_DOUBLE_EQ(0.5, simMotor.GetSpeed());
       }
 
       TEST_F(IntakeTest, RetractTest) {
