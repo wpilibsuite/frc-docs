@@ -235,7 +235,7 @@ thumbpdf
 times
 titlesec
 tocloft
-tools
+latex-tools
 ttf2pk
 ukrhyph
 unicode-data
