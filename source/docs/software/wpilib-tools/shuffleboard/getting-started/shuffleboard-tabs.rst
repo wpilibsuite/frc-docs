@@ -26,7 +26,7 @@ You can add additional tabs by clicking on the plus(+) symbol just to the right 
 .. image:: images/tabs-2.png
    :alt: Modifying tab properties in Shuffleboard
 
-You can hide tabs by clicking the minus(-) symbol to the left of the selected tab name. Since tabs are generated based on relevant :term:`NetworkTable <NetworkTables>`, it is not possible to permanently delete them without deleting the relevant NetworkTable.
+You can hide tabs by clicking the minus(-) symbol to the left of the selected tab name. Since tabs are generated based on the relevant :term:`NetworkTable <NetworkTables>`, it is not possible to permanently delete them without deleting the table.
 
 .. image:: images/shuffleboard-tab-deletion.png
    :alt: Deleting a Shuffleboard Tab
