@@ -6,13 +6,13 @@ Glass supports displaying stick-figure representations of your robot's mechanism
 Creating and Configuring the Mechanism2d Instance
 -------------------------------------------------
 
-The ``Mechanism2d`` object is the base of the mechanism. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object.
+The ``Mechanism2d`` object is the base of the mechanism. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. Coordinate system follow the same orientation as Field2d - ``(0,0)`` is bottom left.
 
 .. tabs::
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 41-44
         :linenos:
@@ -20,7 +20,7 @@ The ``Mechanism2d`` object is the base of the mechanism. To get a root node (rep
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 56-59
         :linenos:
@@ -33,7 +33,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. Call ``
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 46-49
         :linenos:
@@ -41,7 +41,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. Call ``
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 60-65
         :linenos:
@@ -53,7 +53,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 51-52
         :linenos:
@@ -61,7 +61,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 34
         :linenos:
@@ -69,13 +69,13 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
 .. note:: The ``Mechanism2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Mechanism2d` widget will appear under the ``SmartDashboard`` table name.
 
-To manipulate a ligament's angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments. Ligament angles are relative to the parent ligament. 
+To manipulate a ligament's angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:```Rotation2d``<docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. 
 
 .. tabs::
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 55-60
         :linenos:
@@ -83,7 +83,7 @@ To manipulate a ligament's angle or length, call ``setLength()`` or ``setAngle()
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.3.2/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ff52f207ccb685748fb71e1c1726ee98130e4c81/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 37-42
         :linenos:
