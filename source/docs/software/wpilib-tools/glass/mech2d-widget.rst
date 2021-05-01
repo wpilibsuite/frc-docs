@@ -89,4 +89,4 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
         :linenos:
         :lineno-start: 36
 
-Viewing the Mechanism2d widget in Glass is very similar to :ref:`field2d-widget:Viewing the Robot Pose in Glass`.
+Viewing the Mechanism2d widget in Glass is very similar to :ref:`viewing the Field2d widget <docs/software/wpilib-tools/glass/field2d-widget:Viewing the Robot Pose in Glass>`.
