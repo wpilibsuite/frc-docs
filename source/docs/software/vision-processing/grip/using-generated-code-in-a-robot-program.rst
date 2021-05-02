@@ -39,8 +39,8 @@ Iterative program definitions
         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
         import edu.wpi.first.wpilibj.PWMVictorSPX;
         import edu.wpi.first.wpilibj.TimedRobot;
-        import edu.wpi.first.wpilibj.vision.VisionRunner;
-        import edu.wpi.first.wpilibj.vision.VisionThread;
+        import edu.wpi.first.vision.VisionRunner;
+        import edu.wpi.first.vision.VisionThread;
 
         public class Robot extends TimedRobot {
 
