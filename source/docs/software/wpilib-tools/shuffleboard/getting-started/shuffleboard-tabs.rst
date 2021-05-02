@@ -18,13 +18,18 @@ Switching between tabs
 
 You can switch between tabs clicking on the tab label at the top of the window. In the case above, simply click on SmartDashboard or LiveWindow to see the values that are associated with each tab.
 
-Adding tabs and deleting tabs
------------------------------
+Adding and Hiding Tabs
+----------------------
 
 You can add additional tabs by clicking on the plus(+) symbol just to the right of the last tab. Once you create a new tab you can set the label by double-clicking on the label in the tab and editing it. You can also right-click on the tab or use the Tab menu to bring up the tab preferences and from that window you can change the name by editing the Title field.
 
-.. figure:: images/tabs-2.png
-   :alt:
+.. image:: images/tabs-2.png
+   :alt: Modifying tab properties in Shuffleboard
+
+You can hide tabs by clicking the minus(-) symbol to the left of the selected tab name. Since tabs are generated based on the relevant :term:`NetworkTable <NetworkTables>`, it is not possible to permanently delete them without deleting the table.
+
+.. image:: images/shuffleboard-tab-deletion.png
+   :alt: Deleting a Shuffleboard Tab
 
 Setting the tab to auto-populate
 --------------------------------
