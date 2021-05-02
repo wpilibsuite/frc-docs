@@ -36,7 +36,8 @@ Iterative program definitions
 
         import edu.wpi.cscore.UsbCamera;
         import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.RobotDrive;
+        import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+        import edu.wpi.first.wpilibj.PWMVictorSPX;
         import edu.wpi.first.wpilibj.TimedRobot;
         import edu.wpi.first.wpilibj.vision.VisionRunner;
         import edu.wpi.first.wpilibj.vision.VisionThread;
@@ -48,7 +49,9 @@ Iterative program definitions
 
             private VisionThread visionThread;
             private double centerX = 0.0;
-            private RobotDrive drive;
+            private DifferentialDrive drive;
+            private PWMVictorSPX left;
+            private PWMVictorSPX right;
 
             private final Object imgLock = new Object();
 
@@ -58,7 +61,7 @@ In this first part of the program you can see all the import statements for the 
 -   The **VisionThread** is a WPILib class makes it easy to do your camera processing in a separate thread from the rest of the
     robot program.
 -   **centerX** value will be the computed center X value of the detected target.
--   **RobotDrive** encapsulates the 4 motors on this robot and allows simplified driving.
+-   **DifferentialDrive** encapsulates the drive motors on this robot and allows simplified driving.
 -   **imgLock** is a variable to synchronize access to the data being simultaneously updated with each image acquisition pass
     and the code that's processing the coordinates and steering the robot.
 
@@ -81,7 +84,9 @@ In this first part of the program you can see all the import statements for the 
             });
             visionThread.start();
 
-            drive = new RobotDrive(1, 2);
+            left = new PWMVictorSPX(0);
+            right = new PWMVictorSPX(1);
+            drive = new DifferentialDrive(left, right);
         }
 
 The **robotInit()** method is called once when the program starts up. It creates a **CameraServer** instance that begins
