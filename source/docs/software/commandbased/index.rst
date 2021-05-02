@@ -1,7 +1,7 @@
 Command-Based Programming
 =========================
 
-.. note:: Old command-based is no longer available for new projects. Users should migrate to the new command-based framework below. Documentation for old command-based is available here <https://docs.wpilib.org/en/2021/docs/software/old-commandbased/index.html>__.
+.. note:: Old command-based is no longer available for new projects. Users should migrate to the new command-based framework below. Documentation for old command-based is available `here <https://docs.wpilib.org/en/2021/docs/software/old-commandbased/index.html>`_.
 
 This sequence of articles serves as an introduction to and reference for the WPILib command-based framework.
 
