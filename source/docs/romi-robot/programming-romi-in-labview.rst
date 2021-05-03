@@ -6,7 +6,7 @@ Writing a LabVIEW program for the Romi is very similar to writing a program for 
 Creating a Romi Program
 -----------------------
 
-Creating a new program for a Romi is no different than creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially you may wish to create a seperate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
+Creating a new program for a Romi is no different than creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially you may wish to create a separate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
 
 
 Changing the project target
