@@ -37,7 +37,7 @@ Iterative program definitions
         import edu.wpi.cscore.UsbCamera;
         import edu.wpi.first.cameraserver.CameraServer;
         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-        import edu.wpi.first.wpilibj.PWMVictorSPX;
+        import edu.wpi.first.wpilibj.PWMSparkMax;
         import edu.wpi.first.wpilibj.TimedRobot;
         import edu.wpi.first.vision.VisionRunner;
         import edu.wpi.first.vision.VisionThread;
@@ -50,8 +50,8 @@ Iterative program definitions
             private VisionThread visionThread;
             private double centerX = 0.0;
             private DifferentialDrive drive;
-            private PWMVictorSPX left;
-            private PWMVictorSPX right;
+            private PWMSparkMax left;
+            private PWMSparkMax right;
 
             private final Object imgLock = new Object();
 
@@ -84,8 +84,8 @@ In this first part of the program you can see all the import statements for the 
             });
             visionThread.start();
 
-            left = new PWMVictorSPX(0);
-            right = new PWMVictorSPX(1);
+            left = new PWMSparkMax(0);
+            right = new PWMSparkMax(1);
             drive = new DifferentialDrive(left, right);
         }
 
