@@ -160,7 +160,7 @@ There are a number of common issues which result in runtime exceptions.
 Null Pointers and References
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Both C++ and Java have the concept of "null" - a reference which has not yet been initialized, and does not refer to anything meaningful.
+Both C++ and Java have the concept of "null" - they use it to indicate something which has not yet been initialized, and does not refer to anything meaningful.
 
 Manipulating a "null" reference will produce a runtime error.
 
@@ -177,9 +177,7 @@ For example, consider the following code:
 
             @Override
             public void robotInit() {
-
                 armMotorCtrl.setInverted(true);
-
             }
 
    .. group-tab:: C++
@@ -195,7 +193,7 @@ For example, consider the following code:
 
             private:
                frc::PWMVictorSPX m_armMotor{0};
-               frc::PWMVictorSPX * motorRef;
+               frc::PWMVictorSPX* motorRef;
          };
 
 
@@ -208,8 +206,8 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
         ********** Robot program starting **********
-        Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.NullPointerException
-                at frc.robot.Robot.robotInit(Robot.java:24)
+        Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
+                at frc.robot.Robot.robotInit(Robot.java:23)
                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
                 at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
@@ -218,11 +216,11 @@ When run, you'll see output that looks like this:
         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
-      Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 24, and the exception involved "Null Pointer".
+      Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 23, and the exception involved "Null Pointer".
 
-      By going to line 24, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
+      By going to line 23, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
 
-      Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 24. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
+      Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 23. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
 
    .. group-tab:: C++
 
@@ -239,7 +237,7 @@ When run, you'll see output that looks like this:
       .. image:: images/reading-stacktraces/cpp_null_stacktrace.png
          :alt: Stack Trace associated with a null-related error
 
-      The error is specific - our member variable ``motorRef`` was declared, but never assigned a value. Therefor, when we attempt to use it to call a method using the ``->`` operator, the exception occurs.
+      The error is specific - our member variable ``motorRef`` was declared, but never assigned a value. Therefore, when we attempt to use it to call a method using the ``->`` operator, the exception occurs.
 
       The exception states its type was ``nullptr``.
 
@@ -261,10 +259,8 @@ A functional implementation could look like this:
 
             @Override
             public void robotInit() {
-
                 armMotorCtrl = new PWMSparkMax(0);
                 armMotorCtrl.setInverted(true);
-
             }
 
    .. group-tab:: C++
@@ -281,7 +277,7 @@ A functional implementation could look like this:
 
             private:
                frc::PWMVictorSPX m_armMotor{0};
-               frc::PWMVictorSPX * motorRef;
+               frc::PWMVictorSPX* motorRef;
          };
 
 
@@ -302,13 +298,11 @@ For example, consider the following code:
 
             int armLengthRatio;
             int elbowToWrist_in = 39;
-            int shoulderToElbow_in;
+            int shoulderToElbow_in = 0; //TODO
 
             @Override
             public void robotInit() {
-
                armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-
             }
 
    .. group-tab:: C++
@@ -325,7 +319,7 @@ For example, consider the following code:
                private:
                   int armLengthRatio;
                   int elbowToWrist_in = 39;
-                  int shoulderToElbow_in;
+                  int shoulderToElbow_in = 0; //TODO
 
             };
 
@@ -338,8 +332,8 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: java.lang.ArithmeticException: / by zero
-               at frc.robot.Robot.robotInit(Robot.java:25)
+         Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
+               at frc.robot.Robot.robotInit(Robot.java:24)
                at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
                at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
                at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
@@ -348,9 +342,9 @@ When run, you'll see output that looks like this:
          Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
 
-      Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 25. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has not been initialized. This means its value is, by default, zero. And, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
+      Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 24. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has been initialized to zero. Looks like someone forgot to update it! Furthermore, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
 
-      Alternatively, by running the single-step debugger and stopping on line 25, you could inspect the value of all variables to discover ``shoulderToElbow_in`` has a value of ``0``.
+      Alternatively, by running the single-step debugger and stopping on line 24, you could inspect the value of all variables to discover ``shoulderToElbow_in`` has a value of ``0``.
 
    .. group-tab:: C++
 
@@ -367,7 +361,9 @@ When run, you'll see output that looks like this:
       .. image:: images/reading-stacktraces/cpp_div_zero_stacktrace.png
          :alt: Stack Trace associated with a divide by zero error
 
-      Looking at the message, we see the error is described as ``Integer division by zero``. If you look at the two variables which are used on the right-hand side of the ``=`` operator on line 20, you might notice one of them has not been initialized. This means its value is, by default, zero. And, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
+      Looking at the message, we see the error is described as ``Integer division by zero``. If you look at the two variables which are used on the right-hand side of the ``=`` operator on line 20, you might notice one of them has been initialized to zero. Looks like someone forgot to update it! Furthermore,  the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
+
+      Note that the error messages might look slightly different on the roboRIO, or on an operating system other than windows.
 
 
 
@@ -413,7 +409,7 @@ A functional implementation could look like this:
                private:
                   int armLengthRatio;
                   int elbowToWrist_in = 39;
-                  int shoulderToElbow_in; = 3
+                  int shoulderToElbow_in = 3
 
             };
 
@@ -441,10 +437,8 @@ For example, consider the following code:
 
             @Override
             public void robotInit() {
-
                leftFrontMotor = new PWMSparkMax(0);
                leftRearMotor = new PWMSparkMax(0);
-
             }
 
    .. group-tab:: C++
@@ -475,12 +469,12 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:26): Unhandled exception: edu.wpi.first.hal.util.UncleanStatusException:  Code: -1029. HAL: Resource already allocated
+         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.UncleanStatusException:  Code: -1029. HAL: Resource already allocated
                at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
                at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:51)
                at edu.wpi.first.wpilibj.PWMSpeedController.<init>(PWMSpeedController.java:20)
                at edu.wpi.first.wpilibj.PWMSparkMax.<init>(PWMSparkMax.java:31)
-               at frc.robot.Robot.robotInit(Robot.java:26)
+               at frc.robot.Robot.robotInit(Robot.java:25)
                at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
                at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
                at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:407)
@@ -491,9 +485,9 @@ When run, you'll see output that looks like this:
 
       This stack trace shows that a``edu.wpi.first.hal.util.UncleanStatusException`` has occurred. It also gives the helpful message: ``HAL: Resource already allocated``.
 
-      Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:26``.
+      Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
 
-      Taking a peek at the code, we see line 26 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefor, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
+      Taking a peek at the code, we see line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
    .. group-tab:: C++
 
@@ -506,6 +500,8 @@ When run, you'll see output that looks like this:
          Error at frc::PWM::PWM [PWM.cpp:32]: HAL: Resource already allocated, Minimum Value: 0, MaximumValue: 20, Requested Value: 0
 
       The key thing to notice here is the string, ``HAL: Resource already allocated``. That string is your primary clue that something in code has incorrectly "doubled up" on pin usage.
+
+      The message example above was generated on a Windows computer in simulation. If you are running on a roboRIO or on a different operating system, it might look different.
 
 
 Fixing HAL Resource Already Allocated Issues
