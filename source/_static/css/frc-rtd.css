@@ -14,6 +14,7 @@
 	position: relative;
 	width: 100%;
 	z-index: 999;
+	display: table;
 }
 
 .color-strip .fblue {
@@ -26,14 +27,11 @@
 
 .color-strip .fred {
 	background: #ed1c24;
-	width: auto;
 }
 
 .color-strip div {
-	display: block;
-	float: left;
 	height: 100%;
-	width: 33%;
+	display: table-cell;
 }
 
 .rst-versions {
