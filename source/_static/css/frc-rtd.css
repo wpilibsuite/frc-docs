@@ -26,13 +26,14 @@
 
 .color-strip .fred {
 	background: #ed1c24;
+	width:auto;
 }
 
 .color-strip div {
 	display: block;
 	float: left;
 	height: 100%;
-	width: 33.333%;
+	width: 33%;
 }
 
 .rst-versions {
