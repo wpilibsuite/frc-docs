@@ -1,9 +1,11 @@
+.. include <isonum.txt>
+
 Programming the Romi (LabVIEW)
 ==============================
 
-Writing a LabVIEW program for the Romi is very similar to writing a program for a regular FRC robot. In fact, all the same tools (LabVIEW, Driver Station, SmartDashboard, etc) can be used with the Romi.
+Writing a LabVIEW program for the Romi is very similar to writing a program for a regular roboRIO based robot. In fact, all the same tools (LabVIEW, Driver Station, SmartDashboard, etc) can be used with the Romi.
 
-Creating a Romi Program
+Creating a Romi Project
 -----------------------
 
 Creating a new program for a Romi is no different than creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially, you may wish to create a separate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
