@@ -19,7 +19,7 @@ Installing the WebSockets VI
 
 One aspect where a Romi project differs from a regular FRC\|reg| robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer, and leverages the WPILib simulation framework to communicate with the Romi robot. WebSockets is the protocol that LabVIEW uses to converse with the Romi.
 
-Open the **VI Package Manager** application. Type ``websockets`` into the search box in the top right. Select the VI by **LabVIEW Tools Network**.
+Open the :guilabel:`VI Package Manager` application. Type ``websockets`` into the search box in the top right. Select the VI by :guilabel:`LabVIEW Tools Network`.
 
 .. image:: images/programming-romi-in-labview/installing-websockets.png
    :alt: Installing WebSockets via the VI Package Manager
