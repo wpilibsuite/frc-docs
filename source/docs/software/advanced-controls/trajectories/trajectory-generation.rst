@@ -97,12 +97,12 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
       .. code-block:: cpp
 
-         frc::Trajectory m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
+         auto m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
             frc::Pose2d(0_m, 0_m, 0_rad),
             {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
             frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
 
-         frc::Trajectory m_trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
+         auto m_trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
             frc::Pose2d(3_m, 0_m, 0_rad),
             {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
             frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
