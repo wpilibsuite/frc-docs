@@ -73,38 +73,34 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
 .. tabs::
 
-   .. tab:: Java
+   .. code-tab:: Java
 
-      .. code-block:: java
+      m_trajectoryOne =
+      TrajectoryGenerator.generateTrajectory(
+         new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+         List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+         new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+         new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
 
-         m_trajectoryOne =
-         TrajectoryGenerator.generateTrajectory(
-            new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
-            List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
-            new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
-            new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+      m_trajectoryTwo =
+      TrajectoryGenerator.generateTrajectory(
+         new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+         List.of(new Translation2d(4, 4), new Translation2d(6, 3)),
+         new Pose2d(6, 0, Rotation2d.fromDegrees(0)),
+         new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
 
-         m_trajectoryTwo =
-         TrajectoryGenerator.generateTrajectory(
-            new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
-            List.of(new Translation2d(4, 4), new Translation2d(6, 3)),
-            new Pose2d(6, 0, Rotation2d.fromDegrees(0)),
-            new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+      var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
 
-         var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
+   .. code-tab:: C++
 
-   .. tab:: C++
+      auto m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
+         frc::Pose2d(0_m, 0_m, 0_rad),
+         {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
+         frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
 
-      .. code-block:: cpp
+      auto m_trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
+         frc::Pose2d(3_m, 0_m, 0_rad),
+         {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
+         frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
 
-         auto m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
-            frc::Pose2d(0_m, 0_m, 0_rad),
-            {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
-            frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
-
-         auto m_trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
-            frc::Pose2d(3_m, 0_m, 0_rad),
-            {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
-            frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
-
-         frc::Trajectory concatTraj = m_trajectory + m_trajectory2;
+      frc::Trajectory concatTraj = m_trajectory + m_trajectory2;
