@@ -38,6 +38,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/what-is-wpilib
    docs/yearly-overview/index
    docs/software/vscode-overview/index
+   docs/software/dashboards/index
    docs/software/labview/index
    docs/software/actuators/index
    docs/software/sensors/index
@@ -58,10 +59,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Software Tools
 
    docs/software/driverstation/index
-   docs/software/wpilib-tools/shuffleboard/index
-   docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/glass/index
-   docs/software/labview-dashboard/index
    docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index

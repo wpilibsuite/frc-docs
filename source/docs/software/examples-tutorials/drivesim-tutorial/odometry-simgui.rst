@@ -40,7 +40,7 @@ This ``Field2d`` instance must then be sent over NetworkTables. The best place t
         frc::SmartDashboard::PutData("Field", &m_field);
       }
 
-.. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`.
+.. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`.
 
 Finally, the pose from your odometry must be updated periodically into the ``Field2d`` object. Remember that this should be in a general ``periodic()`` method i.e. one that runs both during simulation and during real robot operation.
 
