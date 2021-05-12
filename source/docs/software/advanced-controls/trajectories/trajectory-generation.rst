@@ -63,3 +63,48 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 
 
 .. note:: Even though this trajectory generation is orders of magnitude faster than Pathfinder, it is highly recommended to generate all trajectories on startup (``robotInit``) as the generation time is still not negligible. Generation time often ranges from 10 ms to 25 ms for each trajectory.
+
+Concatenating Trajectories
+--------------------------
+
+Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++ users can simple add (``+``) the two trajectories together.
+
+.. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match.
+
+.. tabs::
+
+   .. tab:: Java
+
+      .. code-block:: java
+
+         m_trajectoryOne =
+         TrajectoryGenerator.generateTrajectory(
+            new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+            List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+            new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+            new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+
+         m_trajectoryTwo =
+         TrajectoryGenerator.generateTrajectory(
+            new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+            List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+            new Pose2d(5, 0, Rotation2d.fromDegrees(0)),
+            new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+
+         var m_concatTraj = trajectoryOne.concatenate(trajectoryTwo);
+
+   .. tab:: C++
+
+      .. code-block:: cpp
+
+         frc::Trajectory m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
+            frc::Pose2d(0_m, 0_m, 0_rad),
+            {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
+            frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
+
+         frc::Trajectory m_trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
+            frc::Pose2d(3_m, 0_m, 0_rad),
+            {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
+            frc::Pose2d(5_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
+
+         frc::Trajectory m_conatTraj = m_trajectory + m_trajectory2;
