@@ -47,13 +47,13 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 
 .. tabs::
 
-   .. tab:: Java
+   .. tab:: java
 
       .. literalinclude:: examples/trajectory-generation-1/java/ExampleTrajectory.java
          :language: java
          :lines: 10-32
 
-   .. tab:: C++
+   .. tab:: cpp
 
       .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
          :language: cpp
@@ -73,7 +73,7 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
 .. tabs::
 
-   .. code-tab:: Java
+   .. code-tab:: java
 
       m_trajectoryOne =
       TrajectoryGenerator.generateTrajectory(
@@ -91,7 +91,7 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
       var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
 
-   .. code-tab:: C++
+   .. code-tab:: cpp
 
       auto m_trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
          frc::Pose2d(0_m, 0_m, 0_rad),
