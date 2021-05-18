@@ -121,7 +121,7 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
             }
         }
 
-Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`, where they will be displayed with their own widgets:
+Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`, where they will be displayed with their own widgets:
 
 .. tabs::
 

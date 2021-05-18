@@ -3,7 +3,7 @@ Setting the Autonomous Commands
 
 Since a command is simply one or more actions (behaviors) that the robot performs, it makes sense to describe the autonomous operation of a robot as a command. While it could be a single command, it is more likely going to be a command group (a group of commands that happen together).
 
-RobotBuilder generates code for a :ref:`Sendable Chooser <docs/software/wpilib-tools/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Choosing an Autonomous Program>` which allows the autonomous command to run to be chosen from the dashboard.
+RobotBuilder generates code for a :ref:`Sendable Chooser <docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Choosing an Autonomous Program>` which allows the autonomous command to run to be chosen from the dashboard.
 
 .. image:: images/autonomous-command-1.png
 

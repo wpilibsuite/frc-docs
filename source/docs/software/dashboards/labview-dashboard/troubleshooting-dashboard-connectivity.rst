@@ -50,7 +50,7 @@ Recognizing Glass Connectivity
 
 .. image:: images/troubleshooting-dashboard-connectivity/glass-connection.png
 
-Glass displays if it is connected or not in the bar across the top.  See this :ref:`page <docs/software/wpilib-tools/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
+Glass displays if it is connected or not in the bar across the top.  See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
 
 Troubleshooting Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

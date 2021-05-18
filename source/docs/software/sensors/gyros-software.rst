@@ -67,7 +67,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 Displaying the robot heading on the dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
+:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
 .. tabs::
 

@@ -1,7 +1,7 @@
 Glass Widgets
 =============
 
-Specialized widgets are available for certain types that exist in robot code. These include objects that are manually sent over NetworkTables such as ``SendableChooser`` instances, or hardware that is automatically sent over :ref:`LiveWindow <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values:Displaying LiveWindow Values>`.
+Specialized widgets are available for certain types that exist in robot code. These include objects that are manually sent over NetworkTables such as ``SendableChooser`` instances, or hardware that is automatically sent over :ref:`LiveWindow <docs/software/dashboards/smartdashboard/test-mode-and-live-window/displaying-LiveWindow-values:Displaying LiveWindow Values>`.
 
 .. note:: Widget support in Glass is still in its infancy -- therefore, there are only a handful of widgets available. This list will grow as development work continues.
 
@@ -40,7 +40,7 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
 
       frc::SmartDashboard::PutData("Auto Selector", &m_selector);
 
-.. note:: For more information on creating a ``SendableChooser``, please see :ref:`this document <docs/software/wpilib-tools/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Setting up SendableChooser>`.
+.. note:: For more information on creating a ``SendableChooser``, please see :ref:`this document <docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Setting up SendableChooser>`.
 
 The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTables` menu and underneath the main table name that the instance was sent over. From the example above, the main table name would be :guilabel:`SmartDashboard`.
 
