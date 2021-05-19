@@ -67,7 +67,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 Concatenating Trajectories
 --------------------------
 
-Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++ users can simple add (``+``) the two trajectories together.
+Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++ users can simply add (``+``) the two trajectories together.
 
 .. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match.
 
