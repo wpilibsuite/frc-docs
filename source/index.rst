@@ -59,10 +59,9 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Software Tools
 
    docs/software/driverstation/index
-   docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
-   docs/software/wpilib-tools/robot-characterization/index
+   docs/software/pathplanning/robot-characterization/index
    docs/software/wpilib-tools/outlineviewer/index
 
 .. toctree::
@@ -73,6 +72,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/commandbased/index
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
+   docs/software/pathplanning/index
    docs/software/roborio-info/index
    docs/software/advanced-gradlerio/index
    docs/software/advanced-controls/index
@@ -83,7 +83,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Examples and Tutorials
 
    docs/software/examples-tutorials/wpilib-examples
-   docs/software/examples-tutorials/trajectory-tutorial/index
    docs/software/examples-tutorials/drivesim-tutorial/index
 
 .. toctree::
