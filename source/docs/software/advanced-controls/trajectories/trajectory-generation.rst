@@ -103,4 +103,4 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
          {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
          frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
 
-      frc::Trajectory concatTraj = m_trajectoryOne + m_trajectoryTwo;
+      auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
