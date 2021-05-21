@@ -1,4 +1,4 @@
-.. include <isonum.txt>
+.. include:: <isonum.txt>
 
 Programming the Romi (LabVIEW)
 ==============================
