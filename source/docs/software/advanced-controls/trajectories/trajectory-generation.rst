@@ -69,7 +69,7 @@ Concatenating Trajectories
 
 Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++ users can simply add (``+``) the two trajectories together.
 
-.. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match.
+.. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match. It is also the users responsibility to ensure that the start and end velocities of their trajectories match.
 
 .. tabs::
 
