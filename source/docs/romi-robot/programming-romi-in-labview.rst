@@ -8,7 +8,7 @@ Writing a LabVIEW program for the Romi is very similar to writing a program for 
 Creating a Romi Project
 -----------------------
 
-Creating a new program for a Romi is no different than creating a normal FRC\ |reg| program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially, you may wish to create a separate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
+Creating a new program for a Romi is no different than creating a normal FRC\|reg| program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially, you may wish to create a separate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
 
 The Romi Robot used PWM ports 0 and 1 for left and right side respectively.
 
@@ -17,7 +17,7 @@ The Romi Robot used PWM ports 0 and 1 for left and right side respectively.
 Installing the WebSockets VI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One aspect where a Romi project differs from a regular FRC\ |reg| robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer, and leverages the WPILib simulation framework to communicate with the Romi robot. WebSockets is the protocol that LabVIEW uses to converse with the Romi.
+One aspect where a Romi project differs from a regular FRC\|reg| robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer, and leverages the WPILib simulation framework to communicate with the Romi robot. WebSockets is the protocol that LabVIEW uses to converse with the Romi.
 
 Open the :guilabel:`VI Package Manager` application. Type ``websockets`` into the search box in the top right. Select the VI by :guilabel:`LabVIEW Tools Network`.
 
