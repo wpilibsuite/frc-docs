@@ -14,3 +14,4 @@ The Romi is a small and inexpensive robot designed for learning about programmin
    getting-to-know-romi
    web-ui
    programming-romi
+   programming-romi-in-labview
