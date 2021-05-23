@@ -104,7 +104,7 @@ The :ref:`Pneumatics Control Module <docs/software/can-devices/pneumatics-contro
 Motor Controllers
 -----------------
 
-There are a variety of different :ref:`motor controllers <docs/software/actuators/overview:Actuator Overview>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of `usage <https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report>`__.
+There are a variety of different :ref:`motor controllers <docs/software/hardware-apis/index:Hardware APIs>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of `usage <https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report>`__.
 
 .. note:: 3rd Party CAN control is not supported from WPILib. See this section on :ref:`docs/software/can-devices/third-party-devices:Third-Party CAN Devices` for more information.
 

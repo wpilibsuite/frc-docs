@@ -23,7 +23,7 @@ Pages references will be auto-generated based on the page filename and section t
 
 For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
 
-.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
+.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
 
 Text
 ----
