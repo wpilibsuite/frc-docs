@@ -16,7 +16,7 @@ Terminology
 ~~~~~~~~~~~
 
 - Raw Data - These are all the images we have provided.
-- Dataset - This is the subset of images we used to train the network. We created this subset by clicking on the 3 dots of the Raw Data workspace, then going to the menu item “Run Python Script” and selecting the script “Filter by tag”  We then filled in the tag “Valid”
+- Dataset - This is the subset of images we used to train the network. We created this subset by clicking on the 3 dots of the Raw Data workspace, then going to the menu item "Run Python Script" and selecting the script "Filter by tag"  We then filled in the tag "Valid"
 
 Datasets are becoming increasingly important to companies. It has been said that Tesla now spends more time with datasets than it does with the software. It is hard to make driving decisions at 70 MPH without accurate object detection. Of interest, at this point in our legal system, you can not patent or copyright an image that is just a statement of fact, for instance a picture of the road or a ball. While Tesla may want to keep their dataset very proprietary, we are hoping that is not true with the FIRST community.
 

@@ -49,6 +49,8 @@ Use literals for filenames, function, and variable names.
 
 Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from `this page <https://www.firstinspires.org/brand>`__. Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``.. include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
 
+Commonly used terms should be added to the :ref:`docs/software/frc-glossary:FRC Glossary`.  You can reference items in the glossary by using ``:term:`deprecated```.
+
 Whitespace
 ----------
 
@@ -152,6 +154,7 @@ All images (including vectors) should be less than ``500`` kilobytes in size. Pl
 .. code-block:: ReST
 
    .. image:: images/my-article/my-image.png
+      :alt: Always add alt text here describing the image.
 
 Image Files
 ^^^^^^^^^^^
@@ -166,7 +169,7 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 
           .. code-block:: ReST
 
-             .. images:: images/my-document/my-image.png
+             .. image:: images/my-document/my-image.png
                 :alt: An example image
 
 Vector Images
@@ -181,6 +184,7 @@ Simply use them as you would with any other image.
 .. code-block:: ReST
 
    .. image:: images/my-document/my-image.svg
+      :alt: Always add alt text here describing the image.
 
 Draw.io Diagrams
 ^^^^^^^^^^^^^^^^
@@ -191,7 +195,8 @@ Simply use them like you would any other vector image, or any other image.
 
 .. code-block:: ReST
 
-   .. images:: diagrams/my-document/diagram-1.drawio.svg
+   .. image:: diagrams/my-document/diagram-1.drawio.svg
+      :alt: Always add alt text here describing the image.
 
 Draw.io Files
 ~~~~~~~~~~~~~

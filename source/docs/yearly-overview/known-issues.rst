@@ -8,12 +8,37 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+No such host is known in the WPILib Installer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following error message will show up when downloading VS Code with WPILib Installer version ``2021.2.1`` or earlier **or** version ``2021.2.2`` that was downloaded before ``3/24/2021``.
+
+.. code-block::
+
+   System.Net.Http.HttpRequestException: No such host is known.
+
+This is due to the VS Code download URL being changed. A hotfix has been published and users should redownload the ``2021.2.2`` release or later. This fix can be downloaded `here <https://github.com/wpilibsuite/allwpilib/releases>`__.
+
+Invalid build due to missing GradleRIO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Rarely, a user's Gradle cache will get broken and they will get shown errors similar to the following:
+
+.. code-block:: console
+
+   Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: ‘2020.3.2’] as it does not provide a plugin with id ‘edu.wpi.first.GradleRIO’
+
+**Workaround:**
+
+Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to `view hidden files <https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5>`__. This issue has only shown up on Windows so far. Please `report <https://github.com/wpilibsuite/frc-docs/issues/new>`__ this issue if you get it on an alternative OS.
+
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** Rarely, the driver station log will show Chinese characters instead of the English text. This appears to only happen when Windows is set to a language other then English.
 
-.. image:: images/known-issues/DS-chinese.jpg
+.. image:: /docs/software/vscode-overview/images/known-issues/DS-chinese.jpg
+  :alt: Chinese character appearing in the Driver Station log window.
 
 **Workaround:**
 There are two known workarounds:
@@ -45,7 +70,7 @@ SmartDashboard and Simulation fail to launch on Windows N Editions
 NetworkTables Interoperability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is currently an issue with inter-operating C++/Java Network Tables clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
+There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
 

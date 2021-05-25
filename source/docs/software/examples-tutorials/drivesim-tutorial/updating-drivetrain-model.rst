@@ -13,6 +13,9 @@ There are three main steps to updating the model:
 .. tabs::
    .. code-tab:: java
 
+      private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
+      private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+
       public Drivetrain() {
         ...
         m_leftEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
@@ -40,6 +43,9 @@ There are three main steps to updating the model:
       }
 
    .. code-tab:: c++
+
+      frc::PWMSparkMax m_leftMotor{0};
+      frc::PWMSparkMax m_rightMotor{1};
 
       Drivetrain() {
         ...

@@ -74,24 +74,35 @@ The returned setpoint might then be used as in the following example:
 
   .. code-tab:: java
 
+    double lastSpeed = 0;
+    double lastTime = Timer.getFPGATimestamp();
+
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
     public void goToPosition(double goalPosition) {
+      double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime)
       motor.setVoltage(
           controller.calculate(encoder.getDistance(), goalPosition)
-          + feedforward.calculate(controller.getSetpoint().position,
-                                  controller.getSetpoint().velocity));
+          + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
+      lastSpeed = controller.getSetpoint().velocity;
+      lastTime = Timer.getFPGATimestamp();
     }
 
   .. code-tab:: c++
 
+    units::meters_per_second_t lastSpeed = 0_mps;
+    units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
+
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
-    void goToPosition(units::meter_t goalPosition) {
-      motor.setVoltage(
-          controller.Calculate(units::meter_t(encoder.GetDistance()), goalPosition)
-          + feedforward.Calculate(controller.GetSetpoint().position,
-                                  controller.GetSetpoint().velocity));
+    void GoToPosition(units::meter_t goalPosition) {
+      auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
+          (frc2::Timer::GetFPGATimestamp() - lastTime);
+      motor.SetVoltage(
+          controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition) +
+          feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
+      lastSpeed = controller.GetSetpoint().velocity;
+      lastTime = frc2::Timer::GetFPGATimestamp();
     }
 
 Complete Usage Example

@@ -80,3 +80,45 @@ Console Output
    :alt: Console Output
 
 When enabled, this section allows users to view the raw console output that the Romi web service provides. This is useful for troubleshooting issues with the Romi, or just to find out more about what goes on behind the scenes.
+
+Bridge Mode
+-----------
+
+Bridge mode allows your Romi robot to connect to a WiFi network instead of acting as an Access Point (AP). This is especially useful in remote learning environments, as you can use the internet while using the Romi without extra hardware.
+
+.. note:: Bridge mode is not likely to work properly in restricted network environments (Educational Institutions).
+
+1. Enable :guilabel:`Writable` in the top menu.
+
+.. image:: images/web-ui/romi-enable-writable.png
+   :alt: Enabling writable mode in the romi UI
+
+2. Click on :guilabel:`Network Settings`.
+
+.. image:: images/web-ui/romi-network-settings.png
+   :alt: Selecting Network Settings in the UI
+
+3. The following network settings must be applied:
+
+.. image:: images/web-ui/romi-bridge-mode.png
+   :alt: Picture of the necessary romi options listed below
+
+- **Ethernet**: DHCP
+- **WiFi Mode**: Bridge
+- **SSID**: SSID (name) of your network
+- **WPA2 Passphrase**: Password of your wifi network
+- **WiFi Address**: DHCP
+
+Once the settings are applied, please reboot the Romi. You should now be able to navigate to ``wpilibpi.local`` in your web browser while connected to your specified network.
+
+Unable to Access Romi
+^^^^^^^^^^^^^^^^^^^^^
+
+If the Romi has the correct bridge settings and you are unable to access it, we have a few workarounds.
+
+- Ethernet into the Romi
+- Reimage the Romi
+
+Some restricted networks can interfere with the hostname of the Romi resolving, you can workaround this by using `Angry IP Scanner <https://angryip.org/>`__ to find the IP address.
+
+.. warning:: Angry IP Scanner is flagged by some antivirus as spyware as it pings devices on your network! It is a safe application!

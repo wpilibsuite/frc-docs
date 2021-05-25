@@ -31,7 +31,7 @@ The Field Network runs a DHCP server with pools for each team that will hand our
 -  OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by
    Kiosk
 -  roboRIO - DHCP ``10.TE.AM.2`` assigned by the Robot Radio
--  Driver Station - DHCP (“Obtain an IP address automatically”)
+-  Driver Station - DHCP ("Obtain an IP address automatically")
    10.TE.AM.X assigned by field
 -  IP camera (if used) - DHCP ``10.TE.AM.Y`` assigned by Robot Radio
 -  Other devices (if used) - DHCP ``10.TE.AM.Z`` assigned by Robot Radio
@@ -61,7 +61,7 @@ In the Pits DHCP Configuration
 
 -  OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk.
 -  roboRIO - ``10.TE.AM.2``, assigned by Robot Radio
--  Driver Station - DHCP (“Obtain an IP address automatically”),
+-  Driver Station - DHCP ("Obtain an IP address automatically"),
    ``10.TE.AM.X``, assigned by Robot Radio
 -  IP camera (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio
 -  Other devices (if used) - DHCP, ``10.TE.AM.Z``, assigned by Robot Radio

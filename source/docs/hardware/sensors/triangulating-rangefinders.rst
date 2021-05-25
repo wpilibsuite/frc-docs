@@ -4,6 +4,7 @@ Triangulating Rangefinders
 ==========================
 
 .. image:: images/triangulating-rangefinders/infrared-proximity-sensor.png
+   :alt: Sharp-brand triangulating rangefinder.
 
 Triangulating rangefinders (often called "IR rangefinders," as they commonly function in the infrared wavelength band) are another common type of rangefinder used in FRC\ |reg|. The sensor shown above is a `common Sharp-brand sensor <https://www.sparkfun.com/products/242>`__
 
@@ -13,6 +14,7 @@ Using IR rangefinders
 ---------------------
 
 .. image:: images/triangulating-rangefinders/ir-proximity-sensor-to-roborio.svg
+   :alt: Connecting the Sharp GP2Y0A21YK IR rangefinder to the analog in port of the roboRIO.
 
 IR Rangefinders generally output an analog voltage proportional to the distance to the target, and thus connect to the :doc:`analog input <analog-inputs-hardware>` ports on the RIO.
 

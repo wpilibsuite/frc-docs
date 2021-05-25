@@ -21,7 +21,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
                 public Robot() {
                     addPeriodic(() -> {
                         m_motor.set(m_controller.calculate(m_encoder.getRate()));
-                    }, 0.01, 0.01);
+                    }, 0.01, 0.005);
                 }
 
                 @Override
@@ -59,7 +59,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
             void Robot::Robot() {
               AddPeriodic([&] {
                 m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
-              }, 10_ms, 10_ms);
+              }, 10_ms, 5_ms);
             }
 
             void Robot::TeleopPeriodic() {
@@ -72,4 +72,4 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
               }
             }
 
-The ``teleopPeriodic()`` method in this example runs every 20 ms, and the controller update is run every 10ms with an offset of 10ms from when ``teleopPeriodic()`` runs so that their timeslots don't conflict.
+The ``teleopPeriodic()`` method in this example runs every 20 ms, and the controller update is run every 10 ms with an offset of 5 ms from when ``teleopPeriodic()`` runs so that their timeslots don't conflict (e.g., ``teleopPeriodic()`` runs at 0 ms, 20 ms, 40 ms, etc.; the controller runs at 5 ms, 15 ms, 25 ms, etc.).

@@ -15,25 +15,35 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
       String trajectoryJSON = "paths/YourPath.wpilib.json";
       Trajectory trajectory = new Trajectory();
-      try {
-        Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
-        trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
-      } catch (IOException ex) {
-        DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
+
+      @Override
+      public void robotInit() {
+         try {
+            Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
+            trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+         } catch (IOException ex) {
+            DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
+         }
       }
 
    .. code-tab:: c++
 
-       #include <frc/Filesystem.h>
-       #include <frc/trajectory/TrajectoryUtil.h>
-       #include <wpi/Path.h>
-       #include <wpi/SmallString.h>
+      #include <frc/Filesystem.h>
+      #include <frc/trajectory/TrajectoryUtil.h>
+      #include <wpi/Path.h>
+      #include <wpi/SmallString.h>
 
-       wpi::SmallString<64> deployDirectory;
-       frc::filesystem::GetDeployDirectory(deployDirectory);
-       wpi::sys::path::append(deployDirectory, "paths");
-       wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
+      frc::Trajectory trajectory;
 
-       frc::Trajectory trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+      void Robot::RobotInit() {
+         wpi::SmallString<64> deployDirectory;
+         frc::filesystem::GetDeployDirectory(deployDirectory);
+         wpi::sys::path::append(deployDirectory, "paths");
+         wpi::sys::path::append(deployDirectory, "YourPath.wpilib.json");
 
-.. note:: In the examples above, ``YourPath`` should be replaced with the name of your path.
+         trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory);
+      }
+
+In the examples above, ``YourPath`` should be replaced with the name of your path.
+
+.. warning:: Loading a PathWeaver JSON from file in Java can take more than one loop iteration so it is highly recommended that the robot load these paths on startup.

@@ -34,15 +34,17 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
     "sphinxcontrib.ghcontributors",
-    "sphinxcontrib.remoteliteralinclude",
     "sphinxcontrib.rsvgconverter",
+    "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
+    "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.linkcheckdiff",
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
+    "sphinx_panels",
 ]
 
 versionwarning_messages = {
@@ -61,7 +63,7 @@ versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'div[class="document"]'
 
 # Redirect branch
-rediraffe_branch = "origin/master"
+rediraffe_branch = "origin/main"
 
 # File containing redirects
 rediraffe_redirects = "redirects.txt"
@@ -70,13 +72,13 @@ rediraffe_redirects = "redirects.txt"
 rediraffe_auto_redirect_perc = 80
 
 # Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/master"
+linkcheckdiff_branch = "origin/main"
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/latest/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
 ogp_image = (
-    "https://raw.githubusercontent.com/wpilibsuite/branding/master/png/wpilib-128.png"
+    "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
 )
 
 # Enables ChiefDelphi support
@@ -84,6 +86,9 @@ ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
     '<meta name="theme-color" content="#AC2B37" />',
 ]
+
+# Set location of pages to be indexed by delta
+delta_doc_path = "source"
 
 # Enable hover content on glossary term
 hoverxref_roles = ["term"]

@@ -3,7 +3,7 @@
 Local and Global Variables in LabVIEW for FRC
 =============================================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 This example serves as an introduction to local and global variables, how they are used in the default LabVIEW for FRC\ |reg| Robot Project, and how you might want to use them in your project.
 
@@ -31,7 +31,7 @@ Global variables are created slightly differently.  Add one to the block diagram
 How They are Used in the Default LabVIEW for FRC Robot Project
 --------------------------------------------------------------
 
-Global variables for “Enable Vision” and “Image Size” are written to during each iteration of the Robot Main VI…
+Global variables for "Enable Vision" and "Image Size" are written to during each iteration of the Robot Main VI…
 
 .. image:: images/local-and-global-variables-in-labview-for-frc/4.png
 

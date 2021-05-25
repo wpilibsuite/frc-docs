@@ -1,7 +1,7 @@
 Using the Compressor in LabVIEW
 ===============================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 This snippet shows how to set up your roboRIO project to use the Pneumatic Control Module (PCM).  The PCM automatically starts and stops the compressor when specific pressures are measured in the tank. In your roboRIO program, you will need to add the following VIs.
 

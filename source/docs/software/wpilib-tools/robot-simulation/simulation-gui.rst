@@ -1,9 +1,11 @@
 .. include:: <isonum.txt>
 
-Simulation User Interface
-=========================
+Simulation Specific User Interface Elements
+===========================================
 
 WPILib has extended robot simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robot's inputs and outputs.
+
+.. note:: The Simulation GUI is very similar in many ways to :ref:`Glass <docs/software/dashboards/glass/introduction:Introduction to Glass>`.  Some of the following pages will link to Glass sections that describe elements common to both GUIs.
 
 Running the GUI
 ---------------
@@ -61,6 +63,14 @@ To add a joystick from the list of system joysticks, simply click and drag a sho
 
 .. note:: The FRC\ |reg| Driver Station does special mapping to gamepads connected and the WPILib simulator does not "map" these by default. You can turn on this behavior by pressing the "Map gamepad" toggle underneath the "Joysticks" menu.
 
+Using the Keyboard as a Joystick
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You add a keyboard to the list of system joysticks by clicking and dragging one of the keyboard items (e.g. Keyboard 0) just like a joystick above.  To edit the settings of the keyboard go to the :guilabel:`DS` item in the menu bar then choose :guilabel:`Keyboard 0 Settings`.  This allows you to control which keyboard buttons control which axis.  This is a common example of how to make the keyboard similar to a split sticks arcade drive on an Xbox controller (uses axis 1 & 4):
+
+.. image:: images/xboxkeyboard.png
+   :alt: How to configure the keyboard so it acts similar to an Xbox controller.
+
 Modifying ADXRS450 Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -89,17 +99,20 @@ In cases where vendor libraries do not compile when running the robot simulation
 
 .. note:: Reassigning value types in C++ requires move or copy assignment; vendors classes that both do not support the SIM and lack a move or copy assignment operator cannot be worked around with conditional allocation unless a pointer is used, instead of a value type.
 
-Viewing the Robot Pose
+Changing View Settings
 ----------------------
 
-After sending the ``Field2d`` instance over NetworkTables, the :guilabel:`Field2d` widget can be added to the simulation GUI by selecting :guilabel:`NetworkTables` in the menu bar, choosing the table name that the instance was sent over, and then clicking on the :guilabel:`Field` button.
+The :guilabel:`View` menu item contains :guilabel:`Zoom` and :guilabel:`Style` settings that can be customized. The :guilabel:`Zoom` option dictates the size of the text in the application whereas the :guilabel:`Style` option allows you to select between the ``Classic``, ``Light``, and ``Dark`` modes.
 
-.. image:: ../glass/images/select-field2d.png
+An example of the ``Dark`` style setting is below:
 
-Once the widget appears, you can resize and place it on the simulation GUI workspace as you desire. Right-clicking the top of the widget will allow you to customize the name of the widget, select a custom field image, select a custom robot image, and choose the dimensions of the field and robot.
+.. image:: /docs/software/dashboards/glass/images/glass-dark-mode.png
 
-When selecting :guilabel:`Choose image...` you can choose to either select an image file or a PathWeaver JSON file as long as the image file is in the same directory.  Choosing the JSON file will automatically import the correct location of the field in the image and the correct size of the field.
+.. note:: In Simulation GUI v2021.2.1 and below, the default zoom setting of 100% may cause text to appear too big on certain macOS Retina displays. Please reduce the zoom level to 75% or 50% or upgrade to v2021.2.2 or later to mitigate this issue.
 
-.. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/PathWeaver/tree/main/src/main/resources/edu/wpi/first/pathweaver>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/wpilib-tools/pathweaver/introduction:Introduction to PathWeaver>`.
+Clearing Application Data
+-------------------------
 
-.. image:: ../glass/images/field2d-options.png
+Application data for the Simulation GUI, including widget sizes and positions as well as other custom information for widgets is stored in a ``imgui.ini`` file. This file is stored in the root of the project directory that the simulation is run from.
+
+The ``imgui.ini`` configuration file can simply be deleted to restore the Simulation GUI to a "clean slate".

@@ -155,7 +155,7 @@ Since subsystems are declared as private members, they must be explicitly passed
       :linenos:
       :lineno-start: 17
 
-As mentioned before, the ``RobotContainer()`` constructor is where most of the declarative setup for the robot should take place, including button bindings, configuring autonomous selectors, etc. If the constructor gets too “busy,” users are encouraged to migrate code into separate subroutines (such as the ``configureButtonBindings()`` method included by default) which are called from the constructor.
+As mentioned before, the ``RobotContainer()`` constructor is where most of the declarative setup for the robot should take place, including button bindings, configuring autonomous selectors, etc. If the constructor gets too "busy," users are encouraged to migrate code into separate subroutines (such as the ``configureButtonBindings()`` method included by default) which are called from the constructor.
 
 .. tabs::
 

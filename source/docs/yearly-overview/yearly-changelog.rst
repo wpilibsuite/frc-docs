@@ -14,7 +14,7 @@ Major Features
 
 - Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi robot code runs in the desktop simulator environment and talks to the Romi via the new WebSocket interface.
 
-- A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
+- A new robot data visualizer -- :ref:`Glass <docs/software/dashboards/glass/index:Glass>` -- has been added. Glass has a similar UI to the simulator GUI and supports much of the same features; however, Glass can be used as a standalone dashboard and is not tied in to the robot program.
 
 - The WPILib installer has been rewritten to support macOS and Linux and to improve ease of use.
 
@@ -33,7 +33,7 @@ Breaking Changes
 
 - Trajectory constraint methods are now ``const`` in C++. Teams defining their own custom constraints should mark the ``MaxVelocity()`` and ``MinMaxAcceleration()`` methods as ``const``.
 
-- The ``Field2d`` class (added midway through the 2020 season) was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
+- The ``Field2d`` class (added midway through the 2020 season) was moved from the simulation package (``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This allows teams to send their robot position over NetworkTables to be viewed in Glass. The Field2d instance can be sent using ``SmartDashboard.putData("Field", m_field2d)`` / ``frc::SmartDashboard::PutData("Field", &m_field2d)`` or by using one of the :ref:`Shuffleboard methods <docs/software/dashboards/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be done in order to see the Field2d in the Simulator GUI.
 
 - PWM Speed Controllers ``get()`` method has been modified to return the same value as was ``set()`` regardless of inversion. The value that still stakes into account the inversion can be retrieved with the ``getSpeed()`` method. This affects the following classes ``DMC60``, ``Jaguar``, ``PWMSparkMax``, ``PWMTalonFX``, ``PWMTalonSRX``, ``PWMVenom``, ``PWMVictorSPX``, ``SD540``, ``Spark``, ``Talon``, ``Victor``, and ``VictorSP`` classes.
 

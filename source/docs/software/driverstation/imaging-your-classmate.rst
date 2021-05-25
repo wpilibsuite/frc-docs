@@ -13,12 +13,13 @@ Prerequisites
 1. E09, E11, E12, or E14 Classmate computer or Acer ES1 computer
 2. 16GB or larger USB drive
 3. 7-Zip software installed (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
-4. RMprepUSB software installed (download `here <https://www.rmprepusb.com/documents/release-2-0>`__). Scroll down the page and select the stable (Full) version download link. As of the writing of this document, the current stable version is 2.1.743e.
+4. RMprepUSB software installed (download `here <https://rmprepusb.com/>`__). Scroll down the page and select the stable (Full) version download link. As of the writing of this document, the current stable version is 2.1.745.
 
 Download the Computer Image
 ---------------------------
 
 .. image:: images/imaging-your-classmate/download-the-computer-image.png
+   :alt: Image of portal website showing each of the different classmate computers and their image.
 
 Download the image from the `FIRST FRC Driver Station System Image Portal <https://frc-events.firstinspires.org/services/DSImages/>`__. There are several computer images available, one for each model. On the download site, select the option that matches your computer by clicking the button below the image. Due to the limited size of the hard drive in the E09, it is supported with a DS/Utilities image only and does not have the IDEs for LabVIEW or C++/Java installed. All other images have the LabVIEW base installation already present.
 
@@ -36,6 +37,7 @@ RMPrep
 ------
 
 .. image:: images/imaging-your-classmate/rmprep.png
+   :alt: Using RMPrep with a USB drive.
 
 Start/Run RMprepUSB
 
@@ -45,6 +47,7 @@ Set Partition Size
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-partition-size.png
+   :alt: Highlights the "Partition Size" box.
 
 Set Partition Size to MAX
 
@@ -52,6 +55,7 @@ Set Volume Label
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-volume-label.png
+   :alt: Hightlights the "Volume Label" box to the right of the partition size.
 
 Set Volume Label to Generic
 
@@ -59,13 +63,15 @@ Set Bootloader Option
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-bootloader-option.png
+   :alt: Highlights the “WinPE v2/WinPE v3/Vista/Win7 bootable” radio button.
 
-Select Bootloader Option “WinPE v2/WinPE v3/Vista/Win7 bootable”
+Select Bootloader Option "WinPE v2/WinPE v3/Vista/Win7 bootable"
 
 Select Filesystem
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/select-filesystem.png
+   :alt: Highlights the "NTFS" radio button.
 
 Select NTFS Filesystem
 
@@ -73,43 +79,49 @@ Copy OS Files Option
 ^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/copy-os-files-option.png
+   :alt: Highlights the “Copy OS files after Format” checkbox.
 
-Ensure the “Copy OS files after Format” box is checked
+Ensure the "Copy OS files after Format" box is checked
 
 Locate Image
 ^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/locate-image.png
+   :alt: Highlights the “Choose Folder/File” button.
 
-Select the “Choose Folder/File” button
+Select the "Choose Folder/File" button
 
 Copy Files Dialog
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/copy-files-dialog.png
+   :alt: Choose "No" from the options of "Yes", "No", and "Cancel" of the dialog box.
 
-Choose “No” and select your ``.7z`` image
+Choose "No" and select your ``.7z`` image
 
 Prepare Drive
 ^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/prepare-drive.png
+   :alt: Click the “Prepare Drive” button.
 
-All configuration settings are now complete. Select “Prepare Drive” to begin the process
+All configuration settings are now complete. Select "Prepare Drive" to begin the process
 
 Confirmation Dialog 1
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/confirmation-dialog-1.png
+   :alt: Click the "OK" button on the dialog.
 
-Click “OK” to execute the command on the selected USB Flash drive. A Command Prompt will open showing the progress
+Click "OK" to execute the command on the selected USB Flash drive. A Command Prompt will open showing the progress
 
 Confirmation Dialog 2
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/confirmation-dialog-2.png
+   :alt: Click "OK" again that it is okay to erase all data on the drive.
 
-Click “OK” to format the USB drive
+Click "OK" to format the USB drive
 
 .. danger:: **ALL DATA ON THE DRIVE WILL BE ERASED!**
 
@@ -123,6 +135,7 @@ Copy Complete
 ^^^^^^^^^^^^^
 
 .. image::  images/imaging-your-classmate/copy-complete.png
+   :alt: Click "OK" to acknowledge that the copy completed.
 
 Once formatting is complete, the restoration files will be extracted and copied to the USB drive. This process should take ~15 minutes when connected to a USB 2.0 port.  When all files have been copied, this message will appear, press OK to continue.
 
@@ -130,8 +143,9 @@ Eject Drive
 ^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/eject-drive.png
+   :alt: Click the “Eject Drive” button on the right hand side in the center.
 
-Press the “Eject Drive” button to safely remove the USB drive. The USB drive is now ready to be used to restore the image onto the PC.
+Press the "Eject Drive" button to safely remove the USB drive. The USB drive is now ready to be used to restore the image onto the PC.
 
 Hardware Setup
 --------------
@@ -143,12 +157,13 @@ Boot to USB
 ^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/boot-to-usb.jpg
+   :alt: Three images that show the 2GO PC then the boot menu in BIOS.
 
 **Classmate:**
 
 1. Power on the Classmate and tap the F11 key on the keyboard. Tapping the F11 key during boot will bring up the boot menu.
 2. Use the up/down keys to select the **USB HDD:** entry on the menu, then press the right arrow to expand the listing
-3. Use the up/down arrow keys on the keyboard to select the USB device (it will be called “Generic Flash Disk”). Press the ENTER key when the USB device is highlighted.
+3. Use the up/down arrow keys on the keyboard to select the USB device (it will be called "Generic Flash Disk"). Press the ENTER key when the USB device is highlighted.
 
 **Acer ES1:**
 
@@ -161,9 +176,10 @@ Image the Classmate
 ^^^^^^^^^^^^^^^^^^^
 
 .. image::  images/imaging-your-classmate/image-the-classmate.png
+   :alt: Two images of a command prompt where you type "1" then "Y".
 
-1. To confirm that you want to reimage the Classmate, type “1” and press ENTER.
-2. Then, type “Y” and press ENTER. The Classmate will begin re-imaging. The installation will take 15-30 minutes.
+1. To confirm that you want to reimage the Classmate, type "1" and press ENTER.
+2. Then, type "Y" and press ENTER. The Classmate will begin re-imaging. The installation will take 15-30 minutes.
 3. When the installation is complete, remove the USB drive.
 4. Restart the Classmate. The Classmate will boot into Windows.
 
@@ -178,16 +194,16 @@ Enter Setup
 ^^^^^^^^^^^
 
 1. Log into the Developer account.
-2. Click “Ask me later”.
-3. Click “OK”. The computer now enters a Set Up that may take a few minutes.
+2. Click "Ask me later".
+3. Click "OK". The computer now enters a Set Up that may take a few minutes.
 
 Activate Windows
 ^^^^^^^^^^^^^^^^
 
 1. Establish an Internet connection.
-2. Once you have an Internet connection, click the Start menu, right click “Computer” and click “Properties”.
-3. Scroll to the bottom section, “Windows activation”, and Click “Activate Windows now”
-4. Click “Activate Windows online now”. The activation may take a few minutes.
+2. Once you have an Internet connection, click the Start menu, right click "Computer" and click "Properties".
+3. Scroll to the bottom section, "Windows activation", and Click "Activate Windows now"
+4. Click "Activate Windows online now". The activation may take a few minutes.
 5. When the activation is complete, close all of the windows.
 
 Microsoft Security Essentials
@@ -199,6 +215,7 @@ Acer ES1: Fix Wireless Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image::  images/imaging-your-classmate/fix-wireless-driver.png
+   :alt: Highlights the "Device Manager" option in the start menu.
 
 **Acer ES1 PC only!**
 
@@ -208,18 +225,21 @@ Open Wireless Device Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image::  images/imaging-your-classmate/open-wireless-device-properties.png
+   :alt: Opening the properties of the wireless adapter.
 
 Click on the arrow next to Network Adapters to expand it and locate the Wireless Network Adapter. Right click the adapter and select Properties.
 
 Uninstall-Driver
 ^^^^^^^^^^^^^^^^
 .. image::  images/imaging-your-classmate/uninstall-driver.png
+   :alt: Clicking on the Driver tab in top center and then on the "Uninstall" button.
 
 Click on the Driver tab, then click the Uninstall button. Click Yes at any prompts.
 
 Scan for New Hardware
 ^^^^^^^^^^^^^^^^^^^^^
 .. image::  images/imaging-your-classmate/scan-for-new-hardware.png
+   :alt: Within Device Manager right click on the PC and choose "Scan for hardware changes".
 
 Right click on the top entry of the tree and click "Scan for hardware changes". The wireless adapter should automatically be re-detected and the correct driver should be installed.
 
@@ -230,6 +250,7 @@ In order for the Classmate images to be prepared on time, they are created befor
 Errors during Imaging Process
 -----------------------------
 .. image::  images/imaging-your-classmate/errors-during-imaging-process.png
+   :alt: Command prompt error window on image failure.
 
 If an error is detected during the imaging process, the following screen will appear. Note that the screenshot below shows the error screen for the Driver Station-only image for the E09. The specific image filename shown will vary depending on the image being applied.
 
@@ -263,6 +284,7 @@ Checking BIOS Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. image::  images/imaging-your-classmate/checking-bios-settings.jpg
+   :alt: Two images of the BIOS making sure the boot menu is enabled and the mode is "Legacy".
 
 If you are having difficulty booting to USB, check the BIOS settings to insure they are correct. To do this:
 

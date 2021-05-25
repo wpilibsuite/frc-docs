@@ -19,7 +19,8 @@ The following example shows the use of the ``DifferentialDrivePoseEstimator``:
               new MatBuilder<>(Nat.N3(), Nat.N1()).fill(0.1, 0.1, 0.01)); // Global measurement standard deviations. X, Y, and theta.
 
    .. code-tab:: cpp
-      #include "frc/estimator/DifferentialDrivePoseEstimator.h
+
+      #include "frc/estimator/DifferentialDrivePoseEstimator.h"
       #include "frc/StateSpaceUtil.h"
 
       frc::DifferentialDrivePoseEstimator estimator{

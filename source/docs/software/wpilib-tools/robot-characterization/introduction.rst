@@ -3,7 +3,7 @@
 Introduction to Robot Characterization
 ======================================
 
-The characterization tools consist of a python application that runs on the user's PC and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over network tables, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
+The characterization tools consist of a python application that runs on the user's PC and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over :term:`NetworkTables`, while the robot sends data back to the application. The application then processes the data and determines characterization parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
 
 What is "Characterization?"
 ---------------------------
@@ -22,7 +22,7 @@ Heuristically, we can interpret the coefficients in the above equation as follow
 
 ``kS`` is the voltage needed to overcome the motor's static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) has the same effect regardless of velocity or acceleration. That is, no matter what speed you’re going or how fast you're accelerating, some constant portion of the voltage you've applied to your motor (depending on the specific mechanism assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.  Note the presence of the `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, because friction force always opposes the direction-of-motion.
 
-``kV`` describes how much voltage is needed to hold (or “cruise”) at a given constant velocity while overcoming the `electromagnetic resistance in the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any additional friction that increases with speed (known as `viscous drag <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__). The relationship between speed and voltage (at constant acceleration) is almost entirely linear (with FRC\ |reg| components, anyway) because of how permanent-magnet DC motors work.
+``kV`` describes how much voltage is needed to hold (or "cruise") at a given constant velocity while overcoming the `electromagnetic resistance in the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any additional friction that increases with speed (known as `viscous drag <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__). The relationship between speed and voltage (at constant acceleration) is almost entirely linear (with FRC\ |reg| components, anyway) because of how permanent-magnet DC motors work.
 
 ``kA`` describes the voltage needed to induce a given acceleration in the motor shaft. As with ``kV``, the relationship between voltage and acceleration (at constant velocity) is almost perfectly linear for FRC components.
 

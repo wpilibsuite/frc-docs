@@ -1,13 +1,15 @@
 Step 2: Creating a Drivetrain Model
 ===================================
+
 In order to accurately determine how your physical drivetrain will respond to given motor voltage inputs, an accurate model of your drivetrain must be created. This model is usually created by measuring various physical parameters of your real robot. In WPILib, this drivetrain simulation model is represented by the ``DifferentialDrivetrainSim`` class.
 
 Creating a ``DifferentialDrivetrainSim`` from Physical Measurements
 -------------------------------------------------------------------
+
 One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through CAD software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The moment of inertia of the drivetrain (this can be obtained from a CAD model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
  - The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
  - The radius of the drive wheels.
@@ -63,6 +65,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 Creating a ``DifferentialDrivetrainSim`` from Characterization Gains
 --------------------------------------------------------------------
+
 You can also use the gains produced by :ref:`robot characterization <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/examples-tutorials/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
 
 .. important:: You must need two sets of ``Kv`` and ``Ka`` gains from the characterization tool -- one from straight-line motion and the other from rotating in place. We will refer to these two sets of gains as linear and angular gains respectively.
@@ -72,7 +75,7 @@ This constructor takes the following parameters:
  - A linear system representing the drivetrain -- this can be created using the characterization gains.
  - The track width (distance between the left and right wheels).
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The radius of the drive wheels.
  - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
 
@@ -96,9 +99,9 @@ You can calculate the measurement noise of your sensors by taking multiple data 
       private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
         // Create a linear system from our characterization gains.
         LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
-        0.7112,                  // The track width is 0.7112 meters.
         DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
         7.29,                    // 7.29:1 gearing reduction.
+        0.7112,                  // The track width is 0.7112 meters.
         Units.inchesToMeters(3), // The robot uses 3" radius wheels.
 
         // The standard deviations for measurement noise:
@@ -146,10 +149,11 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
 -----------------------------------------------------------
+
 The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
 
  - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output over input (this number is usually greater than 1 for drivetrains).
+ - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
  - The diameter of the wheels installed on the drivetrain.
  - The moment of inertia of the drive base (optional).
  - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
@@ -165,8 +169,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
         KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
-        KitbotGearing.k12p75,        // 12.75:1
-        KitbotWheelSize.kSixInch,    // 6" diameter wheels.
+        KitbotGearing.k10p71,        // 10.71:1
+        KitbotWheelSize.SixInch,     // 6" diameter wheels.
         null                         // No measurement noise.
       );
 
@@ -179,7 +183,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
       frc::sim::DifferentialDrivetrainSim m_driveSim =
         frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
           frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
-          frc::sim::DifferentialDrivetrainSim::KitbotGearing::k12p75,       // 12.75:1
+          frc::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1
           frc::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
       );
 

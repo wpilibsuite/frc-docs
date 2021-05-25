@@ -6,4 +6,4 @@ Basic Programming
 
    git-getting-started.rst
    cpp-units
-   robot-code-ci
+   reading-stacktraces

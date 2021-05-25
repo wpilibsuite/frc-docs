@@ -51,6 +51,7 @@ Ethernet Connection
 -------------------
 
 .. image:: images/roborio-troubleshooting/roborio-ip-address.png
+   :alt: The IP address from the roboRIO webdashboard.
 
 If you are troubleshooting an Ethernet connection, it may be helpful to first make sure that you can connect to the roboRIO using the USB connection. Using the USB connection, open the :ref:`roboRIO webdashboard <docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` and verify that the roboRIO has an IP address on the ethernet interface. If you are tethering to the roboRIO directly this should be a self-assigned ``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should be an address of the form ``10.TE.AM.XX`` where TEAM is your four digit FRC team number. If the only IP address here is the USB address, verify the physical roboRIO ethernet connection.
 
@@ -64,36 +65,44 @@ This is not always the same as turning the adapters off with a physical button o
    .. group-tab:: Windows 10
 
       .. image:: images/roborio-troubleshooting/start-menu-win10.png
+         :alt: Windows 10 settings gear on the left hand side of the start menu.
 
       Open the Settings application by clicking on the settings icon.
 
       .. image:: images/roborio-troubleshooting/settings-network-internet.png
+         :alt: Clicking the "Network & Internet" category under Windows Settings.
 
       Choose the :guilabel:`Network & Internet` category.
 
       .. image:: images/roborio-troubleshooting/settings-change-adapter.png
+         :alt: Choose "Change adapter options" in the bottom of the screen.
 
       Click on :guilabel:`Change adapter options`.
 
    .. group-tab:: Windows 7
 
       .. image:: images/roborio-troubleshooting/open-control-panel.png
+         :alt: Click "Control Panel" from the right hand side of the start menu.
 
       Open the Control Panel by going to :guilabel:`Start` -> :guilabel:`Control Panel`
 
       .. image:: images/roborio-troubleshooting/network-internet.png
+         :alt: Clicking the "Network and Internet" category.
 
       Choose the :guilabel:`Network and Internet` category.
 
       .. image:: images/roborio-troubleshooting/network-and-sharing-center.png
+         :alt: Then choosing the "Network and Sharing Center" option at the top.
 
       Click :guilabel:`Network and Sharing Center`
 
 .. image:: images/roborio-troubleshooting/adapter-settings.png
+   :alt: Click "change adapter settings" in the bar on the left hand side.
 
 On the left pane, click :guilabel:`Change Adapter Settings`.
 
 .. image:: images/roborio-troubleshooting/disable-network-adapter.png
+   :alt: Righ clicking on the adapter in question and choosing the first option "Disable".
 
 For each adapter other than the one connected to the radio, right click on the adapter and select :guilabel:`Disable` from the menu.
 

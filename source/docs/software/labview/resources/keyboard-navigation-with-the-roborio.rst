@@ -1,7 +1,7 @@
 Keyboard Navigation with the roboRIO
 ====================================
 
-.. image:: images/ni-logo.png
+.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
 
 This example provides some suggestions for controlling the robot using keyboard navigation in place of a joystick or other controller.  In this case, we use the A, W, S, and D keys to control two drive motors in a tank drive configuration.
 

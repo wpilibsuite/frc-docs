@@ -21,10 +21,12 @@ In Java, a reference to a subroutine that can be passed as a parameter is called
 Lambda Expressions (Java)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called “lambda expressions.” A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called "lambda expressions." A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
 
 Lambda Expressions (C++)
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning:: Due to complications in C++ semantics, capturing ``this`` in a C++ lambda can cause a null pointer exception if done from a component command of a command group.  Whenever possible, C++ users should capture relevant command members explicitly and by value.  For more details, see `here <https://github.com/wpilibsuite/allwpilib/issues/3109>`__.
 
 C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly useable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see `cppreference <https://en.cppreference.com/w/cpp/language/lambda>`__.
 
@@ -66,7 +68,7 @@ Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` comman
 Included Command Types
 ----------------------
 
-The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__).
+The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used "out-of-the-box" via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__).
 
 ConditionalCommand
 ^^^^^^^^^^^^^^^^^^
@@ -98,11 +100,11 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.2.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
       :language: java
-      :lines: 25-49
+      :lines: 20-45
       :linenos:
-      :lineno-start: 25
+      :lineno-start: 20
 
   .. group-tab:: C++ (Header)
 
@@ -141,7 +143,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rel
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
     new RunCommand(() -> m_robotDrive.arcadeDrive(
-        driverController.getY(GenericHID.Hand.kLeft),
+        -driverController.getY(GenericHID.Hand.kLeft),
         driverController.getX(GenericHID.Hand.kRight)),
         m_robotDrive)
 
@@ -152,7 +154,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rel
     frc2::RunCommand(
       [this] {
         m_drive.ArcadeDrive(
-            m_driverController.GetY(frc::GenericHID::kLeftHand),
+            -m_driverController.GetY(frc::GenericHID::kLeftHand),
             m_driverController.GetX(frc::GenericHID::kRightHand));
       },
       {&m_drive}))
@@ -236,7 +238,7 @@ The ``PrintCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/r
 
   .. code-tab:: c++
 
-    frc2::PrintCommand("This message will be printed!)
+    frc2::PrintCommand("This message will be printed!")
 
 ScheduleCommand
 ^^^^^^^^^^^^^^^
@@ -342,9 +344,9 @@ The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/do
 Command Decorator Methods
 -------------------------
 
-The ``Command`` interface contains a number of defaulted “decorator”
+The ``Command`` interface contains a number of defaulted "decorator"
 methods which can be used to add additional functionality to existing
-commands. A “decorator” method is a method that takes an object (in this
+commands. A "decorator" method is a method that takes an object (in this
 case, a command) and returns an object of the same type (i.e. a command)
 with some additional functionality added to it. A list of the included
 decorator methods with brief examples is included below - for rigorous
@@ -424,36 +426,36 @@ alongWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel command group the ordinary way instead.
 
-The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command group containing the command, along with all the other commands passed in as arguments:
+The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
 
 .. code-block:: java
 
-   // Will be a parallel command group containing fooCommand, barCommand, and bazCommand
-   button.whenPressed(fooCommand.alongWith(barCommand, bazCommand));
+   // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+   button.whenPressed(oneSecCommand.alongWith(twoSecCommand, threeSecCommand));
 
 raceWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel command race containing the command, along with all the other commands passed in as arguments:
+The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
 
 .. code-block:: java
 
-   // Will be a parallel command race containing fooCommand, barCommand, and bazCommand
-   button.whenPressed(fooCommand.raceWith(barCommand, bazCommand));
+   // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+   button.whenPressed(twoSecCommand.raceWith(oneSecCommand, threeSecCommand));
 
 deadlineWith (Java only)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a parallel deadline group containing the command, along with all the other commands passed in as arguments:
+The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
 
 .. code-block:: java
 
-   // Will be a parallel deadline group containing fooCommand, barCommand, and bazCommand; fooCommand is the deadline
-   button.whenPressed(fooCommand.deadlineWith(barCommand, bazCommand));
+   // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+   button.whenPressed(twoSecCommand.deadlineWith(oneSecCommand, threeSecCommand));
 
 withName (Java only)
 ^^^^^^^^^^^^^^^^^^^^

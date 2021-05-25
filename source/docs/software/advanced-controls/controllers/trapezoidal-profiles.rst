@@ -87,10 +87,10 @@ Now that we know how to create a set of constraints and the desired start/end st
     // Profile will have a max acceleration of 10 meters per second squared
     // Profile will end stationary at 5 meters
     // Profile will start stationary at zero position
-    frc::TrapezoidProfile<units::meters> profile(
+    frc::TrapezoidProfile<units::meters> profile{
       frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq},
       frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps},
-      frc::TrapezoidProfile<units::meters>::State(0_m, 0_mps});
+      frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps}};
 
 Using a ``TrapezoidProfile``
 ----------------------------

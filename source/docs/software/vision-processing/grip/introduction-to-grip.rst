@@ -100,14 +100,14 @@ Find the yellow area (blob)
 The last step is actually detecting the yellow card using a Blob Detector. This operation looks for a grouping of pixels that
 have some minimum area. In this case, the only non-black pixels are from the yellow card after the filtering is done. You can
 see that a circle is drawn around the detected portion of the image. In the release version of GRIP (watch for more updates
-between now and kickoff) you will be able to send parameters about the detected blob to your robot program using Network Tables.
+between now and kickoff) you will be able to send parameters about the detected blob to your robot program using :term:`NetworkTables`.
 
 Status of GRIP
 --------------
 As you can see from this example, it is very easy and fast to be able to do simple object recognition using GRIP. While this is
 a very simple example, it illustrates the basic principles of using GRIP and feature extraction in general. Over the coming
 weeks the project team will be posting updates to GRIP as more features are added. Currently it supports cameras (Axis ethernet
-camera and web cameras) and image inputs. There is no provision for output yet although Network Tables and ROS (Robot Operating
+camera and web cameras) and image inputs. There is no provision for output yet although NetworkTables and ROS (Robot Operating
 System) are planned.
 
 You can either download a pre-built release of the code from the GitHub page "Releases" section

@@ -5,6 +5,9 @@
 
 .. include:: <isonum.txt>
 
+.. meta::
+   :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
+
 FIRST Robotics Competition Control System
 ===========================================
 
@@ -35,12 +38,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/what-is-wpilib
    docs/yearly-overview/index
    docs/software/vscode-overview/index
+   docs/software/dashboards/index
    docs/software/labview/index
    docs/software/actuators/index
    docs/software/sensors/index
    docs/software/can-devices/index
    docs/software/basic-programming/index
    docs/software/support/support-resources
+   docs/software/frc-glossary
 
 .. toctree::
    :maxdepth: 1
@@ -54,10 +59,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Software Tools
 
    docs/software/driverstation/index
-   docs/software/wpilib-tools/shuffleboard/index
-   docs/software/wpilib-tools/smartdashboard/index
-   docs/software/wpilib-tools/glass/index
-   docs/software/labview-dashboard/index
    docs/software/wpilib-tools/pathweaver/index
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
@@ -70,10 +71,10 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
    docs/software/vision-processing/index
    docs/software/commandbased/index
-   docs/software/old-commandbased/index
    docs/software/kinematics-and-odometry/index
    docs/software/networktables/index
    docs/software/roborio-info/index
+   docs/software/advanced-gradlerio/index
    docs/software/advanced-controls/index
    docs/software/convenience-features/index
 
