@@ -2,7 +2,7 @@ Axon
 ====
 
 .. toctree::
-   :maxdepth:
+   :maxdepth: 1
 
    introduction
    data-format
