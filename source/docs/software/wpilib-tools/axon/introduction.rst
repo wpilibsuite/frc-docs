@@ -25,3 +25,26 @@ Training
 
 Axon provides an excellent UI for doing transfer learning with a quantised COCO-trained MobileNet V2.
 
+Installation
+------------
+
+Docker
+^^^^^^
+
+Docker is a container system that runs a virtual machine. Machine Learning utilizes many dependencies that will be stored inside a docker image. Instead of downloading all of those dependencies separately, a docker image will be provided which is much simpler.
+
+To install docker visit the link and installation instructions provided here: `Docker Desktop <https://www.docker.com/products/docker-desktop>`__
+
+For Windows users an installation of Windows Subsystem for Linux (WSL) is required and can be found here: `WSL Install <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__
+
+For Mac users, follow these instructions to increase Memory allowance to or above 6GBs of RAM. Instructions can be found here: `Mac Instructions <https://docs.docker.com/docker-for-mac/#resources>`__
+
+For Linux users, follow these instructions to complete the installation: `Ubuntu Instructions <https://docs.docker.com/engine/install/ubuntu/>`__
+
+Axon Launcher
+^^^^^^^^^^^^^
+
+You can download the latest release of the installer from `Github <https://github.com/wpilibsuite/Axon/releases/>`__. Ensure that you download the correct binary for your OS and architecture.
+
+Extract the installer and click the setup executable file to get started.
+
