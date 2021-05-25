@@ -89,3 +89,6 @@ $RECYCLE.BIN/
 
 # Python
 *.pyc
+
+# JetBrains IDEs
+.idea
