@@ -7,3 +7,4 @@ Axon
    introduction
    data-format
    retraining-mobilenet
+   labeling-a-dataset-with-supervisely
