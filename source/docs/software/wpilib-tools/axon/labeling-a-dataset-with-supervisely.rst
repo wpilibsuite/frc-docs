@@ -13,7 +13,7 @@ The first step to creating a dataset is getting images. A dataset should have se
 Import Video to Supervisely
 ----------------------
 
-Now that the images for the dataset are gathered, they can be labelled. To do this, Axon supports the use of `https://supervise.ly <https://supervise.ly>`__ An account is required to use the site.
+Now that the images for the dataset are gathered, they can be labeled. To do this, Axon supports the use of `https://supervise.ly <https://supervise.ly>`__ An account is required to use the site.
 
 The workflow is organized in Workspaces, and Projects. A Workspace can have multiple users, so one FRC team can share a workspace. A Workspace also can contain multiple projects.
 
