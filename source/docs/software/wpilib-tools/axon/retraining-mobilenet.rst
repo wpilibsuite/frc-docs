@@ -4,7 +4,7 @@ Retraining Mobilenet V2
 Upload a dataset
 ----------------
 
-To retrain the mobilenet object detection model using Axon, first upload the dataset you would like to retrain with, using the button on the tree to the left.
+To retrain the mobilenet object detection model using Axon, first upload the dataset you would like to retrain with.
 
 .. image:: images/training/axon-mobilenet-1.png
 
@@ -15,7 +15,7 @@ Create a project
 
 Next, you must create a project. A project will hold the data from the retraining, and any tflite exports or tests you create with the retrained model.
 
-To create a project, click the add project button, below the add dataset button.
+To create a project, click the add project button.
 
 .. image:: images/training/axon-mobilenet-2.png
 
@@ -85,7 +85,7 @@ This will open a window that allows you to upload a `.mp4` file.
 
 .. image:: images/training/axon-mobilenet-12.png
 
-Drop a .mp4 in the dropzone, or click to select the file. Once the file is in the dropzone, click "Save".
+Drop a `.mp4` in the dropzone, or click to select the file. Once the file is in the dropzone, click "Save".
 
 When uploaded, you will see the video in the dropdown menu, allowing you to select it for the test.
 
