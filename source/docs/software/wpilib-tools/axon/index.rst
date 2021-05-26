@@ -5,6 +5,7 @@ Axon
    :maxdepth: 1
 
    introduction
+   labeling-a-dataset-with-supervisely
    data-format
    retraining-mobilenet
-   labeling-a-dataset-with-supervisely
+
