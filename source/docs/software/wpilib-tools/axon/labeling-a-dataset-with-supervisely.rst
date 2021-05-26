@@ -1,5 +1,5 @@
 Labeling a Dataset with Supervisely
-==================================
+===================================
 
 The quality of a neural network is fully dependent on the quality of the dataset used to train it. To create a custom dataset, perhaps to train a neural network to recognize the new game piece, Axon supports datasets created using `Supervisely <https://supervise.ly>`__. This page describes how to create label, and export a dataset made with Supervisely.
 
@@ -48,7 +48,7 @@ Within the Project, select the "Rectangle" tool. Supervisely will prompt you to 
 Click the Rectangle tool to label another object within the same image, if there is one. If there is a misclick, the corners of the rectangle can be dragged to better label the object. Else, move on to the next image. It is important to label every single visible object that one wishes to detect, else the neural network will pick up bad habits. The job of labeling data can be tedious, but it can also be shared between members of an FRC team through the Workspace.
 
 Downloading the Dataset
--------------------
+-----------------------
 
 With all the images labelled, the dataset can be downloaded off of Supervisely for use in Axon. Within the Workspace, click on the triple-dot icon of the project you wish to download. Select the ".json and images" download option.
 
