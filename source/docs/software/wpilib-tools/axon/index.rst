@@ -8,4 +8,5 @@ Axon
    labeling-a-dataset-with-supervisely
    data-format
    retraining-mobilenet
+   inferencing-on-a-raspberry-pi.rst
 
