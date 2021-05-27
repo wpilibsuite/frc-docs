@@ -12,4 +12,5 @@ Robot Simulation
    /docs/software/dashboards/glass/plots
    physics-sim
    device-sim
+   drivesim-tutorial/index
    unit-testing

@@ -81,7 +81,6 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    :caption: Examples and Tutorials
 
    docs/software/examples-tutorials/wpilib-examples
-   docs/software/examples-tutorials/drivesim-tutorial/index
 
 .. toctree::
    :maxdepth: 1
