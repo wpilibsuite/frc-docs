@@ -1,9 +1,17 @@
 .. include:: <isonum.txt>
 
-Actuator Overview
-==================
+Hardware APIs
+=============
 
-This section discusses the control of motors and pneumatics through motor controllers, solenoids and pneumatics, and their interface with C++ and Java WPILib.
+This section discusses the control of motors and pneumatics through motor controllers, solenoids and pneumatics, and their interface with Java and C++ WPILib.
+
+.. toctree::
+   :maxdepth: 1
+
+   motors/index
+   pneumatics/index
+   sensors/index
+   misc/index
 
 Motor Controllers
 -----------------
@@ -39,7 +47,7 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 Pneumatics
 ----------
 
-Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics`.
+Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics/pneumatics`.
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

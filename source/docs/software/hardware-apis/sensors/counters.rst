@@ -4,7 +4,7 @@ Counters
 .. image:: images/counters/counters.png
     :alt: IO Diagram showing the up/down pulses the counter is counting.
 
-The :code:`Counter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
+The :code:`Counter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
 
 .. note:: There are a total of 8 counter units in the roboRIO FPGA, meaning no more than 8 :code:`Counter` objects may be instantiated at any one time, including those contained as resources in other WPILib objects.  For detailed information on when a :code:`Counter` may be used by another object, refer to the official API documentation.
 
@@ -257,9 +257,9 @@ Users can obtain the current count with the :code:`get()` method:
 Distance
 ^^^^^^^^
 
-.. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/sensors/counters:Resetting a Counter>`.
+.. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/counters:Resetting a Counter>`.
 
-If the :ref:`distance per pulse <docs/software/sensors/counters:Configuring counter parameters>` has been configured, users can obtain the total distance traveled by the counted sensor with the :code:`getDistance()` method:
+If the :ref:`distance per pulse <docs/software/hardware-apis/sensors/counters:Configuring counter parameters>` has been configured, users can obtain the total distance traveled by the counted sensor with the :code:`getDistance()` method:
 
 .. tabs::
 
@@ -329,7 +329,7 @@ Users can obtain the direction in which the counter last moved with the :code:`g
 Period
 ^^^^^^
 
-.. note:: In :ref:`semi-period mode <docs/software/sensors/counters:Semi-period mode>`, this method returns the duration of the pulse, not of the period.
+.. note:: In :ref:`semi-period mode <docs/software/hardware-apis/sensors/counters:Semi-period mode>`, this method returns the duration of the pulse, not of the period.
 
 Users can obtain the duration (in seconds) of the most-recent period with the :code:`getPeriod()` method:
 
@@ -365,4 +365,4 @@ To reset a counter to a distance reading of zero, call the :code:`reset()` metho
 Using counters in code
 ----------------------
 
-Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`docs/software/sensors/encoders-software:Encoders - Software`.
+Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Encoders - Software`.

@@ -1,6 +1,8 @@
 Sensors
 =======
 
+Sensors are an integral way of having your robot hardware and software communicate with each other. This section highlights interfacing with those sensors at a software level.
+
 .. toctree::
    :maxdepth: 1
 

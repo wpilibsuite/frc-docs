@@ -40,8 +40,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
    docs/software/vscode-overview/index
    docs/software/dashboards/index
    docs/software/labview/index
-   docs/software/actuators/index
-   docs/software/sensors/index
+   docs/software/hardware-apis/index
    docs/software/can-devices/index
    docs/software/basic-programming/index
    docs/software/support/support-resources

@@ -3,7 +3,7 @@
 Ultrasonics - Hardware
 ======================
 
-.. note:: This section covers ultrasonic sensor hardware.  For a software guide to ultrasonics, see :ref:`docs/software/sensors/ultrasonics-software:Ultrasonics - Software`.
+.. note:: This section covers ultrasonic sensor hardware.  For a software guide to ultrasonics, see :ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software`.
 
 Ultrasonic rangefinders are some of the most common rangefinders used in FRC\ |reg|.  They are cheap, easy-to-use, and fairly reliable.  Ultrasonic rangefinders work by emitting a pulse of high-frequency sound, and then measuring how long it takes the echo to reach the sensor after bouncing off the target.  From the measured time and the speed of sound in air, it is possible to calculate the distance to the target.
 
@@ -18,7 +18,7 @@ Analog ultrasonics
 .. image:: images/analog-inputs-hardware/ultrasonic-sensor-to-roborio.svg
    :alt: Connecting a MB1013 to the analog in port of the roboRIO.
 
-Analog ultrasonics output a simple analog voltage corresponding to the distance to the target, and thus connect to an :doc:`analog input <analog-inputs-hardware>` port.  The user will need to calibrate the voltage-to-distance conversion in :ref:`software <docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`.
+Analog ultrasonics output a simple analog voltage corresponding to the distance to the target, and thus connect to an :doc:`analog input <analog-inputs-hardware>` port.  The user will need to calibrate the voltage-to-distance conversion in :ref:`software <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`.
 
 Ping-response ultrasonics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
