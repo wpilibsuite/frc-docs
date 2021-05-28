@@ -9,6 +9,7 @@ This section describes WPILib support for generating parameterized spline trajec
    :maxdepth: 1
 
    trajectory-generation
+   sending-trajectories-field2d
    constraints
    manipulating-trajectories
    transforming-trajectories
