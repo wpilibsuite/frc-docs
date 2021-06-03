@@ -45,10 +45,10 @@ When you are ready to start the retraining, click the play button to the right o
 
 When an evaluation happens, a checkpoint is produced. This is a copy of the model at a particular point in the training. While the model trains, you will see checkpoints appear as points on the graph.
 
-Exporting a checkpoint as a tflite
-----------------------------------
+Exporting a checkpoint in TFLite format
+---------------------------------------
 
-To export a checkpoint as a ``.tflite model`` for use, select the desired checkpoint by clicking the point on the graph.
+To export a checkpoint as a TFLite model for use, select the desired checkpoint by clicking the point on the graph.
 
 .. image:: images/training/axon-mobilenet-4.png
 
@@ -64,7 +64,7 @@ When the export has completed, you may click the menu to the right of an exporte
 
 .. image:: images/training/axon-mobilenet-7.png
 
-Click the download button, and your browser will download a tarfile containing two tflite models, one of which is optimized for the Coral TPU.
+Click the download button, and your browser will download a tarfile containing two TFLite models, one of which is optimized for the Coral TPU. There is also a label map file, for use when converting the model's output to a human-readable format.
 
 .. image:: images/training/axon-mobilenet-8.png
 
@@ -103,4 +103,4 @@ When the test completes, you will see it at the bottom of the test dialog.
 
 .. image:: images/training/axon-mobilenet-14.png
 
-You can download the annotated video. Click the download icon next to the test’s name, and your browser will begin the download.
+You can download the annotated video. Click the download icon next to the test’s name, and your browser will begin the download. The video is currently a `.mp4` within a .zip.
