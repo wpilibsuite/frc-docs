@@ -1,10 +1,20 @@
 Inferencing on a Raspberry Pi
 =============================
 
-Prerequisites
--------------
+Hardware Requirements
+---------------------
 
-This section requires a Romi or a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
+This section requires a Romi or a Raspberry Pi that is running the WPILibPi Image.
+
+Instructions to setup a WPILibPi can be found :ref:`here <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`.
+
+Other hardware that is required is:
+
+-   A USB Camera
+-   A Coral TPU (Highly Recommended)
+
+.. note:: A Coral Edge TPU is a USB Accelerator that the Raspberry Pi uses as a co-processor to improve its performance while inferencing. In our experience it has shown to improve performance by around 9 times.
+
 
 Uploading the Model to the Pi
 -----------------------------
