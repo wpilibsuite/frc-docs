@@ -4,7 +4,7 @@ Inferencing on a Raspberry Pi
 Prerequisites
 -------------
 
-This section requires a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/walkthrough-video>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
+This section requires a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
 
 Uploading the Model to the Pi
 -----------------------------
