@@ -7,7 +7,7 @@ Prerequisites
 This section requires a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/index>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
 
 Uploading the Model to the Pi
--------------------
+-----------------------------
 
 To upload your tflite model to the Raspberry Pi, you must connect to it and open the Web-interface. Select the Application tab, go to the File Upload section and turn the Extract slider on.
 
@@ -23,9 +23,20 @@ Once the tflite model has been uploaded, now the Pi needs python code to utilize
 
 Once this is downloaded, utilize the Vision Application Configuration section to upload the python file.
 
-Once uploaded, utilize the Vision Status tab to check on the state of the script, and the vision settings tab can be used to view the camera stream.
+.. image:: images/inferencing/upload.png
+  :alt: Upload file
 
+Once uploaded, utilize the Vision Status tab to check on the state of the script. Take note of the Camera Server Port number so that you can switch to the correct port to see the output.
 
+Head to the vision settings tab. First click on the camera stream and change the resolution to be greater than 300 pixels by 300 pixels (e.g. 640 by 480).
+
+Then click on open stream to view the camera stream. Switch the port number at the top to move through the various camera streams until you arrive at the desired one.
+
+Then you can see the Output Stream from the Machine Learning Model. You should be able to see the Raspberry Pi identifying objects!
+
+.. image:: images/inferencing/inference.png
+  :alt: Coffee Inference
 
 Network Tables
 --------------
+
