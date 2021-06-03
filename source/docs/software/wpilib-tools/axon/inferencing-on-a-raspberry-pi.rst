@@ -4,7 +4,7 @@ Inferencing on a Raspberry Pi
 Prerequisites
 -------------
 
-This section requires a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
+This section requires a Romi or a Raspberry Pi that is running the WPILibPi Image. Instructions to the following can be found here :ref:`WPILibPi Setup <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`. Furthermore, a USB camera needs to be plugged into the Raspberry Pi.
 
 Uploading the Model to the Pi
 -----------------------------
@@ -49,6 +49,13 @@ Then you can see the Output Stream from the Machine Learning Model. You should b
 Network Tables
 --------------
 
+.. note:: When using a Romi, robot code must be running on the simulator to receive network tables data.
+
+The python script from the releases page that is responsible for inferencing, also pushes that data to network tables. To see the results, one can use the OutlineViewer tool which can be found here: :ref:`OutlineViewer <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>` .
+
 .. image:: images/inferencing/outline.png
   :alt: Outline Viewer
+
+.. note:: Use Server Location "localhost" when running on a Romi
+
 
