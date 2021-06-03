@@ -135,7 +135,7 @@ PathWeaver
 .. image:: images/control-system-software/pathweaver.png
    :alt: PathWeaver UI with a project for FRC Deep Space plotting a trajectory to the back of the rocket.
 
-PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/wpilib-tools/pathweaver/introduction:Introduction to PathWeaver>`.
+PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 Robot Characterization
 ----------------------
@@ -143,7 +143,7 @@ Robot Characterization
 .. image:: images/control-system-software/robot-characterization.png
    :alt: Robot Characterization new project screen that is highlighting "Generate Project".
 
-This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`.
+This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
 OutlineViewer
 -------------

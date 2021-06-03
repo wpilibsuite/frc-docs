@@ -7,7 +7,7 @@ This article goes over how to generate a trajectory. The next few articles in th
 * A way to measure the position and velocity of each side of the robot. An encoder is the best way to do this; however, other options may include optical flow sensors, etc.
 * A way to measure the angle or angular rate of the robot chassis. A gyroscope is the best way to do this. Although the angular rate can be calculated using encoder velocities, this method is NOT recommended because of wheel scrubbing.
 
-If you are looking for a simpler way to perform autonomous navigation, see :ref:`the section on driving to a distance <docs/software/sensors/encoders-software:Driving to a distance>`.
+If you are looking for a simpler way to perform autonomous navigation, see :ref:`the section on driving to a distance <docs/software/hardware-apis/sensors/encoders-software:Driving to a distance>`.
 
 Splines
 -------

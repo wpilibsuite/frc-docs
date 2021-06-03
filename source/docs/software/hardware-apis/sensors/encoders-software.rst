@@ -13,7 +13,7 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft). 
 .. image:: images/encoders-software/encoder-modules.png
     :alt: A Quadrature Decoder analyzing the A, B, and Index signals.
 
-The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
+The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
 
 The Encoder class
 -----------------
@@ -71,7 +71,7 @@ Configuring encoder parameters
 
 .. note:: The :code:`Encoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
-.. note:: The number of pulses used in the distance-per-pulse calculation does *not* depend on the :ref:`decoding type <docs/software/sensors/encoders-software:Decoding type>` - each "pulse" should always be considered to be a full cycle (four edges).
+.. note:: The number of pulses used in the distance-per-pulse calculation does *not* depend on the :ref:`decoding type <docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - each "pulse" should always be considered to be a full cycle (four edges).
 
 The :code:`Encoder` class offers a number of configuration methods:
 
@@ -123,7 +123,7 @@ The :code:`Encoder` class provides a wealth of information to the user about the
 Distance
 ~~~~~~~~
 
-.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/sensors/encoders-software:Resetting an encoder>`.
+.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/encoders-software:Resetting an encoder>`.
 
 Users can obtain the total distance traveled by the encoder with the :code:`getDistance()` method:
 
@@ -212,7 +212,7 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 Resetting an encoder
 ^^^^^^^^^^^^^^^^^^^^
 
-To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/sensors/encoders-software:Homing a mechanism>` routine:
+To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism>` routine:
 
 .. tabs::
 
@@ -310,7 +310,7 @@ Stabilizing heading
 
 .. warning:: Like with all control loops, users should be careful to ensure that the sensor direction and the turning direction are consistent.  If they are not, the loop will be unstable and the robot will turn wildly.
 
-Encoders can be used to ensure that a robot drives straight in a manner quite similar to :ref:`how it is done with a gyroscope <docs/software/sensors/gyros-software:Stabilizing heading while driving>`.  A simple implementation with a P loop is given below:
+Encoders can be used to ensure that a robot drives straight in a manner quite similar to :ref:`how it is done with a gyroscope <docs/software/hardware-apis/sensors/gyros-software:Stabilizing heading while driving>`.  A simple implementation with a P loop is given below:
 
 .. tabs::
 

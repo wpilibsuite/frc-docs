@@ -123,7 +123,7 @@ PathWeaver
 ----------
 
 - Added support for reversed splines
-- The coordinate system in the exported JSON has changed to be compatible with the simulator GUI. See :ref:`Importing a PathWeaver JSON <docs/software/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>` for more information.
+- The coordinate system in the exported JSON has changed to be compatible with the simulator GUI. See :ref:`Importing a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>` for more information.
 
 GradleRIO
 ---------
