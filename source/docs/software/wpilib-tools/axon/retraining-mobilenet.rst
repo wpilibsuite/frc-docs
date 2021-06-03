@@ -1,7 +1,7 @@
 Retraining Mobilenet V2
 =======================
 
-Upload a dataset
+Upload a Dataset
 ----------------
 
 To retrain the mobilenet object detection model using Axon, first upload the dataset you would like to retrain with.
@@ -10,7 +10,7 @@ To retrain the mobilenet object detection model using Axon, first upload the dat
 
 Once you have uploaded a dataset, you should see it in the tree above this button.
 
-Create a project
+Create a Project
 ----------------
 
 Next, you must create a project. A project will hold the data from the retraining, and any tflite exports or tests you create with the retrained model.
@@ -23,7 +23,7 @@ A dialog will appear, asking you to name the project. Pick a name and click crea
 
 Click on the project, and you will be taken to its page.
 
-Start retraining
+Start Retraining
 ----------------
 
 At the top of the project window, there are several parameters to specify how you want the model to be retrained.
@@ -45,7 +45,7 @@ When you are ready to start the retraining, click the play button to the right o
 
 When an evaluation happens, a checkpoint is produced. This is a copy of the model at a particular point in the training. While the model trains, you will see checkpoints appear as points on the graph.
 
-Exporting a checkpoint in TFLite format
+Exporting a Checkpoint in TFLite Format
 ---------------------------------------
 
 To export a checkpoint as a TFLite model for use, select the desired checkpoint by clicking the point on the graph.
@@ -68,7 +68,7 @@ Click the download button, and your browser will download a tarfile containing t
 
 .. image:: images/training/axon-mobilenet-8.png
 
-Testing an exported model
+Testing an Exported Model
 -------------------------
 
 To test an exported model, open the testing dialog by clicking the "Test" button in the menu of the export you would like to test.
