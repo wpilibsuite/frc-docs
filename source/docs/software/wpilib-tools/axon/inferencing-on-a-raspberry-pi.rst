@@ -36,7 +36,7 @@ Head to the vision settings tab. First click on the camera stream and change the
 .. image:: images/inferencing/settings.png
   :alt: Resolution settings
 
-Then click on open stream to view the camera stream. Switch the port number at the top to move through the various camera streams until you arrive at the desired one.
+Then click on open stream to view the camera stream. Increase the port number at the top by one each time to move through the various camera streams until you arrive at the desired one. The default port is always at 1181, and the additional streams will start at 1182.
 
 .. image:: images/inferencing/port.png
   :alt: Changing Ports
