@@ -8,5 +8,5 @@ Axon
    machine-learning
    labeling-a-dataset-with-supervisely
    retraining-mobilenet
-   inferencing-on-a-raspberry-pi.rst
+   inferencing-on-a-raspberry-pi
 
