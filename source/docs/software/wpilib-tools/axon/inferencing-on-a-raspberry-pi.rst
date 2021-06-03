@@ -14,12 +14,12 @@ To upload your tflite model to the Raspberry Pi, you must connect to it and open
 .. image:: images/inferencing/extract.png
   :alt: Click the Extract Slider
 
-Once this is checked, you can upload the zip of your tflite model to the Pi.
+Once this is checked, you can upload the zip that you downloaded from Axon onto the Pi.
 
 Inferencing
 -----------
 
-Once the tflite model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: `Github <https://github.com/wpilibsuite/Axon/releases/>`__
+Once the model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: `Github <https://github.com/wpilibsuite/Axon/releases/>`__
 
 Once this is downloaded, utilize the Vision Application Configuration section to upload the python file.
 
