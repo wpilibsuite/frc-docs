@@ -1,7 +1,7 @@
 Introduction to Machine Learning
 ================================
 
-Machine learning, while often seen as a black box, is really a giant optimization problem. A neural network is a series of matrices, where the number contained within the matrices need to be tuned as precisely as possible to make the best predictions possible. To understand what this means better, let's look at a classic machine learning problem: MNIST.
+Machine learning is a giant optimization problem. A neural network is a series of matrices, where the number contained within the matrices need to be tuned as precisely as possible to make the best predictions possible. To understand what this means better, let's look at a classic machine learning problem: MNIST.
 
 MNIST
 -----
@@ -9,16 +9,18 @@ MNIST
 .. image:: images/machine-learning/mnist.png
   :alt: Example MNIST images
 
-The MNIST dataset is a collection of images showing hand-drawn numbers. The challenge is to create an algorithm that can recognize what number is represented by a given image. This problem can be solved by developing a neural network.
+The MNIST dataset is a collection of images showing hand-drawn numbers. The challenge is to create an algorithm that can recognize what number is represented by a given image, which is solvable by developing a neural network.
 
 .. image:: images/machine-learning/neural.png
   :alt: A very simple neural network
 
-Here we have an over-simplified neural network. It has three layers, arranged vertically. The furthest left layer is called the input layer. When feeding an image into the neural network, the input layer is set to have the same values as our image. The middle layer is called a hidden layer. This layer only does math, and it is not directly interacted with by the programmer. The final layer in this neural network is called the output layer. Its values are used as output by the programmer. Having discussed the nodes (the circles) that make up the layers, it is important to discuss the connections (the arrows) between the layers. Each arrow represents a set of operations between two nodes. This type of neural network is a fully-connected neural network, so the operations that the arrows represent are shown below.
+Here we have an over-simplified neural network. It has three layers, arranged vertically. The furthest left layer is called the input layer. When feeding an image into the neural network, the input layer is set to have the same values as our image. The middle layer is called a hidden layer. This layer focuses on computation, and does not directly interact with by the programmer. The final layer in this neural network is called the output layer and contains the end result.
+
+Having discussed the nodes (the circles) that make up the layers, it is important to discuss the connections (the arrows) between the layers. Each arrow represents a set of operations between two nodes. This type of neural network is a fully-connected neural network, so the operations that the arrows represent are shown below.
 
 .. math:: Y = WX + b
 
-Where :math:`Y` is a matrix, aka layer, that is not the input matrix, and :math:`X` is the matrix directly before (to the left) of :math:`Y`. That leaves :math:`W` and :math:`b`. :math:`W` is a matrix of weights that act as coefficients on :math:`X`. :math:`b` is a matrix of biases that add to the result of the product of :math:`W` and :math:`X`. During the training/learning process, the values within :math:`W` and :math:`b` are adjusted so :math:`Y` is the best possible value with any :math:`X`. In a large neural network, there are millions of weights and biases, resulting in billions of linear algebra operations. This absurd amount math often requires a powerful computer, and/or a lot of time.
+Where :math:`Y` is a non-input matrix layer, and :math:`X` is the matrix directly before (to the left) of :math:`Y`. :math:`W` is a matrix of weights that act as coefficients on :math:`X`. :math:`b` is a matrix of biases that add to the result of the product of :math:`W` and :math:`X`. During the training/learning process, the values within :math:`W` and :math:`b` are adjusted so :math:`Y` is the best possible value from any :math:`X`. In a large neural network, there are millions of weights and biases, resulting in billions of linear algebra operations. This absurd amount math often requires a powerful computer, and/or a lot of time.
 
 With this understanding of a basic neural network, let's look at a simple neural network that can be used for the MNIST problem.
 
