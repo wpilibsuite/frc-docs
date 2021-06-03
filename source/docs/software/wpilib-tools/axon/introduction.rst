@@ -18,7 +18,6 @@ Features of Axon
 
 Dataset Viewing
 ^^^^^^^^^^^^^^^
-
 Axon currently supports Supervisely datasets and OpenImages datasets. Please go to the dataset page to see how to upload a supported dataset format.
 
 Training
@@ -28,13 +27,16 @@ Axon provides an excellent UI for doing transfer learning with a quantised COCO-
 
 Testing
 ^^^^^^^
-
 Axon provides a way to test a trained model before using it on a robot. Simply upload a video to the testing page, and watch the neural network work in real-time. A .mp4 is provided when testing is complete, if so desired.
 
 Exporting
 ^^^^^^^^^
-
 Axon provides a way to export your model in both a normal TFLite format, as well as a Edge-TPU optimized model. The outputted .zip can be directly uploaded to the WPILib Raspberry Pi image, but the format works on many other platforms.
+
+Inferencing
+^^^^^^^^^^^
+Axon provides a Python script for running models on a coprocessor. This script will utilize the hardware of a Google Coral Edge TPU if there is one plugged in. The is officially supported on the WPILibPi image. All inference data is outputted over NetworkTables, and an output MJPEG stream is also provided.
+
 
 Installation
 ------------
