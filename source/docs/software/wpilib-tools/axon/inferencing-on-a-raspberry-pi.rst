@@ -26,11 +26,20 @@ Once this is downloaded, utilize the Vision Application Configuration section to
 .. image:: images/inferencing/upload.png
   :alt: Upload file
 
-Once uploaded, utilize the Vision Status tab to check on the state of the script. Take note of the Camera Server Port number so that you can switch to the correct port to see the output.
+Once uploaded, utilize the Vision Status tab to check on the state of the script. You should be able to see an update with a framerate indicating that everything is working.
+
+.. image:: images/inferencing/console.png
+  :alt: Status Console
 
 Head to the vision settings tab. First click on the camera stream and change the resolution to be greater than 300 pixels by 300 pixels (e.g. 640 by 480).
 
+.. image:: images/inferencing/settings.png
+  :alt: Resolution settings
+
 Then click on open stream to view the camera stream. Switch the port number at the top to move through the various camera streams until you arrive at the desired one.
+
+.. image:: images/inferencing/port.png
+  :alt: Changing Ports
 
 Then you can see the Output Stream from the Machine Learning Model. You should be able to see the Raspberry Pi identifying objects!
 
@@ -39,4 +48,7 @@ Then you can see the Output Stream from the Machine Learning Model. You should b
 
 Network Tables
 --------------
+
+.. image:: images/inferencing/outline.png
+  :alt: Outline Viewer
 
