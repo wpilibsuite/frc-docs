@@ -20,7 +20,7 @@ The JSON string has the following format:
         "ymax": 100,
         "xmax": 150
       },
-      "confidence": .75
+      "confidence": 0.75
     },
     {
       "label": "red robot",
@@ -30,7 +30,7 @@ The JSON string has the following format:
         "ymax": 240,
         "xmax": 320
       },
-      "confidence": .99
+      "confidence": 0.99
     }
   ]
 
