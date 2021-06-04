@@ -31,7 +31,7 @@ Axon provides a way to test a trained model before using it on a robot. Simply u
 
 Exporting
 ^^^^^^^^^
-Axon provides a way to export your model in both a normal TFLite format, as well as a Edge-TPU optimized model. The outputted .zip can be directly uploaded to the WPILib Raspberry Pi image, but the format works on many other platforms.
+Axon provides a way to export your model in both a normal TFLite format, as well as a Edge-TPU optimized model. The outputted ``.zip`` can be directly uploaded to the WPILib Raspberry Pi image, but the format works on many other platforms.
 
 Inferencing
 ^^^^^^^^^^^
