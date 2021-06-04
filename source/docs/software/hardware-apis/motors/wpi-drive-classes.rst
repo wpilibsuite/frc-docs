@@ -39,7 +39,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
    .. code-tab:: java
 
       PWMSparkMax m_motorRight = new PWMSparkMax(0);
-      
+
       @Override
       public void robotInit() {
          m_motorRight.setInverted(true);
@@ -48,7 +48,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
    .. code-tab:: cpp
 
       frc::PWMSparkMax m_motorLeft{0};
-      
+
       public:
        void RobotInit() override {
          m_motorRight.SetInverted(true);
