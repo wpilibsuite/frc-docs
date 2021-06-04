@@ -6,7 +6,7 @@ Hardware Requirements
 
 This section requires a Romi or a Raspberry Pi that is running the WPILibPi Image.
 
-Instructions to setup a WPILibPi can be found :ref:`here <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`.
+Instructions to setup WPILibPi can be found :ref:`here <docs/software/vision-processing/wpilibpi/walkthrough-video:A Video Walkthrough of using WPILibPi with the Raspberry Pi>`.
 
 Other hardware that is required is:
 
