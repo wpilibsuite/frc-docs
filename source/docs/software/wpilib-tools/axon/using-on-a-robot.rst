@@ -7,6 +7,7 @@ Output Format
 -------------
 
 Because there can be any number of detected objects in a given image, the inference data is sent in a JSON string to the ``ML/detections`` NetworkTables entry. By compiling all data into a single entry, it is certain that the labels match with the bounding boxes, which may not be true if these items were separate entries.
+
 The JSON string has the following format:
 
 .. code-block:: JSON
@@ -47,4 +48,3 @@ Machine learning is applicable to the FIRST Robotics Competition when non-unifor
   :alt: hatch panels being inferenced.
 
 A model could also be trained to recognize other robots, if a collision-avoidance system were wanted to be implemented. The WPILib team has found that uniform objects, such as the 2020 Power Cells, are also easily detected by neural networks, but other algorithms may be more appropriate.
-
