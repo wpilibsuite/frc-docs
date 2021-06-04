@@ -45,7 +45,7 @@ Within the Project, select the "Rectangle" tool. Supervisely will prompt you to 
 .. image:: images/dataset/labeled_controller.png
   :alt: A properly labeled image.
 
-Click the Rectangle tool to label another object within the same image, if there is one. If there is a misclick, the corners of the rectangle can be dragged to better label the object. Else, move on to the next image. It is important to label every single visible object that one wishes to detect, else the neural network will pick up bad habits. The job of labeling data can be tedious, but it can also be shared between members of an FRC team through the Workspace.
+Click the :guilabel:`Rectangle` tool to label another object within the same image, if there is one. If there is a misclick, the corners of the rectangle can be dragged to better label the object. Otherwise, move on to the next image. It is important to label every single visible object that one wishes to detect, else the neural network will pick up bad habits. The job of labeling data can be tedious, but it can also be shared between members of an FRC team through the Workspace.
 
 Downloading the Dataset
 -----------------------
