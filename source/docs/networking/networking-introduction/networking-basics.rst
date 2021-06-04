@@ -90,6 +90,11 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 
 .. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
 
+Available Network Ports
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Please see `R60A <https://firstfrc.blob.core.windows.net/frc2021/Manual/HTML/2021FRCGameManual.htm#R60>`__ of the 2021 Game Manual for information regarding available network ports.
+
 mDNS
 ----
 
