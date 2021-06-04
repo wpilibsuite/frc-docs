@@ -4,6 +4,9 @@ Introduction to Axon
 
 Axon is a tool that brings machine learning to the FIRST robotics competition. Axon provides an interface for training, testing, and exporting a machine learning model.
 
+.. image:: images/inferencing/hatchcover.png
+  :alt: hatch panels being inferenced.
+
 What is Machine Learning?
 -------------------------
 

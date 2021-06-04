@@ -9,4 +9,5 @@ Axon
    labeling-a-dataset-with-supervisely
    retraining-mobilenet
    inferencing-on-a-raspberry-pi
+   using-on-a-robot
 
