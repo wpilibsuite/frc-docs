@@ -40,7 +40,7 @@ Labeling the Images
 
 With the project now set up, the data can be labeled. Labeling data means drawing boxes around the objects a neural network would want to detect, so the neural network knows when it is right and when it is wrong when it tries to detect where an object is. The boxes drawn should tightly wrap the entire visible object within each image.
 
-Within the Project, select the "Rectangle" tool. Supervisely will prompt you to create a class, i.e. define what kind of object you are about to label. More classes can be made later. Then, click twice in opposite corners around the object you wish to label. An example of a good label is below.
+Within the Project, select the :guilabel:`Rectangle` tool. Supervisely will prompt you to create a class, i.e. define what kind of object you are about to label. More classes can be made later. Then, click twice in opposite corners around the object you wish to label. An example of a good label is below.
 
 .. image:: images/dataset/labeled_controller.png
   :alt: A properly labeled image.
