@@ -13,17 +13,26 @@ The JSON string has the following format:
 
   [
     {
-      "label": CLASS_NAME,
+      "label": "blue robot",
       "box: {
-        "ymin": Y_MIN,
-        "xmin": X_MIN,
-        "ymax": Y_MAX,
-        "xmax": X_MAX
+        "ymin": 25,
+        "xmin": 10,
+        "ymax": 100,
+        "xmax": 150
       }
-    }
+    },
+    {
+      "label": "red robot",
+      "box: {
+        "ymin": 111,
+        "xmin": 163,
+        "ymax": 240,
+        "xmax": 320
+      }
+    },
   ]
 
-The example above shows the value of the ``ML/detections`` entry if a single object is detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. If multiple objects were detected, then more objects would be in the list.
+The example above shows the value of the ``ML/detections`` entry if two objects are detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. There will be an empty list if no objects are detected.
 
 There are three more NetworkTables entries that the provided script uses to help the programmer. The first is ``ML/fps``, which tells the programmer how many frames their model is processing per second. Another is ``ML/coral``, which tells the programmer is a Google Coral USB accelerator is currently being used. This is included in case someone removes the Coral from the robot and forgets to put it back, or a similar scenario. The final NetworkTables entry is ``ML/resolution``, which is the string ``WIDTH, HEIGHT``, telling the programmer the size of the processed image, for use with calculations.
 
