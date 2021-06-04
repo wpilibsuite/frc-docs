@@ -19,7 +19,7 @@ Other hardware that is required is:
 Uploading the Model to the Pi
 -----------------------------
 
-To upload your tflite model to the Raspberry Pi, you must connect to it and open the Web-interface. Select the Application tab, go to the File Upload section and turn the Extract slider on.
+To upload your tflite model to the Raspberry Pi, you must connect to it and open the Web-interface. Select the :guilabel:`Application` tab, go to the :guilabel:`File Upload` section and turn the :guilabel:`Extract` slider on.
 
 .. image:: images/inferencing/extract.png
   :alt: Click the Extract Slider
@@ -31,17 +31,17 @@ Inferencing
 
 Once the model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: `Github <https://github.com/wpilibsuite/Axon/releases/>`__
 
-Once this is downloaded, utilize the Vision Application Configuration section to upload the python file.
+Once this is downloaded, utilize the :guilabel:`Vision Application Configuration` section to upload the python file.
 
 .. image:: images/inferencing/upload.png
   :alt: Upload file
 
-Once uploaded, utilize the Vision Status tab to check on the state of the script. You should be able to see an update with a framerate indicating that everything is working.
+Once uploaded, utilize the :guilabel:`Vision Status` tab to check on the state of the script. You should be able to see an update with a framerate indicating that everything is working.
 
 .. image:: images/inferencing/console.png
   :alt: Status Console
 
-Head to the vision settings tab. First click on the camera stream and change the resolution to be greater than 300 pixels by 300 pixels (e.g. 640 by 480).
+Head to the :guilabel:`Vision Settings` tab. First click on the camera stream and change the resolution to be greater than 300 pixels by 300 pixels (e.g. 640 by 480).
 
 .. image:: images/inferencing/settings.png
   :alt: Resolution settings

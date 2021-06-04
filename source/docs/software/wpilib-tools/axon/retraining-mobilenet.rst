@@ -77,7 +77,7 @@ To test an exported model, open the testing dialog by clicking the :guilabel:`Te
 
 .. image:: images/training/axon-mobilenet-10.png
 
-First, click the "Select Video" box, and click the "+" that will appear to upload a video.
+First, click the :guilabel:`Select Video` box, and click the :guilabel:`+` that will appear to upload a video.
 
 .. image:: images/training/axon-mobilenet-11.png
 
@@ -85,7 +85,7 @@ This will open a window that allows you to upload a ``.mp4`` file.
 
 .. image:: images/training/axon-mobilenet-12.png
 
-Drop a `.mp4` in the dropzone, or click to select the file. Once the file is in the dropzone, click "Save".
+Drop a ``.mp4`` in the dropzone, or click to select the file. Once the file is in the dropzone, click :guilabel:`Save`.
 
 When uploaded, you will see the video in the dropdown menu, allowing you to select it for the test.
 
@@ -93,11 +93,11 @@ You have the option to change the name of the annotated output video produced by
 
 .. image:: images/training/axon-mobilenet-13.png
 
-Click the "Test" button, and you will see the test begin.
+Click the :guilabel:`Test` button, and you will see the test begin.
 
 .. image:: images/training/axon-mobilenet-14.png
 
-The test uses your model to annotate the video, creating a stream for you to watch as it happens. Click the "View" button, and the stream will open in a separate tab.
+The test uses your model to annotate the video, creating a stream for you to watch as it happens. Click the :guilabel:`View` button, and the stream will open in a separate tab.
 
 When the test completes, you will see it at the bottom of the test dialog.
 
