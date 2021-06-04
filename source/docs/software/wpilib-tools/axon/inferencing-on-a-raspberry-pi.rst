@@ -61,10 +61,9 @@ Network Tables
 
 .. note:: When using a Romi, robot code must be running on the simulator to receive network tables data.
 
-The python script from the releases page that is responsible for inferencing, also pushes that data to network tables. To see the results, one can use the OutlineViewer tool which can be found here: :ref:`OutlineViewer <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>` .
+The python script from the releases page that is responsible for inferencing, also pushes that data to network tables. To see the results, one can use the :ref:`OutlineViewer <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>` tool.
 
 .. image:: images/inferencing/outline.png
   :alt: Outline Viewer
 
 .. note:: Use Server Location ``localhost`` when running on a Romi
-
