@@ -25,7 +25,7 @@ Inside of a Workspace, the video recorded in the previous step can be imported.
 .. image:: images/dataset/import.png
   :alt: The import button needed to import your video.
 
-In the import page, the most important step is choosing the correct "Import plugin". The correct plugin is "Videos (split into frames)." The setting configurations do not need to be changed.
+In the import page, the most important step is choosing the correct :guilabel:`Import plugin`. The correct plugin is "Videos (split into frames)." The setting configurations do not need to be changed.
 
 .. image:: images/dataset/video_split.png
   :alt: The correct plugin selected.
@@ -56,4 +56,3 @@ With all the images labeled, the dataset can be downloaded off of Supervisely fo
   :alt: The proper selection for downloading a dataset.
 
 You are now ready to begin training a neural network.
-
