@@ -54,7 +54,7 @@ For Windows users an installation of Windows Subsystem for Linux (WSL) is requir
 
 For Mac users, follow these instructions to increase Memory allowance to at least 6GBs of RAM. Instructions can be found `here <https://docs.docker.com/docker-for-mac/#resources>`__
 
-For Linux users, follow these instructions to complete the installation: `Ubuntu Instructions <https://docs.docker.com/engine/install/ubuntu/>`__
+For Linux users, follow `these <https://docs.docker.com/engine/install/ubuntu/>`__ instructions to complete the installation.
 
 Axon Launcher
 ^^^^^^^^^^^^^
