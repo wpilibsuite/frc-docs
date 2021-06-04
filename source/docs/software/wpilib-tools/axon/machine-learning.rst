@@ -37,4 +37,4 @@ The neural network that Axon uses is much more complex than the one described fo
 .. image:: images/machine-learning/mobilenet.png
   :alt: the mobilenet v1 architecture
 
-If you would like to learn more about the MobileNet architecture, you can read: `here. <https://arxiv.org/abs/1704.04861>`__ This knowledge is not necessary to use Axon to successfully deploy a neural network on your robot.
+If you would like to learn more about the MobileNet architecture, you can read `here. <https://arxiv.org/abs/1704.04861>`__ This knowledge is not necessary to use Axon to successfully deploy a neural network on your robot.
