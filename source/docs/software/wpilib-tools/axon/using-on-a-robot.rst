@@ -14,7 +14,7 @@ The JSON string has the following format:
   [
     {
       "label": "blue robot",
-      "box: {
+      "box": {
         "ymin": 25,
         "xmin": 10,
         "ymax": 100,
@@ -23,13 +23,13 @@ The JSON string has the following format:
     },
     {
       "label": "red robot",
-      "box: {
+      "box": {
         "ymin": 111,
         "xmin": 163,
         "ymax": 240,
         "xmax": 320
       }
-    },
+    }
   ]
 
 The example above shows the value of the ``ML/detections`` entry if two objects are detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. There will be an empty list if no objects are detected.
