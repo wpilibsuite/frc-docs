@@ -30,7 +30,7 @@ In the import page, the most important step is choosing the correct :guilabel:`I
 .. image:: images/dataset/video_split.png
   :alt: The correct plugin selected.
 
-With the correct plugin selected, the video can be dragged in to the upload box. This will upload the video to Supervisely, and move to a different screen (shown below). Here, the Project should be given a name, and the import should be started, which will convert the video into several thousand individual images.
+With the correct plugin selected, the video can be dragged in to the upload box. This will upload the video to Supervisely, and move to a different screen (shown below). Here, the project should be given a name, and the import should be started, which will convert the video into several thousand individual images.
 
 .. image:: images/dataset/name_import.png
   :alt: Naming the Project.
