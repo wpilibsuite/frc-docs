@@ -81,7 +81,7 @@ First, click the "Select Video" box, and click the "+" that will appear to uploa
 
 .. image:: images/training/axon-mobilenet-11.png
 
-This will open a window that allows you to upload a `.mp4` file.
+This will open a window that allows you to upload a ``.mp4`` file.
 
 .. image:: images/training/axon-mobilenet-12.png
 
@@ -103,4 +103,4 @@ When the test completes, you will see it at the bottom of the test dialog.
 
 .. image:: images/training/axon-mobilenet-14.png
 
-You can download the annotated video. Click the download icon next to the test’s name, and your browser will begin the download. The video is currently a `.mp4` within a .zip.
+You can download the annotated video. Click the download icon next to the test’s name, and your browser will begin the download. The video is currently a ``.mp4`` within a ``.zip``.
