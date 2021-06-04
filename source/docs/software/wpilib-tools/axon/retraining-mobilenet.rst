@@ -15,7 +15,7 @@ Create a Project
 
 Next, you must create a project. A project will hold the data from the retraining, and any tflite exports or tests you create with the retrained model.
 
-To create a project, click the add project button.
+To create a project, click the :guilabel:`Add Project` button.
 
 .. image:: images/training/axon-mobilenet-2.png
 
