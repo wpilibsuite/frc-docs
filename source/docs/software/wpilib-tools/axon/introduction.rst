@@ -37,7 +37,6 @@ Inferencing
 ^^^^^^^^^^^
 Axon provides a Python script for running models on a coprocessor. This script will utilize the hardware of a Google Coral Edge TPU if there is one plugged in. The is officially supported on the WPILibPi image. All inference data is outputted over NetworkTables, and an output MJPEG stream is also provided.
 
-
 Installation
 ------------
 
