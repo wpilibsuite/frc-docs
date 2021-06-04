@@ -51,7 +51,7 @@ Then click on open stream to view the camera stream. Increase the port number at
 .. image:: images/inferencing/port.png
   :alt: Changing Ports
 
-Then you can see the Output Stream from the Machine Learning Model. You should be able to see the Raspberry Pi identifying objects!
+Then you can see the output stream from the Machine Learning Model. You should be able to see the Raspberry Pi identifying objects!
 
 .. image:: images/inferencing/inference.png
   :alt: Coffee Inference
