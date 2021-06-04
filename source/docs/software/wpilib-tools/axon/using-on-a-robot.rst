@@ -10,17 +10,18 @@ Because there can be any number of detected objects in a given image, the infere
 The JSON string has the following format:
 
 .. code-block:: JSON
-[
-  {
-    "label": CLASS_NAME,
-    "box: {
-      "ymin": Y_MIN,
-      "xmin": X_MIN,
-      "ymax": Y_MAX,
-      "xmax": X_MAX
+
+  [
+    {
+      "label": CLASS_NAME,
+      "box: {
+        "ymin": Y_MIN,
+        "xmin": X_MIN,
+        "ymax": Y_MAX,
+        "xmax": X_MAX
+      }
     }
-  }
-]
+  ]
 
 The example above shows the value of the ``ML/detections`` entry if a single object is detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. If multiple objects were detected, then more objects would be in the list.
 
