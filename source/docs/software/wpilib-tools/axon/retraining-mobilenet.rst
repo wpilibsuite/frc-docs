@@ -71,7 +71,7 @@ Click the download button, and your browser will download a tarfile containing t
 Testing an Exported Model
 -------------------------
 
-To test an exported model, open the testing dialog by clicking the "Test" button in the menu of the export you would like to test.
+To test an exported model, open the testing dialog by clicking the :guilabel:`Test` button in the menu of the export you would like to test.
 
 .. image:: images/training/axon-mobilenet-9.png
 
