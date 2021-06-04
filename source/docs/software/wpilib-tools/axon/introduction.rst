@@ -27,7 +27,7 @@ Axon provides an excellent UI for doing transfer learning with a quantised COCO-
 
 Testing
 ^^^^^^^
-Axon provides a way to test a trained model before using it on a robot. Simply upload a video to the testing page, and watch the neural network work in real-time. A .mp4 is provided when testing is complete, if so desired.
+Axon provides a way to test a trained model before using it on a robot. Simply upload a video to the testing page, and watch the neural network work in real-time. A ``.mp4`` is provided when testing is complete, if so desired.
 
 Exporting
 ^^^^^^^^^
