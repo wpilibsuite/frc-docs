@@ -66,6 +66,5 @@ The python script from the releases page that is responsible for inferencing, al
 .. image:: images/inferencing/outline.png
   :alt: Outline Viewer
 
-.. note:: Use Server Location "localhost" when running on a Romi
-
+.. note:: Use Server Location ``localhost`` when running on a Romi
 
