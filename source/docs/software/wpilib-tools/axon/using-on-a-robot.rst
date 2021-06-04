@@ -8,18 +8,19 @@ Output Format
 
 Because there can be any number of detected objects in a given image, the inference data is sent in a JSON string to the ``ML/detections`` NetworkTables entry. By compiling all data into a single entry, it is certain that the labels match with the bounding boxes, which may not be true if these items were separate entries.
 The JSON string has the following format:
+
 .. code-block:: JSON
-  [
-    {
-      "label": CLASS_NAME,
-      "box: {
-        "ymin": Y_MIN,
-        "xmin": X_MIN,
-        "ymax": Y_MAX,
-        "xmax": X_MAX
-      }
+[
+  {
+    "label": CLASS_NAME,
+    "box: {
+      "ymin": Y_MIN,
+      "xmin": X_MIN,
+      "ymax": Y_MAX,
+      "xmax": X_MAX
     }
-  ]
+  }
+]
 
 The example above shows the value of the ``ML/detections`` entry if a single object is detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. If multiple objects were detected, then more objects would be in the list.
 
