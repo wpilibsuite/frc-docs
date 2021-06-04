@@ -48,8 +48,8 @@ For Gradle:
    }
 
    dependencies {
-      compileOnly("edu.wpi.first.shuffleboard", "api", "2020.+")
-      compileOnly("edu.wpi.first.shuffleboard.plugin", "networktables", "2020.+")
+      compileOnly 'edu.wpi.first.shuffleboard:api:2020.+'
+      compileOnly 'edu.wpi.first.shuffleboard.plugin:networktables:2020.+'
    }
 
 
