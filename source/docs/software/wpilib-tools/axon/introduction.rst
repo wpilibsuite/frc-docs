@@ -50,7 +50,7 @@ To install docker visit the link and installation instructions provided here: `D
 
 For Windows users an installation of Windows Subsystem for Linux (WSL) is required and can be found here: `WSL Install <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__
 
-For Mac users, follow these instructions to increase Memory allowance to at least 6GBs of RAM. Instructions can be found here: `Mac Instructions <https://docs.docker.com/docker-for-mac/#resources>`__
+For Mac users, follow these instructions to increase Memory allowance to at least 6GBs of RAM. Instructions can be found `here <https://docs.docker.com/docker-for-mac/#resources>`__
 
 For Linux users, follow these instructions to complete the installation: `Ubuntu Instructions <https://docs.docker.com/engine/install/ubuntu/>`__
 
@@ -60,4 +60,3 @@ Axon Launcher
 You can download the latest release of the installer from `Github <https://github.com/wpilibsuite/Axon/releases/>`__. Ensure that you download the correct binary for your OS and architecture.
 
 Extract the installer and click the setup executable file to get started.
-
