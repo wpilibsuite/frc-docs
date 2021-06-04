@@ -19,7 +19,7 @@ To create a project, click the :guilabel:`Add Project` button.
 
 .. image:: images/training/axon-mobilenet-2.png
 
-A dialog will appear, asking you to name the project. Pick a name and click create. When you create your project, you will see it above the button to the left.
+A dialog will appear, asking you to name the project. Pick a name and click :guilabel:`Create`. When you create your project, you will see it above the button to the left.
 
 Click on the project, and you will be taken to its page.
 
