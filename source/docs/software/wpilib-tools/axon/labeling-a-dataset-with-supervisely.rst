@@ -50,7 +50,7 @@ Click the :guilabel:`Rectangle` tool to label another object within the same ima
 Downloading the Dataset
 -----------------------
 
-With all the images labeled, the dataset can be downloaded off of Supervisely for use in Axon. Within the Workspace, click on the triple-dot icon of the project you wish to download. Select the ".json and images" download option.
+With all the images labeled, the dataset can be downloaded off of Supervisely for use in Axon. Within the Workspace, click on the triple-dot icon of the project you wish to download. Select the :guilabel:`.json and images` download option.
 
 .. image:: images/dataset/download.png
   :alt: The proper selection for downloading a dataset.
