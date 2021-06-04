@@ -3,7 +3,7 @@
 Measuring Bandwidth Usage
 =========================
 
-On the FRC\ |reg| Field (and at home when the radio is configured using the FRC Bridge Configuration Utility) each team is allowed limited (see `R60B <https://firstfrc.blob.core.windows.net/frc2021/Manual/HTML/2021FRCGameManual.htm#R60>`__) network traffic (see the `FMS Whitepaper <https://wpilib.screenstepslive.com/s/fms/m/whitepaper/l/608744-fms-whitepaper>`__ for more details). The FMS Whitepaper provides information on determining the bandwidth usage of the Axis camera, but some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
+On the FRC\ |reg| Field (and at home when the radio is configured using the FRC Bridge Configuration Utility) each team is allocated limited (see `R60B <https://firstfrc.blob.core.windows.net/frc2021/Manual/HTML/2021FRCGameManual.htm#R60>`__) network bandwidth (see the `FMS Whitepaper <https://wpilib.screenstepslive.com/s/fms/m/whitepaper/l/608744-fms-whitepaper>`__ for more details). The FMS Whitepaper provides information on determining the bandwidth usage of the Axis camera, but some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
 
 Measuring Bandwidth Using the Performance Monitor (Win 7 only)
 --------------------------------------------------------------
