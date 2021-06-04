@@ -32,7 +32,27 @@ Drive Class Conventions
 Motor Inversion
 ^^^^^^^^^^^^^^^
 
-By default, the class inverts the motor outputs for the right side of the drivetrain. Generally this will mean that no inversion needs to be done on the individual SpeedController objects. To disable this behavior, use the `setRightSideInverted()` method.
+As of 2022, the right side of the drivetrain is **no longer** inverted by default. It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      PWMSparkMax m_motorRight = new PWMSparkMax(0);
+      
+      @Override
+      public void robotInit() {
+         m_motorRight.setInverted(true);
+      }
+
+   .. code-tab:: cpp
+
+      frc::PWMSparkMax m_motorLeft{0};
+      
+      public:
+       void RobotInit() override {
+         m_motorRight.SetInverted(true);
+       }
 
 Squaring Inputs
 ^^^^^^^^^^^^^^^
@@ -210,7 +230,7 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             // Arcade drive with a given forward and turn rate
             myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
 
-            // Curvature drive with a given forward and turn rate, as well as a quick-turn button
+            // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
             myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
         }
 
