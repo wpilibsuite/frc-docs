@@ -97,7 +97,7 @@ When selecting :guilabel:`Choose image...` you can choose to either select an im
 Modifying Pose Style
 --------------------
 
-Poses can be customized in a plethoria of ways by right clicking on the Field2d menu bar. Examples of customization are: line width, line weight, style, arrow width, arrow weight, color, etc.
+Poses can be customized in a plethora of ways by right clicking on the Field2d menu bar. Examples of customization are: line width, line weight, style, arrow width, arrow weight, color, etc.
 
 .. image:: images/line-options.png
    :alt: Showcases the right click menu of field2d customization options
