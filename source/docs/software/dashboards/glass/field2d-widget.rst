@@ -46,6 +46,39 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 
 .. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget will appear under the ``SmartDashboard`` table name.
 
+Sending Trajectories to Field2d
+-------------------------------
+
+Visualizing your trajectory is a great debugging step for verifying that your trajectories are created as intended. Trajectories can be easily visualized in :ref:`Field2d <docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` using the ``setTrajectory()``/``SetTrajectory()`` functions.
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+         :language: java
+         :lines: 44-61
+         :linenos:
+         :lineno-start: 44
+
+   .. group-tab:: C++
+
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+         :language: cpp
+         :lines: 18-30
+         :linenos:
+         :lineno-start: 18
+
+Viewing Trajectories with Glass
+-------------------------------
+
+The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/glass/index:Glass>` through the dropdown :guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> :guilabel:`Field2d`.
+
+.. image:: images/sent-trajectory.png
+   :alt: Picture containing Field2d and the generated trajectory
+
+.. note:: The above example which uses the `RamseteController (Java) <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__/`RamseteController (C++) <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__ will not show the sent trajectory until autonomous is enabled at least once.
+
 Viewing the Robot Pose in Glass
 -------------------------------
 
@@ -60,3 +93,21 @@ When selecting :guilabel:`Choose image...` you can choose to either select an im
 .. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/PathWeaver/tree/main/src/main/resources/edu/wpi/first/pathweaver>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 .. image:: images/field2d-options.png
+
+Modifying Pose Style
+--------------------
+
+Poses can be customized in a plethoria of ways by right clicking on the Field2d menu bar. Examples of customization are: line width, line weight, style, arrow width, arrow weight, color, etc.
+
+.. image:: images/line-options.png
+   :alt: Showcases the right click menu of field2d customization options
+
+One usage of customizing the pose style is converting the previously shown ``traj`` pose object to a line, rather than a list of poses. Click on the :guilabel:`Style` dropdown box and select :guilabel:`Line`. You should notice an immediate change in how the trajectory looks.
+
+.. image:: images/changing-style-line.png
+   :alt: Selecting the "style" dropdown and then selecting "line".
+
+Now, uncheck the :guilabel:`Arrows` checkbox. This will cause cause our trajectory to look like a nice and fluid line!
+
+.. image:: images/unchecked-arrow-trajectory.png
+   :alt: Unchecked arrows checkbox to showcase fluid line.
