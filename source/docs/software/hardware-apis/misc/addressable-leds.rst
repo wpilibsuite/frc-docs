@@ -18,25 +18,25 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 21-35
+         :lines: 17-32
          :linenos:
-         :lineno-start: 21
+         :lineno-start: 17
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 14-23
+         :lines: 11-20
          :linenos:
-         :lineno-start: 14
+         :lineno-start: 11
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 41-47
+         :lines: 38-44
          :linenos:
-         :lineno-start: 41
+         :lineno-start: 38
 
 Setting the Entire Strip to One Color
 -------------------------------------
@@ -117,19 +117,19 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 45-58
+         :lines: 42-55
          :linenos:
-         :lineno-start: 45
+         :lineno-start: 42
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 26-39
+         :lines: 23-36
          :linenos:
-         :lineno-start: 26
+         :lineno-start: 23
 
 Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
 
@@ -137,16 +137,16 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 37-43
+         :lines: 34-40
          :linenos:
-         :lineno-start: 37
+         :lineno-start: 34
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 49-55
+         :lines: 46-52
          :linenos:
-         :lineno-start: 49
+         :lineno-start: 46
