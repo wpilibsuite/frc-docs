@@ -1,0 +1,7 @@
+{
+  "root": ".",
+  "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
+  "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-beta-\\d)?|[0-9a-f]{40}",
+  "latestVersion": "04e64db945afde667dae829d656392aec945e5c2",
+  "ignoredFiles": ["source/docs/software/pathplanning/trajectory-tutorial/"]
+}

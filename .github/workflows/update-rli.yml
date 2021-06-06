@@ -1,0 +1,162 @@
+name: Update RLIs
+on:
+  pull_request:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  check-rli:
+    if: contains(github.event.comment.html_url, '/pull/') || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      # ---- Find Trigger States ----
+      # Run Inspector autofix on everything
+      - name: Trigger-Check
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-check-all
+        with:
+          trigger: '\inspector check all'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      # Run Inspector autofix only on files changed by the PR
+      - name: Trigger-Diff
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-diff
+        with:
+          trigger: '\inspector fix diff'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      # Run Inspector autofix on everything
+      - name: Trigger-All
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-all
+        with:
+          trigger: '\inspector fix all'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+
+      # ---- Checkout - Triggered by Pull Request -----
+      # If triggered by a pull request, simple checkout
+      - name: Checkout [Pull Request]
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v2
+
+      - name: Set Number [Pull Request]
+        if: github.event_name == 'pull_request'
+        run: echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      # ---- Checkout - Triggered by Comment -----
+      # If triggered by a comment, we need to find out which ref to checkout
+      - name: Set Number [Comment]
+        if: github.event_name != 'pull_request'
+        run: echo "number=${{ github.event.issue.number }}" >> $GITHUB_ENV
+
+      - name: Get Pull Request Ref
+        if: github.event_name != 'pull_request'
+        id: get_pr_ref
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/:repository/pulls/:issue_id
+          repository: ${{ github.repository }}
+          issue_id: ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Checkout [Comment]
+        if: github.event_name != 'pull_request'
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ fromJson(steps.get_pr_ref.outputs.data).head.ref }}
+
+
+      # ---- Common - Run ----
+      # Remove unchanged files, unless explicitly triggered on everything
+      - name: Remove unchanged files
+        if: steps.trigger-all.outputs.triggered == 'false' && steps.trigger-check-all.outputs.triggered == 'false'
+        run: |
+          # Fetch upstream
+          git remote add upstream https://github.com/wpilibsuite/frc-docs.git
+          git fetch upstream
+          # Delete unchanged files
+          echo ".github/" > changed-files.txt
+          git diff upstream/main --name-only --diff-filter=M -- *.rst | tee changed-files.txt
+          git ls-files *.rst | xargs rm
+          git restore --pathspec-from-file=changed-files.txt || true;
+          # Write changed files to env
+          echo 'CHANGED_FILES<<EOF' >> $GITHUB_ENV
+          cat changed-files.txt >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+          rm changed-files.txt
+          # Make sure we still have the .github directory
+          git restore .github
+
+      # Run Inspector
+      - name: Inspect RLIs
+        uses: Starlight220/InspectRLIs@main
+        id: inspector
+        with:
+          root: ${{ github.workspace }}
+        env:
+          INSPECTOR_CONFIG: '.github/workflows/inspector.json'
+
+      # If diff-autofix is triggered, restore temporarily deleted files
+      - name: Restore unchanged files
+        if: steps.trigger-diff.outputs.triggered == 'true'
+        run: |
+          # Add files that Inspector modified, then restore temporarily deleted files
+          touch changed-files.txt
+          echo "${{ env.CHANGED_FILES }}" | tee changed-files.txt
+          git add --pathspec-from-file=changed-files.txt
+          git restore .
+          rm changed-files.txt
+
+      # If autofix is triggered, commit changes
+      - name: Commit
+        if: steps.trigger-all.outputs.triggered == 'true' || steps.trigger-diff.outputs.triggered == 'true'
+        run: |
+          # Set credentials
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          # Commit
+          git commit -m "Update RLIs"
+          git push
+
+      # ---- Common - Post Report ----
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ env.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Inspector Report
+          direction: last
+
+      - name: Create comment
+        if: ${{ steps.fc.outputs.comment-id == 0 }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          body: ${{ env.REPORT }}
+          issue-number: ${{ env.number }}
+
+      - name: Update comment
+        if: ${{ steps.fc.outputs.comment-id != 0 }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          body: |
+            ${{ env.REPORT }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+
+      # If there are any outdated or invalid RLIs, fail the status check
+      - name: Set exit code
+        if: ${{ steps.inspector.up-to-date == false }}
+        run: exit 1
