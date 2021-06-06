@@ -138,7 +138,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         m_disabledRamsete,
         ...
     );
-    
+
    .. code-tab:: c++
 
     frc::RamseteController m_disabledRamsete;
