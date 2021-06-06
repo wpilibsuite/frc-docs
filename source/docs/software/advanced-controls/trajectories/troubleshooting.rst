@@ -128,27 +128,27 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
    .. code-tab:: java
 
-    RamseteController disabledRamsete = new RamseteController();
-    disabledRamsete.setEnabled(false);
+    RamseteController m_disabledRamsete = new RamseteController();
+    m_disabledRamsete.setEnabled(false);
 
     // Be sure to pass your new disabledRamsete variable
     RamseteCommand ramseteCommand = new RamseteCommand(
         exampleTrajectory,
         m_robotDrive::getPose,
-        disabledRamsete,
+        m_disabledRamsete,
         ...
     );
     
    .. code-tab:: c++
 
     frc::RamseteController m_disabledRamsete;
-    disabledRamsete.SetEnabled(false);
+    m_disabledRamsete.SetEnabled(false);
 
     // Be sure to pass your new disabledRamsete variable
     frc2::RamseteCommand ramseteCommand(
       exampleTrajectory,
       [this]() { return m_drive.GetPose(); },
-      disabledRamsete,
+      m_disabledRamsete,
       ...
     );
 
