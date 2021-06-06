@@ -139,7 +139,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         ...
     );
     
-   .. code-tab:: C++
+   .. code-tab:: c++
 
     frc::RamseteController m_disabledRamsete;
     disabledRamsete.SetEnabled(false);
