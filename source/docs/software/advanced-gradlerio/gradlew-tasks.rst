@@ -32,4 +32,4 @@ GradleRIO tasks
 ``./gradlew simulateExternalCpp`` - Simulate External Task for native executable. Exports a JSON file for use by editors / tools
 ``./gradlew simulateExternalJava`` - Simulate External Task for Java/Kotlin/JVM. Exports a JSON file for use by editors / tools
 ``./gradlew simulateJava`` - Launches simulation for the JVM
-``./gradlew vendordep`` - Install vendordep JSON file from URL or local installation. See :doc:`/docs/software/vscode-overview/3rd-party-libraries
+``./gradlew vendordep`` - Install vendordep JSON file from URL or local installation. See :doc:`/docs/software/vscode-overview/3rd-party-libraries`
