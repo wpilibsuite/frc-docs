@@ -9,6 +9,10 @@ Record a Video
 The first step to creating a dataset is getting images. A dataset should have several thousand images. To get this many images, the easiest way is to record a short video, roughly 1 to 5 minutes long. The video should clearly display the object(s) you wish to detect in several angles. Below is an example clip of a video used to teach a neural network to recognize a video game controller.
 
 
+.. raw:: html
+
+    <iframe src="https://github.wpilib.org/frc-docs/videos/ml/dataset_video_example.mp4" frameborder="0" allowfullscreen></iframe>
+
 
 Import Video to Supervisely
 ---------------------------

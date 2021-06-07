@@ -13,7 +13,7 @@ Once you have uploaded a dataset, you should see it in the tree above this butto
 Create a Project
 ----------------
 
-Next, you must create a project. A project will hold the data from the retraining, and any tflite exports or tests you create with the retrained model.
+Next, you must create a project. A project will hold the data from the retraining, and any TFLite exports or tests you create with the retrained model.
 
 To create a project, click the :guilabel:`Add Project` button.
 
