@@ -11,7 +11,7 @@ The first step to creating a dataset is getting images. A dataset should have se
 
 .. raw:: html
 
-    <iframe width="948" height="711" src="https://www.youtube.com/embed/7fPkAV7a0ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="470" height="355" src="https://www.youtube.com/embed/7fPkAV7a0ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
 
 
 Import Video to Supervisely
