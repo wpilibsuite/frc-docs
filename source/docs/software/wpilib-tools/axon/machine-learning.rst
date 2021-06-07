@@ -9,7 +9,7 @@ MNIST
 .. image:: images/machine-learning/mnist.png
   :alt: Example MNIST images
 
-The MNIST dataset is a collection of images showing hand-drawn numbers. The challenge is to create an algorithm that can recognize what number is represented by a given image, which is solvable by developing a neural network.
+MNIST ("Modified National Institute of Standards and Technology") is a commonly used datatset in Computer Vision that deals with classification. The dataset itself is a collection of images showing hand-drawn numbers. The challenge is to create an algorithm that can recognize what number is represented by a given image, which is solvable by developing a neural network.
 
 .. image:: images/machine-learning/neural.png
   :alt: A very simple neural network
