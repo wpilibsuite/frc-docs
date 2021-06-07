@@ -11,7 +11,7 @@ The first step to creating a dataset is getting images. A dataset should have se
 
 .. raw:: html
 
-    <iframe src="https://github.wpilib.org/frc-docs/videos/ml/dataset_video_example.mp4" frameborder="0" allowfullscreen></iframe>
+    <iframe width="948" height="711" src="https://www.youtube.com/embed/7fPkAV7a0ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Import Video to Supervisely
