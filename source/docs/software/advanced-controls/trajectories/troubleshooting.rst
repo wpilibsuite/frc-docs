@@ -122,27 +122,34 @@ If your feedforwards are bad then the P controllers for each side of the robot w
       :linenos:
       :lineno-start: 81
 
-2. (Java only) Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. This is a bit more involved, because we can't just set the gains (b and zeta) to 0. Pass the following into your ``RamseteCommand``:
+2. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
 
 .. tabs::
 
    .. code-tab:: java
 
-    // Paste this variable in
-    RamseteController disabledRamsete = new RamseteController() {
-        @Override
-        public ChassisSpeeds calculate(Pose2d currentPose, Pose2d poseRef, double linearVelocityRefMeters,
-                double angularVelocityRefRadiansPerSecond) {
-            return new ChassisSpeeds(linearVelocityRefMeters, 0.0, angularVelocityRefRadiansPerSecond);
-        }
-    };
+    RamseteController m_disabledRamsete = new RamseteController();
+    m_disabledRamsete.setEnabled(false);
 
     // Be sure to pass your new disabledRamsete variable
     RamseteCommand ramseteCommand = new RamseteCommand(
         exampleTrajectory,
         m_robotDrive::getPose,
-        disabledRamsete,
+        m_disabledRamsete,
         ...
+    );
+
+   .. code-tab:: c++
+
+    frc::RamseteController m_disabledRamsete;
+    m_disabledRamsete.SetEnabled(false);
+
+    // Be sure to pass your new disabledRamsete variable
+    frc2::RamseteCommand ramseteCommand(
+      exampleTrajectory,
+      [this]() { return m_drive.GetPose(); },
+      m_disabledRamsete,
+      ...
     );
 
 3. Finally, we need to log desired wheel velocity and actual wheel velocity (you should put actual and desired velocities on the same graph if you're using Shuffleboard, or if your graphing software has that capability):
