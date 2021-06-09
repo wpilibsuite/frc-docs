@@ -11,8 +11,9 @@ The first step to creating a dataset is getting images. A dataset should have se
 
 .. raw:: html
 
-    <iframe width="470" height="355" src="https://first.wpi.edu/wpilib/frc-docs/videos/ml/dataset_video_example.mp4" title="video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+    <video width="640" height="480" controls autoplay muted>
+      <source src="https://first.wpi.edu/wpilib/frc-docs/videos/ml/dataset_video_example.mp4" type="video/mp4">
+    </video>
 
 Import Video to Supervisely
 ---------------------------
