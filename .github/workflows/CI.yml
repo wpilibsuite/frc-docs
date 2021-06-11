@@ -94,9 +94,12 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
-    - name: Check redirects
+    - name: Check redirects 
       run: |
         make rediraffecheckdiff
+    - name: Check redirects format
+      run: |
+        [[ $(<source/redirects.txt) == $(git show main:source/redirects.txt)* ]]
   check-formatting:
     runs-on: ubuntu-latest
     steps:
