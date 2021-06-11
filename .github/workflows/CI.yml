@@ -99,7 +99,7 @@ jobs:
         make rediraffecheckdiff
     - name: Check redirects format
       run: |
-        [[ $(<source/redirects.txt) == $(git show main:source/redirects.txt)* ]]
+        [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]]
   check-formatting:
     runs-on: ubuntu-latest
     steps:
