@@ -166,6 +166,10 @@ html_logo = "assets/wpilibDocsLogo.png"
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
+# Specify canonical root
+# This tells search engines that this domain is preferred
+html_baseurl = "https://docs.wpilib.org/"
+
 html_theme_options = {
     "collapse_navigation": True,
     "sticky_navigation": False,
