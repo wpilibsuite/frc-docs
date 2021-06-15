@@ -56,6 +56,8 @@ Verify Odometry
 ^^^^^^^^^^^^^^^
 If your odometry is bad, then your Ramsete controller may misbehave, because it modifies your robot's target velocities based on where your odometry thinks the robot is.
 
+.. note:: :doc:`Sending your robot pose and trajectory to field2d </docs/software/dashboards/glass/field2d-widget>` can help verify that your robot is driving correctly relative to the robot trajectory.
+
 1. Set up your code to record your robot's position after each odometry update:
 
 .. tabs::
