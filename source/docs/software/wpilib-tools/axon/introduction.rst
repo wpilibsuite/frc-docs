@@ -27,7 +27,7 @@ Please go to the :ref:`dataset page <docs/software/wpilib-tools/axon/labeling-a-
 Training
 ^^^^^^^^
 
-Axon provides an excellent UI for doing transfer learning with a quantised COCO-trained MobileNet V2. Real-time metrics are provided, showing the precision of your model.
+Axon provides an excellent UI for doing transfer learning with a quantised COCO-trained MobileNet V2. Transfer learning is a technique that reuses parts of a previously trained model, a MobileNet v2 in this case, to improve the learning of a new task like locating hatch panels. Real-time metrics are provided, showing the precision of your model.
 
 Testing
 ^^^^^^^
