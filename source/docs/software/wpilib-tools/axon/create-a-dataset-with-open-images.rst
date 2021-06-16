@@ -14,7 +14,7 @@ Click the create a dataset button to begin.
 Choosing the Classes
 -----------------------
 
-Next, you need to pick the classes that you would like to detect. They must be selected from the categories that are available in the Open Images dataset. More infromation on the dataset can be found here: `Open Images <https://storage.googleapis.com/openimages/web/index.html>`__ .
+Next, you need to pick the classes that you would like to detect. They must be selected from the categories that are available in the Open Images dataset. More information on the dataset can be found here: `Open Images <https://storage.googleapis.com/openimages/web/index.html>`__ .
 
 .. image:: images/open-images/class-name.png
   :alt: Choose the Class Name you want to get images of.
