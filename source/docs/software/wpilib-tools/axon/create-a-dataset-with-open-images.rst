@@ -27,7 +27,7 @@ Furthermore, using the add button, you can choose to make a dataset containing m
 Choosing the Number of Images
 -----------------------------
 
-Finally, you can select the amount of images that you want for each class category in your dataset.
+Finally, you can select the amount of images that you want for each class category in your dataset and click create. It might take a while, but once it's complete you will have a dataset that's ready to use!
 
 .. image:: images/open-images/number.png
   :alt: Set the number of images you want.
