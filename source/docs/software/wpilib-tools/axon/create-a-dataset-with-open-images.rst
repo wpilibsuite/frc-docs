@@ -22,7 +22,7 @@ Next, you need to pick the classes that you would like to detect. They must be s
 Furthermore, using the add button, you can choose to make a dataset containing more than one class. Subsequently, you can also remove classes using the remove button.
 
 .. image:: images/open-images/add-remove.png
-  :alt: Add or remove more classes.
+  :alt: Add or remove classes.
 
 Choosing the Number of Images
 -----------------------------
