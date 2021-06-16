@@ -21,7 +21,7 @@ Features of Axon
 
 Dataset Viewing
 ^^^^^^^^^^^^^^^
-Machine learning requires giant datasets for the machines to recognize patterns in real-world data. The Axon tool supports custom datasets made with Supervisely. It also supports datasets made from a slice of the OpenImages dataset, a Google dataset made of over 6 million images of generic objects.
+Machine learning requires giant datasets for the machines to recognize patterns in real-world data. The Axon tool supports custom datasets made with Supervisely. It also supports datasets made from a slice of the Open Images dataset, a Google dataset made of over 6 million images of generic objects.
 Please go to the :ref:`dataset page <docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely:Labeling a Dataset with Supervisely>` to see how to upload a supported dataset format.
 
 Training
