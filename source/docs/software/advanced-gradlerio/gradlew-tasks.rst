@@ -3,8 +3,8 @@ Gradlew Tasks
 
 This article aims to highlight the gradle commands supported by the WPILib team for user use. These commands can be viewed by typing ``./gradlew tasks`` at the root of your robot project. Not all commands shown in ``./gradlew tasks`` and unsupported commands will not be documented here.
 
-Build task
-----------
+Build tasks
+-----------
 
 ``./gradlew build`` - Assembles and tests this project. Useful for prebuilding your project without deploying to the roboRIO.
 ``./gradlew clean`` - Deletes the build directory.
