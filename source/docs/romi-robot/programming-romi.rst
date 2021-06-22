@@ -42,6 +42,11 @@ If you changed the Romi network settings (for example, to connect it to your own
 
 .. image:: images/programming-romi/romi-vscode-ip-address.png
 
+Now you just need to start your Romi robot code! This is done by opening the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) or by pressing :kbd:`F8`.
+
+.. image:: images/programming-romi/romi-vscode-launch-sim.png
+   :alt: Launching simulation via the WPILib Command Palette
+
 If all goes well, you should see a line in the console output that reads "HALSimWS: WebSocket Connected":
 
 .. image:: images/programming-romi/romi-vscode-connected.png
