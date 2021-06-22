@@ -12,7 +12,7 @@ Build tasks
 CompileCommands tasks
 ---------------------
 
-``./gradlew generateCompileCommands`` - Generate compile_commands.json. This is a configuration file that is supported by many Integated Development Environments.
+``./gradlew generateCompileCommands`` - Generate compile_commands.json. This is a configuration file that is supported by many Integrated Development Environments.
 
 EmbeddedTools tasks
 -------------------
