@@ -14,7 +14,7 @@ The easiest solution is to disable the Windows Firewall. Teams should beware tha
 
 .. tabs::
 
-   .. group-tab:: Windows 10
+   .. group-tab:: Windows 10+
 
       Click :guilabel:`Start` -> :guilabel:`Settings`
 
@@ -70,7 +70,7 @@ Alternatively, you can add exceptions to the Firewall for any FRC programs you a
 
 .. tabs::
 
-   .. group-tab:: Windows 10
+   .. group-tab:: Windows 10+
 
       Click :guilabel:`Start` -> :guilabel:`Settings`
 

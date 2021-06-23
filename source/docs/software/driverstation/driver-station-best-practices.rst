@@ -26,12 +26,12 @@ Prior To Departing For The Competition
 
    d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
    e. A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 and replace it with a SSD.
-   f. Updated to the current release of Windows 10. Being the most common OS now seen at competitions, bugs are more likely to be found and fixed for Windows 10 than on older Windows versions.
+   f. Updated to the current release of Windows 10 or 11. Being the most common OS now seen at competitions, bugs are more likely to be found and fixed for Windows 10 and 11 than on older Windows versions.
 
 5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
 6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
-7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
-8. Avoid managed Windows 10 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
+7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10 or 11. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
+8. Avoid managed Windows 10 or 11 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
 9. Laptop battery / power
 
    a. Turn off Put the computer to sleep in your power plan for both battery and powered operation.

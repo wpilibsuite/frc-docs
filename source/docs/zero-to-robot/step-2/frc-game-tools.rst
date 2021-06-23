@@ -16,7 +16,7 @@ The LabVIEW runtime components required for the Driver Station and Utilities are
 Requirements
 ------------
 
-- Windows 7 or higher (Windows 7, 8, 8.1, 10). Windows 10 is the recommended OS.
+- Windows 7 or higher (Windows 7, 8, 8.1, 10, 11). Windows 10 or 11 are the recommended OS's.
 - Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
@@ -57,7 +57,7 @@ Extraction
 
       Run the downloaded executable file to start the install process. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
-   .. tab:: Offline (Windows 10)
+   .. tab:: Offline (Windows 10+)
 
       Right click on the downloaded iso file and select :guilabel:`mount`. Run ``install.exe`` from the mounted iso. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
