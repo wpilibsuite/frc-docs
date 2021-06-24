@@ -32,7 +32,7 @@ Furthermore, using the :guilabel:`add` button, you can choose to make a dataset 
 Choosing the Number of Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Finally, you can select the amount of images that you want for each class category in your dataset and click :guilabel:`create`.
+Finally, you can select the amount of images that you want for each class category in your dataset and click :guilabel:`CREATE`.
 
 .. image:: images/open-images/number.png
   :alt: Set the number of images you want.
