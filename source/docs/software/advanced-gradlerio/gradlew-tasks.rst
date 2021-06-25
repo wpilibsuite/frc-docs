@@ -25,11 +25,19 @@ GradleRIO tasks
 ---------------
 
 ``./gradlew downloadAll`` - Download all dependencies that may be used by this project
+
 ``./gradlew $TOOL$`` - Runs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, Shuffleboard, etc)
+
 ``./gradlew $TOOL$Install`` - Installs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, Shuffleboard, etc)
+
 ``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as VSCode. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
+
 ``./gradlew riolog`` - Runs a console displaying output from the default RoboRIO (roborio)
+
 ``./gradlew simulateExternalCpp`` - Simulate External Task for native executable. Exports a JSON file for use by editors / tools
+
 ``./gradlew simulateExternalJava`` - Simulate External Task for Java/Kotlin/JVM. Exports a JSON file for use by editors / tools
+
 ``./gradlew simulateJava`` - Launches simulation for the JVM
+
 ``./gradlew vendordep`` - Install vendordep JSON file from URL or local installation. See :doc:`/docs/software/vscode-overview/3rd-party-libraries`
