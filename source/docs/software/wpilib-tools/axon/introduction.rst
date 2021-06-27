@@ -21,12 +21,13 @@ Features of Axon
 
 Dataset Viewing
 ^^^^^^^^^^^^^^^
-Axon currently supports Supervisely datasets and OpenImages datasets. Please go to the dataset page to see how to upload a supported dataset format.
+Machine learning requires giant datasets for the machines to recognize patterns in real-world data. The Axon tool supports custom datasets made with Supervisely. It also supports datasets made from a slice of the Open Images dataset, a Google dataset made of over 6 million images of generic objects.
+Please go to the :ref:`dataset page <docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely:Labeling a Dataset with Supervisely>` to see how to upload a supported dataset format.
 
 Training
 ^^^^^^^^
 
-Axon provides an excellent UI for doing transfer learning with a quantised COCO-trained MobileNet V2. Real-time metrics are provided, showing the precision of your model.
+Axon provides an excellent UI for doing transfer learning with a quantised COCO-trained MobileNet V2. Transfer learning is a technique that reuses parts of a previously trained model, a MobileNet v2 in this case, to improve the learning of a new task like locating hatch panels. Real-time metrics are provided, showing the precision of your model.
 
 Testing
 ^^^^^^^
