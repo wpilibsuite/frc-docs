@@ -1,7 +1,7 @@
 Creating a Dataset with Open Images
 ===================================
 
-For the detection of more generic objects, Axon's creator can be used to make a dataset from Google's Open Images dataset.
+For the detection of more generic objects, Axon's creator can be used to make a dataset from `Google's Open Images dataset <https://storage.googleapis.com/openimages/web/index.html>`__ .
 
 Creating a Dataset
 ------------------
