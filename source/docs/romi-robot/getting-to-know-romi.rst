@@ -92,6 +92,11 @@ Digital IO
 | DIO 7       | Right Encoder Quadrature Channel B   |
 +-------------+--------------------------------------+
 
+Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
+
+Analog Input
+^^^^^^^^^^^^
+
 PWM Output
 ^^^^^^^^^^
 
@@ -102,6 +107,11 @@ PWM Output
 +-------------+-------------------------+
 | PWM 1       | Right Motor             |
 +-------------+-------------------------+
+| PWM 2       | Pin 21 / A3             |
++-------------+-------------------------+
+| PWM 3       | Pin 22 / A4             |
++-------------+-------------------------+
+
 
 .. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
 
