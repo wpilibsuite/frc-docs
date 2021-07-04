@@ -15,7 +15,7 @@ Go ahead and create the following objects at the top of your ``Robot`` class.
    .. group-tab:: Java
 
       .. tabs::
-      
+
          .. group-tab:: CTRE
 
             .. code-block:: java
@@ -62,7 +62,7 @@ Create the following snippet inside of your ``teleopPeriodic()`` function.
    .. group-tab:: Java
 
       .. tabs::
-      
+
          .. group-tab:: CTRE
 
             .. code-block:: java
