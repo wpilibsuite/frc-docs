@@ -242,4 +242,4 @@
 "docs/software/vscode-overview/creating-robot-program.rst" "docs/zero-to-robot/step-4/creating-robot-program.rst"
 "docs/software/vscode-overview/vscode-basics.rst" "docs/zero-to-robot/step-4/vscode-basics.rst"
 "docs/software/vscode-overview/3rd-party-libraries.rst" "docs/zero-to-robot/step-4/3rd-party-libraries.rst"
-"docs/zero-to-robot/step-4/creating-your-benchtop-test-program-cpp-java.rst" "docs/zero-to-robot/step-4/index.rst"
+"docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst" "docs/zero-to-robot/step-4/index.rst"
