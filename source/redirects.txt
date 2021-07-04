@@ -241,3 +241,4 @@
 "docs/software/examples-tutorials/machine-learning/video-walkthrough.rst" "docs/software/wpilib-tools/axon/index.rst"
 "docs/software/vscode-overview/creating-robot-program.rst" "docs/zero-to-robot/step-4/creating-robot-program.rst"
 "docs/software/vscode-overview/vscode-basics.rst" "docs/zero-to-robot/step-4/vscode-basics.rst"
+"docs/software/vscode-overview/3rd-party-libraries.rst" "docs/zero-to-robot/step-4/3rd-party-libraries.rst"
