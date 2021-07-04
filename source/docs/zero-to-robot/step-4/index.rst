@@ -10,5 +10,6 @@ Welcome to Step 4 of Zero-to-Robot! This section outlines creating a robot proje
     creating-robot-program
     3rd-party-libraries
     understanding-your-project
+    programming-your-robot
     creating-benchtop-test-program-labview
     running-benchtop-test
