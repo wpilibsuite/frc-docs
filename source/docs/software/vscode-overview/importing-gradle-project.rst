@@ -290,3 +290,4 @@ Update 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is necessary to update 3rd party libraries. See :doc:`3rd Party Libraries <3rd-party-libraries>` for details.
+It is necessary to update and re-import 3rd party libraries. See :doc:`3rd Party Libraries </docs/zero-to-robot/step-4/3rd-party-libraries>` for details.

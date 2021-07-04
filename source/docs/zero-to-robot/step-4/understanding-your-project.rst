@@ -26,4 +26,4 @@ The sidebar is the method we will use to navigate through our project. Content i
 Next Step
 ---------
 
-Let's click into ``Robot.java`` or ``Robot.cpp`` and begin programming our robot! Be sure to add any necessary :doc:`3rd-party-libaries <vendordeps>` before continuing!
+Let's click into ``Robot.java`` or ``Robot.cpp`` and begin programming our robot! Be sure to add any necessary :doc:`vendordeps <3rd-party-libraries>` before continuing!
