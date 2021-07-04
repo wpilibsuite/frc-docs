@@ -9,8 +9,8 @@ Specific articles that are advised to be read are:
 - :ref:`WPILib Commands in Visual Studio Code <docs/software/vscode-overview/wpilib-commands-vscode:WPILib Commands in Visual Studio Code>`
 - :ref:`Creating a Robot Program <docs/zero-to-robot/step-4/creating-robot-program:Creating a Robot Program>`
 - :ref:`Building and Deploying Robot Code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`
-- :ref:`Installing 3rd Party Libraries <docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries>`
+- :ref:`Installing 3rd Party Libraries <docs/zero-to-robot/step-4/3rd-party-libraries:3rd Party Libraries>`
 
 Additionally, you may need to do extra configuration that is applicable to your team's robot. Please utilize the search feature to find necessary documentation.
 
-.. note:: It's important that teams using 3rd-party CAN motor controllers look at the :ref:`Installing 3rd Party Libraries <docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries>` article as extra steps are required to code for these devices.
+.. note:: It's important that teams using 3rd-party CAN motor controllers look at the :ref:`Installing 3rd Party Libraries <docs/zero-to-robot/step-4/3rd-party-libraries:3rd Party Libraries>` article as extra steps are required to code for these devices.

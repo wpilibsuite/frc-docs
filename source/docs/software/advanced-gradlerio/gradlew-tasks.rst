@@ -40,4 +40,4 @@ GradleRIO tasks
 
 ``./gradlew simulateJava`` - Launches simulation for the JVM
 
-``./gradlew vendordep`` - Install vendordep JSON file from URL or local installation. See :doc:`/docs/software/vscode-overview/3rd-party-libraries`
+``./gradlew vendordep`` - Install vendordep JSON file from URL or local installation. See :doc:`/docs/zero-to-robot/step-4/3rd-party-libraries`
