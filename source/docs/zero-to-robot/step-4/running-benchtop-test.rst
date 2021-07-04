@@ -8,7 +8,7 @@ Overview
 
 You should create and download a Benchtop Test Program as described for your programming language:
 
-:ref:`C++/Java <docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java:Creating your Benchtop Test Program (C++/Java)>`
+:ref:`C++/Java <docs/zero-to-robot/step-4/index:Step 4: Programming your Robot>`
 
 :ref:`LabVIEW <docs/zero-to-robot/step-4/creating-benchtop-test-program-labview:Creating your Benchtop Test Program (LabVIEW)>`
 

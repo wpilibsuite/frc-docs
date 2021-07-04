@@ -9,6 +9,6 @@ Welcome to Step 4 of Zero-to-Robot! This section outlines creating a robot proje
     vscode-basics
     creating-robot-program
     3rd-party-libraries
+    understanding-your-project
     creating-benchtop-test-program-labview
-    creating-benchtop-test-program-cpp-java
     running-benchtop-test
