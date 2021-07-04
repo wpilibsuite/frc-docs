@@ -1,7 +1,7 @@
 Understanding Your Project
 ==========================
 
-Before we get into the heart of programming your robot, it is important to understand the structure and classes of the default ``TimedRobot``. 
+Before we get into the heart of programming your robot, it is important to understand the structure and classes of the default ``TimedRobot``.
 
 Initial Build
 -------------
