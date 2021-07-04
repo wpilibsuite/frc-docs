@@ -14,31 +14,35 @@ Go ahead and create the following objects at the top of your ``Robot`` class.
 
    .. group-tab:: Java
 
-      .. group-tab:: CTRE
+      .. tabs::
+      
+         .. group-tab:: CTRE
 
-         .. code-block:: java
+            .. code-block:: java
 
-            // todo
+               // todo
 
-      .. group-tab:: REV
+         .. group-tab:: REV
 
-         .. code-block:: java
+            .. code-block:: java
 
-            // todo
+               // todo
 
    .. group-tab:: C++
 
-      .. group-tab:: CTRE
+      .. tabs::
 
-         .. code-block:: cpp
+         .. group-tab:: CTRE
 
-            // todo
+            .. code-block:: cpp
 
-      .. group-tab:: REV
+               // todo
 
-         .. code-block:: cpp
+         .. group-tab:: REV
 
-            // todo
+            .. code-block:: cpp
+
+               // todo
 
 In the above example, we created a couple of core essential objects.
 
@@ -57,31 +61,35 @@ Create the following snippet inside of your ``teleopPeriodic()`` function.
 
    .. group-tab:: Java
 
-      .. group-tab:: CTRE
+      .. tabs::
+      
+         .. group-tab:: CTRE
 
-         .. code-block:: java
+            .. code-block:: java
 
-            // todo
+               // todo
 
-      .. group-tab:: REV
+         .. group-tab:: REV
 
-         .. code-block:: java
+            .. code-block:: java
 
-            // todo
+               // todo
 
    .. group-tab:: C++
 
-      .. group-tab:: CTRE
+      .. tabs::
 
-         .. code-block:: cpp
+         .. group-tab:: CTRE
 
-            // todo
+            .. code-block:: cpp
 
-      .. group-tab:: REV
+               // todo
 
-         .. code-block:: cpp
+         .. group-tab:: REV
 
-            // todo
+            .. code-block:: cpp
+
+               // todo
 
 .. note:: While standard gamepad convention uses forward/back Y and left/right X, it's standard for mathematics to have left/right X and forward/back Y. Other sections that use advanced mathematics to drive your robot (such as trajectory following) will assume this!
 
