@@ -97,6 +97,14 @@ Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
 Analog Input
 ^^^^^^^^^^^^
 
++------+-------------------+
+| Port | Channel           |
++======+===================+
+| AIN0 | Analog 6 / Pin 4  |
++------+-------------------+
+| AIN1 | Analog 2 / Pin 20 |
++------+-------------------+
+
 PWM Output
 ^^^^^^^^^^
 

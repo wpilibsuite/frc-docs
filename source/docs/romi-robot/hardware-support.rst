@@ -1,7 +1,7 @@
 Romi Hardware Support
 =====================
 
-The Romi robot has limited hardware interfacing support. It is not compatible with the large majority of FRC based control system components. Details on the pin mapping is available in :doc:`getting-to-know-romi``
+The Romi robot has limited hardware interfacing support. It is not compatible with the large majority of FRC based control system components. Details on the pin mapping is available in :doc:`getting-to-know-romi`.
 
 Incompatible Hardware
 ---------------------
