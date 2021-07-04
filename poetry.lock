@@ -359,7 +359,7 @@ python-versions = "*"
 
 [[package]]
 name = "sphinx-panels"
-version = "0.5.2"
+version = "0.6.0"
 description = "A sphinx extension for creating panels in a grid layout."
 category = "main"
 optional = false
@@ -368,7 +368,7 @@ python-versions = "*"
 [package.dependencies]
 docutils = "*"
 importlib-resources = {version = ">=3.0.0,<3.1.0", markers = "python_version < \"3.7\""}
-sphinx = ">=2,<4"
+sphinx = ">=2,<5"
 
 [package.extras]
 code_style = ["pre-commit (>=2.7.0,<2.8.0)"]
@@ -640,7 +640,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "fe83b77c4b22360dff71b6484eb29eda4859d2177f0caae639393d022915b338"
+content-hash = "a9adc56680ae8c601c07b3f5aa77f900526e69ac858e1b3cde26b71ff8424042"
 
 [metadata.files]
 alabaster = [
@@ -825,8 +825,8 @@ sphinx-notfound-page = [
     {file = "sphinx_notfound_page-0.6-py3-none-any.whl", hash = "sha256:3e8893d47638cc7ac06d4f6d10e97a18508658e36e530e7d24a429e6556c6894"},
 ]
 sphinx-panels = [
-    {file = "sphinx-panels-0.5.2.tar.gz", hash = "sha256:b7b3faa05f37b7318fd14cd85c4effa1ab905dfc8bed236a63978565ea461ae4"},
-    {file = "sphinx_panels-0.5.2-py3-none-any.whl", hash = "sha256:2b2e18448b0494e7a232d6c7dfb9aa3982e7aeb92aeea7d1b146e34e9261d2f1"},
+    {file = "sphinx-panels-0.6.0.tar.gz", hash = "sha256:d36dcd26358117e11888f7143db4ac2301ebe90873ac00627bf1fe526bf0f058"},
+    {file = "sphinx_panels-0.6.0-py3-none-any.whl", hash = "sha256:bd64afaf85c07f8096d21c8247fc6fd757e339d1be97832c8832d6ae5ed2e61d"},
 ]
 sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-0.5.1-py2.py3-none-any.whl", hash = "sha256:fa6bebd5ab9a73da8e102509a86f3fcc36dec04a0b52ea80e5a033b2aba00113"},
