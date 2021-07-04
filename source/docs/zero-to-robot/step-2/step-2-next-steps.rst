@@ -5,9 +5,9 @@ Congratulations! You have completed step 2 and should now have a working softwar
 
 Specific articles that are advised to be read are:
 
-- :ref:`Visual Studio Code Basics <docs/software/vscode-overview/vscode-basics:Visual Studio Code Basics and the WPILib Extension>`
+- :ref:`Visual Studio Code Basics <docs/zero-to-robot/step-4/vscode-basics:Visual Studio Code Basics and the WPILib Extension>`
 - :ref:`WPILib Commands in Visual Studio Code <docs/software/vscode-overview/wpilib-commands-vscode:WPILib Commands in Visual Studio Code>`
-- :ref:`Creating a Robot Program <docs/software/vscode-overview/creating-robot-program:Creating a Robot Program>`
+- :ref:`Creating a Robot Program <docs/zero-to-robot/step-4/creating-robot-program:Creating a Robot Program>`
 - :ref:`Building and Deploying Robot Code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`
 - :ref:`Installing 3rd Party Libraries <docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries>`
 
