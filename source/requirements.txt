@@ -31,7 +31,7 @@ smmap==4.0.0; python_version >= "3.6"
 snowballstemmer==2.1.0; python_version >= "3.5"
 sphinx-hoverxref==0.5b1
 sphinx-notfound-page==0.6
-sphinx-panels==0.5.2
+sphinx-panels==0.6.0
 sphinx-rtd-theme==0.5.1
 sphinx-tabs==2.0.0; python_version >= "3.6" and python_version < "4.0"
 sphinx-version-warning==1.1.2
