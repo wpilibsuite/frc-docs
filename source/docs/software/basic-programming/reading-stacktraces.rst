@@ -242,7 +242,7 @@ When run, you'll see output that looks like this:
       The exception states its type was ``nullptr``.
 
 Fixing Null Object Issues
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Generally, you will want to ensure each reference has been initialized before using it. In this case, there is a missing line of code to instantiate the ``armMotorCtrl`` before calling the ``setInverted()`` method.
 
@@ -368,7 +368,7 @@ When run, you'll see output that looks like this:
 
 
 Fixing Divide By Zero Issues
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Divide By Zero issues can be fixed in a number of ways. It's important to start by thinking about what a zero in the denominator of your calculation _means_. Is it plausible? Why did it happen in the particular case you saw?
 
@@ -505,7 +505,7 @@ When run, you'll see output that looks like this:
 
 
 Fixing HAL Resource Already Allocated Issues
-""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``HAL: Resource already allocated`` are some of the most straightforward errors to fix. Just spend a bit of time looking at the electrical wiring on the robot, and compare that to what's in code.
 
@@ -547,3 +547,33 @@ In the example, the left motor controllers are plugged into PWM ports ``0`` and 
                frc::PWMVictorSPX m_rearLeftMotor{1};
 
             };
+
+gradlew is not recognized...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``gradlew is not recognized as an internal or external command`` is a common error that can occur when the project or directory that you are currently in does not contain a ``gradlew`` file. This usually occurs when you open the wrong directory.
+
+.. image:: images/reading-stacktraces/bad-gradlew-project.png
+   :alt: Image containing that the left-hand VS Code sidebar does not contain gradlew
+
+In the above screenshot, you can see that the left-hand sidebar does not contain many files. At a minimum, VS Code needs a couple of files to properly build and deploy your project.
+
+- ``gradlew``
+- ``build.gradle``
+- ``gradlew.bat``
+
+If you do not see any one of the above files in your project directory, then you have two possible causes.
+
+- A corrupt or bad project.
+- You are in the wrong directory.
+
+Fixing gradlew is not recognized...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``gradlew is not recognized...`` is a fairly easy problem to fix. First identify the problem source:
+
+**Are you in the wrong directory?**
+- Verify that the project directory is the correct directory and open this.
+
+**Is your project missing essential files?**
+- This issue is more complex to solve. The recommended solution is to :ref:`recreate your project <docs/software/vscode-overview/creating-robot-program:Creating a Robot Program>` and manually copy necessary code in.
