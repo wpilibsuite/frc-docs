@@ -13,7 +13,7 @@ Failed to change IP Address in Radio Configuration
 
 **Issue**
 
-The following error message may appear when configuring the radio ``Bridge configuration failed: Failed to change IP Address, please ensure the bridge is connected to this computer and try againPlease ensure the bridge is connected to this computer and try again``. This is due to a change in behavior in java versions 8u291 and 11.0.11.
+The following error message may appear when configuring the radio ``Bridge configuration failed: Failed to change IP Address...``. This is due to a change in behavior in java versions 8u291 and 11.0.11.
 
 **Workaround**
 
