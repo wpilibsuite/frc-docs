@@ -172,6 +172,8 @@ Starting the Configuration Process
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
 
+.. tip:: If the configuration fails with the error ``Failed to change IP Address``, see the :ref:`Failed to change IP Address in Radio Configuration Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>`
+
 Configuration Progress
 ----------------------
 
@@ -212,3 +214,4 @@ Troubleshooting
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
 - If using a foreign language Operating System, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
+If the configuration fails with the error ``Failed to change IP Address``, see the :ref:`Failed to change IP Address in Radio Configuration Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>`
