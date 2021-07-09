@@ -1,16 +1,26 @@
 Romi Hardware Support
 =====================
 
-The Romi robot has limited hardware interfacing support. It is not compatible with the large majority of FRC based control system components. Details on the pin mapping is available in :doc:`getting-to-know-romi`.
+The Romi robot, having a different hardware architecture as a roboRIO, is compatible with a subset of commonly used FRC control system components.
+
+Compatible Hardware
+------------------------
+
+In general, the Romi is compatible with the following:
+
+- Simple Digital Input/Output devices (e.g. bumper switches, single LEDs)
+- Standard RC-style PWM output devices (e.g. servos, PWM based motor controllers)
+- Analog Input sensors (e.g distance sensors that report distance as a voltage)
 
 Incompatible Hardware
 ---------------------
 
-The Romi Robot DIO is not compatible with the following:
+Due to hardware limitations, the Romi Robot is not compatible with the following:
 
 - Non-integrated encoders
-- Ultrasonics
+- "Ping" style ultrasonic sensors (which require 2 DIO channels)
 - Timing based sensors
+- CAN based devices
 
 Compatible Classes
 ------------------

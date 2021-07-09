@@ -94,7 +94,7 @@ Digital IO
 
 Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
 
-Analog Input
+Analog Input (Default Configuration)
 ^^^^^^^^^^^^
 
 +------+-------------------+
