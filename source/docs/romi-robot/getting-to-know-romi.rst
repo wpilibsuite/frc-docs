@@ -108,6 +108,7 @@ Analog Input (Default Configuration)
 PWM Output
 ^^^^^^^^^^
 
+The table below shows the default pins. These are configurable via the Web UI.
 +-------------+-------------------------+
 | PWM Channel | Romi Hardware Component |
 +=============+=========================+
@@ -119,7 +120,6 @@ PWM Output
 +-------------+-------------------------+
 | PWM 3       | Pin 22 / A4             |
 +-------------+-------------------------+
-
 
 .. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
 
