@@ -5,8 +5,7 @@ Robot Characterization
    :maxdepth: 1
 
    introduction
-   generating-project
-   deploying-project
+   configuring-project
    characterization-routine
    analyzing-data
    viewing-diagnostics
