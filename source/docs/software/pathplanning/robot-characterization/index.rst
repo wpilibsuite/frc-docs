@@ -10,4 +10,5 @@ Robot Characterization
    analyzing-data
    viewing-diagnostics
    analyzing-feedback
+   additional-utils
 
