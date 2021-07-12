@@ -312,17 +312,17 @@ python-versions = "*"
 
 [[package]]
 name = "sphinx"
-version = "3.4.3"
+version = "4.1.0"
 description = "Python documentation generator"
 category = "main"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 
 [package.dependencies]
 alabaster = ">=0.7,<0.8"
 babel = ">=1.3"
 colorama = {version = ">=0.3.5", markers = "sys_platform == \"win32\""}
-docutils = ">=0.12"
+docutils = ">=0.14,<0.18"
 imagesize = "*"
 Jinja2 = ">=2.3"
 packaging = "*"
@@ -338,12 +338,12 @@ sphinxcontrib-serializinghtml = "*"
 
 [package.extras]
 docs = ["sphinxcontrib-websupport"]
-lint = ["flake8 (>=3.5.0)", "isort", "mypy (>=0.790)", "docutils-stubs"]
+lint = ["flake8 (>=3.5.0)", "isort", "mypy (>=0.900)", "docutils-stubs", "types-typed-ast", "types-pkg-resources", "types-requests"]
 test = ["pytest", "pytest-cov", "html5lib", "cython", "typed-ast"]
 
 [[package]]
 name = "sphinx-hoverxref"
-version = "0.5b1"
+version = "0.7b1"
 description = "Sphinx extension to embed content in a tooltip on xref hover"
 category = "main"
 optional = false
@@ -351,7 +351,7 @@ python-versions = "*"
 
 [[package]]
 name = "sphinx-notfound-page"
-version = "0.6"
+version = "0.7.1"
 description = "Sphinx extension to build a 404 page with absolute URLs"
 category = "main"
 optional = false
@@ -378,13 +378,14 @@ themes = ["sphinx-rtd-theme", "pydata-sphinx-theme (>=0.4.0,<0.5.0)", "sphinx-bo
 
 [[package]]
 name = "sphinx-rtd-theme"
-version = "0.5.1"
+version = "0.5.2"
 description = "Read the Docs theme for Sphinx"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
+docutils = "<0.17"
 sphinx = "*"
 
 [package.extras]
@@ -392,19 +393,20 @@ dev = ["transifex-client", "sphinxcontrib-httpdomain", "bump2version"]
 
 [[package]]
 name = "sphinx-tabs"
-version = "2.0.0"
+version = "3.1.0"
 description = "Tabbed views for Sphinx"
 category = "main"
 optional = false
 python-versions = "~=3.6"
 
 [package.dependencies]
+docutils = ">=0.16.0,<0.17.0"
 pygments = "*"
-sphinx = ">=2,<4"
+sphinx = ">=2,<5"
 
 [package.extras]
 code_style = ["pre-commit (==2.6)"]
-testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "pygments", "sphinx-testing", "bs4"]
+testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "pygments", "sphinx-testing", "bs4", "rinohtype"]
 
 [[package]]
 name = "sphinx-version-warning"
@@ -640,7 +642,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "a9adc56680ae8c601c07b3f5aa77f900526e69ac858e1b3cde26b71ff8424042"
+content-hash = "39d67509fc80a5090e8e863cd8e1dc36682e9d5dfe13a9ad7d3c930fed30b289"
 
 [metadata.files]
 alabaster = [
@@ -813,28 +815,28 @@ snowballstemmer = [
     {file = "snowballstemmer-2.1.0.tar.gz", hash = "sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"},
 ]
 sphinx = [
-    {file = "Sphinx-3.4.3-py3-none-any.whl", hash = "sha256:c314c857e7cd47c856d2c5adff514ac2e6495f8b8e0f886a8a37e9305dfea0d8"},
-    {file = "Sphinx-3.4.3.tar.gz", hash = "sha256:41cad293f954f7d37f803d97eb184158cfd90f51195131e94875bc07cd08b93c"},
+    {file = "Sphinx-4.1.0-py3-none-any.whl", hash = "sha256:51028bb0d3340eb80bcc1a2d614e8308ac78d226e6b796943daf57920abc1aea"},
+    {file = "Sphinx-4.1.0.tar.gz", hash = "sha256:4219f14258ca5612a0c85ed9b7222d54da69724d7e9dd92d1819ad1bf65e1ad2"},
 ]
 sphinx-hoverxref = [
-    {file = "sphinx-hoverxref-0.5b1.tar.gz", hash = "sha256:ac427f9110385f895e075888bf640e0539412f4982c2d705896b8d2f954324b3"},
-    {file = "sphinx_hoverxref-0.5b1-py3-none-any.whl", hash = "sha256:e1f37e0b32e20d6e13ec44dabf079d43c5025021ded1f2c06d55742c67cc2c72"},
+    {file = "sphinx-hoverxref-0.7b1.tar.gz", hash = "sha256:dedda04d238e1a80b20149cc771f86a2da30cb292ff646c034eeccfa7e436050"},
+    {file = "sphinx_hoverxref-0.7b1-py3-none-any.whl", hash = "sha256:c32b8c2e3fc34d194a62a1b473482e07f6244af6df9a7cb97b2fd5ad21a37986"},
 ]
 sphinx-notfound-page = [
-    {file = "sphinx-notfound-page-0.6.tar.gz", hash = "sha256:5686892db509020d235069dd8a6c7e8bf6fcff43695046b945fe82925cb6c40c"},
-    {file = "sphinx_notfound_page-0.6-py3-none-any.whl", hash = "sha256:3e8893d47638cc7ac06d4f6d10e97a18508658e36e530e7d24a429e6556c6894"},
+    {file = "sphinx-notfound-page-0.7.1.tar.gz", hash = "sha256:01888b45b29a6f81785576bd64ab62015900496b130f7326b4d557bb5ff07787"},
+    {file = "sphinx_notfound_page-0.7.1-py3-none-any.whl", hash = "sha256:b279c3f192c9541046564ba0914db622ec67aa6d74800eb85b1ce14ffd1d4585"},
 ]
 sphinx-panels = [
     {file = "sphinx-panels-0.6.0.tar.gz", hash = "sha256:d36dcd26358117e11888f7143db4ac2301ebe90873ac00627bf1fe526bf0f058"},
     {file = "sphinx_panels-0.6.0-py3-none-any.whl", hash = "sha256:bd64afaf85c07f8096d21c8247fc6fd757e339d1be97832c8832d6ae5ed2e61d"},
 ]
 sphinx-rtd-theme = [
-    {file = "sphinx_rtd_theme-0.5.1-py2.py3-none-any.whl", hash = "sha256:fa6bebd5ab9a73da8e102509a86f3fcc36dec04a0b52ea80e5a033b2aba00113"},
-    {file = "sphinx_rtd_theme-0.5.1.tar.gz", hash = "sha256:eda689eda0c7301a80cf122dad28b1861e5605cbf455558f3775e1e8200e83a5"},
+    {file = "sphinx_rtd_theme-0.5.2-py2.py3-none-any.whl", hash = "sha256:4a05bdbe8b1446d77a01e20a23ebc6777c74f43237035e76be89699308987d6f"},
+    {file = "sphinx_rtd_theme-0.5.2.tar.gz", hash = "sha256:32bd3b5d13dc8186d7a42fc816a23d32e83a4827d7d9882948e7b837c232da5a"},
 ]
 sphinx-tabs = [
-    {file = "sphinx-tabs-2.0.0.tar.gz", hash = "sha256:17ee464042ce2f500b2c725cd243c5f5a40fae5b761bd9b2bd968d0ff8a3c319"},
-    {file = "sphinx_tabs-2.0.0-py3-none-any.whl", hash = "sha256:7d39b543b7f4dd8c869e2a0c73f1fca2fd38d97b56a25a7b30e72bd26b8b3e5b"},
+    {file = "sphinx-tabs-3.1.0.tar.gz", hash = "sha256:5eee2a869b1226e1f618f0c7ed267e5e3c24425565e6313cad80d00a7119694f"},
+    {file = "sphinx_tabs-3.1.0-py3-none-any.whl", hash = "sha256:63df94e84bc05eb8598419a313ffc24455a14d1a580d174bb748404063958a67"},
 ]
 sphinx-version-warning = [
     {file = "sphinx-version-warning-1.1.2.tar.gz", hash = "sha256:9924926fd3e739e32eb42ba2db092ecd7657200107146944fb3e440c9651d945"},
