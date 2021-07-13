@@ -60,6 +60,4 @@ After all four tests have been completed, you can select the folder location for
 
 This will save the data as a JSON file with the specified location/name. A timestamp (``%Y%m%d-%H%M``) will be appended to the chosen filename. Additionally, the name of the file saved will be shown in the :guilabel:`Program Log`.
 
-.. note:: You can run a preliminary check on the quality of the characterization data by enabling prints on Driver Station. After exiting autonmous in each test, the console should output ``Collected : n in t seconds`` where ``n`` should be ``200 * t`` (rounded). More information can be found :ref:`here <docs/software/pathplanning/robot-characterization/viewing-diagnostics:Template Lag>`
-
 .. note:: The number of samples collected for each test will be displayed in the Program Log.

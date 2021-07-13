@@ -7,12 +7,12 @@ Feedback Analysis
 
 .. warning:: The feedback gain calculation assumes that there is no mechanical backlash, sensor noise, or phase lag in the sensor measurement.  While these are reasonable assumptions in many situations, none of them are strictly true in practice.  In particular, many "smart motor controllers" (such as the ``Talon SRX``, ``Talon FX``, and ``SPARK MAX``) have default settings that apply substantial :ref:`low-pass filtering <docs/software/advanced-controls/filters/introduction:Introduction to Filters>` to their encoder velocity measurements, which introduces a significant amount of phase lag.  This can cause the calculated gains for velocity loops to be unstable.  To rectify this, either decrease the amount of filtering through the controller's API, or reduce the magnitude of the PID gains - it has been found that shrinking gains by about a factor of 10 works well for most default filtering settings.
 
-Once the feedforward coefficients have been computed, the controls on the :guilabel:`Feedback Analysis` pane become available.
+To view the feedback constants, click on the dropdown arrow on the :guilabel:`Feedback` section.
 
-.. image:: images/feedbackanalysis.png
+.. image:: images/feedback-analysis.png
    :alt: Picture of the feedback analysis pane
 
-These can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
+This view can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
 
 Enter Controller Parameters
 ---------------------------
@@ -23,7 +23,7 @@ The calculated feedforward gains are *dimensioned quantities*. Unfortunately, no
 
 To specify the correct settings for your PID controller, use the following options.
 
-.. image:: images/controllersettings.png
+.. image:: images/controller-settings.png
    :alt: Picture of the controller settings
 
 - **Gain Settings Preset:** This drop-down menu will auto-populate the remaining fields with likely settings for one of a number of common FRC controller setups. Note that some settings, such as post-encoder gearing, PPR, and the presence of a follower motor must still be manually specified (as the analyzer has no way of knowing these without user input), and that others may vary from the given defaults depending on user setup.
@@ -43,7 +43,7 @@ Specify Optimality Criteria
 
 Finally, the user must specify what will be considered an "optimal" controller.  This takes the form of desired tolerances for the system error and control effort - note that it is *not* guaranteed that the system will obey these tolerances at all times.
 
-.. image:: images/optimalitycriteria.png
+.. image:: images/optimality-criteria.png
    :alt: Entering optimality criteria for the feedback controller
 
 As a rule, smaller values for the :guilabel:`Max Acceptable Error` and larger values for the :guilabel:`Max Acceptable Control Effort` will result in larger gains - this will result in larger control efforts, which can grant better setpoint-tracking but may cause more violent behavior and greater wear on components.
@@ -58,20 +58,3 @@ It is typical to control mechanisms with both position and velocity PIDs, depend
 .. image:: images/looptype.png
    :alt: Specifying characterization loop type
 
-Enter Known Velocity/Acceleration
----------------------------------
-
-.. note:: Sometimes, with an exceptionally light mechanism/robot and/or exceptionally-noisy data, it is possible for the ``kA`` value to be exceedingly small (or even slightly negative).  In this case, the user should set ``kA`` to zero.  The computed feedback gains in this case may also be zero - this is because such a mechanism should not require feedback to accurately track the setpoint under the assumptions of LQR.  These assumptions may not be perfectly accurate, and users may need to add feedback regardless - in this case, the loop must be tuned manually.
-
-If one wishes to use the :guilabel:`Feedback Analysis` pane without running a full analysis on a set of data, or otherwise view the effect of modifying the ``kV`` and ``kA`` values, this can be done here.
-
-.. image:: images/known-acceleration-velocity.png
-   :alt: Entering known acceleration and velocities
-
-Calculate Gains
----------------
-
-Finally, press the :guilabel:`Calculate Optimal Controller Gains` to determine the feedback gains.
-
-.. image:: images/calculategains.png
-   :alt: Calculating the Optimal Controller Gains
