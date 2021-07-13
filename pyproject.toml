@@ -23,7 +23,7 @@ sphinxcontrib-svg2pdfconverter = "==1.1.1"
 sphinxext-linkcheckdiff = "==0.1.0"
 sphinxext-opengraph = "==0.4.1"
 sphinxext-rediraffe = "==0.2.5"
-sphinxext-remoteliteralinclude = "==0.2.0"
+sphinxext-remoteliteralinclude = "==0.3.0"
 sphinxext-toptranslators = "==0.1.2"
 sphinxext-delta = "==0.1.0"
 
