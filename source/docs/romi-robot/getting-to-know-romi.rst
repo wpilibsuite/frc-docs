@@ -108,7 +108,7 @@ Analog Input (Default Configuration)
 PWM Output
 ^^^^^^^^^^
 
-The table below shows the default pins. These are configurable via the Web UI.
+The table below shows the default pins. These are configurable (with the exception of PWM 0 and 1) via the Web UI.
 +-------------+-------------------------+
 | PWM Channel | Romi Hardware Component |
 +=============+=========================+

@@ -17,7 +17,7 @@ Incompatible Hardware
 
 Due to hardware limitations, the Romi Robot is not compatible with the following:
 
-- Non-integrated encoders
+- Encoders other than the Romi-integrated encoders
 - "Ping" style ultrasonic sensors (which require 2 DIO channels)
 - Timing based sensors
 - CAN based devices
