@@ -92,15 +92,33 @@ Digital IO
 | DIO 7       | Right Encoder Quadrature Channel B   |
 +-------------+--------------------------------------+
 
+Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
+
+Analog Input (Default Configuration)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------+-------------------+
+| Port | Channel           |
++======+===================+
+| AIN0 | Analog 6 / Pin 4  |
++------+-------------------+
+| AIN1 | Analog 2 / Pin 20 |
++------+-------------------+
+
 PWM Output
 ^^^^^^^^^^
 
+The table below shows the default pins. These are configurable (with the exception of PWM 0 and 1) via the Web UI.
 +-------------+-------------------------+
 | PWM Channel | Romi Hardware Component |
 +=============+=========================+
 | PWM 0       | Left Motor              |
 +-------------+-------------------------+
 | PWM 1       | Right Motor             |
++-------------+-------------------------+
+| PWM 2       | Pin 21 / A3             |
++-------------+-------------------------+
+| PWM 3       | Pin 22 / A4             |
 +-------------+-------------------------+
 
 .. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
