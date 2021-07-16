@@ -1,7 +1,7 @@
 Romi Hardware Support
 =====================
 
-The Romi robot, having a different hardware architecture as a roboRIO, is compatible with a subset of commonly used FRC control system components.
+The Romi robot, having a different hardware architecture than a roboRIO, is compatible with a subset of commonly used FRC control system components.
 
 Compatible Hardware
 ------------------------
