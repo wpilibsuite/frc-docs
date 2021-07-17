@@ -41,6 +41,7 @@ extensions = [
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.linkcheckdiff",
+    "sphinxext.mimictoc",
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",

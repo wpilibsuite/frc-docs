@@ -9,14 +9,236 @@
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
 FIRST Robotics Competition Control System
-===========================================
+=========================================
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! An overview of the changes from 2020 to 2021 is available on the :ref:`New for 2021 <docs/yearly-overview/yearly-changelog:New for 2021>` document.
+Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
+
+Community translations can be found in a variety of languages in the bottom-left menu.
+
+.. panels::
+   :column: col-sm-6 d-flex pb-3
+   :footer: bg-white border-0
+
+   ---
+   :header: bg-success font-weight-bold text-white
+
+   Returning Teams
+
+   ^^^
+
+   If you are a returning team, please check out the overview of changes from 2021 to 2022. Also check out the cards below or :doc:`Zero-to-Robot </docs/zero-to-robot/introduction>` if you need a refresher.
+
+   +++
+
+   .. link-button:: /docs/yearly-overview/yearly-changelog
+      :type: ref
+      :text: Go to Changelog
+      :classes: btn-outline-primary btn-block
+
+   ---
+   :header: bg-info font-weight-bold text-white
+
+   New Teams
+
+   ^^^
+
+   Please read through the Zero-to-Robot tutorial! This will guide you through preparation, building and programming a basic robot!
+
+   +++
+
+   .. link-button:: /docs/zero-to-robot/introduction
+      :type: ref
+      :text: Go to Zero-to-Robot
+      :classes: btn-outline-primary btn-block
+
+.. raw:: html
+
+   <hr>
+
+.. panels::
+   :column: col-sm-6 d-flex pb-3
+   :footer: bg-white border-0
+
+   ---
+   :header: font-weight-bold text-dark
+
+   Hardware Overview
+
+   ^^^
+
+   An overview of the hardware components available to teams.
+
+   +++
+
+   .. link-button:: /docs/controls-overviews/control-system-hardware
+      :type: ref
+      :text: Go to Hardware Overview
+      :classes: btn-outline-primary btn-block
+
+   ---
+   :header: font-weight-bold text-dark
+
+   Software Overview
+
+   ^^^
+
+   An overview of the software components and tools available to teams.
+
+   +++
+
+   .. link-button:: /docs/controls-overviews/control-system-software
+      :type: ref
+      :text: Go to Software Overview
+      :classes: btn-outline-primary btn-block
+
+.. raw:: html
+
+   <hr>
+
+.. panels::
+   :column: col-sm-4 d-flex pb-3
+   :footer: border-0 bg-white
+
+   ---
+
+   Programming Basics
+
+   ^^^
+
+   Documentation that is useful throughout a team's programming process.
+
+   +++
+
+   .. link-button:: stubs/programming-basics-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block mt-auto
+
+   ---
+
+   API Documentation
+
+   ^^^
+
+   Java and C++ class documentation.
+
+   +++
+
+   .. link-button:: stubs/api-docs-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Software Tools
+
+   ^^^
+
+   Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+
+   +++
+
+   .. link-button:: stubs/software-tools-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Advanced Programming
+
+   ^^^
+
+   Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
+
+   +++
+
+   .. link-button:: stubs/advanced-programming-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Example Projects
+
+   ^^^
+
+   This section showcases the available example projects that teams can reference in VS Code.
+
+   +++
+
+   .. link-button:: docs/software/examples-tutorials/wpilib-examples
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Hardware
+
+   ^^^
+
+   Hardware tutorials and content available for teams.
+
+   +++
+
+   .. link-button:: stubs/hardware-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Romi Robot
+
+   ^^^
+
+   The Romi Robot is a low-cost Raspberry Pi based platform for practicing WPILib programming.
+
+   +++
+
+   .. link-button:: docs/romi-robot/index
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Contributing
+
+   ^^^
+
+   Interested in contributing to WPILib and the documentation? This section will get you started.
+
+   +++
+
+   .. link-button:: stubs/contributing-stub
+      :type: ref
+      :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Issues
+
+   ^^^
+
+   Report a software or documentation issue.
+
+   +++
+
+   .. link-button:: https://github.com/wpilibsuite/frc-docs/issues
+      :type: url
+      :text: View articles
+      :classes: btn-outline-primary btn-block
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :caption: Zero to Robot
+   :hidden:
 
    docs/zero-to-robot/introduction
    docs/zero-to-robot/step-1/index
@@ -27,6 +249,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Control System Overviews
+   :hidden:
 
    docs/controls-overviews/control-system-hardware
    docs/controls-overviews/control-system-software
@@ -34,6 +257,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Programming Basics
+   :hidden:
 
    docs/software/what-is-wpilib
    docs/yearly-overview/index
@@ -49,6 +273,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: API Docs
+   :hidden:
 
    WPILib Java API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html>
    WPILib C++ API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html>
@@ -56,6 +281,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Software Tools
+   :hidden:
 
    docs/software/driverstation/index
    docs/software/wpilib-tools/robotbuilder/index
@@ -66,6 +292,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Advanced Programming
+   :hidden:
 
    docs/software/vision-processing/index
    docs/software/commandbased/index
@@ -80,12 +307,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Examples and Tutorials
+   :hidden:
 
    docs/software/examples-tutorials/wpilib-examples
 
 .. toctree::
    :maxdepth: 1
    :caption: Hardware
+   :hidden:
 
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
@@ -94,12 +323,14 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Romi Robot
+   :hidden:
 
    docs/romi-robot/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Robot Networking
+   :hidden:
 
    docs/networking/networking-introduction/index
    docs/networking/networking-utilities/index
@@ -107,6 +338,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Contributing
+   :hidden:
 
    docs/contributing/frc-docs/index
    docs/contributing/wpilib/index
@@ -114,6 +346,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Issues
+   :hidden:
 
    Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
 
