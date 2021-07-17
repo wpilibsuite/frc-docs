@@ -161,15 +161,23 @@ Community translations can be found in a variety of languages in the bottom-left
 
    +++
 
-   .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html
-      :type: url
-      :text: Java
-      :classes: btn-outline-primary btn-block
+   .. div:: container-fluid p-0
 
-   .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html
-      :type: url
-      :text: C++
-      :classes: btn-outline-primary btn-block
+      .. div:: row
+
+         .. div:: col-sm pl-1 pr-1
+
+            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html
+               :type: url
+               :text: Java
+               :classes: btn-outline-primary btn-block
+
+         .. div:: col-sm pl-1 pr-1
+
+            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html
+               :type: url
+               :text: C++
+               :classes: btn-outline-primary btn-block
 
    ---
 
