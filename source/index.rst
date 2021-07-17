@@ -42,7 +42,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    ^^^
 
-   Please read through the Zero-to-Robot tutorial! This will guide you through preparation, building and programming a basic robot!
+   The Zero-to-Robot tutorial will guide you through preparation, building and programming a basic robot!
 
    +++
 
