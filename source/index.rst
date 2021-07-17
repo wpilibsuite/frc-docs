@@ -167,7 +167,7 @@ Community translations can be found in a variety of languages in the bottom-left
       :classes: btn-outline-primary btn-block
 
    .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html
-      :type: url 
+      :type: url
       :text: C++
       :classes: btn-outline-primary btn-block
 
