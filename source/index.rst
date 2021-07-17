@@ -51,10 +51,6 @@ Community translations can be found in a variety of languages in the bottom-left
       :text: Go to Zero-to-Robot
       :classes: btn-outline-primary btn-block
 
-.. raw:: html
-
-   <hr>
-
 .. panels::
    :column: col-sm-6 d-flex pb-3
    :footer: bg-white border-0
@@ -90,10 +86,6 @@ Community translations can be found in a variety of languages in the bottom-left
       :type: ref
       :text: Go to Software Overview
       :classes: btn-outline-primary btn-block
-
-.. raw:: html
-
-   <hr>
 
 .. panels::
    :column: col-sm-4 d-flex pb-3
