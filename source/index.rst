@@ -108,36 +108,6 @@ Community translations can be found in a variety of languages in the bottom-left
 
    ---
 
-   API Documentation
-
-   ^^^
-
-   Java and C++ class documentation.
-
-   +++
-
-   .. link-button:: stubs/api-docs-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
-
-   ---
-
-   Software Tools
-
-   ^^^
-
-   Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
-
-   +++
-
-   .. link-button:: stubs/software-tools-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
-
-   ---
-
    Advanced Programming
 
    ^^^
@@ -147,21 +117,6 @@ Community translations can be found in a variety of languages in the bottom-left
    +++
 
    .. link-button:: stubs/advanced-programming-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
-
-   ---
-
-   Example Projects
-
-   ^^^
-
-   This section showcases the available example projects that teams can reference in VS Code.
-
-   +++
-
-   .. link-button:: docs/software/examples-tutorials/wpilib-examples
       :type: ref
       :text: View articles
       :classes: btn-outline-primary btn-block
@@ -198,32 +153,82 @@ Community translations can be found in a variety of languages in the bottom-left
 
    ---
 
-   Contributing
+   API Documentation
 
    ^^^
 
-   Interested in contributing to WPILib and the documentation? This section will get you started.
+   Java and C++ class documentation.
 
    +++
 
-   .. link-button:: stubs/contributing-stub
+   .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html
+      :type: url
+      :text: Java
+      :classes: btn-outline-primary btn-block
+
+   .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html
+      :type: url 
+      :text: C++
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Software Tools
+
+   ^^^
+
+   Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+
+   +++
+
+   .. link-button:: stubs/software-tools-stub
       :type: ref
       :text: View articles
       :classes: btn-outline-primary btn-block
 
    ---
 
-   Issues
+   Example Projects
 
    ^^^
 
-   Report a software or documentation issue.
+   This section showcases the available example projects that teams can reference in VS Code.
 
    +++
 
-   .. link-button:: https://github.com/wpilibsuite/frc-docs/issues
-      :type: url
+   .. link-button:: docs/software/examples-tutorials/wpilib-examples
+      :type: ref
       :text: View articles
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   Status Light Quick Reference
+
+   ^^^
+
+   Quick reference guide for the status lights on a variety of FRC hardware.
+
+   +++
+
+   .. link-button:: docs/hardware/hardware-basics/status-lights-ref
+      :type: ref
+      :text: View article
+      :classes: btn-outline-primary btn-block
+
+   ---
+
+   3rd Party Libraries
+
+   ^^^
+
+   Tutorial on adding 3rd party libraries such as CTRE and REV to your robot project.
+
+   +++
+
+   .. link-button:: docs/software/vscode-overview/3rd-party-libraries
+      :type: ref
+      :text: View article
       :classes: btn-outline-primary btn-block
 
 .. toctree::
