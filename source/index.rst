@@ -26,7 +26,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    ^^^
 
-   If you are a returning team, please check out the overview of changes from 2021 to 2022. Also check out the cards below or :doc:`Zero-to-Robot </docs/zero-to-robot/introduction>` if you need a refresher.
+   If you are a returning team, please check out the overview of changes from 2021 to 2022 and the cards below for a refresher.
 
    +++
 
