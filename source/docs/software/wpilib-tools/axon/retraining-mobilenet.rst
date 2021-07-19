@@ -60,15 +60,15 @@ You will soon see an export appear below the button.
 
 .. image:: images/training/exporting.png
 
-When the export has completed, you will see the checkpoint appear in the checkpoint menu, where you can select and work with any of the exported checkpoints.
+When the export has completed, you will see the checkpoint appear in the checkpoint menu where you can select and work with any of the exported checkpoints.
 
 .. image:: images/training/export-menu.png
 
-You may click the menu to the right of an exported model, providing options to rename, delete, download, and test the export.
+You may click the menu to the right of an exported model, providing options to rename, and delete.
 
 .. image:: images/training/rename-checkpoint.png
 
-Click the download button, and your browser will download a tarfile containing two TFLite models, one of which is optimized for the Coral TPU. There is also a label map file, for use when converting the model's output to a human-readable format.
+Click the download button, and your browser will download a tarfile containing two TFLite models of the selected checkpoint, one of which is optimized for the Coral TPU. There is also a label map file, for use when converting the model's output to a human-readable format.
 
 .. image:: images/training/download-checkpoint.png
 
