@@ -8,6 +8,8 @@ Stats
 
 Clicking on a dataset in the pane on the left will allow you to view all the images in the dataset. The size of the set and the classnames/labels in the dataset are displayed.
 
+.. image:: images/dataset-viewer/stats.png
+
 Navigation
 ----------
 
