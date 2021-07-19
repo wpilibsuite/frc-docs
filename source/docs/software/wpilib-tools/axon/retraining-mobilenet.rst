@@ -62,7 +62,7 @@ You will soon see an export appear below the button.
 
 When the export has completed, you will see the checkpoint appear in the checkpoint menu, where you can select and work with any of the exported checkpoints.
 
-.. image:: images/training/checkpoint-menu.png
+.. image:: images/training/export-menu.png
 
 You may click the menu to the right of an exported model, providing options to rename, delete, download, and test the export.
 
