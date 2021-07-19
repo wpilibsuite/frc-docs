@@ -192,6 +192,9 @@ def setup(app):
     app.config.hoverxref_tooltip_side = "left" if is_rtl else "right"
     if is_rtl:
         app.add_css_file("css/frc-rtl.css")
+	
+    # Fix rtd version/language menu on iOS
+    app.add_js_file("js/fix-rtd-menu-ios.js")
 
 
 # -- Options for latex generation --------------------------------------------
