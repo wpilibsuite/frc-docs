@@ -51,10 +51,10 @@ class ImageMinifier(ImageConverter):
                     if is_image_a_vi_snippet(_from):
                         return False
 
-                image.save(_to, quality=self.config.minify_image_quality, optimize=True)
-            return True
+                logger.info("Compressing Image")
 
-            return False
+                image.save(_to, quality=self.config.minify_image_quality, optimize=True)
+                return True
         except OSError:
             logger.warning(__("Unable to convert file %r, " "please verify!"), _from)
             return False
