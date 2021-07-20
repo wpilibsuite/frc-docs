@@ -20,6 +20,8 @@ logger = logging.getLogger(__name__)
 # Helper method to check if image has LabVIEW metadata
 # Credit to VCubed
 VI_CHUNK_TYPE = bytes("niVI", "utf-8")
+
+
 def is_image_a_vi_snippet(image_path):
     with open(image_path, "rb") as image:
         reader = png.Reader(bytes=image.read())
@@ -28,41 +30,37 @@ def is_image_a_vi_snippet(image_path):
             return True
     return False
 
+
 class ImageMinifier(ImageConverter):
-   conversion_rules = [
-      ('image/png', 'image/png'),
-      ('image/jpeg', 'image/jpeg')
-    ]
+    conversion_rules = [("image/png", "image/png"), ("image/jpeg", "image/jpeg")]
 
-   def is_available(self) -> bool:
-      if self.config.minify_only_rtd:
-         if os.getenv("READTHEDOCS"):
+    def is_available(self) -> bool:
+        if self.config.minify_only_rtd:
+            if os.getenv("READTHEDOCS"):
+                return True
+            else:
+                logger.info("Minify is disabled on local builds!")
+                return False
+        else:
             return True
-         else:
-            logger.info("Minify is disabled on local builds!")
-            return False
-      else:
-         return True
 
-   def convert(self, _from: str, _to: str) -> bool:
-      try:
-         with Image.open(_from) as image:
-            if image.format is 'PNG':
-               if is_image_a_vi_snippet(_from):
-                  return False
-               
-            image.save(_to, quality=self.config.minify_image_quality, optimize = True)
-         return True
-         
-         return False
-      except OSError:
-         logger.warning(__('Unable to convert file %r, '
-                              'please verify!'),
-                           _from)
-         return False
-      except FormatError:
-         logger.error(__("There was an error processing the file %r"),
-                        _from)
+    def convert(self, _from: str, _to: str) -> bool:
+        try:
+            with Image.open(_from) as image:
+                if image.format is "PNG":
+                    if is_image_a_vi_snippet(_from):
+                        return False
+
+                image.save(_to, quality=self.config.minify_image_quality, optimize=True)
+            return True
+
+            return False
+        except OSError:
+            logger.warning(__("Unable to convert file %r, " "please verify!"), _from)
+            return False
+        except FormatError:
+            logger.error(__("There was an error processing the file %r"), _from)
+
 
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("minify_only_rtd", False, "html")
