@@ -255,6 +255,14 @@ optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "pypng"
+version = "0.0.20"
+description = "Pure Python PNG image encoder/decoder"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pytz"
 version = "2021.1"
 description = "World timezone definitions, modern and historical"
@@ -666,7 +674,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "cfcd7ef6bdd204fd09c869b0058dae2cc3aadf83668ad042f2baf83c365011b4"
+content-hash = "8b5f681957a7d0dc22bdf05b1bfb821ab2a10e42fffb2cb52ac82531a15537df"
 
 [metadata.files]
 alabaster = [
@@ -797,6 +805,9 @@ pygments = [
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pypng = [
+    {file = "pypng-0.0.20.tar.gz", hash = "sha256:1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b"},
 ]
 pytz = [
     {file = "pytz-2021.1-py2.py3-none-any.whl", hash = "sha256:eb10ce3e7736052ed3623d49975ce333bcd712c7bb19a58b9e2089d4057d0798"},
