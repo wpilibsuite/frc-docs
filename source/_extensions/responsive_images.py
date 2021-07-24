@@ -158,14 +158,12 @@ def builder_init(app: Sphinx):
                 widths.append(im_width)
             for w in widths:
                 h = w * im_height // im_width
-                new_dest = img_dest_path.with_stem(
-                    f"{img_dest_path.stem}-{w}"
-                ).with_suffix(dest_ext)
+                new_dest = img_dest_path.with_name(
+                    f"{img_dest_path.stem}-{w}{dest_ext}"
+                )
 
-                new_uri = (
-                    Path(soup_img.attrs["src"])
-                    .with_stem(f"{img_dest_path.stem}-{w}")
-                    .with_suffix(dest_ext)
+                new_uri = Path(soup_img.attrs["src"]).with_name(
+                    f"{img_dest_path.stem}-{w}{dest_ext}"
                 )
 
                 img_datas.append(
