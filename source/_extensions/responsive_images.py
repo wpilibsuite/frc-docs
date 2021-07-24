@@ -284,7 +284,7 @@ def builder_init(app: Sphinx):
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
-    # app.add_config_value("minify_image_quality", 80, "html")
+    app.add_config_value("minify_image_quality", 80, "html")
     app.add_config_value("max_viewport_width", 1000, "html")
     app.connect("builder-inited", builder_init)
 
