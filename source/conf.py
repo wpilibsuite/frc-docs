@@ -16,6 +16,7 @@
 
 import sys
 import os
+
 sys.path.append(os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
@@ -52,7 +53,7 @@ extensions = [
 ]
 
 local_extensions = [
-    #"_extensions.minify",
+    # "_extensions.minify",
     "_extensions.responsive_images"
 ]
 
