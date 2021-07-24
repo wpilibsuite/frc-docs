@@ -18,6 +18,21 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 pytz = ">=2015.7"
 
 [[package]]
+name = "beautifulsoup4"
+version = "4.9.3"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+soupsieve = {version = ">1.2", markers = "python_version >= \"3.0\""}
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
 name = "certifi"
 version = "2021.5.30"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -247,6 +262,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "pillow-avif-plugin"
+version = "1.2.0"
+description = "A pillow plugin that adds avif support via libavif"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pygments"
 version = "2.9.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -338,6 +361,14 @@ description = "This package provides 29 stemmers for 28 languages generated from
 category = "main"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "soupsieve"
+version = "2.2.1"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [[package]]
 name = "sphinx"
@@ -682,7 +713,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "b2413bf3a808cf50e75a1161b9d930377982d2bc48ea1094f650fdf115d0a242"
+content-hash = "63c8d0fde6edb5515d6fb0dc4a9e576065cb6350aa973b6d0d86d945e3200cdd"
 
 [metadata.files]
 alabaster = [
@@ -692,6 +723,11 @@ alabaster = [
 babel = [
     {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
     {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
+]
+beautifulsoup4 = [
+    {file = "beautifulsoup4-4.9.3-py2-none-any.whl", hash = "sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35"},
+    {file = "beautifulsoup4-4.9.3-py3-none-any.whl", hash = "sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666"},
+    {file = "beautifulsoup4-4.9.3.tar.gz", hash = "sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"},
 ]
 certifi = [
     {file = "certifi-2021.5.30-py2.py3-none-any.whl", hash = "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"},
@@ -847,6 +883,38 @@ pillow = [
     {file = "Pillow-8.3.1-pp37-pypy37_pp73-win_amd64.whl", hash = "sha256:1c03e24be975e2afe70dfc5da6f187eea0b49a68bb2b69db0f30a61b7031cee4"},
     {file = "Pillow-8.3.1.tar.gz", hash = "sha256:2cac53839bfc5cece8fdbe7f084d5e3ee61e1303cccc86511d351adcb9e2c792"},
 ]
+pillow-avif-plugin = [
+    {file = "pillow-avif-plugin-1.2.0.tar.gz", hash = "sha256:3c1a797edb388a0c8115470d72b159e1c398ddf8c1a8306cb6e2873b6c998f7b"},
+    {file = "pillow_avif_plugin-1.2.0-cp27-cp27m-win_amd64.whl", hash = "sha256:32b5100f1c21ce7c8ab1df64f32bb5c49e1585c9793f9d03184681e180c8d9dd"},
+    {file = "pillow_avif_plugin-1.2.0-cp27-cp27mu-manylinux2010_i686.whl", hash = "sha256:e7af186817ef23c2dc48f0ed9a78dfd6f20bb97b5bd4faf0aa191dc40789142e"},
+    {file = "pillow_avif_plugin-1.2.0-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:fc956193e8e230afcf013ab5dcccfd90ce062e8a128b3cf911406daf7a863927"},
+    {file = "pillow_avif_plugin-1.2.0-cp27-cp27mu-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:67b9e762aa82271c3452eccc8ade9ca9dc696f8d7d3fa5ab1fb7720d08291e73"},
+    {file = "pillow_avif_plugin-1.2.0-cp27-cp27mu-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:b87ec92485ba10a5ec22ea85f81b6557c64b11acad25e5de7c21754a4d1fa56a"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-macosx_10_10_x86_64.whl", hash = "sha256:80f6a1922620f064c5dc963bbde8396a60a12015216f751897ca1e83f52a37ef"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:0b44fd1a9e6ebb30b3e2f4bf9fdf98423bd6b2e6ff8f30871091813e8550097d"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:7bd93b923cf7bc6e17c6c27001b4066f2d1d737ba3daa8ae57751e40c24195b9"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:235e1e0501b06f8d19d2920b21f8df5f34387c110fa42d33641707de1764df08"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:87b9ccb8634b63a269cfa2ce312038a7b13dfc2af59e4be175580f2f4549e1c7"},
+    {file = "pillow_avif_plugin-1.2.0-cp36-cp36m-win_amd64.whl", hash = "sha256:d7709bef8d8c3fca16df63a4e71d15f6ad44077c535c4670adadee62302f467a"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-macosx_10_10_x86_64.whl", hash = "sha256:91bcb65aab673c7c8296afe910989e17b68cedb52a6ac91a42bb5a1a98513384"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:f493625cd65e8f91b8b7934eb41120d0856dd14fc38a7179c85ff820a55b3379"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:38545f39421d98b8ad6f13bc82591ae1687895cc3744861cea3c408d0454a6ed"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:b65cd0a245a9be47abb8fcfcc678c2fa130d4131e1de9dd8eff1a6a1897fbd68"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:70751e5c21657a9c28a1c50845a83006d4e3efeddf8968f4bb1bdf799b9291f5"},
+    {file = "pillow_avif_plugin-1.2.0-cp37-cp37m-win_amd64.whl", hash = "sha256:9a66dc55db612273f92ad6924c631d567e3eae7d8ed35fb86e605755d7cc05b0"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-macosx_10_10_x86_64.whl", hash = "sha256:033d3cd394d61089483dc0eefb14fa058f1d9384dc83a92f88fb817431b1dc9d"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:a0dfb06d3b84a0a197a6ed3cc09b5a03415b57f40248aaa27d691d54dc59ebc6"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:9e52b98522970612399064aa4a03ec9f90cd620e189b8d95ca3f194daa44acc2"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:d3e8a3a0488bd0b314a5f8cf9a576757bd85f31858bd2643a81d2f38fcf551fc"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:aa315526bcbdb9b683515cd07e734e44306716d86026bc0acf436871ca08fb0a"},
+    {file = "pillow_avif_plugin-1.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:2d93bba272b4624f3e336e26eb31c40dba27b53bc8115ea1d5900d5be7a3c391"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-macosx_10_10_x86_64.whl", hash = "sha256:0253feec3d0ff05b17998fe0a8d027a41c3d03e6251bdcbe6bb3e5156db37f69"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:c2712169501c8e9dbc8ed1a3dbae5c81b2761a30e12cf2e9b5924e3c7ced6ff8"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:bff792cf24e77fad5908222d2212f0d906dc9371399b55f21eb419509f7c312a"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:45dabd5858573978a8c7284f0c862e25ab519e4cc69207cdd109808afa97939a"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:3f2ddd48d4168796c7afbf339f7a858db0061e6f851ba613ae67a15a0e611cb2"},
+    {file = "pillow_avif_plugin-1.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:7c390fe22c05c3e9a01f83fe88afc21831ccd6bf56ea7575d965819b9c698373"},
+]
 pygments = [
     {file = "Pygments-2.9.0-py3-none-any.whl", hash = "sha256:d66e804411278594d764fc69ec36ec13d9ae9147193a1740cd34d272ca383b8e"},
     {file = "Pygments-2.9.0.tar.gz", hash = "sha256:a18f47b506a429f6f4b9df81bb02beab9ca21d0a5fee38ed15aef65f0545519f"},
@@ -883,6 +951,10 @@ smmap = [
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
     {file = "snowballstemmer-2.1.0.tar.gz", hash = "sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"},
+]
+soupsieve = [
+    {file = "soupsieve-2.2.1-py3-none-any.whl", hash = "sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b"},
+    {file = "soupsieve-2.2.1.tar.gz", hash = "sha256:052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc"},
 ]
 sphinx = [
     {file = "Sphinx-4.1.1-py3-none-any.whl", hash = "sha256:3d513088236eef51e5b0adb78b0492eb22cc3b8ccdb0b36dd021173b365d4454"},

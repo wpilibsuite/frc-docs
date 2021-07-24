@@ -1,19 +1,17 @@
+import os
 import subprocess
 import sys
 from subprocess import PIPE, CalledProcessError
 from typing import Any, Dict
 
+import png
+from PIL import Image
+from png import FormatError
 from sphinx.application import Sphinx
 from sphinx.errors import ExtensionError
 from sphinx.locale import __
 from sphinx.transforms.post_transforms.images import ImageConverter
 from sphinx.util import logging
-from png import FormatError
-
-from PIL import Image
-
-import os
-import png
 
 logger = logging.getLogger(__name__)
 

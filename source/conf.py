@@ -14,9 +14,9 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-import sys, os
-
-sys.path.append(os.path.abspath("sphinxext"))
+import sys
+import os
+sys.path.append(os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
@@ -49,8 +49,14 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
-    "minify",
 ]
+
+local_extensions = [
+    #"_extensions.minify",
+    "_extensions.responsive_images"
+]
+
+extensions += local_extensions
 
 versionwarning_messages = {
     "latest": """
