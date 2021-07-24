@@ -1,5 +1,6 @@
 alabaster==0.7.12; python_version >= "3.6"
 babel==2.9.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
+beautifulsoup4==4.9.3
 certifi==2020.12.5; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 chardet==4.0.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.6" and python_full_version >= "3.5.0"
@@ -20,6 +21,7 @@ latex==0.7.0
 markupsafe==1.1.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 packaging==20.9; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pbr==5.5.1; python_version >= "3.6"
+pillow-avif-plugin==1.2.0
 pillow==8.3.1; python_version >= "3.6"
 pygments==2.8.1; python_version >= "3.6" and python_version < "4.0"
 pyparsing==2.4.7; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
@@ -31,6 +33,7 @@ shutilwhich==1.1.0
 six==1.15.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
 smmap==4.0.0; python_version >= "3.6"
 snowballstemmer==2.1.0; python_version >= "3.6"
+soupsieve==2.2.1; python_version >= "3.6"
 sphinx-hoverxref==0.7b1
 sphinx-notfound-page==0.7.1
 sphinx-panels==0.6.0
