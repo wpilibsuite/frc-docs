@@ -183,7 +183,7 @@ While binding to HID buttons is by far the most common use case, advanced users 
       }
     }
 
-Alternatively, this can also be done inline by passing a lambda to the constructor of ``Trigger`` or ``Button``:
+Alternatively, this can also be done inline by passing a lambda to the constructor of ``trigger`` or ``button``:
 
 .. tabs::
 
