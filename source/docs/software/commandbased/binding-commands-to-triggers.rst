@@ -161,7 +161,7 @@ Note that these methods return a ``Trigger``, not a ``Button``, so the ``Trigger
 Creating Your Own Custom Trigger
 --------------------------------
 
-While binding to HID buttons is by far the most common use case, advanced users may occasionally want to bind commands to arbitrary triggering events. This can be easily done by simply writing your own subclass of ``trigger`` or ``button``:
+While binding to HID buttons is by far the most common use case, advanced users may occasionally want to bind commands to arbitrary triggering events. This can be easily done by simply writing your own subclass of ``Trigger`` or ``Button``:
 
 .. tabs::
 
