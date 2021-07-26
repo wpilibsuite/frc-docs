@@ -92,7 +92,8 @@ def builder_init(app: Sphinx):
             # Check if image is remote. We could take the check from
             # sphinx-contrib/images - it's more robust
             return
-        img_ext = Path(img_uri).suffix
+        img_uri_path = Path(img_uri)
+        img_ext = img_uri_path.suffix
         if img_ext not in {".png", ".jpg", ".jpeg"}:
             # We should support svgs too. In that case. svg would be the
             # preferred format while raster versions would be the fallback.
@@ -153,18 +154,36 @@ def builder_init(app: Sphinx):
 
         for dest_ext in dest_exts:
             srcset = []
-            widths = list(range(250, min(1000, im_width) + 1, 250))
-            if im_width not in widths:
+            width_min = 500
+            width_max = 1100
+            width_step = 300
+            widths = list(range(width_min, min(width_max, im_width) + 1, width_step))
+
+            if not widths:
+                widths = [im_width]
+
+            if im_width - widths[-1] <= width_step / 2:
+                widths[-1] = im_width
+            else:
                 widths.append(im_width)
+
             for w in widths:
                 h = w * im_height // im_width
-                new_dest = img_dest_path.with_name(
-                    f"{img_dest_path.stem}-{w}{dest_ext}"
-                )
+                # We have to use the basename of the img tag's uri to
+                # account for sphinx's handling/mangling of duplicate image
+                # filenames.
 
-                new_uri = Path(soup_img.attrs["src"]).with_name(
-                    f"{img_dest_path.stem}-{w}{dest_ext}"
-                )
+                if w == im_width:
+                    # Special case the full size filename to look like the src filename
+                    new_img_name = f"{img_uri_path.stem}{dest_ext}"
+                else:
+                    new_img_name = f"{img_uri_path.stem}-{w}{dest_ext}"
+
+                # img_dest_path is absolute
+                new_dest = img_dest_path.with_name(new_img_name)
+
+                # soup_img.attrs["src"] is relative to the html file being built
+                new_uri = Path(soup_img.attrs["src"]).with_name(new_img_name)
 
                 img_datas.append(
                     ImgData(
@@ -247,7 +266,7 @@ def builder_init(app: Sphinx):
             "blue",
             len(img_datas),
             app.verbosity,
-            stringify_func=lambda i: str(i.dest_path),
+            stringify_func=lambda i: str(i.dest_path.name),
         ):
             img_data: ImgData
 
@@ -277,13 +296,15 @@ def builder_init(app: Sphinx):
                     )
 
                 im.resize((img_data.width, img_data.height), Image.LANCZOS).save(
-                    str(img_data.dest_path), params=params
+                    str(img_data.dest_path), **params
                 )
 
     app.builder.copy_image_files = new_copy_image_files
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
+    # if we're only going to support png, jpg, webp, and avif, maybe we should
+    # have separate quality config values for each one.
     app.add_config_value("minify_image_quality", 80, "html")
     app.add_config_value("max_viewport_width", 1000, "html")
     app.connect("builder-inited", builder_init)
