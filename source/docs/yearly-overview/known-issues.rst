@@ -8,6 +8,19 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Visual Studio Code project importer fails to import
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue**
+
+In the vscode-wpilib extension version 2021.3.1, the gradle project importer import button does not activate the import process.
+
+**Workaround**
+
+2020 projects can be manually imported using the :ref:`docs/software/vscode-overview/importing-gradle-project:Manual Import Process (2020 to 2021)`.
+
+To import a project from an earlier year, create a new project using VS Code and copy your source files into the new project.
+
 Failed to change IP Address in Radio Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
