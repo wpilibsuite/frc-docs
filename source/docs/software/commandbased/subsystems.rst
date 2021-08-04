@@ -95,3 +95,5 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
   .. code-tab:: c++
 
     exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
+
+.. note:: A command that is assigned as the default command for a subsystem must require that subsystem.
