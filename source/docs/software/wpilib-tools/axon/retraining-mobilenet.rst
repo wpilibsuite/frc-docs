@@ -6,7 +6,8 @@ Upload a Dataset
 
 To retrain the mobilenet object detection model using Axon, first upload the dataset you would like to retrain with.
 
-.. image:: images/training/axon-mobilenet-1.png
+.. image:: images/training/add-dataset.png
+  :alt: Create or Upload a Dataset
 
 Once you have uploaded a dataset, you should see it in the tree above this button.
 
@@ -17,7 +18,8 @@ Next, you must create a project. A project will hold the data from the retrainin
 
 To create a project, click the :guilabel:`Add Project` button.
 
-.. image:: images/training/axon-mobilenet-2.png
+.. image:: images/training/new-project.png
+  :alt: Add a Project
 
 A dialog will appear, asking you to name the project. Pick a name and click :guilabel:`Create`. When you create your project, you will see it above the button to the left.
 
@@ -39,7 +41,8 @@ At the top of the project window, there are several parameters to specify how yo
 **Datasets**: The datasets you would wish to retrain with.
 Edit these input parameters to fit your needs, and tick the checkboxes of the desired datasets from the dropdown.
 
-.. image:: images/training/axon-mobilenet-3.png
+.. image:: images/training/hyperparameters.png
+  :alt: Hyperparameters
 
 When you are ready to start the retraining, click the play button to the right of the dataset dropdown.
 
@@ -50,40 +53,54 @@ Exporting a Checkpoint in TFLite Format
 
 To export a checkpoint as a TFLite model for use, select the desired checkpoint by clicking the point on the graph.
 
-.. image:: images/training/axon-mobilenet-4.png
+.. image:: images/training/select-checkpoint.png
+  :alt: Select a Checkpoint
 
 This will select the checkpoint. Export this checkpoint by clicking the export button below the graph.
 
-.. image:: images/training/axon-mobilenet-5.png
+.. image:: images/training/export-button.png
+  :alt: Click the Export Button
 
 You will soon see an export appear below the button.
 
-.. image:: images/training/axon-mobilenet-6.png
+.. image:: images/training/exporting.png
+  :alt: Exporting
 
-When the export has completed, you may click the menu to the right of an exported model, providing options to rename, delete, download, and test the export.
+When the export has completed, you will see the checkpoint appear in the checkpoint menu where you can select and work with any of the exported checkpoints.
 
-.. image:: images/training/axon-mobilenet-7.png
+.. image:: images/training/export-menu.png
+  :alt: Export Menu
 
-Click the download button, and your browser will download a tarfile containing two TFLite models, one of which is optimized for the Coral TPU. There is also a label map file, for use when converting the model's output to a human-readable format.
+You may click the menu to the right of an exported model, providing options to rename, and delete.
 
-.. image:: images/training/axon-mobilenet-8.png
+.. image:: images/training/rename-checkpoint.png
+  :alt: Menu Options
+
+Click the download button, and your browser will download a tarfile containing two TFLite models of the selected checkpoint, one of which is optimized for the Coral TPU. There is also a label map file, for use when converting the model's output to a human-readable format.
+
+.. image:: images/training/download-checkpoint.png
+  :alt: Select and Download Checkpoints
 
 Testing an Exported Model
 -------------------------
 
 To test an exported model, open the testing dialog by clicking the :guilabel:`Test` button in the menu of the export you would like to test.
 
-.. image:: images/training/axon-mobilenet-9.png
+.. image:: images/training/test-checkpoint-button.png
+  :alt: Test Checkpoint
 
 .. image:: images/training/axon-mobilenet-10.png
+  :alt: Test Menu
 
 First, click the :guilabel:`Select Video` box, and click the :guilabel:`+` that will appear to upload a video.
 
 .. image:: images/training/axon-mobilenet-11.png
+  :alt: Upload
 
 This will open a window that allows you to upload a ``.mp4`` file.
 
 .. image:: images/training/axon-mobilenet-12.png
+  :alt: Save
 
 Drop a ``.mp4`` in the dropzone, or click to select the file. Once the file is in the dropzone, click :guilabel:`Save`.
 
@@ -92,15 +109,18 @@ When uploaded, you will see the video in the dropdown menu, allowing you to sele
 You have the option to change the name of the annotated output video produced by the test.
 
 .. image:: images/training/axon-mobilenet-13.png
+  :alt: Press Test
 
 Click the :guilabel:`Test` button, and you will see the test begin.
 
 .. image:: images/training/axon-mobilenet-14.png
+  :alt: View the Test
 
 The test uses your model to annotate the video, creating a stream for you to watch as it happens. Click the :guilabel:`View` button, and the stream will open in a separate tab.
 
 When the test completes, you will see it at the bottom of the test dialog.
 
-.. image:: images/training/axon-mobilenet-14.png
+.. image:: images/training/axon-mobilenet-15.png
+  :alt: Test Dialog
 
 You can download the annotated video. Click the download icon next to the test’s name, and your browser will begin the download. The video is currently a ``.mp4`` within a ``.zip``.
