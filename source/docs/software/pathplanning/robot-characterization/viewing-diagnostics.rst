@@ -8,7 +8,7 @@ The next diagnostic to look at is the RMSE to make sure that the error is reason
 To investigate further, you can look at several diagnostic plots on the side.
 
 .. image:: images/plot-view.png
-   :alt: Picture of the diagnostic plot location
+   :alt: Diagnostic plot location
 
 Time-Domain Diagnostics
 -----------------------

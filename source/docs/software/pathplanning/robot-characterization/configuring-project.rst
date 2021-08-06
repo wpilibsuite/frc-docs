@@ -88,6 +88,6 @@ Deploying Project
 Once your project has been configured, it's time to deploy the robot project to run the characterization routine.
 
 .. image:: images/deploy-config.png
-   :alt: Deploying the robot project
+   :alt: Deploying the config file
 
 :guilabel:`Team/IP` is where you set your team number or IP. You can then deploy the code with the :guilabel:`Deploy` label.

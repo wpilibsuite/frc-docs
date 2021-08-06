@@ -10,7 +10,7 @@ JSON Converters
 There are a two JSON Utility tools that can be used in the :guilabel:`JSON Converters` tab: FRC-Char Converter and JSON to CSV Converter.
 
 .. image:: images/json-converters.png
-   :alt: Picture of the json converter location
+   :alt: Picture of the json converters
 
 The FRC-Char Converter reads in an FRC-Char JSON and converts it into a SysId JSON that the tool can read. 
 

@@ -6,7 +6,7 @@ Analyzing Data
 Once we have data from a characterization run, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
 
 .. image:: images/analyzer-view.png
-   :alt: Launching the data analyzer
+   :alt: Using the data analyzer
 
 Loading your Data File
 ----------------------
