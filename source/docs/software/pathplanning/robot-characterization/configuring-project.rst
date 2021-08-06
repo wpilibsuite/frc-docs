@@ -40,7 +40,7 @@ Here are the following settings that can be configured (although the settings th
 
 - Ports (either :guilabel:`A` and :guilabel:`B` or :guilabel:`CANCoder Port`
 - :guilabel:`Encoder Inverted` should be checked if a positive motor power doesn't correspond to a positive increase in encoder values
-- :guilabel:`Samples Per Average` is how many samples will be averaged per velocity measurement. A value greater than one can help reduce encoder noise and 5-10 is recommended for encoders with high CPR. Only mess with this setting if a previous run of SysId resulted in extremely noisy data. 
+- :guilabel:`Samples Per Average` is how many samples will be averaged per velocity measurement. A value greater than one can help reduce encoder noise and 5-10 is recommended for encoders with high CPR. Only mess with this setting if a previous run of SysId resulted in extremely noisy data.
 - :guilabel:`Reduce Encoding` should be checked if using high resolution encoders (e.g. CTRE Mag Encoders or REV Through Bore Encoder) that are plugged into the roboRIO. Do note, that if this is checked, you will have to update your team's robot code to also reduce encoding.
 - :guilabel:`Time Measurement Window` is the period of time in milliseconds that the velocity measurement will be taken across. This setting can reduce measurement lag at the cost of possibly introducing more noise. Only modify this if data lag is impeding accurate control and data collection.
 
@@ -55,7 +55,7 @@ Encoder Parameters
 - REV Throughbore: 8192
 - NEO (and NEO 550) Integrated Encoders (REV already handles this value): 1
 
-:guilabel:`Gearing` is the gearing between the encoder and output shaft. For example, an magnetic encoder on a kit chassis would have a gearing of one as it is on a 1:1 ratio with the output shaft. However, if is was an integrated encoder in a motor that was in the gearbox, the gearing would be 10.71 (per Andymark) since there is now gearing between the encoder and the output shaft. 
+:guilabel:`Gearing` is the gearing between the encoder and output shaft. For example, an magnetic encoder on a kit chassis would have a gearing of one as it is on a 1:1 ratio with the output shaft. However, if is was an integrated encoder in a motor that was in the gearbox, the gearing would be 10.71 (per Andymark) since there is now gearing between the encoder and the output shaft.
 
 .. image:: images/encoder-parameters.png
    :alt: Encoder parameters section.
@@ -64,7 +64,7 @@ Gyro Parameters (Drivetrain Only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :guilabel:`Gyro` lets you select the type of supported gyro.
-:guilabel:`Gyro Parameter` lets you configure additional settings needed to configure the previously specified gyro. 
+:guilabel:`Gyro Parameter` lets you configure additional settings needed to configure the previously specified gyro.
 
 .. image:: images/gyro-config.png
    :alt: Gyro configuration section.
