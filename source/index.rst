@@ -234,7 +234,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    +++
 
-   .. link-button:: docs/software/vscode-overview/3rd-party-libraries
+   .. link-button:: docs/zero-to-robot/step-4/3rd-party-libraries
       :type: ref
       :text: View article
       :classes: btn-outline-primary btn-block

@@ -50,7 +50,7 @@ For C++ projects, there is one more step to set up IntelliSense. Whenever you op
 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^
 
-It is necessary to update and re-import 3rd party libraries. See :doc:`3rd Party Libraries <3rd-party-libraries>` for details.
+It is necessary to update and re-import 3rd party libraries. See :doc:`3rd Party Libraries </docs/zero-to-robot/step-4/3rd-party-libraries>` for details.
 
 Manual Import Process (2020 to 2021)
 ------------------------------------
@@ -289,5 +289,5 @@ Delete ``imgui.ini`` (the Simulator GUI ini file) if it exists. The 2020 file fo
 Update 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is necessary to update 3rd party libraries. See :doc:`3rd Party Libraries <3rd-party-libraries>` for details.
+It is necessary to update 3rd party libraries. See :doc:`3rd Party Libraries </docs/zero-to-robot/step-4/3rd-party-libraries>` for details.
 It is necessary to update and re-import 3rd party libraries. See :doc:`3rd Party Libraries </docs/zero-to-robot/step-4/3rd-party-libraries>` for details.
