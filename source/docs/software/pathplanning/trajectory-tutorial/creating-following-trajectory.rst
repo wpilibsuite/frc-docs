@@ -9,19 +9,19 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 82-143
+      :lines: 75-137
       :linenos:
-      :lineno-start: 82
+      :lineno-start: 75
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 48-93
+      :lines: 47-92
       :linenos:
-      :lineno-start: 48
+      :lineno-start: 47
 
 Configuring the Trajectory Constraints
 --------------------------------------
@@ -45,11 +45,11 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 49-53
+      :lines: 48-52
       :linenos:
-      :lineno-start: 49
+      :lineno-start: 48
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -70,11 +70,11 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 55-61
+      :lines: 54-60
       :linenos:
-      :lineno-start: 55
+      :lineno-start: 54
 
 Generating the Trajectory
 -------------------------
@@ -93,11 +93,11 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 63-72
+      :lines: 62-71
       :linenos:
-      :lineno-start: 63
+      :lineno-start: 62
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -118,11 +118,11 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 87-89
+      :lines: 86-87
       :linenos:
-      :lineno-start: 87
+      :lineno-start: 86
 
 
 It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/trajectory/Trajectory.html#transformBy(edu.wpi.first.wpilibj.geometry.Transform2d)>`_,  `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
@@ -141,11 +141,11 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 74-85
+      :lines: 73-84
       :linenos:
-      :lineno-start: 74
+      :lineno-start: 73
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 

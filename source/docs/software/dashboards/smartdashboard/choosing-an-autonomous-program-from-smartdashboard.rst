@@ -91,15 +91,19 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
       :language: java
-      :lines: 44,49-50
+      :lines: 40-41,46-47
+      :linenos:
+      :lineno-start: 40
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
       :language: c++
-      :lines: 23
+      :lines: 20-22
+      :linenos:
+      :lineno-start: 20
 
 Canceling the Autonomous Command
 ---------------------------------
@@ -110,9 +114,11 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
       :language: java
-      :lines: 91-99
+      :lines: 78-87
+      :linenos:
+      :lineno-start: 78
 
   .. group-tab:: C++ (Source)
 
