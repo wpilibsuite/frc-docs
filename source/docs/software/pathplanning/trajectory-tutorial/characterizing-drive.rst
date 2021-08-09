@@ -1,7 +1,7 @@
 Step 1: Characterizing Your Robot Drive
 =======================================
 
-.. note::  For detailed instructions on using the FRC-Characterization tool, see its :ref:`dedicated documentation <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
+.. note::  For detailed instructions on using the System Identification tool, see its :ref:`dedicated documentation <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
 .. note:: The drive characterization process requires ample space for the robot to drive.  Be sure to have *at least* a 10' stretch (ideally closer to 20') in which the robot can drive during the characterization routine.
 
@@ -14,13 +14,8 @@ Gathering the Data
 
 We begin by gathering our drive characterization data.
 
-1. :ref:`Generate a robot project <docs/software/pathplanning/robot-characterization/generating-project:Generating a Project>`.
-
-  * Our example project uses the "simple" project type.  Other project types (e.g. Talon and NEO) can be used without much difference; however, be *sure* to specify the required robot parameters correctly, regardless of project type!
-  * WPILib's trajectory library assumes units of meters are used universally for distance - accordingly, be certain that your robot's wheel diameter is specified in meters!
-
-2. :ref:`Deploy the robot project <docs/software/pathplanning/robot-characterization/deploying-project:Deploying a Project>`.
-3. :ref:`Run the Characterization Routine <docs/software/pathplanning/robot-characterization/characterization-routine:Running the Characterization Routine>`.
+1. :ref:`Configure and Deploy a robot project <docs/software/pathplanning/robot-characterization/configuring-project:Configuring a Project>`.
+2. :ref:`Run the Characterization Routine <docs/software/pathplanning/robot-characterization/characterization-routine:Running the Characterization Routine>`.
 
 Analyzing the Data
 ------------------

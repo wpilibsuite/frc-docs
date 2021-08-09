@@ -6,7 +6,7 @@ Analyzing Data
 Once we have data from a characterization run, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
 
 .. image:: images/analyzer-view.png
-   :alt: Launching the data analyzer
+   :alt: Using the data analyzer
 
 Loading your Data File
 ----------------------
@@ -38,7 +38,7 @@ The computed coefficients of the mechanism characterization will then be display
 .. image:: images/feedforward-values.png
    :alt: Analysis coefficient results
 
-There are also two accuracy metrics that are computed with this tool: r-squared and RMSE. The `r-squared <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ metric refers to the goodness of fit of the tool's `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__. The `RMSE (Root Mean Squared Error) <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ is the error (in the measured units) between the collected velocities and the predicted velocities from a simulation based on the feedforward gains.   
+There are also two accuracy metrics that are computed with this tool: r-squared and RMSE. The `r-squared <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ metric refers to the goodness of fit of the tool's `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__. The `RMSE (Root Mean Squared Error) <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ is the error (in the measured units) between the collected velocities and the predicted velocities from a simulation based on the feedforward gains.
 
 .. image:: images/viewing-metrics.png
    :alt: Analysis accuracy metrics

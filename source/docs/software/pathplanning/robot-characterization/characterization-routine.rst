@@ -35,8 +35,6 @@ The tests can be run in any order, but running a "backwards" test directly after
 
 Follow the instructions in the pop-up windows after pressing each test button.
 
-.. image:: images/running-the-test.png
-   :alt: Running the various tests
 
 Track Width
 ^^^^^^^^^^^
