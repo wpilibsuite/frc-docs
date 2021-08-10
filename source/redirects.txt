@@ -239,3 +239,5 @@
 "docs/software/examples-tutorials/machine-learning/uploading-data-to-aws-s3.rst" "docs/software/wpilib-tools/axon/index.rst"
 "docs/software/examples-tutorials/machine-learning/using-inference-output.rst" "docs/software/wpilib-tools/axon/index.rst"
 "docs/software/examples-tutorials/machine-learning/video-walkthrough.rst" "docs/software/wpilib-tools/axon/index.rst"
+"docs/software/pathplanning/robot-characterization/deploying-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
+"docs/software/pathplanning/robot-characterization/generating-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
