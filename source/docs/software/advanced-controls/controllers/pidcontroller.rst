@@ -110,7 +110,7 @@ Setting a Max Integrator Value
 
 A typical problem encountered when using integral feedback is excessive "wind-up" causing the system to wildly overshoot the setpoint.  This can be alleviated in a number of ways - the WPILib ``PIDController`` enforces an integrator range limiter to help teams overcome this issue.
 
-By default, the integrator term's magnitiude is limited to 1.0.
+By default, the integrator term's magnitude is limited to 1.0.
 
 The range limits may be increased or decreased using the ``setIntegratorRange()`` method.
 
