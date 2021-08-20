@@ -3,6 +3,8 @@ Creating a Robot Program
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch.
 
+The other chapters in Zero-to-Robot will assume that the user is using the ``TimedRobot`` template.
+
 Choosing a Base Class
 ---------------------
 

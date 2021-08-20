@@ -43,4 +43,4 @@ Java/C++ Teams
 3rd Party Libraries/Software
 ----------------------------
 
-A directory of available 3rd party software that plugs in to WPILib can be found on :ref:`docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries`.
+A directory of available 3rd party software that plugs in to WPILib can be found on :ref:`docs/zero-to-robot/step-4/3rd-party-libraries:3rd Party Libraries`.

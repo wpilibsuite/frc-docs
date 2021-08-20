@@ -576,4 +576,4 @@ Fixing gradlew is not recognized...
 - Verify that the project directory is the correct directory and open this.
 
 **Is your project missing essential files?**
-- This issue is more complex to solve. The recommended solution is to :ref:`recreate your project <docs/software/vscode-overview/creating-robot-program:Creating a Robot Program>` and manually copy necessary code in.
+- This issue is more complex to solve. The recommended solution is to :ref:`recreate your project <docs/zero-to-robot/step-4/creating-robot-program:Creating a Robot Program>` and manually copy necessary code in.
