@@ -43,4 +43,4 @@ To follow this tutorial, you will need ready access to the following materials:
 
   * :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
   * :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
-  * :ref:`The FRC-Characterization Toolsuite <docs/software/pathplanning/robot-characterization/introduction:Installing and Launching the Toolsuite>`.
+  * :ref:`The System Identification Toolsuite <docs/software/pathplanning/robot-characterization/introduction:Installing the System Identification Tool>`.
