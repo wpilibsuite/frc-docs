@@ -87,15 +87,8 @@ jobs:
           git remote add upstream https://github.com/wpilibsuite/frc-docs.git
           git fetch upstream
           # Delete unchanged files
-          echo ".github/" > changed-files.txt
-          git diff upstream/main --name-only --diff-filter=M -- *.rst | tee changed-files.txt
-          git ls-files *.rst | xargs rm
-          git restore --pathspec-from-file=changed-files.txt || true;
-          # Write changed files to env
-          echo 'CHANGED_FILES<<EOF' >> $GITHUB_ENV
-          cat changed-files.txt >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-          rm changed-files.txt
+          git ls-files -- *.rst | xargs rm
+          git diff upstream/main..HEAD --name-only --diff-filter=M -- *.rst | xargs -I{} git restore {}
           # Make sure we still have the .github directory
           git restore .github
 
@@ -110,14 +103,10 @@ jobs:
 
       # If diff-autofix is triggered, restore temporarily deleted files
       - name: Restore unchanged files
+        # No point in restoring if we're not using them
         if: steps.trigger-diff.outputs.triggered == 'true'
         run: |
-          # Add files that Inspector modified, then restore temporarily deleted files
-          touch changed-files.txt
-          echo "${{ env.CHANGED_FILES }}" | tee changed-files.txt
-          git add --pathspec-from-file=changed-files.txt
-          git restore .
-          rm changed-files.txt
+          git diff --name-only --diff-filter=D | xargs -I{} git restore {}
 
       # If autofix is triggered, commit changes
       - name: Commit
@@ -126,6 +115,7 @@ jobs:
           # Set credentials
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git diff --name-only --diff-filter=Md | xargs -I{} git add {}
           # Commit
           git commit -m "Update RLIs"
           git push
