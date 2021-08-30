@@ -90,10 +90,14 @@ $RECYCLE.BIN/
 # Python
 *.pyc
 
-# JetBrains IDEs
-.idea
+# JetBrain IDEs
+.idea/
 *.iml
 
 # Virtualenvs
 venv/
 .venv/
+
+# If by any chance some Inspector temp files or the report passed through
+*.tmp
+report.md

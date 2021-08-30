@@ -117,7 +117,7 @@ jobs:
           git config user.email github-actions@github.com
           git diff --name-only --diff-filter=Md | xargs -I{} git add {}
           # Commit
-          git commit -m "Update RLIs"
+          git commit -m "Autofix RLIs"
           git push
 
       # ---- Common - Post Report ----
@@ -148,5 +148,5 @@ jobs:
 
       # If there are any outdated or invalid RLIs, fail the status check
       - name: Set exit code
-        if: ${{ steps.inspector.up-to-date == false }}
+        if: ${{ steps.inspector.outputs.up-to-date == false }}
         run: exit 1
