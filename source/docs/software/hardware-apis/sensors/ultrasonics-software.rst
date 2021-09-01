@@ -34,7 +34,7 @@ It is highly recommended to use ping-response ultrasonics in "automatic mode," a
     .. code-tab:: java
 
         // Starts the ultrasonic sensor running in automatic mode
-        ultrasonic.setAutomaticMode(true);
+        Ultrasonic.setAutomaticMode(true);
 
     .. code-tab:: c++
 
@@ -78,7 +78,7 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
         @Override
         public void robotInit() {
             // Start the ultrasonic in automatic mode
-            ultrasonic.setAutomaticMode(true);
+            Ultrasonic.setAutomaticMode(true);
         }
 
         @Override
