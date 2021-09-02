@@ -101,7 +101,7 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: Starlight220/InspectRLIs@main
+        uses: Starlight220/Inspector@v1.0
         id: inspector
         with:
           root: ${{ github.workspace }}
