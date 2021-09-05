@@ -30,7 +30,7 @@ In FRC\ |reg|, pressure is created using a pneumatic compressor and stored in pn
 
     .. code-tab:: java
 
-        Compressor c = new Compressor(0);
+        Compressor c = new Compressor(0, PneumaticsModuleType.CTREPCM);
 
         c.setClosedLoopControl(true);
         c.setClosedLoopControl(false);
@@ -41,7 +41,7 @@ In FRC\ |reg|, pressure is created using a pneumatic compressor and stored in pn
 
     .. code-tab:: c++
 
-        frc::Compressor c{0};
+        frc::Compressor c{0, frc::PneumaticsModuleType::CTREPCM};
 
         c.SetClosedLoopControl(true);
         c.SetClosedLoopControl(false);
@@ -56,7 +56,7 @@ In FRC\ |reg|, pressure is created using a pneumatic compressor and stored in pn
 Solenoid control
 ----------------
 
-FRC teams use solenoids to preform a variety of tasks, from shifting gearboxes to operating robot mechanisms. A solenoid is a valve used to electronically switch a pressurized air line "on" or "off". For more information on solenoids, see `this wikipedia article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled by a robot's Pneumatics Control Module, or PCM, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the small red LED (which indicates if the valve is "on" or not), and solenoids can be manually actuated when un-powered with the small button adjacent to the LED.
+FRC teams use solenoids to perform a variety of tasks, from shifting gearboxes to operating robot mechanisms. A solenoid is a valve used to electronically switch a pressurized air line "on" or "off". For more information on solenoids, see `this wikipedia article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled by a robot's Pneumatics Control Module, or PCM, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the small red LED (which indicates if the valve is "on" or not), and solenoids can be manually actuated when un-powered with the small button adjacent to the LED.
 
 Single acting solenoids apply or vent pressure from a single output port. They are typically used either when an external force will provide the return action of the cylinder (spring, gravity, separate mechanism) or in pairs to act as a double solenoid. A double solenoid switches air flow between two output ports (many also have a center position where neither output is vented or connected to the input). Double solenoid valves are commonly used when you wish to control both the extend and retract actions of a cylinder using air pressure. Double solenoid valves have two electrical inputs which connect back to two separate channels on the solenoid breakout.
 
@@ -65,20 +65,20 @@ PCM Modules are identified by their CAN Device ID. The default CAN ID for PCMs i
 Single Solenoids in WPILib
 --------------------------
 
-Single solenoids in WPILib are controlled using the Solenoid class. To construct a Solenoid object, simply pass the desired port number (assumes CAN ID 0) or CAN ID and port number to the constructor. To set the value of the solenoid call set(true) to enable or set(false) to disable the solenoid output.
+Single solenoids in WPILib are controlled using the Solenoid class. To construct a Solenoid object, simply pass the desired port number (assumes CAN ID 0) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call set(true) to enable or set(false) to disable the solenoid output.
 
 .. tabs::
 
     .. code-tab:: java
 
-        Solenoid exampleSolenoid = new Solenoid(1);
+        Solenoid exampleSolenoid = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
 
         exampleSolenoid.set(true);
         exampleSolenoid.set(false);
 
     .. code-tab:: c++
 
-        frc::Solenoid exampleSolenoid{1};
+        frc::Solenoid exampleSolenoid{frc::PneumaticsModuleType::CTREPCM, 1};
 
         exampleSolenoid.Set(true);
         exampleSolenoid.Set(false);
@@ -99,8 +99,8 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
         // further reading is available at https://www.geeksforgeeks.org/static-import-java/
         import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
-        DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);
-        DoubleSolenoid anotherDoubleSolenoid = new DoubleSolenoid(/* The PCM CAN ID */ 9, 4, 5);
+        DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+        DoubleSolenoid anotherDoubleSolenoid = new DoubleSolenoid(/* The PCM CAN ID */ 9, PneumaticsModuleType.CTREPCM, 4, 5);
 
 
         exampleDouble.set(kOff);
@@ -109,8 +109,8 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
 
    .. code-tab:: c++
 
-        frc::DoubleSolenoid exampleDouble{1, 2};
-        frc::DoubleSolenoid anotherDoubleSolenoid{/* The PCM CAN ID */ 9, 1, 2};
+        frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+        frc::DoubleSolenoid anotherDoubleSolenoid{/* The PCM CAN ID */ 9, frc::PneumaticsModuleType::CTREPCM, 4, 5};
 
         exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
         exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
@@ -122,14 +122,14 @@ Toggling Solenoids
 Solenoids can be switched from one output to the other (known as toggling) by using the `.toggle()` method.
 
 .. note::
-   Since a DoubleSolenoid defaults to off you will have to set it before it can be toggled.
+   Since a DoubleSolenoid defaults to off, you will have to set it before it can be toggled.
 
 .. tabs::
 
    .. code-tab:: java
 
-      Solenoid exampleSingle = new Solenoid(0);
-      DoubleSolenoid exampleDouble = new DoubleSolenoid(1, 2);
+      Solenoid exampleSingle = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
+      DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
 
       // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
       exampleDouble.set(kReverse);
@@ -141,8 +141,8 @@ Solenoids can be switched from one output to the other (known as toggling) by us
 
    .. code-tab:: c++
 
-      frc::Solenoid exampleSingle{0};
-      frc::DoubleSolenoid exampleDouble{1, 2};
+      frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
+      frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
 
       // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
       exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
