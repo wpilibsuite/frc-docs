@@ -29,7 +29,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
            public Intake() {
              motor = new PWMSparkMax(IntakeConstants.MOTOR_PORT);
-             piston = new DoubleSolenoid(IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV);
+             piston = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV);
            }
 
            public void deploy() {
@@ -74,7 +74,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
            private:
            frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
-           frc::DoubleSolenoid piston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
+           frc::DoubleSolenoid piston{frc::PneumaticsModuleType::CTREPCM, Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
          };
 
    .. group-tab:: C++ (Source)
@@ -136,7 +136,7 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
           assert HAL.initialize(500, 0); // initialize the HAL, crash if failed
           intake = new Intake(); // create our intake
           simMotor = new PWMSim(IntakeConstants.MOTOR_PORT); // create our simulation PWM motor controller
-          simPiston = new DoubleSolenoidSim(IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV); // create our simulation solenoid
+          simPiston = new DoubleSolenoidSim(PneumaticsModuleType.CTREPCM, IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV); // create our simulation solenoid
         }
 
         @After // this method will run after each test
@@ -186,7 +186,7 @@ Both JUnit and GoogleTest have multiple assertion types, but the most common is 
        protected:
         Intake intake; // create our intake
         frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT}; // create our simulation PWM
-        frc::sim::DoubleSolenoidSim simPiston{Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV}; // create our simulation solenoid
+        frc::sim::DoubleSolenoidSim simPiston{frc::PneumaticsModuleType::CTREPCM, Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV}; // create our simulation solenoid
       };
 
       TEST_F(IntakeTest, DoesntWorkWhenClosed) {
