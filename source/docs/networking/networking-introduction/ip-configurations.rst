@@ -27,6 +27,7 @@ On the Field DHCP Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Field Network runs a DHCP server with pools for each team that will hand out addresses in the range of 10.TE.AM.20 to 10.TE.AM.199 with a subnet mask of 255.255.255.0, and a default gateway of 10.TE.AM.4.
+When configured for an event, the Team Radio runs a DHCP server with a pool for devices onboard the robot that will hand out addresses in the range of 10.TE.AM.200 to 10.TE.AM.219 with a subnet mask of 255.255.255.0, and a gateway of 10.TE.AM.1.
 
 -  OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by
    Kiosk
@@ -45,7 +46,8 @@ It is also possible to configure static IPs on your devices to accommodate devic
 -  roboRIO - Static ``10.TE.AM.2`` would be a reasonable choice, subnet mask
    of ``255.255.255.0`` (default)
 -  Driver Station - Static ``10.TE.AM.5`` would be a reasonable choice,
-   subnet mask **must** be ``255.0.0.0`` to enable the DS to reach both the robot and FMS Server
+   subnet mask **must** be ``255.0.0.0`` to enable the DS to reach both the robot and FMS Server, without additionally configuring the default gateway. 
+   If a static address is assigned and the subnet mask is set to ``255.255.255.0``, then the default gateway must be configured to ``10.TE.AM.4``.
 -  IP Camera (if used) - Static ``10.TE.AM.11`` would be a reasonable
    choice, subnet ``255.255.255.0`` should be fine
 -  Other devices - Static ``10.TE.AM.6-.10`` or ``.12-.19`` (.11 if camera not
