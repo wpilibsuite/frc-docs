@@ -46,7 +46,7 @@ It is also possible to configure static IPs on your devices to accommodate devic
 -  roboRIO - Static ``10.TE.AM.2`` would be a reasonable choice, subnet mask
    of ``255.255.255.0`` (default)
 -  Driver Station - Static ``10.TE.AM.5`` would be a reasonable choice,
-   subnet mask **must** be ``255.0.0.0`` to enable the DS to reach both the robot and FMS Server, without additionally configuring the default gateway. 
+   subnet mask **must** be ``255.0.0.0`` to enable the DS to reach both the robot and FMS Server, without additionally configuring the default gateway.
    If a static address is assigned and the subnet mask is set to ``255.255.255.0``, then the default gateway must be configured to ``10.TE.AM.4``.
 -  IP Camera (if used) - Static ``10.TE.AM.11`` would be a reasonable
    choice, subnet ``255.255.255.0`` should be fine
