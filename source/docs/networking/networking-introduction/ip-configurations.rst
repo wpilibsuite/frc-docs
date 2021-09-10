@@ -26,7 +26,7 @@ This section describes networking when connected to the Field Network for match 
 On the Field DHCP Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Field Network runs a DHCP server with pools for each team that will hand out addresses in the range of 10.TE.AM.20 to 10.TE.AM.199 with a subnet mask of 255.255.255.0, and a default gateway of 10.TE.AM.4.
+The Field Network runs a DHCP server with pools for each team that will hand out addresses in the range of ``10.TE.AM.20`` to ``10.TE.AM.199`` with a subnet mask of ``255.255.255.0``, and a default gateway of ``10.TE.AM.4``.
 When configured for an event, the Team Radio runs a DHCP server with a pool for devices onboard the robot that will hand out addresses in the range of 10.TE.AM.200 to 10.TE.AM.219 with a subnet mask of 255.255.255.0, and a gateway of 10.TE.AM.1.
 
 -  OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by
