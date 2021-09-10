@@ -42,7 +42,7 @@ The FPGA's analog input modules supports both oversampling and averaging.  These
 Oversampling
 ~~~~~~~~~~~~
 
-When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2~{n}`:
+When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2^{n}`:
 
 .. tabs::
 
