@@ -197,6 +197,9 @@ def setup(app):
     # Fix rtd version/language menu on iOS
     app.add_js_file("js/fix-rtd-menu-ios.js")
 
+    # Launch external links in a new tab/window
+    app.add_js_file("js/external-links-new-tab.js")
+
 
 # -- Options for latex generation --------------------------------------------
 
