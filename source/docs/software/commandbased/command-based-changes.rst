@@ -1,7 +1,7 @@
 2020 Command-Based Rewrite: What Changed?
 =========================================
 
-This article provides a summary of changes from the :ref:`original command-based framework <docs/software/old-commandbased/basics/what-is-command-based:What is Command-Based Programming?>` to the 2020 rewrite.  This summary is not necessarily comprehensive - for rigorous documentation, as always, refer to the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/>`__).
+This article provides a summary of changes from the original command-based framework to the 2020 rewrite.  This summary is not necessarily comprehensive - for rigorous documentation, as always, refer to the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/>`__).
 
 Package Location
 ----------------

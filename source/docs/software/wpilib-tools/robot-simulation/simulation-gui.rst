@@ -5,7 +5,7 @@ Simulation Specific User Interface Elements
 
 WPILib has extended robot simulation to introduce a graphical user interface (GUI) component. This allows teams to easily visualize their robot's inputs and outputs.
 
-.. note:: The Simulation GUI is very similar in many ways to :ref:`Glass <docs/software/wpilib-tools/glass/introduction:Introduction to Glass>`.  Some of the following pages will link to Glass sections that describe elements common to both GUIs.
+.. note:: The Simulation GUI is very similar in many ways to :ref:`Glass <docs/software/dashboards/glass/introduction:Introduction to Glass>`.  Some of the following pages will link to Glass sections that describe elements common to both GUIs.
 
 Running the GUI
 ---------------
@@ -106,7 +106,7 @@ The :guilabel:`View` menu item contains :guilabel:`Zoom` and :guilabel:`Style` s
 
 An example of the ``Dark`` style setting is below:
 
-.. image:: /docs/software/wpilib-tools/glass/images/glass-dark-mode.png
+.. image:: /docs/software/dashboards/glass/images/glass-dark-mode.png
 
 .. note:: In Simulation GUI v2021.2.1 and below, the default zoom setting of 100% may cause text to appear too big on certain macOS Retina displays. Please reduce the zoom level to 75% or 50% or upgrade to v2021.2.2 or later to mitigate this issue.
 

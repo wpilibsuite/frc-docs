@@ -19,9 +19,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
 .. tabs::
 
-   .. group-tab:: Windows 10
-
-      Windows 10 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
+   .. group-tab:: Windows 10+
+      Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".

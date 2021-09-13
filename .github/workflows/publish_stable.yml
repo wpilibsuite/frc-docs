@@ -33,7 +33,7 @@ jobs:
           git merge --ff-only main
 
       - name: Push
-        if: ${{ env.PUBLISH_STABLE == 'true' || github.event.action == "workflow_dispatch" }}
+        if: ${{ env.PUBLISH_STABLE }} == 'true' || ${{ github.event.action }} == "workflow_dispatch"
         env:
           PUBLISH_STABLE: ${{ secrets.PUBLISH_STABLE }}
         run: |

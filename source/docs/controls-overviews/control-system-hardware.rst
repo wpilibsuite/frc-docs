@@ -32,7 +32,7 @@ Power Distribution Panel
   :alt: Power Distribution Panel
   :width: 500
 
-The :ref:`Power Distribution Panel <docs/software/can-devices/power-distribution-panel:Power Distribution Panel>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://www.ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__.
+The :ref:`Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://www.ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__.
 
 Voltage Regulator Module
 ------------------------
@@ -104,7 +104,7 @@ The :ref:`Pneumatics Control Module <docs/software/can-devices/pneumatics-contro
 Motor Controllers
 -----------------
 
-There are a variety of different :ref:`motor controllers <docs/software/actuators/overview:Actuator Overview>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of `usage <https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report>`__.
+There are a variety of different :ref:`motor controllers <docs/software/hardware-apis/index:Hardware APIs>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of `usage <https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report>`__.
 
 .. note:: 3rd Party CAN control is not supported from WPILib. See this section on :ref:`docs/software/can-devices/third-party-devices:Third-Party CAN Devices` for more information.
 

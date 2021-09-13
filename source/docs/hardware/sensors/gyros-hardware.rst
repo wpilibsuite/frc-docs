@@ -3,7 +3,7 @@
 Gyroscopes - Hardware
 =====================
 
-.. note:: This section covers gyro hardware.  For a software guide to gyros, see :ref:`docs/software/sensors/gyros-software:Gyroscopes - Software`.
+.. note:: This section covers gyro hardware.  For a software guide to gyros, see :ref:`docs/software/hardware-apis/sensors/gyros-software:Gyroscopes - Software`.
 
 Gyroscopes (or "gyros", for short) are devices that measure rate-of-rotation.  These are particularly useful for stabilizing robot driving, or for measuring heading or tilt by integrating (adding-up) the rate measurements to get a measurement of total angular displacement.
 
@@ -42,6 +42,6 @@ Three-axis gyros measure rotation rate around all three spacial axes (typically 
   :alt: The 3 axis: yaw, pitch, and roll and how they relate to robot movement.
   :width: 400
 
-.. note:: The coordinate system shown above is often used for three axis gyros, as it is a convention in avionics. Note that other coordinate systems are used in mathematics and referenced throughout WPILib. Please refer to the :ref:`Drive class axis diagram<docs/software/actuators/wpi-drive-classes:Axis Conventions>` for axis referenced in software.
+.. note:: The coordinate system shown above is often used for three axis gyros, as it is a convention in avionics. Note that other coordinate systems are used in mathematics and referenced throughout WPILib. Please refer to the :ref:`Drive class axis diagram<docs/software/hardware-apis/motors/wpi-drive-classes:Axis Conventions>` for axis referenced in software.
 
 Peripheral three-axis gyros may simply output three analog voltages (and thus connect to the :ref:`analog input ports <docs/hardware/sensors/analog-inputs-hardware:Connecting a sensor to multiple analog input ports>`, or (more commonly) they may communicate with one of the roboRIO's :doc:`serial buses <serial-buses>`.
