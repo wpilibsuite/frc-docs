@@ -241,3 +241,4 @@
 "docs/software/examples-tutorials/machine-learning/video-walkthrough.rst" "docs/software/wpilib-tools/axon/index.rst"
 "docs/software/pathplanning/robot-characterization/deploying-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
 "docs/software/pathplanning/robot-characterization/generating-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
+"docs/software/can-devices/power-distribution-panel.rst" "docs/software/can-devices/power-distribution-module.rst"
