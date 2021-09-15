@@ -406,7 +406,7 @@ dev = ["transifex-client", "sphinxcontrib-httpdomain", "bump2version"]
 
 [[package]]
 name = "sphinx-tabs"
-version = "3.1.0"
+version = "3.2.0"
 description = "Tabbed views for Sphinx"
 category = "main"
 optional = false
@@ -418,7 +418,7 @@ pygments = "*"
 sphinx = ">=2,<5"
 
 [package.extras]
-code_style = ["pre-commit (==2.6)"]
+code_style = ["pre-commit (==2.13.0)"]
 testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "pygments", "sphinx-testing", "bs4", "rinohtype"]
 
 [[package]]
@@ -666,7 +666,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "6911fb7b2b9f77ef048820a5b9a515487bb8e70fd5cdf8de7d161592f7141c9e"
+content-hash = "65171c86b24835000834e7b67c9ec4d7cfe77a85aa24d22053588d01c58be963"
 
 [metadata.files]
 alabaster = [
@@ -845,8 +845,8 @@ sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-1.0.0.tar.gz", hash = "sha256:eec6d497e4c2195fa0e8b2016b337532b8a699a68bcb22a512870e16925c6a5c"},
 ]
 sphinx-tabs = [
-    {file = "sphinx-tabs-3.1.0.tar.gz", hash = "sha256:5eee2a869b1226e1f618f0c7ed267e5e3c24425565e6313cad80d00a7119694f"},
-    {file = "sphinx_tabs-3.1.0-py3-none-any.whl", hash = "sha256:63df94e84bc05eb8598419a313ffc24455a14d1a580d174bb748404063958a67"},
+    {file = "sphinx-tabs-3.2.0.tar.gz", hash = "sha256:33137914ed9b276e6a686d7a337310ee77b1dae316fdcbce60476913a152e0a4"},
+    {file = "sphinx_tabs-3.2.0-py3-none-any.whl", hash = "sha256:1e1b1846c80137bd81a78e4a69b02664b98b1e1da361beb30600b939dfc75065"},
 ]
 sphinx-version-warning = [
     {file = "sphinx-version-warning-1.1.2.tar.gz", hash = "sha256:9924926fd3e739e32eb42ba2db092ecd7657200107146944fb3e440c9651d945"},
