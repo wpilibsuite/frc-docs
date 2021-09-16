@@ -8,6 +8,6 @@ sphinx:
   fail_on_warning: true
 
 python:
-  version: "3.9"
+  version: "3.8"
   install:
   - requirements: source/requirements.txt
