@@ -26,14 +26,17 @@ Release Process
 frc-docs uses a special release process for handling the main site ``/stable/`` and the development site ``/latest/``. This flow is detailed below.
 
 During Season:
+
 - Commit made to ``main`` branch
 
   - Updates ``/stable/`` and ``/latest/`` on the website
 
 End of Season:
+
 - Repository is tagged with year, for archival purposes
 
 Off-Season:
+
 - ``stable`` branch is locked to the last on-season commit
 - Commit made to ``main`` branch
 
