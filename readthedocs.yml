@@ -5,6 +5,10 @@ sphinx:
   configuration: source/conf.py
   fail_on_warning: true
 
+formats:
+  - htmlzip
+  - pdf
+
 python:
   version: "3.8"
   install:
