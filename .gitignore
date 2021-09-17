@@ -93,3 +93,7 @@ $RECYCLE.BIN/
 # JetBrains IDEs
 .idea
 *.iml
+
+# Virtualenvs
+venv/
+.venv/
