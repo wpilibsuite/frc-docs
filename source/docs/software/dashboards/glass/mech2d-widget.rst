@@ -6,7 +6,7 @@ Glass supports displaying stick-figure representations of your robot's mechanism
 Creating and Configuring the Mechanism2d Instance
 -------------------------------------------------
 
-The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. Coordinate system follow the same orientation as Field2d - ``(0,0)`` is bottom left.
+The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The coordinate system follows the same orientation as Field2d - ``(0,0)`` is bottom left.
 
 .. tabs::
 
