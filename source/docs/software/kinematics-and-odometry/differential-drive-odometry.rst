@@ -43,13 +43,14 @@ The ``update`` method can be used to update the robot's position on the field. T
 
       @Override
       public void periodic() {
-      // Get my gyro angle. We are negating the value because gyros return positive
-      // values as the robot turns clockwise. This is not standard convention that is
-      // used by the WPILib classes.
-      var gyroAngle = Rotation2d.fromDegrees(-m_gyro.getAngle());
+        // Get my gyro angle. We are negating the value because gyros return positive
+        // values as the robot turns clockwise. This is not standard convention that is
+        // used by the WPILib classes.
+        var gyroAngle = Rotation2d.fromDegrees(-m_gyro.getAngle());
 
-      // Update the pose
-      m_pose = m_odometry.update(gyroAngle, m_leftEncoder.getDistance(), m_rightEncoder.getDistance());
+        // Update the pose
+        m_pose = m_odometry.update(gyroAngle, m_leftEncoder.getDistance(), m_rightEncoder.getDistance());
+      }
 
    .. code-tab:: c++
 

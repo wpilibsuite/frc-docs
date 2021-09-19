@@ -50,11 +50,13 @@ Poor trajectory tracking performance can be difficult to troubleshoot. Although 
 
 Because it can be so hard to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended for general poor tracking performance (e.g. the robot is off by few feet or more than twenty degrees). The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
-.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
+.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
 
 Verify Odometry
 ^^^^^^^^^^^^^^^
 If your odometry is bad, then your Ramsete controller may misbehave, because it modifies your robot's target velocities based on where your odometry thinks the robot is.
+
+.. note:: :doc:`Sending your robot pose and trajectory to field2d </docs/software/dashboards/glass/field2d-widget>` can help verify that your robot is driving correctly relative to the robot trajectory.
 
 1. Set up your code to record your robot's position after each odometry update:
 
@@ -93,7 +95,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
     }
 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
-3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/wpilib-tools/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
+3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/pathplanning/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
 .. image:: images/track-width-logger.png
   :alt: Highlights the trackwidth section of characterization.
@@ -108,41 +110,48 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.2.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 131-132
+      :lines: 125-126
       :linenos:
-      :lineno-start: 136
+      :lineno-start: 125
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.2.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 82-83
+      :lines: 81-82
       :linenos:
-      :lineno-start: 80
+      :lineno-start: 81
 
-2. (Java only) Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. This is a bit more involved, because we can't just set the gains (b and zeta) to 0. Pass the following into your ``RamseteCommand``:
+2. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
 
 .. tabs::
 
    .. code-tab:: java
 
-    // Paste this variable in
-    RamseteController disabledRamsete = new RamseteController() {
-        @Override
-        public ChassisSpeeds calculate(Pose2d currentPose, Pose2d poseRef, double linearVelocityRefMeters,
-                double angularVelocityRefRadiansPerSecond) {
-            return new ChassisSpeeds(linearVelocityRefMeters, 0.0, angularVelocityRefRadiansPerSecond);
-        }
-    };
+    RamseteController m_disabledRamsete = new RamseteController();
+    m_disabledRamsete.setEnabled(false);
 
     // Be sure to pass your new disabledRamsete variable
     RamseteCommand ramseteCommand = new RamseteCommand(
         exampleTrajectory,
         m_robotDrive::getPose,
-        disabledRamsete,
+        m_disabledRamsete,
         ...
+    );
+
+   .. code-tab:: c++
+
+    frc::RamseteController m_disabledRamsete;
+    m_disabledRamsete.SetEnabled(false);
+
+    // Be sure to pass your new disabledRamsete variable
+    frc2::RamseteCommand ramseteCommand(
+      exampleTrajectory,
+      [this]() { return m_drive.GetPose(); },
+      m_disabledRamsete,
+      ...
     );
 
 3. Finally, we need to log desired wheel velocity and actual wheel velocity (you should put actual and desired velocities on the same graph if you're using Shuffleboard, or if your graphing software has that capability):

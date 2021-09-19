@@ -41,6 +41,7 @@ extensions = [
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.linkcheckdiff",
+    "sphinxext.mimictoc",
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
@@ -166,6 +167,10 @@ html_logo = "assets/wpilibDocsLogo.png"
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
+# Specify canonical root
+# This tells search engines that this domain is preferred
+html_baseurl = "https://docs.wpilib.org/"
+
 html_theme_options = {
     "collapse_navigation": True,
     "sticky_navigation": False,
@@ -188,6 +193,12 @@ def setup(app):
     app.config.hoverxref_tooltip_side = "left" if is_rtl else "right"
     if is_rtl:
         app.add_css_file("css/frc-rtl.css")
+
+    # Fix rtd version/language menu on iOS
+    app.add_js_file("js/fix-rtd-menu-ios.js")
+
+    # Launch external links in a new tab/window
+    app.add_js_file("js/external-links-new-tab.js")
 
 
 # -- Options for latex generation --------------------------------------------

@@ -47,7 +47,7 @@ LabVIEW Dashboard (Windows Only)
 .. image:: images/control-system-software/frc-labview-dashboard.png
    :alt: The default LabVIEW Dashboard on the Drive tab.
 
-The LabVIEW Dashboard is automatically launched by the FRC Driver Station by default. The purpose of the Dashboard is to provide feedback about the operation of the robot using tabbed display with a variety of built in features.  More information about the FRC Default Dashboard software can be found :ref:`here <docs/software/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.
+The LabVIEW Dashboard is automatically launched by the FRC Driver Station by default. The purpose of the Dashboard is to provide feedback about the operation of the robot using tabbed display with a variety of built in features.  More information about the FRC Default Dashboard software can be found :ref:`here <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.
 
 SmartDashboard
 ^^^^^^^^^^^^^^
@@ -55,7 +55,7 @@ SmartDashboard
 .. image:: images/control-system-software/smartdashboard.png
    :alt: SmartDashboard with 3 widgets added.
 
-SmartDashboard allows you to view your robot data by automatically creating customizable indicators specifically for each piece of data sent from your robot.  Additional documentation on SmartDashboard can be found :ref:`here <docs/software/wpilib-tools/smartdashboard/index:SmartDashboard>`.
+SmartDashboard allows you to view your robot data by automatically creating customizable indicators specifically for each piece of data sent from your robot.  Additional documentation on SmartDashboard can be found :ref:`here <docs/software/dashboards/smartdashboard/index:SmartDashboard>`.
 
 Shuffleboard
 ^^^^^^^^^^^^
@@ -63,7 +63,7 @@ Shuffleboard
 .. image:: images/control-system-software/shuffleboard.png
    :alt: Shuffleboard with 3 widgets from their NetworkTables entries added.
 
-Shuffleboard has the same features as SmartDashboard. It also improves on the setup and visualization of your data with new features and a modern design at the cost of being less resource efficient.  Additional documentation on Shuffleboard can be found :ref:`here <docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`.
+Shuffleboard has the same features as SmartDashboard. It also improves on the setup and visualization of your data with new features and a modern design at the cost of being less resource efficient.  Additional documentation on Shuffleboard can be found :ref:`here <docs/software/dashboards/shuffleboard/index:Shuffleboard>`.
 
 Glass
 ^^^^^
@@ -71,7 +71,7 @@ Glass
 .. image:: images/control-system-software/glass.png
    :alt: Glass connected and showing NetworkTables, a Field2D window, and a plot of a couple signals.
 
-:ref:`Glass <docs/software/wpilib-tools/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
+:ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
 
 LiveWindow
 ----------
@@ -79,7 +79,7 @@ LiveWindow
 .. image:: images/control-system-software/livewindow-smartdashboard.png
    :alt: LiveWindow showing two different subsystems.
 
-LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use with the Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found :ref:`here <docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/index:SmartDashboard: Test Mode and Live Window>`.
+LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use with the Test Mode of the Driver Station. LiveWindow allows the user to see feedback from sensors on the robot and control actuators independent of the written user code. More information about LiveWindow can be found :ref:`here <docs/software/dashboards/smartdashboard/test-mode-and-live-window/index:SmartDashboard: Test Mode and Live Window>`.
 
 FRC roboRIO Imaging Tool (Windows Only)
 ---------------------------------------
@@ -135,7 +135,7 @@ PathWeaver
 .. image:: images/control-system-software/pathweaver.png
    :alt: PathWeaver UI with a project for FRC Deep Space plotting a trajectory to the back of the rocket.
 
-PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/wpilib-tools/pathweaver/introduction:Introduction to PathWeaver>`.
+PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 Robot Characterization
 ----------------------
@@ -143,7 +143,7 @@ Robot Characterization
 .. image:: images/control-system-software/robot-characterization.png
    :alt: Robot Characterization new project screen that is highlighting "Generate Project".
 
-This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>`.
+This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
 OutlineViewer
 -------------
@@ -151,7 +151,7 @@ OutlineViewer
 .. image:: images/control-system-software/outline-viewer.png
    :alt: OutlineViewer with the preferences dialog box.
 
-OutlineViewer is a utility used to view, modify and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the Outline Viewer section.
+OutlineViewer is a utility used to view, modify and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the :ref:`Outline Viewer section <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.
 
 Setup Axis Camera (Windows Only)
 --------------------------------

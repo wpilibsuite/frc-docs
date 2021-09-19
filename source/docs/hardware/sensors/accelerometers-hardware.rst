@@ -7,7 +7,7 @@ Accelerometers are common sensors used to measure acceleration.
 
 In principle, precise measurements of acceleration can be double-integrated and used to track position (similarly to how the measurement of turn rate from a gyroscope can be integrated to determine heading) - however, in practice, accelerometers that are available within the legal FRC\ |reg| price range are not nearly accurate for this use.  However, accelerometers are still useful for a number of tasks in FRC.
 
-The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
+The roboRIO comes with a :ref:`built-in three-axis accelerometer <docs/software/hardware-apis/sensors/accelerometers-software:BuiltInAccelerometer>` that all teams can use, however teams seeking more-precise measurements may purchase and use a peripheral accelerometer, as well.
 
 
 Types of accelerometers
@@ -39,7 +39,7 @@ roboRIO built-in accelerometer
 .. image:: images/roborio/roborio-accelerometer.svg
   :alt: The details of this accelerometer are printed on the roboRIO to the right of the NI logo.
 
-The roboRIO has a built-in accelerometer, which does not need any external connections. You can find more details about how to use it in the :ref:`Built-in Accelerometer section <docs/software/sensors/accelerometers-software:BuiltInAccelerometer>` of the software documentation.
+The roboRIO has a built-in accelerometer, which does not need any external connections. You can find more details about how to use it in the :ref:`Built-in Accelerometer section <docs/software/hardware-apis/sensors/accelerometers-software:BuiltInAccelerometer>` of the software documentation.
 
 IMUs (Inertial Measurement Units)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

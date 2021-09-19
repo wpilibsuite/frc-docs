@@ -67,10 +67,10 @@ This is an example of a basic vision setup that posts the target's location in t
 
                rect = cv2.minAreaRect(contour)
                center, size, angle = rect
-               center = [int(dim) for dim in center] # Convert to int so we can draw
+               center = tuple([int(dim) for dim in center]) # Convert to int so we can draw
 
                # Draw rectangle and circle
-               cv2.drawContours(output_img, np.int0(cv2.boxPoints(rect)), -1, color = (0, 0, 255), thickness = 2)
+               cv2.drawContours(output_img, [cv2.boxPoints(rect).astype(int)], -1, color = (0, 0, 255), thickness = 2)
                cv2.circle(output_img, center = center, radius = 3, color = (0, 0, 255), thickness = -1)
 
                x_list.append((center[0] - width / 2) / (width / 2))

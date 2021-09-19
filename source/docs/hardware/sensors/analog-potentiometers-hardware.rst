@@ -3,7 +3,7 @@
 Analog Potentiometers - Hardware
 ================================
 
-.. note:: This section covers analog potentiometer hardware.  For a software guide to analog potentiometers, see :ref:`docs/software/sensors/analog-potentiometers-software:Analog Potentiometers - Software`.
+.. note:: This section covers analog potentiometer hardware.  For a software guide to analog potentiometers, see :ref:`docs/software/hardware-apis/sensors/analog-potentiometers-software:Analog Potentiometers - Software`.
 
 .. warning:: Potentiometers generally have a mechanically-limited travel range.  Users should be careful that their mechanisms do not turn their potentiometers past their maximum travel, as this will damage or destroy the potentiometer.
 

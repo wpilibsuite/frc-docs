@@ -8,6 +8,35 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Visual Studio Code project importer fails to import
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue**
+
+In the vscode-wpilib extension version 2021.3.1, the gradle project importer import button does not activate the import process.
+
+**Workaround**
+
+2020 projects can be manually imported using the :ref:`docs/software/vscode-overview/importing-gradle-project:Manual Import Process (2020 to 2021)`.
+
+To import a project from an earlier year, create a new project using VS Code and copy your source files into the new project.
+
+Failed to change IP Address in Radio Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue**
+
+The following error message may appear when configuring the radio ``Bridge configuration failed: Failed to change IP Address...``. This is due to a change in behavior in java versions 8u291 and 11.0.11.
+
+**Workaround**
+
+Install Java from the `WPILib 2020.3.2 installer <https://github.com/wpilibsuite/allwpilib/releases/tag/v2020.3.2>`__ . It is only necessary to install the Java JDK/JRE as shown below. The radio tool will use this version instead of any other system installed versions of java. This will take approximately 600 mb of disk space.
+
+.. Note:: As the radio tool is unchanged from 2020, it will use the WPILib java installation from 2020, not 2021, so it is necessary to use the 2020 installer.
+
+.. image:: images/known-issues/java-installation.png
+  :alt: WPILib 2020.3.2 installer showing only Java JDK/JRE checked.
+
 No such host is known in the WPILib Installer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

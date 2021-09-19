@@ -169,7 +169,7 @@ Create a Method to Write the Motors on the Subsystem
              m_drive.TankDrive(left, right);
          }
 
-Create a method that takes the joystick inputs, in this case the the left and right driver joystick. The values are passed to the RobotDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
+Create a method that takes the joystick inputs, in this case the the left and right driver joystick. The values are passed to the DifferentialDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
 
 .. note:: Some RobotBuilder output has been removed for this example for clarity
 
@@ -252,7 +252,7 @@ Add the Code to do the Driving
              }
          }
 
-Add code to the execute method to do the actual driving. All that is needed is to get the Joystick objects for the left and right drive joysticks and pass them to the Drive Train subsystem. The subsystem just uses them for the tank steering method on its RobotDrive object. And we get tank steering.
+Add code to the execute method to do the actual driving. All that is needed is to get the Joystick objects for the left and right drive joysticks and pass them to the Drive Train subsystem. The subsystem just uses them for the tank steering method on its DifferentialDrive object. And we get tank steering.
 
 We also filled in the ``end()`` method so that when this command is interrupted or stopped, the motors will be stopped as a safety precaution.
 

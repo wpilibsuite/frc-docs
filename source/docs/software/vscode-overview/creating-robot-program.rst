@@ -19,7 +19,7 @@ Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__
 
-The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()` and :code:`periodic()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SendableChooser.html>`__
+The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SendableChooser.html>`__
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
@@ -58,7 +58,7 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
 
             @Override
             public void teleopPeriodic() {
-                // This is called periodically while the robot is in teleopreated mode
+                // This is called periodically while the robot is in teleoperated mode
             }
 
             @Override
@@ -84,7 +84,7 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
                 void AutonomousInit() override; // This is called once when the robot first enters autonomous mode
                 void AutonomousPeriodic() override; // This is called periodically while the robot is in autonomous mode
                 void TeleopInit() override; // This is called once when the robot first enters teleoperated mode
-                void TeleopPeriodic() override; // This is called periodically while the robot is in teleopreated mode
+                void TeleopPeriodic() override; // This is called periodically while the robot is in teleoperated mode
                 void TestInit() override; // This is called once when the robot enters test mode
                 void TestPeriodic() override; // This is called periodically while the robot is in test mode
         };

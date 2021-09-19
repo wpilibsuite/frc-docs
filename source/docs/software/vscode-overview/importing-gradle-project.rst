@@ -10,6 +10,8 @@ To make it easy for teams to import previous years gradle projects into the curr
 
 .. important:: The import process copies your project source files from the current directory to a new directory and completely regenerates the gradle files. If you made non-standard updates to the build.gradle, you will need to make those changes again. For this reason, in place upgrades are not supported. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
 
+.. warning:: The automatic import process is broken in version 2021.3.1. As a workaround, the project may be :ref:`manually imported <docs/software/vscode-overview/importing-gradle-project:Manual Import Process (2020 to 2021)>`.
+
 Launching the Import Wizard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
