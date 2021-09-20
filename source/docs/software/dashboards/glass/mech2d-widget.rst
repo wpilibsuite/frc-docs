@@ -6,7 +6,7 @@ Glass supports displaying stick-figure representations of your robot's mechanism
 Creating and Configuring the Mechanism2d Instance
 -------------------------------------------------
 
-The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The coordinate system follows the same orientation as Field2d - ``(0,0)`` is bottom left.
+The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The name is used to name the root within networktables, and should be unique, but otherwise isn't important. The x / y coordinate system follows the same orientation as Field2d - ``(0,0)`` is bottom left.
 
 In the examples below, an elevator is drawn, with a rotational wrist on top of the elevator. The full mechanism2d example is available in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp>`__
 
@@ -29,7 +29,7 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
         :lineno-start: 59
 
 
-Each ``MechanismLigament2d`` object represents a stage of the mechanism. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
+Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has a three required parameters, a name, an initial length to draw (relative to the size of the mechanism2d object), and an initial angle to draw the ligament in degrees. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. Two optional parameters let you change the width (also relative to the size of the mechanism2d object) and the color. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
 
 .. tabs::
 
@@ -71,7 +71,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
 .. note:: The ``Mechanism2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Mechanism2d` widget will appear under the ``SmartDashboard`` table name.
 
-To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right.
+To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments.
 
 .. tabs::
 
@@ -105,4 +105,4 @@ Once the widget appears as shown below, you can resize and place it on the Glass
 Next Steps
 ----------
 
-As mentioned above, the Mechanism2d visualization can be combined with :doc:`Physics Simulation </docs/software/wpilib-tools/robot-simulation/physics-sim>` to help you program mechanisms before your robot is built. The ArmSimulation (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__) and ElevatorSimulation (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp>`__) examplses combine physics simulation and Mechanism2d visualization so that you can practice programing a single jointed arm and elevator without a robot.
+As mentioned above, the Mechanism2d visualization can be combined with :doc:`Physics Simulation </docs/software/wpilib-tools/robot-simulation/physics-sim>` to help you program mechanisms before your robot is built. The ArmSimulation (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__) and ElevatorSimulation (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp>`__) examples combine physics simulation and Mechanism2d visualization so that you can practice programing a single jointed arm and elevator without a robot.
