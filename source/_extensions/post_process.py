@@ -32,7 +32,7 @@ def do(app: Sphinx, exception: Union[Exception, None]) -> None:
     change_fontawesome_icons(app)
     cleanup_fontawesome_css(app)
     cleanup_fontawesome_font_files(app)
-    minify(app)
+    # minify(app)
 
 
 def change_fontawesome_icons(app: Sphinx) -> None:
