@@ -218,7 +218,7 @@ def minify(app: Sphinx) -> None:
     big_new_total = 0
 
     for ext in (
-        "html",
+        # "html",
         "css",
         "js",
     ):
