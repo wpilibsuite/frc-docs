@@ -14,6 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import sys
+import os
+
+sys.path.append(os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
@@ -47,6 +51,14 @@ extensions = [
     "versionwarning.extension",
     "sphinx_panels",
 ]
+
+local_extensions = [
+    # "_extensions.minify",
+    # "_extensions.responsive_images",
+    "_extensions.post_process",
+]
+
+extensions += local_extensions
 
 versionwarning_messages = {
     "latest": """

@@ -1,6 +1,9 @@
 alabaster==0.7.12; python_version >= "3.6"
 babel==2.9.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
+brotli==1.0.9; platform_python_implementation == "CPython" and python_version >= "3.6"
+brotlicffi==1.0.9.2; platform_python_implementation != "CPython" and python_version >= "3.6"
 certifi==2021.5.30; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
+cffi==1.14.6; platform_python_implementation != "CPython" and python_version >= "3.6"
 chardet==4.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 charset-normalizer==2.0.5; python_full_version >= "3.6.0" and python_version >= "3.6"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.6" and python_full_version >= "3.5.0"
@@ -8,6 +11,7 @@ data==0.4
 decorator==5.1.0; python_version >= "3.5"
 doc8==0.8.1
 docutils==0.16; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+fonttools==4.27.0; python_version >= "3.6"
 funcsigs==1.0.2
 future==0.18.2; python_version >= "2.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
 gitdb==4.0.7; python_version >= "3.6"
@@ -19,8 +23,10 @@ importlib-resources==3.0.0; python_version >= "2.7" and python_full_version < "3
 jinja2==3.0.1; python_version >= "3.6"
 latex==0.7.0
 markupsafe==2.0.1; python_version >= "3.6"
+minify-html==0.6.8
 packaging==21.0; python_version >= "3.6"
 pbr==5.6.0; python_version >= "3.6"
+pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" and platform_python_implementation != "CPython" or platform_python_implementation != "CPython" and python_version >= "3.6" and python_full_version >= "3.4.0"
 pygments==2.10.0; python_version >= "3.6" and python_version < "4.0"
 pyparsing==2.4.7; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
 pytz==2021.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
@@ -57,3 +63,4 @@ tempdir==0.7.1
 typing-extensions==3.10.0.2; python_version < "3.8" and python_version >= "3.6"
 urllib3==1.26.6; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0" and python_version < "4")
 zipp==3.5.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
+zopfli==0.1.8; python_version >= "3.6"
