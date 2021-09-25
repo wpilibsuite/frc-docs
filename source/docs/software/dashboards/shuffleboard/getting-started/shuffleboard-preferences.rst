@@ -22,7 +22,7 @@ Shuffleboard positions tiles on a grid when you are adding or moving them yourse
 Working with the layout save files
 ----------------------------------
 
-Shuffleboard will default to saving your layout when you exit the application. You can also save it explicitly using the File / Save and File / Save as... menu options. The preferences window has options to cause the previous layout to be automatically applied when Shuffleboard starts. In addition, Shuffleboard will always display a "Save layout" window to remind you to save the layout. You can choose to turn off the automatic prompt on exit, but be sure to save the layout manually in this case so you don't loose your changes.
+You can save your layout using the File / Save and File / Save as... menu options. The preferences window has options to cause the previous layout to be automatically applied when Shuffleboard starts. In addition, Shuffleboard will display a "Save layout" window to remind you to save the layout on exit, if the layout has changed. You can choose to turn off the automatic prompt on exit, but be sure to save the layout manually in this case so you don't loose your changes.
 
 .. figure:: images/preferences-3.png
    :alt:
