@@ -140,8 +140,8 @@ PathWeaver allows teams to quickly generate and configure paths for advanced aut
 Robot Characterization
 ----------------------
 
-.. image:: images/control-system-software/robot-characterization.png
-   :alt: Robot Characterization new project screen that is highlighting "Generate Project".
+.. image:: /docs/software/pathplanning/robot-characterization/images/analysis-type.png
+   :alt: Robot Characterization new project screen.
 
 This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
 
