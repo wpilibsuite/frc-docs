@@ -51,12 +51,11 @@ jobs:
         if: github.event_name != 'pull_request' && !steps.trigger-all.outputs.triggered && !steps.trigger-check-all.outputs.triggered && !steps.trigger-diff.outputs.triggered
         run: exit 1
 
-      # ---- Checkout - Triggered by Pull Request -----
-      # If triggered by a pull request, simple checkout
-      - name: Checkout [Pull Request]
-        if: github.event_name == 'pull_request'
+      - name: Checkout [Common]
         uses: actions/checkout@v2
 
+      # ---- Checkout - Triggered by Pull Request -----
+      # If triggered by a pull request, simple checkout
       - name: Set Number [Pull Request]
         if: github.event_name == 'pull_request'
         run: echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
@@ -67,22 +66,12 @@ jobs:
         if: github.event_name != 'pull_request'
         run: echo "number=${{ github.event.issue.number }}" >> $GITHUB_ENV
 
-      - name: Get Pull Request Ref
+      - name: Checkout PR [Comment]
         if: github.event_name != 'pull_request'
-        id: get_pr_ref
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /repos/:repository/pulls/:issue_id
-          repository: ${{ github.repository }}
-          issue_id: ${{ github.event.issue.number }}
+        run: gh pr checkout $NUMBER
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Checkout [Comment]
-        if: github.event_name != 'pull_request'
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ fromJson(steps.get_pr_ref.outputs.data).head.ref }}
+          NUMBER: ${{ github.event.issue.number }}
 
 
       # ---- Common - Run ----
