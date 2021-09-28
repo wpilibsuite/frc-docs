@@ -1,12 +1,12 @@
 name: Update RLIs
 on:
-  pull_request:
+  pull_request_target:
   issue_comment:
     types: [ created ]
 
 jobs:
   check-rli:
-    if: github.event_name == 'pull_request' || (contains(github.event.comment.html_url, '/pull/')  && contains(github.event.comment.body, '\inspector'))
+    if: github.event_name == 'pull_request_target' || (contains(github.event.comment.html_url, '/pull/')  && contains(github.event.comment.body, '\inspector'))
     runs-on: ubuntu-latest
     steps:
       # ---- Find Trigger States ----
@@ -14,7 +14,7 @@ jobs:
       - name: Trigger-Check
         uses: khan/pull-request-comment-trigger@master
         id: trigger-check-all
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         with:
           trigger: '\inspector check all'
           prefix_only: true
@@ -26,7 +26,7 @@ jobs:
       - name: Trigger-Diff
         uses: khan/pull-request-comment-trigger@master
         id: trigger-diff
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         with:
           trigger: '\inspector fix diff'
           prefix_only: true
@@ -38,7 +38,7 @@ jobs:
       - name: Trigger-All
         uses: khan/pull-request-comment-trigger@master
         id: trigger-all
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         with:
           trigger: '\inspector fix all'
           prefix_only: true
@@ -48,7 +48,7 @@ jobs:
 
       # If this is a comment without a command, exit.
       - name: Quick exit
-        if: github.event_name != 'pull_request' && !steps.trigger-all.outputs.triggered && !steps.trigger-check-all.outputs.triggered && !steps.trigger-diff.outputs.triggered
+        if: github.event_name != 'pull_request_target' && !steps.trigger-all.outputs.triggered && !steps.trigger-check-all.outputs.triggered && !steps.trigger-diff.outputs.triggered
         run: exit 1
 
       - name: Checkout [Common]
@@ -58,7 +58,7 @@ jobs:
       # If triggered by a pull request, simple checkout
       - name: Set Number [Pull Request]
         if: github.event_name == 'pull_request'
-        run: echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+        run: echo "number=${{ github.event.pull_request_target.number }}" >> $GITHUB_ENV
 
       # ---- Checkout - Triggered by Comment -----
       # If triggered by a comment, we need to find out which ref to checkout
@@ -67,7 +67,7 @@ jobs:
         run: echo "number=${{ github.event.issue.number }}" >> $GITHUB_ENV
 
       - name: Checkout PR [Comment]
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         run: gh pr checkout $NUMBER
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
