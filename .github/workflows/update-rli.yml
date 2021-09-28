@@ -57,13 +57,13 @@ jobs:
       # ---- Checkout - Triggered by Pull Request -----
       # If triggered by a pull request, simple checkout
       - name: Set Number [Pull Request]
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request_target'
         run: echo "number=${{ github.event.pull_request_target.number }}" >> $GITHUB_ENV
 
       # ---- Checkout - Triggered by Comment -----
       # If triggered by a comment, we need to find out which ref to checkout
       - name: Set Number [Comment]
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request_target'
         run: echo "number=${{ github.event.issue.number }}" >> $GITHUB_ENV
 
       - name: Checkout PR [Comment]
