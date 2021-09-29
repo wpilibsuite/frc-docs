@@ -10,4 +10,4 @@ The roboRIO is a reconfigurable robotics controller that includes built-in ports
 
 Detailed information on the roboRIO can be found in the `roboRIO User Manual <https://www.ni.com/pdf/manuals/374474a.pdf>`__ and in the `roboRIO technical specifications <https://www.ni.com/pdf/manuals/374661a.pdf>`__.
 
-Before deploying programs to your roboRIO, you must first :ref:`image the roboRIO <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>` with the FRC roboRIO Imaging Tool shown in the next article.
+Before deploying programs to your roboRIO, you must first :ref:`image the roboRIO <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>` with the FRC roboRIO Imaging Tool.
