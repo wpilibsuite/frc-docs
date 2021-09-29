@@ -6,9 +6,9 @@ Glass supports displaying stick-figure representations of your robot's mechanism
 Creating and Configuring the Mechanism2d Instance
 -------------------------------------------------
 
-The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The name is used to name the root within networktables, and should be unique, but otherwise isn't important. The x / y coordinate system follows the same orientation as Field2d - ``(0,0)`` is bottom left.
+The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The name is used to name the root within NetworkTables, and should be unique, but otherwise isn't important. The ``x / y`` coordinate system follows the same orientation as ``Field2d`` - ``(0,0)`` is bottom left.
 
-In the examples below, an elevator is drawn, with a rotational wrist on top of the elevator. The full mechanism2d example is available in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp>`__
+In the examples below, an elevator is drawn, with a rotational wrist on top of the elevator. The full Mechanism2d example is available in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp>`__
 
 .. tabs::
 
@@ -22,20 +22,20 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 59-62
         :linenos:
         :lineno-start: 59
 
 
-Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has a three required parameters, a name, an initial length to draw (relative to the size of the mechanism2d object), and an initial angle to draw the ligament in degrees. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. Two optional parameters let you change the width (also relative to the size of the mechanism2d object) and the color. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
+Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has a three required parameters, a name, an initial length to draw (relative to the size of the ``Mechanism2d`` object), and an initial angle to draw the ligament in degrees. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. Two optional parameters let you change the width (also relative to the size of the Mechanism2d object) and the color. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
 
 .. tabs::
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 48-53
         :linenos:
@@ -43,7 +43,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 63-69
         :linenos:
@@ -55,7 +55,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 55-56
         :linenos:
@@ -63,7 +63,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 36-37
         :linenos:
@@ -77,7 +77,7 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
 
   .. group-tab:: Java
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
         :language: java
         :lines: 59-64
         :linenos:
@@ -85,7 +85,7 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
 
   .. group-tab:: C++
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a446c25598546813ff410654bea343b2d7bc0e6c/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-alpha-1/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
         :language: cpp
         :lines: 40-45
         :linenos:
