@@ -200,6 +200,9 @@ def setup(app):
     # Launch external links in a new tab/window
     app.add_js_file("js/external-links-new-tab.js")
 
+    # Italicize instances of FIRST
+    app.add_js_file("js/italicize_first.js")
+
 
 # -- Options for latex generation --------------------------------------------
 
