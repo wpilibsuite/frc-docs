@@ -102,7 +102,7 @@ To get the pulse width, call the :code:`getPeriod()` method:
     .. code-tab:: java
 
         // Return the measured pulse width in seconds
-        counter.GetPeriod();
+        counter.getPeriod();
 
     .. code-tab:: c++
 
