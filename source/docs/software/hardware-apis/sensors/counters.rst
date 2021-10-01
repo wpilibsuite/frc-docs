@@ -107,7 +107,7 @@ To get the pulse width, call the :code:`getPeriod()` method:
     .. code-tab:: c++
 
         // Return the measured pulse width in seconds
-        counter.getPeriod();
+        counter.GetPeriod();
 
 Pulse-length mode
 ~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
             counter.setUpSourceEdge(true, true);
 
             // Set the counter to count down if the pulses are longer than .05 seconds
-            counter.SetPulseLengthMode(.05)
+            counter.setPulseLengthMode(.05)
         }
 
     .. code-tab:: c++
@@ -146,7 +146,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
             counter.SetUpSourceEdge(true, true);
 
             // Set the counter to count down if the pulses are longer than .05 seconds
-            counter.setPulseLengthMode(.05)
+            counter.SetPulseLengthMode(.05)
 
 External direction mode
 ~~~~~~~~~~~~~~~~~~~~~~~
