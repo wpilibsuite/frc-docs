@@ -15,7 +15,7 @@ Before you begin using the software:
 Prerequisites
 -------------
 
-.. important::. Teams planning on using the tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot->`__.
+.. important::. Teams planning on using the tool on a machine without the 2020 WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=hotspot>`__. Due to a :ref:`Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>` it is recommended to install version 11.0.10.
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
 
@@ -97,7 +97,7 @@ Allow the program to make changes, if prompted
 .. image:: images/radio-programming/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
-If your computer is running Windows, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
+A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
 Select the network interface
 ----------------------------
