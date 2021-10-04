@@ -64,7 +64,7 @@ The Radio Configuration Utility programs a number of configuration settings into
   - Subnet mask of ``255.255.255.0``
   - Broadcast address ``10.TE.AM.255``
 
-- DNS server enabled. DNS server IP and domain suffix (.lan) are served as part of the DHCP.
+- DNS server enabled. DNS server IP and domain suffix (``.lan``) are served as part of the DHCP.
 
 At home only:
 
