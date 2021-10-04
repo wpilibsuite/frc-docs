@@ -38,7 +38,7 @@ The Radio Configuration Utility programs a number of configuration settings into
   - Subnet mask of ``255.255.255.0``
   - Broadcast address ``10.TE.AM.255``
 
-- DNS server enabled. DNS server IP and domain suffix (.lan) are served as part of the DHCP.
+- DNS server enabled. DNS server IP and domain suffix (``.lan``) are served as part of the DHCP.
 
 .. tip:: See the :ref:`Status Light Reference <docs/hardware/hardware-basics/status-lights-ref:OpenMesh Radio>` for details on the behavior of the radio status lights when configured.
 
