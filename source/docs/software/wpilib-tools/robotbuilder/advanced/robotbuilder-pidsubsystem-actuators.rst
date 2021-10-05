@@ -1,7 +1,7 @@
 Using PIDSubsystem to Control Actuators
 =======================================
 
-More advanced subsystems will use sensors for feedback to get guaranteed results for operations like setting elevator heights or wrist angles. The PIDSubsystem has a built-in PIDController to automatically control the mechanism to the correct setpoints.
+More advanced subsystems will use sensors for feedback to get guaranteed results for operations like setting elevator heights or wrist angles.  PIDSubsystems use feedback to control the actuator and drive it to a particular position. In this example we use an elevator with a 10-turn potentiometer connected to it to give feedback on the height. The PIDSubsystem has a built-in PIDController to automatically control the mechanism to the correct setpoints.
 
 Create a PIDSubsystem
 ---------------------
@@ -50,3 +50,4 @@ Click on the :guilabel:`add constant` button
 2. Select a type for the constant from the drop-down menu, in this case: double
 3. Select a value for the constant, in this case: 4.65
 4. Click :guilabel:`add constant` to continue adding constants
+5. After entering all constants, Click :guilabel:`Save and close`
