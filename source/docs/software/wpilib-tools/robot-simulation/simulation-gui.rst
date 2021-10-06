@@ -108,8 +108,6 @@ An example of the ``Dark`` style setting is below:
 
 .. image:: /docs/software/dashboards/glass/images/glass-dark-mode.png
 
-.. note:: In Simulation GUI v2021.2.1 and below, the default zoom setting of 100% may cause text to appear too big on certain macOS Retina displays. Please reduce the zoom level to 75% or 50% or upgrade to v2021.2.2 or later to mitigate this issue.
-
 Clearing Application Data
 -------------------------
 
