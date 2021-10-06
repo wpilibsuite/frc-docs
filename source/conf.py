@@ -53,8 +53,6 @@ extensions = [
 ]
 
 local_extensions = [
-    # "_extensions.minify",
-    # "_extensions.responsive_images",
     "_extensions.post_process",
 ]
 
