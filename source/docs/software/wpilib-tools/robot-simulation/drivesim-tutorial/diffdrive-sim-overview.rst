@@ -1,6 +1,5 @@
 Drivetrain Simulation Overview
 ==============================
-.. note:: WPILib only supports simulating differential drivetrains for the 2021 season. Support for similar simulation capabilities for teams using swerve and mecanum drivetrains is in development.
 
 .. note:: The code in this tutorial does not use any specific framework (i.e. command-based vs. simple data flow); however, guidance will be provided in certain areas for how to best implement certain pieces of code in specific framework types.
 
