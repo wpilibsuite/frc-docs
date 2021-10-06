@@ -18,7 +18,7 @@ Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top 
 Option 2 - Shortcuts
 --------------------
 
-Shortcuts are installed to the Windows Start Menu and the ``2021 WPILib Tools`` folder on the desktop.
+Shortcuts are installed to the Windows Start Menu and the ``2022 WPILib Tools`` folder on the desktop.
 
 Option 3 - Running from the Script
 ----------------------------------
