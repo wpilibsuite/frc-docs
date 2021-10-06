@@ -8,25 +8,25 @@ Robot Project Properties
 
 The properties that describe the robot are:
 
-**Name** - The name of the robot project that is created
+* **Name** - The name of the robot project that is created
 
-**Autonomous Command** - the command that will run by default when the program is placed in autonomous mode
+* **Autonomous Command** - the command that will run by default when the program is placed in autonomous mode
 
-**Autonomous Command Parameters** - Parameters for the Autonomous Command
+* **Autonomous Command Parameters** - Parameters for the Autonomous Command
 
-**Team Number** - The team number for the project, which will be used to locate the robot when deploying code.
+* **Team Number** - The team number for the project, which will be used to locate the robot when deploying code.
 
-**Use Default Java Package** - If checked RobotBuilder will use the default package (frc.robot). Otherwise you can specify a custom package name to be used.
+* **Use Default Java Package** - If checked RobotBuilder will use the default package (frc.robot). Otherwise you can specify a custom package name to be used.
 
-**Java Package** - The name of the generated Java package used when generating the project code
+* **Java Package** - The name of the generated Java package used when generating the project code
 
-**Export Directory** - The folder that the project is generated into when Export to Java or C++ is selected
+* **Export Directory** - The folder that the project is generated into when Export to Java or C++ is selected
 
-**Export Subsystems** - Checked if RobotBuilder should export the Subsystem classes from your project
+* **Export Subsystems** - Checked if RobotBuilder should export the Subsystem classes from your project
 
-**Export Commands** - Checked if RobotBuilder should export the Command classes from your project
+* **Export Commands** - Checked if RobotBuilder should export the Command classes from your project
 
-**Wiring File** - the location of the html file that contains the wiring diagram for your robot
+* **Wiring File** - the location of the html file that contains the wiring diagram for your robot
 
 Using Source Control with the RobotBuilder Project
 --------------------------------------------------
