@@ -85,8 +85,6 @@ def cleanup_fontawesome_font_files(app: Sphinx):
         elif fa_font_path.suffix == ".woff2":
             args.append("--flavor=woff2")
 
-        ss(args)
-
         fa_dest.replace(fa_font_path)
         new_font_size = fa_font_path.stat().st_size
 
