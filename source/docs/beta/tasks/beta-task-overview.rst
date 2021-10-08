@@ -16,7 +16,7 @@ The purpose of Task 0 is to complete some housekeeping tasks and familiarize you
 
 
 Task 1 - Install Software (Targeted Completion 10/22/2021)
----------------------------------------------------------
+----------------------------------------------------------
 
 The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 

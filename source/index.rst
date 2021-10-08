@@ -238,7 +238,7 @@ Community translations can be found in a variety of languages in the bottom-left
       :type: ref
       :text: View article
       :classes: btn-outline-primary btn-block
-      
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
