@@ -238,6 +238,16 @@ Community translations can be found in a variety of languages in the bottom-left
       :type: ref
       :text: View article
       :classes: btn-outline-primary btn-block
+      
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :caption: FRC Beta Test
+   :hidden:
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
 
 .. toctree::
    :maxdepth: 1
