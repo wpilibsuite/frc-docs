@@ -608,7 +608,7 @@ sphinx = ">=2.0"
 
 [[package]]
 name = "sphinxext-photofinish"
-version = "0.1.6"
+version = "0.1.7"
 description = "Sphinx Extension that creates responsive images."
 category = "main"
 optional = false
@@ -710,7 +710,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "a5ed8c7a768fde341689b46590f3522469613d77c69c9783aa1c5008279f3089"
+content-hash = "5a8ef2bad4d8ad0fc0a0619c6d4f5443790c9fffe776adcfbee455a41f004cd6"
 
 [metadata.files]
 alabaster = [
@@ -1027,8 +1027,8 @@ sphinxext-opengraph = [
     {file = "sphinxext_opengraph-0.4.1-py3-none-any.whl", hash = "sha256:ebdfd83535aad4ffe290d5adffe181dae03b59da7fdd25765ee4982e2041bf9e"},
 ]
 sphinxext-photofinish = [
-    {file = "sphinxext-photofinish-0.1.6.tar.gz", hash = "sha256:f51aec19bee629822efdf8d8b84c1fa39f9baf3c4f84825d4d6ad1acd63f6f50"},
-    {file = "sphinxext_photofinish-0.1.6-py3-none-any.whl", hash = "sha256:858d6b59c2b8b97fe30ae9a798ca721f7fd73dcb112e59fdbe0871be05132f5f"},
+    {file = "sphinxext-photofinish-0.1.7.tar.gz", hash = "sha256:19fb9d4f258224219a7ae8bddd5e89ffa7a11680dc02aa3559c96cb6b9e22b82"},
+    {file = "sphinxext_photofinish-0.1.7-py3-none-any.whl", hash = "sha256:b87f64a1d929e89825d25b98d7e1e94831719b3d053d517fc0e9d6e40660111e"},
 ]
 sphinxext-rediraffe = [
     {file = "sphinxext-rediraffe-0.2.5.tar.gz", hash = "sha256:a17287cdee7763341b91762879e042b33a4916d6a2fc6d2f97a18107325bd2cc"},
