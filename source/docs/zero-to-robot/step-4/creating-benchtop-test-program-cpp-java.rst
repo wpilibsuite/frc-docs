@@ -49,15 +49,15 @@ After successfully creating your project, VS Code will give the option of openin
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
-    :alt: The robo.java code shown after opening a new project.
+    :alt: The robot.java code shown after opening a new project.
 
 C++ Configurations (C++ Only)
 -----------------------------
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
-.. image:: /docs/software/vscode-overview/images/importing-eclipse-project/cpp-configurations.png
-    :alt: You must choose "Yes" to refrest the C++ configurations.
+.. image:: /docs/software/vscode-overview/images/importing-previous-project/cpp-configurations.png
+    :alt: You must choose "Yes" to refresh the C++ configurations.
 
 Imports/Includes
 ----------------
