@@ -27,8 +27,69 @@ def do(app: Sphinx, exception: Union[Exception, None]) -> None:
         return
 
     print("Running custom post processing")
+    cleanup_fontawesome_css(app)
     cleanup_fontawesome_font_files(app)
 
+def cleanup_fontawesome_css(app: Sphinx) -> None:
+    """
+    This cleans up the fontawesome css that is in theme.css.
+    About 20% of our theme.css is just fontawesome icon definitions.
+    Execution:
+    1. Find all fontawesome icons used in html files (overestimate)
+    2. Find all safe-to-delete (not tied to other css selectors) icons in theme.css (underestimate)
+    3. Delete all css definitions for icons that are safe-to-delete and not used in html files
+    By overestimating in step 1 and underestimating in step 2, we shouldn't ever delete icons that are used.
+    """
+    _name = inspect.stack()[0][3]
+    print("Running", _name)
+    outdir = Path(app.outdir)
+
+    # Matches to fontawesome uses in html
+    # Ex: fa fa-github
+    FA_REGEX = re.compile(r"fa (fa(?:-[a-z]+)+)")
+
+    used_fa = set()
+
+    for html_file in outdir.glob("**/*.html"):
+        with html_file.open("r") as f:
+            text = f.read()
+        used_fa.update(FA_REGEX.findall(text))
+
+    theme_css_file = outdir / "_static" / "css" / "theme.css"
+
+    with theme_css_file.open("r") as f:
+        theme_text = f.read()
+    theme_size = theme_css_file.stat().st_size
+
+    # Matches to pure fontawesome selectors in css
+    # Note: font awesome is not the first definition in theme.css
+    # Ex: }.fa-github:before{content:"q"}
+    # Ex: }.fa-goodbye:before,.fa-badbye:before{content:"q"}
+    FA_CSS_REGEX = re.compile(
+        r"}(?:\.(fa(?:-[a-z]+)+):before)(?:,\.(fa(?:-[a-z]+)+):before)*{content:\".\"}"
+    )
+
+    start_pos = 0
+    while True:
+        m = FA_CSS_REGEX.search(theme_text, pos=start_pos)
+        if not m:
+            break
+
+        fa_names = m.groups()
+        if not any(fa_name in used_fa for fa_name in fa_names):
+            theme_text = theme_text[: m.start() + 1] + theme_text[m.end() :]
+            start_pos = m.start()
+        else:
+            start_pos = m.end()
+
+    with theme_css_file.open("w") as f:
+        f.write(theme_text)
+    new_theme_size = theme_css_file.stat().st_size
+
+    print(
+        _name,
+        f": size diff : {new_theme_size - theme_size} bytes, {math.floor(((new_theme_size - theme_size) / theme_size) * 100)}%",
+    )
 
 def cleanup_fontawesome_font_files(app: Sphinx):
     """
