@@ -20,7 +20,7 @@ Task 1 - Install Software (Targeted Completion 10/22/2021)
 
 The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 
-1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, CTRE installer if using CANTalon SRX)
+1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, CTRE installer if using CANTalon SRX, REV installer if using SPARK MAX or new REV hardware)
 
 Task 2 - Basic Benchtop Test (Targeted Completion 10/29/2021)
 -------------------------------------------------------------
@@ -37,6 +37,7 @@ The purpose of Task 3 is to port the previous year's robot code with the new Con
 
 1. Port Existing Robot Code to new System
 2. Wireless Operation of FRC Robot
+3. (Optional) Play with robot at offseason event
 
 Task 4 - New Code and Advanced Feature Testing (Targeted Completion 12/3/2021)
 -------------------------------------------------------------------------------
@@ -47,6 +48,6 @@ The purpose of Task 4 is to write new code in order to test features and functio
 
 1. REV Robotics Hardware and associated software
 2. RoboRIO 2.0, especially the SD card imaging process
-3. SysID
-4. Axon
+3. :ref:`SysID <docs/software/pathplanning/robot-characterization/index:Robot Characterization>`
+4. :ref:`Axon <docs/software/wpilib-tools/axon/index:Axon>`
 

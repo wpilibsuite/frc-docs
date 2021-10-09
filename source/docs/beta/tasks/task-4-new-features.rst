@@ -9,14 +9,16 @@ Overview
 The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2022 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
 
 **All languages**
+
 - REV Robotics Hardware and associated software
 - RoboRIO 2.0, especially the SD card imaging process
-- Axon
+- :ref:`Axon <docs/software/wpilib-tools/axon/index:Axon>`
 
 **LabVIEW**
 
 **C++/Java**
-- SysID
+
+- :ref:`SysID <docs/software/pathplanning/robot-characterization/index:Robot Characterization>` 
 
 Desired Feedback
 ----------------

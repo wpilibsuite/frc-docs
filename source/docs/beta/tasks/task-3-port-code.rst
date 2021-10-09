@@ -13,7 +13,7 @@ For C++/Java teams, the Project Importer will attempt to update your code to han
 Desired Feedback
 ----------------
 
-Please keep the following questions in mind as you complete the task and include this information, as appropriate, in your Task 4 report.
+Please keep the following questions in mind as you complete the task and include this information, as appropriate, in your Task 3 report.
 
  1. Note any required changes to your robot program not detailed in the documentation for porting robot code.
  2. What problems or difficulties did you encounter?
