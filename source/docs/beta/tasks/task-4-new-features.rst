@@ -18,7 +18,7 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **C++/Java**
 
-- :ref:`SysID <docs/software/pathplanning/robot-characterization/index:Robot Characterization>` 
+- :ref:`SysID <docs/software/pathplanning/robot-characterization/index:Robot Characterization>`
 
 Desired Feedback
 ----------------
