@@ -36,9 +36,6 @@ General Library
 - GenericHID has been updated to static functions for non-defined controller types
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
-- C++: ``wpi::StringRef`` is replaced with ``std::string_view``. This is a drop in replacement in most cases
-- C++: ``wpi::ArrayRef`` is replaced with ``wpi::span``. This is a modified backport of the C++20 ``std::span``
-- C++: ``wpi::Twine`` is replaced with `fmtlib <https://fmt.dev/latest/index.html>`__. It has more features and is standard in C++20
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -56,6 +53,9 @@ Breaking Changes
 - Various DriverStation In[Mode] functions has been renamed (IE: ``InDisabled`` -> ``inDisabled``)
 - Deprecated ``wpilibj.cameraserver`` has been removed. Use ``cameraserver`` instead
 - ``WPILib.h`` has been removed. Please only include what you need
+- C++: ``wpi::StringRef`` is replaced with ``std::string_view``. This is a drop in replacement in most cases
+- C++: ``wpi::ArrayRef`` is replaced with ``wpi::span``. This is a modified backport of the C++20 ``std::span``
+- C++: ``wpi::Twine`` is replaced with `fmtlib <https://fmt.dev/latest/index.html>`__. It has more features and is standard in C++20
 
 .. dropdown:: Various C++ classes have migrated to use units. Below are a list of effected classes.
 
