@@ -8,6 +8,7 @@ authors = []
 python = "^3.6"
 doc8 = "==0.8.1"
 docutils = "==0.16.0"
+fonttools = {version = "==4.27.0", extras = ["woff"]}
 latex = "==0.7.0"
 sphinx = "==4.1.1"
 sphinx-hoverxref = "==0.7b1"

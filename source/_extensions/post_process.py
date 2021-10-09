@@ -10,6 +10,7 @@ import re
 from pathlib import Path
 from typing import Any, Dict, Union
 
+from fontTools.subset import main as subset_font
 from sphinx.application import Sphinx
 from sphinx.builders.dirhtml import DirectoryHTMLBuilder
 from sphinx.builders.html import StandaloneHTMLBuilder
@@ -145,6 +146,9 @@ def cleanup_fontawesome_font_files(app: Sphinx):
             args.append("--flavor=woff")
         elif fa_font_path.suffix == ".woff2":
             args.append("--flavor=woff2")
+
+        # This runs fontTools's subset tool
+        subset_font(args)
 
         fa_dest.replace(fa_font_path)
         new_font_size = fa_font_path.stat().st_size
