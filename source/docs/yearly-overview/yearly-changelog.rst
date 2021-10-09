@@ -142,6 +142,7 @@ GradleRIO
 
 - Gradle has been updated to version 7
 - Internals of GradleRIO have been updated to be easier to read, more maintainable and easier for advanced teams to modify.
+- Improved the error message when a program crashes
 - Deployment is more customizable
 
 cscore
