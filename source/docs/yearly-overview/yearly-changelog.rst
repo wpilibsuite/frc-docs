@@ -24,7 +24,7 @@ WPILib
 General Library
 ^^^^^^^^^^^^^^^
 
-- Rewrite :doc:`Mechanism2d </docs/software/dashboards/glass/mech2d-widget>`
+- Rewrite :doc:`Mechanism2d </docs/software/dashboards/glass/mech2d-widget>` to utilize NetworkTables
 - Added support for DMA to Java
 - Added ``TimesliceRobot`` project template. This allows users to timeslice schedule periodic functions
 - Added C++ TankDrive example
