@@ -5,7 +5,7 @@ New for 2022
 
 .. important:: Due to the large number of breaking and substantial changes between 2021 and 2022, it is advised that existing teams thoroughly read this document!
 
-A number of improvements have been made to FRC\ |reg| Control System software for 2022. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories. WPILib recognizes that some of these changes may cause teams issues in the short team upgrading. We expect it to pay off over the long term as we better improve the internals of WPILib.
+A number of improvements have been made to FRC\ |reg| Control System software for 2022. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories. WPILib recognizes that some of these changes may cause teams issues in the short term upgrading. We expect it to pay off over the long term as we better improve the internals of WPILib.
 
 Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2022 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2020 or 2021 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
