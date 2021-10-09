@@ -14,7 +14,7 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- Drive class functions such as ``DifferentialDrive`` **no longer invert** the right side by default. Please use ``setInverted`` on your motor controllers to invert the right side
+- Drive class functions such as ``DifferentialDrive`` **no longer invert** the right side by default. Please use ``setInverted`` on your motor controllers to invert the right side to maintain the same behavior
 - Old Command-Based has been removed from the list of new templates. Please migrate to the new Command-Based library
 - IterativeRobot has been removed. Please use the TimedRobot template instead
 
