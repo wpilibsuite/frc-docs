@@ -91,26 +91,26 @@ The above graph is what the following CameraServer snippet creates:
         import edu.wpi.cscore.CvSource;
 
         // Creates UsbCamera and MjpegServer [1] and connects them
-        CameraServer.getInstance().startAutomaticCapture();
+        CameraServer.startAutomaticCapture();
 
         // Creates the CvSink and connects it to the UsbCamera
-        CvSink cvSink = CameraServer.getInstance().getVideo();
+        CvSink cvSink = CameraServer.getVideo();
 
         // Creates the CvSource and MjpegServer [2] and connects them
-        CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+        CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
 
     .. code-tab:: c++
 
         #include "cameraserver/CameraServer.h"
 
         // Creates UsbCamera and MjpegServer [1] and connects them
-        frc::CameraServer::GetInstance().StartAutomaticCapture();
+        frc::CameraServer::StartAutomaticCapture();
 
         // Creates the CvSink and connects it to the UsbCamera
-        cs::CvSink cvSink = frc::CameraServer::GetInstance().GetVideo();
+        cs::CvSink cvSink = frc::CameraServer::GetVideo();
 
         // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream = frc::CameraServer::GetInstance().PutVideo("Blur", 640, 480);
+        cs::CvSource outputStream = frc::CameraServer::PutVideo("Blur", 640, 480);
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
 

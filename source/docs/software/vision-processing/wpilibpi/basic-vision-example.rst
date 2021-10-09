@@ -23,10 +23,10 @@ This is an example of a basic vision setup that posts the target's location in t
          width = camera['width']
          height = camera['height']
 
-         CameraServer.getInstance().startAutomaticCapture()
+         CameraServer.startAutomaticCapture()
 
-         input_stream = CameraServer.getInstance().getVideo()
-         output_stream = CameraServer.getInstance().putVideo('Processed', width, height)
+         input_stream = CameraServer.getVideo()
+         output_stream = CameraServer.putVideo('Processed', width, height)
 
          # Table for vision output information
          vision_nt = NetworkTables.getTable('Vision')

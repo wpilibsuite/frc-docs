@@ -17,8 +17,8 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        @Override
        public void robotInit() {
-           camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-           camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+           camera1 = CameraServer.startAutomaticCapture(0);
+           camera2 = CameraServer.startAutomaticCapture(1);
 
            cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
        }
@@ -43,8 +43,8 @@ If you're interested in just switching what the driver sees, and are using Smart
        nt::NetworkTableEntry cameraSelection;
 
        void RobotInit() override {
-         camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
+         camera1 = frc::CameraServer::StartAutomaticCapture(0);
+         camera2 = frc::CameraServer::StartAutomaticCapture(1);
 
          cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
        }
@@ -72,9 +72,9 @@ If you're using some other dashboard, you can change the camera used by the came
 
        @Override
        public void robotInit() {
-           camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-           camera2 = CameraServer.getInstance().startAutomaticCapture(1);
-           server = CameraServer.getInstance().getServer();
+           camera1 = CameraServer.startAutomaticCapture(0);
+           camera2 = CameraServer.startAutomaticCapture(1);
+           server = CameraServer.getServer();
        }
 
        @Override
@@ -97,9 +97,9 @@ If you're using some other dashboard, you can change the camera used by the came
        bool prevTrigger = false;
 
        void RobotInit() override {
-         camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
-         server = frc::CameraServer::GetInstance()->GetServer();
+         camera1 = frc::CameraServer::StartAutomaticCapture(0);
+         camera2 = frc::CameraServer::StartAutomaticCapture(1);
+         server = frc::CameraServer::GetServer();
        }
 
        void TeleopPeriodic() override {
@@ -129,9 +129,9 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
 
        @Override
        public void robotInit() {
-           camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-           camera2 = CameraServer.getInstance().startAutomaticCapture(1);
-           server = CameraServer.getInstance().getServer();
+           camera1 = CameraServer.startAutomaticCapture(0);
+           camera2 = CameraServer.startAutomaticCapture(1);
+           server = CameraServer.getServer();
 
            camera1.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
            camera2.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
@@ -156,9 +156,9 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        frc::Joystick joy1{0};
        bool prevTrigger = false;
        void RobotInit() override {
-         camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::GetInstance()->StartAutomaticCapture(1);
-         server = frc::CameraServer::GetInstance()->GetServer();
+         camera1 = frc::CameraServer::StartAutomaticCapture(0);
+         camera2 = frc::CameraServer::StartAutomaticCapture(1);
+         server = frc::CameraServer::GetServer();
          camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
          camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
        }
