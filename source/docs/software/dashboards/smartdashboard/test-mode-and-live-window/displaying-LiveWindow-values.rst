@@ -8,43 +8,31 @@ LiveWindow values may also be displayed by writing the code yourself and adding 
 Adding the Necessary Code to your Program
 -----------------------------------------
 
-1. First, get a reference (Java) or pointer (C++) to the LiveWindow object.
-
-.. tabs::
-
-    .. code-tab:: java
-
-        LiveWindow lw = LiveWindow.getInstance();
-
-    .. code-tab:: cpp
-
-        frc::LiveWindow lw = frc::LiveWindow::GetInstance();
-
-2. Then for each sensor or actuator that is created, add it to the LiveWindow display by either calling ``AddActuator`` or ``AddSensor`` (``addActuator`` or ``addSensor`` in Java). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
+For each sensor or actuator that is created, set the subsystem name and display name by calling ``setName`` (``SetName`` in C++). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
 
 .. tabs::
 
     .. code-tab:: java
 
         Ultrasonic ultrasonic = new Ultrasonic(1, 2);
-        lw.addSensor("Arm", "Ultrasonic", ultrasonic);
+        ultrasonic.setName("Arm", "Ultrasonic");
 
         Jaguar elbow = new Jaguar(1);
-        lw.addActuator("Arm", "Elbow", elbow);
+        elbow.setName("Arm", "Elbow");
 
         Victor wrist = new Victor(2);
-        lw.addActuator("Arm", "Wrist", wrist);
+        wrist.setName("Arm", "Wrist");
 
     .. code-tab:: cpp
 
         frc::Ultrasonic ultrasonic{1, 2};
-        lw->AddSensor("Arm", "Ultrasonic", ultrasonic);
+        ultrasonic.SetName("Arm", "Ultrasonic");
 
         frc::Jaguar elbow{1};
-        lw->AddActuator("Arm", "Elbow", elbow);
+        elbow.SetName("Arm", "Elbow");
 
         frc::Victor wrist{2};
-        lw->AddActuator("Arm", "Wrist", wrist);
+        wrist.SetName("Arm", "Wrist");
 
 Viewing the Display in SmartDashboard
 -----------------------------------------

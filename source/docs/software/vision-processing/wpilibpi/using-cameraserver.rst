@@ -14,10 +14,9 @@ The WPILibPi image comes with all the necessary libraries to make your own visio
       import cv2
       import numpy as np
 
-      cs = CameraServer.getInstance()
-      cs.enableLogging()
+      CameraServer.enableLogging()
 
-      camera = cs.startAutomaticCapture()
+      camera = CameraServer.startAutomaticCapture()
       camera.setResolution(width, height)
 
       sink = cs.getVideo()
