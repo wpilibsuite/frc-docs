@@ -15,6 +15,8 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 Community translations can be found in a variety of languages in the bottom-left menu.
 
+dummy change
+
 .. panels::
    :column: col-sm-6 d-flex pb-3
    :footer: bg-white border-0
