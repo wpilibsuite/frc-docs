@@ -56,6 +56,42 @@ Community translations can be found in a variety of languages in the bottom-left
    :footer: bg-white border-0
 
    ---
+   :header: bg-info font-weight-bold text-white
+
+   Beta Introduction
+
+   ^^^
+
+   Beta teams should navigate here for an introduction on using the beta site, reporting issues and more.
+
+   +++
+
+   .. link-button:: /docs/beta/beta-getting-started/index
+      :type: ref
+      :text: Go to Changelog
+      :classes: btn-outline-primary btn-block
+
+   ---
+   :header: bg-info font-weight-bold text-white
+
+   Beta Tasks
+
+   ^^^
+
+   Beta teams should navigate here for a list of tasks they should complete during the 2022 beta.
+
+   +++
+
+   .. link-button:: /docs/beta/tasks/index
+      :type: ref
+      :text: Go to Zero-to-Robot
+      :classes: btn-outline-primary btn-block
+
+.. panels::
+   :column: col-sm-6 d-flex pb-3
+   :footer: bg-white border-0
+
+   ---
    :header: font-weight-bold text-dark
 
    Hardware Overview
