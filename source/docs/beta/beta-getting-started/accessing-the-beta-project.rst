@@ -13,7 +13,7 @@ Signing In
 .. image:: images/accessing-the-beta-project/login.png
    :alt: Logging in to the collab TeamForge site.
 
-Open your web browser and browse to `<https://usfirst.collab.net>`__. Near the top left corner of the page enter the username and password provided in the Beta test email you received, then click "Log In".
+Open your web browser and browse to `<https://usfirst.collab.net>`__. Near the top left corner of the page enter your TeamForge username and password then click "Log In".
 
 Opening the Beta Project
 ------------------------
