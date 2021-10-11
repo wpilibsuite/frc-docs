@@ -187,6 +187,6 @@ RobotBuilder
 SysID
 -----
 
-:doc:`SysId <docs/software/pathplanning/robot-characterization/index>` is a fully featured system characterization utility that supercedes frc-characterization. It features an easy-to-use interface, advanced graphing analytics, Romi integration and other cool features! Full documentation on SysID is available here.
+:doc:`SysId </docs/software/pathplanning/robot-characterization/index>` is a fully featured system characterization utility that supersedes frc-characterization. It features an easy-to-use interface, advanced graphing analytics, Romi integration and other cool features!.
 
 .. important:: frc-characterization is discontinued and is no longer supported!
