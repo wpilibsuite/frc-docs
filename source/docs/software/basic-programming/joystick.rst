@@ -3,7 +3,7 @@
 Joysticks
 =========
 
-In FRC\ |reg|, almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has two relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Each axis of the controller ranges from -1 to 1.
+In FRC\ |reg|, almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the PS4Controller class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
 The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
 
@@ -18,6 +18,8 @@ A joystick can be used with the Driver Station program to control the robot.  Th
 When the Driver Station is in disabled mode, it is routinely looking for status changes on the joystick devices.  Unplugged devices are removed from the list and new devices are opened and added. When not connected to the FMS, unplugging a joystick will force the Driver Station into disabled mode. To start using the joystick again: plug the joystick in, check that it shows up in the right spot, then re-enable the robot. While the Driver Station is in enabled mode, it will not scan for new devices.  This is a time consuming operation and timely update of signals from attached devices takes priority.
 
 When the robot is connected to the Field Management System at competition, the Driver Station mode is dictated by the :term:`FMS`. This means that you cannot disable your robot and the DS cannot disable itself in order to detect joystick changes. A manual complete refresh of the joysticks can be initiated by pressing the F1 key on the keyboard. Note that this will close and re-open all devices, so all devices should be in their center position as noted above.
+
+.. image:: images/joystick/lights.jpg
 
 The USB Devices Tab contains indicators of the values of axes buttons and the POV that can be used to determine the mapping between physical joystick features and axis or button numbers. Simply click the joystick in the list to select it and the indicators will begin responding to the joystick input.
 
@@ -55,6 +57,23 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
 The ``XboxController`` class provides named indicies for each of the buttons that you can access with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
+``PS4Controller`` Class
+-----------------------
+
+.. image:: images/joystick/ps4.jpg
+
+.. tabs::
+
+   .. code-tab:: java
+
+      PS4Controller examplePS4 = new PS4Controller(0); // 0 is the USB Port to be used as indicated on the Driver Station
+
+   .. code-tab:: c++
+
+      PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
+
+The ``PS4Controller`` class provides named indicies for each of the buttons that you can access with ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+
 POV
 ---
 
@@ -66,7 +85,7 @@ On joysticks the POV is directional hat that can select one of 8 different angle
 ``GenericHID`` Usage
 --------------------
 
-An axis can be used with ``.getRawAxis(0)`` (if not using either of the classes above) that returns the current value.  Zero in this example is the index of axis as found in the Drive Station mentioned above.
+An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero in this example is the index of axis as found in the Drive Station mentioned above.
 
 .. tabs::
 
@@ -98,21 +117,36 @@ Unlike an axis you will usually want to use the ``pressed`` and ``released`` met
    .. code-tab:: java
 
       if (joystick.getRawButtonPressed(0)) {
-         turnIntakeOn(); // While held intake stays on
+         turnIntakeOn(); // When pressed the intake turns on
       }
       if (joystick.getRawButtonReleased(0)) {
-         turnIntakeOff(); // When released it turns off
+         turnIntakeOff(); // When released the intake turns off
+      }
+
+      OR
+
+      if (joystick.getRawButton(0)) {
+         turnIntakeOn();
+      } else {
+         turnIntakeOff();
       }
 
    .. code-tab:: c++
 
       if (joystick.GetRawButtonPressed(0)) {
-         turnIntakeOn(); // While held intake stays on
+         turnIntakeOn(); // When pressed the intake turns on
       }
       if (joystick.GetRawButtonReleased(0)) {
-         turnIntakeOff(); // When released it turns off
+         turnIntakeOff(); // When released the intake turns off
       }
 
+      OR
+
+      if (joystick.GetRawButton(0)) {
+         turnIntakeOn();
+      } else {
+         turnIntakeOff();
+      }
 
 A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
 
