@@ -168,7 +168,7 @@ Visual Studio Code Extension
 .. important:: The project importer will only import 2020/2021 projects!
 
 - Project Importer has been updated for the 2022 season. The project importer will attempt update the imported code, but manual changes may still be necessary due to the complexity of the breaking changes this year.
-- Visual Studio Code has been updated to 1.60.2
+- Visual Studio Code has been updated to 1.61
 - Updated Java and C++ language extensions
 - Remove Eclipse Project Importer
 
