@@ -28,7 +28,7 @@ Creating a SlewRateLimiter is simple:
   .. code-tab:: c++
 
     // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
-    frc::SlewRateLimiter<units::volts> filter{0.5_v / 1_s};
+    frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
 
 Using a SlewRateLimiter
 -----------------------
@@ -46,3 +46,28 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
     // Calculates the next value of the output
     filter.Calculate(input);
+
+Using a SlewRateLimiter with DifferentialDrive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: In the C++ example below, the filter is templated on ``double``, rather than on a unit type, since joystick values are typically dimensionless.
+
+A typical use of a SlewRateLimiter is to limit the acceleration of a robot's drive.  This can be especially handy for robots that are very top-heavy, or that have very powerful drives.  To do this, apply a SlewRateLimiter to a value passed into your robot drive function:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Ordinary call with no ramping applied
+    drivetrain.arcadeDrive(forward, turn);
+
+    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+    drivetrain.arcadeDrive(filter.calculate(forward), turn);
+
+  .. code-tab:: c++
+
+    // Ordinary call with no ramping applied
+    drivetrain.ArcadeDrive(forward, turn);
+
+    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+    drivetrain.ArcadeDrive(filter.Calculate(forward), turn);

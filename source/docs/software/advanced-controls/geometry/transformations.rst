@@ -22,7 +22,6 @@ Transformations for ``Rotation2d`` are just arithmetic operations on the angle m
 - ``minus`` (Java) or binary ``-`` (C++): Subtracts the rotation component of ``other`` to this ``Rotation2d``'s rotation component
 - ``unaryMinus`` (Java) or unary ``-`` (C++): Multiplies the rotation component by a scalar of -1.
 - ``times`` (Java) or ``*`` (C++) : Multiplies the rotation component by a scalar.
-- ``div`` (Java) or ``/``: Divides the rotation component by a scalar.
 
 Transform2d and Twist2d
 -----------------------

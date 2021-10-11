@@ -15,7 +15,9 @@ Before you begin using the software:
 Prerequisites
 -------------
 
-.. important::. Teams planning on using the tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot->`__.
+.. important::. Teams planning on using the tool on a machine without the 2020 WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=hotspot>`__. Due to a :ref:`Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>` it is recommended to install version 11.0.10.
+
+.. todo:: update this note when first releases fixed radio utility
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
 
@@ -62,7 +64,7 @@ The Radio Configuration Utility programs a number of configuration settings into
   - Subnet mask of ``255.255.255.0``
   - Broadcast address ``10.TE.AM.255``
 
-- DNS server enabled. DNS server IP and domain suffix (.lan) are served as part of the DHCP.
+- DNS server enabled. DNS server IP and domain suffix (``.lan``) are served as part of the DHCP.
 
 At home only:
 
@@ -97,7 +99,7 @@ Allow the program to make changes, if prompted
 .. image:: images/radio-programming/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
-If your computer is running Windows, a prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
+A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
 Select the network interface
 ----------------------------
@@ -158,7 +160,7 @@ The default values of the options have been selected to match the use case of mo
 
 1. **Robot Name:** This is a string that gets appended to the SSID used by the radio. This allows you to have multiple networks with the same team number and still be able to distinguish them.
 2. **Firewall:** If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
-3. **BW Limit:** If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that in AP mode, this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
+3. **BW Limit:** If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
 
 .. note:: Firewall and BW Limit only apply to the Open Mesh radios. These options have no effect on D-Link radios.
 
@@ -171,6 +173,8 @@ Starting the Configuration Process
   :alt: At the bottom of the screen is instructions for completing the configuration process.
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
+
+.. tip:: If the configuration fails with the error ``Failed to change IP Address``, see the :ref:`Failed to change IP Address in Radio Configuration Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>`
 
 Configuration Progress
 ----------------------
@@ -212,3 +216,4 @@ Troubleshooting
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
 - If using a foreign language Operating System, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
+- If the configuration fails with the error ``Failed to change IP Address``, see the :ref:`Failed to change IP Address in Radio Configuration Known Issue <docs/yearly-overview/known-issues:Failed to change IP Address in Radio Configuration>`

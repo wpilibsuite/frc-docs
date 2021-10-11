@@ -1,0 +1,93 @@
+Configuring a Project
+=====================
+
+To use the toolsuite, we first need to configure the settings for your specific mechanism.
+
+Configure Project Parameters
+----------------------------
+
+In order to run on your robot, the tool must know some parameters about how your robot is set up.
+
+First, you need to use the :guilabel:`Analysis Type` field to select the appropriate project config. ``General Mechanism`` is for non-drivetrain mechanisms (e.g. Simple Motor, Arm, Elevator), ``Drivetrain`` is for Drivetrain mechanisms, and ``Romi`` is for the Romi robots. This allows you to fill out the parameters specific to the type of system you are using.
+
+.. image:: images/analysis-type.png
+   :alt: Selecting the appropriate analysis type.
+
+The rest of the Generator widget is focused on the proper settings based off of the analysis type:
+
+Motor Controller Selection
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :guilabel:`Motor / Motor Controller Selection` allows you to add ports for each motor controller that will be used. The :guilabel:`+` and :guilabel:`-` buttons let you add and remove ports respectively.
+
+.. image:: images/motor-selection.png
+   :alt: Motor selection section.
+
+Each motor port contains the following parts:
+
+- :guilabel:`Motor Port` is where you add the port number for a specific controller
+- :guilabel:`Inverted` should be checked if the motorcontroller should be inverted
+- :guilabel:`Motor Controller` is the type of motor controller that will be used.
+
+Encoder Selection
+^^^^^^^^^^^^^^^^^
+The :guilabel:`Encoder Selection` allows you to configure the encoders that will be used. You can choose the type of encoder with :guilabel:`Encoder`. ``roboRIO`` corresponds to any encoders that are plugged into the rio, ``CANCoder / Alternate`` corresponds to the CTRE CANCoder or any encoders plugged into the Spark Max's Alternate Port, and ``Built-In`` corresponds to any encoder plugged into a CTRE Smart Motor Controller or the encoder port on a Spark Max.
+
+.. image:: images/encoder-selection.png
+   :alt: Encoder selection section.
+
+Here are the following settings that can be configured (although the settings that are visible will vary by the previously selected encoder type):
+
+- Ports (either :guilabel:`A` and :guilabel:`B` or :guilabel:`CANCoder Port`
+- :guilabel:`Encoder Inverted` should be checked if a positive motor power doesn't correspond to a positive increase in encoder values
+- :guilabel:`Samples Per Average` is how many samples will be averaged per velocity measurement. A value greater than one can help reduce encoder noise and 5-10 is recommended for encoders with high CPR. Only mess with this setting if a previous run of SysId resulted in extremely noisy data.
+- :guilabel:`Reduce Encoding` should be checked if using high resolution encoders (e.g. CTRE Mag Encoders or REV Through Bore Encoder) that are plugged into the roboRIO. Do note, that if this is checked, you will have to update your team's robot code to also reduce encoding.
+- :guilabel:`Time Measurement Window` is the period of time in milliseconds that the velocity measurement will be taken across. This setting can reduce measurement lag at the cost of possibly introducing more noise. Only modify this if data lag is impeding accurate control and data collection.
+
+
+Encoder Parameters
+^^^^^^^^^^^^^^^^^^
+
+:guilabel:`Counts Per Revolution` is the encoder counts per revolution for your encoder which is generally specified on a datasheet. Common values include:
+
+- CTRE Magnetic Encoder: 4096
+- Falcon 500 Integrated: 2048
+- REV Throughbore: 8192
+- NEO (and NEO 550) Integrated Encoders (REV already handles this value): 1
+
+:guilabel:`Gearing` is the gearing between the encoder and output shaft. For example, an magnetic encoder on a kit chassis would have a gearing of one as it is on a 1:1 ratio with the output shaft. However, if is was an integrated encoder in a motor that was in the gearbox, the gearing would be 10.71 (per Andymark) since there is now gearing between the encoder and the output shaft.
+
+.. image:: images/encoder-parameters.png
+   :alt: Encoder parameters section.
+
+Gyro Parameters (Drivetrain Only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:guilabel:`Gyro` lets you select the type of supported gyro.
+:guilabel:`Gyro Parameter` lets you configure additional settings needed to configure the previously specified gyro.
+
+.. image:: images/gyro-config.png
+   :alt: Gyro configuration section.
+
+Loading and Saving Configurations
+---------------------------------
+Once your robot configuration is set, you may save it to a location/name of your choice with the :guilabel:`Save` button:
+
+.. image:: images/saving-config-file.png
+   :alt: Saving the configuration file
+
+Accordingly, you can also load an existing config file with the :guilabel:`Load Config` button:
+
+.. image:: images/loading-config-file.png
+   :alt: Loading a saved configuration file
+
+
+Deploying Project
+-----------------
+
+Once your project has been configured, it's time to deploy the robot project to run the characterization routine.
+
+.. image:: images/deploy-config.png
+   :alt: Deploying the config file
+
+:guilabel:`Team/IP` is where you set your team number or IP. You can then deploy the code with the :guilabel:`Deploy` label.

@@ -8,16 +8,21 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-No such host is known in the WPILib Installer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed to change IP Address in Radio Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following error message will show up when downloading VS Code with WPILib Installer version ``2021.2.1`` or earlier **or** version ``2021.2.2`` that was downloaded before ``3/24/2021``.
+**Issue**
 
-.. code-block::
+The following error message may appear when configuring the radio ``Bridge configuration failed: Failed to change IP Address...``. This is due to a change in behavior in java versions 8u291 and 11.0.11.
 
-   System.Net.Http.HttpRequestException: No such host is known.
+**Workaround**
 
-This is due to the VS Code download URL being changed. A hotfix has been published and users should redownload the ``2021.2.2`` release or later. This fix can be downloaded `here <https://github.com/wpilibsuite/allwpilib/releases>`__.
+Install Java from the `WPILib 2020.3.2 installer <https://github.com/wpilibsuite/allwpilib/releases/tag/v2020.3.2>`__ . It is only necessary to install the Java JDK/JRE as shown below. The radio tool will use this version instead of any other system installed versions of java. This will take approximately 600 mb of disk space.
+
+.. Note:: As the radio tool is unchanged from 2020, it will use the WPILib java installation from 2020, not 2021, so it is necessary to use the 2020 installer.
+
+.. image:: images/known-issues/java-installation.png
+  :alt: WPILib 2020.3.2 installer showing only Java JDK/JRE checked.
 
 Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,26 +78,3 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
-
-Fixed in WPILib 2021.2.2
-------------------------
-
-macOS Mojave Simulation Crash
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** The simulation GUI fails to launch on macOS Mojave (10.14.x) due to a dynamic linker error (example below):
-
-.. code-block::
-
-   dyld: lazy symbol binding failed: Symbol not found: _objc_opt_respondsToSelector
-
-**Solution:** Upgrade to WPILib 2021.2.2 by using the latest installer or the "Check for WPILib Updates" feature in VS Code.
-
-Fixed in Game Tools 2021 f1
----------------------------
-
-2021_v3.0 Imaging Issue
-^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** An issue was discovered with the roboRIO image version 2021_v3.1 included in the initial release of the 2021 NI Game Tools that prevents successful imaging of roboRIOs.
-
-**Solution:**  Teams that downloaded the 2021 Game Tools installer prior to the morning of January 11, 2021 should :doc:`re-download and re-install</docs/zero-to-robot/step-2/frc-game-tools>` the latest installer (no need to uninstall first). The new version is 2021 f1. Users with the correct version installed will not see 2021_v3.1 as an option in the roboRIO imaging tool. Once the new version is installed, the roboRIO can be imaged with 2021_v3.0.

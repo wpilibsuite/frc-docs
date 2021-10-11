@@ -63,6 +63,9 @@ The RoboRIO RS-232 serial port uses RS-232 signaling levels (+/- 15v). The MXP s
 
 .. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
 
+USB Client
+----------
+
 One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 
 USB Host

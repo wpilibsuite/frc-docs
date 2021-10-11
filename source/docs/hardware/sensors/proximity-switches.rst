@@ -3,7 +3,7 @@
 Proximity Switches - Hardware
 =============================
 
-.. note:: This section covers proximity switch hardware.  For a guide to using proximity switches in software, see :ref:`docs/software/sensors/digital-inputs-software:Digital Inputs - Software`.
+.. note:: This section covers proximity switch hardware.  For a guide to using proximity switches in software, see :ref:`docs/software/hardware-apis/sensors/digital-inputs-software:Digital Inputs - Software`.
 
 One of the most common sensing tasks on a robot is detecting when an object (be it a mechanism, game piece, or field element) is within a certain distance of a known point on the robot.  This type of sensing is accomplished by a "proximity switch."
 
@@ -37,7 +37,7 @@ Mechanical proximity switches (more commonly known as "limit switches") are prob
 
 Limit switches vary in size, the geometry of the switch-arm, and in the amount of "throw" required to activate the switch.  While limit switches are quite cheap, their mechanical actuation is sometimes less-reliable than no-contact alternatives.  However, they are also extremely versatile, as they can be triggered by any physical object capable of moving the switch arm.
 
-See this :ref:`article <docs/software/sensors/limit-switch:Programming Limit Switches>` for writing the software for Limit Switches.
+See this :ref:`article <docs/software/hardware-apis/sensors/limit-switch:Programming Limit Switches>` for writing the software for Limit Switches.
 
 Magnetic Proximity Switches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

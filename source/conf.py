@@ -14,6 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import sys
+import os
+
+sys.path.append(os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
@@ -37,15 +41,23 @@ extensions = [
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
+    "sphinxext.photofinish",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.linkcheckdiff",
+    "sphinxext.mimictoc",
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
 ]
+
+local_extensions = [
+    "_extensions.post_process",
+]
+
+extensions += local_extensions
 
 versionwarning_messages = {
     "latest": """
@@ -128,7 +140,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["docs/beta/*"]
+# exclude_patterns = ["docs/beta/*"]
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
@@ -166,6 +178,10 @@ html_logo = "assets/wpilibDocsLogo.png"
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
+# Specify canonical root
+# This tells search engines that this domain is preferred
+html_baseurl = "https://docs.wpilib.org/"
+
 html_theme_options = {
     "collapse_navigation": True,
     "sticky_navigation": False,
@@ -188,6 +204,12 @@ def setup(app):
     app.config.hoverxref_tooltip_side = "left" if is_rtl else "right"
     if is_rtl:
         app.add_css_file("css/frc-rtl.css")
+
+    # Fix rtd version/language menu on iOS
+    app.add_js_file("js/fix-rtd-menu-ios.js")
+
+    # Launch external links in a new tab/window
+    app.add_js_file("js/external-links-new-tab.js")
 
 
 # -- Options for latex generation --------------------------------------------

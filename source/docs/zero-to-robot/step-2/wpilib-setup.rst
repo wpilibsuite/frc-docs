@@ -19,9 +19,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
 .. tabs::
 
-   .. group-tab:: Windows 10
-
-      Windows 10 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
+   .. group-tab:: Windows 10+
+      Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
@@ -100,7 +99,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
-.. important:: WPILib installs a separate version of VS Code than into an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2021``. Please launch the WPILib VS Code and not a system installed copy!
+.. important:: WPILib installs a separate version of VS Code than into an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2022``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 

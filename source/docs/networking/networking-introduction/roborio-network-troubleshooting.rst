@@ -23,10 +23,10 @@ Ping Fails
 
 .. tabs::
 
-   .. group-tab:: Windows 10
+   .. group-tab:: Windows 10+
 
       .. image:: images/roborio-troubleshooting/win10-dhcp.png
-         :alt: Windows 10 image of the adapter setting
+         :alt: Windows 10+ image of the adapter setting
 
       If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
 
@@ -62,10 +62,10 @@ This is not always the same as turning the adapters off with a physical button o
 
 .. tabs::
 
-   .. group-tab:: Windows 10
+   .. group-tab:: Windows 10+
 
       .. image:: images/roborio-troubleshooting/start-menu-win10.png
-         :alt: Windows 10 settings gear on the left hand side of the start menu.
+         :alt: Windows 10+ settings gear on the left hand side of the start menu.
 
       Open the Settings application by clicking on the settings icon.
 
