@@ -18,9 +18,8 @@ Reading and Writing Preferences
       double armDownPosition;
 
       public void robotInit() {
-        prefs = Preferences.getInstance();
-        armUpPosition = prefs.getDouble("ArmUpPosition", 1.0);
-        armDownPosition = prefs.getDouble("ArmDownPosition", 4.);
+        armUpPosition = Preferences.getDouble("ArmUpPosition", 1.0);
+        armDownPosition = Preferences.getDouble("ArmDownPosition", 4.);
       }
     }
 
@@ -34,9 +33,8 @@ Reading and Writing Preferences
       double armDownPosition;
 
       public void RobotInit() {
-        prefs = frc::Preferences::GetInstance();
-        armUpPosition = prefs->GetDouble("ArmUpPosition", 1.0);
-        armDownPosition = prefs->GetDouble("ArmDownPosition", 4.);
+        armUpPosition = frc::Preferences::GetDouble("ArmUpPosition", 1.0);
+        armDownPosition = frc::Preferences::GetDouble("ArmDownPosition", 4.);
       }
     }
 

@@ -21,7 +21,7 @@ The following program starts automatic capture of a USB camera like the Microsof
         public class Robot extends IterativeRobot {
 
           public void robotInit() {
-            CameraServer.getInstance().startAutomaticCapture();
+            CameraServer.startAutomaticCapture();
           }
         }
 
@@ -33,7 +33,7 @@ The following program starts automatic capture of a USB camera like the Microsof
         private:
           void RobotInit()
           {
-            CameraServer::GetInstance()->StartAutomaticCapture();
+            CameraServer::StartAutomaticCapture();
           }
         };
         START_ROBOT_CLASS(Robot)
@@ -63,11 +63,11 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
           public void robotInit() {
             new Thread(() -> {
-              UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+              UsbCamera camera = CameraServer.startAutomaticCapture();
               camera.setResolution(640, 480);
 
-              CvSink cvSink = CameraServer.getInstance().getVideo();
-              CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+              CvSink cvSink = CameraServer.getVideo();
+              CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
 
               Mat source = new Mat();
               Mat output = new Mat();
@@ -93,10 +93,10 @@ In the following example a thread created in robotInit() gets the Camera Server 
         private:
           static void VisionThread()
           {
-            cs::UsbCamera camera = CameraServer::GetInstance()->StartAutomaticCapture();
+            cs::UsbCamera camera = CameraServer::StartAutomaticCapture();
             camera.SetResolution(640, 480);
-            cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
-            cs::CvSource outputStreamStd = CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
+            cs::CvSink cvSink = CameraServer::GetVideo();
+            cs::CvSource outputStreamStd = CameraServer::PutVideo("Gray", 640, 480);
             cv::Mat source;
             cv::Mat output;
             while(true) {

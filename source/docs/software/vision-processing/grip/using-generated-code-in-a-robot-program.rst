@@ -71,7 +71,7 @@ In this first part of the program you can see all the import statements for the 
 
         @Override
         public void robotInit() {
-            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            UsbCamera camera = CameraServer.startAutomaticCapture();
             camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 
             visionThread = new VisionThread(camera, new MyVisionPipeline(), pipeline -> {
