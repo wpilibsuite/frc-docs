@@ -28,14 +28,12 @@ def cleanup_fontawesome_css(app: Sphinx) -> None:
     used_fa = set()
 
     for html_file in outdir.glob("**/*.html"):
-        with html_file.open("r") as f:
-            text = f.read()
+        text = html_file.read_text(encoding="utf-8")
         used_fa.update(FA_REGEX.findall(text))
 
     theme_css_file = outdir / "_static" / "css" / "theme.css"
 
-    with theme_css_file.open("r") as f:
-        theme_text = f.read()
+    theme_text = theme_css_file.read_text(encoding="utf-8")
     theme_size = theme_css_file.stat().st_size
 
     # Matches to pure fontawesome selectors in css
@@ -59,8 +57,7 @@ def cleanup_fontawesome_css(app: Sphinx) -> None:
         else:
             start_pos = m.end()
 
-    with theme_css_file.open("w") as f:
-        f.write(theme_text)
+    theme_css_file.write_text(theme_text, encoding="utf-8")
     new_theme_size = theme_css_file.stat().st_size
 
     print(
@@ -89,8 +86,7 @@ def cleanup_fontawesome_font_files(app: Sphinx):
 
     theme_css_file = outdir / "_static" / "css" / "theme.css"
 
-    with theme_css_file.open("r") as f:
-        theme_text = f.read()
+    theme_text = theme_css_file.read_text(encoding="utf-8")
 
     # Matches fontawesome icon definitions in css
     # This doesn't match on the entire definition but on the actual icon ids fontawesome uses.
