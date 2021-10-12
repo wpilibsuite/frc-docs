@@ -68,7 +68,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    .. link-button:: /docs/beta/beta-getting-started/index
       :type: ref
-      :text: Go to Changelog
+      :text: Go to Beta Introduction
       :classes: btn-outline-primary btn-block
 
    ---
@@ -84,7 +84,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    .. link-button:: /docs/beta/tasks/index
       :type: ref
-      :text: Go to Zero-to-Robot
+      :text: Go to Beta Tasks
       :classes: btn-outline-primary btn-block
 
 .. panels::
