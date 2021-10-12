@@ -36,14 +36,14 @@ Click :guilabel:`Import Project` to begin the upgrade.
 
 The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
 
-.. image:: images/importing-eclipse-project/opening-project.png
+.. image:: images/importing-previous-project/opening-project.png
 
 C++ Configurations (C++ Only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click :guilabel:`Yes` to set up IntelliSense.
 
-.. image:: images/importing-eclipse-project/cpp-configurations.png
+.. image:: images/importing-previous-project/cpp-configurations.png
 
 3rd Party Libraries
 ^^^^^^^^^^^^^^^^^^^

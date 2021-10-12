@@ -242,3 +242,4 @@
 "docs/software/pathplanning/robot-characterization/deploying-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
 "docs/software/pathplanning/robot-characterization/generating-project.rst" "docs/software/pathplanning/robot-characterization/configuring-project.rst"
 "docs/software/can-devices/power-distribution-panel.rst" "docs/software/can-devices/power-distribution-module.rst"
+"docs/software/vscode-overview/importing-eclipse-project.rst" "docs/software/vscode-overview/index.rst"
