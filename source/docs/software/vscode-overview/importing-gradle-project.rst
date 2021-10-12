@@ -34,9 +34,15 @@ You'll be presented with the WPILib Project Importer window. This is similar to 
 
 Click :guilabel:`Import Project` to begin the upgrade.
 
-The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately (the pop-up shown below should appear in the bottom right) or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
+The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately using the pop-up below or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
 
 .. image:: images/importing-previous-project/opening-project.png
+   :alt: Opening Project pop-up in VS Code
+
+.. image:: images/creating-robot-program/trusted-workspace.png
+   :alt: Trusted Workspace dialog in VS Code.
+
+Click :guilabel:`Yes I trust the authors`.
 
 C++ Configurations (C++ Only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
