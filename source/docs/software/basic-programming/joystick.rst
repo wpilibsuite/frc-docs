@@ -85,7 +85,7 @@ On joysticks the POV is directional hat that can select one of 8 different angle
 ``GenericHID`` Usage
 --------------------
 
-An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero in this example is the index of axis as found in the Drive Station mentioned above.
+An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Drive Station mentioned above.
 
 .. tabs::
 
@@ -96,7 +96,7 @@ An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes abo
       private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
       private final GenericHID m_stick = new GenericHID(0);
 
-      m_robotDrive.arcadeDrive(-m_stick.getY(), m_stick.getX());
+      m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
 
    .. code-tab:: c++
 
@@ -105,7 +105,7 @@ An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes abo
       frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
       frc::GenericHID m_stick{0};
 
-      m_robotDrive.ArcadeDrive(-m_stick.GetY(), m_stick.GetX());
+      m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
 
 Button Usage
 ------------
