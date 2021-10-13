@@ -8,6 +8,25 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Shuffleboard Camera not Shown
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue**
+
+In Shuffleboard version 2021.x.x, the camera stream may not display, but the camera stream is accessible from a web browser.
+
+**Workaround**
+
+There are several potential workarounds.
+
+1. Click on the record button on the camera display (as shown below), which may cause the stream to start. After the stream starts, press the record button again to stop recording.
+2. Use the 2020 version of Shuffleboard
+3. Use a web browser to show the camera stream instead of Shuffleboard
+4. Use SmartDashboard to display the camera stream instead of Shuffleboard
+
+.. image:: images/known-issues/shuffleboard-record.jpeg
+  :alt: Shuffleboard camera display with record button (black circle) emphasized
+
 Failed to change IP Address in Radio Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
