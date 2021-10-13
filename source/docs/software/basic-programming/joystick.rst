@@ -3,7 +3,7 @@
 Joysticks
 =========
 
-In FRC\ |reg|, almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the PS4Controller class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
+In FRC\ |reg|, almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
 The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
 
@@ -55,6 +55,26 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
       XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
+An example of how to use buttons on the ``XboxController``.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      .. rli:: https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot/RobotContainer.java
+         :language: java
+         :lines: 39,85-88,96-99
+         :linenos:
+         :lineno-start: 39
+
+   .. code-tab:: c++
+
+      .. rli:: https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/GearsBot/cpp/RobotContainer.cpp
+         :language: cpp
+         :lines: 41-48
+         :linenos:
+         :lineno-start: 41
+
 The ``XboxController`` class provides named indicies for each of the buttons that you can access with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 ``PS4Controller`` Class
@@ -85,7 +105,7 @@ On joysticks the POV is directional hat that can select one of 8 different angle
 ``GenericHID`` Usage
 --------------------
 
-An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Drive Station mentioned above.
+An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
 
 .. tabs::
 
