@@ -17,3 +17,5 @@ Once the camera stream is added it will be displayed in the window. It can be re
 
 .. image:: images/shuffleboard-displaying-camera/front-camera.png
    :alt: A camera image of the robot's front camera.
+
+.. note:: Camera streams may not display in Shuffleboard 2021.x.x. See the :ref:`Known Issues <docs/yearly-overview/known-issues:Shuffleboard Camera not Shown>` for workarounds.
