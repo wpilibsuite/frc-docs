@@ -16,7 +16,7 @@ Running the GUI
 You can simply launch the GUI via the **Run Simulation** command palette option.
 
 .. image:: images/vscode-pick-extension.png
-   :alt: Picking Sim Gui simulation extension
+   :alt: Picking Sim GUI simulation extension
 
 And the ``Sim Gui`` option should popup in a new dialog and will be selected by default. Press :guilabel:`Ok`. This will now launch the Simulation GUI!
 
