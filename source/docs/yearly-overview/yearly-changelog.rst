@@ -113,6 +113,8 @@ Shuffleboard
 - Add titles for widgets
 - Show exit save prompt only if not saved
 - Use system menubar
+- Add tab clear confirmation
+- Save widget titles display mode preference
 
 SmartDashboard
 --------------
