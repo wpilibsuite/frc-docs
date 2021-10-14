@@ -16,9 +16,9 @@ Running the GUI
 You can simply launch the GUI via the **Run Simulation** command palette option.
 
 .. image:: images/vscode-pick-extension.png
-   :alt: Picking halsim_gui.dll simulation extension
+   :alt: Picking Sim Gui simulation extension
 
-And the ``halsim_gui.dll`` option should popup in a new dialog (``halsim.gui.so`` on Linux and ``halsim_gui.dylib`` on macOS). Select this and press **Ok**. This will now launch the Simulation GUI!
+And the ``Sim Gui`` option should popup in a new dialog and will be selected by default. Press :guilabel:`Ok`. This will now launch the Simulation GUI!
 
 .. image:: images/sim-gui.png
    :alt: The simulation graphical user interface
