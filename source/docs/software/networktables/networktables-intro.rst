@@ -99,7 +99,7 @@ The NetworkTables classes are instantiated automatically when your program start
       class EasyNetworkExample : public frc::TimedRobot {
          public:
          nt::NetworkTableEntry xEntry;
-         nt::NetworkTableEntry xEntry;
+         nt::NetworkTableEntry yEntry;
 
          void RobotInit() {
             auto inst = nt::NetworkTableInstance::GetDefault();
@@ -113,7 +113,7 @@ The NetworkTables classes are instantiated automatically when your program start
 
          void TeleopPeriodic() {
             xEntry.SetDouble(x);
-            xEntry.SetDouble(Y);
+            yEntry.SetDouble(Y);
             x += 0.05;
             y += 0.05;
          }
