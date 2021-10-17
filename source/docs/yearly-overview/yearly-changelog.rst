@@ -31,7 +31,7 @@ General Library
 - Added C++ TankDrive example
 - Added ``PS4Controller`` controller class
 - Added better message for when an I2C port is out of range
-- Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1Debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
+- Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticsHub`` class for use with the REV Pneumatics Hub
 - GenericHID has been updated to static functions for non-defined controller types
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
