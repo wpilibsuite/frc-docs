@@ -89,7 +89,7 @@ Simulating Other Devices - The SimDeviceSim Class
 
 .. note:: Vendors might implement their connection to the SimDevice API slightly different than described here. They might also provide a simulation class specific for their device class. See your vendor's documentation for more information as to what they support and how.
 
-The ``SimDeviceSim`` (**not ``SimDevice``!**) class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the :guilabel:`Other Devices` tab of the :ref:`SimGUI<docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`.
+The ``SimDeviceSim`` (**not** ``SimDevice``!) class is a general device simulation object for devices that aren't core WPILib devices and therefore don't have specific simulation classes - such as vendor devices. These devices will show up in the :guilabel:`Other Devices` tab of the :ref:`SimGUI<docs/software/wpilib-tools/robot-simulation/simulation-gui:Modifying ADXRS450 Inputs>`.
 
 The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the :guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor. The key contains a prefix that is hidden by default in the SimGUI, it can be shown by selecting the :guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
