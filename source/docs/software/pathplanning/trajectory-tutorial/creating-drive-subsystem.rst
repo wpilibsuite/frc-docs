@@ -229,7 +229,7 @@ To access the robot's current computed pose, we include the following method:
 Voltage-Based Drive Method
 --------------------------
 
-Finally, we must include one additional method - a method that allows us to set the voltage to each side of the drive using the ``setVoltage()`` method of the ``SpeedController`` interface.  The default WPILib drive class does not include this functionality, so we must write it ourselves:
+Finally, we must include one additional method - a method that allows us to set the voltage to each side of the drive using the ``setVoltage()`` method of the ``MotorController`` interface.  The default WPILib drive class does not include this functionality, so we must write it ourselves:
 
 .. tabs::
 
