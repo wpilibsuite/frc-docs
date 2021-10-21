@@ -12,14 +12,14 @@ TimedRobot
 ^^^^^^^^^^
 
 Documentation:
-`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
-- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1TimedRobot.html>`__
+`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
+- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_timed_robot.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__
 
-The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SendableChooser.html>`__
+The :code:`TimedRobot` class is the the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_sendable_chooser.html>`__
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
@@ -91,7 +91,7 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
-.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
+.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
 
 .. tabs::
 
@@ -109,8 +109,8 @@ RobotBase
 ^^^^^^^^^
 
 Documentation:
-`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__
-- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1RobotBase.html>`__
+`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/RobotBase.html>`__
+- `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_robot_base.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__
@@ -197,15 +197,7 @@ An example after all options are selected is shown below.
 Opening The New Project
 -----------------------
 
-.. image:: images/importing-previous-project/opening-project.png
-   :alt: Open Project Dialog in VS Code
-
-After successfully creating your project, VS Code will give the option of opening the project as shown above. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
-
-.. image:: images/creating-robot-program/trusted-workspace.png
-   :alt: Trusted Workspace dialog in VS Code.
-
-Click :guilabel:`Yes I trust the authors`.
+After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
