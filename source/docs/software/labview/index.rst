@@ -7,6 +7,5 @@ FRC LabVIEW Programming
 
    /docs/zero-to-robot/step-2/labview-setup
    /docs/zero-to-robot/step-2/frc-game-tools
-   /docs/yearly-overview/relicensing-labview
    creating-robot-programs/index
    resources/index

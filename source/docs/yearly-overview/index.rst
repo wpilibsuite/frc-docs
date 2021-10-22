@@ -1,4 +1,4 @@
-2021 Overview
+2022 Overview
 =============
 
 .. toctree::
@@ -6,5 +6,3 @@
 
    known-issues
    yearly-changelog
-   relicensing-labview
-   2020-Game-Data
