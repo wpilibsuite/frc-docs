@@ -3,7 +3,7 @@
 Joysticks
 =========
 
-In FRC\ |reg|, almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
+Almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
 The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
 
@@ -59,7 +59,7 @@ An example of how to use buttons on the ``XboxController``.
 
 .. tabs::
 
-   .. code-tab:: java
+   .. group-tab:: java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot/RobotContainer.java
          :language: java
@@ -67,7 +67,7 @@ An example of how to use buttons on the ``XboxController``.
          :linenos:
          :lineno-start: 39
 
-   .. code-tab:: c++
+   .. group-tab:: c++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/GearsBot/cpp/RobotContainer.cpp
          :language: cpp
