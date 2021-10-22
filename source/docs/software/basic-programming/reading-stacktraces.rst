@@ -205,16 +205,19 @@ When run, you'll see output that looks like this:
 
       .. code-block:: text
 
-        ********** Robot program starting **********
-        Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
-                at frc.robot.Robot.robotInit(Robot.java:23)
-                at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
-                at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
-                at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
-                at java.base/java.lang.Thread.run(Thread.java:834)
+         ********** Robot program starting **********
+         Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
+                 at frc.robot.Robot.robotInit(Robot.java:23)
+                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+                 at frc.robot.Main.main(Main.java:23)
 
-        Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
-        Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
+         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+           The above stacktrace can help determine where the error occurred.
+           See https://wpilib.org/stacktrace for more information.
+         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+
 
       Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 23, and the exception involved "Null Pointer".
 
@@ -333,14 +336,16 @@ When run, you'll see output that looks like this:
 
          ********** Robot program starting **********
          Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
-               at frc.robot.Robot.robotInit(Robot.java:24)
-               at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
-               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
-               at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
-               at java.base/java.lang.Thread.run(Thread.java:834)
+                 at frc.robot.Robot.robotInit(Robot.java:24)
+                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+                 at frc.robot.Main.main(Main.java:23)
 
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
-         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
+         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+           The above stacktrace can help determine where the error occurred.
+           See https://wpilib.org/stacktrace for more information.
+         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
 
       Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 24. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has been initialized to zero. Looks like someone forgot to update it! Furthermore, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
 
@@ -469,25 +474,36 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.UncleanStatusException:  Code: -1029. HAL: Resource already allocated
-               at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
-               at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:51)
-               at edu.wpi.first.wpilibj.PWMSpeedController.<init>(PWMSpeedController.java:20)
-               at edu.wpi.first.wpilibj.PWMSparkMax.<init>(PWMSparkMax.java:31)
-               at frc.robot.Robot.robotInit(Robot.java:25)
-               at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
-               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
-               at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:407)
-               at frc.robot.Main.main(Main.java:23)
+         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.AllocationException: Code: -1029
+         PWM or DIO 0 previously allocated.
+         Location of the previous allocation:
+                 at frc.robot.Robot.robotInit(Robot.java:24)
+                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+                 at frc.robot.Main.main(Main.java:23)
 
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): unexpected error has occurred, but yours did!
-         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
+         Location of the current allocation:
+                 at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
+                 at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:66)
+                 at edu.wpi.first.wpilibj.motorcontrol.PWMMotorController.<init>(PWMMotorController.java:27)
+                 at edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax.<init>(PWMSparkMax.java:35)
+                 at frc.robot.Robot.robotInit(Robot.java:25)
+                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+                 at frc.robot.Main.main(Main.java:23)
 
-      This stack trace shows that a``edu.wpi.first.hal.util.UncleanStatusException`` has occurred. It also gives the helpful message: ``HAL: Resource already allocated``.
+         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+           The above stacktrace can help determine where the error occurred.
+           See https://wpilib.org/stacktrace for more information.
+         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
 
-      Looking at our stack trace, we see that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
+      This stack trace shows that a ``edu.wpi.first.hal.util.AllocationException`` has occurred. It also gives the helpful message: ``PWM or DIO 0 previously allocated.``.
 
-      Taking a peek at the code, we see line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
+      Looking at our stack trace, we see two stack traces. The first stack trace shows that the first allocation occurred in ``Robot.java:25``. The second stack trach shows that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
+
+      Taking a peek at the code, we see line 24 is where the first motor controller is declared and line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
    .. group-tab:: C++
 
@@ -495,13 +511,48 @@ When run, you'll see output that looks like this:
 
       .. code-block:: text
 
-         ********** Robot program starting **********
-         Not loading CameraServerShared
-         Error at frc::PWM::PWM [PWM.cpp:32]: HAL: Resource already allocated, Minimum Value: 0, MaximumValue: 20, Requested Value: 0
+         Error at PWM [C::31]: PWM or DIO 0 previously allocated.
+         Location of the previous allocation:
+                 at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+                 at __libc_start_main + 0x114 [0xb57ec580]
 
-      The key thing to notice here is the string, ``HAL: Resource already allocated``. That string is your primary clue that something in code has incorrectly "doubled up" on pin usage.
+         Location of the current allocation:: Channel 0
+                 at  + 0x5fb5c [0xb6e81b5c]
+                 at frc::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
+                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
+                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+                 at __libc_start_main + 0x114 [0xb57ec580]
 
-      The message example above was generated on a Windows computer in simulation. If you are running on a roboRIO or on a different operating system, it might look different.
+         Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
+           The above stacktrace can help determine where the error occurred.
+           See https://wpilib.org/stacktrace for more information.
+
+                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
+                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+                 at __libc_start_main + 0x114 [0xb57ec580]
+
+         terminate called after throwing an instance of 'frc::RuntimeError'
+           what():  PWM or DIO 0 previously allocated.
+         Location of the previous allocation:
+                 at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+                 at __libc_start_main + 0x114 [0xb57ec580]
+
+         Location of the current allocation:: Channel 0
+
+
+      The key thing to notice here is the string, ``PWM or DIO 0 previously allocated.``. That string is your primary clue that something in code has incorrectly "doubled up" on pin 0 usage.
+
+      The message example above was generated on a roboRIO. If you are running in simulation, it might look different.
 
 
 Fixing HAL Resource Already Allocated Issues

@@ -6,7 +6,7 @@ The CTRE Power Distribution Panel (PDP) and Rev Power Distribution Hub can use t
 Creating a Power Distribution Object
 ------------------------------------
 
-To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1PowerDistribution.html>`__):
+To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_power_distribution.html>`__):
 
 .. tabs::
 

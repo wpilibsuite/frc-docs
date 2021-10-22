@@ -92,8 +92,6 @@ Imaging Complete
 
 When the imaging completes you should see the dialog above. Click Ok, then click the Close button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
 
-.. note:: The default CAN webdash functionality has been removed from the image (CAN devices will still work from robot code). You will need to use the tools provided by individual vendors to service their CAN devices.
-
 Troubleshooting
 ^^^^^^^^^^^^^^^
 

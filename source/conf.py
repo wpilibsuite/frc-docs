@@ -18,13 +18,14 @@ import sys
 import os
 
 sys.path.append(os.path.abspath("."))
+sys.path.append(os.path.abspath("./frc-docs/source"))
 
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
 copyright = "2021, FIRST and other WPILib Contributors"
 author = "WPILib"
-version = "2021"
+version = "2022"
 
 
 # -- General configuration ---------------------------------------------------
@@ -96,7 +97,7 @@ ogp_image = (
 # Enables ChiefDelphi support
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
-    '<meta name="theme-color" content="#AC2B37" />',
+    '<meta name="theme-color" content="#003974" />',
 ]
 
 # Set location of pages to be indexed by delta
@@ -141,6 +142,7 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 # exclude_patterns = ["docs/beta/*"]
+exclude_patterns = ["docs/yearly-overview/2020-Game-Data.rst"]
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"

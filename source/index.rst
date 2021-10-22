@@ -68,7 +68,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    .. link-button:: /docs/beta/beta-getting-started/index
       :type: ref
-      :text: Go to Changelog
+      :text: Go to Beta Introduction
       :classes: btn-outline-primary btn-block
 
    ---
@@ -84,7 +84,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    .. link-button:: /docs/beta/tasks/index
       :type: ref
-      :text: Go to Zero-to-Robot
+      :text: Go to Beta Tasks
       :classes: btn-outline-primary btn-block
 
 .. panels::
@@ -203,14 +203,14 @@ Community translations can be found in a variety of languages in the bottom-left
 
          .. div:: col-sm pl-1 pr-1
 
-            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html
+            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/development/java/index.html
                :type: url
                :text: Java
                :classes: btn-outline-primary btn-block
 
          .. div:: col-sm pl-1 pr-1
 
-            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html
+            .. link-button:: https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/index.html
                :type: url
                :text: C++
                :classes: btn-outline-primary btn-block
@@ -326,8 +326,8 @@ Community translations can be found in a variety of languages in the bottom-left
    :caption: API Docs
    :hidden:
 
-   WPILib Java API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/index.html>
-   WPILib C++ API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/index.html>
+   WPILib Java API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/index.html>
+   WPILib C++ API Docs <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/index.html>
 
 .. toctree::
    :maxdepth: 1

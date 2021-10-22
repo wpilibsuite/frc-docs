@@ -31,7 +31,7 @@ LabVIEW Teams
 
 -  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
-.. note:: The dropdown on this page will say 2020 because the 2021 base LabVIEW version is identical to what was used in 2020. If you already have the 2020 version installed see :ref:`docs/yearly-overview/relicensing-labview:Re-licensing LabVIEW for 2021 Season` for info on re-licensing your installation.
+.. note:: The dropdown on this page will say 2020 because the 2021 base LabVIEW version is identical to what was used in 2020.
 
 Java/C++ Teams
 ^^^^^^^^^^^^^^
