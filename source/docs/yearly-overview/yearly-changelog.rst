@@ -56,6 +56,8 @@ Breaking Changes
 - C++: ``wpi::StringRef`` is replaced with ``std::string_view``. This is a drop in replacement in most cases
 - C++: ``wpi::ArrayRef`` is replaced with ``wpi::span``. This is a modified backport of the C++20 ``std::span``
 - C++: ``wpi::Twine`` is replaced with `fmtlib <https://fmt.dev/latest/index.html>`__. It has more features and is standard in C++20
+- C++: ``wpi::sys::path`` is replaced with ``fs::path`` from ``#include <wpi/fs.h>`` which is based on std::filesystem
+- C++: ``frc::filesystem`` methods have been simplified to return ``std::string``, rather then using a pointer parameter
 
 .. dropdown:: Various C++ classes have migrated to use units. Below are a list of effected classes.
 
