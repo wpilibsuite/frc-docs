@@ -43,7 +43,7 @@ Breaking Changes
 - ``PDP`` is now ``PowerDistribution``
 - Various ``PCM`` related classes (Solenoid, Compressor) now require a ``PneumaticsModuleType`` to support either the CTRE Pneumatics Control Module or REV Pneumatics Hub. Vendor specific methods have been moved to the ``PneumaticsControlModule`` or ``PneumaticsHub`` classes
 - Sendable has been broken up into NetworkTables components (called NTSendable\*, ``nt`` namespace) and non-NetworkTables components (moved to wpiutil, ``wpi`` namespace). This will make it easier for vendors and external libraries to integrate Sendable
-- ``InterruptableSendableBase`` has been broken up into ``AsynchronousInterrupt`` & ``SynchronousInterrupt``. Rather then a class, like ``DigitalInput`` extending ``InterruptableSendableBase`` and all methods being accessed through the ``DigitalInput``, teams should instead construct ``AsynchronousInterrupt`` or ``SynchronousInterrupt``, and pass it the ``DigitalInput``.
+- ``InterruptableSendableBase`` has been broken up into ``AsynchronousInterrupt`` & ``SynchronousInterrupt``. Rather then a class, like ``DigitalInput`` extending ``InterruptableSendableBase`` and all interrupt methods being accessed through the ``DigitalInput``, teams should instead construct ``AsynchronousInterrupt`` or ``SynchronousInterrupt``, and pass it the ``DigitalSource`` (e.g. ``DigitalInput``).
 - ``DriverStation.reportWarning`` and ``DriverStation.reportError`` have been removed. See the ``Errors.h`` header
 - ``RobotDrive`` has been removed
 - ``GearTooth`` has been removed
