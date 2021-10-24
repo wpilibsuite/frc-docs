@@ -59,7 +59,7 @@ An example of how to use buttons on the ``XboxController``.
 
 .. tabs::
 
-   .. group-tab:: java
+   .. group-tab:: Java
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot/RobotContainer.java
          :language: java
@@ -67,7 +67,7 @@ An example of how to use buttons on the ``XboxController``.
          :linenos:
          :lineno-start: 39
 
-   .. group-tab:: c++
+   .. group-tab:: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/GearsBot/cpp/RobotContainer.cpp
          :language: cpp
