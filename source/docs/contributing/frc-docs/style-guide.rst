@@ -112,7 +112,7 @@ Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ fo
 RLI (Remote Literal Include)
 ----------------------------
 
-When possible instead of using code blocks an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
+When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
 .. code-block:: ReST
 
