@@ -63,6 +63,23 @@ The key to avoiding a brownout condition is to proactively plan for the current 
 
 4. If you have determined mutually exclusive functions in your analysis, consider enforcing the exclusion in software. You may also use the current monitoring of the PDP (covered in more detail below) in your robot program to provide output limits or exclusions dynamically (such as don't run a mechanism motor when the drivetrain current is over X or only let the motor run up to half output when the drivetrain current is over Y).
 
+Settable Brownout
+-----------------
+
+The NI roboRIO 1.0 does not support custom brownout voltages. It is fixed at 6.3V as mentioned in Stage 2 above.
+
+The NI roboRIO 2.0 adds the option for a software settable brownout level.  The default brownout level (Stage 2) of the roboRIO 2.0 is 6.75V.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    RobotController.setBrownoutVoltage(7.0);
+
+  .. code-tab:: c++
+
+    frc::RobotController::SetBrownoutVoltage(7_V);
+
 Measuring Current Draw using the PDP
 ------------------------------------
 
