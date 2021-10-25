@@ -66,7 +66,9 @@ The key to avoiding a brownout condition is to proactively plan for the current 
 Settable Brownout
 -----------------
 
-The NI roboRIO 2.0 adds the option for a software settable brownout level.  The levels set here will override the 6.3V level of the roboRIO 1.0.  The default brownout level of the roboRIO 2.0 is 6.75V.
+The NI roboRIO 1.0 does not support custom brownout voltages. It is fixed at 6.3V as mentioned in Stage 2 above.
+
+The NI roboRIO 2.0 adds the option for a software settable brownout level.  The default brownout level (Stage 2) of the roboRIO 2.0 is 6.75V.
 
 .. tabs::
 
