@@ -46,9 +46,9 @@ Breaking Changes
 - ``InterruptableSendableBase`` has been broken up
   - ``AsynchronousInterrupt``
   - ``SynchronousInterrupt``
-- ``DriverStation.reportWarning`` and ``DriverStation.reportError`` have been removed. See the ``Errors.h`` header
-- ``RobotDrive`` has been removed
-- ``GearTooth`` has been removed
+- `C++: `DriverStation.ReportWarning`` and ``DriverStation.ReportError`` have been removed. Use ``FRC_ReportError`` in ``frc\Errors.h`` header. Status of frc::err::Error can be used for Errors and frc::warn::Warning can be used for warnings.
+- Deprecated ``RobotDrive`` has been removed. Use ``DifferentialDrive`` instead
+- Deprecated ``GearTooth`` has been removed. Use the ``Counter`` class instead
 - ``SpeedController`` has been renamed to ``MotorController``
 - Various DriverStation In[Mode] functions has been renamed (IE: ``InDisabled`` -> ``inDisabled``)
 - Deprecated ``wpilibj.cameraserver`` has been removed. Use ``cameraserver`` instead
