@@ -54,7 +54,7 @@ Breaking Changes
 - C++: ``wpi::StringRef`` is replaced with ``std::string_view``. This is a drop in replacement in most cases
 - C++: ``wpi::ArrayRef`` is replaced with ``wpi::span``. This is a modified backport of the C++20 ``std::span``
 - C++: ``wpi::Twine`` is replaced with `fmtlib <https://fmt.dev/latest/index.html>`__. It has more features and is standard in C++20
-- C++: ``wpi::sys::path`` is replaced with ``fs::path`` from ``#include <wpi/fs.h>`` which is based on std::filesystem
+- C++: ``wpi::sys::path`` is replaced with ``fs::path`` from ``#include <wpi/fs.h>`` which is based on ``std::filesystem``
 - C++: ``frc::filesystem`` methods have been simplified to return ``std::string``, rather then using a pointer parameter
 - C++: Support for ``std::cout`` was removed from units because ``<iostream>`` has significant compile-time overhead. Use `fmtlib <https://fmt.dev/latest/index.html>`__ instead, an analog for C++20's ``std::format()`` (e.g., ``fmt::print("{}", 2_m)``). The units headers automatically include fmtlib. If you still want to use ``std::cout``, call ``value()`` on the variable being printed (e.g., ``std::cout << velocity.value()``).
 
