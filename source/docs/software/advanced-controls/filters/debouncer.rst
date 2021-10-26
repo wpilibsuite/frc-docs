@@ -1,7 +1,7 @@
 Debouncer
 =========
 
-The ``Debouncer`` class is used to filter out unwanted quick on/off cycles.  These cycles are usually due to a sensor error like noise or reflections and not the actual even the sensor is trying to record.  The ``Debouncer`` works by only recording a change in signal after that change has persisted for a specified period of time.
+The ``Debouncer`` class is used to filter out unwanted quick on/off cycles.  These cycles are usually due to a sensor error like noise or reflections and not the actual event the sensor is trying to record.  The ``Debouncer`` works by only recording a change in signal after that change has persisted for a specified period of time.
 
 .. tabs::
 
@@ -24,7 +24,7 @@ The ``Debouncer`` class is used to filter out unwanted quick on/off cycles.  The
     frc::DigitalInput input{0};
 
     // Creates a Debouncer.
-    frc::Debouncer m_debouncer{0.1};
+    frc::Debouncer m_debouncer{100_ms};
     
     // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
     if (m_debouncer.calculate(input.Get())) {
