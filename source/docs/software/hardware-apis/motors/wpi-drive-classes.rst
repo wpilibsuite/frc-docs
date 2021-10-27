@@ -104,9 +104,9 @@ Axis Conventions
    :alt: Show the axis of the robot with X+ going forward.  Y+ to the right and Z+ downward.
    :width: 600
 
-This library uses the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. Rotations follow the right-hand rule, so clockwise rotation around the Z axis is positive.
+The drive classes use the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. The rest of the library, and math in general, uses NWU axes convention (North-West-Up). We use NED here because joysticks use NED, and they use NED because the aviation industry does.
 
-.. warning:: This convention is different than the convention for joysticks which typically have -Y as Up (commonly mapped to throttle) and +X as Right. Pay close attention to the examples below if you want help with typical Joystick->Drive mapping.
+Joysticks follow NED convention, but it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
 
 Using the DifferentialDrive class to control Differential Drive robots
 ----------------------------------------------------------------------
