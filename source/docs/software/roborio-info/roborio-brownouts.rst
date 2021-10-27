@@ -37,7 +37,7 @@ The controller will take the following steps to attempt to preserve the battery 
 -  GPIO configured as outputs go to High-Z
 -  Relay Outputs are disabled (driven low)
 -  CAN-based motor controllers are sent an explicit disable command
--  The PCM (Pneumatics Control Module) is disabled.
+-  Pneumatic Devices such as the CTRE Pneumatics Control Module and REV Pneumatics Hub are disabled.
 
 **The controller will remain in this state until the voltage rises to greater than 7.5V or drops below the trigger for the next stage of the brownout**
 
