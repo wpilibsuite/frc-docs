@@ -12,3 +12,4 @@ This section describes a number of filters included with WPILib that are useful 
    linear-filter
    median-filter
    slew-rate-limiter
+   debouncer
