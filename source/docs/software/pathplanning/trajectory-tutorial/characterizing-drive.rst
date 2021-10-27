@@ -25,7 +25,7 @@ Once the characterization routine has been run and the data file has been saved,
 Checking Diagnostics
 ^^^^^^^^^^^^^^^^^^^^
 
-Per the :ref:`FRC-Characterization guide <docs/software/pathplanning/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
+Per the :ref:`characterization guide <docs/software/pathplanning/robot-characterization/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
 .. image:: images/voltage-domain-plots.png
    :alt: Combined Voltage-Domain Plots.
@@ -70,4 +70,4 @@ Finally, we calculate and record the feedback gains for our control loop.  Since
 .. image:: images/fb-gains.png
    :alt: Highlights the calculated kP and kD controller gains.
 
-Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.  Thus, our calculated gain means that, for each meter per second of velocity error, the controller will output an additional 8.5 volts.
+Assuming we have done everything correctly, our proportional gain will be in units of Volts * Seconds / Meters.  Thus, our calculated gain means that, for each meter per second of velocity error, the controller will output an additional 3.38 volts.
