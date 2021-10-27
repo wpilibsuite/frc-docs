@@ -109,6 +109,31 @@ All code blocks should have a language specified.
 
 Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
+RLI (Remote Literal Include)
+----------------------------
+
+When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
+
+.. code-block:: ReST
+
+   .. group-tab:: Java
+
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+         :language: java
+         :lines: 44-61
+         :linenos:
+         :lineno-start: 44
+
+   .. group-tab:: C++
+
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+         :language: cpp
+         :lines: 18-30
+         :linenos:
+         :lineno-start: 18
+
+Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub, there is a handy ``Raw`` button in the top right corner of the page.
+
 Admonitions
 -----------
 
