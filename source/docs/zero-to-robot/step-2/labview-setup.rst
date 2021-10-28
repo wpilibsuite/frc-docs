@@ -175,27 +175,30 @@ You will be prompted whether to enable the NI update service. You can choose to 
 NI Activation Wizard
 ^^^^^^^^^^^^^^^^^^^^
 
+.. image:: images/labview/ni_activation_wizard.png
+   :alt: The NI Activation Wizard
+
+Click the :guilabel:`Log in to Activate` button.
+
 .. image:: images/labview/ni_activation_login.png
    :alt: The NI user login screen.
 
 Log into your ni.com account. If you don't have an account, select :guilabel:`Create account` to create a free account.
 
+.. image:: images/labview/ni_activation_sn_selection.png
+   :alt: Screen so select how to activate LabVIEW.
+
+From the drop-down, select enter a serial number
+
 .. image:: images/labview/ni_activation_keys.png
    :alt: Screen for entering your product key.
 
-The serial number you entered at the "User Information" screen should appear in all of the text boxes, if it doesn't, enter it now. Click "Activate".
-
-.. note:: If this is the first time activating the 2020 software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
+Enter the serial number in all the boxes. Click :guilabel:`Activate`.
 
 .. image:: images/labview/ni_activation_success.png
    :alt: Screen details the activation success of each package.
 
-If your products activate successfully, an "Activation Successful" message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Next`.
-
-.. image:: images/labview/ni_activation_finish.png
-   :alt: Close through this screen asking you to register.
-
-Click "Close".
+If your products activate successfully, an "Activation Successful" message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. The items shown above are not expected to activate. If everything activated successfully, click :guilabel:`Finish`.
 
 Restart
 ^^^^^^^
