@@ -32,7 +32,7 @@ General Library
 - Added ``PS4Controller`` controller class
 - Added better message for when an I2C port is out of range
 - Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
-- Added ``PneumaticsHub`` class for use with the REV Pneumatics Hub
+- Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
 - GenericHID has been updated to static functions for non-defined controller types
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
@@ -41,7 +41,7 @@ Breaking Changes
 ^^^^^^^^^^^^^^^^
 
 - ``PDP`` is now ``PowerDistribution``
-- Various ``PCM`` related classes (Solenoid, Compressor) now require a ``PneumaticsModuleType`` to support either the CTRE Pneumatics Control Module or REV Pneumatics Hub. Vendor specific methods have been moved to the ``PneumaticsControlModule`` or ``PneumaticsHub`` classes
+- Various ``PCM`` related classes (Solenoid, Compressor) now require a ``PneumaticsModuleType`` to support either the CTRE Pneumatics Control Module or REV Pneumatic Hub. Vendor specific methods have been moved to the ``PneumaticsControlModule`` or ``PneumaticHub`` classes
 - Sendable has been broken up into NetworkTables components (called NTSendable\*, ``nt`` namespace) and non-NetworkTables components (moved to wpiutil, ``wpi`` namespace). This will make it easier for vendors and external libraries to integrate Sendable
 - ``InterruptableSendableBase`` has been broken up into ``AsynchronousInterrupt`` & ``SynchronousInterrupt``. Rather then a class, like ``DigitalInput`` extending ``InterruptableSendableBase`` and all interrupt methods being accessed through the ``DigitalInput``, teams should instead construct ``AsynchronousInterrupt`` or ``SynchronousInterrupt``, and pass it the ``DigitalSource`` (e.g. ``DigitalInput``).
 - C++: ``DriverStation.ReportWarning`` and ``DriverStation.ReportError`` have been removed. Use ``FRC_ReportError`` in ``frc\Errors.h`` header. Status of ``frc::err::Error`` can be used for Errors and ``frc::warn::Warning`` can be used for warnings.
