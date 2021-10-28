@@ -75,6 +75,13 @@ versionwarning_admonition_type = "warning"
 versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'div[class="document"]'
 
+readthedocs_version = os.getenv("READTHEDOCS_VERSION")
+readthedocs_language = os.getenv("READTHEDOCS_LANGUAGE")
+
+# Handle RTD prefixing
+if readthedocs_version is not None:
+    notfound_urls_prefix = f"/{readthedocs_language}/{readthedocs_version}/"
+
 # Redirect branch
 rediraffe_branch = "origin/main"
 
