@@ -213,6 +213,9 @@ def setup(app):
     # Launch external links in a new tab/window
     app.add_js_file("js/external-links-new-tab.js")
 
+    # Add 2014 archive link to rtd versions menu
+    app.add_js_file("js/version-2014.js")
+
 
 # -- Options for latex generation --------------------------------------------
 
