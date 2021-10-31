@@ -17,11 +17,7 @@ body {
   unicode-bidi: bidi-override;
 }
 
-.link-bar-container {
-  margin-right: 320px;
-  margin-left: 0;
-}
-#link-bar li, .wy-nav-top i {
+.wy-nav-top i {
   float: right;
 }
 
