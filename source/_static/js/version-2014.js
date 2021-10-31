@@ -12,7 +12,7 @@ $lazy = async function (selector) {
 document.addEventListener(
     "DOMContentLoaded",
     async function () {
-        (await $lazy(".rst-other-versions dt:contains('Versions')"))
+        (await $lazy(".rst-other-versions .injected dt:contains('Versions')"))
             .parent()
             .append(
                 `<dd><a href="https://wpilib.screenstepslive.com/s/3120">2014</a></dd>`
