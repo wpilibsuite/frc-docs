@@ -39,7 +39,7 @@ The :guilabel:`Encoder Selection` allows you to configure the encoders that will
    :alt: Encoder selection section.
 
 Encoder Types
-"""""""""""""
+~~~~~~~~~~~~~
 - **General Types** (consistent across all motor controller selections): ``roboRIO`` corresponds to any encoders that are plugged into the roboRIO, ``CANCoder`` corresponds to the CTRE CANCoder.
 - **TalonSRX**: ``Built-in`` corresponds to any quadrature encoder plugged into the encoder port, ``Tachometer`` corresponds to the CTRE Tachometer plugged into the encoder port.
 - **TalonFX**: ``Built-in`` corresponds to the integrated encoder on the TalonFX motor.
