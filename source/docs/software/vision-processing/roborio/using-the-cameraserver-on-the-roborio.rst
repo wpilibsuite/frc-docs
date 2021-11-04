@@ -33,7 +33,7 @@ The following program starts automatic capture of a USB camera like the Microsof
         private:
           void RobotInit()
           {
-            CameraServer::StartAutomaticCapture();
+            frc::CameraServer::StartAutomaticCapture();
           }
         };
         START_ROBOT_CLASS(Robot)
@@ -93,10 +93,10 @@ In the following example a thread created in robotInit() gets the Camera Server 
         private:
           static void VisionThread()
           {
-            cs::UsbCamera camera = CameraServer::StartAutomaticCapture();
+            cs::UsbCamera camera = frc::CameraServer::StartAutomaticCapture();
             camera.SetResolution(640, 480);
-            cs::CvSink cvSink = CameraServer::GetVideo();
-            cs::CvSource outputStreamStd = CameraServer::PutVideo("Gray", 640, 480);
+            cs::CvSink cvSink = frc::CameraServer::GetVideo();
+            cs::CvSource outputStreamStd = frc::CameraServer::PutVideo("Gray", 640, 480);
             cv::Mat source;
             cv::Mat output;
             while(true) {
