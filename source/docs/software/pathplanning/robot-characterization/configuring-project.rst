@@ -20,6 +20,8 @@ Motor Controller Selection
 
 The :guilabel:`Motor / Motor Controller Selection` allows you to add ports for each motor controller that will be used. The :guilabel:`+` and :guilabel:`-` buttons let you add and remove ports respectively.
 
+.. note:: If you are plugging in your encoders into motor controllers make sure that the motor controller type and port(s) are the first ones you specify.
+
 .. image:: images/motor-selection.png
    :alt: Motor selection section.
 
@@ -31,11 +33,21 @@ Each motor port contains the following parts:
 
 Encoder Selection
 ^^^^^^^^^^^^^^^^^
-The :guilabel:`Encoder Selection` allows you to configure the encoders that will be used. You can choose the type of encoder with :guilabel:`Encoder`. ``roboRIO`` corresponds to any encoders that are plugged into the rio, ``CANCoder / Alternate`` corresponds to the CTRE CANCoder or any encoders plugged into the Spark Max's Alternate Port, and ``Built-In`` corresponds to any encoder plugged into a CTRE Smart Motor Controller or the encoder port on a Spark Max.
+The :guilabel:`Encoder Selection` allows you to configure the encoders that will be used. The types of encoder you can use will vary with the first motor controller type specified (see note :ref:`above <docs/software/pathplanning/robot-characterization/configuring-project:Motor Controller Selection>`).
 
 .. image:: images/encoder-selection.png
    :alt: Encoder selection section.
 
+Encoder Types
+~~~~~~~~~~~~~
+- **General Types** (consistent across all motor controller selections): ``roboRIO`` corresponds to any encoders that are plugged into the roboRIO, ``CANCoder`` corresponds to the CTRE CANCoder.
+- **TalonSRX**: ``Built-in`` corresponds to any quadrature encoder plugged into the encoder port, ``Tachometer`` corresponds to the CTRE Tachometer plugged into the encoder port.
+- **TalonFX**: ``Built-in`` corresponds to the integrated encoder on the TalonFX motor.
+- **Spark MAX**: ``Encoder Port`` refers to an encoder plugged into the `encoder port <https://docs.revrobotics.com/sparkmax/feature-description/encoder-port>`__, ``Data Port`` refers to an encoder plugged into the `data port <https://docs.revrobotics.com/sparkmax/feature-description/data-port>`__.
+- **Venom**: ``Built-in`` refers to an encoder plugged into the Venom's encoder port.
+
+Encoder Settings
+""""""""""""""""
 Here are the following settings that can be configured (although the settings that are visible will vary by the previously selected encoder type):
 
 - Ports (either :guilabel:`A` and :guilabel:`B` or :guilabel:`CANCoder Port`
