@@ -20,7 +20,7 @@ Copy the image to your MicroSD card
 -----------------------------------
 
 Download and install `Etcher <https://www.balena.io/etcher/>`__ to image the micro SD card. The micro SD card needs to be at least
-4 GB. Note: a `micro SD to USB dongle <https://www.amazon.com/gp/product/B0779V61XB>`__ works well for writing to micro SD cards.
+8 GB. Note: a `micro SD to USB dongle <https://www.amazon.com/gp/product/B0779V61XB>`__ works well for writing to micro SD cards.
 
 .. figure:: images/installing-the-image-to-your-microsd-card/copy-the-image-to-your-microsd-card.png
 
