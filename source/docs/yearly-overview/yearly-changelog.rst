@@ -95,11 +95,13 @@ Package Renames
 
 We have committed to several organizational renames that will allow us greater flexible with new classes in the future. The VS Code project importer will update existing projects to use the new packages/headers.
 
-- ``controller`` is now ``math.controller``
+- Several packages moved from ``wpilibj`` to ``math``: ``controller``, ``estimator``, ``geometry``, ``kinematics``, ``math``, ``spline``, ``system``, ``trajectory``
+- ``wpiutil.math`` was moved to ``math``
 - ``wpiutil`` is now ``util``
 - ``SlewRateLimiter``, ``LinearFilter``, and ``MedianFilter`` now live in ``math.filters``
 - ``Timer`` has moved from ``frc2`` to ``frc``
 - Motor controllers (``VictorSPX``, ``PWMSparkMax``, etc) have been moved to a ``motorcontrol`` package.
+- ``edu.wpi.cscore`` has moved to ``edu.wpi.first.cscore``
 
 Simulation
 ----------
