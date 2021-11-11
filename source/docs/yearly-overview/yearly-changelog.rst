@@ -146,7 +146,7 @@ PathWeaver
 GradleRIO
 ---------
 
-- Gradle has been updated to version 7
+- Gradle has been updated to version 7.2
 - Internals of GradleRIO have been updated to be easier to read, more maintainable and easier for advanced teams to modify.
 - Deployment is more customizable
 
@@ -165,7 +165,9 @@ OutlineViewer has been updated to be C++ based using the ImGui library. This mak
 WPILib All in One Installer
 ---------------------------
 
-- No new changes
+- Visual Studio Code has been updated to 1.62
+- Updated Java and C++ language extensions
+- Fix Linux desktop icon permissions
 
 Visual Studio Code Extension
 ----------------------------
@@ -173,9 +175,9 @@ Visual Studio Code Extension
 .. important:: The project importer will only import 2020/2021 projects!
 
 - Project Importer has been updated for the 2022 season. The project importer will attempt update the imported code, but manual changes may still be necessary due to the complexity of the breaking changes this year.
-- Visual Studio Code has been updated to 1.61
-- Updated Java and C++ language extensions
 - Remove Eclipse Project Importer
+- fix chcp not found warning during simulation on Windows
+- Add additional information to the project information command display
 
 RobotBuilder
 ------------
