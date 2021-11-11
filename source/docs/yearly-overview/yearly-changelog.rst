@@ -176,7 +176,7 @@ Visual Studio Code Extension
 
 - Project Importer has been updated for the 2022 season. The project importer will attempt update the imported code, but manual changes may still be necessary due to the complexity of the breaking changes this year.
 - Remove Eclipse Project Importer
-- fix chcp not found warning during simulation on Windows
+- Fix chcp not found warning during simulation on Windows
 - Add additional information to the project information command display
 
 RobotBuilder
