@@ -118,6 +118,7 @@ Shuffleboard
 - Use system menubar
 - Add tab clear confirmation
 - Save widget titles display mode preference
+- Fix: CameraServer streams
 
 SmartDashboard
 --------------
