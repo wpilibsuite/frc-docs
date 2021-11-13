@@ -361,6 +361,7 @@ Community translations can be found in a variety of languages in the bottom-left
    :hidden:
 
    docs/software/examples-tutorials/wpilib-examples
+   docs/software/examples-tutorials/third-party-examples
 
 .. toctree::
    :maxdepth: 1
