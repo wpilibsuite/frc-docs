@@ -57,6 +57,7 @@ Breaking Changes
 - C++: ``wpi::Twine`` is replaced with `fmtlib <https://fmt.dev/latest/index.html>`__. It has more features and is standard in C++20
 - C++: ``wpi::sys::path`` is replaced with ``fs::path`` from ``#include <wpi/fs.h>`` which is based on ``std::filesystem``
 - C++: ``frc::filesystem`` methods have been simplified to return ``std::string``, rather then using a pointer parameter
+- C++: ``wpi::math`` is replaced with ``wpi::numbers`` which is based on C++20 ``std::numbers``.
 - C++: Support for ``std::cout`` was removed from units because ``<iostream>`` has significant compile-time overhead. Use `fmtlib <https://fmt.dev/latest/index.html>`__ instead, an analog for C++20's ``std::format()`` (e.g., ``fmt::print("{}", 2_m)``). The units headers automatically include fmtlib. If you still want to use ``std::cout``, call ``value()`` on the variable being printed (e.g., ``std::cout << velocity.value()``).
 
 .. dropdown:: Various C++ classes have migrated to use units. Below are a list of effected classes.
