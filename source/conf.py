@@ -122,6 +122,7 @@ linkcheck_ignore = [
     r".*andymark.com.*",
     r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
     r".*wpilibpi.local.*",
+    r".*java.com/en/download/help/locale.xml.*",
 ]
 
 # Sets linkcheck timeout in seconds
