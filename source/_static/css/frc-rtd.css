@@ -1,12 +1,3 @@
-#link-bar a:visited {
-	color: #FFF;
-}
-
-#link-bar li {
-	float: left;
-	padding: 15px;
-}
-
 .color-strip {
 	height: 10px;
 	margin :0;
@@ -41,10 +32,6 @@
 .header-bar {
 	background: #003974;
 	min-height: 60px;
-}
-
-.link-bar-container {
-	margin-left: 320px;
 }
 
 .wy-nav-content {

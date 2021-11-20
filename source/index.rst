@@ -277,6 +277,14 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
+
+   FRC Game Manual <https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system>
+   FRC Game Q&A <https://frc-qa.firstinspires.org>
+
+
+.. toctree::
+   :maxdepth: 1
    :titlesonly:
    :caption: FRC Beta Test
    :hidden:
