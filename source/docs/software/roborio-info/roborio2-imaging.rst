@@ -1,7 +1,7 @@
 RoboRIO2 Imaging
 ================
 
-The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot image containing the NI Linux Real-Time OS, drivers, and libraries specific to FRC. There are two ways to create the SD card -- with the roboRIO using the imaging tool, or with a laptop and an SD burner application.
+The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot image containing the NI Linux Real-Time OS, drivers, and libraries specific to FRC. There are two ways to create the SD card -- with the roboRIO :ref:`using the imaging tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`, or with a laptop and an SD burner application.
 
 microSD Requirements
 --------------------
