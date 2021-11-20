@@ -120,8 +120,8 @@ The following example shows how to stabilize heading using a simple P loop close
         Spark right1 = new Spark(2);
         Spark right2 = new Spark(3);
 
-        SpeedControllerGroup leftMotors = new SpeedControllerGroup(left1, left2);
-        SpeedControllerGroup rightMotors = new SpeedControllerGroup(right1, right2);
+        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
+        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
 
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
@@ -147,8 +147,8 @@ The following example shows how to stabilize heading using a simple P loop close
         frc::Spark right1{2};
         frc::Spark right2{3};
 
-        frc::SpeedControllerGroup leftMotors{left1, left2};
-        frc::SpeedControllerGroup rightMotors{right1, right2};
+        frc::MotorControllerGroup leftMotors{left1, left2};
+        frc::MotorControllerGroup rightMotors{right1, right2};
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
@@ -186,8 +186,8 @@ The following example shows how to stabilize heading using a simple P loop close
         Spark right1 = new Spark(2);
         Spark right2 = new Spark(3);
 
-        SpeedControllerGroup leftMotors = new SpeedControllerGroup(left1, left2);
-        SpeedControllerGroup rightMotors = new SpeedControllerGroup(right1, right2);
+        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
+        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
 
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
@@ -221,8 +221,8 @@ The following example shows how to stabilize heading using a simple P loop close
         frc::Spark right1{2};
         frc::Spark right2{3};
 
-        frc::SpeedControllerGroup leftMotors{left1, left2};
-        frc::SpeedControllerGroup rightMotors{right1, right2};
+        frc::MotorControllerGroup leftMotors{left1, left2};
+        frc::MotorControllerGroup rightMotors{right1, right2};
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
@@ -263,8 +263,8 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         Spark right1 = new Spark(2);
         Spark right2 = new Spark(3);
 
-        SpeedControllerGroup leftMotors = new SpeedControllerGroup(left1, left2);
-        SpeedControllerGroup rightMotors = new SpeedControllerGroup(right1, right2);
+        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
+        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
 
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
@@ -290,8 +290,8 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         frc::Spark right1{2};
         frc::Spark right2{3};
 
-        frc::SpeedControllerGroup leftMotors{left1, left2};
-        frc::SpeedControllerGroup rightMotors{right1, right2};
+        frc::MotorControllerGroup leftMotors{left1, left2};
+        frc::MotorControllerGroup rightMotors{right1, right2};
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 

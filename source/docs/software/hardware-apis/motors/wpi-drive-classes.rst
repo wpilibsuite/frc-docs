@@ -150,10 +150,10 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
 
 
 
-Multi-Motor DifferentialDrive with SpeedControllerGroups
+Multi-Motor DifferentialDrive with MotorControllerGroups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single SpeedController, using the SpeedControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the SpeedController group constructor (it takes an arbitrary number of inputs).
+Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single MotorController, using the MotorControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the MotorController group constructor (it takes an arbitrary number of inputs).
 
 .. tabs::
 
@@ -164,11 +164,11 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
             public class Robot {
                 Spark m_frontLeft = new Spark(1);
                 Spark m_rearLeft = new Spark(2);
-                SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
+                MotorControllerGroup m_left = new MotorControllerGroup(m_frontLeft, m_rearLeft);
 
                 Spark m_frontRight = new Spark(3);
                 Spark m_rearRight = new Spark(4);
-                SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
+                MotorControllerGroup m_right = new MotorControllerGroup(m_frontRight, m_rearRight);
                 DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
                 public void robotInit() {
@@ -183,11 +183,11 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
                 public:
                     frc::Spark m_frontLeft{1};
                     frc::Spark m_rearLeft{2};
-                    frc::SpeedControllerGroup m_left{m_frontLeft, m_rearLeft};
+                    frc::MotorControllerGroup m_left{m_frontLeft, m_rearLeft};
 
                     frc::Spark m_frontRight{3};
                     frc::Spark m_rearRight{4};
-                    frc::SpeedControllerGroup m_right{m_frontRight, m_rearRight};
+                    frc::MotorControllerGroup m_right{m_frontRight, m_rearRight};
 
                     frc::DifferentialDrive m_drive{m_left, m_right};
 

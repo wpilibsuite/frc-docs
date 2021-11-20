@@ -18,11 +18,11 @@ Inside the Drive Train create a Differential Drive object for a two motor drive.
 
 .. image:: images/driving-with-joysticks-speed-controller-group.png
 
-Since we want to use more then two motors to drive the robot, inside the Differential Drive, create two Speed Controller Groups. These will group multiple speed controllers so they can be used with Differential Drive.
+Since we want to use more then two motors to drive the robot, inside the Differential Drive, create two Motor Controller Groups. These will group multiple motor controllers so they can be used with Differential Drive.
 
 .. image:: images/driving-with-joysticks-speed-controller.png
 
-Finally, create two Speed Controllers in each Speed Controller Group.
+Finally, create two Motor Controllers in each Motor Controller Group.
 
 Add the Joysticks to the Operator Interface
 -------------------------------------------
