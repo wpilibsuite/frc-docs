@@ -42,7 +42,7 @@ There are useful forms of support provided by the community through various foru
 - `Chief Delphi <https://chiefdelphi.com>`__
 - `FRC Discord <https://discord.gg/frc>`__
 - `PhotonVision Support (Discord) <https://discord.com/invite/wYxTwym>`__
-- `Limelight Support <https://docs.limelightvision.io/en/latest/>`__
+- `Limelight Support <https://limelightvision.io/pages/contact-us>`__
 
 Bug Reporting
 -------------
