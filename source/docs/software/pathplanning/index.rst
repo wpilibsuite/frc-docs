@@ -10,7 +10,7 @@ Swerve support in path following has a couple of issues that teams need to be aw
 - WPILib currently does not support swerve in simulation, please see `this <https://github.com/wpilibsuite/allwpilib/pull/3374>`__ pull request.
 - SysID only supports tuning the swerve heading using a simple motor project and is unable to collect module velocity data.
 - Pathweaver and Trajectory following currently do not take heading into account. Path following using the WPILib trajectory framework on swerve will be the same as a DifferentialDrive robot.
-  
+
 We are sorry for the inconvenience at this time.
 
 .. toctree::
