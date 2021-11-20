@@ -10,6 +10,11 @@ Installing LabVIEW for FRC (LabVIEW only)
 
 Download and installation times will vary widely with computer and internet connection specifications, however note that this process involves a large file download and installation and will likely take at least an hour to complete.
 
+Requirements
+------------
+
+- Windows 10 or higher (Windows 10, 11). Windows 11 is not officially supported by NI, but has been tested to work.
+
 Uninstall Old Versions (Recommended)
 ------------------------------------
 
@@ -61,20 +66,10 @@ Starting Install
 
      Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click "Yes" if a Windows Security prompt
 
-     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
+     .. note:: other installed programs may associate with iso files and the mount option may not appear. If that software does not give the option to mount or extract the iso file, then install 7-Zip and use that to extract the iso.
 
      .. image:: images/labview/mount-iso.png
       :alt: The menu after right clicking on an .iso file to choose "Mount".
-
-  .. tab:: Offline Installer (Windows 7, 8, & 8.1)
-
-     Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21).
-     Right click on the downloaded iso file and select Extract to.
-
-     .. image:: images/labview/extract-iso.png
-      :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
-
-     Run install.exe from the extracted folder. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

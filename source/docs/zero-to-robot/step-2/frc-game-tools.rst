@@ -16,7 +16,7 @@ The LabVIEW runtime components required for the Driver Station and Utilities are
 Requirements
 ------------
 
-- Windows 7 or higher (Windows 7, 8, 8.1, 10, 11). Windows 10 or 11 are the recommended OS's.
+- Windows 10 or higher (Windows 10, 11). Windows 11 is not officially supported by NI, but has been tested to work.
 - Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
@@ -64,16 +64,7 @@ Extraction
       .. image:: images/labview/mount-iso.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
-      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Offline Installer (Windows 7, 8, & 8.1)" tab.
-
-   .. tab:: Offline (Windows 7, 8, 8.1)
-
-      Install 7-Zip (download `here <https://www.7-zip.org>`__). As of the writing of this document, the current released version is 19.00 (2019-02-21). Right click on the downloaded iso file and select :guilabel:`Extract to`.
-
-      .. image:: images/labview/extract-iso.png
-         :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
-
-      Run ``install.exe`` from the extracted folder. Click :guilabel:`Yes` if a Windows Security prompt appears.
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then install 7-Zip and use that to extract the iso.
 
 NI Package Manager License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
