@@ -13,14 +13,14 @@ Operation Tips
 
 The NI roboRIO 2.0 controller requires a fully inserted SD card containing a valid image in order to boot and operate as intended.
 
-If the SD card is removed while powered, the controller will hang. Once the SD card is replaced, the controller will need to be restarted using the reset button, or it can have the power cycled.
+If the SD card is removed while powered, the controller will hang. Once the SD card is replaced, the controller will need to be restarted using the reset button, or be power cycled.
 
 No damage will result from SD card removal or insertion while powered, but best practice is to perform these operations while unpowered.
 
 Imaging Using a Computer
 ------------------------
 
-The image will be transferred to the SD card using a specialized writing utility, sometimes called a burner. Several utilities are listed below, but most that can write arbitrary images for booting a Raspberry Pi or similar dev boards will also produce a bootable SD card for roboRIO 2.0.
+The image will be transferred to the SD card using a specialized writing utility, sometimes called a burner. Several utilities are listed below, but most tools that can write arbitrary images for booting a Raspberry Pi or similar dev boards will also produce a bootable SD card for roboRIO 2.0.
 
 Supported image files are named FRC_roboRIO2_VERSION.img.zip and should be located next to this instruction file. You may also locate then by clicking the SD button in the roboRIO Imaging tool. Select the version that matches the version of the programming tools being used. A mismatch between tools and image may result in inconsistent library dependencies.
 
