@@ -3,6 +3,16 @@ Path Planning
 
 Path Planning is the process of creating and following trajectories. These paths use the WPILib trajectory APIs for generation and a :ref:`Ramsete Controller <docs/software/advanced-controls/trajectories/ramsete:Ramsete Controller>` for following. This section highlights the process of characterizing your robot for system identification, trajectory following and usage of PathWeaver. Users may also want to read the :ref:`generic trajectory following documents <docs/software/advanced-controls/trajectories/index:Trajectory Generation and Following with WPILib>` for additional information about the API and non-commandbased usage.
 
+Notice on Swerve Support
+------------------------
+
+Swerve support in path following has a couple of hiccups that teams need ot be aware of:
+- WPILib currently does not support swerve in simulation, please see `this <https://github.com/wpilibsuite/allwpilib/pull/3374>`__ pull request.
+- SysID only supports tuning the swerve heading using a simple motor project and is unable to collect module velocity data.
+- Pathweaver and Trajectory following currently do not take heading into account. Path following using the WPILib trajectory framework on swerve will be the same as a DifferentialDrive robot.
+  
+We are sorry for the inconvenience at this time.
+
 .. toctree::
    :maxdepth: 2
 

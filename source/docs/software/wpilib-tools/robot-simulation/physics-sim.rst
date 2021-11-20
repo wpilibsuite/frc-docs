@@ -26,6 +26,8 @@ The following physics simulation classes are available in WPILib:
 
 All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
 
+.. note:: Swerve support for simulation is in the works, but we cannot provide an ETA. For updates on progress, please follow this `pull request <https://github.com/wpilibsuite/allwpilib/pull/3374>`__.
+
 Usage in User Code
 ------------------
 
