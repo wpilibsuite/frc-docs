@@ -33,7 +33,10 @@ General Library
 - Added better message for when an I2C port is out of range
 - Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
-- GenericHID has been updated to static functions for non-defined controller types
+- GenericHID has been updated to static functions for non-defined controller types. Example conversion is shown below:
+  - `controller.getTriggerAxis(GenericHID.kLeftHand)` -> `controller.getLeftTriggerAxis()`
+  - `controller.getX(GenericHID.kLeftHand)` -> `controller.getLeftX()`
+
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
 
