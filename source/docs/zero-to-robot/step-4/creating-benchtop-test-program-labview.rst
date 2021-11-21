@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
-Creating, Building and Loading your Benchtop Test Program (LabVIEW)
-===================================================================
+Creating your Benchtop Test Program (LabVIEW)
+=============================================
 
 .. note:: This document covers how to create, build and load an FRC\ |reg| LabVIEW program onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Game Tools and that you have configured and imaged your roboRIO as described in the :ref:`Zero-to-Robot tutorial <docs/zero-to-robot/introduction:Introduction>`.
 
@@ -32,7 +32,7 @@ Running the Program
 
 .. image:: images/creating-benchtop-test-labview/running-the-program.png
    :alt: Robot Main in the project window with its corresponding front panel open.
-   
+
 .. note:: Note that a program deployed in this manner will not remain on the roboRIO after a power cycle. To deploy a program to run every time the roboRIO starts follow the next step, Deploying the program.
 
 1. In the Project Explorer window, double-click the Robot Main.vi item to open the Robot Main VI.
