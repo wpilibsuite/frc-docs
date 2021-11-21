@@ -34,7 +34,7 @@ REV Robotics Support
 
 Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__
 
-Other Support
+Other Vendors
 -------------
 
 Support for vendors outside of the KOP can be found below.
