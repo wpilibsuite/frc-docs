@@ -3,8 +3,6 @@
 LabVIEW Examples and Tutorials
 ==============================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 Popular Tutorials
 -----------------
 

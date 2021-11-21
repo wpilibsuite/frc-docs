@@ -1,8 +1,6 @@
 Waiting for Target to Respond - Recovering from bad loops
 =========================================================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 .. note:: If you download LabVIEW code which contains an unconstrained loop (a loop with no delay) it is possible to get the roboRIO into a state where LabVIEW is unable to connect to download new code. This document explains the process required to load new, fixed, code to recover from this state.waiting-for-target-to-respond/
 
 The Symptom

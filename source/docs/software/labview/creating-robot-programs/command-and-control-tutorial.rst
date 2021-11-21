@@ -3,8 +3,6 @@
 Command and Control Tutorial
 ============================
 
-.. image:: images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 Introduction
 ------------
 

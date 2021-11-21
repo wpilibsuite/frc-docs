@@ -3,8 +3,6 @@
 Tank Drive Tutorial
 ===================
 
-.. image:: images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 **Question:** How do I get my robot to drive with two joysticks using tank drive?
 
 **Solution:** There are four components to consider when setting up tank drive for your robot.  The first thing you will want to do is make sure the tank drive.vi is used instead of the arcade drive.vi or whichever drive VI you were utilizing previously.  The second item to consider is how you want your joysticks to map to the direction you want to drive.  In tank drive, the left joystick is used to control the left motors and the right joystick is used to control the right motors.  For example, if you want to make your robot turn right by pushing up on the left joystick and down on the right joystick you will need to set your joystick’s accordingly in LabVIEW (this is shown in more detail below).  Next, you will want to confirm the PWM lines that you are wired into, are the same ones your joysticks will be controlling.  Lastly, make sure your motor controllers match the motor controllers specified in LabVIEW.  The steps below will discuss these ideas in more detail:

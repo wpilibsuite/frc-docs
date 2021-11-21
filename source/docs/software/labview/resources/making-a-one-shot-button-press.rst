@@ -1,8 +1,6 @@
 Making a One-Shot Button Press
 ====================================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 When using the Joystick Get Values function, pushing a joystick button will cause the button to read TRUE until the button is released. This means that you will most likely read multiple TRUE values for each press. What if you want to read only one TRUE value each time the button is pressed? This is often called a "One-Shot Button". The following tutorial will show you how to create a subVI that you can drop into your Teleop.vi to do this.
 
 First, create a new VI in the Support Code folder of your project.

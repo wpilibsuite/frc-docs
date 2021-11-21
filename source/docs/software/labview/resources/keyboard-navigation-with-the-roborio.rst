@@ -1,8 +1,6 @@
 Keyboard Navigation with the roboRIO
 ====================================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 This example provides some suggestions for controlling the robot using keyboard navigation in place of a joystick or other controller.  In this case, we use the A, W, S, and D keys to control two drive motors in a tank drive configuration.
 
 The first VI Snippet is the code that will need to be included in the Dashboard Main VI.  You can insert this code into the True case of Loop 1.  The code opens a connection to the keyboard before the loop begins, and on each iteration it reads the pressed key.  This information is converted to a string, which is then passed to the Teleop VI in the robot project.  When Loop 1 stops running, the connection to the keyboard is closed.
