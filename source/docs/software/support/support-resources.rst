@@ -34,6 +34,14 @@ REV Robotics Support
 
 Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__
 
+Other Support
+-------------
+
+Support for vendors outside of the KOP can be found below.
+
+- `PhotonVision Support (Discord) <https://discord.com/invite/wYxTwym>`__
+- `Limelight Support <https://limelightvision.io/pages/contact-us>`__
+
 Unofficial Support
 ------------------
 
@@ -41,8 +49,6 @@ There are useful forms of support provided by the community through various foru
 
 - `Chief Delphi <https://chiefdelphi.com>`__
 - `FRC Discord <https://discord.gg/frc>`__
-- `PhotonVision Support (Discord) <https://discord.com/invite/wYxTwym>`__
-- `Limelight Support <https://limelightvision.io/pages/contact-us>`__
 
 Bug Reporting
 -------------
