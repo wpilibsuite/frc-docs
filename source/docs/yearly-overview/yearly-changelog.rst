@@ -50,7 +50,7 @@ Breaking Changes
 - ``InterruptableSendableBase`` has been broken up into ``AsynchronousInterrupt`` & ``SynchronousInterrupt``. Rather then a class, like ``DigitalInput`` extending ``InterruptableSendableBase`` and all interrupt methods being accessed through the ``DigitalInput``, teams should instead construct ``AsynchronousInterrupt`` or ``SynchronousInterrupt``, and pass it the ``DigitalSource`` (e.g. ``DigitalInput``).
 - C++: ``DriverStation.ReportWarning`` and ``DriverStation.ReportError`` have been removed. Use ``FRC_ReportError`` in ``frc\Errors.h`` header. Status of ``frc::err::Error`` can be used for Errors and ``frc::warn::Warning`` can be used for warnings.
 - ``SpeedController`` has been renamed to ``MotorController``
-  - Various portions of the API still refers to ``SpeedController`` for backwards compatibility. These functions actually take ``MotorController``.
+  - Various portions of the API still refers to ``SpeedController`` for backwards compatibility. Users should pass ``MotorController`` instead
 
 - Several duplicate ``SpeedController`` methods have been removed. Use ``set`` instead of ``setSpeed``. Use ``disable`` instead of ``setDisable``. Several low level methods have been removed: position, bounds, periodMultiplier, zeroLatch, and raw methods. Use the ``PWM`` class directly if this level of control is needed.
 - Various DriverStation In[Mode] functions has been renamed (IE: ``InDisabled`` -> ``inDisabled``)
