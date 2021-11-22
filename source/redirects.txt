@@ -245,3 +245,4 @@
 "docs/software/vscode-overview/importing-eclipse-project.rst" "docs/software/vscode-overview/index.rst"
 "docs/yearly-overview/relicensing-labview.rst" "docs/software/labview/index.rst"
 "docs/yearly-overview/2020-Game-Data.rst" "docs/yearly-overview/index.rst"
+"docs/software/labview/creating-robot-programs/creating-building-and-loading-your-benchtop-test-program.rst" "docs/zero-to-robot/step-4/creating-benchtop-test-program-labview.rst"

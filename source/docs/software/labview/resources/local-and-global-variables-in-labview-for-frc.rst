@@ -3,8 +3,6 @@
 Local and Global Variables in LabVIEW for FRC
 =============================================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 This example serves as an introduction to local and global variables, how they are used in the default LabVIEW for FRC\ |reg| Robot Project, and how you might want to use them in your project.
 
 Local variables and global variables may be used to transfer data between locations within the same VI (local variables) or within different VI’s (global variables), breaking the conventional `Data Flow Paradigm <https://www.ni.com/getting-started/labview-basics/dataflow>`__ for which LabVIEW is famous.  Thus, they may be useful when, for whatever reason, you cannot wire the value directly to the node to another.

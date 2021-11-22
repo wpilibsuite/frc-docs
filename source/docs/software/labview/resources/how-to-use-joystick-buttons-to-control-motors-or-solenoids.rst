@@ -1,8 +1,6 @@
 How to Use Joystick Buttons to Control Motors or Solenoids
 ==========================================================
 
-.. image:: /docs/software/labview/creating-robot-programs/images/creating-building-and-loading-your-benchtop-test-program/ni-logo.png
-
 As we all get our drive systems working, we are moving on to connecting our auxiliary devices such as motors and solenoids.  With this, we will generally use joystick buttons to control these devices.  To get started with this, we'll go through several ways to control devices with joystick buttons.
 
 Did you know that you can click and drag a VI Snippet from a document like this right into your LabVIEW code?  Try it with the snippets in this document.
