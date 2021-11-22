@@ -39,8 +39,11 @@ Other Vendors
 
 Support for vendors outside of the KOP can be found below.
 
-- `PhotonVision Support (Discord) <https://discord.com/invite/wYxTwym>`__
-- `Limelight Support <https://limelightvision.io/pages/contact-us>`__
+- `Copperforge <https://copperforge.cc/docs/software/libcu/>`__
+- `Kauai Labs (NavX) <https://www.kauailabs.com/support/navx-mxp/>`__
+- `Limelight <https://limelightvision.io/pages/contact-us>`__
+- `PhotonVision (Discord) <https://discord.com/invite/wYxTwym>`__
+- `Playing with Fusion <https://www.playingwithfusion.com/contactus.php>`__
 
 Unofficial Support
 ------------------
