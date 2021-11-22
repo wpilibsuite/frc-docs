@@ -34,9 +34,9 @@ General Library
 - Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
 - GenericHID has been updated to static functions to use for non-defined controller types.
-- ``XboxController`` has migrated away from taking arguments in functions and instead has explicit functions. An example conversion is below:
-  - `controller.getTriggerAxis(GenericHID.Hand.kLeft)` -> `controller.getLeftTriggerAxis()`
-  - `controller.getX(GenericHID.Hand.kLeft)` -> `controller.getLeftX()`
+- ``XboxController`` has migrated away from taking arguments in functions and instead has functions with no arguments. An example conversion is below:
+  - ``controller.getTriggerAxis(GenericHID.Hand.kLeft)`` -> ``controller.getLeftTriggerAxis()``
+  - ``controller.getX(GenericHID.Hand.kLeft)`` -> ``controller.getLeftX()``
 
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
