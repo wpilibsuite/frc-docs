@@ -33,7 +33,11 @@ General Library
 - Added better message for when an I2C port is out of range
 - Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
-- GenericHID has been updated to static functions for non-defined controller types
+- GenericHID has been updated to static functions to use for non-defined controller types.
+- ``XboxController`` has migrated away from taking arguments in functions and instead has functions with no arguments. An example conversion is below:
+  - ``controller.getTriggerAxis(GenericHID.Hand.kLeft)`` -> ``controller.getLeftTriggerAxis()``
+  - ``controller.getX(GenericHID.Hand.kLeft)`` -> ``controller.getLeftX()``
+
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
 
@@ -46,6 +50,8 @@ Breaking Changes
 - ``InterruptableSendableBase`` has been broken up into ``AsynchronousInterrupt`` & ``SynchronousInterrupt``. Rather then a class, like ``DigitalInput`` extending ``InterruptableSendableBase`` and all interrupt methods being accessed through the ``DigitalInput``, teams should instead construct ``AsynchronousInterrupt`` or ``SynchronousInterrupt``, and pass it the ``DigitalSource`` (e.g. ``DigitalInput``).
 - C++: ``DriverStation.ReportWarning`` and ``DriverStation.ReportError`` have been removed. Use ``FRC_ReportError`` in ``frc\Errors.h`` header. Status of ``frc::err::Error`` can be used for Errors and ``frc::warn::Warning`` can be used for warnings.
 - ``SpeedController`` has been renamed to ``MotorController``
+  - Various portions of the API still refers to ``SpeedController`` for backwards compatibility. Users should pass ``MotorController`` instead
+
 - Several duplicate ``SpeedController`` methods have been removed. Use ``set`` instead of ``setSpeed``. Use ``disable`` instead of ``setDisable``. Several low level methods have been removed: position, bounds, periodMultiplier, zeroLatch, and raw methods. Use the ``PWM`` class directly if this level of control is needed.
 - Various DriverStation In[Mode] functions has been renamed (IE: ``InDisabled`` -> ``inDisabled``)
 - Deprecated ``wpilibj.cameraserver`` has been removed. Use ``cameraserver`` instead
