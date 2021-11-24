@@ -80,16 +80,16 @@ Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSI
 
    dependencies {
        // Add ntcore-java
-       compile "edu.wpi.first.ntcore:ntcore-java:VERSION"
+       implementation "edu.wpi.first.ntcore:ntcore-java:VERSION"
 
        // Add wpiutil-java
-       compile "edu.wpi.first.wpiutil:wpiutil-java:VERSION"
+       implementation "edu.wpi.first.wpiutil:wpiutil-java:VERSION"
 
        // Add ntcore-jni for runtime. We are adding all supported platforms
        // so that our application will work on all supported platforms.
-       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxraspbian"
-       runtime "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxraspbian"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
    }
