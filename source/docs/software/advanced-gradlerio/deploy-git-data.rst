@@ -42,5 +42,13 @@ Next, create a new task in the ``build.gradle`` file that will run the above Git
          "branch.txt"
       ).text = branch // set the contents of the file to the variable branch
    }
-    
+   
+This registers a `Gradle task <https://docs.gradle.org/current/userguide/tutorial_using_tasks.html>`__ that uses the aforementioned Git command, saves the output to a variable, and then writes it to a file. Since it was written to the ``src/main/deploy`` directory, it will be included in the jar file deployed to the robot and accessible in code.
+
+The next step is to make the deploy task depend on the task you created, so that it will automatically run before the code is deployed. This example uses the task name ``writeBranchName`` from the previous example, but it should be replaced with whatever it was named in your ``build.gradle``.
+
+.. code-block:: groovy
+
+   tasks.deploy.dependsOn(writeBranchName)
+
 
