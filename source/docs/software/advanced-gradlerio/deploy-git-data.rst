@@ -14,38 +14,38 @@ This example uses `git rev-parse <https://git-scm.com/docs/git-rev-parse>`__ to 
 
    $ git rev-parse --abbrev-ref HEAD
 
-The ``--abbrev-ref`` flag tells Git to use a short version of the name for the current commit that rev-parse is acting on. When HEAD is the most recent commit on a branch, this will return the name of that branch since they are synonymous.
+The ``--abbrev-ref`` flag tells Git to use a short version of the name for the current commit that ``rev-parse`` is acting on. When HEAD is the most recent commit on a branch, this will return the name of that branch.
 
-Next, create a new task in the ``build.gradle`` file that will run the above Git command and write it to a file in the ``src/main/deploy`` directory. For example, the following is how to define a task named ``writeBranchName`` that will write the branch name to a file named ``branch.txt``.
+Next, create a new task in the ``build.gradle`` file that will run the above Git command and write it to a file in the ``src/main/deploy`` directory. For example, the following is an example task named ``writeBranchName`` that will write the branch name to a file named ``branch.txt``.
 
 .. code-block:: groovy
 
    tasks.register("writeBranchName") {
-      // define an output stream to write to instead of terminal
+      // Define an output stream to write to instead of terminal
       def stdout = new ByteArrayOutputStream()
 
-      // execute the git command
+      // Execute the git command
       exec {
          commandLine "git", "rev-parse", "--abbrev-ref", "HEAD"
-         // write to the output stream instead of terminal
+         // Write to the output stream instead of terminal
          standardOutput = stdout
       }
 
-      // parse the output into a string
+      // Parse the output into a string
       def branch = stdout.toString().trim()
 
-      // create a new file
+      // Create a new file
       new File(
-         // join project directory and deploy directory
+         // Join project directory and deploy directory
          projectDir.toString() + "/src/main/deploy",
-         // file name to write to
+         // File name to write to
          "branch.txt"
-      ).text = branch // set the contents of the file to the variable branch
+      ).text = branch // Set the contents of the file to the variable branch
    }
 
-This registers a `Gradle task <https://docs.gradle.org/current/userguide/tutorial_using_tasks.html>`__ that uses the aforementioned Git command, saves the output to a variable, and then writes it to a file. Since it was written to the ``src/main/deploy`` directory, it will be included in the jar file deployed to the robot and accessible in code.
+This registers a `Gradle task <https://docs.gradle.org/current/userguide/tutorial_using_tasks.html>`__ that uses the above Git command, saves the output to a variable, and then writes it to a file. Since it was written to the ``src/main/deploy`` directory, it will be included in the jar file deployed to the robot and accessible in code.
 
-The next step is to make the deploy task depend on the task you created, so that it will automatically run before the code is deployed. This example uses the task name ``writeBranchName`` from the previous example, but it should be replaced with whatever it was named in your ``build.gradle``.
+The next step is to make the deploy task depend on the task you created, so that it will automatically run before the code is deployed. This example uses the task name ``writeBranchName`` from the previous example, but it should be replaced with the name of the task in your ``build.gradle``.
 
 .. code-block:: groovy
 
@@ -60,7 +60,7 @@ Similar to the previous example, ``git rev-parse`` will be used to parse the cur
 
    $ git rev-parse --short HEAD
 
-Similar to the previous Git command, git rev-parse is used to find information about the commit at HEAD. However, instead of using ``--abbrev-ref`` to find the branch name associated with that commit, ``--short`` is used to find the 7-character commit hash.
+Similar to the previous Git command, ``rev-parse`` is used to find information about the commit at HEAD. However, instead of using ``--abbrev-ref`` to find the branch name associated with that commit, ``--short`` is used to find the 7-character commit hash.
 
 .. note:: If you wish to use the full commit hash instead of the 7-character version, you can leave out the ``--short`` flag.
 
