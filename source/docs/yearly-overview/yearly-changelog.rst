@@ -40,7 +40,7 @@ General Library
 
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
-- Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter``, ``Tachometer``, and ``UpDownCounter``
+- Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_up_down_counter.html>`__)
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -115,7 +115,7 @@ We have committed to several organizational renames that will allow us greater f
 Simulation
 ----------
 
-- Uses multi-file JSON save formats instead of INI and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
+- Uses multi-file ``json`` save formats instead of ``ini`` and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
 
 Shuffleboard
 ------------
@@ -137,7 +137,7 @@ SmartDashboard
 Glass
 -----
 
-- Uses multi-file JSON save formats instead of INI and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
+- Uses multi-file ``json`` save formats instead of ``ini`` and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
 
 Axon
 ----
