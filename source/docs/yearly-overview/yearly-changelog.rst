@@ -40,6 +40,7 @@ General Library
 
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
+- Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter``, ``Tachometer``, and ``UpDownCounter``
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -114,7 +115,7 @@ We have committed to several organizational renames that will allow us greater f
 Simulation
 ----------
 
-- No new changes
+- Uses multi-file JSON save formats instead of INI and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
 
 Shuffleboard
 ------------
@@ -136,7 +137,7 @@ SmartDashboard
 Glass
 -----
 
-- No new changes
+- Uses multi-file JSON save formats instead of INI and supports loading/saving the workspace; when started from the VS Code tool menu, these default to using the project directory for saving rather than the system-global location
 
 Axon
 ----
@@ -177,6 +178,7 @@ WPILib All in One Installer
 - Visual Studio Code has been updated to 1.62
 - Updated Java and C++ language extensions
 - Fix Linux desktop icon permissions
+- Add year to tools shortcuts name
 
 Visual Studio Code Extension
 ----------------------------
