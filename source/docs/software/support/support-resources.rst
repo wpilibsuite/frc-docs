@@ -34,6 +34,25 @@ REV Robotics Support
 
 Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__
 
+Other Vendors
+-------------
+
+Support for vendors outside of the KOP can be found below.
+
+- `Copperforge <https://copperforge.cc/docs/software/libcu/>`__
+- `Kauai Labs (NavX) <https://www.kauailabs.com/support/navx-mxp/>`__
+- `Limelight <https://limelightvision.io/pages/contact-us>`__
+- `PhotonVision (Discord) <https://discord.com/invite/wYxTwym>`__
+- `Playing with Fusion <https://www.playingwithfusion.com/contactus.php>`__
+
+Unofficial Support
+------------------
+
+There are useful forms of support provided by the community through various forums and services. The below links and websites are not endorsed by FIRST\ |reg| and are use at your own risk.
+
+- `Chief Delphi <https://chiefdelphi.com>`__
+- `FRC Discord <https://discord.gg/frc>`__
+
 Bug Reporting
 -------------
 
