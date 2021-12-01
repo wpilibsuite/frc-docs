@@ -49,7 +49,7 @@ The next step is to make the deploy task depend on the task you created, so that
 
 .. code-block:: groovy
 
-   tasks.deploy.dependsOn(writeBranchName)
+   deploy.targets.roborio.artifacts.frcStaticFileDeploy.deployTask.dependsOn(writeBranchName)
 
 Deploying Commit Hash
 ---------------------
@@ -84,7 +84,7 @@ Next is to create a task in ``build.gradle`` that runs this command and writes t
       ).text = commitHash
    }
 
-   tasks.deploy.dependsOn("writeCommitHash")
+   deploy.targets.roborio.artifacts.frcStaticFileDeploy.deployTask.dependsOn(writeCommitHash)
 
 Ignoring Generated Files with Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
