@@ -136,7 +136,7 @@ For example,
 
       @Override
       public List<DataType> getDataTypes() {
-         List.of(PointDataType.Instance);
+         return List.of(PointDataType.Instance);
       }
 
    }
