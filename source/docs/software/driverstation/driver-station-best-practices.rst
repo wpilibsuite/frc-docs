@@ -15,7 +15,7 @@ Prior To Departing For The Competition
 3. Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboard software uses very few system resources, so you don't need to buy a new laptop -- instead, buy a cheap 4-5 year old used one. You might even get one donated by a used computer store in your area.
 4. Laptop recommended features
 
-   a. RAM -- 2GB of RAM is minimum, if you have a SSD.
+   a. RAM -- 4GB of RAM
    b. A display size of 13" or greater, with minimum resolution of 1440x1050.
    c. Ports
 
