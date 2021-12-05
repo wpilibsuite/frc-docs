@@ -8,7 +8,9 @@ The FRC\ |reg| software consists of a wide variety of mandatory and optional com
 Operating System Compatibility
 ------------------------------
 
-The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 7, 8, and 10. Windows XP is not supported.
+The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10. NI Tools do not support Windows 7 or 8.1.
+
+.. warning:: Support for Windows 7, 8.1, and 32 bit operating systems for all tools will be removed for the 2023 season.
 
 Many of the tools for C++/Java programming are also supported and tested on macOS and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
 
