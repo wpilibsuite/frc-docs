@@ -124,6 +124,16 @@ Some operating systems require some final action to complete installation.
 
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and MacOS.
 
+Additional C++ Installation for Simulation
+------------------------------------------
+
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 or 2019 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+
+Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
+
+.. image:: /docs/software/wpilib-tools/robot-simulation/images/vs-build-tools.png
+   :alt: Screenshot of the Visual Studio build tools option
+
 What is Installed?
 ------------------
 
