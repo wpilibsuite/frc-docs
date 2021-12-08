@@ -61,8 +61,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 
 .. note:: The Java code utilizes the `Units <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/math/util/Units.html>`_ utility, which was added to WPILib in 2020 for easy unit conversions.
 
-
-.. note:: Even though this trajectory generation is orders of magnitude faster than Pathfinder, it is highly recommended to generate all trajectories on startup (``robotInit``) as the generation time is still not negligible. Generation time often ranges from 10 ms to 25 ms for each trajectory.
+.. note:: Generating a typical trajectory takes about 10 ms to 25 ms. This isn't long, but it's still highly recommended to generate all trajectories on startup (``robotInit``).
 
 Concatenating Trajectories
 --------------------------
