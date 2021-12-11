@@ -90,4 +90,4 @@ The system identification tool (also referred to as ``sysid``) is included with 
 Launching the System Identification Tool
 ----------------------------------------
 
-The system identification tool can be opened from the ``Start Tool`` option in VS Code or by using the desktop shortcut on Windows.
+The system identification tool can be opened from the ``Start Tool`` option in VS Code or by using the shortcut inside the WPILib Tools desktop folder (Windows).
