@@ -109,7 +109,7 @@ POV
    :alt: The angles used by the code of the POV/D-pad with 0 at the top and continuing clockwise.
 
 
-On joysticks the POV is directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
+On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
 ``GenericHID`` Usage
 --------------------
