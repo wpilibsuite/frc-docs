@@ -151,6 +151,8 @@ If all else fails, you can seek out advice and help from others (both in-person 
 
  * Access to your source code, (EX: :ref:`on github.com <docs/software/basic-programming/git-getting-started:Git Version Control Introduction>`)
  * The **full text** of the error, including the full stack trace.
+ 
+ When asking for help, provide as much effort in providing information as you are willing to receive in help!
 
 Common Examples & Patterns
 --------------------------
