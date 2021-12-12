@@ -41,7 +41,7 @@ REV Power Distribution Hub
   :alt: REV Power Distribution Hub
   :width: 500
 
-The `REV Power Distribution Hub <https://docs.revrobotics.com/rev-11-1850/>`__ (PDH) is designed to distribute power from a 12VDC battery to various robot components. With 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel, the PDH gives teams more flexibility for overall power delivery. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry, making it easier than ever to wire and debug your robot. 
+The `REV Power Distribution Hub <https://docs.revrobotics.com/rev-11-1850/>`__ (PDH) is designed to distribute power from a 12VDC battery to various robot components. With 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel, the PDH gives teams more flexibility for overall power delivery. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry, making it easier than ever to wire and debug your robot.
 
 CTRE Voltage Regulator Module
 -----------------------------
@@ -61,7 +61,6 @@ REV Radio Power Module
 
 The `REV Radio Power Module <https://docs.revrobotics.com/rev-11-1856/>`__ is designed to keep one of the most critical system components, the OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition. Traditional barrel jacks easily work themselves loose and often require hacks like hot glue to prevent intermittent power losses. The Radio Power Module eliminates the need for powering the radio through a traditional barrel power jack. Utilizing 18V Passive POE with two socketed RJ45 connectors, the Radio Power Module passes signal between the radio and roboRIO while providing power directly to the radio. After connecting the radio and roboRIO, easily add power to the Radio Power Module by wiring it to the low-current channels on the Power Distribution Hub utilizing the color coded push button WAGO terminals.
 
-REV 
 OpenMesh OM5P-AN or OM5P-AC Radio
 ---------------------------------
 
