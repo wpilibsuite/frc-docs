@@ -8,16 +8,14 @@ The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot
 microSD Requirements
 --------------------
 
-The NI roboRIO 2.0 controller supports microSD cards.  It is recommended to use a SDHC or SDXC capacity card, though all types are expected to function correctly.
-
-SD (secure digital) cards are the oldest, least used and limited to 2GB of storage.  SDHC (high capacity) cards can store up to 32 GB of data, while SDXC (extended capacity) cards can store up to 2 terabytes (2000 GB).
+The NI roboRIO 2.0 supports all microSD cards.  It is recommended to use a card with 2GB or more of capacity.
 
 Operation Tips
 --------------
 
-The NI roboRIO 2.0 controller requires a fully inserted microSD card containing a valid image in order to boot and operate as intended.
+The NI roboRIO 2.0 requires a fully inserted microSD card containing a valid image in order to boot and operate as intended.
 
-If the microSD card is removed while powered, the controller will hang. Once the microSD card is replaced, the controller will need to be restarted using the reset button, or be power cycled.
+If the microSD card is removed while powered, the roboRIO will hang. Once the microSD card is replaced, the roboRIO will need to be restarted using the reset button, or be power cycled.
 
 No damage will result from microSD card removal or insertion while powered, but best practice is to perform these operations while unpowered.
 
@@ -38,7 +36,7 @@ A `microSD to USB dongle <https://www.amazon.com/gp/product/B0779V61XB>`__ works
 .. note:: Raspberry Pi images will not boot on a roboRIO because the OS and drivers are incompatible. Similarly, a roboRIO image is not compatible with Raspberry Pi controller boards.
 
 Writing the image with balenaEtcher
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download and install `balenaEtcher <https://www.balena.io/etcher/>`__.
 - Launch
@@ -46,10 +44,9 @@ Writing the image with balenaEtcher
 - :guilabel:`Select target` -> select the destination microSD device
 - Press :guilabel:`Flash`
 - Insert microSD card and boot the roboRIO 2.0
-- Use the roboRIO Imaging Tool to update the team number
 
 Writing the image with Raspberry Pi Imager
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download and install from `Raspberry Pi Imager <https://www.raspberrypi.com/software/>`__.
 - Launch
@@ -57,4 +54,11 @@ Writing the image with Raspberry Pi Imager
 - :guilabel:`Choose Storage` -> select the destination microSD device
 - Press :guilabel:`Write`
 - Insert microSD card and boot the roboRIO 2.0
-- Use the roboRIO Imaging Tool to update the team number
+
+Setting the roboRIO Team Number
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The image writing process above does not set a team number.  To fix this teams will need to make sure the microSD card is inserted and they are connected to the robot.  With the roboRIO Imaging Tool go to :guilabel:`Edit Startup Settings`.  Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
+
+.. figure:: images/teamnumber.png
+   :alt: The edit Startup Settings portion of the imaging utility allow a team to renumber their robot.
