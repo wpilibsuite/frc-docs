@@ -90,8 +90,8 @@ $RECYCLE.BIN/
 # Python
 *.pyc
 
-# JetBrain IDEs
-.idea/
+# JetBrains IDEs
+.idea
 *.iml
 
 # Virtualenvs
