@@ -43,7 +43,6 @@ Writing the image with balenaEtcher
 - :guilabel:`Flash from file` -> locate the image file you want to copy to the microSD card
 - :guilabel:`Select target` -> select the destination microSD device
 - Press :guilabel:`Flash`
-- Insert microSD card and boot the roboRIO 2.0
 
 Writing the image with Raspberry Pi Imager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +52,6 @@ Writing the image with Raspberry Pi Imager
 - :guilabel:`Choose OS` -> :guilabel:`Use Custom` -> select the image file you want to copy to the microSD card
 - :guilabel:`Choose Storage` -> select the destination microSD device
 - Press :guilabel:`Write`
-- Insert microSD card and boot the roboRIO 2.0
 
 Setting the roboRIO Team Number
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
