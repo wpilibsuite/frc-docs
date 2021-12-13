@@ -58,7 +58,7 @@ Writing the image with Raspberry Pi Imager
 Setting the roboRIO Team Number
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The image writing process above does not set a team number.  To fix this teams will need to make sure the microSD card is inserted and they are connected to the robot.  With the roboRIO Imaging Tool go to :guilabel:`Edit Startup Settings`.  Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
+The image writing process above does not set a team number.  To fix this teams will need to insert the microSD card  in the robRIO and connect to the robot.  With the roboRIO Imaging Tool go to :guilabel:`Edit Startup Settings`.  Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
 
 .. figure:: images/teamnumber.png
    :alt: The edit Startup Settings portion of the imaging utility allow a team to renumber their robot.
