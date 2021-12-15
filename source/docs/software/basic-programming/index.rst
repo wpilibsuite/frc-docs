@@ -6,4 +6,5 @@ Basic Programming
 
    git-getting-started.rst
    cpp-units
+   joystick
    reading-stacktraces
