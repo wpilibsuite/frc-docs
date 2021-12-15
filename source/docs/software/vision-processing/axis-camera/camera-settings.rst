@@ -16,7 +16,7 @@ To change the camera settings on any of the supported Axis cameras (206, M1011, 
 Focus
 -----
 
-The Axis M1011 has a fixed-focus lens and no adjustment is needed. The Axis 206 camera has a black bezel around the lens that rotates to move the lens in and out and adjust focus. The Axis M103 has a silver and black bezel assembly around the lens to adjust the focus. Ensure that the images you are processing are relatively sharp and focused for the distances needed on your robot.
+The Axis M1011 has a fixed-focus lens and no adjustment is needed. The Axis 206 camera has a black bezel around the lens that rotates to move the lens in and out and adjust focus. The Axis M1013 has a silver and black bezel assembly around the lens to adjust the focus. Ensure that the images you are processing are relatively sharp and focused for the distances needed on your robot.
 
 Compression
 -----------
@@ -24,7 +24,7 @@ Compression
 .. image:: images/camera-settings/compression.png
    :alt: Three images with different compression settings of 0, 30, and 100.
 
-The Axis camera returns images in BMP, JPEG, or MJPEG format. BMP images are quite large and take more time to transmit to the cRIO and laptop. Therefore the WPILib implementations typically use MJPEG (motion JPEG). The compression setting ranges from 0 to 100, with 0 being very high quality images with very little compression, and 100 being very low quality images with very high compression. The camera default is 30, and it is a good compromise, with few artifacts that will degrade image processing.
+The Axis camera returns images in BMP, JPEG, or MJPEG format. BMP images are quite large and take more time to transmit to the roboRIO and laptop. Therefore the WPILib implementations typically use MJPEG (motion JPEG). The compression setting ranges from 0 to 100, with 0 being very high quality images with very little compression, and 100 being very low quality images with very high compression. The camera default is 30, and it is a good compromise, with few artifacts that will degrade image processing.
 
 .. note:: Teams are advised to consider how the compression setting on the camera affects bandwidth if performing processing on the Driver Station computer, see the FMS Whitepaper for more details.
 

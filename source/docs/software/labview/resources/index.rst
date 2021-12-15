@@ -6,7 +6,6 @@ LabVIEW Resources
 
    labview-resources
    waiting-for-target-to-respond
-   talon-srx-can
    how-to-toggle-between-two-camera-modes
    labview-examples-and-tutorials
    add-an-independent-motor-to-a-project

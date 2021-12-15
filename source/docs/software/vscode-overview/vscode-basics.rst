@@ -3,7 +3,7 @@
 Visual Studio Code Basics and the WPILib Extension
 ==================================================
 
-Microsoft's Visual Studio Code is the new supported IDE for C++ and Java development in FRC, replacing the Eclipse IDE used from 2015-2018. This article introduces some of the basics of using Visual Studio Code and the WPILib extension.
+Microsoft's Visual Studio Code is the supported IDE for C++ and Java development in FRC. This article introduces some of the basics of using Visual Studio Code and the WPILib extension.
 
 Welcome Page
 ------------
