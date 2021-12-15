@@ -39,7 +39,7 @@ Voltage Parameters
 .. image:: images/voltageparameters.png
    :alt: Voltage Parameters section of the Logger window.
 
-:guilabel:`Quasistatic Ramp Rate` controls how quickly the voltage will ramp up during the quasistatic tests.  The goal here is to get the voltage ramped up almost to full speed.  If the amount of space you have to run the robot is small you might need to slightly increase this ramp rate.
+:guilabel:`Quasistatic Ramp Rate` controls how quickly the voltage will ramp up during the quasistatic tests.  The goal here is to get the voltage ramped up enough that a trend emerges.  If the amount of space you have to run the robot is small you might need to slightly increase this ramp rate.
 
 :guilabel:`Dynamic Step Voltage` is the voltage that will be applied immediately on start to determine how your robot accelerates.  If your robot is short on space you should slightly reduce the voltage.
 
