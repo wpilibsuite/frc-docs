@@ -159,9 +159,9 @@ We can weight error and control effort in our LQR with :math:`\mathbf{Q}` and :m
 
 With WPILib, the LQR class takes a vector of desired maximum state excursions and control efforts and converts them internally to full Q and R matrices with Bryson's rule. We often use lowercase :math:`\mathbf{q}` and :math:`\mathbf{r}` to refer to these vectors, and :math:`\mathbf{Q}` and :math:`\mathbf{R}` to refer to the matrices.
 
-Increasing the :math:`\mathbf{q}` elements would make the LQR less heavily weight large errors, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing :math:`\mathbf{q}`\'s elements.
+Increasing the :math:`\mathbf{q}` elements would make the LQR less heavily weight large errors, and the resulting :term:`control law` will behave more conservatively. This has a similar effect to penalizing :term:`control effort` more heavily by decreasing :math:`\mathbf{r}`\'s elements.
 
-Similarly, decreasing the :math:`\mathbf{q}` elements would make the LQR penalize large errors more heavily, and the resulting :term:`control law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing :math:`\mathbf{q}` elements.
+Similarly, decreasing the :math:`\mathbf{q}` elements would make the LQR penalize large errors more heavily, and the resulting :term:`control law` will behave more aggressively. This has a similar effect to penalizing :term:`control effort` less heavily by increasing :math:`\mathbf{r}` elements.
 
 For example, we might use the following Q and R for an elevator system with position and velocity states.
 
