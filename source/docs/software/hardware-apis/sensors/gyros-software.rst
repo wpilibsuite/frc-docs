@@ -25,13 +25,13 @@ The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/d
 
     .. code-tab:: java
 
-        // Creates an ADXRS450_Gyro object on the MXP SPI port
-        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+        // Creates an ADXRS450_Gyro object on the onboard SPI port
+        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
     .. code-tab:: c++
 
-        // Creates an ADXRS450_Gyro object on the MXP SPI port
-        ADXRS450_Gyro gyro{SPI::Port::kMXP};
+        // Creates an ADXRS450_Gyro object on the onboard SPI port
+        frc::ADXRS450_Gyro gyro;
 
 AnalogGyro
 ^^^^^^^^^^
@@ -45,12 +45,12 @@ The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs
     .. code-tab:: java
 
         // Creates an AnalogGyro object on port 0
-        Gyro gyro = new AnalogGyro(0);
+        AnalogGyro gyro = new AnalogGyro(0);
 
     .. code-tab:: c++
 
         // Creates an AnalogGyro object on port 0
-        AnalogGyro gyro{0};
+        frc::AnalogGyro gyro{0};
 
 Third-party gyros
 -----------------
@@ -73,7 +73,7 @@ Displaying the robot heading on the dashboard
 
     .. code-tab:: java
 
-        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
         public void robotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
@@ -83,7 +83,7 @@ Displaying the robot heading on the dashboard
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+        frc::ADXRS450_Gyro gyro;
 
         void Robot::RobotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
@@ -108,7 +108,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: java
 
-        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
         // The gain for a simple P loop
         double kP = 1;
@@ -136,7 +136,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+        frc::ADXRS450_Gyro gyro;
 
         // The gain for a simple P loop
         double kP = 1;
@@ -171,7 +171,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: java
 
-        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
         // The gain for a simple P loop
         double kP = 1;
@@ -207,7 +207,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+        frc::ADXRS450_Gyro gyro;
 
         // The gain for a simple P loop
         double kP = 1;
@@ -251,7 +251,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     .. code-tab:: java
 
-        Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
         // The gain for a simple P loop
         double kP = 1;
@@ -279,7 +279,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro{frc::SPI::Port::kMXP};
+        frc::ADXRS450_Gyro gyro;
 
         // The gain for a simple P loop
         double kP = 1;
