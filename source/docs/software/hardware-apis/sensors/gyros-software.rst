@@ -14,6 +14,40 @@ All natively-supported gyro objects in WPILib implement the :code:`Gyro` interfa
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
+ADIS16448
+^^^^^^^^^
+
+The ADIS16448 uses the :code:`ADIS16448_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // ADIS16448 plugged into the MXP port
+        ADIS16448_IMU gyro = new ADIS16448_IMU();
+
+    .. code-tab:: c++
+
+        // ADIS16448 plugged into the MXP port
+        ADIS16448_IMU gyro;
+
+ADIS16470
+^^^^^^^^^
+
+The ADIS16470 uses the :code:`ADIS16470_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // ADIS16470 plugged into the MXP port
+        ADIS16470_IMU gyro = new ADIS16470_IMU();
+
+    .. code-tab:: c++
+
+        // ADIS16470 plugged into the MXP port
+        ADIS16470_IMU gyro;
+
 ADXRS450_Gyro
 ^^^^^^^^^^^^^
 
@@ -72,7 +106,7 @@ The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface. 
 Pigeon
 ^^^^^^
 
-The pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__ contains full details on using the Pigeon.
+The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__ contains full details on using the Pigeon.
 
 .. tabs::
 
@@ -111,7 +145,7 @@ Displaying the robot heading on the dashboard
         public void robotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
             // Explicit down-cast required because Gyro does not extend Sendable
-            Shuffleboard.getTab("Example tab").add((Sendable) gyro);
+            Shuffleboard.getTab("Example tab").add(gyro);
         }
 
     .. code-tab:: c++
