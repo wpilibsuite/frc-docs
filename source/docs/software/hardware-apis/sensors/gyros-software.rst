@@ -5,7 +5,7 @@ Gyroscopes - Software
 
 .. note:: This section covers gyros in software.  For a hardware guide to gyros, see :ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`.
 
-A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class.
+A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class. Most common 3rd party gyros inherit from the :code:`Gyro` interface making them easily usable too!
 
 The Gyro interface
 ------------------
@@ -13,6 +13,40 @@ The Gyro interface
 All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
+
+ADIS16448
+^^^^^^^^^
+
+The ADIS16448 uses the :code:`ADIS16448_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // ADIS16448 plugged into the MXP port
+        ADIS16448_IMU gyro = new ADIS16448_IMU();
+
+    .. code-tab:: c++
+
+        // ADIS16448 plugged into the MXP port
+        ADIS16448_IMU gyro;
+
+ADIS16470
+^^^^^^^^^
+
+The ADIS16470 uses the :code:`ADIS16470_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // ADIS16470 plugged into the MXP port
+        ADIS16470_IMU gyro = new ADIS16470_IMU();
+
+    .. code-tab:: c++
+
+        // ADIS16470 plugged into the MXP port
+        ADIS16470_IMU gyro;
 
 ADXRS450_Gyro
 ^^^^^^^^^^^^^
@@ -52,10 +86,43 @@ The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs
         // Creates an AnalogGyro object on port 0
         frc::AnalogGyro gyro{0};
 
-Third-party gyros
------------------
+navX
+^^^^
 
-While WPILib provides native support for a the ADXRS450 gyro available in the kit of parts and for any analog gyro, there are a few popular AHRS (Attitude and Heading Reference System) devices commonly used in FRC\ |reg| that include accelerometers and require more complicated communications.  These are generally controlled through vendor libraries.
+The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // navX MXP using SPI
+        AHRS gyro = new AHRS(SPI.Port.kMXP);
+
+    .. code-tab:: c++
+
+        // navX MXP using SPI
+        AHRS gyro{SPI::Port::kMXP};
+
+Pigeon
+^^^^^^
+
+The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__ contains full details on using the Pigeon.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        WPI_PigeonIMU gyro = new WPI_PigeonIMU(0); // Pigeon is on CAN Bus with device ID 0
+        // OR (choose one or the other based on your connection)
+        TalonSRX talon = new TalonSRX(0); // TalonSRX is on CAN Bus with device ID 0
+        WPI_PigeonIMU gyro = new WPI_PigeonIMU(talon); // Pigeon uses the talon created above
+
+    .. code-tab:: c++
+
+        WPI_PigeonIMU gyro{0}; // Pigeon is on CAN Bus with device ID 0
+        // OR (choose one or the other based on your connection)
+        TalonSRX talon{0}; // TalonSRX is on CAN Bus with device ID 0
+        WPI_PigeonIMU gyro{talon}; // Pigeon uses the talon created above
 
 Using gyros in code
 -------------------
@@ -73,17 +140,17 @@ Displaying the robot heading on the dashboard
 
     .. code-tab:: java
 
-        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+        // Use gyro declaration from above here
 
         public void robotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
             // Explicit down-cast required because Gyro does not extend Sendable
-            Shuffleboard.getTab("Example tab").add((Sendable) gyro);
+            Shuffleboard.getTab("Example tab").add(gyro);
         }
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro;
+        // Use gyro declaration from above here
 
         void Robot::RobotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
@@ -108,7 +175,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: java
 
-        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
@@ -136,7 +203,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro;
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
@@ -171,7 +238,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: java
 
-        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
@@ -207,7 +274,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro;
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
@@ -251,7 +318,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     .. code-tab:: java
 
-        ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
@@ -279,7 +346,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     .. code-tab:: c++
 
-        frc::ADXRS450_Gyro gyro;
+        // Use gyro declaration from above here
 
         // The gain for a simple P loop
         double kP = 1;
