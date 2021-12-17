@@ -4,17 +4,9 @@ roboRIO Web Dashboard
 The roboRIO web dashboard is a webpage built into the roboRIO that can
 be used for checking status and updating settings of the roboRIO.
 
-Unlike the 2015-2018 roboRIO web dashboard, the 2019 web dashboard does
-not use SilverLight. Users may encounter issues using IE (compatibility)
+Users may encounter issues using IE (compatibility)
 or Edge (mDNS site access). Alternate browsers such as Google Chrome or
 Mozilla Firefox are recommended for the best experience.
-
-.. note:: The roboRIO web dashboard was been re-written for 2019. All CAN
- configuration functionality has been removed. Configuration of CAN
- devices should be done with software provided by the device vendor. For
- CTRE devices previously serviced using the webdashboard, the appropriate
- software is `CTRE Phoenix
- Tuner <https://docs.ctre-phoenix.com/en/stable/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
 
 Opening the WebDash
 -------------------
