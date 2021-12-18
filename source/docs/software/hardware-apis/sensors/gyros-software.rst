@@ -144,7 +144,6 @@ Displaying the robot heading on the dashboard
 
         public void robotInit() {
             // Places a compass indicator for the gyro heading on the dashboard
-            // Explicit down-cast required because Gyro does not extend Sendable
             Shuffleboard.getTab("Example tab").add(gyro);
         }
 
