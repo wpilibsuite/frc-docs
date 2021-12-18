@@ -41,7 +41,7 @@ REV Power Distribution Hub
   :alt: REV Power Distribution Hub
   :width: 500
 
-The `REV Power Distribution Hub <https://docs.revrobotics.com/rev-11-1850/>`__ (PDH) is designed to distribute power from a 12VDC battery to various robot components. With 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
+The `REV Power Distribution Hub <https://docs.revrobotics.com/rev-11-1850/>`__ (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
 
 CTRE Voltage Regulator Module
 -----------------------------
