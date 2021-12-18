@@ -190,7 +190,7 @@ Universal Heartbeat
 -------------------
 
 Starting in 2022, the roboRIO provides a universal CAN heartbeat. This heartbeat is sent every 20ms.
-The heartbeat has a full CAN ID of 0x01011840, which it NI manufacturer, RobotController type, Device ID 0 and API ID 0x062.
+The heartbeat has a full CAN ID of 0x01011840 (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID 0x062).
 It is an 8 byte CAN packet. The important byte in here is byte 5 (index 4). The layout is the following bitfield.
 
 RedAlliance : 1
