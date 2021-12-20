@@ -23,7 +23,9 @@ The Romi has the following built-in hardware/peripherals:
 - 1x Inertial Measurement Unit (IMU)
 - 3x LEDs (green, yellow, red)
 - 3x pushbuttons (marked A, B, and C)
-- 5x configurable GPIO channels
+- 5x configurable GPIO channels (EXT)
+
+.. note:: The built-in Buzzer is currently not supported.
 
 Motors, Wheels and Encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,6 +35,32 @@ The motors used on the Romi have a 120:1 gear reduction, and a no-load output sp
 The wheels have a diameter of 70mm (2.75"). They have a trackwidth of 141mm (5.55").
 
 The encoders are connected directly to the motor output shaft and have 12 Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 counts per wheel revolution.
+
+The motor PWM channels are listed in the table below.
+
++-------------+--------------------------+
+| Channel     | Romi Hardware Component  |
++=============+==========================+
+| PWM 0       | Left Motor               |
++-------------+--------------------------+
+| PWM 1       | Right Motor              |
++-------------+--------------------------+
+
+.. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
+
+The encoder channels are listed in the table below.
+
++-------------+--------------------------------------+
+| Channel     | Romi Hardware Component              |
++=============+======================================+
+| DIO 4       | Left Encoder Quadrature Channel A    |
++-------------+--------------------------------------+
+| DIO 5       | Left Encoder Quadrature Channel B    |
++-------------+--------------------------------------+
+| DIO 6       | Right Encoder Quadrature Channel A   |
++-------------+--------------------------------------+
+| DIO 7       | Right Encoder Quadrature Channel B   |
++-------------+--------------------------------------+
 
 .. note:: By default, the encoders count up when the Romi moves forward.
 
@@ -45,32 +73,13 @@ The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro ha
 
 The Romi Web UI also provides a means to calibrate the gyro and measure its zero-offsets before use with robot code.
 
-LEDs and Push Buttons
+Onboard LEDs and Push Buttons
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Romi 32U4 control board has 3 push buttons and 3 LEDs that are exposed as Digital IO channels to robot code. The section on GPIO Mapping has more information on how to use the built in LEDs and buttons in robot code.
+The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are exposed as Digital IO (DIO) channels to robot code.
 
-Configurable GPIO Channels
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The control board has 5 configurable GPIO channels (named EXT0 through EXT4) that allow a user to connect external sensors and actuators to the Romi.
-
-.. image:: images/getting-to-know-romi/romi-external-io.png
-   :alt: Romi External GPIO Channels
-
-All 5 channels support the following modes: Digital IO, Analog In, PWM (with the exception of EXT 0, which only supports Digital IO and PWM).
-
-The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
-
-The power connections for the GPIO channels are initially left unconnected, but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
-
-GPIO Mapping
-------------
-
-To support all the built in peripherals on the Romi, we have provided a hard-coded mapping of WPILib channels/devices to the Romi hardware.
-
-Digital IO
-^^^^^^^^^^
+.. image:: images/getting-toknow-romi/romi-leds-buttons.jpg
+   :alt: Romi LEDs and Buttons
 
 +-------------+--------------------------------------+
 | DIO Channel | Romi Hardware Component              |
@@ -83,47 +92,38 @@ Digital IO
 +-------------+--------------------------------------+
 | DIO 3       | Yellow LED (output only)             |
 +-------------+--------------------------------------+
-| DIO 4       | Left Encoder Quadrature Channel A    |
-+-------------+--------------------------------------+
-| DIO 5       | Left Encoder Quadrature Channel B    |
-+-------------+--------------------------------------+
-| DIO 6       | Right Encoder Quadrature Channel A   |
-+-------------+--------------------------------------+
-| DIO 7       | Right Encoder Quadrature Channel B   |
-+-------------+--------------------------------------+
 
 Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
 
-Analog Input (Default Configuration)
+Configurable GPIO Channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The control board has 5 configurable GPIO pins (named EXT0 through EXT4) that allow a user to connect external sensors and actuators to the Romi.
+
+.. image:: images/getting-to-know-romi/romi-external-io.png
+   :alt: Romi External GPIO Channels
+
+All 5 pins support the following modes: Digital IO, Analog In, PWM (with the exception of EXT 0, which only supports Digital IO and PWM). The mode of the ports can be configured with :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>`.
+
+The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
+
+The power connections for the GPIO channels are initially left unconnected, but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
+
+GPIO Default Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------+-------------------+
-| Port | Channel           |
-+======+===================+
-| AIN0 | Analog 6 / Pin 4  |
-+------+-------------------+
-| AIN1 | Analog 2 / Pin 20 |
-+------+-------------------+
+The table below shows the default configuration of the GPIO pins (EXT0 through EXT4). :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>` allows the user to customize the functions of the 5 configurable GPIO channels. The UI will also provide the appropriate WPILib channel/device mappings on screen once the IO configuration is complete.
 
-PWM Output
-^^^^^^^^^^
-
-The table below shows the default pins. These are configurable (with the exception of PWM 0 and 1) via the Web UI.
-+-------------+-------------------------+
-| PWM Channel | Romi Hardware Component |
-+=============+=========================+
-| PWM 0       | Left Motor              |
-+-------------+-------------------------+
-| PWM 1       | Right Motor             |
-+-------------+-------------------------+
-| PWM 2       | Pin 21 / A3             |
-+-------------+-------------------------+
-| PWM 3       | Pin 22 / A4             |
-+-------------+-------------------------+
-
-.. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
-
-GPIO Channels
-^^^^^^^^^^^^^
-
-The Romi Web UI allows the user to customize the functions of the 5 configurable GPIO channels. The UI will also provide the appropriate WPILib channel/device mappings on screen once the IO configuration is complete. More information on this can be found in the next section.
++-------------+---------+
+| Channel     | Ext Pin |
++=============+=========+
+| DIO 8       | EXT0    |
++-------------+---------+
+| Analog In 0 | EXT1    |
++-------------+---------+
+| Analog In 1 | Ext2    |
++-------------+---------+
+| PWM 2       | Ext3    |
++-------------+---------+
+| PWM 3       | Ext4    |
++-------------+---------+
