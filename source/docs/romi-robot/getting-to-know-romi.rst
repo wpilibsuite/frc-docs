@@ -74,7 +74,7 @@ The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro ha
 The Romi Web UI also provides a means to calibrate the gyro and measure its zero-offsets before use with robot code.
 
 Onboard LEDs and Push Buttons
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are exposed as Digital IO (DIO) channels to robot code.
 
