@@ -78,7 +78,7 @@ Onboard LEDs and Push Buttons
 
 The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are exposed as Digital IO (DIO) channels to robot code.
 
-.. image:: images/getting-toknow-romi/romi-leds-buttons.jpg
+.. image:: images/getting-to-know-romi/romi-leds-buttons.jpg
    :alt: Romi LEDs and Buttons
 
 +-------------+--------------------------------------+
