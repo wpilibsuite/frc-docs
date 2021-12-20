@@ -8,7 +8,7 @@ Creating a Romi Program
 
 Creating a new program for a Romi is like creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
 
-WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is  provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
+WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
 
 .. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <docs/software/wpilib-tools/robot-simulation/introduction:Additional C++ Dependency>`.
 
@@ -40,7 +40,7 @@ To run a Romi program, first ensure that your Romi is powered on. Next, connect 
 
 .. image:: images/programming-romi/romi-vscode-ip-address.png
 
-Now to start your Romi robot code open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code" or by press :kbd:`F5`.
+Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.
 
 .. image:: images/programming-romi/romi-vscode-launch-sim.png
    :alt: Launching simulation via the WPILib Command Palette
