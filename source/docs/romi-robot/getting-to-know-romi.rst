@@ -95,7 +95,7 @@ The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are expos
 
 Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
 
-Configurable GPIO Channels
+Configurable GPIO Pins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The control board has 5 configurable GPIO pins (named EXT0 through EXT4) that allow a user to connect external sensors and actuators to the Romi.
@@ -107,12 +107,12 @@ All 5 pins support the following modes: Digital IO, Analog In, PWM (with the exc
 
 The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
 
-The power connections for the GPIO channels are initially left unconnected, but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
+The power connections for the GPIO pins are initially left unconnected, but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
 
 GPIO Default Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The table below shows the default configuration of the GPIO pins (EXT0 through EXT4). :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>` allows the user to customize the functions of the 5 configurable GPIO channels. The UI will also provide the appropriate WPILib channel/device mappings on screen once the IO configuration is complete.
+The table below shows the default configuration of the GPIO pins (EXT0 through EXT4). :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>` allows the user to customize the functions of the 5 configurable GPIO pins. The UI will also provide the appropriate WPILib channel/device mappings on screen once the IO configuration is complete.
 
 +-------------+---------+
 | Channel     | Ext Pin |
@@ -121,9 +121,9 @@ The table below shows the default configuration of the GPIO pins (EXT0 through E
 +-------------+---------+
 | Analog In 0 | EXT1    |
 +-------------+---------+
-| Analog In 1 | Ext2    |
+| Analog In 1 | EXT2    |
 +-------------+---------+
-| PWM 2       | Ext3    |
+| PWM 2       | EXT3    |
 +-------------+---------+
-| PWM 3       | Ext4    |
+| PWM 3       | EXT4    |
 +-------------+---------+
