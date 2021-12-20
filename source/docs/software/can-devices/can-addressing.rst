@@ -197,6 +197,9 @@ RedAlliance : 1
 Enabled : 1
 Autonomous : 1
 Test : 1
-Reserved : 4
+WatchdogEnabled : 1
+Reserved : 3
+
+The flag to watch for is WatchdogEnabled. If that flag is set, that means motor controllers are enabled.
 
 If 100ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
