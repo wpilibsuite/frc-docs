@@ -129,6 +129,7 @@ Shuffleboard
 - Add tab clear confirmation
 - Save widget titles display mode preference
 - Fix: CameraServer streams
+- Fix: Shuffleboard not starting on Windows N. `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__ is still needed for camera support.
 
 SmartDashboard
 --------------
