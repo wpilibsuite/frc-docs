@@ -41,6 +41,7 @@ General Library
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
 - Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_up_down_counter.html>`__)
+- ``DutyCycleEncoder``: add support for setting duty cycle range
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -156,7 +157,7 @@ PathWeaver
 GradleRIO
 ---------
 
-- Gradle has been updated to version 7.2
+- Gradle has been updated to version 7.3.2
 - Internals of GradleRIO have been updated to be easier to read, more maintainable and easier for advanced teams to modify.
 - Deployment is more customizable
 
@@ -175,10 +176,12 @@ OutlineViewer has been updated to be C++ based using the ImGui library. This mak
 WPILib All in One Installer
 ---------------------------
 
-- Visual Studio Code has been updated to 1.62
+- Simplified installation choices
+- Visual Studio Code has been updated to 1.63.2
 - Updated Java and C++ language extensions
 - Fix Linux desktop icon permissions
 - Add year to tools shortcuts name
+- Handle issues with JDK running and UAC cancelled
 
 Visual Studio Code Extension
 ----------------------------
