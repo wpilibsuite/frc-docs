@@ -66,38 +66,7 @@ Breaking Changes
 - C++: ``frc::filesystem`` methods have been simplified to return ``std::string``, rather then using a pointer parameter
 - C++: ``wpi::math`` is replaced with ``wpi::numbers`` which is based on C++20 ``std::numbers``.
 - C++: Support for ``std::cout`` was removed from units because ``<iostream>`` has significant compile-time overhead. Use `fmtlib <https://fmt.dev/latest/index.html>`__ instead, an analog for C++20's ``std::format()`` (e.g., ``fmt::print("{}", 2_m)``). The units headers automatically include fmtlib. If you still want to use ``std::cout``, call ``value()`` on the variable being printed (e.g., ``std::cout << velocity.value()``).
-
-.. dropdown:: Various C++ classes have migrated to use units. Below are a list of effected classes.
-
-   - ``Ultrasonic``
-   - ``CommandScheduler``
-   - ``CommandState``
-   - ``WaitUntilCommand``
-   - ``MecanumControllerCommand``
-   - ``RamseteCommand``
-   - ``SwerveControllerCommand``
-   - ``TrapezoidProfileCommand``
-   - ``WaitCommand``
-   - ``Command`` (Old Commands)
-   - ``CommandGroup`` (Old Commands)
-   - ``CommandGroupEntry`` (Old Commands)
-   - ``TimedCommand`` (Old Commands)
-   - ``WaitCommand`` (Old Commands)
-   - ``WaitForChildren`` (Old Commands)
-   - ``WaitUntilCommand`` (Old Commands)
-   - ``Counter``
-   - ``CounterBase``
-   - ``DriverStation``
-   - ``Encoder``
-   - ``InterruptableSensorBase``
-   - ``MotorSafety``
-   - ``Notifier``
-   - ``SPI``
-   - ``SerialPort``
-   - ``SlewRateLimiter``
-   - ``Solenoid``
-   - ``Timer``
-   - ``Watchdog``
+- C++: Various classes have migrated to use units: ``Ultrasonic``, ``CommandScheduler``, ``CommandState``, ``WaitUntilCommand``, ``MecanumControllerCommand``, ``RamseteCommand``, ``SwerveControllerCommand``, ``TrapezoidProfileCommand``, ``WaitCommand``, ``Counter``, ``CounterBase``, ``DriverStation``, ``Encoder``, ``InterruptableSensorBase``, ``MotorSafety``, ``Notifier``, ``SPI``, ``SerialPort``, ``SlewRateLimiter``, ``Solenoid``, ``Timer``, ``Watchdog``, and Old Commands: ``Command``, ``CommandGroup``, ``CommandGroupEntry``, ``TimedCommand``, ``WaitCommand``, ``WaitForChildren``, ``WaitUntilCommand``
 
 Package Renames
 ~~~~~~~~~~~~~~~
