@@ -32,11 +32,11 @@ Fill out the rest of the fields in the "New Project Creator" and click "Generate
 Running a Romi Program
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Once the robot project is generated it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a joystick.
+Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a joystick.
 
 One aspect where a Romi project differs from a regular FRC robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer and leverages the WPILib simulation framework to communicate with the Romi robot.
 
-To run a Romi program, first ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``envVar`` line to the appropriate IP address.
+To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``envVar`` line to the appropriate IP address.
 
 .. image:: images/programming-romi/romi-vscode-ip-address.png
 
