@@ -25,23 +25,41 @@ NI roboRIO
 
 The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO Introduction>` is the main robot controller used for FRC. The roboRIO serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
 
-Power Distribution Panel
-------------------------
+CTRE Power Distribution Panel
+-----------------------------
 
 .. image:: images/control-system-hardware/power-distribution-panel.png
-  :alt: Power Distribution Panel
+  :alt: CTRE Power Distribution Panel
   :width: 500
 
-The :ref:`Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://www.ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__.
+The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://www.ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__.
 
-Voltage Regulator Module
-------------------------
+REV Power Distribution Hub
+--------------------------
+
+.. image:: images/control-system-hardware/power-distribution-hub.png
+  :alt: REV Power Distribution Hub
+  :width: 500
+
+The `REV Power Distribution Hub <https://docs.revrobotics.com/rev-11-1850/>`__ (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
+
+CTRE Voltage Regulator Module
+-----------------------------
 
 .. image:: images/control-system-hardware/voltage-regulator-module.png
-  :alt: Voltage Regulator Module
+  :alt: CTRE Voltage Regulator Module
   :width: 500
 
-The Voltage Regulator Module (VRM) is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras. For more information, see the `VRM User Manual <https://www.ctr-electronics.com/VRM%20User's%20Guide.pdf>`__.
+The CTRE Voltage Regulator Module (VRM) is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras. For more information, see the `VRM User Manual <https://www.ctr-electronics.com/VRM%20User's%20Guide.pdf>`__.
+
+REV Radio Power Module
+----------------------
+
+.. image:: images/control-system-hardware/radio-power-module.png
+  :alt: REV Radio Power Module
+  :width: 500
+
+The `REV Radio Power Module <https://docs.revrobotics.com/rev-11-1856/>`__ is designed to keep one of the most critical system components, the OpenMesh WiFi radio, powered in the toughest moments of the competition. The Radio Power Module eliminates the need for powering the radio through a traditional barrel power jack. Utilizing 18V Passive POE with two socketed RJ45 connectors, the Radio Power Module passes signal between the radio and roboRIO while providing power directly to the radio. After connecting the radio and roboRIO, easily add power to the Radio Power Module by wiring it to the low-current channels on the Power Distribution Hub utilizing the color coded push button WAGO terminals.
 
 OpenMesh OM5P-AN or OM5P-AC Radio
 ---------------------------------
@@ -92,14 +110,25 @@ Robot Signal Light
 
 The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
 
-Pneumatics Control Module
--------------------------
+CTRE Pneumatics Control Module
+------------------------------
 
 .. image:: images/control-system-hardware/pneumatics-control-module.png
-  :alt: Pneumatics Control Module
+  :alt: CTRE Pneumatics Control Module
   :width: 500
 
-The :ref:`Pneumatics Control Module <docs/software/can-devices/pneumatics-control-module:Pneumatics Control Module>` (PCM) contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. For more information see the `PCM User Manual <https://www.ctr-electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__.
+The :ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-control-module:Pneumatics Control Module>` (PCM) contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. For more information see the `PCM User Manual <https://www.ctr-electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__.
+
+REV Pneumatic Hub
+-----------------
+
+.. image:: images/control-system-hardware/pneumatic-hub.png
+  :alt: REV Pneumatics Hub
+  :width: 500
+
+The `REV Pneumatic Hub <https://docs.revrobotics.com/rev-11-1852/>`__ is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.
+
+Digital and analog pressure sensor ports are built into the device, increasing the flexibility and feedback functionality of the pneumatic system. The USB-C connection on the Hub works with the REV Hardware Client, allowing users to test pneumatic systems without a need for an additional robot controller.
 
 Motor Controllers
 -----------------
