@@ -24,8 +24,9 @@ The Romi has the following built-in hardware/peripherals:
 - 3x LEDs (green, yellow, red)
 - 3x pushbuttons (marked A, B, and C)
 - 5x configurable GPIO channels (EXT)
+- Buzzer
 
-.. note:: The built-in Buzzer is currently not supported.
+.. note:: The Buzzer is currently not supported by WPILib.
 
 Motors, Wheels and Encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
