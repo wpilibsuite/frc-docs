@@ -6,9 +6,9 @@ Writing a program for the Romi is very similar to writing a program for a regula
 Creating a Romi Program
 -----------------------
 
-Creating a new program for a Romi is no different than creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
+Creating a new program for a Romi is like creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
 
-WPILib comes with several templates for Romi projects, including ones based on TimedRobot, and a Command-Based project template. Additionally, an example project is also provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
+WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
 
 .. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <docs/software/wpilib-tools/robot-simulation/introduction:Additional C++ Dependency>`.
 
@@ -32,17 +32,15 @@ Fill out the rest of the fields in the "New Project Creator" and click "Generate
 Running a Romi Program
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a gamepad.
+Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a joystick.
 
-One aspect where a Romi project differs from a regular FRC robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer, and leverages the WPILib simulation framework to communicate with the Romi robot.
+One aspect where a Romi project differs from a regular FRC robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer and leverages the WPILib simulation framework to communicate with the Romi robot.
 
-To run a Romi program, first, ensure that your Romi is powered on. Once you connect to the ``WPILibPi-<number>`` network broadcast by the Romi, press :kbd:`F5` to start running the Romi program on your computer.
-
-If you changed the Romi network settings (for example, to connect it to your own WiFi network), you can change the IP address that your program uses to connect to the Romi. To do this, open the "build.gradle" file and update the ``envVar`` line to the appropriate IP address.
+To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``envVar`` line to the appropriate IP address.
 
 .. image:: images/programming-romi/romi-vscode-ip-address.png
 
-Now you just need to start your Romi robot code! This is done by opening the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) or by pressing :kbd:`F8`.
+Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.
 
 .. image:: images/programming-romi/romi-vscode-launch-sim.png
    :alt: Launching simulation via the WPILib Command Palette
@@ -52,5 +50,3 @@ If all goes well, you should see a line in the console output that reads "HALSim
 .. image:: images/programming-romi/romi-vscode-connected.png
 
 Your Romi code is now running!
-
-.. note:: By default, the Romi templates and examples are set up so that positive drive values correspond to the Romi moving forward. Since forward movement on a Joystick produces negative values, you will need to invert the values in appropriate places (e.g. the ``xSpeed`` parameter to ``arcadeDrive`` on a ``DifferentialDrive`` object).

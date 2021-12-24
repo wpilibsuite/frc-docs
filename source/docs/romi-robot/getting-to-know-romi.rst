@@ -46,7 +46,7 @@ The motor PWM channels are listed in the table below.
 | PWM 1       | Right Motor              |
 +-------------+--------------------------+
 
-.. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
+.. note:: The right motor is hardwired to spin in a backward direction when positive output is applied. Thus, the corresponding motor controller needs to be inverted in robot code.
 
 The encoder channels are listed in the table below.
 

@@ -12,6 +12,8 @@ You can download the latest release of the installer from `GitHub <https://githu
 
 .. important:: The minimum supported macOS version is Mojave (10.14.x).
 
+WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
+
 Extracting the Installer
 ------------------------
 
@@ -59,37 +61,42 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 .. image:: images/wpilib-setup/installer-start.png
    :alt: Start of Installer
 
+.. image:: images/wpilib-setup/installer-options.png
+   :alt: An overview of the installer options
+
+This showcases a list of options included with the WPILib installation.
+
+- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysID, Glass, and OutlineViewer) and JDK.
+- :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies), WPILib tools, and JDK.
+
+You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
+
+.. note:: If you select Install for all Users, Windows will prompt for administrator access through UAC during installation.
+
+Select the option that is appropriate for you, and you'll presented with the following installation screen.
+
 This next screen involves downloading VS Code. Unfortunately, due to licensing reasons, VS Code can not be bundled with the installer.
 
 .. image:: images/wpilib-setup/installer-vscode-download.png
    :alt: Overview of VS Code download options
 
-- Download VS Code for Single Install
+- Download for this computer only
 
   - This downloads VS Code only for the current platform, which is also the smallest download.
 
-- Skip installing VS Code
+- Skip and don't use VS Code
 
   - Skips installing VS Code. Useful for advanced installations or configurations. Generally not recommended.
 
-- Use Downloaded Offline Installer
+- Select existing VS Code zip for offline install on this computer
 
   - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Download VS Code for Offline Install
+- Create VS Code zip to share with other computers/OSes for offline install
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
 Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
-
-.. image:: images/wpilib-setup/installer-options.png
-   :alt: An overview of the installer options
-
-This showcases a list of options included with the WPILib installation. It's advised to just leave the default options selected.
-
-You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
-
-Select the option that is appropriate for you, and you'll presented with the following installation screen.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -99,7 +106,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
-.. important:: WPILib installs a separate version of VS Code than into an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2022``. Please launch the WPILib VS Code and not a system installed copy!
+.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2022``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
@@ -147,7 +154,7 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass
+- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass, SysID
 
 - **WPILib Dependencies** - OpenCV, etc.
 

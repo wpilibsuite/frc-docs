@@ -27,6 +27,8 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
+.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=hotspot>`__.
+
 Application Notes
 -----------------
 

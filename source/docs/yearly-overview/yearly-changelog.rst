@@ -41,6 +41,7 @@ General Library
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
 - Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_up_down_counter.html>`__)
+- ``DutyCycleEncoder``: add support for setting duty cycle range
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -66,38 +67,7 @@ Breaking Changes
 - C++: ``frc::filesystem`` methods have been simplified to return ``std::string``, rather then using a pointer parameter
 - C++: ``wpi::math`` is replaced with ``wpi::numbers`` which is based on C++20 ``std::numbers``.
 - C++: Support for ``std::cout`` was removed from units because ``<iostream>`` has significant compile-time overhead. Use `fmtlib <https://fmt.dev/latest/index.html>`__ instead, an analog for C++20's ``std::format()`` (e.g., ``fmt::print("{}", 2_m)``). The units headers automatically include fmtlib. If you still want to use ``std::cout``, call ``value()`` on the variable being printed (e.g., ``std::cout << velocity.value()``).
-
-.. dropdown:: Various C++ classes have migrated to use units. Below are a list of effected classes.
-
-   - ``Ultrasonic``
-   - ``CommandScheduler``
-   - ``CommandState``
-   - ``WaitUntilCommand``
-   - ``MecanumControllerCommand``
-   - ``RamseteCommand``
-   - ``SwerveControllerCommand``
-   - ``TrapezoidProfileCommand``
-   - ``WaitCommand``
-   - ``Command`` (Old Commands)
-   - ``CommandGroup`` (Old Commands)
-   - ``CommandGroupEntry`` (Old Commands)
-   - ``TimedCommand`` (Old Commands)
-   - ``WaitCommand`` (Old Commands)
-   - ``WaitForChildren`` (Old Commands)
-   - ``WaitUntilCommand`` (Old Commands)
-   - ``Counter``
-   - ``CounterBase``
-   - ``DriverStation``
-   - ``Encoder``
-   - ``InterruptableSensorBase``
-   - ``MotorSafety``
-   - ``Notifier``
-   - ``SPI``
-   - ``SerialPort``
-   - ``SlewRateLimiter``
-   - ``Solenoid``
-   - ``Timer``
-   - ``Watchdog``
+- C++: Various classes have migrated to use units: ``Ultrasonic``, ``CommandScheduler``, ``CommandState``, ``WaitUntilCommand``, ``MecanumControllerCommand``, ``RamseteCommand``, ``SwerveControllerCommand``, ``TrapezoidProfileCommand``, ``WaitCommand``, ``Counter``, ``CounterBase``, ``DriverStation``, ``Encoder``, ``InterruptableSensorBase``, ``MotorSafety``, ``Notifier``, ``SPI``, ``SerialPort``, ``SlewRateLimiter``, ``Solenoid``, ``Timer``, ``Watchdog``, and Old Commands: ``Command``, ``CommandGroup``, ``CommandGroupEntry``, ``TimedCommand``, ``WaitCommand``, ``WaitForChildren``, ``WaitUntilCommand``
 
 Package Renames
 ~~~~~~~~~~~~~~~
@@ -128,6 +98,7 @@ Shuffleboard
 - Add tab clear confirmation
 - Save widget titles display mode preference
 - Fix: CameraServer streams
+- Fix: Shuffleboard not starting on Windows N. `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__ is still needed for camera support.
 
 SmartDashboard
 --------------
@@ -156,7 +127,7 @@ PathWeaver
 GradleRIO
 ---------
 
-- Gradle has been updated to version 7.2
+- Gradle has been updated to version 7.3.2
 - Internals of GradleRIO have been updated to be easier to read, more maintainable and easier for advanced teams to modify.
 - Deployment is more customizable
 
@@ -175,10 +146,12 @@ OutlineViewer has been updated to be C++ based using the ImGui library. This mak
 WPILib All in One Installer
 ---------------------------
 
-- Visual Studio Code has been updated to 1.62
+- Simplified installation choices
+- Visual Studio Code has been updated to 1.63.2
 - Updated Java and C++ language extensions
 - Fix Linux desktop icon permissions
 - Add year to tools shortcuts name
+- Handle issues with JDK running and UAC cancelled
 
 Visual Studio Code Extension
 ----------------------------

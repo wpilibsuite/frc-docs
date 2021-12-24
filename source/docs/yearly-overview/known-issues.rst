@@ -49,10 +49,14 @@ C++ Intellisense - Files Open on Launch Don't Work Properly
   #. Wait ~1 min
   #. Open the main cpp file (not a header file). Intellisense should now be working
 
-SmartDashboard and Simulation fail to launch on Windows N Editions
+Issues with WPILib Dashboards and Simulation on Windows N Editions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** WPILib code using CSCore (dashboards and simulated robot code) will fail to launch on Education N editions of Windows.
+**Issue:** WPILib code using CSCore (dashboards and simulated robot code) will have issues on Education N editions of Windows.
+
+- Shuffleboard will run, but not load cameras
+- Smartdashbard will crash on start-up
+- Robot Simulation will crash on start-up
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
 
