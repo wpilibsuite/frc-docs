@@ -121,7 +121,7 @@ The table below shows the default pins. These are configurable (with the excepti
 | PWM 3       | Pin 22 / A4             |
 +-------------+-------------------------+
 
-.. note:: The right motor is hardwired to spin in a forward direction when forward stick movement is applied on a joystick. Thus there is no need to invert the corresponding motor controller in robot code.
+.. note:: The right motor is hardwired to spin in a backward direction when positive output is applied. Thus, the corresponding motor controller needs to be inverted in robot code.
 
 GPIO Channels
 ^^^^^^^^^^^^^
