@@ -1,6 +1,6 @@
 Step 1: Creating Simulated Instances of Hardware
 ================================================
-The WPILib simulation framework contains several ``XXXSim`` classes, where ``XXX`` represents physical hardware such as encoders or gyroscopes. These simulation classes can be used to set positions and velocities (for encoders) and angles (for gyroscopes) from a model of your drivetrain.
+The WPILib simulation framework contains several ``XXXSim`` classes, where ``XXX`` represents physical hardware such as encoders or gyroscopes. These simulation classes can be used to set positions and velocities (for encoders) and angles (for gyroscopes) from a model of your drivetrain. See :ref:`the Device Simulation article<docs/software/wpilib-tools/robot-simulation/device-sim:Device Simulation>` for more info about these simulation hardware classes and simulation of vendor devices.
 
 Simulating Encoders
 -------------------
