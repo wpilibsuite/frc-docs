@@ -151,7 +151,7 @@ WPILib All in One Installer
 - Updated Java and C++ language extensions
 - Fix Linux desktop icon permissions
 - Add year to tools shortcuts name
-- Handle issues with JDK running and UAC cancelled
+- Handle issues with JDK running and UAC canceled
 
 Visual Studio Code Extension
 ----------------------------
