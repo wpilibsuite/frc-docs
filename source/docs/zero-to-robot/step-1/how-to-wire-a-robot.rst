@@ -17,7 +17,7 @@ Overview
 
    .. group-tab:: REV
 
-      .. figure:: images/frc-control-system-layout-rev.svg
+      .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
          :width: 500
 
@@ -25,7 +25,7 @@ Overview
 
    .. group-tab:: CTRE
 
-      .. figure:: images/frc-control-system-layout.svg
+      .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
         :alt: Layout of all of the core components of the control system and how they are connected.
         :width: 500
 
