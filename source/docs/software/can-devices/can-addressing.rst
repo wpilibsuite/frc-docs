@@ -200,6 +200,8 @@ The roboRIO provides a universal CAN heartbeat that any device on the bus can li
 +-----------------+-------+
 | Autonomous      | 1     |
 +-----------------+-------+
+| Test            | 1     |
++-----------------+-------+
 | WatchdogEnabled | 1     |
 +-----------------+-------+
 | Reserved        | 3     |
