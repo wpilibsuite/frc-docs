@@ -12,24 +12,11 @@ How to Wire an FRC Robot
 Overview
 --------
 
+.. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
+  :alt: Detailed diagram of all of the components and how they are connected.
+  :width: 600
 
-.. tabs::
-
-   .. group-tab:: REV
-
-      .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
-         :alt: Layout of all popular components of the control system including REV Control System Components
-         :width: 500
-
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
-
-   .. group-tab:: CTRE
-
-      .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
-        :alt: Layout of all of the core components of the control system and how they are connected.
-        :width: 500
-
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+  Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 Gather Materials
 ----------------
