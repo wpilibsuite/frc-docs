@@ -9,7 +9,8 @@ The full drive class from the RamseteCommand Example Project (`Java <https://git
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java      :language: java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+      :language: java
       :lines: 5-
       :linenos:
       :lineno-start: 5
@@ -102,9 +103,9 @@ To access the values measured by the encoders, we include the following method:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 74-76
+      :lines: 82-85
       :linenos:
-      :lineno-start: 74
+      :lineno-start: 82
 
 We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object for easier integration with the ``RamseteCommand`` class later on.
 
@@ -175,9 +176,9 @@ First, we create a member instance of the ``DifferentialDriveOdometry`` class:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
       :language: c++
-      :lines: 146-147
+      :lines: 143-144
       :linenos:
-      :lineno-start: 146
+      :lineno-start: 143
 
 Updating the Odometry
 ^^^^^^^^^^^^^^^^^^^^^
