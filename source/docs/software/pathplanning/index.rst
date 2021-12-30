@@ -11,7 +11,7 @@ Swerve support in path following has a couple of limitations that teams need to 
 - SysID only supports tuning the swerve heading using a General Mechanism project and does not regularly support module velocity data. A workaround is to lock the module's heading into place. This can be done via blocking module rotation using something like a block of wood.
 - Pathweaver and Trajectory following currently do not take heading into account. Path following using the WPILib trajectory framework on swerve will be the same as a DifferentialDrive robot.
 
-We are sorry for the inconvenience at this time.
+We are sorry for the inconvenience.
 
 .. toctree::
    :maxdepth: 2
