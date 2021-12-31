@@ -10,8 +10,8 @@ You can download the latest release of the installer from `GitHub <https://githu
 
 .. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed.
 
-.. danger:: The following OSes will be dropped in 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
-   
+.. warning:: The following OSes will be dropped in 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
+
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
 Extracting the Installer
