@@ -56,6 +56,7 @@ Breaking Changes
 
 - Several duplicate ``SpeedController`` methods have been removed. Use ``set`` instead of ``setSpeed``. Use ``disable`` instead of ``setDisable``. Several low level methods have been removed: position, bounds, periodMultiplier, zeroLatch, and raw methods. Use the ``PWM`` class directly if this level of control is needed.
 - Various DriverStation In[Mode] functions has been renamed (IE: ``InDisabled`` -> ``inDisabled``)
+- ``NormalizeWheelSpeeds`` has been renamed to ``DesaturateWheelSpeeds``
 - Deprecated ``wpilibj.cameraserver`` has been removed. Use ``cameraserver`` instead
 - Deprecated ``RobotDrive`` has been removed. Use ``DifferentialDrive`` instead
 - Deprecated ``GearTooth`` has been removed. Use the ``Counter`` class instead
