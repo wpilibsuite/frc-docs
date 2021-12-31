@@ -185,3 +185,28 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
 -  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRSTs Control System Partners to provide such interfaces.
+
+Universal Heartbeat
+-------------------
+
+The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x062``). It is an 8 byte CAN packet. The important byte in here is byte 5 (index 4). The layout is the following bitfield.
+
++-----------------+-------+
+| Description     | Width |
++=================+=======+
+| RedAlliance     | 1     |
++-----------------+-------+
+| Enabled         | 1     |
++-----------------+-------+
+| Autonomous      | 1     |
++-----------------+-------+
+| Test            | 1     |
++-----------------+-------+
+| WatchdogEnabled | 1     |
++-----------------+-------+
+| Reserved        | 3     |
++-----------------+-------+
+
+The flag to watch for is ``WatchdogEnabled``. If that flag is set, that means motor controllers are enabled.
+
+If 100ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
