@@ -31,7 +31,7 @@ General Library
 - Added C++ TankDrive example
 - Added ``PS4Controller`` controller class
 - Added better message for when an I2C port is out of range
-- Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Debouncer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
+- Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/math/filter/Debouncer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
 - GenericHID has been updated to static functions to use for non-defined controller types.
 - ``XboxController`` has migrated away from taking arguments in functions and instead has functions with no arguments. An example conversion is below:
@@ -77,7 +77,7 @@ We have committed to several organizational renames that will allow us greater f
 - Several packages moved from ``wpilibj`` to ``math``: ``controller``, ``estimator``, ``geometry``, ``kinematics``, ``math``, ``spline``, ``system``, ``trajectory``
 - ``wpiutil.math`` was moved to ``math``
 - ``wpiutil`` is now ``util``
-- ``SlewRateLimiter``, ``LinearFilter``, and ``MedianFilter`` now live in ``math.filters``
+- ``SlewRateLimiter``, ``LinearFilter``, and ``MedianFilter`` now live in ``math.filters``, along with the newly-added ``Debouncer``.
 - ``Timer`` has moved from ``frc2`` to ``frc``
 - Motor controllers (``VictorSPX``, ``PWMSparkMax``, etc) have been moved to a ``motorcontrol`` package.
 - ``edu.wpi.cscore`` has moved to ``edu.wpi.first.cscore``

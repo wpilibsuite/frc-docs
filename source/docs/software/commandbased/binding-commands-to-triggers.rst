@@ -158,6 +158,29 @@ The ``Trigger`` class (including its ``Button`` subclasses) can be composed to c
 
 Note that these methods return a ``Trigger``, not a ``Button``, so the ``Trigger`` binding method names must be used even when buttons are composed.
 
+Debouncing Triggers
+-------------------
+
+To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // debounces exampleButton with a 0.1s debounce time, rising edges only
+    exampleButton.debounce(0.1).whenActive(new ExampleCommand());
+
+    // debounces exampleButton with a 0.1s debounce time, both rising and falling edges
+    exampleButton.debounce(0.1, Debouncer.DebounceType.kBoth).whenActive(new ExampleCommand());
+
+  .. code-tab:: c++
+
+    // debounces exampleButton with a 100ms debounce time, rising edges only
+    exampleButton.Debounce(100_ms).WhenActive(new ExampleCommand());
+
+    // debounces exampleButton with a 100ms debounce time, both rising and falling edges
+    exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).WhenActive(new ExampleCommand());
+
 Creating Your Own Custom Trigger
 --------------------------------
 
