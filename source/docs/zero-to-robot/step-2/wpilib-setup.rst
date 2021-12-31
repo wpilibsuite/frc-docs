@@ -8,9 +8,9 @@ Prerequisites
 
 You can download the latest release of the installer from `GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
-.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed. Support for Windows 7, 8.1, and 32 bit operating systems will be removed for the 2023 season.
+.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed.
 
-.. important:: The minimum supported macOS version is Mojave (10.14.x).
+.. warning:: The following OSes will be unsupported starting 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
