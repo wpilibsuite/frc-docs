@@ -268,6 +268,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/yearly-overview/index
    docs/software/vscode-overview/index
    docs/software/dashboards/index
+   docs/software/telemetry/index
    docs/software/labview/index
    docs/software/hardware-apis/index
    docs/software/can-devices/index
