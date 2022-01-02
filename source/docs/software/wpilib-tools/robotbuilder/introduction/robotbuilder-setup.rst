@@ -26,7 +26,9 @@ The properties that describe the robot are:
 
 * **Export Commands** - Checked if RobotBuilder should export the Command classes from your project
 
-* **Wiring File** - the location of the html file that contains the wiring diagram for your robot
+* **Wiring File location** - the location of the html file to generate that contains the wiring diagram for your robot
+
+* **Desktop Support** - Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
 
 Using Source Control with the RobotBuilder Project
 --------------------------------------------------
