@@ -1,6 +1,6 @@
 {% extends '!breadcrumbs.html' %}
 
 {%- block breadcrumbs_aside %}
-{{ block.super() }}
+{{ super() }}
     <button onclick="document.location.href += '?present'">Present!</button>
 {%- endblock %}
