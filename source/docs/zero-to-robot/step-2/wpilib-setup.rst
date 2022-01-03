@@ -8,7 +8,7 @@ Prerequisites
 
 You can download the latest release of the installer from `GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
-.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed.
+.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed. MacOS and Linux require python3 installed.
 
 .. warning:: The following OSes will be unsupported starting 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
 
