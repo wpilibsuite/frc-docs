@@ -1,7 +1,7 @@
 The C++ Units Library
 =====================
 
-The 2020 release of WPILib is coupled with a `Units <https://github.com/nholthaus/units>`_ library for C++ teams.  This library leverages the C++ `type system <https://docs.microsoft.com/en-us/cpp/cpp/cpp-type-system-modern-cpp?view=vs-2019>`__ to enforce proper dimensionality for method parameters, automatically perform unit conversions, and even allow users to define arbitrary defined unit types.  Since the C++ type system is enforced at compile-time, the library has essentially no runtime cost.
+WPILib is coupled with a `Units <https://github.com/nholthaus/units>`_ library for C++ teams.  This library leverages the C++ `type system <https://docs.microsoft.com/en-us/cpp/cpp/cpp-type-system-modern-cpp?view=vs-2019>`__ to enforce proper dimensionality for method parameters, automatically perform unit conversions, and even allow users to define arbitrary defined unit types.  Since the C++ type system is enforced at compile-time, the library has essentially no runtime cost.
 
 Using the Units Library
 -----------------------
