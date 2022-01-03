@@ -16,7 +16,8 @@ Core Repository
    Styleguide & wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/README.md>
    Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/main/README-CMAKE.md>
    Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>
-   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/main/CONTRIBUTING.md#coding-guidelines>
+   Maven Artifacts <https://github.com/wpilibsuite/allwpilib/blob/main/MavenArtifacts.md>
+   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/main/CONTRIBUTING.md>
 
 NetworkTables
 -------------
