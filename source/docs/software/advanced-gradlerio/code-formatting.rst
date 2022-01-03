@@ -17,8 +17,8 @@ Necessary ``build.gradle`` changes are required to get Spotless functional. In t
 
    plugins {
       id "java"
-      id "edu.wpi.first.GradleRIO" version "2021.2.1"
-      id 'com.diffplug.spotless' version '5.5.0'
+      id "edu.wpi.first.GradleRIO" version "2022.1.1"
+      id 'com.diffplug.spotless' version '6.1.0'
    }
 
 Then ensure you add a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.
@@ -212,10 +212,10 @@ Below is an example GitHub Actions check that uses wpiformat
         with:
           python-version: 3.8
       - name: Install clang-format
-        run: sudo apt-get update -q && sudo apt-get install -y clang-format-10
+        run: sudo apt-get update -q && sudo apt-get install -y clang-format-12
       - name: Install wpiformat
         run: pip3 install wpiformat
       - name: Run
-        run: wpiformat -clang 10
+        run: wpiformat -clang 12
       - name: Check Output
         run: git --no-pager diff --exit-code HEAD
