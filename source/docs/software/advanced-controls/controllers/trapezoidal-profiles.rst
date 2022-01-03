@@ -140,7 +140,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile/Robot.java
       :language: java
       :lines: 5-
       :linenos:

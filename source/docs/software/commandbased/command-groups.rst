@@ -43,7 +43,7 @@ Users have several options for creating command groups. One way - similar to the
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
       :language: java
       :lines: 5-
       :linenos:
@@ -51,7 +51,7 @@ Users have several options for creating command groups. One way - similar to the
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -59,7 +59,7 @@ Users have several options for creating command groups. One way - similar to the
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
       :language: c++
       :lines: 5-
       :linenos:

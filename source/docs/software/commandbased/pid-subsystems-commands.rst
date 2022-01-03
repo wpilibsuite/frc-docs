@@ -107,7 +107,7 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -165,7 +165,7 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
       :language: java
       :lines: 25-39
       :linenos:
@@ -229,7 +229,7 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
       :language: c++
       :lines: 5-
       :linenos:
