@@ -97,3 +97,7 @@ $RECYCLE.BIN/
 # Virtualenvs
 venv/
 .venv/
+
+# If by any chance some Inspector temp files or the report passed through
+*.tmp
+report.md

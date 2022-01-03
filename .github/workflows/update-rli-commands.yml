@@ -1,0 +1,130 @@
+name: Update RLIs - Comment Commands
+on:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  check-rli:
+    if: contains(github.event.comment.html_url, '/pull/')  && contains(github.event.comment.body, '\inspector')
+    runs-on: ubuntu-latest
+    steps:
+      # ---- Find Trigger States ----
+      # Run Inspector autofix on everything
+      - name: Trigger-Check
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-check-all
+        with:
+          trigger: '\inspector check all'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      # Run Inspector autofix only on files changed by the PR
+      - name: Trigger-Diff
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-diff
+        with:
+          trigger: '\inspector fix diff'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      # Run Inspector autofix on everything
+      - name: Trigger-All
+        uses: khan/pull-request-comment-trigger@master
+        id: trigger-all
+        with:
+          trigger: '\inspector fix all'
+          prefix_only: true
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      # If this is a comment without a command, exit.
+      - name: Quick exit
+        if: ${{ !steps.trigger-all.outputs.triggered && !steps.trigger-check-all.outputs.triggered && !steps.trigger-diff.outputs.triggered }}
+        run: exit 1
+
+      - name: Checkout [Common]
+        uses: actions/checkout@v2
+
+      - name: Checkout PR [Comment]
+        run: gh pr checkout $NUMBER
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          NUMBER: ${{ github.event.issue.number }}
+
+      # ---- Common - Run ----
+      # Remove unchanged files, unless explicitly triggered on everything
+      - name: Remove unchanged files
+        if: steps.trigger-all.outputs.triggered == 'false' && steps.trigger-check-all.outputs.triggered == 'false'
+        run: |
+          # Fetch upstream
+          git remote add upstream https://github.com/wpilibsuite/frc-docs.git
+          git fetch upstream
+          # Delete unchanged files
+          git ls-files -- *.rst | xargs rm
+          git diff upstream/main..HEAD --name-only --diff-filter=M -- *.rst | xargs -I{} git restore {}
+          # Make sure we still have the .github directory
+          git restore .github
+
+      # Run Inspector
+      - name: Inspect RLIs
+        uses: Starlight220/Inspector@v1.0
+        id: inspector
+        with:
+          root: ${{ github.workspace }}
+        env:
+          INSPECTOR_CONFIG: '.github/workflows/inspector.json'
+
+      # If diff-autofix is triggered, restore temporarily deleted files
+      - name: Restore unchanged files
+        # No point in restoring if we're not using them
+        if: steps.trigger-diff.outputs.triggered == 'true'
+        run: |
+          git diff --name-only --diff-filter=D | xargs -I{} git restore {}
+
+      # If autofix is triggered, commit changes
+      - name: Commit
+        if: steps.trigger-all.outputs.triggered == 'true' || steps.trigger-diff.outputs.triggered == 'true'
+        run: |
+          # Set credentials
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git diff --name-only --diff-filter=Md | xargs -I{} git add {}
+          # Commit
+          git commit -m "Autofix RLIs"
+          git push
+
+      # ---- Common - Post Report ----
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Inspector Report
+          direction: last
+
+      - name: Create comment
+        if: ${{ steps.fc.outputs.comment-id == 0 }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          body: ${{ env.REPORT }}
+          issue-number: ${{ github.event.issue.number }}
+
+      - name: Update comment
+        if: ${{ steps.fc.outputs.comment-id != 0 }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          body: |
+            ${{ env.REPORT }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+
+      # If there are any outdated or invalid RLIs, fail the status check
+      - name: Set exit code
+        if: ${{ steps.inspector.outputs.up-to-date == false }}
+        run: exit 1
