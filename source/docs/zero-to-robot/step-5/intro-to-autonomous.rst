@@ -1,23 +1,23 @@
 Intro to Autonomous
 ===================
 
-Most years, each match begins with an autonomous period where the robot operates under pre-programmed instructions without user intervention. In most games teams often want to move their robot around the field during this period in order to score points. In order to assist teams approaching this for the first time, this guide provides a high level overview of how to get started with autonomous navigation. 
+Most years, each match begins with an autonomous period where the robot operates under pre-programmed instructions without user intervention. In most games teams often want to move their robot around the field during this period in order to score points. In order to assist teams approaching this for the first time, this guide provides a high level overview of how to get started with autonomous navigation.
 
 Tracking Robot Position
 -----------------------
 Before determining which approach to take and how to proceed, we need to review the fundamental concept crucial to both approaches: determining and tracking the robot’s position.
 Some ways to track robot position when navigating around the field include:
 
-- Time - The most simplistic method of measuring robot position is to execute movements for fixed periods of time. Sensors aren’t required, so it’s applicable to any robot design; however, it doesn’t actually measure anything related to the movement occurring. This means the actual amount of movement may vary depending on battery voltage, wheel slippage, or other robot changes that increase or decrease friction (resulting in the robot moving faster or slower than expected). 
+- Time - The most simplistic method of measuring robot position is to execute movements for fixed periods of time. Sensors aren’t required, so it’s applicable to any robot design; however, it doesn’t actually measure anything related to the movement occurring. This means the actual amount of movement may vary depending on battery voltage, wheel slippage, or other robot changes that increase or decrease friction (resulting in the robot moving faster or slower than expected).
 - Sensors - To get more accurate performance than timed movements, teams can use sensors to make measurements. These :ref:`sensors<docs/hardware/sensors/sensor-overview-hardware:Sensor Overview - Hardware>` fall into two main categories:
 
   - Internal sensors - These sensors measure movement of the robot or robot parts but do not use references from outside the robot. These sensors remove many of the sources of error compared to a time measurement but are still susceptible to things like wheel slip or sensor drift. Two primary types of internal sensors teams use for tracking robot position are:
-      
+
     - :ref:`Encoders<docs/hardware/sensors/encoders-hardware:Encoders - Hardware>` - measure the rotation of shafts (in this case, by extension, wheels). Encoders can track straight-line position, and somewhat track turns (many robot drivetrains experience wheel slip during turns reducing encoder reliability).
     - :ref:`Gyroscopes<docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware>` - track angular position (more specifically, they track angular speed which can be integrated to return angular position). Many gyros also have built-in accelerometers (the combination of one or more gyros and accelerometers in a single unit is commonly called an Inertial Measurement Unit or IMU) which can technically track position through double integration of acceleration measurements, but the double integration amplifies noise, typically making this measurement too noisy for FIRST Robotics Competition use.
-    
+
   Many teams find internal sensors reliable enough for general navigation but may move to external sensors when precision is needed, usually for scoring tasks.
-  
+
   - External sensors - External sensors directly measure the world around the robot. Combined with pre-existing knowledge about the field, they can be used to determine where the robot is located. External sensors include :ref:`cameras<docs/software/vision-processing/index:Vision Processing>` and distance measuring sensors such as :ref:`Laser rangefinders (LIDAR)<docs/hardware/sensors/lidar:LIDAR - Hardware>`, :ref:`IR Rangefinders<docs/hardware/sensors/triangulating-rangefinders:Triangulating Rangefinders>`, and :ref:`Ultrasonic sensors<docs/hardware/sensors/ultrasonics-hardware:Ultrasonics - Hardware>`. Teams often use external sensors when they need to be in a precise location and/or orientation relative to the field, such as for scoring tasks, though they do not have to be limited to this application.
 
 Choose an Approach
@@ -39,7 +39,7 @@ The Individual Movement Approach generally starts by developing individual code 
 
 Path Planning Approach
 ^^^^^^^^^^^^^^^^^^^^^^
-This approach generally starts by tuning a control loop(s) on the robot (generally velocity control) to enable it to follow an arbitrary path. Then, for each path you want to drive, you break the path down into “waypoints” you want the robot to drive through and use them to generate a full path. 
+This approach generally starts by tuning a control loop(s) on the robot (generally velocity control) to enable it to follow an arbitrary path. Then, for each path you want to drive, you break the path down into “waypoints” you want the robot to drive through and use them to generate a full path.
 
 .. tip:: Detail on the WPILib tools that help with this are in the :ref:`docs/software/advanced-controls/trajectories/index:Trajectory Generation and Following with WPILib` and a step-by-step tutorial can be found in the :ref:`docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial`. LabVIEW users can use `this library <https://www.chiefdelphi.com/t/v2-00-of-lv-trajectory-miscellaneous-control-state-space-control-library-release/397258/8>`__ for similar functionality.
 
@@ -52,8 +52,8 @@ Once that you’ve decided on your approach and looked at the path you are tryin
 
   - A state variable – This keeps track of the current state.
   - Conditional/Branched code – A “switch” (or case structure in LabVIEW), or series of “if” statements, inside the AutoPeriodic() method based on the state variable that describes what to do in each state.
-  
+
     - The code inside each branch should generally perform an action (such as setting motors to some speed) and then test whether criteria has been reached to move to a new state. In simple autonomous state machines, flow generally only moves forward (advancing when the target distance or angle has been reached). In more complex state machines flow can jump around and does not necessarily proceed linearly.
     - Make each branch a “building block”, setting motor speeds and checking if the target has been reached before advancing to the next state, use the overall loop around the AutoPeriodic() method from the framework instead of writing your own loop.
-    
+
   - Command-based framework – In the Command-based framework the framework has constructed a type of state machine for you. Each building block is a command where the Init() and/or Execute() method(s) command the motors and the IsFinished() method evaluates whether the target has been reached. When using more advanced controls you may end up using things like the PIDCommand or RamseteCommand which may handle some of this logic for you. To assemble the building blocks together into a routine, use CommandGroups. `Converting a Simple Autonomous Program to Command-Based <https://docs.wpilib.org/en/2021/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.html>`__ uses the “old command based” library, but the principles described should be applicable to either “new” or “old” Command-based frameworks (though some syntax may vary).
