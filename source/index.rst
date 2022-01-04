@@ -250,6 +250,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/zero-to-robot/step-2/index
    docs/zero-to-robot/step-3/index
    docs/zero-to-robot/step-4/index
+   docs/zero-to-robot/step-5/index
 
 .. toctree::
    :maxdepth: 1
