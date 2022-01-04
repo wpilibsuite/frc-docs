@@ -1,6 +1,13 @@
 {% extends '!breadcrumbs.html' %}
 
 {%- block breadcrumbs_aside %}
+<li style="float: right;">
+    <a href="?present"
+       class="btn btn-neutral"
+       style="background-color: #2980b9; color: white;">
+       Present
+       <span class="fa fa-expand"></span>
+    </a>
+</li>
 {{ super() }}
-    <button onclick="document.location.href += '?present'">Present!</button>
 {%- endblock %}
