@@ -1,6 +1,6 @@
 Trajectory Generation
 =====================
-The 2020 release of WPILib contains classes that help generating trajectories. A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field. Generation and following of trajectories is incredibly useful for performing autonomous tasks. Instead of a simple autonomous routine -- which involves moving forward, stopping, turning 90 degrees to the right, then moving forward -- using trajectories allows for motion along a smooth curve. This has the advantage of speeding up autonomous routines, creating more time for other tasks; and when implemented well, makes autonomous navigation more accurate and precise.
+WPILib contains classes that help generating trajectories. A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field. Generation and following of trajectories is incredibly useful for performing autonomous tasks. Instead of a simple autonomous routine -- which involves moving forward, stopping, turning 90 degrees to the right, then moving forward -- using trajectories allows for motion along a smooth curve. This has the advantage of speeding up autonomous routines, creating more time for other tasks; and when implemented well, makes autonomous navigation more accurate and precise.
 
 This article goes over how to generate a trajectory. The next few articles in this series will go over how to actually follow the generated trajectory. There are a few things that your robot must have before you dive into the world of trajectories:
 
@@ -59,7 +59,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
          :language: cpp
          :lines: 8-22
 
-.. note:: The Java code utilizes the `Units <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/math/util/Units.html>`_ utility, which was added to WPILib in 2020 for easy unit conversions.
+.. note:: The Java code utilizes the `Units <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/math/util/Units.html>`_ utility, for easy unit conversions.
 
 .. note:: Generating a typical trajectory takes about 10 ms to 25 ms. This isn't long, but it's still highly recommended to generate all trajectories on startup (``robotInit``).
 
