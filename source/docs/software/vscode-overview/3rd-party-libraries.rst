@@ -70,10 +70,6 @@ Libraries
 
 .. warning:: These are **not** links to directly plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature. Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.
 
-`Analog Devices ADIS16448 IMU <https://github.com/juchong/ADIS16448-roboRIO-Driver>`__ - Driver for ADIS16448 IMU. More info `here <https://wiki.analog.com/first/adis16448_imu_frc>`__
-
-`Analog Devices ADIS16470 IMU <https://github.com/juchong/ADIS16470-roboRIO-Driver>`__ - Driver for ADIS16470 IMU. More info `here <https://wiki.analog.com/first/adis16470_imu_frc>`__
-
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
 
 `CTRE Phoenix Framework <https://github.com/CrossTheRoadElec/Phoenix-Releases/releases>`__ - Contains CANcoder, CANifier, Pigeon IMU, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
