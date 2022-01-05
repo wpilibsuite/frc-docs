@@ -20,7 +20,7 @@ Installers
 All Teams
 ^^^^^^^^^
 
-.. warning:: The 2022 FRC Game Tools are not yet available, the link currently points to where they will be posted. They are expected to be available on Friday afternoon.
+.. warning:: The 2022 FRC Game Tools are not yet available, the link currently points to where they will be posted. They are expected to be available on the afternoon of 1/7/22.
 
 -  `2022 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 
@@ -35,7 +35,7 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
-.. warning:: The 2022 Java/C++ installer is not yet available, the link currently points to where it will be posted. It is expected to be available on or before Friday afternoon.
+.. warning:: The 2022 Java/C++ installer is not yet available, the link currently points to where it will be posted. It is expected to be available on or before afternoon on 1/7/22.
 
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
 
