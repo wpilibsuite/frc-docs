@@ -5,15 +5,15 @@ Programming Radios for FMS Offseason
 
 When using the FMS Offseason software, the typical networking setup is to use a single access point with a single SSID and WPA key. This means that the radios should all be programmed to connect to this network, but with different IPs for each team. The Team version of the FRC\ |reg| Bridge Configuration Utility has an FMS Offseason mode that can be used to do this configuration.
 
-Before you begin using the software:
-
-#. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
-#. Make sure no devices are connected to your computer via ethernet, other than the wireless bridge.
-
 Pre-Requisites
 --------------
 
 Install the FRC\ |reg| Radio Configuration Utility software per the instructions in :ref:`Programming your radio <docs/zero-to-robot/step-3/radio-programming:Prerequisites>`
+
+Before you begin using the software:
+
+#. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
+#. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
 
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
