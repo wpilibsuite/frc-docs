@@ -13,7 +13,7 @@ Install the FRC\ |reg| Radio Configuration Utility software per the instructions
 Before you begin using the software:
 
 #. Disable WiFi connections on your computer, as it may prevent the configuration utility from properly communicating with the bridge
-#. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack and make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter you may try connecting the PC to the alternate port on the radio.
+#. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
 
 Programmed Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^
