@@ -12,7 +12,7 @@ This article contains instructions/links to components you will want to gather i
 Documentation
 -------------
 
-This documentation can be downloaded for offline viewing. The link to download the PDF can be found `here <https://buildmedia.readthedocs.org/media/pdf/frc-docs/latest/frc-docs.pdf>`__.
+This documentation can be downloaded for offline viewing. The link to download the PDF can be found `here <https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf>`__.
 
 Installers
 ----------
@@ -20,21 +20,22 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2021 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
--  `2020 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`__ or `2020 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`__
--  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
+.. warning:: The 2022 FRC Game Tools are not yet available, the link currently points to where they will be posted. They are expected to be available on Friday afternoon.
 
-.. note:: There are no changes to the radio tool for the 2021 season so the 20.0.0 version remains the latest available.
+-  `2022 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+
+-  `2022 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1.zip>`__ or `2022 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1_IL.zip>`__
+-  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
 -  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
-.. note:: The dropdown on this page will say 2020 because the 2021 base LabVIEW version is identical to what was used in 2020.
-
 Java/C++ Teams
 ^^^^^^^^^^^^^^
+
+.. warning:: The 2022 Java/C++ installer is not yet available, the link currently points to where it will be posted. It is expected to be available on or before Friday afternoon.
 
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
 
