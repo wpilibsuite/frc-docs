@@ -24,7 +24,7 @@ Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines
 Could not determine the dependencies of task ':extractReleaseNative'.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** Error when building a robot project in non-WPILib installations
+**Issue:** Error when building a robot project in non-WPILib installations.
 
 .. code-block:: console
 
