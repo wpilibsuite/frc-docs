@@ -21,6 +21,20 @@ Invalid build due to missing GradleRIO
 
 Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to `view hidden files <https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5>`__. This issue has only shown up on Windows so far. Please `report <https://github.com/wpilibsuite/frc-docs/issues/new>`__ this issue if you get it on an alternative OS.
 
+Could not determine the dependencies of task ':extractReleaseNative'.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Error when building a robot project in non-WPILib installations
+
+.. code-block:: console
+
+   Could not determine the dependencies of task ':extractReleaseNative'.
+   > Could not resolve all files for configuration ':nativeRelease'.
+     > Failed to transform hal-cpp-2022.1.1-rc-1-osxx86.zip (edu.wpi.first.hal:hal-cpp:2022.1.1-rc-1) to match attributes {artifactType=gr-directory, org.gradle.status=release}.
+   ...
+
+**Workaround:** M1 based MacOS is not supported. The above error will show up when using an ARM-based JDK. User must use a x64 compatible JDK 11 or preferably use the WPILib installer.
+
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
