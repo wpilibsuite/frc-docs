@@ -22,7 +22,7 @@ if "%1" == "lint" goto lint
 
 if "%1" == "sizecheck" goto sizecheck
 
-%SPHINXBUILD% >NUL 2>NUL
+CALL %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
 	echo.The 'sphinx-build' command was not found. Make sure you have Sphinx
