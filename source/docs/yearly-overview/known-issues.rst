@@ -17,7 +17,7 @@ Onboard I2C Causing System Lockups
 
 Analog Devices Gyros don't work properly
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly. 
+**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly.
 
 **Workaround:** There is no known workaround. An updated image will be released when the issue has been resolved.
 
