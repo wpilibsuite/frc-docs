@@ -20,8 +20,6 @@ Installers
 All Teams
 ^^^^^^^^^
 
-.. warning:: The 2022 FRC Game Tools are not yet available, the link currently points to where they will be posted. They are expected to be available on the afternoon of 1/7/22.
-
 -  `2022 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 
 -  `2022 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1.zip>`__ or `2022 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1_IL.zip>`__
