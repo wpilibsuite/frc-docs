@@ -685,7 +685,7 @@ sphinx = ">=2.0"
 
 [[package]]
 name = "sphinxext-presentations"
-version = "0.2.1"
+version = "0.2.2"
 description = "Sphinx Extension that turns documentation into presentations."
 category = "main"
 optional = false
@@ -793,7 +793,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "79040bc57da477aa96afacc4e07c4378637cfd9c3f6b82f6298e309fe640fe20"
+content-hash = "cf539e52504265fe0f15c692bdb0a8fec267ef06a17643ad640ec8a313e0cd61"
 
 [metadata.files]
 alabaster = [
@@ -1258,8 +1258,8 @@ sphinxext-photofinish = [
     {file = "sphinxext_photofinish-0.1.8-py3-none-any.whl", hash = "sha256:48bbd2e7cae703ee905f6605937321a5ced8af960eb4aff1aed21203c58b881a"},
 ]
 sphinxext-presentations = [
-    {file = "sphinxext-presentations-0.2.1.tar.gz", hash = "sha256:a673ff522366bb410df6793a1a9517e19f6036cf688b87fba47cf1a55ebbae88"},
-    {file = "sphinxext_presentations-0.2.1-py3-none-any.whl", hash = "sha256:b4d56ae511c0b3416b9c4e34147bd34ea780a56dba78e807742d755eb84e452c"},
+    {file = "sphinxext-presentations-0.2.2.tar.gz", hash = "sha256:fb9c86fb3790fc0f5eb8a3f5824cfa75b13a6481079de95ceef95ab36db3a018"},
+    {file = "sphinxext_presentations-0.2.2-py3-none-any.whl", hash = "sha256:11d285286224c631893dcce1659b925dcdb9e52757a41a3e78796c4b21a87489"},
 ]
 sphinxext-rediraffe = [
     {file = "sphinxext-rediraffe-0.2.5.tar.gz", hash = "sha256:a17287cdee7763341b91762879e042b33a4916d6a2fc6d2f97a18107325bd2cc"},
