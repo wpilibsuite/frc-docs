@@ -10,11 +10,23 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 --------------------------
 
-.. figure:: images/frc-control-system-layout.svg
-  :alt: Layout of all of the core components of the control system and how they are connected.
-  :width: 500
+.. tabs::
 
-  Diagram courtesy of FRC Team 3161 and Stefen Acepcion.
+   .. group-tab:: REV
+
+      .. figure:: images/frc-control-system-layout-rev.svg
+         :alt: Layout of all popular components of the control system including REV Control System Components
+         :width: 500
+
+      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+
+   .. group-tab:: CTRE
+
+      .. figure:: images/frc-control-system-layout.svg
+        :alt: Layout of all of the core components of the control system and how they are connected.
+        :width: 500
+
+      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 NI roboRIO
 ----------

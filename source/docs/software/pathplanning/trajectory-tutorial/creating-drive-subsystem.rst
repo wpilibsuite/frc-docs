@@ -9,7 +9,7 @@ The full drive class from the RamseteCommand Example Project (`Java <https://git
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -17,7 +17,7 @@ The full drive class from the RamseteCommand Example Project (`Java <https://git
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -25,7 +25,7 @@ The full drive class from the RamseteCommand Example Project (`Java <https://git
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -45,7 +45,7 @@ The encoder ports are specified in the encoder's constructor, like so:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
       :lines: 35-47
       :linenos:
@@ -53,7 +53,7 @@ The encoder ports are specified in the encoder's constructor, like so:
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
       :lines: 17-18
       :linenos:
@@ -68,19 +68,19 @@ The distance per pulse is specified by calling the encoder's ``setDistancePerPul
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 58-60
+      :lines: 63-64
       :linenos:
-      :lineno-start: 58
+      :lineno-start: 63
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b422665a3c67be506203f0c66d1d71365d4d1290/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 20-22
+      :lines: 26-27
       :linenos:
-      :lineno-start: 20
+      :lineno-start: 26
 
 Encoder Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,19 +93,19 @@ To access the values measured by the encoders, we include the following method:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 81-89
+      :lines: 86-93
       :linenos:
-      :lineno-start: 82
+      :lineno-start: 86
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 68-71
+      :lines: 82-85
       :linenos:
-      :lineno-start: 68
+      :lineno-start: 82
 
 We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object for easier integration with the ``RamseteCommand`` class later on.
 
@@ -118,19 +118,19 @@ The gyroscope measures the rate of change of the robot's heading (which can then
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 48-49
+      :lines: 50-51
       :linenos:
-      :lineno-start: 48
+      :lineno-start: 50
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
       :language: c++
-      :lines: 143-144
+      :lines: 140-141
       :linenos:
-      :lineno-start: 143
+      :lineno-start: 140
 
 Gyroscope Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,19 +141,19 @@ To access the current heading measured by the gyroscope, we include the followin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 173-180
+      :lines: 174-181
       :linenos:
-      :lineno-start: 173
+      :lineno-start: 174
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 64-66
+      :lines: 70-72
       :linenos:
-      :lineno-start: 64
+      :lineno-start: 70
 
 Configuring the Odometry
 ------------------------
@@ -166,19 +166,19 @@ First, we create a member instance of the ``DifferentialDriveOdometry`` class:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 51-52
+      :lines: 52-53
       :linenos:
-      :lineno-start: 51
+      :lineno-start: 53
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
       :language: c++
-      :lines: 146-147
+      :lines: 143-144
       :linenos:
-      :lineno-start: 146
+      :lineno-start: 143
 
 Updating the Odometry
 ^^^^^^^^^^^^^^^^^^^^^
@@ -189,19 +189,19 @@ The odometry class must be regularly updated to incorporate new readings from th
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 66-71
+      :lines: 70-75
       :linenos:
-      :lineno-start: 66
+      :lineno-start: 70
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 30-35
+      :lines: 32-37
       :linenos:
-      :lineno-start: 30
+      :lineno-start: 32
 
 Odometry Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -212,19 +212,19 @@ To access the robot's current computed pose, we include the following method:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 72-80
+      :lines: 77-84
       :linenos:
-      :lineno-start: 72
+      :lineno-start: 74
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 70-70
+      :lines: 78-80
       :linenos:
-      :lineno-start: 70
+      :lineno-start: 78
 
 Voltage-Based Drive Method
 --------------------------
@@ -235,18 +235,18 @@ Finally, we must include one additional method - a method that allows us to set 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
       :language: java
-      :lines: 110-121
+      :lines: 115-125
       :linenos:
-      :lineno-start: 110
+      :lineno-start: 125
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aa9dfabde2fdaf32541697de2159878faa801fa1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
-      :lines: 41-44
+      :lines: 43-47
       :linenos:
-      :lineno-start: 41
+      :lineno-start: 43
 
 It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured characterization data), this is essential to ensuring their accuracy.

@@ -5,13 +5,6 @@ Programming your Radio
 
 This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
-Before you begin using the software:
-
-1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
-2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack and make sure no other devices are connected to your computer via ethernet.
-
-.. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
-
 Prerequisites
 -------------
 
@@ -19,15 +12,20 @@ The FRC Radio Configuration Utility requires administrator privileges to configu
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-.. note:: There are no changes to this tool for the 2021 season so the 20.0.0 version is still the latest available.
+`FRC Radio Configuration 22.0.1 <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1.zip>`_
 
-`FRC Radio Configuration 20.0.0 <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_
-
-`FRC Radio Configuration 20.0.0 Israel Version <https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_
+`FRC Radio Configuration 22.0.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1_IL.zip>`_
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
 .. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=hotspot>`__.
+
+Before you begin using the software:
+
+1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
+2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
+
+.. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
 Application Notes
 -----------------
@@ -114,11 +112,11 @@ Use the pop-up window to select the which ethernet interface the configuration u
 Open Mesh Firmware Note
 -----------------------
 
-For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware. OM5P-AC radios in the 2019 KoP should not need an update.
+For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware.
 
 If you do not need to update or re-load the firmware, skip the next step.
 
-.. warning:: Radios used in 2019 **do not** need to be updated before configuring, the 2020 tool uses the same 2019 firmware.
+.. warning:: Radios used in 2019/2020/2021 **do not** need to be updated before configuring, the 2022 tool uses the same 2019 firmware.
 
 Loading FRC Firmware to Open Mesh Radio
 ---------------------------------------
@@ -209,6 +207,8 @@ Troubleshooting
 - :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
 - Make sure you wait long enough that the power light has stayed solid for 10 seconds.
 - Make sure you have the correct network interface, and only one interface is listed in the drop-down.
+- Make sure your firewall is turned off.
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
 - If using a foreign language Operating System, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
+- If all else fails, try a different computer.
