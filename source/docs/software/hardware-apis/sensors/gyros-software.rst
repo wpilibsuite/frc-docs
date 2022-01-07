@@ -106,7 +106,7 @@ The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface. 
 Pigeon
 ^^^^^^
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://www.ctr-electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__ contains full details on using the Pigeon.
+The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://newsite.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
 
 .. tabs::
 
