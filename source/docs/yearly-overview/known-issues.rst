@@ -15,6 +15,26 @@ Onboard I2C Causing System Lockups
 
 **Workaround:** The only surefire mitigation is to use the MXP I2C port instead. Acessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
+Analog Devices Gyros don't work properly
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly.
+
+**Workaround:** There is no known workaround. An updated image will be released when the issue has been resolved.
+
+Game Tools Autorun graphics say 2020
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** If you launch the Game Tools installer by using the Autorun file, the menu item correctly says 2022, but the graphic says 2020.
+
+**Workaround:** This can be safely ignored, if the menu item says 2022, you are installing the correct software.
+
+Updating Properties on roboRIO 2.0 may be slow or hang
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Updating the properties on a roboRIO 2.0 without reformatting using the Imaging Tool (such as setting the team number) may be slow or hang.
+
+**Workaround:** After a few minutes of the tool waiting the roboRIO should be able to be rebooted and the new properties should be set.
+
 Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
