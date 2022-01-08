@@ -98,3 +98,10 @@ The WPILib old and :doc:`new </docs/software/commandbased/index>` command librar
 `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
 
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
+
+Romi Library
+------------
+
+A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
+
+`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
