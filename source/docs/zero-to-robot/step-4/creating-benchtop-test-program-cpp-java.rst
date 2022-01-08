@@ -96,7 +96,7 @@ Defining the variables for our sample robot
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
          :lines: 19-23
          :linenos:
@@ -104,17 +104,17 @@ Defining the variables for our sample robot
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 12-17
+         :lines: 12-20
          :linenos:
          :lineno-start: 12
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 46-54
+         :lines: 49-57
          :linenos:
-         :lineno-start: 46
+         :lineno-start: 49
 
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1. Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and time (m_timer). This section of the code does three things:
 
@@ -147,19 +147,19 @@ Simple Autonomous Example
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
-         :lines: 32-48
+         :lines: 38-54
          :linenos:
-         :lineno-start: 32
+         :lineno-start: 38
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 18-33
+         :lines: 22-37
          :linenos:
-         :lineno-start: 18
+         :lineno-start: 22
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we reset the ``Timer`` and then start it in this method.
 
@@ -172,19 +172,19 @@ Joystick Control for teleoperation
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
-         :lines: 50-58
+         :lines: 56-64
          :linenos:
-         :lineno-start: 50
+         :lineno-start: 56
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 35-40
+         :lines: 38-43
          :linenos:
-         :lineno-start: 35
+         :lineno-start: 38
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
@@ -195,19 +195,19 @@ Test Mode
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
-         :lines: 60-67
+         :lines: 66-73
          :linenos:
-         :lineno-start: 60
+         :lineno-start: 66
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 42-44
+         :lines: 45-47
          :linenos:
-         :lineno-start: 42
+         :lineno-start: 45
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
