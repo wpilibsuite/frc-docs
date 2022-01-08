@@ -73,7 +73,7 @@ Imports/Includes
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
          :lines: 7-11
          :linenos:
@@ -81,7 +81,7 @@ Imports/Includes
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
          :lines: 5-10
          :linenos:

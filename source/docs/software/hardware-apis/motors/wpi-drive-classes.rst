@@ -264,7 +264,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
       :language: cpp
       :lines: 30-43
       :linenos:
