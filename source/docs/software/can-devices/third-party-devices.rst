@@ -73,8 +73,8 @@ REV Motor Controllers
 
 - **SPARK MAX**
 
-    - API Documentation (`Java <https://www.revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANSparkMax.html>`__, `C++ <https://www.revrobotics.com/content/sw/max/sw-docs/cpp/classrev_1_1_c_a_n_spark_max.html>`__)
-    - `Technical Manual <https://www.revrobotics.com/sparkmax-users-manual/>`__
+    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html>`__, `C++ <https://codedocs.revrobotics.com/cpp/namespacerev.html>`__)
+    - `Technical Manual <https://docs.revrobotics.com/sparkmax/>`__
 
 Playing With Fusion
 -------------------
