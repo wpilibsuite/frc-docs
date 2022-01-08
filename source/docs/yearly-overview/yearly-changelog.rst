@@ -185,3 +185,8 @@ SysID
 :doc:`SysId </docs/software/pathplanning/robot-characterization/index>` is a fully featured system characterization utility that supersedes frc-characterization. It features an easy-to-use interface, advanced graphing analytics, Romi integration and other cool features!.
 
 .. important:: frc-characterization is discontinued and is no longer supported!
+
+Romi
+----
+
+- A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example. `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.

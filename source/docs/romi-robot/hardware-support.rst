@@ -28,10 +28,16 @@ Compatible Classes
 
 All classes listed here are supported by the Romi Robot. If a class is not listed here, assume that it is not supported and *will not* work.
 
+- PWM Motor Controllers (i.e. ``Spark``)
 - ``Encoder``
-- ``RomiGyro``
-- ``RomiMotor``
 - ``AnalogInput``
 - ``DigitalInput``
 - ``DigitalOutput``
 - ``Servo``
+- ``BuiltInAccelerometer``
+
+The following classes are provided by the `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
+
+- ``RomiGyro``
+- ``RomiMotor``
+- ``OnboardIO``
