@@ -6,7 +6,7 @@ Telemetry: Recording Data on the Robot
 Recording Data from Robot Code
 ------------------------------
 
-.. note:: On-robot logging of telemetry data is not yet fully supported by WPILib (it is currently scheduled for 2023).  In the mean-time, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
+.. note:: On-robot logging of telemetry data is not yet fully supported by WPILib (it is currently scheduled for a mid-season update).  In the mean-time, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
 
 WPILib supports several different ways to record and report telemetry data on the driver station.
 

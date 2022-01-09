@@ -48,7 +48,7 @@ Ensuring Safety with setSafeState and setActuator
 
 Since ``Sendable`` allows users to consume arbitrary values from the dashboard, it is possible for users to pipe dashboard controls directly to robot actuations.  This is extremely unsafe if not done with care; dashboards are not a particularly good interface for controlling robot movement, and users generally do not expect the robot to move in response to a change on the dashboard.
 
-To help users ensure safety when interfacing with dashboard values, ``SendableBuilder`` exposes a ``setSafeMode`` method, which is called to place any ``Sendable`` mechanism that actuates based on dashboard input into a safe state.  Any potentially hazardous user-written ``Sendable`` implementation should call ``setSafeMode`` with a suitable safe state implementation.  For example, here is the implementation from the WPILib ``PWMMotorController`` class:
+To help users ensure safety when interfacing with dashboard values, ``SendableBuilder`` exposes a ``setSafeState`` method, which is called to place any ``Sendable`` mechanism that actuates based on dashboard input into a safe state.  Any potentially hazardous user-written ``Sendable`` implementation should call ``setSafeState`` with a suitable safe state implementation.  For example, here is the implementation from the WPILib ``PWMMotorController`` class:
 
 .. tabs::
 
