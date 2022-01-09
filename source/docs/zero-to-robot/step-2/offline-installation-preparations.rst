@@ -33,11 +33,9 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
-.. warning:: The 2022 Java/C++ installer is not yet available, the link currently points to where it will be posted. It is expected to be available on or before afternoon on 1/7/22.
-
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
 
-.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and download VS Code for all platforms and save the downloaded VS Code zip file for future offline installations.
+.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select "Create VS Code zip to share with other computers/OSes for offiline install" and save the downloaded VS Code zip file for future offline installations.
 
 3rd Party Libraries/Software
 ----------------------------
