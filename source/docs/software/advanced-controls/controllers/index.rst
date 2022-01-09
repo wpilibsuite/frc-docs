@@ -13,3 +13,4 @@ This section describes various WPILib feedback and feedforward controller classe
    combining-feedforward-feedback
    trapezoidal-profiles
    profiled-pidcontroller
+   bang-bang
