@@ -63,7 +63,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
          :language: cpp
          :lines: 18-30
          :linenos:
