@@ -12,8 +12,6 @@ Reading and Writing Preferences
 
     public class Robot extends TimedRobot {
 
-      Preferences prefs;
-
       double armUpPosition;
       double armDownPosition;
 
@@ -26,8 +24,6 @@ Reading and Writing Preferences
   .. code-tab:: c++
 
     class Robot: public TimedRobot {
-
-      frc::Preferences *prefs;
 
       double armUpPosition;
       double armDownPosition;
