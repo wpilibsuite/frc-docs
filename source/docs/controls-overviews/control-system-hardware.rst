@@ -215,7 +215,7 @@ Talon Motor Controller
 
 .. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
-The `Talon Motor Controller <https://ctr-electronics.com/Talon_User_Manual_1_1.pdf>`__ from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
+The `Talon Motor Controller <https://files.andymark.com/Talon_User_Manual_1_3.pdf>`__ from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
 
 Victor 888 Motor Controller / Victor 884 Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
