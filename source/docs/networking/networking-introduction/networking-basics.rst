@@ -93,7 +93,7 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 Available Network Ports
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Please see `R60A <https://firstfrc.blob.core.windows.net/frc2021/Manual/HTML/2021FRCGameManual.htm#R60>`__ of the 2021 Game Manual for information regarding available network ports.
+Please see R704 of the 2022 Game Manual for information regarding available network ports.
 
 mDNS
 ----
