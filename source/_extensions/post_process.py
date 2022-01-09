@@ -14,6 +14,8 @@ from .post_process_tasks.fontawesome import (
     cleanup_fontawesome_font_files,
 )
 
+from .post_process_tasks.systemfonts import switch_to_system_fonts
+
 READTHEDOCS_BUILDERS = ["readthedocs", "readthedocsdirhtml"]
 
 
@@ -31,6 +33,7 @@ def do(app: Sphinx, exception: Union[Exception, None]) -> None:
     # The two fontawesome functions must run in order
     cleanup_fontawesome_css(app)
     cleanup_fontawesome_font_files(app)
+    switch_to_system_fonts(app)
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
