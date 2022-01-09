@@ -29,9 +29,9 @@ Project Parameters
 
 :guilabel:`Unit Type` is the units you are using and the units that SysID will export the gains in.
 
-:guilabel:`Units Per Rotation` defines anything that affects the change from rotations of the encoder shaft to the units selected above.  As an example say you are using a TalonFX motor controller with its integrated encoder, the KOP chassis, and units of meters.  The encoder is inside the motor so we have to account for the gearing of the gearbox which is 10.71:1.  We also have to take into account how our wheel will change the distance we have traveled per rotation.  The standard chassis has 6" (0.1524 meters) diameter wheels, so to get the circumference we need to multiply by Pi.  The calculation looks like:
+:guilabel:`Units Per Rotation` defines anything that affects the change from rotations of the output shaft to the units selected above.  As an example say you are using a KOP chassis and units of meters.  The gearing is already accounted for in the generator.  We have to take into account how our wheel will change the distance we have traveled per rotation.  The standard chassis has 6" (0.1524 meters) diameter wheels, so to get the circumference we need to multiply by Pi.  The calculation looks like:
 
-.. math:: Units Per Rotation = (1 / 10.71) \cdot (0.1524 \cdot \pi)
+.. math:: Units Per Rotation = 0.1524 \cdot \pi
 
 Voltage Parameters
 ------------------
