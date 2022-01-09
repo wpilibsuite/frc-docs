@@ -31,6 +31,6 @@ To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``put
 
     .. code-tab:: cpp
 
-        frc::SmartDashboard::PutData("Arm PID", armPIDController);
+        frc::SmartDashboard::PutData("Arm PID", &armPIDController);
 
 Additionally, some ``Sendable`` classes bind setters to the data values sent *from the dashboard to the robot*, allowing remote tuning of robot parameters.
