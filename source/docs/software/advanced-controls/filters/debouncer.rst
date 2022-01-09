@@ -10,8 +10,8 @@ Modes
 
 The WPILib ``Debouncer`` can be configured in three different modes:
 
-  * Rising (default): debounces rising edges (transitions from `false` to `true`) only.
-  * Falling: debounces falling edges (transitions from `true` to `false`) only.
+  * Rising (default): Debounces rising edges (transitions from `false` to `true`) only.
+  * Falling: Debounces falling edges (transitions from `true` to `false`) only.
   * Both: Debounces all transitions.
 
 Usage
