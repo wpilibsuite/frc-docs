@@ -23,7 +23,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
            :linenos:
            :lineno-start: 58
 
-In order to enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
+To enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
 
 The SendableBuilder Class
 -------------------------
