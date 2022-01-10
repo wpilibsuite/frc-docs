@@ -49,7 +49,7 @@ The next step is to make the deploy task depend on the task you created, so that
 
 .. code-block:: groovy
 
-   deploy.targets.roborio.artifacts.frcStaticFileDeploy.deployTask.dependsOn(writeBranchName)
+   deploy.targets.roborio.artifacts.frcStaticFileDeploy.dependsOn(writeBranchName)
 
 Deploying Commit Hash
 ---------------------
@@ -84,7 +84,7 @@ Next is to create a task in ``build.gradle`` that runs this command and writes t
       ).text = commitHash
    }
 
-   deploy.targets.roborio.artifacts.frcStaticFileDeploy.deployTask.dependsOn(writeCommitHash)
+   deploy.targets.roborio.artifacts.frcStaticFileDeploy.dependsOn(writeCommitHash)
 
 Ignoring Generated Files with Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,6 +108,6 @@ In order to access files that were written to the deploy directory in code, you 
 
    File deployDir = Filesystem.getDeployDirectory();
    File branchFile = new File(deployDir, "branch.txt");
-   File commitFile = new FIle(deployDir, "commit.txt");
+   File commitFile = new File(deployDir, "commit.txt");
 
 For more information on how to interact with the file objects, see the documentation of the `File <https://docs.oracle.com/javase/7/docs/api/java/io/File.html>`__ class.
