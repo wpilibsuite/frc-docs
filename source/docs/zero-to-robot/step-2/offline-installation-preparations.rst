@@ -35,7 +35,7 @@ Java/C++ Teams
 
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
 
-.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select "Create VS Code zip to share with other computers/OSes for offiline install" and save the downloaded VS Code zip file for future offline installations.
+.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select :guilabel:`Install for this User` then :guilabel:`Create VS Code zip to share with other computers/OSes for offline install` and save the downloaded VS Code zip file for future offline installations.
 
 3rd Party Libraries/Software
 ----------------------------
