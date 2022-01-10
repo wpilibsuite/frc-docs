@@ -6,89 +6,101 @@ Operating pneumatic cylinders
 Using the FRC Control System to control Pneumatics
 --------------------------------------------------
 
-.. note:: The Pneumatics Control Module (PCM) is a CAN-based device that provides complete control over the compressor and up to 8 solenoids per module. The PCM is integrated into WPILib through a series of classes that make it simple to use. The closed loop control of the Compressor and Pressure switch is handled by the PCM hardware and the Solenoids are handled by the upgraded Solenoid class that now controls the solenoid channels on the PCM. An additional PCM module can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the Solenoid and Compressor classes.
+There are two options for operating solenoids to control pneumatic cylinders, the CTRE Pneumatics Control Module and the REV Robotics Pneumatics Hub.
 
-.. image:: images/pneumatics-control-module.png
-    :alt: The Pneumatics Control Module (PCM).
+The CTRE Pneumatics Control Module (PCM) is a CAN-based device that provides control over the compressor and up to 8 solenoids per module.
+
+.. image:: /docs/controls-overviews/images/control-system-hardware/pneumatics-control-module.png
+    :alt: The Pneumatics Control Module (PCM)
     :width: 400
 
-The Pneumatics Control Module from CTR Electronics is responsible for regulating the robot's pressure using a pressure switch and a compressor and switching solenoids on and off. The PCM communicates with the roboRIO over CAN. For more information, see `FRC Control System Hardware Overview`
+The REV Pneumatic Hub (PCH) is a CAN-based device that provides control over the compressor and up to 16 solenoids per module.
 
-PCM Module Numbers
-------------------
+.. image:: /docs/controls-overviews/images/control-system-hardware/pneumatic-hub.png
+    :alt: The Pneumatic Hub
+    :width: 400
 
-PCM Modules are identified by their Node ID. The default Node ID for PCMs is 0. If using a single PCM on the bus it is recommended to leave it at the default Node ID.
+These devices are integrated into WPILib through a series of classes that make them simple to use. The closed loop control of the Compressor and Pressure switch is handled by the PCM hardware and the Solenoids are handled by the ``Solenoid`` class that controls the solenoid channels.
+These modules are responsible for regulating the robot's pressure using a pressure switch and a compressor and switching solenoids on and off. They communicate with the roboRIO over CAN. For more information, see :doc:`/docs/controls-overviews/control-system-hardware`
+
+Module Numbers
+--------------
+
+CAN Devices are identified by their Node ID. The default Node ID for PCMs is 0. The default Node ID for PCHs is 1. If using a single module on the bus it is recommended to leave it at the default Node ID. Additional modules can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the ``Solenoid`` and ``Compressor`` classes.
+
 
 Generating and Storing Pressure
 -------------------------------
 
-In FRC\ |reg|, pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor doesn't necessarily have to be on the robot, but must be powered by the robot's PCM(s). The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the PCM will automatically turn the compressor on when the pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using a Compressor, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object.
+Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor doesn't necessarily have to be on the robot, but must be powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__ / `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object.
 
-.. note:: The Pneumatics Control Module from Cross the Road Electronics allows for integrated closed loop control of a compressor. Creating any instance of a Solenoid or Double Solenoid object will enable the Compressor control on the corresponding PCM. The Compressor object is only needed if you want the ability to turn off the compressor or query compressor status.
+.. note:: The Compressor object is only needed if you want the ability to turn off the compressor, change the pressure sensor (PCH only), or query compressor status.
 
 .. tabs::
 
     .. code-tab:: java
 
-        Compressor c = new Compressor(0, PneumaticsModuleType.CTREPCM);
+        Compressor pcm = new Compressor(0, PneumaticsModuleType.CTREPCM);
+        Compressor pch = new Compressor(1, PneumaticsMOduleType.REVPH);
 
-        c.setClosedLoopControl(true);
-        c.setClosedLoopControl(false);
+        pcm.enableDigital();
+        pcm.disable();
 
-        boolean enabled = c.enabled();
-        boolean pressureSwitch = c.getPressureSwitchValue();
-        double current = c.getCompressorCurrent();
+        boolean enabled = pcm.enabled();
+        boolean pressureSwitch = pcm.getPressureSwitchValue();
+        double current = pcm.getCompressorCurrent();
 
     .. code-tab:: c++
 
-        frc::Compressor c{0, frc::PneumaticsModuleType::CTREPCM};
+        frc::Compressor pcm{0, frc::PneumaticsModuleType::CTREPCM};
+        frc::Compressor pch{1, frc::PneumaticsModuleType::REVPH};
 
-        c.SetClosedLoopControl(true);
-        c.SetClosedLoopControl(false);
+        pcm.EnableDigital();
+        pcm.Disable();
 
-        bool enabled = c.Enabled();
-        bool pressureSwitch = c.GetPressureSwitchValue();
-        double current = c.GetCompressorCurrent();
+        bool enabled = pcm.Enabled();
+        bool pressureSwitch = pcm.GetPressureSwitchValue();
+        double current = pcm.GetCompressorCurrent();
 
 
-
+The Pneumatic Hub also has methods for enabling compressor control using the REV Analag Pressure Sensor (``enableAnalog`` method).
 
 Solenoid control
 ----------------
 
-FRC teams use solenoids to perform a variety of tasks, from shifting gearboxes to operating robot mechanisms. A solenoid is a valve used to electronically switch a pressurized air line "on" or "off". For more information on solenoids, see `this wikipedia article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled by a robot's Pneumatics Control Module, or PCM, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the small red LED (which indicates if the valve is "on" or not), and solenoids can be manually actuated when un-powered with the small button adjacent to the LED.
+FRC teams use solenoids to perform a variety of tasks, from shifting gearboxes to operating robot mechanisms. A solenoid is a valve used to electronically switch a pressurized air line "on" or "off". For more information on solenoids, see `this wikipedia article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the LEDs on the PCM or PCH (which indicates if the valve is "on" or not), and solenoids can be manually actuated when un-powered with the small button adjacent to the LED.
 
 Single acting solenoids apply or vent pressure from a single output port. They are typically used either when an external force will provide the return action of the cylinder (spring, gravity, separate mechanism) or in pairs to act as a double solenoid. A double solenoid switches air flow between two output ports (many also have a center position where neither output is vented or connected to the input). Double solenoid valves are commonly used when you wish to control both the extend and retract actions of a cylinder using air pressure. Double solenoid valves have two electrical inputs which connect back to two separate channels on the solenoid breakout.
-
-PCM Modules are identified by their CAN Device ID. The default CAN ID for PCMs is 0. If using a single PCM on the bus it is recommended to leave it at the default CAN ID. This ID can be changed with the Phoenix Tuner application, in addition to other debug information. Instructions to download Phoenix Tuner can be found `here <https://github.com/CrossTheRoadElec/Phoenix-Releases/blob/master/README.md>`__ and the installer files can be found `here <https://github.com/CrossTheRoadElec/Phoenix-Releases/releases/latest>`__. For more information about setting PCM CAN ID see this important :ref:`notice <docs/zero-to-robot/step-2/index:Step 2: Installing Software>`.
 
 Single Solenoids in WPILib
 --------------------------
 
-Single solenoids in WPILib are controlled using the Solenoid class. To construct a Solenoid object, simply pass the desired port number (assumes CAN ID 0) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call set(true) to enable or set(false) to disable the solenoid output.
+Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Solenoid.html>`__ / `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_solenoid.html>`__). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call set(true) to enable or set(false) to disable the solenoid output.
 
 .. tabs::
 
     .. code-tab:: java
 
-        Solenoid exampleSolenoid = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
+        Solenoid exampleSolenoidPCM = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
+        Solenoid exampleSolenoidPCH = new Solenoid(PneumaticsModuleType.REVPH, 1);
 
-        exampleSolenoid.set(true);
-        exampleSolenoid.set(false);
+        exampleSolenoidPCM.set(true);
+        exampleSolenoidPCM.set(false);
 
     .. code-tab:: c++
 
-        frc::Solenoid exampleSolenoid{frc::PneumaticsModuleType::CTREPCM, 1};
+        frc::Solenoid exampleSolenoidPCM{frc::PneumaticsModuleType::CTREPCM, 1};
+        frc::Solenoid exampleSolenoidPCH{frc::PneumaticsModuleType::REVPH, 1};
 
-        exampleSolenoid.Set(true);
-        exampleSolenoid.Set(false);
+        exampleSolenoidPCM.Set(true);
+        exampleSolenoidPCM.Set(false);
 
 
 
 Double Solenoids in WPILib
 --------------------------
 
-Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to kOff (neither output activated), kForward (forward channel enabled) or kReverse (reverse channel enabled). Additionally, the PCM CAN ID can be passed to the DoubleSolenoid if teams have a non-standard PCM CAN ID.
+Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__. These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to `kOff` (neither output activated), `kForward` (forward channel enabled) or `kReverse` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-standard CAN ID.
 
 .. tabs::
 
@@ -99,22 +111,22 @@ Double solenoids are controlled by the DoubleSolenoid class in WPILib. These are
         // further reading is available at https://www.geeksforgeeks.org/static-import-java/
         import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
-        DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-        DoubleSolenoid anotherDoubleSolenoid = new DoubleSolenoid(/* The PCM CAN ID */ 9, PneumaticsModuleType.CTREPCM, 4, 5);
+        DoubleSolenoid exampleDoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+        DoubleSolenoid exampleDoublePCH = new DoubleSolenoid(/* The CAN ID */ 9, PneumaticsModuleType.REVPH, 4, 5);
 
 
-        exampleDouble.set(kOff);
-        exampleDouble.set(kForward);
-        exampleDouble.set(kReverse);
+        exampleDoublePCM.set(kOff);
+        exampleDoublePCM.set(kForward);
+        exampleDoublePCM.set(kReverse);
 
    .. code-tab:: c++
 
-        frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
-        frc::DoubleSolenoid anotherDoubleSolenoid{/* The PCM CAN ID */ 9, frc::PneumaticsModuleType::CTREPCM, 4, 5};
+        frc::DoubleSolenoid exampleDoublePCM{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+        frc::DoubleSolenoid exampleDoublePCH{/* The CAN ID */ 9, frc::PneumaticsModuleType::REVPH, 4, 5};
 
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kOff);
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kForward);
-        exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kOff);
+        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kForward);
+        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kReverse);
 
 Toggling Solenoids
 ------------------
@@ -155,7 +167,34 @@ Solenoids can be switched from one output to the other (known as toggling) by us
 Pressure Transducers
 --------------------
 
-One can connect a pressure transducer to measure the pressure stored in a pneumatic system. These transducers connect to the Analog Input ports on the roboRIO, and can be read by the AnalogInput or AnalogPotentiometer classes in WPILib.
+A pressure transducer is a sensor where analog voltage is proportial to the measured pressure.
+
+Pneumatic Hub
+^^^^^^^^^^^^^
+
+The Pneumatic Hub has analog inputs that may be used to read a pressure transducer using the Compressor class.
+
+
+.. tabs::
+
+    .. code-tab:: java
+
+        Compressor pch = new Compressor(1, PneumaticsMOduleType.REVPH);
+
+        double current = pch.getPressure();
+
+    .. code-tab:: c++
+
+        #include <units/pressure.h>
+
+        frc::Compressor pch{1, frc::PneumaticsModuleType::REVPH};
+
+        units::pounds_per_square_inch_t current = pch.GetPressure();
+
+roboRIO
+^^^^^^^
+
+A pressure transducer can be connected to the Analog Input ports on the roboRIO, and can be read by the AnalogInput or AnalogPotentiometer classes in WPILib.
 
 .. tabs::
 

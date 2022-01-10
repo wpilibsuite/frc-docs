@@ -27,7 +27,7 @@ A motor controller is responsible on your robot for making motors move. For brus
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of January 2020:
+Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2022:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
 - Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to PWM only
@@ -38,11 +38,12 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 - Talon FX Motor Controller (P/N: 217-6515, 19-708850, am-6515, am-6515_Short) for controlling integral Falcon 500 only
 - Talon Motor Controller (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)
 - Talon SRX Motor Controller (P/N: 217-8080, am-2854, 14-838288)
+- Venom Motor with Controller (P/N BDC-10001) for controlling integral motor only​
 - Victor 884 Motor Controller (P/N: VICTOR-884-12/12)
 - Victor 888 Motor Controller (P/N: 217-2769)
 - Victor SP Motor Controller (P/N: 217-9090, am-2855, 14-868380)
 - Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)
-- Venom Motor with Controller (P/N BDC-10001) for controlling integral motor only​
+
 
 Pneumatics
 ----------
@@ -53,6 +54,7 @@ FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Pneumatics Control Module (P/N: am-2858, 217-4243)
+- Pneumatic Hub (P/N REV-11-1852)
 
 Relays
 ------
@@ -63,3 +65,4 @@ FRC Legal Relay Modules
 ^^^^^^^^^^^^^^^^^^^^^^^
 - Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
 - Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
+- Power Distribution Hub (PDH) switched channel (P/N REV-11-1850)
