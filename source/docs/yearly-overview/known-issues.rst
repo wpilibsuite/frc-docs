@@ -60,7 +60,7 @@ Unable to Build Robot Projects outside of VS Code on M1-based macOS
      > Failed to transform hal-cpp-2022.1.1-rc-1-osxx86.zip (edu.wpi.first.hal:hal-cpp:2022.1.1-rc-1) to match attributes {artifactType=gr-directory, org.gradle.status=release}.
    ...
 
-**Workaround:** M1-based macOS is not supported. The above error will show up when using an ARM-based JDK. User must use a x64-compatible JDK 11 or preferably use the WPILib installer.
+**Workaround:** M1-based macOS is not supported. The above error will show up when using an ARM-based JDK. User must use a x64-compatible JDK 11 or preferably use the WPILib installer. If you are using SDKMAN! you can add the WPILib JDK with the `local version install <https://sdkman.io/usage#localversion>`__.
 
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
