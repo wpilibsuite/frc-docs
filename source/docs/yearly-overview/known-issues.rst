@@ -17,6 +17,13 @@ Shuffleboard aborts while launching
 
 .. note:: This issue may affect any WPILib java tool, as they use the same scripts to open. If you have issues with PathWeaver, RobotBuilder, or SmartDashboard replace ``shuffleboard.jar`` above with ``PathWeaver.jar``, ``RobotBuilder.jar`` or ``SmartDashboard.jar``
 
+VS Code Vendor Check for Updates Broken
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Checking for vendor library updates online results in the following error message: `Command 'WPILib: Manage Vendor Libraries' resulted in an error (Only absolute URLs are supported)`. This is caused by a bug in the VS Code extension related to the way the WPILib Command library vendordeps were created. This issue will be fixed in the next WPILib release.
+
+**Workaround:** If you aren't using either the new or old Command vendordep, remove them from your project.
+
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
