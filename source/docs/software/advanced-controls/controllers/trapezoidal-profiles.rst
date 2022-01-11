@@ -127,7 +127,7 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
   .. code-tab:: c++
 
     auto setpoint = profile.Calculate(elapsedTime);
-    controller.Calculate(encoder.GetDistance(), setpoint.position.to<double>());
+    controller.Calculate(encoder.GetDistance(), setpoint.position.value());
 
 Complete Usage Example
 ----------------------

@@ -67,10 +67,10 @@ There are three main steps to updating the model:
         m_driveSim.Update(20_ms);
 
         // Update all of our sensors.
-        m_leftEncoderSim.SetDistance(m_driveSim.GetLeftPosition().to<double>());
-        m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().to<double>());
-        m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().to<double>());
-        m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().to<double>());
+        m_leftEncoderSim.SetDistance(m_driveSim.GetLeftPosition().value());
+        m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().value());
+        m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().value());
+        m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().value());
         m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees());
       }
 
