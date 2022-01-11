@@ -150,12 +150,12 @@ However, other ``std`` functions work only on ordinary numerical types (e.g. ``d
 Removing the Unit Wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To convert a container type to a raw numeric value, the ``to<..>()`` method can be used, where the template argument is the underlying type.
+To convert a container type to its underlying value, use the ``value()`` method. This serves as an escape hatch from the units type system, which should be used only when necessary.
 
 .. code-block:: c++
 
    units::meter_t distance = 6.5_m;
-   double distanceMeters = distance.to<double>();
+   double distanceMeters = distance.value();
 
 
 Example of the Units Library in WPILib Code

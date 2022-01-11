@@ -51,9 +51,9 @@ What might a more complete example of combined feedforward/PID control look like
     void TankDriveWithFeedforwardPID(units::meters_per_second_t leftVelocitySetpoint,
                                      units::meters_per_second_t rightVelocitySetpoint) {
       leftMotor.SetVoltage(feedforward.Calculate(leftVelocitySetpoint)
-          + leftPID.Calculate(leftEncoder.getRate(), leftVelocitySetpoint.to<double>());
+          + leftPID.Calculate(leftEncoder.getRate(), leftVelocitySetpoint.value());
       rightMotor.SetVoltage(feedforward.Calculate(rightVelocitySetpoint)
-          + rightPID.Calculate(rightEncoder.getRate(), rightVelocitySetpoint.to<double>());
+          + rightPID.Calculate(rightEncoder.getRate(), rightVelocitySetpoint.value());
     }
 
 Other mechanism types can be handled similarly.

@@ -90,8 +90,8 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
                             units::meter_t(m_rightEncoder.GetDistance()));
 
         auto translation = m_odometry.GetPose().Translation();
-        m_xEntry.SetDouble(translation.X().to<double>());
-        m_yEntry.SetDouble(translation.Y().to<double>());
+        m_xEntry.SetDouble(translation.X().value());
+        m_yEntry.SetDouble(translation.Y().value());
     }
 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
@@ -218,10 +218,10 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
             m_drive.TankDriveVolts(left, right);
 
-            leftMeasurement.SetDouble(m_drive.GetWheelSpeeds().left.to<double>());
+            leftMeasurement.SetDouble(m_drive.GetWheelSpeeds().left.value());
             leftReference.SetDouble(leftController.GetSetpoint());
 
-            rightMeasurement.SetDouble(m_drive.GetWheelSpeeds().right.to<double>());
+            rightMeasurement.SetDouble(m_drive.GetWheelSpeeds().right.value());
             rightReference.SetDouble(rightController.GetSetpoint());
         },
         {&m_drive});
