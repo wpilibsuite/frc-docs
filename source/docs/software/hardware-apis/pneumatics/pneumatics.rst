@@ -8,17 +8,17 @@ Using the FRC Control System to control Pneumatics
 
 There are two options for operating solenoids to control pneumatic cylinders, the CTRE Pneumatics Control Module and the REV Robotics Pneumatics Hub.
 
-The CTRE Pneumatics Control Module (PCM) is a CAN-based device that provides control over the compressor and up to 8 solenoids per module.
-
 .. image:: /docs/controls-overviews/images/control-system-hardware/pneumatics-control-module.png
     :alt: The Pneumatics Control Module (PCM)
     :width: 400
 
-The REV Pneumatic Hub (PCH) is a CAN-based device that provides control over the compressor and up to 16 solenoids per module.
+The CTRE Pneumatics Control Module (PCM) is a CAN-based device that provides control over the compressor and up to 8 solenoids per module.
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/pneumatic-hub.png
-    :alt: The Pneumatic Hub
+    :alt: The Pneumatic Hub (PCH)
     :width: 400
+
+The REV Pneumatic Hub (PCH) is a CAN-based device that provides control over the compressor and up to 16 solenoids per module.
 
 These devices are integrated into WPILib through a series of classes that make them simple to use. The closed loop control of the Compressor and Pressure switch is handled by the PCM hardware and the Solenoids are handled by the ``Solenoid`` class that controls the solenoid channels.
 These modules are responsible for regulating the robot's pressure using a pressure switch and a compressor and switching solenoids on and off. They communicate with the roboRIO over CAN. For more information, see :doc:`/docs/controls-overviews/control-system-hardware`
@@ -41,7 +41,7 @@ Pressure is created using a pneumatic compressor and stored in pneumatic tanks. 
     .. code-tab:: java
 
         Compressor pcm = new Compressor(0, PneumaticsModuleType.CTREPCM);
-        Compressor pch = new Compressor(1, PneumaticsMOduleType.REVPH);
+        Compressor pch = new Compressor(1, PneumaticsModuleType.REVPH);
 
         pcm.enableDigital();
         pcm.disable();
@@ -179,7 +179,7 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
 
     .. code-tab:: java
 
-        Compressor pch = new Compressor(1, PneumaticsMOduleType.REVPH);
+        Compressor pch = new Compressor(1, PneumaticsModuleType.REVPH);
 
         double current = pch.getPressure();
 
