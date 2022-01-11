@@ -6,6 +6,7 @@ CAN Devices
 
    using-can-devices
    pneumatics-control-module
+   pneumatic-hub
    power-distribution-module
    third-party-devices
    can-addressing
