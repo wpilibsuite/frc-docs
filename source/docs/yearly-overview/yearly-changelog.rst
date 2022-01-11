@@ -9,6 +9,8 @@ A number of improvements have been made to FRC\ |reg| Control System software fo
 
 Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2022 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2020 or 2021 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
+It's recommended to also review the list of :doc:`known issues <known-issues>`.
+
 Major Changes (Java/C++)
 ------------------------
 
