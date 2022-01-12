@@ -63,7 +63,7 @@ Pressure is created using a pneumatic compressor and stored in pneumatic tanks. 
         double current = pcm.GetCompressorCurrent();
 
 
-The Pneumatic Hub also has methods for enabling compressor control using the REV Analag Pressure Sensor (``enableAnalog`` method).
+The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor (``enableAnalog`` method).
 
 Solenoid control
 ----------------
