@@ -13,7 +13,7 @@ Shuffleboard aborts while launching
 
 **Issue:** Shuffleboard may start to open, and then abort. This is caused by issues with the scripts for launching the WPILib tools.
 
-**Workaround:** Manually launch Shuffleboard from the commandline without using the shortcut or script. On windows run ``c:\Users\Public\wpilib\2022\jdk\bin\java -jar c:\Users\Public\wpilib\2022\tools\shuffleboard.jar``. On Linux or macOS, run ``~/wpilib/2022/jdk/bin/java -jar ~/wpilib/2022/tools/shuffleboard.jar``
+**Workaround:** Manually launch Shuffleboard from the commandline without using the shortcut or script. On Windows run ``c:\Users\Public\wpilib\2022\jdk\bin\java -jar c:\Users\Public\wpilib\2022\tools\shuffleboard.jar``. On Linux or macOS, run ``~/wpilib/2022/jdk/bin/java -jar ~/wpilib/2022/tools/shuffleboard.jar``
 
 .. note:: This issue may affect any WPILib java tool, as they use the same scripts to open. If you have issues with PathWeaver, RobotBuilder, or SmartDashboard replace ``shuffleboard.jar`` above with ``PathWeaver.jar``, ``RobotBuilder.jar`` or ``SmartDashboard.jar``
 
