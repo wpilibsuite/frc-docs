@@ -40,27 +40,27 @@ Pressure is created using a pneumatic compressor and stored in pneumatic tanks. 
 
     .. code-tab:: java
 
-        Compressor pcm = new Compressor(0, PneumaticsModuleType.CTREPCM);
-        Compressor pch = new Compressor(1, PneumaticsModuleType.REVPH);
+        Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+        Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
 
-        pcm.enableDigital();
-        pcm.disable();
+        pcmCompressor.enableDigital();
+        pcmCompressor.disable();
 
-        boolean enabled = pcm.enabled();
-        boolean pressureSwitch = pcm.getPressureSwitchValue();
-        double current = pcm.getCompressorCurrent();
+        boolean enabled = pcmCompressor.enabled();
+        boolean pressureSwitch = pcmCompressor.getPressureSwitchValue();
+        double current = pcmCompressor.getCompressorCurrent();
 
     .. code-tab:: c++
 
-        frc::Compressor pcm{0, frc::PneumaticsModuleType::CTREPCM};
-        frc::Compressor pch{1, frc::PneumaticsModuleType::REVPH};
+        frc::Compressor pcmCompressor{0, frc::PneumaticsModuleType::CTREPCM};
+        frc::Compressor phCompressor{1, frc::PneumaticsModuleType::REVPH};
 
-        pcm.EnableDigital();
-        pcm.Disable();
+        pcmCompressor.EnableDigital();
+        pcmCompressor.Disable();
 
-        bool enabled = pcm.Enabled();
-        bool pressureSwitch = pcm.GetPressureSwitchValue();
-        double current = pcm.GetCompressorCurrent();
+        bool enabled = pcmCompressor.Enabled();
+        bool pressureSwitch = pcmCompressor.GetPressureSwitchValue();
+        double current = pcmCompressor.GetCompressorCurrent();
 
 
 The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor (``enableAnalog`` method).
@@ -179,17 +179,17 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
 
     .. code-tab:: java
 
-        Compressor pch = new Compressor(1, PneumaticsModuleType.REVPH);
+        Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
 
-        double current = pch.getPressure();
+        double current = phCompressor.getPressure();
 
     .. code-tab:: c++
 
         #include <units/pressure.h>
 
-        frc::Compressor pch{1, frc::PneumaticsModuleType::REVPH};
+        frc::Compressor phCompressor{1, frc::PneumaticsModuleType::REVPH};
 
-        units::pounds_per_square_inch_t current = pch.GetPressure();
+        units::pounds_per_square_inch_t current = phCompressor.GetPressure();
 
 roboRIO
 ^^^^^^^
