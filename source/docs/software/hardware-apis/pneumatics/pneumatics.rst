@@ -194,7 +194,7 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
 roboRIO
 ^^^^^^^
 
-A pressure transducer can be connected to the Analog Input ports on the roboRIO, and can be read by the AnalogInput or AnalogPotentiometer classes in WPILib.
+A pressure transducer can be connected to the Analog Input ports on the roboRIO, and can be read by the ``AnalogInput`` or ``AnalogPotentiometer`` classes in WPILib.
 
 .. tabs::
 
