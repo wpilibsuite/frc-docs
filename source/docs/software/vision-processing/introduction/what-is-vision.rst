@@ -16,7 +16,6 @@ Streaming
 This method involves streaming the camera to the Driver Station so that the driver and manipulator can get visual information from the robot's point of view. This method is simple and takes little time to implement, making it a good option if you do not need features of vision processing.
 
 - :ref:`Streaming using the roboRIO <docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio:Using the CameraServer on the roboRIO>`
-- :ref:`Streaming using an Axis Camera <docs/software/vision-processing/axis-camera/index:Vision with an Axis Camera>`
 
 Processing
 ^^^^^^^^^^

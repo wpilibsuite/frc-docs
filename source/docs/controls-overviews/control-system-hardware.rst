@@ -299,17 +299,6 @@ Servo Power Module
 
 The Servo Power Module from Rev Robotics is capable of expanding the power available to servos beyond what the roboRIO integrated power supply is capable of. The Servo Power Module provides up to 90W of 6V power across 6 channels. All control signals are passed through directly from the roboRIO. For more information, see the `Servo Power Module webpage <https://www.revrobotics.com/rev-11-1144/>`__.
 
-Axis M1013/M1011/206 Ethernet Camera
-------------------------------------
-
-.. image:: images/control-system-hardware/axis-camera.png
-  :alt: Axis M1013/M1011/206 Ethernet Camera
-  :width: 300
-
-.. warning:: While this camera is legal for FRC use, the manufacturer has discontinued support.
-
-The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for capturing images for vision processing and/or sending video back to the Driver Station laptop. The camera should be wired to a 5V power output on the Voltage Regulator Module and an open ethernet port on the robot radio. For more information, see :ref:`Configuring an Axis Camera <docs/software/vision-processing/axis-camera/configuring-an-axis-camera:Configuring an Axis Camera>` and the `Axis 206 <https://www.axis.com/en-us/products/axis-206>`__, `Axis M1011 <https://www.axis.com/en-us/products/axis-m1011>`__, `Axis M1013 pages <https://www.axis.com/en-us/products/axis-m1013>`__.
-
 Microsoft Lifecam HD3000
 ------------------------
 
