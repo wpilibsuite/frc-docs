@@ -112,7 +112,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
         import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
         DoubleSolenoid exampleDoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-        DoubleSolenoid exampleDoublePH = new DoubleSolenoid(/* The CAN ID */ 9, PneumaticsModuleType.REVPH, 4, 5);
+        DoubleSolenoid exampleDoublePH = new DoubleSolenoid(9, PneumaticsModuleType.REVPH, 4, 5);
 
 
         exampleDoublePCM.set(kOff);
@@ -122,7 +122,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
    .. code-tab:: c++
 
         frc::DoubleSolenoid exampleDoublePCM{frc::PneumaticsModuleType::CTREPCM, 1, 2};
-        frc::DoubleSolenoid exampleDoublePH{/* The CAN ID */ 9, frc::PneumaticsModuleType::REVPH, 4, 5};
+        frc::DoubleSolenoid exampleDoublePH{9, frc::PneumaticsModuleType::REVPH, 4, 5};
 
         exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kOff);
         exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kForward);
