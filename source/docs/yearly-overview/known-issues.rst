@@ -109,24 +109,24 @@ There is currently an issue with inter-operating C++/Java :term:`NetworkTables` 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
 
 Fixed in WPILib 2022.2.1
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Joysticks may stop updating in Java
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** A deadlock in the Java WPILib DriverStation thread may occur. This is primarily noticeable by Joystick values "freezing" and not updating. Disable and E-Stop are not affected by this issue.
 
 **Recommendations:** Ensure that anyone operating a robot is prepared to disable or E-Stop if this issue occurs. Limit calls to the following DriverStation methods: ``isEnabled``, ``isEStopped``, ``isAutonomous``, ``isDisabled``, ``isAutonomousEnabled``, ``isTeleopEnabled``, ``isTest``, ``isDSAttached``, ``isFMSAttached``, and ``updateControlWord``, especially from multiple threads, to limit the chance of the deadlock occurring. Follow `this WPILib issue <https://github.com/wpilibsuite/allwpilib/issues/3896>`__ for more updates and possible workarounds.
 
 VS Code Vendor Check for Updates Broken
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** Checking for vendor library updates online results in the following error message: `Command 'WPILib: Manage Vendor Libraries' resulted in an error (Only absolute URLs are supported)`. This is caused by a bug in the VS Code extension related to the way the WPILib Command library vendordeps were created. This issue will be fixed in the next WPILib release.
 
 **Workaround:** If you aren't using either the new or old Command vendordep, remove them from your project. Alternately, the new or old Command vendordep can be temporarily removed before checking for updates, and then re-added.
 
 Shuffleboard aborts while launching
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Issue:** Shuffleboard may start to open, and then abort. This is caused by issues with the scripts for launching the WPILib tools.
 
