@@ -163,19 +163,19 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
       :language: java
-      :lines: 27-42
+      :lines: 29-44
       :linenos:
-      :lineno-start: 27
+      :lineno-start: 29
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
       :language: c++
-      :lines: 37-51
+      :lines: 39-53
       :linenos:
-      :lineno-start: 37
+      :lineno-start: 39
 
 controller
 ~~~~~~~~~~

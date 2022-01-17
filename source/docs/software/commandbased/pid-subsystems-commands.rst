@@ -165,19 +165,19 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
       :language: java
-      :lines: 25-39
-      :linenos:
-      :lineno-start: 25
-
-  .. group-tab:: C++
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
-      :language: c++
       :lines: 27-41
       :linenos:
       :lineno-start: 27
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
+      :language: c++
+      :lines: 29-43
+      :linenos:
+      :lineno-start: 29
 
 controller
 ~~~~~~~~~~

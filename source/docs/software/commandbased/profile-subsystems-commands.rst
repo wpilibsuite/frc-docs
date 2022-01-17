@@ -145,19 +145,19 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
       :language: java
-      :lines: 23-32
+      :lines: 25-34
       :linenos:
-      :lineno-start: 23
+      :lineno-start: 25
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
       :language: c++
-      :lines: 33-43
+      :lines: 35-45
       :linenos:
-      :lineno-start: 33
+      :lineno-start: 35
 
 profile
 ~~~~~~~
