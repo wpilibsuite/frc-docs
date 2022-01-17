@@ -104,5 +104,6 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Make sure your firewall is turned off.
 - Some teams have experienced an issue where imaging fails if the device name of the computer you're using has a dash (``-``) in it. Try renaming the computer (or using a different PC).
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
+- Try a different USB Cable
 - Try a different PC
 - Try imaging a roboRIO 2.0 using the :doc:`roboRIO 2.0 microSD card imaging process</docs/software/roborio-info/roborio2-imaging>`
