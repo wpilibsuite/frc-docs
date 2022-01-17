@@ -12,15 +12,15 @@ To use the either Power Distribution module, create an instance of the :code:`Po
 
     .. code-tab:: java
 
-        PowerDistributionPanel examplePD = new PowerDistribution();
-        PowerDistributionPanel examplePD = new PowerDistribution(0, ModuleType.kCTRE);
-        PowerDistributionPanel examplePD = new PowerDistribution(1, ModuleType.kRev);
+        PowerDistribution examplePD = new PowerDistribution();
+        PowerDistribution examplePD = new PowerDistribution(0, ModuleType.kCTRE);
+        PowerDistribution examplePD = new PowerDistribution(1, ModuleType.kRev);
 
     .. code-tab:: c++
 
-        PowerDistributionPanel examplePD{};
-        PowerDistributionPanel examplePD{0, frc::PowerDistribution::ModuleType::kCTRE};
-        PowerDistributionPanel examplePD{1, frc::PowerDistribution::ModuleType::kRev};
+        PowerDistribution examplePD{};
+        PowerDistribution examplePD{0, frc::PowerDistribution::ModuleType::kCTRE};
+        PowerDistribution examplePD{1, frc::PowerDistribution::ModuleType::kRev};
 
 Note: it is not necessary to create a PowerDistribution object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
