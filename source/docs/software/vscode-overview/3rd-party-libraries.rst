@@ -68,7 +68,7 @@ To remove a library dependency from a project, select :guilabel:`Manage Current 
 Libraries
 ---------
 
-.. warning:: Many vendors, such as CTRE & REV, recommend using their offline installers over using the online vendor json URL.  This recommendation is because the offline installer is bundled with the additional programs that are extremely useful when working with their devices.
+.. warning:: Many vendors, such as CTRE & REV, recommend using their offline installers over using the online vendor json URL.  This recommendation is because the offline installer is bundled with additional programs that are extremely useful when working with their devices.
 
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.  The vendor json will break if a team has not ran an "online" build after 30 days, since the cache will clear.
 
