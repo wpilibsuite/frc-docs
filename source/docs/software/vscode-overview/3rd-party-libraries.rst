@@ -68,24 +68,33 @@ To remove a library dependency from a project, select :guilabel:`Manage Current 
 Libraries
 ---------
 
-.. warning:: These are **not** links to directly plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature. Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.
+.. warning:: Many vendors, such as CTRE & REV, recommend using their offline installers over using the online vendor json URL.  This recommendation is because the offline installer is bundled with additional programs that are extremely useful when working with their devices.
+
+Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.  The online vendor json will break if a team has not ran an "online" build after 30 days, since the cache will clear.
 
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
+   ``https://copperforge.cc/files/dev/vendordeps/LibCu-latest.json``
 
 `CTRE Phoenix Framework <https://newsite.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, Pigeon IMU, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+   ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix-frc2022-latest.json``
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
+   ``Offline only``
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
+   ``https://www.playingwithfusion.com/frc/playingwithfusion2022.json``
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
+   ``https://www.kauailabs.com/dist/frc/2022/navx_frc.json``
 
 `REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
+   ``https://software-metadata.revrobotics.com/REVLib.json``
 
 Community Libraries
 -------------------
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
+   ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
 
 WPILib Command Libraries
 ------------------------
@@ -95,6 +104,7 @@ WPILib Command Libraries
 The WPILib old and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
 
 `Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibOldCommands/WPILibOldCommands.json>`__
+
 `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
 
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
