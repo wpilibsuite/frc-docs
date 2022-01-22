@@ -7,4 +7,5 @@ Basic Programming
    git-getting-started.rst
    cpp-units
    joystick
+   using-test-mode
    reading-stacktraces

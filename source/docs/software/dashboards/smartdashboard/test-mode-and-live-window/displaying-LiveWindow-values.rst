@@ -1,9 +1,7 @@
 Displaying LiveWindow Values
 ============================
 
-.. note:: LiveWindow will automatically add your sensors for you. There is no need to do it manually.
-
-LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. LiveWindow will display values grouped in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
+LiveWindow will automatically add your sensors and actuators for you. There is no need to do it manually. LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. This allows you to customize the names and group them in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
 
 Adding the Necessary Code to your Program
 -----------------------------------------
@@ -15,24 +13,50 @@ For each sensor or actuator that is created, set the subsystem name and display 
     .. code-tab:: java
 
         Ultrasonic ultrasonic = new Ultrasonic(1, 2);
-        ultrasonic.setName("Arm", "Ultrasonic");
+        SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic");
 
         Jaguar elbow = new Jaguar(1);
-        elbow.setName("Arm", "Elbow");
+        SendableRegistry.setName(elbow, "Arm", "Elbow");
 
         Victor wrist = new Victor(2);
-        wrist.setName("Arm", "Wrist");
+        SendableRegistry.setName(wrist, "Arm", "Wrist");
 
     .. code-tab:: cpp
 
         frc::Ultrasonic ultrasonic{1, 2};
-        ultrasonic.SetName("Arm", "Ultrasonic");
+        SendableRegistry::SetName(ultrasonic, "Arm", "Ultrasonic");
 
         frc::Jaguar elbow{1};
-        elbow.SetName("Arm", "Elbow");
+        SendableRegistry::SetName(elbow, "Arm", "Elbow");
 
         frc::Victor wrist{2};
-        wrist.SetName("Arm", "Wrist");
+        SendableRegistry::SetName(wrist, "Arm", "Wrist");
+
+If your objects are in a ``Subsystem``, this can be simplified using the addChild method of ``SubsystemBase``
+
+.. tabs::
+
+    .. code-tab:: java
+
+        Ultrasonic ultrasonic = new Ultrasonic(1, 2);
+        addChild("Ultrasonic", ultrasonic);
+
+        Jaguar elbow = new Jaguar(1);
+        addChild("Elbow", elbow);
+
+        Victor wrist = new Victor(2);
+        addChild("Wrist", wrist);
+
+    .. code-tab:: cpp
+
+        frc::Ultrasonic ultrasonic{1, 2};
+        AddChild("Ultrasonic", ultrasonic);
+
+        frc::Jaguar elbow{1};
+        AddChild("Elbow", elbow);
+
+        frc::Victor wrist{2};
+        AddChild("Wrist", wrist);
 
 Viewing the Display in SmartDashboard
 -----------------------------------------
