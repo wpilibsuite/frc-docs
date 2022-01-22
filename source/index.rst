@@ -72,7 +72,7 @@ Community translations can be found in a variety of languages in the bottom-left
       :classes: btn-outline-primary btn-block
 
    ---
-   :header: font-weight-bold text-dark
+   :header: bg-info font-weight-bold text-white
 
    Software Overview
 
