@@ -108,6 +108,8 @@ The drive classes use the NED axes convention (North-East-Down as external refer
 
 Joysticks follow NED convention, but it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
 
+.. warning:: The ``MecanumDrive`` class does not follow this convention. The positive Y axis points ahead, the positive X axis points right. This may change in a future year's WPILib release.
+
 Using the DifferentialDrive class to control Differential Drive robots
 ----------------------------------------------------------------------
 
