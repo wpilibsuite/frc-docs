@@ -57,6 +57,7 @@ extensions = [
 
 local_extensions = [
     "_extensions.post_process",
+    "_extensions.localization",
 ]
 
 extensions += local_extensions
@@ -76,6 +77,17 @@ versionwarning_admonition_type = "warning"
 versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'div[class="document"]'
 
+# List of languages that frc-docs supports
+localization_languages = [
+    "en",
+    "es",
+    "fr",
+    "he",
+    "pt",
+    "tr",
+    "zh_CN",
+]
+
 # Redirect branch
 rediraffe_branch = "origin/main"
 
@@ -89,7 +101,7 @@ rediraffe_auto_redirect_perc = 80
 linkcheckdiff_branch = "origin/main"
 
 # Configure OpenGraph support
-ogp_site_url = "https://docs.wpilib.org/en/latest/"
+ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
 ogp_image = (
     "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
@@ -184,7 +196,7 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 
 # Specify canonical root
 # This tells search engines that this domain is preferred
-html_baseurl = "https://docs.wpilib.org/"
+html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
     "collapse_navigation": True,
