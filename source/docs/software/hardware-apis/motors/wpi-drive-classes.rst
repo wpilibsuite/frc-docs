@@ -288,15 +288,15 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
-            m_robotDrive.drivePolar(m_stick.getX(), -m_stick.getY(), m_stick.getZ());
+            m_robotDrive.driveCartesian(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
+            m_robotDrive.drivePolar(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
-            m_robotDrive.drivePolar(m_stick.GetX(), -m_stick.GetY(), m_stick.GetZ());
+            m_robotDrive.driveCartesian(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
+            m_robotDrive.drivePolar(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
         }
 
 Field-Oriented Driving
