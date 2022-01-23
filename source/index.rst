@@ -41,6 +41,8 @@ Community translations can be found in a variety of languages in the bottom-left
                :text: Changelog
                :classes: btn-outline-primary btn-block
 
+      .. div:: row
+
          .. div:: col-sm pl-1 pr-1
 
             .. link-button:: /docs/yearly-overview/known-issues
