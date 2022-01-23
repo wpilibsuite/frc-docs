@@ -7,11 +7,11 @@ The FRC\ |reg| Game Tools contains the following software components:
 
 - LabVIEW Update
 - FRC Driver Station
-- FRC Utilities
+- FRC roboRIO Imaging Tool and Images
 
-The LabVIEW runtime components required for the Driver Station and Utilities are included in this package.
+The LabVIEW runtime components required for the Driver Station and Imaging Tool are included in this package.
 
-.. note:: No components from the LabVIEW Software for FRC package are required for running either the Driver Station or Utilities.
+.. note:: No components from the LabVIEW Software for FRC package are required for running either the Driver Station or Imaging Tool.
 
 Requirements
 ------------
