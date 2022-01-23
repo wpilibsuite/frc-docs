@@ -2,10 +2,7 @@
 # The builder is preloaded after all extensions are loaded, so we can
 # change the registered class here.
 
-try:
-    from sphinx.builders.html import StandaloneHTMLBuilder
-except ImportError:
-    from sphinx.builders.html import StandaloneHTMLBuilder
+from sphinx.builders.html import StandaloneHTMLBuilder
 
 
 class ReadtheDocsBuilderLocalMedia(StandaloneHTMLBuilder):
