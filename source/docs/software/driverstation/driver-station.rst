@@ -50,7 +50,7 @@ The Operations Tab is used to control the mode of the robot and provide addition
 
 1. Robot Mode - This section controls the Robot Mode.
 
-  - Teleopoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
+  - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
   - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
   - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab).
   - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
