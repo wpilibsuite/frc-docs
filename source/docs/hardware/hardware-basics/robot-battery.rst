@@ -155,7 +155,7 @@ Battery Longevity
 
 A battery is rated for about 1200 normal charge/recharge cycles. The high currents required for an FRC match reduce that lifespan to about 400 cycles. These cycles are intended to be relatively low discharge, from around 13.5 down to 12 or 12.5 volts. Deep cycling the battery (running it all the way down) will damage it.
 
-Batteries last the longest if they are kept fully charged when not it use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
+Batteries last the longest if they are kept fully charged when not in use, either by charging regularly or by use of a maintenance charger. Batteries drop roughly 0.1V every month of non-use.
 
 Batteries need to be kept away from both extreme heat and cold. This generally means storing the batteries in a climate controlled area: a classroom closet is usually fine, a parking lot shipping container is more risky.
 
