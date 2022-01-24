@@ -12,4 +12,3 @@ VS Code Overview
    viewing-console-output
    debugging-robot-program
    importing-gradle-project
-   using-test-mode
