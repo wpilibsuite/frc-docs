@@ -43,7 +43,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       .. div:: row
 
-         .. div:: col-sm pl-1 pr-1
+         .. div:: col-sm pl-1 pr-1 pt-1
 
             .. link-button:: /docs/yearly-overview/known-issues
                :type: ref
