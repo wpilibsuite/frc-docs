@@ -112,6 +112,7 @@ ogp_image = (
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
     '<meta name="theme-color" content="#003974" />',
+    '<meta name="google-site-verification" content="xcmdxM0KzMYiAOeJzyF_l2Tn3AHGzPICs9_vX6q2nwM" />',
 ]
 
 # Set location of pages to be indexed by delta
