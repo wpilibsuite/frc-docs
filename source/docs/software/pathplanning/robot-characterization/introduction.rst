@@ -67,9 +67,9 @@ Arm Characterization
 
 The arm characterization tool determines the best-fit parameters for the equation:
 
-.. math:: V = kS \cdot sgn(\dot{\theta}) + kCos \cdot cos(\theta) + kV \cdot \dot{\theta} + kA \cdot \ddot{\theta}
+.. math:: V = kS \cdot sgn(\dot{\theta}) + kG \cdot cos(\theta) + kV \cdot \dot{\theta} + kA \cdot \ddot{\theta}
 
-where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`kCos`) is added to correctly account for the effect of gravity.
+where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`kG`) is added to correctly account for the effect of gravity.
 
 Elevator Characterization
 ^^^^^^^^^^^^^^^^^^^^^^^^^
