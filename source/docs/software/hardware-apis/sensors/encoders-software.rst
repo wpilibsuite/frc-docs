@@ -244,7 +244,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         Encoder encoder = new Encoder(0, 1);
 
         // Initialize motor controllers and drive
-        Spark left1 new Spark(0);
+        Spark left1 = new Spark(0);
         Spark left2 = new Spark(1);
 
         Spark right1 = new Spark(2);
@@ -281,6 +281,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         // Initialize motor controllers and drive
         frc::Spark left1{0};
         frc::Spark left2{1};
+
         frc::Spark right1{2};
         frc::Spark right2{3};
 
