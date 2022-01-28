@@ -26,7 +26,7 @@ Imaging Directly to the microSD Card
 
 The image will be transferred to the microSD card using a specialized writing utility, sometimes called a burner. Several utilities are listed below, but most tools that can write arbitrary images for booting a Raspberry Pi or similar dev boards will also produce a bootable SD card for roboRIO 2.0.
 
-Supported image files are named ``FRC_roboRIO2_VERSION.img.zip``. You can locate them by clicking the SD button in the roboRIO Imaging tool. It is generally best to use the latest version of the image.
+Supported image files are named ``FRC_roboRIO2_YEAR_VERSION.img.zip``. You can locate them by clicking the SD button in the roboRIO Imaging tool and then navigating to the ``SD Images`` folder. It is generally best to use the latest version of the image.
 
 If using a non Windows OS you will need to copy this image file to that computer.
 
