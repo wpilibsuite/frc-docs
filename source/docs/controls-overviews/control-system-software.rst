@@ -154,11 +154,3 @@ OutlineViewer
    :alt: OutlineViewer with the preferences dialog box.
 
 OutlineViewer is a utility used to view, modify and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the :ref:`Outline Viewer section <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.
-
-Setup Axis Camera (Windows Only)
---------------------------------
-
-.. image:: images/control-system-software/axis-camera-setup.png
-   :alt: Setup Axis Camera
-
-The Setup Axis Camera utility is a LabVIEW program used to configure an Axis 206, M1011 or M1013 camera for use on the robot.  The Setup Axis Camera tool is installed as part of the FRC Game Tools.
