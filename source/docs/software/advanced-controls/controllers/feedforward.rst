@@ -9,9 +9,12 @@ A feedforward controller injects information about the system’s dynamics (like
 
 There are two types of feedforwards: model-based feedforward and feedforward for unmodeled dynamics. The first solves a mathematical model of the system for the inputs required to meet desired velocities and accelerations. The second compensates for unmodeled forces or behaviors directly so the feedback controller doesn't have to. Both types can facilitate simpler feedback controllers. We'll cover several examples below.
 
-.. note:: The WPILib feedforward classes closely match the available mechanism identification tools available in the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>` - the system identification toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  The toolsuite will indicate the appropriate units for each of the gains.
+The WPILib Feedforward Classes
+------------------------------
 
 WPILib provides a number of classes to help users implement accurate feedforward control for their mechanisms.  In many ways, an accurate feedforward is more important than feedback to effective control of a mechanism.  Since most FRC\ |reg| mechanisms closely obey well-understood system equations, starting with an accurate feedforward is both easy and hugely beneficial to accurate and robust mechanism control.
+
+The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>`.  The system identification toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  If you are unable to empirically characterize your mechanism (due to space and/or time constraints), reasonable estimates of ``kG``, ``kV``, and ``kA`` can be obtained by fairly simple computation, and are also available from `ReCalc <https://www.reca.lc/>`__.  ``kS`` is nearly impossible to model, and must be measured empirically.
 
 WPILib currently provides the following three helper classes for feedforward control:
 
@@ -66,7 +69,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 ArmFeedforward
 --------------
 
-.. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kCos`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+.. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 .. note:: The Java feedforward components will calculate outputs in units determined by the units of the user-provided feedforward gains.  Users *must* take care to keep units consistent, as WPILibJ does not have a type-safe unit system.
 
@@ -80,13 +83,13 @@ To create an ``ArmFeedforward``, simply construct it with the required gains:
 
   .. code-tab:: java
 
-    // Create a new ArmFeedforward with gains kS, kCos, kV, and kA
-    ArmFeedforward feedforward = new ArmFeedforward(kS, kCos, kV, kA);
+    // Create a new ArmFeedforward with gains kS, kG, kV, and kA
+    ArmFeedforward feedforward = new ArmFeedforward(kS, kG, kV, kA);
 
   .. code-tab:: c++
 
-    // Create a new ArmFeedforward with gains kS, kCos, kV, and kA
-    frc::ArmFeedforward feedforward(kS, kCos, kV, kA);
+    // Create a new ArmFeedforward with gains kS, kG, kV, and kA
+    frc::ArmFeedforward feedforward(kS, kG, kV, kA);
 
 To calculate the feedforward, simply call the ``calculate()`` method with the desired arm position, velocity, and acceleration:
 
