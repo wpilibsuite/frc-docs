@@ -139,13 +139,13 @@ PathWeaver
 
 PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
-Robot Characterization
+System Identification
 ----------------------
 
-.. image:: /docs/software/pathplanning/robot-characterization/images/analysis-type.png
-   :alt: Robot Characterization new project screen.
+.. image:: /docs/software/pathplanning/system-identification/images/analysis-type.png
+   :alt: System Identification new project screen.
 
-This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`Robot Characterization section <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`.
+This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`System Identification section <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>`.
 
 OutlineViewer
 -------------

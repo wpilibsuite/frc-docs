@@ -33,7 +33,7 @@ Each motor port contains the following parts:
 
 Encoder Selection
 ^^^^^^^^^^^^^^^^^
-The :guilabel:`Encoder Selection` allows you to configure the encoders that will be used. The types of encoder you can use will vary with the first motor controller type specified (see note :ref:`above <docs/software/pathplanning/robot-characterization/configuring-project:Motor Controller Selection>`).
+The :guilabel:`Encoder Selection` allows you to configure the encoders that will be used. The types of encoder you can use will vary with the first motor controller type specified (see note :ref:`above <docs/software/pathplanning/system-identification/configuring-project:Motor Controller Selection>`).
 
 .. image:: images/encoder-selection.png
    :alt: Encoder selection section.
@@ -97,7 +97,7 @@ Accordingly, you can also load an existing config file with the :guilabel:`Load 
 Deploying Project
 -----------------
 
-Once your project has been configured, it's time to deploy the robot project to run the characterization routine.
+Once your project has been configured, it's time to deploy the robot project to run the identification routine.
 
 .. image:: images/deploy-config.png
    :alt: Deploying the config file

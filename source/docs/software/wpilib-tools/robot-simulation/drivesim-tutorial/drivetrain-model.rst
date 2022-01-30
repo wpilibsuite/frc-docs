@@ -63,16 +63,16 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         // l and r position: 0.005 m
         {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
 
-Creating a ``DifferentialDrivetrainSim`` from Characterization Gains
+Creating a ``DifferentialDrivetrainSim`` from SysId Gains
 --------------------------------------------------------------------
 
-You can also use the gains produced by :ref:`robot characterization <docs/software/pathplanning/robot-characterization/introduction:Introduction to Robot Characterization>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
+You can also use the gains produced by :ref:`System Identification <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
 
-.. important:: You must need two sets of ``Kv`` and ``Ka`` gains from the characterization tool -- one from straight-line motion and the other from rotating in place. We will refer to these two sets of gains as linear and angular gains respectively.
+.. important:: You must need two sets of ``Kv`` and ``Ka`` gains from the identification tool -- one from straight-line motion and the other from rotating in place. We will refer to these two sets of gains as linear and angular gains respectively.
 
 This constructor takes the following parameters:
 
- - A linear system representing the drivetrain -- this can be created using the characterization gains.
+ - A linear system representing the drivetrain -- this can be created using the identification gains.
  - The track width (distance between the left and right wheels).
  - The type and number of motors on one side of the drivetrain.
  - The gear ratio between the motors and the wheels as output torque over input torque (this number is usually greater than 1 for drivetrains).
@@ -88,7 +88,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 .. tabs::
    .. code-tab:: java
 
-      // Create our feedforward gain constants (from the characterization
+      // Create our feedforward gain constants (from the identification
       // tool)
       static final double KvLinear = 1.98;
       static final double KaLinear = 0.2;
@@ -97,7 +97,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       // Create the simulation model of our drivetrain.
       private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
-        // Create a linear system from our characterization gains.
+        // Create a linear system from our identification gains.
         LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
         DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
         7.29,                    // 7.29:1 gearing reduction.
@@ -123,7 +123,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       ...
 
-      // Create our feedforward gain constants (from the characterization
+      // Create our feedforward gain constants (from the identification
       // tool). Note that these need to have correct units.
       static constexpr auto KvLinear = 1.98_V / 1_mps;
       static constexpr auto KaLinear = 0.2_V / 1_mps_sq;
@@ -132,7 +132,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
       // Create the simulation model of our drivetrain.
       frc::sim::DifferentialDrivetrainSim m_driveSim{
-        // Create a linear system from our characterization gains.
+        // Create a linear system from our identification gains.
         frc::LinearSystemId::IdentifyDrivetrainSystem(
           KvLinear, KaLinear, KvAngular, KaAngular),
         0.7112_m,           // The track width is 0.7112 meters.

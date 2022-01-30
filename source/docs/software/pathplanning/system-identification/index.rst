@@ -1,4 +1,4 @@
-Robot Characterization
+System Identification
 ======================
 
 .. toctree::
@@ -6,7 +6,7 @@ Robot Characterization
 
    introduction
    configuring-project
-   characterization-routine
+   identification-routine
    analyzing-data
    viewing-diagnostics
    analyzing-feedback

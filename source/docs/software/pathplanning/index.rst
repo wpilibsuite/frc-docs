@@ -16,6 +16,6 @@ We are sorry for the inconvenience.
 .. toctree::
    :maxdepth: 2
 
-   robot-characterization/index
+   system-identification/index
    trajectory-tutorial/index
    pathweaver/index

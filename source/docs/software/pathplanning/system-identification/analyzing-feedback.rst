@@ -69,5 +69,5 @@ Select Loop Type
 It is typical to control mechanisms with both position and velocity PIDs, depending on application. Either can be selected using the drop-down :guilabel:`Loop Type` menu.
 
 .. image:: images/looptype.png
-   :alt: Specifying characterization loop type
+   :alt: Specifying loop type
 
