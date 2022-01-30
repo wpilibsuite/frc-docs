@@ -23,4 +23,4 @@ When in test mode, the ``testInit`` method is run once, and the testPeriodic met
 
 Adding test mode can be as painless as calling your already written Teleop methods from Test. Or you can write special code to try out a new feature that is only run in Test mode, before integrating it into your teleop or autonomous code. You could even write code to move all motors and check all sensors to help the pit crew!
 
-.. warning:: If you write your own test code, it may interfere with the LiveWindow code that can control actuators and is enabled automatically. You may need to call ``LiveWindow.getInstance().setEnabled(false)`` in your testInit method to avoid this.
+.. warning:: If you write your own test code, it may interfere with the LiveWindow code that can control actuators and is enabled automatically. You may need to call ``LiveWindow.setEnabled(false)`` in your testInit method to avoid this.
