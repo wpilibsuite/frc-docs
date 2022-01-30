@@ -36,9 +36,14 @@ Once the robot project is generated, it is essentially ready to run. The project
 
 One aspect where a Romi project differs from a regular FRC robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer and leverages the WPILib simulation framework to communicate with the Romi robot.
 
-To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``envVar`` line to the appropriate IP address.
+To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 
-.. image:: images/programming-romi/romi-vscode-ip-address.png
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2022.2.1/vscode-wpilib/resources/gradle/javaromi/build.gradle
+   :language: groovy
+   :lines: 35-38
+   :linenos:
+   :lineno-start: 35
+   :emphasize-lines: 2
 
 Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.
 
