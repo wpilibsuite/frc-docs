@@ -12,7 +12,7 @@ Model-based control focuses on developing an accurate model of the :term:`system
 
 .. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 4 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
-If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used FRC-Characterization to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
+If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used SysId to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
 
 Vocabulary
 ----------
@@ -86,7 +86,7 @@ We can convert this equation to state-space notation. We can create a system wit
 .. math::
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} \mathbf{u}
 
-That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in FRC-Characterization to model flywheels and drivetrain velocity systems.
+That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in system identification to model flywheels and drivetrain velocity systems.
 
 Visualizing State-Space Responses: Phase Portrait
 -------------------------------------------------
@@ -220,7 +220,7 @@ Oftentimes, our sensors have a delay associated with their measurements. For exa
 
 This lag means that our feedback controller will be generating voltage commands based on state estimates from the past. This often has the effect of introducing instability and oscillations into our system, as shown in the graph below.
 
-However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in frc-characterization.
+However, we can model our controller to control where the system's :term:`state` is delayed into the future. This will reduce the LQR's :term:`gain` matrix :math:`\mathbf{K}`, trading off controller performance for stability. The below formula, which adjusts the :term:`gain` matrix to account for delay, is also used in system identification.
 
 .. math::
     \mathbf{K_{compensated}} = \mathbf{K} \cdot \left(\mathbf{A} - \mathbf{BK}\right)^{\text{delay} / dt}

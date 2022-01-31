@@ -31,7 +31,7 @@ Modeling Our Flywheel
 
 Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`, :math:`\mathbf{x}` is the system's current state, :math:`\mathbf{u}` is the :term:`input` to the system, and :math:`\mathbf{y}` is the sytem's :term:`output`.
 
-Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the frc-characterization toolsuite, and then model it based on the motor and flywheel's :term:`moment of inertia`.
+Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the SysId toolsuite, and then model it based on the motor and flywheel's :term:`moment of inertia`.
 
 The first step of building up our state-space system is picking our system's states. We can pick anything we want as a state -- we could pick completely unrelated states if we wanted -- but it helps to pick states that are important. We can include :term:`hidden states <hidden state>` in our state (such as elevator velocity if we were only able to measure its position) and let our Kalman Filter estimate their values. Remember that the states we choose will be driven towards their respective :term:`references <reference>` by the feedback controller (typically the :ref:`Linear-Quadratic Regulator <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` since it's optimal).
 

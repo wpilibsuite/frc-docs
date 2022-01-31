@@ -95,10 +95,10 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
     }
 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
-3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width characterization <docs/software/pathplanning/robot-characterization/characterization-routine:Running Tests>` and use that track width instead of the one from your tape measure.
+3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width identification <docs/software/pathplanning/system-identification/identification-routine:Running Tests>` and use that track width instead of the one from your tape measure.
 
 .. image:: images/track-width-logger.png
-  :alt: Highlights the trackwidth section of characterization.
+  :alt: Highlights the trackwidth section of identification.
 
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
@@ -227,7 +227,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         {&m_drive});
 
 4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from NetworkTables.
-5. If the desired and actual are off by *a lot* then you should check if the wheel diameter and ``encoderEPR`` you used for characterization were correct. If you've verified that your units and conversions are correct, then you should try recharacterizing on the same floor that you're testing on to see if you can get better data.
+5. If the desired and actual are off by *a lot* then you should check if the wheel diameter and ``encoderEPR`` you used for system identification were correct. If you've verified that your units and conversions are correct, then you should try recharacterizing on the same floor that you're testing on to see if you can get better data.
 
 Verify P Gain
 ^^^^^^^^^^^^^
@@ -248,7 +248,7 @@ Test one constraint at a time! Remove the other constraints, tune your one remai
 * ``DifferentialDriveVoltageConstraint``:
 
   - If your robot accelerates very slowly then it's possible that the max voltage for this constraint is too low.
-  - If your robot doesn't reach the end of the path then your characterization data may problematic.
+  - If your robot doesn't reach the end of the path then your system identification data may problematic.
 
 * ``DifferentialDriveKinematicsConstraint``:
 

@@ -48,6 +48,6 @@ The purpose of Task 4 is to write new code in order to test features and functio
 
 1. REV Robotics Hardware and associated software
 2. RoboRIO 2.0, especially the SD card imaging process
-3. :ref:`SysID <docs/software/pathplanning/robot-characterization/index:Robot Characterization>`
+3. :ref:`SysID <docs/software/pathplanning/system-identification/index:System Identification>`
 4. :ref:`Axon <docs/software/wpilib-tools/axon/index:Axon>`
 

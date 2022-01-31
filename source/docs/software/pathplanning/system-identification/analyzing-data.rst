@@ -3,7 +3,7 @@ Analyzing Data
 
 .. important:: WPILib standarizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
 
-Once we have data from a characterization run, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
+Once we have data from an identification routine, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
 
 .. image:: images/analyzer-view.png
    :alt: Using the data analyzer
@@ -33,7 +33,7 @@ By default, the analysis will be run by combining all the data in the test. For 
 .. image:: images/limiting-analysis-data.png
    :alt: Limiting analysis data by using the subset dropdown
 
-The computed coefficients of the mechanism characterization will then be displayed.
+The computed mechanism system parameters will then be displayed.
 
 .. image:: images/feedforward-values.png
    :alt: Analysis coefficient results

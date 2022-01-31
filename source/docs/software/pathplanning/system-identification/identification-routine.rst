@@ -1,9 +1,9 @@
-Running the Characterization Routine
-====================================
+Running the Identification Routine
+==================================
 
-Once the characterization code has been deployed, we can now run the characterization routine, and record the resulting data for analysis.
+Once the code has been deployed, we can now run the system identification routine, and record the resulting data for analysis.
 
-.. note:: Ensure you have sufficient space around the robot before running any characterization routine! The drive characterization requires at least 10' of space, ideally closer to 20'. The robot drive can not be accurately characterized while on blocks.
+.. note:: Ensure you have sufficient space around the robot before running any identification routine! The drive identification requires at least 10' of space, ideally closer to 20'. The robot drive can not be accurately characterized while on blocks.
 
 Connect to the Robot
 --------------------
@@ -46,7 +46,7 @@ Voltage Parameters
 Running Tests
 -------------
 
-A standard motor characterization routine consists of two types of tests:
+A standard motor identification routine consists of two types of tests:
 
 - **Quasistatic:** In this test, the mechanism is gradually sped-up such that the voltage corresponding to acceleration is negligible (hence, "as if static").
 - **Dynamic:** In this test, a constant 'step voltage' is given to the mechanism, so that the behavior while accelerating can be determined.

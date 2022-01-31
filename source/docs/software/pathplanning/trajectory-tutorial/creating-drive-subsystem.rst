@@ -62,7 +62,7 @@ The encoder ports are specified in the encoder's constructor, like so:
 Encoder Distance per Pulse
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The distance per pulse is specified by calling the encoder's ``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "pulse" refers to a full encoder cycle (i.e. four edges), and thus will be 1/4 the value that was specified in the FRC-Characterization config.  Remember, as well, that the distance should be measured in meters!
+The distance per pulse is specified by calling the encoder's ``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "pulse" refers to a full encoder cycle (i.e. four edges), and thus will be 1/4 the value that was specified in the SysId config.  Remember, as well, that the distance should be measured in meters!
 
 .. tabs::
 
@@ -249,4 +249,4 @@ Finally, we must include one additional method - a method that allows us to set 
       :linenos:
       :lineno-start: 43
 
-It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured characterization data), this is essential to ensuring their accuracy.
+It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured identification data), this is essential to ensuring their accuracy.
