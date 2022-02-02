@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.9
     - name: Install Python Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -42,7 +42,7 @@ jobs:
         git fetch origin main --depth=1
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -55,7 +55,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -68,7 +68,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
     - name: Check Image Size
       run: |
         make sizecheck
@@ -90,7 +90,7 @@ jobs:
         git fetch origin main --depth=1
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -106,7 +106,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
     - uses: psf/black@22.1.0
       with:
         black_args: ". --check"
