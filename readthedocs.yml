@@ -10,6 +10,6 @@ formats:
   - pdf
 
 python:
-  version: "3.8"
+  version: "3.9"
   install:
   - requirements: source/requirements.txt
