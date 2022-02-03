@@ -6,7 +6,7 @@ Introduction to System Identification
 What is "System Identification?"
 --------------------------------
 
-`System identification <https://en.wikipedia.org/wiki/System_identification>`__ - is the process of determining a mathematical model for the behavior of a system through statistical analysis of its inputs and outputs.
+`System identification <https://en.wikipedia.org/wiki/System_identification>`__ is the process of determining a mathematical model for the behavior of a system through statistical analysis of its inputs and outputs.
 
 This model is a rule describing how input voltage affects the way our measurements (typically encoder data) evolve in time.  A "system identification" routine takes such a model and a dataset and attempts to fit parameters which would make your model most closely-match the dataset.  Generally, the model is not perfect - the real-world data are polluted by both measurement noise (e.g. timing errors, encoder resolution limitations) and system noise (unmodeled forces acting on the system, e.g. vibrations).  However, even an imperfect model is usually "good enough" to give us accurate :ref:`feedforward control <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` of the mechanism, and even to estimate  optimal gains for :ref:`feedback control <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`.
 
