@@ -15,12 +15,6 @@ Onboard I2C Causing System Lockups
 
 **Workaround:** The only surefire mitigation is to use the MXP I2C port instead. Acessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
-Analog Devices Gyros don't work properly
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly.
-
-**Workaround:** There is no known workaround. An updated image will be released when the issue has been resolved.
-
 Game Tools Autorun graphics say 2020
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -107,6 +101,15 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
+
+Fixed in Image 2022_v4.0 (Game Tools 2022 f1 and WPILib 2022.3.1)
+-----------------------------------------------------------------
+
+Analog Devices Gyros don't work properly
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly.
+
+**Workaround:** There is no known workaround. An updated image will be released when the issue has been resolved.
 
 Fixed in WPILib 2022.2.1
 ------------------------
