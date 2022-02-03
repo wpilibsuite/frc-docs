@@ -83,7 +83,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -99,7 +99,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:

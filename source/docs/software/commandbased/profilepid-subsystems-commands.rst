@@ -103,7 +103,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -119,7 +119,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.2.1/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
