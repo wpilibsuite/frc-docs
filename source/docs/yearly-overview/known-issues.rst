@@ -15,6 +15,13 @@ Onboard I2C Causing System Lockups
 
 **Workaround:** The only surefire mitigation is to use the MXP I2C port instead. Acessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
+ADIS16448 not reading values in Java
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** In WPILib 2022.3.1, using the no-args constructor for the ADIS16448 IMU in Java results in an divide by zero exception in a separate thread and no IMU data updates.
+
+**Workaround:** Instead of the no-args constructor, use `new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);`.
+
 Game Tools Autorun graphics say 2020
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
