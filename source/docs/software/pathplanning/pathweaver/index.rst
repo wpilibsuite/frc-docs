@@ -7,6 +7,6 @@ PathWeaver
    introduction
    creating-pathweaver-project
    drawing-pathweaver-path
-   creating-path-groups
+   creating-autonomous-routines
    integrating-robot-program
    adding-field-images

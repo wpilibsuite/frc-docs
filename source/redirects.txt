@@ -262,3 +262,4 @@
 "docs/software/pathplanning/robot-characterization/index.rst" "docs/software/pathplanning/system-identification/index.rst"
 "docs/software/pathplanning/robot-characterization/introduction.rst" "docs/software/pathplanning/system-identification/introduction.rst"
 "docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst" "docs/software/pathplanning/system-identification/viewing-diagnostics.rst"
+"docs/software/pathplanning/pathweaver/creating-path-groups.rst" "docs/software/pathplanning/pathweaver/creating-autonomous-routines.rst"
