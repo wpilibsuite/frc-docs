@@ -11,108 +11,40 @@ The following program starts automatic capture of a USB camera like the Microsof
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        package org.usfirst.frc.team190.robot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+         :language: java
+         :lines: 7-20
+         :linenos:
+         :lineno-start: 7
 
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.IterativeRobot;
+   .. group-tab:: C++
 
-        public class Robot extends IterativeRobot {
-
-          public void robotInit() {
-            CameraServer.startAutomaticCapture();
-          }
-        }
-
-    .. code-tab:: c++
-
-        #include "cameraserver/CameraServer.h"
-        class Robot: public IterativeRobot
-        {
-        private:
-          void RobotInit()
-          {
-            frc::CameraServer::StartAutomaticCapture();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+         :language: cpp
+         :lines: 7-8,16-18,20,25-31
 
 
 Advanced Camera Server Program
 ------------------------------
 
-In the following example a thread created in robotInit() gets the Camera Server instance. Each frame of the video is individually processed, in this case converting a color image (BGR) to gray scale using the OpenCV cvtColor() method. The resultant images are then passed to the output stream and sent to the dashboard. You can replace the cvtColor operation with any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to write targeting information onto the image being sent to the dashboard.
+In the following example a thread created in robotInit() gets the Camera Server instance. Each frame of the video is individually processed, in this case drawing a rectangle on the image using the OpenCV ``rectangle()`` method. The resultant images are then passed to the output stream and sent to the dashboard. You can replace the ``rectangle`` operation with any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to write targeting information onto the image being sent to the dashboard.
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        package org.usfirst.frc.team190.robot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+         :language: java
+         :lines: 7-65
+         :linenos:
+         :lineno-start: 7
 
-        import org.opencv.core.Mat;
-        import org.opencv.imgproc.Imgproc;
+   .. group-tab:: C++
 
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
-        import edu.wpi.cscore.UsbCamera;
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.IterativeRobot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+         :language: cpp
+         :lines: 5-20,23-56,58-61,63-64,69-76
 
-        public class Robot extends IterativeRobot {
-
-          public void robotInit() {
-            new Thread(() -> {
-              UsbCamera camera = CameraServer.startAutomaticCapture();
-              camera.setResolution(640, 480);
-
-              CvSink cvSink = CameraServer.getVideo();
-              CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
-
-              Mat source = new Mat();
-              Mat output = new Mat();
-
-              while(!Thread.interrupted()) {
-                if (cvSink.grabFrame(source) == 0) {
-                  continue;
-                }
-                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-                outputStream.putFrame(output);
-              }
-            }).start();
-          }
-        }
-
-    .. code-tab:: c++
-
-        #include "cameraserver/CameraServer.h"
-        #include <opencv2/imgproc/imgproc.hpp>
-        #include <opencv2/core/core.hpp>
-        class Robot: public IterativeRobot
-        {
-        private:
-          static void VisionThread()
-          {
-            cs::UsbCamera camera = frc::CameraServer::StartAutomaticCapture();
-            camera.SetResolution(640, 480);
-            cs::CvSink cvSink = frc::CameraServer::GetVideo();
-            cs::CvSource outputStreamStd = frc::CameraServer::PutVideo("Gray", 640, 480);
-            cv::Mat source;
-            cv::Mat output;
-            while(true) {
-              if (cvSink.GrabFrame(source) == 0) {
-                continue;
-              }
-              cvtColor(source, output, cv::COLOR_BGR2GRAY);
-              outputStreamStd.PutFrame(output);
-            }
-          }
-          void RobotInit()
-          {
-            std::thread visionThread(VisionThread);
-            visionThread.detach();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
-
-Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on Shuffleboard, select that named stream. In this case that is "Blur" for the Java program and "Gray" for the C++ sample.
+Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".
