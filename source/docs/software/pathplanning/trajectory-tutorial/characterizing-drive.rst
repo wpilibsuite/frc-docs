@@ -27,10 +27,10 @@ Checking Diagnostics
 
 Per the :ref:`system identification guide <docs/software/pathplanning/system-identification/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
-.. image:: images/voltage-domain-plots.png
-   :alt: Combined Voltage-Domain Plots.
+.. image:: images/diagnostic-plots.png
+   :alt: SysId diagnostics panel.
 
-As our data look reasonably linear and our threshold seems to be set correctly, we may move on to the next step.
+As our data look reasonably linear, and the fit metrics are within acceptable parameters, we proceed to the next step.
 
 Record Feedforward Gains
 ^^^^^^^^^^^^^^^^^^^^^^^^
