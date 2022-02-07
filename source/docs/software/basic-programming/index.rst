@@ -7,5 +7,6 @@ Basic Programming
    git-getting-started.rst
    cpp-units
    joystick
+   robot-preferences
    using-test-mode
    reading-stacktraces
