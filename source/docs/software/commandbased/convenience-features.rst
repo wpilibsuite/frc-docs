@@ -371,7 +371,7 @@ decorated command will be interrupted if the timeout expires:
     button.WhenPressed(command.WithTimeout(5.0_s));
 
 until/withInterrupt
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
 
@@ -386,7 +386,7 @@ The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java
 
     // Will be interrupted if m_limitSwitch.get() returns true
     button.WhenPressed(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
-    
+
 ``withInterrupt()`` is an alias for ``until()``.
 
 andThen
