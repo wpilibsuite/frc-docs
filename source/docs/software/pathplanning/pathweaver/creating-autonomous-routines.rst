@@ -4,7 +4,7 @@ Autonomous Routines (also known as Path Groups) are a way of visualizing where o
 
 Creating an Autonomous Routine
 ------------------------------
-Press the "plus" button underneath Autonomous Routines. Then drag the Paths from the Paths section into your Autonomous Routine.
+Press the :guilabel:`+` button underneath Autonomous Routines. Then drag the Paths from the Paths section into your Autonomous Routine.
 
 Each path added to an autonomous routine will be drawn in a different color making it easy to figure out what the name is for each path.
 
