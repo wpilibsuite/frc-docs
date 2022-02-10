@@ -25,69 +25,21 @@ The :code:`TimedRobot` class is the the base class recommended for most users.  
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        import edu.wpi.first.wpilibj.TimedRobot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+         :language: java
+         :lines: 7-55
+         :linenos:
+         :lineno-start: 7
 
-        public class Robot extends TimedRobot {
+   .. group-tab:: C++
 
-            @Override
-            public void robotInit() {
-                // This is called once when the robot code initializes
-            }
-
-            @Override
-            public void robotPeriodic() {
-                // This is called every period regardless of mode
-            }
-
-            @Override
-            public void autonomousInit() {
-                // This is called once when the robot first enters autonomous mode
-            }
-
-            @Override
-            public void autonomousPeriodic() {
-                // This is called periodically while the robot is in autonomous mode
-            }
-
-            @Override
-            public void teleopInit() {
-                // This is called once when the robot first enters teleoperated mode
-            }
-
-            @Override
-            public void teleopPeriodic() {
-                // This is called periodically while the robot is in teleoperated mode
-            }
-
-            @Override
-            public void testInit() {
-                // This is called once when the robot enters test mode
-            }
-
-            @Override
-            public void testPeriodic() {
-                // This is called periodically while the robot is in test mode
-            }
-
-        }
-
-    .. code-tab:: c++
-
-        #include <frc/TimedRobot.h>
-
-        class Robot : public frc::TimedRobot {
-            public:
-                void RobotInit() override; // This is called once when the robot code initializes
-                void RobotPeriodic() override; // This is called every period regardless of mode
-                void AutonomousInit() override; // This is called once when the robot first enters autonomous mode
-                void AutonomousPeriodic() override; // This is called periodically while the robot is in autonomous mode
-                void TeleopInit() override; // This is called once when the robot first enters teleoperated mode
-                void TeleopPeriodic() override; // This is called periodically while the robot is in teleoperated mode
-                void TestInit() override; // This is called once when the robot enters test mode
-                void TestPeriodic() override; // This is called periodically while the robot is in test mode
-        };
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+         :language: cpp
+         :lines: 5-29
+         :linenos:
+         :lineno-start: 5
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
