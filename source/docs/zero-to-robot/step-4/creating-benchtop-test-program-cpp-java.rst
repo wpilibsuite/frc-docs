@@ -6,7 +6,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 Creating a New WPILib Project
 -----------------------------
 
-Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
+Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
     :alt: Choose "WPILib: Create a new project".

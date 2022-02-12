@@ -154,7 +154,7 @@ If desired, users can omit a base class entirely and simply write their program 
 Creating a New WPILib Project
 -----------------------------
 
-Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib," this will bring up the list of WPILib-specific VS Code commands. Now, select the :guilabel:`Create a new project` command:
+Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the :guilabel:`Create a new project` command:
 
 .. image:: images/creating-robot-program/create-new-project.png
    :alt: Highlights the "WPILib: Create a new project" command.
