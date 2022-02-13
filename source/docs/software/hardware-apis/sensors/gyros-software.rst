@@ -192,6 +192,11 @@ The following example shows how to stabilize heading using a simple P loop close
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
         @Override
+        public void robotInit() {
+            rightMotors.setInverted(true);
+        }
+
+        @Override
         public void autonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
             double error = -gyro.getRate();
@@ -217,6 +222,10 @@ The following example shows how to stabilize heading using a simple P loop close
         frc::MotorControllerGroup rightMotors{right1, right2};
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
+
+        void Robot::RobotInit() {
+          rightMotors.SetInverted(true);
+        }
 
         void Robot::AutonomousPeriodic() {
             // Setpoint is implicitly 0, since we don't want the heading to change
@@ -258,6 +267,11 @@ The following example shows how to stabilize heading using a simple P loop close
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
         @Override
+        public void robotInit() {
+            rightMotors.setInverted(true);
+        }
+
+        @Override
         public void autonomousInit() {
             // Set setpoint to current heading at start of auto
             heading = gyro.getAngle();
@@ -292,6 +306,10 @@ The following example shows how to stabilize heading using a simple P loop close
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
+        void Robot::RobotInit() {
+          rightMotors.SetInverted(true);
+        }
+
         void Robot::AutonomousInit() {
             // Set setpoint to current heading at start of auto
             heading = gyro.GetAngle();
@@ -320,7 +338,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         // Use gyro declaration from above here
 
         // The gain for a simple P loop
-        double kP = 1;
+        double kP = 0.05;
 
         // Initialize motor controllers and drive
         Spark left1 = new Spark(0);
@@ -335,12 +353,17 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
         @Override
+        public void robotInit() {
+            rightMotors.setInverted(true);
+        }
+
+        @Override
         public void autonomousPeriodic() {
             // Find the heading error; setpoint is 90
             double error = 90 - gyro.getAngle();
 
             // Turns the robot to face the desired direction
-            drive.tankDrive(kP * error, kP * error);
+            drive.tankDrive(kP * error, -kP * error);
         }
 
     .. code-tab:: c++
@@ -348,7 +371,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         // Use gyro declaration from above here
 
         // The gain for a simple P loop
-        double kP = 1;
+        double kP = 0.05;
 
         // Initialize motor controllers and drive
         frc::Spark left1{0};
@@ -361,12 +384,16 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
+        void Robot::RobotInit() {
+          rightMotors.SetInverted(true);
+        }
+
         void Robot::AutonomousPeriodic() {
             // Find the heading error; setpoint is 90
             double error = 90 - gyro.GetAngle();
 
             // Turns the robot to face the desired direction
-            drive.TankDrive(kP * error, kP * error);
+            drive.TankDrive(kP * error, -kP * error);
         }
 
 As before, more-advanced implementations can use more-complicated control loops.
