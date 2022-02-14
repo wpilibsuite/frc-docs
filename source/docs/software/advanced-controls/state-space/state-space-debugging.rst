@@ -7,7 +7,7 @@ Checking Signs
 One of the most common causes of bugs with state-space controllers is signs being flipped. For example, models included in WPILib expect positive voltage to result in a positive acceleration, and vice versa. If applying a positive voltage does not make the mechanism accelerate forwards, or if moving "forwards" makes encoder (or other sensor readings) decrease, they should be inverted so that positive voltage input results in a positive encoder reading. For example, if I apply an :term:`input` of :math:`[12, 12]^T` (full forwards for the left and right motors) to my differential drivetrain, my wheels should propel my robot "forwards" (along the +X axis locally), and for my encoders to read a positive velocity.
 
 .. important::
-    The WPILib DifferentialDrive by default inverts the right motors. This behavior can be changed by calling ``setRightSideInverted(false)``/``SetRightSideInverted(false)`` (Java/C++) on the DifferentialDrive object.
+    The WPILib ``DifferentialDrive``, by default, does not invert any motors. You may need to call the ``setInverted(true)`` method on the motor controller object to invert so that positive input creates forward motion.
 
 The Importance of Graphs
 ------------------------
