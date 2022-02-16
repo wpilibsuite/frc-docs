@@ -12,7 +12,7 @@ WPILib supports PID control of mechanisms through the ``PIDController`` class (`
 Using the PIDController Class
 -----------------------------
 
-.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``wpilibj.controller`` package.
+.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``edu.wpi.first.math.controller`` package.
 
 Constructing a PIDController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
