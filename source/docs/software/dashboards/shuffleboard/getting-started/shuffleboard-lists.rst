@@ -1,7 +1,7 @@
 Working with Lists
 ==================
 
-Lists are sets of tiles that are be logically grouped together in a vertical layout. When tiles are added to a list,it becomes visually obvious that the tiles are related in function. In addition tiles in lists take up less screen space than the same tiles directly on the desktop because tiles in a list don't display the dark window title, but instead display a smaller textual label documenting the contents of the list.
+Lists are sets of tiles that are logically grouped together in a vertical layout. When tiles are added to a list,it becomes visually obvious that the tiles are related in function. In addition tiles in lists take up less screen space than the same tiles directly on the desktop because tiles in a list don't display the dark window title, but instead display a smaller textual label documenting the contents of the list.
 
 .. figure:: images/list-1.png
    :alt:
