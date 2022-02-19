@@ -55,6 +55,8 @@ Writing the image with Raspberry Pi Imager
 - :guilabel:`Choose Storage` -> select the destination microSD device
 - Press :guilabel:`Write`
 
+.. warning:: After writing the image, Windows may prompt to format the drive. Do not reformat, or else you will need to write the image again.
+
 Setting the roboRIO Team Number
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
