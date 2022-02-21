@@ -135,7 +135,7 @@ REV Pneumatic Hub
 -----------------
 
 .. image:: images/control-system-hardware/pneumatic-hub.png
-  :alt: REV Pneumatics Hub
+  :alt: REV Pneumatic Hub
   :width: 500
 
 The `REV Pneumatic Hub <https://docs.revrobotics.com/rev-11-1852/>`__ is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.

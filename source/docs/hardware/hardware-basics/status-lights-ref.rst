@@ -128,6 +128,53 @@ PDP Special States
 | No LED       | No Power/ Incorrect Polarity |
 +--------------+------------------------------+
 
+Power Distribution Hub
+----------------------
+
+.. image:: images/status-lights/power-distribution-hub.png
+  :alt: REV Power Distribution Hub with Status LED, and Channel LEDs Highlighted
+  :width: 400
+
+.. note:: These led patterns only apply to firmware version 21.1.7 and later
+
+PDH Status LED
+--------------
+
++-------------------------+--------------------------------------------------------+
+| LED Color               | Status                                                 |
++-------------------------+--------------------------------------------------------+
+| Blue Solid              | Device on but no communication established             |
++-------------------------+--------------------------------------------------------+
+| Green Solid             | Main Communication with roboRIO established            |
++-------------------------+--------------------------------------------------------+
+| Magenta Blinking        | Keep Alive Timeout                                     |
++-------------------------+--------------------------------------------------------+
+| Solid Cyan              | Secondary Heartbeat (Connected to REV Hardware Client) |
++-------------------------+--------------------------------------------------------+
+| Orange/Blue Blinking    | Low Battery                                            |
++-------------------------+--------------------------------------------------------+
+| Orange/Yellow Blinking  | CAN Fault                                              |
++-------------------------+--------------------------------------------------------+
+| Orange/Cyan Blinking    | Hardware Fault                                         |
++-------------------------+--------------------------------------------------------+
+| Orange/Red Blinking     | Fail Safe                                              |
++-------------------------+--------------------------------------------------------+
+| Orange/Magenta Blinking | Device Over Current                                    |
++-------------------------+--------------------------------------------------------+
+
+Channel LEDs
+^^^^^^^^^^^^
+
++--------------+----------------------------------------------------------------------------------------------------------+
+| LED Color    | Status                                                                                                   |
++--------------+----------------------------------------------------------------------------------------------------------+
+| Off          | Channel has voltage and is operating as expected                                                         |
++--------------+----------------------------------------------------------------------------------------------------------+
+| Red Solid    | Channel has NO voltage and there is an active fault. Check for tripped or missing circuit breaker / fuse |
++--------------+----------------------------------------------------------------------------------------------------------+
+| Red Blinking | Sticky fault on the channel. Check for tripped circuit breaker / fuse.                                   |
++--------------+----------------------------------------------------------------------------------------------------------+
+
 Voltage Regulator Module
 ------------------------
 
@@ -185,6 +232,62 @@ PCM Solenoid Channel LEDs
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
+
+Pneumatic Hub
+-------------
+
+.. image:: images/status-lights/pneumatic-hub.png
+  :alt: REV Pneumatic Hub with Status LED, Compressor LED, and Solenoid LEDs highlighted
+  :width: 400
+
+.. note:: These led patterns only apply to firmware version 21.1.7 and later
+
+PH Status LED
+^^^^^^^^^^^^^
+
++-------------------------+--------------------------------------------------+
+| LED Color               | Status                                           |
++=========================+==================================================+
+| Blue Solid              | Device on but no communication established       |
++-------------------------+--------------------------------------------------+
+| Green Solid             | Main Communication established                   |
++-------------------------+--------------------------------------------------+
+| Magenta Blinking        | Keep Alive Timeout                               |
++-------------------------+--------------------------------------------------+
+| Solid Cyan              | Secondary Heartbeat (connected to REV HW Client) |
++-------------------------+--------------------------------------------------+
+| Orange/Blue Blinking    | Hardware Fault                                   |
++-------------------------+--------------------------------------------------+
+| Orange/Yellow Blinking  | CAN Fault                                        |
++-------------------------+--------------------------------------------------+
+| Orange/Red Blinking     | Fail Safe                                        |
++-------------------------+--------------------------------------------------+
+| Orange/Magenta Blinking | Device Over Current                              |
++-------------------------+--------------------------------------------------+
+| Orange/Green Blinking   | Orange/Green Blinking                            |
++-------------------------+--------------------------------------------------+
+
+Compressor LED
+^^^^^^^^^^^^^^
+
++-------------+----------------+
+| LED Color   | Status         |
++=============+================+
+| Green Solid | Compressor On  |
++-------------+----------------+
+| Black Solid | Compressor Off |
++-------------+----------------+
+
+Solenoid LEDs
+^^^^^^^^^^^^^
+
++-------------+--------------+
+| LED Color   | Status       |
++=============+==============+
+| Green Solid | Solenoid On  |
++-------------+--------------+
+| Black Solid | Solenoid Off |
++-------------+--------------+
 
 Talon SRX & Victor SPX & Talon FX Motor Controllers
 ---------------------------------------------------
