@@ -15,13 +15,6 @@ Onboard I2C Causing System Lockups
 
 **Workaround:** The only surefire mitigation is to use the MXP I2C port instead. Acessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
-ADIS16448 not reading values in Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** In WPILib 2022.3.1, using the no-args constructor for the ADIS16448 IMU in Java results in an divide by zero exception in a separate thread and no IMU data updates.
-
-**Workaround:** Instead of the no-args constructor, use ``new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);``.
-
 CAN bus utilization is noisy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -119,6 +112,41 @@ LabVIEW Autorun graphics say 2020
 
 **Workaround:** This can be safely ignored, if the menu item says 2022, you are installing the correct software.
 
+Fixed in WPILib 2022.4.1
+------------------------
+
+Reentrant uses of synchronized may cause deadlock in Java
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** If multiple threads call a `synchronized` object, there may be a deadlock. This is caused by a bug in the version of JDK bundled with the 2022.1.1 to 2022.3.1 versions of WPILib.
+
+**Workaround:** There are two options for workarounds:
+
+#. Install the 2021 JDK. This is performed automatically in the WPILib 2022.4.1 and later.
+
+   #. Download the `2021 JDK <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/jdk/roborio-2021/11.0.9u11-1/roborio-2021-11.0.9u11-1.ipk>`__.
+
+   #. :doc:`Copy </docs/software/roborio-info/roborio-ftp>` the downloaded ``.ipk`` file to the roboRIO.
+
+   #. :doc:`SSH </docs/software/roborio-info/roborio-ssh>` as admin to the roborio and execute ``opkg remove frc2022-openjdk*`` and ``opkg install roborio-2021-11.0.9u11-1.ipk``
+
+#. Replace uses of ``synchronized`` with ``reentrantLock``
+
+.. code-block:: Java
+
+   try {
+     reentrantLock.lock()
+     ...do code here...
+   } finally {
+     reentrantLock.unlock()
+   }
+
+ADIS16448 not reading values in Java
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** In WPILib 2022.3.1, using the no-args constructor for the ADIS16448 IMU in Java results in an divide by zero exception in a separate thread and no IMU data updates.
+
+**Workaround:** Instead of the no-args constructor, use ``new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);``.
 
 Fixed in Image 2022_v4.0 (Game Tools 2022 f1 and WPILib 2022.3.1)
 -----------------------------------------------------------------
