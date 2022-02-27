@@ -370,22 +370,24 @@ decorated command will be interrupted if the timeout expires:
     // Will time out 5 seconds after being scheduled, and be interrupted
     button.WhenPressed(command.WithTimeout(5.0_s));
 
-withInterrupt
-^^^^^^^^^^^^^
+until/withInterrupt
+^^^^^^^^^^^^^^^^^^^
 
-The ``withInterrupt()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ad5d6a753ec2790f274bc7b884e9e305b>`__) decorator adds a condition on which the command will be interrupted:
+The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
   .. code-tab:: java
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.whenPressed(command.withInterrupt(m_limitSwitch::get));
+    button.whenPressed(command.until(m_limitSwitch::get));
 
   .. code-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.WhenPressed(command.WithInterrupt([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+    button.WhenPressed(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+
+``withInterrupt()`` is an alias for ``until()``.
 
 andThen
 ^^^^^^^
