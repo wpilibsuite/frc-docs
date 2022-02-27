@@ -15,11 +15,11 @@ Data logs consist of a series of timestamped records.  Control records allow sta
 Standard Data Logging using DataLogManager
 ------------------------------------------
 
-The ``DataLogManager`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/wpilibj/DataLogManager.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The deta file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
+The ``DataLogManager`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The deta file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
 
 Log files are initially named ``FRC_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``FRC_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the FMS is connected and provides a match number, the log file is renamed to ``FRC_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
 
-On startup, all existing ``FRC_TBD`` log files are deleted.  If there is less than 50 MB of free space on the target storage, ``FRC_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
+On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 50 MB of free space on the target storage, ``FRC_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
 
 The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``robotInit``). This will record all NetworkTables changes to the data log.
 
@@ -83,9 +83,9 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
 Custom Data Logging using DataLog
 ---------------------------------
 
-The ``DataLog`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/util/datalog/DataLog.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
+The ``DataLog`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
-.. note: Unlike NetworkTables, there is no change checking performed.  **Every** call to a LogEntry.append() function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
+.. note: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
 The LogEntry classes can be used in conjunction with DataLogManager to record values only to a data log and not to NetworkTables:
 
@@ -174,13 +174,13 @@ Connecting to RoboRIO
 .. image:: images/datalogtool/download-connecting.png
    :alt: Connection display showing team number, username, and password fields.
 
-Either a team number, IP address, or hostname can be entered into the "Team Number / Address" field.  This field specifies the remote host to connect to. If a team number is entered, ``roborio-TEAM-frc.local`` is used as the connection address.
+Either a team number, IP address, or hostname can be entered into the :guilabel:`Team Number / Address` field.  This field specifies the remote host to connect to. If a team number is entered, ``roborio-TEAM-frc.local`` is used as the connection address.
 
 The remote username and password are also entered here.  For the roboRIO, the username should be ``lvuser`` with a blank password.
 
 The tool also supports connecting to network devices other than the roboRIO, such as coprocessors, as long as the device supports SFTP password-based authentication.
 
-Click "Connect" to connect to the remote device.  This will attempt to connect to the device.  The connection attempt can be aborted at any time by clicking the "Disconnect" button.  If the application is unable to connect to the remote device, an error will be displayed above the "Team Number / Address" field and a new connection can be attempted.
+Click :guilabel:`Connect` to connect to the remote device.  This will attempt to connect to the device.  The connection attempt can be aborted at any time by clicking :guilabel:`Disconnect`.  If the application is unable to connect to the remote device, an error will be displayed above the :guilabel:`Team Number / Address` field and a new connection can be attempted.
 
 Downloading Files
 ^^^^^^^^^^^^^^^^^
@@ -190,11 +190,11 @@ After the connection is successfully established, a simplified file browser will
 .. image:: images/datalogtool/download-file-selection.png
    :alt: Remote file browser showing remote directory, list of directories, and list of files with checkboxes next to each one.
 
-Click the "Select Download Folder..." button to bring up a file browser for the local computer.
+Click :guilabel:`Select Download Folder...` to bring up a file browser for the local computer.
 
-If you want to delete the files from the remote device after they are downloaded, check the "Delete after download" checkbox.
+If you want to delete the files from the remote device after they are downloaded, check the :guilabel:`Delete after download` checkbox.
 
-Once a download folder is selected, a "Download" button will appear.  After clicking this button, the display will change to a download progress display.  Any errors will be shown next to each file.  Click the "Download complete!" button to return to the file browser.
+Once a download folder is selected, a :guilabel:`Download` button will appear.  After clicking this button, the display will change to a download progress display.  Any errors will be shown next to each file.  Click :guilabel:`Download complete!` to return to the file browser.
 
 .. image:: images/datalogtool/download-downloading.png
    :alt: Download status showing 100% completion on the first file and a "file exists" error on the second file.
@@ -216,6 +216,6 @@ The output window is used to specify the output folder (via the "Select Output F
 Custom Processing of Data Logs
 ------------------------------
 
-For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in `Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/util/datalog/DataLogReader.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log_reader.html>`__, or `Python <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py>`__.  For other languages, the `data log format <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__ is also documented.
+For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in `Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLogReader.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log_reader.html>`__, or `Python <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py>`__.  For other languages, the `data log format <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__ is also documented.
 
 DataLogReader provides a low-level view of a data log, in that it supports iterating over a data log's control and data records and decoding of common data types, but does not provide any higher level abstractions such as a NetworkTables-like map of entries.  The printlog example in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/src/printlog/java/printlog/PrintLog.java>`__ and `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/printlog.cpp>`__ (and the Python ``datalog.py``) demonstrates basic usage.
