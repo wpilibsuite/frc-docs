@@ -34,7 +34,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 33-47
       :linenos:
@@ -42,7 +42,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.3.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 12-22
       :linenos:
