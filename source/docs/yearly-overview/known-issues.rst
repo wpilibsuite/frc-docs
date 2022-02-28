@@ -122,7 +122,7 @@ Reentrant uses of synchronized may cause deadlock in Java
 
 **Workaround:** There are two options for workarounds:
 
-#. Install the 2021 JDK. This is performed automatically in the WPILib 2022.4.1 and later.
+#. Install the 2021 JDK. This is performed automatically in WPILib 2022.4.1 and later.
 
    #. Download the `2021 JDK <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/jdk/roborio-2021/11.0.9u11-1/roborio-2021-11.0.9u11-1.ipk>`__.
 
