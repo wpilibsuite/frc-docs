@@ -17,7 +17,7 @@ Standard Data Logging using DataLogManager
 
 The ``DataLogManager`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The deta file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
 
-.. note: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or ExFAT formatted drives will not work.
+.. note: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work.
 
 Log files are initially named ``FRC_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``FRC_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the FMS is connected and provides a match number, the log file is renamed to ``FRC_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
 
