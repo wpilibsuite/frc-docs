@@ -1,14 +1,16 @@
-Telemetry: Recording Data on the Robot
-======================================
+Telemetry: Recording and Sending Real-Time Data
+===============================================
 
 `Telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ (literally "measuring remotely") is the process of recording and sending real-time data about the performance of your robot to a real-time readout or log file.  Recording and viewing telemetry data is a crucial part of the engineering process - accurate telemetry data helps you tune your robot to perform optimally, and is indispensable for debugging your robot when it fails to perform as expected.
 
-Recording Data from Robot Code
+By default, no telemetry data is recorded (saved) on the robot.  However, recording data on the robot can provide benefits over recording on a dashboard, namely that more data can be recorded (there are no bandwidth limitations), and all the recorded data can be very accurately timestamped.  WPILib has integrated support for on-robot recording of telemetry data via the ``DataLogManager`` and ``DataLog`` classes and provides a tool for downloading data log files and converting them to CSV.
+
+.. note:: In addition to on-robot recording of telemetry data, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
+
+Adding Telemetry to Robot Code
 ------------------------------
 
-.. note:: On-robot logging of telemetry data is not yet fully supported by WPILib (it is currently scheduled for a mid-season update).  In the mean-time, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
-
-WPILib supports several different ways to record and report telemetry data on the driver station.
+WPILib supports several different ways to record and send telemetry data from robot code.
 
 At the most basic level, the :ref:`Riolog <docs/software/vscode-overview/viewing-console-output:Viewing Console Output>` provides support for viewing print statements from robot code.  This is useful for on-the-fly debugging of problematic code, but does not scale as console interfaces are not suitable for rich data streams.
 
