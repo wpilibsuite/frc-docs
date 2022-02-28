@@ -29,6 +29,13 @@ Updating Properties on roboRIO 2.0 may be slow or hang
 
 **Workaround:** After a few minutes of the tool waiting the roboRIO should be able to be rebooted and the new properties should be set.
 
+Simulation crashes on Mac after updating WPILib
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** On Mac, after updating the project to use a newer version of WPILib, running simulation immediately crashes without the GUI appearing.
+
+**Workaround:** Run ``.\gradlew clean`` or delete the build directory.
+
 Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
