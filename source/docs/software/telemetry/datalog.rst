@@ -208,7 +208,7 @@ Converting Data Logs to CSV
 
 As data logs are binary files, the DataLogTool desktop application provides functionality to convert data logs into CSV files for further processing or analysis.  Multiple data logs may be simultaneously loaded into the tool for batch processing, and partial data exports can be performed by selecting only the data that is desired to be output.
 
-.. image:: images/datalogtool/download-connecting.png
+.. image:: images/datalogtool/csv-export.png
    :alt: DataLogTool window showing two open files, a tree view of entries with corresponding checkboxes and information about each entry, and an output window with export style option.
 
 The conversion process is started by opening data log files in the "Input Files" window.  Files are opened by clicking :guilabel:`Open File(s)...`.  Summary status on each file (e.g. number of records and entries) is displayed.  The :guilabel:`X` button in the table row closes the file.
