@@ -12,7 +12,7 @@ In addition to this site there are a few other places teams may check for docume
 
 -  `NI FRC Community Documents Section <https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=documents>`__
 -  `FIRST Inspires Technical Resources Page <https://www.firstinspires.org/resource-library?flagged=All&combine=&field_content_type_value%5B0%5D=first_robotics_competition&field_resource_library_tags_tid=171&sort_by=created_1>`__
--  `CTRE Software & Resources Page <https://newsite.ctr-electronics.com/software/>`__
+-  `CTRE Software & Resources Page <https://store.ctr-electronics.com/software/>`__
 
 Forums
 ------
