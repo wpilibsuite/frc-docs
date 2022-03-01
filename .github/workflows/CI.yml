@@ -48,7 +48,7 @@ jobs:
         pip install -r source/requirements.txt
     - name: Check Links
       run: |
-        make linkcheckdiff
+        make linkcheck
   check-linting:
     runs-on: ubuntu-latest
     steps:
