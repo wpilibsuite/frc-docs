@@ -198,7 +198,7 @@ Click :guilabel:`Select Download Folder...` to bring up a file browser for the l
 
 If you want to delete the files from the remote device after they are downloaded, check the :guilabel:`Delete after download` checkbox.
 
-Once a download folder is selected, a :guilabel:`Download` button will appear.  After clicking this button, the display will change to a download progress display.  Any errors will be shown next to each file.  Click :guilabel:`Download complete!` to return to the file browser.
+Once a download folder is selected, :guilabel:`Download` will appear.  After clicking this button, the display will change to a download progress display.  Any errors will be shown next to each file.  Click :guilabel:`Download complete!` to return to the file browser.
 
 .. image:: images/datalogtool/download-downloading.png
    :alt: Download status showing 100% completion on the first file and a "file exists" error on the second file.
@@ -208,14 +208,14 @@ Converting Data Logs to CSV
 
 As data logs are binary files, the DataLogTool desktop application provides functionality to convert data logs into CSV files for further processing or analysis.  Multiple data logs may be simultaneously loaded into the tool for batch processing, and partial data exports can be performed by selecting only the data that is desired to be output.
 
-.. image:: images/datalogtool/download-connecting.png
+.. image:: images/datalogtool/csv-export.png
    :alt: DataLogTool window showing two open files, a tree view of entries with corresponding checkboxes and information about each entry, and an output window with export style option.
 
-The conversion process is started by opening data log files in the "Input Files" window.  Files are opened by clicking the "Open File(s)..." button.  Summary status on each file (e.g. number of records and entries) is displayed.  The "X" button in the table row closes the file.
+The conversion process is started by opening data log files in the "Input Files" window.  Files are opened by clicking :guilabel:`Open File(s)...`.  Summary status on each file (e.g. number of records and entries) is displayed.  Clicking :guilabel:`X` in the table row closes the file.
 
-After at least one file is loaded, the "Entries" window displays a tree view of the entries (this can be changed to a flat view by right clicking on the "Entries" window title bar and unchecking "Tree View").  Individual entries or entire subtrees can be checked or unchecked to indicate whether they should be included in the export.  The data type information and initial metadata for each entry is also shown in the table.  As the "Entries" view shows a merged view of all entries across all input files, if more than one input file is open, hovering over an entry's name will highlight what input files contain that entry.
+After at least one file is loaded, the "Entries" window displays a tree view of the entries (this can be changed to a flat view by right clicking on the "Entries" window title bar and unchecking :guilabel:`Tree View`).  Individual entries or entire subtrees can be checked or unchecked to indicate whether they should be included in the export.  The data type information and initial metadata for each entry is also shown in the table.  As the "Entries" view shows a merged view of all entries across all input files, if more than one input file is open, hovering over an entry's name will highlight what input files contain that entry.
 
-The output window is used to specify the output folder (via the "Select Output Folder..." button) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking "Export CSV" will create a ``.csv`` file in the output folder corresponding to each input file.
+The output window is used to specify the output folder (via :guilabel:`Select Output Folder...`) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking :guilabel:`Export CSV` will create a ``.csv`` file in the output folder corresponding to each input file.
 
 Custom Processing of Data Logs
 ------------------------------
