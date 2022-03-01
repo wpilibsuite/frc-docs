@@ -75,7 +75,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
    ``https://copperforge.cc/files/dev/vendordeps/LibCu-latest.json``
 
-`CTRE Phoenix Framework <https://newsite.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, Pigeon IMU, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+`CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, Pigeon IMU, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
    ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix-frc2022-latest.json``
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library

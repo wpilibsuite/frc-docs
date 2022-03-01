@@ -44,7 +44,7 @@ CTRE Power Distribution Panel
   :alt: CTRE Power Distribution Panel
   :width: 500
 
-The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://newsite.ctr-electronics.com/content/user-manual/PDP%20User%27s%20Guide.pdf>`__.
+The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://store.ctr-electronics.com/content/user-manual/PDP%20User%27s%20Guide.pdf>`__.
 
 REV Power Distribution Hub
 --------------------------
@@ -62,7 +62,7 @@ CTRE Voltage Regulator Module
   :alt: CTRE Voltage Regulator Module
   :width: 500
 
-The CTRE Voltage Regulator Module (VRM) is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras. For more information, see the `VRM User Manual <https://newsite.ctr-electronics.com/content/user-manual/VRM%20User%27s%20Guide.pdf>`__.
+The CTRE Voltage Regulator Module (VRM) is an independent module that is powered by 12 volts. The device is wired to a dedicated connector on the PDP. The module has multiple regulated 12V and 5V outputs. The purpose of the VRM is to provide regulated power for the robot radio, custom circuits, and IP vision cameras. For more information, see the `VRM User Manual <https://store.ctr-electronics.com/content/user-manual/VRM%20User%27s%20Guide.pdf>`__.
 
 REV Radio Power Module
 ----------------------
@@ -129,7 +129,7 @@ CTRE Pneumatics Control Module
   :alt: CTRE Pneumatics Control Module
   :width: 500
 
-The :ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-control-module:Pneumatics Control Module>` (PCM) contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. For more information see the `PCM User Manual <https://newsite.ctr-electronics.com/content/user-manual/PCM%20User%27s%20Guide.pdf>`__.
+The :ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-control-module:Pneumatics Control Module>` (PCM) contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. For more information see the `PCM User Manual <https://store.ctr-electronics.com/content/user-manual/PCM%20User%27s%20Guide.pdf>`__.
 
 REV Pneumatic Hub
 -----------------
@@ -156,7 +156,7 @@ Talon SRX
   :alt: Talon SRX
   :width: 500
 
-The `Talon SRX Motor Controller <https://newsite.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://newsite.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
+The `Talon SRX Motor Controller <https://store.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
 
 Victor SPX
 ^^^^^^^^^^
@@ -165,7 +165,7 @@ Victor SPX
   :alt: Victor SPX
   :width: 500
 
-The `Victor SPX Motor Controller <https://newsite.ctr-electronics.com/victor-spx/>`__ is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the roboRIO PWM connectors or a CAN bus. The case is sealed to prevent debris from entering the controller. For more information, see the `Victor SPX User Guide <https://newsite.ctr-electronics.com/content/user-manual/Victor%20SPX%20User's%20Guide.pdf>`__.
+The `Victor SPX Motor Controller <https://store.ctr-electronics.com/victor-spx/>`__ is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the roboRIO PWM connectors or a CAN bus. The case is sealed to prevent debris from entering the controller. For more information, see the `Victor SPX User Guide <https://store.ctr-electronics.com/content/user-manual/Victor%20SPX%20User's%20Guide.pdf>`__.
 
 SPARK MAX Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -183,7 +183,7 @@ TalonFX Motor Controller
   :alt: TalonFX Motor Controller
   :width: 500
 
-The `TalonFX Motor Controller <https://newsite.ctr-electronics.com/falcon-500-powered-by-talon-fx/>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <https://newsite.ctr-electronics.com/content/user-manual/Falcon%20500%20User%20Guide.pdf>`__.
+The `TalonFX Motor Controller <https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/>`__  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the `Falcon 500 User Guide <https://store.ctr-electronics.com/content/user-manual/Falcon%20500%20User%20Guide.pdf>`__.
 
 SPARK Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -205,7 +205,7 @@ Victor SP
 
 .. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
-The `Victor SP Motor Controller <https://newsite.ctr-electronics.com/content/user-manual/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
+The `Victor SP Motor Controller <https://store.ctr-electronics.com/content/user-manual/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
 
 Talon Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^
