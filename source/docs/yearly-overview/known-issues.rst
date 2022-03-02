@@ -17,8 +17,8 @@ Onboard I2C Causing System Lockups
 
 Several alternatives exist for accessing the REV color sensor without using the roboRIO I2C port. A similar approach could be used for other I2C sensors.
 
-- Use a `Raspberry Pi Pico <https://github.com/ThadHouse/picocolorsensor/>`. Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
-- Use a `Raspberry Pi <https://github.com/PeterJohnson/rpi-colorsensor/>`. Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
+- Use a `Raspberry Pi Pico <https://github.com/ThadHouse/picocolorsensor/>`__. Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
+- Use a `Raspberry Pi <https://github.com/PeterJohnson/rpi-colorsensor/>`__. Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
 
 CAN bus utilization is noisy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
