@@ -13,11 +13,6 @@ Set Driver Station to Default
 
 Open the Driver Station software, click on the Setup tab and set the Dashboard setting to Default. **Then close the Driver Station!**
 
-Locate Dashboard JAR file
--------------------------
-
-Find the location of the dashboard ``jar`` file.
-
 Open DS Data Storage file
 -------------------------
 
