@@ -7,7 +7,7 @@ On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R7
 
 .. note:: Teams can simulate the bandwidth throttling at home using the FRC Bridge Configuration Utility with the bandwidth checkbox checked.
 
-Measuring Bandwidth Using the Performance Monitor (Win 7 only)
+Measuring Bandwidth Using the Performance Monitor (Win 7/10)
 --------------------------------------------------------------
 
 Windows contains a built-in tool called the Performance Monitor that can be used to monitor the bandwidth usage over a network interface.
@@ -75,7 +75,7 @@ You may now connect to your robot as normal over the selected interface (if you 
 Measuring Bandwidth Usage using Wireshark
 -----------------------------------------
 
-If you are not using Windows 7, you will need to install a 3rd party program to monitor bandwidth usage. One program that can be used for this purpose is Wireshark. Download and install the latest version of Wireshark for your version of Windows. After installation is complete, locate and open Wireshark. Connect your computer to your robot, open the Driver Station and any Dashboard or custom programs you may be using.
+If you can not use performance monitor, you will need to install a 3rd party program to monitor bandwidth usage. One program that can be used for this purpose is Wireshark. Download and install the latest version of Wireshark for your version of Windows. After installation is complete, locate and open Wireshark. Connect your computer to your robot, open the Driver Station and any Dashboard or custom programs you may be using.
 
 Select the interface and Start capture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
