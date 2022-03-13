@@ -56,10 +56,10 @@ Like a PID controller, best results are obtained in conjunction with a :ref:`fee
 
     // Controls a motor with the output of the BangBang controller and a feedforward
     // Shrinks the feedforward slightly to avoid overspeeding the shooter
-    motor.set(controller.calculate(encoder.getRate(), setpoint) + 0.9 * feedforward.calculate(setpoint));
+    motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint));
 
   .. code-tab:: c++
 
     // Controls a motor with the output of the BangBang controller and a feedforward
     // Shrinks the feedforward slightly to avoid overspeeding the shooter
-    motor.Set(controller.Calculate(encoder.GetRate(), setpoint) + 0.9 * feedforward.Calculate(setpoint));
+    motor.SetVoltage(controller.Calculate(encoder.GetRate(), setpoint) * 12.0 + 0.9 * feedforward.Calculate(setpoint));
