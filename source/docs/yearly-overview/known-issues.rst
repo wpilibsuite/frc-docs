@@ -132,6 +132,8 @@ Reentrant uses of synchronized may cause deadlock in Java
 
 **Issue:** If multiple threads call a `synchronized` object, there may be a deadlock. This is caused by a bug in the version of JDK bundled with the 2022.1.1 to 2022.3.1 versions of WPILib.
 
+The old commands framework, when using PIDController and PIDCommand, is possibly susceptible to this issue. If using that combination, please update to the latest WPILib to solve the issue.
+
 **Workaround:** There are two options for workarounds:
 
 #. Install the 2021 JDK. This is performed automatically in WPILib 2022.4.1 and later.
