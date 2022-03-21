@@ -29,7 +29,7 @@ Modeling Our Flywheel
     \dot{\mathbf{x}} &= \mathbf{A}\mathbf{x} + \mathbf{B}\mathbf{u} \\
     \mathbf{y} &= \mathbf{C}\mathbf{x} + \mathbf{D}\mathbf{u}
 
-Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`, :math:`\mathbf{x}` is the system's current state, :math:`\mathbf{u}` is the :term:`input` to the system, and :math:`\mathbf{y}` is the sytem's :term:`output`.
+Where :term:`x-dot` is the rate of change of the :term:`system`'s :term:`state`, :math:`\mathbf{x}` is the system's current state, :math:`\mathbf{u}` is the :term:`input` to the system, and :math:`\mathbf{y}` is the system's :term:`output`.
 
 Let's use this system of equations to model our flywheel in two different ways. We'll first model it using :term:`system identification` using the SysId toolsuite, and then model it based on the motor and flywheel's :term:`moment of inertia`.
 
