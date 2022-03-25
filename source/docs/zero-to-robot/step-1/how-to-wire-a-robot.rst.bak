@@ -167,7 +167,8 @@ Weidmuller Connectors
 .. image:: images/how-to-wire-a-robot/weidmuller.png
   :alt: 8mm stripped copper wire inserted in weidmuller connector.
 
-.. warning:: The strip length is ~5/16" (~8 mm)
+
+.. warning:: The strip length is ~5/16" (~8 mm), not the 5/8" (~16 mm) mentioned in the video.
 
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
