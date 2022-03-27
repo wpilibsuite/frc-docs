@@ -19,7 +19,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Change Select Default Simulate Extension Setting** - Change whether simulation extensions are enabled by default (all simulation extensions defined in ``build.gradle`` will be enabled)
 - **WPILib: Change Skip Tests On Deploy Setting** - Change whether to skip tests on deploy. Defaults to disabled (tests are run on deploy)
 - **WPILib: Change Stop Simulation on Entry Setting** - Change whether to stop robot code on entry when running simulation. Defaults to disabled (don't stop on entry).
-- **WPILib: Check for WPILib Updates** - Check for an update to the WPILib GradleRIO version for the project
+- **WPILib: Check for WPILib Updates** - Check for an update to the WPILib GradleRIO version for the project. This does not update the Visual Studio Code extension, tools, or offline dependencies. Users are strongly recommended to use the :doc:`offline wpilib installer </docs/zero-to-robot/step-2/wpilib-setup>`
 - **WPILib: Debug Robot Code** - Build and deploy robot code to roboRIO in debug mode and start debugging
 - **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
 - **WPILib: Import a WPILib 2020/2021 Gradle Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2020 or 2021. Further documentation is at :doc:`importing gradle project </docs/software/vscode-overview/importing-gradle-project>`
