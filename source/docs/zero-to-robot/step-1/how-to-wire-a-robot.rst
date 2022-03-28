@@ -164,7 +164,11 @@ For terminal motor controllers (bottom image):
 Weidmuller Connectors
 ---------------------
 
-.. image:: images/how-to-wire-a-robot/weidmuller.png
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube-nocookie.com/embed/Zsnro-9_ZfQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
   :alt: 8mm stripped copper wire inserted in weidmuller connector.
 
 .. warning:: The strip length is ~5/16" (~8 mm)
