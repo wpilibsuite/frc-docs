@@ -57,10 +57,10 @@ Writing a program to access the keys
 
    .. code-tab:: cpp
 
-      std::shared_ptr<NetworkTable> table;
+      std::shared_ptr<nt::NetworkTable> table;
 
       void Robot::RobotInit() override {
-        table = NetworkTable::GetTable("GRIP/myContoursReport");
+        table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
       }
 
       void Robot::TeleopPeriodic() override {
