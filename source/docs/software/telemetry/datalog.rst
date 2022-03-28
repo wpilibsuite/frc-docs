@@ -1,6 +1,8 @@
 On-Robot Telemetry Recording Into Data Logs
 ===========================================
 
+.. note:: The DataLog feature and Data Log Tool were added in WPILib 2022.4.1. The Data Log Tool is installed by the WPILib installer only (new tools are not installed when a robot project is upgraded).
+
 By default, no telemetry data is recorded (saved) on the robot. The ``DataLogManager`` class provides a convenient wrapper around the lower-level ``DataLog`` class for on-robot recording of telemetry data into data logs.  The WPILib data logs are binary for size and speed reasons.  In general, the data log facilities provided by WPILib have minimal overhead to robot code, as all file I/O is performed on a separate thread--the log operation consists of mainly a mutex acquisition and copying the data.
 
 Structure of Data Logs
@@ -8,7 +10,7 @@ Structure of Data Logs
 
 Similar to NetworkTables, data logs have the concept of entries with string identifiers (keys) with a specified data type.  Unlike NetworkTables, the data type cannot be changed after the entry is created, and entries also have metadata--an arbitrary (but typically JSON) string that can be used to convey additional information about the entry such as the data source or data schema.  Also unlike NetworkTables, data log operation is unidirectional--the ``DataLog`` class can only write data logs (it does not support read-back of written values) and the ``DataLogReader`` class can only read data logs (it does not support changing values in the data log).
 
-Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.
+Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the RoboRIO, the FPGA timestamp is used (the same timestamp returned by ``Timer.getFPGATimestamp()``).
 
 .. note: For more information on the details of the data log file format, see the `WPILib Data Log File Format Specification <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__.
 
