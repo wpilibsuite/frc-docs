@@ -170,7 +170,7 @@ Weidmuller Connectors
         <iframe src="https://www.youtube-nocookie.com/embed/Zsnro-9_ZfQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-.. warning:: The reccommended wire strip length is ~5/16" (~8 mm).
+.. warning:: The recommended wire strip length is ~5/16" (~8 mm).
 
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:
 
