@@ -501,7 +501,7 @@ When run, you'll see output that looks like this:
 
       This stack trace shows that a ``edu.wpi.first.hal.util.AllocationException`` has occurred. It also gives the helpful message: ``PWM or DIO 0 previously allocated.``.
 
-      Looking at our stack trace, we see two stack traces. The first stack trace shows that the first allocation occurred in ``Robot.java:25``. The second stack trach shows that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
+      Looking at our stack trace, we see two stack traces. The first stack trace shows that the first allocation occurred in ``Robot.java:25``. The second stack trace shows that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
 
       Taking a peek at the code, we see line 24 is where the first motor controller is declared and line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
