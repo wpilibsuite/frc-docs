@@ -1,7 +1,7 @@
 Working with Graphs
 ===================
 
-With Shuffleboard you can graph numeric values over time. Graphs are very. useful to see how sensor or motor values are changing as your robot is operating. For example the sensor value can be graphed in a PID loop to see how it is responding during tuning.
+With Shuffleboard you can graph numeric values over time. Graphs are very useful to see how sensor or motor values are changing as your robot is operating. For example the sensor value can be graphed in a PID loop to see how it is responding during tuning.
 
 To create a graph, choose a numeric value and right-click in the heading and select "Show as..." and then choose graph
 
