@@ -39,7 +39,7 @@ Simulation crashes on Mac after updating WPILib
 
 **Issue:** On macOS, after updating the project to use a newer version of WPILib, running simulation immediately crashes without the GUI appearing.
 
-**Workaround:** In VS Code, run WPILib | Run a command in Gradle, ``clean``. Alternatively, run ``.\gradlew clean`` in the terminal or delete the build directory.
+**Workaround:** In VS Code, run WPILib | Run a command in Gradle, ``clean``. Alternatively, run ``./gradlew clean`` in the terminal or delete the build directory.
 
 Invalid build due to missing GradleRIO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
