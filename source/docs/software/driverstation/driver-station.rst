@@ -17,6 +17,18 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
 
 .. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/dashboards/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`.
 
+Driver Station Key Shortcuts
+----------------------------
+
+  * `F1` - Force a Joystick refresh.
+  * `[` + `]` + `\\` - Enable the robot (the 3 keys above Enter on most keyboards)
+  * `Enter` - Disable the Robot
+  * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+
+.. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
+
+.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
+
 Setting Up the Driver Station
 -----------------------------
 
@@ -186,15 +198,3 @@ Both Tab
 --------
 
 The last tab on the right side is the Both tab which displays Messages and Charts side by side
-
-Driver Station Key Shortcuts
-----------------------------
-
-  * `F1` - Force a Joystick refresh.
-  * `[` + `]` + `\\` - Enable the robot (the 3 keys above Enter on most keyboards)
-  * `Enter` - Disable the Robot
-  * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
-
-.. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
-
-.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
