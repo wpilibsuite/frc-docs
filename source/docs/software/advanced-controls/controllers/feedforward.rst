@@ -145,17 +145,17 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
   .. code-tab:: java
 
-    // Calculates the feedforward for a position of 10 units, velocity of 20 units/second,
+    // Calculates the feedforward for a velocity of 20 units/second
     // and an acceleration of 30 units/second^2
     // Units are determined by the units of the gains passed in at construction.
-    feedforward.calculate(10, 20, 30);
+    feedforward.calculate(20, 30);
 
   .. code-tab:: c++
 
-    // Calculates the feedforward for a position of 10 meters, velocity of 20 meters/second,
+    // Calculates the feedforward for a velocity of 20 meters/second
     // and an acceleration of 30 meters/second^2
     // Output is in volts
-    feedforward.Calculate(10_m, 20_mps, 30_mps_sq);
+    feedforward.Calculate(20_mps, 30_mps_sq);
 
 Using Feedforward to Control Mechanisms
 ---------------------------------------
