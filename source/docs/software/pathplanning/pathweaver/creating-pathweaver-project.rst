@@ -34,9 +34,9 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 
 **Export Unit:** The units to be used when exporting the paths and waypoints. If you are planning to use WPILib Trajectories, then you should choose :guilabel:`Always Meters`. Choosing :guilabel:`Same as Project` will export in the same units as :guilabel:`Length Unit` above.
 
-**Max Velocity:** The max speed of the robot for trajectory tracking. This does not need to be the maximum attainable speed of the robot, but just the max speed that you want to run trajectories at.
+**Max Velocity:** The max speed of the robot for trajectory tracking.  The kitbot runs at ~10 :math:`ft/sec` which is ~3 :math:`m/sec`.
 
-**Max Acceleration:** The max acceleration of the robot for trajectory tracking. This does not need to be the maximum attainable acceleration of the robot, but just the max acceleration that you want to run trajectories at.
+**Max Acceleration:** The max acceleration of the robot for trajectory tracking. Using the same value for acceleration (3 :math:`m/sec^2`) is a good place to start depending if you don't know your drivetains characteristics.
 
 **Wheel Base:** The distance between the left and right wheels of your robot. This is used to ensure that no wheel on a differential drive will go over the specified max velocity around turns.
 
