@@ -60,7 +60,7 @@ Max Trajectory Velocity/Acceleration
 
 We must also decide on a nominal max acceleration and max velocity for the robot during path-following.  The maximum velocity value should be set somewhat below the nominal free-speed of the robot.  Due to the later use of the ``DifferentialDriveVoltageConstraint``, the maximum acceleration value is not extremely crucial.
 
-.. warning:: Max velocity and acceleration, as defined here, are applied only during trajectory generation planning.  Do not rely or expect these values to protect the robot, or anyone around the robot from encoder faults, measurement unit problems, or mismatched sign values, as the ``RamseteCommand`` itself may give values to the ``DriveSubsystem`` that can cause the robot to greatly exceed these velocities and accelerations.
+.. warning:: Max velocity and acceleration, as defined here, are applied only during trajectory generation planning.  They do not limit the ``RamseteCommand`` itself, which may give values to the ``DriveSubsystem`` that can cause the robot to greatly exceed these velocities and accelerations.
 
 .. tabs::
 

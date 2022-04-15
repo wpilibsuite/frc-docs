@@ -225,8 +225,8 @@ To access the robot's current computed pose, we include the following method:
       :lines: 78-80
       :linenos:
       :lineno-start: 78
-	  
-.. important: The odometry must be correct for a RamseteCommand to successfully work, matching the units used for the trajectory, with correct sign on each side's wheel velocity and position, and with correct gyro values.  Errors can cause a robot to move at high speeds in unpredictable directions.  Before running the RamseteCommand, new teams are strongly encouraged to deploy and test just their odometry code, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This is an especially serious risk for CAN-based encoders, which may return diffent units than expected or may not honor negative multipliers for encoder unit conversion settings.
+
+.. important:: Before running a ``RamseteCommand``, teams are strongly encouraged to deploy and test the odometry code alone, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry must be correct for a RamseteCommand to successfully work, as sign or unit errors can cause a robot to move at high speeds in unpredictable directions.  
 
 Voltage-Based Drive Method
 --------------------------
@@ -253,4 +253,4 @@ Finally, we must include one additional method - a method that allows us to set 
 
 It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured identification data), this is essential to ensuring their accuracy.
 
-.. warning: While the ``TrajectoryGenerator`` accepts constraints including power, speed, and acceleration, it only does so to estimate maximum acceleration from the system characterization, and then limiting the generated trajectory's target poses to those constraints.  The ``RamseteCommand`` itself does not enforce and isn't even aware of these restraints, and will instead directly push the output of its internal estimated required voltage calculations directly to this ``tankDriveVoltage()``.  During initial code development, teams are strongly encouraged to apply both maximum and minimum bounds on the input variables before passing these values to ``setVoltage()``.  Otherwise, measurement unit or sign errors may cause the robot to move very far and/or very fast in unexpected directions.
+.. warning:: The ``RamseteCommand`` itself does not internally enforce any speed or acceleration limits before providing motor power settings to this method.  During initial code development, teams are strongly encouraged to apply both maximum and minimum bounds on the input variables before passing these values to ``setVoltage()``.
