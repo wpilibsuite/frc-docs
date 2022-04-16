@@ -3,6 +3,8 @@ Building and Deploying Robot Code
 
 Robot projects must be compiled ("built") and deployed in order to run on the roboRIO.  Since the code is not compiled natively on the robot controller, this is known as "cross-compilation."
 
+.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the roboRIO filesystem and prevent your code from working until the roboRIO is :doc:`re-imaged <docs/zero-to-robot/step-3/imaging-your-roborio>`.
+
 To build and deploy a robot project, do one of:
 
 1. Open the Command Palette and enter/select "Build Robot Code"
