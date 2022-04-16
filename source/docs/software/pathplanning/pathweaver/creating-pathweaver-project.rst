@@ -36,7 +36,7 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 
 **Max Velocity:** The max speed of the robot for trajectory tracking.  The kitbot runs at ~10 :math:`ft/sec` which is ~3 :math:`m/sec`.
 
-**Max Acceleration:** The max acceleration of the robot for trajectory tracking. Using the same value for acceleration (3 :math:`m/sec^2`) is a good place to start depending if you don't know your drivetains characteristics.
+**Max Acceleration:** The max acceleration of the robot for trajectory tracking. Using the same value for acceleration (3 :math:`m/sec^2`) is a good place to start if you don't know your drivetain's characteristics.
 
 **Wheel Base:** The distance between the left and right wheels of your robot. This is used to ensure that no wheel on a differential drive will go over the specified max velocity around turns.
 
