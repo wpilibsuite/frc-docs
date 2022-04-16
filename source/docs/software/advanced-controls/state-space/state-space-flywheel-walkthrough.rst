@@ -271,6 +271,6 @@ Mechanisms with a continuous angle can have that angle wrapped by calling the co
 
       .. code-block:: C++
 
-         auto error = lqr.R() - x;
+         Eigen::Vector<double, 2> error = lqr.R() - x;
          error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
          Eigen::Vector<double, 2> u = lqr.K() * error;
