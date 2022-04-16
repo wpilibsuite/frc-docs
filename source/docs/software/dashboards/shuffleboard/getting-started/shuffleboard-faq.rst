@@ -14,7 +14,7 @@ Bugs, issues, and feature requests can be added on the Shuffleboard GitHub page 
 How can I add my own widgets or other extensions to Shuffleboard?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Custom Widgets</docs/software/dashboards/shuffleboard/custom-widgets>` has a large amount of documentation on extending the program with custom plugins. Sample plugin projects that can be used for additional custom widgets and themes can be found on the `Shuffleboard GitHub page <https://github.com/wpilibsuite/shuffleboard/tree/main/example-plugins>`__.
+:doc:`Custom Widgets</docs/software/dashboards/shuffleboard/custom-widgets/index>` has a large amount of documentation on extending the program with custom plugins. Sample plugin projects that can be used for additional custom widgets and themes can be found on the `Shuffleboard GitHub page <https://github.com/wpilibsuite/shuffleboard/tree/main/example-plugins>`__.
 
 How can I build Shuffleboard from the source code?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
