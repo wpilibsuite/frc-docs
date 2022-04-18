@@ -251,3 +251,26 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
          :lines: 91-113
          :linenos:
          :lineno-start: 91
+
+Angle Wrap with LQR
+-------------------
+
+Mechanisms with a continuous angle can have that angle wrapped by calling the code below instead of ``lqr.Calculate(x, r)``.
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. code-block:: Java
+
+         var error = lqr.getR().minus(x);
+         error.set(0, 0, MathUtil.angleModulus(error.get(0, 0)));
+         var u = lqr.getK().times(error);
+
+   .. group-tab:: C++
+
+      .. code-block:: C++
+
+         Eigen::Vector<double, 2> error = lqr.R() - x;
+         error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
+         Eigen::Vector<double, 2> u = lqr.K() * error;
