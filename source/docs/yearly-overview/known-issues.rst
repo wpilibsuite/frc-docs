@@ -13,7 +13,7 @@ Code crash when initializing a PH/PCM related device
 
 **Issue:** The following crash may happen when a ``Solenoid``, ``DoubleSolenoid``, ``Compressor``, ``PneumaticHub`` or ``PneumaticsControlModule`` is initialized when the CAN bus is disconnected.
 
-**Workaround:** It is recommended to wrap the constructor in a try/catch and catch any corresponding usages.
+**Workaround:** It is recommended to wrap the constructor in a try/catch and catch any corresponding usages. Additionally, you will want to double check that all CAN connections are secure from possible disconnects.
 
 .. tabs::
 
