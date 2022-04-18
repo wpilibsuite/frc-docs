@@ -8,6 +8,36 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Code crash when initializing a PH/PCM related device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The following crash may happen when a ``Solenoid``, ``DoubleSolenoid``, ``Compressor``, ``PneumaticHub`` or ``PneumaticsControlModule`` is initialized when the CAN bus is disconnected.
+
+**Workaround:** It is recommended to wrap the constructor in a try/catch and catch any corresponding usages. Additionally, you will want to double check that all CAN connections are secure from possible disconnects.
+
+.. tabs::
+
+   .. code-tab:: java
+
+      private Solenoid m_intakeSolenoid;
+
+      @Override
+      public void robotInit() {
+        try {
+          m_intakeSolenoid = new Solenoid(PneumaticsModuleType.REVPH, 0);
+        } catch (UncleanStatusException ex) {
+          DriverStation.reportError("Error creating Solenoid", ex.getStackTrace());
+        }
+      }
+
+      public void toggleSolenoid() {
+        try {
+          m_intakeSolenoid.toggle();
+        } catch (NullPointerException ex) {
+          DriverStation.reportError("Solenoid object is null", ex.getStackTrace());
+        }
+      }
+
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
