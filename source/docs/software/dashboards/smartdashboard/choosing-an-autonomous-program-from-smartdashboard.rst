@@ -10,7 +10,7 @@ TimedRobot
 
 .. note:: The code snippets shown below are part of the TimedRobot template (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/timed>`__):
 
-Creating the SendableChooser Object
+Creating SendableChooser Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``SendableChooser`` object. Two or more auto modes can be added by creating strings to send to the chooser. Using the ``SendableChooser``, one can choose between them. In this example, ``Default`` and ``My Auto`` are shown as options. You will also need a variable to store which auto has been chosen, ``m_autoSelected``.
@@ -29,7 +29,7 @@ In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``Se
       :language: c++
       :lines: 28-31
 
-Setting up SendableChooser
+Setting Up Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The chooser allows you to pick from a list of defined elements, in this case the strings we defined above. In ``robotInit``, add your options created as strings above using ``setDefaultOption`` or ``addOption``. ``setDefaultOption`` will be the one selected by default when the dashboard starts. The ``putData`` function will push it to the dashboard on your driver station computer.
