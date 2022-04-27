@@ -50,7 +50,7 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 Using a SlewRateLimiter with DifferentialDrive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: In the C++ example below, the filter is templated on ``double``, rather than on a unit type, since joystick values are typically dimensionless.
+.. note:: The C++ example below templates the filter on ``units::scalar`` for use with doubles, since joystick values are typically dimensionless.
 
 A typical use of a SlewRateLimiter is to limit the acceleration of a robot's drive.  This can be especially handy for robots that are very top-heavy, or that have very powerful drives.  To do this, apply a SlewRateLimiter to a value passed into your robot drive function:
 
