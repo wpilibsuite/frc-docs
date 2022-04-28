@@ -43,6 +43,10 @@ When the robot is connected to the Field Management System at competition, the D
 
       Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
+   .. code-tab:: python
+
+      exampleJoystick = wpilib.Joystick(0) # 0 is the USB Port to be used as indicated on the Driver Station
+
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
 
 ``XboxController`` Class
@@ -60,6 +64,10 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
    .. code-tab:: c++
 
       XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
+
+   .. code-tab:: python
+
+      exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
 An example of how to use buttons on the ``XboxController``.
 
@@ -100,6 +108,10 @@ The ``XboxController`` class provides named indicies for each of the buttons tha
 
       PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
+   .. code-tab:: python
+
+      examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
+
 The ``PS4Controller`` class provides named indicies for each of the buttons. These buttons can accessed with ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
 POV
@@ -135,6 +147,16 @@ An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes abo
       frc::GenericHID m_stick{0};
 
       m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
+
+   .. code-tab:: python
+
+      leftMotor = wpilib.PWMVictorSPX(0)
+      rightMotor = wpilib.PWMVictorSPX(1)
+      self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
+      self.stick = wpilib.GenericHID(0)
+
+      self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
+
 
 Button Usage
 ------------
@@ -177,6 +199,21 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
          turnIntakeOff();
       }
 
+   .. code-tab:: python
+
+      if joystick.getRawButtonPressed(0):
+         turnIntakeOn() # When pressed the intake turns on
+
+      if joystick.getRawButtonReleased(0):
+         turnIntakeOff() # When released the intake turns off
+
+      OR
+
+      if joystick.getRawButton(0):
+         turnIntakeOn()
+      else:
+         turnIntakeOff()
+
 A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
 
 .. tabs::
@@ -212,3 +249,17 @@ A common request is to toggle something on and off with the press of a button.  
             toggle = true;
          }
       }
+
+   .. code-tab:: python
+
+      toggle = False
+
+      if joystick.getRawButtonPressed(0):
+         if toggle:
+            # current state is True so turn off
+            retractIntake()
+            toggle = False
+         else:
+            # Current state is False so turn on
+            deployIntake()
+            toggle = True

@@ -54,6 +54,12 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
          m_motorRight.SetInverted(true);
        }
 
+   .. code-tab:: python
+
+        def robotInit(self):
+            self.motorRight = wpilib.PWMSparkMax(0)
+            self.motorRight.setInverted(True)
+
 Squaring Inputs
 ^^^^^^^^^^^^^^^
 
@@ -95,6 +101,13 @@ The Motor Safety interface of motor controllers can be interacted with by the us
         exampleJaguar->SetSafetyEnabled(false);
         exampleJaguar->SetExpiration(.1);
         exampleJaguar->Feed();
+
+    .. code-tab:: python
+
+        exampleJaguar.setSafetyEnabled(True)
+        exampleJaguar.setSafetyEnabled(False)
+        exampleJaguar.setExpiration(.1)
+        exampleJaguar.feed()
 
 By default all Drive objects enable Motor Safety. Depending on the mechanism and the structure of your program, you may wish to configure the timeout length of the motor safety (in seconds). The timeout length is configured on a per actuator basis and is not a global setting. The default (and minimum useful) value is 100ms.
 
@@ -150,6 +163,15 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
                 m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
             }
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            def robotInit(self):
+                left = wpilib.Spark(1)
+                left.setInverted(True) # if you want to invert motor outputs, you can do so here
+                right = wpilib.Spark(2)
+                self.drive = wpilib.drive.DifferentialDrive(left, right)
 
 
 Multi-Motor DifferentialDrive with MotorControllerGroups
@@ -201,6 +223,21 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
                 m_left.SetInverted(true); // if you want to invert the entire side you can do so here
             }
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            def robotInit(self):
+                frontLeft = wpilib.Spark(1)
+                rearLeft = wpilib.Spark(2)
+                left = wpilib.MotorControllerGroup(frontLeft, rearLeft)
+                left.setInverted(True) # if you want to invert the entire side you can do so here
+
+                frontRight = wpilib.Spark(3)
+                rearRight = wpilib.Spark(4)
+                right = wpilib.MotorControllerGroup(frontLeft, rearLeft)
+
+                self.drive = wpilib.drive.DifferentialDrive(left, right)
 
 
 
@@ -248,6 +285,18 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
             myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
         }
+
+    .. code-tab:: python
+
+        def teleopPeriodic(self):
+            # Tank drive with a given left and right rates
+            self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
+
+            # Arcade drive with a given forward and turn rate
+            self.myDrive.arcadeDrive(-self.driveStick.getY(), self.driveStick.getX())
+
+            # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
+            self.myDrive.curvatureDrive(-self.driveStick.getY(), self.driveStick.getX(), self.driveStick.getButton(1))
 
 Using the MecanumDrive class to control Mecanum Drive robots
 ------------------------------------------------------------
@@ -298,6 +347,12 @@ The MecanumDrive class contains two different default modes of driving your robo
             m_robotDrive.driveCartesian(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
             m_robotDrive.drivePolar(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
         }
+
+    .. code-tab:: python
+
+        def teleopPeriodic(self):
+            self.robotDrive.driveCartesian(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
+            self.robotDrive.drivePolar(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
 
 Field-Oriented Driving
 ^^^^^^^^^^^^^^^^^^^^^^
