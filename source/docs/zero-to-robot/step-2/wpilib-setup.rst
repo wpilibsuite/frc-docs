@@ -6,7 +6,7 @@ This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`l
 Prerequisites
 -------------
 
-You can download the latest release of the installer from `GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
+`You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
 .. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed. MacOS and Linux require python3 installed.
 
