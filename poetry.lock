@@ -665,6 +665,17 @@ python-versions = ">=3.6"
 sphinx = ">=2.0"
 
 [[package]]
+name = "sphinxext-pwa"
+version = "0.0.3a0"
+description = "Sphinx Extension to turn Sphinx websites into Progressive Web Applications"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+sphinx = ">=2.0"
+
+[[package]]
 name = "sphinxext-rediraffe"
 version = "0.2.5"
 description = "Sphinx Extension that redirects non-existent pages to working pages."
@@ -742,7 +753,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "3c312d43248049b22df4416f3fb93ff3b4da83773ac5ef8a06627b13b764a5cb"
+content-hash = "d823e33efa51aafaebd9f02d58ed8bc285903ffd75a6d14b57e0eaf3c9dc8946"
 
 [metadata.files]
 alabaster = [
@@ -1210,6 +1221,10 @@ sphinxext-photofinish = [
 sphinxext-presentations = [
     {file = "sphinxext-presentations-0.2.2.tar.gz", hash = "sha256:fb9c86fb3790fc0f5eb8a3f5824cfa75b13a6481079de95ceef95ab36db3a018"},
     {file = "sphinxext_presentations-0.2.2-py3-none-any.whl", hash = "sha256:11d285286224c631893dcce1659b925dcdb9e52757a41a3e78796c4b21a87489"},
+]
+sphinxext-pwa = [
+    {file = "sphinxext-pwa-0.0.3a0.tar.gz", hash = "sha256:cdfb5f5d17d3f5ad442d2008f41320d265aabcb0a668c6d7d906da9861e4544d"},
+    {file = "sphinxext_pwa-0.0.3a0-py3-none-any.whl", hash = "sha256:54920de08543f56c601d5816002ae54977e5cf34d14134b17989774ad14472e0"},
 ]
 sphinxext-rediraffe = [
     {file = "sphinxext-rediraffe-0.2.5.tar.gz", hash = "sha256:a17287cdee7763341b91762879e042b33a4916d6a2fc6d2f97a18107325bd2cc"},
