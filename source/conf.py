@@ -43,6 +43,7 @@ extensions = [
     "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
+    "sphinxext.pwa",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
@@ -177,6 +178,17 @@ hoverxref_mathjax = True
 # Use MathJax3 for better page loading times
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
+# PWA Specific Settings
+pwa_name = "FRC Docs"
+pwa_short_name = "FRC Docs"
+pwa_theme_color = "#003974"
+pwa_background_color = "#003974"
+pwa_icons = [
+    ["first-logo-256px.png", "256x256"],
+    ["first-logo-512px.png", "512x512"],
+]
+pwa_apple_icon = "_static/touch-icon.png"
+pwa_maskable_icon = "first-logo-maskable.png"
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -184,6 +196,10 @@ mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
+
+# Specify canonical root
+# This tells search engines that this domain is preferred
+html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -195,10 +211,6 @@ html_logo = "assets/wpilibDocsLogo.png"
 
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
-
-# Specify canonical root
-# This tells search engines that this domain is preferred
-html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
     "collapse_navigation": True,
