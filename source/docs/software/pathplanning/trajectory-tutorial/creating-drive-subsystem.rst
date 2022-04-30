@@ -253,4 +253,4 @@ Finally, we must include one additional method - a method that allows us to set 
 
 It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured identification data), this is essential to ensuring their accuracy.
 
-.. warning:: The ``RamseteCommand`` itself does not internally enforce any speed or acceleration limits before providing motor power settings to this method.  During initial code development, teams are strongly encouraged to apply both maximum and minimum bounds on the input variables before passing these values to ``setVoltage()``.
+.. warning:: ``RamseteCommand`` itself does not internally enforce any speed or acceleration limits before providing motor voltage parameters to this method.  During initial code development, teams are strongly encouraged to apply both maximum and minimum bounds on the input variables before passing these values to ``setVoltage()``.
