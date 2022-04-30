@@ -40,6 +40,6 @@ Setting up the driver station in the short few seconds before the match should b
 
 .. todo:: add more and maybe some images
 
-You should immediately notify the FTA that there is a connectivity issue for the quickest resolution. 
+You should immediately notify the FTA that there is a connectivity issue for the quickest resolution.
 
 .. important:: While rare, it has been shown that the robot radio can sometimes take a large amount of time to boot.
