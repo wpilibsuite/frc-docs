@@ -15,6 +15,8 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 Community translations can be found in a variety of languages in the bottom-left menu.
 
+.. attention:: It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
+
 .. panels::
    :column: col-sm-6 d-flex pb-3
    :footer: bg-white border-0
@@ -26,29 +28,14 @@ Community translations can be found in a variety of languages in the bottom-left
 
    ^^^
 
-   If you are a returning team, please check out the overview of changes from 2021 to 2022 and the known issues.
+   If you are a returning team, click the button below to view a list of articles to refresh on.
 
    +++
 
-   .. div:: container-fluid p-0
-
-      .. div:: row
-
-         .. div:: col-sm pl-1 pr-1
-
-            .. link-button:: /docs/yearly-overview/yearly-changelog
-               :type: ref
-               :text: Changelog
-               :classes: btn-outline-primary btn-block
-
-      .. div:: row
-
-         .. div:: col-sm pl-1 pr-1 pt-1
-
-            .. link-button:: /docs/yearly-overview/known-issues
-               :type: ref
-               :text: Known Issues
-               :classes: btn-outline-primary btn-block
+   .. link-button:: /stubs/returning-teams-stub
+      :type: ref
+      :text: Popular Articles
+      :classes: btn-outline-primary btn-block
 
    ---
    :header: bg-info font-weight-bold text-white
