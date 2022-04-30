@@ -38,6 +38,10 @@
 	width: 320px;
 }
 
+.document img {
+	margin-bottom: 10px;
+}
+
 .header-bar {
 	background: #003974;
 	min-height: 60px;
