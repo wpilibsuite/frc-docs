@@ -226,7 +226,7 @@ To access the robot's current computed pose, we include the following method:
       :linenos:
       :lineno-start: 78
 
-.. important:: Before running a ``RamseteCommand``, teams are strongly encouraged to deploy and test the odometry code alone, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry must be correct for a RamseteCommand to successfully work, as sign or unit errors can cause a robot to move at high speeds in unpredictable directions.  
+.. important:: Before running a ``RamseteCommand``, teams are strongly encouraged to deploy and test the odometry code alone, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry must be correct for a RamseteCommand to successfully work, as sign or unit errors can cause a robot to move at high speeds in unpredictable directions.
 
 Voltage-Based Drive Method
 --------------------------
