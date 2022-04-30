@@ -21,21 +21,10 @@ If there is no response, try pinging ``10.TE.AM.2`` (:ref:`TE.AM IP Notation <do
 Ping Fails
 ----------
 
-.. tabs::
+   .. image:: images/roborio-troubleshooting/win10-dhcp.png
+      :alt: Windows 10+ image of the adapter setting
 
-   .. group-tab:: Windows 10+
-
-      .. image:: images/roborio-troubleshooting/win10-dhcp.png
-         :alt: Windows 10+ image of the adapter setting
-
-      If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
-
-   .. group-tab:: Windows 7
-
-      .. image:: images/roborio-troubleshooting/control-panel-dhcp.png
-         :alt: Windows 7 image of the adapter setting
-
-      If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Obtain an Address Automatically** (also known as DHCP). To check this, click :guilabel:`Start` -> :guilabel:`Control Panel` -> :guilabel:`Network Connections` -> :guilabel:`Change adapter settings`, then right click on the appropriate interface (usually Local Area Connection for Ethernet or Wireless Network Connection for wireless) and select :guilabel:`Properties`. Click :guilabel:`Internet Protocol Version 4`, then click :guilabel:`Properties`. Make sure both radio buttons are set to :guilabel:`Obtain automatically`.
+   If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
 
 USB Connection Troubleshooting
 ------------------------------
@@ -60,41 +49,20 @@ Disabling Network Adapters
 
 This is not always the same as turning the adapters off with a physical button or putting the PC into airplane mode. The following steps provide more detail on how to disable adapters.
 
-.. tabs::
+.. image:: images/roborio-troubleshooting/start-menu-win10.png
+   :alt: Windows 10+ settings gear on the left hand side of the start menu.
 
-   .. group-tab:: Windows 10+
+Open the Settings application by clicking on the settings icon.
 
-      .. image:: images/roborio-troubleshooting/start-menu-win10.png
-         :alt: Windows 10+ settings gear on the left hand side of the start menu.
+.. image:: images/roborio-troubleshooting/settings-network-internet.png
+   :alt: Clicking the "Network & Internet" category under Windows Settings.
 
-      Open the Settings application by clicking on the settings icon.
+Choose the :guilabel:`Network & Internet` category.
 
-      .. image:: images/roborio-troubleshooting/settings-network-internet.png
-         :alt: Clicking the "Network & Internet" category under Windows Settings.
+.. image:: images/roborio-troubleshooting/settings-change-adapter.png
+   :alt: Choose "Change adapter options" in the bottom of the screen.
 
-      Choose the :guilabel:`Network & Internet` category.
-
-      .. image:: images/roborio-troubleshooting/settings-change-adapter.png
-         :alt: Choose "Change adapter options" in the bottom of the screen.
-
-      Click on :guilabel:`Change adapter options`.
-
-   .. group-tab:: Windows 7
-
-      .. image:: images/roborio-troubleshooting/open-control-panel.png
-         :alt: Click "Control Panel" from the right hand side of the start menu.
-
-      Open the Control Panel by going to :guilabel:`Start` -> :guilabel:`Control Panel`
-
-      .. image:: images/roborio-troubleshooting/network-internet.png
-         :alt: Clicking the "Network and Internet" category.
-
-      Choose the :guilabel:`Network and Internet` category.
-
-      .. image:: images/roborio-troubleshooting/network-and-sharing-center.png
-         :alt: Then choosing the "Network and Sharing Center" option at the top.
-
-      Click :guilabel:`Network and Sharing Center`
+Click on :guilabel:`Change adapter options`.
 
 .. image:: images/roborio-troubleshooting/adapter-settings.png
    :alt: Click "change adapter settings" in the bar on the left hand side.
