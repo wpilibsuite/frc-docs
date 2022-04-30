@@ -3,7 +3,7 @@
 Returning Teams
 ===============
 
-This section serves as a launch point for various popular articles that a veteran team may want. It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
+This section serves as a launch point for various popular articles that a veteran team may want. It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/yearly-changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
 
 .. mimictoc::
    :maxdepth: 2

@@ -15,7 +15,7 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 Community translations can be found in a variety of languages in the bottom-left menu.
 
-.. attention:: It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
+.. attention:: It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/yearly-changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
 
 .. panels::
    :column: col-sm-6 d-flex pb-3
