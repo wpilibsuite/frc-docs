@@ -8,9 +8,7 @@ Prerequisites
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
-.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed. MacOS and Linux require python3 installed.
-
-.. warning:: The following OSes will be unsupported starting 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
+.. warning:: The following OSes are now unsupported: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
@@ -22,16 +20,15 @@ When you download the WPILib installer, it is distributed as a disk image file `
 .. tabs::
 
    .. group-tab:: Windows 10+
+
       Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
-      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Windows 7" tab.
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-   .. group-tab:: Windows 7
-
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
+      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
@@ -171,7 +168,7 @@ WPILib is designed to install to different folders for different years, so that 
 
   .. tab:: Windows
 
-     1. Delete the appropriate wpilib folder (2019: ``c:\Users\Public\frc2019``, 2020 and later: ``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
+     1. Delete the appropriate wpilib folder (``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
      2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
      3. Delete the path environment variables.
 
@@ -187,11 +184,11 @@ WPILib is designed to install to different folders for different years, so that 
 
   .. tab:: macOS
 
-     1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
+     1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
 
   .. tab:: Linux
 
-     1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
+     1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
 
 Troubleshooting
 ---------------
