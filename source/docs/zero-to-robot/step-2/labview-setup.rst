@@ -17,7 +17,7 @@ Uninstall Old Versions (Recommended)
 
 .. note:: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC\ |reg| 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
 
-Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software" or "NI Software", and select Uninstall.
+Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_control_panel.png
    :alt: Add or Remove -> NI Software
