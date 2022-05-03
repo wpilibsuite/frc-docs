@@ -232,6 +232,13 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+    # Add interactive PID tuning
+    app.add_js_file("js/highcharts.js")
+    app.add_js_file("js/pid-tune.js")
+    app.add_css_file("css/pid-tune.css")
+
+
+
 
 # -- Options for latex generation --------------------------------------------
 
