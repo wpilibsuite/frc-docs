@@ -37,21 +37,11 @@ Mechanism Walkthrough - Flywheel
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <div class="col" id="flywheel_pid_plot"> 
-      
-      </div>
-
+      <div class="col" id="flywheel_bb_plot"></div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz">   
-         
-         </div>
-
-         <div id="flywheel_pid_ctrls">
-      
-         </div>
+         <div class="col" id="flywheel_bb_viz"></div>
+         <div id="flywheel_bb_ctrls"></div>
       </div>
-
-
     </div>
 
 
@@ -61,7 +51,11 @@ Mechanism Walkthrough - Vertical Arm
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-   
+      <div class="col" id="flywheel_pid_plot"></div>
+      <div class="flex-grid">
+         <div class="col" id="flywheel_pid_viz"></div>
+         <div id="flywheel_pid_ctrls"></div>
+      </div>
     </div>
 
 
