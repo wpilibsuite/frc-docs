@@ -139,7 +139,7 @@ Simple Autonomous Example
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
-         :lines: 38-54
+         :lines: 38-55
          :linenos:
          :lineno-start: 38
 
