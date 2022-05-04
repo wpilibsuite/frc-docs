@@ -416,19 +416,6 @@ class FlywheelPIDF extends FlywheelViz {
 }
 
 
-window.onload = function () {
-    // set up all visualizations
-
-    flywheel_pid = new FlywheelPIDF("flywheel_pid");
-    flywheel_pid.runSim();
-
-    flywheel_bb = new FlywheelBangBang("flywheel_bb");
-    flywheel_bb.runSim();
-}
-
-
-
-
 
 /**************************************************************************************
  ** HIGHCHARTS SUPPORT & CONFIG

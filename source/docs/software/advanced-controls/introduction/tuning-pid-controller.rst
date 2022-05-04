@@ -42,6 +42,10 @@ Mechanism Walkthrough - Flywheel
          <div class="col" id="flywheel_pid_viz"></div>
          <div id="flywheel_pid_ctrls"></div>
       </div>
+      <script>
+         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid.runSim();
+      </script>
     </div> 
 
 
