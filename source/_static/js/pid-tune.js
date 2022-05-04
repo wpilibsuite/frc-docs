@@ -42,15 +42,17 @@ class ControlsViz {
 
         this.chart.yAxis[0].setTitle({ text: stateUnits });
 
-        this.timeSamples = [];
-        this.outputSamples = [];
-
-        this.maxTime = 1.0;
+        this.timeSamples = Array(0, this.simEndTime / this.Ts);
+        this.outputSamples = Array(0, this.simEndTime / this.Ts);
+        this.setpointSamples = Array(0, this.simEndTime / this.Ts);
+        this.ctrlEffortSamples = Array(0, this.simEndTime / this.Ts);
 
         this.vizDrawDiv = document.getElementById(div_id_prefix + "_viz");
 
         this.animationStart = null;
         window.requestAnimationFrame((t)=>this.animationStep(t));
+
+        this.ctrlsDrawDiv = document.getElementById(div_id_prefix + "_ctrls");
 
     }
 
@@ -75,37 +77,25 @@ class ControlsViz {
     }
 
 
-    addCtrlEffortData(time, value) {
-        this.chart.series[2].addPoint([time, value], false, false, true);
-        this.maxTime = Math.max(time, this.maxTime);
-        this.chart.xAxis[0].setExtremes(0.0, this.maxTime, false);
+    setCtrlEffortData(data) {
+        this.chart.series[2].setData(data, false, false, true);
     }
 
-    addOutputData(time, value) {
-        this.chart.series[0].addPoint([time, value], false, false, true);
-        this.maxTime = Math.max(time, this.maxTime);
-        this.chart.xAxis[0].setExtremes(0.0, this.maxTime, false);
-        this.timeSamples.push(time);
-        this.outputSamples.push(value);
+    setOutputData(data) {
+        this.chart.series[0].setData(data, false, false, true);
     }
 
-    addSetpointData(time, value) {
-        this.chart.series[1].addPoint([time, value], false, false, true);
-        this.maxTime = Math.max(time, this.maxTime);
-        this.chart.xAxis[0].setExtremes(0.0, this.maxTime, false);
+    setSetpointData(data) {
+        this.chart.series[1].setData(data, false, false, true);
     }
 
     redraw() {
+        this.chart.xAxis[0].setExtremes(0.0, this.simEndTime, false);
         this.chart.redraw();
     }
 
     clear() {
-        this.chart.series[0].setData([]);
-        this.chart.series[1].setData([]);
-        this.chart.series[2].setData([]);
-        this.maxTime = 1.0;
-        this.timeSamples = [];
-        this.outputSamples = [];
+
     }
 }
 
@@ -152,6 +142,8 @@ class FlywheelViz extends ControlsViz {
 
         this.clear();
 
+        var idx = 0;
+
         for(var t = 0.0; t < this.simEndTime; t += Ts){
 
             var curSetpoint = 0.0;
@@ -178,18 +170,34 @@ class FlywheelViz extends ControlsViz {
 
             //Simulate main Plant behavior
             var speed = (Ts*this.C1*inVolts - Ts*this.C3*extTrq + speedPrev)/(1+Ts*this.C2);
+            if(speed < 0){
+                speed = 0;
+            }
             speedPrev = speed;
 
             var speed_rpm = speed*60/2/3.14159;
 
-            this.addCtrlEffortData(t, inVolts);
-            this.addOutputData(t, speed_rpm);
-            this.addSetpointData(t, curSetpoint);
-
             speed_delay_line.addSample(speed_rpm);
 
+            this.timeSamples[idx] = t;
+            this.ctrlEffortSamples[idx] = inVolts;
+            this.outputSamples[idx] = speed_rpm;
+            this.setpointSamples[idx] = curSetpoint;
 
+            idx++;
         }
+
+        var ctrlEffortPlotData = Array(null, this.timeSamples.length);
+        var outputPlotData = Array(null, this.timeSamples.length);
+        var setpointPlotData = Array(null, this.timeSamples.length);
+        for(var idx = 0; idx < this.timeSamples.length; idx++){
+            ctrlEffortPlotData[idx] = [ this.timeSamples[idx], this.ctrlEffortSamples[idx] ];
+            outputPlotData[idx] = [ this.timeSamples[idx], this.outputSamples[idx] ];
+            setpointPlotData[idx] = [ this.timeSamples[idx], this.setpointSamples[idx] ];
+        }
+        this.setCtrlEffortData(ctrlEffortPlotData);
+        this.setSetpointData(setpointPlotData);
+        this.setOutputData(outputPlotData);
 
         this.redraw();
 
@@ -234,7 +242,7 @@ class FlywheelPIDF extends FlywheelViz {
         this.err_prev = 0.0;
 
         //User-configured feedback
-        this.kP = 0.2;
+        this.kP = 0.0;
         this.kI = 0.0;
         this.kD = 0.0;
 
@@ -242,10 +250,142 @@ class FlywheelPIDF extends FlywheelViz {
         this.kV = 0.0;
         this.kS = 0.0;
 
+        this.ctrlsInit();
+
+
+    }
+
+    ctrlsInit(){
+
+        let ctrlTable =  document.createElement("table");
+        this.ctrlsDrawDiv.appendChild(ctrlTable);
+
+        let curRow = document.createElement("tr");
+        ctrlTable.appendChild(curRow);
+
+        let btn = document.createElement("button");
+        btn.innerHTML = "Double kP";
+        btn.onclick = function () {
+            if(this.kP == 0){
+                this.kP = 0.001;
+            } else {
+                this.kP *= 2.0;
+            }
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Half kP";
+        btn.onclick = function () {
+            this.kP *= 0.5;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Up kP";
+        btn.onclick = function () {
+            this.kP *= 1.1;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Down kP";
+        btn.onclick = function () {
+            this.kP *= 0.9;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        curRow = document.createElement("tr");
+        ctrlTable.appendChild(curRow);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Double kD";
+        btn.onclick = function () {
+            if(this.kD == 0){
+                this.kD = 0.001;
+            } else {
+                this.kD *= 2.0;
+            }            
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Half kD";
+        btn.onclick = function () {
+            this.kD *= 0.5;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Up kD";
+        btn.onclick = function () {
+            this.kD *= 1.1;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Down kD";
+        btn.onclick = function () {
+            this.kD *= 0.9;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        curRow = document.createElement("tr");
+        ctrlTable.appendChild(curRow);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Double kI";
+        btn.onclick = function () {
+            if(this.kI == 0){
+                this.kI = 0.001;
+            } else {
+                this.kI *= 2.0;
+            }            
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Half kI";
+        btn.onclick = function () {
+            this.kI *= 0.5;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Up kI";
+        btn.onclick = function () {
+            this.kI *= 1.1;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
+
+        btn = document.createElement("button");
+        btn.innerHTML = "Bump Down kI";
+        btn.onclick = function () {
+            this.kI *= 0.9;
+            this.runSim();
+        }.bind(this);
+        curRow.appendChild(btn);
 
     }
 
     controllerUpdate(time, setpoint, output){
+
+        //Handle Init
+        if(time == 0.0){
+            this.err_accum = 0.0;
+            this.err_prev = 0.0;
+        }
             
         //Calculate error, error derivative, and error integral
         var error = (setpoint - output)*2*3.14159/60;
@@ -309,8 +449,8 @@ var dflt_options = {
         backgroundColor: {
             linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
             stops: [
-                [0, 'rgb(0, 0, 0)'], //Yes, both black. Just in case I decide to change back....
-                [1, 'rgb(0, 0, 0)']
+                [0, 'rgb(255,255,255)'], //Yes, both black. Just in case I decide to change back....
+                [1, 'rgb(255,255,255)']
             ]
         },
     },
@@ -323,19 +463,19 @@ var dflt_options = {
     xAxis: {
         type: 'linear',
         title: 'Time (sec)',
-        lineColor: '#777',
-        tickColor: '#444',
-        gridLineColor: '#444',
+        lineColor: '#000',
+        tickColor: '#000',
+        gridLineColor: '#BBB',
         gridLineWidth: 1,
         labels: {
             style: {
-                color: '#DDD',
+                color: '#222',
                 fontWeight: 'bold'
             },
         },
         title: {
             style: {
-                color: '#D43',
+                color: '#222',
             },
         },
     },
@@ -344,17 +484,17 @@ var dflt_options = {
         title: {
             text: "State",
             style: {
-                color: '#DDD',
+                color: '#222',
             },
         },
         showEmpty: true,
-        lineColor: '#777',
-        tickColor: '#444',
-        gridLineColor: '#444',
+        lineColor: '#000',
+        tickColor: '#000',
+        gridLineColor: '#bbb',
         gridLineWidth: 1,
         labels: {
             style: {
-                color: '#DDD',
+                color: '#888',
                 fontWeight: 'bold'
             },
         },
@@ -363,17 +503,17 @@ var dflt_options = {
         title: {
             text: "Voltage",
             style: {
-                color: '#DDD',
+                color: '#888',
             },
         },
         showEmpty: true,
-        lineColor: '#777',
-        tickColor: '#444',
-        gridLineColor: '#444',
+        lineColor: '#000',
+        tickColor: '#000',
+        gridLineColor: '#bbb',
         gridLineWidth: 1,
         labels: {
             style: {
-                color: '#DDD',
+                color: '#888',
                 fontWeight: 'bold'
             },
         },
@@ -386,14 +526,12 @@ var dflt_options = {
         align: 'right',
         verticalAlign: 'top',
         borderWidth: 1,
+        backgroundColor:  '#ddd',
         floating: true,
         itemStyle: {
             font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: '#DDD'
+            color: '#222'
         },
-        itemHoverStyle: {
-            color: 'gray'
-        }
 
     },
 
@@ -401,32 +539,32 @@ var dflt_options = {
         enabled: false
     },
 
-    colors: ['#FF0000', '#0000FF', '#00FF00', '#FF00FF', '#00FFFF', '#FFFF00'],
+    colors: ['#FF0000', '#0000FF', '#00BB00', '#FF00FF', '#00FFFF', '#FFFF00'],
 
     plotOptions: {
         line: {
             marker: {
                 radius: 2
             },
-            lineWidth: 1,
+            lineWidth: 3,
             threshold: null,
-            animation: false,
+            animation: true,
         }
     },
     tooltip: {
         crosshairs: true,
         hideDelay: 0,
         shared: true,
-        backgroundColor: null,
+        backgroundColor: '#ddd',
         snap: 30,
         borderWidth: 1,
-        borderColor: '#FF0000',
+        borderColor:  '#ddd',
         shadow: true,
         animation: false,
         useHTML: false,
         style: {
             padding: 0,
-            color: '#D43',
+            color: '#000',
         }
     },
 
