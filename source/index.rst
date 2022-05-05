@@ -9,7 +9,6 @@
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
 FIRST Robotics Competition Control System
-=========================================
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
 
