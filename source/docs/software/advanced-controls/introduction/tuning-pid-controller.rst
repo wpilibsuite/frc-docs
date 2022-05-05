@@ -31,7 +31,7 @@ Most PID tuning will follow the following steps:
 
 .. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
 
-Mechanism Walkthrough - Flywheel
+Mechanism Walkthrough - Flywheel 
 ````````````````````````````````
 
 .. raw:: html
@@ -44,7 +44,7 @@ Mechanism Walkthrough - Flywheel
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_pid");
-         flywheel_pid.runSim();
+         flywheel_pid.runSim(); 
       </script> 
     </div>
 

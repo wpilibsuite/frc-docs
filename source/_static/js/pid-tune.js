@@ -76,8 +76,9 @@ class FlywheelViz {
         this.drawStatic();
     }
 
-    setData(posRev){
+    setData(time, posRev){
         this.posRev = posRev;
+        this.time = time;
     }
 
     drawStatic(){
@@ -134,7 +135,16 @@ class FlywheelViz {
         this.ctxa.beginPath();
         this.ctxa.arc(0.5*this.width, 0.5*this.height, 0.05*this.height, 0, 2 * Math.PI, false);
         this.ctxa.fill();
-        
+
+        //Time Indicator
+        var time_sec = this.time[timeIdx];
+        this.ctxa.fillStyle="#000000"
+        this.ctxa.font = "bold 20px Arial";
+        this.ctxa.fillText("t = " + time_sec.toFixed(2) + " sec", 0.05*this.width, 0.15*this.height); 
+        //Progress bar
+        this.ctxa.fillStyle="#0000FF"
+        this.ctxa.fillRect(0.0*this.width, 0.0*this.height, ((timeIdx)/(this.time.length))*this.width, 0.02*this.height);
+            
     }
 }
 
@@ -162,14 +172,17 @@ class ControlsSim {
 
         this.ctrlsDrawDiv = document.getElementById(div_id_prefix + "_ctrls");
 
+        this.animationReset = true;
+
     }
 
     animationStep(timestamp) {
 
         var curTime = timestamp / 1000.0;
 
-        if (this.animationStart === null) {
+        if (this.animationReset) {
             this.animationStart = curTime;
+            this.animationReset = false;
         }
 
         var animationTime = curTime - this.animationStart;
@@ -316,7 +329,7 @@ class FlywheelSim extends ControlsSim {
         this.setCtrlEffortData(ctrlEffortPlotData);
         this.setSetpointData(setpointPlotData);
         this.setOutputData(outputPlotData);
-        this.viz.setData(this.outputVizPosRevSamples);
+        this.viz.setData(this.timeSamples, this.outputVizPosRevSamples);
 
         this.redraw();
 
@@ -395,6 +408,7 @@ class FlywheelPIDF extends FlywheelSim {
         input.setAttribute("value", "1000.0");
         input.setAttribute("step", "100.0");
         input.onchange = function (event) {
+            this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
@@ -412,6 +426,7 @@ class FlywheelPIDF extends FlywheelSim {
         input.setAttribute("value", "0.0");
         input.setAttribute("step", "0.01");
         input.onchange = function (event) {
+            this.animationReset = true;
             this.kP = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
@@ -429,6 +444,7 @@ class FlywheelPIDF extends FlywheelSim {
         input.setAttribute("value", "0.0");
         input.setAttribute("step", "0.01");
         input.onchange = function (event) {
+            this.animationReset = true;
             this.kI = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
@@ -446,6 +462,7 @@ class FlywheelPIDF extends FlywheelSim {
         input.setAttribute("value", "0.0");
         input.setAttribute("step", "0.01");
         input.onchange = function (event) {
+            this.animationReset = true;
             this.kD = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
@@ -453,6 +470,41 @@ class FlywheelPIDF extends FlywheelSim {
         curRow.appendChild(label);
         curRow.appendChild(control);
 
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "kV";
+        control = document.createElement("td");
+        ctrlTable.appendChild(curRow);
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "0.0");
+        input.setAttribute("step", "0.01");
+        input.onchange = function (event) {
+            this.animationReset = true;
+            this.kV = parseFloat(event.target.value);
+            this.runSim();
+        }.bind(this);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
+
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "kS";
+        control = document.createElement("td");
+        ctrlTable.appendChild(curRow);
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "0.0");
+        input.setAttribute("step", "0.01");
+        input.onchange = function (event) {
+            this.animationReset = true;
+            this.kS = parseFloat(event.target.value);
+            this.runSim();
+        }.bind(this);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
 
 
     }
