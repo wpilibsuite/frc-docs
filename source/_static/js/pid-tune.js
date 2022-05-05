@@ -31,7 +31,114 @@ class DelayLine
 // Graphing Utilities
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class ControlsViz {
+class FlywheelViz {
+    constructor(div_in){
+
+        this.drawDiv = div_in;
+
+        //div_in.width = 500;
+        //div_in.height = 500;
+        div_in.style.position = "relative";
+
+        this.ca = document.createElement("canvas")
+        this.cas = document.createElement("canvas")
+
+        this.cas.style.border = "1px solid #000000";
+        this.cas.style.position = "absolute";
+        this.cas.style.top = "0px";
+        this.cas.style.left = "0px";
+
+        this.ca.style.position = "absolute";
+        this.ca.style.top = "0px";
+        this.ca.style.left = "0px";
+
+
+        this.ctxa = this.ca.getContext("2d");
+        this.ctxs = this.cas.getContext("2d");
+
+        div_in.appendChild(this.cas);
+        div_in.appendChild(this.ca);
+
+        this.updateSize();
+
+        window.addEventListener('resize', this.updateSize.bind(this));
+        window.addEventListener('load', this.updateSize.bind(this));
+
+    }
+
+    updateSize(){
+        this.width = this.drawDiv.offsetWidth;
+        this.height = this.drawDiv.offsetHeight ;
+        this.cas.width = this.width;
+        this.cas.height = this.height;
+        this.ca.width = this.width;
+        this.ca.height = this.height;
+        this.drawStatic();
+    }
+
+    setData(posRev){
+        this.posRev = posRev;
+    }
+
+    drawStatic(){
+
+        this.ctxs.clearRect(0,0,this.width,this.height);
+
+        //Wheel
+        this.ctxs.lineWidth = 4;
+        this.ctxs.fillStyle="#DDDDDD"
+        this.ctxs.strokeStyle = '#000000';
+        this.ctxs.beginPath();
+        this.ctxs.arc(0.5*this.width, 0.5*this.height, 0.25*this.height, 0, 2 * Math.PI, false);
+        this.ctxs.fill();
+        this.ctxs.stroke();
+
+    }
+
+    drawDynamic(timeIdx){
+        var pos = this.posRev[timeIdx]; //make it look nice
+        this.ctxa.clearRect(0,0,this.width,this.height);
+
+        var indLen = this.height * 0.25;
+
+        var indStartX = 0.5*this.width;
+        var indStartY = 0.5*this.height;
+
+
+        var numSegments = 5;
+        var segWidthRad = 0.3;
+
+        for(var segIdx = 0; segIdx < numSegments; segIdx ++){
+
+            var offset = segIdx * Math.PI * 2 / numSegments;
+
+            this.ctxa.lineWidth = 4;
+            this.ctxa.strokeStyle = '#000000';
+            if(offset == 0){
+                this.ctxa.fillStyle="#FF0000";
+            } else {
+                this.ctxa.fillStyle="#000000";
+            }
+            this.ctxa.beginPath();
+            this.ctxa.moveTo(indStartX,indStartY);
+            this.ctxa.arc(indStartX, indStartY, indLen, offset + pos - segWidthRad/2.0, offset + pos + segWidthRad/2.0, false);
+            this.ctxa.closePath();
+            this.ctxa.stroke();
+            this.ctxa.fill();
+        }
+
+        //Center Hub
+        this.ctxa.lineWidth = 1;
+        this.ctxa.fillStyle="#000000"
+        this.ctxa.strokeStyle = '#000000';
+        this.ctxa.beginPath();
+        this.ctxa.arc(0.5*this.width, 0.5*this.height, 0.05*this.height, 0, 2 * Math.PI, false);
+        this.ctxa.fill();
+        
+    }
+}
+
+class ControlsSim {
 
     constructor(div_id_prefix, stateUnits) {
         this.speedGraph = null;
@@ -46,6 +153,7 @@ class ControlsViz {
         this.outputSamples = Array(0, this.simEndTime / this.Ts);
         this.setpointSamples = Array(0, this.simEndTime / this.Ts);
         this.ctrlEffortSamples = Array(0, this.simEndTime / this.Ts);
+        this.outputVizPosRevSamples = Array(0, this.simEndTime / this.Ts);
 
         this.vizDrawDiv = document.getElementById(div_id_prefix + "_viz");
 
@@ -70,7 +178,9 @@ class ControlsViz {
             animationTime = 0.0;
         }
 
-        this.drawAnimation(animationTime);
+        var animationStep = Math.floor(animationTime / this.Ts);
+
+        this.drawAnimation(animationStep);
 
         window.requestAnimationFrame((t)=>this.animationStep(t));
 
@@ -99,14 +209,15 @@ class ControlsViz {
     }
 }
 
-class FlywheelViz extends ControlsViz {
+class FlywheelSim extends ControlsSim {
 
     constructor(div_id_prefix) {
 
         super(div_id_prefix, "RPM");
 
         this.simEndTime = 10.0;
-        this.simTs = 0.01;
+        this.Ts = 0.001;
+
 
         // User-configured setpoints
         this.setpointVal = 1000.0; 
@@ -128,14 +239,18 @@ class FlywheelViz extends ControlsViz {
         this.C2 = 2 * Kv * Kt / (mass * radius * radius * Rc);
         this.C3 = 2 / (mass * radius * radius);
 
+        this.viz = new FlywheelViz(this.vizDrawDiv);
+        this.viz.drawStatic();
+
     }
 
     runSim(){
 
-        var Ts = 0.001;
         var inVolts = 0.0;
         var speedPrev = 0;
         var nextControllerRunTime = 0;
+
+        var curPosRev = 0;
 
         var speed_delay_line = new DelayLine(49); //models sensor lag
 
@@ -144,7 +259,7 @@ class FlywheelViz extends ControlsViz {
 
         var idx = 0;
 
-        for(var t = 0.0; t < this.simEndTime; t += Ts){
+        for(var t = 0.0; t < this.simEndTime; t += this.Ts){
 
             var curSetpoint = 0.0;
             if(t > this.setpointStepTime){
@@ -169,7 +284,7 @@ class FlywheelViz extends ControlsViz {
             }
 
             //Simulate main Plant behavior
-            var speed = (Ts*this.C1*inVolts - Ts*this.C3*extTrq + speedPrev)/(1+Ts*this.C2);
+            var speed = (this.Ts*this.C1*inVolts - this.Ts*this.C3*extTrq + speedPrev)/(1+this.Ts*this.C2);
             if(speed < 0){
                 speed = 0;
             }
@@ -177,12 +292,15 @@ class FlywheelViz extends ControlsViz {
 
             var speed_rpm = speed*60/2/3.14159;
 
+            curPosRev += speed_rpm / 60.0 * this.Ts;
+
             speed_delay_line.addSample(speed_rpm);
 
             this.timeSamples[idx] = t;
             this.ctrlEffortSamples[idx] = inVolts;
             this.outputSamples[idx] = speed_rpm;
             this.setpointSamples[idx] = curSetpoint;
+            this.outputVizPosRevSamples[idx] = curPosRev;
 
             idx++;
         }
@@ -198,18 +316,19 @@ class FlywheelViz extends ControlsViz {
         this.setCtrlEffortData(ctrlEffortPlotData);
         this.setSetpointData(setpointPlotData);
         this.setOutputData(outputPlotData);
+        this.viz.setData(this.outputVizPosRevSamples);
 
         this.redraw();
 
     }
 
-    drawAnimation(time) {
-
+    drawAnimation(timeIdx) {
+        this.viz.drawDynamic(timeIdx);
     }
 
 }
 
-class FlywheelBangBang extends FlywheelViz {
+class FlywheelBangBang extends FlywheelSim {
 
     constructor(div_id_prefix) {
 
@@ -230,7 +349,7 @@ class FlywheelBangBang extends FlywheelViz {
 
 }
 
-class FlywheelPIDF extends FlywheelViz {
+class FlywheelPIDF extends FlywheelSim {
 
     constructor(div_id_prefix) {
 
@@ -257,125 +376,84 @@ class FlywheelPIDF extends FlywheelViz {
 
     ctrlsInit(){
 
-        let ctrlTable =  document.createElement("table");
+        var curRow;
+        var label;
+        var control;
+        var input;
+
+        var ctrlTable =  document.createElement("table");
+        ctrlTable.classList.add("controlTable");
         this.ctrlsDrawDiv.appendChild(ctrlTable);
 
-        let curRow = document.createElement("tr");
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "Setpoint";
+        control = document.createElement("td");
         ctrlTable.appendChild(curRow);
-
-        let btn = document.createElement("button");
-        btn.innerHTML = "Double kP";
-        btn.onclick = function () {
-            if(this.kP == 0){
-                this.kP = 0.001;
-            } else {
-                this.kP *= 2.0;
-            }
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "1000.0");
+        input.setAttribute("step", "100.0");
+        input.onchange = function (event) {
+            this.setpointVal = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Half kP";
-        btn.onclick = function () {
-            this.kP *= 0.5;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Up kP";
-        btn.onclick = function () {
-            this.kP *= 1.1;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Down kP";
-        btn.onclick = function () {
-            this.kP *= 0.9;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
 
         curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "kP";
+        control = document.createElement("td");
         ctrlTable.appendChild(curRow);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Double kD";
-        btn.onclick = function () {
-            if(this.kD == 0){
-                this.kD = 0.001;
-            } else {
-                this.kD *= 2.0;
-            }            
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "0.0");
+        input.setAttribute("step", "0.01");
+        input.onchange = function (event) {
+            this.kP = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Half kD";
-        btn.onclick = function () {
-            this.kD *= 0.5;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Up kD";
-        btn.onclick = function () {
-            this.kD *= 1.1;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Down kD";
-        btn.onclick = function () {
-            this.kD *= 0.9;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
 
         curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "kI";
+        control = document.createElement("td");
         ctrlTable.appendChild(curRow);
-
-        btn = document.createElement("button");
-        btn.innerHTML = "Double kI";
-        btn.onclick = function () {
-            if(this.kI == 0){
-                this.kI = 0.001;
-            } else {
-                this.kI *= 2.0;
-            }            
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "0.0");
+        input.setAttribute("step", "0.01");
+        input.onchange = function (event) {
+            this.kI = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
-        curRow.appendChild(btn);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
 
-        btn = document.createElement("button");
-        btn.innerHTML = "Half kI";
-        btn.onclick = function () {
-            this.kI *= 0.5;
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "kD";
+        control = document.createElement("td");
+        ctrlTable.appendChild(curRow);
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "number");
+        input.setAttribute("value", "0.0");
+        input.setAttribute("step", "0.01");
+        input.onchange = function (event) {
+            this.kD = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
-        curRow.appendChild(btn);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
 
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Up kI";
-        btn.onclick = function () {
-            this.kI *= 1.1;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
 
-        btn = document.createElement("button");
-        btn.innerHTML = "Bump Down kI";
-        btn.onclick = function () {
-            this.kI *= 0.9;
-            this.runSim();
-        }.bind(this);
-        curRow.appendChild(btn);
 
     }
 

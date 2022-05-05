@@ -39,17 +39,17 @@ Mechanism Walkthrough - Flywheel
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
       <div class="col" id="flywheel_pid_plot"></div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div>
+         <div class="col" id="flywheel_pid_viz"></div> 
          <div id="flywheel_pid_ctrls"></div>
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_pid");
          flywheel_pid.runSim();
-      </script>
-    </div> 
+      </script> 
+    </div>
 
 
-Mechanism Walkthrough - Vertical Arm
+Mechanism Walkthrough - Vertical Arm 
 ````````````````````````````````````
 
 .. raw:: html
@@ -84,4 +84,3 @@ Mathematically, suppose we have a controller :math:`u = k(r - x)` where :math:`u
    k_{max} &< k
 
 For the inequality to hold, :math:`k_{max}` must be less than the original value for :math:`k`. This reduced gain is evident in a :term:`system response` when there is a linear change in state instead of an exponential one as it approaches the :term:`reference`. This is due to the :term:`control effort` no longer following a decaying exponential plot. Once the :term:`system` is closer to the :term:`reference`, the controller will stop saturating and produce realistic controller values again. 
-  
