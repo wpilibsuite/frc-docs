@@ -236,6 +236,9 @@ class FlywheelSim extends ControlsSim {
         this.setpointVal = 1000.0; 
         this.setpointStepTime = 1.0;
 
+        // User-configured plant model things
+        this.injectBall = true;
+
         //Constants related to plant model
         //Gearbox
         var GEARBOX_RATIO = 50.0/10.0; //output over input - 5:1 gear ratio
@@ -291,7 +294,7 @@ class FlywheelSim extends ControlsSim {
                 
             //Simulate friction
             var extTrq = 0.0005*speedPrev;
-            if(t > 5.0 & t < 5.05){
+            if(this.injectBall & t > 5.0 & t < 5.05){
                 //add a short "impulse" to simulate putting a ball into the shooter
                 extTrq += 2;
             }
@@ -500,6 +503,23 @@ class FlywheelPIDF extends FlywheelSim {
         input.onchange = function (event) {
             this.animationReset = true;
             this.kS = parseFloat(event.target.value);
+            this.runSim();
+        }.bind(this);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
+
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
+        label.innerHTML = "Inject Ball";
+        control = document.createElement("td");
+        ctrlTable.appendChild(curRow);
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("checked", true);
+        input.onchange = function (event) {
+            this.animationReset = true;
+            this.injectBall = event.target.checked;
             this.runSim();
         }.bind(this);
         control.append(input)
