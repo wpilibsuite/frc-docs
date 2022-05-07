@@ -3,41 +3,53 @@ Approaches to Control Systems
 
 .. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
 
+When desigining a control system for your robot, there are a number of different approaches to take. They range from very simple approaches, to advanced and complex ones. Each has *tradeoffs*. Some will work better than others in different situations, some require more mathematical analysis than others.
+
+Teams should prioritize picking the easiest strategy which enables success on the field. However, as you do experiemnts, keep in mind there is almost always a "next-step" to take to improve your field performance.
 
 FeedForward vs. FeedBack
 ------------------------
 
-Feed-Forward is assigning control efforts based on an assumed model of how the mechanism should work.
+There are two broad categories of strategies in control system design:
 
-Feed-Back is using sensors to detect what actually happened to the mechanism, and apply a correction factor.
+**Feed-Forward** refers to the class of algorithms which incorporate knowledge of how the mechanism under control is *expected* to operate. Using this "model" of operation, the control input is chosen to make the mechanism get close to where it should be.
 
+**Feed-Back** refers to the class of algorithms which use sensors to *measure* what a mechanism is doing, and issue corrective commands to move a mechnaism from where it actually is, to where you want it to be.
+
+They are not mutually exclusive - the most advanced techniques will incorporate both of these concepts simultaneously.
 
 Start with FeedForward
 -----------------------
 
+Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feed-forward techniques first. 
+
 First-Principles - How do you expect your system to behave?
 ```````````````````````````````````````````````````````````
 
-ReCalc
+The first step in designing a control system is writing down information on how you expect your mechanism to behave.
 
-Physics and FIrst Principles
+This step is done by combining one or more concepts you may be familiar with from Physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard models of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
 
+Models do not have to be extremely accurate to be useful. For example, a very simple model of a motor is that its speed is proportional to the voltage applied. A motor which spins at 3000 RPM at 12v will spin near 1500RPM at 6V. If you know you want your motor to be spinning at 1254 RPM, you can use the proportionality to calculate the amount of voltage to send to the motor.
+
+`ReCalc is an online calculator <https://www.reca.lc/>` which helps take care of some of these physics model calcualtions for common FRC mechanisms.
+
+System Identification
+`````````````````````
+
+A key way to improve the accuracy of a First-Principles physics model is to perform experiments on it, record data, and use the data to *derive* the constants associated with different parts of the model.
+
+This is useful if CAD models are not perfectly accurate, or parts of the model are not easily predicted (ex: friction in a gearbox).
+
+`FRC's system identification tool (sysid)<link me>` supports some common FRC mechanisms, including drivetrains. It can be configured to load custom code onto a robot, exercise the mechanism and record data, and derive relevant constants to build a more accurate model of the system behavior.
 
 Combining Feedback and FeedForward
 ``````````````````````````````````
 
-Feedback useful when FeedForward cannot fully describe everything int he system.
+Even with lots of experiments and study, it is not possible to know every force that will be exerted on a robot's mechanism with great detail. For example, in a flywheel shooter, the timing and exact forces associated with a ball being put through the mechanism are not easy to define accurately. For another example, consider the fact that gearboxes can be greased to reduce friction, but throw off grease over time and get more friction. This is a complex process to model well.
 
-Ex: Ball injected into shooter.
+In cases where not everything can be known, incorporating sensors and *feedback* control is useful to account for inaccuracies in the model of system behavior.
 
-Ex: Gearbox was regreased
-
-Model Based & System Identification
-```````````````````````````````````
-
-tools available to inject testcases into the mechanism to derive constants
-
-can derive constants assocaited with feed forward, as well as inform feedback decisions
 
 Incorporating FeedBack
 ----------------------
@@ -47,11 +59,10 @@ Let's say we are controlling a DC brushed motor. With just a mathematical model 
 To combat this, we can take measurements of the system and the environment to detect this deviation and account for it. For example, we could measure the current position and estimate an angular velocity from it. We can then give the motor corrective commands as well as steer our model back to reality. This feedback allows us to account for uncertainty and be robust to it.
 
 
-
 Feedback-Only Techniques
 ------------------------
 
-In may controls textbooks, you may see a set of techniques which rely on Feedback only. These are very common in industry, and work surprisingly well in many cases, even when the underlying system behavior is not easy to model.
+In may controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
 
 For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding them if possible is recommended.
 
@@ -60,7 +71,9 @@ Bang-Bang
 
 A ``BangBang`` controller applies either zero control effort, or 100% control effort, depending on whether the system is at the setpoint or not.
 
-It may work well for flywheels, or very simple autonomous "drive distance" routines. However, it will likely not work for elevators, arms, turrets, or 
+It may work well for flywheels, or very simple autonomous "drive distance" routines. However, it will likely not work for elevators, arms, turrets, or more complex drivetrain motion.
+
+
 
 PID
 ```

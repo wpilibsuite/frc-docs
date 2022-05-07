@@ -3,7 +3,7 @@ Tuning a Bang-Bang Controller
 
 As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid.rst>`, a Bang-Bang controller is a simple construct for applying a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint. 
 
-It is simple because it requires no calibration. The simplicity comes at a cost though, it only works well for some mechanisms.
+It is simple because it requires no calibration. The simplicity comes at a cost though: it only works well for some mechanisms.
 
 General Tuning Techniques
 ``````````````````````````

@@ -8,9 +8,9 @@ The Need for Control Systems
 
 Control systems are all around us and we interact with them daily. A small list of ones you may have seen includes heaters and air conditioners with thermostats, cruise control and the anti-lock braking system (ABS) on automobiles, and fan speed modulation on modern laptops. Control systems monitor or control the behavior of systems like these and may consist of humans controlling them directly (manual control), or of only machines (automatic control).
 
-The thing that is common to all of these things: They all have a mechanism which does useful work, but cannot be *directly* controlled. 
+The thing that is common to all of these things: They all have a mechanism which does useful work, but cannot be *directly* commanded to the state that is desired.
 
-For example, an air conditioner's fans and compressor have no mechanical or electrical input where the user specifies a temperature directly. Rather, some additional mechanism must compare the current air temperature to some sepoint, and choose how to cycle the mechanisms on and off to achieve that temperature. 
+For example, an air conditioner's fans and compressor have no mechanical or electrical input where the user specifies a temperature. Rather, some additional mechanism must compare the current air temperature to some sepoint, and choose how to cycle the compressor and fans on and off to achieve that temperature. 
 
 Similarly, an automobile's engine and transmission have no lever which directly sets a particular speed. Rather, some additional mechanism must measure the current speed of the vehicle, and adjust the transmisison gear and fuel injected into the cylinders to achieve the desired vehicle speed.
 
@@ -43,6 +43,15 @@ The figure below shows a system with a hypothetical input and output. Since the 
 
 .. image:: images/control-system-basics-whatisgain.png
    :alt: A system diagram with hypothetical input and output
+
+What is a Model?
+----------------
+
+A *model* of your mechanism is a set of math equations which describe its expected behavior.
+
+They can be built up from first-principles physics equations, and refined by doing experiments on the mechanism.
+
+Models are often simple algebra equations. They can also include some linear algebra, matricies, and differential equations. WPILib provides a number of classes to help simplify the more complex math.
 
 Block Diagrams
 --------------
