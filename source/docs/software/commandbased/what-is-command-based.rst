@@ -78,4 +78,4 @@ Creating a Robot Project
 
 Creating a project is detailed in :ref:`docs/software/vscode-overview/creating-robot-program:Creating a Robot Program`. Select "Template" then your programming language then "New Command Robot" to create a basic Command-Based Robot program.
 
-When you create a  project, the new command based vendor library is automatically imported.
+When you create a project, the new command based vendor library is automatically imported.
