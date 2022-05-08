@@ -32,7 +32,8 @@ This step is done by combining one or more concepts you may be familiar with fro
 
 Models do not have to be extremely accurate to be useful. For example, a very simple model of a motor is that its speed is proportional to the voltage applied. A motor which spins at 3000 RPM at 12v will spin near 1500RPM at 6V. If you know you want your motor to be spinning at 1254 RPM, you can use the proportionality to calculate the amount of voltage to send to the motor.
 
-`ReCalc is an online calculator <https://www.reca.lc/>` which helps take care of some of these physics model calcualtions for common FRC mechanisms.
+`ReCalc is an online calculator <https://www.reca.lc/>`__ which helps take care of some of these physics model calcualtions for common FRC mechanisms.
+
 
 System Identification
 `````````````````````
