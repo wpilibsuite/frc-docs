@@ -20,8 +20,8 @@ The following physics simulation classes are available in WPILib:
 - LinearSystemSim, for modeling systems with linear dynamics
 - FlywheelSim
 - DifferentialDrivetrainSim
-- ElevatorSim, which models gravity
-- SingleJointedArmSim, which models gravity
+- ElevatorSim, which models gravity in the direction of elevator motion
+- SingleJointedArmSim, which models gravity proportional to the arm angle
 - BatterySim, which simply estimates battery voltage sag based on drawn currents
 
 All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
