@@ -42,7 +42,8 @@ A key way to improve the accuracy of a First-Principles physics model is to perf
 
 This is useful if CAD models are not perfectly accurate, or parts of the model are not easily predicted (ex: friction in a gearbox).
 
-`FRC's system identification tool (sysid)<link me>` supports some common FRC mechanisms, including drivetrains. It can be configured to load custom code onto a robot, exercise the mechanism and record data, and derive relevant constants to build a more accurate model of the system behavior.
+:doc:`FRC's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrains. It can be configured to load custom code onto a robot, exercise the mechanism and record data, and derive relevant constants to build a more accurate model of the system behavior.
+
 
 Combining Feedback and FeedForward
 ``````````````````````````````````
