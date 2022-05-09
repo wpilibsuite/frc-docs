@@ -6,12 +6,12 @@ As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introducti
 It is simple because it requires no calibration. The simplicity comes at a cost though: it only works well for some mechanisms.
 
 General Tuning Techniques
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bang-Bang controllers do not have any parameters to tune. They either push the mechanism toward the setpoint from the "too-low" side, or allow it to drift back toward the setpoint from the "too-high" side.
 
 Mechanism Walkthrough - Flywheel
-````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -29,7 +29,7 @@ Mechanism Walkthrough - Flywheel
 
 
 Mechanism Walkthrough - Vertical Arm
-````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
