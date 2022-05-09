@@ -5,7 +5,7 @@ Advanced Controls Introduction
    :maxdepth: 1
 
    control-system-basics
-   approaches_to_ctrl_sys_design
+   approaches-to-ctrl-sys-design
    tuning-bang-bang-controller
    pid-video
    introduction-to-pid
