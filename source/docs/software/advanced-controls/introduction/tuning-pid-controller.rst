@@ -7,18 +7,20 @@ There are multiple methods for determining the values for these constants on you
 
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
-Manual tuning is also possible. A technique for manual tuning is presented here.
-
 Manual PID Tuning
 -----------------
 
+In this section, we'll go through some techniques to manually find reasonable values for the gains in a PID controller.
+
+This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
+
 Prerequisites
-`````````````
+^^^^^^^^^^^^^
 
 Evaluating the performance of a particular PID gain set is best done by analyzing a plot of :term:`output` and :term:`setpoint`. Additionally, plotting the :term:`output` "control effort" can be useful to determine if the system has reached its maximum ability to exert force.
 
 General Techniques
-``````````````````
+^^^^^^^^^^^^^^^^^^
 
 Most PID tuning will follow the following steps:
 
@@ -32,7 +34,7 @@ Most PID tuning will follow the following steps:
 .. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
 
 Mechanism Walkthrough - Flywheel 
-````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -50,7 +52,7 @@ Mechanism Walkthrough - Flywheel
 
 
 Mechanism Walkthrough - Vertical Arm 
-````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -60,19 +62,21 @@ Mechanism Walkthrough - Vertical Arm
 Common Issues
 -------------
 
+There are a number of common issues which can arise while tuning PID controllers.
+
 Integral Term Windup
-````````````````````
+^^^^^^^^^^^^^^^^^^^^
 
 Beware that if :math:`K_i` is too large, integral windup can occur. Following a large change in :term:`setpoint`, the integral term can accumulate an error larger than the maximal :term:`control input`. As a result, the system overshoots and continues to increase until this accumulated error is unwound.
 
 There are a few ways to mitigate this:
 
 1. Decrease the value of :math:`K_i`, down to zero if possible.
-2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ``setIZone()`` method.
-3. Cap the integrator at some maximum value. WPILib's ``PIDController`` implements this with the ``setIntegratorRange()`` method.
+2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ^^setIZone()^^ method.
+3. Cap the integrator at some maximum value. WPILib's ^^PIDController^^ implements this with the ^^setIntegratorRange()^^ method.
 
 Actuator Saturation
-```````````````````
+^^^^^^^^^^^^^^^^^^^
 
 A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been temporarily reduced.
 
