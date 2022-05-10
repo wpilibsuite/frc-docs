@@ -56,6 +56,17 @@ Mechanism Walkthrough - Vertical Arm
 
 .. raw:: html
 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <div class="col" id="arm_pid_plot"></div>
+      <div class="flex-grid">
+         <div class="col" id="arm_pid_viz"></div> 
+         <div id="arm_pid_ctrls"></div>
+      </div>
+      <script>
+         arm_pidf = new VerticalArmPIDF("arm_pid");
+         arm_pidf.runSim(); 
+      </script> 
+    </div>
 
 
 
