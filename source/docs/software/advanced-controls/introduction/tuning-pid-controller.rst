@@ -45,7 +45,7 @@ Mechanism Walkthrough - Flywheel
          <div id="flywheel_pid_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid = new FlywheelPIDF("flywheel_pid");  
          flywheel_pid.runSim(); 
       </script> 
     </div>
@@ -60,7 +60,7 @@ Mechanism Walkthrough - Vertical Arm
       <div class="col" id="arm_pid_plot"></div>
       <div class="flex-grid">
          <div class="col" id="arm_pid_viz"></div> 
-         <div id="arm_pid_ctrls"></div>
+         <div id="arm_pid_ctrls"></div> 
       </div>
       <script>
          arm_pidf = new VerticalArmPIDF("arm_pid");

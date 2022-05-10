@@ -483,18 +483,15 @@ class VerticalArmSim extends ControlsSim {
 
     constructor(div_id_prefix) {
 
-        super(div_id_prefix, "RPM");
+        super(div_id_prefix, "Radians");
 
         this.simEndTime = 10.0;
         this.Ts = 0.001;
 
 
         // User-configured setpoints
-        this.setpointVal = 1000.0; 
+        this.setpointVal = 0.1; 
         this.setpointStepTime = 1.0;
-
-        // User-configured plant model things
-        this.injectBall = true;
 
         //Constants related to plant model
         //Gearbox
@@ -503,13 +500,13 @@ class VerticalArmSim extends ControlsSim {
         //775 Pro Motor
         var Rc = 0.08; //Coil & Wiring Resistance in Ohms
         var Kt = 0.71/134; //Nm/A torque constant -  Calculated from Stall Torque/Stall Current
-        var Kv = (12-(0.7*Rc))/(18730*2*3.14159/60); //V/(rad/s). Calculated from Vemf@FreeSpeed/(2pi/60*RPM@FreeSpeed). Steady-state Vemf = Vs - I@FreeSpeed*Rc, for Vs = 12
+        var Kv = (12-(0.7*Rc))/(18730*2*Math.PI/60); //V/(rad/s). Calculated from Vemf@FreeSpeed/(2pi/60*RPM@FreeSpeed). Steady-state Vemf = Vs - I@FreeSpeed*Rc, for Vs = 12
 
         
         //Arm assembly
         var mass = 2.0; //arm end effector mass in Kg
         var radius = 0.6096; //2 ft arm length, converted to meters
-        this.muKinetic = 1.25; // rotational kinetic friction coefficient in N/(rad/sec)
+        var muKinetic = 1.25; // rotational kinetic friction coefficient in N/(rad/sec)
 
         //Previous state
         this.posPrevRad = 0;
@@ -517,9 +514,9 @@ class VerticalArmSim extends ControlsSim {
 
 
         // Constants from the blog post equations
-        this.C1 = 2 *  Kt / (mass * radius * radius * GEARBOX_RATIO * Rc);
-        this.C2 = 2 * Kv * Kt / (mass * radius * radius * Rc);
-        this.C3 = 2 / (mass * radius * radius);
+        this.C1 = GEARBOX_RATIO * Kt/(mass*radius*radius*Rc);
+        this.C2 = Kt*Kv/(mass*radius*radius*Rc) + muKinetic/(mass*radius*radius)
+        this.C3 = 9.81/(radius * radius);
 
         this.viz = new VerticalArmViz(this.vizDrawDiv);
         this.viz.drawStatic();
@@ -529,10 +526,13 @@ class VerticalArmSim extends ControlsSim {
     runSim(){
 
         var inVolts = 0.0;
-        var speedPrev = 0;
         var nextControllerRunTime = 0;
 
         var curPosRev = 0;
+
+        //Previous state
+        this.posPrevRad = 0;
+        this.posPrevPrevRad = 0;
 
         var pos_delay_line = new DelayLine(49); //models sensor lag
 
@@ -548,28 +548,27 @@ class VerticalArmSim extends ControlsSim {
                 curSetpoint = this.setpointVal;
             }
 
-            var meas_speed = pos_delay_line.getSample();
+            var measPos = pos_delay_line.getSample();
 
             //Simulate Controller
             if(t >= nextControllerRunTime){
-                inVolts = this.controllerUpdate(t, curSetpoint, meas_speed);
+                inVolts = this.controllerUpdate(t, curSetpoint, measPos);
                 //Maintain separate sample rate for controller
                 nextControllerRunTime += this.ctrl_Ts;
             }
 
             //Run plant model simulation
-            var curPosRev = 1/(this.Ts*this.C2 + 1) * ( this.Ts*this.Ts*this.C1*inVolts - this.Ts*this.Ts*this.C3*Math.cos(this.posPrevRad) + this.posPrevRad*(this.Ts*this.C2 + 2) - this.posPrevPrevRad );
+            var curPosRad = 1/(this.Ts*this.C2 + 1) * ( this.Ts*this.Ts*this.C1*inVolts - this.Ts*this.Ts*this.C3*Math.cos(this.posPrevRad) + this.posPrevRad*(this.Ts*this.C2 + 2) - this.posPrevPrevRad );
 
-
-            this.posPrevRad = curPosRev;
             this.posPrevPrevRad = this.posPrevRad;
-            pos_delay_line.addSample(curPosRev);
+            this.posPrevRad = curPosRad;
+            pos_delay_line.addSample(curPosRad);
 
             this.timeSamples[idx] = t;
             this.ctrlEffortSamples[idx] = inVolts;
-            this.outputSamples[idx] = curPosRev;
+            this.outputSamples[idx] = curPosRad;
             this.setpointSamples[idx] = curSetpoint;
-            this.outputVizPosRevSamples[idx] = curPosRev;
+            this.outputVizPosRevSamples[idx] = curPosRad/2/Math.PI;
 
             idx++;
         }
@@ -912,8 +911,8 @@ class VerticalArmPIDF extends VerticalArmSim {
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
-        input.setAttribute("value", "1000.0");
-        input.setAttribute("step", "100.0");
+        input.setAttribute("value", "0.1");
+        input.setAttribute("step", "0.01");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
@@ -1024,7 +1023,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         }
             
         //Calculate error, error derivative, and error integral
-        var error = (setpoint - output)*2*3.14159/60;
+        var error = (setpoint - output);
         
         this.err_accum += (error)*this.ctrl_Ts;
 
