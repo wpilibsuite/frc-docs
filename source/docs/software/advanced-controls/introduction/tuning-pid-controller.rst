@@ -52,7 +52,7 @@ Mechanism Walkthrough - Flywheel
 
 
 Mechanism Walkthrough - Vertical Arm 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 .. raw:: html
 

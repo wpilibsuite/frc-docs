@@ -16,6 +16,10 @@
 
 import sys
 import os
+import glob
+from jsmin import jsmin
+
+
 
 sys.path.append(os.path.abspath("."))
 sys.path.append(os.path.abspath("./frc-docs/source"))
@@ -210,6 +214,21 @@ user_options = [
     ("warning-is-error", True),
 ]
 
+# javascript files which need to be merged and minified
+js_pid_src_path = "./source/_static/js/pid-tune/*.js"
+js_pid_output_file = "./source/_static/js/pid-tune.js"
+
+def mergeAndMinify(sourceDir, outputFile):
+    with open(outputFile, "w") as outf:
+        inFileNames = glob.glob(sourceDir)
+        for inFileName in inFileNames:
+            with open(inFileName, "r") as inf:
+                minified = jsmin(inf.read())
+                outf.write("///////////////////////////////////////////////////////////\n")
+                outf.write("// {}\n".format(inFileName))
+                outf.write(minified)
+                outf.write("\n")
+
 
 def setup(app):
     app.add_css_file("css/frc-rtd.css")
@@ -232,12 +251,13 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+    # Generate merged/minified PID tuning source
+    mergeAndMinify(js_pid_src_path, js_pid_output_file)
+
     # Add interactive PID tuning
     app.add_js_file("js/highcharts.js")
     app.add_js_file("js/pid-tune.js")
     app.add_css_file("css/pid-tune.css")
-
-
 
 
 # -- Options for latex generation --------------------------------------------
