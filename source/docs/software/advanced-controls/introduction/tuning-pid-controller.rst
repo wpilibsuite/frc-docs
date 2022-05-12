@@ -63,7 +63,7 @@ Mechanism Walkthrough - Vertical Arm
          <div id="arm_pid_ctrls"></div> 
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid");
+         arm_pidf = new VerticalArmPIDF("arm_pid"); 
          arm_pidf.runSim(); 
       </script> 
     </div>

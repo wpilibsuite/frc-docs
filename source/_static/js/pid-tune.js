@@ -152,6 +152,7 @@ class VerticalArmViz {
         this.drawDiv = div_in;
 
         div_in.style.position = "relative";
+        div_in.style.maxWidth = "500px";
 
         this.ca = document.createElement("canvas")
         this.cas = document.createElement("canvas")
@@ -165,12 +166,13 @@ class VerticalArmViz {
         this.ca.style.top = "0px";
         this.ca.style.left = "0px";
 
-
         this.ctxa = this.ca.getContext("2d");
         this.ctxs = this.cas.getContext("2d");
 
         div_in.appendChild(this.cas);
         div_in.appendChild(this.ca);
+
+        this.teamNum = Math.floor(Math.random() * 9999).toFixed(0);
 
         this.updateSize();
 
@@ -198,7 +200,6 @@ class VerticalArmViz {
 
         this.ctxs.clearRect(0,0,this.width,this.height);
 
-        var teamNum = Math.floor(Math.random() * 9000).toFixed(0);
 
         //Supports
         this.ctxs.lineWidth = 5;
@@ -231,10 +232,11 @@ class VerticalArmViz {
 
         //Bumpers
         this.ctxs.fillStyle="#FF0000"
-        this.ctxs.fillRect(0.1*this.width, 0.9*this.height, 0.8*this.width, 0.05*this.height);
+        this.ctxs.fillRect(0.1*this.width, 0.88*this.height, 0.8*this.width, 0.07*this.height);
         this.ctxs.fillStyle="#FFFFFF"
         this.ctxs.font = "bold 22px Arial";
-        this.ctxs.fillText(teamNum, 0.45*this.width, 0.94*this.height); 
+        this.ctxs.textAlign = "center";
+        this.ctxs.fillText(this.teamNum, 0.5*this.width, 0.94*this.height); 
 
     }
 
@@ -242,7 +244,7 @@ class VerticalArmViz {
         var angleRev = this.posRev[timeIdx]; //make it look nice
         this.ctxa.clearRect(0,0,this.width,this.height);
 
-        var armLenPx = this.width*0.40;
+        var armLenPx = Math.min(this.width,this.height)*0.40;
 
         var armStartX = 0.5*this.width;
         var armStartY = 0.5*this.height;
@@ -534,7 +536,7 @@ class VerticalArmSim extends ControlsSim {
         this.posPrevRad = 0;
         this.posPrevPrevRad = 0;
 
-        var pos_delay_line = new DelayLine(49); //models sensor lag
+        var pos_delay_line = new DelayLine(10); //models sensor lag
 
 
         this.clear();
@@ -885,8 +887,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         this.kD = 0.0;
 
         //User-configured Feed-Forward
-        this.kV = 0.0;
-        this.kS = 0.0;
+        this.kcosFF = 0.0;
 
         this.ctrlsInit();
 
@@ -912,7 +913,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.1");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
@@ -930,7 +931,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kP = parseFloat(event.target.value);
@@ -948,7 +949,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kI = parseFloat(event.target.value);
@@ -978,34 +979,16 @@ class VerticalArmPIDF extends VerticalArmSim {
 
         curRow = document.createElement("tr");
         label = document.createElement("td");
-        label.innerHTML = "kV";
+        label.innerHTML = "kCosFF";
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
-            this.kV = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kS";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
-        input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kS = parseFloat(event.target.value);
+            this.kcosFF = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
         control.append(input)
@@ -1029,9 +1012,8 @@ class VerticalArmPIDF extends VerticalArmSim {
 
         var err_delta = (error - this.err_prev)/this.ctrl_Ts;
 
-        //PID + kv/ks control law
-        var ctrlEffort = this.kV * setpoint + 
-                            this.kS * Math.sign(setpoint) + 
+        //PID + cosine feed-forward control law
+        var ctrlEffort = this.kcosFF * Math.cos(output) + 
                             this.kP * error  +  
                             this.kI * this.err_accum  +  
                             this.kD * err_delta;
