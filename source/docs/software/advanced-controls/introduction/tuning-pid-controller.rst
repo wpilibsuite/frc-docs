@@ -1,7 +1,7 @@
 Tuning a PID Controller
 =======================
 
-As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
+As seen in :ref:`the introduction to PID controller <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
 
 There are multiple methods for determining the values for these constants on your particular mechanism.
 
@@ -13,25 +13,6 @@ Manual PID Tuning
 In this section, we'll go through some techniques to manually find reasonable values for the gains in a PID controller.
 
 This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
-
-Prerequisites
-^^^^^^^^^^^^^
-
-Evaluating the performance of a particular PID gain set is best done by analyzing a plot of :term:`output` and :term:`setpoint`. Additionally, plotting the :term:`output` "control effort" can be useful to determine if the system has reached its maximum ability to exert force.
-
-General Techniques
-^^^^^^^^^^^^^^^^^^
-
-Most PID tuning will follow the following steps:
-
-1. Set :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
-2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
-3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
-4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before convergin to the :term:`setpoint`.
-
-.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. A better approach would be to tune it with an integrator added to the :term:`plant`, but this requires a :term:`model`. 
-
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
 
 Mechanism Walkthrough - Flywheel 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,13 +33,47 @@ For this walkthrough, use this interactive simulation to explore tuning concepts
       </script> 
     </div>
 
+Mechanism Description
+~~~~~~~~~~~~~~~~~~~~~
+The "Flywheel" is nothing more than a circular mass, attached to a gearbox, and driven by a motor. They're commonly used to propel game pieces through the air, into a target. 
+
+In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction slowly decreases the spinning until the flywheel stops.
+
+To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it. 
+
+This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
+
 Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~
 
-We will first attempt to tune the flywheel using 
+We will first attempt to tune the flywheel using only the feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`. 
+
+Perform the following:
+
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, :math:`K_v` and :math:`K_s` to zero.
+2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
+3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
+4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before convergin to the :term:`setpoint`.
+
+.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. A better approach would be to tune it with an integrator added to the :term:`plant`, but this requires a :term:`model`. 
+
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
+
 
 Step 2: Feed-Forward, then FeedBack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by 
+
+Perform the following:
+
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, :math:`K_v` and :math:`K_s` to zero.
+2. Increase :math:`K_v` until the :term:`output` gets fairly close to the :term:`setpoint` as time goes on. You don't have to be perfect, but try to get somewhat close.
+3. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
+
+You may also desire to pull in a small amount of :math:`K_d` to prevent oscillation.
+
+In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, Feed-Forward is recommended over :math:`K_i`.
 
 
 Mechanism Walkthrough - Vertical Arm
@@ -78,7 +93,26 @@ Mechanism Walkthrough - Vertical Arm
       </script> 
     </div>
 
+Mechanism Description
+~~~~~~~~~~~~~~~~~~~~~
+The "Vertical Arm" is a mass on a stick, moved up and down by a gearbox, and driven by a motor. They're commonly used to lift gamepieces from the ground, and up higher to place and score them.
 
+Applying voltage to the motor causes a force on the mechansim that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
+
+To consistently place a gamepiece, the arm must move from wherever it is at, to a specific angle which puts the gamepiece at teh right height. 
+
+This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
+
+
+Step 1: Feedback-Only
+~~~~~~~~~~~~~~~~~~~~~
+
+Again, we will first attempt to tune this mechanism ...
+
+Step 2: Feed-Forward, then FeedBack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+bla bla bla
 
 Common Issues
 -------------

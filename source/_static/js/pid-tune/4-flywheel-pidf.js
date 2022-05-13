@@ -114,7 +114,7 @@ class FlywheelPIDF extends FlywheelSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kV = parseFloat(event.target.value);

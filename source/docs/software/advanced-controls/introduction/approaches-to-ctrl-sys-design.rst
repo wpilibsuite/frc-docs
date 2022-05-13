@@ -1,5 +1,5 @@
-Approaches to Control Systems
-=============================
+Approaches to Designing Control Systems
+=======================================
 
 .. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
 
@@ -66,18 +66,12 @@ Feedback-Only Techniques
 
 In may controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
 
-For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding them if possible is recommended.
+For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding techniques which exclude Feed-Forward is recommended if at all possible.
 
-Bang-Bang
-^^^^^^^^^
+Next Steps
+----------
 
-A ^^BangBang^^ controller applies either zero control effort, or 100% control effort, depending on whether the system is at the setpoint or not.
+To jump right in, check out :ref:`a hands-on example working with a simple Bang-Bang controller <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller
+>`.
 
-It may work well for flywheels, or very simple autonomous "drive distance" routines. However, it will likely not work for elevators, arms, turrets, or more complex drivetrain motion.
-
-
-
-PID
-^^^
-
-The Propriotnal integral derivative controller...
+Alternatively, spend some time learning about :ref:`the details of PID controllers <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`.

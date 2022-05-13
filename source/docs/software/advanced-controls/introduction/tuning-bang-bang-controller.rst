@@ -1,33 +1,17 @@
 Tuning a Bang-Bang Controller
 =============================
 
-As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a Bang-Bang controller is a simple construct for applying a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint. 
+A "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint. 
 
-It is simple because it requires no calibration. The simplicity comes at a cost though: it only works well for some mechanisms.
+:ref:`WPILib provides an implementation <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>` for bang-bang control as well. This page includes a more in-depth description.
+
 
 General Tuning Techniques
 -------------------------
 
 Bang-Bang controllers do not have any parameters to tune. They either push the mechanism toward the setpoint from the "too-low" side, or allow it to drift back toward the setpoint from the "too-high" side.
 
-.. tabs::
-
-  .. code-tab:: java
-
-     if(setpoint < output){
-      ctrlEffort = 1.0;
-     } else {
-      ctrlEffort = 0.0;
-     }
-
-  .. code-tab:: c++
-
-     if(setpoint < output){
-      ctrlEffort = 1.0;
-     } else {
-      ctrlEffort = 0.0;
-     }
-
+The only task users have to do implement and test the system to ensure it is functional.
 
 Mechanism Walkthrough - Flywheel
 --------------------------------

@@ -12,7 +12,7 @@ The thing that is common to all of these things: They all have a mechanism which
 
 For example, an air conditioner's fans and compressor have no mechanical or electrical input where the user specifies a temperature. Rather, some additional mechanism must compare the current air temperature to some sepoint, and choose how to cycle the compressor and fans on and off to achieve that temperature. 
 
-Similarly, an automobile's engine and transmission have no lever which directly sets a particular speed. Rather, some additional mechanism must measure the current speed of the vehicle, and adjust the transmisison gear and fuel injected into the cylinders to achieve the desired vehicle speed.
+Similarly, an automobile's engine and transmission have no mechanical lever which directly sets a particular speed. Rather, some additional mechanism must measure the current speed of the vehicle, and adjust the transmisison gear and fuel injected into the cylinders to achieve the desired vehicle speed.
 
 *Controls Engineering* is the study of how to design those additional mechanisms to bridge the gap from what the user wants a mechanism to do, to how the mechanism is actualy manipulated.
 
@@ -74,4 +74,4 @@ The below figure is a block diagram with more formal notation in a feedback conf
 Getting Started
 ---------------
 
-Continue on to :ref:`the first tuning exercise <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller>` for an introduction to one of the simplest closed-loop control techniques.
+Continue on to :ref:`some background to approaches in designing a control system for a mechanism on your robot<docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Approaches to Designing Control Systems>`.
