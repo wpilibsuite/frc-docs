@@ -7,6 +7,16 @@ Developing with allwpilib
 
 This is a list of links to the various documentation for the `allwpilib <https://github.com/wpilibsuite/allwpilib>`__ repository.
 
+Quick Start
+-----------
+
+Below is a list of instructions that guide you through cloning, building, publishing and using local allwpilib binaries in a robot project.
+
+* Clone the repository with `git clone https://github.com/wpilibsuite/allwpilib.git`
+* Build the repository with `./gradlew build` or `./gradlew build --build-cache` if you have an internet connection
+* Publish the artifacts locally by running `./gradlew publish`
+* `Update your <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>`__ `build.gradle` to use the artifacts
+
 Core Repository
 ---------------
 .. toctree::
