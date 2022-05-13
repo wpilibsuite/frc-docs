@@ -11,9 +11,9 @@ class VerticalArmSim extends BaseSim {
         this.setpointVal = 0.1; 
         this.setpointStepTime = 1.0;
 
-        this.plant = VerticalArmPlant();
+        this.plant = new VerticalArmPlant();
 
-        this.viz = new VerticalArmViz(this.vizDrawDiv);
+        this.viz = new VerticalArmVisualization(this.vizDrawDiv);
         this.viz.drawStatic();
 
     }
@@ -24,7 +24,7 @@ class VerticalArmSim extends BaseSim {
         var nextControllerRunTime = 0;
         var pos_delay_line = new DelayLine(10); //models sensor lag
 
-        this.plant.init();
+        this.plant.init(this.Ts);
 
         var idx = 0;
 
@@ -44,15 +44,15 @@ class VerticalArmSim extends BaseSim {
                 nextControllerRunTime += this.ctrl_Ts;
             }
 
-            this.plant.update(t)
+            this.plant.update(t,inVolts)
 
-            pos_delay_line.addSample(curPosRad);
+            pos_delay_line.addSample(this.plant.getCurPosRad());
 
             this.timeSamples[idx] = t;
             this.ctrlEffortSamples[idx] = inVolts;
-            this.outputSamples[idx] = curPosRad;
+            this.outputSamples[idx] = this.plant.getCurPosRad();
             this.setpointSamples[idx] = curSetpoint;
-            this.outputVizPosRevSamples[idx] = curPosRad/2/Math.PI;
+            this.outputVizPosRevSamples[idx] = this.plant.getCurPosRad()/2/Math.PI;
 
             idx++;
         }

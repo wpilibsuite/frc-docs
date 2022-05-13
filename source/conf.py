@@ -221,6 +221,7 @@ js_pid_output_file = "./source/_static/js/pid-tune.js"
 def mergeAndMinify(sourceDir, outputFile):
     with open(outputFile, "w") as outf:
         inFileNames = glob.glob(sourceDir)
+        inFileNames.sort()
         for inFileName in inFileNames:
             with open(inFileName, "r") as inf:
                 minified = jsmin(inf.read())

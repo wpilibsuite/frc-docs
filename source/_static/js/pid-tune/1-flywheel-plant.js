@@ -22,22 +22,23 @@ class FlywheelPlant{
         this.C3 = 2 / (mass * radius * radius);
     }
 
-    init(){
+    init(Ts){
         this.speed = 0;
         this.speedPrev = 0;
         this.curPosRev = 0;
+        this.Ts = Ts;
     }
 
-    update(t){
+    update(t, inVolts){
         //Simulate friction
-        var extTrq = 0.0005*speedPrev;
+        var extTrq = 0.0005*this.speedPrev;
         if(this.injectBall & t > 5.0 & t < 5.05){
             //add a short "impulse" to simulate putting a ball into the shooter
             extTrq += 2;
         }
 
         //Simulate main Plant behavior
-        this.speed = (this.Ts*this.C1*this.inVolts - this.Ts*this.C3*extTrq + this.speedPrev)/(1+this.Ts*this.C2);
+        this.speed = (this.Ts*this.C1*inVolts - this.Ts*this.C3*extTrq + this.speedPrev)/(1+this.Ts*this.C2);
         if(this.speed < 0){
             this.speed = 0;
         }

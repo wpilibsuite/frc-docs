@@ -27,21 +27,27 @@ class VerticalArmPlant{
 
     }
 
-    init(){
+    init(Ts){
         //Previous state
         this.posPrevRad = 0;
         this.posPrevPrevRad = 0;
+        this.Ts = Ts;
+
 
     }
 
-    update(t){
-
+    update(t, inVolts){
         //Run plant model simulation
-        var curPosRad = 1/(this.Ts*this.C2 + 1) * ( this.Ts*this.Ts*this.C1*inVolts - this.Ts*this.Ts*this.C3*Math.cos(this.posPrevRad) + this.posPrevRad*(this.Ts*this.C2 + 2) - this.posPrevPrevRad );
-
+        this.curPosRad = 1/(this.Ts*this.C2 + 1) * ( this.Ts*this.Ts*this.C1*inVolts - this.Ts*this.Ts*this.C3*Math.cos(this.posPrevRad) + this.posPrevRad*(this.Ts*this.C2 + 2) - this.posPrevPrevRad );
+        
+        //Shift
         this.posPrevPrevRad = this.posPrevRad;
-        this.posPrevRad = curPosRad;
+        this.posPrevRad = this.curPosRad ;
 
+    }
+
+    getCurPosRad(){
+        return this.curPosRad;
     }
 
 }

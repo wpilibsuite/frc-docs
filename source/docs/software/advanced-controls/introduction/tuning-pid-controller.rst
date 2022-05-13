@@ -7,7 +7,7 @@ There are multiple methods for determining the values for these constants on you
 
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
-Manual PID Tuning
+Manual PID Tunin
 -----------------
 
 In this section, we'll go through some techniques to manually find reasonable values for the gains in a PID controller.
@@ -51,8 +51,8 @@ Mechanism Walkthrough - Flywheel
     </div>
 
 
-Mechanism Walkthrough - Vertical Arm 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+Mechanism Walkthrough - Vertical Arm
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 

@@ -10,9 +10,9 @@ class FlywheelSim extends BaseSim {
         this.setpointVal = 1000.0; 
         this.setpointStepTime = 1.0;
 
-        this.plant = FlywheelPlant();
+        this.plant = new FlywheelPlant();
 
-        this.viz = new FlywheelViz(this.vizDrawDiv);
+        this.viz = new FlywheelVisualization(this.vizDrawDiv);
         this.viz.drawStatic();
 
     }
@@ -24,7 +24,7 @@ class FlywheelSim extends BaseSim {
 
         var speed_delay_line = new DelayLine(49); //models sensor lag
 
-        this.plant.init();
+        this.plant.init(this.Ts);
 
         var idx = 0;
 
@@ -44,13 +44,13 @@ class FlywheelSim extends BaseSim {
                 nextControllerRunTime += this.ctrl_Ts;
             }
 
-            this.plant.update(t);
+            this.plant.update(t,inVolts);
 
-            speed_delay_line.addSample(this.plant.getSpeedRPM());
+            speed_delay_line.addSample(this.plant.getCurSpeedRPM());
 
             this.timeSamples[idx] = t;
             this.ctrlEffortSamples[idx] = inVolts;
-            this.outputSamples[idx] = this.plant.getSpeedRPM();
+            this.outputSamples[idx] = this.plant.getCurSpeedRPM();
             this.setpointSamples[idx] = curSetpoint;
             this.outputVizPosRevSamples[idx] = this.plant.getCurPosRev();
 
