@@ -5,3 +5,9 @@ Have you ever had trouble designing a robot system to move quickly and then stop
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;"> <iframe src="https://www.youtube-nocookie.com/embed/UOuRx9Ujsog" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> </div>
+
+
+Next Steps
+----------
+
+Now that you have learned a bit about PID controllers, :ref:`get hands-on with some tuning exercises. <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.

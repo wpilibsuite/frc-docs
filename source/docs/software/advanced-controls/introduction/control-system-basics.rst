@@ -71,4 +71,7 @@ The below figure is a block diagram with more formal notation in a feedback conf
 :math:`\mp` means "minus or plus" where a minus represents negative feedback.
 
 
+Getting Started
+---------------
 
+Continue on to :ref:`the first tuning exercise <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller>` for an introduction to one of the simplest closed-loop control techniques.

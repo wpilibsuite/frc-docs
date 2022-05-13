@@ -21,5 +21,11 @@
 controlTable {
     margin: 5px;
 }
+
+.viz-div {
+  margin:10px;
+  border-style: solid;
+  border-width: 3px;
+}
     
     

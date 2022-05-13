@@ -149,8 +149,8 @@ class VerticalArmPIDF extends VerticalArmSim {
         //Cap voltage at max/min of the physically possible command
         if(ctrlEffort > 12){
             ctrlEffort = 12;
-        } else if (ctrlEffort < 0){
-            ctrlEffort = 0;
+        } else if (ctrlEffort < -12){
+            ctrlEffort = -12;
         }
 
         this.err_prev = error;

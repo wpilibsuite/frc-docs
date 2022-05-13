@@ -1,13 +1,13 @@
 Tuning a PID Controller
 =======================
 
-As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid.rst>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
+As seen in :ref:`Introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
 
 There are multiple methods for determining the values for these constants on your particular mechanism.
 
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
-Manual PID Tunin
+Manual PID Tuning
 -----------------
 
 In this section, we'll go through some techniques to manually find reasonable values for the gains in a PID controller.
@@ -36,9 +36,11 @@ Most PID tuning will follow the following steps:
 Mechanism Walkthrough - Flywheel 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+For this walkthrough, use this interactive simulation to explore tuning concepts:
+
 .. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+    <div class="viz-div">
       <div class="col" id="flywheel_pid_plot"></div>
       <div class="flex-grid">
          <div class="col" id="flywheel_pid_viz"></div> 
@@ -50,13 +52,21 @@ Mechanism Walkthrough - Flywheel
       </script> 
     </div>
 
+Step 1: Feedback-Only
+~~~~~~~~~~~~~~~~~~~~~
+
+We will first attempt to tune the flywheel using 
+
+Step 2: Feed-Forward, then FeedBack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Mechanism Walkthrough - Vertical Arm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+    <div class="viz-div">
       <div class="col" id="arm_pid_plot"></div>
       <div class="flex-grid">
          <div class="col" id="arm_pid_viz"></div> 
@@ -86,7 +96,7 @@ There are a few ways to mitigate this:
 2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ^^setIZone()^^ method.
 3. Cap the integrator at some maximum value. WPILib's ^^PIDController^^ implements this with the ^^setIntegratorRange()^^ method.
 
-Actuator Saturation
+Actuator Saturation 
 ^^^^^^^^^^^^^^^^^^^
 
 A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been temporarily reduced.

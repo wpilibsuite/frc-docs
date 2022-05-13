@@ -9,7 +9,6 @@ class BaseVisualization {
         this.ca = document.createElement("canvas")
         this.cas = document.createElement("canvas")
 
-        this.cas.style.border = "1px solid #000000";
         this.cas.style.position = "absolute";
         this.cas.style.top = "0px";
         this.cas.style.left = "0px";
@@ -34,8 +33,8 @@ class BaseVisualization {
     }
 
     updateSize(){
-        this.width = this.drawDiv.offsetWidth;
-        this.height = this.drawDiv.offsetHeight ;
+        this.width = Math.min(this.drawDiv.offsetWidth, 500);
+        this.height = this.drawDiv.offsetHeight;
         this.cas.width = this.width;
         this.cas.height = this.height;
         this.ca.width = this.width;
@@ -68,7 +67,7 @@ class BaseVisualization {
         this.ctxa.fillText("t = " + time_sec.toFixed(2) + " sec", 0.05*this.width, 0.15*this.height); 
         //Progress bar
         this.ctxa.fillStyle="#0000FF"
-        this.ctxa.fillRect(0.0*this.width, 0.0*this.height, ((timeIdx)/(this.time.length))*this.width, 0.02*this.height);
+        this.ctxa.fillRect(0.0*this.width, 0.98*this.height, ((timeIdx)/(this.time.length))*this.width, 0.02*this.height);
             
     }
 }

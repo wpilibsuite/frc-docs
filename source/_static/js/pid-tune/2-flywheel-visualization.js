@@ -5,12 +5,15 @@ class FlywheelVisualization extends BaseVisualization{
     }
 
     drawStaticCustom(){
+
+        this.wheelRadius =  Math.min(this.height, this.width) * 0.35;
+
         //Wheel
         this.ctxs.lineWidth = 4;
         this.ctxs.fillStyle="#DDDDDD"
         this.ctxs.strokeStyle = '#000000';
         this.ctxs.beginPath();
-        this.ctxs.arc(0.5*this.width, 0.5*this.height, 0.25*this.height, 0, 2 * Math.PI, false);
+        this.ctxs.arc(0.5*this.width, 0.5*this.height, this.wheelRadius, 0, 2 * Math.PI, false);
         this.ctxs.fill();
         this.ctxs.stroke();
     }
@@ -19,7 +22,7 @@ class FlywheelVisualization extends BaseVisualization{
 
         var pos = this.posRev[timeIdx]; //make it look nice
 
-        var indLen = this.height * 0.25;
+        var indLen = this.wheelRadius;
 
         var indStartX = 0.5*this.width;
         var indStartY = 0.5*this.height;
@@ -52,7 +55,7 @@ class FlywheelVisualization extends BaseVisualization{
         this.ctxa.fillStyle="#000000"
         this.ctxa.strokeStyle = '#000000';
         this.ctxa.beginPath();
-        this.ctxa.arc(0.5*this.width, 0.5*this.height, 0.05*this.height, 0, 2 * Math.PI, false);
+        this.ctxa.arc(0.5*this.width, 0.5*this.height, 0.1*this.wheelRadius, 0, 2 * Math.PI, false);
         this.ctxa.fill();
 
 

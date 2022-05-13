@@ -6,7 +6,6 @@ class VerticalArmVisualization extends BaseVisualization{
 
     drawStaticCustom(){
 
-
         //Supports
         this.ctxs.lineWidth = 5;
         this.ctxs.strokeStyle = '#000000';

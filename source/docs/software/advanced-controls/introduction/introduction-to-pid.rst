@@ -3,6 +3,11 @@
 Introduction to PID
 ===================
 
+This page provides a math-focused approach to explaining a PID controller. In parallel, in :ref:`a video from WPI is available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>` if you prefer videos over reading.
+
+What is a PID Controller?
+-------------------------
+
 The PID controller is a commonly used feedback controller consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each of them behaves.
 
 First, we'll get some nomenclature for PID controllers out of the way. The :term:`reference` is called the setpoint (the desired position) and the :term:`output` is called the :term:`process variable` (the measured position). Below are some common variable naming conventions for relevant quantities.
@@ -140,3 +145,9 @@ An *underdamped* response oscillates around the :term:`reference` before settlin
    :align: center
 
 is slow to rise and does not overshoot the :term:`reference`. A *critically damped* response has the fastest :term:`rise time` without overshooting the :term:`reference`.
+
+
+Next Steps
+----------
+
+Now that you have learned a bit about the math of a PID controller, :ref:`get hands-on with some tuning exercises. <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.
