@@ -10,7 +10,7 @@ This is a list of links to the various documentation for the `allwpilib <https:/
 Quick Start
 -----------
 
-Below is a list of instructions that guide you through cloning, building, publishing and using local allwpilib binaries in a robot project.
+Below is a list of instructions that guide you through cloning, building, publishing and using local allwpilib binaries in a robot project. This quick start is not intended as a replacement for the information that is further listed in this document.
 
 * Clone the repository with `git clone https://github.com/wpilibsuite/allwpilib.git`
 * Build the repository with `./gradlew build` or `./gradlew build --build-cache` if you have an internet connection
