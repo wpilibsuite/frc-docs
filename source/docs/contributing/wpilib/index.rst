@@ -15,7 +15,7 @@ Below is a list of instructions that guide you through cloning, building, publis
 * Clone the repository with ``git clone https://github.com/wpilibsuite/allwpilib.git``
 * Build the repository with ``./gradlew build`` or ``./gradlew build --build-cache`` if you have an internet connection
 * Publish the artifacts locally by running ``./gradlew publish``
-* `Update your <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>`__ ``build.gradle`` `to use the artifacts <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>`__
+* `Update your robot project's <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>`__ ``build.gradle`` `to use the artifacts <https://github.com/wpilibsuite/allwpilib/blob/main/OtherVersions.md>`__
 
 Core Repository
 ---------------
