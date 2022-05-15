@@ -3,6 +3,8 @@ Event-Based Programming With EventLoop
 
 Many operations in robot code are driven by certain conditions; buttons are one common example. Conditions can be polled `imperatively <https://en.wikipedia.org/wiki/Imperative_programming>`__ with an ``if`` statement in a periodic method. As an alternative, WPILib offers an `event-based <https://en.wikipedia.org/wiki/Event-driven_programming>`__ API in the shape of the ``EventLoop`` and ``BooleanEvent`` classes.
 
+.. note:: The example code here is taken from the EventLoop example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/1bde262450b3fcd89285e61c9aa154c25059a6e1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/1bde262450b3fcd89285e61c9aa154c25059a6e1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp>`__).
+
 EventLoop
 ---------
 
@@ -128,8 +130,8 @@ To avoid rapid repeated activation, conditions (especially those originating fro
          :language: cpp
          :lines: 64-69
 
-rising() / Rising(), falling() / Falling()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rising(), falling()
+^^^^^^^^^^^^^^^^^^^
 
 Often times it is desired to bind an action not to the *current* state of a condition, but instead to when that state *changes*. For example, binding an action to when a button is newly pressed as opposed to when it is held. This is what the ``rising()`` and ``falling()`` decorators do: ``rising()`` will return a condition that is ``true`` only when the original condition returned ``true`` in the *current* polling and ``false`` in the *previous* polling; ``falling()`` returns a condition that returns ``true`` only on a transition from ``true`` to ``false``.
 
