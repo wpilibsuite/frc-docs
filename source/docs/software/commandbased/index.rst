@@ -22,4 +22,5 @@ For a collection of example projects using the command-based framework, see :ref
    pid-subsystems-commands
    profile-subsystems-commands
    profilepid-subsystems-commands
+   organizing-command-based
    cpp-command-discussion
