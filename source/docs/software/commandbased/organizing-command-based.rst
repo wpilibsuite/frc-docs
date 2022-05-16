@@ -220,12 +220,26 @@ Notice how ``intake.commandRun(1)`` has been replaced with ``IntakeCommands.run(
 
     // TODO
 
-The trade-offs between static and instance factory methods for single subsystems make the choice between them entirely a matter of personal opinion, and shouldn't be the subject of too much concern. It's only recommended to pick one way and stick with it throughout the entire robot project. Having a prescribed system makes code easy and fluid to navigate and reduces confusion between multiple contributing team members.
+The trade-offs between static and instance factory methods for single subsystems make the choice between them entirely a matter of personal opinion, and shouldn't be the subject of too much concern. Some programming teams might prefer static methods to maintain consistency with multi-subsystem command groups, in order to define commands consistently across the entire codebase. However, other teams might want to take advantage of the more fluid syntax offered by instance methods. For the command group discussion below, this article uses instance method calls.
+
+.. note:: Much like command groups, commands that require multiple subsystems should not be defined in instance methods of subsystems, since they are not conceptually related to a single subsystem. These commands should be either defined inline at their usage location, constructed using a static factory method, or made a subclass of ``CommandBase`` (depending on complexity of the command and programmer preference).
 
 Command Groups
 ^^^^^^^^^^^^^^
 
-Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used (such as the ``intakeRunSequence`` command immediately above). However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group definitions using the same example from the previous section:
+Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used (such as the ``intakeRunSequence`` command immediately above). This is often the case for small, ad-hoc command groups that are closely related to a single button. Consider this code for a button that extends an arm and then releases a robot claw:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    someJoystickButton.whenPressed(arm.commandExtend().andThen(claw.commandRelease()));
+
+  .. code-tab:: c++
+
+    // TODO
+
+ However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group definitions using the same example from the previous section. This is a relatively simple command group, but the principles apply to larger command groups that might consist of several nested commands and groups together.
 
 .. tabs::
 
