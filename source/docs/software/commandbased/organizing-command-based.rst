@@ -227,7 +227,7 @@ The trade-offs between static and instance factory methods for single subsystems
 Command Groups
 ^^^^^^^^^^^^^^
 
-Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used (such as the ``intakeRunSequence`` command immediately above). This is often the case for small, ad-hoc command groups that are closely related to a single button. Consider this code for a button that extends an arm and then releases a robot claw:
+Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used. This is often the case for small, ad-hoc command groups that are closely related to a single button. Consider this code for a button that extends an arm and then releases a robot claw:
 
 .. tabs::
 
@@ -239,7 +239,7 @@ Command groups have slightly different organizational concerns, but many of the 
 
     // TODO
 
- However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group definitions using the same example from the previous section. This is a relatively simple command group, but the principles apply to larger command groups that might consist of several nested commands and groups together.
+However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group definitions using the same example from the previous section. This is a relatively simple command group, but the principles apply to larger command groups that might consist of several nested commands and groups together.
 
 .. tabs::
 
