@@ -189,7 +189,7 @@ For instance, this code creates a command group that runs the intake forwards fo
 Static Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The factory methods presented above do have some negatives. They clutter up the `Intake` class (and the namespace of `Intake` methods) with command-related methods. With that pattern, it's also possible to break the intended encapsulation of the subsystem (as the warning box alludes to), since code in these factory methods can access `private` members of the `Intake` class. To avoid these pitfalls, it's possible to define intake-related methods as static members of a seperate `IntakeCommands` class:
+The factory methods presented above do have some negatives. They clutter up the `Intake` class (and the namespace of `Intake` methods) with command-related methods. With that pattern, it's also possible to break the intended encapsulation of the subsystem (as the warning box alludes to), since code in these factory methods can access `private` members of the `Intake` class. To avoid these pitfalls, it's possible to define intake-related methods as static members of a separate `IntakeCommands` class:
 
 .. tabs::
 
