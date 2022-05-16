@@ -112,8 +112,8 @@ Factory Methods
 
 A useful middle ground between these two extremes is using a factory method. A factory method is a method that, each time it is called, returns a new object according to some specification.
 
-Instance Factory Methods
-~~~~~~~~~~~~~~~~~~~~~~~~
+Instance Command Factory Methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``commandRun`` method as an instance method of the ``Intake`` class:
 
@@ -186,7 +186,7 @@ For instance, this code creates a command group that runs the intake forwards fo
 
     // TODO
 
-Static Factory Methods
+Static Command Factories
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The factory methods presented above do have some negatives. They clutter up the `Intake` class (and the namespace of `Intake` methods) with command-related methods. With that pattern, it's also possible to break the intended encapsulation of the subsystem (as the warning box alludes to), since code in these factory methods can access `private` members of the `Intake` class. To avoid these pitfalls, it's possible to define intake-related methods as static members of a separate `IntakeCommands` class:
@@ -194,11 +194,13 @@ The factory methods presented above do have some negatives. They clutter up the 
 .. tabs::
 
   .. code-tab:: java
+
     public class IntakeCommands {
         public static Command run(Intake intake, double percent) {
             return new StartEndCommand(() -> intake.set(percent), () -> intake.set(0), intake);
         }
     }
+
   .. code-tab:: c++
 
     // TODO
@@ -263,8 +265,8 @@ When splitting a command group into a separate file, subclassing the desired typ
 
 This is relatively short and minimizes boilerplate. It is also comfortable to use in a purely object-oriented paradigm and may be more acceptable to novice programmers. However, it has some downsides. For one, it is not immediately clear exactly what type of command group this is from the constructor definition: it is better to define this in a more inline and expressive way, particularly when nested command groups start showing up. Additionally, it requires a new file for every single command group, even when the groups are conceptually related.
 
-Static Factory Methods
-~~~~~~~~~~~~~~~~~~~~~~
+Static Command Groups Factories
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We can also split command groups into static factory methods. This is the same concept as discussed above for regular commands, but defining command groups in instance methods is not an option when creating groups associated with multiple different subsystems.
 
