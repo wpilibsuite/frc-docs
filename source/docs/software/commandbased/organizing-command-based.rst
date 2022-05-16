@@ -1,7 +1,7 @@
 Organizing Command-Based Robot Projects
 =======================================
 
-As your robot code becomes more complicated, navigating, understanding, and maintaining the code takes up more and more time and energy. Making changes to the code often becomes more difficult, sometimes for reasons that have very little to do with the actual complexity of the underlying logic. For a simplified example: putting the logic for many unrelated robot functions into a single 1000-line file makes it difficult to find a specific piece of code within that file, particularly under stress at a competition. But spreading out closely related logic across dozens of tiny files is often just as difficult to navigate.
+As robot code becomes more complicated, navigating, understanding, and maintaining the code takes up more and more time and energy. Making changes to the code often becomes more difficult, sometimes for reasons that have very little to do with the actual complexity of the underlying logic. For a simplified example: putting the logic for many unrelated robot functions into a single 1000-line file makes it difficult to find a specific piece of code within that file, particularly under stress at a competition. But spreading out closely related logic across dozens of tiny files is often just as difficult to navigate.
 
 This is not a problem unique to FRC, and in fact, good organization only becomes more and more critical as software projects become bigger and bigger. The "best" organization system is a perennial topic of debate, much like the "best" programming language, but in the end, the choice (in both cases) comes down to the specific task at hand and the programmer (or programmers) implementing said task. Even in the relatively small space of FRC robot programming, there is no right answer. The best choice for a given team will depend on the nature of the specific robot code, team structure, and pure personal preference.
 
@@ -9,7 +9,7 @@ This article discusses various facets of command-based robot program design that
 
 Why Care About Organization?
 ----------------------------
-Good code organization will rarely make or break a team's competitive ability—but it does mean easier debugging, faster modifications, nicer-looking code, and happier programmers. But while it's impossible to define "good" organization by way of what the code looks like from the inside, it's easier to define in terms of what the robot's software looks like from the outside.
+Good code organization will rarely make or break a team's competitive ability—but it does mean easier debugging, faster modifications, nicer-looking code, and happier programmers. While it's impossible to define "good" organization by way of what the code looks like from the inside, it's easier to define in terms of what the robot's software looks like from the outside.
 
 What Good Organization Looks Like
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -19,14 +19,14 @@ When code is well-designed and well-organized, the code's internal structure is 
 What Bad Organization Looks Like
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Poorly organized code often has internal structure that makes little to no sense, even to whoever wrote it. When functionality has to be added or changed, it often breaks unrelated parts of the robot: adding automatic shooter control might introduce a bug in the climbing sequence for unclear reasons. Alternatively, the organizational framework might be so strict that it's impossible to implement necessary behavior, requiring nasty hacks or workarounds. Many lines of boilerplate code are needed for simple robot logic. Collaboration among multiple programmers is difficult or impossible.
+Poorly organized code often has internal structure that makes little to no sense, even to whoever wrote it. When functionality has to be added or changed, it often breaks unrelated parts of the robot: adding automatic shooter control might introduce a bug in the climbing sequence for unclear reasons. Alternatively, the organizational framework might be so strict that it's impossible to implement necessary behavior, requiring nasty hacks or workarounds. Many lines of boilerplate code are needed for simple robot logic. Constants are scattered across the codebase, and changing basic behavior often requires making the same change to many different files. Collaboration among multiple programmers is difficult or impossible.
 
 Defining Commands
 -----------------
 
 In larger robot codebases, multiple copies of the same command need to be used in many different places. For instance, a command that runs a robot's intake might be used in teleop, bound to a certain button; as part of a complicated command group for an autonomous routine; and as part of a self-test sequence.
 
-As an example, let's look at some ways to define a simple command that simply runs the robot's intake forward at full power until cancelled.
+As an example, let's look at some ways to define a simple command that simply runs the robot's intake forward at full power until canceled.
 
 Inline Commands
 ^^^^^^^^^^^^^^^
@@ -187,7 +187,7 @@ For instance, this code creates a command group that runs the intake forwards fo
 Command Groups
 ^^^^^^^^^^^^^^
 
-Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used (such as the ``intakeRunSequence`` command immediately above). However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group using the same example from the previous section:
+Command groups have slightly different organizational concerns, but many of the same principles apply. Certain command groups are used in just one place, and so it's more sensible to define a command group entirely using inline decorators shortly before it is used (such as the ``intakeRunSequence`` command immediately above). However, command groups that are reused often, or large command groups such as autonomous routines, are still better when split into separate files. We'll consider command group definitions using the same example from the previous section:
 
 .. tabs::
 
