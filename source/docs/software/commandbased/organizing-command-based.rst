@@ -203,7 +203,7 @@ The factory methods presented above do have some negatives. They clutter up the 
 
     // TODO
 
-However, these benefits come at the cost of somewhat more cumbersome usage code. This is what the intake-then-outtake sequence looks like using static factory methods. 
+However, these benefits come at the cost of somewhat more cumbersome usage code. This is what the intake-then-outtake sequence looks like using static factory methods.
 Notice how ``intake.commandRun(1)`` has been replaced with ``IntakeCommands.run(intake, 1)``, but the code is otherwise identical:
 
 .. tabs::
@@ -237,7 +237,7 @@ Command groups have slightly different organizational concerns, but many of the 
 
     // TODO
 
-Potential organizational schemes for command groups are much the same as for regular commands, with some slight differences. 
+Potential organizational schemes for command groups are much the same as for regular commands, with some slight differences.
 
 Subclassing
 ~~~~~~~~~~~
@@ -266,7 +266,7 @@ This is relatively short and minimizes boilerplate. It is also comfortable to us
 Static Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We can also split command groups into static factory methods. This is the same concept as discussed above for regular commands, but defining command groups in instance methods is not an option when creating groups associated with multiple different subsystems. 
+We can also split command groups into static factory methods. This is the same concept as discussed above for regular commands, but defining command groups in instance methods is not an option when creating groups associated with multiple different subsystems.
 
 .. tabs::
 
