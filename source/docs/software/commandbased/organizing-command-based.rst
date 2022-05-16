@@ -66,12 +66,12 @@ This is sufficient for commands that are only used once. However, for a command 
 
     // TODO
 
-(Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.)
+.. note:: Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.
 
 Subclassing CommandBase
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-One possible solution to this problem is to create a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` routines.
+One possible way to avoid repeating code is creating a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` routines.
 
 .. tabs::
 
@@ -110,7 +110,10 @@ This, however, is just as cumbersome. The only two lines that really matter in t
 Factory Methods
 ^^^^^^^^^^^^^^^
 
-A useful middle ground between these two extremes is using a `factory method <https://www.tutorialspoint.com/design_pattern/factory_pattern.htm>`__. A factory method is a method that, each time it is called, returns a new object according to some specification.
+A useful middle ground between these two extremes is using a factory method. A factory method is a method that, each time it is called, returns a new object according to some specification.
+
+Instance Factory Methods
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 A command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``commandRun`` method as an instance method of the ``Intake`` class:
 
@@ -136,7 +139,6 @@ Notice how since we are in the ``Intake`` class, we no longer refer to ``intake`
 .. warning:: To preserve encapsulation, avoid referring to ``private`` variables and methods of the ``Intake`` class from within the ``commandRun`` method, even though they are technically accessible. (For instance, the ``commandRun`` method should use the subsystem's public ``set`` method instead of interfacing directly with the motor controllers.)
 
 Using this new factory method in command groups and button bindings is highly expressive:
-
 
 .. tabs::
 
@@ -184,6 +186,40 @@ For instance, this code creates a command group that runs the intake forwards fo
 
     // TODO
 
+Static Factory Methods
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The factory methods presented above do have some negatives. They clutter up the `Intake` class (and the namespace of `Intake` methods) with command-related methods. With that pattern, it's also possible to break the intended encapsulation of the subsystem (as the warning box alludes to), since code in these factory methods can access `private` members of the `Intake` class. To avoid these pitfalls, it's possible to define intake-related methods as static members of a seperate `IntakeCommands` class:
+
+.. tabs::
+
+  .. code-tab:: java
+    public class IntakeCommands {
+        public static Command run(Intake intake, double percent) {
+            return new StartEndCommand(() -> intake.set(percent), () -> intake.set(0), intake);
+        }
+    }
+  .. code-tab:: c++
+
+    // TODO
+
+However, these benefits come at the cost of somewhat more cumbersome usage code. This is what the intake-then-outtake sequence looks like using static factory methods. 
+Notice how ``intake.commandRun(1)`` has been replaced with ``IntakeCommands.run(intake, 1)``, but the code is otherwise identical:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    Command intakeRunSequence = IntakeCommands.run(intake, 1).withTimeout(2)
+        .andThen(new WaitCommand(2))
+        .andThen(IntakeCommands.run(intake, 1).withTimeout(5));
+
+  .. code-tab:: c++
+
+    // TODO
+
+The trade-offs between static and instance factory methods for single subsystems make the choice between them entirely a matter of personal opinion, and shouldn't be the subject of too much concern. It's only recommended to pick one way and stick with it throughout the entire robot project. Having a prescribed system makes code easy and fluid to navigate and reduces confusion between multiple contributing team members.
+
 Command Groups
 ^^^^^^^^^^^^^^
 
@@ -200,6 +236,8 @@ Command groups have slightly different organizational concerns, but many of the 
   .. code-tab:: c++
 
     // TODO
+
+Potential organizational schemes for command groups are much the same as for regular commands, with some slight differences. 
 
 Subclassing
 ~~~~~~~~~~~
@@ -228,7 +266,7 @@ This is relatively short and minimizes boilerplate. It is also comfortable to us
 Static Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Instead, it's better to split command groups into *static* factory methods, and provide their subsystem dependencies via dependency injection.
+We can also split command groups into static factory methods. This is the same concept as discussed above for regular commands, but defining command groups in instance methods is not an option when creating groups associated with multiple different subsystems. 
 
 .. tabs::
 
@@ -256,4 +294,4 @@ Instead, it's better to split command groups into *static* factory methods, and 
 
     // TODO
 
-Using static factory methods, it's easy to have multiple smaller command groups contained within different files. Also, note the use of static methods to construct parallel and sequential command groups: this is equivalent to the ``andThen`` decorator, but is more expressive in some cases. Its use is a matter of personal preference.
+Also, note the use of static methods to construct parallel and sequential command groups: this is equivalent to the ``andThen`` decorator, but is more expressive in some cases. Its use is a matter of personal preference.
