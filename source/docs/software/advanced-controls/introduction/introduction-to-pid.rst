@@ -3,7 +3,7 @@
 Introduction to PID
 ===================
 
-This page provides a math-focused approach to explaining a PID controller. In parallel, in :ref:`a video from WPI is available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>` if you prefer videos over reading.
+This page provides a math-focused approach to explaining a PID controller. :ref:`A video from WPI is available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
 
 What is a PID Controller?
 -------------------------
