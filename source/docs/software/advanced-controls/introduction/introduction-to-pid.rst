@@ -150,4 +150,4 @@ is slow to rise and does not overshoot the :term:`reference`. A *critically damp
 Next Steps
 ----------
 
-Now that you have learned a bit about the math of a PID controller, :ref:`get hands-on with some tuning exercises. <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.
+Now that you have learned a bit about the math of a PID controller, :ref:`get hands-on experience with some tuning exercises <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.
