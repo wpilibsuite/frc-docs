@@ -6,8 +6,6 @@ Unit testing is a method of testing code by dividing the code into the smallest 
 Writing Testable Code
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
-
 Our subsystem will be an Infinite Recharge intake mechanism containing a piston and a motor: the piston deploys/retracts the intake, and the motor will pull the Power Cells inside. We don't want the motor to run if the intake mechanism isn't deployed because it won't do anything.
 
 To provide a "clean slate" for each test, we need to have a function to destroy the object and free all hardware allocations. In Java, this is done by implementing the ``AutoCloseable`` interface and its ``.close()`` method, destroying each member object by calling the member's ``.close()`` method - an object without a ``.close()`` method probably doesn't need to be closed. In C++, the default destructor will be called automatically when the object goes out of scope and will call destructors of member objects.
@@ -60,13 +58,12 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
       .. code-block:: cpp
 
-         #include <frc2/command/SubsystemBase.h>
          #include <frc/DoubleSolenoid.h>
          #include <frc/PWMSparkMax.h>
 
          #include "Constants.h"
 
-         class Intake : public frc2::SubsystemBase {
+         class Intake {
           public:
            void Deploy();
            void Retract();
