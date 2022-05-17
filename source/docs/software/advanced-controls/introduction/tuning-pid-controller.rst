@@ -43,6 +43,10 @@ To consistently launch a gamepiece, a good first step is to make sure it is spin
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
 
+As a test, a gamepiece is injected into the flywheel about halfway through the simulation.
+
+Gearbox inefficiencies and sensor delay is included in this model.
+
 Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -50,14 +54,26 @@ We will first attempt to tune the flywheel using only the feedback terms :math:`
 
 Perform the following:
 
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, :math:`K_v` and :math:`K_s` to zero.
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_v` to zero.
 2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
 3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
-4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before convergin to the :term:`setpoint`.
+4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 
 .. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. A better approach would be to tune it with an integrator added to the :term:`plant`, but this requires a :term:`model`. 
 
 .. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
+
+.. raw:: html
+
+   <details>
+     <summary>Tuning Solution</summary>
+
+
+In this particular example, for a setpoint of 1000, values of :math:`K_p = 2.0`, :math:`K_i = 0.0`, and :math:`K_d = 0.04` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
+   
+.. raw:: html
+
+   </details> <br>
 
 
 Step 2: Feed-Forward, then FeedBack
@@ -67,11 +83,23 @@ Tuning with only feedback can produce reasonable results in many cases. However,
 
 Perform the following:
 
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, :math:`K_v` and :math:`K_s` to zero.
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_v` to zero.
 2. Increase :math:`K_v` until the :term:`output` gets fairly close to the :term:`setpoint` as time goes on. You don't have to be perfect, but try to get somewhat close.
 3. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
 
 You may also desire to pull in a small amount of :math:`K_d` to prevent oscillation.
+
+.. raw:: html
+
+   <details>
+     <summary>Tuning Solution</summary>
+
+
+In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 1.0`  will produce very good results. Other setpoints should work nearly as well too.
+   
+.. raw:: html
+
+   </details> <br>
 
 In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, Feed-Forward is recommended over :math:`K_i`.
 
@@ -97,22 +125,78 @@ Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~
 The "Vertical Arm" is a mass on a stick, moved up and down by a gearbox, and driven by a motor. They're commonly used to lift gamepieces from the ground, and up higher to place and score them.
 
-Applying voltage to the motor causes a force on the mechansim that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
+Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
 
-To consistently place a gamepiece, the arm must move from wherever it is at, to a specific angle which puts the gamepiece at teh right height. 
+To consistently place a gamepiece, the arm must move from wherever it is at, to a specific angle which puts the gamepiece at the right height. 
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
+
+Gearbox inefficiencies and sensor delay is included in this model.
 
 
 Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~
 
-Again, we will first attempt to tune this mechanism ...
+Again, we will first attempt to tune this mechanism with using only feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`. 
+
+Perform the following:
+
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_{cosFF}` to zero.
+2. Increase :math:`K_p` until the :term:`output` starts to oscillate. You likely won't be able to push it much higher.
+3. Increase :math:`K_i` when the :term:`output` gets "stuck" before converging to the :term:`setpoint`.
+4. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`. It should help reduce some of the oscillation.
+
+Note that you will likely have trouble finding a set of tunes that behaves acceptably. If you think you have a set, try adjusting the setpoint to be a bit different. You'll likely see the arm behave very differently for small changes in setpoints.
+
+.. raw:: html
+
+   <details>
+     <summary>Tuning Solution</summary>
+
+
+In this particular example, for a setpoint of 0.1, values of :math:`K_p = 12.0`, :math:`K_i = 6.0`, and :math:`K_d = 3.0` will produce somewhat reasonable results. It won't be great for other setpoints.
+   
+.. raw:: html
+
+   </details> <br>
+
+This is a case where feedback control alone is insufficient to achieve good behavior with the system.
 
 Step 2: Feed-Forward, then FeedBack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-bla bla bla
+The core reason for this is that gravity pulls on the arm in a :term:`non-linear` fashion. That is to say, the amount of :term:`torque` that gravity exerts on our arm is proportional to the *cosine* of the current angle.
+
+To counteract this, we introduce a feed-forward term which is also proportional to the cosine of the angle. 
+
+.. math::
+   V_{ff} = K_{cosFF} * cos(\theta_{arm})
+
+:math:`K_{cosFF}` could be calculated if all the mechanical and physical properties of the system are known. However, since a lot of these are hard to model accurately, we will determine it experimentally.
+
+Perform the following:
+
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_{cosFF}` to zero.
+2. Increase and decrease :math:`K_{cosFF}` until the arm can hold its position with as little movement as possible. In this simulation, you'll want to go out to at least four decimal points.
+3. Increase :math:`K_p` until the :term:`output` starts approaches the :term:`setpoint`.
+4. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`. It should help reduce some of the if present.
+
+Adjust the setpoint up and down. Now, the arm should exhibit good behavior - quickly and precisely approaching the :term:`setpoint`.
+
+.. raw:: html
+
+   <details>
+     <summary>Tuning Solution</summary>
+
+
+In this particular example, reasonable values for the constants are :math:`K_{cosFF} = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.
+   
+.. raw:: html
+
+   </details> <br>
+
+
+This shows how adding a carefully-chosen feed forward not only simplifies the calibration process, but produces better behavior at a wide range of setpoints.
 
 Common Issues
 -------------
@@ -127,8 +211,8 @@ Beware that if :math:`K_i` is too large, integral windup can occur. Following a 
 There are a few ways to mitigate this:
 
 1. Decrease the value of :math:`K_i`, down to zero if possible.
-2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ^^setIZone()^^ method.
-3. Cap the integrator at some maximum value. WPILib's ^^PIDController^^ implements this with the ^^setIntegratorRange()^^ method.
+2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ``setIZone()`` method.
+3. Cap the integrator at some maximum value. WPILib's ``PIDController`` implements this with the ``setIntegratorRange()`` method.
 
 Actuator Saturation 
 ^^^^^^^^^^^^^^^^^^^

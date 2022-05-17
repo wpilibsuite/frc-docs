@@ -124,41 +124,6 @@ class FlywheelPIDF extends FlywheelSim {
         curRow.appendChild(label);
         curRow.appendChild(control);
 
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kS";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
-        input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kS = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "Inject Ball";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "checkbox");
-        input.setAttribute("checked", true);
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.injectBall = event.target.checked;
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
 
     }
 

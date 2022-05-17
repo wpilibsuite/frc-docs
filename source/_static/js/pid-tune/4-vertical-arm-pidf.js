@@ -113,7 +113,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.1");
+        input.setAttribute("step", "0.0000001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kcosFF = parseFloat(event.target.value);

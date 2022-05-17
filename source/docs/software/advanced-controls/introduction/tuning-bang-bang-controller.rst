@@ -43,10 +43,10 @@ Common Issues
 
 The imprecision observed is one common issue with bang-bang control.
 
-Additioanlly, the fact the control effort turns on and off quickly, zooming from zero to full, can cause problems. The cycles of rapidly applying and removing forces can loosten bolts and joints, and put a lot of stress on gearboxes.
+Additionally, the fact the control effort turns on and off quickly, zooming from zero to full, can cause problems. The cycles of rapidly applying and removing forces can loosen bolts and joints, and put a lot of stress on gearboxes.
 
 The abrupt changes in control effort can cause abrupt changes in current draw. Some motor controllers may not last for an extended period of time.
 
-Finally, this technique only works for mechanisms that accelerate relatively slowly, in comparison to the amount of control effort applied. For mechanisms like flywheels, or drivetrain control for simple autonomous, it may be sufficent. 
+Finally, this technique only works for mechanisms that accelerate relatively slowly, in comparison to the amount of control effort applied. For mechanisms like flywheels, or drivetrain control for simple autonomous, it may be sufficient. 
 
 We will learn about these more-effective and more-precise techniques in :ref:`the next tuning exercise <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`.

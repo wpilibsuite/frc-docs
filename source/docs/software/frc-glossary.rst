@@ -59,6 +59,9 @@ FRC Glossary
    NetworkTables
       A way to communicate key / value pairs, of data, between programs.
 
+   non-linear
+      In a control system: some system which is not well-modeled by a set of polynomials and their derivatives. For example, in a mechanism where friction forces jump instantaneously between two values (due to changing static/kinetic coefficients of friction), that mechanism can be said to act in a "non-linear" way.
+
    RP
       Ranking Point, a way of ordering teams rewarding specific objectives in addition to winning the match.
 
@@ -67,6 +70,9 @@ FRC Glossary
 
    teleop
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.
+
+   torque
+      A force applied at a distance from some axis of rotation
 
    trajectory
       A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field.
