@@ -488,6 +488,23 @@ The ``perpetually()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/d
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     button.WhenPressed(command.Perpetually());
 
+unless
+^^^^^^
+TODO: get actual like for c++ docs
+The ``unless()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) creates a conditional command that stops the command from starting if the supplier returns true. The command will not stop if the supplier changes while running.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Command will only run if the intake is deployed. This will not cancel the command if it is already running
+    button.whenPressed(command.unless(() -> !intake.isDeployed()));
+
+  .. code-tab:: c++
+
+    // Will run forever unless externally interrupted, regardless of command.isFinished()
+    button.WhenPressed(command.Unless([&intake] { return !intake.IsDeployed(); }));
+
 Composing Decorators
 ^^^^^^^^^^^^^^^^^^^^
 
