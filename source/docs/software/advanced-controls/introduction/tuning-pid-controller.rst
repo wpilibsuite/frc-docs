@@ -1,7 +1,7 @@
 Tuning a PID Controller
 =======================
 
-As seen in :ref:`the introduction to PID controller <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
 
 There are multiple methods for determining the values for these constants on your particular mechanism.
 
