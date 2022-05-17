@@ -10,4 +10,4 @@ Have you ever had trouble designing a robot system to move quickly and then stop
 Next Steps
 ----------
 
-Now that you have learned a bit about PID controllers, :ref:`get hands-on with some tuning exercises. <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.
+Now that you have learned a bit about PID controllers, :ref:`get hands-on experience with some tuning exercises. <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.
