@@ -189,7 +189,7 @@ Adjust the setpoint up and down. Now, the arm should exhibit good behavior - qui
      <summary>Tuning Solution</summary>
 
 
-In this particular example, reasonable values for the constants are :math:`K_{cosFF} = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.
+In this particular example, reasonable values for the constants are :math:`K_g = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.
    
 .. raw:: html
 
