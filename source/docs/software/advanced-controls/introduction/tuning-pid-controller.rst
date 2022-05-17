@@ -45,7 +45,7 @@ This design drives the controls goal we will use in this example: Put the correc
 
 As a test, a gamepiece is injected into the flywheel about halfway through the simulation.
 
-Gearbox inefficiencies and sensor delay is included in this model.
+Gearbox inefficiencies and sensor delay are included in this model.
 
 Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~
