@@ -127,7 +127,7 @@ The "Vertical Arm" is a mass on a stick, moved up and down by a gearbox, and dri
 
 Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
 
-To consistently place a gamepiece, the arm must move from wherever it is at, to a specific angle which puts the gamepiece at the right height. 
+To consistently place a gamepiece, the arm must move from its current location to a specific angle which puts the gamepiece at the right height. 
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
 
