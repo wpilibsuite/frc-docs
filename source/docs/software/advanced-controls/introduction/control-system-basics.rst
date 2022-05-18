@@ -8,7 +8,7 @@ The Need for Control Systems
 
 Control systems are all around us and we interact with them daily. A small list of ones you may have seen includes heaters and air conditioners with thermostats, cruise control and the anti-lock braking system (ABS) on automobiles, and fan speed modulation on modern laptops. Control systems monitor or control the behavior of systems like these and may consist of humans controlling them directly (manual control), or of only machines (automatic control).
 
-The thing that is common to all of these things: They all have a mechanism which does useful work, but cannot be *directly* commanded to the state that is desired.
+All of these examples have a mechanism which does useful work, but cannot be *directly* commanded to the state that is desired.
 
 For example, an air conditioner's fans and compressor have no mechanical or electrical input where the user specifies a temperature. Rather, some additional mechanism must compare the current air temperature to some sepoint, and choose how to cycle the compressor and fans on and off to achieve that temperature. 
 
@@ -47,9 +47,9 @@ The figure below shows a system with a hypothetical input and output. Since the 
 What is a Model?
 ----------------
 
-A *model* of your mechanism is a set of math equations which describe its expected behavior.
+A *model* of your mechanism is a mathematical description of its behavior. Specifically, this mathematical description must define the mechanism's inputs and outputs, and how the output values change over time as a function of its input values.
 
-They can be built up from `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`, and refined by doing experiments on the mechanism.
+Models can be built up from `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`, and refined by doing experiments on the mechanism.
 
 Models are often simple algebra equations. They can also include some linear algebra, matrices, and differential equations. WPILib provides a number of classes to help simplify the more complex math.
 

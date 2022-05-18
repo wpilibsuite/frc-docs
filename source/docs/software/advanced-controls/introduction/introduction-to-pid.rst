@@ -8,7 +8,7 @@ This page provides a math-focused approach to explaining a PID controller. :ref:
 What is a PID Controller?
 -------------------------
 
-The PID controller is a commonly used feedback controller consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each of them behaves.
+The PID controller is a common :ref:`feedback controller<docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Incorporating FeedBack>` consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each of them behaves.
 
 First, we'll get some nomenclature for PID controllers out of the way. The :term:`reference` is called the setpoint (the desired position) and the :term:`output` is called the :term:`process variable` (the measured position). Below are some common variable naming conventions for relevant quantities.
 
