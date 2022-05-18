@@ -1,7 +1,7 @@
 Tuning a Bang-Bang Controller
 =============================
 
-A "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint. 
+The "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint. 
 
 :ref:`WPILib provides an implementation <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>` for bang-bang control as well. This page includes a more in-depth description.
 
@@ -9,7 +9,7 @@ A "Bang-Bang" controller is a simple controller which applies a binary (present/
 General Tuning Techniques
 -------------------------
 
-Bang-Bang controllers do not have any parameters to tune. They either push the mechanism toward the setpoint from the "too-low" side, or allow it to drift back toward the setpoint from the "too-high" side.
+Bang-Bang controllers do not have any parameters to tune. 
 
 The only task users have to do implement and test the system to ensure it is functional.
 

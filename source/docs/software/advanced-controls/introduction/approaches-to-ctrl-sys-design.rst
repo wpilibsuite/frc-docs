@@ -7,7 +7,7 @@ When designing a control system for your robot, there are a number of different 
 
 Teams should prioritize picking the easiest strategy which enables success on the field. However, as you do experiments, keep in mind there is almost always a "next-step" to take to improve your field performance.
 
-FeedForward vs. FeedBack
+Feedforward vs. Feedback
 ------------------------
 
 There are two broad categories of strategies in control system design:
@@ -18,7 +18,7 @@ There are two broad categories of strategies in control system design:
 
 They are not mutually exclusive - many techniques will use these concepts simultaneously.
 
-Start with FeedForward
+Start with Feedforward
 -----------------------
 
 Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feedforward techniques first. 
@@ -28,11 +28,11 @@ How do you expect your system to behave?
 
 The first step in designing a control system is writing down information on how you expect your mechanism to behave.
 
-This step is done by combining one or more concepts you may be familiar with from Physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard models of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
+This step is done by combining one or more concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard models of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
 
 Models do not have to be extremely accurate to be useful. For example, a very simple model of a motor is that its speed is proportional to the voltage applied. A motor which spins at 3000 RPM at 12v will spin near 1500RPM at 6V. If you know you want your motor to be spinning at 1254 RPM, you can use the voltage/speed ratio to calculate the amount of voltage to send to the motor.
 
-`ReCalc is an online calculator <https://www.reca.lc/>`__ which helps take care of some of these physics model calcualtions for common FRC mechanisms.
+`ReCalc is an online calculator <https://www.reca.lc/>`__ which helps take care of some of these physics model calculations for common FRC mechanisms.
 
 
 System Identification
@@ -42,10 +42,10 @@ A key way to improve the accuracy of a simple physics model is to perform experi
 
 This is useful if CAD models are not perfectly accurate, or parts of the model are not easily predicted (ex: friction in a gearbox).
 
-:doc:`FRC's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrains. It can be configured to load custom code onto a robot, exercise the mechanism and record data, and derive relevant constants to build a more accurate model of the system behavior.
+:doc:`WPILib's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive relevant constants. These constants can be used to build a more accurate model of the system behavior.
 
 
-Combining Feedback and FeedForward
+Combining Feedback and Feedforward
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Even with lots of experiments and study, it is not possible to know every force that will be exerted on a robot's mechanism with great detail. For example, in a flywheel shooter, the timing and exact forces associated with a ball being put through the mechanism are not easy to define accurately. For another example, consider the fact that gearboxes can be greased to reduce friction, but throw off grease over time and get more friction. This is a complex process to model well.
@@ -64,14 +64,13 @@ To combat this, we can take measurements of the system and the environment to de
 Feedback-Only Techniques
 ------------------------
 
-In may controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
+In many controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
 
-For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding techniques which exclude feedforward is recommended if at all possible.
+For most FRC mechanisms, these feedback-only techniques may produce good results in some cases. However, there will be limits to this success. For most FRC use cases, it is recommended to include feedforward.
 
 Next Steps
 ----------
 
-To jump right in, check out :ref:`a hands-on example working with a simple Bang-Bang controller <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller
->`.
+To jump right in, check out :ref:`a hands-on example working with a simple Bang-Bang controller <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller>`.
 
 Alternatively, spend some time learning about :ref:`the details of PID controllers <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`.

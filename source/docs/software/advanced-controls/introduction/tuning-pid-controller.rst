@@ -7,6 +7,16 @@ There are multiple methods for determining the values for these constants on you
 
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
+.. note:: 
+   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller. 
+   
+   For example, for the proportional gain:
+   
+      * :math:`K_p` is the standard math-equation-focused way to notate the constant. 
+      * ``kP`` is a common way to see it written as a variable in software.
+
+   Despite the differences in capitalization, the two formats refer to the same concept.
+
 Manual PID Tuning
 -----------------
 
@@ -35,7 +45,13 @@ For this walkthrough, use this interactive simulation to explore tuning concepts
 
 Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~
-The "Flywheel" is nothing more than a circular mass, attached to a gearbox, and driven by a motor. They're commonly used to propel game pieces through the air, into a target. 
+The "Flywheel" is nothing more than:
+
+  * A thin, cylindrical mass 
+  * A gearbox driving the mass
+  * A motor driving the gearbox
+  
+Flywheels are commonly used to propel game pieces through the air, toward a target. 
 
 In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction slowly decreases the spinning until the flywheel stops.
 
@@ -49,6 +65,7 @@ Gearbox inefficiencies and sensor delay are included in this model.
 
 Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~
+
 
 We will first attempt to tune the flywheel using only the feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`. 
 
@@ -196,7 +213,7 @@ In this particular example, reasonable values for the constants are :math:`K_g =
    </details> <br>
 
 
-This shows how adding a carefully-chosen feed forward not only simplifies the calibration process, but produces better behavior at a wide range of setpoints.
+This shows how adding a carefully-chosen feedforward not only simplifies the calibration process, but produces better behavior at a wide range of setpoints.
 
 Common Issues
 -------------
