@@ -148,7 +148,7 @@ To consistently place a gamepiece, the arm must move from its current location t
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
 
-Gearbox inefficiencies and sensor delay is included in this model.
+Gearbox inefficiencies and sensor delay are included in this model.
 
 
 Step 1: Feedback-Only
