@@ -3,25 +3,25 @@ Approaches to Designing Control Systems
 
 .. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
 
-When desigining a control system for your robot, there are a number of different approaches to take. They range from very simple approaches, to advanced and complex ones. Each has *tradeoffs*. Some will work better than others in different situations, some require more mathematical analysis than others.
+When designing a control system for your robot, there are a number of different approaches to take. They range from very simple approaches, to advanced and complex ones. Each has *tradeoffs*. Some will work better than others in different situations, some require more mathematical analysis than others.
 
-Teams should prioritize picking the easiest strategy which enables success on the field. However, as you do experiemnts, keep in mind there is almost always a "next-step" to take to improve your field performance.
+Teams should prioritize picking the easiest strategy which enables success on the field. However, as you do experiments, keep in mind there is almost always a "next-step" to take to improve your field performance.
 
 FeedForward vs. FeedBack
 ------------------------
 
 There are two broad categories of strategies in control system design:
 
-**Feed-Forward** refers to the class of algorithms which incorporate knowledge of how the mechanism under control is *expected* to operate. Using this "model" of operation, the control input is chosen to make the mechanism get close to where it should be.
+**Feedforward** refers to the class of algorithms which incorporate knowledge of how the mechanism under control is *expected* to operate. Using this "model" of operation, the control input is chosen to make the mechanism get close to where it should be.
 
-**Feed-Back** refers to the class of algorithms which use sensors to *measure* what a mechanism is doing, and issue corrective commands to move a mechnaism from where it actually is, to where you want it to be.
+**Feedback** refers to the class of algorithms which use sensors to *measure* what a mechanism is doing, and issue corrective commands to move a mechanism from where it actually is, to where you want it to be.
 
 They are not mutually exclusive - many techniques will use these concepts simultaneously.
 
 Start with FeedForward
 -----------------------
 
-Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feed-forward techniques first. 
+Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feedforward techniques first. 
 
 How do you expect your system to behave?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,7 +66,7 @@ Feedback-Only Techniques
 
 In may controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
 
-For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding techniques which exclude Feed-Forward is recommended if at all possible.
+For most FRC mechanisms, they may produce good results in some cases. However, they all have limits. Avoiding techniques which exclude feedforward is recommended if at all possible.
 
 Next Steps
 ----------

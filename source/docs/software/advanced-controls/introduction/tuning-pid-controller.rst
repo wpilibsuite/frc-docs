@@ -76,8 +76,8 @@ In this particular example, for a setpoint of 1000, values of :math:`K_p = 2.0`,
    </details> <br>
 
 
-Step 2: Feed-Forward, then FeedBack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Feedforward, then FeedBack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by 
 
@@ -101,7 +101,7 @@ In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.007
 
    </details> <br>
 
-In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, Feed-Forward is recommended over :math:`K_i`.
+In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, feedforward is recommended over :math:`K_i`.
 
 
 Mechanism Walkthrough - Vertical Arm
@@ -162,12 +162,12 @@ In this particular example, for a setpoint of 0.1, values of :math:`K_p = 12.0`,
 
 This is a case where feedback control alone is insufficient to achieve good behavior with the system.
 
-Step 2: Feed-Forward, then FeedBack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Feedforward, then FeedBack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The core reason for this is that gravity pulls on the arm in a :term:`non-linear` fashion. That is to say, the amount of :term:`torque` that gravity exerts on our arm is proportional to the *cosine* of the current angle.
 
-To counteract this, we introduce a feed-forward term which is also proportional to the cosine of the angle. 
+To counteract this, we introduce a feedforward term which is also proportional to the cosine of the angle. 
 
 .. math::
    V_{ff} = K_{cosFF} * cos(\theta_{arm})
