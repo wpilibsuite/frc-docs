@@ -28,9 +28,11 @@ How do you expect your system to behave?
 
 The first step in designing a control system is writing down information on how you expect your mechanism to behave.
 
-This step is done by combining one or more concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard models of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
+This step is done by combining one or more concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard equations of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
 
-Models do not have to be extremely accurate to be useful. For example, a very simple model of a motor is that its speed is proportional to the voltage applied. A motor which spins at 3000 RPM at 12v will spin near 1500RPM at 6V. If you know you want your motor to be spinning at 1254 RPM, you can use the voltage/speed ratio to calculate the amount of voltage to send to the motor.
+The act of creating these mathematical descriptions is called *modeling* your system's behavior. The resulting set of equations are the *model* of how you expect the system to behave.
+
+Note that models do not have to be perfectly accurate to be useful. As we will see in later tuning exercises, even using a simple model of a mechanism can make the tuning effort much simpler.
 
 `ReCalc is an online calculator <https://www.reca.lc/>`__ which helps take care of some of these physics model calculations for common FRC mechanisms.
 

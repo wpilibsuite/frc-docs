@@ -76,7 +76,7 @@ Perform the following:
 3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
 4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 
-.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. A better approach would be to tune it with an integrator added to the :term:`plant`, but this requires a :term:`model`. 
+.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. As we will see soon, a better approach is to incorporate feedforward.
 
 .. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
 
@@ -96,7 +96,7 @@ In this particular example, for a setpoint of 1000, values of :math:`K_p = 2.0`,
 Step 2: Feedforward, then FeedBack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by 
+Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by calibrating an appropriate feedforward value. 
 
 Perform the following:
 
@@ -140,7 +140,13 @@ Mechanism Walkthrough - Vertical Arm
 
 Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~
-The "Vertical Arm" is a mass on a stick, moved up and down by a gearbox, and driven by a motor. They're commonly used to lift gamepieces from the ground, and up higher to place and score them.
+The "Vertical Arm" is:
+
+  * A mass on a stick
+  * A gearbox which drives the stick in circles
+  * A motor which drives the gearbox.
+  
+Vertical arms are commonly used to lift gamepieces from the ground, up to a scoring position.
 
 Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
 
@@ -158,7 +164,7 @@ Again, we will first attempt to tune this mechanism with using only feedback ter
 
 Perform the following:
 
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_{cosFF}` to zero.
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_g` to zero.
 2. Increase :math:`K_p` until the :term:`output` starts to oscillate. You likely won't be able to push it much higher.
 3. Increase :math:`K_i` when the :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 4. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`. It should help reduce some of the oscillation.
@@ -182,21 +188,21 @@ This is a case where feedback control alone is insufficient to achieve good beha
 Step 2: Feedforward, then FeedBack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The core reason for this is that gravity pulls on the arm in a :term:`non-linear` fashion. That is to say, the amount of :term:`torque` that gravity exerts on our arm is proportional to the *cosine* of the current angle.
+The core reason for why PID behaves poorly without feed forward is gravity. In this mechanism, depending on the arm's angle, gravity will pull with a different force.
 
 To counteract this, we introduce a feedforward term which is also proportional to the cosine of the angle. 
 
 .. math::
-   V_{ff} = K_{cosFF} * cos(\theta_{arm})
+   V_{ff} = K_g * cos(\theta_{arm})
 
-:math:`K_{cosFF}` could be calculated if all the mechanical and physical properties of the system are known. However, since a lot of these are hard to model accurately, we will determine it experimentally.
+:math:`K_g` :ref:` could be calculated <docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Start with Feedforward>` if all the mechanical and physical properties of the system are known. However, since a lot of these are hard to model accurately, we will determine it experimentally.
 
 Perform the following:
 
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_{cosFF}` to zero.
-2. Increase and decrease :math:`K_{cosFF}` until the arm can hold its position with as little movement as possible. In this simulation, you'll want to go out to at least four decimal points.
+1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_g` to zero.
+2. Increase and decrease :math:`K_g` until the arm can hold its position with as little movement as possible. In this simulation, you'll want to go out to at least four decimal points.
 3. Increase :math:`K_p` until the :term:`output` starts approaches the :term:`setpoint`.
-4. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`. It should help reduce some of the if present.
+4. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`. It should help reduce some of the :term:`output` oscillation if present.
 
 Adjust the setpoint up and down. Now, the arm should exhibit good behavior - quickly and precisely approaching the :term:`setpoint`.
 

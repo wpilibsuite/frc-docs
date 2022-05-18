@@ -107,7 +107,7 @@ class VerticalArmPIDF extends VerticalArmSim {
 
         curRow = document.createElement("tr");
         label = document.createElement("td");
-        label.innerHTML = "kCosFF";
+        label.innerHTML = "kG";
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
@@ -116,7 +116,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         input.setAttribute("step", "0.0000001");
         input.onchange = function (event) {
             this.animationReset = true;
-            this.kcosFF = parseFloat(event.target.value);
+            this.kG = parseFloat(event.target.value);
             this.runSim();
         }.bind(this);
         control.append(input)
