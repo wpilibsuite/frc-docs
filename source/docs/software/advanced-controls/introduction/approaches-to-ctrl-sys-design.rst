@@ -21,7 +21,7 @@ They are not mutually exclusive - many techniques will use these concepts simult
 Start with Feedforward
 -----------------------
 
-Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feedforward techniques first. 
+Because most FRC mechanisms can be manufactured to be have well-defined behavior and can be easily modeled, it's generally encouraged to look into feedforward techniques first.
 
 How do you expect your system to behave?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,15 +50,15 @@ Correcting for Unknowns with Feedback
 
 Even with lots of experiments and study, it is not possible to know every force that will be exerted on a robot's mechanism with great detail. For example, in a flywheel shooter, the timing and exact forces associated with a ball being put through the mechanism are not easy to define accurately. For another example, consider the fact that gearboxes can be greased to reduce friction, but throw off grease over time and get more friction. This is a complex process to model well.
 
-In cases where not everything can be known, incorporating sensors and *feedback* control is necessary to correct for unknowns in the system's behavior. 
+In cases where not everything can be known, incorporating sensors and *feedback* control is necessary to correct for unknowns in the system's behavior.
 
 If the unmodeled, unknown behaviors of the system are big enough to prevent a mechanism from working well, feedback control will be necessary to control the system.
 
 
-Incorporating FeedBack
+Incorporating Feedback
 ----------------------
 
-Let's say we are controlling :ref:`a DC Motor </docs/software/pathplanning/system-identification/introduction:How DC Motors Behave>`. With just a mathematical model and knowledge of all the current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. Why then do we need feedback control? If the system is disturbed in any way that isn't modeled by our equations, like a load was applied, or voltage sag in the rest of the circuit caused the commanded voltage to not match the applied voltage, the angular velocity of the motor will deviate from the model over time.
+Let's say we are controlling :doc:`a DC Motor </docs/software/pathplanning/system-identification/introduction>`. With just a mathematical model and knowledge of all the current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. Why then do we need feedback control? If the system is disturbed in any way that isn't modeled by our equations, like a load was applied, or voltage sag in the rest of the circuit caused the commanded voltage to not match the applied voltage, the angular velocity of the motor will deviate from the model over time.
 
 To combat this undesired effect, we can take measurements of the system and the environment to detect this deviation and account for it. For example, we could measure the current position and estimate an angular velocity from it. We can then give the motor corrective commands as well as steer our model back to reality. This feedback allows us to account for uncertainty and be robust to it.
 

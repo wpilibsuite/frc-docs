@@ -1,18 +1,18 @@
 Tuning a PID Controller
 =======================
 
-As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots. 
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots.
 
 There are multiple methods for determining the values for these constants on your particular mechanism.
 
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
-.. note:: 
-   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller. 
-   
+.. note::
+   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
+
    For example, for the proportional gain:
-   
-      * :math:`K_p` is the standard math-equation-focused way to notate the constant. 
+
+      * :math:`K_p` is the standard math-equation-focused way to notate the constant.
       * ``kP`` is a common way to see it written as a variable in software.
 
    Despite the differences in capitalization, the two formats refer to the same concept.
@@ -24,7 +24,7 @@ In this section, we'll go through some techniques to manually find reasonable va
 
 This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
 
-Mechanism Walkthrough - Flywheel 
+Mechanism Walkthrough - Flywheel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For this walkthrough, use this interactive simulation to explore tuning concepts:
@@ -34,23 +34,23 @@ For this walkthrough, use this interactive simulation to explore tuning concepts
     <div class="viz-div">
       <div class="col" id="flywheel_pid_plot"></div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div> 
+         <div class="col" id="flywheel_pid_viz"></div>
          <div id="flywheel_pid_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid");  
-         flywheel_pid.runSim(); 
-      </script> 
+         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid.runSim();
+      </script>
     </div>
 
-Mechanism Description
-~~~~~~~~~~~~~~~~~~~~~
+Flywheel Mechanism Description
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The "Flywheel" is nothing more than:
 
-  * A thin, cylindrical mass 
+  * A thin, cylindrical mass
   * A gearbox driving the mass
   * A motor driving the gearbox
-  
+
 
 A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
 
@@ -58,19 +58,19 @@ In general: the more voltage that is applied to the motor, the faster the flywhe
 
 Flywheels are commonly used to propel game pieces through the air, toward a target.
 
-To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it. 
+To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
 
-As a test, a gamepiece is injected into the flywheel about halfway through the simulation.[1]_
+As a test, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
 
 Gearbox inefficiencies and sensor delay are included in this model.
 
-Step 1: Feedback-Only
-~~~~~~~~~~~~~~~~~~~~~
+Flywheel Tuning Step 1: Feedback-Only
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-We will first attempt to tune the flywheel using only the feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`. 
+We will first attempt to tune the flywheel using only the feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`.
 
 Perform the following:
 
@@ -90,16 +90,16 @@ Perform the following:
 
 
 In this particular example, for a setpoint of 1000, values of :math:`K_p = 2.0`, :math:`K_i = 0.0`, and :math:`K_d = 0.04` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
-   
+
 .. raw:: html
 
    </details> <br>
 
 
-Step 2: Feedforward, then FeedBack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flywheel Tuning Step 2: Feedforward, then Feedback
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by calibrating an appropriate feedforward value. 
+Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by calibrating an appropriate feedforward value.
 
 Perform the following:
 
@@ -116,7 +116,7 @@ You may also desire to pull in a small amount of :math:`K_d` to prevent oscillat
 
 
 In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 1.0`  will produce very good results. Other setpoints should work nearly as well too.
-   
+
 .. raw:: html
 
    </details> <br>
@@ -132,38 +132,38 @@ Mechanism Walkthrough - Vertical Arm
     <div class="viz-div">
       <div class="col" id="arm_pid_plot"></div>
       <div class="flex-grid">
-         <div class="col" id="arm_pid_viz"></div> 
-         <div id="arm_pid_ctrls"></div> 
+         <div class="col" id="arm_pid_viz"></div>
+         <div id="arm_pid_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid"); 
-         arm_pidf.runSim(); 
-      </script> 
+         arm_pidf = new VerticalArmPIDF("arm_pid");
+         arm_pidf.runSim();
+      </script>
     </div>
 
-Mechanism Description
-~~~~~~~~~~~~~~~~~~~~~
+Arm Mechanism Description
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The "Vertical Arm" is:
 
   * A mass on a stick
   * A gearbox which drives the stick in circles
   * A motor which drives the gearbox.
-  
+
 Vertical arms are commonly used to lift gamepieces from the ground, up to a scoring position.
 
 Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.
 
-To consistently place a gamepiece, the arm must move from its current location to a specific angle which puts the gamepiece at the right height. 
+To consistently place a gamepiece, the arm must move from its current location to a specific angle which puts the gamepiece at the right height.
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
 
 Gearbox inefficiencies and sensor delay are included in this model.
 
 
-Step 1: Feedback-Only
-~~~~~~~~~~~~~~~~~~~~~
+Arm Tuning Step 1: Feedback-Only
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Again, we will first attempt to tune this mechanism with using only feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`. 
+Again, we will first attempt to tune this mechanism with using only feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`.
 
 Perform the following:
 
@@ -181,19 +181,19 @@ Note that you will likely have trouble finding a set of tunes that behaves accep
 
 
 In this particular example, for a setpoint of 0.1, values of :math:`K_p = 12.0`, :math:`K_i = 6.0`, and :math:`K_d = 3.0` will produce somewhat reasonable results. It won't be great for other setpoints.
-   
+
 .. raw:: html
 
    </details> <br>
 
 This is a case where feedback control alone is insufficient to achieve good behavior with the system.
 
-Step 2: Feedforward, then FeedBack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Arm Tuning Step 2: Feedforward, then Feedback
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The core reason for why PID behaves poorly without feed forward is gravity. In this mechanism, depending on the arm's angle, gravity will pull with a different force.
 
-To counteract this, we introduce a feedforward term which is also proportional to the cosine of the angle. 
+To counteract this, we introduce a feedforward term which is also proportional to the cosine of the angle.
 
 .. math::
    V_{ff} = K_g * cos(\theta_{arm})
@@ -216,7 +216,7 @@ Adjust the setpoint up and down. Now, the arm should exhibit good behavior - qui
 
 
 In this particular example, reasonable values for the constants are :math:`K_g = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.
-   
+
 .. raw:: html
 
    </details> <br>
@@ -252,7 +252,7 @@ Actuator Saturation
 
 A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been temporarily reduced.
 
-Mathematically, suppose we have a controller :math:`u = k(r - x)` where :math:`u` is the :term:`control effort`, :math:`k` is the gain, :math:`r` is the :term:`reference`, and :math:`x` is the current state. Let :math:`u_{max}` be the limit of the actuator's output which is less than the uncapped value of :math:`u` and :math:`k_{max}` be the associated maximum gain. We will now compare the capped and uncapped controllers for the same :term:`reference` and current :term:`state`. 
+Mathematically, suppose we have a controller :math:`u = k(r - x)` where :math:`u` is the :term:`control effort`, :math:`k` is the gain, :math:`r` is the :term:`reference`, and :math:`x` is the current state. Let :math:`u_{max}` be the limit of the actuator's output which is less than the uncapped value of :math:`u` and :math:`k_{max}` be the associated maximum gain. We will now compare the capped and uncapped controllers for the same :term:`reference` and current :term:`state`.
 
 .. math::
    u_{max} &< u \\
@@ -265,4 +265,4 @@ For the inequality to hold, :math:`k_{max}` must be less than the original value
 Footnotes
 ---------
 
-.. [1] For this simulation, we model a ball being injected to the flywheel as a constant torque fighting the spinning of the wheel for a brief period of time, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system. 
+.. [1] For this simulation, we model a ball being injected to the flywheel as a constant torque fighting the spinning of the wheel for a brief period of time, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system.
