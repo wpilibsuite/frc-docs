@@ -51,15 +51,18 @@ The "Flywheel" is nothing more than:
   * A gearbox driving the mass
   * A motor driving the gearbox
   
-Flywheels are commonly used to propel game pieces through the air, toward a target. 
+
+A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
 
 In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction slowly decreases the spinning until the flywheel stops.
+
+Flywheels are commonly used to propel game pieces through the air, toward a target.
 
 To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it. 
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
 
-As a test, a gamepiece is injected into the flywheel about halfway through the simulation.
+As a test, a gamepiece is injected into the flywheel about halfway through the simulation.[1]_
 
 Gearbox inefficiencies and sensor delay are included in this model.
 
@@ -221,6 +224,11 @@ In this particular example, reasonable values for the constants are :math:`K_g =
 
 This shows how adding a carefully-chosen feedforward not only simplifies the calibration process, but produces better behavior at a wide range of setpoints.
 
+Software Implementation
+-----------------------
+
+If you are interested in implementing a PID controller on your robot, check out :ref:`the documentation on the WPILib classes which can help <docs/software/advanced-controls/controllers/pidcontroller:Using the PIDController Class>`.
+
 Common Issues
 -------------
 
@@ -237,6 +245,8 @@ There are a few ways to mitigate this:
 2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ``setIZone()`` method.
 3. Cap the integrator at some maximum value. WPILib's ``PIDController`` implements this with the ``setIntegratorRange()`` method.
 
+.. important:: Most mechanisms in FRC do not require any integral control, and systems that seem to require integral control to respond well probably have an inaccurate feedforward model.
+
 Actuator Saturation
 ^^^^^^^^^^^^^^^^^^^
 
@@ -250,3 +260,9 @@ Mathematically, suppose we have a controller :math:`u = k(r - x)` where :math:`u
    k_{max} &< k
 
 For the inequality to hold, :math:`k_{max}` must be less than the original value for :math:`k`. This reduced gain is evident in a :term:`system response` when there is a linear change in state instead of an exponential one as it approaches the :term:`reference`. This is due to the :term:`control effort` no longer following a decaying exponential plot. Once the :term:`system` is closer to the :term:`reference`, the controller will stop saturating and produce realistic controller values again.
+
+
+Footnotes
+---------
+
+.. [1] For this simulation, we model a ball being injected to the flywheel as a constant torque fighting the spinning of the wheel for a brief period of time, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system. 

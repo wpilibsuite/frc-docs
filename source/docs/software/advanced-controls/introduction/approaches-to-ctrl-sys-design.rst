@@ -40,9 +40,7 @@ Note that models do not have to be perfectly accurate to be useful. As we will s
 System Identification
 ^^^^^^^^^^^^^^^^^^^^^
 
-A key way to improve the accuracy of a simple physics model is to perform experiments on the real mechanism, record data, and use the data to *derive* the constants associated with different parts of the model.
-
-This is useful if CAD models are not perfectly accurate, or parts of the model are not easily predicted (ex: friction in a gearbox).
+A good way to improve the accuracy of a simple physics model is to perform experiments on the real mechanism, record data, and use the data to *derive* the constants associated with different parts of the model. This is very useful for physical quantities which are difficult or impossible to predict, but easy to measure (ex: friction in a gearbox).
 
 :doc:`WPILib's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive relevant constants. These constants can be used to build a more accurate model of the system behavior.
 

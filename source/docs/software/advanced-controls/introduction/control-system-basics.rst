@@ -49,9 +49,9 @@ What is a Model?
 
 A *model* of your mechanism is a mathematical description of its behavior. Specifically, this mathematical description must define the mechanism's inputs and outputs, and how the output values change over time as a function of its input values.
 
-Models can be built up from `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`, and refined by doing experiments on the mechanism.
+The mathematical description is often just simple algebra equations. It can also include some linear algebra, matrices, and differential equations. WPILib provides a number of classes to help simplify the more complex math.
 
-Models are often simple algebra equations. They can also include some linear algebra, matrices, and differential equations. WPILib provides a number of classes to help simplify the more complex math.
+`Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>` defines many of the equations used to build up models of system behavior. Many of the values inside those equations can be determined by doing experiments on the mechanism.
 
 Block Diagrams
 --------------
