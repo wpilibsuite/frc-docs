@@ -16,7 +16,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         this.kD = 0.0;
 
         //User-configured Feed-Forward
-        this.kcosFF = 0.0;
+        this.kG = 0.0;
 
         this.ctrlsInit();
 
@@ -141,7 +141,7 @@ class VerticalArmPIDF extends VerticalArmSim {
         var err_delta = (error - this.err_prev)/this.ctrl_Ts;
 
         //PID + cosine feed-forward control law
-        var ctrlEffort = this.kcosFF * Math.cos(output) + 
+        var ctrlEffort = this.kG * Math.cos(output) + 
                             this.kP * error  +  
                             this.kI * this.err_accum  +  
                             this.kD * err_delta;
