@@ -20,7 +20,6 @@ import glob
 from jsmin import jsmin
 
 
-
 sys.path.append(os.path.abspath("."))
 sys.path.append(os.path.abspath("./frc-docs/source"))
 
@@ -218,6 +217,7 @@ user_options = [
 js_pid_src_path = "./source/_static/js/pid-tune/*.js"
 js_pid_output_file = "./source/_static/js/pid-tune.js"
 
+
 def mergeAndMinify(sourceDir, outputFile):
     with open(outputFile, "w") as outf:
         inFileNames = glob.glob(sourceDir)
@@ -225,7 +225,9 @@ def mergeAndMinify(sourceDir, outputFile):
         for inFileName in inFileNames:
             with open(inFileName, "r") as inf:
                 minified = jsmin(inf.read())
-                outf.write("///////////////////////////////////////////////////////////\n")
+                outf.write(
+                    "///////////////////////////////////////////////////////////\n"
+                )
                 outf.write("// {}\n".format(inFileName))
                 outf.write(minified)
                 outf.write("\n")
