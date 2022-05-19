@@ -214,8 +214,9 @@ user_options = [
 ]
 
 # javascript files which need to be merged and minified
-js_pid_src_path = "./source/_static/js/pid-tune/*.js"
-js_pid_output_file = "./source/_static/js/pid-tune.js"
+js_build_dir = os.path.dirname(__file__)
+js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
+js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
 
 
 def mergeAndMinify(sourceDir, outputFile):
