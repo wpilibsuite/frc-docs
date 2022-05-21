@@ -43,6 +43,8 @@ class FlywheelPIDF extends FlywheelSim {
         input.setAttribute("type", "number");
         input.setAttribute("value", "300.0");
         input.setAttribute("step", "10.0");
+        input.setAttribute("max", "1800.0");
+        input.setAttribute("min", "0.0");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);

@@ -185,7 +185,7 @@ Simulation - Vertical Arm
     <div class="viz-div">
       <div id="arm_pid_container">
          <div class="col" id="arm_pid_plotVals"></div>
-         <div class="col" id="arm_pid_plotVolts"></div> 
+         <div class="col" id="arm_pid_plotVolts"></div>
       </div>
       <div class="flex-grid">
          <div class="col" id="arm_pid_viz"></div>
