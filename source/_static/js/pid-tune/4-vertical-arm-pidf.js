@@ -42,6 +42,8 @@ class VerticalArmPIDF extends VerticalArmSim {
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.1");
         input.setAttribute("step", "0.1");
+        input.setAttribute("min", "-3.14159");
+        input.setAttribute("max", "3.14159");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);

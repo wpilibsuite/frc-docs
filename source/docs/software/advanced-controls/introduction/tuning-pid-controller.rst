@@ -24,27 +24,15 @@ In this section, we'll go through some techniques to manually find reasonable va
 
 This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
 
-Mechanism Walkthrough - Flywheel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For this walkthrough, use this interactive simulation to explore tuning concepts:
+Gamepiece-Launching Flywheel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
-
-    <div class="viz-div">
-      <div class="col" id="flywheel_pid_plot"></div>
-      <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div>
-         <div id="flywheel_pid_ctrls"></div>
-      </div>
-      <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid");
-         flywheel_pid.runSim();
-      </script>
-    </div>
+In this section, we will calibrate a flywheel used for launching gamepieces.
 
 Flywheel Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The "Flywheel" is nothing more than:
 
   * A thin, cylindrical mass
@@ -63,6 +51,28 @@ To consistently launch a gamepiece, a good first step is to make sure it is spin
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
 
 Gearbox inefficiencies and sensor delay are included in this model.
+
+Mechanism Walkthrough - Flywheel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this walkthrough, use this interactive simulation to explore tuning concepts:
+
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="flywheel_pid_container">
+         <div class="col" id="flywheel_pid_plotVals"></div>
+         <div class="col" id="flywheel_pid_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="flywheel_pid_viz"></div>
+         <div id="flywheel_pid_ctrls"></div>
+      </div>
+      <script>
+         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid.runSim();
+      </script>
+    </div>
 
 Flywheel Tuning Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,22 +132,10 @@ In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.007
 In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, feedforward is recommended over :math:`K_i`.
 
 
-Mechanism Walkthrough - Vertical Arm
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Vertical Arm
+^^^^^^^^^^^^
 
-.. raw:: html
-
-    <div class="viz-div">
-      <div class="col" id="arm_pid_plot"></div>
-      <div class="flex-grid">
-         <div class="col" id="arm_pid_viz"></div>
-         <div id="arm_pid_ctrls"></div>
-      </div>
-      <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid");
-         arm_pidf.runSim();
-      </script>
-    </div>
+In this section, we will calibrate a vertical arm for manipulating gamepieces.
 
 Arm Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,6 +155,25 @@ This design drives the controls goal we will use in this example: Put the correc
 
 Gearbox inefficiencies and sensor delay are included in this model.
 
+Simulation - Vertical Arm
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="arm_pid_container">
+         <div class="col" id="arm_pid_plotVals"></div>
+         <div class="col" id="arm_pid_plotVolts"></div> 
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="arm_pid_viz"></div>
+         <div id="arm_pid_ctrls"></div>
+      </div>
+      <script>
+         arm_pidf = new VerticalArmPIDF("arm_pid");
+         arm_pidf.runSim();
+      </script>
+    </div>
 
 Arm Tuning Step 1: Feedback-Only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

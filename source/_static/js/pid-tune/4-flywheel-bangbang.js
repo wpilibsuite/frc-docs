@@ -29,8 +29,8 @@ class FlywheelBangBang extends FlywheelSim {
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
-        input.setAttribute("value", "1000.0");
-        input.setAttribute("step", "100.0");
+        input.setAttribute("value", "300.0");
+        input.setAttribute("step", "10.0");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
