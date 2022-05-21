@@ -60,7 +60,7 @@ class FlywheelPIDF extends FlywheelSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kP = parseFloat(event.target.value);
@@ -78,7 +78,7 @@ class FlywheelPIDF extends FlywheelSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kI = parseFloat(event.target.value);
@@ -96,7 +96,7 @@ class FlywheelPIDF extends FlywheelSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kD = parseFloat(event.target.value);
@@ -114,7 +114,7 @@ class FlywheelPIDF extends FlywheelSim {
         input = document.createElement("INPUT");
         input.setAttribute("type", "number");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.0001");
+        input.setAttribute("step", "0.00001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kV = parseFloat(event.target.value);
@@ -136,7 +136,7 @@ class FlywheelPIDF extends FlywheelSim {
         }
             
         //Calculate error, error derivative, and error integral
-        var error = (setpoint - output)*2*3.14159/60;
+        var error = (setpoint - output);
         
         this.err_accum += (error)*this.ctrl_Ts;
 

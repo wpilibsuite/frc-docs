@@ -87,7 +87,7 @@ Perform the following:
      <summary>Tuning Solution</summary>
 
 
-In this particular example, for a setpoint of 1000, values of :math:`K_p = 2.0`, :math:`K_i = 0.0`, and :math:`K_d = 0.04` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
+In this particular example, for a setpoint of 1000, values of :math:`K_p = 0.13`, :math:`K_i = 0.0`, and :math:`K_d = 0.002` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
 
 .. raw:: html
 
@@ -113,7 +113,7 @@ You may also desire to pull in a small amount of :math:`K_d` to prevent oscillat
      <summary>Tuning Solution</summary>
 
 
-In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 1.0`  will produce very good results. Other setpoints should work nearly as well too.
+In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results. Other setpoints should work nearly as well too.
 
 .. raw:: html
 
