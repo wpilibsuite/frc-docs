@@ -24,7 +24,6 @@ In this section, we'll go through some techniques to manually find reasonable va
 
 This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
 
-
 Gamepiece-Launching Flywheel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -45,12 +44,23 @@ In general: the more voltage that is applied to the motor, the faster the flywhe
 
 Flywheels are commonly used to propel game pieces through the air, toward a target. In this simulation, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
 
-
 To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
 
 Gearbox inefficiencies and sensor delay are included in this model.
+
+The plant and controller are connected together in this fashion:
+
+.. image:: images/control-system-basics-ctrl-plus-plant.png
+   :alt: Tuning Exercise Block Diagrams showing feedforward and feedback blocks, controlling a plant.
+
+Where:
+
+* The plant's :term:`output` :math:`y(t)` is the flywheel rotational velocity
+* The controller's :term:`setpoint` :math:`r(t)` is the desired velocity of the flywheel
+* The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the flywheel's motion
+
 
 Mechanism Walkthrough - Flywheel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,7 +104,7 @@ Perform the following:
 .. raw:: html
 
    <details>
-     <summary>Tuning Solution</summary>
+     <summary>Tuning Solution</summary><br>
 
 
 In this particular example, for a setpoint of 1000, values of :math:`K_p = 0.13`, :math:`K_i = 0.0`, and :math:`K_d = 0.002` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
@@ -120,7 +130,7 @@ You may also desire to pull in a small amount of :math:`K_d` to prevent oscillat
 .. raw:: html
 
    <details>
-     <summary>Tuning Solution</summary>
+     <summary>Tuning Solution</summary><br>
 
 
 In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results. Other setpoints should work nearly as well too.
@@ -129,7 +139,7 @@ In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.007
 
    </details> <br>
 
-In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and many more that will be presented later, feedforward is recommended over :math:`K_i`.
+In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and others that will be presented later, feedforward is recommended over :math:`K_i`.
 
 
 Vertical Arm
@@ -154,6 +164,18 @@ To consistently place a gamepiece, the arm must move from its current location t
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the arm to a certain angle, and then keep it there.
 
 Gearbox inefficiencies and sensor delay are included in this model.
+
+The plant and controller are connected together in this fashion:
+
+.. image:: images/control-system-basics-ctrl-plus-plant.png
+   :alt: Tuning Exercise Block Diagrams showing feedforward and feedback blocks, controlling a plant.
+
+Where:
+
+* The plant's :term:`output` :math:`y(t)` is the arm's angular position
+* The controller's :term:`setpoint` :math:`r(t)` is the desired angular position of the arm.
+* The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the arm's motion.
+
 
 Simulation - Vertical Arm
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,7 +214,7 @@ Note that you will likely have trouble finding a set of tunes that behaves accep
 .. raw:: html
 
    <details>
-     <summary>Tuning Solution</summary>
+     <summary>Tuning Solution</summary><br>
 
 
 In this particular example, for a setpoint of 0.1, values of :math:`K_p = 12.0`, :math:`K_i = 6.0`, and :math:`K_d = 3.0` will produce somewhat reasonable results. It won't be great for other setpoints.
@@ -227,7 +249,7 @@ Adjust the setpoint up and down. Now, the arm should exhibit good behavior - qui
 .. raw:: html
 
    <details>
-     <summary>Tuning Solution</summary>
+     <summary>Tuning Solution</summary><br>
 
 
 In this particular example, reasonable values for the constants are :math:`K_g = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.

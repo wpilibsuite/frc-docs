@@ -1,23 +1,3 @@
-//Handles coordidinating the animation triggers and the plot setup/config
-/**
- * Override the reset function, we don't need to hide the tooltips and
- * crosshairs.
- */
- Highcharts.Pointer.prototype.reset = function () {
-    return undefined;
-};
-
-/**
- * Highlight a point by showing tooltip, setting hover state and draw crosshair
- */
-Highcharts.Point.prototype.highlight = function (event) {
-    event = this.series.chart.pointer.normalize(event);
-    this.onMouseOver(); // Show the hover marker
-    this.series.chart.tooltip.refresh(this); // Show the tooltip
-    this.series.chart.xAxis[0].drawCrosshair(event, this); // Show the crosshair
-};
-
-
 class BaseSim {
 
     constructor(div_id_prefix, stateUnits) {
@@ -30,50 +10,18 @@ class BaseSim {
         this.valsChart = new Highcharts.Chart(plotDrawDivVals, dflt_options);
         this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, dflt_options);
 
-        this.voltsChart.addSeries({name: "volts", color: '#00FF00'});
+        this.voltsChart.addSeries({name: "control effort", color: '#00BB00'});
         this.valsChart.addSeries({name: "output", color: '#FF0000'});
-        this.valsChart.addSeries({name: "setpoint", color: '#000088'});
+        this.valsChart.addSeries({name: "setpoint", color: '#0000FF'});
 
         this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: 0.0, id:"curTime"})
         this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: 0.0, id:"curTime"})
-        
-        this.valsChart.yAxis[0].setTitle({ text: stateUnits });
-        this.voltsChart.yAxis[0].setTitle({ text: "Volts" });
 
         this.timeSamples = Array(0, this.simEndTime / this.Ts);
         this.outputSamples = Array(0, this.simEndTime / this.Ts);
         this.setpointSamples = Array(0, this.simEndTime / this.Ts);
         this.ctrlEffortSamples = Array(0, this.simEndTime / this.Ts);
         this.outputVizPosRevSamples = Array(0, this.simEndTime / this.Ts);
-
-        /**
-         * In order to synchronize tooltips and crosshairs, override the
-         * built-in events with handlers defined on the parent element.
-         */
-        ['mousemove', 'touchmove', 'touchstart'].forEach(function (eventType) {
-            this.containerDiv.addEventListener(
-                eventType,
-                function (e) {
-                    var chart,
-                        point,
-                        i,
-                        event;
-
-                    for (i = 0; i < Highcharts.charts.length; i = i + 1) {
-                        chart = Highcharts.charts[i];
-                        // Find coordinates within the chart
-                        event = chart.pointer.normalize(e);
-                        // Get the hovered point
-                        point = chart.series[0].searchPoint(event, true);
-
-                        if (point) {
-                            point.highlight(e);
-                        }
-                    }
-                }
-            );
-        }, this);
-
 
         this.vizDrawDiv = document.getElementById(div_id_prefix + "_viz");
 
