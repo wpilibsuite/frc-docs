@@ -40,23 +40,6 @@ class FlywheelBangBang extends FlywheelSim {
         curRow.appendChild(label);
         curRow.appendChild(control);
 
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "Inject Ball";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "checkbox");
-        input.setAttribute("checked", true);
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.injectBall = event.target.checked;
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
     }
 
     controllerUpdate(time, setpoint, output){

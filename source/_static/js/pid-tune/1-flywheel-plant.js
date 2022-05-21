@@ -2,9 +2,6 @@ class FlywheelPlant{
 
     constructor(){
 
-        // User-configured plant model things
-        this.injectBall = true;
-
         //Constants related to plant model
         //Gearbox
         var GEARBOX_RATIO = 50.0/10.0; //output over input - 5:1 gear ratio
@@ -27,14 +24,30 @@ class FlywheelPlant{
         this.speedPrev = 0;
         this.curPosRev = 0;
         this.Ts = Ts;
+        this.ballEnterTime = 5.0;
+        this.ballExitTime = null; // gets filled out if the ball does indeed exit in this sim.
+        this.ballEnterWheelAngle = null;
     }
 
     update(t, inVolts){
         //Simulate friction
         var extTrq = 0.0005*this.speedPrev;
-        if(this.injectBall & t > 5.0 & t < 5.05){
-            //add a short "impulse" to simulate putting a ball into the shooter
-            extTrq += 2;
+
+        if(t > this.ballEnterTime & this.ballExitTime == null){
+            //ball is in contact with the flywheel
+
+            if(this.ballEnterWheelAngle == null){
+                //First loop, init the enter angle
+                this.ballEnterWheelAngle = this.curPosRev;
+            } 
+            
+            if(this.curPosRev > this.ballEnterWheelAngle + 0.25){
+                //ball has just exited the flywheel.
+                this.ballExitTime = t;
+            } else {
+                //ball is exerting force on the shooter wheel
+                extTrq += this.speedPrev * 0.008;
+            }
         }
 
         //Simulate main Plant behavior
@@ -56,6 +69,14 @@ class FlywheelPlant{
 
     getCurPosRev(){
         return this.curPosRev;
+    }
+
+    getBallEnterTime(){
+        return this.ballEnterTime;
+    }
+
+    getBallExitTime(){
+        return this.ballExitTime;
     }
 
 }

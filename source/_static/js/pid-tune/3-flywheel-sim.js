@@ -7,7 +7,7 @@ class FlywheelSim extends BaseSim {
 
 
         // User-configured setpoints
-        this.setpointVal = 1000.0; 
+        this.setpointVal = 300.0; 
         this.setpointStepTime = 1.0;
 
         this.plant = new FlywheelPlant();
@@ -68,7 +68,8 @@ class FlywheelSim extends BaseSim {
         this.setCtrlEffortData(ctrlEffortPlotData);
         this.setSetpointData(setpointPlotData);
         this.setOutputData(outputPlotData);
-        this.viz.setData(this.timeSamples, this.outputVizPosRevSamples);
+        this.viz.setActuatorPositionData(this.timeSamples, this.outputVizPosRevSamples);
+        this.viz.setBallTimes(this.plant.getBallEnterTime(), this.plant.getBallExitTime());
 
         this.redraw();
 

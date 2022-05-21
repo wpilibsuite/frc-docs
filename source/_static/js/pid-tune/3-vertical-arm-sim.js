@@ -68,7 +68,7 @@ class VerticalArmSim extends BaseSim {
         this.setCtrlEffortData(ctrlEffortPlotData);
         this.setSetpointData(setpointPlotData);
         this.setOutputData(outputPlotData);
-        this.viz.setData(this.timeSamples, this.outputVizPosRevSamples);
+        this.viz.setActuatorPositionData(this.timeSamples, this.outputVizPosRevSamples);
 
         this.redraw();
 

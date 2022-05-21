@@ -42,7 +42,7 @@ class BaseVisualization {
         this.drawStatic();
     }
 
-    setData(time, posRev){
+    setActuatorPositionData(time, posRev){
         this.posRev = posRev;
         this.time = time;
     }

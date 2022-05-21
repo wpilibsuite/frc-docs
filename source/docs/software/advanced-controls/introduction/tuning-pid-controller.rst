@@ -51,18 +51,16 @@ The "Flywheel" is nothing more than:
   * A gearbox driving the mass
   * A motor driving the gearbox
 
-
 A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
 
 In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction slowly decreases the spinning until the flywheel stops.
 
-Flywheels are commonly used to propel game pieces through the air, toward a target.
+Flywheels are commonly used to propel game pieces through the air, toward a target. In this simulation, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
+
 
 To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.
 
 This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
-
-As a test, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
 
 Gearbox inefficiencies and sensor delay are included in this model.
 
@@ -198,7 +196,7 @@ To counteract this, we introduce a feedforward term which is also proportional t
 .. math::
    V_{ff} = K_g * cos(\theta_{arm})
 
-:math:`K_g` :ref:` could be calculated <docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Start with Feedforward>` if all the mechanical and physical properties of the system are known. However, since a lot of these are hard to model accurately, we will determine it experimentally.
+:math:`K_g` :ref:`could be calculated <docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Start with Feedforward>` if all the mechanical and physical properties of the system are known. However, since a lot of these are hard to model accurately, we will determine it experimentally.
 
 Perform the following:
 
@@ -265,4 +263,4 @@ For the inequality to hold, :math:`k_{max}` must be less than the original value
 Footnotes
 ---------
 
-.. [1] For this simulation, we model a ball being injected to the flywheel as a constant torque fighting the spinning of the wheel for a brief period of time, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system.
+.. [1] For this simulation, we model a ball being injected to the flywheel as a velocity-dependant (frictional) torque fighting the spinning of the wheel for one quarter of a wheel rotation, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system.
