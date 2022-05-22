@@ -145,9 +145,3 @@ An *underdamped* response oscillates around the :term:`reference` before settlin
    :align: center
 
 is slow to rise and does not overshoot the :term:`reference`. A *critically damped* response has the fastest :term:`rise time` without overshooting the :term:`reference`.
-
-
-Next Steps
-----------
-
-Now that you have learned a bit about the math of a PID controller, :ref:`get hands-on experience with some tuning exercises <docs/software/advanced-controls/introduction/tuning-pid-controller:Tuning a PID Controller>`.

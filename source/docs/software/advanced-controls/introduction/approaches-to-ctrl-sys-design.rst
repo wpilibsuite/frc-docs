@@ -68,10 +68,3 @@ Feedback-Only Techniques
 In many controls textbooks, you may see a set of techniques which rely on feedback control only. These are very common in industry, and works well in many cases, especially when the underlying system behavior is not easy to model.
 
 For most FRC mechanisms, these feedback-only techniques may produce good results in some cases. However, there will be limits to this success. For most FRC use cases, it is recommended to include feedforward.
-
-Next Steps
-----------
-
-To jump right in, check out :ref:`a hands-on example working with a simple Bang-Bang controller <docs/software/advanced-controls/introduction/tuning-bang-bang-controller:Tuning a Bang-Bang Controller>`.
-
-Alternatively, spend some time learning about :ref:`the details of PID controllers <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`.
