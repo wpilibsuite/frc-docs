@@ -10,12 +10,15 @@ class BaseSim {
         this.valsChart = new Highcharts.Chart(plotDrawDivVals, dflt_options);
         this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, dflt_options);
 
-        this.voltsChart.addSeries({name: "control effort", color: '#00BB00'});
-        this.valsChart.addSeries({name: "output", color: '#FF0000'});
-        this.valsChart.addSeries({name: "setpoint", color: '#0000FF'});
+        this.voltsChart.addSeries({name: "Control Effort", color: '#00BB00'});
+        this.valsChart.addSeries({name: "Output", color: '#FF0000'});
+        this.valsChart.addSeries({name: "Setpoint", color: '#0000FF'});
 
         this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: 0.0, id:"curTime"})
         this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: 0.0, id:"curTime"})
+
+        this.voltsChart.yAxis[0].setTitle({ text : "Volts"});
+        this.valsChart.yAxis[0].setTitle({ text :stateUnits });
 
         this.timeSamples = Array(0, this.simEndTime / this.Ts);
         this.outputSamples = Array(0, this.simEndTime / this.Ts);
@@ -106,7 +109,7 @@ var dflt_options = {
         ignoreHiddenSeries: true,
         panning: false,
         showAxes: true,
-        marginLeft: 40, // Keep all charts left aligned
+        marginLeft: 60, // Keep all charts left aligned
         spacingTop: 20,
         spacingBottom: 20,
         backgroundColor: {
