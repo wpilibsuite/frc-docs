@@ -64,19 +64,19 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ffc69d406cdba3890a2eb4d6c2fbaa07e4497d56/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
-      :lines: 62-63
+      :lines: 57-58
       :linenos:
-      :lineno-start: 62
+      :lineno-start: 57
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2020.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ffc69d406cdba3890a2eb4d6c2fbaa07e4497d56/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
-      :lines: 60-61
+      :lines: 61-62
       :linenos:
-      :lineno-start: 60
+      :lineno-start: 61
 
 Ramsete Parameters
 ------------------
