@@ -20,6 +20,7 @@
 "docs/software/advanced-control/introduction/controls-glossary.rst" "docs/software/advanced-controls/introduction/controls-glossary.rst"
 "docs/software/advanced-control/introduction/index.rst" "docs/software/advanced-controls/introduction/index.rst"
 "docs/software/advanced-control/introduction/introduction-to-pid.rst" "docs/software/advanced-controls/introduction/introduction-to-pid.rst"
+"docs/software/advanced-control/introduction/tuning-pid-controller.rst" "docs/software/advanced-controls/introduction/tuning-flywheel.rst"
 "docs/software/advanced-control/trajectories/index.rst" "docs/software/advanced-controls/trajectories/index.rst"
 "docs/software/advanced-control/trajectories/manipulating-trajectories.rst" "docs/software/advanced-controls/trajectories/manipulating-trajectories.rst"
 "docs/software/advanced-control/trajectories/ramsete.rst" "docs/software/advanced-controls/trajectories/ramsete.rst"

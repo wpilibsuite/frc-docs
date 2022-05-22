@@ -1,7 +1,7 @@
 Tuning a Flywheel Speed Controller
 ==================================
 
-In this section, we will calibrate a flywheel used for launching gamepieces.
+In this section, we will calibrate controllers for a gamepiece-launching flywheel.
 
 Flywheel Mechanism Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
