@@ -99,6 +99,8 @@ As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introd
 
 There are multiple methods for determining the values for these constants on your particular mechanism.
 
+`ReCalc is an online calculator <https://www.reca.lc/>`__ which can help model your system's behavior, and provide an estimate of controller constants.
+
 The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
 
 .. note::
@@ -160,17 +162,20 @@ Perform the following:
      <summary>Tuning Solution</summary><br>
 
 
-In this particular example, for a setpoint of 1000, values of :math:`K_p = 0.13`, :math:`K_i = 0.0`, and :math:`K_d = 0.002` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
+In this particular example, for a setpoint of 300, values of :math:`K_p = 0.13`, :math:`K_i = 0.0`, and :math:`K_d = 0.002` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
 
 .. raw:: html
 
    </details> <br>
 
+Because a non-zero amount of :term:`control effort` is required to keep the flywheel spinning, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.
 
 Flywheel Tuning Step 2: Feedforward, then Feedback
 --------------------------------------------------
 
-Tuning with only feedback can produce reasonable results in many cases. However, there is an easier way. Rather than starting with feedback, start by calibrating an appropriate feedforward value.
+Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, it won't work well for flywheels, elevators, or vertical arms. Approaches incorporating feedforward are required for these situations.
+
+To illustrate, start by calibrating a simple feedforward for a flywheel.
 
 Perform the following:
 
@@ -186,13 +191,13 @@ You may also desire to pull in a small amount of :math:`K_d` to prevent oscillat
      <summary>Tuning Solution</summary><br>
 
 
-In this particular example, for a setpoint of 1000, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results. Other setpoints should work nearly as well too.
+In this particular example, for a setpoint of 300, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results. Other setpoints should work nearly as well too.
 
 .. raw:: html
 
    </details> <br>
 
-In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all. For these reasons, and others that will be presented later, feedforward is recommended over :math:`K_i`.
+In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all.
 
 PID Control Software Implementation
 -----------------------------------

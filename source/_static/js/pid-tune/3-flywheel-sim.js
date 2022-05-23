@@ -3,7 +3,7 @@ class FlywheelSim extends BaseSim {
 
     constructor(div_id_prefix) {
 
-        super(div_id_prefix, "RPM");
+        super(div_id_prefix, "RPM", 0, 1800);
 
 
         // User-configured setpoints

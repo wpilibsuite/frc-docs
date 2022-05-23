@@ -4,7 +4,7 @@ class VerticalArmSim extends BaseSim {
 
     constructor(div_id_prefix) {
 
-        super(div_id_prefix, "Radians");
+        super(div_id_prefix, "Radians", -Math.PI*1.25, Math.PI*1.25);
 
 
         // User-configured setpoints

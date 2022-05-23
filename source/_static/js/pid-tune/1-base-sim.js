@@ -1,6 +1,6 @@
 class BaseSim {
 
-    constructor(div_id_prefix, stateUnits) {
+    constructor(div_id_prefix, stateUnits, stateMin, stateMax) {
         this.speedGraph = null;
         this.voltsGraph = null;
         this.containerDiv  = document.getElementById(div_id_prefix + "_container");
@@ -11,14 +11,17 @@ class BaseSim {
         this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, dflt_options);
 
         this.voltsChart.addSeries({name: "Control Effort", color: '#00BB00'});
-        this.valsChart.addSeries({name: "Output", color: '#FF0000'});
-        this.valsChart.addSeries({name: "Setpoint", color: '#0000FF'});
+        this.valsChart.addSeries({name: "Output", color: '#FF0000', zIndex: 2});
+        this.valsChart.addSeries({name: "Setpoint", color: '#0000FF', zIndex: 1});
 
         this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: 0.0, id:"curTime"})
         this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: 0.0, id:"curTime"})
 
         this.voltsChart.yAxis[0].setTitle({ text : "Volts"});
         this.valsChart.yAxis[0].setTitle({ text :stateUnits });
+
+        this.voltsChart.yAxis[0].setOptions({min:-14.0, max:14.0});
+        this.valsChart.yAxis[0].setOptions({min:stateMin, max:stateMax});
 
         this.timeSamples = Array(0, this.simEndTime / this.Ts);
         this.outputSamples = Array(0, this.simEndTime / this.Ts);
@@ -109,14 +112,14 @@ var dflt_options = {
         ignoreHiddenSeries: true,
         panning: false,
         showAxes: true,
-        marginLeft: 60, // Keep all charts left aligned
+        marginLeft: 80, // Keep all charts left aligned
         spacingTop: 20,
         spacingBottom: 20,
         backgroundColor: {
             linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
             stops: [
-                [0, 'rgb(255,255,255)'], //Yes, both black. Just in case I decide to change back....
-                [1, 'rgb(255,255,255)']
+                [0, 'rgb(255,255,255)'],
+                [1, 'rgb(230,230,230)']
             ]
         },
     },
