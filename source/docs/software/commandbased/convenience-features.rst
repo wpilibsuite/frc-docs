@@ -490,19 +490,18 @@ The ``perpetually()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/d
 
 unless
 ^^^^^^
-TODO: get actual like for c++ docs
-The ``unless()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) creates a conditional command that stops the command from starting if the supplier returns true. The command will not stop if the supplier changes while running.
+The ``unless()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a61630f22b45df20ede2e14f14cfd2708>`__) creates a conditional command that stops the command from starting if the supplier returns true. The command will not stop if the supplier changes while running. The new conditional command will use the requirements of the decorated command so even if the condition to run the command is not met, any commands using the requirements will be canceled.
 
 .. tabs::
 
   .. code-tab:: java
 
-    // Command will only run if the intake is deployed. This will not cancel the command if it is already running
+    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
     button.whenPressed(command.unless(() -> !intake.isDeployed()));
 
   .. code-tab:: c++
 
-    // Will run forever unless externally interrupted, regardless of command.isFinished()
+    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
     button.WhenPressed(command.Unless([&intake] { return !intake.IsDeployed(); }));
 
 Composing Decorators
