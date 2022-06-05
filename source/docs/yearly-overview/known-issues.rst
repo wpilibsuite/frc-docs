@@ -8,6 +8,21 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Visual Studio Code extensions fail to install on macOS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** With macOS Monterrey 12.3 or later, the VS Code extensions do not install automatically. This is due to the fact that macOS 12.3 removed python, but VS Code 1.62 installed by the WPILib Installer uses python when loading extensions.
+
+**Workaround:** Manually install the VS Code extensions
+
+1. Go to VS Code extensions (1), then three dots (2), then Install from VSIX (3).
+2. Navigate to ``~/wpilib/2022/vsCodeExtensions`` and install ``CPP.vsix``
+3. Repeat for the remaining 4 extensions (``JavaDebug.vsix``, ``JavaDeps.vsix``, ``JavaLang.vsix``, ``WPILib.vsix``)
+4. Restart VS Code.
+
+.. image:: images/known-issues/VSCodeExtensions.png
+   :alt: VS Code screen showing the navigation steps to Install from VSIX
+
 Code crash when initializing a PH/PCM related device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
