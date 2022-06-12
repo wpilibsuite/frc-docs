@@ -40,11 +40,11 @@ class FlywheelPIDF extends FlywheelSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "300.0");
-        input.setAttribute("step", "10.0");
-        input.setAttribute("max", "1800.0");
-        input.setAttribute("min", "0.0");
+        //input.setAttribute("step", "10.0");
+        //input.setAttribute("max", "1800.0");
+        //input.setAttribute("min", "0.0");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
@@ -60,9 +60,9 @@ class FlywheelPIDF extends FlywheelSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.001");
+        //input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kP = parseFloat(event.target.value);
@@ -78,9 +78,9 @@ class FlywheelPIDF extends FlywheelSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.001");
+        //input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kI = parseFloat(event.target.value);
@@ -96,9 +96,9 @@ class FlywheelPIDF extends FlywheelSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.001");
+        //input.setAttribute("step", "0.001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kD = parseFloat(event.target.value);
@@ -114,9 +114,9 @@ class FlywheelPIDF extends FlywheelSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.00001");
+        //input.setAttribute("step", "0.00001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kV = parseFloat(event.target.value);

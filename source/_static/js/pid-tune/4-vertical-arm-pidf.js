@@ -39,11 +39,11 @@ class VerticalArmPIDF extends VerticalArmSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.1");
-        input.setAttribute("step", "0.1");
-        input.setAttribute("min", "-3.14159");
-        input.setAttribute("max", "3.14159");
+        //input.setAttribute("step", "0.1");
+        //input.setAttribute("min", "-3.14159");
+        //input.setAttribute("max", "3.14159");
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
@@ -59,9 +59,9 @@ class VerticalArmPIDF extends VerticalArmSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.1");
+        //input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kP = parseFloat(event.target.value);
@@ -77,9 +77,9 @@ class VerticalArmPIDF extends VerticalArmSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.1");
+        //input.setAttribute("step", "0.1");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kI = parseFloat(event.target.value);
@@ -95,9 +95,9 @@ class VerticalArmPIDF extends VerticalArmSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.01");
+        //input.setAttribute("step", "0.01");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kD = parseFloat(event.target.value);
@@ -113,9 +113,9 @@ class VerticalArmPIDF extends VerticalArmSim {
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "number");
+        input.setAttribute("type", "text");
         input.setAttribute("value", "0.0");
-        input.setAttribute("step", "0.0000001");
+        //input.setAttribute("step", "0.0000001");
         input.onchange = function (event) {
             this.animationReset = true;
             this.kG = parseFloat(event.target.value);
