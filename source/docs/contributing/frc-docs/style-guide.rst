@@ -149,11 +149,17 @@ Links
 Internal Links
 ^^^^^^^^^^^^^^
 
-Internal links will be auto-generated based on the page filename and section title.
+Internal Links will be auto-generated based on the ReStructuredText filename and section title.
 
-For example, given the following file ``contributing.rst`` and a section called ``Internal Links``, you would reference this by doing ``:ref:`contributing:Internal Links```
+For example, here are several ways to link to sections and documents.
 
-.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
+Use this format to reference a document section. You must use the absolute path of the document. ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics``` renders to :ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics`.
+
+Use this format to reference a section of the same document. Note the single underscore. ```Images`_`` renders to `Images`_.
+
+Use this format to reference the top-level of a document. You can use relative paths ``:doc:`build-instructions``` renders to :doc:`build-instructions` Or to use absolute paths, put a forward slash at the beginning of the path ``:doc:`/docs/software/hardware-apis/sensors/ultrasonics-software``` renders to :doc:`/docs/software/hardware-apis/sensors/ultrasonics-software`. Note that the text rendered is the main section title of the target page regardless of the target filename.
+
+When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrounding the actual link with angle brackets ``<>`` and adding the custom text between the first backtick ````` and the first angle bracket ``<``. For example ``:ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>``` renders to :ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>`.
 
 External Links
 ^^^^^^^^^^^^^^
