@@ -143,19 +143,22 @@ NOT
    .. warning::
       This is a warning!
 
-Page References
----------------
-
-Pages references will be auto-generated based on the page filename and section title.
-
-For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
-
-.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
-
 Links
 -----
 
-It is preferred to format links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
+Internal Links
+^^^^^^^^^^^^^^
+
+Internal links will be auto-generated based on the page filename and section title.
+
+For example, given the following file ``contributing.rst`` and a section called ``Internal Links``, you would reference this by doing ``:ref:`contributing:Internal Links```
+
+.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
+
+External Links
+^^^^^^^^^^^^^^
+
+It is preferred to format external links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
 
 .. code-block:: ReST
 
