@@ -135,7 +135,7 @@ PathWeaver
 .. image:: images/control-system-software/pathweaver.png
    :alt: PathWeaver UI with a project for FRC Deep Space plotting a trajectory to the back of the rocket.
 
-PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate thir robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 System Identification
 ----------------------
