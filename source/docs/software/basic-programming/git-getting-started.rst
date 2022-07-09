@@ -166,10 +166,10 @@ Run: ``git pull``
 Git Add
 ^^^^^^^
 
-This command "stages" the specified file(s) so that they will be included in the next commit. 
+This command "stages" the specified file(s) so that they will be included in the next commit.
 
 For a single file, run ``git add FILENAME.txt`` where FILENAME.txt is the name and extension of the file to add.
-To add every file/folder that isn't excluded via *gitignore*, 
+To add every file/folder that isn't excluded via *gitignore*,
 run ``git add .``.  When run in the root of the repository this command will stage every untracked, unexcluded file.
 
 Git Commit
