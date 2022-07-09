@@ -19,7 +19,7 @@ Suffix filenames with the ``.rst`` extension.
 Text
 ----
 
-All text content should be on the same line, if you need readability, use the word-wrap function of your editor.
+All text content should be on the same line. If you need readability, use the word-wrap function of your editor.
 
 Use the following case for these terms:
 
@@ -55,7 +55,7 @@ Indentation of content directives as new line ``.. toctree::``  should be `3` sp
 Blank Lines
 ^^^^^^^^^^^
 
-There should be ``1`` blank lines separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
+There should be ``1`` blank line separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
 
 Interior Whitespace
 ^^^^^^^^^^^^^^^^^^^
@@ -123,12 +123,12 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
          :linenos:
          :lineno-start: 18
 
-Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub, there is a handy ``Raw`` button in the top right corner of the page.
+Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
 Admonitions
 -----------
 
-Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
+Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule, however, when having multiple sections of content inside of an admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
 Use
 
@@ -193,7 +193,7 @@ All images (including vectors) should be less than ``500`` kilobytes in size. Pl
 Image Files
 ^^^^^^^^^^^
 
-Image files should be stored in the document directory, sub-directory of ``document-name/images``
+Image files should be stored in the document directory, sub-directory of ``document-name/images``.
 
 They should follow the naming scheme of ``short-description.png``, where the name of the image is a short description of what the image shows. This should be less than ``24`` characters.
 

@@ -47,13 +47,13 @@ CTRE Sensors
 
 - **CANcoder**
 
-    - API Documentation(`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__)
+    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/CANCoder%20User's%20Guide.pdf>`__
     - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch12a_BringUpCANCoder.html>`__
 
 - **Pigeon IMU**
 
-    - API Documentation(`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__)
+    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__
     - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch11_BringUpPigeon.html>`__
 
@@ -94,5 +94,5 @@ PWF Sensors
 
 - **Time of Flight Sensor**
 
-    - API Documentation(`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
+    - API Documentation (`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
     - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7091>`__
