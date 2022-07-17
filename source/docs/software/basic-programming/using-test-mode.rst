@@ -14,7 +14,7 @@ Test mode on the robot can be enabled from the Driver Station just like autonomo
 LiveWindow in Test Mode
 -----------------------
 
-With LiveWindow, all actuator's outputs can be controlled on the Dashboard and all sensor values can be seen. PID Controllers can also be tuned. The sensors and actuators are added automatically, no code is necessary. See :doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index` for more details.
+With LiveWindow, all actuator outputs can be controlled on the Dashboard and all sensor values can be seen. PID Controllers can also be tuned. The sensors and actuators are added automatically, no code is necessary. See :doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index` for more details.
 
 Adding Test mode code to your robot code
 ----------------------------------------

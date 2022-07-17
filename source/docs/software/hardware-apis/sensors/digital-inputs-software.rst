@@ -106,7 +106,7 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 Using DigitalInputs in code
 ---------------------------
 
-As almost all switches on the robot will be used through a :code:`DigitalInput`, this class is extremely important for effective robot control.
+As almost all switches on the robot will be used through a :code:`DigitalInput`. This class is extremely important for effective robot control.
 
 Limiting the motion of a mechanism
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -151,4 +151,4 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
 Homing a mechanism
 ^^^^^^^^^^^^^^^^^^
 
-Limit switches are very important for being able to "home" a mechanism with a encoder.  For an example of this, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism`.
+Limit switches are very important for being able to "home" a mechanism with an encoder.  For an example of this, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism`.
