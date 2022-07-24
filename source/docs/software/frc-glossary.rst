@@ -21,7 +21,7 @@ FRC Glossary
       One of the three officially supported programming languages.
 
    deprecated
-      Software that will be maintained for at least 1 year, but may be removed after that.
+      Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code.
 
    DHCP
       Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addresses to all other devices.
