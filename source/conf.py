@@ -138,6 +138,7 @@ linkcheck_ignore = [
     r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
     r".*wpilibpi.local.*",
     r".*java.com/en/download/help/locale.xml.*",
+    r".*playingwithfusion.com/contactus.php.*",
 ]
 
 # Sets linkcheck timeout in seconds
