@@ -60,7 +60,7 @@ FRC Glossary
       A way to communicate key / value pairs of data between programs.
 
    RP
-      Ranking Point, a way of ordering teams rewarding specific objectives in addition to winning the match.
+      Ranking Point, a way of ordering teams rewarding specific objectives in addition to winning the match. Ranking points are only credited during qualification matches, as they directly affect seeding.
 
    simulation
       A way for teams to test their code without having an actual robot available.
