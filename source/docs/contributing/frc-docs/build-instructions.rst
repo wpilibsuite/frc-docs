@@ -15,7 +15,7 @@ Windows
 
 - `Python 3.9 <https://www.python.org/downloads/>`__ (Python >= 3.10 is incompatible)
 - `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
-- `Perl <http://strawberryperl.com/>`__
+- `Perl <https://strawberryperl.com/>`__
 - `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.

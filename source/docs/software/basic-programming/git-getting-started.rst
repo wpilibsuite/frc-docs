@@ -152,7 +152,7 @@ In the previous example, we created a file called README.md. Open that file in y
      1 file changed, 2 insertions(+), 0 deletions(-)
     > git push
 
-.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://chris.beams.io/posts/git-commit/>`_.
+.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://cbea.ms/git-commit/>`_.
 
 Git Pull
 ^^^^^^^^

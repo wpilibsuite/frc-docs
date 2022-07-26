@@ -50,8 +50,8 @@ Unofficial Support
 
 There are useful forms of support provided by the community through various forums and services. The below links and websites are not endorsed by FIRST\ |reg| and may be used at your own risk.
 
-- `Chief Delphi <https://chiefdelphi.com>`__
-- `FRC Discord <https://discord.gg/frc>`__
+- `Chief Delphi <https://www.chiefdelphi.com/>`__
+- `FRC Discord <https://discord.com/invite/frc>`__
 
 Bug Reporting
 -------------
