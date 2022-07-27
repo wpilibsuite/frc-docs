@@ -30,7 +30,7 @@ GradleRIO tasks
 
 ``./gradlew $TOOL$Install`` - Installs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, Shuffleboard, etc)
 
-``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as VSCode. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
+``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as VS Code. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
 
 ``./gradlew riolog`` - Runs a console displaying output from the default roboRIO (roborio)
 
