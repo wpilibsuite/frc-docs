@@ -7,8 +7,6 @@ So far, we've used feedback control for reference tracking (making a system's ou
 
 A feedforward controller injects information about the system’s dynamics (like a mathematical model does) or the intended movement. Feedforward handles parts of the control actions we already know must be applied to make a system track a reference, then feedback compensates for what we do not or cannot know about the system’s behavior at runtime.
 
-There are two types of feedforwards: model-based feedforward and feedforward for unmodeled dynamics. The first solves a mathematical model of the system for the inputs required to meet desired velocities and accelerations. The second compensates for unmodeled forces or behaviors directly so the feedback controller doesn't have to. Both types can facilitate simpler feedback controllers. We'll cover several examples below.
-
 The WPILib Feedforward Classes
 ------------------------------
 

@@ -23,6 +23,16 @@ For those already familiar with PID control, this book's interpretation won't be
 
 The proportional term drives the position error to zero, the derivative term drives the velocity error to zero, and the integral term accumulates the area between the :term:`setpoint` and :term:`output` plots over time (the integral of position :term:`error`) and adds the current total to the :term:`control input`. We'll go into more detail on each of these.
 
+.. note::
+   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
+
+   For example, for the proportional gain:
+
+      * :math:`K_p` is the standard math-equation-focused way to notate the constant.
+      * ``kP`` is a common way to see it written as a variable in software.
+
+   Despite the differences in capitalization, the two formats refer to the same concept.
+
 Proportional Term
 -----------------
 
