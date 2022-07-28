@@ -24,6 +24,13 @@ The idea behind feedforward control is to provide the mechanism with the control
 
 This is the type of control you are implicitly using whenever you use a joystick to "directly" control the speed of a motor through the applied voltage.  It is the simplest and most straightforward type of control, and is probably the one you encountered first when programming a FRC motor, though it may not have been referred to by name.
 
+When Do We Need Feedforward Control?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In general, feedforward control is *required* whenever the system requires some constant control signal to remain at the desired setpoint (such as position control of a vertical arm where gravity will cause the arm to fall, or velocity control where the back-EMF and friction will cause the motor to slow down over time).  Feedback controllers naturally fall to zero output when they achieve their setpoint, and so a feedforward controller is needed to provide the signal to *keep* the mechanism where we want it.
+
+Some control strategies instead account for this in the feedback controller with integral gain - however, this is slow and prone to oscillation.  It is almost always better to use a feedforward controller to account for the output needed to maintain the setpoint.
+
 Feedforward and Position Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
