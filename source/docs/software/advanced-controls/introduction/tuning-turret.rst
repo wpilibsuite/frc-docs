@@ -9,7 +9,7 @@ Turret Model Description
 Our "turret" consists of:
 
   * A rotating inertial mass (the turret)
-  * A motor (and possibly a gearbox) driving the mass
+  * A motor and gearbox driving the mass
 
 For the purposes of this tutorial, this system ("plant") is modeled with the same equation used by WPILib's :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward`, with additional adjustment for sensor delay and gearbox inefficiency - this is generally a very good approximation.  The simulation assumes the plant is controlled by feedforward and feedback controllers, composed in this fashion:
 

@@ -1,5 +1,5 @@
-Controlling your Robot Mechanisms
-=================================
+Picking a Control Strategy
+==========================
 
 .. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
 
@@ -9,7 +9,7 @@ Teams should prioritize picking the easiest strategy which enables success on th
 
 There are two fundamental types of mechanism controller that we will cover here:
 
-.. note:: These are not strict definitions - some control strategies are not easily classifiable and incorporate elements of both feedforward and feedback controllers.  However, it is still a useful distinction in most cases.
+.. note:: These are not strict definitions - some control strategies are not easily classifiable and incorporate elements of both feedforward and feedback controllers.  However, it is still a useful distinction in most FRC applications.
 
 **Feedforward control** (or "open-loop control") refers to the class of algorithms which incorporate knowledge of how the mechanism under control is *expected* to operate. Using this "model" of operation, the control input is chosen to make the mechanism get close to where it should be.
 
@@ -20,14 +20,16 @@ These are not mutually exclusive, and in fact it is usually best to use both.  T
 Feedforward Control: Making a Best Guess
 ----------------------------------------
 
-The idea behind feedforward control is to provide the mechanism with the control signal you think it needs to make the mechanism do what you want.  A feedforward controller feeds information we already know about the system *forward* into an estimate of the required control signal.  The feedforward controller does *not* adjust this in response to the measured behavior of the system to try to correct for errors from the guess - hence the term, "open-loop" (since there's no measurement, the block diagram of such a system is just a line, not a loop).
+"Feedforward control" means providing the mechanism with the control signal you think it needs to make the mechanism do what you want, without any knowledge of where the mechanism currently is.  A feedforward controller feeds information we already know about the system *forward* into an estimate of the required :term:`control effort`.  The feedforward controller does *not* adjust this in response to the measured behavior of the system to try to correct for errors from the guess.
+
+Feedforward control is also sometimes referred to as "open-loop control", because if you draw out a block diagram of the controlled system it consists of only a line from the controller to the plant, with no connection from the measured plant output back into the controller (hence an "open" loop, which really isn't a loop at all).
 
 This is the type of control you are implicitly using whenever you use a joystick to "directly" control the speed of a motor through the applied voltage.  It is the simplest and most straightforward type of control, and is probably the one you encountered first when programming a FRC motor, though it may not have been referred to by name.
 
 When Do We Need Feedforward Control?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In general, feedforward control is *required* whenever the system requires some constant control signal to remain at the desired setpoint (such as position control of a vertical arm where gravity will cause the arm to fall, or velocity control where the back-EMF and friction will cause the motor to slow down over time).  Feedback controllers naturally fall to zero output when they achieve their setpoint, and so a feedforward controller is needed to provide the signal to *keep* the mechanism where we want it.
+In general, feedforward control is *required* whenever the system requires some constant control signal to remain at the desired setpoint (such as position control of a vertical arm where gravity will cause the arm to fall, or velocity control where internal motor dynamics and friction will cause the motor to slow down over time).  Feedback controllers naturally fall to zero output when they achieve their setpoint, and so a feedforward controller is needed to provide the signal to *keep* the mechanism where we want it.
 
 Some control strategies instead account for this in the feedback controller with integral gain - however, this is slow and prone to oscillation.  It is almost always better to use a feedforward controller to account for the output needed to maintain the setpoint.
 
@@ -36,7 +38,7 @@ Feedforward and Position Control
 
 The WPILib feedforward classes require velocity and acceleration setpoints to generate an estimated control voltage.  This is because the equations-of-motion of a permanent-magnet DC motor relate the applied voltage to velocity and acceleration; it is a fact of physics that we cannot change.
 
-But what if we want to control position?  There's no immediate relation between position and control signal.  In order to use feedforward effectively for position control, we need to come up with a sequence of velocities that will take the robot mechanism to the desired position.  This is called a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>`.
+But what if we want to control position?  When controlling a DC motor, there's no immediate relation between position and control signal.  In order to use feedforward effectively for position control, we need to come up with a sequence of velocities that will take the robot mechanism to the desired position.  This is called a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>`.
 
 Many teams do not wish to incur the extra technical cost of using a motion profile when doing position control, and instead omit the feedforward controller entirely and opt to use only feedback control.  As we will discuss later, this may work in *some* situations, but has some important caveats.
 
@@ -45,7 +47,7 @@ Most FRC mechanisms are well-described by WPILib's feedforward classes, though p
 Feedback Control: Correcting for Errors and Disturbances
 --------------------------------------------------------
 
-Even with unlimited study, `it is impossible to know every force that will be exerted on a robot's mechanism in perfect detail <https://kwarc.info/teaching/TDM/Borges.pdf>`__. For example, in a flywheel shooter, the timing and exact forces associated with a ball being put through the mechanism are extremely difficult to measure accurately. For another example, consider the fact that gearboxes gradually throw off grease as they operate, increasing their internal friction over time. This is a *very* complex process to model well.
+Even with unlimited study, `it is impossible to know every force that will be exerted on a robot's mechanism in perfect detail <http://www.mi.sanu.ac.rs/~kosta/O%20strogosti%20u%20nauci.pdf>`__. For example, in a flywheel shooter, the timing and exact forces associated with a ball being put through the mechanism are extremely difficult to measure accurately. For another example, consider the fact that gearboxes gradually throw off grease as they operate, increasing their internal friction over time. This is a *very* complex process to model well.
 
 In practice, this means that the "guess" made by our feedforward controller will never be perfect.  There will always be some error - that is, some lingering difference between the state we want our mechanism to be in, and the state the feedforward controller leaves it in.  In many situations, this error is large enough that we need to adjust our output to correct it; this is the job of the feedback controller.  Feedback controllers are also called "closed-loop" controllers, because the flow of information about the current state *back* through the system "closes" the loop in the system's block diagram.
 
@@ -85,7 +87,7 @@ The act of creating a consistent mathematical description of your system is call
 
 Note that models do not have to be perfectly accurate to be useful. As we will see in later tuning exercises, even using a simple model of a mechanism can make the tuning effort much simpler.
 
-Obtaining models for your mechanisms
+Obtaining Models for Your Mechanisms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If modeling your mechanism seems daunting, don't worry!  Most mechanisms in FRC are modeled by well-studied equations and code for interacting with those models is included in WPILib.  Usually, all that is needed is to determine a set of physical parameters (sometimes called "tuning constants" or "gains") that depend on the specific details of your mechanism/robot.  These can be estimated theoretically from other known parameters of your system (such as mass, length, and choice of motor/gearbox), or measured from your mechanism's actual behavior through a system identification routine.

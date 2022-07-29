@@ -9,7 +9,7 @@ Arm Mechanism Description
 Our "vertical arm" consists of:
 
   * A mass on a stick, under the force of gravity, pivoting around an axle.
-  * A motor (and possibly a gearbox) driving the axle to which the mass-on-a-stick is affixed
+  * A motor and gearbox driving the axle to which the mass-on-a-stick is affixed
 
 For the purposes of this tutorial, this system ("plant") is modeled with the same equation used by WPILib's :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward`, with additional adjustment for sensor delay and gearbox inefficiency - this is generally a very good approximation.  The simulation assumes the plant is controlled by feedforward and feedback controllers, composed in this fashion:
 
@@ -69,9 +69,10 @@ Interact with the simulation below to examine how the turret system responds whe
 
 To tune the feedforward controller,, perform the following:
 
-1. Increase :math:`K_g` until the arm can hold its position with as little movement as possible. If the arm moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
-2. Increase the velocity feedforward gain :math:`K_v` until the arm tracks the setpoint during smooth, slow motion.  If the arm overshoots, reduce the gain.  Note that the arm may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
-3. Increase the acceleration feedforward gain :math:`K_a` until the arm no longer lags behind the setpoint during smooth, slow motion.
+1. Set :math:`K_g`, :math:`K_v`, and :math:`K_a` to zero.
+2. Increase :math:`K_g` until the arm can hold its position with as little movement as possible. If the arm moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
+3. Increase the velocity feedforward gain :math:`K_v` until the arm tracks the setpoint during smooth, slow motion.  If the arm overshoots, reduce the gain.  Note that the arm may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
+4. Increase the acceleration feedforward gain :math:`K_a` until the arm no longer lags behind the setpoint during smooth, slow motion.
 
 
 .. raw:: html
