@@ -39,6 +39,8 @@ Because we must apply a constant control voltage to the motor to maintain a velo
 
 Velocity control also differs from position control in the effect of inertia - in a position controller, inertia tends to cause the mechanism to swing past the setpoint even if the control voltage drops to zero near the setpoint.  This makes aggressive control strategies infeasible, as they end up wasting lots of energy fighting self-induced oscillations.  In a velocity controller, however, the effect is different - the rotor shaft stops accelerating as soon as you stop applying a control voltage (in fact, it will slow down due to friction and back-EMF), so such overshoots are rare (in fact, overshoot typically occurs in velocity controllers only as a result of loop delay).  This enables the use of an extremely simple, extremely aggressive control strategy called :ref:`bang-bang control <docs/software/advanced-controls/introduction/tuning-flywheel:Bang-Bang Control>`.
 
+The tutorials below will demonstrate the behavior of the system under bang-bang, pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
+
 Bang-Bang Control
 ~~~~~~~~~~~~~~~~~
 
@@ -86,6 +88,8 @@ Pure Feedforward Control
 Interact with the simulation below to see how the flywheel system responds when controlled only by a feedforward controller.
 
 .. note:: The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior.
+
+.. note:: There is no need for a :math:`K_a` term in the feedforward for velocity control unless the setpoint is changing - for a flywheel, this is not a concern, and so the gain is omitted here.
 
 <TODO: edit simulation to only include feedforward>
 
@@ -165,16 +169,16 @@ Perform the following:
 
 In this particular example, for a setpoint of 300, values of :math:`K_p = 0.1`, :math:`K_i = 0.0`, and :math:`K_d = 0.0` will produce somewhat reasonable results.  Since this control strategy is not very good, it will not work well for all setpoints.  You can attempt to improve this behavior by incorporating some :math:`K_i`, but it is very difficult to achieve good behavior across a wide range of setpoints.
 
-Because a non-zero amount of :term:`control effort` is required to keep the flywheel spinning, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.
+Because a non-zero amount of :term:`control effort` is required to keep the flywheel spinning, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.  In order to optimally control a flywheel, a combined feedforward-feedback strategy is needed.
 
 Combined Feedforward and Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Bang-bang control can be combined with feedforward control much in the way PID control can - for the sake of brevity we do not include a combined feedforward-bang-bang simulation.
 
-Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, as seen above, it does not work well for a flyhweel. To control this system, we need to combine the PID controller with a feedforward controller.
+Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, as seen above, it does not work well for a flyhweel, where the back-EMF and friction both act to slow the motor even when it is sustaining motion at the setpoint. To control this system, we need to combine the PID controller with a feedforward controller.
 
-Tuning the combined flywheel controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.
+Tuning the combined flywheel controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.  Notice that PID portion of the controller is *much* easier to tune "on top of" an accurate feedforward.
 
 .. raw:: html
 

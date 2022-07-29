@@ -18,9 +18,9 @@ For the purposes of this tutorial, this system ("plant") is modeled with the sam
 
 Where:
 
-* The plant's :term:`output` :math:`y(t)` is the flywheel rotational velocity
-* The controller's :term:`setpoint` :math:`r(t)` is the desired velocity of the flywheel
-* The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the flywheel's motion
+* The plant's :term:`output` :math:`y(t)` is the turret's position
+* The controller's :term:`setpoint` :math:`r(t)` is the desired position of the turret
+* The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the turret
 
 Picking the Control Strategy for a Turret Position Controller
 -------------------------------------------------------------
@@ -38,11 +38,11 @@ The tutorials below will demonstrate the behavior of the system under pure feedf
 Pure Feedforward Control
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the turret system responds when controlled pnly by a feedforward controller.
+Interact with the simulation below to examine how the turret system responds when controlled only by a feedforward controller.
 
 .. note:: Feedforward-only control is not a viable control scheme for turrets!  Do not be surprised if/when the simulation below does not behave well, even when the "correct" constants are used.
 
-.. note:: To change the turret setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the turret's directional indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
+.. note:: To change the turret setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the setpoint indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
 
 <TODO: insert simulation here>
 
@@ -80,7 +80,7 @@ As seen in :ref:`the introduction to PID <docs/software/advanced-controls/contro
 Perform the following:
 
 1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_v` to zero.
-2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates around the setpoint, reduce `K_p` until it stops.
+2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates too much around the setpoint, reduce `K_p` until it stops.
 3. Increase :math:`K_d` to reduce the amount of "lag" when the controller tries to track a smoothly moving setpoint (reminder: click and drag the turret's directional indicator to move it smoothly).  If the controller starts to oscillate, reduce `K_d` until it stops.
 
 .. raw:: html
@@ -95,15 +95,15 @@ Note that even with system noise enabled, the feedback controller is able to dri
 Combined Feedforward and Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the system responds to simultaneous feedforward and feedback control.
+Interact with the simulation below to examine how the turret system responds under simultaneous feedforward and feedback control.
 
 <TODO: insert simulation here>
 
 Controlling a mechanism with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. On a turret, this can work acceptably - however, it may still run into problems when trying to follow a moving setpoint, as it relies entirely on the controller transients to control the mechanism's intermediate motion between position setpoints.
 
-We saw in the feedforward-only example above that an accurate feedforward can track velocity setpoints quite well.  Combining a feedforward controller with the feedback controller gives the smooth velocity-following of a feedforward controller with the stable long-term error elimination of a feedback controller.
+We saw in the feedforward-only example above that an accurate feedforward can track slow, smooth velocity setpoints quite well.  Combining a feedforward controller with the feedback controller gives the smooth velocity-following of a feedforward controller with the stable long-term error elimination of a feedback controller.
 
-Tuning the combined controller is simple - first tune the feedforward, then tune the feedback, following precisely the same steps outlined in their respective sections.
+Tuning the combined turret controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.  Notice that PID portion of the controller is *much* easier to tune "on top of" an accurate feedforward.
 
 .. raw:: html
 
