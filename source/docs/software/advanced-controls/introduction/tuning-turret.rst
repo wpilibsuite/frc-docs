@@ -1,7 +1,7 @@
 Tuning a Turret Position Controller
 ===================================
 
-In this section, we will explain how to tune a simple position controller for a turret.  The same tuning principles explained below will work also for almost all position-control scenarios under no external loading (such as the force of gravity on an arm).
+In this section, we will tune a simple position controller for a turret.  The same tuning principles explained below will work also for almost all position-control scenarios under no external loading (such as the force of gravity on an arm).
 
 Turret Model Description
 ------------------------
@@ -25,7 +25,7 @@ Where:
 Picking the Control Strategy for a Turret Position Controller
 -------------------------------------------------------------
 
-In general: the more voltage that is applied to the motor, the faster the motor (and turret) will spin. Once voltage is removed, friction slowly decreases the spinning until the turret stops.  We want to make the turret rotate to a given position.
+In general: the more voltage that is applied to the motor, the faster the motor (and turret) will spin. Once voltage is removed, friction and back-EMF slowly decrease the spinning until the turret stops.  We want to make the turret rotate to a given position.
 
 Like in the case of the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flyhweel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
 
@@ -38,17 +38,17 @@ The tutorials below will demonstrate the behavior of the system under pure feedf
 Pure Feedforward Control
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the turret system responds when controlled by a pure feedforward controller.
+Interact with the simulation below to examine how the turret system responds when controlled pnly by a feedforward controller.
 
 .. note:: Feedforward-only control is not a viable control scheme for turrets!  Do not be surprised if/when the simulation below does not behave well, even when the "correct" constants are used.
-
-.. note:: The WPILib SimpleMotorFeedforward 
 
 .. note:: To change the turret setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the turret's directional indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
 
 <TODO: insert simulation here>
 
 To tune the feedforward controller, perform the following:
+
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two (this is called an "exponential search", and is very good for finding positive constants when we don't have a good idea of how large they should be). Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior seems to stop improving.
 
 1. Increase the velocity feedforward gain :math:`K_v` until the turret tracks the setpoint during smooth, slow motion.  If the turret overshoots, reduce the gain.  Note that the turret may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
 2. Increase the acceleration feedforward gain :math:`K_a` until the turret no longer lags behind the setpoint during smooth, slow motion.
@@ -64,14 +64,14 @@ As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`doc
 
 However, our feedforward equation relates *velocity* and *acceleration* to voltage - it allows us to control the *instantaneous motion* of our mechanism with high accuracy, but it does not allow us direct control over the *position*.  This is a problem even in our simulation (in which the feedforward equation is the *actual* equation of motion), because unless we employ a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` to generate a sequence of velocity setpoints we can ask the turret to jump immediately from one position to another.  This is impossible, even for our simulated turret.
 
-The resulting behavior from the feedforward controller is to output a single "voltage spike" when the position setpoint changes (corresponding to a single loop iteration of very high velocity), and then zero voltage (because it is assumed that the system has already reached the setpoint).  In practice, we can see in the simulation that this results in an initial "impulse" movement towards the target position, that stops at some indeterminite position in-between.  This kind of response is called a "kick," and is generally seen as undesirable.
+The resulting behavior from the feedforward controller is to output a single "voltage spike" when the position setpoint changes (corresponding to a single loop iteration of very high velocity), and then zero voltage (because it is assumed that the system has already reached the setpoint).  In practice, we can see in the simulation that this results in an initial "impulse" movement towards the target position, that stops at some indeterminate position in-between.  This kind of response is called a "kick," and is generally seen as undesirable.
 
 You may notice that *smooth* motion below the turret's maximum achievable speed can be followed accurately in the simulation with feedforward alone.  This is misleading, however, because no real mechanism perfectly obeys its feedforward equation.  With the "system noise" option enabled, we can see that even smooth, slow motion eventually results in compounding position errors when only only feedforward control is used.  To accurately converge to the setpoint, we need to use a feedback (PID) controller.
 
 Pure Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the turret system responds when controlled by a pure feedback (PID) controller.
+Interact with the simulation below to examine how the turret system responds when controlled only by a feedback (PID) controller.
 
 <TODO: insert simulation here>
 
@@ -83,14 +83,12 @@ Perform the following:
 2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates around the setpoint, reduce `K_p` until it stops.
 3. Increase :math:`K_d` to reduce the amount of "lag" when the controller tries to track a smoothly moving setpoint (reminder: click and drag the turret's directional indicator to move it smoothly).  If the controller starts to oscillate, reduce `K_d` until it stops.
 
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two (this is called an "exponential search", and is very good for finding positive constants when we don't have a good idea of how large they should be). Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior seems to stop improving.
-
 .. raw:: html
 
    <details>
      <summary>Tuning Solution</summary><br>
 
-An optimal set of gains for the simulated mechanism above is <TODO: insert gains here>.  This is not the only set of gains that will produce good results ("optimal" is a fuzzy term), but the controller should behave fairly well given these gains.
+A good set of gains for the simulated mechanism above is <TODO: insert gains here>.  This is not the only set of gains that will produce good results, but the controller should behave fairly well given these gains.
 
 Note that even with system noise enabled, the feedback controller is able to drive the turret to the setpoint in a stable manner over time.  However, it may not be possible to smoothly track a moving setpoint without lag using feedback alone, as the feedback controller can only respond to errors once they have built up.  To get the best of both worlds, we need to combine our feedback controller with a feedforward controller.
 
@@ -105,7 +103,7 @@ Controlling a mechanism with only feedback can produce reasonable results in cas
 
 We saw in the feedforward-only example above that an accurate feedforward can track velocity setpoints quite well.  Combining a feedforward controller with the feedback controller gives the smooth velocity-following of a feedforward controller with the stable long-term error elimination of a feedback controller.
 
-Manually tuning the combined controller is simple - first tune the feedforward, then tune the feedback, following precisely the same steps outlined in their respective sections.
+Tuning the combined controller is simple - first tune the feedforward, then tune the feedback, following precisely the same steps outlined in their respective sections.
 
 .. raw:: html
 

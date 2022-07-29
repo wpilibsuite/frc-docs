@@ -1,30 +1,19 @@
 Tuning a Flywheel Speed Controller
 ==================================
 
-In this section, we will calibrate controllers for a gamepiece-launching flywheel.
+In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive).
 
-Flywheel Mechanism Description
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flywheel Model Description
+--------------------------
 
-The "Flywheel" is nothing more than:
+.. note:: A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
 
-  * A thin, cylindrical mass
-  * A gearbox driving the mass
-  * A motor driving the gearbox
+Our "Flywheel" consists of:
 
-A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
+  * A rotating inertial mass which launches the game piece (the flywheel)
+  * A motor (and possibly a gearbox) driving the mass.
 
-In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction slowly decreases the spinning until the flywheel stops.
-
-Flywheels are commonly used to propel game pieces through the air, toward a target. In this simulation, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
-
-To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.
-
-This design drives the controls goal we will use in this example: Put the correct amount of voltage into the motor to get the flywheel to a certain speed, and then keep it there.
-
-Gearbox inefficiencies and sensor delay are included in this model.
-
-The plant and controller are connected together in this fashion:
+For the purposes of this tutorial, this system ("plant") is modeled with the same equation used by WPILib's :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward`, with additional adjustment for sensor delay and gearbox inefficiency - this is generally a very good approximation.  The simulation assumes the plant is controlled by feedforward and feedback controllers, composed in this fashion:
 
 .. image:: images/control-system-basics-ctrl-plus-plant.png
    :alt: Tuning Exercise Block Diagrams showing feedforward and feedback blocks, controlling a plant.
@@ -35,21 +24,25 @@ Where:
 * The controller's :term:`setpoint` :math:`r(t)` is the desired velocity of the flywheel
 * The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the flywheel's motion
 
+Picking the Control Strategy for a Flywheel Velocity Controller
+---------------------------------------------------------------
+
+In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction and back-EMF slowly decrease the velocity until the flywheel stops.
+
+Flywheels are commonly used to propel game pieces through the air, toward a target. In this simulation, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
+
+To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.  Thus, we want to accurately control the velocity of our flywheel.  This is fundamentally different from the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>` and :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>` controllers, which both control *position*.  This has several consequences:
+
+Because we are controlling velocity, we can achieve fairly good performance with a :ref:`pure feedforward controller <docs/software/advanced-controls/introduction/tuning-flywheel:Pure Feedforward Control>`.  This is because a permanent-magnet DC motor's steady-state velocity is roughly proportional to the voltage applied, and is the reason that you can drive your robot around with joysticks without appearing to use any control loop at all - in that case, you are implicitly using a proportional feedforward model.
+
+Because we must apply a constant control voltage to the motor to maintain a velocity at the setpoint, we cannot successfully use a :ref:`pure feedback (PID) controller <docs/software/advanced-controls/introduction/tuning-flywheel:Pure Feedback Control>` (whose output typically disappears when you reach the setpoint) - in order to effectively control velocity, a feedback controller must be :ref:`combined with a feedforward controller <docs/software/advanced-controls/introduction/tuning-flywheel:Combined Feedforward and Feedback Control>`.
+
+Velocity control also differs from position control in the effect of inertia - in a position controller, inertia tends to cause the mechanism to swing past the setpoint even if the control voltage drops to zero near the setpoint.  This makes aggressive control strategies infeasible, as they end up wasting lots of energy fighting self-induced oscillations.  In a velocity controller, however, the effect is different - the rotor shaft stops accelerating as soon as you stop applying a control voltage (in fact, it will slow down due to friction and back-EMF), so such overshoots are rare (in fact, overshoot typically occurs in velocity controllers only as a result of loop delay).  This enables the use of an extremely simple, extremely aggressive control strategy called :ref:`bang-bang control <docs/software/advanced-controls/introduction/tuning-flywheel:Bang-Bang Control>`.
+
 Bang-Bang Control
 ~~~~~~~~~~~~~~~~~
 
-The "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint.
-
-:ref:`WPILib provides an implementation <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>` for bang-bang control as well. This page includes a more in-depth description.
-
-Bang-Bang controllers do not have any parameters to tune.
-
-The only task users have to do implement and test the system to ensure it is functional.
-
-Working with a Bang-Bang Controller
------------------------------------
-
-Use this interactive simulation to explore bang-bang controller concepts:
+Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.  There are no tuneable controller parameters for a bang-bang controller - you can only adjust the setpoint.
 
 .. raw:: html
 
@@ -68,60 +61,33 @@ Use this interactive simulation to explore bang-bang controller concepts:
       </script>
     </div>
 
-A Bang-Bang controller is most well known for its simplicity - there is nothing to tune!
+The "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint.  A more detailed description (and documentation for the corresponding WPILib implementation) can be found :ref:`here. <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>`
+
+Bang-Bang controllers do not have any parameters to tune.  This simplicty is their strength, and also their weakness.
 
 Try adjusting the setpoint up and down. You should see that for almost all values, the output converges to be somewhat near the setpoint.
 
-Note it's not perfect: Sensor delay in the system prevents the control effort from turning on and off at exactly the right time. The roboRIO only updates its output periodically (usually, every 20ms). Motor controllers can't turn on and off their power output instantaneously.
-
-Collectively, these cause a cycle of "overshoot" and "undershoot", as the output repeatedly goes above and below the setpoint.
-
-Bang-Bang Controller Software Implementation
---------------------------------------------
-
-If you are interested in implementing a Bang-Bang controller on your robot, check out :ref:`the documentation on the WPILib classes which can help <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>`.
+Note that the system behavior is not perfect, because of delays in the control loop.  These can result from the nature of the sensors, measurement filters, loop iteration timers, or even delays in the control hardware itself.  Collectively, these cause a cycle of "overshoot" and "undershoot", as the output repeatedly goes above and below the setpoint.  This oscillation is unavoidable with a bang-bang controller.
 
 Common Issues with Bang-Bang Controllers
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The guarantee of oscillation in steady state described above is one common issue with bang-bang control.
+Typically, the steady-state oscillation of a bang-bang controller is small enough that it performs quite well in practice. However, rapid on/off cycling of the control effort can cause mechanical issues - the cycles of rapidly applying and removing forces can loosen bolts and joints, and put a lot of stress on gearboxes.
 
-Additionally, rapid on/off cycling of the control effort can issues. The cycles of rapidly applying and removing forces can loosen bolts and joints, and put a lot of stress on gearboxes.
-
-The abrupt changes in control effort can cause abrupt changes in current draw. This may stress motor control hardware, and cause eventual damage or failure.
+The abrupt changes in control effort can cause abrupt changes in current draw if the system's inductance is too low. This may stress motor control hardware, and cause eventual damage or failure.
 
 Finally, this technique only works for mechanisms that accelerate relatively slowly. A more in-depth discussion of the details :ref:`can be found here <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>`.
 
-PID Control
-~~~~~~~~~~~
+Bang-bang control sacrifices a lot for simplicity and high performance (in the sense of fast convergence to the setpoint).  To achieve "smoother" control, we need a more-refined control strategy, such as PID control.
 
-As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has three *tuned* constants. The numeric values for these constants must be picked carefully for the specific mechanism under control. These constants will generally have different values on different robots.
+Pure Feedforward Control
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are multiple methods for determining the values for these constants on your particular mechanism.
+Interact with the simulation below to see how the flywheel system responds when controlled only by a feedforward controller.
 
-`ReCalc is an online calculator <https://www.reca.lc/>`__ which can help model your system's behavior, and provide an estimate of controller constants.
+.. note:: The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior.
 
-The :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>` can be used to model your system and give accurate Proportional and Derivative values. This is preferred for supported mechanism types.
-
-.. note::
-   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
-
-   For example, for the proportional gain:
-
-      * :math:`K_p` is the standard math-equation-focused way to notate the constant.
-      * ``kP`` is a common way to see it written as a variable in software.
-
-   Despite the differences in capitalization, the two formats refer to the same concept.
-
-
-In this section, we'll go through some techniques to manually find reasonable values for the gains in a PID controller.
-
-This is useful if you are not using the :ref:`SysId toolsuite <docs/software/pathplanning/system-identification/index:System Identification>`. Additionally, even if you are using it, it is useful to see and understand the behavior of changing the values of the constants in different situations.
-
-Working with PID Controllers
-----------------------------
-
-Use this interactive simulation to explore tuning concepts:
+<TODO: edit simulation to only include feedforward>
 
 .. raw:: html
 
@@ -140,21 +106,56 @@ Use this interactive simulation to explore tuning concepts:
       </script>
     </div>
 
-Flywheel Tuning Step 1: Feedback-Only
--------------------------------------
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
 
-We will first attempt to tune the flywheel using only the feedback terms :math:`K_p`, :math:`K_i`, and :math:`K_d`.
+To tune the feedforward controller, increase the velocity feedforward gain :math:`K_v` until the flywheel approaches the correct setpoint over time.  If the flywheel overshoots, reduce :math:`K_v`.
+
+.. raw:: html
+
+   <details>
+     <summary>Tuning Solution</summary><br>
+
+The exact gain used by the simulation is :math:`K_v = 0.0075`.
+
+We can see that a pure feedforward control strategy works reasonably well for flywheel velocity control.  As we mentioned earlier, this is why it's possible to control most motors "directly" with joysticks, without any explicit "control loop" at all.  However, we can still do better - the pure feedforward strategy cannot reject disturbances, and so takes a while to recover after the ball is introduced.  Additionally, the motor may not perfectly obey the feedforward equation (even after accounting for vibration/noise).  To account for these, we need a feedback controller.
+
+Pure Feedback Control
+~~~~~~~~~~~~~~~~~~~~~
+
+Interact with the simulation below to see how the flywheel system responds when controlled by only a feedback (PID) controller.
+
+.. note:: PID-only control is not a very good control scheme for flywheel velocity!  Do not be surprised if/when the simulation below does not behave well, even when the "optimal" constants are used.
+
+<TODO: edit simulation to only include feedback>
+
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="flywheel_pid_container">
+         <div class="col" id="flywheel_pid_plotVals"></div>
+         <div class="col" id="flywheel_pid_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="flywheel_pid_viz"></div>
+         <div id="flywheel_pid_ctrls"></div>
+      </div>
+      <script>
+         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid.runSim();
+      </script>
+    </div>
+
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/controllers/feedforward:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 
 Perform the following:
 
 1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_v` to zero.
-2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
-3. Increase :math:`K_d` as much as possible without introducing jittering in the :term:`system response`.
-4. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before converging to the :term:`setpoint`.
+2. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`, then decrease it until the oscillations stop.
+3. *In some cases*, increase :math:`K_i` if :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 
-.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error`. As we will see soon, a better approach is to incorporate feedforward.
+.. note:: :math:`K_d` is not useful for velocity control with a constant setpoint - it is only necessary when the setpoint is changing.
 
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
+.. important:: Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error` - you can see how sloppy and "laggy" it is in the simulation above! As we will see soon, a better approach is to combine the PID controller with a feedforward controller.
 
 .. raw:: html
 
@@ -162,28 +163,18 @@ Perform the following:
      <summary>Tuning Solution</summary><br>
 
 
-In this particular example, for a setpoint of 300, values of :math:`K_p = 0.13`, :math:`K_i = 0.0`, and :math:`K_d = 0.002` will produce somewhat reasonable results. It will get better or worse as you change the setpoint.
-
-.. raw:: html
-
-   </details> <br>
+In this particular example, for a setpoint of 300, values of :math:`K_p = 0.1`, :math:`K_i = 0.0`, and :math:`K_d = 0.0` will produce somewhat reasonable results.  Since this control strategy is not very good, it will not work well for all setpoints.  You can attempt to improve this behavior by incorporating some :math:`K_i`, but it is very difficult to achieve good behavior across a wide range of setpoints.
 
 Because a non-zero amount of :term:`control effort` is required to keep the flywheel spinning, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.
 
-Flywheel Tuning Step 2: Feedforward, then Feedback
---------------------------------------------------
+Combined Feedforward and Feedback Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, it won't work well for flywheels, elevators, or vertical arms. Approaches incorporating feedforward are required for these situations.
+.. note:: Bang-bang control can be combined with feedforward control much in the way PID control can - for the sake of brevity we do not include a combined feedforward-bang-bang simulation.
 
-To illustrate, start by calibrating a simple feedforward for a flywheel.
+Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, as seen above, it does not work well for a flyhweel. To control this system, we need to combine the PID controller with a feedforward controller.
 
-Perform the following:
-
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_v` to zero.
-2. Increase :math:`K_v` until the :term:`output` gets fairly close to the :term:`setpoint` as time goes on. You don't have to be perfect, but try to get somewhat close.
-3. Increase :math:`K_p` until the :term:`output` starts to oscillate around the :term:`setpoint`.
-
-You may also desire to pull in a small amount of :math:`K_d` to prevent oscillation.
+Tuning the combined flywheel controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.
 
 .. raw:: html
 
@@ -191,51 +182,16 @@ You may also desire to pull in a small amount of :math:`K_d` to prevent oscillat
      <summary>Tuning Solution</summary><br>
 
 
-In this particular example, for a setpoint of 300, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results. Other setpoints should work nearly as well too.
+In this particular example, for a setpoint of 300, values of :math:`K_v = 0.0075` and :math:`K_p = 0.1`  will produce very good results across all setpoints.  Small changes to  :math:`K_p` will change the controller behavior to be more or less aggressive - the optimal choice depends on your problem constraints.
 
-.. raw:: html
+Note that the combined feedforward-feedback controller works well across all setpoints, and recovers very quickly after the external disturbance of the ball contacting the flywheel.
 
-   </details> <br>
+A Note on Feedforward and Static Friction
+-----------------------------------------
 
-In general, this technique should have a much larger range of :math:`K_p` and :math:`K_d` values which produce reasonable results. Additionally, you should not have to use a non-zero :math:`K_i` at all.
+For the sake of simplicity, the simulations above omit the :math:`K_s` term from the WPILib SimpleMotorFeedforward equation.  On actual mechanisms, however, this can be important - especially if there's a lot of friction in the mechanism gearing.  A flywheel with a lot of static friction will not have a linear control voltage-velocity relationship unless the feedforward controller includes a :math:`K_s` term to cancel it out..
 
-PID Control Software Implementation
------------------------------------
-
-If you are interested in implementing a PID controller on your robot, check out :ref:`the documentation on the WPILib classes which can help <docs/software/advanced-controls/controllers/pidcontroller:Using the PIDController Class>`.
-
-Common Issues
--------------
-
-There are a number of common issues which can arise while tuning PID controllers.
-
-Integral Term Windup
-^^^^^^^^^^^^^^^^^^^^
-
-Beware that if :math:`K_i` is too large, integral windup can occur. Following a large change in :term:`setpoint`, the integral term can accumulate an error larger than the maximal :term:`control input`. As a result, the system overshoots and continues to increase until this accumulated error is unwound.
-
-There are a few ways to mitigate this:
-
-1. Decrease the value of :math:`K_i`, down to zero if possible.
-2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers implement this with a ``setIZone()`` method.
-3. Cap the integrator at some maximum value. WPILib's ``PIDController`` implements this with the ``setIntegratorRange()`` method.
-
-.. important:: Most mechanisms in FRC do not require any integral control, and systems that seem to require integral control to respond well probably have an inaccurate feedforward model.
-
-Actuator Saturation
-^^^^^^^^^^^^^^^^^^^
-
-A controller calculates its output based on the error between the :term:`reference` and the current :term:`state`. :term:`Plant <plant>` in the real world don't have unlimited control authority available for the controller to apply. When the actuator limits are reached, the controller acts as if the gain has been temporarily reduced.
-
-Mathematically, suppose we have a controller :math:`u = k(r - x)` where :math:`u` is the :term:`control effort`, :math:`k` is the gain, :math:`r` is the :term:`reference`, and :math:`x` is the current state. Let :math:`u_{max}` be the limit of the actuator's output which is less than the uncapped value of :math:`u` and :math:`k_{max}` be the associated maximum gain. We will now compare the capped and uncapped controllers for the same :term:`reference` and current :term:`state`.
-
-.. math::
-   u_{max} &< u \\
-   k_{max}(r - x) &< k(r - x) \\
-   k_{max} &< k
-
-For the inequality to hold, :math:`k_{max}` must be less than the original value for :math:`k`. This reduced gain is evident in a :term:`system response` when there is a linear change in state instead of an exponential one as it approaches the :term:`reference`. This is due to the :term:`control effort` no longer following a decaying exponential plot. Once the :term:`system` is closer to the :term:`reference`, the controller will stop saturating and produce realistic controller values again.
-
+To measure :math:`K_s` manually, slowly increase the voltage to the mechanism until it starts to move.  The value of :math:`K_s` is the largest voltage applied before the mechanism begins to move.
 
 Footnotes
 ---------
