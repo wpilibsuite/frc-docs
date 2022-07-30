@@ -1,47 +1,8 @@
-import control as ct
+#!/usr/bin/env python3
+
+import frccontrol as fct
 import numpy as np
-import scipy as sp
-
-
-def lqr(*args, **kwargs):
-    """Solves for the optimal linear-quadratic regulator (LQR).
-    For a continuous system:
-    .. math:: xdot = A * x + B * u
-    .. math:: J = \\int_0^\\infty (x^T Q x + u^T R u + 2 x^T N u) dt
-    For a discrete system:
-    .. math:: x(n + 1) = A x(n) + B u(n)
-    .. math:: J = \\sum_0^\\infty (x^T Q x + u^T R u + 2 x^T N u) \\Delta T
-    Keyword arguments:
-    sys -- StateSpace object representing a linear system.
-    Q -- numpy.array(states x states), state cost matrix.
-    R -- numpy.array(inputs x inputs), control effort cost matrix.
-    N -- numpy.array(states x inputs), cross weight matrix.
-    Returns:
-    K -- numpy.array(states x inputs), controller gain matrix.
-    """
-    sys = args[0]
-    Q = args[1]
-    R = args[2]
-    if len(args) == 4:
-        N = args[3]
-    else:
-        N = np.zeros((sys.A.shape[0], sys.B.shape[1]))
-
-    m = sys.A.shape[0]
-
-    controllability_rank = np.linalg.matrix_rank(ct.ctrb(sys.A, sys.B))
-    if controllability_rank != m:
-        print(
-            "Warning: Controllability of %d != %d, uncontrollable state"
-            % (controllability_rank, m)
-        )
-
-    if sys.dt == None:
-        P = sp.linalg.solve_continuous_are(a=sys.A, b=sys.B, q=Q, r=R, s=N)
-        return np.linalg.solve(R, sys.B.T @ P + N.T)
-    else:
-        P = sp.linalg.solve_discrete_are(a=sys.A, b=sys.B, q=Q, r=R, s=N)
-        return np.linalg.solve(R + sys.B.T @ P @ sys.B, sys.B.T @ P @ sys.A + N.T)
+from scipy.signal import StateSpace
 
 
 kv = 1.0
@@ -52,16 +13,16 @@ B = np.array([[1 / ka]])
 C = np.array([[1]])
 D = np.array([[0]])
 
-sys = ct.ss(A, B, C, D)
+sys = StateSpace(A, B, C, D)
 
-sysd = sys.sample(0.01)
+sysd = sys.to_discrete(0.01)
 
 
 x1 = np.array([[0]])
 x2 = np.array([[0]])
 
-K1 = lqr(sysd, np.array([[1.0 / (1.0**2)]]), np.array([[1.0 / (12.0**2)]]))
-K2 = lqr(sysd, np.array([[1.0 / (0.1**2)]]), np.array([[1.0 / (12.0**2)]]))
+K1 = fct.lqr(sysd, np.array([[1.0 / (1.0**2)]]), np.array([[1.0 / (12.0**2)]]))
+K2 = fct.lqr(sysd, np.array([[1.0 / (0.1**2)]]), np.array([[1.0 / (12.0**2)]]))
 
 t1 = []
 x1data = []
