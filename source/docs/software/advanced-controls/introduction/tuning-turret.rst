@@ -27,7 +27,7 @@ Picking the Control Strategy for a Turret Position Controller
 
 In general: the more voltage that is applied to the motor, the faster the motor (and turret) will spin. Once voltage is removed, friction and back-EMF slowly decrease the spinning until the turret stops.  We want to make the turret rotate to a given position.
 
-Like in the case of the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flyhweel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
+Like in the case of the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
 
 In the case of the flywheel *velocity* controller we could achieve good control performance with feedforward alone.  However, it is very hard to predict how much voltage will cause a certain total change in *position* (time can turn even small errors in velocity into very big errors in position).  In this case, we cannot rely on feedforward control alone - as with the vertical arm, we will need a feedback controller.
 
@@ -60,7 +60,7 @@ To tune the feedforward controller, perform the following:
 
 The exact gains used by the simulation are <TODO: insert gains here>.
 
-As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flyhweel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
+As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
 However, our feedforward equation relates *velocity* and *acceleration* to voltage - it allows us to control the *instantaneous motion* of our mechanism with high accuracy, but it does not allow us direct control over the *position*.  This is a problem even in our simulation (in which the feedforward equation is the *actual* equation of motion), because unless we employ a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` to generate a sequence of velocity setpoints we can ask the turret to jump immediately from one position to another.  This is impossible, even for our simulated turret.
 
@@ -75,7 +75,7 @@ Interact with the simulation below to examine how the turret system responds whe
 
 <TODO: insert simulation here>
 
-As seen in :ref:`the introduction to PID <docs/software/advanced-controls/controllers/feedforward:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 
 Perform the following:
 

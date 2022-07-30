@@ -12,15 +12,18 @@ class FlywheelPlant{
         var GEARBOX_RATIO = 5.0/1.0; //output over input - 5:1 gear ratio
 
         // 775 Pro Motor
-        // Specs taken from reca.lc
         var Rc = 0.08; //Coil & Wiring Resistance in Ohms
         var Kt = 0.71/134; //Nm/A torque constant -  Calculated from Stall Torque/Stall Current
-        var Kv = 0.4 * radius; //V/(rad/s). Taken from recalc
+        var Kv = (12-(0.7*Rc))/(18730*2*3.14159/60); //V/(rad/s). Calculated from Vemf@FreeSpeed/(2pi/60*RPM@FreeSpeed). Steady-state Vemf = Vs - I@FreeSpeed*Rc, for Vs = 12
 
         // Constants from the blog post equations
         this.C1 = 2 *  Kt / (mass * radius * radius * GEARBOX_RATIO * Rc);
         this.C2 = 2 * Kv * Kt / (mass * radius * radius * Rc);
         this.C3 = 2 / (mass * radius * radius);
+
+        this.systemNoise = false;
+        // Simulate 4 volt std dev system noise at the loop update frequency
+        this.gaussianNoise = gaussian(0, 4);
     }
 
     init(Ts){
@@ -31,12 +34,17 @@ class FlywheelPlant{
         this.ballEnterTime = 5.0;
         this.ballExitTime = null; // gets filled out if the ball does indeed exit in this sim.
         this.ballEnterWheelAngle = null;
-        this.systemNoise = false;
     }
 
     update(t, inVolts){
         //Simulate friction
         var extTrq = 0.0005*this.speedPrev;
+
+        // Simulate system noise
+        if (this.systemNoise && inVolts > 0) {
+            // apply system noise
+            inVolts += this.gaussianNoise();
+        }
 
         if (t > this.ballEnterTime & this.ballExitTime == null){
             // ball is in contact with the flywheel
@@ -61,14 +69,7 @@ class FlywheelPlant{
             this.speed = 0;
         }
 
-        // Simulate system noise
-        if (this.systemNoise) {
-            // Assume a quarter-volt of system noise
-            this.speed += gaussian(0, radius / Kv * 0.25);
-        }
-
         this.curPosRev += this.speed / 2.0 / Math.PI * this.Ts;
-
 
         this.speedPrev = this.speed;
 

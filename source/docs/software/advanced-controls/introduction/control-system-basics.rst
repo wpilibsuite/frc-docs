@@ -77,12 +77,6 @@ For the purposes of the introductory section, all systems and controllers (excep
 
 Nonetheless, we restrict ourselves to SISO systems here to be able to present the following tutorials in terms of the PID Controller formalism, which is commonly featured in introductory course material and has extensive documentation and many available implementations.
 
-The :ref:`state-space <docs/software/state-space/state-space-intro:Introduction to State-Space Control>` formalism is an alternate way to conceptualize these systems which allows us to easily capture interactions between different quantities (as well as simultaneously represent multiple aspects of the same quantity, such as position and velocity of a motor).  It does this, roughly, by replacing the single-dimensional scalars (e.g. the :term:`gain`, :term:`input`, and :term:`output`) with multi-dimensional vectors.  In the state-space formalism, the equivalent of a "PID" controller is a vector-proportional controller on a single vector-valued mechanism state, with a single :term:`gain` vector (instead of three different :term:`gain` scalars).
+The :ref:`state-space <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` formalism is an alternate way to conceptualize these systems which allows us to easily capture interactions between different quantities (as well as simultaneously represent multiple aspects of the same quantity, such as position and velocity of a motor).  It does this, roughly, by replacing the single-dimensional scalars (e.g. the :term:`gain`, :term:`input`, and :term:`output`) with multi-dimensional vectors.  In the state-space formalism, the equivalent of a "PID" controller is a vector-proportional controller on a single vector-valued mechanism state, with a single :term:`gain` vector (instead of three different :term:`gain` scalars).
 
 If you remember that a state-space controller is really just a PID controller written with dense notation, many of the principles covered in this set of introductory articles will transfer seamlessly to the case of state-space control.
-
-
-Getting Started
----------------
-
-Continue on to :ref:`some background to approaches in designing a control system for a mechanism on your robot<docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Approaches to Designing Control Systems>`.

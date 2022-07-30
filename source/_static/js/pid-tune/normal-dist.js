@@ -19,9 +19,6 @@ function gaussian(mean, stdev) {
       use_last = true;
     }
 
-    var retval = mean + stdev * y1;
-    if (retval > 0)
-      return retval;
-    return -retval;
+    return mean + stdev * y1;
   }
 }

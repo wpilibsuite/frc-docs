@@ -10,12 +10,12 @@ This page explains the conceptual and mathematical workings of a PID controller.
 What is a PID Controller?
 -------------------------
 
-The PID controller is a common :ref:`feedback controller<docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Incorporating Feedback>` consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each term behaves.
+The PID controller is a common :ref:`feedback controller<docs/software/advanced-controls/introduction/picking-control-strategy:Feedback Control: Correcting for Errors and Disturbances>` consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each term behaves.
 
 First, we'll get some nomenclature for PID controllers out of the way. In a PID context, we use the term :term:`reference` or :term:`setpoint` to mean the desired state of the mechanism, and the term :term:`output` or :term:`process variable` to refer to the measured state of the mechanism. Below are some common variable naming conventions for relevant quantities.
 
 ============ =================================== ============ ========================================
-:math:`r(t)` :term:`setpoint`, :term:`reference` :math:`u(t)` :term:`control input`
+:math:`r(t)` :term:`setpoint`, :term:`reference` :math:`u(t)` :term:`control effort`
 :math:`e(t)` :term:`error`                       :math:`y(t)` :term:`output`, :term:`process variable`
 ============ =================================== ============ ========================================
 
@@ -79,7 +79,7 @@ A PD controller has a proportional controller for position (:math:`K_p`) and a p
 .. math::
    u_k = K_p e_k + K_d \frac{e_k - e_{k-1}}{dt}
 
-where :math:`u_k` is the :term:`control input` at timestep :math:`k` and :math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is defined as :math:`e_k = r_k - x_k` where :math:`r_k` is the :term:`setpoint` and :math:`x_k` is the current :term:`state` at timestep :math:`k`.
+where :math:`u_k` is the :term:`control effort` at timestep :math:`k` and :math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is defined as :math:`e_k = r_k - x_k` where :math:`r_k` is the :term:`setpoint` and :math:`x_k` is the current :term:`state` at timestep :math:`k`.
 
 .. math::
    u_k &= K_p (r_k - x_k) + K_d \frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\
@@ -119,7 +119,7 @@ When the :term:`system` is close the :term:`setpoint` in steady-state, the propo
    :alt: PI controller with steady-state
    :align: center
 
-A common way of eliminating :term:`steady-state error` is to integrate the :term:`error` and add it to the :term:`control input`. This increases the :term:`control effort` until the :term:`system` converges. Figure 2.4 shows an example of :term:`steady-state error` for a flywheel, and figure 2.5 shows how an integrator added to the flywheel controller eliminates it. However, too high of an integral gain can lead to overshoot, as shown in figure 2.6.
+A common way of eliminating :term:`steady-state error` is to integrate the :term:`error` and add it to the :term:`control effort`. This increases the :term:`control effort` until the :term:`system` converges. Figure 2.4 shows an example of :term:`steady-state error` for a flywheel, and figure 2.5 shows how an integrator added to the flywheel controller eliminates it. However, too high of an integral gain can lead to overshoot, as shown in figure 2.6.
 
 .. image:: images/introduction-to-pid-pi-controller-overshoot.png
    :alt: Figure 2.6 and 2.6 graphs

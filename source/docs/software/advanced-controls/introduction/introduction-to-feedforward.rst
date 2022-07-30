@@ -18,11 +18,11 @@ where :math:`V` is the applied voltage, :math:`d` is the displacement (position)
 
 We can interpret the coefficients in the above equation as follows:
 
-:term:`K_s` is the voltage needed to overcome the motor's static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) has the same effect regardless of velocity or acceleration. That is, no matter what speed you’re going or how fast you're accelerating, some constant portion of the voltage you've applied to your motor (depending on the specific mechanism assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.  Note the presence of the `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, because friction force always opposes the direction-of-motion.
+:math:`K_s` is the voltage needed to overcome the motor's static friction, or in other words to just barely get it moving; it turns out that this static friction (because it’s, well, static) has the same effect regardless of velocity or acceleration. That is, no matter what speed you’re going or how fast you're accelerating, some constant portion of the voltage you've applied to your motor (depending on the specific mechanism assembly) will be going towards overcoming the static friction in your gears, bearings, etc; this value is your kS.  Note the presence of the `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, because friction force always opposes the direction-of-motion.
 
-:term:`K_v` describes how much voltage is needed to hold (or "cruise") at a given constant velocity while overcoming the `electromagnetic resistance in the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any additional friction that increases with speed (known as `viscous drag <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__). The relationship between speed and voltage (at constant acceleration) is almost entirely linear (with FRC\ |reg| components, anyway) because of how permanent-magnet DC motors work.
+:math:`K_v` describes how much voltage is needed to hold (or "cruise") at a given constant velocity while overcoming the `electromagnetic resistance in the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any additional friction that increases with speed (known as `viscous drag <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__). The relationship between speed and voltage (at constant acceleration) is almost entirely linear (with FRC components, anyway) because of how permanent-magnet DC motors work.
 
-:term:`K_a` describes the voltage needed to induce a given acceleration in the motor shaft. As with ``kV``, the relationship between voltage and acceleration (at constant velocity) is almost perfectly linear for FRC components.
+:math:`K_a` describes the voltage needed to induce a given acceleration in the motor shaft. As with ``kV``, the relationship between voltage and acceleration (at constant velocity) is almost perfectly linear for FRC components.
 
 Once these coefficients have been determined, we can then take a given desired velocity and acceleration for the motor and calculate the voltage that should be applied to achieve it.  This is very useful - not only for, say, following motion profiles, but also for making mechanisms more controllable in open-loop control, because your joystick inputs will more closely match the actual mechanism motion.
 
@@ -43,7 +43,7 @@ where :math:`V` is the applied voltage, :math:`d` is the displacement (position)
 Arm Feedforward
 ~~~~~~~~~~~~~~~
 
-An arm consists of a permanent-magnet DC motor attached to a mass on a stick held under the force of gravity.  Like the elevator feedforward, it includes a :term:`K_g` term to account for the effect of gravity - unlike the elevator feedforward, however, this term is multiplied by the cosine of the arm angle (since the gravitational force does not act directly on the motor):
+An arm consists of a permanent-magnet DC motor attached to a mass on a stick held under the force of gravity.  Like the elevator feedforward, it includes a :math:`K_g` term to account for the effect of gravity - unlike the elevator feedforward, however, this term is multiplied by the cosine of the arm angle (since the gravitational force does not act directly on the motor):
 
 .. math:: V = kG \cdot cos(\theta) + kS \cdot sgn(\dot{\theta}) + kV \cdot \dot{\theta} + kA \cdot \ddot{\theta}
 
@@ -52,7 +52,7 @@ where :math:`V` is the applied voltage, :math:`\theta` is the angular displaceme
 Using the Feedforward
 ---------------------
 
-In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:`earlier <docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :term:`K_s` etc. can be obtained either through theoretical modeling with `ReCalc <https://www.reca.lc/>`__ or explicit measurement with :doc:`SysId </docs/software/pathplanning/system-identification/introduction>`.  That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
+In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:`earlier <docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_s` etc. can be obtained either through theoretical modeling with `ReCalc <https://www.reca.lc/>`__ or explicit measurement with :doc:`SysId </docs/software/pathplanning/system-identification/introduction>`.  That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
 
 Typically, these come from our setpoints - remember that with feedforward we are making a "guess" as to the output we need based on where we want the system to be.
 

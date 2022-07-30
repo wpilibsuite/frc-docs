@@ -39,6 +39,24 @@ class FlywheelPIDF extends FlywheelSim {
 
         curRow = document.createElement("tr");
         label = document.createElement("td");
+        label.innerHTML = "System Noise";
+        control = document.createElement("td");
+        ctrlTable.appendChild(curRow);
+        input = document.createElement("INPUT");
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("value", "false");
+        input.setAttribute("id", "systemNoise")
+        input.onclick = function (event) {
+            this.animationReset = true;
+            this.plant.setSystemNoise(document.getElementById("systemNoise").checked);
+            this.runSim();
+        }.bind(this);
+        control.append(input)
+        curRow.appendChild(label);
+        curRow.appendChild(control);
+
+        curRow = document.createElement("tr");
+        label = document.createElement("td");
         label.innerHTML = "Setpoint";
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
@@ -51,23 +69,6 @@ class FlywheelPIDF extends FlywheelSim {
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "System Noise";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "checkbox");
-        input.setAttribute("value", "false");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.plant.setSystemNoise(!!event.target.value);
             this.runSim();
         }.bind(this);
         control.append(input)

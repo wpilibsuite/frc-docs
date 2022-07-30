@@ -29,7 +29,7 @@ Vertical arms are commonly used to lift gamepieces from the ground up to a scori
 
 Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.  To consistently place a gamepiece, the arm must move from its current location to a specific angle which puts the gamepiece at the right height.
 
-Like in the case of the :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flyhweel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
+Like in the case of the :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
 
 In the case of the flywheel *velocity* controller we could achieve good control performance with feedforward alone.  However, it is very hard to predict how much voltage will cause a certain total change in *position* (time can turn even small errors in velocity into very big errors in position).  In this case, we cannot rely on feedforward control alone - as with the vertical arm, we will need a feedback controller.
 
@@ -82,7 +82,7 @@ To tune the feedforward controller,, perform the following:
 
 The exact gains used by the simulation are <TODO: insert gains here, including kv, ka>.
 
-As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flyhweel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
+As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
 However, our feedforward equation relates *velocity* and *acceleration* to voltage - it allows us to control the *instantaneous motion* of our mechanism with high accuracy, but it does not allow us direct control over the *position*.  This is a problem even in our simulation (in which the feedforward equation is the *actual* equation of motion), because unless we employ a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` to generate a sequence of velocity setpoints we can ask the arm to jump immediately from one position to another.  This is impossible, even for our simulated arm.
 
@@ -116,7 +116,7 @@ Interact with the simulation below to examine how the vertical arm system respon
       </script>
     </div>
 
-As seen in :ref:`the introduction to PID <docs/software/advanced-controls/controllers/feedforward:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 
 Perform the following:
 

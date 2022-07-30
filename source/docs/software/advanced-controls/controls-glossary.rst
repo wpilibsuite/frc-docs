@@ -3,11 +3,11 @@ Controls Glossary
 
 .. glossary::
 
-   control effort
-      A term describing how much force, pressure, etc. an actuator is exerting.
+   control signal
+      The driving signal sent to a :term:`plant` by a :term:`controller`, usually quantified as a voltage.
 
-   control input
-      The input of a :term:`plant` used for the purpose of controlling it
+   control effort
+      :term:`Control signal`
 
    control law
       A mathematical formula that generates :term:`inputs <input>` to drive a :term:`system` to a desired :term:`state`, given the current :term:`state`. A common example is the control law :math:`\mathbf{u} = \mathbf{K(r - x)}`
@@ -22,7 +22,7 @@ Controls Glossary
       :term:`Reference <reference>` minus an :term:`output` or :term:`state`.
 
    gain
-      A proportional value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
+      A proportional (scalar) value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
 
    hidden state
       A :term:`state` that cannot be directly measured, but whose :term:`dynamics` can be related to other states.
@@ -37,7 +37,6 @@ Controls Glossary
 
    measurement
       Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
-
 
    model
       A set of mathematical equations that reflects some aspect of a physical :term:`system's <system>` behavior.

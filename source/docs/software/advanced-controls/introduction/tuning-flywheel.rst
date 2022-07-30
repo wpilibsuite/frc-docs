@@ -1,5 +1,5 @@
-Tuning a Flywheel Speed Controller
-==================================
+Tuning a Flywheel Velocity Controller
+=====================================
 
 In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive).
 
@@ -94,16 +94,16 @@ Interact with the simulation below to see how the flywheel system responds when 
 .. raw:: html
 
     <div class="viz-div">
-      <div id="flywheel_pid_container">
-         <div class="col" id="flywheel_pid_plotVals"></div>
-         <div class="col" id="flywheel_pid_plotVolts"></div>
+      <div id="flywheel_feedforward">
+         <div class="col" id="flywheel_feedforward_plotVals"></div>
+         <div class="col" id="flywheel_feedforward_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div>
-         <div id="flywheel_pid_ctrls"></div>
+         <div class="col" id="flywheel_feedforward_viz"></div>
+         <div id="flywheel_feedforward_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid", "feedforward");
+         flywheel_pid = new FlywheelPIDF("flywheel_feedforward", "feedforward");
          flywheel_pid.runSim();
       </script>
     </div>
@@ -131,21 +131,21 @@ Interact with the simulation below to see how the flywheel system responds when 
 .. raw:: html
 
     <div class="viz-div">
-      <div id="flywheel_pid_container">
-         <div class="col" id="flywheel_pid_plotVals"></div>
-         <div class="col" id="flywheel_pid_plotVolts"></div>
+      <div id="flywheel_feedback">
+         <div class="col" id="flywheel_feedback_plotVals"></div>
+         <div class="col" id="flywheel_feedback_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div>
-         <div id="flywheel_pid_ctrls"></div>
+         <div class="col" id="flywheel_feedback_viz"></div>
+         <div id="flywheel_feedback_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid", "feedback");
+         flywheel_pid = new FlywheelPIDF("flywheel_feedback", "feedback");
          flywheel_pid.runSim();
       </script>
     </div>
 
-As seen in :ref:`the introduction to PID <docs/software/advanced-controls/controllers/feedforward:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
+As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 
 Perform the following:
 
@@ -177,16 +177,16 @@ Interact with the simulation below to see how the flywheel system responds under
 .. raw:: html
 
     <div class="viz-div">
-      <div id="flywheel_pid_container">
-         <div class="col" id="flywheel_pid_plotVals"></div>
-         <div class="col" id="flywheel_pid_plotVolts"></div>
+      <div id="flywheel_feedforward_feedback">
+         <div class="col" id="flywheel_feedforward_feedback_plotVals"></div>
+         <div class="col" id="flywheel_feedforward_feedback_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="flywheel_pid_viz"></div>
-         <div id="flywheel_pid_ctrls"></div>
+         <div class="col" id="flywheel_feedforward_feedback_viz"></div>
+         <div id="flywheel_feedforward_feedback_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid", "both");
+         flywheel_pid = new FlywheelPIDF("flywheel_feedforward_feedback", "both");
          flywheel_pid.runSim();
       </script>
     </div>

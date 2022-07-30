@@ -6,7 +6,7 @@ There are a number of common issues which can arise while tuning feedforward and
 Integral Term Windup
 --------------------
 
-Beware that if :math:`K_i` is too large, integral windup can occur. Following a large change in :term:`setpoint`, the integral term can accumulate an error larger than the maximal :term:`control input`. As a result, the system overshoots and continues to increase until this accumulated error is unwound.
+Beware that if :math:`K_i` is too large, integral windup can occur. Following a large change in :term:`setpoint`, the integral term can accumulate an error larger than the maximal :term:`control effort`. As a result, the system overshoots and continues to increase until this accumulated error is unwound.
 
 There are a few ways to mitigate this:
 
