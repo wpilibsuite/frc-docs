@@ -91,8 +91,6 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. note:: There is no need for a :math:`K_a` term in the feedforward for velocity control unless the setpoint is changing - for a flywheel, this is not a concern, and so the gain is omitted here.
 
-<TODO: edit simulation to only include feedforward>
-
 .. raw:: html
 
     <div class="viz-div">
@@ -105,12 +103,12 @@ Interact with the simulation below to see how the flywheel system responds when 
          <div id="flywheel_pid_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid = new FlywheelPIDF("flywheel_pid", "feedforward");
          flywheel_pid.runSim();
       </script>
     </div>
 
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two. Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior is good enough.
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it).  This is called an `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__, and is a very efficient way to find positive values of unknown scale.
 
 To tune the feedforward controller, increase the velocity feedforward gain :math:`K_v` until the flywheel approaches the correct setpoint over time.  If the flywheel overshoots, reduce :math:`K_v`.
 
@@ -130,8 +128,6 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. note:: PID-only control is not a very good control scheme for flywheel velocity!  Do not be surprised if/when the simulation below does not behave well, even when the "optimal" constants are used.
 
-<TODO: edit simulation to only include feedback>
-
 .. raw:: html
 
     <div class="viz-div">
@@ -144,7 +140,7 @@ Interact with the simulation below to see how the flywheel system responds when 
          <div id="flywheel_pid_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_pid");
+         flywheel_pid = new FlywheelPIDF("flywheel_pid", "feedback");
          flywheel_pid.runSim();
       </script>
     </div>
@@ -175,6 +171,25 @@ Combined Feedforward and Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Bang-bang control can be combined with feedforward control much in the way PID control can - for the sake of brevity we do not include a combined feedforward-bang-bang simulation.
+
+Interact with the simulation below to see how the flywheel system responds under stimultaneous feedforward and feedback (PID) control.
+
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="flywheel_pid_container">
+         <div class="col" id="flywheel_pid_plotVals"></div>
+         <div class="col" id="flywheel_pid_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="flywheel_pid_viz"></div>
+         <div id="flywheel_pid_ctrls"></div>
+      </div>
+      <script>
+         flywheel_pid = new FlywheelPIDF("flywheel_pid", "both");
+         flywheel_pid.runSim();
+      </script>
+    </div>
 
 Tuning with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. This may work for mechanisms like turrets, or swerve drive steering. However, as seen above, it does not work well for a flyhweel, where the back-EMF and friction both act to slow the motor even when it is sustaining motion at the setpoint. To control this system, we need to combine the PID controller with a feedforward controller.
 

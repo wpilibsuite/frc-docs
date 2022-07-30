@@ -1,6 +1,6 @@
 class FlywheelPIDF extends FlywheelSim {
 
-    constructor(div_id_prefix) {
+    constructor(div_id_prefix, controlStrategy) {
 
         super(div_id_prefix);
 
@@ -9,14 +9,17 @@ class FlywheelPIDF extends FlywheelSim {
         this.err_accum = 0.0;
         this.err_prev = 0.0;
 
-        //User-configured feedback
+        // User-configured feedback
         this.kP = 0.0;
         this.kI = 0.0;
         this.kD = 0.0;
 
-        //User-configured Feed-Forward
+        // User-configured Feed-Forward
         this.kV = 0.0;
         this.kS = 0.0;
+
+        // Which control strategy to display elements for - can be "feedforward", "feedback", or "both"
+        this.controlStrategy = controlStrategy;
 
         this.ctrlsInit();
 
@@ -56,75 +59,97 @@ class FlywheelPIDF extends FlywheelSim {
 
         curRow = document.createElement("tr");
         label = document.createElement("td");
-        label.innerHTML = "kP";
+        label.innerHTML = "System Noise";
         control = document.createElement("td");
         ctrlTable.appendChild(curRow);
         input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.001");
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("value", "false");
         input.onchange = function (event) {
             this.animationReset = true;
-            this.kP = parseFloat(event.target.value);
+            this.plant.setSystemNoise(!!event.target.value);
             this.runSim();
         }.bind(this);
         control.append(input)
         curRow.appendChild(label);
         curRow.appendChild(control);
 
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kI";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.001");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kI = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
+        // Display feedforward gain inputs
+        if (this.controlStrategy == "feedforward" || this.controlStrategy == "both") {
+            curRow = document.createElement("tr");
+            label = document.createElement("td");
+            label.innerHTML = "kV";
+            control = document.createElement("td");
+            ctrlTable.appendChild(curRow);
+            input = document.createElement("INPUT");
+            input.setAttribute("type", "text");
+            input.setAttribute("value", "0.0");
+            //input.setAttribute("step", "0.00001");
+            input.onchange = function (event) {
+                this.animationReset = true;
+                this.kV = parseFloat(event.target.value);
+                this.runSim();
+            }.bind(this);
+            control.append(input)
+            curRow.appendChild(label);
+            curRow.appendChild(control);
+        }
 
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kD";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.001");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kD = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
+        if (this.controlStrategy == "feedback" || this.controlStrategy == "both") {
+            curRow = document.createElement("tr");
+            label = document.createElement("td");
+            label.innerHTML = "kP";
+            control = document.createElement("td");
+            ctrlTable.appendChild(curRow);
+            input = document.createElement("INPUT");
+            input.setAttribute("type", "text");
+            input.setAttribute("value", "0.0");
+            //input.setAttribute("step", "0.001");
+            input.onchange = function (event) {
+                this.animationReset = true;
+                this.kP = parseFloat(event.target.value);
+                this.runSim();
+            }.bind(this);
+            control.append(input)
+            curRow.appendChild(label);
+            curRow.appendChild(control);
 
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kV";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.00001");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kV = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
+            curRow = document.createElement("tr");
+            label = document.createElement("td");
+            label.innerHTML = "kI";
+            control = document.createElement("td");
+            ctrlTable.appendChild(curRow);
+            input = document.createElement("INPUT");
+            input.setAttribute("type", "text");
+            input.setAttribute("value", "0.0");
+            //input.setAttribute("step", "0.001");
+            input.onchange = function (event) {
+                this.animationReset = true;
+                this.kI = parseFloat(event.target.value);
+                this.runSim();
+            }.bind(this);
+            control.append(input)
+            curRow.appendChild(label);
+            curRow.appendChild(control);
+
+            curRow = document.createElement("tr");
+            label = document.createElement("td");
+            label.innerHTML = "kD";
+            control = document.createElement("td");
+            ctrlTable.appendChild(curRow);
+            input = document.createElement("INPUT");
+            input.setAttribute("type", "text");
+            input.setAttribute("value", "0.0");
+            //input.setAttribute("step", "0.001");
+            input.onchange = function (event) {
+                this.animationReset = true;
+                this.kD = parseFloat(event.target.value);
+                this.runSim();
+            }.bind(this);
+            control.append(input)
+            curRow.appendChild(label);
+            curRow.appendChild(control);
+        }
 
 
     }

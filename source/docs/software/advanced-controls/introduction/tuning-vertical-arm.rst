@@ -65,7 +65,7 @@ Interact with the simulation below to examine how the turret system responds whe
       </script>
     </div>
 
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed. Similarly, when "decreasing" a value, divide by two (this is called an "exponential search", and is very good for finding positive constants when we don't have a good idea of how large they should be). Once you find the point where the expected effect starts or stops, switch to "bumping" the value up and down by ~10% until the behavior seems to stop improving.
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it).  This is called an `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__, and is a very efficient way to find positive values of unknown scale.
 
 To tune the feedforward controller,, perform the following:
 
