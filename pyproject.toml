@@ -32,6 +32,7 @@ sphinxext-rediraffe = "==0.2.5"
 sphinxext-remoteliteralinclude = "==0.3.0"
 sphinxext-toptranslators = "==0.1.2"
 urllib3 = ">=1.26.6, <2.0.0"
+frccontrol = "==2022.14"
 
 [tool.poetry.dev-dependencies]
 
