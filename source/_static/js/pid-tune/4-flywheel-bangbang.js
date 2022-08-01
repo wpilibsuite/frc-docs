@@ -7,26 +7,26 @@ class FlywheelBangBang extends FlywheelSim {
 
         this.ctrl_Ts = 0.02;
 
-        this.ctrlsInit();
+        this.buildControlTable();
 
     }
 
-    ctrlsInit(){
+    buildControlTable(){
 
-        var curRow;
-        var label;
-        var control;
-        var input;
+        let curRow;
+        let label;
+        let control;
+        let input;
 
-        var ctrlTable =  document.createElement("table");
-        ctrlTable.classList.add("controlTable");
-        this.ctrlsDrawDiv.appendChild(ctrlTable);
+        let controlTable =  document.createElement("table");
+        controlTable.classList.add("controlTable");
+        this.controlDrawDiv.appendChild(controlTable);
 
         curRow = document.createElement("tr");
         label = document.createElement("td");
         label.innerHTML = "Setpoint";
         control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
+        controlTable.appendChild(curRow);
         input = document.createElement("INPUT");
         input.setAttribute("type", "text");
         input.setAttribute("value", "300.0");

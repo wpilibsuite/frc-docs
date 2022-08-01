@@ -46,22 +46,19 @@ Interact with the simulation below to examine how the turret system responds whe
 
 .. note:: To change the arm setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the setpoint indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
 
-<TODO: edit simulation to only include feedforward, and to include kV, kA, and setpoint indicator>
-
 .. raw:: html
 
     <div class="viz-div">
-      <div id="arm_pid_container">
-         <div class="col" id="arm_pid_plotVals"></div>
-         <div class="col" id="arm_pid_plotVolts"></div>
+      <div id="arm_feedforward_container">
+         <div class="col" id="arm_feedforward_plotVals"></div>
+         <div class="col" id="arm_feedforward_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="arm_pid_viz"></div>
-         <div id="arm_pid_ctrls"></div>
+         <div class="col" id="arm_feedforward_viz"></div>
+         <div id="arm_feedforward_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid");
-         arm_pidf.runSim();
+         arm_pidf = new VerticalArmPIDF("arm_feedforward", "feedforward");
       </script>
     </div>
 
@@ -72,7 +69,6 @@ To tune the feedforward controller,, perform the following:
 1. Set :math:`K_g`, :math:`K_v`, and :math:`K_a` to zero.
 2. Increase :math:`K_g` until the arm can hold its position with as little movement as possible. If the arm moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
 3. Increase the velocity feedforward gain :math:`K_v` until the arm tracks the setpoint during smooth, slow motion.  If the arm overshoots, reduce the gain.  Note that the arm may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
-4. Increase the acceleration feedforward gain :math:`K_a` until the arm no longer lags behind the setpoint during smooth, slow motion.
 
 
 .. raw:: html
@@ -102,17 +98,16 @@ Interact with the simulation below to examine how the vertical arm system respon
 .. raw:: html
 
     <div class="viz-div">
-      <div id="arm_pid_container">
-         <div class="col" id="arm_pid_plotVals"></div>
-         <div class="col" id="arm_pid_plotVolts"></div>
+      <div id="arm_feedback_container">
+         <div class="col" id="arm_feedback_plotVals"></div>
+         <div class="col" id="arm_feedback_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="arm_pid_viz"></div>
-         <div id="arm_pid_ctrls"></div>
+         <div class="col" id="arm_feedback_viz"></div>
+         <div id="arm_feedback_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid");
-         arm_pidf.runSim();
+         arm_pidf = new VerticalArmPIDF("arm_feedback", "feedback");
       </script>
     </div>
 
@@ -145,17 +140,16 @@ Interact with the simulation below to examine how the vertical arm system respon
 .. raw:: html
 
     <div class="viz-div">
-      <div id="arm_pid_container">
-         <div class="col" id="arm_pid_plotVals"></div>
-         <div class="col" id="arm_pid_plotVolts"></div>
+      <div id="arm_feedforward_feedback_container">
+         <div class="col" id="arm_feedforward_feedback_plotVals"></div>
+         <div class="col" id="arm_feedforward_feedback_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="arm_pid_viz"></div>
-         <div id="arm_pid_ctrls"></div>
+         <div class="col" id="arm_feedforward_feedback_viz"></div>
+         <div id="arm_feedforward_feedback_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_pid");
-         arm_pidf.runSim();
+         arm_pidf = new VerticalArmPIDF("arm_feedforward_feedback", "both");
       </script>
     </div>
 

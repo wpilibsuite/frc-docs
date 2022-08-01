@@ -1,163 +1,174 @@
-
 class VerticalArmPIDF extends VerticalArmSim {
+  constructor(divIdPrefix, controlStrategy) {
+    super(divIdPrefix);
 
-    constructor(div_id_prefix) {
+    // Can be "feedforward", "feedback", or "both"
+    this.controlStrategy = controlStrategy;
 
-        super(div_id_prefix);
+    this.buildControlTable();
+  }
 
-        this.ctrl_Ts = 0.02;
+  buildControlTable() {
+    let curRow;
+    let label;
+    let control;
+    let input;
 
-        this.err_accum = 0.0;
-        this.err_prev = 0.0;
+    let controlTable = document.createElement("table");
+    controlTable.classList.add("controlTable");
+    this.controlDrawDiv.appendChild(controlTable);
 
-        //User-configured feedback
-        this.kP = 0.0;
-        this.kI = 0.0;
-        this.kD = 0.0;
+    curRow = document.createElement("tr");
+    label = document.createElement("td");
+    label.innerHTML = "System Noise";
+    control = document.createElement("td");
+    controlTable.appendChild(curRow);
+    input = document.createElement("INPUT");
+    input.setAttribute("type", "checkbox");
+    input.setAttribute("value", "false");
+    input.setAttribute("id", "systemNoise");
+    input.onclick = function (event) {
+      this.animationReset = true;
+      this.plant.setSystemNoise(document.getElementById("systemNoise").checked);
+      this.runSim();
+    }.bind(this);
+    control.append(input);
+    curRow.appendChild(label);
+    curRow.appendChild(control);
 
-        //User-configured Feed-Forward
-        this.kG = 0.0;
+    curRow = document.createElement("tr");
+    label = document.createElement("td");
+    label.innerHTML = "Setpoint";
+    control = document.createElement("td");
+    controlTable.appendChild(curRow);
+    input = document.createElement("INPUT");
+    input.setAttribute("type", "text");
+    input.setAttribute("value", "0.1");
+    //input.setAttribute("step", "0.1");
+    //input.setAttribute("min", "-3.14159");
+    //input.setAttribute("max", "3.14159");
+    input.onchange = function (event) {
+      this.animationReset = true;
+      this.currentSetpointRev = parseFloat(event.target.value);
+      this.reset();
+    }.bind(this);
+    control.append(input);
+    curRow.appendChild(label);
+    curRow.appendChild(control);
 
-        this.ctrlsInit();
+    if (
+      this.controlStrategy == "feedforward" ||
+      this.controlStrategy == "both"
+    ) {
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kG";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.0000001");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kG = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
 
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kV";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.0000001");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kV = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
+
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kA";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.0000001");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kA = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
     }
 
-    ctrlsInit(){
+    if (this.controlStrategy == "feedback" || this.controlStrategy == "both") {
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kP";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.1");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kP = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
 
-        var curRow;
-        var label;
-        var control;
-        var input;
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kI";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.1");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kI = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
 
-        var ctrlTable =  document.createElement("table");
-        ctrlTable.classList.add("controlTable");
-        this.ctrlsDrawDiv.appendChild(ctrlTable);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "Setpoint";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.1");
-        //input.setAttribute("step", "0.1");
-        //input.setAttribute("min", "-3.14159");
-        //input.setAttribute("max", "3.14159");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.setpointVal = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kP";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.1");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kP = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kI";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.1");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kI = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kD";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.01");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kD = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
-        curRow = document.createElement("tr");
-        label = document.createElement("td");
-        label.innerHTML = "kG";
-        control = document.createElement("td");
-        ctrlTable.appendChild(curRow);
-        input = document.createElement("INPUT");
-        input.setAttribute("type", "text");
-        input.setAttribute("value", "0.0");
-        //input.setAttribute("step", "0.0000001");
-        input.onchange = function (event) {
-            this.animationReset = true;
-            this.kG = parseFloat(event.target.value);
-            this.runSim();
-        }.bind(this);
-        control.append(input)
-        curRow.appendChild(label);
-        curRow.appendChild(control);
-
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kD";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.01");
+      input.onchange = function (event) {
+        this.animationReset = true;
+        this.kD = parseFloat(event.target.value);
+        this.reset();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
     }
-
-    controllerUpdate(time, setpoint, output){
-
-        //Handle Init
-        if(time == 0.0){
-            this.err_accum = 0.0;
-            this.err_prev = 0.0;
-        }
-            
-        //Calculate error, error derivative, and error integral
-        var error = (setpoint - output);
-        
-        this.err_accum += (error)*this.ctrl_Ts;
-
-        var err_delta = (error - this.err_prev)/this.ctrl_Ts;
-
-        //PID + cosine feed-forward control law
-        var ctrlEffort = this.kG * Math.cos(output) + 
-                            this.kP * error  +  
-                            this.kI * this.err_accum  +  
-                            this.kD * err_delta;
-
-        //Cap voltage at max/min of the physically possible command
-        if(ctrlEffort > 12){
-            ctrlEffort = 12;
-        } else if (ctrlEffort < -12){
-            ctrlEffort = -12;
-        }
-
-        this.err_prev = error;
-        
-        return ctrlEffort;
-    }
-
+  }
 }

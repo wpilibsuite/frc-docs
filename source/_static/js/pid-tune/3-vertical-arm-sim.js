@@ -1,77 +1,134 @@
-
-
 class VerticalArmSim extends BaseSim {
+  constructor(divIdPrefix) {
+    super(divIdPrefix, "Radians", -Math.PI * 1.25, Math.PI * 1.25);
 
-    constructor(div_id_prefix) {
+    this.positionDelayLine = new DelayLine(49); //models sensor lag
 
-        super(div_id_prefix, "Radians", -Math.PI*1.25, Math.PI*1.25);
+    // User-configured setpoints
+    this.currentSetpointRev = 0.1;
 
+    this.plant = new VerticalArmPlant();
 
-        // User-configured setpoints
-        this.setpointVal = 0.1; 
-        this.setpointStepTime = 1.0;
+    this.visualization = new VerticalArmVisualization(
+      this.visualizationDrawDiv,
+      setpoint => this.setSetpointRev(setpoint)
+    );
+    this.visualization.drawStatic();
 
-        this.plant = new VerticalArmPlant();
+    this.timeSinceLastControllerIteration = 0.0;
 
-        this.viz = new VerticalArmVisualization(this.vizDrawDiv);
-        this.viz.drawStatic();
+    this.accumulatedError = 0.0;
+    this.previousError = 0.0;
+    this.previousSetpoint = 0.0;
 
+    //User-configured feedback
+    this.kP = 0.0;
+    this.kI = 0.0;
+    this.kD = 0.0;
+
+    //User-configured Feed-Forward
+    this.kG = 0.0;
+    this.kV = 0.0;
+
+    this.inputVolts = 0.0;
+
+    this.reset();
+    setInterval(() => {this.iterate();}, this.simulationTimestepS * 1000);
+  }
+
+  setSetpointRev(setpoint) {
+    this.currentSetpointRev = setpoint;
+  }
+
+  reset() {
+    this.plant.init(this.simulationTimestepS);
+    this.timeS = Array(this.simulationEndTimeS / this.simulationTimestepS)
+      .fill()
+      .map((_, index) => {
+        return index * this.simulationTimestepS;
+      });
+    this.output = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.setpoint = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.controlEffort = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.outputPositionRev = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+
+    this.visualization.setPositionData(this.outputPositionRev);
+    this.visualization.setTimeData(this.timeS);
+    this.visualization.setSetpointData(this.setpoint);
+
+    this.accumulatedError = 0.0;
+    this.previousError = 0.0;
+    this.previousSetpoint = 0.0;
+    this.inputvolts = 0.0;
+
+    this.positionDelayLine = new DelayLine(49); //models sensor lag
+
+    this.redraw();
+  }
+
+  iterate() {
+    let measuredPositionRev = this.positionDelayLine.getSample();
+
+    // Update controller at controller freq
+    if (this.timeSinceLastControllerIteration >= this.controllerTimestepS) {
+      this.inputVolts = this.updateController(this.currentSetpointRev, measuredPositionRev);
+      this.timeSinceLastControllerIteration = 0;
+    } else {
+      this.timeSinceLastControllerIteration = this.timeSinceLastControllerIteration + this.simulationTimestepS;
     }
 
-    runSim(){
+    this.plant.update(this.inputVolts);
 
-        var inVolts = 0.0;
-        var nextControllerRunTime = 0;
-        var pos_delay_line = new DelayLine(10); //models sensor lag
+    this.positionDelayLine.addSample(this.plant.getPositionRad() / 2 / Math.PI);
 
-        this.plant.init(this.Ts);
+    this.controlEffort.unshift(this.inputVolts);
+    this.controlEffort.pop();
+    this.output.unshift(this.plant.getPositionRad());
+    this.output.pop();
+    this.setpoint.unshift(this.currentSetpointRev);
+    this.setpoint.pop();
+    this.outputPositionRev.unshift(this.plant.getPositionRad() / 2 / Math.PI);
+    this.outputPositionRev.pop();
+  }
 
-        var idx = 0;
+  updateController(setpoint, measurement) {
 
-        for(var t = 0.0; t < this.simEndTime; t += this.Ts){
+    // Calculate error, error derivative, and error integral
+    let error = setpoint - measurement;
+    const derivativeSetpoint =
+      (setpoint - this.previousSetpoint) / this.controllerTimestepS;
 
-            var curSetpoint = 0.0;
-            if(t > this.setpointStepTime){
-                curSetpoint = this.setpointVal;
-            }
+    this.accumulatedError += error * this.controllerTimestepS;
 
-            var measPos = pos_delay_line.getSample();
+    const derivativeError =
+      (error - this.previousError) / this.controllerTimestepS;
 
-            //Simulate Controller
-            if(t >= nextControllerRunTime){
-                inVolts = this.controllerUpdate(t, curSetpoint, measPos);
-                //Maintain separate sample rate for controller
-                nextControllerRunTime += this.ctrl_Ts;
-            }
+    // PID + cosine feed-forward control law
+    let controlEffort =
+      this.kG * Math.cos(setpoint * 2 * Math.PI) +
+      this.kV * derivativeSetpoint +
+      this.kP * error +
+      this.kI * this.accumulatedError +
+      this.kD * derivativeError;
 
-            this.plant.update(t,inVolts)
-
-            pos_delay_line.addSample(this.plant.getCurPosRad());
-
-            this.timeSamples[idx] = t;
-            this.ctrlEffortSamples[idx] = inVolts;
-            this.outputSamples[idx] = this.plant.getCurPosRad();
-            this.setpointSamples[idx] = curSetpoint;
-            this.outputVizPosRevSamples[idx] = this.plant.getCurPosRad()/2/Math.PI;
-
-            idx++;
-        }
-
-        var ctrlEffortPlotData = Array(null, this.timeSamples.length);
-        var outputPlotData = Array(null, this.timeSamples.length);
-        var setpointPlotData = Array(null, this.timeSamples.length);
-        for(var idx = 0; idx < this.timeSamples.length; idx++){
-            ctrlEffortPlotData[idx] = [ this.timeSamples[idx], this.ctrlEffortSamples[idx] ];
-            outputPlotData[idx] = [ this.timeSamples[idx], this.outputSamples[idx] ];
-            setpointPlotData[idx] = [ this.timeSamples[idx], this.setpointSamples[idx] ];
-        }
-        this.setCtrlEffortData(ctrlEffortPlotData);
-        this.setSetpointData(setpointPlotData);
-        this.setOutputData(outputPlotData);
-        this.viz.setActuatorPositionData(this.timeSamples, this.outputVizPosRevSamples);
-
-        this.redraw();
-
+    // Cap voltage at max/min of the physically possible command
+    if (controlEffort > 12) {
+      controlEffort = 12;
+    } else if (controlEffort < -12) {
+      controlEffort = -12;
     }
 
+    this.previousError = error;
+    this.previousSetpoint = setpoint;
+
+    return controlEffort;
+  }
 }

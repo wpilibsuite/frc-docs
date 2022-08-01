@@ -1,183 +1,219 @@
 class BaseSim {
+  constructor(divIdPrefix, processVariableUnits, stateMin, stateMax) {
+    this.speedGraph = null;
+    this.voltsGraph = null;
+    this.containerDiv = document.getElementById(divIdPrefix + "_container");
+    let plotDrawDivVals = document.getElementById(divIdPrefix + "_plotVals");
+    let plotDrawDivVolts = document.getElementById(divIdPrefix + "_plotVolts");
 
-    constructor(div_id_prefix, stateUnits, stateMin, stateMax) {
-        this.speedGraph = null;
-        this.voltsGraph = null;
-        this.containerDiv  = document.getElementById(div_id_prefix + "_container");
-        var plotDrawDivVals = document.getElementById(div_id_prefix + "_plotVals");
-        var plotDrawDivVolts = document.getElementById(div_id_prefix + "_plotVolts");
+    this.processVariableChart = new Highcharts.Chart(
+      plotDrawDivVals,
+      defaultOptions
+    );
+    this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, defaultOptions);
 
-        this.valsChart = new Highcharts.Chart(plotDrawDivVals, dflt_options);
-        this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, dflt_options);
+    this.voltsChart.addSeries({ name: "Control Effort", color: "#00BB00" });
+    this.processVariableChart.addSeries({
+      name: "Output",
+      color: "#FF0000",
+      zIndex: 2,
+    });
+    this.processVariableChart.addSeries({
+      name: "Setpoint",
+      color: "#0000FF",
+      zIndex: 1,
+    });
 
-        this.voltsChart.addSeries({name: "Control Effort", color: '#00BB00'});
-        this.valsChart.addSeries({name: "Output", color: '#FF0000', zIndex: 2});
-        this.valsChart.addSeries({name: "Setpoint", color: '#0000FF', zIndex: 1});
+    this.voltsChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: 0.0,
+      id: "curTime",
+    });
+    this.processVariableChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: 0.0,
+      id: "curTime",
+    });
 
-        this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: 0.0, id:"curTime"})
-        this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: 0.0, id:"curTime"})
+    this.voltsChart.yAxis[0].setTitle({ text: "Volts" });
+    this.processVariableChart.yAxis[0].setTitle({ text: processVariableUnits });
 
-        this.voltsChart.yAxis[0].setTitle({ text : "Volts"});
-        this.valsChart.yAxis[0].setTitle({ text :stateUnits });
+    this.voltsChart.yAxis[0].setOptions({ min: -14.0, max: 14.0 });
+    this.processVariableChart.yAxis[0].setOptions({
+      min: stateMin,
+      max: stateMax,
+    });
 
-        this.voltsChart.yAxis[0].setOptions({min:-14.0, max:14.0});
-        this.valsChart.yAxis[0].setOptions({min:stateMin, max:stateMax});
+    this.simulationEndTimeS = 10.0;
+    this.simulationTimestepS = 0.001;
+    this.controllerTimestepS = 0.02;
 
-        this.timeSamples = Array(0, this.simEndTime / this.Ts);
-        this.outputSamples = Array(0, this.simEndTime / this.Ts);
-        this.setpointSamples = Array(0, this.simEndTime / this.Ts);
-        this.ctrlEffortSamples = Array(0, this.simEndTime / this.Ts);
-        this.outputVizPosRevSamples = Array(0, this.simEndTime / this.Ts);
+    this.timeS = Array(this.simulationEndTimeS / this.simulationTimestepS).fill(0);
+    this.output = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.setpoint = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.controlEffort = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
+    this.outputPositionRev = Array(
+      this.simulationEndTimeS / this.simulationTimestepS
+    ).fill(0);
 
-        this.vizDrawDiv = document.getElementById(div_id_prefix + "_viz");
+    this.visualizationDrawDiv = document.getElementById(divIdPrefix + "_viz");
 
-        this.animationStart = null;
-        window.requestAnimationFrame((t)=>this.animationStep(t));
+    this.animationStartTimeS = null;
+    window.requestAnimationFrame((t) => this.animate(t));
 
-        this.ctrlsDrawDiv = document.getElementById(div_id_prefix + "_ctrls");
+    this.controlDrawDiv = document.getElementById(divIdPrefix + "_ctrls");
 
-        this.animationReset = true;
+    this.animationReset = true;
+  }
 
-        
-        this.simEndTime = 10.0;
-        this.Ts = 0.001;
+  animate(currentTimeMs) {
+    let currentTimeS = currentTimeMs / 1000.0;
 
+    if (this.animationReset) {
+      this.animationStartTimeS = currentTimeS;
+      this.animationReset = false;
     }
 
-    animationStep(timestamp) {
-
-        var curTime = timestamp / 1000.0;
-
-        if (this.animationReset) {
-            this.animationStart = curTime;
-            this.animationReset = false;
-        }
-
-        var animationTime = curTime - this.animationStart;
-        if (animationTime > this.simEndTime) {
-            this.animationStart = curTime;
-            animationTime = 0.0;
-        }
-
-        var animationStep = Math.floor(animationTime / this.Ts);
-
-        this.drawAnimation(animationStep, animationTime);
-
-        window.requestAnimationFrame((t)=>this.animationStep(t));
-
+    let animationTimeS = currentTimeS - this.animationStartTimeS;
+    if (animationTimeS > this.simulationEndTimeS) {
+      this.animationStartTimeS = currentTimeS;
+      animationTimeS = 0.0;
     }
 
+    let stepIndex = Math.floor(animationTimeS / this.simulationTimestepS);
 
-    setCtrlEffortData(data) {
-        this.voltsChart.series[0].setData(data, false, false, true);
-    }
+    this.drawAnimation(stepIndex, animationTimeS);
 
-    setOutputData(data) {
-        this.valsChart.series[0].setData(data, false, false, true);
-    }
+    window.requestAnimationFrame((t) => this.animate(t));
+  }
 
-    setSetpointData(data) {
-        this.valsChart.series[1].setData(data, false, false, true);
-    }
+  setControlEffortData(data) {
+    this.voltsChart.series[0].setData(data, false, false, true);
+  }
 
-    redraw() {
-        this.valsChart.xAxis[0].setExtremes(0.0, this.simEndTime, false);
-        this.voltsChart.xAxis[0].setExtremes(0.0, this.simEndTime, false);
-        this.valsChart.redraw();
-        this.voltsChart.redraw();
-    }
+  setOutputData(data) {
+    this.processVariableChart.series[0].setData(data, false, false, true);
+  }
 
-    drawAnimation(timeIdx, animationTime) {
-        this.viz.drawDynamic(timeIdx);
-        
-        this.voltsChart.xAxis[0].removePlotBand("curTime");
-        this.valsChart.xAxis[0].removePlotBand("curTime");
-        this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: animationTime, id:"curTime"})
-        this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: animationTime, id:"curTime"})
-        
-    }
+  setSetpointData(data) {
+    this.processVariableChart.series[1].setData(data, false, false, true);
+  }
+
+  redraw() {
+    this.processVariableChart.xAxis[0].setExtremes(
+      0.0,
+      this.simulationEndTimeS,
+      false
+    );
+    this.voltsChart.xAxis[0].setExtremes(0.0, this.simulationEndTimeS, false);
+    this.processVariableChart.redraw();
+    this.voltsChart.redraw();
+  }
+
+  drawAnimation(timeIndex, animationTimeS) {
+    this.visualization.drawDynamic(timeIndex);
+
+    this.voltsChart.xAxis[0].removePlotBand("curTime");
+    this.processVariableChart.xAxis[0].removePlotBand("curTime");
+    this.voltsChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: animationTimeS,
+      id: "curTime",
+    });
+    this.processVariableChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: animationTimeS,
+      id: "curTime",
+    });
+  }
 }
 
+let defaultOptions = {
+  credits: {
+    enabled: false,
+  },
 
-
-var dflt_options = {
-
-    credits: {
-        enabled: false
+  chart: {
+    zoomType: null,
+    animation: false,
+    ignoreHiddenSeries: true,
+    panning: false,
+    showAxes: true,
+    marginLeft: 80, // Keep all charts left aligned
+    spacingTop: 20,
+    spacingBottom: 20,
+    backgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, "rgb(255,255,255)"],
+        [1, "rgb(230,230,230)"],
+      ],
     },
+  },
 
-    chart: {
-        zoomType: null,
-        animation: false,
-        ignoreHiddenSeries: true,
-        panning: false,
-        showAxes: true,
-        marginLeft: 80, // Keep all charts left aligned
-        spacingTop: 20,
-        spacingBottom: 20,
-        backgroundColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            stops: [
-                [0, 'rgb(255,255,255)'],
-                [1, 'rgb(230,230,230)']
-            ]
-        },
+  title: {
+    //disable title
+    text: null,
+  },
+
+  xAxis: {
+    type: "linear",
+    title: "Time (sec)",
+    lineColor: "#000",
+    tickColor: "#000",
+    gridLineColor: "#BBB",
+    gridLineWidth: 1,
+    labels: {
+      style: {
+        color: "#222",
+        fontWeight: "bold",
+      },
     },
-
     title: {
-        //disable title
-        text: null,
+      style: {
+        color: "#222",
+      },
     },
+  },
 
-    xAxis: {
-        type: 'linear',
-        title: 'Time (sec)',
-        lineColor: '#000',
-        tickColor: '#000',
-        gridLineColor: '#BBB',
-        gridLineWidth: 1,
-        labels: {
-            style: {
-                color: '#222',
-                fontWeight: 'bold'
-            },
-        },
-        title: {
-            style: {
-                color: '#222',
-            },
-        },
+  legend: {
+    layout: "vertical",
+    align: "right",
+    verticalAlign: "top",
+    borderWidth: 1,
+    backgroundColor: "#ddd",
+    floating: true,
+    itemStyle: {
+      font: "9pt Trebuchet MS, Verdana, sans-serif",
+      color: "#222",
     },
+  },
 
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        borderWidth: 1,
-        backgroundColor:  '#ddd',
-        floating: true,
-        itemStyle: {
-            font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: '#222'
-        },
+  exporting: {
+    enabled: false,
+  },
 
+  colors: ["#FF0000", "#0000FF", "#00BB00", "#FF00FF", "#00FFFF", "#FFFF00"],
+
+  plotOptions: {
+    line: {
+      marker: {
+        radius: 2,
+      },
+      lineWidth: 3,
+      threshold: null,
+      animation: true,
     },
-
-    exporting: {
-        enabled: false
-    },
-
-    colors: ['#FF0000', '#0000FF', '#00BB00', '#FF00FF', '#00FFFF', '#FFFF00'],
-
-    plotOptions: {
-        line: {
-            marker: {
-                radius: 2
-            },
-            lineWidth: 3,
-            threshold: null,
-            animation: true,
-        }
-    },
-    series: []
-}
+  },
+  series: [],
+};

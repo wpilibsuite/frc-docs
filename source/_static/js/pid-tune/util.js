@@ -1,13 +1,13 @@
 function gaussian(mean, stdev) {
-  var y2;
-  var use_last = false;
+  let y2;
+  let use_last = false;
   return function() {
-    var y1;
+    let y1;
     if (use_last) {
       y1 = y2;
       use_last = false;
     } else {
-      var x1, x2, w;
+      let x1, x2, w;
       do {
         x1 = 2.0 * Math.random() - 1.0;
         x2 = 2.0 * Math.random() - 1.0;
@@ -21,4 +21,10 @@ function gaussian(mean, stdev) {
 
     return mean + stdev * y1;
   }
+}
+
+function isNear([x1, y1], [x2, y2], tolerance) {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  return dx * dx + dy * dy <= tolerance * tolerance;
 }
