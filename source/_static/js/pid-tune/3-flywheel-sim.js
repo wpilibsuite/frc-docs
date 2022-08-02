@@ -20,48 +20,45 @@ class FlywheelSim extends BaseSim {
 
     this.plant.init(this.simulationTimestepS);
 
-    var idx = 0;
-
-    for (var t = 0.0; t < this.simulationEndTimeS; t += this.simulationTimestepS) {
+    for (var index = 0.0; index < this.timeS.length; index++) {
       var currentSetpoint = 0.0;
-      if (t > this.setpointStepTime) {
+      var currentTimeS = index * this.simulationTimestepS;
+      if (currentTimeS > this.setpointStepTime) {
         currentSetpoint = this.setpointVal;
       }
 
       var meas_speed = speed_delay_line.getSample();
 
       //Simulate Controller
-      if (t >= nextControllerRunTime) {
-        inputVolts = this.controllerUpdate(t, currentSetpoint, meas_speed);
+      if (currentTimeS >= nextControllerRunTime) {
+        inputVolts = this.controllerUpdate(currentTimeS, currentSetpoint, meas_speed);
         //Maintain separate sample rate for controller
         nextControllerRunTime += this.controllerTimestepS;
       }
 
-      this.plant.update(t, inputVolts);
+      this.plant.update(currentTimeS, inputVolts);
 
       speed_delay_line.addSample(this.plant.getCurrentSpeedRPM());
 
-      this.timeS[idx] = t;
-      this.controlEffort[idx] = inputVolts;
-      this.output[idx] = this.plant.getCurrentSpeedRPM();
-      this.setpoint[idx] = currentSetpoint;
-      this.outputPositionRev[idx] = this.plant.getCurrentPositionRev();
-
-      idx++;
+      this.timeS[index] = currentTimeS;
+      this.controlEffort[index] = inputVolts;
+      this.output[index] = this.plant.getCurrentSpeedRPM();
+      this.setpoint[index] = currentSetpoint;
+      this.outputPositionRev[index] = this.plant.getCurrentPositionRev();
     }
 
-    var controlEffortPlotData = Array(null, this.timeS.length);
-    var outputPlotData = Array(null, this.timeS.length);
-    var setpointPlotData = Array(null, this.timeS.length);
-    for (var idx = 0; idx < this.timeS.length; idx++) {
-      controlEffortPlotData[idx] = [
-        this.timeS[idx],
-        this.controlEffort[idx],
+    var controlEffortPlotData = Array(this.timeS.length);
+    var outputPlotData = Array(this.timeS.length);
+    var setpointPlotData = Array(this.timeS.length);
+    for (var index = 0; index < this.timeS.length; index++) {
+      controlEffortPlotData[index] = [
+        this.timeS[index],
+        this.controlEffort[index],
       ];
-      outputPlotData[idx] = [this.timeS[idx], this.outputPositionRev[idx]];
-      setpointPlotData[idx] = [
-        this.timeS[idx],
-        this.setpoint[idx],
+      outputPlotData[index] = [this.timeS[index], this.output[index]];
+      setpointPlotData[index] = [
+        this.timeS[index],
+        this.setpoint[index],
       ];
     }
     this.setControlEffortData(controlEffortPlotData);
