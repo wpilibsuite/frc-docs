@@ -3,9 +3,9 @@
 import matplotlib.pyplot as plt
 
 import frccontrol as fct
-import control as ct
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.signal import StateSpace
 
 DT = 0.005
 DELAY = 0.01
@@ -105,7 +105,7 @@ class Elevator(fct.System):
         C = np.array([[1]])
         D = np.array([[0]])
 
-        return ct.ss(A, B, C, D)
+        return StateSpace(A, B, C, D)
 
     def design_controller_observer(self):
         q = [0.00001]

@@ -56,4 +56,4 @@ There are useful forms of support provided by the community through various foru
 Bug Reporting
 -------------
 
-Found a bug? Let us know by reporting it in the Issues section of the appropriate WPILibSuite project on Github: https://github.com/wpilibsuite
+Found a bug? Let us know by reporting it in the Issues section of the appropriate WPILibSuite project on GitHub: https://github.com/wpilibsuite
