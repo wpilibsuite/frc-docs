@@ -95,24 +95,6 @@ class VerticalArmPIDF extends VerticalArmSim {
       control.append(input);
       curRow.appendChild(label);
       curRow.appendChild(control);
-
-      curRow = document.createElement("tr");
-      label = document.createElement("td");
-      label.innerHTML = "kA";
-      control = document.createElement("td");
-      controlTable.appendChild(curRow);
-      input = document.createElement("INPUT");
-      input.setAttribute("type", "text");
-      input.setAttribute("value", "0.0");
-      //input.setAttribute("step", "0.0000001");
-      input.onchange = function (event) {
-        this.animationReset = true;
-        this.kA = parseFloat(event.target.value);
-        this.reset();
-      }.bind(this);
-      control.append(input);
-      curRow.appendChild(label);
-      curRow.appendChild(control);
     }
 
     if (this.controlStrategy == "feedback" || this.controlStrategy == "both") {

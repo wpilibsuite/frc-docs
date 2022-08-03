@@ -2,7 +2,7 @@ class VerticalArmPlant {
   constructor() {
     // Constants related to plant model
     // Gearbox
-    let GEARBOX_RATIO = 50.0 / 1.0; //output over input - 50:1 gear ratio
+    let GEARBOX_RATIO = 100.0 / 1.0; //output over input - 100:1 gear ratio
 
     // 775 Pro Motor
     let Rc = 0.08; // Coil & Wiring Resistance in Ohms
@@ -10,7 +10,7 @@ class VerticalArmPlant {
     let Kv = (12 - 0.7 * Rc) / ((18730 * 2 * Math.PI) / 60); //V/(rad/s). Calculated from Vemf@FreeSpeed/(2pi/60*RPM@FreeSpeed). Steady-state Vemf = Vs - I@FreeSpeed*Rc, for Vs = 12
 
     // Arm assembly
-    let mass = 2.0; // arm end effector mass in Kg
+    let mass = 0.5; // arm end effector mass in Kg
     let radius = 0.6096; // 2 ft arm length, converted to meters
     let muKinetic = 1.25; // rotational kinetic friction coefficient in N/(rad/sec)
 
