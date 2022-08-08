@@ -15,7 +15,7 @@ In all Romi documentation, references to driving forward use the above definitio
    :alt: Romi Forward Driving Direction
 
 Hardware, Sensors, and GPIO
---------------------------
+---------------------------
 
 The Romi has the following built-in hardware/peripherals:
 
