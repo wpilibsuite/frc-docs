@@ -66,3 +66,4 @@ urllib3==1.26.9; (python_version >= "2.7" and python_full_version < "3.0.0") or 
 zipp==3.8.0; python_version < "3.10" and python_version >= "3.7"
 zopfli==0.2.1; python_version >= "3.7"
 jsmin==3.0.0
+sphinx-toolbox==3.1.0

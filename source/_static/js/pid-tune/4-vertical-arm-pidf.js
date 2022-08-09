@@ -43,13 +43,13 @@ class VerticalArmPIDF extends VerticalArmSim {
     controlTable.appendChild(curRow);
     input = document.createElement("INPUT");
     input.setAttribute("type", "text");
-    input.setAttribute("value", "0.1");
+    input.setAttribute("value", "0.0");
     //input.setAttribute("step", "0.1");
     //input.setAttribute("min", "-3.14159");
     //input.setAttribute("max", "3.14159");
     input.onchange = function (event) {
       this.animationReset = true;
-      this.currentSetpointRev = parseFloat(event.target.value);
+      this.currentSetpointRad = parseFloat(event.target.value) / 2 / Math.PI;
       this.reset();
     }.bind(this);
     control.append(input);

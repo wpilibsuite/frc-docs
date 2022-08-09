@@ -45,12 +45,12 @@ class BaseVisualization {
     this.timeS = timeS;
   }
 
-  setPositionData(positionRev) {
-    this.positionRev = positionRev;
+  setPositionData(positionRad) {
+    this.positionRad = positionRad;
   }
 
   setSetpointData(setpointRev) {
-    this.setpointRev = setpointRev;
+    this.setpointRad = setpointRev;
   }
 
   drawStatic() {

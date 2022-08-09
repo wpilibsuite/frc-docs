@@ -1,41 +1,39 @@
 class VerticalArmPlant {
-  constructor() {
-    // Constants related to plant model
-    // Gearbox
-    let GEARBOX_RATIO = 100.0 / 1.0; //output over input - 100:1 gear ratio
+  constructor(TimestepS) {
+    this.TimestepS = TimestepS;
 
-    // 775 Pro Motor
-    let Rc = 0.08; // Coil & Wiring Resistance in Ohms
-    let Kt = 0.71 / 134; // Nm/A torque constant -  Calculated from Stall Torque/Stall Current
-    let Kv = (12 - 0.7 * Rc) / ((18730 * 2 * Math.PI) / 60); //V/(rad/s). Calculated from Vemf@FreeSpeed/(2pi/60*RPM@FreeSpeed). Steady-state Vemf = Vs - I@FreeSpeed*Rc, for Vs = 12
+    // Gains estimated by ReCalc (http://reca.lc) with the specs below
+    // motor: 1x REV Neo
+    // gearing: 100:1
+    // efficiency: 100
+    // arm length: 1 meter
+    // arm mass: 5 kg
+    this.kGVolts = 1.75;
+    this.kVVoltSecondPerRad = 1.95;
+    this.kAVoltSecondSquaredPerRad = 0.18;
 
-    // Arm assembly
-    let mass = 0.5; // arm end effector mass in Kg
-    let radius = 0.6096; // 2 ft arm length, converted to meters
-    let muKinetic = 1.25; // rotational kinetic friction coefficient in N/(rad/sec)
-
-    // Previous state
-    this.posPrevRad = 0;
-    this.posPrevPrevRad = 0;
-
-    // TODO: better comment and descriptive variable naming
-    // Constants from the blog post equations
-    this.C1 = (GEARBOX_RATIO * Kt) / (mass * radius * radius * Rc);
-    this.C2 =
-      (Kt * Kv) / (mass * radius * radius * Rc) +
-      muKinetic / (mass * radius * radius);
-    this.C3 = 9.81 / (radius * radius);
+    this.state = [0, 0];
 
     this.systemNoise = false;
-    // Simulate 4 volt std dev system noise at the loop update frequency
-    this.gaussianNoise = gaussian(0, 4);
+    // Simulate quarter volt std dev system noise at the loop update frequency
+    this.gaussianNoise = gaussian(0, 0.25);
   }
 
-  init(TimestepS) {
-    //Previous state
-    this.posPrevRad = 0;
-    this.posPrevPrevRad = 0;
-    this.TimestepS = TimestepS;
+  acceleration([posRad, velRadPerS], inputVolts) {
+    if (this.systemNoise) {
+      inputVolts += this.gaussianNoise();
+    }
+
+    const gravityAcceleration = -this.kGVolts * Math.cos(posRad) / this.kAVoltSecondSquaredPerRad;
+    const EMFAcceleration = -this.kVVoltSecondPerRad * velRadPerS / this.kAVoltSecondSquaredPerRad;
+    const controlEffortAcceleration = inputVolts / this.kAVoltSecondSquaredPerRad;
+    const accelRadPerSSquared = gravityAcceleration + EMFAcceleration + controlEffortAcceleration;
+
+    return [velRadPerS, accelRadPerSSquared]
+  }
+  
+  reset() {
+    this.state = [0, 0];
   }
 
   update(inputVolts) {
@@ -46,20 +44,22 @@ class VerticalArmPlant {
     }
 
     //Run plant model simulation
-    this.curPosRad =
-      (1 / (this.TimestepS * this.C2 + 1)) *
-      (this.TimestepS * this.TimestepS * this.C1 * inputVolts -
-        this.TimestepS * this.TimestepS * this.C3 * Math.cos(this.posPrevRad) +
-        this.posPrevRad * (this.TimestepS * this.C2 + 2) -
-        this.posPrevPrevRad);
+    // this.curPosRad =
+    //   (1 / (this.TimestepS * this.C2 + 1)) *
+    //   (this.TimestepS * this.TimestepS * this.C1 * inputVolts -
+    //     this.TimestepS * this.TimestepS * this.C3 * Math.cos(this.posPrevRad) +
+    //     this.posPrevRad * (this.TimestepS * this.C2 + 2) -
+    //     this.posPrevPrevRad);
 
-    //Shift
-    this.posPrevPrevRad = this.posPrevRad;
-    this.posPrevRad = this.curPosRad;
+    this.state =
+      secondOrderRK4((state, inputVolts) => this.acceleration(state, inputVolts),
+      this.state,
+      inputVolts,
+      this.TimestepS);
   }
 
   getPositionRad() {
-    return this.curPosRad;
+    return this.state[0];
   }
 
   setSystemNoise(enabled) {

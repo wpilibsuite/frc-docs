@@ -5,13 +5,14 @@ class VerticalArmSim extends BaseSim {
     this.positionDelayLine = new DelayLine(49); //models sensor lag
 
     // User-configured setpoints
-    this.currentSetpointRev = 0.1;
+    this.currentSetpointRad = 0.0;
 
-    this.plant = new VerticalArmPlant();
+    this.plant = new VerticalArmPlant(this.simulationTimestepS);
 
     this.visualization = new VerticalArmVisualization(
       this.visualizationDrawDiv,
-      setpoint => this.setSetpointRev(setpoint)
+      setpoint => this.setSetpointRad(setpoint),
+      () => this.updateGraphs()
     );
     this.visualization.drawStatic();
 
@@ -36,17 +37,19 @@ class VerticalArmSim extends BaseSim {
     setInterval(() => {this.iterate();}, this.simulationTimestepS * 1000);
   }
 
-  setSetpointRev(setpoint) {
-    this.currentSetpointRev = setpoint;
+  setSetpointRad(setpoint) {
+    this.currentSetpointRad = setpoint;
+    this.visualization.setSetpointRev
   }
 
   reset() {
-    this.plant.init(this.simulationTimestepS);
+    this.plant.reset();
     this.timeS = Array(this.simulationEndTimeS / this.simulationTimestepS)
       .fill()
       .map((_, index) => {
         return index * this.simulationTimestepS;
-      });
+      })
+      .reverse();
     this.output = Array(
       this.simulationEndTimeS / this.simulationTimestepS
     ).fill(0);
@@ -60,7 +63,7 @@ class VerticalArmSim extends BaseSim {
       this.simulationEndTimeS / this.simulationTimestepS
     ).fill(0);
 
-    this.visualization.setPositionData(this.outputPositionRev);
+    this.visualization.setPositionData(this.output);
     this.visualization.setTimeData(this.timeS);
     this.visualization.setSetpointData(this.setpoint);
 
@@ -69,17 +72,17 @@ class VerticalArmSim extends BaseSim {
     this.previousSetpoint = 0.0;
     this.inputvolts = 0.0;
 
-    this.positionDelayLine = new DelayLine(49); //models sensor lag
+    this.positionDelayLine = new DelayLine(50); //models sensor lag
 
     this.redraw();
   }
 
   iterate() {
-    let measuredPositionRev = this.positionDelayLine.getSample();
+    let measuredPositionRad = this.positionDelayLine.getSample();
 
     // Update controller at controller freq
     if (this.timeSinceLastControllerIteration >= this.controllerTimestepS) {
-      this.inputVolts = this.updateController(this.currentSetpointRev, measuredPositionRev);
+      this.inputVolts = this.updateController(this.currentSetpointRad, measuredPositionRad);
       this.timeSinceLastControllerIteration = 0;
     } else {
       this.timeSinceLastControllerIteration = this.timeSinceLastControllerIteration + this.simulationTimestepS;
@@ -87,13 +90,13 @@ class VerticalArmSim extends BaseSim {
 
     this.plant.update(this.inputVolts);
 
-    this.positionDelayLine.addSample(this.plant.getPositionRad() / 2 / Math.PI);
+    this.positionDelayLine.addSample(this.plant.getPositionRad());
 
     this.controlEffort.unshift(this.inputVolts);
     this.controlEffort.pop();
     this.output.unshift(this.plant.getPositionRad());
     this.output.pop();
-    this.setpoint.unshift(this.currentSetpointRev);
+    this.setpoint.unshift(this.currentSetpointRad);
     this.setpoint.pop();
     this.outputPositionRev.unshift(this.plant.getPositionRad() / 2 / Math.PI);
     this.outputPositionRev.pop();
@@ -113,7 +116,7 @@ class VerticalArmSim extends BaseSim {
 
     // PID + cosine feed-forward control law
     let controlEffort =
-      this.kG * Math.cos(setpoint * 2 * Math.PI) +
+      this.kG * Math.cos(setpoint) +
       this.kV * derivativeSetpoint +
       this.kP * error +
       this.kI * this.accumulatedError +
@@ -130,5 +133,12 @@ class VerticalArmSim extends BaseSim {
     this.previousSetpoint = setpoint;
 
     return controlEffort;
+  }
+
+  updateGraphs() {
+    this.setControlEffortData(zip(this.timeS, this.controlEffort));
+    this.setSetpointData(zip(this.timeS, this.output));
+    this.setOutputData(zip(this.timeS, this.setpoint));
+    this.redraw();
   }
 }

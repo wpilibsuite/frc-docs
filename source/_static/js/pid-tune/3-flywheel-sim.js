@@ -76,4 +76,23 @@ class FlywheelSim extends BaseSim {
 
     this.redraw();
   }
+
+  drawAnimation(timeIndex, animationTimeS) {
+    super.drawAnimation(timeIndex, animationTimeS);
+
+    this.voltsChart.xAxis[0].removePlotBand("curTime");
+    this.processVariableChart.xAxis[0].removePlotBand("curTime");
+    this.voltsChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: animationTimeS,
+      id: "curTime",
+    });
+    this.processVariableChart.xAxis[0].addPlotLine({
+      color: "#BBBB00",
+      width: 2,
+      value: animationTimeS,
+      id: "curTime",
+    });
+  }
 }

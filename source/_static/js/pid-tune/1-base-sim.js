@@ -24,19 +24,6 @@ class BaseSim {
       zIndex: 1,
     });
 
-    this.voltsChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: 0.0,
-      id: "curTime",
-    });
-    this.processVariableChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: 0.0,
-      id: "curTime",
-    });
-
     this.voltsChart.yAxis[0].setTitle({ text: "Volts" });
     this.processVariableChart.yAxis[0].setTitle({ text: processVariableUnits });
 
@@ -47,7 +34,7 @@ class BaseSim {
     });
 
     this.simulationEndTimeS = 10.0;
-    this.simulationTimestepS = 0.001;
+    this.simulationTimestepS = 0.005;
     this.controllerTimestepS = 0.02;
 
     this.timeS = Array(this.simulationEndTimeS / this.simulationTimestepS).fill(0);
@@ -120,21 +107,6 @@ class BaseSim {
 
   drawAnimation(timeIndex, animationTimeS) {
     this.visualization.drawDynamic(timeIndex);
-
-    this.voltsChart.xAxis[0].removePlotBand("curTime");
-    this.processVariableChart.xAxis[0].removePlotBand("curTime");
-    this.voltsChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: animationTimeS,
-      id: "curTime",
-    });
-    this.processVariableChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: animationTimeS,
-      id: "curTime",
-    });
   }
 }
 

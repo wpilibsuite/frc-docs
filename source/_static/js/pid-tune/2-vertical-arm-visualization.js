@@ -1,5 +1,5 @@
 class VerticalArmVisualization extends BaseVisualization {
-  constructor(div_in, setSimulationSetpoint) {
+  constructor(div_in, setSimulationSetpoint, updateSimulationGraphs) {
     super(div_in);
 
     // These kept as members for click-drag detection
@@ -9,6 +9,7 @@ class VerticalArmVisualization extends BaseVisualization {
     this.draggingSetpoint = false;
 
     this.setSimulationSetpoint = setSimulationSetpoint;
+    this.updateSimulationGraphs = updateSimulationGraphs;
 
     this.animatedCanvas.addEventListener("mousedown", event => this.handleMouseDown(event));
     this.animatedCanvas.addEventListener("mousemove", event => this.handleMouseMove(event));
@@ -31,7 +32,7 @@ class VerticalArmVisualization extends BaseVisualization {
   }
 
   angleFromArmCenter([x, y]) {
-    return -Math.atan2(y - this.armStartY, x - this.armStartX) / 2 / Math.PI;
+    return -Math.atan2(y - this.armStartY, x - this.armStartX);
   }
 
   handleMouseDown(event) {
@@ -62,6 +63,8 @@ class VerticalArmVisualization extends BaseVisualization {
   handleMouseUp(event) {
     event.preventDefault();
     event.stopPropagation();
+
+    this.updateSimulationGraphs();
 
     this.draggingSetpoint = false;
   }
@@ -147,14 +150,14 @@ class VerticalArmVisualization extends BaseVisualization {
     this.animatedCanvasContext.clearRect(0, 0, this.width, this.height);
 
     let armEndX =
-      this.armStartX + this.armLenPx * Math.cos(2 * Math.PI * this.positionRev[0]);
+      this.armStartX + this.armLenPx * Math.cos(this.positionRad[0]);
     let armEndY =
-      this.armStartY - this.armLenPx * Math.sin(2 * Math.PI * this.positionRev[0]); // y axis inverted on graphics
+      this.armStartY - this.armLenPx * Math.sin(this.positionRad[0]); // y axis inverted on graphics
 
     this.setpointX =
-      this.armStartX + this.armLenPx * Math.cos(2 * Math.PI * this.setpointRev[0]);
+      this.armStartX + this.armLenPx * Math.cos(this.setpointRad[0]);
     this.setpointY =
-      this.armStartY - this.armLenPx * Math.sin(2 * Math.PI * this.setpointRev[0]);
+      this.armStartY - this.armLenPx * Math.sin(this.setpointRad[0]);
 
     // Arm
     this.animatedCanvasContext.lineWidth = 6;
@@ -202,9 +205,5 @@ class VerticalArmVisualization extends BaseVisualization {
     );
     this.animatedCanvasContext.fillStyle = "red";
     this.animatedCanvasContext.fill();
-  }
-
-  setSetpointRev(setpointRev) {
-    this.setpointRev = setpointRev;
   }
 }

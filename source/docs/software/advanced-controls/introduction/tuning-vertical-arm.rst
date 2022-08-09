@@ -40,11 +40,9 @@ The tutorials below will demonstrate the behavior of the system under pure feedf
 Pure Feedforward Control
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the turret system responds when controlled only by a feedforward controller.
-
 .. note:: Feedforward-only control is not a viable control scheme for vertical arms!  Do not be surprised if/when the simulation below does not behave well, even when the "correct" constants are used.
 
-.. note:: To change the arm setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the setpoint indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
+Interact with the simulation below to examine how the turret system responds when controlled only by a feedforward controller.
 
 .. raw:: html
 
@@ -62,38 +60,37 @@ Interact with the simulation below to examine how the turret system responds whe
       </script>
     </div>
 
-.. note:: When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it).  This is called an `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__, and is a very efficient way to find positive values of unknown scale.
+.. note:: To change the arm setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the setpoint indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
+
+.. note:: This simulation does not include any motion profile generation, so acceleration setpoints are not very well-defined.  Accordingly, the `kA` term of the feedforward equation is not used by the controller.
 
 To tune the feedforward controller,, perform the following:
 
-1. Set :math:`K_g`, :math:`K_v`, and :math:`K_a` to zero.
+.. note:: When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it).  This is called an `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__, and is a very efficient way to find positive values of unknown scale.
+
+1. Set :math:`K_g` and :math:`K_v` to zero.
 2. Increase :math:`K_g` until the arm can hold its position with as little movement as possible. If the arm moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
 3. Increase the velocity feedforward gain :math:`K_v` until the arm tracks the setpoint during smooth, slow motion.  If the arm overshoots, reduce the gain.  Note that the arm may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
+   
+.. collapse:: Tuning solution
+   
+   The exact gains used by the simulation are :math:`K_g = 1.75` and :math:`K_v = 1.95`.
 
-
-.. raw:: html
-
-   <details>
-     <summary>Tuning Solution</summary><br>
-
-The exact gains used by the simulation are <TODO: insert gains here, including kv, ka>.
-
-As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
+|
+As mentioned above, our simulated mechanism almost-perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
 However, our feedforward equation relates *velocity* and *acceleration* to voltage - it allows us to control the *instantaneous motion* of our mechanism with high accuracy, but it does not allow us direct control over the *position*.  This is a problem even in our simulation (in which the feedforward equation is the *actual* equation of motion), because unless we employ a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` to generate a sequence of velocity setpoints we can ask the arm to jump immediately from one position to another.  This is impossible, even for our simulated arm.
 
 The resulting behavior from the feedforward controller is to output a single "voltage spike" when the position setpoint changes (corresponding to a single loop iteration of very high velocity), and then zero voltage (because it is assumed that the system has already reached the setpoint).  In practice, we can see in the simulation that this results in an initial "impulse" movement towards the target position, that stops at some indeterminate position in-between.  This kind of response is called a "kick," and is generally seen as undesirable.
 
-You may notice that *smooth* motion below the arm's maximum achievable speed can be followed accurately in the simulation with feedforward alone.  This is misleading, however, because no real mechanism perfectly obeys its feedforward equation.  With the "system noise" option enabled, we can see that even smooth, slow motion eventually results in compounding position errors when only only feedforward control is used.  To accurately converge to the setpoint, we need to use a feedback (PID) controller.
+You will notice that, once properly tuned, the mechanism can track slow/smooth movement with a surprising amount of accuracy - however, there are some obvious problems with this approach.  Our feedforward equation corrects for the force of gravity *at the setpoint* - this results in poor behavior if our arm is far from the setpoint.  With the "system noise" option enabled, we can also see that even smooth, slow motion eventually results in compounding position errors when only only feedforward control is used.  To accurately converge to and remain at the setpoint, we need to use a feedback (PID) controller.
 
 Pure Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the vertical arm system responds when controlled only by a feedback (PID) controller.
-
 .. note:: Feedback-only control is not a viable control scheme for vertical arms!  Do not be surprised if/when the simulation below does not behave well, even when the "correct" constants are used.
 
-<TODO: edit simulation to only include feedback and setpoint indicator>
+Interact with the simulation below to examine how the vertical arm system responds when controlled only by a feedback (PID) controller.
 
 .. raw:: html
 
@@ -122,14 +119,11 @@ Perform the following:
 
 Note that you will likely have trouble finding a set of gains that behaves acceptably. If you think you have a set that works, try changing the setpoint to be a bit different. You'll likely see the arm behave very differently for small changes in setpoints.
 
-.. raw:: html
+.. collapse:: Tuning solution
 
-   <details>
-     <summary>Tuning Solution</summary><br>
+   There is no good tuning solution for this control strategy.  Values of :math:`K_p = 5` and :math:`K_d = 1` yield a reasonable approach to a stable equilibrium, but that equilibrium is not actually at the setpoint!  Adding some integral gain can push us to the setpoint over time, but it's unstable and laggy.
 
-
-In this particular example, for a setpoint of 0.1, values of :math:`K_p = 12.0`, :math:`K_i = 6.0`, and :math:`K_d = 3.0` will produce somewhat reasonable results. It won't be great for other setpoints.
-
+|
 Because a non-zero amount of :term:`control effort` is required to keep the arm at a constant height, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.  In order to optimally control a vertical arm, a combined feedforward-feedback strategy is needed.
 
 Combined Feedforward and Feedback Control
@@ -159,16 +153,14 @@ We saw in the feedforward-only example above that an accurate feedforward can tr
 
 Tuning the combined arm controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.  Notice that PID portion of the controller is *much* easier to tune "on top of" an accurate feedforward.
 
-.. raw:: html
+.. collapse:: Tuning solution
 
-   <details>
-     <summary>Tuning Solution</summary><br>
+   Combining the feedforward coefficients from our first simulation (:math:`K_g = 1.75` and :math:`K_v = 1.95`) and the feedback coefficients from our second simulation (:math:`K_p = 5` and :math:`K_d = 1`) yields a good controller behavior.
 
-<TODO: include kv, ka>
+|
+Once tuned properly, the combined controller accurately tracks a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
 
-In this particular example, reasonable values for the constants are :math:`K_g = 5.92465`, :math:`K_p = 6.0`, and :math:`K_d = 2.0`. These should produce good results at all setpoints.
-
-Once tuned properly, the combined controller should accurately track a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
+The control law is not perfect, though.  There is usually some overshoot even for smoothly-moving setpoints - this is combination of the lack of :math:`K_a` in the feedforward (see the note above for why it is omitted here), and some discretization error in the simulation.  Attempting to move the setpoint too quickly can also cause the setpoint and mechanism to diverge, which (as mentioned earlier) will result in poor behavior due to the :math:'K_g' term correcting for the wrong force, as it is calculated from the setpoint, not the measurement.  Using the measurement to correct for gravity is called "feedback linearization" (as opposed to "feedforward linearization" when the setpoint is used), and can be a better control strategy if your measurements are sufficiently fast and accurate.
 
 A Note on Feedforward and Static Friction
 -----------------------------------------
