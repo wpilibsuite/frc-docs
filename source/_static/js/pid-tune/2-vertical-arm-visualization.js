@@ -47,11 +47,9 @@ class VerticalArmVisualization extends BaseVisualization {
 
     const clickLocation = this.getCursorPosition(event);
 
-    if (this.isNearSetpoint(clickLocation)) {
-        this.draggingSetpoint = true;
-    } else {
-        this.setSimulationSetpoint(this.angleFromArmCenter(clickLocation));
-    }
+    this.draggingSetpoint = true;
+
+    this.setSimulationSetpoint(this.angleFromArmCenter(clickLocation));
   }
 
   handleMouseMove(event) {
@@ -124,7 +122,7 @@ class VerticalArmVisualization extends BaseVisualization {
     this.staticCanvasContext.stroke();
 
     //Bumpers
-    this.staticCanvasContext.fillStyle = "#FF0000";
+    this.staticCanvasContext.fillStyle = "blue";
     this.staticCanvasContext.fillRect(
       0.1 * this.width,
       0.88 * this.height,
@@ -174,7 +172,7 @@ class VerticalArmVisualization extends BaseVisualization {
 
     // Arm
     this.animatedCanvasContext.lineWidth = 6;
-    this.animatedCanvasContext.strokeStyle = "#22BB22";
+    this.animatedCanvasContext.strokeStyle = "grey";
     this.animatedCanvasContext.beginPath();
     this.animatedCanvasContext.moveTo(this.armStartX, this.armStartY);
     this.animatedCanvasContext.lineTo(armEndX, armEndY);
@@ -190,20 +188,7 @@ class VerticalArmVisualization extends BaseVisualization {
       2 * Math.PI,
       false
     );
-    this.animatedCanvasContext.fillStyle = "grey";
-    this.animatedCanvasContext.fill();
-
-    // End Effector
-    this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.arc(
-      armEndX,
-      armEndY,
-      0.035 * this.height,
-      0,
-      2 * Math.PI,
-      false
-    );
-    this.animatedCanvasContext.fillStyle = "#990099";
+    this.animatedCanvasContext.fillStyle = "green";
     this.animatedCanvasContext.fill();
 
     // Setpoint indicator
@@ -217,6 +202,19 @@ class VerticalArmVisualization extends BaseVisualization {
       false
     );
     this.animatedCanvasContext.fillStyle = "red";
+    this.animatedCanvasContext.fill();
+
+    // End Effector
+    this.animatedCanvasContext.beginPath();
+    this.animatedCanvasContext.arc(
+      armEndX,
+      armEndY,
+      0.035 * this.height,
+      0,
+      2 * Math.PI,
+      false
+    );
+    this.animatedCanvasContext.fillStyle = "purple";
     this.animatedCanvasContext.fill();
   }
 }

@@ -5,10 +5,10 @@ class VerticalArmPIDF extends VerticalArmSim {
     // Can be "feedforward", "feedback", or "both"
     this.controlStrategy = controlStrategy;
 
-    this.buildControlTable();
+    this.buildControlTable(divIdPrefix);
   }
 
-  buildControlTable() {
+  buildControlTable(divIdPrefix) {
     let curRow;
     let label;
     let control;
@@ -26,10 +26,10 @@ class VerticalArmPIDF extends VerticalArmSim {
     input = document.createElement("INPUT");
     input.setAttribute("type", "checkbox");
     input.setAttribute("value", "false");
-    input.setAttribute("id", "systemNoise");
+    input.setAttribute("id", divIdPrefix + "_systemNoise");
     input.onclick = function (event) {
       this.plant.setSystemNoise(document.getElementById("systemNoise").checked);
-      this.runSim();
+      this.begin();
     }.bind(this);
     control.append(input);
     curRow.appendChild(label);
@@ -43,12 +43,10 @@ class VerticalArmPIDF extends VerticalArmSim {
     input = document.createElement("INPUT");
     input.setAttribute("type", "text");
     input.setAttribute("value", "0.0");
-    //input.setAttribute("step", "0.1");
-    //input.setAttribute("min", "-3.14159");
-    //input.setAttribute("max", "3.14159");
+    input.setAttribute("id", divIdPrefix + "_setpoint");
     input.onchange = function (event) {
-      this.currentSetpointRad = parseFloat(event.target.value) / 2 / Math.PI;
-      this.reset();
+      this.currentSetpointRad = parseFloat(event.target.value);
+      this.begin();
     }.bind(this);
     control.append(input);
     curRow.appendChild(label);
@@ -69,7 +67,7 @@ class VerticalArmPIDF extends VerticalArmSim {
       //input.setAttribute("step", "0.0000001");
       input.onchange = function (event) {
         this.kG = parseFloat(event.target.value);
-        this.reset();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -86,7 +84,7 @@ class VerticalArmPIDF extends VerticalArmSim {
       //input.setAttribute("step", "0.0000001");
       input.onchange = function (event) {
         this.kV = parseFloat(event.target.value);
-        this.reset();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -105,7 +103,7 @@ class VerticalArmPIDF extends VerticalArmSim {
       //input.setAttribute("step", "0.1");
       input.onchange = function (event) {
         this.kP = parseFloat(event.target.value);
-        this.reset();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -122,7 +120,7 @@ class VerticalArmPIDF extends VerticalArmSim {
       //input.setAttribute("step", "0.1");
       input.onchange = function (event) {
         this.kI = parseFloat(event.target.value);
-        this.reset();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -139,7 +137,7 @@ class VerticalArmPIDF extends VerticalArmSim {
       //input.setAttribute("step", "0.01");
       input.onchange = function (event) {
         this.kD = parseFloat(event.target.value);
-        this.reset();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);

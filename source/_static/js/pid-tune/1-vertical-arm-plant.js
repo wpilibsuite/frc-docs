@@ -15,8 +15,8 @@ class VerticalArmPlant {
     this.state = [0, 0];
 
     this.systemNoise = false;
-    // Simulate quarter volt std dev system noise at the loop update frequency
-    this.gaussianNoise = gaussian(0, 0.25);
+    // Simulate half volt std dev system noise at sim loop update frequency
+    this.gaussianNoise = gaussian(0, 0.5);
   }
 
   acceleration([posRad, velRadPerS], inputVolts) {
@@ -42,14 +42,6 @@ class VerticalArmPlant {
       // apply system noise
       inputVolts += this.gaussianNoise();
     }
-
-    //Run plant model simulation
-    // this.curPosRad =
-    //   (1 / (this.TimestepS * this.C2 + 1)) *
-    //   (this.TimestepS * this.TimestepS * this.C1 * inputVolts -
-    //     this.TimestepS * this.TimestepS * this.C3 * Math.cos(this.posPrevRad) +
-    //     this.posPrevRad * (this.TimestepS * this.C2 + 2) -
-    //     this.posPrevPrevRad);
 
     this.state =
       secondOrderRK4((state, inputVolts) => this.acceleration(state, inputVolts),

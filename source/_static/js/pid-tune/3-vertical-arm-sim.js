@@ -44,6 +44,7 @@ class VerticalArmSim extends BaseSim {
 
   setSetpointRad(setpoint) {
     this.currentSetpointRad = setpoint;
+    document.getElementById(this.divIdPrefix + "_setpoint").value = setpoint;
   }
 
   reset() {
@@ -156,8 +157,8 @@ class VerticalArmSim extends BaseSim {
 
   updateGraphs() {
     this.setControlEffortData(zip(this.timeS, this.controlEffort));
-    this.setSetpointData(zip(this.timeS, this.output));
-    this.setOutputData(zip(this.timeS, this.setpoint));
+    this.setSetpointData(zip(this.timeS, this.setpoint));
+    this.setOutputData(zip(this.timeS, this.output));
     this.redraw();
   }
 }

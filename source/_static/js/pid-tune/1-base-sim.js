@@ -1,5 +1,6 @@
 class BaseSim {
   constructor(divIdPrefix, processVariableUnits, stateMin, stateMax) {
+    this.divIdPrefix = divIdPrefix;
     this.speedGraph = null;
     this.voltsGraph = null;
     this.containerDiv = document.getElementById(divIdPrefix + "_container");
@@ -12,15 +13,15 @@ class BaseSim {
     );
     this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, defaultOptions);
 
-    this.voltsChart.addSeries({ name: "Control Effort", color: "#00BB00" });
+    this.voltsChart.addSeries({ name: "Control Effort", color: "green" });
     this.processVariableChart.addSeries({
       name: "Output",
-      color: "#FF0000",
+      color: "purple",
       zIndex: 2,
     });
     this.processVariableChart.addSeries({
       name: "Setpoint",
-      color: "#0000FF",
+      color: "red",
       zIndex: 1,
     });
 
