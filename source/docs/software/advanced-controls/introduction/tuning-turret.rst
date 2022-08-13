@@ -44,21 +44,36 @@ Interact with the simulation below to examine how the turret system responds whe
 
 .. note:: To change the turret setpoint, click on the desired angle along the perimeter of the turret.  To command smooth motion, click and drag the setpoint indicator.  The "system noise" option introduces random (gaussian) error into the plant to provide a more realistic situation of system behavior, especially over long time-scales.
 
-<TODO: insert simulation here>
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="turret_feedforward_container">
+         <div class="col" id="turret_feedforward_plotVals"></div>
+         <div class="col" id="turret_feedforward_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="turret_feedforward_viz"></div>
+         <div id="turret_feedforward_ctrls"></div>
+      </div>
+      <script>
+         turret_pidf = new TurretPIDF("turret_feedforward", "feedforward");
+      </script>
+    </div>
+
+.. note:: This simulation does not include any motion profile generation, so acceleration setpoints are not very well-defined.  Accordingly, the `kA` term of the feedforward equation is not used by the controller.  This means there will be some amount of delay/lag inherent to the feedforward-only response.
 
 To tune the feedforward controller, perform the following:
 
 .. note:: When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it).  This is called an `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__, and is a very efficient way to find positive values of unknown scale.
 
-1. Increase the velocity feedforward gain :math:`K_v` until the turret tracks the setpoint during smooth, slow motion.  If the turret overshoots, reduce the gain.  Note that the turret may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
-2. Increase the acceleration feedforward gain :math:`K_a` until the turret no longer lags behind the setpoint during smooth, slow motion.
+1. Set :math:`K_v` to zero.
+2. Increase the velocity feedforward gain :math:`K_v` until the turret tracks the setpoint during smooth, slow motion.  If the turret overshoots, reduce the gain.  Note that the turret may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
 
-.. raw:: html
+.. collapse:: Tuning solution
 
-   <details>
-     <summary>Tuning Solution</summary><br>
+   The exact gain used by the plant is :math:`K_v = 0.2`.  Note that due to timing inaccuracy in browser simulations, the :math:`K_v` that works best in the simulation may be somewhat smaller than this.
 
-The exact gains used by the simulation are <TODO: insert gains here>.
+|
 
 As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
@@ -73,7 +88,21 @@ Pure Feedback Control
 
 Interact with the simulation below to examine how the turret system responds when controlled only by a feedback (PID) controller.
 
-<TODO: insert simulation here>
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="turret_feedback_container">
+         <div class="col" id="turret_feedback_plotVals"></div>
+         <div class="col" id="turret_feedback_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="turret_feedback_viz"></div>
+         <div id="turret_feedback_ctrls"></div>
+      </div>
+      <script>
+         turret_pidf = new TurretPIDF("turret_feedback", "feedback");
+      </script>
+    </div>
 
 As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has *three* tuned constants.  This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 
@@ -83,12 +112,11 @@ Perform the following:
 2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates too much around the setpoint, reduce `K_p` until it stops.
 3. Increase :math:`K_d` to reduce the amount of "lag" when the controller tries to track a smoothly moving setpoint (reminder: click and drag the turret's directional indicator to move it smoothly).  If the controller starts to oscillate, reduce `K_d` until it stops.
 
-.. raw:: html
+.. collapse:: Tuning solution
 
-   <details>
-     <summary>Tuning Solution</summary><br>
+   Gains of :math:`K_p = 0.3` and :math:`K_d = 0.1` yield rapid and stable convergence to the setpoint.  Other, simiilar gains will work nearly as well.
 
-A good set of gains for the simulated mechanism above is <TODO: insert gains here>.  This is not the only set of gains that will produce good results, but the controller should behave fairly well given these gains.
+|
 
 Note that even with system noise enabled, the feedback controller is able to drive the turret to the setpoint in a stable manner over time.  However, it may not be possible to smoothly track a moving setpoint without lag using feedback alone, as the feedback controller can only respond to errors once they have built up.  To get the best of both worlds, we need to combine our feedback controller with a feedforward controller.
 
@@ -97,7 +125,21 @@ Combined Feedforward and Feedback Control
 
 Interact with the simulation below to examine how the turret system responds under simultaneous feedforward and feedback control.
 
-<TODO: insert simulation here>
+.. raw:: html
+
+    <div class="viz-div">
+      <div id="turret_feedforward_feedback_container">
+         <div class="col" id="turret_feedforward_feedback_plotVals"></div>
+         <div class="col" id="turret_feedforward_feedback_plotVolts"></div>
+      </div>
+      <div class="flex-grid">
+         <div class="col" id="turret_feedforward_feedback_viz"></div>
+         <div id="turret_feedforward_feedback_ctrls"></div>
+      </div>
+      <script>
+         turret_pidf = new TurretPIDF("turret_feedforward_feedback", "both");
+      </script>
+    </div>
 
 Controlling a mechanism with only feedback can produce reasonable results in cases where no :term:`control effort` is required to keep the :term:`output` at the :term:`setpoint`. On a turret, this can work acceptably - however, it may still run into problems when trying to follow a moving setpoint, as it relies entirely on the controller transients to control the mechanism's intermediate motion between position setpoints.
 
@@ -105,12 +147,11 @@ We saw in the feedforward-only example above that an accurate feedforward can tr
 
 Tuning the combined turret controller is simple - we first tune the feedforward controller following the same procedure as in the feedforward-only section, and then we tune the PID controller following the same procedure as in the feedback-only section.  Notice that PID portion of the controller is *much* easier to tune "on top of" an accurate feedforward.
 
-.. raw:: html
+.. collapse:: Tuning solution
 
-   <details>
-     <summary>Tuning Solution</summary><br>
+   The optimal gains for the combined controller are just the optimal gains for the individual controllers: gains of :math:`K_v = 0.15`, :math:`K_p = 0.3`, and :math:`K_d = 0.1` yield rapid and stable convergence to the setpoint and relatively accurate tracking of smooth motion.  Other, simiilar gains will work nearly as well.
 
-The optimal gains for the controllers when combined are the same as the optimal gains when separate: <TODO: insert gains here>.
+|
 
 Once tuned properly, the combined controller should accurately track a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
 
