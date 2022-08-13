@@ -71,12 +71,13 @@ To tune the feedforward controller,, perform the following:
 1. Set :math:`K_g` and :math:`K_v` to zero.
 2. Increase :math:`K_g` until the arm can hold its position with as little movement as possible. If the arm moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
 3. Increase the velocity feedforward gain :math:`K_v` until the arm tracks the setpoint during smooth, slow motion.  If the arm overshoots, reduce the gain.  Note that the arm may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
-   
+
 .. collapse:: Tuning solution
-   
+
    The exact gains used by the simulation are :math:`K_g = 1.75` and :math:`K_v = 1.95`.
 
 |
+
 As mentioned above, our simulated mechanism almost-perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
 However, our feedforward equation relates *velocity* and *acceleration* to voltage - it allows us to control the *instantaneous motion* of our mechanism with high accuracy, but it does not allow us direct control over the *position*.  This is a problem even in our simulation (in which the feedforward equation is the *actual* equation of motion), because unless we employ a :ref:`motion profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` to generate a sequence of velocity setpoints we can ask the arm to jump immediately from one position to another.  This is impossible, even for our simulated arm.
@@ -124,6 +125,7 @@ Note that you will likely have trouble finding a set of gains that behaves accep
    There is no good tuning solution for this control strategy.  Values of :math:`K_p = 5` and :math:`K_d = 1` yield a reasonable approach to a stable equilibrium, but that equilibrium is not actually at the setpoint!  Adding some integral gain can push us to the setpoint over time, but it's unstable and laggy.
 
 |
+
 Because a non-zero amount of :term:`control effort` is required to keep the arm at a constant height, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.  In order to optimally control a vertical arm, a combined feedforward-feedback strategy is needed.
 
 Combined Feedforward and Feedback Control
@@ -158,6 +160,7 @@ Tuning the combined arm controller is simple - we first tune the feedforward con
    Combining the feedforward coefficients from our first simulation (:math:`K_g = 1.75` and :math:`K_v = 1.95`) and the feedback coefficients from our second simulation (:math:`K_p = 5` and :math:`K_d = 1`) yields a good controller behavior.
 
 |
+
 Once tuned properly, the combined controller accurately tracks a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
 
 The control law is not perfect, though.  There is usually some overshoot even for smoothly-moving setpoints - this is combination of the lack of :math:`K_a` in the feedforward (see the note above for why it is omitted here), and some discretization error in the simulation.  Attempting to move the setpoint too quickly can also cause the setpoint and mechanism to diverge, which (as mentioned earlier) will result in poor behavior due to the :math:'K_g' term correcting for the wrong force, as it is calculated from the setpoint, not the measurement.  Using the measurement to correct for gravity is called "feedback linearization" (as opposed to "feedforward linearization" when the setpoint is used), and can be a better control strategy if your measurements are sufficiently fast and accurate.

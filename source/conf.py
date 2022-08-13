@@ -56,10 +56,10 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
-    'sphinx.ext.viewcode',
-    'sphinx_tabs.tabs',
-    'sphinx-prompt',
-    'sphinx_toolbox.collapse',
+    "sphinx.ext.viewcode",
+    "sphinx_tabs.tabs",
+    "sphinx-prompt",
+    "sphinx_toolbox.collapse",
 ]
 
 local_extensions = [

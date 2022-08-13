@@ -60,8 +60,8 @@ sysd = sys.sample(0.01)
 x1 = np.array([[0]])
 x2 = np.array([[0]])
 
-K1 = lqr(sysd, np.array([[1.0 / (1.0**2)]]), np.array([[1.0 / (12.0**2)]]))
-K2 = lqr(sysd, np.array([[1.0 / (0.1**2)]]), np.array([[1.0 / (12.0**2)]]))
+K1 = lqr(sysd, np.array([[1.0 / (1.0 ** 2)]]), np.array([[1.0 / (12.0 ** 2)]]))
+K2 = lqr(sysd, np.array([[1.0 / (0.1 ** 2)]]), np.array([[1.0 / (12.0 ** 2)]]))
 
 t1 = []
 x1data = []
