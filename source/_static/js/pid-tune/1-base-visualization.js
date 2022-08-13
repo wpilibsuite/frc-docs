@@ -1,73 +1,73 @@
-
 class BaseVisualization {
-    constructor(div_in){
+  constructor(div_in) {
+    this.drawDiv = div_in;
 
-        this.drawDiv = div_in;
+    div_in.style.position = "relative";
 
-        div_in.style.position = "relative";
+    this.animatedCanvas = document.createElement("canvas");
+    this.staticCanvas = document.createElement("canvas");
 
-        this.ca = document.createElement("canvas")
-        this.cas = document.createElement("canvas")
+    this.staticCanvas.style.position = "absolute";
+    this.staticCanvas.style.top = "0px";
+    this.staticCanvas.style.left = "0px";
 
-        this.cas.style.position = "absolute";
-        this.cas.style.top = "0px";
-        this.cas.style.left = "0px";
+    this.animatedCanvas.style.position = "absolute";
+    this.animatedCanvas.style.top = "0px";
+    this.animatedCanvas.style.left = "0px";
 
-        this.ca.style.position = "absolute";
-        this.ca.style.top = "0px";
-        this.ca.style.left = "0px";
+    this.teamNumber = Math.floor(Math.random() * 9999).toFixed(0);
 
-        this.teamNum = Math.floor(Math.random() * 9999).toFixed(0);
+    this.animatedCanvasContext = this.animatedCanvas.getContext("2d");
+    this.staticCanvasContext = this.staticCanvas.getContext("2d");
 
-        this.ctxa = this.ca.getContext("2d");
-        this.ctxs = this.cas.getContext("2d");
+    div_in.appendChild(this.staticCanvas);
+    div_in.appendChild(this.animatedCanvas);
 
-        div_in.appendChild(this.cas);
-        div_in.appendChild(this.ca);
+    this.updateSize();
 
-        this.updateSize();
+    window.addEventListener("resize", this.updateSize.bind(this));
+    window.addEventListener("load", this.updateSize.bind(this));
+  }
 
-        window.addEventListener('resize', this.updateSize.bind(this));
-        window.addEventListener('load', this.updateSize.bind(this));
+  updateSize() {
+    this.width = Math.min(this.drawDiv.offsetWidth, 500);
+    this.height = this.drawDiv.offsetHeight;
+    this.staticCanvas.width = this.width;
+    this.staticCanvas.height = this.height;
+    this.animatedCanvas.width = this.width;
+    this.animatedCanvas.height = this.height;
+    this.drawStatic();
+  }
 
-    }
+  setTimeData(timeS) {
+    this.timeS = timeS;
+  }
 
-    updateSize(){
-        this.width = Math.min(this.drawDiv.offsetWidth, 500);
-        this.height = this.drawDiv.offsetHeight;
-        this.cas.width = this.width;
-        this.cas.height = this.height;
-        this.ca.width = this.width;
-        this.ca.height = this.height;
-        this.drawStatic();
-    }
+  setPositionData(positionRad) {
+    this.positionRad = positionRad;
+  }
 
-    setActuatorPositionData(time, posRev){
-        this.posRev = posRev;
-        this.time = time;
-    }
+  setSetpointData(setpoint) {
+    this.setpoint = setpoint;
+  }
 
-    drawStatic(){
+  setOutputData(output) {
+    this.output = output;
+  }
 
-        this.ctxs.clearRect(0,0,this.width,this.height);
+  setControlEffortData(controlEffortVolts) {
+    this.controlEffortVolts = controlEffortVolts;
+  }
 
-        this.drawStaticCustom();
+  drawStatic() {
+    this.staticCanvasContext.clearRect(0, 0, this.width, this.height);
 
-    }
+    this.drawStaticCustom();
+  }
 
-    drawDynamic(timeIdx){
-        this.ctxa.clearRect(0,0,this.width,this.height);
+  drawDynamic(timeIndex, animationTimeS) {
+    this.animatedCanvasContext.clearRect(0, 0, this.width, this.height);
 
-        this.drawDynamicCustom(timeIdx);
-
-        //Time Indicator
-        var time_sec = this.time[timeIdx];
-        this.ctxa.fillStyle="#000000"
-        this.ctxa.font = "bold 20px Arial";
-        this.ctxa.fillText("t = " + time_sec.toFixed(2) + " sec", 0.05*this.width, 0.15*this.height); 
-        //Progress bar
-        this.ctxa.fillStyle="#0000FF"
-        this.ctxa.fillRect(0.0*this.width, 0.98*this.height, ((timeIdx)/(this.time.length))*this.width, 0.02*this.height);
-            
-    }
+    this.drawDynamicCustom(timeIndex, animationTimeS);
+  }
 }

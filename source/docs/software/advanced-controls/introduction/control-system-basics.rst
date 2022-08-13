@@ -70,8 +70,13 @@ The below figure is a block diagram with more formal notation in a feedback conf
 
 :math:`\mp` means "minus or plus" where a minus represents negative feedback.
 
+A Note on Dimensionality
+------------------------
 
-Getting Started
----------------
+For the purposes of the introductory section, all systems and controllers (except feedforward controllers) are assumed to be "single-in, single-out" (SISO) - this means they only map single values to single values.  For example, a DC motor is considered to take an :term:`input` of a single scalar value (voltage) and yield an :term:`output` of only a single scalar value in return (either position or velocity).  This forces us to consider *position controllers* and *velocity controllers* as separate entities - this is sometimes source of confusion in situations when we want to control both (such as when following a motion profiles).  Limiting ourselves to SISO systems also means that we are unable to analyze more-complex "multiple-in, multiple-out" (MIMO) systems like drivetrains that cannot be represented with a single state (there are at least two independent sets of wheels in a drive).
 
-Continue on to :ref:`some background to approaches in designing a control system for a mechanism on your robot<docs/software/advanced-controls/introduction/approaches-to-ctrl-sys-design:Approaches to Designing Control Systems>`.
+Nonetheless, we restrict ourselves to SISO systems here to be able to present the following tutorials in terms of the PID Controller formalism, which is commonly featured in introductory course material and has extensive documentation and many available implementations.
+
+The :ref:`state-space <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>` formalism is an alternate way to conceptualize these systems which allows us to easily capture interactions between different quantities (as well as simultaneously represent multiple aspects of the same quantity, such as position and velocity of a motor).  It does this, roughly, by replacing the single-dimensional scalars (e.g. the :term:`gain`, :term:`input`, and :term:`output`) with multi-dimensional vectors.  In the state-space formalism, the equivalent of a "PID" controller is a vector-proportional controller on a single vector-valued mechanism state, with a single :term:`gain` vector (instead of three different :term:`gain` scalars).
+
+If you remember that a state-space controller is really just a PID controller written with dense notation, many of the principles covered in this set of introductory articles will transfer seamlessly to the case of state-space control.

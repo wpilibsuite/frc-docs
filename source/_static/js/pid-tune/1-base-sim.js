@@ -1,183 +1,174 @@
 class BaseSim {
+  constructor(divIdPrefix, processVariableUnits, stateMin, stateMax) {
+    this.divIdPrefix = divIdPrefix;
+    this.speedGraph = null;
+    this.voltsGraph = null;
+    this.containerDiv = document.getElementById(divIdPrefix + "_container");
+    let plotDrawDivVals = document.getElementById(divIdPrefix + "_plotVals");
+    let plotDrawDivVolts = document.getElementById(divIdPrefix + "_plotVolts");
 
-    constructor(div_id_prefix, stateUnits, stateMin, stateMax) {
-        this.speedGraph = null;
-        this.voltsGraph = null;
-        this.containerDiv  = document.getElementById(div_id_prefix + "_container");
-        var plotDrawDivVals = document.getElementById(div_id_prefix + "_plotVals");
-        var plotDrawDivVolts = document.getElementById(div_id_prefix + "_plotVolts");
+    this.processVariableChart = new Highcharts.Chart(
+      plotDrawDivVals,
+      defaultOptions
+    );
+    this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, defaultOptions);
 
-        this.valsChart = new Highcharts.Chart(plotDrawDivVals, dflt_options);
-        this.voltsChart = new Highcharts.Chart(plotDrawDivVolts, dflt_options);
+    this.voltsChart.addSeries({ name: "Control Effort", color: "green" });
+    this.processVariableChart.addSeries({
+      name: "Output",
+      color: "purple",
+      zIndex: 2,
+    });
+    this.processVariableChart.addSeries({
+      name: "Setpoint",
+      color: "red",
+      zIndex: 1,
+    });
 
-        this.voltsChart.addSeries({name: "Control Effort", color: '#00BB00'});
-        this.valsChart.addSeries({name: "Output", color: '#FF0000', zIndex: 2});
-        this.valsChart.addSeries({name: "Setpoint", color: '#0000FF', zIndex: 1});
+    this.voltsChart.yAxis[0].setTitle({ text: "Volts" });
+    this.processVariableChart.yAxis[0].setTitle({ text: processVariableUnits });
 
-        this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: 0.0, id:"curTime"})
-        this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: 0.0, id:"curTime"})
+    this.voltsChart.yAxis[0].setOptions({ min: -14.0, max: 14.0 });
+    this.processVariableChart.yAxis[0].setOptions({
+      min: stateMin,
+      max: stateMax,
+    });
 
-        this.voltsChart.yAxis[0].setTitle({ text : "Volts"});
-        this.valsChart.yAxis[0].setTitle({ text :stateUnits });
+    this.visualizationDrawDiv = document.getElementById(divIdPrefix + "_viz");
 
-        this.voltsChart.yAxis[0].setOptions({min:-14.0, max:14.0});
-        this.valsChart.yAxis[0].setOptions({min:stateMin, max:stateMax});
+    this.animationStartTimeS = null;
+    window.requestAnimationFrame((t) => this.animate(t));
 
-        this.timeSamples = Array(0, this.simEndTime / this.Ts);
-        this.outputSamples = Array(0, this.simEndTime / this.Ts);
-        this.setpointSamples = Array(0, this.simEndTime / this.Ts);
-        this.ctrlEffortSamples = Array(0, this.simEndTime / this.Ts);
-        this.outputVizPosRevSamples = Array(0, this.simEndTime / this.Ts);
+    this.controlDrawDiv = document.getElementById(divIdPrefix + "_ctrls");
 
-        this.vizDrawDiv = document.getElementById(div_id_prefix + "_viz");
+    this.animationReset = true;
+  }
 
-        this.animationStart = null;
-        window.requestAnimationFrame((t)=>this.animationStep(t));
+  resetData() {
 
-        this.ctrlsDrawDiv = document.getElementById(div_id_prefix + "_ctrls");
+  }
 
-        this.animationReset = true;
+  animate(currentTimeMs) {
+    let currentTimeS = currentTimeMs / 1000.0;
 
-        
-        this.simEndTime = 10.0;
-        this.Ts = 0.001;
-
+    if (this.animationReset) {
+      this.animationStartTimeS = currentTimeS;
+      this.animationReset = false;
     }
 
-    animationStep(timestamp) {
+    let animationTimeS = (currentTimeS - this.animationStartTimeS) % this.simDurationS;
 
-        var curTime = timestamp / 1000.0;
+    let timeIndex = Math.floor(animationTimeS / this.simulationTimestepS);
 
-        if (this.animationReset) {
-            this.animationStart = curTime;
-            this.animationReset = false;
-        }
+    this.drawAnimation(timeIndex, animationTimeS);
 
-        var animationTime = curTime - this.animationStart;
-        if (animationTime > this.simEndTime) {
-            this.animationStart = curTime;
-            animationTime = 0.0;
-        }
+    window.requestAnimationFrame((t) => this.animate(t));
+  }
 
-        var animationStep = Math.floor(animationTime / this.Ts);
+  setControlEffortData(data) {
+    this.voltsChart.series[0].setData(data, false, false, true);
+  }
 
-        this.drawAnimation(animationStep, animationTime);
+  setOutputData(data) {
+    this.processVariableChart.series[0].setData(data, false, false, true);
+  }
 
-        window.requestAnimationFrame((t)=>this.animationStep(t));
+  setSetpointData(data) {
+    this.processVariableChart.series[1].setData(data, false, false, true);
+  }
 
-    }
+  redraw() {
+    this.processVariableChart.xAxis[0].setExtremes(
+      0.0,
+      this.simDurationS,
+      false
+    );
+    this.voltsChart.xAxis[0].setExtremes(0.0, this.simDurationS, false);
+    this.processVariableChart.redraw();
+    this.voltsChart.redraw();
+  }
 
-
-    setCtrlEffortData(data) {
-        this.voltsChart.series[0].setData(data, false, false, true);
-    }
-
-    setOutputData(data) {
-        this.valsChart.series[0].setData(data, false, false, true);
-    }
-
-    setSetpointData(data) {
-        this.valsChart.series[1].setData(data, false, false, true);
-    }
-
-    redraw() {
-        this.valsChart.xAxis[0].setExtremes(0.0, this.simEndTime, false);
-        this.voltsChart.xAxis[0].setExtremes(0.0, this.simEndTime, false);
-        this.valsChart.redraw();
-        this.voltsChart.redraw();
-    }
-
-    drawAnimation(timeIdx, animationTime) {
-        this.viz.drawDynamic(timeIdx);
-        
-        this.voltsChart.xAxis[0].removePlotBand("curTime");
-        this.valsChart.xAxis[0].removePlotBand("curTime");
-        this.voltsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2, value: animationTime, id:"curTime"})
-        this.valsChart.xAxis[0].addPlotLine({color: '#BBBB00',width: 2,value: animationTime, id:"curTime"})
-        
-    }
+  drawAnimation(timeIndex, animationTimeS) {
+    this.visualization.drawDynamic(timeIndex, animationTimeS);
+  }
 }
 
+let defaultOptions = {
+  credits: {
+    enabled: false,
+  },
 
-
-var dflt_options = {
-
-    credits: {
-        enabled: false
+  chart: {
+    zoomType: null,
+    animation: false,
+    ignoreHiddenSeries: true,
+    panning: false,
+    showAxes: true,
+    marginLeft: 80, // Keep all charts left aligned
+    spacingTop: 20,
+    spacingBottom: 20,
+    backgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, "rgb(255,255,255)"],
+        [1, "rgb(230,230,230)"],
+      ],
     },
+  },
 
-    chart: {
-        zoomType: null,
-        animation: false,
-        ignoreHiddenSeries: true,
-        panning: false,
-        showAxes: true,
-        marginLeft: 80, // Keep all charts left aligned
-        spacingTop: 20,
-        spacingBottom: 20,
-        backgroundColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            stops: [
-                [0, 'rgb(255,255,255)'],
-                [1, 'rgb(230,230,230)']
-            ]
-        },
+  title: {
+    //disable title
+    text: null,
+  },
+
+  xAxis: {
+    type: "linear",
+    title: "Time (sec)",
+    lineColor: "#000",
+    tickColor: "#000",
+    gridLineColor: "#BBB",
+    gridLineWidth: 1,
+    labels: {
+      style: {
+        color: "#222",
+        fontWeight: "bold",
+      },
     },
-
     title: {
-        //disable title
-        text: null,
+      style: {
+        color: "#222",
+      },
     },
+  },
 
-    xAxis: {
-        type: 'linear',
-        title: 'Time (sec)',
-        lineColor: '#000',
-        tickColor: '#000',
-        gridLineColor: '#BBB',
-        gridLineWidth: 1,
-        labels: {
-            style: {
-                color: '#222',
-                fontWeight: 'bold'
-            },
-        },
-        title: {
-            style: {
-                color: '#222',
-            },
-        },
+  legend: {
+    layout: "vertical",
+    align: "right",
+    verticalAlign: "top",
+    borderWidth: 1,
+    backgroundColor: "#ddd",
+    floating: true,
+    itemStyle: {
+      font: "9pt Trebuchet MS, Verdana, sans-serif",
+      color: "#222",
     },
+  },
 
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        borderWidth: 1,
-        backgroundColor:  '#ddd',
-        floating: true,
-        itemStyle: {
-            font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: '#222'
-        },
+  exporting: {
+    enabled: false,
+  },
 
+  colors: ["#FF0000", "#0000FF", "#00BB00", "#FF00FF", "#00FFFF", "#FFFF00"],
+
+  plotOptions: {
+    line: {
+      marker: {
+        radius: 2,
+      },
+      lineWidth: 3,
+      threshold: null,
+      animation: true,
     },
-
-    exporting: {
-        enabled: false
-    },
-
-    colors: ['#FF0000', '#0000FF', '#00BB00', '#FF00FF', '#00FFFF', '#FFFF00'],
-
-    plotOptions: {
-        line: {
-            marker: {
-                radius: 2
-            },
-            lineWidth: 3,
-            threshold: null,
-            animation: true,
-        }
-    },
-    series: []
-}
+  },
+  series: [],
+};

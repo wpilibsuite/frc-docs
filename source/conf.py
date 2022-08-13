@@ -56,6 +56,10 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
+    "sphinx.ext.viewcode",
+    "sphinx_tabs.tabs",
+    "sphinx-prompt",
+    "sphinx_toolbox.collapse",
 ]
 
 local_extensions = [
@@ -298,3 +302,6 @@ sphinx_tabs_valid_builders = ["epub", "linkcheck"]
 gettext_compact = False
 locale_dirs = ["locale/"]
 rtl_locale = ["he"]
+
+github_username = ""
+github_repository = ""
