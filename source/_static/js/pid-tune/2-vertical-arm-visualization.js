@@ -143,6 +143,8 @@ class VerticalArmVisualization extends BaseVisualization {
     const index = this.getSimulationIndex();
     const simulationTimeS = index * this.simulationTimestepS;
 
+    // todo: systematize magic numbers
+
     //Time Indicator
     this.animatedCanvasContext.fillStyle = "#000000";
     this.animatedCanvasContext.font = "bold 20px Arial";
@@ -162,7 +164,7 @@ class VerticalArmVisualization extends BaseVisualization {
 
     const setpointRad = this.setpointRad[index];
     const positionRad = this.positionRad[index];
-    const controlEffortPlotScale = this.controlEffortVolts[index] * 1/12 * armLenPx;
+    const controlEffortPlotScale = this.controlEffortVolts[index] * 1.5/12 * armLenPx;
 
     const armEndX =
       this.armStartX + armLenPx * Math.cos(positionRad);
@@ -212,17 +214,16 @@ class VerticalArmVisualization extends BaseVisualization {
     this.animatedCanvasContext.fill();
 
     // Control effort indicator
-    if (this.controlEffortPlotScale != 0) {
-      drawArrow(this.animatedCanvasContext, armEndX, armEndY, controlEffortEndX, controlEffortEndY, 6, "green")
+    if (controlEffortPlotScale * controlEffortPlotScale > 0) {
+      drawArrow(this.animatedCanvasContext, armEndX, armEndY, controlEffortEndX, controlEffortEndY, 4, "green")
     }
-    
 
     // End Effector
     this.animatedCanvasContext.beginPath();
     this.animatedCanvasContext.arc(
       armEndX,
       armEndY,
-      0.035 * this.height,
+      0.03 * this.height,
       0,
       2 * Math.PI,
       false
