@@ -114,7 +114,7 @@ Perform the following:
 
 .. collapse:: Tuning solution
 
-   Gains of :math:`K_p = 0.3` and :math:`K_d = 0.1` yield rapid and stable convergence to the setpoint.  Other, simiilar gains will work nearly as well.
+   Gains of :math:`K_p = 0.3` and :math:`K_d = 0.05` yield rapid and stable convergence to the setpoint.  Other, simiilar gains will work nearly as well.
 
 |
 
@@ -149,7 +149,7 @@ Tuning the combined turret controller is simple - we first tune the feedforward 
 
 .. collapse:: Tuning solution
 
-   The optimal gains for the combined controller are just the optimal gains for the individual controllers: gains of :math:`K_v = 0.15`, :math:`K_p = 0.3`, and :math:`K_d = 0.1` yield rapid and stable convergence to the setpoint and relatively accurate tracking of smooth motion.  Other, simiilar gains will work nearly as well.
+   The optimal gains for the combined controller are just the optimal gains for the individual controllers: gains of :math:`K_v = 0.15`, :math:`K_p = 0.3`, and :math:`K_d = 0.05` yield rapid and stable convergence to the setpoint and relatively accurate tracking of smooth motion.  Other, simiilar gains will work nearly as well.
 
 |
 
