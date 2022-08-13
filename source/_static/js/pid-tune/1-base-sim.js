@@ -33,24 +33,6 @@ class BaseSim {
       max: stateMax,
     });
 
-    this.simulationEndTimeS = 10.0;
-    this.simulationTimestepS = 0.005;
-    this.controllerTimestepS = 0.02;
-
-    this.timeS = Array(this.simulationEndTimeS / this.simulationTimestepS).fill(0);
-    this.output = Array(
-      this.simulationEndTimeS / this.simulationTimestepS
-    ).fill(0);
-    this.setpoint = Array(
-      this.simulationEndTimeS / this.simulationTimestepS
-    ).fill(0);
-    this.controlEffort = Array(
-      this.simulationEndTimeS / this.simulationTimestepS
-    ).fill(0);
-    this.outputPositionRev = Array(
-      this.simulationEndTimeS / this.simulationTimestepS
-    ).fill(0);
-
     this.visualizationDrawDiv = document.getElementById(divIdPrefix + "_viz");
 
     this.animationStartTimeS = null;
@@ -61,6 +43,10 @@ class BaseSim {
     this.animationReset = true;
   }
 
+  resetData() {
+
+  }
+
   animate(currentTimeMs) {
     let currentTimeS = currentTimeMs / 1000.0;
 
@@ -69,15 +55,13 @@ class BaseSim {
       this.animationReset = false;
     }
 
-    let animationTimeS = currentTimeS - this.animationStartTimeS;
-    if (animationTimeS > this.simulationEndTimeS) {
-      this.animationStartTimeS = currentTimeS;
-      animationTimeS = 0.0;
-    }
+    let animationTimeS = (currentTimeS - this.animationStartTimeS) % this.simDurationS;
 
-    let stepIndex = Math.floor(animationTimeS / this.simulationTimestepS);
+    let timeIndex = Math.floor(animationTimeS / this.simulationTimestepS);
 
-    this.drawAnimation(stepIndex, animationTimeS);
+    console.log(timeIndex);
+
+    this.drawAnimation(timeIndex, animationTimeS);
 
     window.requestAnimationFrame((t) => this.animate(t));
   }
@@ -97,16 +81,16 @@ class BaseSim {
   redraw() {
     this.processVariableChart.xAxis[0].setExtremes(
       0.0,
-      this.simulationEndTimeS,
+      this.simDurationS,
       false
     );
-    this.voltsChart.xAxis[0].setExtremes(0.0, this.simulationEndTimeS, false);
+    this.voltsChart.xAxis[0].setExtremes(0.0, this.simDurationS, false);
     this.processVariableChart.redraw();
     this.voltsChart.redraw();
   }
 
   drawAnimation(timeIndex, animationTimeS) {
-    this.visualization.drawDynamic(timeIndex);
+    this.visualization.drawDynamic(timeIndex, animationTimeS);
   }
 }
 

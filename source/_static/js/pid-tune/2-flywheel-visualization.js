@@ -57,7 +57,7 @@ class FlywheelVisualization extends BaseVisualization{
 
     drawDynamicCustom(timeIndex){
 
-        let pos = this.positionRev[timeIndex] * 2 * Math.PI; 
+        let pos = this.positionRad[timeIndex]; 
 
         let indLen = this.wheelRadius;
 
@@ -80,8 +80,8 @@ class FlywheelVisualization extends BaseVisualization{
                 //First loop of exit, calc exit speed
                 this.ballEnterTimeIndex = timeIndex
             }    
-            let startAngle = this.positionRev[this.ballEnterTimeIndex ] * 2 * Math.PI;
-            let ballDrawAngle = this.positionRev[timeIndex]*2*Math.PI - startAngle + Math.PI;
+            let startAngle = this.positionRad[this.ballEnterTimeIndex];
+            let ballDrawAngle = this.positionRad[timeIndex] - startAngle + Math.PI;
             ballCenterX = this.wheelCenterX + (this.wheelRadius + this.ballRadius) * Math.cos(ballDrawAngle);
             ballCenterY = this.wheelCenterY + (this.wheelRadius + this.ballRadius) * Math.sin(ballDrawAngle);
 
@@ -91,8 +91,8 @@ class FlywheelVisualization extends BaseVisualization{
             if(this.ballExitTimeIndex == null){
                 //First loop of exit, calc exit speed
                 this.ballExitTimeIndex = timeIndex;
-                let ballExitRotVel = (this.positionRev[timeIndex] - this.positionRev[timeIndex-1])/(this.timeS[timeIndex] - this.timeS[timeIndex-1]);
-                this.ballExitSpeed = ballExitRotVel * 2 * Math.PI * (this.wheelRadius + this.ballRadius);
+                let ballExitRotVel = (this.positionRad[timeIndex] - this.positionRad[timeIndex-1])/(this.timeS[timeIndex] - this.timeS[timeIndex-1]);
+                this.ballExitSpeed = ballExitRotVel * (this.wheelRadius + this.ballRadius);
             }                
             ballCenterX = this.ballLaunchTrackXStart + this.ballExitSpeed * (this.timeS[timeIndex] - this.ballExitTime);
             ballCenterY = this.ballLaunchTrackY;

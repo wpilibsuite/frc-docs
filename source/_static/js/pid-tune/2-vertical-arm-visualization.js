@@ -1,15 +1,19 @@
 class VerticalArmVisualization extends BaseVisualization {
-  constructor(div_in, setSimulationSetpoint, updateSimulationGraphs) {
+  constructor(div_in, simulationTimestepS, getSimulationIndex, setSimulationSetpoint, beginSimulation) {
     super(div_in);
 
     // These kept as members for click-drag detection
     this.setpointX = 0.0;
     this.setpointY = 0.0;
 
+    this.simulationTimestepS = simulationTimestepS;
+
+    this.getSimulationIndex = getSimulationIndex;
+
     this.draggingSetpoint = false;
 
     this.setSimulationSetpoint = setSimulationSetpoint;
-    this.updateSimulationGraphs = updateSimulationGraphs;
+    this.beginSimulation = beginSimulation;
 
     this.animatedCanvas.addEventListener("mousedown", event => this.handleMouseDown(event));
     this.animatedCanvas.addEventListener("mousemove", event => this.handleMouseMove(event));
@@ -39,12 +43,13 @@ class VerticalArmVisualization extends BaseVisualization {
     event.preventDefault();
     event.stopPropagation();
 
+    this.beginSimulation();
+
     const clickLocation = this.getCursorPosition(event);
 
     if (this.isNearSetpoint(clickLocation)) {
         this.draggingSetpoint = true;
     } else {
-        console.log("Foo");
         this.setSimulationSetpoint(this.angleFromArmCenter(clickLocation));
     }
   }
@@ -63,8 +68,6 @@ class VerticalArmVisualization extends BaseVisualization {
   handleMouseUp(event) {
     event.preventDefault();
     event.stopPropagation();
-
-    this.updateSimulationGraphs();
 
     this.draggingSetpoint = false;
   }
@@ -138,7 +141,19 @@ class VerticalArmVisualization extends BaseVisualization {
     );
   }
 
-  drawDynamicCustom(timeIndex) {
+  drawDynamicCustom() {
+    const index = this.getSimulationIndex();
+    const simulationTimeS = index * this.simulationTimestepS;
+
+    //Time Indicator
+    this.animatedCanvasContext.fillStyle = "#000000";
+    this.animatedCanvasContext.font = "bold 20px Arial";
+    this.animatedCanvasContext.fillText(
+      "t = " + simulationTimeS.toFixed(2) + " sec",
+      0.05 * this.width,
+      0.15 * this.height
+    );
+
     this.armStartX = 0.5 * this.width;
     this.armStartY = 0.5 * this.height;
     this.armLenPx = Math.min(this.width, this.height) * 0.4;
@@ -147,17 +162,15 @@ class VerticalArmVisualization extends BaseVisualization {
     this.setpointIndicatorRadius = 0.035 * this.height;
     this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    this.animatedCanvasContext.clearRect(0, 0, this.width, this.height);
-
     let armEndX =
-      this.armStartX + this.armLenPx * Math.cos(this.positionRad[0]);
+      this.armStartX + this.armLenPx * Math.cos(this.positionRad[index]);
     let armEndY =
-      this.armStartY - this.armLenPx * Math.sin(this.positionRad[0]); // y axis inverted on graphics
+      this.armStartY - this.armLenPx * Math.sin(this.positionRad[index]); // y axis inverted on graphics
 
     this.setpointX =
-      this.armStartX + this.armLenPx * Math.cos(this.setpointRad[0]);
+      this.armStartX + this.armLenPx * Math.cos(this.setpointRad[index]);
     this.setpointY =
-      this.armStartY - this.armLenPx * Math.sin(this.setpointRad[0]);
+      this.armStartY - this.armLenPx * Math.sin(this.setpointRad[index]);
 
     // Arm
     this.animatedCanvasContext.lineWidth = 6;

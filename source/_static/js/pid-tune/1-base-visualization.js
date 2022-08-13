@@ -15,8 +15,6 @@ class BaseVisualization {
     this.animatedCanvas.style.top = "0px";
     this.animatedCanvas.style.left = "0px";
 
-    
-
     this.teamNumber = Math.floor(Math.random() * 9999).toFixed(0);
 
     this.animatedCanvasContext = this.animatedCanvas.getContext("2d");
@@ -59,27 +57,9 @@ class BaseVisualization {
     this.drawStaticCustom();
   }
 
-  drawDynamic(timeIndex) {
+  drawDynamic(timeIndex, animationTimeS) {
     this.animatedCanvasContext.clearRect(0, 0, this.width, this.height);
 
-    this.drawDynamicCustom(timeIndex);
-
-    //Time Indicator
-    let timeS = this.timeS[timeIndex];
-    this.animatedCanvasContext.fillStyle = "#000000";
-    this.animatedCanvasContext.font = "bold 20px Arial";
-    this.animatedCanvasContext.fillText(
-      "t = " + timeS.toFixed(2) + " sec",
-      0.05 * this.width,
-      0.15 * this.height
-    );
-    //Progress bar
-    this.animatedCanvasContext.fillStyle = "#0000FF";
-    this.animatedCanvasContext.fillRect(
-      0.0 * this.width,
-      0.98 * this.height,
-      (timeIndex / this.timeS.length) * this.width,
-      0.02 * this.height
-    );
+    this.drawDynamicCustom(timeIndex, animationTimeS);
   }
 }

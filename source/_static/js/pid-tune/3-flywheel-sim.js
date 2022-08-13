@@ -2,6 +2,24 @@ class FlywheelSim extends BaseSim {
   constructor(div_id_prefix) {
     super(div_id_prefix, "RPM", 0, 1800);
 
+    this.simDurationS = 10.0;
+    this.simulationTimestepS = 0.001;
+    this.controllerTimestepS = 0.02;
+
+    this.timeS = Array(this.simDurationS / this.simulationTimestepS).fill(0);
+    this.output = Array(
+      this.simDurationS / this.simulationTimestepS
+    ).fill(0);
+    this.setpoint = Array(
+      this.simDurationS / this.simulationTimestepS
+    ).fill(0);
+    this.controlEffort = Array(
+      this.simDurationS / this.simulationTimestepS
+    ).fill(0);
+    this.outputPositionRad = Array(
+      this.simDurationS / this.simulationTimestepS
+    ).fill(0);
+
     // User-configured setpoints
     this.setpointVal = 300.0;
     this.setpointStepTime = 1.0;
@@ -44,7 +62,7 @@ class FlywheelSim extends BaseSim {
       this.controlEffort[index] = inputVolts;
       this.output[index] = this.plant.getCurrentSpeedRPM();
       this.setpoint[index] = currentSetpoint;
-      this.outputPositionRev[index] = this.plant.getCurrentPositionRev();
+      this.outputPositionRad[index] = this.plant.getCurrentPositionRev() * 2 * Math.PI;
     }
 
     var controlEffortPlotData = Array(this.timeS.length);
@@ -65,7 +83,7 @@ class FlywheelSim extends BaseSim {
     this.setSetpointData(setpointPlotData);
     this.setOutputData(outputPlotData);
     this.visualization.setPositionData(
-      this.outputPositionRev
+      this.outputPositionRad
     );
     this.visualization.setSetpointData(this.setpoint);
     this.visualization.setTimeData(this.timeS);
