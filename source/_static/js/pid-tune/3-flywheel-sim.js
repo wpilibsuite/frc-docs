@@ -86,6 +86,8 @@ class FlywheelSim extends BaseSim {
       this.outputPositionRad
     );
     this.visualization.setSetpointData(this.setpoint);
+    this.visualization.setOutputData(this.output);
+    this.visualization.setControlEffortData(this.controlEffortVolts);
     this.visualization.setTimeData(this.timeS);
     this.visualization.setBallTimes(
       this.plant.getBallEnterTime(),

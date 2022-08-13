@@ -47,8 +47,12 @@ class BaseVisualization {
     this.positionRad = positionRad;
   }
 
-  setSetpointData(setpointRev) {
-    this.setpointRad = setpointRev;
+  setSetpointData(setpoint) {
+    this.setpoint = setpoint;
+  }
+
+  setOutputData(output) {
+    this.output = output;
   }
 
   setControlEffortData(controlEffortVolts) {
