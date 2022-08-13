@@ -51,6 +51,10 @@ class BaseVisualization {
     this.setpointRad = setpointRev;
   }
 
+  setControlEffortData(controlEffortVolts) {
+    this.controlEffortVolts = controlEffortVolts;
+  }
+
   drawStatic() {
     this.staticCanvasContext.clearRect(0, 0, this.width, this.height);
 

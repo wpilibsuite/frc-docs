@@ -13,7 +13,7 @@ class FlywheelSim extends BaseSim {
     this.setpoint = Array(
       this.simDurationS / this.simulationTimestepS
     ).fill(0);
-    this.controlEffort = Array(
+    this.controlEffortVolts = Array(
       this.simDurationS / this.simulationTimestepS
     ).fill(0);
     this.outputPositionRad = Array(
@@ -59,7 +59,7 @@ class FlywheelSim extends BaseSim {
       speed_delay_line.addSample(this.plant.getCurrentSpeedRPM());
 
       this.timeS[index] = currentTimeS;
-      this.controlEffort[index] = inputVolts;
+      this.controlEffortVolts[index] = inputVolts;
       this.output[index] = this.plant.getCurrentSpeedRPM();
       this.setpoint[index] = currentSetpoint;
       this.outputPositionRad[index] = this.plant.getCurrentPositionRev() * 2 * Math.PI;
@@ -71,7 +71,7 @@ class FlywheelSim extends BaseSim {
     for (var index = 0; index < this.timeS.length; index++) {
       controlEffortPlotData[index] = [
         this.timeS[index],
-        this.controlEffort[index],
+        this.controlEffortVolts[index],
       ];
       outputPlotData[index] = [this.timeS[index], this.output[index]];
       setpointPlotData[index] = [

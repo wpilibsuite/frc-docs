@@ -6,6 +6,8 @@ class VerticalArmPIDF extends VerticalArmSim {
     this.controlStrategy = controlStrategy;
 
     this.buildControlTable(divIdPrefix);
+
+    this.begin();
   }
 
   buildControlTable(divIdPrefix) {
@@ -28,7 +30,7 @@ class VerticalArmPIDF extends VerticalArmSim {
     input.setAttribute("value", "false");
     input.setAttribute("id", divIdPrefix + "_systemNoise");
     input.onclick = function (event) {
-      this.plant.setSystemNoise(document.getElementById("systemNoise").checked);
+      this.plant.setSystemNoise(document.getElementById(divIdPrefix + "_systemNoise").checked);
       this.begin();
     }.bind(this);
     control.append(input);

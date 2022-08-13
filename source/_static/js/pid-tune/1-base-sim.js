@@ -60,8 +60,6 @@ class BaseSim {
 
     let timeIndex = Math.floor(animationTimeS / this.simulationTimestepS);
 
-    console.log(timeIndex);
-
     this.drawAnimation(timeIndex, animationTimeS);
 
     window.requestAnimationFrame((t) => this.animate(t));

@@ -63,7 +63,7 @@ class VerticalArmSim extends BaseSim {
     this.setpoint = Array(
       this.simDurationS / this.simulationTimestepS
     ).fill(0);
-    this.controlEffort = Array(
+    this.controlEffortVolts = Array(
       this.simDurationS / this.simulationTimestepS
     ).fill(0);
     this.outputPositionRev = Array(
@@ -73,6 +73,7 @@ class VerticalArmSim extends BaseSim {
     this.visualization.setPositionData(this.output);
     this.visualization.setTimeData(this.timeS);
     this.visualization.setSetpointData(this.setpoint);
+    this.visualization.setControlEffortData(this.controlEffortVolts);
 
     this.accumulatedError = 0.0;
     this.previousError = 0.0;
@@ -110,7 +111,7 @@ class VerticalArmSim extends BaseSim {
 
     this.positionDelayLine.addSample(this.plant.getPositionRad());
 
-    this.controlEffort[this.iterationCount] = this.inputVolts;
+    this.controlEffortVolts[this.iterationCount] = this.inputVolts;
     this.output[this.iterationCount] = this.plant.getPositionRad();
     this.setpoint[this.iterationCount] = this.currentSetpointRad;
     this.outputPositionRev[this.iterationCount] = this.plant.getPositionRad() / 2 / Math.PI;
@@ -135,7 +136,7 @@ class VerticalArmSim extends BaseSim {
       (error - this.previousError) / this.controllerTimestepS;
 
     // PID + cosine feed-forward control law
-    let controlEffort =
+    let controlEffortVolts =
       this.kG * Math.cos(setpoint) +
       this.kV * derivativeSetpoint +
       this.kP * error +
@@ -143,20 +144,20 @@ class VerticalArmSim extends BaseSim {
       this.kD * derivativeError;
 
     // Cap voltage at max/min of the physically possible command
-    if (controlEffort > 12) {
-      controlEffort = 12;
-    } else if (controlEffort < -12) {
-      controlEffort = -12;
+    if (controlEffortVolts > 12) {
+      controlEffortVolts = 12;
+    } else if (controlEffortVolts < -12) {
+      controlEffortVolts = -12;
     }
 
     this.previousError = error;
     this.previousSetpoint = setpoint;
 
-    return controlEffort;
+    return controlEffortVolts;
   }
 
   updateGraphs() {
-    this.setControlEffortData(zip(this.timeS, this.controlEffort));
+    this.setControlEffortData(zip(this.timeS, this.controlEffortVolts));
     this.setSetpointData(zip(this.timeS, this.setpoint));
     this.setOutputData(zip(this.timeS, this.output));
     this.redraw();

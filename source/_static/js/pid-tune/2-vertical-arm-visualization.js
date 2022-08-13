@@ -154,21 +154,28 @@ class VerticalArmVisualization extends BaseVisualization {
 
     this.armStartX = 0.5 * this.width;
     this.armStartY = 0.5 * this.height;
-    this.armLenPx = Math.min(this.width, this.height) * 0.4;
+    const armLenPx = Math.min(this.width, this.height) * 0.4;
 
     this.clickTolerance = 0.5 * this.height;
     this.setpointIndicatorRadius = 0.035 * this.height;
     this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    let armEndX =
-      this.armStartX + this.armLenPx * Math.cos(this.positionRad[index]);
-    let armEndY =
-      this.armStartY - this.armLenPx * Math.sin(this.positionRad[index]); // y axis inverted on graphics
+    const setpointRad = this.setpointRad[index];
+    const positionRad = this.positionRad[index];
+    const controlEffortPlotScale = this.controlEffortVolts[index] * 1/12 * armLenPx;
+
+    const armEndX =
+      this.armStartX + armLenPx * Math.cos(positionRad);
+    const armEndY =
+      this.armStartY - armLenPx * Math.sin(positionRad);
+
+    const controlEffortEndX = armEndX - controlEffortPlotScale * Math.sin(positionRad);
+    const controlEffortEndY = armEndY - controlEffortPlotScale * Math.cos(positionRad);
 
     this.setpointX =
-      this.armStartX + this.armLenPx * Math.cos(this.setpointRad[index]);
+      this.armStartX + armLenPx * Math.cos(setpointRad);
     this.setpointY =
-      this.armStartY - this.armLenPx * Math.sin(this.setpointRad[index]);
+      this.armStartY - armLenPx * Math.sin(setpointRad);
 
     // Arm
     this.animatedCanvasContext.lineWidth = 6;
@@ -188,7 +195,7 @@ class VerticalArmVisualization extends BaseVisualization {
       2 * Math.PI,
       false
     );
-    this.animatedCanvasContext.fillStyle = "green";
+    this.animatedCanvasContext.fillStyle = "black";
     this.animatedCanvasContext.fill();
 
     // Setpoint indicator
@@ -203,6 +210,12 @@ class VerticalArmVisualization extends BaseVisualization {
     );
     this.animatedCanvasContext.fillStyle = "red";
     this.animatedCanvasContext.fill();
+
+    // Control effort indicator
+    if (this.controlEffortPlotScale != 0) {
+      drawArrow(this.animatedCanvasContext, armEndX, armEndY, controlEffortEndX, controlEffortEndY, 6, "green")
+    }
+    
 
     // End Effector
     this.animatedCanvasContext.beginPath();
