@@ -63,7 +63,7 @@ Imports/Includes
 .. tabs::
 
    .. group-tab:: PWM
-      
+
       .. tabs::
 
          .. group-tab:: Java
@@ -114,7 +114,7 @@ Defining the variables for our sample robot
 .. tabs::
 
    .. group-tab:: PWM
-      
+
       .. tabs::
 
          .. group-tab:: Java
@@ -140,7 +140,7 @@ Defining the variables for our sample robot
                :lineno-start: 49
 
    .. group-tab:: CTRE
-      
+
       .. tabs::
 
          .. group-tab:: Java
@@ -224,7 +224,7 @@ Joystick Control for teleoperation
 .. tabs::
 
    .. group-tab:: PWM
-      
+
       .. tabs::
 
          .. group-tab:: Java
@@ -251,7 +251,7 @@ Test Mode
 .. tabs::
 
    .. group-tab:: PWM
-      
+
       .. tabs::
 
          .. group-tab:: Java
