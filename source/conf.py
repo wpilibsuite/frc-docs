@@ -218,23 +218,24 @@ user_options = [
     ("warning-is-error", True),
 ]
 
-# javascript files which need to be merged and minified
+# Handle custom javascript
+# We generally want to group, merge, and minify the js files 
 js_build_dir = os.path.dirname(__file__)
 js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
 js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
 
-
 def mergeAndMinify(sourceDir, outputFile):
     with open(outputFile, "w") as outf:
         inFileNames = glob.glob(sourceDir)
-        inFileNames.sort()
+        # It is not trivial to figure out which order to include the javascript 
+        # source files into the final minified file.
+        # Current low-bar solution - assume file names are prefixed with numbers, 
+        # such that a sort puts them in the right order.
+        inFileNames.sort() 
         for inFileName in inFileNames:
             with open(inFileName, "r") as inf:
+                # Minify each file independently - again, low bar solution for now
                 minified = jsmin(inf.read())
-                outf.write(
-                    "///////////////////////////////////////////////////////////\n"
-                )
-                outf.write("// {}\n".format(inFileName))
                 outf.write(minified)
                 outf.write("\n")
 
@@ -303,6 +304,3 @@ sphinx_tabs_valid_builders = ["epub", "linkcheck"]
 gettext_compact = False
 locale_dirs = ["locale/"]
 rtl_locale = ["he"]
-
-github_username = ""
-github_repository = ""
