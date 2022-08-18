@@ -21,7 +21,7 @@ Voltage Sag
 
 When we operate mechanisms on our robot, we draw current from its battery.  This causes the available "bus voltage" that all the robot mechanisms operate off of to drop.  This means that the performance of our mechanisms will vary depending on the loading and action of the robot - this is not ideal.
 
-To fix this, most voltage controllers offer a "voltage compensation" setting for their internal control loops that keep the output voltage of the control loops constant despite changes in the bus voltage.  The WPILib ``SpeedController`` class offers a ``setVoltage`` method can do the same thing if the control loops are being run on the RIO (provided you call it every robot loop iteration).
+To fix this, most voltage controllers offer a "voltage compensation" setting for their internal control loops that keep the output voltage of the control loops constant despite changes in the bus voltage.  The WPILib ``MotorController`` class offers a ``setVoltage`` method can do the same thing if the control loops are being run on the RIO (provided you call it every robot loop iteration).
 
 Keep in mind that voltage compensation cannot increase the voltage applied to the motor beyond what is available on the bus - if your actuator is saturating (described below), you'll have to account for that separately.
 
