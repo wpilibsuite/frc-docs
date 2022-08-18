@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Run Tune
+      uses: abbbi/github-actions-tune@v1
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
@@ -16,11 +18,11 @@ jobs:
         pip install -r source/requirements.txt
     - name: Install LaTeX
       run: |
-        sudo apt-get update
-        sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
+        sudo apt-fast -y update
+        sudo apt-fast install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
     - name: Build HTML
       run: |
-        make html
+        make html SPHINXOPTS="-j 3"
     - name: Archive HTML
       uses: actions/upload-artifact@v2
       with:
@@ -28,7 +30,7 @@ jobs:
         path: build/html/
     - name: Build PDF
       run: |
-        make latexpdf
+        make latexpdf SPHINXOPTS="-j 3"
     - name: Archive PDF
       uses: actions/upload-artifact@v2
       with:
@@ -37,10 +39,10 @@ jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Checkout main
-      run: |
-        git fetch origin main --depth=1
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: main
     - uses: actions/setup-python@v2
       with:
         python-version: 3.9
