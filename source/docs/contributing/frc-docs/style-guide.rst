@@ -16,19 +16,10 @@ Suffix filenames with the ``.rst`` extension.
 
 .. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is `Notepad++ <https://notepad-plus-plus.org/>`__. Please make sure that `tabs are replaced with spaces <https://stackoverflow.com/questions/455037/convert-tabs-to-spaces-in-notepad>`__, and the space indentation is set to ``3``.
 
-Page References
----------------
-
-Pages references will be auto-generated based on the page filename and section title.
-
-For example, given the following file ``contributing.rst`` and a section called ``Page References``, you would reference this by doing ``:ref:`contributing:Page References```
-
-.. note:: Please note that document structure is preserved in references, with the root being the location of the ``conf.py`` file. To access documents in sub-folders, simply prepend the folder path before the filename. IE, ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-sensors:Ultrasonics - Sensors```
-
 Text
 ----
 
-All text content should be on the same line, if you need readability, use the word-wrap function of your editor.
+All text content should be on the same line. If you need readability, use the word-wrap function of your editor.
 
 Use the following case for these terms:
 
@@ -64,7 +55,7 @@ Indentation of content directives as new line ``.. toctree::``  should be `3` sp
 Blank Lines
 ^^^^^^^^^^^
 
-There should be ``1`` blank lines separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
+There should be ``1`` blank line separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
 
 Interior Whitespace
 ^^^^^^^^^^^^^^^^^^^
@@ -132,12 +123,12 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
          :linenos:
          :lineno-start: 18
 
-Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub, there is a handy ``Raw`` button in the top right corner of the page.
+Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
 Admonitions
 -----------
 
-Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule however, when having multiple sections of content inside of admonition. Generally having multiple sections of content inside of an admonition is not recommended.
+Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule, however, when having multiple sections of content inside of an admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
 Use
 
@@ -155,7 +146,25 @@ NOT
 Links
 -----
 
-It is preferred to format links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
+Internal Links
+^^^^^^^^^^^^^^
+
+Internal Links will be auto-generated based on the ReStructuredText filename and section title.
+
+For example, here are several ways to link to sections and documents.
+
+Use this format to reference a document section. You must use the absolute path of the document. ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics``` renders to :ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics`.
+
+Use this format to reference a section of the same document. Note the single underscore. ```Images`_`` renders to `Images`_.
+
+Use this format to reference the top-level of a document. You can use relative paths ``:doc:`build-instructions``` renders to :doc:`build-instructions` Or to use absolute paths, put a forward slash at the beginning of the path ``:doc:`/docs/software/hardware-apis/sensors/ultrasonics-software``` renders to :doc:`/docs/software/hardware-apis/sensors/ultrasonics-software`. Note that the text rendered is the main section title of the target page regardless of the target filename.
+
+When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrounding the actual link with angle brackets ``<>`` and adding the custom text between the first backtick ````` and the first angle bracket ``<``. For example ``:ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>``` renders to :ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>`.
+
+External Links
+^^^^^^^^^^^^^^
+
+It is preferred to format external links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
 
 .. code-block:: ReST
 
@@ -184,7 +193,7 @@ All images (including vectors) should be less than ``500`` kilobytes in size. Pl
 Image Files
 ^^^^^^^^^^^
 
-Image files should be stored in the document directory, sub-directory of ``document-name/images``
+Image files should be stored in the document directory, sub-directory of ``document-name/images``.
 
 They should follow the naming scheme of ``short-description.png``, where the name of the image is a short description of what the image shows. This should be less than ``24`` characters.
 

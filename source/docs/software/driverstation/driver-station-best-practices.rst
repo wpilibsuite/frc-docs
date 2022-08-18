@@ -3,7 +3,7 @@
 Driver Station Best Practices
 =============================
 
-This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found `here <https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429>`__
+This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found `here <https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429>`__.
 
 Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.
 
@@ -51,7 +51,7 @@ Prior To Departing For The Competition
 At The Competition
 ------------------
 
-1. Turn off Windows firewall using these instructions.
+1. Turn off Windows firewall using :ref:`these instructions <docs/networking/networking-introduction/windows-firewall-configuration:Disabling Windows Firewall>`.
 2. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by disabling it in the Adapter Settings control panel.
 3. Charge the driver station when it’s in the pit.
 4. Remove login passwords or ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.

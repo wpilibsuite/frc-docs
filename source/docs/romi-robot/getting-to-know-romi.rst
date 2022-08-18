@@ -14,8 +14,8 @@ In all Romi documentation, references to driving forward use the above definitio
 .. image:: images/getting-to-know-romi/romi-forward.png
    :alt: Romi Forward Driving Direction
 
-Hardware, Sensors and GPIO
---------------------------
+Hardware, Sensors, and GPIO
+---------------------------
 
 The Romi has the following built-in hardware/peripherals:
 
@@ -28,8 +28,8 @@ The Romi has the following built-in hardware/peripherals:
 
 .. note:: The Buzzer is currently not supported by WPILib.
 
-Motors, Wheels and Encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Motors, Wheels, and Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The motors used on the Romi have a 120:1 gear reduction, and a no-load output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-in safety clutch might start slipping at lower torques.
 
@@ -70,7 +70,7 @@ Inertial Measurement Unit
 
 The Romi includes an STMicroelectronics LSM6DS33 Inertial Measurement Unit (IMU) which contains a 3-axis gyro and a 3-axis accelerometer.
 
-The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro has selectable sensitivity of 125 Degrees Per Second (DPS), 250 DPS, 500 DPS, 1000 DPS and 2000 DPS.
+The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro has selectable sensitivity of 125 Degrees Per Second (DPS), 250 DPS, 500 DPS, 1000 DPS, and 2000 DPS.
 
 The Romi Web UI also provides a means to calibrate the gyro and measure its zero-offsets before use with robot code.
 
@@ -104,11 +104,11 @@ The control board has 5 configurable GPIO pins (named EXT0 through EXT4) that al
 .. image:: images/getting-to-know-romi/romi-external-io.png
    :alt: Romi External GPIO Channels
 
-All 5 pins support the following modes: Digital IO, Analog In, PWM (with the exception of EXT 0, which only supports Digital IO and PWM). The mode of the ports can be configured with :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>`.
+All 5 pins support the following modes: Digital IO, Analog In, and PWM (with the exception of EXT 0, which only supports Digital IO and PWM). The mode of the ports can be configured with :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>`.
 
 The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
 
-The power connections for the GPIO pins are initially left unconnected, but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
+The power connections for the GPIO pins are initially left unconnected but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
 
 GPIO Default Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

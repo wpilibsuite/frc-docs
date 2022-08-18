@@ -1,7 +1,7 @@
 The C++ Units Library
 =====================
 
-WPILib is coupled with a `Units <https://github.com/nholthaus/units>`_ library for C++ teams.  This library leverages the C++ `type system <https://docs.microsoft.com/en-us/cpp/cpp/cpp-type-system-modern-cpp?view=vs-2019>`__ to enforce proper dimensionality for method parameters, automatically perform unit conversions, and even allow users to define arbitrary defined unit types.  Since the C++ type system is enforced at compile-time, the library has essentially no runtime cost.
+WPILib is coupled with a `Units <https://github.com/nholthaus/units>`_ library for C++ teams.  This library leverages the C++ `type system <https://docs.microsoft.com/en-us/cpp/cpp/cpp-type-system-modern-cpp?view=msvc-170&viewFallbackFrom=vs-2019>`__ to enforce proper dimensionality for method parameters, automatically perform unit conversions, and even allow users to define arbitrary defined unit types.  Since the C++ type system is enforced at compile-time, the library has essentially no runtime cost.
 
 Using the Units Library
 -----------------------
@@ -62,7 +62,7 @@ Unit Types
 
 Unit types correspond to the abstract concept of a unit, without any actual stored value.  Unit types are the fundamental "building block" of the units library - all unit types are defined constructively (using the ``compound_unit`` template) from a small number of "basic" unit types (such as ``meters``, ``seconds``, etc).
 
-While unit types cannot contain numerical values, their use in building other unit types means that when a type or method uses a `template parameter <http://www.cplusplus.com/doc/oldtutorial/templates/>`__ to specify its dimensionality, that parameter will be a unit type.
+While unit types cannot contain numerical values, their use in building other unit types means that when a type or method uses a `template parameter <https://cplusplus.com/doc/oldtutorial/templates/>`__ to specify its dimensionality, that parameter will be a unit type.
 
 Container Types
 ~~~~~~~~~~~~~~~

@@ -14,12 +14,12 @@ Test mode on the robot can be enabled from the Driver Station just like autonomo
 LiveWindow in Test Mode
 -----------------------
 
-With LiveWindow, all actuator's outputs can be controlled on the Dashboard and all sensor values can be seen. PID Controllers can also be tuned. The sensors and actuators are added automatically, no code is necessary. See :doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index` for more details.
+With LiveWindow, all actuator outputs can be controlled on the Dashboard and all sensor values can be seen. PID Controllers can also be tuned. The sensors and actuators are added automatically, no code is necessary. See :doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index` for more details.
 
 Adding Test mode code to your robot code
 ----------------------------------------
 
-When in test mode, the ``testInit`` method is run once, and the testPeriodic method is run once per tick, in addition to ``robotPeriodic``, similar to teleop and autonomous control modes.
+When in test mode, the ``testInit`` method is run once, and the ``testPeriodic`` method is run once per tick, in addition to ``robotPeriodic``, similar to teleop and autonomous control modes.
 
 Adding test mode can be as painless as calling your already written Teleop methods from Test. Or you can write special code to try out a new feature that is only run in Test mode, before integrating it into your teleop or autonomous code. You could even write code to move all motors and check all sensors to help the pit crew!
 
