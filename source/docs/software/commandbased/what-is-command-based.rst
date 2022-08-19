@@ -3,9 +3,9 @@ What Is "Command-Based" Programming?
 
 WPILib supports a robot programming methodology called "command-based" programming. In general, "command-based" can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
 
-"Command-based" programming is an example of what is known as a `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ It is a general way of organizing one’s robot code that is well-suited to a particular problem-space. It is not the only way to write a robot program, but it is a very effective one; command-based robot code tends to be clean, extensible, and (with some tricks) easy to re-use from year to year.
+"Command-based" programming is one possible :term:`design pattern` for robot software. It is not the only way to write a robot program, but it is a very effective one. Command-based robot code tends to be clean, extensible, and (with some tricks) easy to re-use from year to year.
 
-The command-based paradigm is also an example of what is known as `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ programming. In declarative programming, the emphasis is placed on *what* the program ought to do, rather than *how* the program ought to do it. Thus, the command-based libraries allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in a command-based program, a user can specify that "the robot should perform an action when a button is pressed" (note the use of a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`):
+The command-based paradigm is also an example of :term:`declarative programming`. The command-based libraries allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in a command-based program, a user can specify that "the robot should perform an action when a button is pressed" (note the use of a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`):
 
 .. tabs::
 
@@ -17,7 +17,7 @@ The command-based paradigm is also an example of what is known as `declarative <
 
     aButton.WhenPressed([&intake] { intake.Run(); });
 
-In contrast, in an ordinary `imperative <https://en.wikipedia.org/wiki/Imperative_programming>`__ program, the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
+In contrast, in an ordinary , the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
 
 .. tabs::
 
@@ -51,9 +51,9 @@ Subsystems and Commands
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
-**Subsystems** are the basic unit of robot organization in the design-based paradigm. Subsystems `encapsulate <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ lower-level robot hardware (such as motor controllers, sensors, and/or pneumatic actuators), and define the interfaces through which that hardware can be accessed by the rest of the robot code. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem without also changing the rest of the robot code. Subsystems implement the ``Subsystem`` interface.
+**Subsystems** are the basic unit of robot organization in the design-based paradigm. Subsystems form an :term:`encapsulation` of lower-level robot hardware (such as motor controllers, sensors, and/or pneumatic actuators), and define the interfaces through which that hardware can be accessed by the rest of the robot code. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem without also changing the rest of the robot code. Subsystems implement the ``Subsystem`` interface.
 
-**Commands** define high-level robot actions or behaviors that utilize the methods defined by the subsystems. A command is a simple `state machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ that is either initializing, executing, ending, or idle. Users write code specifying which action should be taken in each state. Simple commands can be composed into "command groups" to accomplish more-complicated tasks. Commands, including command groups, implement the ``Command`` interface.
+**Commands** define high-level robot actions or behaviors that utilize the methods defined by the subsystems. A command is a simple :term:`state machine` that is either initializing, executing, ending, or idle. Users write code specifying which action should be taken in each state. Simple commands can be composed into "command groups" to accomplish more-complicated tasks. Commands, including command groups, implement the ``Command`` interface.
 
 How Commands Are Run
 --------------------
@@ -71,7 +71,7 @@ When a command is scheduled, its ``initialize()`` method is called once. Its ``e
 Command Groups
 --------------
 
-It is often desirable to build complex commands from simple pieces. This is achievable by `composing <https://en.wikipedia.org/wiki/Object_composition>`__ commands into "command groups." A :doc:`command group <command-groups>` is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they are `recursively composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.
+It is often desirable to build complex commands from simple pieces. This is achievable by creating :term:`compositions` of commands called "command groups." A :doc:`command group <command-groups>` is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they can be used in a :term:`recursive composition`. That is to say - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.
 
 Creating a Robot Project
 ========================

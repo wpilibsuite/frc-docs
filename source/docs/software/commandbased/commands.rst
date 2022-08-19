@@ -6,7 +6,7 @@ Commands are simple state machines that perform high-level robot functions using
 Creating Commands
 -----------------
 
-.. note:: In the C++ API, a `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is used to allow certain Command methods to work with the object ownership model.  Users should *always* extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
+.. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should *always* extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
 
 Similarly to subsystems, the recommended method for most users to create a command is to subclass the abstract ``CommandBase`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
@@ -89,7 +89,7 @@ What might a functional command look like in practice? As before, below is a sim
       :linenos:
       :lineno-start: 5
 
-Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called `dependency injection <https://en.wikipedia.org/wiki/Dependency_injection>`__, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
+Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called :term:`dependency injection`, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
 Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <docs/software/commandbased/convenience-features:InstantCommand>` even more succinctly.
 
