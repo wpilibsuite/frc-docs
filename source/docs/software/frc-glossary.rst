@@ -50,6 +50,9 @@ FRC Glossary
    FMS
       Field Management System, the electronics core responsible for sensing and controlling the FIRST Robotics Competition field.
 
+   FPGA
+       Field-programmable gate array - a specialized integrated circuit consisting of many digital logic elements, which can be configured to act in different patterns. This allows its behavior to be changed after manufacturing. In the context of FRC, National Instruments provides a specific configuration for the RIO's FPGA which allows it to process the electrical inputs and outputs at a very high rate. See `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ on wikipedia for more info.
+
    GradleRIO
       The mechanism that powers the deployment of robot code to the roboRIO.
 
@@ -80,6 +83,9 @@ FRC Glossary
    NetworkTables
       A way to communicate key / value pairs of data between programs.
 
+   permanent-magnet DC motor
+      The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on wikipedia for more info.
+
    recursive composition
       A software term for when an object is made up of many objects, including itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on wikipedia for more info.
 
@@ -88,6 +94,9 @@ FRC Glossary
 
    software library
       A collection of code that can be imported into and used by other software. See `software library <https://en.wikipedia.org/wiki/Library_(computing)>`__ on wikipedia for more info.
+
+   solenoid valve
+      A airflow-controlling valve which is actuated by a small electromagnet. Strictly speaking, the *solenoid* is the coil of wire which forms the electromagnet, and the *valve* is the mechanism which actually redirects airflow. However, the set of solenoid and valve together is often simply called "a solenoid". See `solenoid valve <https://en.wikipedia.org/wiki/Solenoid_valve>`__. on wikipedia for more info.
 
    state machine
       A programming construct that divides a problem into many discrete, well-defined, mutually-exclusive "states", then defines how the problem is solved by moving between different states. See `state machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ on wikipedia for more more info.

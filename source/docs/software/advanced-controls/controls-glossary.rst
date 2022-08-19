@@ -15,8 +15,17 @@ Controls Glossary
    controller
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
+   current
+      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to 6241509074000000000 electrons moving past the measurement point in one second.
+
+   counter-electromotive force
+      A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on wikipedia for more info.
+
    dynamics
       A branch of physics concerned with the motion of bodies under the action of forces. In modern control, systems evolve according to their dynamics.
+
+   derivative
+      A mathematical operation which evaluates the "rate-of-change" of a function at a given point. See `derivative <https://en.wikipedia.org/wiki/Derivative>`__ on wikipedia for more info.
 
    error
       :term:`Reference <reference>` minus an :term:`output` or :term:`state`.
@@ -34,6 +43,9 @@ Controls Glossary
          - Ex. A drivetrain might have 2 inputs: the voltages of the left and right motors.
 
       Inputs are often represented by the variable :math:`\mathbf{u}`, a column vector with one entry per :term:`input` to the :term:`system`.
+
+   LQR
+      Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "lowest cost" manner. It requires an accurate mathematical model of the system being controlled, and a set of equations describing what things are "costly". See `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__ on wikipedia for more info.
 
    measurement
       Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
@@ -55,6 +67,9 @@ Controls Glossary
 
       Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our, our :term:`output` vector would only include the :term:`system`\'s velocity.
 
+   PID
+      Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. on wikipedia for more info.
+
    plant
       The :term:`system` or collection of actuators being controlled.
 
@@ -72,6 +87,9 @@ Controls Glossary
 
    settling time
       The time a :term:`system` takes to settle at the :term:`reference` after a :term:`step input` is applied.
+
+   signum function
+      A non-continuous function that expresses the "sign" of its input. It is equal to -1 for all negative input numbers, 0 for an input of 0, and 1 for all positive input numbers. See `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, on wikipedia for more info.
 
    state
       A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system's <system>` future behavior. In state-space notation, the state of a system is written as a column vector describing it's position in state-space.
@@ -98,6 +116,9 @@ Controls Glossary
 
    system response
       The behavior of a :term:`system` over time for a given :term:`input`.
+
+   voltage
+      The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts" It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having 1/6241509074000000000 joules of energy.
 
    x-dot
       :math:`\dot{\mathbf{x}}`, or x-dot: the derivative of the :term:`state` vector :math:`\mathbf{x}`. If the :term:`system` had just a velocity :term:`state`, then :math:`\dot{\mathbf{x}}` would represent the :term:`system`\'s acceleration.
