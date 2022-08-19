@@ -14,7 +14,7 @@ What's a "Stack Trace"?
 
 The ``unexpected error has occurred`` message is a signal that a *stack trace* has been printed out.
 
-In Java and C++, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
+In Java and C++, the :term:`call stack` data structure is used to store information about which function or method is currently being executed.
 
 A *stack trace* prints information about what was on this stack when the unhandled exception occurred. This points you to the lines of code which were running just before the problem happened. While it doesn't always point you to the exact *root cause* of your issue, it's usually the best place to start looking.
 

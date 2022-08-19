@@ -3,7 +3,7 @@
 Robot Battery Basics
 ====================
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the :term:`COTS` battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
 
 COTS Battery
 ------------

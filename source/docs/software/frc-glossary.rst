@@ -11,11 +11,17 @@ FRC Glossary
    auto
       The first phase of each match is called Autonomous (auto) and consists of the robot's running pre-programmed instructions.
 
+   call stack
+      A specially-organized region of memory which helps the program keep track of what function it is in, and store the values of some variables. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on wikipedia for more info.
+
    COTS
       Commercial off the shelf, a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
 
    C++
       One of the three officially supported programming languages.
+
+   declarative programming
+      A style of software which focuses on describing _what_ a program should do, rather than _how_ it gets done. See `declarative programming <https://en.wikipedia.org/wiki/Declarative_programming>`__ on wikipedia for more info.
 
    deprecated
       Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code.
@@ -55,6 +61,9 @@ FRC Glossary
 
    simulation
       A way for teams to test their code without having an actual robot available.
+
+   software library
+      A collection of code that can be imported into and used by other software. See `software library <https://en.wikipedia.org/wiki/Library_(computing)>`__ on wikipedia for more info.
 
    teleop
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.
