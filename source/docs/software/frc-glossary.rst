@@ -59,5 +59,8 @@ FRC Glossary
    teleop
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.
 
+   torque
+      A force applied at a distance from some axis of rotation
+
    trajectory
       A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field.
