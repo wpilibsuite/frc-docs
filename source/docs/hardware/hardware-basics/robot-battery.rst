@@ -8,7 +8,7 @@ The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead A
 COTS Battery
 ------------
 
-The Robot Rules in the Game Manual specify a Commercial Off The Shelf [COTS] non-spillable sealed lead acid battery meeting specific criteria, and gives examples of legal part numbers from a variety of vendors.
+The Robot Rules in the Game Manual specify a COTS non-spillable sealed lead acid battery meeting specific criteria, and gives examples of legal part numbers from a variety of vendors.
 
 Battery Safety & Handling
 -------------------------
