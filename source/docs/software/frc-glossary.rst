@@ -39,7 +39,7 @@ FRC Glossary
       Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code.
 
    design pattern
-      A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ on wikipedia for more info. 
+      A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ on wikipedia for more info.
 
    DHCP
       Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addresses to all other devices.
@@ -105,7 +105,7 @@ FRC Glossary
       A software term for when an object is made up of many objects, including itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on wikipedia for more info.
 
    serialized
-      The property of a data organization scheme that allows the description of the data to be sent in order, byte by byte, over some communication channel. Reading or writing a file on disk is done in this serial fashion (IE, the data is read or written byte by byte, not all at once). Sending data over a SPI or I2C bus is also done byte by byte, again requiring the data can be serialized. 
+      The property of a data organization scheme that allows the description of the data to be sent in order, byte by byte, over some communication channel. Reading or writing a file on disk is done in this serial fashion (IE, the data is read or written byte by byte, not all at once). Sending data over a SPI or I2C bus is also done byte by byte, again requiring the data can be serialized.
 
    simulation
       A way for teams to test their code without having an actual robot available.

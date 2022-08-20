@@ -6,7 +6,7 @@ Controls Glossary
    bang-bang control
       A very simple, no-tuning-required closed-loop control technique. It simply "turns on" the :term:`control effort` when the :term:`process variable` is too small, and "turns off" the control effort when the process variable is too big. It works well in some cases, but not all. See `"Bang-bang" control <https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ on wikipedia for more info.
 
-   Cartesian coordinate system 
+   Cartesian coordinate system
       A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC, but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
 
    churning losses
@@ -81,7 +81,7 @@ Controls Glossary
       In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
 
    orthogonal
-      Having the property of being independent. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other. 
+      Having the property of being independent. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other.
 
    output
       Measurements from sensors. There can be more measurements then states. These outputs are used in the "correct" step of Kalman Filters.
@@ -104,7 +104,7 @@ Controls Glossary
       The term used to describe the output of a :term:`plant` in the context of PID control.
 
    r-squared
-      A statistical measurement of how well an `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__ predicts a given set of input data. It is not impacted by the units of measurement. A value of 0.0 is a horrible fit, and 1.0 is a perfect fit. See `Coefficient_of_determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ on wikipedia for more info. 
+      A statistical measurement of how well an `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__ predicts a given set of input data. It is not impacted by the units of measurement. A value of 0.0 is a horrible fit, and 1.0 is a perfect fit. See `Coefficient_of_determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ on wikipedia for more info.
 
    reference
       The desired state. This value is used as the reference point for a controller's error calculation.
@@ -133,7 +133,7 @@ Controls Glossary
       A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
    statistically robust
-      The property of a data processing algorithm which makes it resilient to a wide variety of inputs. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desireable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on wikipedia for more info.
+      The property of a data processing algorithm which makes it resilient to a wide variety of inputs. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desirable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on wikipedia for more info.
 
    steady-state error
       :term:`Error <error>` after :term:`system` reaches equilibrium.

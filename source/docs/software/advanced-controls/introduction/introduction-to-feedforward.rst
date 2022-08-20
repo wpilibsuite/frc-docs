@@ -12,7 +12,7 @@ Recall from earlier that the point of a feedforward controller is to use the kno
 
 In FRC, the most common system that we're interested in controlling is the :term:`permanent-magnet DC motor`.
 
-These motors have a number of convenient properties that make them particularly easy to control, and ideal for FRC tasks.  In particular, they obey a particular relationship between applied voltage, rotor velocity, and rotor acceleration known as a "voltage balance equation". 
+These motors have a number of convenient properties that make them particularly easy to control, and ideal for FRC tasks.  In particular, they obey a particular relationship between applied voltage, rotor velocity, and rotor acceleration known as a "voltage balance equation".
 
 .. math:: V = K_s \cdot sgn(\dot{d}) + K_v \cdot \dot{d} + K_a \cdot \ddot{d}
 
