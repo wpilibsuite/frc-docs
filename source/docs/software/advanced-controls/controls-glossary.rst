@@ -3,6 +3,12 @@ Controls Glossary
 
 .. glossary::
 
+   Cartesian coordinate system 
+      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. 2-dimension and 3-dimension spaces are most common in FRC, but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
+
+   churning losses
+      Complex friction-like forces arising from the fact that when gears and bearings rotate, they must displace liquid lubricant. This reduces the efficiency of rotating mechanisms.
+
    control signal
       The driving signal sent to a :term:`plant` by a :term:`controller`, usually quantified as a voltage.
 
@@ -16,7 +22,7 @@ Controls Glossary
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
    current
-      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to 6241509074000000000 electrons moving past the measurement point in one second.
+      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to $6241509074000000000$ electrons moving past the measurement point in one second.
 
    counter-electromotive force
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on wikipedia for more info.
@@ -33,6 +39,9 @@ Controls Glossary
    gain
       A proportional (scalar) value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
 
+   Gaussian distribution
+      A special mathematical function useful for statistical analysis. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). See `Gaussian distribution <https://en.wikipedia.org/wiki/Gaussian_function>`__  on wikipedia for more info.
+
    hidden state
       A :term:`state` that cannot be directly measured, but whose :term:`dynamics` can be related to other states.
 
@@ -43,6 +52,9 @@ Controls Glossary
          - Ex. A drivetrain might have 2 inputs: the voltages of the left and right motors.
 
       Inputs are often represented by the variable :math:`\mathbf{u}`, a column vector with one entry per :term:`input` to the :term:`system`.
+
+   least-squares regression
+      A curve-fitting technique which picks a curve to minimizes the *square* of the error between the fitted curve, and the actual measured data. See `ordinary least-squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__ on wikipedia for more info.
 
    LQR
       Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "lowest cost" manner. It requires an accurate mathematical model of the system being controlled, and a set of equations describing what things are "costly". See `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__ on wikipedia for more info.
@@ -66,6 +78,9 @@ Controls Glossary
          - Ex. A drivetrain might use solvePNP and V-SLAM to find it's x/y/heading position on the field. It's fine that there are 6 measurements (solvePNP x/y/heading and V-SLAM x/y/heading) and 3 states (robot x/y/heading).
 
       Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our, our :term:`output` vector would only include the :term:`system`\'s velocity.
+
+   phase portrait
+      A graph of a function's value and its derivative as they change in time, given some initial starting conditions. They are useful for analyzing system behavior (stable/unstable operating points, limit cycles, etc.) given a certain set of parameters or starting conditions. See `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ on wikipedia for more info.
 
    PID
       Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. on wikipedia for more info.
@@ -118,7 +133,10 @@ Controls Glossary
       The behavior of a :term:`system` over time for a given :term:`input`.
 
    voltage
-      The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts" It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having 1/6241509074000000000 joules of energy.
+      The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts" It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having $\frac{1}{6241509074000000000}$ joules of energy.
+
+   viscous drag
+      The force generated from an object moving *relatively* slowly through non-turbulent fluid. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See `Drag (physics) <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__ on wikipedia for more info.
 
    x-dot
       :math:`\dot{\mathbf{x}}`, or x-dot: the derivative of the :term:`state` vector :math:`\mathbf{x}`. If the :term:`system` had just a velocity :term:`state`, then :math:`\dot{\mathbf{x}}` would represent the :term:`system`\'s acceleration.

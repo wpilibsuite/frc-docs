@@ -11,7 +11,7 @@ This image shows flywheel velocity measurements over time, run through a variety
 Gaussian Functions
 ------------------
 
-Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
+Kalman filters utilize a :term:`Gaussian distribution` to model the noise in a process. In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
 
 .. figure:: images/normal-distribution.png
   :width: 600
