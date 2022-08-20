@@ -31,7 +31,7 @@ Controls Glossary
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on wikipedia for more info.
 
    current
-      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to $6241509074000000000$ electrons moving past the measurement point in one second.
+      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to :math:`6241509074000000000` electrons moving past the measurement point in one second.
 
    dynamics
       A branch of physics concerned with the motion of bodies under the action of forces. In modern control, systems evolve according to their dynamics.
@@ -154,7 +154,7 @@ Controls Glossary
       The behavior of a :term:`system` over time for a given :term:`input`.
 
    voltage
-      The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts" It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having $\frac{1}{6241509074000000000}$ joules of energy.
+      The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts". It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having :math:`\frac{1}{6241509074000000000}` joules of energy.
 
    viscous drag
       The force generated from an object moving *relatively* slowly through non-turbulent fluid. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See `Drag (physics) <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__ on wikipedia for more info.
