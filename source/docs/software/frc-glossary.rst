@@ -14,13 +14,16 @@ FRC Glossary
    call stack
       A specially-organized region of memory which helps the program keep track of what function it is in, and store the values of some variables. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on wikipedia for more info.
 
+   Classical Mechanics
+      The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on wikipedia for more info.
+
    COTS
       Commercial off the shelf, a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
 
    compositions
       A formal software term a set of multiple objects (such as commands) grouped into a bigger object. See `object composition <https://en.wikipedia.org/wiki/Object_composition>`__ on wikipedia for more info.
 
-   CTRP
+   CRTP
       Continuously Recurring Template Pattern - A software idiom in which a class `X`` derives from a class template instantiation using `X`` itself as a template argument. See `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ on wikipedia for more info.
 
    C++
@@ -71,6 +74,9 @@ FRC Glossary
    Java
       One of the three officially supported programming languages.
 
+   JSON
+      JavaScript Object Notation. A standardized way of organizing data into named values. The organized data can be easily :term:`serialized`. While the original usage was in Javascript, it can be used and interested by most modern programming languages. See `JSON <https://en.wikipedia.org/wiki/JSON>`__ on wikipedia for more info.
+
    KOP
       Kit of Parts, the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
@@ -83,11 +89,23 @@ FRC Glossary
    NetworkTables
       A way to communicate key / value pairs of data between programs.
 
+   mass
+      the amount of matter in a physical object. Objects with more mass will resist changes in motion more than objects with less mass. See `mass <https://en.wikipedia.org/wiki/Mass>`_ on wikipedia for more info.
+
+   moment of inertia
+      The property of an object that describes both how much mass it has, and how that mass is distributed relative to a certain axis of rotation. Objects with higher moments of inertia resist changes in rotational motion more than objects with lower moments of inertia. Increasing the moment of inertia is accomplished by adding more mass, or moving the mass further away from the axis of rotation. See `moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_ on wikipedia for more info.
+
    permanent-magnet DC motor
       The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on wikipedia for more info.
 
+   retro-reflection
+      The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on wikipedia for more information.
+
    recursive composition
       A software term for when an object is made up of many objects, including itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on wikipedia for more info.
+
+   serialized
+      The property of a data organization scheme that allows the description of the data to be sent in order, byte by byte, over some communication channel. Reading or writing a file on disk is done in this serial fashion (IE, the data is read or written byte by byte, not all at once). Sending data over a SPI or I2C bus is also done byte by byte, again requiring the data can be serialized. 
 
    simulation
       A way for teams to test their code without having an actual robot available.
@@ -100,6 +118,9 @@ FRC Glossary
 
    state machine
       A programming construct that divides a problem into many discrete, well-defined, mutually-exclusive "states", then defines how the problem is solved by moving between different states. See `state machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ on wikipedia for more more info.
+
+   telemetry
+      The process of recording and sending real-time data about the performance of your robot to a real-time readout or log file. For the linguists among us, the word's roots are "tele" (remote) and "metry" (measurement). See `telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ on wikipedia for more info.
 
    teleop
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.

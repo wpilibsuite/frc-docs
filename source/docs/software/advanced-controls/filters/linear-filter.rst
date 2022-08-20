@@ -3,7 +3,7 @@ Linear Filters
 
 The first (and most commonly-employed) sort of filter that WPILib supports is a *linear filter* - or, more specifically, a linear time-invariant (LTI) filter.
 
-An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reducible to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  Mathematically, this kind of moving average is known as a `convolution <https://en.wikipedia.org/wiki/Convolution>`__.
+An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reducible to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  The mathematical term for this operation is :term:`convolution`.
 
 There are two broad "sorts" of impulse responses: infinite impulse responses (IIR), and finite impulse responses (FIR).
 
@@ -28,7 +28,7 @@ singlePoleIIR
 .. image:: images/singlepolefilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
 
-The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter (also known as `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of having an exponential impulse response).  This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
+The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter which performs :term:`exponential smoothing`. This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
 
 .. tabs::
 

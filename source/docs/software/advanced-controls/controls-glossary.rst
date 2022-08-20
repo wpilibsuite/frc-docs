@@ -3,8 +3,11 @@ Controls Glossary
 
 .. glossary::
 
+   bang-bang control
+      A very simple, no-tuning-required closed-loop control technique. It simply "turns on" the :term:`control effort` when the :term:`process variable` is too small, and "turns off" the control effort when the process variable is too big. It works well in some cases, but not all. See `"Bang-bang" control <https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ on wikipedia for more info.
+
    Cartesian coordinate system 
-      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. 2-dimension and 3-dimension spaces are most common in FRC, but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
+      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC, but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
 
    churning losses
       Complex friction-like forces arising from the fact that when gears and bearings rotate, they must displace liquid lubricant. This reduces the efficiency of rotating mechanisms.
@@ -21,11 +24,14 @@ Controls Glossary
    controller
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
-   current
-      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to $6241509074000000000$ electrons moving past the measurement point in one second.
+   convolution
+      A mathematical operation that creates a function from a combination of two others. It expresses how the shape of one function gets modified by the other. A common way to "filter" sensor input is to apply a *convolution* to it, using a specifically-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__. on wikipedia for more info.
 
    counter-electromotive force
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on wikipedia for more info.
+
+   current
+      The flow of electrons through a conductor. Current is described with a unit of "Amps" (or simply "A"), and is measured at a single point in a circuit. One amp is equal to $6241509074000000000$ electrons moving past the measurement point in one second.
 
    dynamics
       A branch of physics concerned with the motion of bodies under the action of forces. In modern control, systems evolve according to their dynamics.
@@ -35,6 +41,12 @@ Controls Glossary
 
    error
       :term:`Reference <reference>` minus an :term:`output` or :term:`state`.
+
+   exponential search
+      An iterative process of finding a specific value within a wide search range by applying a multiplicative factor to the search value. See `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__ on wikipedia for more info.
+
+   exponential smoothing
+      The usage of exponential window function in a convolution with an input signal. It is a very common way to implement a simple low-pass filter. See `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__ on wikipedia for more info.
 
    gain
       A proportional (scalar) value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
@@ -65,11 +77,11 @@ Controls Glossary
    model
       A set of mathematical equations that reflects some aspect of a physical :term:`system's <system>` behavior.
 
-   moment of inertia
-      A measurement of a rotating body's resistance to angular acceleration or deceleration. Angular moment of inertia can be thought of as angular mass. See also: `Moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`__.
-
    observer
       In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
+
+   orthogonal
+      Having the property of being independent. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other. 
 
    output
       Measurements from sensors. There can be more measurements then states. These outputs are used in the "correct" step of Kalman Filters.
@@ -80,7 +92,7 @@ Controls Glossary
       Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our, our :term:`output` vector would only include the :term:`system`\'s velocity.
 
    phase portrait
-      A graph of a function's value and its derivative as they change in time, given some initial starting conditions. They are useful for analyzing system behavior (stable/unstable operating points, limit cycles, etc.) given a certain set of parameters or starting conditions. See `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ on wikipedia for more info.
+      A graph of a function's value and its :term:`derivative` as they change in time, given some initial starting conditions. They are useful for analyzing system behavior (stable/unstable operating points, limit cycles, etc.) given a certain set of parameters or starting conditions. See `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ on wikipedia for more info.
 
    PID
       Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. on wikipedia for more info.
@@ -91,11 +103,17 @@ Controls Glossary
    process variable
       The term used to describe the output of a :term:`plant` in the context of PID control.
 
+   r-squared
+      A statistical measurement of how well an `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__ predicts a given set of input data. It is not impacted by the units of measurement. A value of 0.0 is a horrible fit, and 1.0 is a perfect fit. See `Coefficient_of_determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ on wikipedia for more info. 
+
    reference
       The desired state. This value is used as the reference point for a controller's error calculation.
 
    rise time
       The time a :term:`system` takes to initially reach the :term:`reference` after applying a :term:`step input`.
+
+   RMSE
+      Root Mean Squared Error - Statistical measurement of how well a curve is fit to a set of input data. It is calculated as the square root of the average (mean) of the squares of all the errors between the actual sample and the curve fit. It has units of the original input data. See `Root Mean Squared Error <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ on wikipedia for more info.
 
    setpoint
       The term used to describe the :term:`reference` of a PID controller.
@@ -113,6 +131,9 @@ Controls Glossary
          - Ex. An elevator system might have the states :math:`\begin{bmatrix} \text{position} \\ \text{velocity} \end{bmatrix}` to describe its current height and velocity.
 
       A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
+
+   statistically robust
+      The property of a data processing algorithm which makes it resilient to a wide variety of inputs. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desireable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on wikipedia for more info.
 
    steady-state error
       :term:`Error <error>` after :term:`system` reaches equilibrium.
