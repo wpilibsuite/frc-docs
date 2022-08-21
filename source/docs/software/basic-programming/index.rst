@@ -8,5 +8,3 @@ Basic Programming
    cpp-units
    joystick
    robot-preferences
-   using-test-mode
-   reading-stacktraces
