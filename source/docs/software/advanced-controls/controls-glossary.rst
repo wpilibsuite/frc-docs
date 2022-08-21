@@ -7,7 +7,7 @@ Controls Glossary
       A very simple, no-tuning-required closed-loop control technique. It simply "turns on" the :term:`control effort` when the :term:`process variable` is too small, and "turns off" the control effort when the process variable is too big. It works well in some cases, but not all. See `"Bang-bang" control <https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ on wikipedia for more info.
 
    Cartesian coordinate system
-      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC, but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
+      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC (and likely what was learned in algebra 1), but any number of dimensions is theoretically possible. See `Cartesian coordinate system <https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ on wikipedia for more info.
 
    churning losses
       Complex friction-like forces arising from the fact that when gears and bearings rotate, they must displace liquid lubricant. This reduces the efficiency of rotating mechanisms.
@@ -25,7 +25,7 @@ Controls Glossary
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
    convolution
-      A mathematical operation that creates a function from a combination of two others. It expresses how the shape of one function gets modified by the other. A common way to "filter" sensor input is to apply a *convolution* to it, using a specifically-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__. on wikipedia for more info.
+      A mathematical operation that calculates a weighted moving average of one function, with the weights assigned by a second function. A common way to "filter" sensor input is to apply a *convolution* to it, using a carefully-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__. on wikipedia for more info.
 
    counter-electromotive force
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on wikipedia for more info.
