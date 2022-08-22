@@ -50,20 +50,28 @@ If many variables change, and the problem goes away, you will not know which var
 
 While it may be tempting to change a lot of things hoping one of them fixes the issue, this will likely lead to a lot of things changed unnecessarily.
 
-Be Targeted with Assumptions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Undirected Guess and Check is Ineffective
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A naïve approach to troubleshooting will start by assuming *anything* could be the root cause, and 
+A naïve approach to troubleshooting will start by assuming *anything* could be the root cause, and pursue each option one by one. However, in a large and complex system (like a robot), the number of possibilities can be too large to effectively test each one, one by one.
+
+From this perspective, it is best to start by making a few assumptions about what root causes are *most likely*, and test those first. As you get more experience doing troubleshooting, you'll gain a better intuition for where to start looking for problems.
+
+However, keep in mind that these are *assumptions*. They're educated guesses as to where the problem *likely is not*, not exhaustive proof that a problem doesn't exist. Always be ready to go back and undo your assumptions if needed.
 
 Be Egoless
 ^^^^^^^^^^
 
+When troubleshooting, emotions can often start flying, as it sometimes appears blame is being placed. People can get defensive when their component or their design is called into question. 
+
+It's important to keep in mind that everyone is on the same team, working toward the same goal. Be careful to choose words and descriptions which describe and judge ideas, not people. Furthermore, try not to let your own ego and biases get in the way of considering possible faults in the systems you are responsible for.
+
 Single vs. Multiple Points of Failure 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The most effective way to troubleshoot is to start by assuming that a *single point of failure* has triggered the symptom. For well designed, simple systems, this is usually the case.
 
-Undirected Guess and Check is Ineffective
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+However, as systems get larger and more complex, it's very possible multiple failures might exist. While this should always be a *secondary* assumption, be careful not to ignore the fact a symptom may be caused by multiple, interacting failures.
 
 Practice, Practice, Practice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

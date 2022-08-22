@@ -20,18 +20,21 @@ You should immediately notify the FTA that there is a connectivity issue for the
 
 .. important:: While rare, it has been shown that the robot radio can sometimes take a large amount of time to boot.
 
+Driving toward Root Cause
+-------------------------
+
 Checking physical connections
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Checking wifi connections & interference
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check power supply to radio or switch (resets)
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check Firewall
---------------
+^^^^^^^^
 
 Try different ethernet port
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

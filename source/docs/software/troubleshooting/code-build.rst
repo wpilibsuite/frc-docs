@@ -34,3 +34,7 @@ Fixing gradlew is not recognized...
 
 **Is your project missing essential files?**
 - This issue is more complex to solve. The recommended solution is to :ref:`recreate your project <docs/software/vscode-overview/creating-robot-program:Creating a Robot Program>` and manually copy necessary code in.
+
+
+Driving toward Root Cause
+-------------------------
