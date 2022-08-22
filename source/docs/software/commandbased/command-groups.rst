@@ -3,7 +3,7 @@ Command Groups
 
 Individual commands are capable of accomplishing a large variety of robot tasks, but the simple three-state format can quickly become cumbersome when more advanced functionality requiring extended sequences of robot tasks or coordination of multiple robot subsystems is required. In order to accomplish this, users are encouraged to use the powerful command group functionality included in the command-based library.
 
-As the name suggests, command groups are :term:`compositions` of multiple commands. Command groups *compose* multiple commands into a *composite* command. This allows code to be kept much cleaner and simpler, as the individual *component* commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
+As the name suggests, a command group is a :term:`composition` of multiple commands. Command groups *compose* multiple commands into a *composite* command. This allows code to be kept much cleaner and simpler, as the individual *component* commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
 
 Most importantly, however, command groups *are themselves commands* - they implement the ``Command`` interface. This allows command groups to be grouped as a :term:`recursive composition` - that is, a command group may contain *other command groups* as components.
 

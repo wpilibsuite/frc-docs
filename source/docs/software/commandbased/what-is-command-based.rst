@@ -71,7 +71,7 @@ When a command is scheduled, its ``initialize()`` method is called once. Its ``e
 Command Groups
 --------------
 
-It is often desirable to build complex commands from simple pieces. This is achievable by creating :term:`compositions` of commands called "command groups." A :doc:`command group <command-groups>` is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they can be used in a :term:`recursive composition`. That is to say - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.
+It is often desirable to build complex commands from simple pieces. This is achievable by creating a :term:`composition` of commands called a "command group." A :doc:`command group <command-groups>` is a command that contains multiple commands within it, which run either in parallel or in sequence. The command-based library provides several types of command groups for teams to use, and users are encouraged to write their own, if desired. As command groups themselves implement the ``Command`` interface, they can be used in a :term:`recursive composition`. That is to say - one can include command groups *within* other command groups. This provides an extremely powerful way of building complex robot actions with a simple library.
 
 Creating a Robot Project
 ========================

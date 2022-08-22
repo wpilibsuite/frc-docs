@@ -46,13 +46,13 @@ Controls Glossary
       An iterative process of finding a specific value within a wide search range by applying a multiplicative factor to the search value. See `exponential search <https://en.wikipedia.org/wiki/Exponential_search>`__ on wikipedia for more info.
 
    exponential smoothing
-      The usage of exponential window function in a convolution with an input signal. It is a very common way to implement a simple low-pass filter. See `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__ on wikipedia for more info.
+      The usage of exponential window function in a convolution with an input signal. It is a very common way to implement a simple low-pass filter, because the convolution operation simplifies down to a very simple set of math operations on the current input and previous output. See `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__ on wikipedia for more info.
 
    gain
       A proportional (scalar) value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
 
    Gaussian distribution
-      A special mathematical function useful for statistical analysis. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). See `Gaussian distribution <https://en.wikipedia.org/wiki/Gaussian_function>`__  on wikipedia for more info.
+      A special mathematical function that describes distributions of average values. As more and more data goes into an average, its distribution will almost always get closer to a Gaussian distribution, even if the individual components of the average do not themselves follow a Gaussian distribution. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). See `Gaussian distribution <https://en.wikipedia.org/wiki/Gaussian_function>`__  on wikipedia for more info.
 
    hidden state
       A :term:`state` that cannot be directly measured, but whose :term:`dynamics` can be related to other states.
@@ -69,7 +69,7 @@ Controls Glossary
       A curve-fitting technique which picks a curve to minimizes the *square* of the error between the fitted curve, and the actual measured data. See `ordinary least-squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__ on wikipedia for more info.
 
    LQR
-      Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "lowest cost" manner. It requires an accurate mathematical model of the system being controlled, and a set of equations describing what things are "costly". See `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__ on wikipedia for more info.
+     Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "most optimal" or "lowest cost" manner, in the sense of minimizing the square of some "cost function" that represents a combination of system error and control effort. This requires an accurate mathematical model of the system being controlled, and function describing the "cost" of any given system state. See `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__ on wikipedia for more info.
 
    measurement
       Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
@@ -81,7 +81,7 @@ Controls Glossary
       In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
 
    orthogonal
-      Having the property of being independent. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other.
+      Having the property of being independent, or lacking mutual influence. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other.
 
    output
       Measurements from sensors. There can be more measurements then states. These outputs are used in the "correct" step of Kalman Filters.
@@ -104,7 +104,8 @@ Controls Glossary
       The term used to describe the output of a :term:`plant` in the context of PID control.
 
    r-squared
-      A statistical measurement of how well an `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__ predicts a given set of input data. It is not impacted by the units of measurement. A value of 0.0 is a horrible fit, and 1.0 is a perfect fit. See `Coefficient_of_determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ on wikipedia for more info.
+
+      A statistical measurement of how well a model predicts a set of data, representing the fraction of the observed variation in the independent variable that is accurately predicted by the model. The value typically runs from 0.0 (a terrible fit, equivalent to just guessing the average value of your independent variable) to 1.0 (a perfect fit). See `Coefficient_of_determination <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ on wikipedia for more info.
 
    reference
       The desired state. This value is used as the reference point for a controller's error calculation.
@@ -113,7 +114,7 @@ Controls Glossary
       The time a :term:`system` takes to initially reach the :term:`reference` after applying a :term:`step input`.
 
    RMSE
-      Root Mean Squared Error - Statistical measurement of how well a curve is fit to a set of input data. It is calculated as the square root of the average (mean) of the squares of all the errors between the actual sample and the curve fit. It has units of the original input data. See `Root Mean Squared Error <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ on wikipedia for more info.
+      Root Mean Squared Error - Statistical measurement of how well a curve is fit to a set of data. It is calculated as the square root of the average (mean) of the squares of all the errors between the actual sample and the curve fit. It has units of the original input data. See `Root Mean Squared Error <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ on wikipedia for more info.
 
    setpoint
       The term used to describe the :term:`reference` of a PID controller.
@@ -133,7 +134,7 @@ Controls Glossary
       A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
    statistically robust
-      The property of a data processing algorithm which makes it resilient to a wide variety of inputs. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desirable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on wikipedia for more info.
+      The property of a data processing algorithm which makes it resilient to a noisy or outlier-prone data set. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desirable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on wikipedia for more info.
 
    steady-state error
       :term:`Error <error>` after :term:`system` reaches equilibrium.
@@ -157,7 +158,7 @@ Controls Glossary
       The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts". It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having :math:`\frac{1}{6241509074000000000}` joules of energy.
 
    viscous drag
-      The force generated from an object moving *relatively* slowly through non-turbulent fluid. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See `Drag (physics) <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__ on wikipedia for more info.
+      The force generated from an object moving *relatively* slowly through non-turbulent fluid. In this region, the force is roughly proportional to the *velocity* of the object. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See `Drag (physics) <https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__ on wikipedia for more info.
 
    x-dot
       :math:`\dot{\mathbf{x}}`, or x-dot: the derivative of the :term:`state` vector :math:`\mathbf{x}`. If the :term:`system` had just a velocity :term:`state`, then :math:`\dot{\mathbf{x}}` would represent the :term:`system`\'s acceleration.

@@ -12,7 +12,7 @@ FRC Glossary
       The first phase of each match is called Autonomous (auto) and consists of the robot's running pre-programmed instructions.
 
    call stack
-      A specially-organized region of memory which helps the program keep track of what function it is in, and store the values of some variables. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on wikipedia for more info.
+      A specially-organized region of memory which helps the program keep track of what function it is in. As each function calls another, the call point is recorded and added to the top of the structure, forming a "stack" of references. Additionally, local variables will also be stored in this stack. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on wikipedia for more info.
 
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on wikipedia for more info.
@@ -20,8 +20,8 @@ FRC Glossary
    COTS
       Commercial off the shelf, a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
 
-   compositions
-      A formal software term a set of multiple objects (such as commands) grouped into a bigger object. See `object composition <https://en.wikipedia.org/wiki/Object_composition>`__ on wikipedia for more info.
+   composition
+      A formal software term for building (or "composing") software entities out of smaller component entities. See `object composition <https://en.wikipedia.org/wiki/Object_composition>`__ on wikipedia for more info.
 
    CRTP
       Continuously Recurring Template Pattern - A software idiom in which a class `X`` derives from a class template instantiation using `X`` itself as a template argument. See `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ on wikipedia for more info.
@@ -33,10 +33,10 @@ FRC Glossary
       A style of software which focuses on describing *what* a program should do, rather than *how* it gets done. See `declarative programming <https://en.wikipedia.org/wiki/Declarative_programming>`__ on wikipedia for more info.
 
    dependency injection
-      A software design pattern where each class receives all objects it depends upon as arguments to its constructor. See `dependency injection <https://en.wikipedia.org/wiki/Dependency_injection>`__ on wikipedia for more info.
+      A software design pattern where each class receives all objects it depends upon. Sometimes these are passed through the constructor, but not always. See `dependency injection <https://en.wikipedia.org/wiki/Dependency_injection>`__ on wikipedia for more info.
 
    deprecated
-      Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code.
+      Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code. WPILib always deprecates features at least one year prior to removing them from the codebase.
 
    design pattern
       A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ on wikipedia for more info.
@@ -102,7 +102,7 @@ FRC Glossary
       The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on wikipedia for more information.
 
    recursive composition
-      A software term for when an object is made up of many objects, including itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on wikipedia for more info.
+      A type of :term:`composition` in which the composite object may contain components of the same type as itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on wikipedia for more info. See also :term:`recursive composition`.
 
    serialized
       The property of a data organization scheme that allows the description of the data to be sent in order, byte by byte, over some communication channel. Reading or writing a file on disk is done in this serial fashion (IE, the data is read or written byte by byte, not all at once). Sending data over a SPI or I2C bus is also done byte by byte, again requiring the data can be serialized.
