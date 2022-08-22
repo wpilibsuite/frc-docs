@@ -290,6 +290,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/basic-programming/index
    docs/software/troubleshooting/index
    docs/software/support/support-resources
+   docs/software/troubleshooting/index
    docs/software/frc-glossary
 
 .. toctree::
