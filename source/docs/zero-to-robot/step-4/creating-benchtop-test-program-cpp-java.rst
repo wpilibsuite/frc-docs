@@ -3,6 +3,8 @@ Creating your Benchtop Test Program (C++/Java)
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
+.. important:: This guide includes code examples that involve vendor hardware at the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Falcon 500 motor controller, but is applicable on the TalonSRX as well. REV examples will be coming soon.
+
 Creating a New WPILib Project
 -----------------------------
 
@@ -121,7 +123,7 @@ Defining the variables for our sample robot
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
                :language: java
-               :lines: 19-24
+               :lines: 19-36
                :linenos:
                :lineno-start: 19
 
@@ -160,14 +162,26 @@ Defining the variables for our sample robot
 
             .. code-block:: cpp
 
-                 private:
-                  // Robot drive system
-                  ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{0};
-                  ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{1};
-                  frc::DifferentialDrive m_robotDrive{m_left, m_right};
+               public:
+                Robot() {
+                   m_right.SetInverted(true);
+                   m_robotDrive.SetExpiration(100_ms);
+                   // We need to invert one side of the drivetrain so that positive voltages
+                   // result in both sides moving forward. Depending on how your robot's
+                   // gearbox is constructed, you might have to invert the left side instead.
+                   m_timer.Start();
+                }
 
-                  frc::Joystick m_stick{0};
-                  frc::Timer m_timer;
+            .. code-block:: cpp
+
+               private:
+                // Robot drive system
+                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{0};
+                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{1};
+                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+
+                frc::Joystick m_stick{0};
+                frc::Timer m_timer;
 
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1. Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
 
@@ -218,30 +232,26 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 
 ``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than 2 seconds has elapsed, the code stops the robot drive.
 
-Joystick Control for teleoperation
+Joystick Control for Teleoperation
 ----------------------------------
 
 .. tabs::
 
-   .. group-tab:: PWM
+   .. group-tab:: Java
 
-      .. tabs::
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 56-64
+         :linenos:
+         :lineno-start: 56
 
-         .. group-tab:: Java
+   .. group-tab:: C++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-               :language: java
-               :lines: 56-64
-               :linenos:
-               :lineno-start: 56
-
-         .. group-tab:: C++
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 38-43
-               :linenos:
-               :lineno-start: 38
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 38-43
+         :linenos:
+         :lineno-start: 38
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
@@ -250,25 +260,21 @@ Test Mode
 
 .. tabs::
 
-   .. group-tab:: PWM
+   .. group-tab:: Java
 
-      .. tabs::
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :lines: 66-73
+         :linenos:
+         :lineno-start: 66
 
-         .. group-tab:: Java
+   .. group-tab:: C++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-               :language: java
-               :lines: 66-73
-               :linenos:
-               :lineno-start: 66
-
-         .. group-tab:: C++
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 45-47
-               :linenos:
-               :lineno-start: 45
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :lines: 45-47
+         :linenos:
+         :lineno-start: 45
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
