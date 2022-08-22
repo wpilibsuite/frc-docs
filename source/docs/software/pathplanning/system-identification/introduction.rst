@@ -17,7 +17,7 @@ If you haven't yet, read the full explanation of the feedforward equations used 
 
 The process of System Identification is to determine concrete values for the coefficients in the model that best-reflect the behavior of *your particular* real-world system.
 
-To determine numeric values for each coefficient in our model, a curve-fitting technique (such as :term:`least-squares regression`) is applied to measurements taken from the real mechanism. Careful selection of the experiments to record help improve the accuracy of the curve-fitting.
+To determine numeric values for each coefficient in our model, a curve-fitting technique (such as :term:`least-squares regression`) is applied to measurements taken from the real mechanism. Careful selection of the data-producing experiments helps improve the accuracy of the curve-fitting.
 
 Once these coefficients have been determined, we can then take a given desired velocity and acceleration for the motor and calculate the voltage that should be applied to achieve it.  This is very useful - not only for, say, following motion profiles, but also for making mechanisms more controllable in open-loop control, because your joystick inputs will more closely match the actual mechanism motion.
 
