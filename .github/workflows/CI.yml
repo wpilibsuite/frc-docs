@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run Tune
-      uses: abbbi/github-actions-tune@v1
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
