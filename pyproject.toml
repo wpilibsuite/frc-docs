@@ -5,12 +5,13 @@ description = ""
 authors = []
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.12"
 doc8 = "==0.11.1"
 docutils = "==0.17.0"
 fonttools = {version = "==4.33.3", extras = ["woff"]}
 latex = "==0.7.0"
 packaging = "==20.9"
+scipy = ">=1.9.0, <2.0.0"
 sphinx = "==4.5.0"
 sphinx-hoverxref = "==1.0.1"
 sphinx-notfound-page = "==0.8.0"
