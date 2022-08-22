@@ -13,7 +13,7 @@ Windows
 
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
-- `Python 3.9 <https://www.python.org/downloads/>`__ (Python >= 3.10 is incompatible)
+- `Python 3.9 <https://www.python.org/downloads/>`__
 - `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
 - `Perl <https://strawberryperl.com/>`__
 - `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
