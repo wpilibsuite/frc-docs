@@ -135,7 +135,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 
 .. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
 
-   Teams may also see this error with Operating Systems not configured for languages other than US Engilsh. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
+   Teams may also see this error with Operating Systems configured for languages other than US Engilsh. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.xml>`_.
 
 Select Radio and Operating Mode
 -------------------------------
