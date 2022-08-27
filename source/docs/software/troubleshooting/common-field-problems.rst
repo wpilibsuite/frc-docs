@@ -49,4 +49,4 @@ This is likely a bandwidth or IP configuration issue. Try setting your IP config
 Unable to connect to your robot?
 --------------------------------
 
-See :ref:`networking:Usual symptoms`
+See :ref:`docs/software/troubleshooting/networking:Usual Symptoms`

@@ -265,3 +265,5 @@
 "docs/software/pathplanning/pathweaver/creating-path-groups.rst" "docs/software/pathplanning/pathweaver/creating-autonomous-routines.rst"
 "docs/software/dashboards/smartdashboard/setting-robot-preferences-from-smartdashboard.rst" "docs/software/basic-programming/robot-preferences.rst"
 "docs/software/advanced-controls/introduction/tuning-pid-controller.rst" "docs/software/advanced-controls/introduction/tuning-flywheel.rst"
+"docs/software/driverstation/driver-station-errors-warnings.rst" "docs/software/troubleshooting/driver-station-errors-warnings.rst"
+"docs/software/basic-programming/using-test-mode.rst" "docs/software/troubleshooting/using-test-mode.rst"

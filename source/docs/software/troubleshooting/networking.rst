@@ -1,7 +1,7 @@
 Debugging Network-Related Problems
 ==================================
 
-Usual symptoms
+Usual Symptoms
 --------------
 
 Setting up the driver station in the short few seconds before the match should be utilized to do a quick connectivity and joystick check. Assuming your robot is turned on and has been turned on for ~30-60 seconds, you might realize a problem has happened. Below are a list of common reasons you are unable to connect to your robot.
@@ -16,9 +16,9 @@ Setting up the driver station in the short few seconds before the match should b
 
 .. todo:: add more and maybe some images
 
-You should immediately notify the FTA that there is a connectivity issue for the quickest resolution.
+If on the field, you should immediately notify the FTA that there is a connectivity issue for the quickest resolution.
 
-.. important:: While rare, it has been shown that the robot radio can sometimes take a large amount of time to boot.
+.. important:: While rare, it has been shown that the robot radio can sometimes take a large amount of time to boot - 90 seconds or more.
 
 Driving toward Root Cause
 -------------------------
@@ -33,7 +33,7 @@ Check power supply to radio or switch (resets)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check Firewall
-^^^^^^^^
+^^^^^^^^^^^^^^
 
 Try different ethernet port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
