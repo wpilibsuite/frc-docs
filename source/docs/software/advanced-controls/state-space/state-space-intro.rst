@@ -76,17 +76,17 @@ A continuous-time state-space system can be converted into a discrete-time syste
 
 .. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally to the discrete-time form where necessary.
 
-State-space Notation Example: Flywheel from kV and kA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+State-space Notation Example: Flywheel from `K_v` and `K_a`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Recall <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model the motion of a flywheel connected to a brushed DC motor with the equation :math:`V = kV \cdot v + kA \cdot a`, where V is voltage output, v is the flywheel's angular velocity and a is its angular acceleration. This equation can be rewritten as :math:`a = \frac{V - kV \cdot v}{kA}`, or :math:`a = \frac{-kV}{kA} \cdot v + \frac{1}{kA} \cdot V`. Notice anything familiar? This equation relates the angular acceleration of the flywheel to its angular velocity and the voltage applied.
+:ref:`Recall <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model the motion of a flywheel connected to a brushed DC motor with the equation :math:`V = K_v \cdot v + K_a \cdot a`, where V is voltage output, v is the flywheel's angular velocity and a is its angular acceleration. This equation can be rewritten as :math:`a = \frac{V - K_v \cdot v}{K_a}`, or :math:`a = \frac{-K_v}{K_a} \cdot v + \frac{1}{K_a} \cdot V`. Notice anything familiar? This equation relates the angular acceleration of the flywheel to its angular velocity and the voltage applied.
 
 We can convert this equation to state-space notation. We can create a system with one state (velocity), one :term:`input` (voltage), and one :term:`output` (velocity). Recalling that the first derivative of velocity is acceleration, we can write our equation as follows, replacing velocity with :math:`\mathbf{x}`, acceleration with :math:`\mathbf{\dot{x}}`, and voltage :math:`\mathbf{V}` with :math:`\mathbf{u}`:
 
 .. math::
-    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} \mathbf{u}
+    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-K_v}{K_a}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{K_a}\end{bmatrix} \mathbf{u}
 
-That's it! That's the state-space model of a system for which we have the kV and kA constants. This same math is use in system identification to model flywheels and drivetrain velocity systems.
+That's it! That's the state-space model of a system for which we have the `K_v` and `K_a` constants. This same math is use in system identification to model flywheels and drivetrain velocity systems.
 
 Visualizing State-Space Responses: Phase Portrait
 -------------------------------------------------
@@ -141,12 +141,12 @@ Because model-based control means that we can predict the future states of a sys
 LQR: Definition
 ~~~~~~~~~~~~~~~
 
-Linear-Quadratic Regulators work by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{\dot{x} = Ax + Bu}`.
+Linear-Quadratic Regulators work by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{x_{k+1} = Ax_k + Bu_k}`.
 
 .. math::
-    J = \int\limits_0^\infty \left(\mathbf{x}^T\mathbf{Q}\mathbf{x} + \mathbf{u}^T\mathbf{R}\mathbf{u}\right) dt
+    J = \sum\limits_{k=0}^\infty \left(\mathbf{x}_k^T\mathbf{Q}\mathbf{x}_k + \mathbf{u}_k^T\mathbf{R}\mathbf{u}_k\right)
 
-The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`.
+The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :math:`\mathbf{u = K(r_k - x_k)}`, where :math:`r_k - x_k` is the :term:`error`.
 
 .. note:: LQR design's :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices don't need discretization, but the :math:`\mathbf{K}` calculated for continuous-time and discrete time :term:`systems <system>` will be different.
 
@@ -199,14 +199,14 @@ For example, we might use the following Q and R for an elevator system with posi
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`kV = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`kA = 1.5 \frac{\text{volts}}{\text{radian per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
+Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`K_v = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`K_a = 1.5 \frac{\text{volts}}{\text{radian per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
 .. math::
-    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-kV}{kA}\end{bmatrix} v + \begin{bmatrix}\frac{1}{kA}\end{bmatrix} V
+    \mathbf{\dot{x}} = \begin{bmatrix}\frac{-K_v}{K_a}\end{bmatrix} v + \begin{bmatrix}\frac{1}{K_a}\end{bmatrix} V
 
 We arbitrarily choose a desired state excursion (maximum error) of :math:`q = [0.1\ \text{rad/sec}]`, and an :math:`\mathbf{r}` of :math:`[12\ \text{volts}]`. After discretization with a timestep of 20ms, we find a :term:`gain` of :math:`\mathbf{K} = ~81`. This K :term:`gain` acts as the proportional component of a PID loop on flywheel's velocity.
 
-Let's adjust :math:`\mathbf{q}` and :math:`\mathbf{r}`. We know that increasing the q elements or decreasing the :math:`\mathbf{r}` elements we use to create :math:`\mathbf{Q}` and :math:`\mathbf{R}` would make our controller more heavily penalize :term:`control effort`, analogous to trying to driving a car more conservatively to improve fuel economy. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` matrix :math:`\mathbf{K}` drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant :math:`\mathbf{K}`.
+Let's adjust :math:`\mathbf{q}` and :math:`\mathbf{r}`. We know that increasing the q elements or decreasing the :math:`\mathbf{r}` elements we use to create :math:`\mathbf{Q}` and :math:`\mathbf{R}` would make our controller more heavily penalize :term:`control effort`, analogous to trying to driving a car more conservatively to improve fuel economy. In fact, if we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` matrix :math:`\mathbf{K}` drops from ~81 to ~11. Similarly, decreasing our maximum voltage :math:`r` from 12.0 to 1.2 decreases :math:`\mathbf{K}`.
 
 The following graph shows the flywheel's angular velocity and applied voltage over time with two different :term:`gain`\s. We can see how a higher :term:`gain` will make the system reach the reference more quickly (at t = 0.8 seconds), while keeping our motor saturated at 12V for longer. This is exactly the same as increasing the P gain of a PID controller by a factor of ~8x.
 
