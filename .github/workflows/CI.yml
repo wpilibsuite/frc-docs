@@ -3,28 +3,21 @@ name: CI
 on: [pull_request, push]
 
 jobs:
-  build:
+  build-pdf:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
+        cache: 'pip'
     - name: Install Python Dependencies
       run: |
         pip install -r source/requirements.txt
     - name: Install LaTeX
       run: |
-        sudo apt-get update
-        sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
-    - name: Build HTML
-      run: |
-        make html
-    - name: Archive HTML
-      uses: actions/upload-artifact@v2
-      with:
-        name: frc-docs-html
-        path: build/html/
+        sudo apt-fast -y update
+        sudo apt-fast install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
     - name: Build PDF
       run: |
         make latexpdf
@@ -33,13 +26,36 @@ jobs:
       with:
         name: frc-docs-pdf
         path: build/latex/firstroboticscompetition.pdf
-  check-links:
+        if-no-files-found: error
+        
+  build-html:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout main
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+        cache: 'pip'
+    - name: Install Python Dependencies
       run: |
-        git fetch origin main --depth=1
+        pip install -r source/requirements.txt
+    - name: Build HTML
+      run: |
+        make html
+    - name: Archive HTML
+      uses: actions/upload-artifact@v2
+      with:
+        name: frc-docs-html
+        path: build/html/
+        if-no-files-found: error
+        
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: main
     - uses: actions/setup-python@v2
       with:
         python-version: 3.9
@@ -49,6 +65,7 @@ jobs:
     - name: Check Links
       run: |
         make linkcheck
+        
   check-linting:
     runs-on: ubuntu-latest
     steps:
@@ -62,6 +79,7 @@ jobs:
     - name: Check Lint
       run: |
         make lint
+        
   check-image-size:
     runs-on: ubuntu-latest
     steps:
@@ -75,6 +93,7 @@ jobs:
     - name: Check Image Size
       run: |
         make sizecheck
+        
   check-spelling:
     runs-on: ubuntu-latest
     steps:
@@ -84,6 +103,7 @@ jobs:
         with:
           locale: "US"
           reporter: "github-check"
+          
   check-redirects:
     runs-on: ubuntu-latest
     steps:
@@ -103,6 +123,7 @@ jobs:
     - name: Check redirects format
       run: |
         [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
+        
   check-formatting:
     runs-on: ubuntu-latest
     steps:
