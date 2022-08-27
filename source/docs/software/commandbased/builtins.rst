@@ -1,10 +1,39 @@
 WPILib Command classes
 ======================
 
+The command-based library includes a variety of pre-written commands for most use cases, most of them intended to be used “out-of-the-box” via inlining. A list of the included pre-made commands, grouped by functionality type, can be found below, along with brief examples of each. For more rigorous documentation about specific classes, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+
+.. important:: It is recommended not to inherit from these classes and override their methods; not calling the class's version of the method may crash code in ways that are challenging to diagnose.
+
+Passing Subroutines As Parameters
+---------------------------------
+
+In order to inline a command definition, users require some way to specify what code the commands will run as constructor parameters. Fortunately, both Java and C++ offer users the ability to pass subroutines as parameters.
+
+Method References (Java)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Java, a reference to a subroutine that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method``. Note that no method parameters are included, since the method *itself* is the parameter. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see `the official Oracle documentation <https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__.
+
+Lambda Expressions (Java)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While method references work well for passing a subroutine that has already been written, often it is inconvenient/wasteful to write a subroutine solely for the purpose of sending as a method reference, if that subroutine will never be used elsewhere. To avoid this, Java also supports a feature called "lambda expressions." A lambda expression is an inline method definition - it allows a subroutine to be defined *inside of a parameter list*. For specifics on how to write Java lambda expressions, see `this tutorial <https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.
+
+Lambda Expressions (C++)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: Due to complications in C++ semantics, capturing ``this`` in a C++ lambda can cause a null pointer exception if done from a component command of a command group.  Whenever possible, C++ users should capture relevant command members explicitly and by value.  For more details, see `here <https://github.com/wpilibsuite/allwpilib/issues/3109>`__.
+
+C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly useable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see `cppreference <https://en.cppreference.com/w/cpp/language/lambda>`__.
+
 Running Actions
 ---------------
 
-While users are able to create commands by explicitly writing command classes (either by subclassing ``CommandBase`` or implementing ``Command``), for many commands (such as those that simply call a single subsystem method) this involves a lot of wasteful boilerplate code. To help alleviate this, many of the prewritten commands included in the command-based library may be *inlined* - that is, the command body can be defined in a single line of code at command construction.
+While users are able to create commands by explicitly writing command classes (by inheriting from ``CommandBase`` or ``Command``), for many commands (such as those that simply call a single subsystem method) this involves a lot of wasteful boilerplate code. To help alleviate this, many of the prewritten commands included in the command-based library may be *inlined* - that is, the command body can be defined in a single line of code at command construction.
+
+InstantCommand
+^^^^^^^^^^^^^^
 
 The ``InstantCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__) executes a single action on initialization, and then ends immediately) provides an example of a type of command that benefits greatly from inlining. Consider the following from the HatchBotInlined example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):
 
@@ -38,7 +67,10 @@ Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` comman
 
 In addition to ``InstantCommand`` shown above, there are multiple more command classes that can be constructed inline and accept one or more lambdas to be executed:
 
-``RunCommand`` (Java, C++) accepts a single ``Runnable``/``std::function<void()>`` lambda that is executed repeatedly in ``execute()`` until the command is interrupted--the command has no natural end condition; one can be added using the ``until()`` decorator.
+RunCommand
+^^^^^^^^^^
+
+``RunCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) accepts a single ``Runnable``/``std::function<void()>`` lambda that is executed repeatedly in ``execute()`` until the command is interrupted--the command has no natural end condition; one can be added using the ``until()`` decorator.
 
 .. tabs::
 
@@ -63,7 +95,10 @@ In addition to ``InstantCommand`` shown above, there are multiple more command c
       },
       {&m_drive}))
 
-``StartEndCommand`` (Java, C++) accepts two ``Runnable``/``std::function<void()>`` lambdas, the first is executed once in ``initialize()`` when the command is scheduled and the second is executed in ``end()`` when the command is interrupted (the command has no natural end condition).
+StartEndCommand
+^^^^^^^^^^^^^^^
+
+``StartEndCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) accepts two ``Runnable``/``std::function<void()>`` lambdas, the first is executed once in ``initialize()`` when the command is scheduled and the second is executed in ``end()`` when the command is interrupted (the command has no natural end condition).
 
 .. tabs::
 
@@ -89,7 +124,10 @@ In addition to ``InstantCommand`` shown above, there are multiple more command c
       {&m_shooter}
     )
 
-``FunctionalCommand`` (Java, C++) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
+FunctionalCommand
+^^^^^^^^^^^^^^^^^
+
+``FunctionalCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
 
 .. tabs::
 
@@ -123,7 +161,10 @@ In addition to ``InstantCommand`` shown above, there are multiple more command c
       {&m_drive}
     )
 
-``PrintCommand`` (Java, C++) is a subclass of ``InstantCommand`` for printing a string and ending immediately.
+PrintCommand
+^^^^^^^^^^^^
+
+``PrintCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__) is a subclass of ``InstantCommand`` for printing a string and ending immediately.
 
 .. tabs::
 
@@ -136,12 +177,19 @@ In addition to ``InstantCommand`` shown above, there are multiple more command c
     frc2::PrintCommand("This message will be printed!")
 
 
-Dynamically Deciding What Command To Run
-----------------------------------------
+Dynamically Deciding What Command To Schedule
+---------------------------------------------
 
 Sometimes it's desired to run a command out of a few options based on sensor feedback or other data known only at runtime.
 
-For this, ``SelectCommand`` (Java, C++) accepts a map of commands and a generic selector.
+SelectCommand
+^^^^^^^^^^^^^
+
+For this, ``SelectCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_select_command.html>`__) accepts a map of commands and a generic selector, or a ``Supplier<Command>``.
+
+.. note:: While the Java version of ``SelectCommand`` simply uses an ``Object`` as a key, the C++ version is templated on the key type.
+
+.. note:: An alternate version of ``SelectCommand`` simply takes a method that supplies the command to be run - this can be very succinct, but makes inferring the command’s requirements impossible, and so leaves the user responsible for manually adding the requirements to the SelectCommand.
 
 .. tabs::
 
@@ -161,7 +209,10 @@ For this, ``SelectCommand`` (Java, C++) accepts a map of commands and a generic 
       :linenos:
       :lineno-start: 25
 
-``ConditionalCommand`` (Java, C++) is a specialized version of this that decides between two commands using a boolean condition.
+ConditionalCommand
+^^^^^^^^^^^^^^^^^^
+
+``ConditionalCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__) is a specialized version of this that decides between two commands using a boolean condition.
 
 .. tabs::
 
@@ -176,16 +227,15 @@ For this, ``SelectCommand`` (Java, C++) accepts a map of commands and a generic 
     frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
 
 
-``SuppliedCommand`` (Java, C++) accepts a ``Supplier<Command>``/``std::function<Command*()>`` lambda that is polled at ``initialize()`` and the returned command is executed. Useful for creating commands on-the-fly.
-
-TODO: add example code here
-
 Waiting For Delays
 ------------------
 
 Wait for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command group or between other robot actions.
 
-``WaitCommand`` (Java, C++) does nothing and ends after a specified period of time elapses.
+WaitCommand
+^^^^^^^^^^^
+
+``WaitCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__) does nothing and ends after a specified period of time elapses.
 
 .. tabs::
 
@@ -199,9 +249,12 @@ Wait for a certain condition to happen or adding a delay can be useful to synchr
     // Ends 5 seconds after being scheduled
     frc2::WaitCommand(5.0_s)
 
-.. warning:: The match timer used by WaitUntilCommand does *not* provide an official match time! While it is fairly accurate, use of this timer can *not* guarantee the legality of your robot's actions.
+WaitUntilCommand
+^^^^^^^^^^^^^^^^
 
 ``WaitUntilCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__) does nothing, ending once a specified condition becomes true or once a specified match time passes.
+
+.. warning:: The match timer used by WaitUntilCommand does *not* provide an official match time! While it is fairly accurate, use of this timer can *not* guarantee the legality of your robot's actions.
 
 .. tabs::
 
@@ -221,29 +274,7 @@ Wait for a certain condition to happen or adding a delay can be useful to synchr
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
 
-
-
-
-
-
-
-
-
 In combination with ``ParallelRaceGroup`` or ``ParallelDeadlineGroup``, this can be used to replace a command's end condition or add another one - in fact, that is what the ``until()`` decorator does under the hood.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Scheduling Other Commands
 -------------------------
@@ -285,10 +316,10 @@ By default, commands in command groups are run *through* the command group, and 
 Running Command Continuously
 ----------------------------
 
-Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) and ``EndlessCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/EndlessCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_endless_command.html>`__) run a command continuously, with one key difference: ``RepeatCommand`` restarts the command every time it ends, while ``EndlessCommand`` ignores the command's end condition. This has important ramifications, for example: ``InstantCommand`` will run multiple times if repeated, but not if made endless.
+Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) and ``EndlessCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/EndlessCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_endless_command.html>`__) run a command continuously, with one key difference: ``RepeatCommand`` restarts the command every time it ends, while ``EndlessCommand`` ignores the command's end condition. This has important ramifications, for example an ``InstantCommand`` will run multiple times if repeated but not if made endless; an endless ``SequentialCommandGroup`` will keep running the last command until interrupted, meanwhile a repeated ``SequentialCommandGroup`` will restart once the last command ends.
 
 .. tabs::
-
+  .. todo: maybe a better way of indicating when each method will be called?
   .. code-tab:: java
 
     new PerpetualCommand(new FunctionalCommand(
@@ -305,7 +336,6 @@ Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/relea
         })
     )
 
-    // TODO: maybe a better way of indicating when each method will be called?
     new RepeatCommand(new FunctionalCommand(
         // initialize()
         () -> System.out.println("This will be called many times!"),
@@ -352,57 +382,24 @@ Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/relea
 
 ``RepeatCommand`` and ``EndlessCommand`` can also be created using the ``.repeat()`` and ``.endlessly()`` decorators respectively.
 
-Running Commands In Parallel
-----------------------------
+Running Multiple Commands
+-------------------------
 
-Running multiple commands in parallel as part of a process such as an autonomous routine is very useful. There are three types of parallel command groups:
+Running multiple commands in series or parallel as part of a process such as an autonomous routine is very useful. See :ref:`docs/software/commandbased/command-groups:Command Groups` for more info.
 
-- ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_command_group.html>`__) runs multiple commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
-    - The ``.alongWith()`` decorator can be used to create a ``ParallelCommandGroup`` inline.
+Control Algorithm Commands
+--------------------------
 
-- ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_race_group.html>`__) is similar to ``ParallelCommandGroup`` in that it runs a set of commands concurrently, with the difference of interrupting all other commands and ending as soon as any command in the group ends - all other commands in the group are interrupted at that point.
-    - The ``.raceWith()`` decorator can be used to create a ``ParallelRaceGroup`` inline.
+There are commands for various control setups:
 
-- ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_deadline_group.html>`__) is similar to ``ParallelCommandGroup`` and ``ParallelRaceGroup`` in that it runs a set of commands concurrently, with the difference of ending when a *specific* command (the "deadline") ends, interrupting all other commands in the group that are still running at that point.
-    - The ``.deadlineWith()`` decorator can be used to create a ``ParallelDeadlineGroup`` inline.
+- ``PIDCommand`` uses a PID controller. For more info, see :ref:`docs/software/commandbased/pid-subsystems-commands:PIDCommand`.
 
-TODO: add diagrams here
+- ``TrapezoidProfileCommand`` tracks a trapezoid motion profile. For more info, see :ref:`docs/software/commandbased/profile-subsystems-commands:TrapezoidProfileCommand`.
 
+- ``ProfiledPIDCommand`` combines PID control with trapezoid motion profiles. For more info, see :ref:`docs/software/commandbased/profilepid-subsystems-commands:ProfiledPIDCommand`.
 
+- ``MecanumControllerCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_mecanum_controller_command.html>`__) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand>`__) example project for more info.
 
+- ``SwerveControllerCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_swerve_controller_command.html>`__) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand>`__) example project for more info.
 
-Full List Of Command Classes
-============================
-
-(probably also have a full separate list of decorators?)
-
-``ConditionalCommand`` (Java, C++) accepts two commands as well as a ``BooleanSupplier``/``std::function<bool()>`` lambda to decide which of them is executed.
-
-- ``SelectCommand`` (Java, C++) is a version of ``ConditionalCommand`` for selcting between more than two commands with a map of commands and a generic selector.
-
-- ``SuppliedCommand`` (Java, C++) accepts a ``Supplier<Command>``/``std::function<Command*()>`` lambda that is polled at ``initialize()`` and the returned command is executed. Useful for creating commands on-the-fly.
-
-- ``ScheduleCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command and ends instantly.
-
-
-- ``WaitCommand`` (Java, C++) does nothing and ends after a specified period of time elapses. Useful to introduce a delay in a command group.
-
-- ``WaitUntilCommand`` (Java, C++) accepts a ``BooleanSupplier``/``std::function<bool()>`` condition and does nothing, ending when the condition returns ``true``. Useful to introduce a delay in a command group, or can be used in combination with ``ParallelRaceGroup`` or ``ParallelDeadlineGroup`` to replace a command's end condition or add another one - in fact, that is what the ``until()`` decorator does under the hood.
-
-- ``RepeatCommand`` (Java, C++) executes a command repeatedly, restarting it if it ends.
-    - The ``.repeatedly()`` decorator can also be used to create a ``RepeatCommand`` inline.
-
-- ``EndlessCommand`` (Java, C++) executes a command endlessly, ignoring its end condition.
-    - The ``.endlessly()`` decorator can also be used to create an ``EndlessCommand`` inline.
-
-- ``SequentialCommandGroup`` (Java, C++) executes multiple commands in a sequence, one after another.
-    - The ``.andThen()`` and ``.beforeStarting()`` decorators can also be used to create a ``SequentialCommandGroup`` inline.
-
-- ``ParallelCommandGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_command_group.html>`__) runs multiple commands concurrently - all commands will execute at the same time. The parallel group will end when all commands have finished.
-    - The ``.alongWith()`` decorator can be used to create a ``ParallelCommandGroup`` inline.
-
-- ``ParallelRaceGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_race_group.html>`__) is similar to ``ParallelCommandGroup`` in that it runs a set of commands concurrently, with the difference of interrupting all other commands and ending as soon as any command in the group ends - all other commands in the group are interrupted at that point.
-    - The ``.raceWith()`` decorator can be used to create a ``ParallelRaceGroup`` inline.
-
-- ``ParallelDeadlineGroup`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_deadline_group.html>`__) is similar to ``ParallelCommandGroup`` and ``ParallelRaceGroup`` in that it runs a set of commands concurrently, with the difference of ending when a *specific* command (the "deadline") ends, interrupting all other commands in the group that are still running at that point.
-    - The ``.deadlineWith()`` decorator can be used to create a ``ParallelDeadlineGroup`` inline.
+- ``RamseteCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__) is useful for path following with differential drivetrains ("tank drive"). See API docs and the :ref:`Trajectory Tutorial<docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` for more info.

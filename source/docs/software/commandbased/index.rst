@@ -19,8 +19,9 @@ For a collection of example projects using the command-based framework, see :ref
    binding-commands-to-triggers
    structuring-command-based-project
    convenience-features
+   builtins
+   decorators
    pid-subsystems-commands
    profile-subsystems-commands
    profilepid-subsystems-commands
    cpp-command-discussion
-   builtins
