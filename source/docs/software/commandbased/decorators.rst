@@ -27,10 +27,10 @@ decorated command will be interrupted if the timeout expires:
     // Will time out 5 seconds after being scheduled, and be interrupted
     button.WhenPressed(command.WithTimeout(5.0_s));
 
-until
------
+until/withInterrupt
+-------------------
 
-The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ad5d6a753ec2790f274bc7b884e9e305b>`__) decorator adds a condition on which the command will be interrupted:
+The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
@@ -42,9 +42,9 @@ The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java
   .. code-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.WhenPressed(command.until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+    button.WhenPressed(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
-The ``withInterrupt()`` decorator is an alias of ``until()``.
+``withInterrupt()`` is an alias for ``until()``.
 
 andThen
 -------
@@ -129,7 +129,7 @@ The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/relea
    var command = new PrintCommand("Hello robot!").withName("My Command");
 
 endlessly
------------
+---------
 
 The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#endlessly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
 
@@ -144,6 +144,22 @@ The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/doc
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     button.WhenPressed(command.endlessly());
+
+unless
+^^^^^^
+The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a61630f22b45df20ede2e14f14cfd2708>`__) creates a conditional command that stops the command from starting if the supplier returns true. The command will not stop if the supplier changes while running. The new conditional command will use the requirements of the decorated command so even if the condition to run the command is not met, any commands using the requirements will be canceled.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+    button.whenPressed(command.unless(() -> !intake.isDeployed()));
+
+  .. code-tab:: c++
+
+    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+    button.WhenPressed(command.Unless([&intake] { return !intake.IsDeployed(); }));
 
 Composing Decorators
 --------------------
