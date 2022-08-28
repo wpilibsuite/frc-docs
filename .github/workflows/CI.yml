@@ -39,6 +39,10 @@ jobs:
     - name: Install Python Dependencies
       run: |
         pip install -r source/requirements.txt
+    - name: Install librsvg2
+      run: |
+        sudo apt-fast -y update
+        sudo apt-fast install -y librsvg2-bin
     - name: Build HTML
       run: |
         make html
