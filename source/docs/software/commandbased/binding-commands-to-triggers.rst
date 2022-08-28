@@ -161,7 +161,7 @@ Note that these methods return a ``Trigger``, not a ``Button``, so the ``Trigger
 Debouncing Triggers
 -------------------
 
-To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/softwere/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
+To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
 
 .. tabs::
 
