@@ -108,6 +108,9 @@ rediraffe_auto_redirect_perc = 80
 # Configure linkcheck diff branch
 linkcheckdiff_branch = "origin/main"
 
+# Configure photofinish ci mode
+photofinish_ci_only = True
+
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
