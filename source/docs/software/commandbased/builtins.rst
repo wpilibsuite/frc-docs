@@ -354,7 +354,7 @@ Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/relea
         })
     )
 
-``RepeatCommand`` and ``EndlessCommand`` can also be created using the ``.repeat()`` and ``.endlessly()`` decorators respectively.
+``RepeatCommand`` and ``EndlessCommand`` can also be created using the ``.repeatedly()`` and ``.endlessly()`` decorators respectively.
 
 Running Multiple Commands
 -------------------------

@@ -128,6 +128,23 @@ The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/relea
    // This command will be called "My Command".
    var command = new PrintCommand("Hello robot!").withName("My Command");
 
+repeatedly
+----------
+
+The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a2f03abf3d59fcd539385e39526751512>`__) restarts the command each time it ends, so that it runs forever.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Will run forever unless externally interrupted, regardless of command.isFinished()
+    button.whenPressed(command.repeatedly());
+
+  .. code-tab:: c++
+
+    // Will run forever unless externally interrupted, regardless of command.isFinished()
+    button.WhenPressed(command.Repeatedly());
+
 endlessly
 ---------
 
@@ -143,7 +160,7 @@ The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/doc
   .. code-tab:: c++
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
-    button.WhenPressed(command.endlessly());
+    button.WhenPressed(command.Endlessly());
 
 unless
 ^^^^^^
