@@ -65,7 +65,7 @@ The Operations Tab is used to control the mode of the robot and provide addition
   - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
   - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
   - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab).
-  - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
+  - :doc:`Test Mode </docs/software/troubleshooting/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
 
 2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_.
 3. Elapsed Time - Indicates the amount of time the robot has been enabled.
