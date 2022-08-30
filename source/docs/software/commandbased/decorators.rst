@@ -1,13 +1,9 @@
 Command Decorator Methods
 =========================
 
-The ``Command`` interface contains a number of defaulted "decorator"
-methods which can be used to add additional functionality to existing
-commands. A "decorator" method is a method that takes an object (in this
-case, a command) and returns an object of the same type (i.e. a command)
-with some additional functionality added to it. A list of the included
-decorator methods with brief examples is included below - for rigorous
-documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+The ``Command`` interface contains a number of defaulted "decorator" methods which can be used to add additional functionality to existing commands. A "decorator" method is a method that takes an object (in this case, a command) and returns an object of the same type (i.e. a command) with some additional functionality added to it. A list of the included decorator methods with brief examples is included below - for rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+
+.. important:: After calling a decorator, the command object cannot be reused! Use only the command object returned from the decorator.
 
 withTimeout
 -----------
@@ -177,6 +173,40 @@ The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/deve
 
     // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
     button.WhenPressed(command.Unless([&intake] { return !intake.IsDeployed(); }));
+
+ignoringDisable
+^^^^^^^^^^^^^^^
+
+The ``ignoringDisable(boolean)`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#ignoringDisable(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#af7f8cbee58cacc610a5200a653fd9ed2>`__) wraps the command in a new command which has the given value as its :ref:`docs/software/commandbased/commands:runsWhenDisabled` property, setting whether the command can run when the robot is disabled (defaults to ``false``).
+
+.. important:: Hardware outputs are disabled when the robot is disabled, regardless of ``runsWhenDisabled()``!
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // This command can run during disabled
+    Command canRunDuringDisable = command.ignoringDisable(true);
+
+  .. code-tab:: c++
+
+    // This command can run during disabled
+    std::unique_ptr<Command*> canRunDuringDisable = command.IgnoringDisable(true);
+
+withInterruptBehavior
+^^^^^^^^^^^^^^^^^^^^^
+
+The ``withInterruptBehavior(Command.InterruptionBehavior)`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withInterruptBehavior(edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a5c82f4b2188946cbddc39ccbde6ef37a>`__) wraps the command in a new command which has the given value as its :ref:`docs/software/commandbased/commands:getInterruptionBehavior` property, setting defines what happens if another command sharing a requirement is scheduled while this one is running (defaults to ``kCancelSelf``).
+
+.. tabs::
+
+  .. code-tab:: java
+
+    Command uninterruptible = command.withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
+
+  .. code-tab:: c++
+
+    std::unique_ptr<frc2::Command*> uninterruptible = command.WithInterruptBehavior(frc2::Command::InterruptBehavior::kCancelIncoming);
 
 Composing Decorators
 --------------------
