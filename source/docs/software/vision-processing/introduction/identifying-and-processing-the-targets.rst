@@ -59,7 +59,7 @@ The target is 20" (508 mm) wide by 12" (304.8 mm) tall, for a ratio of 1.6. The 
 Moment
 ^^^^^^
 
-The moment measurement calculates the particles moment of inertia about it's center of mass. This measurement provides a representation of the pixel distribution in the particle. The ideal score for this test is ~0.28. See: `Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_
+The "moment" measurement calculates how spread out each pixel is from the center of the blob. This measurement provides a representation of the pixel distribution in the particle. It can be thought of as analogous to a physics :term:`moment of inertia` calculation. The ideal score for this test is ~0.28.
 
 X/Y Profiles
 ^^^^^^^^^^^^

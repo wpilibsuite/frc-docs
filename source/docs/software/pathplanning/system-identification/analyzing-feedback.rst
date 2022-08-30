@@ -10,7 +10,7 @@ To view the feedback constants, click on the dropdown arrow on the :guilabel:`Fe
 .. image:: images/feedback-analysis.png
    :alt: Feedback analysis pane
 
-This view can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__).
+This view can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via :term:`LQR`).
 
 Enter Controller Parameters
 ---------------------------

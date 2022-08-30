@@ -51,7 +51,7 @@ A *model* of your mechanism is a mathematical description of its behavior. Speci
 
 The mathematical description is often just simple algebra equations. It can also include some linear algebra, matrices, and differential equations. WPILib provides a number of classes to help simplify the more complex math.
 
-`Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ defines many of the equations used to build up models of system behavior. Many of the values inside those equations can be determined by doing experiments on the mechanism.
+:term:`Classical Mechanics` defines many of the equations used to build up models of system behavior. Many of the values inside those equations can be determined by doing experiments on the mechanism.
 
 Block Diagrams
 --------------
