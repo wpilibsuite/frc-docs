@@ -127,7 +127,7 @@ The above example tells spotless where our Java classes are and to exclude the `
    // format:on
 
 - ``googleJavaFormat()`` tells spotless to format according to the `Google Style Guide <https://google.github.io/styleguide/javaguide.html>`__
-- ``removeUnusedImports()`` will remove any unused imports from any of your java classes
+- ``removeUnusedImports()`` will remove any unused imports from any of your Java classes
 - ``trimTrailingWhitespace()`` will remove any extra whitespace at the end of your lines
 - ``endWithNewline()`` will add a newline character to the end of your classes
 

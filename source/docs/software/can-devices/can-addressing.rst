@@ -168,7 +168,7 @@ System Resume     10
 ================= ==
 
 Devices should disable immediately when receiving the Disable message
-(arbID 0), implementation of other broadcast messages is optional.
+(arbID 0).  Implementation of other broadcast messages is optional.
 
 Requirements for FRC CAN Nodes
 ------------------------------
@@ -183,8 +183,8 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
    -  A user selectable device number if multiple units of the device type are intended to co-exist on the same network.
 
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
--  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present
--  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRSTs Control System Partners to provide such interfaces.
+-  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present.
+-  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRST's Control System Partners to provide such interfaces.
 
 Universal Heartbeat
 -------------------

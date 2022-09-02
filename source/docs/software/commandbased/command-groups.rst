@@ -3,9 +3,9 @@ Command Groups
 
 Individual commands are capable of accomplishing a large variety of robot tasks, but the simple three-state format can quickly become cumbersome when more advanced functionality requiring extended sequences of robot tasks or coordination of multiple robot subsystems is required. In order to accomplish this, users are encouraged to use the powerful command group functionality included in the command-based library.
 
-As the name suggests, command groups are combinations of multiple commands. The act of combining multiple objects (such as commands) into a bigger object is known as `composition <https://en.wikipedia.org/wiki/Object_composition>`__. Command groups *compose* multiple commands into a *composite* command. This allows code to be kept much cleaner and simpler, as the individual *component* commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
+As the name suggests, a command group is a :term:`composition` of multiple commands. Command groups *compose* multiple commands into a *composite* command. This allows code to be kept much cleaner and simpler, as the individual *component* commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
 
-Most importantly, however, command groups *are themselves commands* - they implement the ``Command`` interface. This allows command groups to be `recursively composed <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - that is, a command group may contain *other command groups* as components.
+Most importantly, however, command groups *are themselves commands* - they implement the ``Command`` interface. This allows command groups to be grouped as a :term:`recursive composition` - that is, a command group may contain *other command groups* as components.
 
 Types of Command Groups
 -----------------------
@@ -89,7 +89,7 @@ This is called an :ref:`inline <docs/software/commandbased/convenience-features:
 Recursive Composition of Command Groups
 ---------------------------------------
 
-As mentioned earlier, command groups are `recursively composable <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ - since command groups are themselves commands, they may be included as components of other command groups. This is an extremely powerful feature of command groups, and allows users to build very complex robot actions from simple pieces. For example, consider the following code:
+As mentioned earlier, command groups are recursively composable - since command groups are themselves commands, they may be included as components of other command groups. This is an extremely powerful feature of command groups, and allows users to build very complex robot actions from simple pieces. For example, consider the following code:
 
 .. tabs::
 
