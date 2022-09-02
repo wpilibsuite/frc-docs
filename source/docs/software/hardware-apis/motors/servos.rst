@@ -18,7 +18,7 @@ Constructing a Servo object
 
     .. code-tab:: python
 
-        exampleServo = wpilib.Servo(1)
+       exampleServo = wpilib.Servo(1)
 
 A servo object is constructed by passing a channel.
 
@@ -39,8 +39,8 @@ Setting Servo Values
 
     .. code-tab:: python
 
-        exampleServo.set(.5)
-        exampleServo.setAngle(75)
+       exampleServo.set(.5)
+       exampleServo.setAngle(75)
 
 There are two methods of setting servo values in WPILib:
 
