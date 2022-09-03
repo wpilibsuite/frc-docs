@@ -207,7 +207,7 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
       if joystick.getRawButtonReleased(0):
          turnIntakeOff() # When released the intake turns off
 
-      # OR 
+      # OR
 
       if joystick.getRawButton(0):
          turnIntakeOn()
