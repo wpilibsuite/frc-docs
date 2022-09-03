@@ -26,6 +26,11 @@ Users familiar with the old ``PIDController`` class may notice the lack of any f
     // Adds a feedforward to the loop output before sending it to the motor
     motor.SetVoltage(pid.Calculate(encoder.GetDistance(), setpoint) + feedforward);
 
+  .. code-tab:: python
+
+     // Adds a feedforward to the loop output before sending it to the motor
+     motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward)
+
 Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC\ |reg| mechanisms - for more information, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
 
 Using Feedforward Components with PID
@@ -55,5 +60,20 @@ What might a more complete example of combined feedforward/PID control look like
       rightMotor.SetVoltage(feedforward.Calculate(rightVelocitySetpoint)
           + rightPID.Calculate(rightEncoder.getRate(), rightVelocitySetpoint.value()));
     }
+
+  .. code-tab:: python
+     
+    def tank_drive_with_feedforward_PID(
+        left_velocity_setpoint: float,
+        right_velocity_setpoint: float,
+    ) -> None:
+        leftMotor.setVoltage(
+            feedforward.calculate(left_velocity_setpoint)
+            + leftPID.calculate(leftEncoder.getRate(), left_velocity_setpoint)
+        )
+        rightMotor.setVoltage(
+            feedforward.calculate(right_velocity_setpoint)
+            + rightPID.calculate(rightEncoder.getRate(), right_velocity_setpoint)
+        )
 
 Other mechanism types can be handled similarly.
