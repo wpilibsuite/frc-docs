@@ -69,6 +69,7 @@ class FlywheelSim extends BaseSim {
     this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, currentSetpoint));
     this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));
 
+    this.visualization.setBallState(this.curSimTimeS > this.plant.getBallEnterTime());
     this.visualization.setCurPos(this.plant.getCurrentPositionRad());
     this.visualization.setCurOutput(this.plant.getCurrentSpeedRPM());
     this.visualization.setCurTime(this.curSimTimeS);

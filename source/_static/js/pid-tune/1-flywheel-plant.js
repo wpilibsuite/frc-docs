@@ -89,10 +89,6 @@ class FlywheelPlant{
         return this.ballEnterTime;
     }
 
-    getBallExitTime() {
-        return this.ballExitTime;
-    }
-
     setSystemNoise(enabled) {
         this.systemNoise = enabled;
     }

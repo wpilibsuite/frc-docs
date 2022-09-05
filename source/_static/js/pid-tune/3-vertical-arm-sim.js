@@ -39,7 +39,7 @@ class VerticalArmSim extends BaseSim {
 
     this.inputVolts = 0.0;
 
-    this.reset();
+    this.resetCustom();
   }
 
   setSetpointRad(setpoint) {
