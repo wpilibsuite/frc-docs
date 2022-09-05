@@ -3,22 +3,8 @@ class FlywheelSim extends BaseSim {
     super(div_id_prefix, "RPM", 0, 1800);
 
     this.simDurationS = 10.0;
-    this.simulationTimestepS = 0.001;
+    this.simulationTimestepS = 0.005;
     this.controllerTimestepS = 0.02;
-
-    this.timeS = Array(this.simDurationS / this.simulationTimestepS).fill(0);
-    this.output = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.setpoint = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.controlEffortVolts = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.outputPositionRad = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
 
     // User-configured setpoints
     this.setpointVal = 300.0;
@@ -30,66 +16,71 @@ class FlywheelSim extends BaseSim {
     this.visualization.drawStatic();
   }
 
-  runSim() {
-    var inputVolts = 0.0;
-    var nextControllerRunTime = 0;
-
-    this.procVarActualSignal.clearValues()
-    this.procVarDesiredSignal.clearValues()
-    this.voltsSignal.clearValues()
-
-    var speed_delay_line = new DelayLine(49); //models sensor lag
-
+  resetCustom() {
     this.plant.init(this.simulationTimestepS);
 
-    for (var index = 0.0; index < this.timeS.length; index++) {
-      var currentSetpoint = 0.0;
-      var currentTimeS = index * this.simulationTimestepS;
-      if (currentTimeS > this.setpointStepTime) {
-        currentSetpoint = this.setpointVal;
-      }
+    this.timeS = Array(this.simDurationS / this.simulationTimestepS)
+      .fill()
+      .map((_, index) => {
+        return index * this.simulationTimestepS;
+      });
 
-      var meas_speed = speed_delay_line.getSample();
+    this.visualization.setCurPos(0.0);
+    this.visualization.setCurOutput(0.0);
+    this.visualization.setCurTime(0.0);
+    this.visualization.setCurSetpoint(0.0);
+    this.visualization.setCurControlEffort(0.0);
 
-      //Simulate Controller
-      if (currentTimeS >= nextControllerRunTime) {
-        inputVolts = this.controllerUpdate(currentTimeS, currentSetpoint, meas_speed);
-        //Maintain separate sample rate for controller
-        nextControllerRunTime += this.controllerTimestepS;
-      }
+    this.inputVolts = 0.0;
+    this.nextControllerRunTime = 0;
 
-      this.plant.update(currentTimeS, inputVolts);
+    this.iterationCount = 0;
 
-      speed_delay_line.addSample(this.plant.getCurrentSpeedRPM());
-
-
-      this.procVarActualSignal.addSample(new Sample(currentTimeS, this.plant.getCurrentSpeedRPM()));
-      this.procVarDesiredSignal.addSample(new Sample(currentTimeS, currentSetpoint));
-      this.voltsSignal.addSample(new Sample(currentTimeS, inputVolts));
-
-      //TODO - move all these over to be signals/samples too
-      this.timeS[index] = currentTimeS;
-      this.controlEffortVolts[index] = inputVolts;
-      this.output[index] = this.plant.getCurrentSpeedRPM();
-      this.setpoint[index] = currentSetpoint;
-      this.outputPositionRad[index] = this.plant.getCurrentPositionRev() * 2 * Math.PI;
-    }
-
-    //TODO - move all these over to be signals/samples too
-    this.visualization.setPositionData(this.outputPositionRad);
-    this.visualization.setSetpointData(this.setpoint);
-    this.visualization.setOutputData(this.output);
-    this.visualization.setControlEffortData(this.controlEffortVolts);
-    this.visualization.setTimeData(this.timeS);
-    this.visualization.setBallTimes(
-      this.plant.getBallEnterTime(),
-      this.plant.getBallExitTime()
-    );
+    this.speed_delay_line = new DelayLine(9); //models sensor lag
 
   }
 
-  drawAnimation(timeIndex, animationTimeS) {
-    super.drawAnimation(timeIndex, animationTimeS);
+
+
+  iterateCustom() {
+
+    this.curSimTimeS = this.iterationCount * this.simulationTimestepS;
+
+    var currentSetpoint = 0.0;
+    if (this.curSimTimeS > this.setpointStepTime) {
+      currentSetpoint = this.setpointVal;
+    }
+
+    var meas_speed = this.speed_delay_line.getSample();
+
+    //Simulate Controller
+    if (this.curSimTimeS >= this.nextControllerRunTime) {
+      this.inputVolts = this.controllerUpdate(this.curSimTimeS, currentSetpoint, meas_speed);
+      //Maintain separate sample rate for controller
+      this.nextControllerRunTime += this.controllerTimestepS;
+    }
+
+    this.plant.update(this.curSimTimeS, this.inputVolts);
+
+    this.speed_delay_line.addSample(this.plant.getCurrentSpeedRPM());
+
+
+    this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getCurrentSpeedRPM()));
+    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, currentSetpoint));
+    this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));
+
+    this.visualization.setCurPos(this.plant.getCurrentPositionRad());
+    this.visualization.setCurOutput(this.plant.getCurrentSpeedRPM());
+    this.visualization.setCurTime(this.curSimTimeS);
+    this.visualization.setCurSetpoint(this.currentSetpointRad);
+    this.visualization.setCurControlEffort(this.inputVolts);
+
+    this.iterationCount++;
+
+    if (this.iterationCount >= this.timeS.length) {
+      this.end();
+    }
+
   }
 
 }

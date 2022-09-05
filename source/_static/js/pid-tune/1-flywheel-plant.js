@@ -80,9 +80,10 @@ class FlywheelPlant{
         return this.speed*60/2/Math.PI;
     }
 
-    getCurrentPositionRev() {
-        return this.curpositionRev;
+    getCurrentPositionRad() {
+        return this.curpositionRev * 2.0 * Math.PI;
     }
+    
 
     getBallEnterTime() {
         return this.ballEnterTime;

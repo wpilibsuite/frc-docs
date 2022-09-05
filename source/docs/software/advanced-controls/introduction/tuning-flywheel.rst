@@ -59,7 +59,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_bb = new FlywheelBangBang("flywheel_bb");
-         flywheel_bb.runSim();
       </script>
     </div>
 
@@ -104,7 +103,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedforward", "feedforward");
-         flywheel_pid.runSim();
       </script>
     </div>
 
@@ -141,7 +139,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedback", "feedback");
-         flywheel_pid.runSim();
       </script>
     </div>
 
@@ -187,7 +184,6 @@ Interact with the simulation below to see how the flywheel system responds under
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedforward_feedback", "both");
-         flywheel_pid.runSim();
       </script>
     </div>
 

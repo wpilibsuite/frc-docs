@@ -47,7 +47,7 @@ class TurretSim extends BaseSim {
     document.getElementById(this.divIdPrefix + "_setpoint").value = setpoint;
   }
 
-  reset() {
+  resetCustom() {
     this.plant.reset();
     this.timeS = Array(this.simDurationS / this.simulationTimestepS)
       .fill()

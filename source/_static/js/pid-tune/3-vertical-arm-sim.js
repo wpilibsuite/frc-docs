@@ -47,7 +47,7 @@ class VerticalArmSim extends BaseSim {
     document.getElementById(this.divIdPrefix + "_setpoint").value = setpoint;
   }
 
-  reset() {
+  resetCustom() {
     this.plant.reset();
     this.timeS = Array(this.simDurationS / this.simulationTimestepS)
       .fill()
@@ -69,6 +69,7 @@ class VerticalArmSim extends BaseSim {
     this.positionDelayLine = new DelayLine(50); //models sensor lag
 
   }
+  
 
   iterateCustom() {
 

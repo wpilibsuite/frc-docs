@@ -4,13 +4,6 @@ class FlywheelVisualization extends BaseVisualization{
         super(div_in);
     }
 
-    setBallTimes(enterTime, exitTime){
-        this.ballEnterTime = enterTime;
-        this.ballExitTime = exitTime;
-        this.ballEnterTimeIndex = null;
-        this.ballExitTimeIndex = null;
-    }
-
     drawStaticCustom(){
 
         this.wheelCenterX = 0.6*this.width;
@@ -55,53 +48,52 @@ class FlywheelVisualization extends BaseVisualization{
 
     }
 
-    drawDynamicCustom(timeIndex){
-        const timeS = this.timeS[timeIndex];
-        const positionRad = this.positionRad[timeIndex];
+    drawDynamicCustom(){
+        const positionRad = this.positionRad;
 
         // todo: magic numbers again
-        const setpointPlotScale = this.setpoint[timeIndex] * 1/500 * this.wheelRadius;
-        const outputPlotScale = this.output[timeIndex] * 1/500 * this.wheelRadius;
-        const controlEffortPlotScale = this.controlEffortVolts[timeIndex] * 1/6 * this.wheelRadius;
+        const setpointPlotScale = this.setpoint * 1/500 * this.wheelRadius;
+        const outputPlotScale = this.output * 1/500 * this.wheelRadius;
+        const controlEffortPlotScale = this.controlEffortVolts * 1/6 * this.wheelRadius;
 
         const vectorY = this.wheelCenterY - this.wheelRadius;
         const setpointEndX = this.wheelCenterX + setpointPlotScale;
         const outputEndX = this.wheelCenterX + outputPlotScale;
         const controlEffortEndX = this.wheelCenterX + controlEffortPlotScale;
 
-        let ballCenterX = 0;
-        let ballCenterY = 0;
+        //let ballCenterX = 0;
+        //let ballCenterY = 0;
 
         //Calculate ball position
-        if(timeS < this.ballEnterTime){
-            //While loading, ball stays on LoadTrackX for x position, and 
-            // moves linearly along from TrackYStart to TrackYEnd to enter the wheel at just the right time
-            ballCenterX = this.ballLoadTrackX;
-            let progFrac = (1 - (this.ballEnterTime - timeS)/this.ballEnterTime);
-            ballCenterY = this.ballLoadTrackYStart + progFrac * (this.ballLoadTrackYEnd - this.ballLoadTrackYStart);
-        } else if (timeS >= this.ballEnterTime && (this.ballExitTime == null || timeS < this.ballExitTime )){
-            //Ball is in contact with the shooter and should move along with it
-            if(this.ballEnterTimeIndex == null){
-                //First loop of exit, calc exit speed
-                this.ballEnterTimeIndex = timeIndex
-            }    
-            let startAngle = this.positionRad[this.ballEnterTimeIndex];
-            let ballDrawAngle = this.positionRad[timeIndex] - startAngle + Math.PI;
-            ballCenterX = this.wheelCenterX + (this.wheelRadius + this.ballRadius) * Math.cos(ballDrawAngle);
-            ballCenterY = this.wheelCenterY + (this.wheelRadius + this.ballRadius) * Math.sin(ballDrawAngle);
-
-        } else {
-            //Ball has left the shooter, travel along the launch path at whatever
-            // speed it left the shooter wheel at
-            if(this.ballExitTimeIndex == null){
-                //First loop of exit, calc exit speed
-                this.ballExitTimeIndex = timeIndex;
-                let ballExitRotVel = (positionRad - this.positionRad[timeIndex-1])/(timeS - this.timeS[timeIndex-1]);
-                this.ballExitSpeed = ballExitRotVel * (this.wheelRadius + this.ballRadius);
-            }                
-            ballCenterX = this.ballLaunchTrackXStart + this.ballExitSpeed * (timeS - this.ballExitTime);
-            ballCenterY = this.ballLaunchTrackY;
-        }
+        //if(timeS < this.ballEnterTime){
+        //    //While loading, ball stays on LoadTrackX for x position, and 
+        //    // moves linearly along from TrackYStart to TrackYEnd to enter the wheel at just the right time
+        //    ballCenterX = this.ballLoadTrackX;
+        //    let progFrac = (1 - (this.ballEnterTime - timeS)/this.ballEnterTime);
+        //    ballCenterY = this.ballLoadTrackYStart + progFrac * (this.ballLoadTrackYEnd - this.ballLoadTrackYStart);
+        //} else if (timeS >= this.ballEnterTime && (this.ballExitTime == null || timeS < this.ballExitTime )){
+        //    //Ball is in contact with the shooter and should move along with it
+        //    if(this.ballEnterTimeIndex == null){
+        //        //First loop of exit, calc exit speed
+        //        this.ballEnterTimeIndex = timeIndex
+        //    }    
+        //    let startAngle = this.positionRad[this.ballEnterTimeIndex];
+        //    let ballDrawAngle = this.positionRad[timeIndex] - startAngle + Math.PI;
+        //    ballCenterX = this.wheelCenterX + (this.wheelRadius + this.ballRadius) * Math.cos(ballDrawAngle);
+        //    ballCenterY = this.wheelCenterY + (this.wheelRadius + this.ballRadius) * Math.sin(ballDrawAngle);
+//
+        //} else {
+        //    //Ball has left the shooter, travel along the launch path at whatever
+        //    // speed it left the shooter wheel at
+        //    if(this.ballExitTimeIndex == null){
+        //        //First loop of exit, calc exit speed
+        //        this.ballExitTimeIndex = timeIndex;
+        //        let ballExitRotVel = (positionRad - this.positionRad[timeIndex-1])/(timeS - this.timeS[timeIndex-1]);
+        //        this.ballExitSpeed = ballExitRotVel * (this.wheelRadius + this.ballRadius);
+        //    }                
+        //    ballCenterX = this.ballLaunchTrackXStart + this.ballExitSpeed * (timeS - this.ballExitTime);
+        //    ballCenterY = this.ballLaunchTrackY;
+        //}
 
 
         let numSegments = 5;
@@ -136,13 +128,13 @@ class FlywheelVisualization extends BaseVisualization{
         this.animatedCanvasContext.stroke();
 
         //ball
-        this.animatedCanvasContext.lineWidth = 1;
-        this.animatedCanvasContext.fillStyle="#bbffbb"
-        this.animatedCanvasContext.strokeStyle = '#000000';
-        this.animatedCanvasContext.beginPath();
-        this.animatedCanvasContext.arc(ballCenterX, ballCenterY, this.ballRadius, 0, 2 * Math.PI, false);
-        this.animatedCanvasContext.fill();
-        this.animatedCanvasContext.stroke();
+        //this.animatedCanvasContext.lineWidth = 1;
+        //this.animatedCanvasContext.fillStyle="#bbffbb"
+        //this.animatedCanvasContext.strokeStyle = '#000000';
+        //this.animatedCanvasContext.beginPath();
+        //this.animatedCanvasContext.arc(ballCenterX, ballCenterY, this.ballRadius, 0, 2 * Math.PI, false);
+        //this.animatedCanvasContext.fill();
+        //this.animatedCanvasContext.stroke();
 
         // Vector indicators
         if (setpointPlotScale * setpointPlotScale > 0) {

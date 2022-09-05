@@ -52,7 +52,7 @@ class BaseSim {
   }
 
   begin() {
-    this.reset();
+    this.resetCustom(); //Callback to fixed point in specific sim classes
     this.procVarActualSignal.clearValues();
     this.procVarDesiredSignal.clearValues();
     this.voltsSignal.clearValues();

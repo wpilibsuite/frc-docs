@@ -9,6 +9,8 @@ class FlywheelBangBang extends FlywheelSim {
 
         this.buildControlTable();
 
+        this.begin();
+
     }
 
     buildControlTable(){
@@ -34,7 +36,7 @@ class FlywheelBangBang extends FlywheelSim {
         input.onchange = function (event) {
             this.animationReset = true;
             this.setpointVal = parseFloat(event.target.value);
-            this.runSim();
+            this.begin();;
         }.bind(this);
         control.append(input)
         curRow.appendChild(label);
