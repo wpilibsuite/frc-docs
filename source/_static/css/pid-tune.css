@@ -15,6 +15,7 @@
 .col {
     flex: 1;
     min-height: 300px;
+    max-height:300px;
     margin: 5px;
 }
 

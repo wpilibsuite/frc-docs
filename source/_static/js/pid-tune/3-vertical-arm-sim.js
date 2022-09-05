@@ -83,7 +83,6 @@ class VerticalArmSim extends BaseSim {
 
     this.positionDelayLine = new DelayLine(50); //models sensor lag
 
-    this.redraw();
   }
 
   begin() {
@@ -160,6 +159,5 @@ class VerticalArmSim extends BaseSim {
     this.setControlEffortData(zip(this.timeS, this.controlEffortVolts));
     this.setSetpointData(zip(this.timeS, this.setpoint));
     this.setOutputData(zip(this.timeS, this.output));
-    this.redraw();
   }
 }

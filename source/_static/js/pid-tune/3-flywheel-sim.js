@@ -34,6 +34,10 @@ class FlywheelSim extends BaseSim {
     var inputVolts = 0.0;
     var nextControllerRunTime = 0;
 
+    this.procVarActualSignal.clearValues()
+    this.procVarDesiredSignal.clearValues()
+    this.voltsSignal.clearValues()
+
     var speed_delay_line = new DelayLine(49); //models sensor lag
 
     this.plant.init(this.simulationTimestepS);
@@ -58,6 +62,12 @@ class FlywheelSim extends BaseSim {
 
       speed_delay_line.addSample(this.plant.getCurrentSpeedRPM());
 
+
+      this.procVarActualSignal.addSample(new Sample(currentTimeS, this.plant.getCurrentSpeedRPM()));
+      this.procVarDesiredSignal.addSample(new Sample(currentTimeS, currentSetpoint));
+      this.voltsSignal.addSample(new Sample(currentTimeS, inputVolts));
+
+      //TODO - move all these over to be signals/samples too
       this.timeS[index] = currentTimeS;
       this.controlEffortVolts[index] = inputVolts;
       this.output[index] = this.plant.getCurrentSpeedRPM();
@@ -65,26 +75,8 @@ class FlywheelSim extends BaseSim {
       this.outputPositionRad[index] = this.plant.getCurrentPositionRev() * 2 * Math.PI;
     }
 
-    var controlEffortPlotData = Array(this.timeS.length);
-    var outputPlotData = Array(this.timeS.length);
-    var setpointPlotData = Array(this.timeS.length);
-    for (var index = 0; index < this.timeS.length; index++) {
-      controlEffortPlotData[index] = [
-        this.timeS[index],
-        this.controlEffortVolts[index],
-      ];
-      outputPlotData[index] = [this.timeS[index], this.output[index]];
-      setpointPlotData[index] = [
-        this.timeS[index],
-        this.setpoint[index],
-      ];
-    }
-    this.setControlEffortData(controlEffortPlotData);
-    this.setSetpointData(setpointPlotData);
-    this.setOutputData(outputPlotData);
-    this.visualization.setPositionData(
-      this.outputPositionRad
-    );
+    //TODO - move all these over to be signals/samples too
+    this.visualization.setPositionData(this.outputPositionRad);
     this.visualization.setSetpointData(this.setpoint);
     this.visualization.setOutputData(this.output);
     this.visualization.setControlEffortData(this.controlEffortVolts);
@@ -94,25 +86,10 @@ class FlywheelSim extends BaseSim {
       this.plant.getBallExitTime()
     );
 
-    this.redraw();
   }
 
   drawAnimation(timeIndex, animationTimeS) {
     super.drawAnimation(timeIndex, animationTimeS);
-
-    this.voltsChart.xAxis[0].removePlotBand("curTime");
-    this.processVariableChart.xAxis[0].removePlotBand("curTime");
-    this.voltsChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: animationTimeS,
-      id: "curTime",
-    });
-    this.processVariableChart.xAxis[0].addPlotLine({
-      color: "#BBBB00",
-      width: 2,
-      value: animationTimeS,
-      id: "curTime",
-    });
   }
+
 }
