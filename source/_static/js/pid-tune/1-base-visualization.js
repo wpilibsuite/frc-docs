@@ -39,23 +39,23 @@ class BaseVisualization {
     this.drawStatic();
   }
 
-  setTimeData(timeS) {
+  setCurTime(timeS) {
     this.timeS = timeS;
   }
 
-  setPositionData(positionRad) {
+  setCurPos(positionRad) {
     this.positionRad = positionRad;
   }
 
-  setSetpointData(setpoint) {
+  setCurSetpoint(setpoint) {
     this.setpoint = setpoint;
   }
 
-  setOutputData(output) {
+  setCurOutput(output) {
     this.output = output;
   }
 
-  setControlEffortData(controlEffortVolts) {
+  setCurControlEffort(controlEffortVolts) {
     this.controlEffortVolts = controlEffortVolts;
   }
 
@@ -65,9 +65,9 @@ class BaseVisualization {
     this.drawStaticCustom();
   }
 
-  drawDynamic(timeIndex, animationTimeS) {
+  drawDynamic() {
     this.animatedCanvasContext.clearRect(0, 0, this.width, this.height);
 
-    this.drawDynamicCustom(timeIndex, animationTimeS);
+    this.drawDynamicCustom();
   }
 }

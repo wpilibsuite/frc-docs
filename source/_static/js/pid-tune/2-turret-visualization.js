@@ -123,9 +123,9 @@ class TurretVisualization extends BaseVisualization {
     this.setpointIndicatorRadius = 0.035 * this.height;
     this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    const setpointRad = this.setpoint[index];
-    const positionRad = this.positionRad[index];
-    const controlEffortPlotScale = this.controlEffortVolts[index] * 1.5/12 * this.turretRadiusPx;
+    const setpointRad = this.setpoint;
+    const positionRad = this.positionRad;
+    const controlEffortPlotScale = this.controlEffortVolts * 1.5/12 * this.turretRadiusPx;
 
     const turretFrontX =
       this.turretCenterX + this.turretRadiusPx * Math.cos(positionRad);

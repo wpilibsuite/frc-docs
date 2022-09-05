@@ -57,23 +57,11 @@ class TurretSim extends BaseSim {
       .map((_, index) => {
         return index * this.simulationTimestepS;
       });
-    this.output = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.setpoint = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.controlEffortVolts = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
-    this.outputPositionRev = Array(
-      this.simDurationS / this.simulationTimestepS
-    ).fill(0);
 
-    this.visualization.setPositionData(this.output);
-    this.visualization.setTimeData(this.timeS);
-    this.visualization.setSetpointData(this.setpoint);
-    this.visualization.setControlEffortData(this.controlEffortVolts);
+    this.visualization.setCurPos(this.output);
+    this.visualization.setCurTime(this.timeS);
+    this.visualization.setCurSetpoint(this.setpoint);
+    this.visualization.setCurControlEffort(this.controlEffortVolts);
 
     this.accumulatedError = 0.0;
     this.previousError = 0.0;
@@ -87,15 +75,20 @@ class TurretSim extends BaseSim {
 
   begin() {
     this.reset();
-    this.simLoopHandle = setInterval(() => {this.iterate();}, this.simulationTimestepS * 1000);
+    this.procVarActualSignal.clearValues();
+    this.procVarDesiredSignal.clearValues();
+    this.voltsSignal.clearValues();
+    this.curSimTimeS = 0.0;
+    this.animationReset = true;
+    this.simRunning = true;
   }
 
   end() {
-    clearInterval(this.simLoopHandle);
-    this.updateGraphs();
+    this.simRunning = false;
   }
 
   iterate() {
+
     let measuredPositionRad = this.positionDelayLine.getSample();
 
     // Update controller at controller freq
@@ -110,16 +103,23 @@ class TurretSim extends BaseSim {
 
     this.positionDelayLine.addSample(this.plant.getPositionRad());
 
-    this.controlEffortVolts[this.iterationCount] = this.inputVolts;
-    this.output[this.iterationCount] = this.plant.getPositionRad();
-    this.setpoint[this.iterationCount] = this.currentSetpointRad;
-    this.outputPositionRev[this.iterationCount] = this.plant.getPositionRad() / 2 / Math.PI;
+    this.curSimTimeS = this.timeS[this.iterationCount];
+    this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getPositionRad()));
+    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.currentSetpointRad));
+    this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));
+
+    this.visualization.setCurPos(this.plant.getPositionRad());
+    this.visualization.setCurTime(this.curSimTimeS);
+    this.visualization.setCurSetpoint(this.currentSetpointRad);
+    this.visualization.setCurControlEffort(this.inputVolts);
+
 
     this.iterationCount++;
 
     if (this.iterationCount >= this.timeS.length) {
       this.end();
     }
+
   }
 
   updateController(setpoint, measurement) {
@@ -155,9 +155,4 @@ class TurretSim extends BaseSim {
     return controlEffortVolts;
   }
 
-  updateGraphs() {
-    this.setControlEffortData(zip(this.timeS, this.controlEffortVolts));
-    this.setSetpointData(zip(this.timeS, this.setpoint));
-    this.setOutputData(zip(this.timeS, this.output));
-  }
 }

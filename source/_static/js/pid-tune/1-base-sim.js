@@ -34,6 +34,8 @@ class BaseSim {
 
     this.simRunning = true;
 
+    this.curSimTimeS = 0.0;
+
     //Register mouseover & scrollwheel callbacks. 
     // This is still tentative, as these won't work if the sim is running
     this.procVarPlot.chart.mouseoverAtTimeCallback = this.onChartMouseOver.bind(this); 
@@ -58,38 +60,37 @@ class BaseSim {
       //Sim has restarted, reset things to nominal
       this.animationStartTimeS = currentTimeS;
       this.animationReset = false;
+      this.procVarPlot.setDrawRange(0, this.simDurationS);
+      this.voltsPlot.setDrawRange(0, this.simDurationS);
     }
 
-    //Calculate the current time index, looping once we get past the end of the simulated duration
-    let animationTimeS = (currentTimeS - this.animationStartTimeS) % this.simDurationS;
-    let timeIndex = Math.floor(animationTimeS / this.simulationTimestepS);
+    if(this.simRunning){
+      //Calculate the current time index, looping once we get past the end of the simulated duration
+      let animationTimeS = (currentTimeS - this.animationStartTimeS);
 
-    //Let the sim draw its animation
-    this.visualization.drawDynamic(timeIndex, animationTimeS);
+      //run the simulation up to the current animation time
+      while(this.curSimTimeS <= animationTimeS){
+        this.iterate();
+      }
 
-    //Update plot ranges and draw them
-    this.procVarPlot.setDrawRange(0, this.simDurationS);
-    this.procVarPlot.drawDataToChart();
-    this.procVarPlot.setCursorPos(animationTimeS);
+      //Let the sim draw its animation
+      this.visualization.drawDynamic();
 
-    this.voltsPlot.setDrawRange(0, this.simDurationS);
-    this.voltsPlot.drawDataToChart();
-    this.voltsPlot.setCursorPos(animationTimeS);
+      this.procVarPlot.setCursorPos(animationTimeS);
+      this.voltsPlot.setCursorPos(animationTimeS);
+      this.voltsPlot.drawDataToChart();
+      this.procVarPlot.drawDataToChart();
+
+    } else {
+      this.procVarPlot.setCursorPos(null);
+      this.voltsPlot.setCursorPos(null);    
+    }
+
+
+
 
     // Tell the browser to animate another frame for us later
     window.requestAnimationFrame((t) => this.animate(t));
-  }
-
-  setControlEffortData(data) {
-    this.voltsPlot.series[0].setData(data, false, false, true);
-  }
-
-  setOutputData(data) {
-    this.procVarPlot.series[0].setData(data, false, false, true);
-  }
-
-  setSetpointData(data) {
-    this.procVarPlot.series[1].setData(data, false, false, true);
   }
 
   ///////////////////////////
