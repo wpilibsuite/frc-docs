@@ -225,9 +225,9 @@ js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
 js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
 
 
+debugJS = False  # flip to true to make the output js more readable
 
 
-debugJS = False # flip to true to make the output js more readable
 def mergeAndMinify(sourceDir, outputFile):
     with open(outputFile, "w") as outf:
         inFileNames = glob.glob(sourceDir)
