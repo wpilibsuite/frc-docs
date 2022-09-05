@@ -162,7 +162,7 @@ class FastChart {
     drawSeries(sampleList, yMin, yMax, colorString_in, bold_in){
         if(sampleList.length > 2){
             this.ctx.strokeStyle = colorString_in;
-            this.ctx.lineWidth = bold_in ? 3 : 1;
+            this.ctx.lineWidth = bold_in ? 5 : 3;
             this.ctx.beginPath();
             var x_px = this.timeToX_px(sampleList[0].time);
             var y_px = this.valToY_px(sampleList[0].value, yMin, yMax);

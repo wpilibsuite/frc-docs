@@ -12,15 +12,15 @@ class BaseSim {
     this.procVarPlot = new Plot(plotDrawDivVals);
     this.procVarActualSignal = new Signal("Actual", processVariableUnits);
     this.procVarDesiredSignal = new Signal("Desired", processVariableUnits);
-    this.procVarPlot.addSignal(this.procVarActualSignal, "green");
-    this.procVarPlot.addSignal(this.procVarDesiredSignal, "blue");
+    this.procVarPlot.addSignal(this.procVarActualSignal, "purple");
+    this.procVarPlot.addSignal(this.procVarDesiredSignal, "red");
     this.procVarPlot.setNumValueAxes(1);
 
 
     // Set up "volts" chart - indicates control effort applied to the system
     this.voltsPlot = new Plot(plotDrawDivVolts);
     this.voltsSignal = new Signal("Control Effort", "V");
-    this.voltsPlot.addSignal(this.voltsSignal, "red");
+    this.voltsPlot.addSignal(this.voltsSignal, "green");
     this.voltsPlot.setNumValueAxes(1);
 
     this.visualizationDrawDiv = document.getElementById(divIdPrefix + "_viz");
@@ -95,13 +95,24 @@ class BaseSim {
       this.voltsPlot.setCursorPos(animationTimeS);
     } 
 
-    //Always redraw in case the screen resizes or for mouseovers
-    this.visualization.drawDynamic();
-    this.voltsPlot.drawDataToChart();
-    this.procVarPlot.drawDataToChart();
+    //Redraw only if visible.
+    if(this.isInViewport()){
+      this.visualization.drawDynamic();
+      this.voltsPlot.drawDataToChart();
+      this.procVarPlot.drawDataToChart();
+    }
+
 
     // Tell the browser to animate another frame for us later
     window.requestAnimationFrame((t) => this.animate(t));
+  }
+
+
+  isInViewport() {
+    const rect = this.containerDiv.getBoundingClientRect();
+    var topIn = rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight);
+    var bottomIn = rect.bottom >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    return topIn || bottomIn;
   }
 
   ///////////////////////////

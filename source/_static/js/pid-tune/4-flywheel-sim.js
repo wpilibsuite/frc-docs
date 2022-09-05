@@ -73,7 +73,7 @@ class FlywheelSim extends BaseSim {
     this.visualization.setCurPos(this.plant.getCurrentPositionRad());
     this.visualization.setCurOutput(this.plant.getCurrentSpeedRPM());
     this.visualization.setCurTime(this.curSimTimeS);
-    this.visualization.setCurSetpoint(this.currentSetpointRad);
+    this.visualization.setCurSetpoint(currentSetpoint);
     this.visualization.setCurControlEffort(this.inputVolts);
 
     this.iterationCount++;

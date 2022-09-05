@@ -48,8 +48,8 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="flywheel_bb_container">
+    <div class="viz-div" id="flywheel_bb_container">
+      <div >
          <div class="col" id="flywheel_bb_plotVals"></div>
          <div class="col" id="flywheel_bb_plotVolts"></div>
       </div>
@@ -92,7 +92,7 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div" id="flywheel_feedforward_container">
       <div id="flywheel_feedforward">
          <div class="col" id="flywheel_feedforward_plotVals"></div>
          <div class="col" id="flywheel_feedforward_plotVolts"></div>
@@ -128,7 +128,7 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div" id="flywheel_feedback_container">
       <div id="flywheel_feedback">
          <div class="col" id="flywheel_feedback_plotVals"></div>
          <div class="col" id="flywheel_feedback_plotVolts"></div>
@@ -173,7 +173,7 @@ Interact with the simulation below to see how the flywheel system responds under
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div"  id="flywheel_feedforward_feedback_container">
       <div id="flywheel_feedforward_feedback">
          <div class="col" id="flywheel_feedforward_feedback_plotVals"></div>
          <div class="col" id="flywheel_feedforward_feedback_plotVolts"></div>

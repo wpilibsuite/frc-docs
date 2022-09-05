@@ -46,8 +46,8 @@ Interact with the simulation below to examine how the turret system responds whe
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="arm_feedforward_container">
+    <div class="viz-div" id="arm_feedforward_container">
+      <div >
          <div class="col" id="arm_feedforward_plotVals"></div>
          <div class="col" id="arm_feedforward_plotVolts"></div>
       </div>
@@ -95,8 +95,8 @@ Interact with the simulation below to examine how the vertical arm system respon
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="arm_feedback_container">
+    <div class="viz-div"  id="arm_feedback_container">
+      <div>
          <div class="col" id="arm_feedback_plotVals"></div>
          <div class="col" id="arm_feedback_plotVolts"></div>
       </div>
@@ -135,8 +135,8 @@ Interact with the simulation below to examine how the vertical arm system respon
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="arm_feedforward_feedback_container">
+    <div class="viz-div" id="arm_feedforward_feedback_container">
+      <div >
          <div class="col" id="arm_feedforward_feedback_plotVals"></div>
          <div class="col" id="arm_feedforward_feedback_plotVolts"></div>
       </div>
