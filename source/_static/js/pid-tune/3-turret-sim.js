@@ -1,6 +1,6 @@
 class TurretSim extends BaseSim {
   constructor(divIdPrefix) {
-    super(divIdPrefix, "Radians", -Math.PI * 1.25, Math.PI * 1.25);
+    super(divIdPrefix, "Rad", -Math.PI * 1.25, Math.PI * 1.25);
 
     this.positionDelayLine = new DelayLine(49); //models sensor lag
     
@@ -48,9 +48,6 @@ class TurretSim extends BaseSim {
   }
 
   reset() {
-    if (this.simLoopHandle) {
-      clearInterval(this.simLoopHandle);
-    }
     this.plant.reset();
     this.timeS = Array(this.simDurationS / this.simulationTimestepS)
       .fill()
@@ -58,10 +55,10 @@ class TurretSim extends BaseSim {
         return index * this.simulationTimestepS;
       });
 
-    this.visualization.setCurPos(this.output);
-    this.visualization.setCurTime(this.timeS);
-    this.visualization.setCurSetpoint(this.setpoint);
-    this.visualization.setCurControlEffort(this.controlEffortVolts);
+    this.visualization.setCurPos(0.0);
+    this.visualization.setCurTime(0.0);
+    this.visualization.setCurSetpoint(0.0);
+    this.visualization.setCurControlEffort(0.0);
 
     this.accumulatedError = 0.0;
     this.previousError = 0.0;
@@ -73,21 +70,9 @@ class TurretSim extends BaseSim {
 
   }
 
-  begin() {
-    this.reset();
-    this.procVarActualSignal.clearValues();
-    this.procVarDesiredSignal.clearValues();
-    this.voltsSignal.clearValues();
-    this.curSimTimeS = 0.0;
-    this.animationReset = true;
-    this.simRunning = true;
-  }
+  iterateCustom() {
 
-  end() {
-    this.simRunning = false;
-  }
-
-  iterate() {
+    this.curSimTimeS = this.timeS[this.iterationCount];
 
     let measuredPositionRad = this.positionDelayLine.getSample();
 
@@ -103,7 +88,6 @@ class TurretSim extends BaseSim {
 
     this.positionDelayLine.addSample(this.plant.getPositionRad());
 
-    this.curSimTimeS = this.timeS[this.iterationCount];
     this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getPositionRad()));
     this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.currentSetpointRad));
     this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));

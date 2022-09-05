@@ -105,8 +105,6 @@ class TurretVisualization extends BaseVisualization {
   }
 
   drawDynamicCustom() {
-    const index = this.getSimulationIndex();
-    const simulationTimeS = index * this.simulationTimestepS;
 
     // todo: systematize magic numbers
 
@@ -114,7 +112,7 @@ class TurretVisualization extends BaseVisualization {
     this.animatedCanvasContext.fillStyle = "#000000";
     this.animatedCanvasContext.font = "bold 20px Arial";
     this.animatedCanvasContext.fillText(
-      "t = " + simulationTimeS.toFixed(2) + " sec",
+      "t = " + this.timeS.toFixed(2) + " sec",
       0.05 * this.width,
       0.15 * this.height
     );

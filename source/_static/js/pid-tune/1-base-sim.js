@@ -51,6 +51,24 @@ class BaseSim {
 
   }
 
+  begin() {
+    this.reset();
+    this.procVarActualSignal.clearValues();
+    this.procVarDesiredSignal.clearValues();
+    this.voltsSignal.clearValues();
+    this.curSimTimeS = 0.0;
+    this.animationReset = true;
+    this.simRunning = true;
+  }
+
+  end() {
+    this.simRunning = false;
+  }
+
+  iterate(){
+    this.iterateCustom(); //callback to fixed point in the specific sim class
+  }
+
   animate(currentTimeMs) {
 
     //Main animation loop
@@ -69,7 +87,7 @@ class BaseSim {
       let animationTimeS = (currentTimeS - this.animationStartTimeS);
 
       //run the simulation up to the current animation time
-      while(this.curSimTimeS <= animationTimeS){
+      while(this.curSimTimeS <= animationTimeS && this.simRunning){
         this.iterate();
       }
 
