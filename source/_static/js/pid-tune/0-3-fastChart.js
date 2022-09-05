@@ -28,16 +28,14 @@ class FastChart {
         this.canvas.id     = this.drawDiv.id + "_canvas";
         this.drawDiv.appendChild(this.canvas);
         this.ctx = this.canvas.getContext("2d");
-        this.canvas.addEventListener('mousemove', this.mouseoverHandler.bind(this), false);
-        this.canvas.addEventListener('mouseleave', this.mouseleaveHandler.bind(this), false);
-        this.canvas.addEventListener('mouseup', this.mouseupHandler.bind(this), false);
-        this.canvas.addEventListener('mousedown', this.mousedownHandler.bind(this), false);
-        if (this.canvas.addEventListener) {
-            this.canvas.addEventListener("mousewheel", this.mousewheelHandler.bind(this), false);
-            this.canvas.addEventListener("DOMMouseScroll", this.mousewheelHandler.bind(this), false);
-        } else {
-            this.canvas.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
-        }
+        //TODO - bring these back at some point, but with better handling for mobile devices
+        //this.canvas.addEventListener('mousemove', this.mouseoverHandler.bind(this), false);
+        //this.canvas.addEventListener('mouseleave', this.mouseleaveHandler.bind(this), false);
+        //this.canvas.addEventListener('mouseup', this.mouseupHandler.bind(this), false);
+        //this.canvas.addEventListener('mousedown', this.mousedownHandler.bind(this), false);
+        //this.canvas.addEventListener("mousewheel", this.mousewheelHandler.bind(this), false);
+        //this.canvas.addEventListener("DOMMouseScroll", this.mousewheelHandler.bind(this), false);
+
         
     }
 
