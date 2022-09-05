@@ -63,7 +63,7 @@ class FastChart {
         //Drawing configurations
 
         this.AXIS_MARGIN = 10;
-        this.VALUE_AXIS_WIDTH = 30;
+        this.VALUE_AXIS_WIDTH = 50;
         this.AXIS_Y_BOTTOM_MARGIN = 30;
 
         this.plotOriginX_px = Math.round(this.AXIS_MARGIN + this.VALUE_AXIS_WIDTH * numValueAxes);
@@ -88,7 +88,7 @@ class FastChart {
             this.ctx.lineTo(xPos, this.plotOriginY_px);
             this.ctx.stroke();
 
-            this.ctx.strokeStyle = "#FFFFFF";
+            this.ctx.strokeStyle = "#555555";
             this.ctx.lineWidth = 1;
             this.ctx.beginPath();
             this.ctx.moveTo(xPos, this.plotOriginY_px);
@@ -97,7 +97,8 @@ class FastChart {
 
             this.ctx.font = "18px monospace";
             this.ctx.textBaseline = 'top';
-            this.ctx.fillStyle = "#FFFFFF";
+            this.ctx.fillStyle = "#555555";
+            this.ctx.textAlign = 'left';
             this.ctx.fillText(markerTime.toPrecision(3), xPos + 2, this.plotOriginY_px + 2);
         });
 
@@ -192,7 +193,7 @@ class FastChart {
     }
 
     drawAxes(valueAxisMap){
-        this.ctx.strokeStyle = "#FFFFFF";
+        this.ctx.strokeStyle = "#555555";
         this.ctx.lineWidth = 2;
         this.ctx.beginPath();
         //X axis
@@ -212,26 +213,23 @@ class FastChart {
             var yMin = va.minVal;
             var yMax = va.maxVal;
 
-
-            this.ctx.font = "12px monospace";
+            // Units Label
+            this.ctx.font = "15px monospace";
             this.ctx.textBaseline = 'middle';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillStyle = "#FFFFFF";
-            var labelXPos = xPos - this.VALUE_AXIS_WIDTH/2;
+            this.ctx.textAlign = 'right';
+            this.ctx.fillStyle = "#555555";
+            var labelXPos = xPos - this.VALUE_AXIS_WIDTH/8;
             var labelYPos = (this.plotOriginY_px + this.canvas.height)/2;
-
-            // underlined, rotated text for units label
             this.ctx.save()
             this.ctx.translate(labelXPos,labelYPos)
-            this.ctx.rotate(-Math.PI/4);
             this.ctx.fillText(va.units,0,0);
-            this.ctx.fillText("_____",0,0);
-            this.ctx.restore();
+            //todo - rotated text?
+            this.ctx.restore()
 
 
             this.getTickMarkList(yMin, yMax, 2.0).forEach(markerVal => {
                 var yPos = this.valToY_px(markerVal, yMin, yMax);
-                this.ctx.strokeStyle = "#FFFFFF";
+                this.ctx.strokeStyle = "#555555";
                 this.ctx.lineWidth = 1;
                 this.ctx.beginPath();
                 this.ctx.moveTo(xPos - this.VALUE_AXIS_WIDTH/2.1, yPos);
@@ -239,12 +237,12 @@ class FastChart {
                 this.ctx.stroke();
     
                 this.ctx.save();
-                this.ctx.translate(xPos, yPos);
-                this.ctx.rotate(-Math.PI/2);
-                this.ctx.font = "15px monospace";
+                this.ctx.translate(xPos - this.VALUE_AXIS_WIDTH/8, yPos);
+                //this.ctx.rotate(-Math.PI/2);
+                this.ctx.font = "12px monospace";
                 this.ctx.textBaseline = 'bottom';
-                this.ctx.textAlign = 'left';
-                this.ctx.fillStyle = "#FFFFFF";
+                this.ctx.textAlign = 'right';
+                this.ctx.fillStyle = "#555555";
                 this.ctx.fillText(markerVal.toPrecision(3), 2, -2);
                 this.ctx.restore();
 

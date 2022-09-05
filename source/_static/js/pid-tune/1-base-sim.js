@@ -34,10 +34,12 @@ class BaseSim {
 
     this.simRunning = true;
 
-    //Register mouseover callbacks. 
+    //Register mouseover & scrollwheel callbacks. 
     // This is still tentative, as these won't work if the sim is running
-    this.procVarPlot.chart.mouseoverAtTimeCallback = this.onChartMouseOver; 
-    this.voltsPlot.chart.zoomRangeUpdateCallback = this.onChartZoomAction; 
+    this.procVarPlot.chart.mouseoverAtTimeCallback = this.onChartMouseOver.bind(this); 
+    this.voltsPlot.chart.mouseoverAtTimeCallback = this.onChartMouseOver.bind(this); 
+    this.procVarPlot.chart.zoomRangeUpdateCallback = this.onChartZoomAction.bind(this); 
+    this.voltsPlot.chart.zoomRangeUpdateCallback = this.onChartZoomAction.bind(this); 
     
 
   }

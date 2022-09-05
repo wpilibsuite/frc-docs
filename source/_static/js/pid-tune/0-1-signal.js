@@ -7,9 +7,7 @@ class Signal {
     constructor(name_in, units_in) { 
         this.name = name_in;
         this.units = units_in;
-        this.sampleList = []; //Assumed to be entered in monotomically-increasing order
-        this.latestSampleTime = 0;
-        this.firstSampleTime = 0;
+        this.clearValues();
     }
 
     //Add a new sample to the signal 
@@ -53,7 +51,9 @@ class Signal {
 
     //Clear out all samples
     clearValues(){
-        this.sampleList = [];
+        this.sampleList = []; //Assumed to be entered in monotomically-increasing order
+        this.latestSampleTime = 0;
+        this.firstSampleTime = 0;    
     }
 
     //Return the most-recently-added sample

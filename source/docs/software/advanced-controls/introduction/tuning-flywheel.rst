@@ -1,7 +1,7 @@
 Tuning a Flywheel Velocity Controller
 =====================================
 
-In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive).
+In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive)
 
 Flywheel Model Description
 --------------------------
@@ -40,7 +40,7 @@ Because we must apply a constant control voltage to the motor to maintain a velo
 Velocity control also differs from position control in the effect of inertia - in a position controller, inertia tends to cause the mechanism to swing past the setpoint even if the control voltage drops to zero near the setpoint.  This makes aggressive control strategies infeasible, as they end up wasting lots of energy fighting self-induced oscillations.  In a velocity controller, however, the effect is different - the rotor shaft stops accelerating as soon as you stop applying a control voltage (in fact, it will slow down due to friction and back-EMF), so such overshoots are rare (in fact, overshoot typically occurs in velocity controllers only as a result of loop delay).  This enables the use of an extremely simple, extremely aggressive control strategy called :ref:`bang-bang control <docs/software/advanced-controls/introduction/tuning-flywheel:Bang-Bang Control>`.
 
 The tutorials below will demonstrate the behavior of the system under bang-bang, pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
- 
+
 Bang-Bang Control
 ~~~~~~~~~~~~~~~~~
 
