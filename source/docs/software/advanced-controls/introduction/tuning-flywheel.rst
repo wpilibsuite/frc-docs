@@ -44,14 +44,14 @@ The tutorials below will demonstrate the behavior of the system under bang-bang,
 Bang-Bang Control
 ~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.  There are no tuneable controller parameters for a bang-bang controller - you can only adjust the setpoint. 
+Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.  There are no tuneable controller parameters for a bang-bang controller - you can only adjust the setpoint.
 
 .. raw:: html
 
     <div class="viz-div">
       <div id="flywheel_bb_container">
-         <div class="col" id="flywheel_bb_plotVals"></div> 
-         <div class="col" id="flywheel_bb_plotVolts"></div>  
+         <div class="col" id="flywheel_bb_plotVals"></div>
+         <div class="col" id="flywheel_bb_plotVolts"></div>
       </div>
       <div class="flex-grid">
          <div class="col" id="flywheel_bb_viz"></div>

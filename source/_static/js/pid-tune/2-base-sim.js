@@ -91,21 +91,14 @@ class BaseSim {
         this.iterate();
       }
 
-      //Let the sim draw its animation
-      this.visualization.drawDynamic();
-
       this.procVarPlot.setCursorPos(animationTimeS);
       this.voltsPlot.setCursorPos(animationTimeS);
-      this.voltsPlot.drawDataToChart();
-      this.procVarPlot.drawDataToChart();
+    } 
 
-    } else {
-      this.procVarPlot.setCursorPos(null);
-      this.voltsPlot.setCursorPos(null);    
-    }
-
-
-
+    //Always redraw in case the screen resizes or for mouseovers
+    this.visualization.drawDynamic();
+    this.voltsPlot.drawDataToChart();
+    this.procVarPlot.drawDataToChart();
 
     // Tell the browser to animate another frame for us later
     window.requestAnimationFrame((t) => this.animate(t));

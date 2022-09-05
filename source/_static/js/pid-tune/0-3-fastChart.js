@@ -111,7 +111,7 @@ class FastChart {
     drawCursor(){
         if(this.cursorTime != null){
             var cursorPos = this.timeToX_px(this.cursorTime);
-            this.ctx.strokeStyle = "#FFFF00";
+            this.ctx.strokeStyle = "#BBBB00";
             this.ctx.lineWidth = 2;
             this.ctx.beginPath();
             this.ctx.moveTo(cursorPos, 0);
@@ -124,7 +124,7 @@ class FastChart {
         if(this.zoomRangeDn != null && this.cursorTime != null){
             var zpx = this.timeToX_px(this.zoomRangeDn);
             var cpx = this.timeToX_px(this.cursorTime);
-            this.ctx.fillStyle = "#333355";
+            this.ctx.fillStyle = "#FFFFBB";
             this.ctx.lineWidth = 0;
             this.ctx.moveTo(zpx, 0);
             this.ctx.lineTo(cpx, 0);
@@ -259,7 +259,7 @@ class FastChart {
     // Mouse-over cursor Handlers
     mouseoverHandler(e){
         if(this.mouseoverAtTimeCallback != null){
-            var time = this.xPxToTime(e.x);
+            var time = this.xPxToTime(e.offsetX);
             if(time > this.startTime && time < this.endTime){
                 this.mouseoverAtTimeCallback(time);
             } else {
@@ -283,7 +283,7 @@ class FastChart {
         this.resetZoomRangeHandlers();
 
         //Save off the time where the user clicked down 
-        var time = this.xPxToTime(e.x);
+        var time = this.xPxToTime(e.offsetX);
         if(time > this.startTime && time < this.endTime){
             this.zoomRangeDn = time;
         } 
@@ -291,7 +291,7 @@ class FastChart {
 
     mouseupHandler(e){
         //Save off the time where the user released
-        var time = this.xPxToTime(e.x);
+        var time = this.xPxToTime(e.offsetX);
         if(time > this.startTime && time < this.endTime){
             this.zoomRangeUp = time;
         } else {
