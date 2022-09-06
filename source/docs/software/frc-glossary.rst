@@ -14,6 +14,9 @@ FRC Glossary
    call stack
       A specially-organized region of memory which helps the program keep track of what function it is in. As each function calls another, the call point is recorded and added to the top of the structure, forming a "stack" of references. Additionally, local variables will also be stored in this stack. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on Wikipedia for more info.
 
+   central limit theorem
+      A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See `Central Limit Theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`__ on Wikipedia for more info.
+
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on Wikipedia for more info.
 
