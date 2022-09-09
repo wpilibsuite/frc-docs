@@ -225,6 +225,9 @@ js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
 js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
 
 
+debugJS = False  # flip to true to make the output js more readable
+
+
 def mergeAndMinify(sourceDir, outputFile):
     with open(outputFile, "w") as outf:
         inFileNames = glob.glob(sourceDir)
@@ -235,10 +238,30 @@ def mergeAndMinify(sourceDir, outputFile):
         inFileNames.sort()
         for inFileName in inFileNames:
             with open(inFileName, "r") as inf:
-                # Minify each file independently - again, low bar solution for now
-                minified = jsmin(inf.read())
-                outf.write(minified)
-                outf.write("\n")
+                if not debugJS:
+                    # Minify each file independently - again, low bar solution for now
+                    minified = jsmin(inf.read())
+                    outf.write(minified)
+                    outf.write("\n")
+                else:
+                    # Verbose, no minify
+                    outf.write("\n\n\n")
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write("//**    {}\n".format(inFileName))
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write("\n")
+                    outf.write(inf.read())
+                    outf.write("\n")
 
 
 def setup(app):
@@ -266,7 +289,6 @@ def setup(app):
     mergeAndMinify(js_pid_src_path, js_pid_output_file)
 
     # Add interactive PID tuning
-    app.add_js_file("js/highcharts.js")
     app.add_js_file("js/pid-tune.js")
     app.add_css_file("css/pid-tune.css")
 

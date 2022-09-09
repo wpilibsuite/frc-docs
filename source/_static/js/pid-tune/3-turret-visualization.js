@@ -105,8 +105,6 @@ class TurretVisualization extends BaseVisualization {
   }
 
   drawDynamicCustom() {
-    const index = this.getSimulationIndex();
-    const simulationTimeS = index * this.simulationTimestepS;
 
     // todo: systematize magic numbers
 
@@ -114,7 +112,7 @@ class TurretVisualization extends BaseVisualization {
     this.animatedCanvasContext.fillStyle = "#000000";
     this.animatedCanvasContext.font = "bold 20px Arial";
     this.animatedCanvasContext.fillText(
-      "t = " + simulationTimeS.toFixed(2) + " sec",
+      "t = " + this.timeS.toFixed(2) + " sec",
       0.05 * this.width,
       0.15 * this.height
     );
@@ -123,9 +121,9 @@ class TurretVisualization extends BaseVisualization {
     this.setpointIndicatorRadius = 0.035 * this.height;
     this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    const setpointRad = this.setpoint[index];
-    const positionRad = this.positionRad[index];
-    const controlEffortPlotScale = this.controlEffortVolts[index] * 1.5/12 * this.turretRadiusPx;
+    const setpointRad = this.setpoint;
+    const positionRad = this.positionRad;
+    const controlEffortPlotScale = this.controlEffortVolts * 1.5/12 * this.turretRadiusPx;
 
     const turretFrontX =
       this.turretCenterX + this.turretRadiusPx * Math.cos(positionRad);

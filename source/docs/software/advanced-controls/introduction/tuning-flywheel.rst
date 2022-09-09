@@ -1,7 +1,7 @@
 Tuning a Flywheel Velocity Controller
 =====================================
 
-In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive).
+In this section, we will tune a simple velocity controller for a flywheel.  The same tuning principles explained here will also work for almost any velocity control scenario (such as a robot drive)
 
 Flywheel Model Description
 --------------------------
@@ -48,8 +48,8 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="flywheel_bb_container">
+    <div class="viz-div" id="flywheel_bb_container">
+      <div >
          <div class="col" id="flywheel_bb_plotVals"></div>
          <div class="col" id="flywheel_bb_plotVolts"></div>
       </div>
@@ -59,7 +59,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_bb = new FlywheelBangBang("flywheel_bb");
-         flywheel_bb.runSim();
       </script>
     </div>
 
@@ -93,7 +92,7 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div" id="flywheel_feedforward_container">
       <div id="flywheel_feedforward">
          <div class="col" id="flywheel_feedforward_plotVals"></div>
          <div class="col" id="flywheel_feedforward_plotVolts"></div>
@@ -104,7 +103,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedforward", "feedforward");
-         flywheel_pid.runSim();
       </script>
     </div>
 
@@ -130,7 +128,7 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div" id="flywheel_feedback_container">
       <div id="flywheel_feedback">
          <div class="col" id="flywheel_feedback_plotVals"></div>
          <div class="col" id="flywheel_feedback_plotVolts"></div>
@@ -141,7 +139,6 @@ Interact with the simulation below to see how the flywheel system responds when 
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedback", "feedback");
-         flywheel_pid.runSim();
       </script>
     </div>
 
@@ -176,7 +173,7 @@ Interact with the simulation below to see how the flywheel system responds under
 
 .. raw:: html
 
-    <div class="viz-div">
+    <div class="viz-div"  id="flywheel_feedforward_feedback_container">
       <div id="flywheel_feedforward_feedback">
          <div class="col" id="flywheel_feedforward_feedback_plotVals"></div>
          <div class="col" id="flywheel_feedforward_feedback_plotVolts"></div>
@@ -187,7 +184,6 @@ Interact with the simulation below to see how the flywheel system responds under
       </div>
       <script>
          flywheel_pid = new FlywheelPIDF("flywheel_feedforward_feedback", "both");
-         flywheel_pid.runSim();
       </script>
     </div>
 

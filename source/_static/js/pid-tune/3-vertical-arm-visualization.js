@@ -6,8 +6,6 @@ class VerticalArmVisualization extends BaseVisualization {
     this.setpointX = 0.0;
     this.setpointY = 0.0;
 
-    this.simulationTimestepS = simulationTimestepS;
-
     this.getSimulationIndex = getSimulationIndex;
 
     this.draggingSetpoint = false;
@@ -140,16 +138,13 @@ class VerticalArmVisualization extends BaseVisualization {
   }
 
   drawDynamicCustom() {
-    const index = this.getSimulationIndex();
-    const simulationTimeS = index * this.simulationTimestepS;
-
     // todo: systematize magic numbers
 
     //Time Indicator
     this.animatedCanvasContext.fillStyle = "#000000";
     this.animatedCanvasContext.font = "bold 20px Arial";
     this.animatedCanvasContext.fillText(
-      "t = " + simulationTimeS.toFixed(2) + " sec",
+      "t = " + this.timeS.toFixed(2) + " sec",
       0.05 * this.width,
       0.15 * this.height
     );
@@ -162,9 +157,9 @@ class VerticalArmVisualization extends BaseVisualization {
     this.setpointIndicatorRadius = 0.035 * this.height;
     this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    const setpointRad = this.setpoint[index];
-    const positionRad = this.positionRad[index];
-    const controlEffortPlotScale = this.controlEffortVolts[index] * 1.5/12 * armLenPx;
+    const setpointRad = this.setpoint;
+    const positionRad = this.positionRad;
+    const controlEffortPlotScale = this.controlEffortVolts * 1.5/12 * armLenPx;
 
     const armEndX =
       this.armStartX + armLenPx * Math.cos(positionRad);

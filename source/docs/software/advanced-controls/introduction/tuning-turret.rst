@@ -46,8 +46,8 @@ Interact with the simulation below to examine how the turret system responds whe
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="turret_feedforward_container">
+    <div class="viz-div" id="turret_feedforward_container">
+      <div>
          <div class="col" id="turret_feedforward_plotVals"></div>
          <div class="col" id="turret_feedforward_plotVolts"></div>
       </div>
@@ -90,8 +90,8 @@ Interact with the simulation below to examine how the turret system responds whe
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="turret_feedback_container">
+    <div class="viz-div" id="turret_feedback_container">
+      <div>
          <div class="col" id="turret_feedback_plotVals"></div>
          <div class="col" id="turret_feedback_plotVolts"></div>
       </div>
@@ -127,8 +127,8 @@ Interact with the simulation below to examine how the turret system responds und
 
 .. raw:: html
 
-    <div class="viz-div">
-      <div id="turret_feedforward_feedback_container">
+    <div class="viz-div" id="turret_feedforward_feedback_container">
+      <div >
          <div class="col" id="turret_feedforward_feedback_plotVals"></div>
          <div class="col" id="turret_feedforward_feedback_plotVolts"></div>
       </div>

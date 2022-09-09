@@ -18,6 +18,9 @@ class FlywheelPIDF extends FlywheelSim {
     this.controlStrategy = controlStrategy;
 
     this.buildControlTable();
+
+    this.begin();
+
   }
 
   buildControlTable() {
@@ -42,7 +45,7 @@ class FlywheelPIDF extends FlywheelSim {
     input.onclick = function (event) {
       this.animationReset = true;
       this.plant.setSystemNoise(document.getElementById("systemNoise").checked);
-      this.runSim();
+      this.begin();
     }.bind(this);
     control.append(input);
     curRow.appendChild(label);
@@ -62,7 +65,7 @@ class FlywheelPIDF extends FlywheelSim {
     input.onchange = function (event) {
       this.animationReset = true;
       this.setpointVal = parseFloat(event.target.value);
-      this.runSim();
+      this.begin();
     }.bind(this);
     control.append(input);
     curRow.appendChild(label);
@@ -85,7 +88,7 @@ class FlywheelPIDF extends FlywheelSim {
       input.onchange = function (event) {
         this.animationReset = true;
         this.kV = parseFloat(event.target.value);
-        this.runSim();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -105,7 +108,7 @@ class FlywheelPIDF extends FlywheelSim {
       input.onchange = function (event) {
         this.animationReset = true;
         this.kP = parseFloat(event.target.value);
-        this.runSim();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -123,7 +126,7 @@ class FlywheelPIDF extends FlywheelSim {
       input.onchange = function (event) {
         this.animationReset = true;
         this.kI = parseFloat(event.target.value);
-        this.runSim();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
@@ -141,7 +144,7 @@ class FlywheelPIDF extends FlywheelSim {
       input.onchange = function (event) {
         this.animationReset = true;
         this.kD = parseFloat(event.target.value);
-        this.runSim();
+        this.begin();
       }.bind(this);
       control.append(input);
       curRow.appendChild(label);
