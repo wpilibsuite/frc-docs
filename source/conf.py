@@ -115,6 +115,9 @@ ogp_image = (
     "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
 )
 
+# Configure photofinish ci mode
+photofinish_ci_only = True
+
 # Enables ChiefDelphi support
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
