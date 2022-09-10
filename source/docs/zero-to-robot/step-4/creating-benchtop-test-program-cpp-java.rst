@@ -156,9 +156,7 @@ Defining the variables for our sample robot
                   private final Joystick m_stick = new Joystick(0);
                   private final Timer m_timer = new Timer();
 
-         .. group-tab:: C++
-
-            Inside of ``Robot.h``
+         .. group-tab:: C++ (Header)
 
             .. code-block:: cpp
 
