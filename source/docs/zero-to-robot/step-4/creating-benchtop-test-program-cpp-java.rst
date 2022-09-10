@@ -3,7 +3,7 @@ Creating your Benchtop Test Program (C++/Java)
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
-.. important:: This guide includes code examples that involve vendor hardware at the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Falcon 500 motor controller, but is applicable on the TalonSRX and VictorSPX as well. REV examples will be coming soon.
+.. important:: This guide includes code examples that involve vendor hardware at the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. There is an assumption that the user has already configured the device (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctre-phoenix.com/en/stable/>`__). REV examples will be coming soon.
 
 Creating a New WPILib Project
 -----------------------------
@@ -108,7 +108,7 @@ Imports/Includes
                   #include <frc/drive/DifferentialDrive.h>
                   #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -150,8 +150,8 @@ Defining the variables for our sample robot
             .. code-block:: java
 
                public class Robot extends TimedRobot {
-                  private final WPI_TalonFX m_leftDrive = new WPI_TalonFX(0);
-                  private final WPI_TalonFX m_rightDrive = new WPI_TalonFX(1);
+                  private final WPI_TalonFX m_leftDrive = new WPI_TalonFX(1);
+                  private final WPI_TalonFX m_rightDrive = new WPI_TalonFX(2);
                   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
                   private final Joystick m_stick = new Joystick(0);
                   private final Timer m_timer = new Timer();
@@ -176,14 +176,14 @@ Defining the variables for our sample robot
 
                private:
                 // Robot drive system
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{0};
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{1};
+                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{1};
+                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{2};
                 frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
-The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1. Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
+The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN on ports 1 and 2). Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
