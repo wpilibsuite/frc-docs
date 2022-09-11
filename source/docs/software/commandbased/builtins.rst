@@ -1,14 +1,14 @@
-WPILib Command classes
+WPILib Command Classes
 ======================
 
-The command-based library includes a variety of pre-written commands for most use cases, most of them intended to be used “out-of-the-box” via inlining. A list of the included pre-made commands with brief examples can be found below, grouped by functionality type. For more rigorous documentation about specific classes, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+The command-based library includes a variety of pre-written commands for most use cases, most of them intended to be used "out-of-the-box" via inlining. A list of the included pre-made commands with brief examples can be found below, grouped by functionality type. For more rigorous documentation about specific classes, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
 
 .. important:: It is recommended not to inherit from these classes and override their methods; not calling the class's version of the method may crash code in ways that are challenging to diagnose.
 
 Running Actions
 ---------------
 
-The most basic commands are actions the robot takes -- setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a mere method call or two, the command-based library offers multiple classes to be constructed inline with one or more lambdas to be executed:
+The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several classes to be constructed inline with one or more lambdas to be executed.
 
 InstantCommand
 ^^^^^^^^^^^^^^
@@ -44,7 +44,7 @@ InstantCommand
 RunCommand
 ^^^^^^^^^^
 
-``RunCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) accepts a single ``Runnable``/``std::function<void()>`` lambda that is called in ``execute()`` (once every scheduler loop) until the command is interrupted -- the command has no natural end condition; one can be added using :ref:`docs/software/commandbased/decorators:until`.
+``RunCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) accepts a single ``Runnable``/``std::function<void()>`` lambda that is called every scheduler loop until the command is interrupted -- the command has no natural end condition; one can be added using :ref:`docs/software/commandbased/decorators:until`.
 
 .. tabs::
 
@@ -72,7 +72,7 @@ RunCommand
 StartEndCommand
 ^^^^^^^^^^^^^^^
 
-``StartEndCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) accepts two ``Runnable``/``std::function<void()>`` lambdas, the first is executed once in ``initialize()`` when the command is scheduled and the second is executed in ``end()`` when the command is interrupted (the command has no natural end condition).
+``StartEndCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) accepts two ``Runnable``/``std::function<void()>`` lambdas, the first is executed once when the command is scheduled and the second is executed when the command is interrupted (the command has no natural end condition).
 
 .. tabs::
 
@@ -144,17 +144,17 @@ PrintCommand
 
   .. code-tab:: java
 
-    new PrintCommand("This message will be printed!")
+     new PrintCommand("This message will be printed!")
 
   .. code-tab:: c++
 
-    frc2::PrintCommand("This message will be printed!")
+     frc2::PrintCommand("This message will be printed!")
 
 
-Dynamically Deciding What Command To Schedule
----------------------------------------------
+Determining Commands at Runtime
+-------------------------------
 
-Sometimes it's desired to run a command out of a few options based on sensor feedback or other data known only at runtime.
+Sometimes it's desired to run a command out of a few options based on sensor feedback or other data known only at runtime. This can be useful for determining an auto routine, or running a different command based on whether a game piece is present or not, and so on.
 
 SelectCommand
 ^^^^^^^^^^^^^
@@ -163,30 +163,30 @@ For this, ``SelectCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 
 .. note:: While the Java version of ``SelectCommand`` simply uses an ``Object`` as a key, the C++ version is templated on the key type.
 
-.. note:: An alternate version of ``SelectCommand`` simply takes a method that supplies the command to be run - this can be very succinct, but makes inferring the command’s requirements impossible, and so leaves the user responsible for manually adding the requirements to the SelectCommand.
+.. note:: The ``Supplier<Command>`` overload cannot infer requirements, so the user must be responsible for manually adding the requirements to the SelectCommand.
 
 .. tabs::
 
   .. group-tab:: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
-      :language: java
-      :lines: 20-45
-      :linenos:
-      :lineno-start: 20
+       :language: java
+       :lines: 20-45
+       :linenos:
+       :lineno-start: 20
 
   .. group-tab:: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
-      :language: c++
-      :lines: 25-44
-      :linenos:
-      :lineno-start: 25
+       :language: c++
+       :lines: 25-44
+       :linenos:
+       :lineno-start: 25
 
 ConditionalCommand
 ^^^^^^^^^^^^^^^^^^
 
-``ConditionalCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__) is a specialized version of this that decides between two commands using a boolean condition.
+``ConditionalCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__,`C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__) is a specialized version of ``SelectCommand`` that decides between two commands using a boolean condition.
 
 .. tabs::
 
@@ -204,7 +204,7 @@ ConditionalCommand
 Waiting For Delays
 ------------------
 
-Wait for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command group or between other robot actions.
+Waiting for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command group or between other robot actions.
 
 WaitCommand
 ^^^^^^^^^^^
@@ -248,12 +248,12 @@ WaitUntilCommand
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
 
-In combination with ``ParallelRaceGroup`` or ``ParallelDeadlineGroup``, this can be used to replace a command's end condition or add another one - in fact, that is what the ``until()`` decorator does under the hood.
+In combination with ``ParallelRaceGroup`` or ``ParallelDeadlineGroup``, this can be used to replace a command's end condition or add another one. In fact, that is what the ``until()`` decorator does under the hood.
 
 Scheduling Other Commands
 -------------------------
 
-By default, commands in command groups are run *through* the command group, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the group's requirements. While this is usually fine, sometimes it is undesirable for the entire command group to gain the requirements of a single command - a good solution is to "fork off" from the command group and schedule that command separately.
+By default, commands in command groups are run *through* the command group, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the group's requirements. While this is usually fine, sometimes it is undesirable for the entire command group to gain the requirements of a single command. A good solution is to "fork off" from the command group and schedule that command separately.
 
 ``ScheduleCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command and ends instantly.
 
