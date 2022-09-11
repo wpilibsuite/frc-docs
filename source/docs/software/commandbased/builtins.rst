@@ -44,7 +44,7 @@ InstantCommand
 RunCommand
 ^^^^^^^^^^
 
-``RunCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) accepts a single ``Runnable``/``std::function<void()>`` lambda that is called in ``execute()`` (once every scheduler loop) until the command is interrupted -- the command has no natural end condition; one can be added using :ref:`docs/software/commandbased/decorators:until/withInterrupt`.
+``RunCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) accepts a single ``Runnable``/``std::function<void()>`` lambda that is called in ``execute()`` (once every scheduler loop) until the command is interrupted -- the command has no natural end condition; one can be added using :ref:`docs/software/commandbased/decorators:until`.
 
 .. tabs::
 
