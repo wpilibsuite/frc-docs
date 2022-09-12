@@ -172,7 +172,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
       private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
         KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
         KitbotGearing.k10p71,        // 10.71:1
-        KitbotWheelSize.SixInch,     // 6" diameter wheels.
+        KitbotWheelSize.kSixInch,     // 6" diameter wheels.
         null                         // No measurement noise.
       );
 
