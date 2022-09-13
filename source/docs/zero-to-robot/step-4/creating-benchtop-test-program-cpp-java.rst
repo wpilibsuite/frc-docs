@@ -3,7 +3,7 @@ Creating your Benchtop Test Program (C++/Java)
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
-.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. There is an assumption that the user has already configured the device (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctre-phoenix.com/en/stable/>`__). REV examples will be coming soon.
+.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>`  and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctre-phoenix.com/en/stable/>`__). REV examples will be coming soon.
 
 Creating a New WPILib Project
 -----------------------------
