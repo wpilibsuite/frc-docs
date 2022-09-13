@@ -9,18 +9,22 @@ Create a Drive Train Subsystem
 ------------------------------
 
 .. image:: images/driving-with-joysticks-subsystem.png
+   :alt: Dragging subsystem from palette to tree
 
 Create a subsystem called Drive Train. Its responsibility will be to handle the driving for the robot base.
 
 .. image:: images/driving-with-joysticks-differential-drive.png
+   :alt: Dragging differential drive from palette to tree
 
 Inside the Drive Train create a Differential Drive object for a two motor drive. There is a left motor and right motor as part of the Differential Drive class.
 
 .. image:: images/driving-with-joysticks-speed-controller-group.png
+   :alt: Dragging motor controller group from palette to tree
 
 Since we want to use more then two motors to drive the robot, inside the Differential Drive, create two Motor Controller Groups. These will group multiple motor controllers so they can be used with Differential Drive.
 
 .. image:: images/driving-with-joysticks-speed-controller.png
+   :alt: Dragging motor controller from pallet to tree
 
 Finally, create two Motor Controllers in each Motor Controller Group.
 
@@ -28,6 +32,7 @@ Add the Joysticks to the Operator Interface
 -------------------------------------------
 
 .. image:: images/driving-with-joysticks-joysticks.png
+   :alt: dragging joystick from palette to tree
 
 Add two joysticks to the Operator Interface, one is the left stick and the other is the right stick. The y-axis on the two joysticks are used to drive the robots left and right sides.
 
@@ -319,14 +324,17 @@ Read Joystick Values and Call the Subsystem Methods
 ---------------------------------------------------
 
 .. image:: images/driving-with-joysticks-command.png
+   :alt: dragging a command from palette to the tree
 
 Create a command, in this case called Tank Drive. Its purpose will be to read the joystick values and send them to the Drive Base subsystem. Notice that this command Requires the Drive Train subsystem. This will cause it to stop running whenever anything else tries to use the Drive Train.
 
 .. image:: images/driving-with-joysticks-command-parameters.png
+   :alt: parameter dialog box with DoubleSupplier parameters added
 
 Create two parameters (``DoubleSupplier`` for Java or ``std::function<double()>`` for C++) for the left and right speeds.
 
 .. image:: images/driving-with-joysticks-command-parameters-presets.png
+   :alt: paramet preset dialog box with parameters entered
 
 Create a parameter preset to retrive joystick values. Java: For the left parameter enter ``() -> getJoystick1().getY()`` and for right enter ``() -> getJoystick2().getY()``. C++: For the left parameter enter ``[this] {return getJoystick1()->GetY();}`` and for the right enter ``[this] {return getJoystick2()->GetY();}``
 
@@ -527,10 +535,12 @@ Make Default Command
 --------------------
 
 .. image:: images/driving-with-joysticks-default-command.png
+   :alt: setting default command for subsystem
 
 The last step is to make the Tank Drive command be the "Default Command" for the Drive Train subsystem. This means that whenever no other command is using the Drive Train, the Joysticks will be in control. This is probably the desirable behavior. When the autonomous code is running, it will also require the drive train and interrupt the Tank Drive command. When the autonomous code is finished, the DriveWithJoysticks command will restart automatically (because it is the default command), and the operators will be back in control. If you write any code that does teleop automatic driving, those commands should also "require" the DriveTrain so that they too will interrupt the Tank Drive command and have full control.
 
 .. image:: images/driving-with-joysticks-default-command-parameters.png
+   :alt: applying parameter preset to command
 
 The final step is to choose the joystick parameter preset previously set up.
 
