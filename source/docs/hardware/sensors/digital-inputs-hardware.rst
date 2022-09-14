@@ -21,7 +21,7 @@ Connecting to the roboRIO DIO ports
 
 The roboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the DIO ports - there is a constant 5V potential difference between the "power" and the "ground" pins [3]_ - the "power" pin corresponds to the "high" state (5V), and the "ground" to "low" (0V).  The signal pin is the pin on which the signal is actually measured (or, when used as an output, the pin that sends the signal).
 
-All DIO ports have built in "pull-up" resistors between the power pins and the signal pins - these ensure that when the signal pin is "floating" (i.e. is not connected to any circuit), they consistently remain in a "high" state.
+All DIO ports have built-in "pull-up" resistors between the power pins and the signal pins - these ensure that when the signal pin is "floating" (i.e. is not connected to any circuit), they consistently remain in a "high" state.
 
 Connecting a simple switch to a DIO port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,6 +54,6 @@ Some sensors (such as :doc:`quadrature encoders <encoders-hardware>`) may need t
 Footnotes
 ---------
 
-.. [1] More-precisely, the signal reads "high" when it rises above 2.0V, and reads "low" when it falls back below 0.8V - behavior between these two thresholds is not guaranteed to be consistent.
-.. [2] The roboRIO also offers 3.3V logic via the "MXP" expansion port; however, use of this is far less-common than the 5V.
+.. [1] More precisely, the signal reads "high" when it rises above 2.0V, and reads "low" when it falls back below 0.8V - behavior between these two thresholds is not guaranteed to be consistent.
+.. [2] The roboRIO also offers 3.3V logic via the "MXP" expansion port; however, the use of this is far less common than the 5V.
 .. [3] All power pins are actually connected to a single rail, as are all ground pins - there is no need to use the power/ground pins corresponding to a given signal pin.
