@@ -56,7 +56,7 @@ Startup Settings
 -  Enable Console Out - This enables the on-board RS232 port to be used
    as a Console output. It is recommended to leave this enabled unless
    you are using this port to talk to a serial device (note that this
-   port uses RS232 levels and and should not be connected to many
+   port uses RS232 levels and should not be connected to many
    microcontrollers which use TTL levels). **Default is checked.**
 -  Disable RT Startup App - Checking this box disables code from running
    at startup. This may be used for troubleshooting if you find the

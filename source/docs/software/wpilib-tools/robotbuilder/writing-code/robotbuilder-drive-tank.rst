@@ -316,7 +316,7 @@ Create a Method to Write the Motors on the Subsystem
                  m_drive.TankDrive(left, right);
              }
 
-Create a method that takes the joystick inputs, in this case the the left and right driver joystick. The values are passed to the DifferentialDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
+Create a method that takes the joystick inputs, in this case the left and right driver joystick. The values are passed to the DifferentialDrive object that in turn does tank steering using the joystick values. Also create a method called stop() that stops the robot from driving, this might come in handy later.
 
 .. note:: Some RobotBuilder output has been removed for this example for clarity
 
