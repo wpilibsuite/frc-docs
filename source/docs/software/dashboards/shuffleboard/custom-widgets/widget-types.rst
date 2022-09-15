@@ -54,7 +54,7 @@ A type of widget that only supports a single data type. This interface is parame
 AnnotatedWidget
 ---------------
 
-This interface implements ``getDataTypes()`` and ``getName()`` by looking at the the ``@Description`` annotation on the implementing class. This *requires* the annotation to be present, or the widget will not be able to be loaded and used.
+This interface implements ``getDataTypes()`` and ``getName()`` by looking at the ``@Description`` annotation on the implementing class. This *requires* the annotation to be present, or the widget will not be able to be loaded and used.
 
 .. code:: java
 

@@ -5,7 +5,7 @@ Introduction to PID
 
 .. note:: For a guide on implementing PID control with WPILib, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
-This page explains the conceptual and mathematical workings of a PID controller. :ref:`A video explanation from WPI is is also available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
+This page explains the conceptual and mathematical workings of a PID controller. :ref:`A video explanation from WPI is also available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
 
 What is a PID Controller?
 -------------------------
