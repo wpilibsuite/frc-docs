@@ -341,6 +341,9 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
+   docs/hardware/kit-of-parts/index
+   docs/hardware/robot-quick-build/index
+   docs/hardware/sensors/index
 
 .. toctree::
    :maxdepth: 1
