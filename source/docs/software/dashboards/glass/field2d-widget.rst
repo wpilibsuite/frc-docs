@@ -107,7 +107,7 @@ One usage of customizing the pose style is converting the previously shown ``tra
 .. image:: images/changing-style-line.png
    :alt: Selecting the "style" dropdown and then selecting "line".
 
-Now, uncheck the :guilabel:`Arrows` checkbox. This will cause cause our trajectory to look like a nice and fluid line!
+Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to look like a nice and fluid line!
 
 .. image:: images/unchecked-arrow-trajectory.png
    :alt: Unchecked arrows checkbox to showcase fluid line.

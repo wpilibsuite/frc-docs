@@ -81,7 +81,7 @@ However, our feedforward equation relates *velocity* and *acceleration* to volta
 
 The resulting behavior from the feedforward controller is to output a single "voltage spike" when the position setpoint changes (corresponding to a single loop iteration of very high velocity), and then zero voltage (because it is assumed that the system has already reached the setpoint).  In practice, we can see in the simulation that this results in an initial "impulse" movement towards the target position, that stops at some indeterminate position in-between.  This kind of response is called a "kick," and is generally seen as undesirable.
 
-You may notice that *smooth* motion below the turret's maximum achievable speed can be followed accurately in the simulation with feedforward alone.  This is misleading, however, because no real mechanism perfectly obeys its feedforward equation.  With the "system noise" option enabled, we can see that even smooth, slow motion eventually results in compounding position errors when only only feedforward control is used.  To accurately converge to the setpoint, we need to use a feedback (PID) controller.
+You may notice that *smooth* motion below the turret's maximum achievable speed can be followed accurately in the simulation with feedforward alone.  This is misleading, however, because no real mechanism perfectly obeys its feedforward equation.  With the "system noise" option enabled, we can see that even smooth, slow motion eventually results in compounding position errors when only feedforward control is used.  To accurately converge to the setpoint, we need to use a feedback (PID) controller.
 
 Pure Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~

@@ -263,7 +263,7 @@ Table of Contents (TOC)
 
 Each category should contain an ``index.rst``. This index file should contain a ``maxdepth`` of ``1``. Sub-categories are acceptable, with a ``maxdepth`` of 1.
 
-The category ``index.rst`` file can then be added added to the root index file located at ``source/index.rst``.
+The category ``index.rst`` file can then be added to the root index file located at ``source/index.rst``.
 
 Examples
 --------

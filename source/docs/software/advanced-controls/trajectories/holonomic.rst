@@ -38,7 +38,7 @@ Getting Adjusted Velocities
 ---------------------------
 The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal is comprised of a desired pose, linear velocity, and heading.
 
-.. note:: The "goal pose" represents the position that the robot should be at at a particular timestamp when tracking the trajectory. It does NOT represent the trajectory's endpoint.
+.. note:: The "goal pose" represents the position that the robot should be at a particular timestamp when tracking the trajectory. It does NOT represent the trajectory's endpoint.
 
 The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
 
