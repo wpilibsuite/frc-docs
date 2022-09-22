@@ -223,7 +223,12 @@ user_options = [
 
 # Handle custom javascript
 # We generally want to group, merge, and minify the js files
-js_build_dir = os.path.dirname(__file__)
+
+if 'data' in globals():
+    js_build_dir = BASEDIR #allow an alternate basedir if set into globals by another script
+else:
+    js_build_dir = os.path.dirname(__file__) #otherwise, just use this file's directory as the build idr.
+
 js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
 js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
 
