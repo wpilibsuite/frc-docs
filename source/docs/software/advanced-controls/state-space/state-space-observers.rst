@@ -11,7 +11,7 @@ This image shows flywheel velocity measurements over time, run through a variety
 Gaussian Functions
 ------------------
 
-Kalman filters utilize `Gaussian distributions <https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to model the noise in a process. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
+Kalman filters utilize a :term:`Gaussian distribution` to model the noise in a process [1]_. In the case of a Kalman filter, the estimated :term:`state` of the system is the mean, while the variance is a measure of how certain (or uncertain) the filter is about the true :term:`state`.
 
 .. figure:: images/normal-distribution.png
   :width: 600
@@ -119,3 +119,8 @@ WPILib's Kalman Filter classes' constructors take a linear system, a vector of p
          :lines: 47-52
          :linenos:
          :lineno-start: 47
+
+Footnotes
+---------
+
+.. [1] In a real robot, noise comes from all sorts of sources. Stray electromagnetic radiation adds extra voltages to sensor readings, vibrations and temperature variations throw off inertial measurement units, gear lash causes encoders to have inaccuracies when directions change... all sorts of things. It's important to realize that, by themselves, each of these sources of "noise" aren't guaranteed to follow any pattern. Some of them might be the "white noise" random vibrations you've probably heard on the radio. Others might be "pops" or single-loop errors. Others might be nominally zero, but strongly correlated with events on the robot. However, the :term:`Central Limit Theorem` shows mathematically that regardless of how the individual sources of noise are distributed, as we add more and more of them up their combined effect eventually is distributed like a Gaussian. Since we do not know the exact individual sources of noise, the best choice of a model we can make is indeed that Gaussian function.

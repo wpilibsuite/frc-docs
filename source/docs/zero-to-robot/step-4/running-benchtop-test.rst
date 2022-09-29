@@ -15,7 +15,7 @@ You should create and download a Benchtop Test Program as described for your pro
 Tethered Operation
 ------------------
 
-Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the the program was successfully deployed and that the driver station and roboRIO are properly configured.
+Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the program was successfully deployed and that the driver station and roboRIO are properly configured.
 
 The roboRIO should be powered on and connected to the PC over Ethernet or USB.
 

@@ -136,7 +136,7 @@ C++ Intellisense - Files Open on Launch Don't Work Properly
 
   #. Close all  files in VS Code, but leave VS Code open
   #. Delete c_cpp_properties.json file in the .vscode folder, if it exists
-  #. Run the "Refresh C++ Intellisense" command in vscode.
+  #. Run the "Refresh C++ Intellisense" command in VS Code.
   #. In the bottom right you should see something that looks like a platform (linuxathena or windowsx86-64 etc). If it’s not linuxathena click it and set it to linuxathena (release)
   #. Wait ~1 min
   #. Open the main cpp file (not a header file). Intellisense should now be working
@@ -240,4 +240,4 @@ Shuffleboard aborts while launching
 
 **Workaround:** Manually launch Shuffleboard from the commandline without using the shortcut or script. On Windows run ``c:\Users\Public\wpilib\2022\jdk\bin\java -jar c:\Users\Public\wpilib\2022\tools\shuffleboard.jar``. On Linux or macOS, run ``~/wpilib/2022/jdk/bin/java -jar ~/wpilib/2022/tools/shuffleboard.jar``
 
-.. note:: This issue may affect any WPILib java tool, as they use the same scripts to open. If you have issues with PathWeaver, RobotBuilder, or SmartDashboard replace ``shuffleboard.jar`` above with ``PathWeaver.jar``, ``RobotBuilder.jar`` or ``SmartDashboard.jar``
+.. note:: This issue may affect any WPILib Java tool, as they use the same scripts to open. If you have issues with PathWeaver, RobotBuilder, or SmartDashboard replace ``shuffleboard.jar`` above with ``PathWeaver.jar``, ``RobotBuilder.jar`` or ``SmartDashboard.jar``

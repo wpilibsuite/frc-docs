@@ -9,9 +9,9 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXOPTS=-W --keep-going
+set SPHINXOPTS=-W --keep-going -q
 set LINTER=doc8
-set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
+set LINTEROPTS=--ignore D001 --ignore D004
 set SIZECHECKER=python -m scripts.imagesizechecker
 set CONFEXCLUDE=--exclude-file source/conf.py
 set SIZEMAX=500

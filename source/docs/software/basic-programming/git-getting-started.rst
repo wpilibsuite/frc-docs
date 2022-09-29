@@ -7,7 +7,7 @@ Git Version Control Introduction
 
 `Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
-- Separate testing environments into *branches*
+- Separation of testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
 - Ability to manage *commits* in various ways, including combining them
 - Various other features, see `here <https://git-scm.com/about>`__
@@ -28,16 +28,16 @@ You have to download and install Git from the following links:
 Git Vocabulary
 --------------
 
-Git revolves around several core commands:
+Git revolves around several core data structures and commands:
 
 - **Repository:** the data structure of your code, including a ``.git`` folder in the root directory
-- **Commit:** a particular saved state of the repository, this includes all files and additions
-- **Branch:** a means of separating various commits, having a unique history. This is primarily used for separating development and stable branches.
+- **Commit:** a particular saved state of the repository, which includes all files and additions
+- **Branch:** a means of grouping a set of commits. Each branch has a unique history. This is primarily used for separating development and stable branches.
 - **Push:** update the remote repository with your local changes
 - **Pull:** update your local repository with the remote changes
-- **Clone:** retrieving a local copy of a repository to modify
-- **Fork:** duplicating a pre-existing repository to modify, and to compare against the original
-- **Merge:** combining various changes from different branches/commits/forks into a single history
+- **Clone:** retrieve a local copy of a repository to modify
+- **Fork:** duplicate a pre-existing repository to modify, and to compare against the original
+- **Merge:** combine various changes from different branches/commits/forks into a single history
 
 Repository
 ----------
@@ -53,14 +53,14 @@ Git repositories usually consist of:
 Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You can store the repository locally, or through a remote. A remote being the cloud, or possibly another storage medium that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+You can store the repository locally, or through a remote -- a remote being the cloud, or possibly another storage medium or server that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
 .. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_ and `Bitbucket <https://bitbucket.org/>`_ are a few alternatives to Github.
 
 Creating a GitHub Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go ahead and create a GitHub account by visiting the `website <https://github.com>`_ and following the own screen prompts.
+Go ahead and create a GitHub account by visiting the `website <https://github.com>`_ and following the on-screen prompts.
 
 .. image:: images/git-getting-started/create-account.png
    :alt: How to create a new GitHub account.
@@ -93,7 +93,7 @@ You should see a screen similar to this
 .. image:: images/git-getting-started/quick-setup.png
    :alt: The quick setup screen after creating a repository.
 
-.. note:: The keyboard shortcut :kbd:`Ctrl+~` can be used to open a terminal in Visual Studio Code.
+.. note:: The keyboard shortcut :kbd:`Ctrl+~` can be used to open a terminal in Visual Studio Code for Windows.
 
 Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
 
@@ -152,7 +152,7 @@ In the previous example, we created a file called README.md. Open that file in y
      1 file changed, 2 insertions(+), 0 deletions(-)
     > git push
 
-.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://chris.beams.io/posts/git-commit/>`_.
+.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://cbea.ms/git-commit/>`_.
 
 Git Pull
 ^^^^^^^^
@@ -166,15 +166,18 @@ Run: ``git pull``
 Git Add
 ^^^^^^^
 
-This command adds a selected file(s) to a commit. To commit every file/folder that isn't excluded via *gitignore*.
+This command "stages" the specified file(s) so that they will be included in the next commit.
 
-Run: ``git add FILENAME.txt`` where FILENAME.txt is the name and extension of the file to add to a commit.
-Run: ``git add .`` will add every untracked, unexcluded file when ran in the root of the repository.
+For a single file, run ``git add FILENAME.txt`` where FILENAME.txt is the name and extension of the file to add.
+To add every file/folder that isn't excluded via *gitignore*,
+run ``git add .``.  When run in the root of the repository this command will stage every untracked, unexcluded file.
 
 Git Commit
 ^^^^^^^^^^
 
-This command creates the commit and stores it locally. This saves the state and adds it to the repositories history.
+This command creates the commit and stores it locally. This saves the state and adds it to the repository's history.
+The commit will consist of whatever changes ("diffs") were made to the staged files since the last commit.
+It is required to specify a "commit message" explaining why you changed this set of files or what the change accomplishes.
 
 Run: ``git commit -m "type message here"``
 
@@ -188,7 +191,7 @@ Run: ``git push``
 Branches
 --------
 
-Branches are a similar to parallel worlds to Git. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
+Branches in Git are similar to parallel worlds. They start off the same, and then they can "branch" out into different varying paths. Consider the Git control flow to look similar to this.
 
 .. image:: diagrams/branches.drawio.svg
    :alt: A branch workflow state diagram.
@@ -210,14 +213,14 @@ Run: ``git checkout branch-name`` where branch-name is the branch that was previ
 Merging
 -------
 
-In scenarios where you want to copy one branches history into another, you can merge them. A merge is done by calling ``git merge branch-name`` with branch-name being the name of the branch to merge from. It is automatically merged in the current active branch.
+In scenarios where you want to copy one branches history into another, you can merge them. A merge is done by calling ``git merge branch-name`` with branch-name being the name of the branch to merge from. It is automatically merged into the current active branch.
 
-It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits. That merge may look like the below.
+It's common for a remote repository to contain work (history) that you do not have. Whenever you run ``git pull``, it will attempt to automatically merge those commits into your local copy. That merge may look like the below.
 
 .. image:: diagrams/merge-conflict.drawio.svg
    :alt: A merge workflow state diagram.
 
-However, in the above example, what if File 1 was modified by both branch FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict will can be resolved by editing the conflicting file. In the example, we would need to edit File 1 to keep the history or changes that we want. After that has been done. Simply re-add, re-commit, and then push your changes.
+However, in the above example, what if File A was modified by both branch Feature1 and Feature2? This is called a **merge conflict**. A merge conflict can be resolved by editing the conflicting file. In the example, we would need to edit File A to keep the history or changes that we want. After that has been done, simply re-add, re-commit, and then push your changes.
 
 Resets
 ------
@@ -252,7 +255,7 @@ In the situation that a repository is already created and stored on a remote, yo
 
    git clone https://github.com/myrepo.git
 
-where ``myrepo.git`` is replaced with your git repo. If you follow this, you can skip to :ref:commits <docs/software/basic-programming/git-getting-started:Commits>`.
+where ``myrepo.git`` is replaced with your git repo. If you follow this, you can skip to :ref:`commits <docs/software/basic-programming/git-getting-started:Commits>`.
 
 Updating a Fork
 ^^^^^^^^^^^^^^^
@@ -269,7 +272,7 @@ Gitignore
 
 A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
 
-Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__
+Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__.
 
 Hiding a Folder
 ^^^^^^^^^^^^^^^

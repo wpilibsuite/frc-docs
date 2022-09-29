@@ -38,7 +38,7 @@ You will now be greeted with a text editor. Replace all the default text with th
         runs-on: ubuntu-latest
 
         # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2022-18.04
+        container: wpilib/roborio-cross-ubuntu:2022-20.04
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
@@ -90,7 +90,7 @@ This block of code dictates when the Action will run. Currently, the action will
         runs-on: ubuntu-latest
 
         # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2022-18.04
+        container: wpilib/roborio-cross-ubuntu:2022-20.04
 
 Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one "build" job.
 

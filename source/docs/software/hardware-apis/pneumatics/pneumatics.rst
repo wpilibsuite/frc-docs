@@ -67,10 +67,10 @@ Pressure is created using a pneumatic compressor and stored in pneumatic tanks. 
 
 The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor (``enableAnalog`` method).
 
-Solenoid control
+Solenoid Control
 ----------------
 
-FRC teams use solenoids to perform a variety of tasks, from shifting gearboxes to operating robot mechanisms. A solenoid is a valve used to electronically switch a pressurized air line "on" or "off". For more information on solenoids, see `this wikipedia article <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the LEDs on the PCM or PH (which indicates if the valve is "on" or not). When un-powered, solenoids can be manually actuated with the small button on the solenoid.
+FRC teams can use a :term:`solenoid valve` as part of performing a variety of tasks, including shifting gearboxes and moving robot mechanisms. A solenoid valve is used to electronically switch a pressurized air line "on" or "off". Solenoids are controlled by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the LEDs on the PCM or PH (which indicates if the valve is "on" or not). When un-powered, solenoids can be manually actuated with the small button on the valve body.
 
 Single acting solenoids apply or vent pressure from a single output port. They are typically used either when an external force will provide the return action of the cylinder (spring, gravity, separate mechanism) or in pairs to act as a double solenoid. A double solenoid switches air flow between two output ports (many also have a center position where neither output is vented or connected to the input). Double solenoid valves are commonly used when you wish to control both the extend and retract actions of a cylinder using air pressure. Double solenoid valves have two electrical inputs which connect back to two separate channels on the solenoid breakout.
 
@@ -102,7 +102,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
 Double Solenoids in WPILib
 --------------------------
 
-Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__. These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to `kOff` (neither output activated), `kForward` (forward channel enabled) or `kReverse` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-standard CAN ID.
+Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to `kOff` (neither output activated), `kForward` (forward channel enabled) or `kReverse` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-standard CAN ID.
 
 .. tabs::
 

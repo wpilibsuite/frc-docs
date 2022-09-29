@@ -4,14 +4,12 @@ Viewing Diagnostics
 Goodness-of-Fit Metrics
 -----------------------
 
-There are three numerical accuracy metrics that are computed with this tool: acceleration r-squared, simulated velocity r-squared, and standard deviation of the simulated velocity error.
+There are three numerical accuracy metrics that are computed with this tool: acceleration :term:`r-squared`, simulated velocity r-squared, and the simulated velocity :term:`RMSE`.
 
 .. image:: images/viewing-metrics.png
    :alt: Analysis accuracy metrics
 
-The `r-squared <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ metric refers to the goodness of fit of the tool's `OLS (Ordinary Least Squares) fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__.  The `RMSE (Root Mean Squared Error) <https://en.wikipedia.org/wiki/Root-mean-square_deviation>`__ is the error (in the measured units) between the collected velocities and the predicted velocities from a simulation based on the feedforward gains.
-
-The acceleration r-squared is the fraction of the variance in measured acceleration (used as the independent variable in the SysId regression) explained by the linear model.  This can be quite variable variable, because acceleration is very susceptible to system noise.  Assuming the other fit metrics are acceptable, values near ``1`` indicate an "ideal" mechanism with few disturbances, while values near ``0`` indicate a noisy mechanism with substantial physical vibrations/losses.
+The acceleration r-squared is the fraction of the variance in measured acceleration (used as the independent variable in the SysId regression) explained by the linear model.  This can be quite variable, because acceleration is very susceptible to system noise.  Assuming the other fit metrics are acceptable, values near ``1`` indicate an "ideal" mechanism with few disturbances, while values near ``0`` indicate a noisy mechanism with substantial physical vibrations/losses.
 
 The simulated velocity r-squared is the fraction of the variance in measured velocity explained by a noiseless simulation of the motor movement stepped forward with the constants determined from the regression.  A value north of ``.9`` indicates a good fit.
 

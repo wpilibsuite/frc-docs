@@ -24,7 +24,7 @@ Several examples in the old command-based framework involved code like this:
      AddSequential(new OpenClaw());
    }
 
-In the command-group above, the component commands of the command group were being heap allocated and passed into ``AddSequential`` all in the same line. This meant that that user had no reference to that object in memory and therefore had no means of freeing the allocated memory once the command group ended. The command group itself never freed the memory and neither did the command scheduler. This led to memory leaks in robot programs (i.e. memory was allocated on the heap but never freed).
+In the command-group above, the component commands of the command group were being heap allocated and passed into ``AddSequential`` all in the same line. This meant that user had no reference to that object in memory and therefore had no means of freeing the allocated memory once the command group ended. The command group itself never freed the memory and neither did the command scheduler. This led to memory leaks in robot programs (i.e. memory was allocated on the heap but never freed).
 
 This glaring problem was one of the reasons for the rewrite of the framework. A comprehensive ownership model was introduced with this rewrite, along with the usage of smart pointers which will automatically free memory when they go out of scope.
 

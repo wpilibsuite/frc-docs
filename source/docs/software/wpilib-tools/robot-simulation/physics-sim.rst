@@ -20,8 +20,8 @@ The following physics simulation classes are available in WPILib:
 - LinearSystemSim, for modeling systems with linear dynamics
 - FlywheelSim
 - DifferentialDrivetrainSim
-- ElevatorSim, which models gravity
-- SingleJointedArmSim, which models gravity
+- ElevatorSim, which models gravity in the direction of elevator motion
+- SingleJointedArmSim, which models gravity proportional to the arm angle
 - BatterySim, which simply estimates battery voltage sag based on drawn currents
 
 All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
@@ -33,7 +33,7 @@ Usage in User Code
 
 The following is available from the WPILib :code:`elevatorsimulation` `example project <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__.
 
-In addition to standard objects such as motors and encoders, we instantiate our elevator simulator using known constants such as carriage mass and gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the distance and rate read by our our :code:`Encoder`.
+In addition to standard objects such as motors and encoders, we instantiate our elevator simulator using known constants such as carriage mass and gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the distance and rate read by our :code:`Encoder`.
 
 In the following example, we simulate an elevator given the mass of the moving carriage (in kilograms), the radius of the drum driving the elevator (in meters), the gearing reduction between motor and drum as output over input (so usually greater than one), the minimum and maximum height of the elevator (in meters), and some random noise to add to our position estimate.
 

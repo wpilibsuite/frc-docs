@@ -6,7 +6,7 @@ This article provides a summary of changes from the original command-based frame
 Package Location
 ----------------
 
-The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++.  The old command-based framework is still available in the original location. The new framework must be installed using the instructions: :ref:`docs/software/vscode-overview/3rd-party-libraries:WPILib Command Libraries`.
+The new command-based framework is located in the ``wpilibj2`` package for Java, and in the ``frc2`` namespace for C++. The new framework must be installed using the instructions: :ref:`docs/software/vscode-overview/3rd-party-libraries:WPILib Command Libraries`.
 
 Major Architectural Changes
 ---------------------------
@@ -70,7 +70,7 @@ Changes to Command
 * ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overrideable ``runsWhenDisabled()`` method.  Commands that should run when disabled should override this method to return true.
 * ``void setInterruptible(boolean interruptible)`` has been removed; interruptibility is no longer an innate property of commands, and can be set when the command is scheduled.
 * Several :ref:`"decorator" methods <docs/software/commandbased/convenience-features:Command Decorator Methods>` have been added to allow easy inline modification of commands (e.g. adding a timeout).
-* (C++ only) In order to allow the decorators to work with the command ownership model, a `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is used via the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__.  Any user-defined Command subclass ``Foo`` *must* extend ``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class.
+* (C++ only) In order to allow the decorators to work with the command ownership model, a :term:`CRTP` is used via the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__.  Any user-defined Command subclass ``Foo`` *must* extend ``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class.
 
 Changes to PIDSubsystem/PIDCommand
 ----------------------------------

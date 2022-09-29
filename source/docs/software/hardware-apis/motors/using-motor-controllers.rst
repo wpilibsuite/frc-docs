@@ -8,6 +8,8 @@ Using PWM Motor Controllers
 
 PWM motor controllers can be controlled in the same way as a CAN motor controller. For a more detailed background on *how* they work, see :doc:`pwm-controllers`. To use a PWM motor controller, simply use the appropriate motor controller class provided by WPI and supply it the port the motor controller(s) are plugged into on the roboRIO. All approved motor controllers have WPI classes provided for them.
 
+.. note:: The ``Spark`` and ``VictorSP`` classes are used here as an example; other PWM motor controller classes have exactly the same API.
+
 .. tabs::
 
    .. code-tab:: java
@@ -29,6 +31,16 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
       frc::VictorSP victor{0}; // 0 is the RIO PWM port this is connected to
 
       victor.Set(0.6); // the % output of the motor, between -1 and 1
+
+   .. code-tab:: python
+
+      spark = wpilib.Spark(0) # 0 is the RIO PWM port this is connected to
+
+      spark.set(-0.75) # the % output of the motor, between -1 and 1
+
+      victor = wpilib.VictorSP(0) # 0 is the RIO PWM port this is connected to
+
+      victor.set(0.6) # the % output of the motor, between -1 and 1
 
 
 CAN Motor Controllers

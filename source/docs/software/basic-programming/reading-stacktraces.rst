@@ -14,7 +14,7 @@ What's a "Stack Trace"?
 
 The ``unexpected error has occurred`` message is a signal that a *stack trace* has been printed out.
 
-In Java and C++, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data structure is used to store information about which function or method is currently being executed.
+In Java and C++, the :term:`call stack` data structure is used to store information about which function or method is currently being executed.
 
 A *stack trace* prints information about what was on this stack when the unhandled exception occurred. This points you to the lines of code which were running just before the problem happened. While it doesn't always point you to the exact *root cause* of your issue, it's usually the best place to start looking.
 
@@ -129,7 +129,7 @@ Often, just looking in (or near) the problematic location in code will be fruitf
 
 A key strategy for analyzing code is to ask the following questions:
 
- * When was the last time the code "worked" (IE, didn't have this particular error)?
+ * When was the last time the code "worked" (I.e., didn't have this particular error)?
  * What has changed in the code between the last working version, and now?
 
 Frequent testing and careful code changes help make this particular strategy more effective.
@@ -142,7 +142,7 @@ Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single
 Search for More Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Google <https://google.com>`_ is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, how it comes about, and potential fixes.
+`Google <https://www.google.com/>`_ is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, how it comes about, and potential fixes.
 
 Seeking Outside Help
 ^^^^^^^^^^^^^^^^^^^^
@@ -375,7 +375,7 @@ When run, you'll see output that looks like this:
 Fixing Divide By Zero Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Divide By Zero issues can be fixed in a number of ways. It's important to start by thinking about what a zero in the denominator of your calculation _means_. Is it plausible? Why did it happen in the particular case you saw?
+Divide By Zero issues can be fixed in a number of ways. It's important to start by thinking about what a zero in the denominator of your calculation *means*. Is it plausible? Why did it happen in the particular case you saw?
 
 Sometimes, you just need to use a different number other than 0.
 
@@ -426,7 +426,7 @@ Finally, changing variable types to be ``float`` or ``double`` can help you get 
 HAL Resource Already Allocated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A very common FRC-specific error occurs when the code attempts to put two hardware-related on the same HAL resource (usually, roboRIO IO pin.)
+A very common FRC-specific error occurs when the code attempts to put two hardware-related entities on the same HAL resource (usually, roboRIO IO pin).
 
 For example, consider the following code:
 
@@ -503,7 +503,7 @@ When run, you'll see output that looks like this:
 
       Looking at our stack trace, we see two stack traces. The first stack trace shows that the first allocation occurred in ``Robot.java:25``. The second stack trace shows that the error *actually* happened deep within WPILib. However, we should start by looking in our own code. Halfway through the stack trace, you can find a reference to the last line of the team's robot code that called into WPILib: ``Robot.java:25``.
 
-      Taking a peek at the code, we see line 24 is where the first motor controller is declared and line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposefully generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
+      Taking a peek at the code, we see line 24 is where the first motor controller is declared and line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposely generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
    .. group-tab:: C++
 

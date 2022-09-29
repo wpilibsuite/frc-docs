@@ -16,6 +16,9 @@
 
 import sys
 import os
+import glob
+from jsmin import jsmin
+
 
 sys.path.append(os.path.abspath("."))
 sys.path.append(os.path.abspath("./frc-docs/source"))
@@ -23,7 +26,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2022, FIRST and other WPILib Contributors"
+copyright = "2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
 version = "2022"
 
@@ -53,6 +56,10 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx_panels",
+    "sphinx.ext.viewcode",
+    "sphinx_tabs.tabs",
+    "sphinx-prompt",
+    "sphinx_toolbox.collapse",
 ]
 
 local_extensions = [
@@ -108,6 +115,9 @@ ogp_image = (
     "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
 )
 
+# Configure photofinish ci mode
+photofinish_ci_only = True
+
 # Enables ChiefDelphi support
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
@@ -138,6 +148,7 @@ linkcheck_ignore = [
     r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
     r".*wpilibpi.local.*",
     r".*java.com/en/download/help/locale.xml.*",
+    r".*playingwithfusion.com/contactus.php.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -210,6 +221,51 @@ user_options = [
     ("warning-is-error", True),
 ]
 
+# Handle custom javascript
+# We generally want to group, merge, and minify the js files
+js_build_dir = os.path.dirname(__file__)
+js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
+js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
+
+
+debugJS = False  # flip to true to make the output js more readable
+
+
+def mergeAndMinify(sourceDir, outputFile):
+    with open(outputFile, "w") as outf:
+        inFileNames = glob.glob(sourceDir)
+        # It is not trivial to figure out which order to include the javascript
+        # source files into the final minified file.
+        # Current low-bar solution - assume file names are prefixed with numbers,
+        # such that a sort puts them in the right order.
+        inFileNames.sort()
+        for inFileName in inFileNames:
+            with open(inFileName, "r") as inf:
+                if not debugJS:
+                    # Minify each file independently - again, low bar solution for now
+                    minified = jsmin(inf.read())
+                    outf.write(minified)
+                    outf.write("\n")
+                else:
+                    # Verbose, no minify
+                    outf.write("\n\n\n")
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write("//**    {}\n".format(inFileName))
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write(
+                        "//*******************************************************\n"
+                    )
+                    outf.write("\n")
+                    outf.write(inf.read())
+                    outf.write("\n")
+
 
 def setup(app):
     app.add_css_file("css/frc-rtd.css")
@@ -231,6 +287,13 @@ def setup(app):
 
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
+
+    # Generate merged/minified PID tuning source
+    mergeAndMinify(js_pid_src_path, js_pid_output_file)
+
+    # Add interactive PID tuning
+    app.add_js_file("js/pid-tune.js")
+    app.add_css_file("css/pid-tune.css")
 
 
 # -- Options for latex generation --------------------------------------------
@@ -267,3 +330,6 @@ sphinx_tabs_valid_builders = ["epub", "linkcheck"]
 gettext_compact = False
 locale_dirs = ["locale/"]
 rtl_locale = ["he"]
+
+github_username = ""
+github_repository = ""

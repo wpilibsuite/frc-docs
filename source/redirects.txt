@@ -264,3 +264,4 @@
 "docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst" "docs/software/pathplanning/system-identification/viewing-diagnostics.rst"
 "docs/software/pathplanning/pathweaver/creating-path-groups.rst" "docs/software/pathplanning/pathweaver/creating-autonomous-routines.rst"
 "docs/software/dashboards/smartdashboard/setting-robot-preferences-from-smartdashboard.rst" "docs/software/basic-programming/robot-preferences.rst"
+"docs/software/advanced-controls/introduction/tuning-pid-controller.rst" "docs/software/advanced-controls/introduction/tuning-flywheel.rst"

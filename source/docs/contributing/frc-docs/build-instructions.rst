@@ -13,9 +13,9 @@ Windows
 
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
-- `Python 3.9 <https://www.python.org/downloads/>`__ (Python >= 3.10 is incompatible)
+- `Python 3.9 <https://www.python.org/downloads/>`__
 - `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
-- `Perl <http://strawberryperl.com/>`__
+- `Perl <https://strawberryperl.com/>`__
 - `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
@@ -73,7 +73,7 @@ The link checker makes sure that all links in the documentation resolve. This **
 Image Size Check
 ^^^^^^^^^^^^^^^^
 
-Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
+Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check **will** fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
 Redirect Check
 ^^^^^^^^^^^^^^
@@ -115,19 +115,19 @@ frc-docs uses `Poetry <https://python-poetry.org/>`__ to manage its dependencies
 Installing Poetry
 ^^^^^^^^^^^^^^^^^
 
-Ensure that Poetry is installed. Run the following command: ``pip install poetry``
+Ensure that Poetry is installed. Run the following command: ``pip install poetry``.
 
 Adding a Dependency
 ^^^^^^^^^^^^^^^^^^^
 
-Add the dependency to the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``poetry lock --no-update``
+Add the dependency to the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``poetry lock --no-update``.
 
 Updating a Top-Level Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``
+Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``.
 
 Updating Hidden Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run the following command: ``poetry lock``
+Run the following command: ``poetry lock``.

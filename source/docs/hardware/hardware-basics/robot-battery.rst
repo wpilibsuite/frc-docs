@@ -3,19 +3,19 @@
 Robot Battery Basics
 ====================
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the COTS battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the :term:`COTS` battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
 
 COTS Battery
 ------------
 
-The Robot Rules in the Game Manual specify a Commercial Off The Shelf [COTS] non-spillable sealed lead acid battery meeting specific criteria, and gives examples of legal part numbers from a variety of vendors.
+The Robot Rules in the Game Manual specify a COTS non-spillable sealed lead acid battery meeting specific criteria, and gives examples of legal part numbers from a variety of vendors.
 
 Battery Safety & Handling
 -------------------------
 
 A healthy battery is **always** "On" and the terminals are **always** energized. If the polarities short together - for example, a wrench or aerosol can falls and bridges the gap between two bare terminals - all the stored energy will be released in a dangerous arc. This risk drives a wide range of best practices, such as covering terminals in storage, only uncovering and working on one terminal or polarity at a time, keeping SB contacts fully inserted in connectors, etc.
 
-**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them. Pulling on batteries by the cables will begin to damage the lugs, tabs, and the internal connection of the tab. Over time, fatigue damage can add up until the the entire tab tears out of the housing! Even if it isn't clearly broken, internal fatigue damage can increase the battery internal resistance, prematurely wearing out the battery. The battery will not be able to provide the same amount of current with increased internal resistance or if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
+**Do *NOT* carry a battery assembly by the cables**, and always avoid pulling by them. Pulling on batteries by the cables will begin to damage the lugs, tabs, and the internal connection of the tab. Over time, fatigue damage can add up until the entire tab tears out of the housing! Even if it isn't clearly broken, internal fatigue damage can increase the battery internal resistance, prematurely wearing out the battery. The battery will not be able to provide the same amount of current with increased internal resistance or if the :ref:`connectors are loose <docs/hardware/hardware-basics/preemptive-troubleshooting:Check Battery Connections>`.
 
 .. image:: images/robot-battery/broken-terminal.png
   :alt: One terminal of an FRC battery fully detached from the battery.

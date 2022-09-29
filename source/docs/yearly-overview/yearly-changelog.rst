@@ -42,7 +42,7 @@ General Library
   - ``controller.getX(GenericHID.Hand.kLeft)`` -> ``controller.getLeftX()``
 
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
-- ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
+- ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been :term:`deprecated`. Use ``AdvanceIfElapsed()`` instead
 - Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_up_down_counter.html>`__)
 - ``DutyCycleEncoder``: add support for setting duty cycle range
 - Added ``ADIS16448_IMU`` and ``ADIS16470_IMU`` classes.

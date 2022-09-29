@@ -27,12 +27,12 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 CTRE Support
 ------------
 
-Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the email address `support@crosstheroadelectronics.com <mailto:support@crosstheroadelectronics.com>`__
+Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the email address `support@crosstheroadelectronics.com <mailto:support@crosstheroadelectronics.com>`__.
 
 REV Robotics Support
 --------------------
 
-Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__
+Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__.
 
 Other Vendors
 -------------
@@ -48,12 +48,12 @@ Support for vendors outside of the KOP can be found below.
 Unofficial Support
 ------------------
 
-There are useful forms of support provided by the community through various forums and services. The below links and websites are not endorsed by FIRST\ |reg| and are use at your own risk.
+There are useful forms of support provided by the community through various forums and services. The below links and websites are not endorsed by FIRST\ |reg| and may be used at your own risk.
 
-- `Chief Delphi <https://chiefdelphi.com>`__
-- `FRC Discord <https://discord.gg/frc>`__
+- `Chief Delphi <https://www.chiefdelphi.com/>`__
+- `FRC Discord <https://discord.com/invite/frc>`__
 
 Bug Reporting
 -------------
 
-Found a bug? Let us know by reporting it in the Issues section of the appropriate WPILibSuite project on Github: https://github.com/wpilibsuite
+Found a bug? Let us know by reporting it in the Issues section of the appropriate WPILibSuite project on GitHub: https://github.com/wpilibsuite
