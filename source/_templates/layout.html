@@ -26,6 +26,51 @@
 </div>
 {% endblock %}
 
+{#- This block is mostly copied from the rtd version #}
+{%- block sidebartitle %}
+  <a href="{{ pathto(master_doc) }}" style="display: block; margin-bottom: 0;">
+  {%- if logo and theme_logo_only %}
+  {%- else %}
+      {{ project }}
+  {%- endif %}
+
+  {%- if logo %}
+    {#- sphinx version >= 4.0 only #}
+    <picture>
+      <source
+        sizes="300px"
+        srcset="{{logo_url|replace('.png', '_300.webp')}} 300w, {{logo_url|replace('.png', '_500.webp')}} 500w, {{logo_url|replace('.png', '_700.webp')}} 700w, {{logo_url|replace('.png', '_1050.webp')}} 1050w"
+        type="image/webp"
+      />
+      <img
+        src="{{ logo_url }}"
+        sizes="300px"
+        srcset="{{logo_url|replace('.png', '_300.png')}} 300w, {{logo_url|replace('.png', '_500.png')}} 500w, {{logo_url|replace('.png', '_700.png')}} 700w, {{logo_url|replace('.png', '_1050.png')}} 1050w"
+        height="468"
+        width="1050"
+        alt="{{ _('Logo') }}"
+        decoding="async"
+        class="logo"
+        style="height: auto; width: 100%; border-radius: 0%;"
+      />
+    </picture>
+  {%- endif %}
+  </a>
+
+  {%- if theme_display_version %}
+    {%- set nav_version = version %}
+    {%- if READTHEDOCS and current_version %}
+      {%- set nav_version = current_version %}
+    {%- endif %}
+    {%- if nav_version %}
+      <div class="version">
+        {{ nav_version }}
+      </div>
+    {%- endif %}
+  {%- endif %}
+  {%- include "searchbox.html" %}
+{%- endblock %}
+
 {%- block footer %}
   {%- if READTHEDOCS %}
   <script>
