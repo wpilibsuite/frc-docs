@@ -102,5 +102,5 @@ venv/
 *.tmp
 report.md
 
-# Temp JS build
-**/pid-tune.js
+# Temp JS builds
+source/_static_generated/**

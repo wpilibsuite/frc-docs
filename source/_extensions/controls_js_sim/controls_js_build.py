@@ -25,9 +25,13 @@ FOLDER_INCS = [
 ]
 
 
-def mergeAndMinify():
+def mergeAndMinify(out_folder):
 
-    outputFile = "./pid-tune.js"
+    if not os.path.isdir(out_folder):
+        os.makedirs(out_folder)
+
+    outputFile = os.path.join(out_folder, "pid-tune.js")
+
     with open(outputFile, "w") as outf:
         for folder in FOLDER_INCS:
 
@@ -42,7 +46,6 @@ def mergeAndMinify():
             for inFileName in inFileNames:
 
                 with open(inFileName, "r") as inf:
-                    print("Adding {}...".format(inFileName))
                     if not debugJS:
                         # Minify each file independently - again, low bar solution for now
                         minified = jsmin(inf.read())
@@ -77,13 +80,9 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     print("Generating and adding controls javascript...")
 
     # Generate merged/minified PID tuning source
-    generatedFile = mergeAndMinify()
+    mergeAndMinify("source/_static_generated")
 
     # Add interactive PID tuning
-    app.config['html_static_path'].append(generatedFile)
-    app.add_js_file(generatedFile)
+    app.add_js_file("pid-tune.js")
     app.add_css_file("css/pid-tune.css")
-
-    print("Controls javascript build completed!")
-
 
