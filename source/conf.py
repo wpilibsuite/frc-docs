@@ -16,9 +16,6 @@
 
 import sys
 import os
-import glob
-from jsmin import jsmin
-
 
 sys.path.append(os.path.abspath("."))
 sys.path.append(os.path.abspath("./frc-docs/source"))
@@ -66,6 +63,7 @@ local_extensions = [
     "_extensions.post_process",
     "_extensions.rtd_patch",
     "_extensions.localization",
+    "_extensions.controls_js_sim.controls_js_build",
 ]
 
 extensions += local_extensions
@@ -221,57 +219,6 @@ user_options = [
     ("warning-is-error", True),
 ]
 
-# Handle custom javascript
-# We generally want to group, merge, and minify the js files
-
-if "BASEDIR" in globals():
-    # allow an alternate basedir if set into globals by another script
-    js_build_dir = BASEDIR
-else:
-    # otherwise, just use this file's directory
-    js_build_dir = os.path.dirname(__file__)
-
-js_pid_src_path = os.path.join(js_build_dir, "_static/js/pid-tune/*.js")
-js_pid_output_file = os.path.join(js_build_dir, "_static/js/pid-tune.js")
-
-debugJS = False  # flip to true to make the output js more readable
-
-
-def mergeAndMinify(sourceDir, outputFile):
-    with open(outputFile, "w") as outf:
-        inFileNames = glob.glob(sourceDir)
-        # It is not trivial to figure out which order to include the javascript
-        # source files into the final minified file.
-        # Current low-bar solution - assume file names are prefixed with numbers,
-        # such that a sort puts them in the right order.
-        inFileNames.sort()
-        for inFileName in inFileNames:
-            with open(inFileName, "r") as inf:
-                if not debugJS:
-                    # Minify each file independently - again, low bar solution for now
-                    minified = jsmin(inf.read())
-                    outf.write(minified)
-                    outf.write("\n")
-                else:
-                    # Verbose, no minify
-                    outf.write("\n\n\n")
-                    outf.write(
-                        "//*******************************************************\n"
-                    )
-                    outf.write(
-                        "//*******************************************************\n"
-                    )
-                    outf.write("//**    {}\n".format(inFileName))
-                    outf.write(
-                        "//*******************************************************\n"
-                    )
-                    outf.write(
-                        "//*******************************************************\n"
-                    )
-                    outf.write("\n")
-                    outf.write(inf.read())
-                    outf.write("\n")
-
 
 def setup(app):
     app.add_css_file("css/frc-rtd.css")
@@ -293,13 +240,6 @@ def setup(app):
 
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
-
-    # Generate merged/minified PID tuning source
-    mergeAndMinify(js_pid_src_path, js_pid_output_file)
-
-    # Add interactive PID tuning
-    app.add_js_file("js/pid-tune.js")
-    app.add_css_file("css/pid-tune.css")
 
 
 # -- Options for latex generation --------------------------------------------
