@@ -70,10 +70,9 @@ def mergeAndMinify(out_folder):
                         outf.write("\n")
                         outf.write(inf.read())
                         outf.write("\n")
-    
+
     return outputFile
 
-        
 
 def setup(app: Sphinx) -> Dict[str, Any]:
 
@@ -85,4 +84,3 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     # Add interactive PID tuning
     app.add_js_file("pid-tune.js")
     app.add_css_file("css/pid-tune.css")
-
