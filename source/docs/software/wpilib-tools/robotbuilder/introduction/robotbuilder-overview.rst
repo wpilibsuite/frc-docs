@@ -55,7 +55,7 @@ Commands are distinct goals that the robot will perform. These commands are adde
 
 - Normal commands - these are the most flexible command, you have to write all of the code to perform the desired actions necessary to accomplish the goal.
 - Timed commands - these commands are a simplified version of a command that ends after a timeout
-- Instant commands - these commands are a simplified versio of a command that runs for one iteration and then ends
+- Instant commands - these commands are a simplified version of a command that runs for one iteration and then ends
 - Command groups - these commands are a combination of other commands running both in a sequential order and in parallel. Use these to build up more complicated actions after you have a number of basic commands implemented.
 - Setpoint commands - setpoint commands move a PID Subsystem to a fixed setpoint, or the desired location.
 - PID commands - these commands have a built-in PID controller to be used with a regular subsystem.
