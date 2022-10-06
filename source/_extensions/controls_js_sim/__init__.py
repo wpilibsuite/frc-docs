@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any, Dict
 
 import os, glob
@@ -78,9 +79,23 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 
     print("Generating and adding controls javascript...")
 
+    # Perform controls js setup
+    static_dir = Path(__file__).parent / "_static_generated"
+    print(static_dir)
+    # everything written to this new static folder in this `setup` will be copied to the build static folder as is
+    app.connect(
+        "builder-inited",
+        (lambda app: app.config.html_static_path.append(static_dir.as_posix())),
+    )
+
     # Generate merged/minified PID tuning source
-    mergeAndMinify("source/_static_generated")
+    mergeAndMinify(static_dir)
 
     # Add interactive PID tuning
     app.add_js_file("pid-tune.js")
     app.add_css_file("css/pid-tune.css")
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
