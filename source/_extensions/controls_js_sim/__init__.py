@@ -80,8 +80,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     print("Generating and adding controls javascript...")
 
     # Perform controls js setup
-    static_dir = Path(__file__).parent / "_static_generated"
-    print(static_dir)
+    static_dir = Path(__file__).parent / "_static"
+
     # everything written to this new static folder in this `setup` will be copied to the build static folder as is
     app.connect(
         "builder-inited",
