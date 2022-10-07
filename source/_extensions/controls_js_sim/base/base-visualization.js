@@ -31,7 +31,7 @@ class BaseVisualization {
 
   updateSize() {
     this.width = Math.min(this.drawDiv.offsetWidth, 500);
-    this.height = this.drawDiv.offsetHeight;
+    this.height = Math.max(this.drawDiv.offsetHeight, 100);
     this.staticCanvas.width = this.width;
     this.staticCanvas.height = this.height;
     this.animatedCanvas.width = this.width;
