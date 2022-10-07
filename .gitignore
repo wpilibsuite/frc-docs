@@ -101,6 +101,3 @@ venv/
 # If by any chance some Inspector temp files or the report passed through
 *.tmp
 report.md
-
-# Temp JS build
-source/_static/js/pid-tune.js
