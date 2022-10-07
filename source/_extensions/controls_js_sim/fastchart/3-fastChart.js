@@ -55,8 +55,8 @@ class FastChart {
 
 
     recalcDrawConstants(numValueAxes){
-        this.canvas.width  = this.drawContainer.clientWidth;
-        this.canvas.height = this.drawContainer.clientHeight;
+        this.canvas.width  = this.drawContainer.offsetWidth;
+        this.canvas.height = this.drawContainer.offsetHeight;
 
         //Drawing configurations
 
