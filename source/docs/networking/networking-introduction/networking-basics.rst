@@ -15,7 +15,7 @@ As shown above, this means that each IP address is a 32-bit address meaning ther
 
 This brings up our **first key point** of IP Addressing: Each device on the network must have a unique IP address. No two devices can have the same IP address, otherwise collisions will occur.
 
-Since there are only 4-billion addresses, and there are more than 4-billion computers connected to the internet, we need to be as efficient as possible with giving out IP addresses. This brings us to public vs. private addresses.
+Since there are only 4 billion addresses, and there are more than 4 billion computers connected to the internet, we need to be as efficient as possible with giving out IP addresses. This brings us to public vs. private addresses.
 
 Public vs Private IP Addresses
 ------------------------------
@@ -47,7 +47,7 @@ then passing the returned data back to the private IP that requested it. This al
 How are these addresses assigned?
 ---------------------------------
 
-We’ve covered the basics of what IP addresses are, and which IP addresses we will use for the FRC competition,so now we need to discuss how these addresses will get assigned to the devices on our network. We already stated above that we can’t have two devices on the same network with the same IP Address, so we need a way to be sure that every device receives an address without overlapping. This can be done Dynamically (automatic), or Statically (manual).
+We’ve covered the basics of what IP addresses are, and which IP addresses we will use for the FRC competition, so now we need to discuss how these addresses will get assigned to the devices on our network. We already stated above that we can’t have two devices on the same network with the same IP Address, so we need a way to be sure that every device receives an address without overlapping. This can be done Dynamically (automatic), or Statically (manual).
 
 Dynamically
 ^^^^^^^^^^^
@@ -103,20 +103,20 @@ mDNS, or multicast Domain Name System is a protocol that allows us to benefit fr
 What is DNS?
 ^^^^^^^^^^^^
 
-DNS (Domain Name System) can become a complex topic, but for the scope of this paper, we are going to just look at the high level overview of DNS. In the most basic explanation, DNS is what allows us to relate human-friendly names for network devices to IP Addresses, and keep track of those IP addresses if they change.
+DNS (Domain Name System) can become a complex topic, but for the scope of this paper, we are going to just look at the high-level overview of DNS. In the most basic explanation, DNS is what allows us to relate human-friendly names for network devices to IP Addresses, and keep track of those IP addresses if they change.
 
-Example 1: Let’s look at the site ``www.google.com``. The IP address for this site is ``172.217.164.132``, however that is not very user friendly to remember!
+Example 1: Let’s look at the site ``www.google.com``. The IP address for this site is ``172.217.164.132``, however that is not very user-friendly to remember!
 
-Whenever a user types ``www.google.com`` into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for ``www.google.com``. The DNS server returns the IP address and then the computer is able to use that to connect to the Google web site.
+Whenever a user types ``www.google.com`` into their computer, the computer contacts the DNS server (a setting provided by DHCP!) and asks what is the IP address on file for ``www.google.com``. The DNS server returns the IP address and then the computer is able to use that to connect to the Google website.
 
 Example 2: On your home network, you have a server named ``MYCOMPUTER`` that you want to connect to from your laptop. Your network uses DHCP so you don’t know the IP Address of ``MYCOMPUTER``, but DNS allows you to connect just by using the ``MYCOMPUTER`` name. Additionally, whenever the DHCP assignments refresh, ``MYCOMPUTER`` may end up with a different address, but because you’re connecting by using the ``MYCOMPUTER`` name instead of a specific IP address, the DNS record was updated and you’re still able to connect.
 
-This is the second benefit to DNS, and the most relevant for FRC. With DNS, if we reference devices by their friendly name instead of IP Address, we don’t have to change anything in our program if the IP Address changes. DNS will keep track of the changes and return the new address if it ever changes.
+This is the second benefit to DNS and the most relevant for FRC. With DNS, if we reference devices by their friendly name instead of IP Address, we don’t have to change anything in our program if the IP Address changes. DNS will keep track of the changes and return the new address if it ever changes.
 
 DNS for FRC
 ^^^^^^^^^^^
 
-On the field and in the pits, there is no DNS server that allows us to perform the lookups like we do for the Google web site, but we’d still like to have the benefits of not remembering every IP Address, and not having to guess at every device’s address if DHCP assigns a different address than we expect. This is where mDNS comes into the picture.
+On the field and in the pits, there is no DNS server that allows us to perform the lookups like we do for the Google website, but we’d still like to have the benefits of not remembering every IP Address, and not having to guess at every device’s address if DHCP assigns a different address than we expect. This is where mDNS comes into the picture.
 
 mDNS provides us the same benefits as traditional DNS, but is just implemented in a way that does not require a server. Whenever a user asks to connect to a device using a friendly name, mDNS sends out a message asking the device with that name to identify itself. The device with the name then sends a return message including its IP address so all devices on the network can update their information. mDNS is what allows us to refer to our roboRIO as ``roboRIO-TEAM-FRC.local`` and have it connect on a DHCP network.
 
@@ -126,7 +126,7 @@ mDNS provides us the same benefits as traditional DNS, but is just implemented i
 mDNS - Principles
 ^^^^^^^^^^^^^^^^^
 
-Multicast Domain Name System (mDNS) is a system which allows for resolution of host names to IP addresses on small networks with no dedicated name server. To resolve a host name a device sends out a multicast message to the network querying for the device. The device then responds with a multicast message containing it's IP. Devices on the network can store this information in a cache so subsequent requests for this address can be resolved from the cache without repeating the network query.
+Multicast Domain Name System (mDNS) is a system which allows for resolution of hostnames to IP addresses on small networks with no dedicated name server. To resolve a hostname a device sends out a multicast message to the network querying for the device. The device then responds with a multicast message containing its IP. Devices on the network can store this information in a cache so subsequent requests for this address can be resolved from the cache without repeating the network query.
 
 mDNS - Providers
 ^^^^^^^^^^^^^^^^
@@ -175,7 +175,7 @@ If using the USB interface, no network setup is required (you do need the :ref:`
 Ethernet/Wireless
 -----------------
 
-The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
+The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team-based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
 
 Summary
 -------

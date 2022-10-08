@@ -53,6 +53,33 @@ jobs:
         path: build/html/
         if-no-files-found: error
         
+  build-html-translation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: wpilibsuite/frc-docs-translations
+    - name: Delete old submodule
+      run: |
+        rm -rf ./frc-docs
+    - uses: actions/checkout@v3
+      with:
+        path: frc-docs
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+        cache: 'pip'
+    - name: Install Python Dependencies
+      run: |
+        pip install -r frc-docs/source/requirements.txt
+    - name: Install librsvg2
+      run: |
+        sudo apt-fast -y update
+        sudo apt-fast install -y librsvg2-bin
+    - name: Build HTML
+      run: |
+        sphinx-build -D language=es -b html . _build/html
+
   check-links:
     runs-on: ubuntu-latest
     steps:
