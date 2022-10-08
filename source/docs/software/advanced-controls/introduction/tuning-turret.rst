@@ -59,7 +59,7 @@ Interact with the simulation below to examine how the turret system responds whe
 To tune the feedforward controller, perform the following:
 
 1. Set :math:`K_v` to zero.
-2. Increase the velocity feedforward gain :math:`K_v` until the turret tracks the setpoint during smooth, slow motion.  If the turret overshoots, reduce the gain.  
+2. Increase the velocity feedforward gain :math:`K_v` until the turret tracks the setpoint during smooth, slow motion.  If the turret overshoots, reduce the gain.
 
 Note that the turret may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
 

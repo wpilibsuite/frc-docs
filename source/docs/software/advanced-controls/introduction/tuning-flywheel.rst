@@ -31,16 +31,16 @@ In general: the more voltage that is applied to the motor, the faster the flywhe
 
 Flywheels are commonly used to propel game pieces through the air, toward a target. In this simulation, a gamepiece is injected into the flywheel about halfway through the simulation. [1]_
 
-To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.  Thus, we want to accurately control the velocity of our flywheel.  
+To consistently launch a gamepiece, a good first step is to make sure it is spinning at a particular speed before putting a gamepiece into it.  Thus, we want to accurately control the velocity of our flywheel.
 
-.. note:: This is fundamentally different from the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>` and :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>` controllers, which both control *position*.  
+.. note:: This is fundamentally different from the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>` and :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>` controllers, which both control *position*.
 
-The tutorials below will demonstrate the behavior of the system under bang-bang, pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  
+The tutorials below will demonstrate the behavior of the system under bang-bang, pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.
 
 Bang-Bang Control
 ~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.  
+Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.
 
 .. raw:: html
 
