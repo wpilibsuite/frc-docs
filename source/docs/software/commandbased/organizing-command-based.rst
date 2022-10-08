@@ -223,7 +223,7 @@ The disadvantage of this is more cumbersome usage code and needing intermediary 
 
     // TODO
 
-While static factories are managable for single-subsystem commands, they excel at multi-subsystem commands -- particularly command groups. With single-subsystem commands defined as instance factory methods, static factories can look like this:
+While static factories are manageable for single-subsystem commands, they excel at multi-subsystem commands -- particularly command groups. With single-subsystem commands defined as instance factory methods, static factories can look like this:
 
 .. tabs::
 
