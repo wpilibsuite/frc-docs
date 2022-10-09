@@ -91,7 +91,7 @@ What might a functional command look like in practice? As before, below is a sim
 
 Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called :term:`dependency injection`, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
-Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <docs/software/commandbased/convenience-features:InstantCommand>` even more succinctly.
+Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and in fact the command-based library includes code to make :ref:`commands like this <docs/software/commandbased/builtins:InstantCommand>` even more succinctly.
 
 What about a more complicated case? Below is a drive command, from the same example project:
 
@@ -121,4 +121,27 @@ What about a more complicated case? Below is a drive command, from the same exam
       :linenos:
       :lineno-start: 5
 
-Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make :ref:`this kind of command <docs/software/commandbased/convenience-features:RunCommand>` easier to write, too!).
+Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands (and, as can be guessed, the library includes tools to make :ref:`this kind of command <docs/software/commandbased/builtins:RunCommand>` easier to write, too!).
+
+Command Properties
+------------------
+
+In addition to the four lifecycle methods described above, each ``Command`` also has two properties, the value of which is defined by the ``runsWhenDisabled`` and ``getInterruptBehavior`` methods respectively. In most cases, the default value is enough.
+
+runsWhenDisabled
+^^^^^^^^^^^^^^^^
+
+The ``runsWhenDisabled()`` method returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
+
+.. important:: Except for Addressable LEDs, hardware outputs are disabled when the robot is disabled, regardless of ``runsWhenDisabled()``!
+
+This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:ignoringDisable` decorator.
+
+getInterruptionBehavior
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``getInterruptionBehavior()`` method (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#getInterruptionBehavior()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#ab1e027e86fc5c9132914ca566a9845a8>`__) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running.
+
+.. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
+
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:withInterruptBehavior` decorator.
