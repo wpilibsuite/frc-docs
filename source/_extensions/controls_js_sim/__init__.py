@@ -93,7 +93,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 
     # Add interactive PID tuning
     app.add_js_file("pid-tune.js")
-    app.add_css_file("css/pid-tune.css")
+    app.add_css_file("pid-tune.css")
 
     return {
         "parallel_read_safe": True,

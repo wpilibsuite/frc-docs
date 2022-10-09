@@ -46,7 +46,6 @@ class BaseSim {
 
   }
 
-
   resetData() {
 
   }
