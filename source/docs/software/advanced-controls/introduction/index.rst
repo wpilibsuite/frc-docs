@@ -9,6 +9,7 @@ Advanced Controls Introduction
    introduction-to-feedforward
    introduction-to-pid
    pid-video
+   tutorial-intro
    tuning-flywheel
    tuning-turret
    tuning-vertical-arm

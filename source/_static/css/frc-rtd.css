@@ -133,3 +133,18 @@
 .sphinx-tab img {
 	margin-bottom: 24px;
 }
+
+/* ======================================== */
+/* ====== START SPHINX DETAILS CSS ======== */
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em;
+    margin: .5em .5em 2em .5em;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
