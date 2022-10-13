@@ -32,8 +32,6 @@ GradleRIO tasks
 
 ``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as Visual Studio Code. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
 
-``./gradlew riolog`` - Runs a console displaying output from the default roboRIO (roborio)
-
 ``./gradlew simulateExternalCpp`` - Simulate External Task for native executable. Exports a JSON file for use by editors / tools
 
 ``./gradlew simulateExternalJava`` - Simulate External Task for Java/Kotlin/JVM. Exports a JSON file for use by editors / tools
