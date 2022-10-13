@@ -47,5 +47,5 @@ The purpose of Task 4 is to write new code in order to test features and functio
 1. All languages - AprilTags
 2. All languages - NetworkTables v4
 3. Java/C++ - 3D Geometry classes & ComputerVisionUtil
-4. C++\Java - Linear Time-Varying controllers for unicycles (Ramsete replacement) and diff drives
+4. Java/C++ - Linear Time-Varying controllers for unicycles (Ramsete replacement) and diff drives
 
