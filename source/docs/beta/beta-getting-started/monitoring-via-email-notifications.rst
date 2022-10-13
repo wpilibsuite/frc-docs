@@ -1,64 +1,22 @@
 Monitoring Via Email Notifications
 ==================================
 
-.. note::
-   You may wish to monitor specific items or even whole sections of the Beta project via email. TeamForge has a large degree of flexibility in setting up e-mail monitoring.
+Configuring GitHub Notifications
+--------------------------------
+Your overall Github notification preferences can be set at `<https://github.com/settings/notifications>`__
 
-Monitoring Individual Items
----------------------------
+Configuring Repository Settings
+-------------------------------
 
-.. image:: images/monitoring-via-email-notifications/monitoring-item.png
-   :alt: Monitor button that sends emails when clicked.
+.. image:: images/monitoring-via-email-notifications/watch.png
+   :alt: Watch button that configures repository notifications
 
-You can choose to monitor a number of different individual items (forum threads, tracker artifacts, file releases, etc.) via e-mail. Items that can be subscribed to will have a Monitor button located at the bottom of the screen. Clicking this button will subscribe you to the item and notify you of changes via e-mail. To unsubscribe, click the Stop Monitoring button (which will replace the Monitor button when you are subscribed).
+In addition to your overall GitHub settings, you need to configure the desired settings for the repository. From any page in the project, click the "Watch" button in the grey secondary NavBar to show your repository Watch settings. Due to the expected traffic volume of the Beta project, "Participating and Mentions" is the recommended setting. This will provide notifications for Discussions or Issues you post in or are tagged in by another user.
 
-Monitoring Folders
-------------------
+Watching an Issue or Discussion
+--------------------------------
 
-.. image:: images/monitoring-via-email-notifications/monitoring-folder.png
-   :alt: You can monitor folders also.
+.. image:: images/monitoring-via-email-notifications/subscribe.png
+   :alt: Subscribe button that sends emails when clicked.
 
-"Folders" (discussion sections, trackers, etc.) can also be monitored via e-mail. To monitor a folder click the dropdown arrow next to the Monitor button and select Monitor Current Folder.
-
-Monitoring Project Sections
----------------------------
-
-.. image:: images/monitoring-via-email-notifications/monitoring-section.png
-   :alt: Monitoring entire sections.
-
-It is also possible to set up for entire sections of the site. To set up this monitoring:
-
-1. Click My Workspace
-2. Click on the Monitoring Tab
-3. Select the project from the list on the left
-4. Click on the Monitored Applications tab
-5. Check the box for any section you wish to subscribe to
-6. Click Save
-
-Monitoring Settings
--------------------
-
-.. image:: images/monitoring-via-email-notifications/monitoring-settings.png
-   :alt: How the monitoring emails are configured.
-
-You can set your overall notification settings to e-mail you per change or to send you a daily digest email with all changes. To do this:
-
-1. Click My Workspace
-2. Click My Settings
-3. Select the desired setting
-4. Click Save
-
-Per Section Notification Settings
----------------------------------
-
-.. image:: images/monitoring-via-email-notifications/monitoring-section-settings.png
-   :alt: Each section has a dropdown on how it should be treated.
-
-You can also customize notifications on a per section basis. To do this:
-
-1. Click My Workspace
-2. Click Monitoring
-3. Click on the FRC20**Beta project on the left side
-4. Select the Email Notification Preferences tab
-5. Change the settings for any section of the project you wish to have override your base settings.
-6. Click Save
+To subscribe to an individual Issue or Discussion which you have not yet participated in, locate the "Notifications" section on the right hand side of the screen and click "Subscribe".
