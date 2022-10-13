@@ -5,36 +5,27 @@ Accessing the Beta Project
 
 .. note:: Only accepted Beta Test teams will have access to the Beta project.
 
-The members identified by your team to communicate with *FIRST*\ |reg| technical staff will have access to the Beta Test project on the `<https://usfirst.collab.net>`__ site.
+The members identified by your team to communicate with *FIRST*\ |reg| technical staff will have access to the Beta Test project on the `<https://github.com/wpilibsuite/BetaTest>`__ site.
 
 Signing In
 ----------
 
 .. image:: images/accessing-the-beta-project/login.png
-   :alt: Logging in to the collab TeamForge site.
+   :alt: Logging in to the GitHub site.
 
-Open your web browser and browse to `<https://usfirst.collab.net>`__. Near the top left corner of the page enter your TeamForge username and password then click "Log In".
+Open your web browser and browse to `<https://github.com/wpilibsuite/BetaTest>`__. Near the top right corner of the page, click "Sign In" (if the Sign-In box does not automatically appear), enter your username and password and click  "Sign In". If you have two-factor authenticatio enabled you may need to complete an action on your mobile device to verify your log in attempt.
 
-Opening the Beta Project
-------------------------
-
-.. image:: images/accessing-the-beta-project/project-list.png
-   :alt: The view from the project tab.
-
-Your user account should already be added to the Beta Project. To view the project:
-
-1. Click the Projects tab on the top navigation ribbon.
-2. Then click on ``FRC20**Beta`` in the projects list (image of 2015 as an example).
+Using this direct link, the Beta Test project should open as soon as you log in.
 
 The Project Homepage
 --------------------
 
 .. image:: images/accessing-the-beta-project/project-home.png
-   :alt: The project homepage and graphs.
+   :alt: The project homepage.
 
-The project homepage contains some statistics and Project News. Throughout the beta, the Project News section may be updated with the latest information from the *FIRST* technical staff. The top ribbon contains tabs allowing you to navigate to the different sections of the project:
+The project homepage contains a ReadMe file. Throughout the beta, the ReadMe section may be updated with the latest information from the *FIRST* technical staff. The top ribbon contains tabs allowing you to navigate to the different sections of the project:
 
-1. Trackers - The Trackers tab is where the bug tracker for the project is located.
-2. File Releases - The File Releases tab will host any files you will need to download as part of the Beta test process such as NI FRC\ |reg| Game Tools files.
-3. Documents - the Documents tab will contain any documents to be distributed to Beta teams. Much of the documentation for the Beta test will be located on the FRC Docs site but there may still be documents posted here as well.
+2. Code - The Code tab will take you to the ReadMe with Beta announcements as well as allow you to access file releases using the "Releases" section on the right hand side of the screen.
+1. Issues - The Issues tab is where the bug tracker for the project is located.
 4. Discussions - The Discussions tab contains a forum which will allow teams to post questions or discussions about the Beta test, software or documentation. Task reports will also be posted here.
+3. Wiki - the Wiki tab will contain any documents to be distributed to Beta teams. We do not currently expect to use this but if there is any documentation that we want to restrict to Beta Teams only it will be posted here.
