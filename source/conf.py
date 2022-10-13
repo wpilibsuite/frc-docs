@@ -148,7 +148,7 @@ linkcheck_ignore = [
     r".*wpilibpi.local.*",
     r".*java.com/en/download/help/locale.xml.*",
     r".*playingwithfusion.com/contactus.php.*",
-    r".*github.com/wpilibsuite/BetaTest.*"
+    r".*github.com/wpilibsuite/BetaTest.*",
 ]
 
 # Sets linkcheck timeout in seconds
