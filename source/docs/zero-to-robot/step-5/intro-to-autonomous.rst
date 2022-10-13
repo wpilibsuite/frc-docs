@@ -7,7 +7,7 @@ What Will the Robot Do?
 -----------------------
 Before you can think about writing any code, you need to figure out what you want to have the robot try to do. Some questions you may ask to help determine this:
 
-- Where will the robot start? Check the rules to see where your robot must start the match. Are there any features of the field that you can align with or measure off of to ensure consistent placement of your robot? 
+- Where will the robot start? Check the rules to see where your robot must start the match. Are there any features of the field that you can align with or measure off of to ensure consistent placement of your robot?
 - What will your alliance partners do? Will your alliance partners want to start in the same place or do the same things you want to? Consider having one or more alternative autos that you could select as a backup plan. You can use :ref:`Sendable Chooser<docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Choosing an Autonomous Program>` for C++/Java or the `Auto Selector string with different cases in LabVIEW <https://forums.ni.com/t5/FIRST-Robotics-Competition/Autonomous-Timed-Movement-Tutorial/ta-p/3732667?profile.language=en>`__ to create multiple autonomous modes and choose them from the dashboard prior to each match.
 - Where should the robot end autonomous? If you've got extra time, it's often beneficial to use it to position your robot in an advantgeous location to get a jump start on your first objective in teleop.
 
