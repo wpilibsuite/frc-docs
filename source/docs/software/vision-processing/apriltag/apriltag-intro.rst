@@ -152,13 +152,23 @@ TODO: Code samples? Specifics?
 
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
-This method requires calibrating the camera to understand how 
+This method requires calibrating the camera to measure how its optics distort 3d space onto the 2d sensor.
 
-given tag ID, lookup tag pose in wpilib provided dictionary
+Once calibrated, each image is searched for AprilTags using the above algorithm. 
 
-do transforms translations and whatnot
+Given each tag's ID, the position of the tag on the field can be identified.
 
-Add vision estimate to pose kalman filter
+TODO: Code Snippet
+
+Using the information about the camera's distortion, along with the known size of the tag, an estimate of the camera's position relative to the tag is calcualted.
+
+TODO: Code Snippet
+
+In turn, using the `Pose3d` classes and the known positions of tags on the field, the robot's position on the field may be estimate.
+
+These estimates can be incorporated into the WPILib pose estimation classes.
+
+TODO: code snippets
 
 Adjustable Parameters
 ---------------------
@@ -183,34 +193,3 @@ The three major versions of AprilTags are described in three academic papers. It
 * :download:`AprilTags v3 <files/krogius2019iros.pdf>`
 
 Additioanl information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`_
-
-
--------------------------------------
-Backup....
-
-
-APRILTAGS 1 - 
-* calcualte the gradient at each pixel (magnititude and direction of direvative change)
-  * Blur can be added at this step to get rid of noise in the image (which has a bit impact on gradient)
-  * This can be done at a lower resolution too
-    * Reason both of these work: corders of a quad are much "larger-scale" compared to noise
-* Cluster similar gradient pixels together
-* fit line segments along the similar clusters such that lighter is on the right
-* Search for quads - sets of four line segments which start and end at a "close enough" location to be reasoanble assumed to be a square
-  * counter-clockwise "winding order"
-  * Corners of the quad are the intersections of the lines that define it (not the pixel locations)
-
-Apriltags 2 - 
-
-Gradient line fitting removed - was too time intensive (majority of the time spent doing this)
-Hamming distance functionality removed - no one cared to correct for bit errors
-Adaptive thresholding - pixels compared to a small, local average of pixel values (4x4 grid, but done in a 3x3 pattern with 1 pixel overlap). 
-Pixels categorized as either "light", "dark", or "Insufficent contrast". Edges are expected along light/dark categorized pixels. Pixels marked as insufficent-contrast can be ignored to save processing time.
-Cluster the patches of pixels categoriezed as black or white into blobs (assimilating iinterior unknown blobs)
-Quadralterials are fit to 
-
-
-Apriltags 3 - 
-
-Decimation used to reduce image size by simply downsampling (no blur). Point-filtering (IE, just take the middle of a box) was used.
-Added early rejection of connected regions too small to be part of a valid tag
