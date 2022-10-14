@@ -16,7 +16,7 @@ Starting in 2023, FIRST is providing a number of tags, scattered throughout the 
 
 All of the tags are from the 36H11 family, which means that:
 
-1) Each tag carries 36 bits of information each (in a 6x6 grid)
+1) Each tag carries 36 bits of information
 2) It would take at least 11 bit "flips" before one tag could be mistaken for another.
 
 All tags will be printed such that their outer black border is 200mm on a side.
@@ -108,6 +108,10 @@ Here is a visualization of the steps involved:
 
       :image:`images/bw_img.png`
 
+   .. tab:: Decimate
+
+      :image:`images/decimate.png`
+
    .. tab:: Adaptive Threshold
 
       :image:`images/adaptive_threshold.png`
@@ -116,9 +120,17 @@ Here is a visualization of the steps involved:
 
       :image:`images/segmentation.png`
 
-   .. tab:: Remove Colors
+   .. tab:: Tag Detection
 
-      :image:`images/bw_img.png`
+      :image:`images/tag_detection.png`
+
+   .. tab:: Fit External Quad
+
+      :image:`images/fit_ext_quad.png`
+
+   .. tab:: Homography
+
+      :image:`images/homography.png`
 
 
 Usage
@@ -127,16 +139,20 @@ Usage
 2D Alignment
 ^^^^^^^^^^^^
 
-Make sure you're looking at the right tag
+A simple strategy for using targets is to move the robot until the target is centered in the image. Assuming the field and robot are constructed such that the gamepiece, scoring location, vision target, and camera are all aligned, this method should proved a straightforward method to automatically align the robot to the scoring position.
 
-Use centroid
+Using a camera, identify the _centroid_ of the apriltags in view. If the tag's ID is correct, apply drivetrain commands to rotate the robot left or right until the tag is centered in the camera image.
+
+This method does not require calibrating the camera or performing the homography step.
+
+TODO: Code samples? Specifics?
 
 3D Alignment
 ^^^^^^^^^^^^
 
-Pose blah blah blah
+A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
-homography something something
+This method requires calibrating the camera to understand how 
 
 given tag ID, lookup tag pose in wpilib provided dictionary
 
