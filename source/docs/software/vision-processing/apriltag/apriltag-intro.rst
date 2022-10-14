@@ -55,7 +55,7 @@ An image from a camera is simply an array of values, corresponding to the color 
     * The full-resolution image will be used later to refine early estimates.
 * Apply an adaptive thresholding algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
     * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
-* Analyze the known pixels to "clump" them together, accumulating all interior unknown points as well.
+* Analyze the known pixels to "clump" them together.
     * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
 * Fit a quadralaterial to each clump
   * Identify likely "corner" candiadtes by pixels which are outliers in both dimensions.
@@ -92,6 +92,34 @@ The algorithm to do this is:
 * Use geometry to calcualte the exact center of the re-fit quadralateral
 
 Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce signifigant errors into your robot's behavior, depending on how you are using the tag outputs.
+
+Visualization
+^^^^^^^^^^^^^
+
+Here is a visualization of the steps involved:
+
+.. tabs::
+
+   .. tab:: Origional Image
+
+      :image:`images/orig_img.png`
+
+   .. tab:: Remove Colors
+
+      :image:`images/bw_img.png`
+
+   .. tab:: Adaptive Threshold
+
+      :image:`images/adaptive_threshold.png`
+
+   .. tab:: Segementation
+
+      :image:`images/segmentation.png`
+
+   .. tab:: Remove Colors
+
+      :image:`images/bw_img.png`
+
 
 Usage
 -----
