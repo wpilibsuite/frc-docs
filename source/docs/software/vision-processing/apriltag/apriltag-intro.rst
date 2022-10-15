@@ -41,92 +41,87 @@ Processing Technique
 
 While most FRC teams should not have to implement their own code to identify AprilTags in a camera image, it is useful to know the basics of how the underlying libraries function.
 
-Processing is done in three steps:
-
-Detection
-^^^^^^^^^
-
-An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. The algorithm to do this is:
-
-* Convert the image to a grey-scale (brightness-only) image. 
-    * Color information is not needed to detect the black-and-white tags.
-* Convert the image to a lower resolution. 
-    * Working with fewer pixels helps the algorithm work faster. 
-    * The full-resolution image will be used later to refine early estimates.
-* Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
-    * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
-* Analyze the known pixels to "clump" them together.
-    * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
-* Fit a quadrilateral to each clump
-  * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
-  * Iterate through all possible combinations of corners, evaluating the fit each time
-  * Pick the best-fit quadrilateral
-* Identify a suspect set of quadrilateral which is likely a tag.
-  * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
-
-If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
-
-Decoding
-^^^^^^^^
-
-Now that we have one or more regions of pixels which we believe to be a valid AprilTag, we need to identify which tag we are looking at. This is done by "decoding" the pattern of light and dark squares on the inside.
-
-* Calculate the expected interior pixel coordinates where the center of each bit should be
-* Mark each location as "1" or "0" by comparing the pixel intensity to a threshold
-* Find the tag ID which most closely matches what was seen in the image, allowing for one or two bit errors.
-
-It is possible there is no valid tag ID which matches the suspect tag. In this case, the decoding process stops.
-
-Edge Refinement 
-^^^^^^^^^^^^^^^
-
-Now that we have a tag ID for the region of pixels, we need to do something useful with it.
-
-For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the beginning to have distorted the image, and we want to undo those effects. 
-
-The algorithm to do this is:
-
-* Use the detected tag location to define a region of interest in the original-resolution image
-* Calculate the :term:`gradient` at pre-defined points in the region of interest to detect where the image most sharply transitions between black to white
-* Use these gradient measurements to rapidly re-fit an exterior quadrilateral at full resolution
-* Use geometry to calculate the exact center of the re-fit quadrilateral
-
-Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce significant errors into your robot's behavior, depending on how you are using the tag outputs.
-
-Visualization
-^^^^^^^^^^^^^
-
-Here is a visualization of the steps involved:
-
 .. tabs::
 
    .. tab:: Original Image
 
       .. image:: images/orig_img.png
 
+      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. 
+
    .. tab:: Remove Colors
 
       .. image:: images/bw_img.png
+
+      * Convert the image to a grey-scale (brightness-only) image. 
+         * Color information is not needed to detect the black-and-white tags.
 
    .. tab:: Decimate
 
       .. image:: images/decimate.png
 
+      * Convert the image to a lower resolution. 
+         * Working with fewer pixels helps the algorithm work faster. 
+         * The full-resolution image will be used later to refine early estimates.
+
    .. tab:: Adaptive Threshold
 
       .. image:: images/adaptive_threshold.png
+
+      * Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
+         * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
    .. tab:: Segmentation
 
       .. image:: images/segmentation.png
 
+      * Analyze the known pixels to "clump" them together.
+         * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
+
+   .. tab:: Quad Detection
+
+      .. image:: images/detected_quads.png
+
+      * Identify a suspect set of quadrilateral which is likely a tag.
+         * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
+
+      * Fit a quadrilateral to each clump
+         * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
+         * Iterate through all possible combinations of corners, evaluating the fit each time
+         * Pick the best-fit quadrilateral
+
+      If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
+
    .. tab:: Tag Detection
 
       .. image:: images/tag_detection.png
 
+      Now that we have one or more regions of pixels which we believe to be a valid AprilTag, we need to identify which tag we are looking at. This is done by "decoding" the pattern of light and dark squares on the inside.
+
+      * Calculate the expected interior pixel coordinates where the center of each bit should be
+      * Mark each location as "1" or "0" by comparing the pixel intensity to a threshold
+      * Find the tag ID which most closely matches what was seen in the image, allowing for one or two bit errors.
+
+      It is possible there is no valid tag ID which matches the suspect tag. In this case, the decoding process stops.
+
    .. tab:: Fit External Quad
 
       .. image:: images/fit_ext_quad.png
+
+      Now that we have a tag ID for the region of pixels, we need to do something useful with it.
+
+      For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the beginning to have distorted the image, and we want to undo those effects. 
+
+      The algorithm to do this is:
+
+      * Use the detected tag location to define a region of interest in the original-resolution image
+      * Calculate the :term:`gradient` at pre-defined points in the region of interest to detect where the image most sharply transitions between black to white
+      * Use these gradient measurements to rapidly re-fit an exterior quadrilateral at full resolution
+      * Use geometry to calculate the exact center of the re-fit quadrilateral
+
+      Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce significant errors into your robot's behavior, depending on how you are using the tag outputs.
+
+
 
    .. tab:: Homography
 

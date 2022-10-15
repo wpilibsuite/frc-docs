@@ -2,6 +2,6 @@ AprilTag Introduction
 =====================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    apriltag-intro
