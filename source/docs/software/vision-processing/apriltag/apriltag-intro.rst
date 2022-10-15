@@ -3,6 +3,8 @@
 What Are AprilTags?
 ===================
 
+.. image:: images/apriltagrobots_overlay.jpg
+
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
 Application to FRC
@@ -26,7 +28,7 @@ For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/mai
 Software Support
 ----------------
 
-The main repository for the source code that detects and decodes AprilTags `can be found here <https://github.com/AprilRobotics/apriltag>`_.
+The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/AprilRobotics/apriltag>`_.
 
 WPILib has forked the repository to add new features for FRC. These include:
 
@@ -45,20 +47,20 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Original Image
 
-      .. image:: images/orig_img.png
+      .. image:: images/orig_img.gif
 
       An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. 
 
    .. tab:: Remove Colors
 
-      .. image:: images/bw_img.png
+      .. image:: images/bw_img.gif
 
       * Convert the image to a grey-scale (brightness-only) image. 
          * Color information is not needed to detect the black-and-white tags.
 
    .. tab:: Decimate
 
-      .. image:: images/decimate.png
+      .. image:: images/decimate.gif
 
       * Convert the image to a lower resolution. 
          * Working with fewer pixels helps the algorithm work faster. 
@@ -66,21 +68,21 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Adaptive Threshold
 
-      .. image:: images/adaptive_threshold.png
+      .. image:: images/adaptive_threshold.gif
 
       * Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
          * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
    .. tab:: Segmentation
 
-      .. image:: images/segmentation.png
+      .. image:: images/segmentation.gif
 
       * Analyze the known pixels to "clump" them together.
          * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
 
    .. tab:: Quad Detection
 
-      .. image:: images/detected_quads.png
+      .. image:: images/detected_quads.gif
 
       * Identify a suspect set of quadrilateral which is likely a tag.
          * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
@@ -94,7 +96,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Tag Detection
 
-      .. image:: images/tag_detection.png
+      .. image:: images/tag_detection.gif
 
       Now that we have one or more regions of pixels which we believe to be a valid AprilTag, we need to identify which tag we are looking at. This is done by "decoding" the pattern of light and dark squares on the inside.
 
@@ -106,7 +108,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Fit External Quad
 
-      .. image:: images/fit_ext_quad.png
+      .. image:: images/fit_ext_quad.gif
 
       Now that we have a tag ID for the region of pixels, we need to do something useful with it.
 
@@ -120,12 +122,6 @@ While most FRC teams should not have to implement their own code to identify Apr
       * Use geometry to calculate the exact center of the re-fit quadrilateral
 
       Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce significant errors into your robot's behavior, depending on how you are using the tag outputs.
-
-
-
-   .. tab:: Homography
-
-      .. image:: images/homography.png
 
 
 Usage
@@ -145,6 +141,8 @@ TODO: Code samples? Specifics?
 3D Alignment
 ^^^^^^^^^^^^
 
+.. image:: images/homography.gif
+
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
 This method requires calibrating the camera to measure how its optics distort 3d space onto the 2d sensor.
@@ -163,20 +161,16 @@ In turn, using the `Pose3d` classes and the known positions of tags on the field
 
 These estimates can be incorporated into the WPILib pose estimation classes.
 
-TODO: code snippets
-
 Adjustable Parameters
 ---------------------
 
-blur, decimation, threads, whatever else
+`Decimation factor` impacts how much the image is down-sampled before processing. Increasing it will increase detection speed, at the cost of not being able to see tags which are far away.
 
-blur - don't use it bad bad bad apriltag 3 shouldn't use it
+`Blur` applies smoothing to the input image to decrease noise, which increases speed when fitting quads to pixels, at the cost of precision. For most good cameras, this may be left at zero.
 
-Decimation factor - should only impact speed and reliability of either seeing or not seeing a tag. Should not impact corner detection.
+`Threads` changes the number of parallel threads which the algorithm uses to process the image. Certain steps may be sped up by allowing multithreading. In general, you want this to be approximately equal to the number of physical cores in your CPU, minus the number of cores which will be used for other processing tasks.
 
-Threads - idk need ot look it up. ALign to number of cores?
-
-TODO: What does the github library actually expose to end users?
+Detailed information about the tunable parameters `can be found here <https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters>`_.
 
 Further Learning
 ----------------
