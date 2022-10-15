@@ -3,7 +3,7 @@
 What Are AprilTags?
 ===================
 
-.. image:: images/apriltagrobots_overlay.jpg
+.. image:: images/apriltagrobots_overlay.png
 
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
@@ -47,20 +47,20 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Original Image
 
-      .. image:: images/orig_img.gif
+      .. image:: images/orig_img.png
 
       An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag.
 
    .. tab:: Remove Colors
 
-      .. image:: images/bw_img.gif
+      .. image:: images/bw_img.png
 
       * Convert the image to a grey-scale (brightness-only) image.
          * Color information is not needed to detect the black-and-white tags.
 
    .. tab:: Decimate
 
-      .. image:: images/decimate.gif
+      .. image:: images/decimate.png
 
       * Convert the image to a lower resolution.
          * Working with fewer pixels helps the algorithm work faster.
@@ -68,21 +68,21 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Adaptive Threshold
 
-      .. image:: images/adaptive_threshold.gif
+      .. image:: images/adaptive_threshold.png
 
       * Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
          * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
    .. tab:: Segmentation
 
-      .. image:: images/segmentation.gif
+      .. image:: images/segmentation.png
 
       * Analyze the known pixels to "clump" them together.
          * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
 
    .. tab:: Quad Detection
 
-      .. image:: images/detected_quads.gif
+      .. image:: images/detected_quads.png
 
       * Identify a suspect set of quadrilateral which is likely a tag.
          * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
@@ -96,7 +96,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Tag Detection
 
-      .. image:: images/tag_detection.gif
+      .. image:: images/tag_detection.png
 
       Now that we have one or more regions of pixels which we believe to be a valid AprilTag, we need to identify which tag we are looking at. This is done by "decoding" the pattern of light and dark squares on the inside.
 
@@ -108,7 +108,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
    .. tab:: Fit External Quad
 
-      .. image:: images/fit_ext_quad.gif
+      .. image:: images/fit_ext_quad.png
 
       Now that we have a tag ID for the region of pixels, we need to do something useful with it.
 
@@ -141,7 +141,7 @@ TODO: Code samples? Specifics?
 3D Alignment
 ^^^^^^^^^^^^
 
-.. image:: images/homography.gif
+.. image:: images/homography.png
 
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
