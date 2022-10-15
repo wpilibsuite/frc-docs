@@ -46,23 +46,23 @@ Processing is done in three steps:
 Detection
 ^^^^^^^^^
 
-An image from a camera is simply an array of values, corresponding to the color and brigness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. The algorithm to do this is:
+An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. The algorithm to do this is:
 
-* Convert the image to a greyscale (birghtness-only) image. 
+* Convert the image to a grey-scale (brightness-only) image. 
     * Color information is not needed to detect the black-and-white tags.
 * Convert the image to a lower resolution. 
-    * Working with fewer pixels helps the algorith work faster. 
+    * Working with fewer pixels helps the algorithm work faster. 
     * The full-resolution image will be used later to refine early estimates.
-* Apply an adaptive thresholding algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
+* Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
     * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 * Analyze the known pixels to "clump" them together.
     * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
-* Fit a quadralaterial to each clump
-  * Identify likely "corner" candiadtes by pixels which are outliers in both dimensions.
-  * Iterate through all possible combindations of corners, evaluating the fit each time
-  * Pick the best-fit quadralateral
-* Identify a suspect set of quadralaterals which is likely a tag.
-  * For example, a single large exterior quadralateral with many interior quadralterals is likely a good candidate
+* Fit a quadrilateral to each clump
+  * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
+  * Iterate through all possible combinations of corners, evaluating the fit each time
+  * Pick the best-fit quadrilateral
+* Identify a suspect set of quadrilateral which is likely a tag.
+  * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
 
 If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
 
@@ -82,16 +82,16 @@ Edge Refinement
 
 Now that we have a tag ID for the region of pixels, we need to do something useful with it.
 
-For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the begnning to have distorted the image, and we want to undo those effects. 
+For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the beginning to have distorted the image, and we want to undo those effects. 
 
 The algorithm to do this is:
 
-* Use the detected tag location to define a region of interest in the origional-resolution image
+* Use the detected tag location to define a region of interest in the original-resolution image
 * Calculate the :term:`gradient` at pre-defined points in the region of interest to detect where the image most sharply transitions between black to white
-* Use these gradient measurements to rapidly re-fit an exterior quadralateral at full resolution
-* Use geometry to calcualte the exact center of the re-fit quadralateral
+* Use these gradient measurements to rapidly re-fit an exterior quadrilateral at full resolution
+* Use geometry to calculate the exact center of the re-fit quadrilateral
 
-Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce signifigant errors into your robot's behavior, depending on how you are using the tag outputs.
+Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce significant errors into your robot's behavior, depending on how you are using the tag outputs.
 
 Visualization
 ^^^^^^^^^^^^^
@@ -100,37 +100,37 @@ Here is a visualization of the steps involved:
 
 .. tabs::
 
-   .. tab:: Origional Image
+   .. tab:: Original Image
 
-      :image:`images/orig_img.png`
+      .. image:: images/orig_img.png
 
    .. tab:: Remove Colors
 
-      :image:`images/bw_img.png`
+      .. image:: images/bw_img.png
 
    .. tab:: Decimate
 
-      :image:`images/decimate.png`
+      .. image:: images/decimate.png
 
    .. tab:: Adaptive Threshold
 
-      :image:`images/adaptive_threshold.png`
+      .. image:: images/adaptive_threshold.png
 
-   .. tab:: Segementation
+   .. tab:: Segmentation
 
-      :image:`images/segmentation.png`
+      .. image:: images/segmentation.png
 
    .. tab:: Tag Detection
 
-      :image:`images/tag_detection.png`
+      .. image:: images/tag_detection.png
 
    .. tab:: Fit External Quad
 
-      :image:`images/fit_ext_quad.png`
+      .. image:: images/fit_ext_quad.png
 
    .. tab:: Homography
 
-      :image:`images/homography.png`
+      .. image:: images/homography.png
 
 
 Usage
@@ -160,7 +160,7 @@ Given each tag's ID, the position of the tag on the field can be identified.
 
 TODO: Code Snippet
 
-Using the information about the camera's distortion, along with the known size of the tag, an estimate of the camera's position relative to the tag is calcualted.
+Using the information about the camera's distortion, along with the known size of the tag, an estimate of the camera's position relative to the tag is calculated.
 
 TODO: Code Snippet
 
@@ -177,7 +177,7 @@ blur, decimation, threads, whatever else
 
 blur - don't use it bad bad bad apriltag 3 shouldn't use it
 
-Decimation factor - should only impact speed and reliaability of either seeing or not seeing a tag. Should not impact corner detection.
+Decimation factor - should only impact speed and reliability of either seeing or not seeing a tag. Should not impact corner detection.
 
 Threads - idk need ot look it up. ALign to number of cores?
 
@@ -192,4 +192,4 @@ The three major versions of AprilTags are described in three academic papers. It
 * :download:`AprilTags v2 <files/wang2016iros.pdf>`
 * :download:`AprilTags v3 <files/krogius2019iros.pdf>`
 
-Additioanl information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`_
+Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`_
