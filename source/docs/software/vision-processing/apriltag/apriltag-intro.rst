@@ -49,21 +49,21 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       .. image:: images/orig_img.gif
 
-      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag. 
+      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag.
 
    .. tab:: Remove Colors
 
       .. image:: images/bw_img.gif
 
-      * Convert the image to a grey-scale (brightness-only) image. 
+      * Convert the image to a grey-scale (brightness-only) image.
          * Color information is not needed to detect the black-and-white tags.
 
    .. tab:: Decimate
 
       .. image:: images/decimate.gif
 
-      * Convert the image to a lower resolution. 
-         * Working with fewer pixels helps the algorithm work faster. 
+      * Convert the image to a lower resolution.
+         * Working with fewer pixels helps the algorithm work faster.
          * The full-resolution image will be used later to refine early estimates.
 
    .. tab:: Adaptive Threshold
@@ -112,7 +112,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       Now that we have a tag ID for the region of pixels, we need to do something useful with it.
 
-      For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the beginning to have distorted the image, and we want to undo those effects. 
+      For most FRC applications, we care about knowing the precise location of the corners of the tag, or its center. In both cases, we expect the resolution-lowering operation we did at the beginning to have distorted the image, and we want to undo those effects.
 
       The algorithm to do this is:
 
@@ -147,7 +147,7 @@ A more advanced usage of AprilTags is to use their corner locations to help perf
 
 This method requires calibrating the camera to measure how its optics distort 3d space onto the 2d sensor.
 
-Once calibrated, each image is searched for AprilTags using the above algorithm. 
+Once calibrated, each image is searched for AprilTags using the above algorithm.
 
 Given each tag's ID, the position of the tag on the field can be identified.
 
