@@ -21,7 +21,9 @@ All of the tags are from the 36H11 family, which means that:
 1) Each tag carries 36 bits of information
 2) It would take at least 11 bit "flips" before one tag could be mistaken for another.
 
-All tags will be printed such that their outer black border is 200mm on a side.
+All tags will be printed such that their outer black border is 8.125 inches on a side.
+
+.. image:: images/tag_size.png
 
 For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/main/tag36h11>`_ may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
 
@@ -84,13 +86,13 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       .. image:: images/detected_quads.png
 
-      * Identify a suspect set of quadrilateral which is likely a tag.
-         * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
-
       * Fit a quadrilateral to each clump
          * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
          * Iterate through all possible combinations of corners, evaluating the fit each time
          * Pick the best-fit quadrilateral
+
+      * Identify a suspect set of quadrilateral which is likely a tag.
+         * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
 
@@ -136,7 +138,15 @@ Using a camera, identify the _centroid_ of the apriltags in view. If the tag's I
 
 This method does not require calibrating the camera or performing the homography step.
 
-TODO: Code samples? Specifics?
+.. tabs::
+
+  .. code-tab:: java
+
+    // Coming soon!
+
+  .. code-tab:: c++
+
+    // Coming soon!
 
 3D Alignment
 ^^^^^^^^^^^^
@@ -151,15 +161,53 @@ Once calibrated, each image is searched for AprilTags using the above algorithm.
 
 Given each tag's ID, the position of the tag on the field can be identified.
 
-TODO: Code Snippet
+.. tabs::
+
+  .. code-tab:: java
+
+    // Coming soon!
+
+  .. code-tab:: c++
+
+    // Coming soon!
+
 
 Using the information about the camera's distortion, along with the known size of the tag, an estimate of the camera's position relative to the tag is calculated.
 
-TODO: Code Snippet
+.. tabs::
+
+  .. code-tab:: java
+
+    // Coming soon!
+
+  .. code-tab:: c++
+
+    // Coming soon!
 
 In turn, using the `Pose3d` classes and the known positions of tags on the field, the robot's position on the field may be estimate.
 
 These estimates can be incorporated into the WPILib pose estimation classes.
+
+2D to 3D Ambiguity
+------------------
+
+The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional") is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the image.
+
+Humans can often use lighting or background clues to understand how objects are oriented in space. However, computers do not have this benefit. They can be tricked by similar-looking targets:
+
+.. image:: images/planar_ambiguity1.png
+
+.. image:: images/planar_ambiguity2.png
+  
+.. image:: images/planar_ambiguity3.png
+
+Resolving which position is "correct" can be done in a few different ways:
+
+1. Use your odometry history from all sensors to pick the pose closest to where you expect the robot to be.
+2. Reject poses which are very unlikely (ex: outside the field perimiter, or up in the air)
+3. Ignore pose estimates which are very close together (and hard to differentiate)
+4. Use multiple cameras to look at the same target, such that at least one camera can generate a good pose estimate
+5. Look at many targets at once, using each to generate multiple pose estimates. Discard the outlying estimates, use the ones which are tightly clustered together.
 
 Adjustable Parameters
 ---------------------
@@ -180,5 +228,6 @@ The three major versions of AprilTags are described in three academic papers. It
 * :download:`AprilTags v1 <files/olson2011tags.pdf>`
 * :download:`AprilTags v2 <files/wang2016iros.pdf>`
 * :download:`AprilTags v3 <files/krogius2019iros.pdf>`
+* :download:`Pose Ambiguity <files/mmsp2014_spe.pdf>`
 
 Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`_
