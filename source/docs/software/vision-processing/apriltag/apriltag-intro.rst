@@ -198,7 +198,7 @@ Humans can often use lighting or background clues to understand how objects are 
 .. image:: images/planar_ambiguity1.png
 
 .. image:: images/planar_ambiguity2.png
-  
+
 .. image:: images/planar_ambiguity3.png
 
 Resolving which position is "correct" can be done in a few different ways:
