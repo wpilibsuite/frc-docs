@@ -18,7 +18,7 @@ The purpose of this task is to test any newly developed or heavily modified feat
 **C++/Java**
 
 - 3D Geometry classes & ComputerVisionUtil
-- Linear Time-Varying controllers for unicycles (Ramsete replacement) and diff drives
+- Linear Time-Varying controllers for unicycles (Ramsete replacement) and differential drives
 
 Desired Feedback
 ----------------
