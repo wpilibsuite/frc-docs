@@ -71,7 +71,7 @@ Creating one ``StartEndCommand`` instance and putting it in a variable won't wor
 Instance Command Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One way to solve this quandry is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using command composition and :ref:`decorators<docs/software/commandbased/convenience-features:Command Decorator Methods>`, a factory method can construct a complex command object with merely a few lines of code.
+One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using command composition and :ref:`decorators<docs/software/commandbased/convenience-features:Command Decorator Methods>`, a factory method can construct a complex command object with merely a few lines of code.
 
 For example, a command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``runIntakeCommand`` method as an instance method of the ``Intake`` class:
 
@@ -147,7 +147,7 @@ For instance, this code creates a command group that runs the intake forwards fo
     // TODO
 
 
-This approach is recommended for commands that are conceptually related to only a single subsystem, and is very consise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
+This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
 
 
 Subclassing CommandBase
@@ -251,7 +251,7 @@ While static factories are manageable for single-subsystem commands, they excel 
 
     // TODO
 
-Also, note the use of static factories to construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more expressive in some cases. Their use is a matter of personal preference
+Also, note the use of static factories to construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more expressive in some cases. Their use is a matter of personal preference.
 
 
 Subclassing Command Groups
