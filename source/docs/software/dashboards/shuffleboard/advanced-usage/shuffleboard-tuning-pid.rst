@@ -46,7 +46,7 @@ The following example demonstrates how to create a button on your dashboard that
     NetworkTableEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
 
     // Command Example assumed to be in a PIDSubsystem
-    new NetworkButton(shooterEnable).whenPressed(new InstantCommand(m_shooter::enable));
+    new NetworkButton(shooterEnable).onTrue(new InstantCommand(m_shooter::enable));
 
     // Timed Robot Example
     if (shooterEnable.getBoolean()) {
@@ -61,7 +61,7 @@ The following example demonstrates how to create a button on your dashboard that
     nt::NetworkTableEntry shooterEnable = tab.Add("Shooter Enable", false).GetEntry();
 
     // Command-based assumed to be in a PIDSubsystem
-    frc2::NetworkButton(shooterEnable).WhenPressed(frc2::InstantCommand([&] { m_shooter.Enable(); }));
+    frc2::NetworkButton(shooterEnable).OnTrue(frc2::InstantCommand([&] { m_shooter.Enable(); }));
 
     // Timed Robot Example
     if (shooterEnable.GetBoolean()) {

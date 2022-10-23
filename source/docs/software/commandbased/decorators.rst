@@ -16,12 +16,12 @@ decorated command will be interrupted if the timeout expires:
   .. code-tab:: java
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    button.whenPressed(command.withTimeout(5));
+    button.onTrue(command.withTimeout(5));
 
   .. code-tab:: c++
 
     // Will time out 5 seconds after being scheduled, and be interrupted
-    button.WhenPressed(command.WithTimeout(5.0_s));
+    button.OnTrue(command.WithTimeout(5.0_s));
 
 until
 -----
@@ -33,12 +33,12 @@ The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/ed
   .. code-tab:: java
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.whenPressed(command.until(m_limitSwitch::get));
+    button.onTrue(command.until(m_limitSwitch::get));
 
   .. code-tab:: c++
 
     // Will be interrupted if m_limitSwitch.get() returns true
-    button.WhenPressed(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+    button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
 ``until()`` replaces the deprecated ``withInterrupt()``.
 
@@ -52,12 +52,12 @@ The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
   .. code-tab:: java
 
     // Will print "hello" after ending
-    button.whenPressed(command.andThen(() -> System.out.println("hello")));
+    button.onTrue(command.andThen(() -> System.out.println("hello")));
 
   .. code-tab:: c++
 
     // Will print "hello" after ending
-    button.WhenPressed(command.AndThen([] { std::cout << "hello"; }));
+    button.OnTrue(command.AndThen([] { std::cout << "hello"; }));
 
 beforeStarting
 --------------
@@ -69,12 +69,12 @@ The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpili
   .. code-tab:: java
 
     // Will print "hello" before starting
-    button.whenPressed(command.beforeStarting(() -> System.out.println("hello")));
+    button.onTrue(command.beforeStarting(() -> System.out.println("hello")));
 
   .. code-tab:: c++
 
     // Will print "hello" before starting
-    button.WhenPressed(command.BeforeStarting([] { std::cout << "hello"; }));
+    button.OnTrue(command.BeforeStarting([] { std::cout << "hello"; }));
 
 alongWith (Java only)
 ---------------------
@@ -86,7 +86,7 @@ The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta
 .. code-block:: java
 
    // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
-   button.whenPressed(oneSecCommand.alongWith(twoSecCommand, threeSecCommand));
+   button.onTrue(oneSecCommand.alongWith(twoSecCommand, threeSecCommand));
 
 raceWith (Java only)
 --------------------
@@ -98,7 +98,7 @@ The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta/
 .. code-block:: java
 
    // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
-   button.whenPressed(twoSecCommand.raceWith(oneSecCommand, threeSecCommand));
+   button.onTrue(twoSecCommand.raceWith(oneSecCommand, threeSecCommand));
 
 deadlineWith (Java only)
 ------------------------
@@ -110,7 +110,7 @@ The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/b
 .. code-block:: java
 
    // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-   button.whenPressed(twoSecCommand.deadlineWith(oneSecCommand, threeSecCommand));
+   button.onTrue(twoSecCommand.deadlineWith(oneSecCommand, threeSecCommand));
 
 withName (Java only)
 --------------------
@@ -134,12 +134,12 @@ The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/do
   .. code-tab:: java
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
-    button.whenPressed(command.repeatedly());
+    button.onTrue(command.repeatedly());
 
   .. code-tab:: c++
 
     // Will run forever unless externally interrupted, regardless of command.isFinished()
-    button.WhenPressed(command.Repeatedly());
+    button.OnTrue(command.Repeatedly());
 
 unless
 ^^^^^^
@@ -150,12 +150,12 @@ The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/deve
   .. code-tab:: java
 
     // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-    button.whenPressed(command.unless(() -> !intake.isDeployed()));
+    button.onTrue(command.unless(() -> !intake.isDeployed()));
 
   .. code-tab:: c++
 
     // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-    button.WhenPressed(command.Unless([&intake] { return !intake.IsDeployed(); }));
+    button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
 
 ignoringDisable
 ^^^^^^^^^^^^^^^
@@ -199,4 +199,4 @@ Remember that decorators, like all command groups, can be composed! This allows 
 .. code-block:: java
 
    // Will run fooCommand, and then a race between barCommand and bazCommand
-   button.whenPressed(fooCommand.andThen(barCommand.raceWith(bazCommand)));
+   button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)));

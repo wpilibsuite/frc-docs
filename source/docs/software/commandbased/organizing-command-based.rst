@@ -50,7 +50,7 @@ This is sufficient for commands that are only used once. However, for a command 
   .. code-tab:: java
 
     // RobotContainer.java
-    intakeButton.whileHeld(new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake));
+    intakeButton.whileTrue(new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake));
 
 
     Command intakeAndShoot = new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake)
@@ -104,7 +104,7 @@ Using this new factory method in command groups and button bindings is highly ex
 
   .. code-tab:: java
 
-    intakeButton.whileHeld(intake.runIntakeCommand());
+    intakeButton.whileTrue(intake.runIntakeCommand());
 
     Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter());
 
