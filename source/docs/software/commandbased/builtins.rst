@@ -290,25 +290,10 @@ By default, commands in command groups are run *through* the command group, and 
 Running Command Continuously
 ----------------------------
 
-Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) and ``EndlessCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/EndlessCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_endless_command.html>`__) run a command continuously, with one key difference: ``RepeatCommand`` restarts the command every time it ends, while ``EndlessCommand`` ignores the command's end condition. This has important ramifications, for example an ``InstantCommand`` will run multiple times if repeated but not if made endless; an endless ``SequentialCommandGroup`` will keep running the last command until interrupted, meanwhile a repeated ``SequentialCommandGroup`` will restart once the last command ends.
+``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) runs a command continuously by restarting the command every time it ends. For example, a common use case for this is in combination with ``SequentialCommandGroup`` to achieve a sequence of commands that returns to the first command once the last one ends.
 
 .. tabs::
-  .. todo: maybe a better way of indicating when each method will be called?
   .. code-tab:: java
-
-    new PerpetualCommand(new FunctionalCommand(
-        // initialize()
-        () -> System.out.println("This will be called only once!"),
-        // execute
-        () -> System.out.println("This will be called many times!"),
-        // end
-        interrupted -> System.out.println("This won't be called at all!"),
-        // isFinished
-        () -> {
-            System.out.println("This won't be called either!");
-            return true;
-        })
-    )
 
     new RepeatCommand(new FunctionalCommand(
         // initialize()
@@ -326,20 +311,6 @@ Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/relea
 
   .. code-tab:: c++
 
-    frc2::PerpetualCommand(frc2::FunctionalCommand(
-        // initialize()
-        []{ wpi::outs() << "This will be called only once!"; },
-        // execute
-        []{ wpi::outs() << "This will be called many times!"; },
-        // end
-        [](bool interrupted){ wpi::outs() << "This won't be called at all!",
-        // isFinished
-        []{
-            wpi::outs() << "This won't be called either!");
-            return true;
-        })
-    )
-
     frc2::RepeatCommand(frc2::FunctionalCommand(
         // initialize()
         []{ wpi::outs() << "This will be called many times!",
@@ -354,7 +325,7 @@ Both ``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/relea
         })
     )
 
-``RepeatCommand`` and ``EndlessCommand`` can also be created using the ``.repeatedly()`` and ``.endlessly()`` decorators respectively.
+``RepeatCommand`` can also be created using the ``.repeatedly()`` decorator.
 
 Running Multiple Commands
 -------------------------
