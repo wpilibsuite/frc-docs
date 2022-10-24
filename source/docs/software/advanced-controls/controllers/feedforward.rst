@@ -160,7 +160,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 Using Feedforward to Control Mechanisms
 ---------------------------------------
 
-.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_speed_controller.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_motor_controller.html#a613c23a3336e103876e433bcb8b5ad3e>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
 
 Feedforward control can be used entirely on its own, without a feedback controller.  This is known as "open-loop" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:
 
