@@ -31,7 +31,7 @@ Moreover, feedforward is a separate feature entirely from feedback, and thus has
 Using Feedforward Components with PID
 -------------------------------------
 
-.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_speed_controller.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_motor_controller.html#a613c23a3336e103876e433bcb8b5ad3e>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
 
 What might a more complete example of combined feedforward/PID control look like?  Consider the :ref:`drive example <docs/software/advanced-controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` from the feedforward page.  We can easily modify this to include feedback control (with a ``SimpleMotorFeedforward`` component):
 
