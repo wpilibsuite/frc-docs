@@ -290,7 +290,7 @@ By default, commands in command groups are run *through* the command group, and 
 Running Command Continuously
 ----------------------------
 
-``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) runs a command continuously by restarting the command every time it ends. For example, a common use case for this is in combination with ``SequentialCommandGroup`` to achieve a sequence of commands that returns to the first command once the last one ends.
+``RepeatCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_repeat_command.html>`__) runs a command continuously by restarting the command every time it ends. For example, a common use case for this is in combination with ``SequentialCommandGroup`` to achieve a sequence of commands that returns to the first command once the last one ends.
 
 .. tabs::
   .. todo: maybe a better way of indicating when each method will be called?
