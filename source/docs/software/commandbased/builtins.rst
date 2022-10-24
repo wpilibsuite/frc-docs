@@ -19,7 +19,7 @@ InstantCommand
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
       :language: java
       :lines: 90-95
       :linenos:
@@ -27,7 +27,7 @@ InstantCommand
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
       :language: c++
       :lines: 66-68
       :linenos:
@@ -35,7 +35,7 @@ InstantCommand
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
       :lines: 35-40
       :linenos:
@@ -169,7 +169,7 @@ For this, ``SelectCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
        :language: java
        :lines: 20-45
        :linenos:
@@ -177,7 +177,7 @@ For this, ``SelectCommand`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
        :language: c++
        :lines: 25-44
        :linenos:

@@ -20,7 +20,7 @@ As ``Robot`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjE
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 22-31
       :linenos:
@@ -34,7 +34,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 33-47
       :linenos:
@@ -42,7 +42,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 12-22
       :linenos:
@@ -54,7 +54,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 56-65
       :linenos:
@@ -62,7 +62,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 33-43
       :linenos:
@@ -74,7 +74,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 71-80
       :linenos:
@@ -82,7 +82,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 47-56
       :linenos:
@@ -109,7 +109,7 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExa
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
       :language: c++
       :lines: 25-27
       :linenos:
@@ -141,7 +141,7 @@ Since subsystems are declared as private members, they must be explicitly passed
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
       :lines: 31-37
       :linenos:
@@ -149,7 +149,7 @@ Since subsystems are declared as private members, they must be explicitly passed
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
       :lines: 14-16
       :linenos:
@@ -161,7 +161,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
       :lines: 39-48
       :linenos:
@@ -169,7 +169,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
       :lines: 18-21
       :linenos:
