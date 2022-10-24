@@ -148,7 +148,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
       :language: c++
       :lines: 5-
       :linenos:
