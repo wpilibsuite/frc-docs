@@ -19,9 +19,9 @@ Initializing Preferences
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
-         :lines: 37-44, 84-85, 91-99
+         :lines: 38-45, 85-86, 92-100
 
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
@@ -42,9 +42,9 @@ Reading Preferences
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
-         :lines: 121-129
+         :lines: 122-130
 
 Reading a preference is easy. The ``GetDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
@@ -60,9 +60,9 @@ Depending on the data that is stored in preferences, you can use it when you rea
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
-         :lines: 131-142
+         :lines: 132-143
 
 Using Preferences in SmartDashboard
 -----------------------------------
