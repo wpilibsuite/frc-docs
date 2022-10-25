@@ -72,12 +72,14 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: Starlight220/Inspector@v1.0
+        uses: Starlight220/Inspector@v1.2
         id: inspector
         with:
           root: ${{ github.workspace }}
-        env:
-          INSPECTOR_CONFIG: '.github/workflows/inspector.json'
+          baseUrl: 'https://raw.githubusercontent.com/wpilibsuite/allwpilib/'
+          versionScheme: 'v\d{4}\.\d\.\d(?:-(?:alpha|beta)-\d)?|[0-9a-f]{40}'
+          latestVersion: 'v2023.1.1-beta-1'
+          ignoredFiles: '["source/docs/software/pathplanning/trajectory-tutorial/"]'
 
       # If diff-autofix is triggered, restore temporarily deleted files
       - name: Restore unchanged files
