@@ -1,14 +1,14 @@
 Command Decorator Methods
 =========================
 
-The ``Command`` interface contains a number of defaulted "decorator" methods which can be used to add additional functionality to existing commands. A "decorator" method is a method that takes an object (in this case, a command) and returns an object of the same type (i.e. a command) with some additional functionality added to it. A list of the included decorator methods with brief examples is included below - for rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html>`__).
+The ``Command`` interface contains a number of defaulted "decorator" methods which can be used to add additional functionality to existing commands. A "decorator" method is a method that takes an object (in this case, a command) and returns an object of the same type (i.e. a command) with some additional functionality added to it. A list of the included decorator methods with brief examples is included below - for rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html>`__).
 
 .. important:: After calling a decorator, the command object cannot be reused! Use only the command object returned from the decorator.
 
 withTimeout
 -----------
 
-The ``withTimeout()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a7d1ba6905ebca2f7e000942b318b59ae>`__) adds a timeout to a command. The
+The ``withTimeout()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a7d1ba6905ebca2f7e000942b318b59ae>`__) adds a timeout to a command. The
 decorated command will be interrupted if the timeout expires:
 
 .. tabs::
@@ -26,7 +26,7 @@ decorated command will be interrupted if the timeout expires:
 until
 -----
 
-The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
+The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
@@ -45,7 +45,7 @@ The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/
 andThen
 -------
 
-The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#ab0cc63118f578b328222ab2e9f1b7b65>`__) adds a method to be executed after the command ends:
+The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ab0cc63118f578b328222ab2e9f1b7b65>`__) adds a method to be executed after the command ends:
 
 .. tabs::
 
@@ -62,7 +62,7 @@ The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 beforeStarting
 --------------
 
-The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#ab8d1d6ccf24f90ffa9be270544dd7162>`__) adds a method to be executed before the command starts:
+The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ab8d1d6ccf24f90ffa9be270544dd7162>`__) adds a method to be executed before the command starts:
 
 .. tabs::
 
@@ -81,7 +81,7 @@ alongWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel command group the ordinary way instead.
 
-The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
+The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
 
 .. code-block:: java
 
@@ -93,7 +93,7 @@ raceWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
+The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
 
 .. code-block:: java
 
@@ -105,7 +105,7 @@ deadlineWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
+The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
 
 .. code-block:: java
 
@@ -117,7 +117,7 @@ withName (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should set the name of the command inside their command class instead.
 
-The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.util.sendable.SendableBuilder)>`__.
+The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.util.sendable.SendableBuilder)>`__.
 
 .. code-block:: java
 
@@ -127,7 +127,7 @@ The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/devel
 repeatedly
 ----------
 
-The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a2f03abf3d59fcd539385e39526751512>`__) restarts the command each time it ends, so that it runs forever.
+The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a2f03abf3d59fcd539385e39526751512>`__) restarts the command each time it ends, so that it runs forever.
 
 .. tabs::
 
@@ -144,7 +144,7 @@ The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/do
 endlessly
 ---------
 
-The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#endlessly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
+The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#endlessly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
 
 .. tabs::
 
