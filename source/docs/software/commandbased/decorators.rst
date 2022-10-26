@@ -141,23 +141,6 @@ The ``repeatedly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/do
     // Will run forever unless externally interrupted, regardless of command.isFinished()
     button.WhenPressed(command.Repeatedly());
 
-endlessly
----------
-
-The ``endlessly()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#endlessly()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
-
-.. tabs::
-
-  .. code-tab:: java
-
-    // Will run forever unless externally interrupted, regardless of command.isFinished()
-    button.whenPressed(command.endlessly());
-
-  .. code-tab:: c++
-
-    // Will run forever unless externally interrupted, regardless of command.isFinished()
-    button.WhenPressed(command.Endlessly());
-
 unless
 ^^^^^^
 The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a61630f22b45df20ede2e14f14cfd2708>`__) creates a conditional command that stops the command from starting if the supplier returns true. The command will not stop if the supplier changes while running. The new conditional command will use the requirements of the decorated command so even if the condition to run the command is not met, any commands using the requirements will be canceled.
