@@ -80,7 +80,7 @@ sphinxcontrib-svg2pdfconverter==1.2.0; python_version >= "3.4" and python_versio
 sphinxext-delta==0.2.0; python_version >= "3.6"
 sphinxext-linkcheckdiff==0.1.0; python_version >= "3.6"
 sphinxext-mimic==0.1.1; python_version >= "3.6"
-sphinxext-opengraph==0.4.1; python_version >= "3.6"
+git+https://github.com/wpilibsuite/sphinxext-opengraph@main
 sphinxext-photofinish==0.1.9; python_version >= "3.6"
 sphinxext-presentations==0.2.2; python_version >= "3.6"
 sphinxext-rediraffe==0.2.5; python_version >= "3.6"
