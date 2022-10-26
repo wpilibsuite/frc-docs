@@ -673,7 +673,9 @@ Spike relay configured as for one or two solenoids
 CANCoder Encoder
 ----------------
 
-.. todo:: image
+.. image:: images/status-lights/cancoder-status-lights.png
+  :alt: LED at the top of the encoder.
+  :width: 400
 
 +---------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------+
 | LED Color           | LED Brightness  | CAN Bus detection                  | Magnet Field Strength                                                 | Description                                                     |
