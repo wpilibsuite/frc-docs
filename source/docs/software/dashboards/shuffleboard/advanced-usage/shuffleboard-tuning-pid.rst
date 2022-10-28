@@ -31,7 +31,7 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 
 Try various PID gains to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
 
-.. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this fuctionality.
+.. important:: The enable option does not affect the `PIDController <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this fuctionality.
 
 Enable Functionality in the New PIDController
 ---------------------------------------------

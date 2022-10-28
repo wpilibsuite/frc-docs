@@ -53,11 +53,11 @@ Building the program
 --------------------
 When building and running the program you will need some additional libraries to include with your client-side program. These are:
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-java/ (ntcore Java files)
+https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/ntcore/ntcore-java/ (ntcore Java files)
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-jni/ (ntcore native libs for all desktop platforms)
+https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/ntcore/ntcore-jni/ (ntcore native libs for all desktop platforms)
 
-https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil Java files)
+https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil Java files)
 
 .. note:: The desktop platform jar is for Windows, macOS, and Linux.
 
@@ -71,7 +71,7 @@ First, the FRC\ |reg| Maven repository should be added to the ``repositories`` b
 .. code-block:: groovy
 
    repositories {
-       maven { url "https://frcmaven.wpi.edu/artifactory/release/" }
+       maven { url "https://frcmaven.wpi.edu/artifactory/development/" }
    }
 
 Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSION`` should be replaced with the latest version number of the following dependencies. This usually corresponds to the version number of the latest WPILib release.

@@ -183,7 +183,7 @@ The old commands framework, when using PIDController and PIDCommand, is possibly
 
 #. Install the 2021 JDK. This is performed automatically in WPILib 2022.4.1 and later.
 
-   #. Download the `2021 JDK <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/jdk/roborio-2021/11.0.9u11-1/roborio-2021-11.0.9u11-1.ipk>`__.
+   #. Download the `2021 JDK <https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/jdk/roborio-2021/11.0.9u11-1/roborio-2021-11.0.9u11-1.ipk>`__.
 
    #. :doc:`Copy </docs/software/roborio-info/roborio-ftp>` the downloaded ``.ipk`` file to the roboRIO.
 

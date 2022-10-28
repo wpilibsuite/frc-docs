@@ -21,7 +21,7 @@ Three-axis accelerometers often require more complicated communications protocol
 AnalogAccelerometer
 -------------------
 
-The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_analog_accelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
+The :code:`AnalogAccelerometer` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_analog_accelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
 .. tabs::
 
@@ -59,7 +59,7 @@ If users have a 3-axis analog accelerometer, they can use three instances of thi
 The Accelerometer interface
 ---------------------------
 
-All 3-axis accelerometers in WPILib implement the :code:`Accelerometer` interface (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Accelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_accelerometer.html>`__).  This interface defines functionality and settings common to all supported 3-axis accelerometers.
+All 3-axis accelerometers in WPILib implement the :code:`Accelerometer` interface (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/interfaces/Accelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_accelerometer.html>`__).  This interface defines functionality and settings common to all supported 3-axis accelerometers.
 
 The :code:`Accelerometer` interface contains getters for the acceleration along each cardinal direction (x, y, and z), as well as a setter for the range of accelerations the accelerometer will measure.
 
@@ -80,7 +80,7 @@ The :code:`Accelerometer` interface contains getters for the acceleration along 
 ADXL345_I2C
 ^^^^^^^^^^^
 
-The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___i2_c.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
+The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l345___i2_c.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tabs::
 
@@ -99,7 +99,7 @@ The :code:`ADXL345_I2C` class (`Java <https://first.wpi.edu/wpilib/allwpilib/doc
 ADXL345_SPI
 ^^^^^^^^^^^
 
-The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.
+The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.
 
 .. tabs::
 
@@ -118,7 +118,7 @@ The :code:`ADXL345_SPI` class (`Java <https://first.wpi.edu/wpilib/allwpilib/doc
 ADXL362
 ^^^^^^^
 
-The :code:`ADXL362` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
+The :code:`ADXL362` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
 .. tabs::
 
@@ -137,7 +137,7 @@ The :code:`ADXL362` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/re
 BuiltInAccelerometer
 ^^^^^^^^^^^^^^^^^^^^
 
-The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_built_in_accelerometer.html>`__) provides access to the roboRIO's own built-in accelerometer:
+The :code:`BuiltInAccelerometer` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_built_in_accelerometer.html>`__) provides access to the roboRIO's own built-in accelerometer:
 
 .. tabs::
 
@@ -212,7 +212,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_linear_filter.html>`__) to reduce the noise:
 
 .. tabs::
 

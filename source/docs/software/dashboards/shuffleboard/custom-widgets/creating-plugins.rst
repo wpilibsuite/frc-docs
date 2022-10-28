@@ -36,7 +36,7 @@ Plugin classes are permitted to have a default constructor but it cannot take an
 
 Building plugin
 ---------------
-Plugins require the usage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the ``build.gradle`` file or using maven. The dependencies would be as follows:
+Plugins require the usage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the ``build.gradle`` file or using maven. The dependencies would be as follows:
 
 For Gradle:
 

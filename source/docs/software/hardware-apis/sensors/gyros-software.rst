@@ -10,7 +10,7 @@ A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to 
 The Gyro interface
 ------------------
 
-All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
+All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
@@ -51,7 +51,7 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class and implements the :code:`Gyr
 ADXRS450_Gyro
 ^^^^^^^^^^^^^
 
-The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
@@ -70,7 +70,7 @@ The :code:`ADXRS450_Gyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/d
 AnalogGyro
 ^^^^^^^^^^
 
-The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html>`__) provides support for any single-axis gyro with an analog output.
+The :code:`AnalogGyro` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/development/cpp/classfrc_1_1_analog_gyro.html>`__) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 

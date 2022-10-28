@@ -12,7 +12,7 @@ The AnalogInput class
 
 .. note:: It is often more convenient to use the :doc:`Analog Potentiometers <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
-Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_analog_input.html>`__).
+Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogInput.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/classfrc_1_1_analog_input.html>`__).
 
 Initializing an AnalogInput
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

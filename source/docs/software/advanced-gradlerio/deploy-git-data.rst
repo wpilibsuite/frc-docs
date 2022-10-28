@@ -100,7 +100,7 @@ Since these files include data that is already tracked by Git and are regenerate
 Using Deployed Files
 --------------------
 
-In order to access files that were written to the deploy directory in code, you have to use the ``getDeployDirectory()`` method of the `Filesystem <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Filesystem.html>`__ class in Java, or the ``GetDeployDirectory()`` function of the `frc::filesystem <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/namespacefrc_1_1filesystem.html>`__ namespace in C++. Below is an example of opening both files from the previous examples:
+In order to access files that were written to the deploy directory in code, you have to use the ``getDeployDirectory()`` method of the `Filesystem <https://first.wpi.edu/wpilib/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Filesystem.html>`__ class in Java, or the ``GetDeployDirectory()`` function of the `frc::filesystem <https://first.wpi.edu/wpilib/allwpilib/docs/beta/cpp/namespacefrc_1_1filesystem.html>`__ namespace in C++. Below is an example of opening both files from the previous examples:
 
 .. note:: Opening and reading the files is slow and should not be performed during any periodic methods. Since the file will only change on deploy, it only needs to be read once.
 
