@@ -5,6 +5,8 @@ Driver Station Log File Viewer
 
 In an effort to provide information to aid in debugging, the FRC\ |reg| Driver Station creates log files of important diagnostic data while running. These logs can be reviewed later using the FRC Driver Station Log Viewer. The Log Viewer can be found via the shortcut installed in the Start menu, in the FRC Driver Station folder in Program Files, or via the Gear icon in the Driver Station.
 
+.. image:: images/driver-station-log-viewer/open_ds_log_viewer__from_driver_station.png
+
 Event Logs
 ----------
 
