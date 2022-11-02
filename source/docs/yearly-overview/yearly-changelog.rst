@@ -5,9 +5,9 @@ New for 2023
 
 A number of improvements have been made to FRC\ |reg| Control System software for 2023. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
-Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:``Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>``, any 2022 projects must be :doc:``imported </docs/software/vscode-overview/importing-gradle-project>`` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2022 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
-It's recommended to also review the list of :doc:``known issues <known-issues>``.
+It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
 Major Changes (Java/C++)
 ------------------------
@@ -64,11 +64,11 @@ General Library
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
-  - `Trigger`'s bindings are changed to use `True`/`False` terminology, as it should be unambiguous. Each binding type has both `True` and `False` variants; for brevity, only the `True` variants are listed here:
+  - ``Trigger`'`s bindings are changed to use ``True``/``False`` terminology, as it should be unambiguous. Each binding type has both ``True`` and ``False`` variants; for brevity, only the ``True`` variants are listed here:
 
     - ``onTrue`` (replaces ``whenActive`` and ``whenPressed``): schedule on rising edge.
     - ``whileTrue`` (replaces ``whileActiveOnce``): schedule on rising edge, cancel on falling edge.
-    - ``toggleOnTrue`` (replaces `toggleWhenActive`): on rising edge, schedule if unscheduled and cancel if scheduled.
+    - ``toggleOnTrue`` (replaces ``toggleWhenActive``): on rising edge, schedule if unscheduled and cancel if scheduled.
 
   - Two binding types are completely deprecated:
 
@@ -78,7 +78,7 @@ General Library
 Breaking Changes
 ^^^^^^^^^^^^^^^^
 
-.. important:: The 2023 release no longer includes the old command-based framework. Users must refactor existing code to use the new :doc:``command-based framework </docs/software/commandbased/index>``
+.. important:: The 2023 release no longer includes the old command-based framework. Users must refactor existing code to use the new :doc:`command-based framework </docs/software/commandbased/index>`
 
 .. danger:: Updated ``DifferentialDrive`` and ``MecanumDrive`` classes to use North-West-Up axis conventions to match the rest of WPILib. The Z-axis (i.e. turning) will need to be inverted to restore the old behavior.
 
