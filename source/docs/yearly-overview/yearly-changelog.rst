@@ -63,7 +63,7 @@ General Library
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
-  - ``Trigger`'`s bindings are changed to use ``True``/``False`` terminology, as it should be unambiguous. Each binding type has both ``True`` and ``False`` variants; for brevity, only the ``True`` variants are listed here:
+  - ``Trigger``'s bindings are changed to use ``True``/``False`` terminology, as it should be unambiguous. Each binding type has both ``True`` and ``False`` variants; for brevity, only the ``True`` variants are listed here:
 
     - ``onTrue`` (replaces ``whenActive`` and ``whenPressed``): schedule on rising edge.
     - ``whileTrue`` (replaces ``whileActiveOnce``): schedule on rising edge, cancel on falling edge.
