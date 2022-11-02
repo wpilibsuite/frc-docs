@@ -143,7 +143,7 @@ Opening The New Project
 
 After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
-.. note:: Due to a known issue it is recommended to choose :guilabel:`Yes (new window)`. :ref:`here <docs/yearly-overview/known-issues:WPILib VS Code extension not loaded after creating new project or importing>`
+.. note:: Due to a known issue it is recommended to choose :guilabel:`Yes (new window)`. :ref:`docs/yearly-overview/known-issues:WPILib VS Code extension not loaded after creating new project or importing`
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
