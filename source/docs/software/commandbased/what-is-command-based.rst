@@ -11,11 +11,11 @@ The command-based paradigm is also an example of :term:`declarative programming`
 
   .. code-tab:: java
 
-    aButton.whenPressed(intake::run);
+    aButton.onTrue(new InstantCommand(intake::run, intake));
 
   .. code-tab:: c++
 
-    aButton.WhenPressed([&intake] { intake.Run(); });
+    aButton.OnTrue(InstantCommand([&intake] { intake.Run(); }, {&intake}));
 
 In contrast, in an ordinary , the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
 
