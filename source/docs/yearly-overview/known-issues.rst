@@ -8,51 +8,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-Visual Studio Code extensions fail to install on macOS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** With macOS Monterrey 12.3 or later, the VS Code extensions do not install automatically. This is due to the fact that macOS 12.3 removed python, but VS Code 1.62 installed by the WPILib Installer uses python when loading extensions.
-
-**Workaround:** Manually install the VS Code extensions
-
-1. Go to VS Code extensions (1), then three dots (2), then Install from VSIX (3).
-2. Navigate to ``~/wpilib/2022/vsCodeExtensions`` and install ``CPP.vsix``
-3. Repeat for the remaining 4 extensions (``JavaDebug.vsix``, ``JavaDeps.vsix``, ``JavaLang.vsix``, ``WPILib.vsix``)
-4. Restart VS Code.
-
-.. image:: images/known-issues/VSCodeExtensions.png
-   :alt: VS Code screen showing the navigation steps to Install from VSIX
-
-Code crash when initializing a PH/PCM related device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** The following crash may happen when a ``Solenoid``, ``DoubleSolenoid``, ``Compressor``, ``PneumaticHub`` or ``PneumaticsControlModule`` is initialized when the CAN bus is disconnected.
-
-**Workaround:** It is recommended to wrap the constructor in a try/catch and catch any corresponding usages. Additionally, you will want to double check that all CAN connections are secure from possible disconnects.
-
-.. tabs::
-
-   .. code-tab:: java
-
-      private Solenoid m_intakeSolenoid;
-
-      @Override
-      public void robotInit() {
-        try {
-          m_intakeSolenoid = new Solenoid(PneumaticsModuleType.REVPH, 0);
-        } catch (UncleanStatusException ex) {
-          DriverStation.reportError("Error creating Solenoid", ex.getStackTrace());
-        }
-      }
-
-      public void toggleSolenoid() {
-        try {
-          m_intakeSolenoid.toggle();
-        } catch (NullPointerException ex) {
-          DriverStation.reportError("Solenoid object is null", ex.getStackTrace());
-        }
-      }
-
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -98,20 +53,6 @@ Invalid build due to missing GradleRIO
 **Workaround:**
 
 Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to `view hidden files <https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5>`__. This issue has only shown up on Windows so far. Please `report <https://github.com/wpilibsuite/frc-docs/issues/new>`__ this issue if you get it on an alternative OS.
-
-Unable to Build Robot Projects outside of VS Code on M1-based macOS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Error when building a robot project in non-WPILib installations.
-
-.. code-block:: console
-
-   Could not determine the dependencies of task ':extractReleaseNative'.
-   > Could not resolve all files for configuration ':nativeRelease'.
-     > Failed to transform hal-cpp-2022.1.1-rc-1-osxx86.zip (edu.wpi.first.hal:hal-cpp:2022.1.1-rc-1) to match attributes {artifactType=gr-directory, org.gradle.status=release}.
-   ...
-
-**Workaround:** M1-based macOS is not supported. The above error will show up when using an ARM-based JDK. User must use a x64-compatible JDK 11 or preferably use the WPILib installer.
 
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,76 +109,3 @@ LabVIEW Autorun graphics say 2020
 **Issue:** If you launch the LabVIEW installer by using the Autorun file, the menu item correctly says 2022, but the graphic says 2020.
 
 **Workaround:** This can be safely ignored, if the menu item says 2022, you are installing the correct software.
-
-Fixed in WPILib 2022.4.1
-------------------------
-
-Reentrant uses of synchronized may cause deadlock in Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** If multiple threads call a `synchronized` object, there may be a deadlock. This is caused by a bug in the version of JDK bundled with the 2022.1.1 to 2022.3.1 versions of WPILib.
-
-The old commands framework, when using PIDController and PIDCommand, is possibly susceptible to this issue. If using that combination, please update to the latest WPILib to solve the issue.
-
-**Workaround:** There are two options for workarounds:
-
-#. Install the 2021 JDK. This is performed automatically in WPILib 2022.4.1 and later.
-
-   #. Download the `2021 JDK <https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/jdk/roborio-2021/11.0.9u11-1/roborio-2021-11.0.9u11-1.ipk>`__.
-
-   #. :doc:`Copy </docs/software/roborio-info/roborio-ftp>` the downloaded ``.ipk`` file to the roboRIO.
-
-   #. :doc:`SSH </docs/software/roborio-info/roborio-ssh>` as admin to the roborio and execute ``opkg remove frc2022-openjdk*`` and ``opkg install roborio-2021-11.0.9u11-1.ipk``
-
-#. Replace uses of ``synchronized`` with ``reentrantLock``
-
-.. code-block:: Java
-
-   try {
-     reentrantLock.lock()
-     ...do code here...
-   } finally {
-     reentrantLock.unlock()
-   }
-
-ADIS16448 not reading values in Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** In WPILib 2022.3.1, using the no-args constructor for the ADIS16448 IMU in Java results in an divide by zero exception in a separate thread and no IMU data updates.
-
-**Workaround:** Instead of the no-args constructor, use ``new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);``.
-
-Fixed in Image 2022_v4.0 (Game Tools 2022 f1 and WPILib 2022.3.1)
------------------------------------------------------------------
-
-Analog Devices Gyros don't work properly
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Issue:** Due to an issue with the "autoSPI" feature in the roboRIO image 2022_v3.0, Analog Devices gyros do not work properly.
-
-**Workaround:** There is no known workaround. An updated image will be released when the issue has been resolved.
-
-Fixed in WPILib 2022.2.1
-------------------------
-
-Joysticks may stop updating in Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** A deadlock in the Java WPILib DriverStation thread may occur. This is primarily noticeable by Joystick values "freezing" and not updating. Disable and E-Stop are not affected by this issue.
-
-**Recommendations:** Ensure that anyone operating a robot is prepared to disable or E-Stop if this issue occurs. Limit calls to the following DriverStation methods: ``isEnabled``, ``isEStopped``, ``isAutonomous``, ``isDisabled``, ``isAutonomousEnabled``, ``isTeleopEnabled``, ``isTest``, ``isDSAttached``, ``isFMSAttached``, and ``updateControlWord``, especially from multiple threads, to limit the chance of the deadlock occurring. Follow `this WPILib issue <https://github.com/wpilibsuite/allwpilib/issues/3896>`__ for more updates and possible workarounds.
-
-VS Code Vendor Check for Updates Broken
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Checking for vendor library updates online results in the following error message: `Command 'WPILib: Manage Vendor Libraries' resulted in an error (Only absolute URLs are supported)`. This is caused by a bug in the VS Code extension related to the way the WPILib Command library vendordeps were created. This issue will be fixed in the next WPILib release.
-
-**Workaround:** If you aren't using either the new or old Command vendordep, remove them from your project. Alternately, the new or old Command vendordep can be temporarily removed before checking for updates, and then re-added.
-
-Shuffleboard aborts while launching
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Shuffleboard may start to open, and then abort. This is caused by issues with the scripts for launching the WPILib tools.
-
-**Workaround:** Manually launch Shuffleboard from the commandline without using the shortcut or script. On Windows run ``c:\Users\Public\wpilib\2022\jdk\bin\java -jar c:\Users\Public\wpilib\2022\tools\shuffleboard.jar``. On Linux or macOS, run ``~/wpilib/2022/jdk/bin/java -jar ~/wpilib/2022/tools/shuffleboard.jar``
-
-.. note:: This issue may affect any WPILib Java tool, as they use the same scripts to open. If you have issues with PathWeaver, RobotBuilder, or SmartDashboard replace ``shuffleboard.jar`` above with ``PathWeaver.jar``, ``RobotBuilder.jar`` or ``SmartDashboard.jar``
