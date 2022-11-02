@@ -16,7 +16,7 @@ WPILib VS Code extension not loaded after creating new project or importing
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
    :alt: Trusted Workspace dialog in VS Code.
 
-**Workaround:** There are a few workarounds to have the trust dialog box appear so that the projecte can be trusted and allow the extension to enable
+**Workaround:** There are a few workarounds to have the trust dialog box appear so that the project can be trusted and allow the extension to enable
 
 - After using the project creator or importer, choose the :guilabel:`Yes (new window)` option intead of :guilabel:`Yes (current window)`
 - Open another program and then switch back VS Code again. VS Code will then open the dialog box to trust the project
