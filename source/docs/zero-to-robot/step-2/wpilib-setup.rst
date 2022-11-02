@@ -124,8 +124,6 @@ Some operating systems require some final action to complete installation.
       After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the dock.
       Eject WPILibInstaller image from the desktop.
 
-      .. warning:: On macOS Monterrey 12.3 and later, the VS Code extensions do not automatically install. See :ref:`docs/yearly-overview/known-issues:Visual Studio Code extensions fail to install on macOS` for the workaround.
-
    .. group-tab:: Linux
 
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.

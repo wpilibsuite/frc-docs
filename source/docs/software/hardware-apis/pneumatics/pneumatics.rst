@@ -3,8 +3,6 @@
 Operating pneumatic cylinders
 =============================
 
-.. important:: There is a known bug with constructing Pneumatic related devices when the CAN bus is disconnected. See :ref:`Known Issues <docs/yearly-overview/known-issues:code crash when initializing a ph/pcm related device>`.
-
 Using the FRC Control System to control Pneumatics
 --------------------------------------------------
 
