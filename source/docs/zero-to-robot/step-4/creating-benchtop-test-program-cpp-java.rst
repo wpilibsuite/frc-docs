@@ -41,6 +41,8 @@ Opening The New Project
 
 After successfully creating your project, VS Code will give the option of opening the project as shown above. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
+.. note:: Due to a known issue it is recommended to choose :guilabel:`Yes (new window). :ref:`here <docs/yearly-overview/known-issues:WPILib VS Code extension not loaded after creating new project or importing>`
+
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
    :alt: Trusted Workspace dialog in VS Code.
 
