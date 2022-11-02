@@ -33,7 +33,6 @@ General Library
 - Added ``ignoringDisable(boolean)`` decorator to set the ``runsWhenDisabled`` property of a command
 - Added ``finallyDo(BooleanConsumer)`` and ``handleInterrupt(Runnable)`` decorators
 - Added static factory methods for Command
-- Renamed Trigger methods to ``True``/``False`` terminology
 - Added ``ComputerVisionUtil``
 - Added ``EventLoop`` and ``BooleanEvent``, an expansion of the existing Trigger framework encompassing non-commandbased
 - Added ``BooleanEvent``-returning factory methods to the HID classes
