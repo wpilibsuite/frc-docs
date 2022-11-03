@@ -15,9 +15,15 @@ Major Changes (Java/C++)
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
-- Windows 7 and 32-bit support has been dropped. M1 macOS is now supported
 - Bundled Java version has been bumped to 17 from 11
-- GCC 12.1 with C++ 20 support. Visual Studio 2022 is required for running C++ Simulation
+- GCC 12.1 with C++ 20 support. Visual Studio 2022 is required for running C++ Simulation on Windows
+
+Supported Operating Systems and Architectures:
+ * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
+ * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.32 may work, but are unsupported
+ * macOS 11 & 12, Intel and Arm.
+
+.. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib
 ------

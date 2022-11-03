@@ -9,11 +9,11 @@ Prerequisites
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
 
 Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit. Arm is not supported
- * Ubuntu 20.04 and 22.04, 64 bit. Other Linux distributions may work, but are unsupported
+ * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
+ * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.32 may work, but are unsupported
  * macOS 11 & 12, Intel and Arm.
 
-.. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows.
+.. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
