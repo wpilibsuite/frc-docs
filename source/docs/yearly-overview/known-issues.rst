@@ -20,6 +20,7 @@ WPILib VS Code extension not loaded after creating new project or importing
 
 - After using the project creator or importer, choose the :guilabel:`Yes (new window)` option intead of :guilabel:`Yes (current window)`
 - Open another program and then switch back VS Code again. VS Code will then open the dialog box to trust the project
+- Click on the extensions button, then on the WPILib extension and select :guilabel:`Enable (workspace)` then select :guilabel:`Trust Folder & Continue`
 - Click the WPILib extension logo in the upper right corner if it exists. VS Code will then open the dialog box to trust the project
 
 Onboard I2C Causing System Lockups
