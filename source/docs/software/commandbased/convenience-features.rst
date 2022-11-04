@@ -49,7 +49,7 @@ The ``InstantCommand`` class provides an example of a type of command that benef
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
       :language: c++
       :lines: 66-68
       :linenos:
