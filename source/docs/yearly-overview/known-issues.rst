@@ -8,6 +8,21 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+WPILib VS Code extension not loaded after creating new project or importing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** After creating a new project or importing a project, the WPILib extension doesn't enable and you can't build or deploy code or use any other function of the WPILib extension. This is because the new project isn't trusted by VS Code, but VS Code doesn't prompt to trust the project.
+
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
+   :alt: Trusted Workspace dialog in VS Code.
+
+**Workaround:** There are a few workarounds to have the trust dialog box appear so that the project can be trusted and allow the extension to enable
+
+- After using the project creator or importer, choose the :guilabel:`Yes (new window)` option intead of :guilabel:`Yes (current window)`
+- Open another program and then switch back VS Code again. VS Code will then open the dialog box to trust the project
+- Click on the extensions button, then on the WPILib extension and select :guilabel:`Enable (workspace)` then select :guilabel:`Trust Folder & Continue`
+- Click the WPILib extension logo in the upper right corner if it exists. VS Code will then open the dialog box to trust the project
+
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
