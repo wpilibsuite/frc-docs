@@ -191,7 +191,7 @@ These estimates can be incorporated into the WPILib pose estimation classes.
 2D to 3D Ambiguity
 ------------------
 
-The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional") is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the image.
+The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional) is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the image.
 
 Humans can often use lighting or background clues to understand how objects are oriented in space. However, computers do not have this benefit. They can be tricked by similar-looking targets:
 
