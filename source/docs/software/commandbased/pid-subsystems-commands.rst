@@ -127,7 +127,7 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
       :language: java
       :lines: 81-87
       :linenos:
@@ -143,7 +143,7 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
       :language: c++
       :lines: 28-34
       :linenos:
@@ -249,7 +249,7 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
       :language: java
       :lines: 64-79
       :linenos:
@@ -257,8 +257,8 @@ And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inlin
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 33-47
+      :lines: 34-49
       :linenos:
-      :lineno-start: 33
+      :lineno-start: 34

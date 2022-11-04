@@ -131,19 +131,19 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
       :language: java
-      :lines: 56-63
+      :lines: 56-64
       :linenos:
       :lineno-start: 56
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 29-36
+      :lines: 32-39
       :linenos:
-      :lineno-start: 29
+      :lineno-start: 32
 
 ProfiledPIDCommand
 ------------------
