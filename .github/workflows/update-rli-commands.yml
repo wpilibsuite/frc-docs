@@ -72,7 +72,7 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: Starlight220/Inspector@main
+        uses: Starlight220/Inspector@v1.4
         id: inspector
         with:
           root: ${{ github.workspace }}
