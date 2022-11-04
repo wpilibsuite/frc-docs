@@ -114,6 +114,8 @@ Shuffleboard
 SmartDashboard
 --------------
 
+.. important:: Smartdashboard is not included with Beta 2. It is planned for future betas.
+
 .. important:: SmartDashboard is not supported on M1 macOS.
 
 - No new changes
@@ -164,7 +166,7 @@ RobotBuilder
 SysID
 -----
 
-.. important:: SysID is not included with Beta 1. It is planned for future betas.
+.. important:: SysID is not included with Beta 2. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0
