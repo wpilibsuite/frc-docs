@@ -32,7 +32,6 @@ All of the tags are from the 36H11 family.
    1. Be robust against some bit flips (IE, issues where a bit has its color incorrectly identified).
    2. Not involve "simple" geometric patterns likely to be found on things which are not tags. (IE, squares, stripes, etc.)
    3. Ensure the geometric pattern is asymmetric enough that you can always figure out which way is up.
-
 |
 
 All tags will be printed such that their outer black border is 8.125 inches on a side.
@@ -68,24 +67,21 @@ While most FRC teams should not have to implement their own code to identify Apr
       .. image:: images/orig_img.png
          :alt: Original, unprocessed image
 
-      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag.
+      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. 
 
    .. tab:: Remove Colors
 
       .. image:: images/bw_img.png
          :alt: Image converted to be grey-scale
 
-      * Convert the image to a grey-scale (brightness-only) image.
-         * Color information is not needed to detect the black-and-white tags.
+      The first step is to convert the image to a grey-scale (brightness-only) image. Color information is not needed to detect the black-and-white tags.
 
    .. tab:: Decimate
 
       .. image:: images/decimate.png
          :alt: Image converted to a lower resolution
 
-      * Convert the image to a lower resolution.
-         * Working with fewer pixels helps the algorithm work faster.
-         * The full-resolution image will be used later to refine early estimates.
+      The next step is to convert the image to a lower resolution. Working with fewer pixels helps the algorithm work faster. The full-resolution image will be used later to refine early estimates.
 
    .. tab:: Adaptive Threshold
 
@@ -93,35 +89,37 @@ While most FRC teams should not have to implement their own code to identify Apr
          :alt: Image with adaptive threshold algorithm applied
 
 
-      * Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
-         * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
+      An adaptive threshold algorithm is run to classify each pixel as "definitely light", "definitely dark", or "not sure".
+      
+      The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
    .. tab:: Segmentation
 
       .. image:: images/segmentation.png
          :alt: Adaptive thresholded image, but with clusters of similar pixels grouped together
 
-      * Analyze the known pixels to "clump" them together.
-         * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
+      Next, the known pixels are clumped together. Any clumps which are too small to reasonably be a meaningful part of a tag are discarded.
 
    .. tab:: Quad Detection
 
       .. image:: images/detected_quads.png
          :alt: Image with quadrilateral areas identified and marked
 
-      * Fit a quadrilateral to each clump
-         * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
-         * Iterate through all possible combinations of corners, evaluating the fit each time
-         * Pick the best-fit quadrilateral
+      An algorithm for fitting a quadrilateral to each clump is now run:
 
-      * Identify a suspect set of quadrilateral which is likely a tag.
-         * For example, a single large exterior quadrilateral with many interior quadrilateral is likely a good candidate
+      * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
+      * Iterate through all possible combinations of corners, evaluating the fit each time
+      * Pick the best-fit quadrilateral
+
+      Given the set of all quadralaterals, Identify a subset of quadrilaterals which is likely a tag.
+         
+      A single large exterior quadrilateral with many interior quadrilateral is likely a good candidate.
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
 
-   .. tab:: Tag Detection
+   .. tab:: Decode ID
 
-      .. image:: images/tag_detection.png
+      .. image:: images/decode_id.png
          :alt: Image with AprilTag data decoded into a target identification number.
 
 
@@ -164,15 +162,6 @@ Using a camera, identify the _centroid_ of the apriltags in view. If the tag's I
 
 This method does not require calibrating the camera or performing the homography step.
 
-.. tabs::
-
-  .. code-tab:: java
-
-    // Coming soon!
-
-  .. code-tab:: c++
-
-    // Coming soon!
 
 3D Alignment
 ^^^^^^^^^^^^
