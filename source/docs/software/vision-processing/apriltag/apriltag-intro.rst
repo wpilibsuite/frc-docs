@@ -28,12 +28,12 @@ All tags will be printed such that their outer black border is 8.125 inches on a
    :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
 
 
-For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/main/tag36h11>`_ may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
+For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/main/tag36h11>`__ may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
 
 Software Support
 ----------------
 
-The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/AprilRobotics/apriltag>`_.
+The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/AprilRobotics/apriltag>`__.
 
 WPILib has forked the repository to add new features for FRC. These include:
 
@@ -246,4 +246,4 @@ The three major versions of AprilTags are described in three academic papers. It
 * :download:`AprilTags v3 <files/krogius2019iros.pdf>`
 * :download:`Pose Ambiguity <files/mmsp2014_spe.pdf>`
 
-Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`_
+Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__
