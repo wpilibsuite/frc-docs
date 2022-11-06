@@ -41,7 +41,7 @@ WPILib has forked the repository to add new features for FRC. These include:
 2. Adding Java Native Interface (JNI) support to allow invoking its functionality from Java
 3. Gradle & Maven publishing support
 
-TODO: this is actually what photonvision did. wpilib...?
+.. todo:: Work in this library is still ongoing, this list may change in the future.
 
 Processing Technique
 --------------------
