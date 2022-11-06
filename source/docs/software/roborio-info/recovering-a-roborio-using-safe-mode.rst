@@ -3,6 +3,8 @@ Recovering a roboRIO using Safe Mode
 
 Occasionally a roboRIO may become corrupted to the point that it cannot be recovered using the normal boot and imaging process. Booting the roboRIO into Safe Mode may allow the device to be successfully re-imaged.
 
+.. important:: These steps are not applicable to the roboRIO 2. Reimaging the SD card following :doc:`roboRIO 2.0 microSD card imaging process</docs/software/roborio-info/roborio2-imaging>` will fully reformat the device.
+
 Booting into Safe Mode
 ----------------------
 
