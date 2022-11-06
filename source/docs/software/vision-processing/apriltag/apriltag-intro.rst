@@ -32,6 +32,7 @@ All of the tags are from the 36H11 family.
    1. Be robust against some bit flips (IE, issues where a bit has its color incorrectly identified).
    2. Not involve "simple" geometric patterns likely to be found on things which are not tags. (IE, squares, stripes, etc.)
    3. Ensure the geometric pattern is asymmetric enough that you can always figure out which way is up.
+
 |
 
 All tags will be printed such that their outer black border is 8.125 inches on a side.
