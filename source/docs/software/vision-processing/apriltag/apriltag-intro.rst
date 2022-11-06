@@ -6,7 +6,9 @@ What Are AprilTags?
 .. image:: images/apriltagrobots_overlay.png
    :alt: A demonstration of AprilTag fiducial targets attached to generic robots.
 
-AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
+AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications. 
+
+Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__ This document attempts to summarize the content for FIRST robotics related purposes.
 
 Application to FRC
 ------------------
@@ -17,10 +19,21 @@ AprilTags have been in development since 2011, and have been refined over the ye
 
 Starting in 2023, FIRST is providing a number of tags, scattered throughout the field, each at a known :term:`pose`.
 
-All of the tags are from the 36H11 family, which means that:
+All of the tags are from the 36H11 family. 
 
-1) Each tag carries 36 bits of information
-2) It would take at least 11 bit "flips" before one tag could be mistaken for another.
+.. collapse:: What is the 36H11 family?
+
+   The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__. 
+
+   FIRST has chosen the 36H11 family for 2023. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+
+   While there are :math:`2^{36} = 68719476736` theoretical possible tags, only 587 are actually used. These are chosen to:
+
+   1. Be robust against some bit flips (IE, issues where a bit has its color incorrectly identified).
+   2. Not involve "simple" geometric patterns likely to be found on things which are not tags. (IE, squares, stripes, etc.)
+   3. Ensure the geometric pattern is asymmetric enough that you can always figure out which way is up.
+
+|
 
 All tags will be printed such that their outer black border is 8.125 inches on a side.
 
@@ -210,11 +223,11 @@ Resolving which position is "correct" can be done in a few different ways:
 Adjustable Parameters
 ---------------------
 
-`Decimation factor` impacts how much the image is down-sampled before processing. Increasing it will increase detection speed, at the cost of not being able to see tags which are far away.
+``Decimation factor`` impacts how much the image is down-sampled before processing. Increasing it will increase detection speed, at the cost of not being able to see tags which are far away.
 
-`Blur` applies smoothing to the input image to decrease noise, which increases speed when fitting quads to pixels, at the cost of precision. For most good cameras, this may be left at zero.
+``Blur`` applies smoothing to the input image to decrease noise, which increases speed when fitting quads to pixels, at the cost of precision. For most good cameras, this may be left at zero.
 
-`Threads` changes the number of parallel threads which the algorithm uses to process the image. Certain steps may be sped up by allowing multithreading. In general, you want this to be approximately equal to the number of physical cores in your CPU, minus the number of cores which will be used for other processing tasks.
+``Threads`` changes the number of parallel threads which the algorithm uses to process the image. Certain steps may be sped up by allowing multithreading. In general, you want this to be approximately equal to the number of physical cores in your CPU, minus the number of cores which will be used for other processing tasks.
 
 Detailed information about the tunable parameters `can be found here <https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters>`__.
 
@@ -228,4 +241,3 @@ The three major versions of AprilTags are described in three academic papers. It
 * :download:`AprilTags v3 <files/krogius2019iros.pdf>`
 * :download:`Pose Ambiguity <files/mmsp2014_spe.pdf>`
 
-Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__
