@@ -166,56 +166,38 @@ This method does not require calibrating the camera or performing the homography
 
 .. image:: images/homography.png
 
+.. todo:: Code examples coming soon!
+
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
-This method requires calibrating the camera to measure how its optics distort 3d space onto the 2d sensor.
+Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated. 
 
-Once calibrated, each image is searched for AprilTags using the above algorithm.
+The tag's ID is also decoded. from the image. Given each tag's ID, the position of the tag on the field can be looked up.
 
-Given each tag's ID, the position of the tag on the field can be identified.
+Knowing the position of the tag on the field, and the position of the camera relative to the tag, the 3D geometry classes can be used to estimate the position of the camera on the field.
 
-.. tabs::
-
-  .. code-tab:: java
-
-    // Coming soon!
-
-  .. code-tab:: c++
-
-    // Coming soon!
-
-
-Using the information about the camera's distortion, along with the known size of the tag, an estimate of the camera's position relative to the tag is calculated.
-
-.. tabs::
-
-  .. code-tab:: java
-
-    // Coming soon!
-
-  .. code-tab:: c++
-
-    // Coming soon!
-
-In turn, using the ``Pose3d`` classes and the known positions of tags on the field, the robot's position on the field may be estimate.
+If the camera's position on the robot is known, the robot's position on the field can also be estimated.
 
 These estimates can be incorporated into the WPILib pose estimation classes.
 
 2D to 3D Ambiguity
 ------------------
 
-The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional) is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the image.
+The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional) is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the camera image.
 
 Humans can often use lighting or background clues to understand how objects are oriented in space. However, computers do not have this benefit. They can be tricked by similar-looking targets:
 
 .. image:: images/planar_ambiguity1.png
    :alt: First optical illusion example of planar ambiguity
+   :width: 30 %
 
 .. image:: images/planar_ambiguity2.png
    :alt: Second optical illusion example of planar ambiguity
+   :width: 30 %
 
 .. image:: images/planar_ambiguity3.png
    :alt: Third optical illusion example of planar ambiguity
+   :width: 30 %
 
 Resolving which position is "correct" can be done in a few different ways:
 
