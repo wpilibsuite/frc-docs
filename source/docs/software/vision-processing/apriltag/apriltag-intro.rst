@@ -218,7 +218,7 @@ Adjustable Parameters
 
 `Threads` changes the number of parallel threads which the algorithm uses to process the image. Certain steps may be sped up by allowing multithreading. In general, you want this to be approximately equal to the number of physical cores in your CPU, minus the number of cores which will be used for other processing tasks.
 
-Detailed information about the tunable parameters `can be found here <https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters>`_.
+Detailed information about the tunable parameters `can be found here <https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters>`__.
 
 Further Learning
 ----------------
