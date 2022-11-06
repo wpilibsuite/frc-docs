@@ -6,7 +6,7 @@ What Are AprilTags?
 .. image:: images/apriltagrobots_overlay.png
    :alt: A demonstration of AprilTag fiducial targets attached to generic robots.
 
-AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications. 
+AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
 Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__ This document attempts to summarize the content for FIRST robotics related purposes.
 
@@ -19,11 +19,11 @@ AprilTags have been in development since 2011, and have been refined over the ye
 
 Starting in 2023, FIRST is providing a number of tags, scattered throughout the field, each at a known :term:`pose`.
 
-All of the tags are from the 36H11 family. 
+All of the tags are from the 36H11 family.
 
 .. collapse:: What is the 36H11 family?
 
-   The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__. 
+   The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__.
 
    FIRST has chosen the 36H11 family for 2023. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
@@ -67,7 +67,7 @@ While most FRC teams should not have to implement their own code to identify Apr
       .. image:: images/orig_img.png
          :alt: Original, unprocessed image
 
-      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. 
+      An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel.
 
    .. tab:: Remove Colors
 
@@ -90,7 +90,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
 
       An adaptive threshold algorithm is run to classify each pixel as "definitely light", "definitely dark", or "not sure".
-      
+
       The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
    .. tab:: Segmentation
@@ -112,7 +112,7 @@ While most FRC teams should not have to implement their own code to identify Apr
       * Pick the best-fit quadrilateral
 
       Given the set of all quadralaterals, Identify a subset of quadrilaterals which is likely a tag.
-         
+   
       A single large exterior quadrilateral with many interior quadrilateral is likely a good candidate.
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
@@ -172,7 +172,7 @@ This method does not require calibrating the camera or performing the homography
 
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
-Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated. 
+Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated.
 
 The tag's ID is also decoded. from the image. Given each tag's ID, the position of the tag on the field can be looked up.
 
