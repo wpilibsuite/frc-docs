@@ -4,6 +4,7 @@ What Are AprilTags?
 ===================
 
 .. image:: images/apriltagrobots_overlay.png
+   :alt: A demonstration of AprilTag fiducial targets attached to generic robots.
 
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
@@ -24,6 +25,8 @@ All of the tags are from the 36H11 family, which means that:
 All tags will be printed such that their outer black border is 8.125 inches on a side.
 
 .. image:: images/tag_size.png
+   :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
+
 
 For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/main/tag36h11>`_ may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
 
@@ -50,12 +53,14 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Original Image
 
       .. image:: images/orig_img.png
+         :alt: Original, unprocessed image
 
       An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel. The first step is to determine which pixels, if any, represent an AprilTag.
 
    .. tab:: Remove Colors
 
       .. image:: images/bw_img.png
+         :alt: Image converted to be grey-scale
 
       * Convert the image to a grey-scale (brightness-only) image.
          * Color information is not needed to detect the black-and-white tags.
@@ -63,6 +68,7 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Decimate
 
       .. image:: images/decimate.png
+         :alt: Image converted to a lower resolution
 
       * Convert the image to a lower resolution.
          * Working with fewer pixels helps the algorithm work faster.
@@ -71,6 +77,8 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Adaptive Threshold
 
       .. image:: images/adaptive_threshold.png
+         :alt: Image with adaptive threshold algorithm applied
+
 
       * Apply an adaptive threshold algorithm to classify each pixel as "definitely light", "definitely dark", or "not sure".
          * The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
@@ -78,6 +86,7 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Segmentation
 
       .. image:: images/segmentation.png
+         :alt: Adaptive thresholded image, but with clusters of similar pixels grouped together
 
       * Analyze the known pixels to "clump" them together.
          * Discard any clumps which are too small to reasonably be a meaningful part of a tag.
@@ -85,6 +94,7 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Quad Detection
 
       .. image:: images/detected_quads.png
+         :alt: Image with quadrilateral areas identified and marked
 
       * Fit a quadrilateral to each clump
          * Identify likely "corner" candidates by pixels which are outliers in both dimensions.
@@ -99,6 +109,8 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Tag Detection
 
       .. image:: images/tag_detection.png
+         :alt: Image with AprilTag data decoded into a target identification number.
+
 
       Now that we have one or more regions of pixels which we believe to be a valid AprilTag, we need to identify which tag we are looking at. This is done by "decoding" the pattern of light and dark squares on the inside.
 
@@ -111,6 +123,7 @@ While most FRC teams should not have to implement their own code to identify Apr
    .. tab:: Fit External Quad
 
       .. image:: images/fit_ext_quad.png
+         :alt: External quadrilateral fitting process applied to each target
 
       Now that we have a tag ID for the region of pixels, we need to do something useful with it.
 
@@ -196,10 +209,13 @@ The process of translating the four known corners of the target in the image (tw
 Humans can often use lighting or background clues to understand how objects are oriented in space. However, computers do not have this benefit. They can be tricked by similar-looking targets:
 
 .. image:: images/planar_ambiguity1.png
+   :alt: First optical illusion example of planar ambiguity
 
 .. image:: images/planar_ambiguity2.png
+   :alt: Second optical illusion example of planar ambiguity
 
 .. image:: images/planar_ambiguity3.png
+   :alt: Third optical illusion example of planar ambiguity
 
 Resolving which position is "correct" can be done in a few different ways:
 
