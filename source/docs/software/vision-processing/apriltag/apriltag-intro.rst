@@ -184,7 +184,7 @@ Using the information about the camera's distortion, along with the known size o
 
     // Coming soon!
 
-In turn, using the `Pose3d` classes and the known positions of tags on the field, the robot's position on the field may be estimate.
+In turn, using the ``Pose3d`` classes and the known positions of tags on the field, the robot's position on the field may be estimate.
 
 These estimates can be incorporated into the WPILib pose estimation classes.
 
