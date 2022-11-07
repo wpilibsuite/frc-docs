@@ -113,7 +113,7 @@ While most FRC teams should not have to implement their own code to identify Apr
       * Pick the best-fit quadrilateral
 
       Given the set of all quadralaterals, Identify a subset of quadrilaterals which is likely a tag.
-   
+
       A single large exterior quadrilateral with many interior quadrilateral is likely a good candidate.
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
