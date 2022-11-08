@@ -190,17 +190,21 @@ The process of translating the four known corners of the target in the image (tw
 
 Humans can often use lighting or background clues to understand how objects are oriented in space. However, computers do not have this benefit. They can be tricked by similar-looking targets:
 
+.. image:: images/planar_ambiguity1_base.png
+   :alt: First optical illusion example of planar ambiguity
+   :width: 45 %
+
 .. image:: images/planar_ambiguity1.png
    :alt: First optical illusion example of planar ambiguity
-   :width: 30 %
+   :width: 45 %
 
 .. image:: images/planar_ambiguity2.png
    :alt: Second optical illusion example of planar ambiguity
-   :width: 30 %
+   :width: 45 %
 
 .. image:: images/planar_ambiguity3.png
    :alt: Third optical illusion example of planar ambiguity
-   :width: 30 %
+   :width: 45 %
 
 Resolving which position is "correct" can be done in a few different ways:
 
