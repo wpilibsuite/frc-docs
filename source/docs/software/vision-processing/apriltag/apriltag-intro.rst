@@ -17,7 +17,7 @@ In the context of FRC, AprilTags are useful for helping your robot know where it
 
 AprilTags have been in development since 2011, and have been refined over the years to increase the robustness and speed of detection.
 
-Starting in 2023, FIRST is providing a number of tags, scattered throughout the field, each at a known :term:`pose`.
+`Starting in 2023, FIRST is providing a number of tags,<https://www.firstinspires.org/robotics/frc/blog/2022-control-system-reporting-2023-updates-and-beta-testing>`__ scattered throughout the field, each at a known :term:`pose`.
 
 All of the tags are from the 36H11 family.
 
@@ -173,7 +173,7 @@ This method does not require calibrating the camera or performing the homography
 
 A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
 
-Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated.
+Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated. A good camera calibration is required for the assumptions about its lens behavior to be accurate.
 
 The tag's ID is also decoded. from the image. Given each tag's ID, the position of the tag on the field can be looked up.
 
