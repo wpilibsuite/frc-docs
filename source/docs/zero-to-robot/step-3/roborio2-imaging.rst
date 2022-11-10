@@ -1,11 +1,11 @@
-roboRIO 2.0 microSD Card Imaging
-================================
+Imaging your roboRIO 2
+======================
 
-.. note:: The imaging instructions for the NI roboRIO 1.0 are :ref:`here <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`.
+.. note:: The imaging instructions for the NI roboRIO 1.0 are :ref:`here <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>`.
 
-The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot image containing the NI Linux Real-Time OS, drivers, and libraries specific to FRC. There are two ways to create the microSD card -- with the roboRIO :ref:`using the imaging tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`, or with a laptop and an SD burner application per the instructions on this page.
+The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot image containing the NI Linux Real-Time OS, drivers, and libraries specific to FRC. The microSD card must be imaged with a laptop and an SD burner application per the instructions on this page.
 
-.. important:: The first time a roboRIO 2 is imaged (or if the microSD card is replaced with a new card), the microSD card must be imaged using these instructions; imaging the roboRIO 2 directly with the roboRIO Imaging Tool is not supported.
+.. important:: Imaging the roboRIO 2 directly with the roboRIO Imaging Tool is not supported.
 
 microSD Requirements
 --------------------
@@ -21,6 +21,8 @@ If the microSD card is removed while powered, the roboRIO will hang. Once the mi
 
 No damage will result from microSD card removal or insertion while powered, but best practice is to perform these operations while unpowered.
 
+.. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
+
 Imaging Directly to the microSD Card
 ------------------------------------
 
@@ -30,7 +32,7 @@ Supported image files are named ``FRC_roboRIO2_YEAR_VERSION.img.zip``. You can l
 
 If using a non Windows OS you will need to copy this image file to that computer.
 
-.. figure:: images/sd_button.png
+.. figure:: images/roborio2-imaging/sd_button.png
    :alt: Click the SD folder icon will bring up the location of the images in windows explorer.
 
 A `microSD to USB dongle <https://www.amazon.com/gp/product/B0779V61XB>`__ works well for writing to microSD cards.
@@ -62,5 +64,5 @@ Setting the roboRIO Team Number
 
 The image writing process above does not set a team number.  To fix this teams will need to insert the microSD card  in the robRIO and connect to the robot.  With the roboRIO Imaging Tool go to :guilabel:`Edit Startup Settings`.  Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
 
-.. figure:: images/teamnumber.png
+.. figure:: images/roborio2-imaging/teamnumber.png
    :alt: The edit Startup Settings portion of the imaging utility allow a team to renumber their robot.

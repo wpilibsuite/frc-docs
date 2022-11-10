@@ -1,11 +1,11 @@
 .. include:: <isonum.txt>
 
-Imaging your roboRIO
-====================
+Imaging your roboRIO 1
+======================
 
 .. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
-.. important:: The first time a roboRIO 2 is imaged (or if the microSD card is replaced with a new card), the microSD card must be imaged with a computer and SD burner application using :doc:`roboRIO 2.0 microSD card imaging process</docs/software/roborio-info/roborio2-imaging>`; imaging the roboRIO 2 directly using the roboRIO Imaging Tool is not supported.
+.. note:: The imaging instructions for the NI roboRIO 2.0 are :doc:`here<roborio2-imaging>`.
 
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,4 +106,3 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
 - Try a different USB Cable
 - Try a different PC
-- Try imaging a roboRIO 2.0 using the :doc:`roboRIO 2.0 microSD card imaging process</docs/software/roborio-info/roborio2-imaging>`
