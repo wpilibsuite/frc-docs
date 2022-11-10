@@ -8,11 +8,9 @@ The FRC\ |reg| software consists of a wide variety of mandatory and optional com
 Operating System Compatibility
 ------------------------------
 
-The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10. NI Tools do not support Windows 7 or 8.1.
+The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10 & 11.
 
 Many of the tools for C++/Java programming are also supported and tested on macOS and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
-
-.. important:: The minimum supported macOS version is Mojave (10.14.x).
 
 LabVIEW FRC (Windows Only)
 --------------------------
