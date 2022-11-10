@@ -17,17 +17,17 @@ In the context of FRC, AprilTags are useful for helping your robot know where it
 
 AprilTags have been in development since 2011, and have been refined over the years to increase the robustness and speed of detection.
 
-`Starting in 2023, FIRST is providing a number of tags,<https://www.firstinspires.org/robotics/frc/blog/2022-control-system-reporting-2023-updates-and-beta-testing>`__ scattered throughout the field, each at a known :term:`pose`.
+`Starting in 2023, FIRST is providing a number of tags,<https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update>`__ scattered throughout the field, each at a known :term:`pose`.
 
-All of the tags are from the 36H11 family.
+All of the tags are from the 16H5 family.
 
-.. collapse:: What is the 36H11 family?
+.. collapse:: What is the 16H5 family?
 
    The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__.
 
-   FIRST has chosen the 36H11 family for 2023. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+   FIRST has chosen the 16H5 family for 2023. This family of tags is made of a 4x4 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
-   While there are :math:`2^{36} = 68719476736` theoretical possible tags, only 587 are actually used. These are chosen to:
+   While there are :math:`2^{16} = 65536` theoretical possible tags, only 30 are actually used. These are chosen to:
 
    1. Be robust against some bit flips (IE, issues where a bit has its color incorrectly identified).
    2. Not involve "simple" geometric patterns likely to be found on things which are not tags. (IE, squares, stripes, etc.)
@@ -35,13 +35,13 @@ All of the tags are from the 36H11 family.
 
 |
 
-All tags will be printed such that their outer black border is 8.125 inches on a side.
+All tags will be printed such that their outer black border is 8.0 inches on a side.
 
 .. image:: images/tag_size.png
    :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
 
 
-For home usage, `these pdf files <https://github.com/rgov/apriltag-pdfs/tree/main/tag36h11>`__ may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
+For home usage, tag files may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
 
 Software Support
 ----------------
