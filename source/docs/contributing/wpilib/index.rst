@@ -35,4 +35,5 @@ NetworkTables
 .. toctree::
    :maxdepth: 1
 
+   NetworkTables 4 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables4.adoc>
    NetworkTables 3 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables3.adoc>
