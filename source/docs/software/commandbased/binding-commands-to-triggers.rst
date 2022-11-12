@@ -10,7 +10,7 @@ Command binding is done through the ``Trigger`` class (`Java <https://github.wpi
 Trigger Bindings
 -----------------------
 
-.. note:: The C++ command-based library offers two overloads of each button binding method - one that takes an `rvalue reference<http://thbecker.net/articles/rvalue_references/section_01.html>`__ (``CommandPtr&&``), and one that takes a raw pointer (``Command*``).  The rvalue overload moves ownership to the scheduler, while the raw pointer overload leaves the user responsible for the lifespan of the command object.  It is recommended that users preferentially use the rvalue reference overload unless there is a specific need to retain a handle to the command in the calling code.
+.. note:: The C++ command-based library offers two overloads of each button binding method - one that takes an `rvalue reference <http://thbecker.net/articles/rvalue_references/section_01.html>`__ (``CommandPtr&&``), and one that takes a raw pointer (``Command*``).  The rvalue overload moves ownership to the scheduler, while the raw pointer overload leaves the user responsible for the lifespan of the command object.  It is recommended that users preferentially use the rvalue reference overload unless there is a specific need to retain a handle to the command in the calling code.
 
 There are a number of bindings available for the ``Trigger`` class. All of these bindings will automatically schedule a command when a certain trigger activation event occurs - however, each binding has different specific behavior.
 
