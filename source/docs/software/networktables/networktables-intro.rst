@@ -55,7 +55,7 @@ NetworkTables organization
 
 Data is organized in NetworkTables in a hierarchy much like a filesystem's folders and files. There can be multiple subtables (folders) and topics (files) that may be nested in whatever way fits the data organization desired. At the top level (``NetworkTableInstance``), topic names are handled similar to absolute paths in a filesystem: subtables are represented as a long topic name with slashes ("/") separating the nested subtable and value names. A ``NetworkTable`` object represents a single subtable (folder), so topic names are relative to the NetworkTable's base path: e.g. for a root table called "SmartDashboard" with a topic named "xValue", the same topic can be accessed via ``NetworkTableInstance`` as a topic named "/SmartDashboard/xValue". However, unlike a filesystem, subtables don't really exist in the same way folders do, as there is no way to represent an empty subtable on the network--a subtable "appears" only as long as there are topics published within it.
 
-OutlineViewer is a utility for exploring the values stored in NetworkTables, and can show either a flat view (topics with absolute paths) or a nested view (subtables and topics).
+`OutlineViewer <https://docs.wpilib.org/en/latest/docs/software/wpilib-tools/outlineviewer/index.html#outlineviewer>`__ is a utility for exploring the values stored in NetworkTables, and can show either a flat view (topics with absolute paths) or a nested view (subtables and topics).
 
 There are some default tables that are created automatically when a robot program starts up:
 
