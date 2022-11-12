@@ -15,7 +15,7 @@ First, let's define some terms:
 - **Subscriber**: receives timestamped data value updates to one or more topics.
 - **Entry**: a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
 
-NetworkTables supports a range of data types, including boolean, numeric, string, and arrays of those types. Supported numeric data types are single or double precision floating point, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data. Types are represented as strings, although for efficiency reasons, there is also an enumeration for the most common types in the NetworkTables API.
+NetworkTables supports a range of data types, including boolean, numeric, string, and arrays of those types. Supported numeric data types are single or double precision floating point, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data. Types are represented as strings for efficiency reasons. There is also an enumeration for the most common types in the NetworkTables API.
 
 Topics are created when the first publisher announces the topic and are removed when the last publisher stops publishing. It's possible to subscribe to a topic that has not yet been created/published.
 
