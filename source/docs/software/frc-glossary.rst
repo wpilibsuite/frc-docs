@@ -57,7 +57,7 @@ FRC Glossary
       A software design pattern which uses a class to hide the implementation details of other classes. See `encapsulation <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ on Wikipedia for more info.
 
    entry
-      A combined :term:`publisher` and :term:`subscriber`. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
+      In :term:`NetworkTables`, a combined :term:`publisher` and :term:`subscriber`. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
 
    enumeration
       A list of all elements of a set, typically used to refer to a set of pre-defined values.
@@ -120,13 +120,13 @@ FRC Glossary
       The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on Wikipedia for more info.
 
    persistent
-      A :term:`topic` that is saved to a file by the server and restored at startup.
+      In :term:`NetworkTables`, a :term:`topic` that is saved to a file by the server and restored at startup.
 
    property
-      Named information (metadata) about a topic stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
+      In :term:`NetworkTables`, named information (metadata) about a :term:`topic` stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
 
    publisher
-      Defines a :term:`topic` and creates and sends timestamped data values.
+      In :term:`NetworkTables`, an object that defines a :term:`topic` and creates and sends timestamped data values.
 
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
@@ -138,7 +138,7 @@ FRC Glossary
       A type of :term:`composition` in which the composite object may contain components of the same type as itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on Wikipedia for more info. See also :term:`recursive composition`.
 
    retained
-      A :term:`topic` that is kept alive by the server even after all publishers stop publishing.
+      In :term:`NetworkTables`, a :term:`topic` that is kept alive by the server even after all publishers stop publishing.
 
    serialized
       The property of a data organization scheme that allows the description of the data to be sent in order, byte by byte, over some communication channel. Reading or writing a file on disk is done in this serial fashion (IE, the data is read or written byte by byte, not all at once). Sending data over a SPI or I2C bus is also done byte by byte, again requiring the data can be serialized.
@@ -156,7 +156,7 @@ FRC Glossary
       A programming construct that divides a problem into many discrete, well-defined, mutually-exclusive "states", then defines how the problem is solved by moving between different states. See `state machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ on Wikipedia for more more info.
 
    subscriber
-      Receives :term:`NetworkTables` timestamped data value updates to one or more :term:`topic`\s.
+      In :term:`NetworkTables`, an object that receives timestamped data value updates to one or more :term:`topic`\s.
 
    telemetry
       The process of recording and sending real-time data about the performance of your robot to a real-time readout or log file. For the linguists among us, the word's roots are "tele" (remote) and "metry" (measurement). See `telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ on Wikipedia for more info.
@@ -165,7 +165,7 @@ FRC Glossary
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.
 
    topic
-      A named data channel in :term:`NetworkTables`.
+      In :term:`NetworkTables`, a named data channel.
 
    torque
       A force applied at a distance from some axis of rotation
@@ -174,4 +174,4 @@ FRC Glossary
       A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field.
 
    transitory
-      A :term:`topic` that will disappear after the last :term:`publisher` stops publishing.
+      In :term:`NetworkTables`, a :term:`topic` that will disappear after the last :term:`publisher` stops publishing.
