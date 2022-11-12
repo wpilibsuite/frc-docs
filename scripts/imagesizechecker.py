@@ -72,7 +72,7 @@ def main():
         conf = importlib.import_module(clean_module_path(exclude_file))
 
         if hasattr(conf, "IMAGE_SIZE_EXCLUSIONS"):
-            excluded_files = list(conf.IMAGE_SIZE_EXCLUSIONS)
+            excluded_files = list(getattr(conf, "IMAGE_SIZE_EXCLUSIONS"))
         else:
             excluded_files = None
 
