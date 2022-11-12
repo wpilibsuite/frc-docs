@@ -28,7 +28,7 @@ Retained and Persistent topics
 
 While by default topics are :term:`transitory` and disappear after the last publisher stops publishing, topics can be marked as :term:`retained` (via setting the "retained" property to true) to prevent them from disappearing. For retained topics, the server acts as an implicit publisher of the last value, and will keep doing so as long as the server is running. This is primarily useful for configuration values; e.g. an autonomous mode selection published by a dashboard should set the topic as retained so its value is preserved in case the dashboard disconnects.
 
-Additionally, topics can be marked as :term:`persistent` via setting the "persistent" property to true. These operate similarly to retained topics, but in addition, persistent topic values are automatically saved to a file on the server and when the server starts up again, the topic is create and its last value is published by the server.
+Additionally, topics can be marked as :term:`persistent` via setting the "persistent" property to true. These operate similarly to retained topics, but in addition, persistent topic values are automatically saved to a file on the server and when the server starts up again, the topic is created and its last value is published by the server.
 
 Value propagation
 -----------------
