@@ -48,7 +48,7 @@ All NetworkTable value updates are timestamped at the time they are published. T
 
 NetworkTables automatically synchronizes time between the server and clients. Each client maintains an offset between the client local time and the server time, so when a client publishes a value, it stores a timestamp in local time and calculates the equivalent server timestamp. The server timestamp is what is communicated over the network to any subscribers. This makes it possible e.g. for a robot program to get a reasonable estimation of the time when a value was published on a coprocessor relative to the current time.
 
-Because of this, two timestamps are visible through the API: a server timestamp indicating the time (estimated) on the server, and a local timestamp indicating the local equivalent to the server timestamp. When the RoboRIO is the NetworkTables server, the server timestamp is the same as the FPGA timestamp returned by ``Timer.getFPGATimestamp()`` (except the units are different: NetworkTables uses microseconds, while ``getFPGATimestamp()`` returns seconds).
+Because of this, two timestamps are visible through the API: a server timestamp indicating the time (estimated) on the server, and a local timestamp indicating the time on the client. When the RoboRIO is the NetworkTables server, the server timestamp is the same as the FPGA timestamp returned by ``Timer.getFPGATimestamp()`` (except the units are different: NetworkTables uses microseconds, while ``getFPGATimestamp()`` returns seconds).
 
 NetworkTables organization
 --------------------------
