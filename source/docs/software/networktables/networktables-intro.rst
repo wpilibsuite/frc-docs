@@ -10,12 +10,13 @@ NetworkTables concepts
 
 First, let's define some terms:
 
-- **Topic**: a named data channel. Topics have a fixed data type (for the lifetime of the topic) and mutable properties.
+- **Topic**: a named data channel. Topics have a fixed data type (for the lifetime of the topic) and :term:`mutable` properties.
 - **Publisher**: defines the topic and creates and sends timestamped data values.
 - **Subscriber**: receives timestamped data value updates to one or more topics.
 - **Entry**: a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
+- **Property**: named information (metadata) about a topic stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
 
-NetworkTables supports a range of data types, including boolean, numeric, string, and arrays of those types. Supported numeric data types are single or double precision floating point, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data. Types are represented as strings for efficiency reasons. There is also an enumeration for the most common types in the NetworkTables API.
+NetworkTables supports a range of data types, including :term:`boolean`, numeric, string, and arrays of those types. Supported numeric data types are single or double precision :term:`floating point`, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data. Types are represented as strings for efficiency reasons. There is also an :term:`enumeration` for the most common types in the NetworkTables API.
 
 Topics are created when the first publisher announces the topic and are removed when the last publisher stops publishing. It's possible to subscribe to a topic that has not yet been created/published.
 
