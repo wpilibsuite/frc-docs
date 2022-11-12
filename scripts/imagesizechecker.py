@@ -18,7 +18,7 @@ def verify_image_size(file, max_size, excluded_files):
     if file.path.lower().endswith(IMAGE_FORMATS):
         if excluded_files is not None:
             if file.path.replace("\\", "/").lower().endswith(tuple(excluded_files)):
-                return
+                return True
 
         file_size = file.stat().st_size
 
