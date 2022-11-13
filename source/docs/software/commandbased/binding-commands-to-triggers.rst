@@ -187,10 +187,12 @@ While binding to HID buttons is by far the most common use case, advanced users 
 
   .. code-tab:: java
 
-    // Here it is assumed that "condition" is an object with a method "get" that returns whether the trigger should be true
-    Trigger exampleTrigger = new Trigger(condition::get);
+    DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
+
+    Trigger exampleTrigger = new Trigger(limitSwitch::get);
 
   .. code-tab:: c++
 
-    // Here it is assumed that "condition" is a boolean that determines whether the trigger should be true
-    frc2::Trigger exampleTrigger([&condition] { return condition; });
+    frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
+
+    frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
