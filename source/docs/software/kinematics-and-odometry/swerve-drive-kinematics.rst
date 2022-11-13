@@ -133,7 +133,7 @@ Field-oriented drive
       // is a quarter of a rotation per second counterclockwise. The current
       // robot angle is 45 degrees.
       frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(
-        2_mps, 2_mps, units::radians_per_second_t(wpi::math::pi / 2.0), Rotation2d(45_deg));
+        2_mps, 2_mps, units::radians_per_second_t(std::numbers::pi / 2.0), Rotation2d(45_deg));
 
       // Now use this in our kinematics
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
