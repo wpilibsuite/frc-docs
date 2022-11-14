@@ -98,6 +98,10 @@ Breaking Changes
 - Refactored command ``interruptible`` to be an enum property (``getInterruptionBehavior()``) of the command object rather than a boolean flag when scheduling; the ``withInterruptBehavior(InterruptBehavior)`` decorator can be used to set this property
 - Command lifecycle methods of command groups cannot be overridden
 - [C++ only] Command Decorators changed to return ``CommandPtr`` -- a new move-only value type for holding commands
+- Removed wpi versions of C++20 methods
+
+   - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
+   - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
 
 Simulation
 ----------
