@@ -62,7 +62,7 @@ The ``MecanumDriveOdometry`` class requires three mandatory arguments and one op
         m_gyro.GetRotation2d(),
         frc::MecanumDriveWheelPositions{
           units::meters_t(m_frontLeftEncoder.GetDistance()),
-          units::meterst(m_frontRightEncoder.GetDistance()),
+          units::meters_t(m_frontRightEncoder.GetDistance()),
           units::meters_t(m_backLeftEncoder.GetDistance()),
           units::meters_t(m_backRightEncoder.GetDistance())
         },
