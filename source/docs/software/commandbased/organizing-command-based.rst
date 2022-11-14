@@ -229,6 +229,8 @@ While static factories are manageable for single-subsystem commands, they excel 
 
   .. code-tab:: java
 
+    import static edu.wpi.first.wpilibj2.command.Commands.*;
+
     public class AutoRoutines {
 
         public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
@@ -251,7 +253,7 @@ While static factories are manageable for single-subsystem commands, they excel 
 
     // TODO
 
-Also, note the use of static factories to construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more expressive in some cases. Their use is a matter of personal preference.
+Also, note the use of static factories from ``Commands`` to construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more expressive in some cases. Their use is a matter of personal preference.
 
 
 Subclassing Command Groups
