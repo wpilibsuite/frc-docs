@@ -6,9 +6,11 @@ A user can use the mecanum drive kinematics classes in order to perform :ref:`od
 
 Creating the odometry object
 ----------------------------
-The ``MecanumDriveOdometry`` class requires two mandatory arguments and one optional argument. The mandatory arguments are the kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class) and the angle reported by your gyroscope (as a Rotation2d). The third optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
+The ``MecanumDriveOdometry`` class requires three mandatory arguments and one optional argument. The mandatory arguments are the kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class), the angle reported by your gyroscope (as a ``Rotation2d``), and the initial positions of the wheels (as ``MecanumDriveWheelPositions``). The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. By default, WPILib gyros exhibit the opposite behavior, so you should negate the gyro angle.
+
+.. note:: The ``MecanumDriveWheelPositions`` class in Java must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
 
 .. tabs::
 
@@ -25,11 +27,18 @@ The ``MecanumDriveOdometry`` class requires two mandatory arguments and one opti
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
       );
 
-      // Creating my odometry object from the kinematics object. Here,
-      // our starting pose is 5 meters along the long end of the field and in the
-      // center of the field along the short end, facing forward.
-      MecanumDriveOdometry m_odometry = new MecanumDriveOdometry(m_kinematics,
-        getGyroHeading(), new Pose2d(5.0, 13.5, new Rotation2d()));
+      // Creating my odometry object from the kinematics object and the initial wheel positions.
+      // Here, our starting pose is 5 meters along the long end of the field and in the
+      // center of the field along the short end, facing the opposing alliance wall.
+      MecanumDriveOdometry m_odometry = new MecanumDriveOdometry(
+        m_kinematics,
+        getGyroHeading(),
+        new MecanumDriveWheelPositions(
+          m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
+          m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance()
+        ),
+        new Pose2d(5.0, 13.5, new Rotation2d())
+      );
 
    .. code-tab:: c++
 
@@ -41,21 +50,28 @@ The ``MecanumDriveOdometry`` class requires two mandatory arguments and one opti
 
       // Creating my kinematics object using the wheel locations.
       frc::MecanumDriveKinematics m_kinematics{
-        m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
-        m_backRightLocation};
+        m_frontLeftLocation, m_frontRightLocation,
+        m_backLeftLocation, m_backRightLocation
+      };
 
       // Creating my odometry object from the kinematics object. Here,
       // our starting pose is 5 meters along the long end of the field and in the
       // center of the field along the short end, facing forward.
-      frc::MecanumDriveOdometry m_odometry{m_kinematics, GetGyroHeading(),
+      frc::MecanumDriveOdometry m_odometry{
+        m_kinematics,
+        GetGyroHeading(),
+        frc::MecanumDriveWheelPositions{
+          units::meters_t(m_frontLeftEncoder.GetDistance()),
+          units::meterst(m_frontRightEncoder.GetDistance()),
+          units::meters_t(m_backLeftEncoder.GetDistance()),
+          units::meters_t(m_backRightEncoder.GetDistance())
+        },
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
 
 Updating the robot pose
 -----------------------
-The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with a ``MecanumDriveWheelSpeeds`` object representing the speed of each of the 4 wheels on the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
-
-.. note:: The ``MecanumDriveWheelSpeeds`` class in Java must be constructed with each wheel speed in meters per second. In C++, the units library must be used to represent your wheel speeds.
+The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with a ``MecanumDriveWheelPositions`` object representing the position of each of the 4 wheels on the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
 .. tabs::
 
@@ -63,10 +79,10 @@ The ``update`` method of the odometry class updates the robot position on the fi
 
       @Override
       public void periodic() {
-        // Get my wheel speeds
-        var wheelSpeeds = new MecanumDriveWheelSpeeds(
-            m_frontLeftEncoder.getRate(), m_frontRightEncoder.getRate(),
-            m_backLeftEncoder.getRate(), m_backRightEncoder.getRate());
+        // Get my wheel positions
+        var wheelPositions = new MecanumDriveWheelPositions(
+            m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
+            m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
 
         // Get my gyro angle. We are negating the value because gyros return positive
         // values as the robot turns clockwise. This is not standard convention that is
@@ -74,18 +90,18 @@ The ``update`` method of the odometry class updates the robot position on the fi
         var gyroAngle = Rotation2d.fromDegrees(-m_gyro.getAngle());
 
         // Update the pose
-        m_pose = m_odometry.update(gyroAngle, wheelSpeeds);
+        m_pose = m_odometry.update(gyroAngle, wheelPositions);
       }
 
    .. code-tab:: c++
 
       void Periodic() override {
-         // Get my wheel speeds
-         frc::MecanumDriveWheelSpeeds wheelSpeeds{
-           units::meters_per_second_t(m_frontLeftEncoder.GetRate()),
-           units::meters_per_second_t(m_frontRightEncoder.GetRate()),
-           units::meters_per_second_t(m_backLeftEncoder.GetRate()),
-           units::meters_per_second_t(m_backRightEncoder.GetRate())};
+         // Get my wheel positions
+         frc::MecanumDriveWheelPositions wheelPositions{
+           units::meters_t(m_frontLeftEncoder.GetDistance()),
+           units::meterst(m_frontRightEncoder.GetDistance()),
+           units::meters_t(m_backLeftEncoder.GetDistance()),
+           units::meters_t(m_backRightEncoder.GetDistance())};
 
          // Get my gyro angle. We are negating the value because gyros return positive
          // values as the robot turns clockwise. This is not standard convention that is
@@ -93,12 +109,12 @@ The ``update`` method of the odometry class updates the robot position on the fi
          frc::Rotation2d gyroAngle{units::degree_t(-m_gyro.GetAngle())};
 
          // Update the pose
-         m_pose = m_odometry.Update(gyroAngle, wheelSpeeds);
+         m_pose = m_odometry.Update(gyroAngle, wheelPositions);
        }
 
 Resetting the Robot Pose
 ------------------------
-The robot pose can be reset via the ``resetPose`` method. This method accepts two arguments -- the new field-relative pose and the current gyro angle.
+The robot pose can be reset via the ``resetPose`` method. This method accepts three arguments -- the new field-relative pose, the current gyro angle, and the current wheel positions.
 
 .. important:: If at any time, you decide to reset your gyroscope, the ``resetPose`` method MUST be called with the new gyro angle.
 
