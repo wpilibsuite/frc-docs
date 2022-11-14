@@ -6,7 +6,7 @@ NetworkTables 4.0 (new for 2023) has a number of significant API breaking change
 NetworkTableEntry
 -----------------
 
-While ``NetworkTableEntry`` can still be used (for backwards compatibility), users are encouraged to migrate to use of type-specific Publisher/Subscriber/Entry classes as appropriate, or if necessary, ``GenericEntry``. It's important to note that unlike ``NetworkTableEntry``, these classes need to have appropriate lifetime management. Some functionality (e.g. persistent settings) has also moved to ``Topic`` properties.
+While ``NetworkTableEntry`` can still be used (for backwards compatibility), users are encouraged to migrate to use of type-specific Publisher/Subscriber/Entry classes as appropriate, or if necessary, ``GenericEntry`` (see :ref:`docs/software/networktables/publish-and-subscribe:publishing and subscribing to a topic`. It's important to note that unlike ``NetworkTableEntry``, these classes need to have appropriate lifetime management. Some functionality (e.g. persistent settings) has also moved to ``Topic`` properties (see :ref:`docs/software/networktables/tables-and-topics:networktables tables and topics`).
 
 NT3 code (was):
 
