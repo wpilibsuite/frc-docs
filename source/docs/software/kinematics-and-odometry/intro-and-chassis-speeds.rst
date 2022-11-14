@@ -38,7 +38,7 @@ The constructor for the ``ChassisSpeeds`` object is very straightforward, accept
       // per second to the right, and rotating at half a rotation per
       // second counterclockwise.
       frc::ChassisSpeeds speeds{3.0_mps, -2.0_mps,
-        units::radians_per_second_t(wpi::math::pi)};
+        units::radians_per_second_t(std::numbers::pi)};
 
 
 Creating a ChassisSpeeds Object from Field-Relative Speeds
@@ -67,6 +67,6 @@ The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / ``ChassisSpeeds::F
       // is a quarter of a rotation per second counterclockwise. The current
       // robot angle is 45 degrees.
       frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(
-        2_mps, 2_mps, units::radians_per_second_t(wpi::math::pi / 2.0), Rotation2d(45_deg));
+        2_mps, 2_mps, units::radians_per_second_t(std::numbers::pi / 2.0), Rotation2d(45_deg));
 
 .. note:: The angular velocity is not explicitly stated to be "relative to the field" because the angular velocity is the same as measured from a field perspective or a robot perspective.
