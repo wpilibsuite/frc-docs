@@ -8,7 +8,7 @@ Creating the odometry object
 ----------------------------
 The ``MecanumDriveOdometry`` class requires three mandatory arguments and one optional argument. The mandatory arguments are the kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class), the angle reported by your gyroscope (as a ``Rotation2d``), and the initial positions of the wheels (as ``MecanumDriveWheelPositions``). The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
-.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. By default, WPILib gyros exhibit the opposite behavior, so you should negate the gyro angle.
+.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase.  The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose.
 
 .. note:: The ``MecanumDriveWheelPositions`` class in Java must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
 
@@ -32,7 +32,7 @@ The ``MecanumDriveOdometry`` class requires three mandatory arguments and one op
       // center of the field along the short end, facing the opposing alliance wall.
       MecanumDriveOdometry m_odometry = new MecanumDriveOdometry(
         m_kinematics,
-        getGyroHeading(),
+        m_gyro.getRotation2d(),
         new MecanumDriveWheelPositions(
           m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
           m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance()
@@ -59,7 +59,7 @@ The ``MecanumDriveOdometry`` class requires three mandatory arguments and one op
       // center of the field along the short end, facing forward.
       frc::MecanumDriveOdometry m_odometry{
         m_kinematics,
-        GetGyroHeading(),
+        m_gyro.GetRotation2d(),
         frc::MecanumDriveWheelPositions{
           units::meters_t(m_frontLeftEncoder.GetDistance()),
           units::meterst(m_frontRightEncoder.GetDistance()),
@@ -84,10 +84,8 @@ The ``update`` method of the odometry class updates the robot position on the fi
             m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
             m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
 
-        // Get my gyro angle. We are negating the value because gyros return positive
-        // values as the robot turns clockwise. This is not standard convention that is
-        // used by the WPILib classes.
-        var gyroAngle = Rotation2d.fromDegrees(-m_gyro.getAngle());
+        // Get my gyro angle.
+        var gyroAngle = m_gyro.getRotation2d();
 
         // Update the pose
         m_pose = m_odometry.update(gyroAngle, wheelPositions);
@@ -103,10 +101,8 @@ The ``update`` method of the odometry class updates the robot position on the fi
            units::meters_t(m_backLeftEncoder.GetDistance()),
            units::meters_t(m_backRightEncoder.GetDistance())};
 
-         // Get my gyro angle. We are negating the value because gyros return positive
-         // values as the robot turns clockwise. This is not standard convention that is
-         // used by the WPILib classes.
-         frc::Rotation2d gyroAngle{units::degree_t(-m_gyro.GetAngle())};
+         // Get my gyro angle.
+         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
 
          // Update the pose
          m_pose = m_odometry.Update(gyroAngle, wheelPositions);
