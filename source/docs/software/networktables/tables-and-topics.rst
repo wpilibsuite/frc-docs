@@ -4,14 +4,14 @@ NetworkTables Tables and Topics
 Using the NetworkTable class
 ----------------------------
 
-The ``NetworkTable`` class is an API abstraction that represents a single "folder" (or "table") of topics as described in :ref:`docs/software/networktables/networktables-intro:networktables organization`. The NetworkTable class stores the base path to the table and provides functions to get topics within the table, automatically prepending the table path.
+The ``NetworkTable`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/NetworkTable.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_network_table.html>`__) class is an API abstraction that represents a single "folder" (or "table") of topics as described in :ref:`docs/software/networktables/networktables-intro:networktables organization`. The NetworkTable class stores the base path to the table and provides functions to get topics within the table, automatically prepending the table path.
 
 Getting a Topic
 ---------------
 
-A ``Topic`` object (or ``NT_Topic`` handle) represents a :term:`topic`. This has a 1:1 correspondence with the topic's name, and will not change as long as the instance exists.
+A ``Topic`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/Topic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_topic.html>`__) object (or ``NT_Topic`` handle) represents a :term:`topic`. This has a 1:1 correspondence with the topic's name, and will not change as long as the instance exists.
 
-Having a Topic object or handle does not mean the topic exists or is of the correct type. For convenience when creating publishers and subscribers, there are type-specific Topic classes (e.g. ``BooleanTopic``), but there is no check at the Topic level to ensure that the topic's type actually matches. The preferred method to get a type-specific topic to call the appropriate type-specific getter, but it's also possible to directly convert a generic Topic into a type-specific Topic class. Note: the handle-based API does not have a concept of type-specific classes.
+Having a Topic object or handle does not mean the topic exists or is of the correct type. For convenience when creating publishers and subscribers, there are type-specific Topic classes (e.g. ``BooleanTopic``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanTopic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_topic.html>`__), but there is no check at the Topic level to ensure that the topic's type actually matches. The preferred method to get a type-specific topic to call the appropriate type-specific getter, but it's also possible to directly convert a generic Topic into a type-specific Topic class. Note: the handle-based API does not have a concept of type-specific classes.
 
 .. tabs::
 
