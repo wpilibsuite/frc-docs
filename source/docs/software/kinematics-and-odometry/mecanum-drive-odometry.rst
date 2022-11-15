@@ -61,10 +61,10 @@ The ``MecanumDriveOdometry`` class requires three mandatory arguments and one op
         m_kinematics,
         m_gyro.GetRotation2d(),
         frc::MecanumDriveWheelPositions{
-          units::meters_t(m_frontLeftEncoder.GetDistance()),
-          units::meters_t(m_frontRightEncoder.GetDistance()),
-          units::meters_t(m_backLeftEncoder.GetDistance()),
-          units::meters_t(m_backRightEncoder.GetDistance())
+          units::meter_t(m_frontLeftEncoder.GetDistance()),
+          units::meter_t(m_frontRightEncoder.GetDistance()),
+          units::meter_t(m_backLeftEncoder.GetDistance()),
+          units::meter_t(m_backRightEncoder.GetDistance())
         },
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
@@ -96,10 +96,10 @@ The ``update`` method of the odometry class updates the robot position on the fi
       void Periodic() override {
          // Get my wheel positions
          frc::MecanumDriveWheelPositions wheelPositions{
-           units::meters_t(m_frontLeftEncoder.GetDistance()),
-           units::meterst(m_frontRightEncoder.GetDistance()),
-           units::meters_t(m_backLeftEncoder.GetDistance()),
-           units::meters_t(m_backRightEncoder.GetDistance())};
+           units::meter_t(m_frontLeftEncoder.GetDistance()),
+           units::meter_t(m_frontRightEncoder.GetDistance()),
+           units::meter_t(m_backLeftEncoder.GetDistance()),
+           units::meter_t(m_backRightEncoder.GetDistance())};
 
          // Get my gyro angle.
          frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();

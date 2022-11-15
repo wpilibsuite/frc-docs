@@ -79,20 +79,24 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
         // Update the pose
         m_pose = m_odometry.update(gyroAngle,
-          m_frontLeftModule.getPosition(), m_frontRightModule.getPosition(),
-          m_backLeftModule.getPosition(), m_backRightModule.getPosition());
+          new SwerveModulePosition[] {
+            m_frontLeftModule.getPosition(), m_frontRightModule.getPosition(),
+            m_backLeftModule.getPosition(), m_backRightModule.getPosition()
+          });
       }
 
    .. code-tab:: c++
 
       void Periodic() override {
-         // Get my gyro angle.
-         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();;
+        // Get my gyro angle.
+        frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();;
 
-         // Update the pose
-         m_pose = m_odometry.Update(gyroAngle,
-           m_frontLeftModule.GetPosition(), m_frontRightModule.GetPosition(),
-           m_backLeftModule.GetPosition(), m_backRightModule.GetPosition());
+        // Update the pose
+        m_pose = m_odometry.Update(gyroAngle,
+          {
+            m_frontLeftModule.GetPosition(), m_frontRightModule.GetPosition(),
+            m_backLeftModule.GetPosition(), m_backRightModule.GetPosition()
+          };
       }
 
 Resetting the Robot Pose
