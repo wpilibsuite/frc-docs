@@ -188,7 +188,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                 // add a listener to only value changes on the Y subscriber
                 valueListenerHandle = inst.addListener(
                     ySub,
-                    EnumSet.of(NetworkTableEvent.kValueAll),
+                    EnumSet.of(NetworkTableEvent.Kind.kValueAll),
                     event -> {
                       // can only get doubles because it's a DoubleSubscriber, but
                       // could check value.isDouble() here too
@@ -199,9 +199,9 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                 // the string array is an array of topic name prefixes.
                 topicListenerHandle = inst.addListener(
                     new String[] { datatable.getPath() + "/" },
-                    EnumSet.of(NetworkTableEvent.kTopic),
+                    EnumSet.of(NetworkTableEvent.Kind.kTopic),
                     event -> {
-                      if (event.is(NetworkTableEvent.kPublish)) {
+                      if (event.is(NetworkTableEvent.Kind.kPublish)) {
                         // topicInfo.name is the full topic name, e.g. "/datatable/X"
                         System.out.println("newly published " + event.topicInfo.name);
                       }
