@@ -103,9 +103,9 @@ WPILib Command Libraries
 
 The WPILib old and :doc:`new </docs/software/commandbased/index>` command libraries have been split into vendor libraries in order to reduce the chances of mixing the two which will not work correctly. They are both installed by the wpilib installer for offline installation. They may also be installed with the following online links:
 
-`Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibOldCommands/WPILibOldCommands.json>`__
+`Old Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibOldCommands/WPILibOldCommands.json>`__
 
-`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibNewCommands/WPILibNewCommands.json>`__
 
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
 
@@ -114,4 +114,4 @@ Romi Library
 
 A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
 
-`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
+`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/v2022.2.1/RomiVendordep.json>`__.
