@@ -15,9 +15,11 @@ def clean_module_path(path):
 
 
 def verify_image_size(file, max_size, excluded_files):
-    if file.path.lower().endswith(IMAGE_FORMATS) and not file.path.replace(
-        "\\", "/"
-    ).lower().endswith(tuple(excluded_files)):
+    if file.path.lower().endswith(IMAGE_FORMATS):
+        if excluded_files is not None:
+            if file.path.replace("\\", "/").lower().endswith(tuple(excluded_files)):
+                return True
+
         file_size = file.stat().st_size
 
         if not file_size <= max_size:
@@ -67,11 +69,13 @@ def main():
     # Gets excluded files from conf.py
     exclude_file = args["exclude_file"]
     if exclude_file is not None:
-        excluded_files = list(
-            importlib.import_module(
-                clean_module_path(exclude_file)
-            ).IMAGE_SIZE_EXCLUSIONS
-        )
+        conf = importlib.import_module(clean_module_path(exclude_file))
+
+        if hasattr(conf, "IMAGE_SIZE_EXCLUSIONS"):
+            excluded_files = list(getattr(conf, "IMAGE_SIZE_EXCLUSIONS"))
+        else:
+            excluded_files = None
+
         print("Exclusion Config: {}".format(exclude_file))
     else:
         excluded_files = list()
