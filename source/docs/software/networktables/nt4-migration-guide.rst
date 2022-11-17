@@ -152,14 +152,14 @@ Listeners
 
 The separate connection, value, and log listeners/events have been unified into a single listener/event. The NetworkTable-level listeners have also been removed. Listeners in many cases can be replaced with subscriber ``readQueue()`` calls, but if listeners are still required, they can be used via ``NetworkTableInstance`` (see :ref:`docs/software/networktables/listening-for-change:listening for changes` for more information).
 
-Client/Server operations
+Client/Server Operations
 ------------------------
 
 Starting a NetworkTable server now requires specifying both the NT3 port and the NT4 port. For a NT4-only server, the NT3 port can be specified as 0.
 
 A NetworkTable client can only operate in NT3 mode or NT4 mode, not both (there is no provision for automatic fallback). As such, the ``startClient()`` call has been replaced by ``startClient3()`` and ``startClient4()``. The client must also specify a unique name for itself--the server will reject connection attempts with duplicate names.
 
-C++ changes
+C++ Changes
 -----------
 
 C++ values are now returned/used as value objects (plain ``nt::Value``) instead of shared pointers to them (``std::shared_ptr<nt::Value>``).

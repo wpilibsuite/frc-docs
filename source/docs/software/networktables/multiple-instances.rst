@@ -1,4 +1,4 @@
-NetworkTables instances
+NetworkTables Instances
 =======================
 
 The NetworkTables implementation supports simultaneous operation of multiple "instances." Each instance has a completely independent set of topics, publishers, subscribers, and client/server state. This feature is mainly useful for unit testing. It allows a single program to be a member of two :term:`NetworkTables` "networks" that contain different (and unrelated) sets of topics, or running both client and server instances in a single program.

@@ -1,4 +1,4 @@
-Listening for changes
+Listening for Changes
 =====================
 
 A common use case for :term:`NetworkTables` is where a coprocessor generates values that need to be sent to the robot. For example, imagine that some image processing code running on a coprocessor computes the heading and distance to a goal and sends those values to the robot. In this case it might be desirable for the robot program to be notified when new values arrive.
@@ -141,7 +141,7 @@ NetworkTableEvent
 
 All listener callbacks take a single ``NetworkTableEvent`` parameter, and similarly, reading a listener poller returns an array of ``NetworkTableEvent``. The event contains information including what kind of event it is (e.g. a value update, a new topic, a network disconnect), the handle of the listener that caused the event to be generated, and more detailed information that depends on the type of the event (connection information for connection events, topic information for topic-related events, value data for value updates, and the log message for log message events).
 
-Using NetworkTableInstance to listen for changes
+Using NetworkTableInstance to Listen for Changes
 ------------------------------------------------
 
 The below example listens to various kinds of events using ``NetworkTableInstance``. The listener callback provided to any of the addListener functions will be called asynchronously from a background thread when a matching event occurs.

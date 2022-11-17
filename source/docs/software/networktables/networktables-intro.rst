@@ -3,11 +3,11 @@ What is NetworkTables
 
 :term:`NetworkTables` is an implementation of a `publish-subscribe messaging system <https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern>`_. Values are published to named "topics" either on the robot, driver station, or potentially an attached coprocessor, and the values are automatically distributed to all subscribers to the topic. For example, a driver station laptop might receive camera images over the network, perform some vision processing algorithm, and come up with some values to sent back to the robot. The values might be an X, Y, and Distance. By writing these results to NetworkTables topics called "X", "Y", and "Distance" they can be read by the robot shortly after being written. Then the robot can act upon them. Similarly, the robot program can write sensor values to topics and those can be read and plotted in real time on a dashboard application.
 
-NetworkTables can be used by programs on the robot in C++, Java, or LabVIEW, and is built into each version of WPILib.
+NetworkTables can be used by programs on the robot in Java, C++, or LabVIEW, and is built into each version of WPILib.
 
 .. note: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`.
 
-NetworkTables concepts
+NetworkTables Concepts
 ----------------------
 
 First, let's define some terms:
@@ -26,14 +26,14 @@ Topics have properties. Properties are initially set by the first publisher, but
 
 Publishers specify the topic's data type; while there can be multiple publishers to a single topic, they must all be publishing the same data type. This is enforced by the NetworkTables server (the first publisher "wins"). Typically single-topic subscribers also specify what data type they're expecting to receive on a topic and thus won't receive value updates of other types.
 
-Retained and Persistent topics
+Retained and Persistent Topics
 ------------------------------
 
 While by default topics are :term:`transitory` and disappear after the last publisher stops publishing, topics can be marked as :term:`retained` (via setting the "retained" property to true) to prevent them from disappearing. For retained topics, the server acts as an implicit publisher of the last value, and will keep doing so as long as the server is running. This is primarily useful for configuration values; e.g. an autonomous mode selection published by a dashboard should set the topic as retained so its value is preserved in case the dashboard disconnects.
 
 Additionally, topics can be marked as :term:`persistent` via setting the "persistent" property to true. These operate similarly to retained topics, but in addition, persistent topic values are automatically saved to a file on the server and when the server starts up again, the topic is created and its last value is published by the server.
 
-Value propagation
+Value Propagation
 -----------------
 
 The server keeps a copy of the last published value for every topic. When a subscriber initially subscribes to a topic, the server sends the last published value. After that initial value, new value updates are communicated to subscribers each time the publisher sends a new value.
@@ -53,7 +53,7 @@ NetworkTables automatically synchronizes time between the server and clients. Ea
 
 Because of this, two timestamps are visible through the API: a server timestamp indicating the time (estimated) on the server, and a local timestamp indicating the time on the client. When the RoboRIO is the NetworkTables server, the server timestamp is the same as the FPGA timestamp returned by ``Timer.getFPGATimestamp()`` (except the units are different: NetworkTables uses microseconds, while ``getFPGATimestamp()`` returns seconds).
 
-NetworkTables organization
+NetworkTables Organization
 --------------------------
 
 Data is organized in NetworkTables in a hierarchy much like a filesystem's folders and files. There can be multiple subtables (folders) and topics (files) that may be nested in whatever way fits the data organization desired. At the top level (``NetworkTableInstance``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/NetworkTableInstance.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_network_table_instance.html>`__), topic names are handled similar to absolute paths in a filesystem: subtables are represented as a long topic name with slashes ("/") separating the nested subtable and value names. A ``NetworkTable`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/NetworkTable.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_network_table.html>`__) object represents a single subtable (folder), so topic names are relative to the NetworkTable's base path: e.g. for a root table called "SmartDashboard" with a topic named "xValue", the same topic can be accessed via ``NetworkTableInstance`` as a topic named "/SmartDashboard/xValue". However, unlike a filesystem, subtables don't really exist in the same way folders do, as there is no way to represent an empty subtable on the network--a subtable "appears" only as long as there are topics published within it.
@@ -87,16 +87,16 @@ There are some default tables that are created automatically when a robot progra
 |                 | Field Management System  |
 +-----------------+--------------------------+
 
-NetworkTables API variants
+NetworkTables API Variants
 --------------------------
 
 There are two major variants of the NetworkTables API. The object-oriented API (C++ and Java) is recommended for robot code and general team use, and provides classes that help ensure correct use of the API. For advanced use cases such as writing object-oriented wrappers for other programming languages, there's also a C/C++ handle-based API.
 
-Lifetime management
+Lifetime Management
 -------------------
 
 Publishers, subscribers, and entries only exist as long as the objects exist.
 
-In Java, a common bug is to create a subscriber or publisher and not properly release it by calling ``close()``, as this will result in the object lingering around for an unknown period of time until it is garbage collected. This is less common of an issue in robot programs, as long as the publisher or subscriber is stored in an instance variable that persists for the life of the program.
+In Java, a common bug is to create a subscriber or publisher and not properly release it by calling ``close()``, as this will result in the object lingering around for an unknown period of time and not releasing resources properly. This is less common of an issue in robot programs, as long as the publisher or subscriber object is stored in an instance variable that persists for the life of the program.
 
-In C++, publishers, subscribers, and entries are RAII, which means they are automatically destroyed when they go out of scope. ``NetworkTableInstance`` is an exception to this; it is designed to be explicitly destroyed, so it's not necessary to maintain a global instance of it.
+In C++, publishers, subscribers, and entries are :term:`RAII`, which means they are automatically destroyed when they go out of scope. ``NetworkTableInstance`` is an exception to this; it is designed to be explicitly destroyed, so it's not necessary to maintain a global instance of it.

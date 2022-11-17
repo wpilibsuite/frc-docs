@@ -131,6 +131,9 @@ FRC Glossary
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
 
+   RAII
+      Resource Acquisition Is Initialization; a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
+
    retro-reflection
       The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on Wikipedia for more information.
 

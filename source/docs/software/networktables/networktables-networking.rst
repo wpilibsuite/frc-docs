@@ -1,9 +1,9 @@
-NetworkTables networking
+NetworkTables Networking
 ========================
 
 The advantage of the robot program being the server is that it's at a known network name (and typically at a known address) that is based on the team number. This is why it's possible in both the NetworkTables client API and in most dashboards to simply provide the team number, rather than a server address. As the robot program is the server, note this means the NetworkTables server is running on the local computer when running in simulation.
 
-Starting a NetworkTables server
+Starting a NetworkTables Server
 -------------------------------
 
 .. tabs::
@@ -37,7 +37,7 @@ Starting a NetworkTables server
             NT_StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
 
 
-Starting a NetworkTables client
+Starting a NetworkTables Client
 -------------------------------
 
 .. tabs::

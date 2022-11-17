@@ -1,9 +1,9 @@
 .. include:: <isonum.txt>
 
-Creating a client-side program
+Creating a Client-side Program
 ==============================
 
-If all you need to do is have your robot program communicate with a COTS coprocessor or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build :term:`NetworkTables` programs for those (non-roboRIO) platforms.
+If all you need to do is have your robot program communicate with a :term:`COTS` coprocessor or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build :term:`NetworkTables` programs for those (non-roboRIO) platforms.
 
 A basic client program looks like the following example.
 

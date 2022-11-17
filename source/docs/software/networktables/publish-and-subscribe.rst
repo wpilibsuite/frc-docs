@@ -1,12 +1,12 @@
 Publishing and Subscribing to a Topic
 =====================================
 
-Publishing to a topic
+Publishing to a Topic
 ---------------------
 
 In order to create a :term:`topic` and publish values to it, it's necessary to create a :term:`publisher`.
 
-NetworkTable publishers are represented as type-specific Publisher objects (e.g. ``BooleanPublisher``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_publisher.html>`__). The publisher object must be retained for the publisher to continue publishing. In Java, the ``close()`` method needs be called to ensure publishing is stopped; in C++ this is handled by the destructor. C++ publishers are moveable and non-copyable.
+NetworkTable publishers are represented as type-specific Publisher objects (e.g. ``BooleanPublisher``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_publisher.html>`__). Publishers are only active as long as the Publisher object exists. Typically you want to keep publishing longer than the local scope of a function, so it's necessary to store the Publisher object somewhere longer term, e.g. in an instance variable. In Java, the ``close()`` method needs be called to stop publishing; in C++ this is handled by the destructor. C++ publishers are moveable and non-copyable.
 
 In the handle-based APIs, there is only the non-type-specific ``NT_Publisher`` handle; the user is responsible for keeping track of the type of the publisher and using the correct type-specific set methods.
 
@@ -186,10 +186,10 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
             NT_Unpublish(dblPub);
 
 
-Subscribing to a topic
+Subscribing to a Topic
 ----------------------
 
-A :term:`subscriber` receives value updates made to a topic. Similar to publishers, NetworkTable subscribers are represented as type-specific Subscriber classes (e.g. ``BooleanSubscriber``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_subscriber.html>`__) that must be retained to continue subscribing.
+A :term:`subscriber` receives value updates made to a topic. Similar to publishers, NetworkTable subscribers are represented as type-specific Subscriber classes (e.g. ``BooleanSubscriber``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_subscriber.html>`__) that must be stored somewhere to continue subscribing.
 
 Subscribers have a range of different ways to read received values. It's possible to just read the most recent value using ``get()``, read the most recent value, along with its timestamp, using ``getAtomic()``, or get an array of all value changes since the last call using ``readQueue()`` or ``readQueueValues()``.
 
@@ -372,7 +372,7 @@ Subscribers have a range of different ways to read received values. It's possibl
             NT_Unsubscribe(dblSub);
 
 
-Using Entry to both subscribe and publish
+Using Entry to Both Subscribe and Publish
 -----------------------------------------
 
 An :term:`entry` is a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber. Similar to publishers and subscribers, NetworkTable entries are represented as type-specific Entry classes (e.g. ``BooleanEntry``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_entry.html>`__) that must be retained to continue subscribing (and publishing).
@@ -732,7 +732,7 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
             };
 
 
-Subscribing to multiple topics
+Subscribing to Multiple Topics
 ------------------------------
 
 While in most cases it's only necessary to subscribe to individual topics, it is sometimes useful (e.g. in dashboard applications) to subscribe and get value updates for changes to multiple topics. Listeners (see :ref:`docs/software/networktables/listening-for-change:listening for changes`) can be used directly, but creating a ``MultiSubscriber`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/MultiSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_multi_subscriber.html>`__) allows specifying subscription options and reusing the same subscriber for multiple listeners.
