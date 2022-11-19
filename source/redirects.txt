@@ -265,3 +265,4 @@
 "docs/software/pathplanning/pathweaver/creating-path-groups.rst" "docs/software/pathplanning/pathweaver/creating-autonomous-routines.rst"
 "docs/software/dashboards/smartdashboard/setting-robot-preferences-from-smartdashboard.rst" "docs/software/basic-programming/robot-preferences.rst"
 "docs/software/advanced-controls/introduction/tuning-pid-controller.rst" "docs/software/advanced-controls/introduction/tuning-flywheel.rst"
+"docs/software/roborio-info/roborio2-imaging.rst" "docs/zero-to-robot/step-3/roborio2-imaging.rst"
