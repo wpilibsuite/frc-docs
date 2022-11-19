@@ -6,6 +6,7 @@ Very often the values are for one or more areas of interest such as goals or gam
 
 Verify the NetworkTables Topics Being Published
 -----------------------------------------------
+
 .. image:: images/reading-array-values-published-by-networktables-1.png
    :alt: Image of OutlineViewer with the NetworkTables topics
 
@@ -17,6 +18,7 @@ Both of the following examples are extremely simplified programs that just illus
 
 Writing a Program to Access the Topics
 --------------------------------------
+
 .. tabs::
 
    .. code-tab:: java
@@ -71,6 +73,7 @@ The steps to getting the values and, in this program, printing them are:
 
 Program Output
 --------------
+
 .. image:: images/reading-array-values-published-by-networktables-2.png
    :alt: Image of Riolog showing the values
 
