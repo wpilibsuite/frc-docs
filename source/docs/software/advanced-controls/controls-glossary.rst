@@ -54,6 +54,9 @@ Controls Glossary
    Gaussian distribution
       A special mathematical function that describes distributions of averages. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). See `Gaussian distribution <https://en.wikipedia.org/wiki/Gaussian_function>`__  on Wikipedia for more info.
 
+   gradient
+      The :term:`derivative`, but applied to a function with multiple inputs. As a result, the output is both the magnitude of the rate of change, and the vector direction along which it occurs.
+
    hidden state
       A :term:`state` that cannot be directly measured, but whose :term:`dynamics` can be related to other states.
 
