@@ -6,11 +6,17 @@ A user can use the swerve drive kinematics classes in order to perform :ref:`odo
 
 Creating the odometry object
 ----------------------------
-The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument (only C++), three mandatory arguments, and one optional argument. The template argument (only C++) is an integer representing the number of swerve modules. The mandatory arguments are the kinematics object that represents your swerve drive (in the form of a ``SwerveDriveKinematics`` class), the angle reported by your gyroscope (as a ``Rotation2d``), and the initial positions of the swerve modules (as an array of ``SwerveModulePosition``). The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
+The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument (only C++), three mandatory arguments, and one optional argument. The template argument (only C++) is an integer representing the number of swerve modules.
+
+The mandatory arguments are:
+
+* The kinematics object that represents your swerve drive (in the form of a ``SwerveDriveKinematics`` class)
+* The angle reported by your gyroscope (as a ``Rotation2d``)
+* The initial positions of the swerve modules (as an array of ``SwerveModulePosition``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
+
+The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose.
-
-.. note:: The ``SwerveModulePosition`` class in Java must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
 
 .. tabs::
 

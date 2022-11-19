@@ -6,11 +6,17 @@ A user can use the mecanum drive kinematics classes in order to perform :ref:`od
 
 Creating the odometry object
 ----------------------------
-The ``MecanumDriveOdometry`` class requires three mandatory arguments and one optional argument. The mandatory arguments are the kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class), the angle reported by your gyroscope (as a ``Rotation2d``), and the initial positions of the wheels (as ``MecanumDriveWheelPositions``). The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
+The ``MecanumDriveOdometry`` class requires three mandatory arguments and one optional argument.
+
+The mandatory arguments are:
+
+* The kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class)
+* The angle reported by your gyroscope (as a ``Rotation2d``)
+* The initial positions of the wheels (as ``MecanumDriveWheelPositions``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
+
+The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase.  The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose.
-
-.. note:: The ``MecanumDriveWheelPositions`` class in Java must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
 
 .. tabs::
 
