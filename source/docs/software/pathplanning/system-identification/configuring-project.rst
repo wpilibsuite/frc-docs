@@ -53,7 +53,7 @@ Here are the following settings that can be configured (although the settings th
 - Ports (either :guilabel:`A` and :guilabel:`B` or :guilabel:`CANCoder Port`
 - :guilabel:`Encoder Inverted` should be checked if a positive motor power doesn't correspond to a positive increase in encoder values
 - :guilabel:`Samples Per Average` is how many samples will be averaged per velocity measurement. A value greater than one can help reduce encoder noise and 5-10 is recommended for encoders with high CPR. Only mess with this setting if a previous run of SysId resulted in extremely noisy data.
-- :guilabel:`Reduce Encoding` should be checked if using high resolution encoders (e.g. CTRE Mag Encoders or REV Through Bore Encoder) that are plugged into the roboRIO. This ises the ``Encoder`` class ``1x`` decoding to reduce velocity noise. If this is checked, you will have to update your team's robot code to also use ``1x`` decoding on the encoders.
+- :guilabel:`Reduce Encoding` should be checked if using high resolution encoders (e.g. CTRE Mag Encoders or REV Through Bore Encoder) that are plugged into the roboRIO. This uses the ``Encoder`` class ``1x`` decoding to reduce velocity noise. If this is checked, you will have to update your team's robot code to also use ``1x`` decoding on the encoders.
 - :guilabel:`Time Measurement Window` is the period of time in milliseconds that the velocity measurement will be taken across. This setting can reduce measurement lag at the cost of possibly introducing more noise. Only modify this if data lag is impeding accurate control and data collection.
 
 
