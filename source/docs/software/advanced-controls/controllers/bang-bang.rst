@@ -27,7 +27,7 @@ Since a bang-bang controller does not have any gains, it does not need any const
     frc::BangBangController controller;
 
   .. code-tab:: python
-    
+
      # Creates a BangBangController
      controller = wpimath.BangBangController()
 

@@ -62,7 +62,7 @@ What might a more complete example of combined feedforward/PID control look like
     }
 
   .. code-tab:: python
-     
+
     def tank_drive_with_feedforward_PID(
         left_velocity_setpoint: float,
         right_velocity_setpoint: float,
