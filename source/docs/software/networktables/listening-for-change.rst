@@ -36,8 +36,8 @@ There are a few different ways to detect that a topic's value has changed; the e
 
                 // readQueueValues() provides all value changes since the last call;
                 // this way it's not possible to miss a change by polling too slowly
-                for (double value : ySub.readQueueValues()) {
-                  System.out.println("X changed value: " + value);
+                for (double iterVal : ySub.readQueueValues()) {
+                  System.out.println("X changed value: " + iterVal);
                 }
 
                 // readQueue() is similar to readQueueValues(), but provides timestamps
@@ -84,8 +84,8 @@ There are a few different ways to detect that a topic's value has changed; the e
 
                 // ReadQueueValues() provides all value changes since the last call;
                 // this way it's not possible to miss a change by polling too slowly
-                for (double value : ySub.ReadQueueValues()) {
-                  fmt::print("X changed value: {}\n", value);
+                for (double iterVal : ySub.ReadQueueValues()) {
+                  fmt::print("X changed value: {}\n", iterVal);
                 }
 
                 // ReadQueue() is similar to ReadQueueValues(), but provides timestamps
@@ -159,7 +159,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
             public class Example {
               final DoubleSubscriber ySub;
               // use an AtomicReference to make updating the value thread-safe
-              final AtomicReference<> yValue = new AtomicReference<Double>();
+              final AtomicReference<Double> yValue = new AtomicReference<Double>();
               // retain listener handles for later removal
               int connListenerHandle;
               int valueListenerHandle;

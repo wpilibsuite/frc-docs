@@ -608,8 +608,8 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
 
                 // when getting an entry, the type string is also optional; if not provided
                 // the publisher data type will be determined by the first publisher-creating call
-                entry = topic.getEntry();
-                entry = topic.getEntry("double");
+                entry = topic.getGenericEntry();
+                entry = topic.getGenericEntry("double");
 
                 // publish and subscribe options may be specified using PubSubOption
                 pub = topic.genericPublish("double",
