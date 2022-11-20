@@ -33,7 +33,7 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
--  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
+-  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
 
 Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
 
