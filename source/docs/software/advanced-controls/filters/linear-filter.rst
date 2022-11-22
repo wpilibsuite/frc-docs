@@ -11,7 +11,7 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__).
+Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__).
 
 Creating a LinearFilter
 -----------------------

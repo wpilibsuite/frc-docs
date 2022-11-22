@@ -68,12 +68,12 @@ Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` comman
 Included Command Types
 ----------------------
 
-The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used "out-of-the-box" via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+The command-based library includes a variety of pre-written commands for commonly-encountered use cases. Many of these commands are intended to be used "out-of-the-box" via `inlining <#inline-command-definitions>`_, however they may be subclassed, as well. A list of the included pre-made commands can be found below, along with brief examples of each - for more rigorous documentation, see the API docs (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/package-summary.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
 
 ConditionalCommand
 ^^^^^^^^^^^^^^^^^^
 
-The ``ConditionalCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__) runs one of two commands when executed, depending on a user-specified true-or-false condition:
+The ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__) runs one of two commands when executed, depending on a user-specified true-or-false condition:
 
 .. tabs::
 
@@ -94,7 +94,7 @@ SelectCommand
 
 .. note:: An alternate version of SelectCommand simply takes a method that supplies the command to be run - this can be very succinct, but makes inferring the command's requirements impossible, and so leaves the user responsible for manually adding the requirements to the SelectCommand.
 
-The ``SelectCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_select_command.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands based on the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
+The ``SelectCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_select_command.html>`__) is a generalization of the ``ConditionalCommand`` class that runs one of a selection of commands based on the value of a user-specified selector.  The following example code is taken from the SelectCommand example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):
 
 .. tabs::
 
@@ -117,7 +117,7 @@ The ``SelectCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 InstantCommand
 ^^^^^^^^^^^^^^
 
-The ``InstantCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__) executes a single action on initialization, and then ends immediately:
+The ``InstantCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__) executes a single action on initialization, and then ends immediately:
 
 .. tabs::
 
@@ -134,7 +134,7 @@ The ``InstantCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs
 RunCommand
 ^^^^^^^^^^
 
-The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) runs a specified method repeatedly in its ``execute()`` block. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ it to add them.
+The ``RunCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) runs a specified method repeatedly in its ``execute()`` block. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ it to add them.
 
 .. tabs::
 
@@ -162,7 +162,7 @@ The ``RunCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/rel
 StartEndCommand
 ^^^^^^^^^^^^^^^
 
-The ``StartEndCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) executes an action when starting, and a second one when ending. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ an inlined command to add them.
+The ``StartEndCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) executes an action when starting, and a second one when ending. It does not have end conditions by default; users can either subclass it, or `decorate <#command-decorator-methods>`_ an inlined command to add them.
 
 .. tabs::
 
@@ -191,7 +191,7 @@ The ``StartEndCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/doc
 FunctionalCommand
 ^^^^^^^^^^^^^^^^^
 
-The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__) allows all four ``Command`` methods to be passed in as method references or lambdas:
+The ``FunctionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__) allows all four ``Command`` methods to be passed in as method references or lambdas:
 
 .. tabs::
 
@@ -228,7 +228,7 @@ The ``FunctionalCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/d
 PrintCommand
 ^^^^^^^^^^^^
 
-The ``PrintCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__) prints a given string.
+The ``PrintCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__) prints a given string.
 
 .. tabs::
 
@@ -243,7 +243,7 @@ The ``PrintCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/r
 ScheduleCommand
 ^^^^^^^^^^^^^^^
 
-The ``ScheduleCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command, and ends instantly:
+The ``ScheduleCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command, and ends instantly:
 
 .. tabs::
 
@@ -262,7 +262,7 @@ This is often useful for "forking off" from command groups: by default, commands
 ProxyScheduleCommand
 ^^^^^^^^^^^^^^^^^^^^
 
-The ``ProxyScheduleCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_schedule_command.html>`__) schedules a specified command, and does not end until that command ends:
+The ``ProxyScheduleCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_schedule_command.html>`__) schedules a specified command, and does not end until that command ends:
 
 .. tabs::
 
@@ -281,7 +281,7 @@ This is often useful for "forking off" from command groups: by default, commands
 WaitCommand
 ^^^^^^^^^^^
 
-The ``WaitCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__) does nothing, and ends after a specified period of time elapses after its initial scheduling:
+The ``WaitCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__) does nothing, and ends after a specified period of time elapses after its initial scheduling:
 
 .. tabs::
 
@@ -304,7 +304,7 @@ WaitUntilCommand
 
 .. warning:: The match timer used by WaitUntilCommand does *not* provide an official match time!  While it is fairly accurate, use of this timer can *not* guarantee the legality of your robot's actions.
 
-The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__) does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
+The ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__) does nothing, and ends once a specified condition becomes true, or until a specified match time passes.
 
 .. tabs::
 
@@ -327,7 +327,7 @@ The ``WaitUntilCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/do
 PerpetualCommand
 ^^^^^^^^^^^^^^^^
 
-The ``PerpetualCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_perpetual_command.html>`__) runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
+The ``PerpetualCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_perpetual_command.html>`__) runs a given command with its end condition removed, so that it runs forever (unless externally interrupted):
 
 .. tabs::
 
@@ -350,12 +350,12 @@ commands. A "decorator" method is a method that takes an object (in this
 case, a command) and returns an object of the same type (i.e. a command)
 with some additional functionality added to it. A list of the included
 decorator methods with brief examples is included below - for rigorous
-documentation, see the API docs (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+documentation, see the API docs (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
 
 withTimeout
 ^^^^^^^^^^^
 
-The ``withTimeout()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a7d1ba6905ebca2f7e000942b318b59ae>`__) adds a timeout to a command. The
+The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a7d1ba6905ebca2f7e000942b318b59ae>`__) adds a timeout to a command. The
 decorated command will be interrupted if the timeout expires:
 
 .. tabs::
@@ -373,7 +373,7 @@ decorated command will be interrupted if the timeout expires:
 until/withInterrupt
 ^^^^^^^^^^^^^^^^^^^
 
-The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
+The ``until()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a1617d60548cc8a75c12f5ddfe8e3c38c>`__) decorator adds a condition on which the command will be interrupted:
 
 .. tabs::
 
@@ -392,7 +392,7 @@ The ``until()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java
 andThen
 ^^^^^^^
 
-The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ab0cc63118f578b328222ab2e9f1b7b65>`__) adds a method to be executed after the command ends:
+The ``andThen()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ab0cc63118f578b328222ab2e9f1b7b65>`__) adds a method to be executed after the command ends:
 
 .. tabs::
 
@@ -409,7 +409,7 @@ The ``andThen()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/
 beforeStarting
 ^^^^^^^^^^^^^^
 
-The ``beforeStarting()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ab8d1d6ccf24f90ffa9be270544dd7162>`__) adds a method to be executed before the command starts:
+The ``beforeStarting()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#ab8d1d6ccf24f90ffa9be270544dd7162>`__) adds a method to be executed before the command starts:
 
 .. tabs::
 
@@ -428,7 +428,7 @@ alongWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel command group the ordinary way instead.
 
-The ``alongWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
+The ``alongWith()`` `decorator <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel command group <docs/software/commandbased/command-groups:ParallelCommandGroup>`. All commands will execute at the same time and each will end independently of each other:
 
 .. code-block:: java
 
@@ -440,7 +440,7 @@ raceWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel race group the ordinary way instead.
 
-The ``raceWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
+The ``raceWith()`` `decorator <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel race group <docs/software/commandbased/command-groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At this point all others are interrupted.  It doesn't matter which command is the calling command:
 
 .. code-block:: java
 
@@ -452,7 +452,7 @@ deadlineWith (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should simply construct a parallel deadline group the ordinary way instead.
 
-The ``deadlineWith()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
+The ``deadlineWith()`` `decorator <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__ returns a :ref:`parallel deadline group <docs/software/commandbased/command-groups:ParallelDeadlineGroup>` with the calling command being the deadline.  When this deadline command ends it will interrupt any others that are not finished:
 
 .. code-block:: java
 
@@ -464,7 +464,7 @@ withName (Java only)
 
 .. note:: This decorator is not supported in C++ due to technical constraints - users should set the name of the command inside their command class instead.
 
-The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.util.sendable.SendableBuilder)>`__.
+The ``withName()`` `decorator <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__ adds a name to a command. This name will appear on a dashboard when the command is sent via the `sendable interface <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.util.sendable.SendableBuilder)>`__.
 
 .. code-block:: java
 
@@ -474,7 +474,7 @@ The ``withName()`` `decorator <https://first.wpi.edu/wpilib/allwpilib/docs/relea
 perpetually
 ^^^^^^^^^^^
 
-The ``perpetually()`` decorator (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
+The ``perpetually()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html#a4e72c5be424accbf416cf35be061c918>`__) removes the end condition of a command, so that it runs forever.
 
 .. tabs::
 
@@ -503,7 +503,7 @@ Static Factory Methods for Command Groups (Java only)
 
 .. note:: These factory methods are not included in the C++ command library, as the reduction in verbosity would be minimal - C++ commands should be stack-allocated, removing the need for the ``new`` keyword.
 
-If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
+If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, and ``deadlineWith`` decorators for declaring command groups, but still wish to reduce verbosity compared to calling the constructors, the ``CommandGroupBase`` `class <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__ contains four static factory methods for declaring command groups: ``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used from within a command group subclass or in combination with ``import static``, these become extremely concise and greatly aid in command composition:
 
 .. code-block:: java
 

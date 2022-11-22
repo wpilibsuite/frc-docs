@@ -12,7 +12,7 @@ One of the most common control algorithms used in FRC\ |reg| is the `PID control
 PIDSubsystems
 -------------
 
-The ``PIDSubsystem`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_subsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
+The ``PIDSubsystem`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_subsystem.html>`__) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
 Creating a PIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^

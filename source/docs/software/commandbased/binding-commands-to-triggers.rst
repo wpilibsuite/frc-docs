@@ -5,7 +5,7 @@ Apart from autonomous commands, which are scheduled at the start of the autonomo
 
 As mentioned earlier, command-based is a `declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is "declared" once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or canceling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
 
-Command binding is done through the ``Trigger`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html>`__) and its various ``Button`` subclasses (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_button.html>`__).
+Command binding is done through the ``Trigger`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html>`__) and its various ``Button`` subclasses (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_button.html>`__).
 
 Trigger/Button Bindings
 -----------------------
@@ -37,7 +37,7 @@ This binding schedules a command when a trigger changes from active to inactive 
 toggleWhenActive/toggleWhenPressed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a `StartEndCommand <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__ or a `ConditionalCommand <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__ is a good way to specify the commands that you want to be want to be toggled between.
+This binding toggles a command, scheduling it when a trigger changes from inactive to active (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a `StartEndCommand <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__ or a `ConditionalCommand <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__ is a good way to specify the commands that you want to be want to be toggled between.
 
 .. tabs::
 
@@ -66,7 +66,7 @@ The most-common way to trigger a command is to bind a command to a button on a j
 Creating a JoystickButton
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to create a ``JoystickButton``, we first need a Joystick.  All types of joysticks (including gamepads) are represented in code by the ``GenericHID`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/GenericHID.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_generic_h_i_d.html>`__), or one of its subclasses:
+In order to create a ``JoystickButton``, we first need a Joystick.  All types of joysticks (including gamepads) are represented in code by the ``GenericHID`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/GenericHID.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_generic_h_i_d.html>`__), or one of its subclasses:
 
 .. tabs::
 
@@ -80,9 +80,9 @@ In order to create a ``JoystickButton``, we first need a Joystick.  All types of
     frc::Joystick exampleStick{1}; // Creates a joystick on port 1
     frc::XBoxController exampleController{2} // Creates an XboxController on port 2
 
-.. note:: When creating a ``JoystickButton`` with an XboxController, it is usually a good idea to use the button enum (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/structfrc_1_1_xbox_controller_1_1_button.html>`__) to get the button number corresponding to a given button.
+.. note:: When creating a ``JoystickButton`` with an XboxController, it is usually a good idea to use the button enum (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/structfrc_1_1_xbox_controller_1_1_button.html>`__) to get the button number corresponding to a given button.
 
-After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html>`__):
+After the joystick is instantiated, users can then pass it to a ``JoystickButton`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html>`__):
 
 .. tabs::
 

@@ -33,7 +33,7 @@ General Library
 - Added C++ TankDrive example
 - Added ``PS4Controller`` controller class
 - Added better message for when an I2C port is out of range
-- Added ``Debouncer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/Debouncer.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
+- Added ``Debouncer`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/Debouncer.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_debouncer.html>`__) class. This helps with filtering rising and falling edges when dealing with boolean values
 - Added ``PneumaticHub`` class for use with the REV Pneumatic Hub
 - GenericHID has been updated to static functions to use for non-defined controller types.
 - ``XboxController`` has migrated away from taking arguments in functions and instead has functions with no arguments. An example conversion is below:
@@ -43,10 +43,10 @@ General Library
 
 -  ``getInstance()`` functions in ``CameraServer``, ``DriverStation``, ``LiveWindow``, ``Preferences``, ``SendableRegistry``, have been deprecated and replaced with static functions
 - ``Timer::HasPeriodPassed()`` and ``Timer.hasPeriodPassed()`` have been deprecated. Use ``AdvanceIfElapsed()`` instead
-- Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_up_down_counter.html>`__)
+- Several new classes have been added to enable simpler access to ``Counter``: ``ExternalDirectionCounter`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/ `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_external_direction_counter.html>`__), ``Tachometer`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/ `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_tachometer.html>`__), and ``UpDownCounter`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/ `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_up_down_counter.html>`__)
 - ``DutyCycleEncoder``: add support for setting duty cycle range
 - Added ``ADIS16448_IMU`` and ``ADIS16470_IMU`` classes.
-- Added ``BangBangController`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__) for maximally-aggressive velocity control of high-inertia mechanisms, which is useful for flywheel shooters.
+- Added ``BangBangController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__) for maximally-aggressive velocity control of high-inertia mechanisms, which is useful for flywheel shooters.
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^

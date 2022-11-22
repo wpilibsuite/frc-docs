@@ -17,7 +17,7 @@ Data logs consist of a series of timestamped records.  Control records allow sta
 Standard Data Logging using DataLogManager
 ------------------------------------------
 
-The ``DataLogManager`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The deta file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
+The ``DataLogManager`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The deta file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
 
 .. note: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work.
 
@@ -87,7 +87,7 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
 Custom Data Logging using DataLog
 ---------------------------------
 
-The ``DataLog`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
+The ``DataLog`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
 .. note: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
@@ -222,6 +222,6 @@ The output window is used to specify the output folder (via :guilabel:`Select Ou
 Custom Processing of Data Logs
 ------------------------------
 
-For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in `Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLogReader.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log_reader.html>`__, or `Python <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py>`__.  For other languages, the `data log format <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__ is also documented.
+For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLogReader.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log_reader.html>`__, or `Python <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py>`__.  For other languages, the `data log format <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__ is also documented.
 
 DataLogReader provides a low-level view of a data log, in that it supports iterating over a data log's control and data records and decoding of common data types, but does not provide any higher level abstractions such as a NetworkTables-like map of entries.  The printlog example in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/src/printlog/java/printlog/PrintLog.java>`__ and `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/printlog.cpp>`__ (and the Python ``datalog.py``) demonstrates basic usage.

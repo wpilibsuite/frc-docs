@@ -27,6 +27,6 @@ The Java and C++ source code can be found in the WPILibJ and WPILibC source dire
 
 While users are strongly encouraged to read the source code to resolve detailed questions about library functionality, more-concise documentation can be found on the official documentation pages for WPILibJ and WPILibC:
 
- - `Java documentation <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/>`__
+ - `Java documentation <https://github.wpilib.org/allwpilib/docs/release/java/>`__
 
- - `C++ documentation <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/>`__
+ - `C++ documentation <https://github.wpilib.org/allwpilib/docs/release/cpp/>`__

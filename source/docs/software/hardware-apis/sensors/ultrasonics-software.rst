@@ -13,7 +13,7 @@ There are two primary types of ultrasonics supported natively by WPILib:
 Ping-response ultrasonics
 -------------------------
 
-The :code:`Ultrasonic` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_ultrasonic.html>`__) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the: name) require separate pins for both spending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
+The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ultrasonic.html>`__) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the: name) require separate pins for both spending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
 
 .. tabs::
 

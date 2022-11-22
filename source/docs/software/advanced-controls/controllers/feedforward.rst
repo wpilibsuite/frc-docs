@@ -18,9 +18,9 @@ The WPILib feedforward classes closely match the available mechanism characteriz
 
 WPILib currently provides the following three helper classes for feedforward control:
 
-* `SimpleMotorFeedforward`_ (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__)
-* `ArmFeedforward`_ (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/ArmFeedforward.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_arm_feedforward.html>`__)
-* `ElevatorFeedforward`_ (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/ElevatorFeedforward.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_elevator_feedforward.html>`__)
+* `SimpleMotorFeedforward`_ (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__)
+* `ArmFeedforward`_ (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ArmFeedforward.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_arm_feedforward.html>`__)
+* `ElevatorFeedforward`_ (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ElevatorFeedforward.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_elevator_feedforward.html>`__)
 
 SimpleMotorFeedforward
 ----------------------
@@ -160,7 +160,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 Using Feedforward to Control Mechanisms
 ---------------------------------------
 
-.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_speed_controller.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_speed_controller.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for "voltage sag" from the battery.
 
 Feedforward control can be used entirely on its own, without a feedback controller.  This is known as "open-loop" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:
 

@@ -6,7 +6,7 @@ This class provides an easy way to forward local ports to another host/port. Thi
 Forwarding a Remote Port
 ------------------------
 
-Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/util/net/PortForwarder.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classwpi_1_1_port_forwarder.html>`__) can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port in Java, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
+Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/net/PortForwarder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_port_forwarder.html>`__) can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port in Java, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
 
 .. tabs::
 
