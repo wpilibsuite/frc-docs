@@ -6,7 +6,7 @@ Robot programs can specify exactly which widget to use to display a data point, 
 Specifying a widget
 -------------------
 
-Call `withWidget` after `add` in the call chain:
+Call ``withWidget`` after ``add`` in the call chain:
 
 .. tabs::
 
