@@ -66,6 +66,7 @@ General Library
 
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
+- Add missing ``PS4Controller`` triangle methods
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
@@ -108,6 +109,7 @@ Simulation
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 Shuffleboard
 ------------
@@ -118,7 +120,7 @@ Shuffleboard
 SmartDashboard
 --------------
 
-.. important:: Smartdashboard is not included with Beta 3. It is planned for future betas.
+.. important:: Smartdashboard is not included with Beta 4. It is planned for future betas.
 
 .. important:: SmartDashboard is not supported on M1 macOS.
 
@@ -129,6 +131,7 @@ Glass
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 PathWeaver
 ----------
@@ -154,7 +157,7 @@ WPILib All in One Installer
 ---------------------------
 
 - M1 macOS is now supported
-- Update to VS Code 1.72
+- Update to VS Code 1.73
 
 Visual Studio Code Extension
 ----------------------------
@@ -170,7 +173,7 @@ RobotBuilder
 SysID
 -----
 
-.. important:: SysID is not included with Beta 3. It is planned for future betas.
+.. important:: SysID is not included with Beta 4. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0
