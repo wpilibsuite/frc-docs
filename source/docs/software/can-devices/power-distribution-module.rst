@@ -31,6 +31,22 @@ Reading the Bus Voltage
 
 .. tabs::
 
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 26-29
+         :linenos:
+         :lineno-start: 26
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 23-26
+         :linenos:
+         :lineno-start: 23
+
     .. code-tab:: java
 
         double voltage = examplePD.getVoltage();
@@ -46,6 +62,22 @@ Reading the Temperature
 
 .. tabs::
 
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 31-33
+         :linenos:
+         :lineno-start: 31
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 28-30
+         :linenos:
+         :lineno-start: 28
+
     .. code-tab:: java
 
         double temp = examplePD.getTemperature();
@@ -60,6 +92,23 @@ Reading the Total Current, Power, and Energy
 --------------------------------------------
 
 .. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 35-47
+         :linenos:
+         :lineno-start: 35
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 32-44
+         :linenos:
+         :lineno-start: 32
+
 
     .. code-tab:: java
 
@@ -78,9 +127,25 @@ Monitoring the total current, power and energy can be useful for controlling how
 Reading Individual Channel Currents
 -----------------------------------
 
-The PDP/PDH also allows users to monitor the current drawn by the individual device power channels.  You can read the current on any of the 16 PDP channels (0-15) or 24 PDH channels (0-23). For example, to read the current on channel 0:
+The PDP/PDH also allows users to monitor the current drawn by the individual device power channels.  You can read the current on any of the 16 PDP channels (0-15) or 24 PDH channels (0-23).
 
 .. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 20-24
+         :linenos:
+         :lineno-start: 20
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/435008073cbe56954fda71b8800233bf9d8e1c44/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 17-21
+         :linenos:
+         :lineno-start: 17
 
     .. code-tab:: java
 
