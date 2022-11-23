@@ -47,14 +47,6 @@ Reading the Bus Voltage
          :linenos:
          :lineno-start: 23
 
-    .. code-tab:: java
-
-        double voltage = examplePD.getVoltage();
-
-    .. code-tab:: c++
-
-        double voltage = examplePD.GetVoltage();
-
 Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/roborio-info/roborio-brownouts>` for more information.
 
 Reading the Temperature
@@ -78,14 +70,6 @@ Reading the Temperature
          :linenos:
          :lineno-start: 28
 
-    .. code-tab:: java
-
-        double temp = examplePD.getTemperature();
-
-    .. code-tab:: c++
-
-        double temp = examplePD.GetTemperature();
-
 Monitoring the temperature can be useful for detecting if the robot has been drawing too much power and needs to be shut down for a while, or if there is a short or other wiring problem.
 
 Reading the Total Current, Power, and Energy
@@ -108,19 +92,6 @@ Reading the Total Current, Power, and Energy
          :lines: 32-44
          :linenos:
          :lineno-start: 32
-
-
-    .. code-tab:: java
-
-        double current = examplePD.getTotalCurrent();
-        double power = examplePD.getTotalPower();
-        double energy = examplePD.getTotalEnergy();
-
-    .. code-tab:: c++
-
-        double current = examplePD.GetTotalCurrent();
-        double power = examplePD.GetTotalPower();
-        double energy = examplePD.GetTotalEnergy();
 
 Monitoring the total current, power and energy can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required. Power is the bus voltage multiplied by the current with the units Watts. Energy is the power summed over time with units Joules.
 
@@ -146,14 +117,6 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
          :lines: 17-21
          :linenos:
          :lineno-start: 17
-
-    .. code-tab:: java
-
-        double current = examplePD.getCurrent(0);
-
-    .. code-tab:: c++
-
-        double current = examplePD.GetCurrent(0);
 
 Monitoring individual device current draws can be useful for detecting shorts or stalled motors.
 
