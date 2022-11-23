@@ -69,27 +69,7 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
       exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-An example of how to use buttons on the ``XboxController``.
-
-.. tabs::
-
-   .. group-tab:: Java
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot/RobotContainer.java
-         :language: java
-         :lines: 39,85-88,96-99
-         :linenos:
-         :lineno-start: 39
-
-   .. group-tab:: C++
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/GearsBot/cpp/RobotContainer.cpp
-         :language: cpp
-         :lines: 41-48
-         :linenos:
-         :lineno-start: 41
-
-The ``XboxController`` class provides named indices for each of the buttons that you can access with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+The ``XboxController`` class provides named methods for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 ``PS4Controller`` Class
 -----------------------
@@ -112,7 +92,7 @@ The ``XboxController`` class provides named indices for each of the buttons that
 
       examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``PS4Controller`` class provides named indices for each of the buttons. These buttons can accessed with ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
+The ``PS4Controller`` class provides named methods for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
 POV
 ---
@@ -121,7 +101,7 @@ POV
    :alt: The angles used by the code of the POV/D-pad with 0 at the top and continuing clockwise.
 
 
-On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
+On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController/PS4Controller D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
 ``GenericHID`` Usage
 --------------------
@@ -160,6 +140,8 @@ An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes abo
 
 Button Usage
 ------------
+
+.. note:: Usage such as the following is for code not using the command-based framework. For button usage in the command-based framework, see :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 Unlike an axis, you will usually want to use the ``pressed`` and ``released`` methods to respond to button input.  These will return true if the button has been activated since the last check.  This is helpful for taking an action once when the event occurs but not having to continuously do it while the button is held down.
 
