@@ -1,22 +1,22 @@
 Commands
 ========
 
-Commands represent independently-controlled collections of robot hardware (such as motor controllers, sensors, pneumatic actuators, etc.) that operate together. Subsystems back the resource-management system of command-based: only one command can use a given subsystem at the same time. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem's hardware without also changing the rest of the robot code.  Commands are represented in the command-based library by the ``Command`` interface (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html>`__).
+**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met.  Commands are represented in the command-based library by the ``Command`` interface (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html>`__).
 
 The Structure of a Command
 --------------------------
 
-While subsystems are fairly freeform, and may generally look like whatever the user wishes them to, commands are quite a bit more constrained. Command code must specify what the command will do in each of its possible states. This is done by overriding the ``initialize()``, ``execute()``, and ``end()`` methods. Additionally, a command must be able to tell the scheduler when (if ever) it has finished execution - this is done by overriding the ``isFinished()`` method. All of these methods are defaulted to reduce clutter in user code: ``initialize()``, ``execute()``, and ``end()`` are defaulted to simply do nothing, while ``isFinished()`` is defaulted to return false (resulting in a command that never ends).
+Commands specify what the command will do in each of its possible states. This is done by overriding the ``initialize()``, ``execute()``, and ``end()`` methods. Additionally, a command must be able to tell the scheduler when (if ever) it has finished execution - this is done by overriding the ``isFinished()`` method. All of these methods are defaulted to reduce clutter in user code: ``initialize()``, ``execute()``, and ``end()`` are defaulted to simply do nothing, while ``isFinished()`` is defaulted to return false (resulting in a command that never finishes naturally, and will run until interrupted).
 
 Initialization
 ^^^^^^^^^^^^^^
 
-The ``initialize()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#initialize()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ad3f1971a1b44ecdd4683d766f831bccd>`__) marks the command start, and is called exactly once per time a command is scheduled. The ``initialize()`` method should be used to place the command in a known starting state for execution. Any state or resources needed for the command's functionality should be initialized or opened here, not in the constructor -- command objects may be reused and scheduled multiple times, and unlike the constructor, ``initialize()`` will be called at the start of each use. It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
+The ``initialize()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#initialize()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ad3f1971a1b44ecdd4683d766f831bccd>`__) marks the command start, and is called exactly once per time a command is scheduled. The ``initialize()`` method should be used to place the command in a known starting state for execution. Command objects may be reused and scheduled multiple times, so any state or resources needed for the command's functionality should be initialized or opened in ``initialize`` (which will be called at the start of each use) rather than the constructor (which is invoked only once on object allocation). It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
 
 Execution
 ^^^^^^^^^
 
-The ``execute()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#execute()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a7d7ea1271f7dcc65c0ba3221d179b510>`__) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called (this is generally done in the main robot periodic method, which runs every 20ms by default). The execute block should be used for any task that needs to be done continually while the command is scheduled, such as updating motor outputs to match joystick inputs, or using the output of a control loop.
+The ``execute()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#execute()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a7d7ea1271f7dcc65c0ba3221d179b510>`__) is called repeatedly while the command is scheduled; this is when the scheduler’s ``run()`` method is called (this is generally done in the main robot periodic method, which runs every 20ms by default). The execute block should be used for any task that needs to be done continually while the command is scheduled, such as updating motor outputs to match joystick inputs, or using the output of a control loop.
 
 Ending
 ^^^^^^
@@ -26,12 +26,12 @@ The ``end(bool interrupted)`` method (`Java <https://github.wpilib.org/allwpilib
 Specifying end conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``isFinished()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#end(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#af5e8c12152d195a4f3c06789366aac88>`__) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called *after* the ``execute()`` method, so the command *will* execute once on the same iteration that it ends.
+The ``isFinished()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#end(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#af5e8c12152d195a4f3c06789366aac88>`__) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called after the ``execute()`` method, so the command will execute once on the same iteration that it ends.
 
 Command Properties
 ------------------
 
-In addition to the four lifecycle methods described above, each ``Command`` also has two properties, the value of which is defined by the ``runsWhenDisabled`` and ``getInterruptBehavior`` methods respectively. In most cases, the default value is enough.
+In addition to the four lifecycle methods described above, each ``Command`` also has three properties, defined by getter methods that should always return the same value with no side affects.
 
 getRequirements
 ^^^^^^^^^^^^^^^
@@ -40,9 +40,19 @@ Each command should declare any subsystems it controls as requirements. This bac
 
 Most command factories and constructors provided by the library have a ``requirements`` vararg (Java) / initializer list (C++) parameter.
 
-Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / initializer list (C++) parameter at the end of the parameter list of most command constructors and factories in the library.
+Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / initializer list (C++) parameter at the end of the parameter list of most command constructors and factories in the library:
 
-As a rule, command compositions require the union of the requirements of their component commands.
+.. tabs::
+
+  .. code-tab:: java
+
+    Commands.run(intake::activate, intake);
+
+  .. code-tab:: c++
+
+    frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake});
+
+As a rule, command compositions require all subsystems their components require.
 
 runsWhenDisabled
 ^^^^^^^^^^^^^^^^
@@ -51,18 +61,38 @@ The ``runsWhenDisabled()`` method returns a ``boolean``/``bool`` specifying whet
 
 .. important:: Except for Addressable LEDs, hardware outputs are disabled when the robot is disabled, regardless of ``runsWhenDisabled()``!
 
-This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:ignoringDisable` decorator.
+This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:ignoringDisable` decorator:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    CommandBase mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
+
+  .. code-tab:: c++
+
+    frc2::CommandPtr mayRunDuringDisabled = frc2::cmd::Run([] { UpdateTelemetry(); }).IgnoringDisable(true);
 
 As a rule, command compositions may run when disabled if all their component commands set ``runsWhenDisabled`` as ``true``.
 
 getInterruptionBehavior
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``getInterruptionBehavior()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#getInterruptionBehavior()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ab1e027e86fc5c9132914ca566a9845a8>`__) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running.
+The ``getInterruptionBehavior()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#getInterruptionBehavior()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#ab1e027e86fc5c9132914ca566a9845a8>`__) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running. Note that ``getInterruptionBehavior`` only affects resolution of requirement conflicts: all commands can be canceled, regardless of ``getInterruptionBehavior``.
 
 .. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
 
-This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:withInterruptBehavior` decorator.
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:withInterruptBehavior` decorator:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    CommandBase noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
+
+  .. code-tab:: c++
+
+    frc2::CommandPtr noninterruptible = frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake}).WithInterruptBehavior(Command::InterruptBehavior::kCancelIncoming);
 
 Included Command Types
 ----------------------
@@ -244,7 +274,7 @@ Custom Command Classes
 
 Users may also write custom command classes. As this is significantly more verbose, it's recommended to use the more concise factories mentioned above.
 
-.. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should *always* extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
+.. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
 
 To write a custom command class, subclass the abstract ``CommandBase`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
