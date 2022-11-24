@@ -69,7 +69,7 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
       exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``XboxController`` class provides named methods for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+The ``XboxController`` class provides named methods (``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 ``PS4Controller`` Class
 -----------------------
@@ -92,7 +92,7 @@ The ``XboxController`` class provides named methods for each of the buttons, and
 
       examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``PS4Controller`` class provides named methods for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
+The ``PS4Controller`` class provides named methods (``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
 POV
 ---
@@ -106,34 +106,34 @@ On joysticks, the POV is a directional hat that can select one of 8 different an
 ``GenericHID`` Usage
 --------------------
 
-An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
+An axis can be used with ``.getRawAxis(int index)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
 
 .. tabs::
 
    .. code-tab:: java
 
-      private final PWMSparkMax m_leftMotor = new PWMSparkMax(0);
-      private final PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+      private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
+      private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
       private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
-      private final GenericHID m_stick = new GenericHID(0);
+      private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
 
       m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
 
    .. code-tab:: c++
 
-      frc::PWMVictorSPX m_leftMotor{0};
-      frc::PWMVictorSPX m_rightMotor{1};
+      frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
+      frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
       frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
-      frc::GenericHID m_stick{0};
+      frc::GenericHID m_stick{Constants::kJoystickPort};
 
       m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
 
    .. code-tab:: python
 
-      leftMotor = wpilib.PWMVictorSPX(0)
-      rightMotor = wpilib.PWMVictorSPX(1)
+      leftMotor = wpilib.PWMVictorSPX(LEFT_MOTOR_PORT)
+      rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
       self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
-      self.stick = wpilib.GenericHID(0)
+      self.stick = wpilib.GenericHID(JOYSTICK_PORT)
 
       self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
 
