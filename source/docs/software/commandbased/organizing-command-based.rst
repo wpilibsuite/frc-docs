@@ -232,14 +232,14 @@ While static factories are manageable for single-subsystem commands, they excel 
     public class AutoRoutines {
 
         public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
-            return parallel(
+            return Commands.parallel(
                 drivetrain.commandDrive(0.5,0.5),
                 intake.runIntakeCommand(1.0)
             ).withTimeout(5.0);
         }
 
         public static Command intakeThenOuttake(Intake intake) {
-            return sequence(
+            return Commands.sequence(
                 intake.runIntakeCommand(1.0).withTimeout(2.0),
                 new WaitCommand(3.0),
                 intake.runIntakeCommand(-1).withTimeout(2.0)
