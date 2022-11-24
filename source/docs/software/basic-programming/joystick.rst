@@ -69,7 +69,7 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
       exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``XboxController`` class provides named methods (``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 ``PS4Controller`` Class
 -----------------------
@@ -92,7 +92,7 @@ The ``XboxController`` class provides named methods (``getXButton``, ``getXButto
 
       examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``PS4Controller`` class provides named methods (``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
+The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
 POV
 ---
