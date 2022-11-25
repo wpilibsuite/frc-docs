@@ -59,7 +59,7 @@ runsWhenDisabled
 
 The ``runsWhenDisabled()`` method returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
 
-.. important:: Except for Addressable LEDs, hardware outputs are disabled when the robot is disabled, regardless of ``runsWhenDisabled()``!
+.. important::  When the robot is disabled, PWM outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
 
 This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:ignoringDisable` decorator:
 
