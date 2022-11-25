@@ -103,6 +103,7 @@ Breaking Changes
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
    - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
+- ``Rotation2d`` now holds the angle using the sine and cosine components so the returned angle value will always be within :math:`\left(-\pi, \pi\right]`
 
 Simulation
 ----------
