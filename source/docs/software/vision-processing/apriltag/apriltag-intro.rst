@@ -37,7 +37,7 @@ All of the tags are from the 16H5 family.
 
 |
 
-All tags will be printed such that their outer black border is 8.0 inches on a side.
+All tags will be printed such that the total size is 8.0 inches, and the black is 6.0 inches on a side.
 
 .. image:: images/tag_size.png
    :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
