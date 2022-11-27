@@ -34,6 +34,6 @@ Linking a Button to the "Move Elevator" Command
 Add the button that should be pressed to the program
 
 1. Drag the joystick button to the Joystick (Logitech Controller) so that it's under the joystick
-2. Set the properties for the button: the button number, the command to run when the button is pressed, parameters the command takes, and the "When to run" property to "whenPressed" to indicate that the command should run whenever the joystick button is pressed.
+2. Set the properties for the button: the button number, the command to run when the button is pressed, parameters the command takes, and the :guilabel:`When to run` property to :guilabel:`onTrue` to indicate that the command should run whenever the joystick button is pressed.
 
 .. note:: Joystick buttons must be dragged to (under) a Joystick. You must have a joystick in the Operator Interface folder before adding buttons.
