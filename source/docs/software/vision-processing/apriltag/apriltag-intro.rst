@@ -21,7 +21,7 @@ AprilTags have been in development since 2011, and have been refined over the ye
 
 All of the tags are from the 16H5 family.
 
-.. note:: Many of the pictures in this documentation are from the 32H11 family, which are similar (but not identical) to the 16H5 actually in use for FRC. All the underlying concepts are the same.
+.. note:: Many of the pictures in this documentation are from the 36H11 family, which are similar (but not identical) to the 16H5 actually in use for FRC. All the underlying concepts are the same.
 
 .. collapse:: What is the 16H5 family?
 
