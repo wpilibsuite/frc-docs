@@ -267,3 +267,4 @@
 "docs/software/advanced-controls/introduction/tuning-pid-controller.rst" "docs/software/advanced-controls/introduction/tuning-flywheel.rst"
 "docs/software/roborio-info/roborio2-imaging.rst" "docs/zero-to-robot/step-3/roborio2-imaging.rst"
 "docs/software/networktables/listening-for-subtable-creation.rst" "docs/software/networktables/networktables-intro.rst"
+"docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst" "docs/software/advanced-controls/state-space/state-space-pose-estimators.rst"
