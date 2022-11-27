@@ -19,15 +19,15 @@ AprilTags have been in development since 2011, and have been refined over the ye
 
 `Starting in 2023, FIRST is providing a number of tags, <https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update>`__ scattered throughout the field, each at a known :term:`pose`.
 
-All of the tags are from the 16H5 family.
+All of the tags are from the 16h5 family.
 
-.. note:: Many of the pictures in this documentation are from the 32H11 family, which are similar (but not identical) to the 16H5 actually in use for FRC. All the underlying concepts are the same.
+.. note:: Many of the pictures in this documentation are from the 36h11 family, which are similar (but not identical) to the 16h5 actually in use for FRC. All the underlying concepts are the same.
 
-.. collapse:: What is the 16H5 family?
+.. collapse:: What is the 16h5 family?
 
    The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__.
 
-   FIRST has chosen the 16H5 family for 2023. This family of tags is made of a 4x4 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+   FIRST has chosen the 16h5 family for 2023. This family of tags is made of a 4x4 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
    While there are :math:`2^{16} = 65536` theoretical possible tags, only 30 are actually used. These are chosen to:
 
@@ -37,7 +37,7 @@ All of the tags are from the 16H5 family.
 
 |
 
-All tags will be printed such that their outer black border is 8.0 inches on a side.
+All tags will be printed such that the tag's main "body" is 6 inches in length.
 
 .. image:: images/tag_size.png
    :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
@@ -161,7 +161,7 @@ Usage
 
 A simple strategy for using targets is to move the robot until the target is centered in the image. Assuming the field and robot are constructed such that the gamepiece, scoring location, vision target, and camera are all aligned, this method should proved a straightforward method to automatically align the robot to the scoring position.
 
-Using a camera, identify the _centroid_ of the apriltags in view. If the tag's ID is correct, apply drivetrain commands to rotate the robot left or right until the tag is centered in the camera image.
+Using a camera, identify the *centroid* of the AprilTags in view. If the tag's ID is correct, apply drivetrain commands to rotate the robot left or right until the tag is centered in the camera image.
 
 This method does not require calibrating the camera or performing the homography step.
 
