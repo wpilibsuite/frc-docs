@@ -13,6 +13,7 @@ In addition to this site there are a few other places teams may check for docume
 -  `NI FRC Community Documents Section <https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=documents>`__
 -  `FIRST Inspires Technical Resources Page <https://www.firstinspires.org/resource-library?flagged=All&combine=&field_content_type_value%5B0%5D=first_robotics_competition&field_resource_library_tags_tid=171&sort_by=created_1>`__
 -  `CTRE Software & Resources Page <https://store.ctr-electronics.com/software/>`__
+-  `REV Robotics Documentation <https://docs.revrobotics.com/docs/>`__
 
 Forums
 ------
@@ -32,7 +33,7 @@ Support for Cross The Road Electronics components (Pneumatics Control Module, Po
 REV Robotics Support
 --------------------
 
-Support for REV Robotics components (SPARK MAX, Sensors, upcoming new control system components) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__.
+Support for REV Robotics components (SPARK MAX, Sensors, Pneumatic Hub, Power Distribution Hub, Radio Power Module) is provided via phone at `844-255-2267 <tel:844-255-2267>`__ or via the email address `support@revrobotics.com <support@revrobotics.com>`__.
 
 Other Vendors
 -------------

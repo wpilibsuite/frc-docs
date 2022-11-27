@@ -6,7 +6,7 @@ roboRIO
 
    roborio-introduction
    /docs/zero-to-robot/step-3/imaging-your-roborio
-   roborio2-imaging
+   /docs/zero-to-robot/step-3/roborio2-imaging
    roborio-web-dashboard
    roborio-ftp
    roborio-ssh

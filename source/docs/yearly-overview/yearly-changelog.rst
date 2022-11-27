@@ -66,6 +66,7 @@ General Library
 
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
+- Add missing ``PS4Controller`` triangle methods
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
@@ -88,7 +89,6 @@ Breaking Changes
 .. danger:: Updated ``DifferentialDrive`` and ``MecanumDrive`` classes to use North-West-Up axis conventions to match the rest of WPILib. The Z-axis (i.e. turning) will need to be inverted to restore the old behavior.
 
 - Removed deprecated ``MakeMatrix()`` from ``StateSpaceUtil``
-- Removed deprecated ``CameraServer`` class
 - Removed deprecated ``KilloughDrive`` class
 - Removed deprecated ``SpeedController`` and ``SpeedControllerGroup`` classes. Use MotorController and MotorControllerGroup instead
 - Removed deprecated ``MatrixUtils`` class
@@ -98,16 +98,19 @@ Breaking Changes
 - Refactored command ``interruptible`` to be an enum property (``getInterruptionBehavior()``) of the command object rather than a boolean flag when scheduling; the ``withInterruptBehavior(InterruptBehavior)`` decorator can be used to set this property
 - Command lifecycle methods of command groups cannot be overridden
 - [C++ only] Command Decorators changed to return ``CommandPtr`` -- a new move-only value type for holding commands
+- ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``SwerveModulePosition`` to represent a swerve module's angle and distance driven.
 - Removed wpi versions of C++20 methods
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
    - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
+- ``Rotation2d`` now holds the angle using the sine and cosine components so the returned angle value will always be within :math:`\left(-\pi, \pi\right]`
 
 Simulation
 ----------
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 Shuffleboard
 ------------
@@ -118,7 +121,7 @@ Shuffleboard
 SmartDashboard
 --------------
 
-.. important:: Smartdashboard is not included with Beta 3. It is planned for future betas.
+.. important:: Smartdashboard is not included with Beta 4. It is planned for future betas.
 
 .. important:: SmartDashboard is not supported on M1 macOS.
 
@@ -129,6 +132,7 @@ Glass
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 PathWeaver
 ----------
@@ -154,7 +158,7 @@ WPILib All in One Installer
 ---------------------------
 
 - M1 macOS is now supported
-- Update to VS Code 1.72
+- Update to VS Code 1.73
 
 Visual Studio Code Extension
 ----------------------------
@@ -170,7 +174,7 @@ RobotBuilder
 SysID
 -----
 
-.. important:: SysID is not included with Beta 3. It is planned for future betas.
+.. important:: SysID is not included with Beta 4. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0

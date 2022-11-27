@@ -33,7 +33,17 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
--  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases>`__
+-  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
+
+Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
+
+.. image:: images/installer-download/github-release.jpg
+   :alt: Latest WPILib release page on GitHub
+
+Then click on the correct binary for your OS and architecture to begin the download.
+
+.. image:: images/installer-download/github-assets.jpg
+   :alt: Assets at bottom of latest WPILib release page on GitHub
 
 .. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select :guilabel:`Install for this User` then :guilabel:`Create VS Code zip to share with other computers/OSes for offline install` and save the downloaded VS Code zip file for future offline installations.
 
