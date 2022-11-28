@@ -124,9 +124,9 @@ Shuffleboard
 SmartDashboard
 --------------
 
-.. important:: Smartdashboard is not included with Beta 4. It is planned for future betas.
+.. important:: SmartDashboard is not included with Beta 4. It is planned for future betas.
 
-.. important:: SmartDashboard is not supported on M1 macOS.
+.. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
 - No new changes
 
