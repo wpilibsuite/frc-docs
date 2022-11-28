@@ -38,8 +38,6 @@ getRequirements
 
 Each command should declare any subsystems it controls as requirements. This backs the scheduler's resource management mechanism, ensuring that no more than one command requires a given subsystem at the same time. This prevents situations such as two different pieces of code attempting to set the same motor controller to different output values.
 
-Most command factories and constructors provided by the library have a ``requirements`` vararg (Java) / initializer list (C++) parameter.
-
 Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / initializer list (C++) parameter at the end of the parameter list of most command constructors and factories in the library:
 
 .. tabs::
@@ -94,17 +92,19 @@ This property can be set either by overriding the ``getInterruptionBehavior`` me
 
     frc2::CommandPtr noninterruptible = frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake}).WithInterruptBehavior(Command::InterruptBehavior::kCancelIncoming);
 
+As a rule, command compositions are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
+
 Included Command Types
 ----------------------
 
-The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java) or in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++).
+The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java) or in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++). Classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
 
 Running Actions
 ^^^^^^^^^^^^^^^
 
-The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several classes to be constructed inline with one or more lambdas to be executed.
+The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several factories to be construct commands inline with one or more lambdas to be executed.
 
-To run a lambda once, the library offers the ``Commands.runOnce(Runnable, Subsystem...)``/``frc2::cmd::RunOnce(std::function<void()>, std::span<Subsystem* const>)`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_instant_command.html>`__) class.
+The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_instant_command.html>`__) class, creates a command that calls a lambda once, and then finishes.
 
 .. tabs::
 
@@ -132,7 +132,7 @@ To run a lambda once, the library offers the ``Commands.runOnce(Runnable, Subsys
       :linenos:
       :lineno-start: 35
 
-To run a lambda repeatedly, the library offers the ``Commands.run(Runnable, Subsystem...)``/``frc2::cmd::Run(std::function<void()>, std::span<Subsystem* const>)`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_run_command.html>`__) class.
+The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_run_command.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
 
 .. tabs::
 
@@ -157,13 +157,13 @@ To run a lambda repeatedly, the library offers the ``Commands.run(Runnable, Subs
       },
       {&m_drive}))
 
-To run a lambda on schedule and a lambda on finish or interrupt, the library offers the ``Commands.startEnd(Runnable, Runnable, Subsystem...)``/``frc2::cmd::StartEnd(std::function<void()>, std::function<void()>, std::span<Subsystem* const>)`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_start_end_command.html>`__) class.
+The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_start_end_command.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
 .. tabs::
 
   .. code-tab:: java
 
-    new StartEndCommand(
+    Commands.StartEnd(
         // Start a flywheel spinning at 50% power
         () -> m_shooter.shooterSpeed(0.5),
         // Stop the flywheel at the end of the command
@@ -174,7 +174,7 @@ To run a lambda on schedule and a lambda on finish or interrupt, the library off
 
   .. code-tab:: c++
 
-    frc2::StartEndCommand(
+    frc2::cmd::StartEnd(
       // Start a flywheel spinning at 50% power
       [this] { m_shooter.shooterSpeed(0.5); },
       // Stop the flywheel at the end of the command
