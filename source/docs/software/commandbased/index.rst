@@ -14,6 +14,7 @@ For a collection of example projects using the command-based framework, see :ref
    what-is-command-based
    subsystems
    commands
+   command-compositions
    command-groups
    command-scheduler
    binding-commands-to-triggers
