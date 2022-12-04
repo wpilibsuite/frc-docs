@@ -64,7 +64,7 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ffc69d406cdba3890a2eb4d6c2fbaa07e4497d56/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
       :lines: 57-58
       :linenos:

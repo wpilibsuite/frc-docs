@@ -43,7 +43,7 @@ In the following example, we simulate an elevator given the mass of the moving c
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 53-64
          :linenos:
@@ -51,7 +51,7 @@ In the following example, we simulate an elevator given the mass of the moving c
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 61-70
          :linenos:
@@ -63,7 +63,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 101-111
          :linenos:
@@ -71,7 +71,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 98-106
          :linenos:
@@ -85,7 +85,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 82-99
          :linenos:
@@ -93,7 +93,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 89-108
          :linenos:

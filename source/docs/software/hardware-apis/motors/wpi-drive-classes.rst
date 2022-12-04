@@ -307,7 +307,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
       :language: java
       :lines: 24-39
       :linenos:
@@ -315,7 +315,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
       :language: cpp
       :lines: 31-44
       :linenos:

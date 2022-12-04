@@ -118,7 +118,7 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 86-87
       :linenos:

@@ -13,13 +13,13 @@ Initializing Preferences
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 35-42, 90-91, 98-105
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 38-45, 85-86, 92-100
 
@@ -36,13 +36,13 @@ Reading Preferences
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 126-134
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 122-130
 
@@ -54,13 +54,13 @@ Depending on the data that is stored in preferences, you can use it when you rea
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 136-147
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 132-143
 
