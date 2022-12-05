@@ -160,7 +160,7 @@ OutlineViewer
 WPILib All in One Installer
 ---------------------------
 
-- M1 macOS is now supported
+- Apple Silicon (Arm64) Macs are now supported
 - Update to VS Code 1.73
 
 Visual Studio Code Extension
