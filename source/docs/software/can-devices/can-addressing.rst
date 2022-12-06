@@ -64,7 +64,8 @@ Kauai Labs            9
 Copperforge           10
 Playing With Fusion   11
 Studica               12
-Reserved              13-255
+The Thrifty Bot       13
+Reserved              14-255
 ===================== ==========
 
 API/Message Identifier
