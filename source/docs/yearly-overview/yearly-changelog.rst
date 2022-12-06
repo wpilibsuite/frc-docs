@@ -104,7 +104,8 @@ Breaking Changes
 - ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``SwerveModulePosition`` to represent a swerve module's angle and distance driven.
 - ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now take in the wheel distances in an array rather than as a variadic parameter.
 - ``MecanumDriveOdometry`` and ``MecanumDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``MecanumDriveWheelPositions`` to represent the wheel distances.
-- ``resetPosition`` methods on all odometry and pose estimation classes now have mandatory wheel distance parameters, and the parameters have been rearranged to be consistent between implementations. Users should consult the API documentation for the particular class they're using and update the method calls accordingly.
+- Constructors and ``resetPosition`` methods on all odometry and pose estimation classes now have mandatory wheel distance parameters.
+- Odometry and pose estimator constructor and function arguments have been rearranged to be consistent between implementations. Users should consult the API documentation for the particular class they're using and update the method calls accordingly.
 - Removed wpi versions of C++20 methods
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
