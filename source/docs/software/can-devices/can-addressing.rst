@@ -64,6 +64,7 @@ Kauai Labs            9
 Copperforge           10
 Playing With Fusion   11
 Studica               12
+The Thrifty Bot       13
 Reserved              13-255
 ===================== ==========
 
