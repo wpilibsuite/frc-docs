@@ -31,13 +31,21 @@ Reading the Bus Voltage
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        double voltage = examplePD.getVoltage();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 32-35
+         :linenos:
+         :lineno-start: 32
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        double voltage = examplePD.GetVoltage();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 28-31
+         :linenos:
+         :lineno-start: 28
 
 Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/roborio-info/roborio-brownouts>` for more information.
 
@@ -46,13 +54,21 @@ Reading the Temperature
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        double temp = examplePD.getTemperature();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 37-39
+         :linenos:
+         :lineno-start: 37
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        double temp = examplePD.GetTemperature();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 33-35
+         :linenos:
+         :lineno-start: 33
 
 Monitoring the temperature can be useful for detecting if the robot has been drawing too much power and needs to be shut down for a while, or if there is a short or other wiring problem.
 
@@ -61,34 +77,46 @@ Reading the Total Current, Power, and Energy
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        double current = examplePD.getTotalCurrent();
-        double power = examplePD.getTotalPower();
-        double energy = examplePD.getTotalEnergy();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 41-53
+         :linenos:
+         :lineno-start: 41
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        double current = examplePD.GetTotalCurrent();
-        double power = examplePD.GetTotalPower();
-        double energy = examplePD.GetTotalEnergy();
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 37-49
+         :linenos:
+         :lineno-start: 37
 
 Monitoring the total current, power and energy can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required. Power is the bus voltage multiplied by the current with the units Watts. Energy is the power summed over time with units Joules.
 
 Reading Individual Channel Currents
 -----------------------------------
 
-The PDP/PDH also allows users to monitor the current drawn by the individual device power channels.  You can read the current on any of the 16 PDP channels (0-15) or 24 PDH channels (0-23). For example, to read the current on channel 0:
+The PDP/PDH also allows users to monitor the current drawn by the individual device power channels.  You can read the current on any of the 16 PDP channels (0-15) or 24 PDH channels (0-23).
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        double current = examplePD.getCurrent(0);
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+         :language: java
+         :lines: 26-30
+         :linenos:
+         :lineno-start: 26
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        double current = examplePD.GetCurrent(0);
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/148759ef5471360b694d2e63a764728b44273c1a/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+         :language: cpp
+         :lines: 22-26
+         :linenos:
+         :lineno-start: 22
 
 Monitoring individual device current draws can be useful for detecting shorts or stalled motors.
 
