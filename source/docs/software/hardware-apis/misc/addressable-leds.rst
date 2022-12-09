@@ -26,17 +26,17 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-5/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: cpp
-         :lines: 11-20
+         :lines: 12-12, 18-27
          :linenos:
          :lineno-start: 11
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-5/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 38-44
+         :lines: 7-13
          :linenos:
-         :lineno-start: 38
+         :lineno-start: 7
 
 Setting the Entire Strip to One Color
 -------------------------------------
@@ -125,11 +125,11 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-5/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 23-36
+         :lines: 22-35
          :linenos:
-         :lineno-start: 23
+         :lineno-start: 22
 
 Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
 
@@ -145,8 +145,8 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-5/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
-         :lines: 46-52
+         :lines: 15-20
          :linenos:
-         :lineno-start: 46
+         :lineno-start: 15
