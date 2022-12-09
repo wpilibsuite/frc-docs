@@ -3,12 +3,12 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d"
+      "latestVersion": "v2023.1.1-beta-5"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "5e74ff26d83c969c2e2bfb6d0ef3831ed3e9868d"
+      "latestVersion": "v2023.1.1-beta-5"
     }
   ],
   "ignoredFiles": ["source/docs/software/commandbased/"]
