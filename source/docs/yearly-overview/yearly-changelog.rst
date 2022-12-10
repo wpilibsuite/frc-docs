@@ -5,9 +5,12 @@ New for 2023
 
 A number of improvements have been made to FRC\ |reg| Control System software for 2023. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
-Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2022 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
-
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
+
+Importing Projects from Previous Years
+--------------------------------------
+
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2022 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
 Major Changes (Java/C++)
 ------------------------
@@ -99,6 +102,10 @@ Breaking Changes
 - Command lifecycle methods of command groups cannot be overridden
 - [C++ only] Command Decorators changed to return ``CommandPtr`` -- a new move-only value type for holding commands
 - ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``SwerveModulePosition`` to represent a swerve module's angle and distance driven.
+- ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now take in the wheel distances in an array rather than as a variadic parameter.
+- ``MecanumDriveOdometry`` and ``MecanumDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``MecanumDriveWheelPositions`` to represent the wheel distances.
+- Constructors and ``resetPosition`` methods on all odometry and pose estimation classes now have mandatory wheel distance parameters.
+- Odometry and pose estimator constructor and function arguments have been rearranged to be consistent between implementations. Users should consult the API documentation for the particular class they're using and update the method calls accordingly.
 - Removed wpi versions of C++20 methods
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
@@ -122,7 +129,7 @@ Shuffleboard
 SmartDashboard
 --------------
 
-.. important:: SmartDashboard is not supported on M1 macOS.
+.. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
 - Update PowerDistribution Widget to support 24 channels
 - Add option to clear all plots
@@ -157,7 +164,7 @@ OutlineViewer
 WPILib All in One Installer
 ---------------------------
 
-- M1 macOS is now supported
+- Apple Silicon (Arm64) Macs are now supported
 - Update to VS Code 1.73
 
 Visual Studio Code Extension
