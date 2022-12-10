@@ -122,8 +122,6 @@ Shuffleboard
 SmartDashboard
 --------------
 
-.. important:: Smartdashboard is not included with Beta 4. It is planned for future betas.
-
 .. important:: SmartDashboard is not supported on M1 macOS.
 
 - Update PowerDistribution Widget to support 24 channels
@@ -178,7 +176,7 @@ RobotBuilder
 SysID
 -----
 
-.. important:: SysID is not included with Beta 4. It is planned for future betas.
+.. important:: SysID is not included with Beta 5. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0
