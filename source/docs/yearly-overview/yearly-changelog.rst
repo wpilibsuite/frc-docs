@@ -124,15 +124,15 @@ Shuffleboard
 
 - Added vertical orientation option to number bar widget
 - Fixed Field2d widget not auto populating
+- Update PowerDistribution Widget to support 24 channels
 
 SmartDashboard
 --------------
 
-.. important:: SmartDashboard is not included with Beta 4. It is planned for future betas.
-
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
-- No new changes
+- Update PowerDistribution Widget to support 24 channels
+- Add option to clear all plots
 
 Glass
 -----
@@ -177,11 +177,13 @@ RobotBuilder
 
 - Add support for ``DoubleSupplier`` and ``std::function<double>`` parameters
 - Add option to put commands tied to Joystick Buttons to SmartDashboard
+- Add PS4 Controller
+- Validate Team Number
 
 SysID
 -----
 
-.. important:: SysID is not included with Beta 4. It is planned for future betas.
+.. important:: SysID is not included with Beta 5. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0
