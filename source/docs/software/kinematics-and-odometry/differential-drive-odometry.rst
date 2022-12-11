@@ -9,7 +9,7 @@ Creating the Odometry Object
 The ``DifferentialDriveOdometry`` class constructor requires three mandatory arguments and one optional argument. The mandatory arguments are:
 
 * The angle reported by your gyroscope (as a ``Rotation2d``)
-* The initial left and right encoder readings. In Java, these are each a ``double``, and must represent the distance travelled by each side in meters.  In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions.
+* The initial left and right encoder readings. In Java, these are each a ``double``, and must represent the distance traveled by each side in meters.  In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions.
 
 The optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
