@@ -6,17 +6,17 @@ A user can use the mecanum drive kinematics classes in order to perform :ref:`od
 
 Creating the odometry object
 ----------------------------
-The ``MecanumDriveOdometry`` class requires three mandatory arguments and one optional argument.
+The ``MecanumDriveOdometry`` class constructor requires three mandatory arguments and one optional argument.
 
 The mandatory arguments are:
 
 * The kinematics object that represents your mecanum drive (as a ``MecanumDriveKinematics`` instance)
 * The angle reported by your gyroscope (as a ``Rotation2d``)
-* The initial positions of the wheels (as ``MecanumDriveWheelPositions``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
+* The initial positions of the wheels (as ``MecanumDriveWheelPositions``). In Java, this must be constructed with each wheel position in meters. In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions.
 
 The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
-.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase.  The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information.
+.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase.  The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
 .. tabs::
 
@@ -67,10 +67,10 @@ The fourth optional argument is the starting pose of your robot on the field (as
         m_kinematics,
         m_gyro.GetRotation2d(),
         frc::MecanumDriveWheelPositions{
-          units::meter_t(m_frontLeftEncoder.GetDistance()),
-          units::meter_t(m_frontRightEncoder.GetDistance()),
-          units::meter_t(m_backLeftEncoder.GetDistance()),
-          units::meter_t(m_backRightEncoder.GetDistance())
+          units::meter_t{m_frontLeftEncoder.GetDistance()},
+          units::meter_t{m_frontRightEncoder.GetDistance()},
+          units::meter_t{m_backLeftEncoder.GetDistance()},
+          units::meter_t{m_backRightEncoder.GetDistance()}
         },
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
@@ -102,10 +102,10 @@ The ``update`` method of the odometry class updates the robot position on the fi
       void Periodic() override {
         // Get my wheel positions
         frc::MecanumDriveWheelPositions wheelPositions{
-          units::meter_t(m_frontLeftEncoder.GetDistance()),
-          units::meter_t(m_frontRightEncoder.GetDistance()),
-          units::meter_t(m_backLeftEncoder.GetDistance()),
-          units::meter_t(m_backRightEncoder.GetDistance())};
+          units::meter_t{m_frontLeftEncoder.GetDistance()},
+          units::meter_t{m_frontRightEncoder.GetDistance()},
+          units::meter_t{m_backLeftEncoder.GetDistance()},
+          units::meter_t{m_backRightEncoder.GetDistance()}};
 
         // Get my gyro angle.
         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
@@ -118,7 +118,7 @@ Resetting the Robot Pose
 ------------------------
 The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, the current wheel positions, and the new field-relative pose.
 
-.. important:: If at any time, you decide to reset your gyroscope, the ``resetPose`` method MUST be called with the new gyro angle.
+.. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel positions.
 
 .. note:: A full example of a mecanum drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot>`_.
 

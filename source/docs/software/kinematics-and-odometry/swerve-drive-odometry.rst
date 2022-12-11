@@ -6,17 +6,17 @@ A user can use the swerve drive kinematics classes in order to perform :ref:`odo
 
 Creating the odometry object
 ----------------------------
-The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument (only C++), three mandatory arguments, and one optional argument. The template argument (only C++) is an integer representing the number of swerve modules.
+The ``SwerveDriveOdometry<int NumModules>`` class constructor requires one template argument (only C++), three mandatory arguments, and one optional argument. The template argument (only C++) is an integer representing the number of swerve modules.
 
 The mandatory arguments are:
 
 * The kinematics object that represents your swerve drive (as a ``SwerveDriveKinematics`` instance)
 * The angle reported by your gyroscope (as a ``Rotation2d``)
-* The initial positions of the swerve modules (as an array of ``SwerveModulePosition``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
+* The initial positions of the swerve modules (as an array of ``SwerveModulePosition``). In Java, this must be constructed with each wheel position in meters. In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
 The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
-.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information.
+.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
 .. tabs::
 
@@ -109,7 +109,7 @@ Resetting the Robot Pose
 ------------------------
 The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, an array of the current module positions (as in the constructor and update method), and the new field-relative pose.
 
-.. important:: If at any time, you decide to reset your gyroscope, the ``resetPosition`` method MUST be called with the new gyro angle.
+.. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.
 
 .. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_.
 
