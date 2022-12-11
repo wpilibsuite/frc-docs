@@ -10,7 +10,7 @@ The ``MecanumDriveOdometry`` class requires three mandatory arguments and one op
 
 The mandatory arguments are:
 
-* The kinematics object that represents your mecanum drive (in the form of a ``MecanumDriveKinematics`` class)
+* The kinematics object that represents your mecanum drive (as a ``MecanumDriveKinematics`` instance)
 * The angle reported by your gyroscope (as a ``Rotation2d``)
 * The initial positions of the wheels (as ``MecanumDriveWheelPositions``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
 
@@ -87,8 +87,8 @@ The ``update`` method of the odometry class updates the robot position on the fi
       public void periodic() {
         // Get my wheel positions
         var wheelPositions = new MecanumDriveWheelPositions(
-            m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
-            m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
+          m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
+          m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
 
         // Get my gyro angle.
         var gyroAngle = m_gyro.getRotation2d();
@@ -100,23 +100,23 @@ The ``update`` method of the odometry class updates the robot position on the fi
    .. code-tab:: c++
 
       void Periodic() override {
-         // Get my wheel positions
-         frc::MecanumDriveWheelPositions wheelPositions{
-           units::meter_t(m_frontLeftEncoder.GetDistance()),
-           units::meter_t(m_frontRightEncoder.GetDistance()),
-           units::meter_t(m_backLeftEncoder.GetDistance()),
-           units::meter_t(m_backRightEncoder.GetDistance())};
+        // Get my wheel positions
+        frc::MecanumDriveWheelPositions wheelPositions{
+          units::meter_t(m_frontLeftEncoder.GetDistance()),
+          units::meter_t(m_frontRightEncoder.GetDistance()),
+          units::meter_t(m_backLeftEncoder.GetDistance()),
+          units::meter_t(m_backRightEncoder.GetDistance())};
 
-         // Get my gyro angle.
-         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+        // Get my gyro angle.
+        frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
 
-         // Update the pose
-         m_pose = m_odometry.Update(gyroAngle, wheelPositions);
-       }
+        // Update the pose
+        m_pose = m_odometry.Update(gyroAngle, wheelPositions);
+      }
 
 Resetting the Robot Pose
 ------------------------
-The robot pose can be reset via the ``resetPose`` method. This method accepts three arguments -- the new field-relative pose, the current gyro angle, and the current wheel positions.
+The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, the current wheel positions, and the new field-relative pose.
 
 .. important:: If at any time, you decide to reset your gyroscope, the ``resetPose`` method MUST be called with the new gyro angle.
 

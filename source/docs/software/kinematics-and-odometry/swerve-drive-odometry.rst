@@ -10,11 +10,11 @@ The ``SwerveDriveOdometry<int NumModules>`` class requires one template argument
 
 The mandatory arguments are:
 
-* The kinematics object that represents your swerve drive (in the form of a ``SwerveDriveKinematics`` class)
+* The kinematics object that represents your swerve drive (as a ``SwerveDriveKinematics`` instance)
 * The angle reported by your gyroscope (as a ``Rotation2d``)
-* The initial positions of the swerve modules (as an array of ``SwerveModulePosition``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions.
+* The initial positions of the swerve modules (as an array of ``SwerveModulePosition``). In Java, this must be constructed with each wheel position in meters. In C++, the units library must be used to represent your wheel positions. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
-The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
+The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose.
 
@@ -70,7 +70,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
 
 Updating the robot pose
 -----------------------
-The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with a series of module positions (distances and angles) in the form of a ``SwerveModulePosition`` each. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
+The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with an array of ``SwerveModulePosition`` objects. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
 This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
@@ -95,7 +95,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
       void Periodic() override {
         // Get my gyro angle.
-        frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();;
+        frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
 
         // Update the pose
         m_pose = m_odometry.Update(gyroAngle,
@@ -107,7 +107,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
 Resetting the Robot Pose
 ------------------------
-The robot pose can be reset via the ``resetPose`` method. This method accepts three arguments -- the new field-relative pose, the current gyro angle, and an array of the current module positions (as in the constructor).
+The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, an array of the current module positions (as in the constructor and update method), and the new field-relative pose.
 
 .. important:: If at any time, you decide to reset your gyroscope, the ``resetPosition`` method MUST be called with the new gyro angle.
 
