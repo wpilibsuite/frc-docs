@@ -17,25 +17,70 @@ However, there is one exception: users *must* call ``CommandScheduler.getInstanc
 The ``schedule()`` Method
 -------------------------
 
-.. image:: diagrams/scheduler.drawio.svg
-  :alt: Flow diagram showing how a scheduled command is evaluated to be run.
+To schedule a command, users call the ``schedule()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command, and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
 
-To schedule a command, users call the ``schedule()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__.  This method takes a command (and, optionally, a specification as to whether that command is interruptible), and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
+This method walks through the following steps:
+
+#. Verifies that the command isn't in a composition.
+#. No-op if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't <commands:runsWhenDisabled>.
+#. If requirements are in use:
+   * If all conflicting commands are interruptible, cancel them.
+   * If not, don't schedule the new command.
+#. Call ``initialize()``.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 205-248
+      :linenos:
+      :lineno-start: 205
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 184-194
+      :linenos:
+      :lineno-start: 184
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+      :language: c++
+      :lines: 114-159
+      :linenos:
+      :lineno-start: 114
 
 The Scheduler Run Sequence
 --------------------------
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
-.. image:: diagrams/scheduler-run-sequence.drawio.svg
-  :alt: Flow diagram that show the sequence of each individual command.
-
-What does a single iteration of the scheduler's ``run()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration.
+What does a single iteration of the scheduler's ``run()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__) actually do?  The following section walks through the logic of a scheduler iteration. For the full implementation, see the source code (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java#L275-L356>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp#L177-L253>`__).
 
 Step 1: Run Subsystem Periodic Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, the scheduler runs the ``periodic()`` method of each registered ``Subsystem``.
+First, the scheduler runs the ``periodic()`` method of each registered ``Subsystem``. In simulation, each subsystem's ``simulationPeriodic()`` method is called as well.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 281-288
+      :linenos:
+      :lineno-start: 281
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+      :language: c++
+      :lines: 184-191
+      :linenos:
+      :lineno-start: 184
 
 Step 2: Poll Command Scheduling Triggers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,6 +89,24 @@ Step 2: Poll Command Scheduling Triggers
 
 Secondly, the scheduler polls the state of all registered triggers to see if any new commands that have been bound to those triggers should be scheduled.  If the conditions for scheduling a bound command are met, the command is scheduled and its ``Initialize()`` method is run.
 
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 293-295
+      :linenos:
+      :lineno-start: 293
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+      :language: c++
+      :lines: 196-198
+      :linenos:
+      :lineno-start: 196
+
 Step 3: Run/Finish Scheduled Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -51,10 +114,48 @@ Thirdly, the scheduler calls the ``execute()`` method of each currently-schedule
 
 Note that this sequence of calls is done in order for each command - thus, one command may have its ``end()`` method called before another has its ``execute()`` method called.  Commands are handled in the order they were scheduled.
 
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 298-328
+      :linenos:
+      :lineno-start: 298
+      :emphasize-lines: 15,20-21
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+      :language: c++
+      :lines: 202-227
+      :linenos:
+      :lineno-start: 202
+      :emphasize-lines: 6,12-13
+
 Step 4: Schedule Default Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Finally, any registered ``Subsystem`` has its default command scheduled (if it has one).  Note that the ``initialize()`` method of the default command will be called at this time.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+      :language: java
+      :lines: 343-349
+      :linenos:
+      :lineno-start: 343
+
+  .. group-tab:: C++ (Source)
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+      :language: c++
+      :lines: 241-247
+      :linenos:
+      :lineno-start: 241
 
 Disabling the Scheduler
 -----------------------
@@ -71,22 +172,13 @@ Occasionally, it is desirable to have the scheduler execute a custom action when
 onCommandInitialize
 ^^^^^^^^^^^^^^^^^^^
 
-The ``onCommandInitialize`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__) runs a specified action whenever a command is initialized.
+- ``onCommandInitialize`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__) runs a specified action whenever a command is initialized.
 
-onCommandExecute
-^^^^^^^^^^^^^^^^
+- ``onCommandExecute`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__) runs a specified action whenever a command is executed.
 
-The ``onCommandExecute`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__) runs a specified action whenever a command is executed.
+- ``onCommandFinish`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
 
-onCommandFinish
-^^^^^^^^^^^^^^^
-
-The ``onCommandFinish`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
-
-onCommandInterrupt
-^^^^^^^^^^^^^^^^^^
-
-The ``onCommandInterrupt`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
+- ``onCommandInterrupt`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
 
 A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the SchedulerEventLogging example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):
 
