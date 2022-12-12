@@ -22,7 +22,7 @@ Public vs Private IP Addresses
 
 To be efficient with using IP Addresses, the idea of "Reserved IP Ranges" was implemented. In short, this means that there are ranges of IP Addresses that will never be assigned to web servers, and will only be used for local networks, such as those in your house.
 
-**Key point #2**: Unless you a directly connecting to your internet provider’s basic modem (no router function), your device will have an IP Address in one of these ranges. This means that at any local network, such as: your school, work office, home, etc., your device will 99% of the time have an IP address in a range listed below:
+**Key point #2**: Unless you are directly connecting to your internet provider’s basic modem (no router function), your device will have an IP Address in one of these ranges. This means that at any local network, such as: your school, work office, home, etc., your device will 99% of the time have an IP address in a range listed below:
 
 +-------+------+---------------+-----------------+---------------------+
 | Class | Bits | Start Address | End Address     | Number of Addresses |
