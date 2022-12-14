@@ -132,12 +132,12 @@ TrapezoidProfileCommand
 
 The ``TrapezoidProfileCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_trapezoid_profile_command.html>`__) allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
 
-As with ``TrapezoidProfileSubsystem``, users can create a ``TrapezoidProfileCommand`` by subclassing the ``TrapezoidProfileCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``TrapezoidProfileCommand`` :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+As with ``TrapezoidProfileSubsystem``, users can create a ``TrapezoidProfileCommand`` by subclassing the ``TrapezoidProfileCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``TrapezoidProfileCommand`` :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.
 
 Creating a TrapezoidProfileCommand
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``TrapezoidProfileCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``TrapezoidProfileCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
 In either case, a ``TrapezoidProfileCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
@@ -167,7 +167,7 @@ The ``profile`` parameter is the ``TrapezoidProfile`` object that will be execut
 output
 ~~~~~~
 
-The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useState()`_ function in ``PIDSubsystem``.
+The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useState()`_ function in ``PIDSubsystem``.
 
 requirements
 ~~~~~~~~~~~~
@@ -205,7 +205,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
       :linenos:
       :lineno-start: 5
 
-And, for an :ref:`inlined <docs/software/commandbased/convenience-features:Inline Command Definitions>`  example:
+And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:Inline Commands>` example:
 
 .. tabs::
 

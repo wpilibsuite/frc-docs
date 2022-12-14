@@ -150,12 +150,12 @@ ProfiledPIDCommand
 
 .. note:: In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_profiled_p_i_d_command.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+The ``ProfiledPIDCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_profiled_p_i_d_command.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
 
-A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``ProfiledPIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``ProfiledPIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
 In either case, a ``ProfiledPIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
@@ -187,21 +187,21 @@ When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. enabling
 measurementSource
 ~~~~~~~~~~~~~~~~~
 
-The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
+The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
 goalSource
 ~~~~~~~~~~
 
-The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the current goal state for the mechanism.  If only a constant goal is needed, an overload exists that takes a constant goal rather than a supplier.  Additionally, if goal velocities are desired to be zero, overloads exist that take a constant distance rather than a full profile state.
+The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the current goal state for the mechanism.  If only a constant goal is needed, an overload exists that takes a constant goal rather than a supplier.  Additionally, if goal velocities are desired to be zero, overloads exist that take a constant distance rather than a full profile state.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_goal`` field.
 
 useOutput
 ~~~~~~~~~
 
-The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint state of the control loop.  Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``ProfiledPIDSubsystem``.
+The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint state of the control loop.  Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 

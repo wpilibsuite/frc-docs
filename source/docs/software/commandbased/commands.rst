@@ -55,11 +55,11 @@ As a rule, command compositions require all subsystems their components require.
 runsWhenDisabled
 ^^^^^^^^^^^^^^^^
 
-The ``runsWhenDisabled()`` method returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
+The ``runsWhenDisabled()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#runsWhenDisabled()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a5113cbf3655ce8679dd48bf22700b2f4>`__) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
 
 .. important::  When the robot is disabled, PWM outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
 
-This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:ignoringDisable` decorator:
+This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#ignoringDisable(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#acc67b15e71a66aafb7523ccdd0a7a834>`__):
 
 .. tabs::
 
@@ -80,7 +80,7 @@ The ``getInterruptionBehavior()`` method (`Java <https://github.wpilib.org/allwp
 
 .. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
 
-This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the :ref:`docs/software/commandbased/decorators:withInterruptBehavior` decorator:
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#withInterruptBehavior(edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a6583f966509478a29e7764a72c4bf177>`__):
 
 .. tabs::
 
@@ -97,7 +97,7 @@ As a rule, command compositions are ``kCancelIncoming`` if all their components 
 Included Command Types
 ----------------------
 
-The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java) or in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++). Classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
+The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/index:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java) or in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++). Classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
 
 Running Actions
 ^^^^^^^^^^^^^^^

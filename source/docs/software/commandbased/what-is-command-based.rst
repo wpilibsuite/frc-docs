@@ -5,7 +5,7 @@ WPILib supports a robot programming methodology called "command-based" programmi
 
 "Command-based" programming is one possible :term:`design pattern` for robot software. It is not the only way to write a robot program, but it is a very effective one. Command-based robot code tends to be clean, extensible, and (with some tricks) easy to re-use from year to year.
 
-The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`):
+The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`):
 
 .. tabs::
 
@@ -67,4 +67,4 @@ Multiple commands can run concurrently, as long as they do not require the same 
 Command Compositions
 --------------------
 
-It is often desirable to build complex commands from simple pieces. This is achievable by creating a :term:`composition` of commands. The command-based library provides several types of :doc:`command compositions <command-groups>` for teams to use, and users may write their own. As command compositions are commands themselves, they may be used in a :term:`recursive composition`. That is to say - one can create a command compositions from multiple command compositions. This provides an extremely powerful way of building complex robot actions from simple components.
+It is often desirable to build complex commands from simple pieces. This is achievable by creating a :term:`composition` of commands. The command-based library provides several types of :doc:`command compositions <command-compositions>` for teams to use, and users may write their own. As command compositions are commands themselves, they may be used in a :term:`recursive composition`. That is to say - one can create a command compositions from multiple command compositions. This provides an extremely powerful way of building complex robot actions from simple components.
