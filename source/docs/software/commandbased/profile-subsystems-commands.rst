@@ -19,6 +19,8 @@ The ``TrapezoidProfileSubsystem`` class (`Java <https://github.wpilib.org/allwpi
 Creating a TrapezoidProfileSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note:: If ``periodic`` is overridden when inheriting from ``TrapezoidProfileSubsystem``, make sure to call ``super.periodic()``! Otherwise, motion profiling functionality will not work properly.
+
 When subclassing ``TrapezoidProfileSubsystem``, users must override a single abstract method to provide functionality that the class will use in its ordinary operation:
 
 useState()
@@ -26,13 +28,17 @@ useState()
 
 .. tabs::
 
-  .. code-tab:: java
+   .. group-tab:: Java
 
-    protected abstract void useState(TrapezoidProfile.State state);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
+         :language: java
+         :lines: 105-105
 
-  .. code-tab:: c++
+   .. group-tab:: C++
 
-    virtual void UseState(frc::TrapezoidProfile<Distance>::State state) = 0;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
+         :language: c++
+         :lines: 77-77
 
 
 The ``useState()`` method consumes the current state of the motion profile.  The ``TrapezoidProfileSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the motion profile state corresponding to the subsystem's current progress through the motion profile.
@@ -65,14 +71,17 @@ The ``setGoal()`` method can be used to set the goal state of the ``TrapezoidPro
   .. code-tab:: java
 
     // The subsystem will execute a profile to a position of 5 and a velocity of 3.
-    examplePIDSubsystem.setGoal(new TrapezoidProfile.Goal(5, 3);
+    examplePIDSubsystem.setGoal(new TrapezoidProfile.State(5, 3);
 
   .. code-tab:: c++
 
     // The subsystem will execute a profile to a position of 5 meters and a velocity of 3 mps.
     examplePIDSubsyste.SetGoal({5_m, 3_mps});
 
-.. todo:: add section on enable/disable once these are added to profilesubsystem classes.
+enable() and disable()
+~~~~~~~~~~~~~~~~~~~~~~
+
+The ``enable()`` and ``disable()`` methods enable and disable the motion profiling control of the ``TrapezoidProfileSubsystem``.  When the subsystem is enabled, it will automatically run the control loop and call ``useState()`` periodically.  When it is disabled, no control is performed.
 
 Full TrapezoidProfileSubsystem Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,12 +141,12 @@ TrapezoidProfileCommand
 
 The ``TrapezoidProfileCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_trapezoid_profile_command.html>`__) allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
 
-As with ``TrapezoidProfileSubsystem``, users can create a ``TrapezoidProfileCommand`` by subclassing the ``TrapezoidProfileCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``TrapezoidProfileCommand`` :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.
-
 Creating a TrapezoidProfileCommand
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``TrapezoidProfileCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+
+.. note:: If subclassing ``TrapezoidProfileCommand`` and overriding any methods, make sure to call the ``super`` version of those methods! Otherwise, motion profiling functionality will not work properly.
 
 In either case, a ``TrapezoidProfileCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 

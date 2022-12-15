@@ -5,9 +5,7 @@ PID Control through PIDSubsystems and PIDCommands
 
 .. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
-.. note:: Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
-
-One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` controller WPILib offers its own :ref:`PIDController <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
+One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` controller. WPILib offers its own :ref:`PIDController <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
 
 PIDSubsystems
 -------------
@@ -17,6 +15,8 @@ The ``PIDSubsystem`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta
 Creating a PIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note:: If ``periodic`` is overridden when inheriting from ``PIDSubsystem``, make sure to call ``super.periodic()``! Otherwise, PID functionality will not work properly.
+
 When subclassing ``PIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
 getMeasurement()
@@ -24,13 +24,17 @@ getMeasurement()
 
 .. tabs::
 
-  .. code-tab:: java
+   .. group-tab:: Java
 
-    protected abstract double getMeasurement();
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+         :language: java
+         :lines: 84-84
 
-  .. code-tab:: c++
+   .. group-tab:: C++
 
-    virtual double GetMeasurement() = 0;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+         :language: cpp
+         :lines: 79-79
 
 The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
 
@@ -41,13 +45,17 @@ useOutput()
 
 .. tabs::
 
-  .. code-tab:: java
+   .. group-tab:: Java
 
-    protected abstract void useOutput(double output, double setpoint);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+         :language: java
+         :lines: 77-77
 
-  .. code-tab:: c++
+   .. group-tab:: C++
 
-    virtual void UseOutput(double output, double setpoint) = 0;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+         :language: cpp
+         :lines: 87-87
 
 
 The ``useOutput()`` method consumes the output of the PID controller, and the current setpoint (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.
@@ -152,12 +160,14 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 PIDCommand
 ----------
 
-The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.  As with PIDSubsystem, users can create a ``PIDCommand`` by subclassing the ``PIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining a ``PIDCommand`` :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.
+The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
 
 A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`. Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+
+.. note:: If subclassing ``PIDCommand`` and overriding any methods, make sure to call the ``super`` version of those methods! Otherwise, PID functionality will not work properly.
 
 In either case, a ``PIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
