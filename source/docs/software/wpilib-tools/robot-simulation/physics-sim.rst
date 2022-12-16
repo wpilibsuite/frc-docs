@@ -43,7 +43,7 @@ In the following example, we simulate an elevator given the mass of the moving c
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 53-64
          :linenos:
@@ -51,7 +51,7 @@ In the following example, we simulate an elevator given the mass of the moving c
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 61-70
          :linenos:
