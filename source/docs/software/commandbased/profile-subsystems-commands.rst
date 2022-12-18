@@ -30,13 +30,13 @@ useState()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
          :language: java
          :lines: 105-105
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
          :language: c++
          :lines: 77-77
 
@@ -154,7 +154,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
       :language: java
       :lines: 25-34
       :linenos:
@@ -162,7 +162,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
       :language: c++
       :lines: 35-45
       :linenos:
@@ -192,7 +192,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
       :language: java
       :lines: 5-
       :linenos:
@@ -200,7 +200,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -208,7 +208,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
       :language: c++
       :lines: 5-
       :linenos:
