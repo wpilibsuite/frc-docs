@@ -32,7 +32,7 @@ This method walks through the following steps:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 205-248
       :linenos:
@@ -46,7 +46,7 @@ This method walks through the following steps:
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 114-159
       :linenos:
@@ -76,11 +76,11 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
-      :lines: 184-191
+      :lines: 183-190
       :linenos:
-      :lineno-start: 184
+      :lineno-start: 183
 
 Step 2: Poll Command Scheduling Triggers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,11 +101,11 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
-      :lines: 196-198
+      :lines: 195-197
       :linenos:
-      :lineno-start: 196
+      :lineno-start: 195
 
 Step 3: Run/Finish Scheduled Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,11 +127,11 @@ Note that this sequence of calls is done in order for each command - thus, one c
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
-      :lines: 202-227
+      :lines: 201-226
       :linenos:
-      :lineno-start: 202
+      :lineno-start: 201
       :emphasize-lines: 6,12-13
 
 Step 4: Schedule Default Commands
@@ -151,11 +151,11 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-6/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
-      :lines: 241-247
+      :lines: 240-246
       :linenos:
-      :lineno-start: 241
+      :lineno-start: 240
 
 Disabling the Scheduler
 -----------------------
