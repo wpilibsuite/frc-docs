@@ -90,7 +90,7 @@ The ``update`` method of the odometry class updates the robot position on the fi
           m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
           m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
 
-        // Get my gyro angle.
+        // Get the rotation of the robot from the gyro.
         var gyroAngle = m_gyro.getRotation2d();
 
         // Update the pose
@@ -107,7 +107,7 @@ The ``update`` method of the odometry class updates the robot position on the fi
           units::meter_t{m_backLeftEncoder.GetDistance()},
           units::meter_t{m_backRightEncoder.GetDistance()}};
 
-        // Get my gyro angle.
+        // Get the rotation of the robot from the gyro.
         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
 
         // Update the pose

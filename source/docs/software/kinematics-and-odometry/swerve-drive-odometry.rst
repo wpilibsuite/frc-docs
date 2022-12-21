@@ -80,7 +80,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
       @Override
       public void periodic() {
-        // Get my gyro angle.
+        // Get the rotation of the robot from the gyro.
         var gyroAngle = m_gyro.getRotation2d();
 
         // Update the pose
@@ -94,7 +94,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
    .. code-tab:: c++
 
       void Periodic() override {
-        // Get my gyro angle.
+        // Get the rotation of the robot from the gyro.
         frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
 
         // Update the pose
