@@ -43,7 +43,7 @@ Updating the Robot Pose
 -----------------------
 The ``update`` method can be used to update the robot's position on the field. This method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot. This method takes in the gyro angle of the robot, along with the left encoder distance and right encoder distance.
 
-.. note:: If the robot is moving forward in a straight line, **both** distances (left and right) must be increasing.
+.. note:: If the robot is moving forward in a straight line, **both** distances (left and right) must be increasing positively -- the rate of change must be positive.
 
 .. tabs::
 
