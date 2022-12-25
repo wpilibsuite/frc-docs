@@ -119,7 +119,7 @@ We specify that we want the job to run on an Ubuntu virtual machine and in a vir
         - name: Compile and run tests on robot code
           run: ./gradlew build
 
-Each job has certain steps that will be executed. This job has four steps. The first step involves checking out the repository to access the robot code. The second step is a workaround for a `GitHub Actions issue <https://www.github.com/actions/runner/issues/2033>`_. The third step involves giving the virtual machine permission to execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew build`` to compile robot code and run any unit tests.
+Each job has certain steps that will be executed. This job has four steps. The first step involves checking out the repository to access the robot code. The second step is a workaround for a `GitHub Actions issue <https://github.com/actions/runner/issues/2033>`_. The third step involves giving the virtual machine permission to execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew build`` to compile robot code and run any unit tests.
 
 Adding a Build Status Badge to a README.md File
 -----------------------------------------------
