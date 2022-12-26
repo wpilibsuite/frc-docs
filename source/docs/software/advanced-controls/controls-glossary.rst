@@ -49,7 +49,7 @@ Controls Glossary
       A very common way to implement a simple low-pass filter, using an exponential window function in a :term:`convolution` with an input signal. The convolution operation simplifies down to a very simple set of math operations on the current input and previous output. See `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__ on Wikipedia for more info.
 
    gain
-      A scalar value that relates the magnitude of an input signal to the magnitude of an output signal. In the signal-dimensional case, gain can be thought of as the proportional term of a PID controller. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
+      A scalar value that relates the magnitude of an input signal to the magnitude of an output signal. For example, ``gain`` in ``output = gain * input``. A gain greater than one would amplify an input signal, while a gain less than one would dampen an input signal. A negative gain would negate the input signal.
 
    Gaussian distribution
       A special mathematical function that describes distributions of averages. The graph of a Gaussian function is a "bell curve" shape. This function is described by its mean (the location of the "peak" of the bell curve) and variance (a measure of how "spread out" the bell curve is). See `Gaussian distribution <https://en.wikipedia.org/wiki/Gaussian_function>`__  on Wikipedia for more info.
