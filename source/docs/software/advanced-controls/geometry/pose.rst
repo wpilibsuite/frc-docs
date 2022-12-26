@@ -13,9 +13,11 @@ You can get the distance to another ``Translation2d`` object by using the ``getD
 Rotation
 --------
 
-Rotation in 2 dimensions is representated by WPILib's ``Rotation2d`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/geometry/Rotation2d.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_rotation2d.html>`__). This class has an angle component, which represents the robot's rotation relative to an axis on a 2-dimensional coordinate system. Due to the angle being stored as its sine and cosine components, the angle will always be in the :math:`\left(-\pi, \pi\right]` range. Positive rotations are counterclockwise.
+Rotation in 2 dimensions is representated by WPILib's ``Rotation2d`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/geometry/Rotation2d.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_rotation2d.html>`__). This class has an angle component, which represents the robot's rotation relative to an axis on a 2-dimensional coordinate system. Positive rotations are counterclockwise.
 
 .. note:: ``Rotation2d`` uses the C++ Units library. The contructor in Java accepts either the angle in radians, or the sine and cosine of the angle, but the ``fromDegrees`` method will construct a ``Rotation2d`` object from degrees.
+
+.. note:: ``Rotation2d`` does not wrap the value of the angle, so if a value of 400 degrees is passed into the constructor, then 400 degrees will be returned in subsequent value calls.
 
 Pose
 ----
