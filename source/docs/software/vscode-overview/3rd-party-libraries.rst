@@ -1,33 +1,38 @@
 3rd Party Libraries
 ===================
 
-Teams that are not using parts provided in the KoP will likely need to install external dependencies. Please view the below section to see information on adding an external library.
+Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies. Please view the below section to see information on adding an external library.
 
-The Mechanism
--------------
+What are vendor dependencies?
+-----------------------------
 
-In support of this effort NI (for LabVIEW) and FIRST/WPI (for Java/C++) have developed mechanisms that should make it easy for vendors to plug their code into the WPILib software and for teams to use that code once it has been installed. A brief description of how the system works for each language can be found below.
+A vendor dependency is a way for vendors like CTRE, and REV to add their own custom code that interfaces with their motor controllers and other devices. This way you can interact with your devices via CAN and have access to more complex and in-depth features than traditional PWM control.
 
-The Mechanism - Java/C++
-^^^^^^^^^^^^^^^^^^^^^^^^
+Managing Vendor Dependencies
+----------------------------
 
-For Java and C++ a JSON file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in Visual Studio Code. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be online for an initial build to fetch the library from a remote Maven location.
+Vendor dependencies are installed on a per-project basis (so each robot project can have its own set of vendor dependencies). Vendor dependencies can be installed "online" or "offline". The offline installer will usually be provided by the vendor themselves if they have one and will usually come with additional debugging/utility programs.
 
-The JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors choosing to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
+.. warning:: If you choose to install a vendor dependency via the "online" mode, you must reconnect your computer to the internet and rebuild about every 30 days otherwise the cache will clear, completely deleting your cached library install.
 
-.. note:: The vendor JSON files are actually processed by GradleRIO once they are in your projects ``vendordeps`` folder. If you are using another IDE, you will need to manually create a "vendordeps" folder in your project and copy any desired vendor JSON files from the "wpilib/YYYY" folder (where they should be placed by an offline installer) or download them directly from the vendor and place them into the folder in the project.
+How Does It Work?
+^^^^^^^^^^^^^^^^^
 
-The Mechanism - LabVIEW
-^^^^^^^^^^^^^^^^^^^^^^^
+How Does It Work? - Java/C++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it’s 2020, the directory would be ``LabVIEW 2019``.
+For Java and C++, a :term:`JSON` file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in Visual Studio Code. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be connected to the internet for an initial build to fetch the library from a remote Maven location.
 
-To use installed "Third Party" libraries, simply locate the VIs in one of these 3 locations and drag them into your project as you would with any other VI.
+This JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors that choose to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
-Managing VS Code Libraries
---------------------------
+How Does It Work? - LabVIEW
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Adding Offline Libraries
+For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it's 2020, the directory would be ``LabVIEW 2019``.
+
+In order to install third party libraries for LabVIEW, you will need to download the VIs from the vendor (typically via some sort of installer) and then you can drag and drop the third party VIs into the respective folder mentioned above as you would with any other VI.
+
+Installing Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 VS Code
@@ -43,32 +48,33 @@ To add a vendor library that has been installed by an offline installer, press :
 
 Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
 
-Command-line
+If you want to install a vendor library in online mode, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries` and select it in the menu, and then click on :guilabel:`Install new libraries (online)` instead and copy + paste your vendor JSON URL.
+
+
+Checking for Updates (Offline)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since dependencies are version managed and done on a per-project bases, even if you have installed an updated library using an offline installer, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
+
+Checking for Updates (Online)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Part of the JSON file that vendors may optionally populate is an online update location. If a library has an appropriate location specified, running :guilabel:`Check for updates (online)` will check if a newer version of the library is available from the remote location.
+
+Removing a Library Dependency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
+
+Command-Line
 ~~~~~~~~~~~~
 
 Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
 
 The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.
 
-Checking for Updates (Offline)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Dependencies are now version managed and done on a per-project bases. Even if you have installed an updated library using an offline installer, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
-
-Checking for Updates (Online)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Part of the JSON file that vendors may optionally populate is an online update location. If a library has an appropriate location specified, running :guilabel:`Check for updates (online)` will check if a newer version of the library is available from the remote location.
-
-Removing a Library Dependency
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
-
 Libraries
 ---------
-
-.. warning:: Many vendors, such as CTRE & REV, recommend using their offline installers over using the online vendor json URL.  This recommendation is because the offline installer is bundled with additional programs that are extremely useful when working with their devices.
 
 .. important:: Vendors are in the process of releasing updates compatible with the 2023 version of WPILib. 2022 versions are not compatible.
 
@@ -93,13 +99,13 @@ Click these links to visit the vendor site to see whether they offer online inst
    ``https://software-metadata.revrobotics.com/REVLib.json``
 
 Community Libraries
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
    ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
 
 WPILib Command Libraries
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The WPILib :doc:`new </docs/software/commandbased/index>` command library has been split into a vendor library. It is installed by the WPILib installer for offline installation. It may also be installed with the following online link:
 
@@ -108,7 +114,7 @@ The WPILib :doc:`new </docs/software/commandbased/index>` command library has be
 To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
 
 Romi Library
-------------
+~~~~~~~~~~~~
 
 A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
 
