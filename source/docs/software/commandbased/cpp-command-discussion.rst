@@ -1,10 +1,10 @@
 A Technical Discussion on C++ Commands
 ======================================
-.. important:: This article serves as a technical discussion on some of the design decisions that were made when designing the new command-based framework in C++. You do not need to understand the information within this article to use the command-based framework in your robot code.
+.. note:: This article assumes that you have a fair understanding of advanced C++ concepts, including templates, smart pointers, inheritance, rvalue references, copy semantics, move semantics, and CRTP.  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
-.. note:: This article assumes that you have a fair understanding of advanced C++ concepts, including templates, smart pointers, inheritance, rvalue references, copy semantics, move semantics, and CRTP.
+This article will help you understand the reasoning behind some of the decisions made in the 2020 command-based framework (such as the use of ``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, etc.).  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
-This article will help you understand the reasoning behind some of the decisions made in the new command-based framework (such as the use of ``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, the lack of more advanced decorators that are available in Java, etc.)
+.. note:: The model was further changed in 2023, as described `below <#2023 Updates>`_.
 
 Ownership Model
 ---------------
@@ -28,7 +28,7 @@ In the command-group above, the component commands of the command group were bei
 
 This glaring problem was one of the reasons for the rewrite of the framework. A comprehensive ownership model was introduced with this rewrite, along with the usage of smart pointers which will automatically free memory when they go out of scope.
 
-Default commands are owned by the command scheduler whereas component commands of command groups are owned by the command group. Other commands are owned by whatever the user decides they should be owned by (e.g. a subsystem instance or a ``RobotContainer`` instance). This means that the ownership of the memory allocated by any commands or command groups is clearly defined.
+Default commands are owned by the command scheduler whereas component commands of command compositions are owned by the command composition. Other commands are owned by whatever the user decides they should be owned by (e.g. a subsystem instance or a ``RobotContainer`` instance). This means that the ownership of the memory allocated by any commands or command compositions is clearly defined.
 
 ``std::unique_ptr`` vs. ``std::shared_ptr``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,7 +62,7 @@ With ``std::shared_ptr``, there is no clear ownership model because there can be
 
 Use of CRTP
 -----------
-You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
+You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::CommandBase``) and the class that you just created. Let's take a look at the reasoning behind this:
 
 Command Decorators
 ^^^^^^^^^^^^^^^^^^
@@ -179,3 +179,43 @@ And then we include ``SequentialCommandGroup.h`` in ``Command.cpp``. If these de
 Java vs C++ Syntax
 ^^^^^^^^^^^^^^^^^^
 These decorators usually save more verbosity in Java (because Java requires raw ``new`` calls) than in C++, so in general, it does not make much of a syntanctic difference in C++ if you create the command group manually in user code.
+
+2023 Updates
+------------
+
+After a few years in the new command-based framework, the recommended way to create commands increasingly shifted towards inline commands, decorators, and factory methods. With this paradigm shift, it became evident that the C++ commands model introduced in 2020 and described above has some pain points when used according to the new recommendations.
+
+A significant root cause of most pain points was commands being passed by value in a non-polymorphic way. This made object slicing mistakes rather easy, and changes in composition structure could propagate type changes throughout the codebase: for example, if a ``ParallelRaceGroup`` were changed to a ``ParallelDeadlineGroup``, those type changes would propagate through the codebase. Passing around the object as a ``Command`` (as done in Java) would result in object slicing.
+
+Additionally, various decorators weren't supported in C++ due to reasons described `above <#Templating Decorators>`_. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
+
+``CommandPtr``
+^^^^^^^^^^^^^^
+
+Let's recall the mention of ``std::unique_ptr`` far above: a value type with only move semantics. This is the ownership model we want!
+
+However, plainly using ``std::unique_ptr<Command>`` had some drawbacks. Primarily, implementing decorators would be impossible: ``unique_ptr`` is defined in the standard library so we can't define methods on it, and any methods defined on ``Command`` wouldn't have access to the owning ``unique_ptr``.
+
+The solution is ``CommandPtr``: a move-only value class wrapping ``unique_ptr``, that we can define methods on.
+
+Commands should be passed around as ``CommandPtr``, using ``std::move``. All decorators, including those not supported in C++ before, are defined on ``CommandPtr`` with rvalue-this. The use of rvalues, move-only semantics, and clear ownership makes it very easy to avoid mistakes such as adding the same command instance to more than one :doc:`command composition <command-compositions>`.
+
+In addition to decorators, ``CommandPtr`` instances also define utility methods such as ``Schedule()``, ``IsScheduled()``. ``CommandPtr`` instances can be used in nearly almost every way command objects can be used in Java: they can be moved into trigger bindings, default commands, and so on. For the few things that require a ``Command*`` (such as non-owning trigger bindings), a raw pointer to the owned command can be retrieved using ``get()``.
+
+There are multiple ways to get a ``CommandPtr`` instance:
+
+- ``CommandPtr``-returning factories are present in the ``frc2::cmd`` namespace in the ``Commands.h`` header for almost all command types. For multi-command compositions, there is a vector-taking overload as well as a variadic-templated overload for multiple ``CommandPtr`` instances.
+
+- All decorators, including those defined on ``Command``, return ``CommandPtr``. This has allowed defining almost all decorators on ``Command``, so a decorator chain can start from a ``Command``.
+
+- A ``ToPtr()`` method has been added to the CRTP, akin to ``TransferOwnership``. This is useful especially for user-defined command classes, as well as other command classes that don't have factories.
+
+For instance, consider the following from the `HatchbotInlined example project <https://github.com/wpilibsuite/allwpilib/blob/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/>`:
+
+.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
+   :language: c++
+   :lines: 33-73
+   :linenos:
+   :lineno-start: 33
+
+To avoid breakage, command compositions still use ``unique_ptr<Command>``, so ``CommandPtr`` instances can be destructured into a ``unique_ptr<Command>`` using the ``Unwrap()`` rvalue-this method. For vectors, the static ``CommandPtr::UnwrapVector(vector<CommandPtr>)`` function exists.

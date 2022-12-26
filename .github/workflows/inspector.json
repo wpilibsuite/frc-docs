@@ -11,5 +11,5 @@
       "latestVersion": "v2023.1.1-beta-7"
     }
   ],
-  "ignoredFiles": ["source/docs/software/commandbased/"]
+  "ignoredFiles": []
 }

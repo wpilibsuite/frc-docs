@@ -21,12 +21,12 @@ Commands and Subsystems as Interfaces
 Multiple Command Group Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``CommandGroup`` class no longer exists, and has been replaced by a number of narrower classes that can be recursively composed to create more-complicated group structures.  For more information see :doc:`command-groups`.
+The ``CommandGroup`` class no longer exists, and has been replaced by a number of narrower classes that can be recursively composed to create more-complicated group structures.  For more information see :doc:`command-compositions`.
 
 Inline Command Definitions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Previously, users were required to write a subclass of ``Command`` in almost all cases where a command was needed.  Many of the new commands are designed to allow inline definition of command functionality, and so can be used without the need for an explicit subclass.  For more information, see :doc:`convenience-features`.
+Previously, users were required to write a subclass of ``Command`` in almost all cases where a command was needed.  Many of the new commands are designed to allow inline definition of command functionality, and so can be used without the need for an explicit subclass.  For more information, see :ref:`docs/software/commandbased/commands:Included Command Types`.
 
 Injection of Command Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,6 +46,7 @@ Changes to the Scheduler
 ------------------------
 
 * ``Scheduler`` has been renamed to ``CommandScheduler`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html>`__).
+* Interruptibility of commands is now the responsibility of the scheduler, not the commands, and can be specified during the call to ``schedule``.
 * Users can now pass actions to the scheduler which are taken whenever a command is scheduled, interrupted, or ends normally.  This is highly useful for cases such as event logging.
 
 Changes to Subsystem
@@ -66,9 +67,9 @@ Changes to Command
 * Commands no longer handle their own scheduling state; this is now the responsibility of the scheduler.
 * The ``interrupted()`` method has been rolled into the ``end()`` method, which now takes a parameter specifying whether the command was interrupted (``false`` if it ended normally).
 * The ``requires()`` method has been renamed to ``addRequirement()``.
-* ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overrideable ``runsWhenDisabled()`` method.  Commands that should run when disabled should override this method to return true, or be decorated with ``ignoresDisable(true)``.
-* Interruptibility has been refactored to use the ``Command.InterruptionBehavior`` enum instead of a boolean. ``void setInterruptible(boolean interruptible)`` has been removed; commands should set their interruptibility by overriding ``getInterruptBehavior`` or using the ``withInterruptBehavior(Command.InterruptionBehavior)`` decorator.
-* Several :ref:`"decorator" methods <docs/software/commandbased/convenience-features:Command Decorator Methods>` have been added to allow easy inline modification of commands (e.g. adding a timeout).
+* ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overrideable :ref:`docs/software/commandbased/commands:runsWhenDisabled` method.
+* ``void setInterruptible(boolean interruptible)`` has been replaced by an overrideable :ref:`docs/software/commandbased/commands:getInterruptionBehavior` method.
+* Several :ref:`"decorator" methods <docs/software/commandbased/command-compositions:Command Compositions>` have been added to allow easy inline modification of commands (e.g. adding a timeout).
 * (C++ only) In order to allow the decorators to work with the command ownership model, a :term:`CRTP` is used via the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__.  Any user-defined Command subclass ``Foo`` *must* extend ``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class.
 
 Changes to PIDSubsystem/PIDCommand

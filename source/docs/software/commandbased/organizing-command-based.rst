@@ -37,11 +37,11 @@ The easiest and most expressive way to do this is with a ``StartEndCommand``:
 
   .. code-tab:: java
 
-    Command runIntake = new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake);
+    Command runIntake = Commands.startEnd(() -> intake.set(1), () -> intake.set(0), intake);
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake});
 
 This is sufficient for commands that are only used once. However, for a command like this that might get used in many different autonomous routines and button bindings, inline commands everywhere means a lot of repetitive code:
 
@@ -50,28 +50,36 @@ This is sufficient for commands that are only used once. However, for a command 
   .. code-tab:: java
 
     // RobotContainer.java
-    intakeButton.whileTrue(new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake));
+    intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
 
-
-    Command intakeAndShoot = new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake)
+    Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
         .alongWith(new RunShooter(shooter));
 
-    Command autonomousCommand = new ParallelCommandGroup(
-        new StartEndCommand(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
-        new WaitCommand(3.0),
-        new StartEndCommand(() -> intake.set(1.0), () -> intake.set(0), intake).withTimeout(5.0)
-    )
+    Command autonomousCommand = Commands.sequence(
+        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
+        Commands.waitSeconds(3.0),
+        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
+    );
 
   .. code-tab:: c++
 
-    // TODO
+    intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
+
+    frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
+        .AlongWith(RunShooter(&shooter).ToPtr());
+
+    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s),
+      frc2::cmd::Wait(3.0_s),
+      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s)
+    );
 
 Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.
 
 Instance Command Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using command composition and :ref:`decorators<docs/software/commandbased/convenience-features:Command Decorator Methods>`, a factory method can construct a complex command object with merely a few lines of code.
+One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using :ref:`command composition <docs/software/commandbased/command-compositions:Command Compositions>`, a factory method can construct a complex command object with merely a few lines of code.
 
 For example, a command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``runIntakeCommand`` method as an instance method of the ``Intake`` class:
 
@@ -81,18 +89,22 @@ For example, a command like the intake-running command is conceptually related t
 
   .. code-tab:: java
 
-    public class Intake {
+    public class Intake extends SubsystemBase {
         // [code for motor controllers, configuration, etc.]
         // ...
 
         public Command runIntakeCommand() {
-            return new StartEndCommand(() -> this.set(1.0), () -> this.set(0.0), this);
+          // implicitly requires `this`
+          return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
         }
     }
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr Intake::RunIntakeCommand() {
+      // implicitly requires `this`
+      return this->StartEnd([this] { this->Set(1.0); }, [this] { this->Set(0); });
+    }
 
 Notice how since we are in the ``Intake`` class, we no longer refer to ``intake``; instead, we use the ``this`` keyword to refer to the current instance.
 
@@ -106,17 +118,25 @@ Using this new factory method in command groups and button bindings is highly ex
 
     intakeButton.whileTrue(intake.runIntakeCommand());
 
-    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter());
+    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
 
-    Command autonomousCommand = new SequentialCommandGroup(
+    Command autonomousCommand = Commands.sequence(
         intake.runIntakeCommand().withTimeout(5.0),
-        new WaitCommand(3.0),
+        Commands.waitSeconds(3.0),
         intake.runIntakeCommand().withTimeout(5.0)
     );
 
   .. code-tab:: c++
 
-    // TODO
+    intakeButton.WhileTrue(intake.RunIntakeCommand());
+
+    frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
+
+    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+      intake.RunIntakeCommand().WithTimeout(5.0_s),
+      frc2::cmd::Wait(3.0_s),
+      intake.RunIntakeCommand().WithTimeout(5.0_s)
+    );
 
 Adding a parameter to the ``runIntakeCommand`` method to provide the exact percentage to run the intake is easy and allows for even more flexibility.
 
@@ -130,7 +150,10 @@ Adding a parameter to the ``runIntakeCommand`` method to provide the exact perce
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr Intake::RunIntakeCommand() {
+      // implicitly requires `this`
+      return this->StartEnd([this, percent] { this->Set(percent); }, [this] { this->Set(0); });
+    }
 
 For instance, this code creates a command group that runs the intake forwards for two seconds, waits for two seconds, and then runs the intake backwards for five seconds.
 
@@ -139,12 +162,14 @@ For instance, this code creates a command group that runs the intake forwards fo
   .. code-tab:: java
 
     Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
-        .andThen(new WaitCommand(2.0))
+        .andThen(Commands.waitSeconds(2.0))
         .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
+        .AndThen(frc2::cmd::Wait(2.0_s))
+        .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
 
 
 This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
@@ -216,7 +241,7 @@ The disadvantage of this is more cumbersome usage code and needing intermediary 
   .. code-tab:: java
 
     Command intakeRunSequence = IntakeCommands.runIntakeCommand(1.0, intake).withTimeout(2.0)
-        .andThen(new WaitCommand(2.0))
+        .andThen(Commands.waitSeconds(2.0))
         .andThen(IntakeCommands.runIntakeCommand(1.0, intake).withTimeout(5.0));
 
   .. code-tab:: c++
@@ -233,7 +258,7 @@ While static factories are manageable for single-subsystem commands, they excel 
 
         public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
             return Commands.parallel(
-                drivetrain.commandDrive(0.5,0.5),
+                drivetrain.commandDrive(0.5, 0.5),
                 intake.runIntakeCommand(1.0)
             ).withTimeout(5.0);
         }
