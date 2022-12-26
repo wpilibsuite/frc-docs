@@ -1,7 +1,7 @@
 Introduction to PathWeaver
 ==========================
 
-.. note:: WPILib currently recommends `PathPlanner <https://github.com/mjansen4857/pathplanner>`_ over PathWeaver for new projects.  While PathPlanner is not a WPILib supported project it is a stable community project used by many teams.
+.. note:: Users may find a community driven project `PathPlanner <https://github.com/mjansen4857/pathplanner>`__ as potentially more useful. PathPlanner improves upon traditional pathplanning applications with an intuitive user interface and swerve path following support. Note that WPILib offers no support for community projects.
 
 Autonomous is an important section of the match; it is exciting when robots do impressive things in autonomous. In order to score, the robot usually need to go somewhere. The faster the robot arrives at that location, the sooner it can score points! The traditional method for autonomous is driving in a straight line, turning to a certain angle, and driving in a straight line again. This approach works fine, but the robot spends a non-negligible amount of time stopping and starting again after each straight line and turn.
 
