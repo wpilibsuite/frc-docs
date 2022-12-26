@@ -1,7 +1,7 @@
 PathWeaver
 ==========
 
-.. note:: WPILib currently recommends `PathPlanner <https://github.com/mjansen4857/pathplanner>`_ over PathWeaver for new projects.  While PathPlanner is not a WPILib supported project it is a stable community project used by many teams.
+.. note:: Users may find a community driven project `PathPlanner <https://github.com/mjansen4857/pathplanner>`__ as potentially more useful. PathPlanner improves upon traditional pathplanning applications with an intuitive user interface and swerve path following support. Note that WPILib offers no support for community projects.
 
 .. toctree::
    :maxdepth: 1
