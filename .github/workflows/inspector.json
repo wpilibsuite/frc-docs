@@ -1,6 +1,15 @@
 {
-  "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
-  "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-  "latestVersion": "v2023.1.1-beta-3",
-  "ignoredFiles": ["source/docs/software/pathplanning/trajectory-tutorial/"]
+  "sources": [
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion": "v2023.1.1-beta-7"
+    },
+    {
+      "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion": "v2023.1.1-beta-7"
+    }
+  ],
+  "ignoredFiles": ["source/docs/software/commandbased/"]
 }

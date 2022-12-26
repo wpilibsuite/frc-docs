@@ -44,6 +44,6 @@ This setup will automatically discover all camera streams hosted on a roboRIO by
 NetworkTables Plugin
 --------------------
 
-The NetworkTables plugin provides data sources backed by ntcore. Since the ``LiveWindow`` and ``SmartDashboard`` classes in WPILib use NetworkTables to send the data to the driver station, this plugin will need to be loaded in order to use those classes.
+The NetworkTables plugin provides data sources backed by ntcore. Since the ``LiveWindow``, ``SmartDashboard``, and ``Shuffleboard`` classes in WPILib use NetworkTables to send the data to the driver station, this plugin will need to be loaded in order to use those classes.
 
 This plugin handles the connection and reconnection to NetworkTables automatically, users of shuffleboard and writers of custom plugins will not have to worry about the intricacies of the NetworkTables protocol.

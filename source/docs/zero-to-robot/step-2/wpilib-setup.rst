@@ -6,8 +6,6 @@ This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`l
 Prerequisites
 -------------
 
-`You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
-
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
  * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
@@ -16,6 +14,21 @@ Supported Operating Systems and Architectures:
 .. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
+
+Downloading
+-----------
+
+`You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
+
+Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
+
+.. image:: images/installer-download/github-release.jpg
+   :alt: Latest WPILib release page on GitHub
+
+Then click on the correct binary for your OS and architecture to begin the download.
+
+.. image:: images/installer-download/github-assets.jpg
+   :alt: Assets at bottom of latest WPILib release page on GitHub
 
 Extracting the Installer
 ------------------------
@@ -98,7 +111,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
-Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar

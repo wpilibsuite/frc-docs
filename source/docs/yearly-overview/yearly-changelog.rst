@@ -5,9 +5,12 @@ New for 2023
 
 A number of improvements have been made to FRC\ |reg| Control System software for 2023. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
 
-Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2022 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
-
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
+
+Importing Projects from Previous Years
+--------------------------------------
+
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2023 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2022 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
 
 Major Changes (Java/C++)
 ------------------------
@@ -66,6 +69,7 @@ General Library
 
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
+- Add missing ``PS4Controller`` triangle methods
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
@@ -98,37 +102,44 @@ Breaking Changes
 - Command lifecycle methods of command groups cannot be overridden
 - [C++ only] Command Decorators changed to return ``CommandPtr`` -- a new move-only value type for holding commands
 - ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``SwerveModulePosition`` to represent a swerve module's angle and distance driven.
+- ``SwerveDriveOdometry`` and ``SwerveDrivePoseEstimator`` now take in the wheel distances in an array rather than as a variadic parameter.
+- ``MecanumDriveOdometry`` and ``MecanumDrivePoseEstimator`` now use wheel distances instead of wheel speeds; Use ``MecanumDriveWheelPositions`` to represent the wheel distances.
+- Constructors and ``resetPosition`` methods on all odometry and pose estimation classes now have mandatory wheel distance parameters.
+- Odometry and pose estimator constructor and function arguments have been rearranged to be consistent between implementations. Users should consult the API documentation for the particular class they're using and update the method calls accordingly.
 - Removed wpi versions of C++20 methods
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
    - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
+- ``Rotation2d`` now holds the angle using the sine and cosine components so the returned angle value will always be within :math:`\left(-\pi, \pi\right]`
 
 Simulation
 ----------
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 Shuffleboard
 ------------
 
 - Added vertical orientation option to number bar widget
 - Fixed Field2d widget not auto populating
+- Update PowerDistribution Widget to support 24 channels
 
 SmartDashboard
 --------------
 
-.. important:: Smartdashboard is not included with Beta 3. It is planned for future betas.
+.. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
-.. important:: SmartDashboard is not supported on M1 macOS.
-
-- No new changes
+- Update PowerDistribution Widget to support 24 channels
+- Add option to clear all plots
 
 Glass
 -----
 
 - Added precision setting for NetworkTables decimal values
 - Added docking support for GUI elements
+- Save secondary Y axis in plots
 
 PathWeaver
 ----------
@@ -153,8 +164,8 @@ OutlineViewer
 WPILib All in One Installer
 ---------------------------
 
-- M1 macOS is now supported
-- Update to VS Code 1.72
+- Apple Silicon (Arm64) Macs are now supported
+- Update to VS Code 1.73
 
 Visual Studio Code Extension
 ----------------------------
@@ -166,11 +177,13 @@ RobotBuilder
 
 - Add support for ``DoubleSupplier`` and ``std::function<double>`` parameters
 - Add option to put commands tied to Joystick Buttons to SmartDashboard
+- Add PS4 Controller
+- Validate Team Number
 
 SysID
 -----
 
-.. important:: SysID is not included with Beta 3. It is planned for future betas.
+.. important:: SysID is not included with Beta 5. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0

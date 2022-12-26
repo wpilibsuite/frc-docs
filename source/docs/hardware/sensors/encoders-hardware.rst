@@ -30,8 +30,8 @@ These encoders vary in how they are mounted to the mechanism in question.  In ad
 Shafted encoders
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/encoders-hardware/greyhill-63r-encoder-to-roborio.svg
-  :alt: Connecting the Greyhill 63R Optical Encoder to 2 ports on the roboRIO.
+.. image:: images/encoders-hardware/greyhill-63r-encoder.svg
+  :alt: Diagram of the Greyhill 63R Optical Encoder.
   :width: 400
 
 Shafted encoders have a sealed body with a shaft protruding out of it that must be coupled rotationally to a mechanism.  This is often done with a helical beam coupling, or, more cheaply, with a length of flexible tubing (such as surgical tubing or pneumatic tubing), fastened with cable ties and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes have purpose-built mounting points for shafted encoders, such as the popular `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__, pictured above.
@@ -39,8 +39,8 @@ Shafted encoders have a sealed body with a shaft protruding out of it that must 
 On-shaft encoders
 ^^^^^^^^^^^^^^^^^
 
-.. image:: images/encoders-hardware/amt10x-encoders-to-roborio.svg
-  :alt: How to connect both the AMT103 and the AMT102 encoders to two DIO ports each.
+.. image:: images/encoders-hardware/amt10x-encoders.svg
+  :alt: Diagram of the AMT103 and the AMT102 shaft encoders.
   :width: 600
 
 On-shaft encoders (such as the `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice) couple to a shaft by fitting *around* it, forming a friction coupling between the shaft and a rotating hub inside the encoder.
