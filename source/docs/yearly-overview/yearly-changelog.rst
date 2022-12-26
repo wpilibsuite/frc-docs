@@ -175,6 +175,8 @@ RobotBuilder
 
 .. important:: With the removal of old command-based, the legacy RobotBuilder install has been removed.
 
+.. warning:: Due to project file changes, Robotbuilder will not import yaml save files from 2022 or earlier.
+
 - Add support for ``DoubleSupplier`` and ``std::function<double>`` parameters
 - Add option to put commands tied to Joystick Buttons to SmartDashboard
 - Add PS4 Controller
