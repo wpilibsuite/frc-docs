@@ -78,7 +78,7 @@ Libraries
 
 .. important:: Vendors are in the process of releasing updates compatible with the 2023 version of WPILib. 2022 versions are not compatible.
 
-Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.  The online vendor json will break if a team has not ran an "online" build after 30 days, since the cache will clear.
+Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
    ``https://copperforge.cc/files/dev/vendordeps/LibCu-latest.json``
