@@ -39,7 +39,6 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
-    "sphinxcontrib.ghcontributors",
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
