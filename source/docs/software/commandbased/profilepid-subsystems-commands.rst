@@ -5,8 +5,6 @@ Combining Motion Profiling and PID in Command-Based
 
 .. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
-.. note:: Unlike the earlier version of ``PIDController``, the 2020 ``ProfiledPIDController`` class runs *synchronously*, and is not handled in its own thread.  Accordingly, changing its ``period`` parameter will *not* change the actual frequency at which it runs in any of these wrapper classes.  Users should never modify the ``period`` parameter unless they are certain of what they are doing.
-
 A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile for setpoint generation with a PID controller for setpoint tracking.  To facilitate this, WPILib includes its own :ref:`ProfiledPIDController <docs/software/advanced-controls/controllers/profiled-pidcontroller:Combining Motion Profiling and PID Control with ProfiledPIDController>` class.  To further aid teams in integrating this functionality into their robots, the command-based framework contains two convenience wrappers for the ``ProfiledPIDController`` class: ``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, and ``ProfiledPIDCommand``, which integrates the controller into a command.
 
 ProfiledPIDSubsystem
@@ -19,6 +17,8 @@ The ``ProfiledPIDSubsystem`` class (`Java <https://github.wpilib.org/allwpilib/d
 Creating a ProfiledPIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note:: If ``periodic`` is overridden when inheriting from ``ProfiledPIDSubsystem``, make sure to call ``super.periodic()``! Otherwise, control functionality will not work properly.
+
 When subclassing ``ProfiledPIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
 getMeasurement()
@@ -26,13 +26,17 @@ getMeasurement()
 
 .. tabs::
 
-  .. code-tab:: java
+   .. group-tab:: Java
 
-    protected abstract double getMeasurement();
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.java
+         :language: java
+         :lines: 85-85
 
-  .. code-tab:: c++
+   .. group-tab:: C++
 
-    virtual double GetMeasurement() = 0;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
+         :language: cpp
+         :lines: 103-103
 
 The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
 
@@ -43,16 +47,20 @@ useOutput()
 
 .. tabs::
 
-  .. code-tab:: java
+   .. group-tab:: Java
 
-    protected abstract void useOutput(double output, TrapezoidProfile.State setpoint);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.java
+         :language: java
+         :lines: 78-78
 
-  .. code-tab:: c++
+   .. group-tab:: C++
 
-    virtual void UseOutput(double output, frc::TrapezoidProfile<Distance>::State setpoint) = 0;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
+         :language: cpp
+         :lines: 112-112
 
 
-The ``useOutput()`` method consumes the output of the PID controller, and the current setpoint state (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.
+The ``useOutput()`` method consumes the output of the Profiled PID controller, and the current setpoint state (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.
 
 Users should override this method to pass the final computed control output to their subsystem's motors.
 
@@ -103,7 +111,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -111,7 +119,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmBot/include/subsystems/ArmSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ArmBot/include/subsystems/ArmSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -119,7 +127,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -131,17 +139,17 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
       :language: java
-      :lines: 56-64
+      :lines: 55-64
       :linenos:
-      :lineno-start: 56
+      :lineno-start: 55
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 32-39
+      :lines: 33-39
       :linenos:
       :lineno-start: 32
 
@@ -150,12 +158,14 @@ ProfiledPIDCommand
 
 .. note:: In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_profiled_p_i_d_command.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  However, as with many of the other command classes in the command-based library, users may want to save code by defining it :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.
+The ``ProfiledPIDCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_profiled_p_i_d_command.html>`__) allows users to easily create commands with a built-in ProfiledPIDController.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
 
-A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``ProfiledPIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/convenience-features:Inline Command Definitions>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``ProfiledPIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`.  Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
+
+.. note:: If subclassing ``ProfiledPIDCommand`` and overriding any methods, make sure to call the ``super`` version of those methods! Otherwise, control functionality will not work properly.
 
 In either case, a ``ProfiledPIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
@@ -163,7 +173,7 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
       :language: java
       :lines: 29-44
       :linenos:
@@ -171,7 +181,7 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
       :language: c++
       :lines: 39-53
       :linenos:
@@ -187,21 +197,21 @@ When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. enabling
 measurementSource
 ~~~~~~~~~~~~~~~~~
 
-The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
+The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
 goalSource
 ~~~~~~~~~~
 
-The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that returns the current goal state for the mechanism.  If only a constant goal is needed, an overload exists that takes a constant goal rather than a supplier.  Additionally, if goal velocities are desired to be zero, overloads exist that take a constant distance rather than a full profile state.
+The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the current goal state for the mechanism.  If only a constant goal is needed, an overload exists that takes a constant goal rather than a supplier.  Additionally, if goal velocities are desired to be zero, overloads exist that take a constant distance rather than a full profile state.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_goal`` field.
 
 useOutput
 ~~~~~~~~~
 
-The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/convenience-features:Lambda Expressions (Java)>`) that consumes the output and setpoint state of the control loop.  Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``ProfiledPIDSubsystem``.
+The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint state of the control loop.  Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``ProfiledPIDSubsystem``.
 
 When subclassing ``ProfiledPIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 
@@ -219,7 +229,7 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngleProfiled.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngleProfiled.java
       :language: java
       :lines: 5-
       :linenos:
@@ -227,7 +237,7 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngleProfiled.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngleProfiled.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -235,7 +245,7 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngleProfiled.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngleProfiled.cpp
       :language: c++
       :lines: 5-
       :linenos:

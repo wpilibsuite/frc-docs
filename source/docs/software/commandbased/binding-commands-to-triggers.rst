@@ -7,12 +7,72 @@ As mentioned earlier, command-based is a :term:`declarative programming` paradig
 
 Command binding is done through the ``Trigger`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_trigger.html>`__).
 
+Getting a Trigger Instance
+--------------------------
+
+To bind commands to conditions, we need a ``Trigger`` object. There are three ways to get a Trigger object:
+
+HID Factories
+^^^^^^^^^^^^^
+
+The command-based HID classes contain factory methods returning a ``Trigger`` for a given button. ``CommandGenericHID`` has an index-based ``button(int)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/CommandGenericHID.html#button(int)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_generic_h_i_d.html#a661f49794a913615c94fba927e1072a8>`__), and its subclasses ``CommandXboxController`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/CommandXboxController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_xbox_controller.html>`__), ``CommandPS4Controller`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/CommandPS4Controller.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_p_s4_controller.html>`__), and ``CommandJoystick`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/CommandJoystick.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_joystick.html>`__) have named factory methods for each button.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    CommandXboxController exampleCommandController = new CommandXboxController(1); // Creates an CommandXboxController on port 1.
+    Trigger xButton = exampleCommandController.x(); // Creates a new Trigger object for the `X` button on exampleCommandController
+
+  .. code-tab:: c++
+
+    frc2::CommandXboxController exampleCommandController{1} // Creates an CommandXboxController on port 1
+    frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
+
+JoystickButton
+^^^^^^^^^^^^^^
+
+Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_joystick_button.html>`__), a constructor-only subclass of ``Trigger``:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    XboxController exampleController = new XboxController(2); // Creates an XboxController on port 2.
+    Trigger yButton = new JoystickButton(exampleController, XboxController.Button.kY.value); // Creates a new JoystickButton object for the `Y` button on exampleController
+
+  .. code-tab:: c++
+
+    frc::XboxController exampleController{2} // Creates an XboxController on port 2
+    frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
+
+Arbitrary Triggers
+^^^^^^^^^^^^^^^^^^
+
+While binding to HID buttons is by far the most common use case, users may want to bind commands to arbitrary triggering events. This can be done inline by passing a lambda to the constructor of ``Trigger``:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
+
+    Trigger exampleTrigger = new Trigger(limitSwitch::get);
+
+  .. code-tab:: c++
+
+    frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
+
+    frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
+
 Trigger Bindings
------------------------
+----------------
 
 .. note:: The C++ command-based library offers two overloads of each button binding method - one that takes an `rvalue reference <http://thbecker.net/articles/rvalue_references/section_01.html>`__ (``CommandPtr&&``), and one that takes a raw pointer (``Command*``).  The rvalue overload moves ownership to the scheduler, while the raw pointer overload leaves the user responsible for the lifespan of the command object.  It is recommended that users preferentially use the rvalue reference overload unless there is a specific need to retain a handle to the command in the calling code.
 
 There are a number of bindings available for the ``Trigger`` class. All of these bindings will automatically schedule a command when a certain trigger activation event occurs - however, each binding has different specific behavior.
+
+``Trigger`` objects *do not need to survive past the call to a binding method*, so the binding methods may be simply called on a temp. Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
 .. note:: The ``Button`` subclass is deprecated, and usage of its binding methods should be replaced according to the respective deprecation messages in the API docs.
 
@@ -21,12 +81,48 @@ onTrue
 
 This binding schedules a command when a trigger changes from ``false`` to ``true`` (or, accordingly, when a button changes is initially pressed). The command will be scheduled on the iteration when the state changes, and will not be scheduled again unless the trigger becomes ``false`` and then ``true`` again (or the button is released and then re-pressed).
 
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
+      :language: java
+      :lines: 52-53
+      :linenos:
+      :lineno-start: 52
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 24-25
+      :linenos:
+      :lineno-start: 24
+
 The ``onFalse`` binding is identical, only that it schedules on ``false`` instead of on ``true``.
 
 whileTrue
 ^^^^^^^^^
 
 This binding schedules a command when a trigger changes from ``false`` to ``true`` (or, accordingly, when a button is initially pressed) and cancels it when the trigger becomes ``false`` again (or the button is released). The command will *not* be re-scheduled if it finishes while the trigger is still ``true``. For the command to restart if it finishes while the trigger is ``true``, wrap the command in a ``RepeatCommand``, or use a ``RunCommand`` instead of an ``InstantCommand``.
+
+.. tabs::
+
+  .. group-tab:: Java
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+      :language: java
+      :lines: 87-89
+      :linenos:
+      :lineno-start: 87
+
+  .. group-tab:: C++
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+      :language: c++
+      :lines: 46-49
+      :linenos:
+      :lineno-start: 46
 
 The ``whileFalse`` binding is identical, only that it schedules on ``false`` and cancels on ``true``.
 
@@ -51,68 +147,10 @@ This binding toggles a command, scheduling it when a trigger changes from ``fals
 
 The ``toggleOnFalse`` binding is identical, only that it toggles on ``false`` instead of on ``true``.
 
-Binding a command to a joystick button
---------------------------------------
+Chaining Calls
+--------------
 
-The most-common way to trigger a command is to bind a command to a button on a joystick or other HID (human interface device). For this, we use ``Trigger`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_trigger.html>`__) or its ``JoystickButton`` subclass (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_joystick_button.html>`__).
-
-There are two ways to do this: ``Trigger``-returning factory methods on the Command HID classes, or the ``JoystickButton`` subclass with the regular HID classes. The former is recommended, as it provides a cleaner syntax.
-
-Getting a Trigger instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: The ``XboxController``/``CommandXboxController`` classes for an Xbox controller will be used here as an example, but similar classes exist for PS4 controllers (``PS4Controller``/``CommandPS4Controller``), flight joysticks (``Joystick``/``CommandJoystick``), and generic HID devices (``GenericHID``/``CommandGenericHID``).
-
-First, we first need an object representing our HID device.
-
-.. tabs::
-
-  .. code-tab:: java
-
-    CommandXboxController exampleCommandController = new XboxController(1); // Creates an CommandXboxController on port 1.
-    XboxController exampleController = new XboxController(2); // Creates an XboxController on port 2.
-
-  .. code-tab:: c++
-
-    frc2::CommandXboxController exampleCommandController{1} // Creates an CommandXboxController on port 1
-    frc::XboxController exampleController{2} // Creates an XboxController on port 2
-
-Now, we can get a ``Trigger`` from our command HID object or pass the regular HID object to a ``JoystickButton``:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    Trigger xButton = exampleCommandController.x(); // Creates a new Trigger object for the `X` button on exampleCommandController
-
-    Trigger yButton = new JoystickButton(exampleController, XboxController.Button.kY.value); // Creates a new JoystickButton object for the `Y` button on exampleController
-
-  .. code-tab:: c++
-
-    frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
-
-    frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
-
-Binding a Command to a JoystickButton
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: ``Trigger`` objects *do not need to survive past the call to a binding method*, so the binding methods may be simply called on a temp.
-
-Putting it all together, it is very simple to bind a command to a button:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    // Binds an ExampleCommand to be scheduled when the trigger of the example joystick is pressed
-    exampleButton.onTrue(new ExampleCommand());
-
-  .. code-tab:: c++
-
-    // Binds an ExampleCommand to be scheduled when the trigger of the example joystick is pressed
-    exampleButton.OnTrue(ExampleCommand().ToPtr());
-
-It is useful to note that the command binding methods all return the trigger that they were called on, and thus can be chained to bind multiple commands to different states of the same button. For example:
+It is useful to note that the command binding methods all return the trigger that they were called on, and thus can be chained to bind multiple commands to different states of the same trigger. For example:
 
 .. tabs::
 
@@ -131,8 +169,6 @@ It is useful to note that the command binding methods all return the trigger tha
         .OnTrue(FooCommand().ToPtr())
         // Binds a BarCommand to be scheduled when that same button is released
         .OnFalse(BarCommand().ToPtr());
-
-Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
 Composing Triggers
 ------------------
@@ -177,22 +213,3 @@ To avoid rapid repeated activation, triggers (especially those originating from 
 
     // debounces exampleButton with a 100ms debounce time, both rising and falling edges
     exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).OnTrue(ExampleCommand().ToPtr());
-
-Creating Your Own Custom Trigger
---------------------------------
-
-While binding to HID buttons is by far the most common use case, advanced users may occasionally want to bind commands to arbitrary triggering events. This can also be done inline by passing a lambda to the constructor of ``Trigger``:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
-
-    Trigger exampleTrigger = new Trigger(limitSwitch::get);
-
-  .. code-tab:: c++
-
-    frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
-
-    frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
