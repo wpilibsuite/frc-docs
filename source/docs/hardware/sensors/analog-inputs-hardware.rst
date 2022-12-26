@@ -30,13 +30,13 @@ Connecting a sensor to a single analog input port
 
 Most sensors that connect to analog input ports will have three wires - signal, power, and ground - corresponding precisely to the three pins of the analog input ports. They should be connected accordingly.
 
-.. image:: images/analog-inputs-hardware/ultrasonic-sensor-to-roborio.svg
-   :alt: Hooking a MB1013 distance sensor to an analog input on the roboRIO.
+.. image:: images/accelerometers-hardware/adxl193-single-axis-accelerometer-to-roborio.svg
+   :alt: Hooking a ADXL193 single axis accelerometer to an analog input on the roboRIO.
 
 Connecting a sensor to multiple analog input ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows an analog accelerometer that requires three digital input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
+Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows an analog accelerometer that requires three analog input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
 
 .. image:: images/analog-inputs-hardware/triple-axis-accelerometer-to-roborio.svg
    :alt: Hooking a triple axis accelerometer to three different analog input channels of the roboRIO.
