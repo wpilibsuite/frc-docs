@@ -37,8 +37,6 @@ Click :guilabel:`Import Project` to begin the upgrade.
 
 The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately using the pop-up below or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
 
-.. note:: Due to a known issue it is recommended to choose :guilabel:`Yes (new window)`. :ref:`docs/yearly-overview/known-issues:WPILib VS Code extension not loaded after creating new project or importing`
-
 .. image:: images/importing-previous-project/opening-project.png
    :alt: Opening Project pop-up in VS Code
 
