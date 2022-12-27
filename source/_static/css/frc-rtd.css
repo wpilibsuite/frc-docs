@@ -55,6 +55,13 @@
 	background: #fcfcfc;
 }
 
+/* Tweaks for sphinx panels */
+
+/* Reduces the added margin to card footers due to a conflict in RTD CSS styles */
+.sd-card-footer > p.sd-card-text {
+	margin-bottom: 5px;
+}
+
 /* Tweaks to make sidebar scroll look pretty */
 .wy-side-scroll {
 	width: auto;

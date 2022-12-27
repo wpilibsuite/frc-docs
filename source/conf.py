@@ -36,10 +36,10 @@ version = "2022"
 # ones.
 extensions = [
     "sphinx_tabs.tabs",
+    "sphinx_design",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
-    "sphinxcontrib.ghcontributors",
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
@@ -53,7 +53,6 @@ extensions = [
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
-    "sphinx_panels",
     "sphinx.ext.viewcode",
     "sphinx_tabs.tabs",
     "sphinx-prompt",
