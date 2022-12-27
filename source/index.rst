@@ -317,7 +317,6 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
-   docs/software/wpilib-tools/axon/index
 
 .. toctree::
    :maxdepth: 1
