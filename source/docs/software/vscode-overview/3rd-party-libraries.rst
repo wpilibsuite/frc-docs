@@ -3,17 +3,17 @@
 
 Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies. Please view the below section to see information on adding an external library.
 
-What are vendor dependencies?
+What Are Vendor Dependencies?
 -----------------------------
 
-A vendor dependency is a way for vendors like CTRE, and REV to add their own custom code that interfaces with their motor controllers and other devices. This way you can interact with your devices via CAN and have access to more complex and in-depth features than traditional PWM control.
+A vendor dependency is a way for vendors such as CTRE, REV, and others to add their own custom code that interfaces with motor controllers and other devices. This way teams can interact with their devices via CAN and have access to more complex and in-depth features than traditional PWM control.
 
 Managing Vendor Dependencies
 ----------------------------
 
-Vendor dependencies are installed on a per-project basis (so each robot project can have its own set of vendor dependencies). Vendor dependencies can be installed "online" or "offline". The offline installer will usually be provided by the vendor themselves if they have one and will usually come with additional debugging/utility programs.
+Vendor dependencies are installed on a per-project basis (so each robot project can have its own set of vendor dependencies). Vendor dependencies can be installed "online" or "offline". The "online" functionality is done by downloading the dependencies over the internet, while offline is typically provided by a vendor-specific installer.
 
-.. warning:: If you choose to install a vendor dependency via the "online" mode, you must reconnect your computer to the internet and rebuild about every 30 days otherwise the cache will clear, completely deleting your cached library install.
+.. warning:: If installing a vendor dependency via the "online" mode, make sure to reconnect the computer to the internet and rebuild about every 30 days otherwise the cache will clear, completely deleting the downloaded library install.
 
 How Does It Work?
 ^^^^^^^^^^^^^^^^^
@@ -28,9 +28,9 @@ This JSON file allows specification of complex libraries with multiple component
 How Does It Work? - LabVIEW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For LabVIEW teams, you may notice a few new Third Party items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it's 2020, the directory would be ``LabVIEW 2019``.
+For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it's 2020, the directory would be ``LabVIEW 2019``.
 
-In order to install third party libraries for LabVIEW, you will need to download the VIs from the vendor (typically via some sort of installer) and then you can drag and drop the third party VIs into the respective folder mentioned above as you would with any other VI.
+In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
 
 Installing Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,13 +48,13 @@ To add a vendor library that has been installed by an offline installer, press :
 
 Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
 
-If you want to install a vendor library in online mode, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries` and select it in the menu, and then click on :guilabel:`Install new libraries (online)` instead and copy + paste your vendor JSON URL.
+In order to install a vendor library in online mode, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries` and select it in the menu, and then click on :guilabel:`Install new libraries (online)` instead and copy + paste the vendor JSON URL.
 
 
 Checking for Updates (Offline)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since dependencies are version managed and done on a per-project bases, even if you have installed an updated library using an offline installer, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
+Since dependencies are version managed on a per-project basis, even when installed offline, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
 
 Checking for Updates (Online)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +71,7 @@ Command-Line
 
 Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
 
-The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the new command-based framework.
+The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the command-based framework.
 
 Libraries
 ---------
