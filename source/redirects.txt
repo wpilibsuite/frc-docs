@@ -272,3 +272,4 @@
 "docs/software/commandbased/decorators.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/software/commandbased/builtins.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/software/commandbased/convenience-features.rst" "docs/software/commandbased/command-compositions.rst"
+"docs/software/wpilib-tools/axon/index.rst" "stubs/software-tools-stub.rst"
