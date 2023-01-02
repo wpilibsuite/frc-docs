@@ -165,10 +165,16 @@ WPILib All in One Installer
 ---------------------------
 
 - Apple Silicon (Arm64) Macs are now supported
-- Update to VS Code 1.73
+- Update to VS Code 1.74
+- Update to use .NET 7
+- Add links to changelog and known issues
 
 Visual Studio Code Extension
 ----------------------------
+
+Update templates to JUnit 5.8.2
+Add copy button from project versions dialog
+Allow importing Romi projects
 
 RobotBuilder
 ------------
