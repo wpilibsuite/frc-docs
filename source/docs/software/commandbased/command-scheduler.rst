@@ -32,17 +32,17 @@ This method walks through the following steps:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 205-248
+      :lines: 202-245
       :linenos:
-      :lineno-start: 205
+      :lineno-start: 202
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 184-194
+      :lines: 181-191
       :linenos:
-      :lineno-start: 184
+      :lineno-start: 181
 
   .. group-tab:: C++ (Source)
 
@@ -68,11 +68,11 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 281-288
+      :lines: 278-285
       :linenos:
-      :lineno-start: 281
+      :lineno-start: 278
 
   .. group-tab:: C++ (Source)
 
@@ -93,11 +93,11 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 293-295
+      :lines: 290-292
       :linenos:
-      :lineno-start: 293
+      :lineno-start: 290
 
   .. group-tab:: C++ (Source)
 
@@ -118,11 +118,11 @@ Note that this sequence of calls is done in order for each command - thus, one c
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 298-328
+      :lines: 295-325
       :linenos:
-      :lineno-start: 298
+      :lineno-start: 295
       :emphasize-lines: 15,20-21
 
   .. group-tab:: C++ (Source)
@@ -143,11 +143,11 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
-      :lines: 343-349
+      :lines: 340-346
       :linenos:
-      :lineno-start: 343
+      :lineno-start: 340
 
   .. group-tab:: C++ (Source)
 
