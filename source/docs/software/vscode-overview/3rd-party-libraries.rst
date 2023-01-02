@@ -1,12 +1,12 @@
 3rd Party Libraries
 ===================
 
-Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies. Please view the below section to see information on adding an external library.
+Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies.
 
 What Are Vendor Dependencies?
 -----------------------------
 
-A vendor dependency is a way for vendors such as CTRE, REV, and others to add their own custom code that interfaces with motor controllers and other devices. This way teams can interact with their devices via CAN and have access to more complex and in-depth features than traditional PWM control.
+A vendor dependency is a way for vendors such as CTRE, REV, and others to add their :term:`software library` to robot projects. This library can interface with motor controllers and other devices. This way, teams can interact with their devices via CAN and have access to more complex and in-depth features than traditional PWM control.
 
 Managing Vendor Dependencies
 ----------------------------
@@ -14,6 +14,8 @@ Managing Vendor Dependencies
 Vendor dependencies are installed on a per-project basis (so each robot project can have its own set of vendor dependencies). Vendor dependencies can be installed "online" or "offline". The "online" functionality is done by downloading the dependencies over the internet, while offline is typically provided by a vendor-specific installer.
 
 .. warning:: If installing a vendor dependency via the "online" mode, make sure to reconnect the computer to the internet and rebuild about every 30 days otherwise the cache will clear, completely deleting the downloaded library install.
+
+.. note:: Vendors recommend using their offline installers when available, because the offline installer is typically bundled with additional programs that are extremely useful when working with their devices.
 
 How Does It Work?
 ^^^^^^^^^^^^^^^^^
@@ -28,7 +30,7 @@ This JSON file allows specification of complex libraries with multiple component
 How Does It Work? - LabVIEW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW YYYY\vi.lib\Rock Robotics\WPI\Third Party`` where ``YYYY`` is the current year - 1. If it's 2020, the directory would be ``LabVIEW 2019``.
+For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2020\vi.lib\Rock Robotics\WPI\Third Party``
 
 In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
 
