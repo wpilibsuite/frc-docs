@@ -172,9 +172,9 @@ WPILib All in One Installer
 Visual Studio Code Extension
 ----------------------------
 
-Update templates to JUnit 5.8.2
-Add copy button from project versions dialog
-Allow importing Romi projects
+- Update templates to JUnit 5.8.2
+- Add copy button from project versions dialog
+- Allow importing Romi projects
 
 RobotBuilder
 ------------
