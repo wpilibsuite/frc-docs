@@ -3,7 +3,7 @@ NetworkTables
 
 This section outlines the details of using the NetworkTables (v4) API to communicate informationa cross the robot network.
 
-.. important:: The code examples in this section are not intended for the user to copy-paste. Ensure that the following documentation is thoroughly read and the API (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>`__) is consulted when necessary.
+.. important:: The code examples in this section are not intended for the user to copy-paste. Ensure that the following documentation is thoroughly read and the API (`Java <https://github.wpilib.org/allwpilib/docs/release/java/index.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>`__) is consulted when necessary.
 
 .. toctree::
    :maxdepth: 1
