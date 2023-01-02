@@ -154,6 +154,7 @@ cscore
 ------
 
 - Update to opencv 4.6.0
+- Added ArUco module
 
 OutlineViewer
 -------------
