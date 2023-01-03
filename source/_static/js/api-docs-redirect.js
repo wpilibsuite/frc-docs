@@ -17,7 +17,7 @@ function resolveApiDocsLink(url) {
 document.addEventListener('DOMContentLoaded', function() {
     "use strict";
     for (let link of document.links) {
-        if (link.href.startsWith("<https://github.wpilib.org/allwpilib/docs/release/")) {
+        if (link.href.startsWith("https://github.wpilib.org/allwpilib/docs/release/")) {
             link.href = resolveApiDocsLink(link.href)
         }
     }
