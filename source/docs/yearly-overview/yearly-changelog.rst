@@ -41,7 +41,7 @@ General Library
 - Added ``unless(BooleanSupplier)`` decorator
 - Added ``ignoringDisable(boolean)`` decorator to set the ``runsWhenDisabled`` property of a command
 - Added ``finallyDo(BooleanConsumer)`` and ``handleInterrupt(Runnable)`` decorators
-- Added static factory methods for Command
+- Added static command factories in Commands
 - Added ``ComputerVisionUtil``
 - Added ``EventLoop`` and ``BooleanEvent``, an expansion of the existing Trigger framework encompassing non-commandbased
 - Added ``BooleanEvent``-returning factory methods to the HID classes
@@ -70,6 +70,13 @@ General Library
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
 - Add missing ``PS4Controller`` triangle methods
+- Add method to disable LW actuator control in test mode
+
+- Enhanced ``Sendable`` representation of commands
+- Deprecated ``CommandGroupBase``; the static factories have been moved to ``Commands``
+- Refactor SelectCommand's `Supplier<Command>` constructor and ProxyScheduleCommand into ProxyCommand
+- Remove `isFinished` check for default commands
+- Add method to remove default commands
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
