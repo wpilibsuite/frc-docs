@@ -191,8 +191,6 @@ RobotBuilder
 SysID
 -----
 
-.. important:: SysID is not included with Beta 5. It is planned for future betas.
-
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0
 - Fixed ``Override Units`` option not overriding units per rotations
