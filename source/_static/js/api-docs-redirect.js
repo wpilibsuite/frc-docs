@@ -3,7 +3,7 @@ function resolveApiDocsLink(url) {
 
     if (!window.hasOwnProperty("docsAccessInfo")) { // Cache Docs Access Info
         const match = window.location.href.match(/.*wpilib(?<sep>\/|\\)[0-9]{4}\k<sep>documentation\k<sep>/);
-        const onlineDocsUrl = "<https://github.wpilib.org/allwpilib/docs/release/";
+        const onlineDocsUrl = "https://github.wpilib.org/allwpilib/docs/release/";
 
         window.docsAccessInfo = {};
         window.docsAccessInfo.isLocal = Boolean(match);
