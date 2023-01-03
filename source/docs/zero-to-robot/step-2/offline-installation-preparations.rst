@@ -20,9 +20,10 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2022 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+.. important:: As of 1/3/23 the 2023 Game Tools are not yet available. 2023 Game Tools will likely be available sometime on 1/4 or 1/5.
+-  `2023 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
 
--  `2022 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1.zip>`__ or `2022 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2022/Radio/FRC_Radio_Configuration_22_0_1_IL.zip>`__
+-  `2023 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2.zip>`__ or `2023 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
 
 LabVIEW Teams
@@ -33,6 +34,7 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
+.. important:: The 2023 WPILib installer is expected to be available later on 1/3 or 1/4.
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
 
 Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
