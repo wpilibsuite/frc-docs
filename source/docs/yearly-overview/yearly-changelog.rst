@@ -41,7 +41,7 @@ General Library
 - Added ``unless(BooleanSupplier)`` decorator
 - Added ``ignoringDisable(boolean)`` decorator to set the ``runsWhenDisabled`` property of a command
 - Added ``finallyDo(BooleanConsumer)`` and ``handleInterrupt(Runnable)`` decorators
-- Added static factory methods for Command
+- Added static command factories in Commands
 - Added ``ComputerVisionUtil``
 - Added ``EventLoop`` and ``BooleanEvent``, an expansion of the existing Trigger framework encompassing non-commandbased
 - Added ``BooleanEvent``-returning factory methods to the HID classes
@@ -70,6 +70,13 @@ General Library
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
 - Add missing ``PS4Controller`` triangle methods
+- Add method to disable LW actuator control in test mode
+
+- Enhanced ``Sendable`` representation of commands
+- Deprecated ``CommandGroupBase``; the static factories have been moved to ``Commands``
+- Refactor SelectCommand's `Supplier<Command>` constructor and ProxyScheduleCommand into ProxyCommand
+- Remove `isFinished` check for default commands
+- Add method to remove default commands
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
@@ -154,6 +161,7 @@ cscore
 ------
 
 - Update to opencv 4.6.0
+- Added ArUco module
 
 OutlineViewer
 -------------
@@ -164,10 +172,16 @@ WPILib All in One Installer
 ---------------------------
 
 - Apple Silicon (Arm64) Macs are now supported
-- Update to VS Code 1.73
+- Update to VS Code 1.74
+- Update to use .NET 7
+- Add links to changelog and known issues
 
 Visual Studio Code Extension
 ----------------------------
+
+- Update templates to JUnit 5.8.2
+- Add copy button from project versions dialog
+- Allow importing Romi projects
 
 RobotBuilder
 ------------
@@ -183,8 +197,6 @@ RobotBuilder
 
 SysID
 -----
-
-.. important:: SysID is not included with Beta 5. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0

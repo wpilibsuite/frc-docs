@@ -5,7 +5,7 @@ Combining Motion Profiling and PID Control with ProfiledPIDController
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 
-This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/controller/ProfiledPIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_profiled_p_i_d_controller.html>`__) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
+This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ProfiledPIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_profiled_p_i_d_controller.html>`__) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
 
 Using the ProfiledPIDController class
 -------------------------------------
@@ -114,7 +114,7 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
       :language: java
       :lines: 5-
       :linenos:
@@ -122,7 +122,7 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
       :language: c++
       :lines: 5-
       :linenos:

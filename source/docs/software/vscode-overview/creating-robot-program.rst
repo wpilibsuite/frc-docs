@@ -12,14 +12,14 @@ TimedRobot
 ^^^^^^^^^^
 
 Documentation:
-`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
-- `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_timed_robot.html>`__
+`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__
+- `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_timed_robot.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__
 - `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__
 
-The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_sendable_chooser.html>`__
+The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/ `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_sendable_chooser.html>`__
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
@@ -27,7 +27,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
          :language: java
          :lines: 7-55
          :linenos:
@@ -35,7 +35,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1-beta-7/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.1.1/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
          :language: cpp
          :lines: 5-29
          :linenos:
@@ -43,7 +43,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
-.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
+.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
 
 .. tabs::
 
@@ -61,8 +61,8 @@ RobotBase
 ^^^^^^^^^
 
 Documentation:
-`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/RobotBase.html>`__
-- `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_robot_base.html>`__
+`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__
+- `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_robot_base.html>`__
 
 Source:
 `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__
@@ -143,7 +143,8 @@ Opening The New Project
 
 After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
-.. note:: Due to a known issue it is recommended to choose :guilabel:`Yes (new window)`. :ref:`docs/yearly-overview/known-issues:WPILib VS Code extension not loaded after creating new project or importing`
+.. image:: images/importing-previous-project/opening-project.png
+   :alt: Opening Project pop-up in VS Code
 
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 

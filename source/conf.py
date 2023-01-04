@@ -24,9 +24,9 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2022"
+version = "2023"
 
 
 # -- General configuration ---------------------------------------------------
@@ -167,7 +167,11 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["docs/yearly-overview/2020-Game-Data.rst"]
+exclude_patterns = [
+    "docs/yearly-overview/2020-Game-Data.rst",
+    "docs/software/wpilib-tools/axon/**",
+    "docs/beta/*",
+]
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"

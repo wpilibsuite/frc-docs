@@ -273,3 +273,4 @@
 "docs/software/commandbased/builtins.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/software/commandbased/convenience-features.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/contributing/frc-docs/top-contributors.rst" "docs/contributing/frc-docs/index.rst"
+"docs/software/wpilib-tools/axon/index.rst" "stubs/software-tools-stub.rst"
