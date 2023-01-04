@@ -15,244 +15,290 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 Community translations can be found in a variety of languages in the bottom-left menu.
 
-.. panels::
-   :column: col-sm-6 d-flex pb-3
-   :footer: bg-white border-0
+.. grid:: 1 2 2 2
+   :gutter: 3
 
-   ---
-   :header: bg-success font-weight-bold text-white
+   .. grid-item-card::
+      :class-header: sd-bg-success sd-text-white
 
-   Returning Teams
+      **Returning Teams**
 
-   ^^^
+      ^^^
 
-   If you are a returning team, please check out the overview of changes from 2022 to 2023 and the known issues.
+      If you are a returning team, please check out the overview of changes from 2022 to 2023 and the known issues.
 
-   +++
+      +++
 
-   .. div:: container-fluid p-0
+      .. button-link:: /docs/yearly-overview/yearly-changelog
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :class: mb-1
+         :outline:
 
-      .. div:: row
+         Changelog
 
-         .. div:: col-sm pl-1 pr-1
+      .. button-link:: /docs/yearly-overview/known-issues
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-            .. link-button:: /docs/yearly-overview/yearly-changelog
-               :type: ref
-               :text: Changelog
-               :classes: btn-outline-primary btn-block
+         Known Issues
 
-      .. div:: row
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-         .. div:: col-sm pl-1 pr-1 pt-1
+      **New Teams**
 
-            .. link-button:: /docs/yearly-overview/known-issues
-               :type: ref
-               :text: Known Issues
-               :classes: btn-outline-primary btn-block
+      ^^^
 
-   ---
-   :header: bg-info font-weight-bold text-white
+      The Zero-to-Robot tutorial will guide you through preparation, wiring and programming a basic robot!
 
-   New Teams
+      +++
 
-   ^^^
+      .. button-link:: /docs/zero-to-robot/introduction
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   The Zero-to-Robot tutorial will guide you through preparation, wiring and programming a basic robot!
+         Go to Zero-to-Robot
 
-   +++
+.. grid:: 1 2 2 2
+   :gutter: 3
 
-   .. link-button:: /docs/zero-to-robot/introduction
-      :type: ref
-      :text: Go to Zero-to-Robot
-      :classes: btn-outline-primary btn-block
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-.. panels::
-   :column: col-sm-6 d-flex pb-3
-   :footer: bg-white border-0
+      **Hardware Overview**
 
-   ---
-   :header: bg-info font-weight-bold text-white
+      ^^^
 
-   Hardware Overview
+      An overview of the hardware components available to teams.
 
-   ^^^
+      +++
 
-   An overview of the hardware components available to teams.
+      .. button-link:: /docs/controls-overviews/control-system-hardware
+         :color: primary
+         :align: center
+         :expand:
+         :outline:
 
-   +++
+         Go to Hardware Overview
 
-   .. link-button:: /docs/controls-overviews/control-system-hardware
-      :type: ref
-      :text: Go to Hardware Overview
-      :classes: btn-outline-primary btn-block
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   ---
-   :header: bg-info font-weight-bold text-white
+      **Software Overview**
 
-   Software Overview
+      ^^^
 
-   ^^^
+      An overview of the software components and tools available to teams.
 
-   An overview of the software components and tools available to teams.
+      +++
 
-   +++
+      .. button-link:: /docs/controls-overviews/control-system-software
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   .. link-button:: /docs/controls-overviews/control-system-software
-      :type: ref
-      :text: Go to Software Overview
-      :classes: btn-outline-primary btn-block
+         Go to Software Overview
 
-.. panels::
-   :column: col-sm-4 d-flex pb-3
-   :footer: border-0 bg-white
+.. grid:: 1 2 3 3
+   :gutter: 3
 
-   ---
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   Programming Basics
+      **Programming Basics**
 
-   ^^^
+      ^^^
 
-   Documentation that is useful throughout a team's programming process.
+      Documentation that is useful throughout a team's programming process.
 
-   +++
+      +++
 
-   .. link-button:: stubs/programming-basics-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block mt-auto
+      .. button-link:: stubs/programming-basics-stub
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   ---
+         View articles
 
-   Advanced Programming
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   ^^^
+      **Advanced Programming**
 
-   Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
+      ^^^
 
-   +++
+      Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
 
-   .. link-button:: stubs/advanced-programming-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
+      +++
 
-   ---
+      .. button-link:: stubs/advanced-programming-stub
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   Hardware
+         View articles
 
-   ^^^
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   Hardware tutorials and content available for teams.
+      **Hardware**
 
-   +++
+      ^^^
 
-   .. link-button:: stubs/hardware-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
+      Hardware tutorials and content available for teams.
 
-   ---
+      +++
 
-   Romi Robot
+      .. button-link:: stubs/hardware-stub
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   ^^^
+         View articles
 
-   The Romi Robot is a low-cost Raspberry Pi based platform for practicing WPILib programming.
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   +++
+      **Romi Robot**
 
-   .. link-button:: docs/romi-robot/index
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
+      ^^^
 
-   ---
+      The Romi Robot is a low-cost Raspberry Pi based platform for practicing WPILib programming.
 
-   API Documentation
+      +++
 
-   ^^^
+      .. button-link:: docs/romi-robot/index
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   Java and C++ class documentation.
+         View articles
 
-   +++
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   .. div:: container-fluid p-0
+      **API Documentation**
 
-      .. div:: row
+      ^^^
 
-         .. div:: col-sm pl-1 pr-1
+      Java and C++ class documentation.
 
-            .. link-button:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
-               :type: url
-               :text: Java
-               :classes: btn-outline-primary btn-block
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-         .. div:: col-sm pl-1 pr-1
+         Java
 
-            .. link-button:: https://github.wpilib.org/allwpilib/docs/release/cpp/index.html
-               :type: url
-               :text: C++
-               :classes: btn-outline-primary btn-block
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/cpp/index.html
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   ---
+         C++
 
-   Software Tools
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   ^^^
+      **Software Tools**
 
-   Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+      ^^^
 
-   +++
+      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
 
-   .. link-button:: stubs/software-tools-stub
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
+      +++
 
-   ---
+      .. button-link:: stubs/software-tools-stub
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   Example Projects
+         View articles
 
-   ^^^
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   This section showcases the available example projects that teams can reference in VS Code.
+      **Example Projects**
 
-   +++
+      ^^^
 
-   .. link-button:: docs/software/examples-tutorials/wpilib-examples
-      :type: ref
-      :text: View articles
-      :classes: btn-outline-primary btn-block
+      This section showcases the available example projects that teams can reference in VS Code.
 
-   ---
+      +++
 
-   Status Light Quick Reference
+      .. button-link:: docs/software/examples-tutorials/wpilib-examples
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   ^^^
+         View articles
 
-   Quick reference guide for the status lights on a variety of FRC hardware.
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   +++
+      **Status Light Quick Reference**
 
-   .. link-button:: docs/hardware/hardware-basics/status-lights-ref
-      :type: ref
-      :text: View article
-      :classes: btn-outline-primary btn-block
+      ^^^
 
-   ---
+      Quick reference guide for the status lights on a variety of FRC hardware.
 
-   3rd Party Libraries
+      +++
 
-   ^^^
+      .. button-link:: docs/hardware/hardware-basics/status-lights-ref
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
 
-   Tutorial on adding 3rd party libraries such as CTRE and REV to your robot project.
+         View article
 
-   +++
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
 
-   .. link-button:: docs/software/vscode-overview/3rd-party-libraries
-      :type: ref
-      :text: View article
-      :classes: btn-outline-primary btn-block
+      **3rd Party libraries**
+
+      ^^^
+
+      Tutorial on adding 3rd party libraries such as CTRE and REV to your robot project.
+
+      +++
+
+      .. button-link:: docs/software/vscode-overview/3rd-party-libraries
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         View article
 
 .. toctree::
    :maxdepth: 1
