@@ -53,25 +53,66 @@ Remember that in order for this to work, ``resetEncoders`` must be a ``Runnable`
 
 If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.
 
-Lambda Expressions
-^^^^^^^^^^^^^^^^^^
+Lambda Expressions in Java
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If we do not already have a named function that does what we want, we can define a function "inline" - that means, right inside of the call to ``runOnce``!  We do this by writing our function with a special syntax that uses an "arrow" symbol to link the argument list to the function body:
 
 .. code-block:: java
 
    // Create an InstantCommand that runs the drive forward at half speed 
-   Command disableCommand = runOnce(() -> { drive.arcadeDrive(0.5, 0.0); });
+   Command driveHalfSpeed = runOnce(() -> { drivetrain.arcadeDrive(0.5, 0.0); }, drivetrain);
 
-Java calls this a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.
+Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
 
 Note that our inline function still has to be a ``Runnable`` - notice that it takes no arguments and has no return statement.  If it did not match the ``Runnable`` contract, our code would fail to compile.
 
-Capturing State in Lambda Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Capturing State in Java Lambda Expressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the above example, our function body references an object that lives outside of the function itself (namely, the ``drive`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
+In the above example, our function body references an object that lives outside of the function itself (namely, the ``drivetrain`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
 
 In Java capturing state is a fairly safe thing to do in general, with one major caveat: we can only capture state that is "effectively final".  That means it is only legal to capture a variable from the enclosing scope if that variable is never reassigned after initialization.  Note that this does not mean that the captured state cannot change: Remember that Java objects are references, so the object that the reference *points to* may change after capture - but the reference itself cannot be made to point to another object.
 
 This means we can only capture primitive types (like ``int``, ``double``, and ``boolean``) if they're constants.  If we want to capture a state variable that can change, it *must be wrapped in a mutable object*.
+
+Treating Functions as Data in C++
+---------------------------------
+
+C++ has a number of ways to treat functions as data.  For the sake of this article, we'll only talk about the parts that are relevant to using WPILibC.
+
+In WPILibC, function types are represented with the ``std::function`` class <TODO: link>.  This standard library class is templated on the function's signature - that means we have to provide it a function pointer type <TODO: link> as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
+
+This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
+
+.. note:: The ``requirements`` parameter is explained in the Command-based documentation, and will not be discussed here <TODO: link>.
+.. code-block:: cpp
+
+   CommandPtr RunOnce(
+    std::function<void()> action,
+    std::initializer_list<Subsystem*> requirements);
+
+``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ term for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function pointer type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
+
+Lambda Expressions in C++
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To pass a function to ``runOnce``, we need to write a short inline function expression using a special syntax that resembles ordinary C++ function declarations, but varies in a few important ways:
+
+.. code-block:: cpp
+
+   // Create an InstantCommand that runs the drive forward at half speed 
+   CommandPtr driveHalfSpeed = cmd::runOnce(() [this] { drivetrain.arcadeDrive(0.5, 0.0); }, {drivetrain});
+
+C++ calls ``() [this] { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression".  It has three parts: a *parameter list* (parentheses), a *capture list* (square brackets), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
+
+Since ``runOnce`` wants a function with no parameters and no return value, our lambda expression has an empty parameter list and no return statement.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
+
+Capturing State in C++ Lambda Expressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the above example, our function body references an object that lives outside of the function itself (namely, the ``drivetrain`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
+
+C++ has somewhat more-powerful semantics than Java.  One cost of this is that we generally need to give the C++ compiler some help to figure out *how exactly* we want it to capture state from the enclosing scope.  This is the purpose of the *capture list*.  For the purposes of using the WPILibC Command-based framework, it is usually sufficient to use a capture list of ``[this]``, which gives access to members of the enclosing class by capturing the enclosing class's ``this`` pointer by value.
+
+Method locals cannot be captured this way, and must be captured explicitly either by reference or by value by including them in the capture list.  It is typically safer to capture locals by-value, since a lambda can outlive the lifespan of an object it captures by reference.  For more details, consult the C++ standard library documentation on capture semantics <TODO: link>.
