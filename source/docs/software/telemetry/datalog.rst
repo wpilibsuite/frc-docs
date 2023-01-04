@@ -224,8 +224,8 @@ Data Log Visualization
 
 `AdvantageScope <https://github.com/Mechanical-Advantage/AdvantageScope>`__ is a third-party tool allowing users to play back and visualize data stored in WPILib data logs, with support for line graphs, field displays, video synchronization, etc. More details are available in the `AdvantageScope documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/INDEX.md>`__. Note that WPILib offers no support for third-party projects.
 
-.. image:: images/advantagescope.jpg
-   :alt: Screenshot with many overlaid AdvantageScope windows displaying line graphs, 3D views, joysticks, and other miscellaneous visualizations.
+.. image:: images/advantagescope.png
+   :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
 
 Custom Processing of Data Logs
 ------------------------------
