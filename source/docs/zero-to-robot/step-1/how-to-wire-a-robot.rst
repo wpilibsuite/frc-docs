@@ -282,7 +282,7 @@ A number of the CAN and power connectors in the system use a Weidmuller LSF seri
 After making the connection check to be sure that it is clean and secure:
 
 - Verify that there are no "whiskers" outside the connector that may cause a short circuit
-- Tug on the wire to verify that it is seated fully. If the wire comes out and is the correct gauge it needs to be inserted further and/or stripped back further. Occassionally the terminal may remain stuck open with the wire inserted and the button released even if the wire is stripped and inserted properly; in these cases wiggling the wire in and out a small ammount will often allow the connector to latch shut and grip the wire.
+- Tug on the wire to verify that it is seated fully. If the wire comes out and is the correct gauge it needs to be inserted further and/or stripped back further. Occasionally the terminal may remain stuck open with the wire inserted and the button released even if the wire is stripped and inserted properly; in these cases wiggling the wire in and out a small amount will often allow the connector to latch shut and grip the wire.
 
 roboRIO Power
 -------------
@@ -418,7 +418,7 @@ Ethernet Cables
       Requires: 2x Ethernet cables
 
       1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the Radio Power Module labeled roboRIO.
-      2. Connect an Ethernet cable from the RJ45 socket of the radio closest to the barrel connector socket (labeled 18-24v POE) to the socket labled WiFi Radio on the RPM
+      2. Connect an Ethernet cable from the RJ45 socket of the radio closest to the barrel connector socket (labeled 18-24v POE) to the socket labeled WiFi Radio on the RPM
 
    .. group-tab:: CTR
 
