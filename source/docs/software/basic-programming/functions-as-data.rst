@@ -60,7 +60,7 @@ If we do not already have a named function that does what we want, we can define
 
 .. code-block:: java
 
-   // Create an InstantCommand that runs the drive forward at half speed 
+   // Create an InstantCommand that runs the drive forward at half speed
    Command driveHalfSpeed = runOnce(() -> { drivetrain.arcadeDrive(0.5, 0.0); }, drivetrain);
 
 Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
@@ -101,7 +101,7 @@ To pass a function to ``runOnce``, we need to write a short inline function expr
 
 .. code-block:: cpp
 
-   // Create an InstantCommand that runs the drive forward at half speed 
+   // Create an InstantCommand that runs the drive forward at half speed
    CommandPtr driveHalfSpeed = cmd::runOnce(() [this] { drivetrain.arcadeDrive(0.5, 0.0); }, {drivetrain});
 
 C++ calls ``() [this] { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression".  It has three parts: a *parameter list* (parentheses), a *capture list* (square brackets), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
