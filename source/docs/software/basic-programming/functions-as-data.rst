@@ -1,21 +1,27 @@
 Functions as Data
 =================
 
-Regardless of programming language, one of the first things anyone learns to do when programming a computer is to write a function (also known as a "method" or a "subroutine").  Functions are a fundamental part of organized code - writing functions lets us avoid duplicating the same piece of code over and over again.  Instead of writing duplicated sections of code, we call a single function that contains the code we want to execute from multiple places.  If the section of code needs some additional information about its surrounding context to run, we pass those to the function as parameters.
+Regardless of programming language, one of the first things anyone learns to do when programming a computer is to write a function (also known as a "method" or a "subroutine").  Functions are a fundamental part of organized code - writing functions lets us avoid duplicating the same piece of code over and over again.  Instead of writing duplicated sections of code, we call a single function that contains the code we want to execute from multiple places. If the section of code needs some additional information about its surrounding context to run, we pass those to the function as parameters.
 
 Sometimes, we need to pass functions from one part of the code to another part of the code.  This might seem like a strange concept, if we're used to thinking of functions as part of a class definition rather than objects in their own right.  But at a basic level, functions are just data - in the same way we can store an ``integer`` or a ``double`` as a variable and pass it around our program, we can do the same thing with a function.  A variable whose value is a function is called a "functional interface" in Java, and a "function pointer" or "functor" in C++.
 
 Why Would We Want to Treat Functions as Data?
 ---------------------------------------------
 
-Typically, we have a need to treat functions as data when the function needs to be called from somewhere other than where it was defined in the code.
+Typically, code that calls a function is coupled to (depends on) the definition of the function. While this occurs all the time, it becomes problematic when the code *calling* the function (for example, WPILib) is developed independently and without direct knowledge of the code that *defines* the function (for example, code from an FRC team). Sometimes we solve this challenge through the use of class interfaces, which define collections of data and functions that are meant to be used together.  However, often we really only have a dependency on a *single function*, rather than on an *entire class*.
 
 For example, the Command-based framework <TODO: link> is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
+
+In this case, we want to be able to pass a single function as a piece of data, as if it were a variable - it doesn't make sense to ask the user to provide an entire class, when we really just want them to give us a single appropriately-shaped function.
+
+It's important that *passing* a function is not the same as *calling* a function.  When we call a function, we execute the code inside of it and either receive a return value, cause some side-effects elsewhere in the code, or both.  When we *pass* a function, nothing in particular happens *immediately.*  Instead, by passing the function we are allowing some *other* code to call the function *in the future.*  Seeing the name of a function in code does not always mean that the code in the function is being run!
+
+Inside of code that passes a function, we will see some syntax that either refers to the name of an existing function in a special way, or else defines a new function to be passed inside of the call expression.  The specific syntax needed (and the rules around it) depends on which programming language we are using.
 
 Treating Functions as Data in Java
 ----------------------------------
 
-Java represents functions-as-data as instances of "functional interfaces" <TODO: link to docs>.  A functional interface is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class - instead, it defines a particular group of classes that *only* represent single functions.
+Java represents functions-as-data as instances of "functional interfaces" <TODO: link to docs>.  A functional interface is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.
 
 This might sound complicated, but in the context of WPILib we don't really need to worry much about using the functional interfaces themselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.  For a simple example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
