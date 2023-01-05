@@ -94,7 +94,7 @@ class WpilibRelease(SphinxDirective):
                     dlbutton.text = 'Download for macOS Intel - {mac_intel["size"] / 1e9 : .2f} GB';
                 }} else if (ua['architecture'].includes('arm')) {{
                     dlbutton.href = '{mac_arm["browser_download_url"]}';
-                    dlbutton.text = 'Download for macOS Arm | Apple Silicon {mac_arm["size"] / 1e9 : .2f} GB';
+                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm["size"] / 1e9 : .2f} GB';
                 }}
             }}
         }});
