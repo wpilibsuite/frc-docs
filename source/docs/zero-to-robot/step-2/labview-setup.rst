@@ -42,7 +42,7 @@ Either locate and insert the LabVIEW USB Drive or download the `LabVIEW for FRC 
 
 If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
 
-.. note:: This is a large download (~8GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
+.. note:: This is a large download (~9GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
 
 Installing LabVIEW
 ------------------
