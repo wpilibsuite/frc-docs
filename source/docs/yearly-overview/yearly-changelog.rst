@@ -98,6 +98,7 @@ Breaking Changes
 
 .. danger:: Updated ``DifferentialDrive`` and ``MecanumDrive`` classes to use North-West-Up axis conventions to match the rest of WPILib. The Z-axis (i.e. turning) will need to be inverted to restore the old behavior.
 
+- Shuffleboard classes now return ``GenericEntry`` instead of ``NetworkTableEntry``; as ``GenericEntry`` provides nearly all the same methods, a simple textual replacement of the class name should suffice
 - Removed deprecated ``MakeMatrix()`` from ``StateSpaceUtil``
 - Removed deprecated ``KilloughDrive`` class
 - Removed ``Vector2d``, which was an implementation detail of MecanumDrive and KilloughDrive. In Java, use ``Vector<N2>`` (``edu.wpi.first.math.Vector``) or ``Translation2d`` (``edu.wpi.first.math.geometry.Translation2d``) instead. In C++, use ``Eigen::Vector2d`` from ``<Eigen/Core>`` or ``Translation2d`` from ``<frc/geometry/Translation2d.h>`` instead.
