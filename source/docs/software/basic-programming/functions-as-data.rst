@@ -104,7 +104,7 @@ To pass a function to ``runOnce``, we need to write a short inline function expr
    // Create an InstantCommand that runs the drive forward at half speed
    CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});
 
-C++ calls ``() [this] { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression".  It has three parts: a *parameter list* (parentheses), a *capture list* (square brackets), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
+C++ calls ``[captures] (params) { body; }`` a "lambda expression".  It has three parts: a *capture list* (square brackets), an optional *parameter list* (parentheses), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
 
 Since ``RunOnce`` wants a function with no parameters and no return value, our lambda expression has an empty parameter list and no return statement.  The "lambda expression" here represents a function that calls ``drivetrain.ArcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
 
