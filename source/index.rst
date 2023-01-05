@@ -29,7 +29,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: /docs/yearly-overview/yearly-changelog
+      .. button-ref:: /docs/yearly-overview/yearly-changelog
          :color: primary
          :shadow:
          :align: center
@@ -39,7 +39,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          Changelog
 
-      .. button-link:: /docs/yearly-overview/known-issues
+      .. button-ref:: /docs/yearly-overview/known-issues
          :color: primary
          :shadow:
          :align: center
@@ -59,7 +59,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: /docs/zero-to-robot/introduction
+      .. button-ref:: /docs/zero-to-robot/introduction
          :color: primary
          :shadow:
          :align: center
@@ -82,7 +82,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: /docs/controls-overviews/control-system-hardware
+      .. button-ref:: /docs/controls-overviews/control-system-hardware
          :color: primary
          :align: center
          :expand:
@@ -101,7 +101,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: /docs/controls-overviews/control-system-software
+      .. button-ref:: /docs/controls-overviews/control-system-software
          :color: primary
          :shadow:
          :align: center
@@ -124,7 +124,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: stubs/programming-basics-stub
+      .. button-ref:: stubs/programming-basics-stub
          :color: primary
          :shadow:
          :align: center
@@ -144,7 +144,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: stubs/advanced-programming-stub
+      .. button-ref:: stubs/advanced-programming-stub
          :color: primary
          :shadow:
          :align: center
@@ -164,7 +164,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: stubs/hardware-stub
+      .. button-ref:: stubs/hardware-stub
          :color: primary
          :shadow:
          :align: center
@@ -184,7 +184,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: docs/romi-robot/index
+      .. button-ref:: docs/romi-robot/index
          :color: primary
          :shadow:
          :align: center
@@ -231,7 +231,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: stubs/software-tools-stub
+      .. button-ref:: stubs/software-tools-stub
          :color: primary
          :shadow:
          :align: center
@@ -251,7 +251,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: docs/software/examples-tutorials/wpilib-examples
+      .. button-ref:: docs/software/examples-tutorials/wpilib-examples
          :color: primary
          :shadow:
          :align: center
@@ -271,7 +271,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: docs/hardware/hardware-basics/status-lights-ref
+      .. button-ref:: docs/hardware/hardware-basics/status-lights-ref
          :color: primary
          :shadow:
          :align: center
@@ -291,7 +291,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-link:: docs/software/vscode-overview/3rd-party-libraries
+      .. button-ref:: docs/software/vscode-overview/3rd-party-libraries
          :color: primary
          :shadow:
          :align: center
