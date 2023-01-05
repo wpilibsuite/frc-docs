@@ -83,7 +83,7 @@ Treating Functions as Data in C++
 
 C++ has a number of ways to treat functions as data.  For the sake of this article, we'll only talk about the parts that are relevant to using WPILibC.
 
-In WPILibC, function types are represented with the ``std::function`` class (`https://en.cppreference.com/w/cpp/utility/functional/function`__).  This standard library class is templated on the function's signature - that means we have to provide it a `function type <https://stackoverflow.com/questions/17446220/c-function-types>`__ as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
+In WPILibC, function types are represented with the ``std::function`` class (https://en.cppreference.com/w/cpp/utility/functional/function).  This standard library class is templated on the function's signature - that means we have to provide it a `function type <https://stackoverflow.com/questions/17446220/c-function-types>`__ as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
 
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
