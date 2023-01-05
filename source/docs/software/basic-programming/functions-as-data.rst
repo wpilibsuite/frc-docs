@@ -10,9 +10,11 @@ Why Would We Want to Treat Functions as Data?
 
 Typically, code that calls a function is coupled to (depends on) the definition of the function. While this occurs all the time, it becomes problematic when the code *calling* the function (for example, WPILib) is developed independently and without direct knowledge of the code that *defines* the function (for example, code from an FRC team). Sometimes we solve this challenge through the use of class interfaces, which define collections of data and functions that are meant to be used together.  However, often we really only have a dependency on a *single function*, rather than on an *entire class*.
 
-For example, the Command-based framework <TODO: link> is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
+For example, WPILib offers several ways for users to execute certain code whenever a joystick button is pressed - one of the easiest and cleanest ways to do this is to allow the user to *pass a function* to one of the WPILib joystick methods.  This way, the user only has to write the code that deals with the interesting and team-specific things (e.g., "move my robot arm") and not the boring, error-prone, and universal thinsg ("properly read button inputs from a standard joystick").
 
-In this case, we want to be able to pass a single function as a piece of data, as if it were a variable - it doesn't make sense to ask the user to provide an entire class, when we really just want them to give us a single appropriately-shaped function.
+For another example, the :ref:`Command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
+
+In these cases, we want to be able to pass a single function as a piece of data, as if it were a variable - it doesn't make sense to ask the user to provide an entire class, when we really just want them to give us a single appropriately-shaped function.
 
 It's important that *passing* a function is not the same as *calling* a function.  When we call a function, we execute the code inside of it and either receive a return value, cause some side-effects elsewhere in the code, or both.  When we *pass* a function, nothing in particular happens *immediately.*  Instead, by passing the function we are allowing some *other* code to call the function *in the future.*  Seeing the name of a function in code does not always mean that the code in the function is being run!
 
@@ -21,11 +23,11 @@ Inside of code that passes a function, we will see some syntax that either refer
 Treating Functions as Data in Java
 ----------------------------------
 
-Java represents functions-as-data as instances of "functional interfaces" <TODO: link to docs>.  A functional interface is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.  Each type of function signature has its own functional interface, which is an interface with a single function definition of that signature.
+Java represents functions-as-data as instances of `functional interfaces <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`__.  A "functional interface" is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.  Each type of function signature has its own functional interface, which is an interface with a single function definition of that signature.
 
 This might sound complicated, but in the context of WPILib we don't really need to worry much about using the functional interfaces themselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.  For a simple example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
-.. note:: The ``requirements`` parameter is explained in the Command-based documentation, and will not be discussed here <TODO: link>.
+.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 .. code-block:: java
 
    public static CommandBase runOnce(Runnable action, Subsystem... requirements)
@@ -51,7 +53,7 @@ Remember that in order for this to work, ``resetEncoders`` must be a ``Runnable`
    // void because it returns no parameters, and has an empty parameter list
    public void resetEncoders()
 
-If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.
+If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.  Note that all we need to do is make sure that the signature matches the signature of the single method in the ``Runnable`` functional interface - we don't need to *explicitly* name it as a ``Runnable``.
 
 Lambda Expressions in Java
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,7 +67,7 @@ If we do not already have a named function that does what we want, we can define
 
 Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
 
-Note that our inline function still has to be a ``Runnable`` - notice that it takes no arguments and has no return statement.  If it did not match the ``Runnable`` contract, our code would fail to compile.
+As with method references, we do not need to *explicitly* name the lambda expression as a ``Runnable`` - Java can infer that our lambda expression is a ``Runnable`` so long as its signature matches that of the single method in the ``Runnable`` interface.  Accordingly, our lambda takes no arguments and has no return statement - if it did not match the ``Runnable`` contract, our code would fail to compile.
 
 Capturing State in Java Lambda Expressions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,11 +83,11 @@ Treating Functions as Data in C++
 
 C++ has a number of ways to treat functions as data.  For the sake of this article, we'll only talk about the parts that are relevant to using WPILibC.
 
-In WPILibC, function types are represented with the ``std::function`` class <TODO: link>.  This standard library class is templated on the function's signature - that means we have to provide it a function pointer type <TODO: link> as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
+In WPILibC, function types are represented with the ``std::function`` class (`https://en.cppreference.com/w/cpp/utility/functional/function`__).  This standard library class is templated on the function's signature - that means we have to provide it a `function type <https://stackoverflow.com/questions/17446220/c-function-types>`__ as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
 
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
-.. note:: The ``requirements`` parameter is explained in the Command-based documentation, and will not be discussed here <TODO: link>.
+.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 .. code-block:: cpp
 
    CommandPtr RunOnce(
@@ -115,4 +117,4 @@ In the above example, our function body references an object that lives outside 
 
 C++ has somewhat more-powerful semantics than Java.  One cost of this is that we generally need to give the C++ compiler some help to figure out *how exactly* we want it to capture state from the enclosing scope.  This is the purpose of the *capture list*.  For the purposes of using the WPILibC Command-based framework, it is usually sufficient to use a capture list of ``[this]``, which gives access to members of the enclosing class by capturing the enclosing class's ``this`` pointer by value.
 
-Method locals cannot be captured this way, and must be captured explicitly either by reference or by value by including them in the capture list.  It is typically safer to capture locals by-value, since a lambda can outlive the lifespan of an object it captures by reference.  For more details, consult the C++ standard library documentation on capture semantics <TODO: link>.
+Method locals cannot be captured this way, and must be captured explicitly either by reference or by value by including them in the capture list.  It is typically safer to capture locals by-value, since a lambda can outlive the lifespan of an object it captures by reference.  For more details, consult the C++ standard library `documentation on capture semantics <https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture>`__.
