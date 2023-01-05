@@ -99,13 +99,3 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
-
-LabVIEW Autorun graphics say 2020
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/known-issues/labview-autorun.png
-   :alt: LabVIEW autorun screen showing mismatched versions
-
-**Issue:** If you launch the LabVIEW installer by using the Autorun file, the menu item correctly says 2022, but the graphic says 2020.
-
-**Workaround:** This can be safely ignored, if the menu item says 2022, you are installing the correct software.
