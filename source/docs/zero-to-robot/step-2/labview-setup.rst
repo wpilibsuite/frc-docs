@@ -17,7 +17,7 @@ Uninstall Old Versions (Recommended)
 
 .. note:: If you wish to keep programming cRIOs you will need to maintain an install of LabVIEW for FRC\ |reg| 2014. The LabVIEW for FRC 2014 license has been extended. While these versions should be able to co-exist on a single computer, this is not a configuration that has been extensively tested.
 
-Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2020 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select Uninstall.
+Before installing the new version of LabVIEW it is recommended to remove any old versions. The new version will likely co-exist with the old version, but all testing has been done with FRC 2023 only. Make sure to back up any team code located in the "User\\LabVIEW Data" directory before un-installing. Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select Uninstall.
 
 .. image:: images/labview/uninstall_control_panel.png
    :alt: Add or Remove -> NI Software
@@ -35,7 +35,7 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 Getting LabVIEW installer
 -------------------------
 
-Either locate and insert the LabVIEW USB Drive or download the `LabVIEW for FRC 2020 installer <https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html>`__ from NI. Be sure to select the correct version from the drop-down.
+Either locate and insert the LabVIEW USB Drive or download the `LabVIEW for FRC 2023 installer <https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html>`__ from NI. Be sure to select the correct version from the drop-down.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.
