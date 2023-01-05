@@ -100,6 +100,7 @@ Breaking Changes
 
 - Removed deprecated ``MakeMatrix()`` from ``StateSpaceUtil``
 - Removed deprecated ``KilloughDrive`` class
+- Removed ``Vector2d``, which was an implementation detail of MecanumDrive and KilloughDrive. In Java, use ``Vector<N2>`` (``edu.wpi.first.math.Vector``) or ``Translation2d`` (``edu.wpi.first.math.geometry.Translation2d``) instead. In C++, use ``Eigen::Vector2d`` from ``<Eigen/Core>`` or ``Translation2d`` from ``<frc/geometry/Translation2d.h>`` instead.
 - Removed deprecated ``SpeedController`` and ``SpeedControllerGroup`` classes. Use MotorController and MotorControllerGroup instead
 - Removed deprecated ``MatrixUtils`` class
 - Removed various deprecated overloads that used above mentioned classes
