@@ -102,7 +102,7 @@ To pass a function to ``runOnce``, we need to write a short inline function expr
 .. code-block:: cpp
 
    // Create an InstantCommand that runs the drive forward at half speed
-   CommandPtr driveHalfSpeed = cmd::runOnce(() [this] { drivetrain.arcadeDrive(0.5, 0.0); }, {drivetrain});
+   CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});
 
 C++ calls ``() [this] { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression".  It has three parts: a *parameter list* (parentheses), a *capture list* (square brackets), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
 
