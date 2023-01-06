@@ -2,6 +2,9 @@ name: CI
 
 on: [pull_request, push]
 
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   build-pdf:
     runs-on: ubuntu-latest

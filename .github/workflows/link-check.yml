@@ -5,6 +5,9 @@ on:
   schedule:
     - cron:  '0 4 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   check-links:
     if: github.repository_owner	== 'wpilibsuite'

@@ -285,3 +285,30 @@ rtl_locale = ["he"]
 
 github_username = ""
 github_repository = ""
+
+
+# Add Github Token to all Github API Requests made by any extension anywhere
+
+import http.client
+original_send = http.client.HTTPConnection.send
+def new_send(self, data):
+    try:
+        headers = dict(
+            (a.lower(), b)
+            for a, b in
+            (
+                header.split(b":", 1)
+                for header in data.strip().split(b"\r\n")[1:]
+            )
+        )
+        new_data = data
+        if b"api.github.com" in headers[b"host"]:
+            if b"authorization" not in headers:
+                if github_token := os.environ.get("GITHUB_TOKEN", None):
+                    print(f"Adding Github Token to request to {headers['host']} with data {data.strip().split(b':')[0]}")
+                    new_data = new_data[:-1] + b"Authorization: Bearer " + github_token.encode('ascii') + "\r\n\r\n"
+        
+        original_send(self, new_data)
+    except:
+        original_send(self, data)
+http.client.HTTPConnection.send = new_send
