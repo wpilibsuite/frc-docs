@@ -75,7 +75,7 @@ Libraries
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.  The online vendor json will break if a team has not ran an "online" build after 30 days, since the cache will clear.
 
 `Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
-   ``https://copperforge.cc/files/dev/vendordeps/LibCu-latest.json``
+   Not yet available for 2023
 
 `2023 CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
    Phoenix (v5):         ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2023-latest.json``
@@ -89,22 +89,22 @@ Click these links to visit the vendor site to see whether they offer online inst
    .. warning:: Only use **ONE** of the above Phoenix vendordep links within a project.  If you need both Phoenix v5 and Phoenix Pro in the same project, use the third option.
 
 `Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
-   ``Offline only``
+   Not yet available for 2023
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
-   ``https://www.playingwithfusion.com/frc/playingwithfusion2022.json``
+   Not yet available for 2023
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
-   ``https://www.kauailabs.com/dist/frc/2022/navx_frc.json``
+   Not yet available for 2023
 
 `REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
-   ``https://software-metadata.revrobotics.com/REVLib.json``
+   Not yet available for 2023
 
 Community Libraries
 -------------------
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
-   ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
+   Not yet available for 2023
 
 WPILib Command Libraries
 ------------------------
