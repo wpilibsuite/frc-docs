@@ -308,7 +308,7 @@ def new_send(self, data):
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (
-                        new_data[:-2] # Remove the last CRLF
+                        new_data[:-2]  # Remove the last CRLF
                         + b"Authorization: Bearer "
                         + github_token.encode("ascii")
                         + b"\r\n\r\n"
