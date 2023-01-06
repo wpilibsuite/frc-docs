@@ -64,7 +64,6 @@ local_extensions = [
     "_extensions.rtd_patch",
     "_extensions.localization",
     "_extensions.controls_js_sim",
-    "_extensions.wpilib_release",
 ]
 
 extensions += local_extensions
