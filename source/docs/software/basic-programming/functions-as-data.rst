@@ -88,6 +88,7 @@ In WPILibC, function types are represented with the ``std::function`` class (htt
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
+
 .. code-block:: cpp
 
    CommandPtr RunOnce(
