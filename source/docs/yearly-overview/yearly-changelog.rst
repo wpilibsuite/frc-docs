@@ -17,6 +17,7 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
+- :doc:`NetworkTables </docs/software/networktables/networktables-intro>` has been completely rewritten as version 4.0. This introduces pub/sub semantics to NetworkTables and adds a number of new features, including timestamped updates. Its wire protocol is also now WebSockets-based for easier use by browser applications. While most of the changes should be transparent to users who don't use the new features, there are several breaking changes.
 - Added support for :doc:`on-robot telemetry recording into data logs </docs/software/telemetry/datalog>`
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
 - Bundled Java version has been bumped to 17 from 11
@@ -99,7 +100,7 @@ Breaking Changes
 
 .. danger:: Updated ``DifferentialDrive`` and ``MecanumDrive`` classes to use North-West-Up axis conventions to match the rest of WPILib. The Z-axis (i.e. turning) will need to be inverted to restore the old behavior.
 
-- Shuffleboard classes now return ``GenericEntry`` instead of ``NetworkTableEntry``; as ``GenericEntry`` provides nearly all the same methods, a simple textual replacement of the class name should suffice
+- NetworkTables 4.0 (NT4) introduced several breaking changes. Shuffleboard classes now return ``GenericEntry`` instead of ``NetworkTableEntry``; as ``GenericEntry`` provides nearly all the same methods, a simple textual replacement of the class name should suffice. Also, the ``force`` setters have been removed. See the :doc:`NT4 migration guide </docs/software/networktables/nt4-migration-guide>` for more information.
 - Removed deprecated ``MakeMatrix()`` from ``StateSpaceUtil``
 - Removed deprecated ``KilloughDrive`` class
 - Removed ``Vector2d``, which was an implementation detail of MecanumDrive and KilloughDrive. In Java, use ``Vector<N2>`` (``edu.wpi.first.math.Vector``) or ``Translation2d`` (``edu.wpi.first.math.geometry.Translation2d``) instead. In C++, use ``Eigen::Vector2d`` from ``<Eigen/Core>`` or ``Translation2d`` from ``<frc/geometry/Translation2d.h>`` instead.
