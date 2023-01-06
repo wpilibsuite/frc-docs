@@ -11,6 +11,7 @@ docutils = "==0.18.0"
 fonttools = {version = "==4.33.3", extras = ["woff"]}
 jsmin = "==3.0.1"
 latex = "==0.7.0"
+markdown2 = "==2.4.6"
 packaging = "==22.0"
 scipy = ">=1.9.0, <2.0.0"
 sphinx = "==5.3.0"
