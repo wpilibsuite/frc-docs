@@ -17,6 +17,7 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
+- Added support for :doc:`on-robot telemetry recording into data logs </docs/software/telemetry/datalog>`
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
 - Bundled Java version has been bumped to 17 from 11
 - GCC 12.1 with C++ 20 support. Visual Studio 2022 is required for running C++ Simulation on Windows
