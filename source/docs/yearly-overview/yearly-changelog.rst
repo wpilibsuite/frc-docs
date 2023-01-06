@@ -17,7 +17,7 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- NetworkTables has been completely rewritten as version 4.0. This introduces pub/sub semantics to NetworkTables and adds a number of new features, including timestamped updates. Its wire protocol is also now WebSockets-based for easier use by browser applications. While most of the changes should be transparent to users who don't use the new features, there are several breaking changes; see the :doc:`NT4 migration guide </docs/software/networktables/nt4-migration-guide>` for more information.
+- :doc:`NetworkTables </docs/software/networktables/networktables-intro>` has been completely rewritten as version 4.0. This introduces pub/sub semantics to NetworkTables and adds a number of new features, including timestamped updates. Its wire protocol is also now WebSockets-based for easier use by browser applications. While most of the changes should be transparent to users who don't use the new features, there are several breaking changes.
 - Added support for :doc:`on-robot telemetry recording into data logs </docs/software/telemetry/datalog>`
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
 - Bundled Java version has been bumped to 17 from 11
