@@ -886,23 +886,6 @@ files = [
 ]
 
 [[package]]
-name = "markdown2"
-version = "2.4.6"
-description = "A fast and complete Python implementation of Markdown"
-category = "main"
-optional = false
-python-versions = ">=3.5, <4"
-files = [
-    {file = "markdown2-2.4.6-py2.py3-none-any.whl", hash = "sha256:528f978beb3dbcf529a139b6c76f6ac6ecf8bb96c131beab751bb095b3873b58"},
-    {file = "markdown2-2.4.6.tar.gz", hash = "sha256:f65b4dbe1e16591b14fd40bc659b8b58d285eab70c1da21f390294fcdec42bb0"},
-]
-
-[package.extras]
-all = ["pygments (>=2.7.3)", "wavedrom"]
-code-syntax-highlighting = ["pygments (>=2.7.3)"]
-wavedrom = ["wavedrom"]
-
-[[package]]
 name = "markupsafe"
 version = "2.1.1"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -2233,4 +2216,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "cf750095d8e63c36d575c0d7e0739a770e5a938f3f93e0e20f14629a367e9261"
+content-hash = "8037331ee2acc753a175d68b29eb6f01aa7a425c2467a1e721c4614ea673d7a3"
