@@ -292,6 +292,7 @@ github_repository = ""
 import http.client
 original_send = http.client.HTTPConnection.send
 def new_send(self, data):
+    # print(data)
     try:
         headers = dict(
             (a.lower(), b)
@@ -301,12 +302,21 @@ def new_send(self, data):
                 for header in data.strip().split(b"\r\n")[1:]
             )
         )
+
+        # if b"api.github.com" in data:
+            # import code
+            # code.interact(local={**locals(), **globals()})
+
         new_data = data
         if b"api.github.com" in headers[b"host"]:
+            print(data)
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     print(f"Adding Github Token to request to {headers['host']} with data {data.strip().split(b':')[0]}")
                     new_data = new_data[:-1] + b"Authorization: Bearer " + github_token.encode('ascii') + "\r\n\r\n"
+                else:
+                    print("GITHUB_TOKEN not found")
+                    print("env:", os.environ)
         
         original_send(self, new_data)
     except:
