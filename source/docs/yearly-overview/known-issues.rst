@@ -15,6 +15,25 @@ Driver Station does not detect joysticks at startup
 
 **Workaround:** Connect joysticks after starting the DS, or use the joystick rescan button or the F1 shortcut to rescan for joysticks.
 
+Manually flushing a client NetworkTableInstance does not work
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Calling ``flush()`` on a ``NetworkTableInstance`` does not cause the data to be flushed to remote subscribers immediately. This issue will be fixed in an upcoming WPILib release.
+
+**Workaround:** Set the ``periodic`` option on the NetworkTable publishers that need a faster update rate:
+
+.. tabs::
+
+   .. code-tab:: java
+
+      // Get a DoubleEntry for myTopic and update it with a 10ms period.
+      DoubleEntry myEntry = table.getDoubleTopic("myTopic").getEntry(0, PubSubOption.periodic(0.01));
+
+   .. code-tab:: cpp
+
+      // Get a DoubleEntry for myTopic and update it with a 10ms period.
+      nt::DoubleEntry entry = table.GetDoubleTopic("myTopic").GetEntry(0, { .periodic = 0.01 });
+
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -106,22 +125,3 @@ NetworkTables Interoperability
 There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
 
 **Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
-
-Manually flushing a client NetworkTableInstance does not work
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Calling ``flush()`` on a ``NetworkTableInstance`` does not cause the data to be flushed to remote subscribers immediately. This issue will be fixed in an upcoming WPILib release.
-
-**Workaround:** Set the ``periodic`` option on the NetworkTable publishers that need a faster update rate:
-
-.. tabs::
-
-   .. code-tab:: java
-
-      // Get a DoubleEntry for myTopic and update it with a 10ms period.
-      DoubleEntry myEntry = table.getDoubleTopic("myTopic").getEntry(0, PubSubOption.periodic(0.01));
-
-   .. code-tab:: cpp
-
-      // Get a DoubleEntry for myTopic and update it with a 10ms period.
-      nt::DoubleEntry entry = table.GetDoubleTopic("myTopic").GetEntry(0, { .periodic = 0.01 });
