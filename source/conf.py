@@ -290,35 +290,37 @@ github_repository = ""
 # Add Github Token to all Github API Requests made by any extension anywhere
 
 import http.client
+
 original_send = http.client.HTTPConnection.send
+
+
 def new_send(self, data):
-    # print(data)
     try:
         headers = dict(
             (a.lower(), b)
-            for a, b in
-            (
-                header.split(b":", 1)
-                for header in data.strip().split(b"\r\n")[1:]
+            for a, b in (
+                header.split(b":", 1) for header in data.strip().split(b"\r\n")[1:]
             )
         )
 
-        # if b"api.github.com" in data:
-            # import code
-            # code.interact(local={**locals(), **globals()})
-
         new_data = data
         if b"api.github.com" in headers[b"host"]:
-            print(data)
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
-                    print(f"Adding Github Token to request to {headers['host']} with data {data.strip().split(b':')[0]}")
-                    new_data = new_data[:-1] + b"Authorization: Bearer " + github_token.encode('ascii') + "\r\n\r\n"
-                else:
-                    print("GITHUB_TOKEN not found")
-                    print("env:", os.environ)
-        
+                    new_data = (
+                        new_data[:-2] # Remove the last CRLF
+                        + b"Authorization: Bearer "
+                        + github_token.encode("ascii")
+                        + b"\r\n\r\n"
+                    )
+
         original_send(self, new_data)
-    except:
+    except Exception as e:
         original_send(self, data)
+        print(
+            f"Intercepting a http(s) request failed. Running original request for header: {data}"
+        )
+        print(f"The exception is: {e}")
+
+
 http.client.HTTPConnection.send = new_send
