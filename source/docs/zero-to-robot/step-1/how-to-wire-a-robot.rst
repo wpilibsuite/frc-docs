@@ -7,7 +7,7 @@ How to Wire an FRC Robot
 
    This document details the wiring of a basic electronics board for bench-top testing.
 
-   Some images shown in this section reflect the setup for a Robot Control System using Victor SPX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
+   Some images shown in this section reflect the setup for a Robot Control System using SPARK or SPARK MAX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
 
 Overview
 --------
@@ -152,11 +152,11 @@ Wire Breaker to Power Distribution
            :alt: Show the circuit breaker wired to the PDH.
 
 
-         Requires: 6 AWG (16 :math:`mm^2`) red wire, 1x 6 AWG (16 :math:`mm^2`) terminal lugs, 5 mm Allen, 7/16" (11 mm) wrench
+         Requires: 6 AWG (16 :math:`mm^2`) red wire, 1x 6 AWG (16 :math:`mm^2`) terminal lugs, 7/16" (11 mm) wrench
 
          Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) wrench, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut and strip the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDH.
 
-         1. Cut and stripthe other end of the red wire.
+         1. Cut and strip the other end of the red wire.
          2. Using the 7/16" (11 mm) wrench, secure the wire to the "AUX" side of the 120A main breaker.
          3. Lift the lever on the positive (red) input terminal of the PDH, insert the wire, then close the terminal.
 
