@@ -78,6 +78,33 @@ In Java capturing state is a fairly safe thing to do in general, with one major 
 
 This means we can only capture primitive types (like ``int``, ``double``, and ``boolean``) if they're constants.  If we want to capture a state variable that can change, it *must be wrapped in a mutable object*.
 
+Syntactic Sugar for Java Lambda Expressions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The full lambda expression syntax can be needlessly verbose in some cases.  To help with this, Java lets us take some shortcuts (called "syntactic sugar") in cases where some of the notation is redundant.
+
+Omitting Function Body Brackets for One-Line Lambdas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the function body of our lambda expression is only one line, Java lets us omit the brackets around the function body.  When omitting function brackets, we also omit trailing semicolons And the `return` keyword.
+
+So, our ``Runnable`` lambda above could instead be written:
+
+.. code-block:: java
+
+   // Create an InstantCommand that runs the drive forward at half speed
+   Command driveHalfSpeed = runOnce(() -> drivetrain.arcadeDrive(0.5, 0.0), drivetrain);
+
+Omitting Parentheses around Single Lambda Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the lambda expression is for a functional interface that takes only a single argument, we can omit the parenthesis around the parameter list:
+
+.. code-block:: java
+
+   // We can write this lambda with no parenthesis around its single argument
+   IntConsumer exampleLambda = (a -> System.out.println(a));
+
 Treating Functions as Data in C++
 ---------------------------------
 
