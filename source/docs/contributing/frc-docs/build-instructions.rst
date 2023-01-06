@@ -11,7 +11,7 @@ Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-docs re
 Text Editors / IDE
 ^^^^^^^^^^^^^^^^^^
 
-For development, we reccomend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`. However, any text editor will work.
+For development, we recommend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_. However, any text editor will work.
 
 Windows
 ^^^^^^^
