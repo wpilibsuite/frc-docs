@@ -80,8 +80,8 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
                 // an instance variable)
                 dblPub = dblTopic.Publish();
 
-                // publish options may be specified using PubSubOption
-                dblPub = dblTopic.Publish({{nt::PubSubOption::KeepDuplicates(true)}});
+                // publish options may be specified using PubSubOptions
+                dblPub = dblTopic.Publish({.keepDuplicates = true});
 
                 // PublishEx provides additional options such as setting initial
                 // properties and using a custom type string. Using a custom type string for
@@ -120,9 +120,9 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
                 // for all types except string and raw.
                 dblPub = nt::Publish(dblTopic, NT_DOUBLE, "double");
 
-                // publish options may be specified using PubSubOption
+                // publish options may be specified using PubSubOptions
                 dblPub = nt::Publish(dblTopic, NT_DOUBLE, "double",
-                    {{nt::PubSubOption::KeepDuplicates(true)}});
+                    {.keepDuplicates = true});
 
                 // PublishEx allows setting initial properties. The
                 // properties must be a JSON map.
@@ -160,10 +160,11 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
             NT_Publisher dblPub = NT_Publish(dblTopic, NT_DOUBLE, "double", NULL, 0);
 
             // publish options may be specified
-            struct NT_PubSubOption options[1];
-            options[0].type = NT_PUBSUB_KEEPDUPLICATES;
-            options[0].value = 1;  // true
-            NT_Publisher dblPub = NT_Publish(dblTopic, NT_DOUBLE, "double", options, 1);
+            struct NT_PubSubOptions options;
+            memset(&options, 0, sizeof(options));
+            options.structSize = sizeof(options);
+            options.keepDuplicates = 1;  // true
+            NT_Publisher dblPub = NT_Publish(dblTopic, NT_DOUBLE, "double", &options);
 
             // PublishEx allows setting initial properties. The properties string must
             // be a JSON map.
@@ -262,10 +263,10 @@ Subscribers have a range of different ways to read received values. It's possibl
                 // the parameter is the default value if no value is available when get() is called
                 dblSub = dblTopic.Subscribe(0.0);
 
-                // subscribe options may be specified using PubSubOption
+                // subscribe options may be specified using PubSubOptions
                 dblSub =
                     dblTopic.subscribe(0.0,
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
 
                 // SubscribeEx provides the options of using a custom type string.
                 // Using a custom type string for types other than raw and string is not recommended.
@@ -306,10 +307,10 @@ Subscribers have a range of different ways to read received values. It's possibl
                 // Using a custom type string for types other than raw and string is not recommended.
                 dblSub = nt::Subscribe(dblTopic, NT_DOUBLE, "double");
 
-                // subscribe options may be specified using PubSubOption
+                // subscribe options may be specified using PubSubOptions
                 dblSub =
                     nt::Subscribe(dblTopic, NT_DOUBLE, "double",
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
               }
 
               void Periodic() {
@@ -341,13 +342,13 @@ Subscribers have a range of different ways to read received values. It's possibl
             // Using a custom type string for types other than raw and string is not recommended.
             NT_Subscriber dblSub = NT_Subscribe(dblTopic, NT_DOUBLE, "double", NULL, 0);
 
-            // subscribe options may be specified using NT_PubSubOption
-            struct NT_PubSubOption options[2];
-            options[0].type = NT_PUBSUB_KEEPDUPLICATES;
-            options[0].value = 1;  // true
-            options[1].type = NT_PUBSUB_POLLSTORAGE;
-            options[1].value = 10;
-            NT_Subscriber dblSub = NT_Subscribe(dblTopic, NT_DOUBLE, "double", options, 2);
+            // subscribe options may be specified using NT_PubSubOptions
+            struct NT_PubSubOptions options;
+            memset(&options, 0, sizeof(options));
+            options.structSize = sizeof(options);
+            options.keepDuplicates = 1;  // true
+            options.pollStorage = 10;
+            NT_Subscriber dblSub = NT_Subscribe(dblTopic, NT_DOUBLE, "double", &options);
 
             // get the most recent value; if no value has been published, returns
             // the passed-in default value
@@ -450,10 +451,10 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
                 // the parameter is the default value if no value is available when get() is called
                 dblEntry = dblTopic.GetEntry(0.0);
 
-                // publish and subscribe options may be specified using PubSubOption
+                // publish and subscribe options may be specified using PubSubOptions
                 dblEntry =
                     dblTopic.GetEntry(0.0,
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
 
                 // GetEntryEx provides the options of using a custom type string.
                 // Using a custom type string for types other than raw and string is not recommended.
@@ -498,10 +499,10 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
                 // Using a custom type string for types other than raw and string is not recommended.
                 dblEntry = nt::GetEntry(dblTopic, NT_DOUBLE, "double");
 
-                // publish and subscribe options may be specified using PubSubOption
+                // publish and subscribe options may be specified using PubSubOptions
                 dblEntry =
                     nt::GetEntry(dblTopic, NT_DOUBLE, "double",
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
               }
 
               void Periodic() {
@@ -540,13 +541,13 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
             // Using a custom type string for types other than raw and string is not recommended.
             NT_Entry dblEntry = NT_GetEntryEx(dblTopic, NT_DOUBLE, "double", NULL, 0);
 
-            // publish and subscribe options may be specified using NT_PubSubOption
-            struct NT_PubSubOption options[2];
-            options[0].type = NT_PUBSUB_KEEPDUPLICATES;
-            options[0].value = 1;  // true
-            options[1].type = NT_PUBSUB_POLLSTORAGE;
-            options[1].value = 10;
-            NT_Entry dblEntry = NT_GetEntryEx(dblTopic, NT_DOUBLE, "double", options, 2);
+            // publish and subscribe options may be specified using NT_PubSubOptions
+            struct NT_PubSubOptions options;
+            memset(&options, 0, sizeof(options));
+            options.structSize = sizeof(options);
+            options.keepDuplicates = 1;  // true
+            options.pollStorage = 10;
+            NT_Entry dblEntry = NT_GetEntryEx(dblTopic, NT_DOUBLE, "double", &options);
 
             // entries support all the same methods as subscribers:
             double val = NT_GetDouble(dblEntry, 0.0);
@@ -690,17 +691,17 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
                 entry = topic.GetEntry();
                 entry = topic.GetEntry("double");
 
-                // publish and subscribe options may be specified using PubSubOption
+                // publish and subscribe options may be specified using PubSubOptions
                 pub = topic.GenericPublish("double",
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
                 sub = topic.GenericSubscribe(
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
                 entry = topic.GetGenericEntry(
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
 
                 // genericPublishEx provides the option of setting initial properties.
                 pub = topic.genericPublishEx("double", {{"myprop", 5}},
-                    {{nt::PubSubOption::KeepDuplicates(true), nt::PubSubOption::PollStorage(10)}});
+                    {.pollStorage = 10, .keepDuplicates = true});
               }
 
               void Periodic() {
@@ -801,7 +802,7 @@ While in most cases it's only necessary to subscribe to individual topics, it is
 
                 // subscribe options may be specified using PubSubOption
                 multiSub = nt::MultiSubscriber{inst, {{"/table1/", "/table2/"}},
-                    {{nt::PubSubOption::KeepDuplicates(true)}}};
+                    {.keepDuplicates = true}};
 
                 // to get value updates from a MultiSubscriber, it's necessary to create a listener
                 // (see the listener documentation for more details)
@@ -837,7 +838,7 @@ While in most cases it's only necessary to subscribe to individual topics, it is
 
                 // subscribe options may be specified using PubSubOption
                 multiSub = nt::SubscribeMultiple(inst, {{"/table1/", "/table2/"}},
-                    {{nt::PubSubOption::KeepDuplicates(true)}});
+                    {.keepDuplicates = true});
 
                 // to get value updates from a MultiSubscriber, it's necessary to create a listener
                 // (see the listener documentation for more details)
@@ -876,11 +877,12 @@ While in most cases it's only necessary to subscribe to individual topics, it is
             prefixes[1].len = 8;
             NT_MultiSubscriber multiSub = NT_SubscribeMultiple(inst, prefixes, 2, NULL, 0);
 
-            // subscribe options may be specified using NT_PubSubOption
-            struct NT_PubSubOption option;
-            option.type = NT_PUBSUB_KEEPDUPLICATES;
-            option.value = 1;  // true
-            NT_MultiSubscriber multiSub = NT_SubscribeMultiple(inst, prefixes, 2, &option, 1);
+            // subscribe options may be specified using NT_PubSubOptions
+            struct NT_PubSubOptions options;
+            memset(&options, 0, sizeof(options));
+            options.structSize = sizeof(options);
+            options.keepDuplicates = 1;  // true
+            NT_MultiSubscriber multiSub = NT_SubscribeMultiple(inst, prefixes, 2, &options);
 
             // to get value updates from a MultiSubscriber, it's necessary to create a listener
             // (see the listener documentation for more details)
@@ -902,6 +904,35 @@ While in most cases it's only necessary to subscribe to individual topics, it is
             // stop subscribing
             NT_UnsubscribeMultiple(multiSub);
 
+
+Publish/Subscribe Options
+-------------------------
+
+Publishers and subscribers have various options that affect their behavior. Options can only be set at the creation of the publisher, subscriber, or entry. Options set on an entry affect both the publisher and subscriber portions of the entry. The above examples show how options can be set when creating a publisher or subscriber.
+
+Subscriber options:
+
+- ``pollStorage``: Polling storage size for a subscription. Specifies the maximum number of updates NetworkTables should store between calls to the subscriber's ``readQueue()`` function. If zero, defaults to 1 if sendAll is false, 20 if sendAll is true.
+
+- ``topicsOnly``: Don't send value changes, only topic announcements. Defaults to false. As a client doesn't get topic announcements for topics it is not subscribed to, this option may be used with ``MultiSubscriber`` to get topic announcements for a particular topic name prefix, without also getting all value changes.
+
+- ``excludePublisher``: Used to exclude a single publisher's updates from being queued to the subscriber's ``readQueue()`` function. This is primarily useful in scenarios where you don't want local value updates to be "echoed back" to a local subscriber. Regardless of this setting, the topic value is updated--this only affects ``readQueue()`` on this subscriber.
+
+- ``disableRemote``: If true, remote value updates are not queued for ``readQueue()``. Defaults to false. Regardless of this setting, the topic value is updated--this only affects ``readQueue()`` on this subscriber.
+
+- ``disableLocal``: If true, local value updates are not queued for ``readQueue()``. Defaults to false. Regardless of this setting, the topic value is updated--this only affects ``readQueue()`` on this subscriber.
+
+Subscriber and publisher options:
+
+- ``periodic``: How frequently changes will be sent over the network, in seconds. NetworkTables may send more frequently than this (e.g. use a combined minimum period for all values) or apply a restricted range to this value. The default is 0.1 seconds. For publishers, it specifies how frequently local changes should be sent over the network; for subscribers, it is a request to the server to send server changes at the requested rate. Note that regardless of the setting of this option, only value changes are sent, unless the ``keepDuplicates`` option is set.
+
+- ``sendAll``: If true, send all value changes over the network. Defaults to false. As with ``periodic``, this is a request to the server for subscribers and a behavior change for publishers.
+
+- ``keepDuplicates``: If true, preserves duplicate value changes (rather than ignoring them). Defaults to false. As with ``periodic``, this is a request to the server for subscribers and a behavior change for publishers.
+
+Entry options:
+
+- ``excludeSelf``: Provides the same behavior as ``excludePublisher`` for the entry's internal publisher. Defaults to false.
 
 NetworkTableEntry
 -----------------
