@@ -83,7 +83,7 @@ Treating Functions as Data in C++
 
 C++ has a number of ways to treat functions as data.  For the sake of this article, we'll only talk about the parts that are relevant to using WPILibC.
 
-In WPILibC, function types are represented with the ``std::function`` class (https://en.cppreference.com/w/cpp/utility/functional/function).  This standard library class is templated on the function's signature - that means we have to provide it a `function type <https://stackoverflow.com/questions/17446220/c-function-types>`__ as a template parameter to specify the signature of the function (compare this to Java above, where we have a separate interface type for each kind of signature).
+In WPILibC, function types are represented with the ``std::function`` class (https://en.cppreference.com/w/cpp/utility/functional/function).  This standard library class is templated on the function's signature - that means we have to provide it a `function type <https://stackoverflow.com/questions/17446220/c-function-types>`__ as a template parameter to specify the signature of the function (compare this to :ref:`Java <docs/software/basic-programming/functions-as-data:Treating Functions as Data in Java>` above, where we have a separate interface type for each kind of signature).
 
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
@@ -95,7 +95,7 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
     std::function<void()> action,
     std::initializer_list<Subsystem*> requirements);
 
-``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ term for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
+``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ type for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
 
 Lambda Expressions in C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^
