@@ -20,6 +20,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
 - Bundled Java version has been bumped to 17 from 11
 - GCC 12.1 with C++ 20 support. Visual Studio 2022 is required for running C++ Simulation on Windows
+- CameraServer now supports USB cameras on Mac operating systems
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
