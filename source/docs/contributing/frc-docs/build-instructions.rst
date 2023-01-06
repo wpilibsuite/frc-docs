@@ -8,6 +8,11 @@ Prerequisites
 
 Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-docs repository is cloned by using ``git clone https://github.com/wpilibsuite/frc-docs.git``.
 
+Text Editors / IDE
+^^^^^^^^^^^^^^^^^^
+
+For development, we reccomend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`. However, any text editor will work.
+
 Windows
 ^^^^^^^
 
