@@ -98,7 +98,7 @@ Click these links to visit the vendor site to see whether they offer online inst
    Not yet available for 2023
 
 `REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
-   Not yet available for 2023
+   ``https://software-metadata.revrobotics.com/REVLib-2023.json``
 
 Community Libraries
 -------------------
