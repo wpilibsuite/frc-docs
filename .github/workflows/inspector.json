@@ -11,9 +11,14 @@
       "latestVersion": "v2023.1.1"
     },
     {
-      "baseUrl": "https://raw.githubusercontent.com/robotpy/",
+      "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
       "latestVersion": "2023.1.1.0"
+    },
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion":"v2023.1.1"
     }
   ],
   "ignoredFiles": []
