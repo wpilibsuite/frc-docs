@@ -95,7 +95,7 @@ Click these links to visit the vendor site to see whether they offer online inst
    ``https://www.playingwithfusion.com/frc/playingwithfusion2023.json``
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
-   Not yet available for 2023
+   ``https://dev.studica.com/releases/2023/NavX.json``
 
 `REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
    ``https://software-metadata.revrobotics.com/REVLib-2023.json``
