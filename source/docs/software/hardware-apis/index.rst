@@ -27,7 +27,7 @@ A motor controller is responsible on your robot for making motors move. For brus
 FRC Legal Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2022:
+Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2023:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
 - Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to PWM only
