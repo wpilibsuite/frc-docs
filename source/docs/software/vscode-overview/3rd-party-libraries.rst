@@ -112,7 +112,7 @@ Community Libraries
 ^^^^^^^^^^^^^^^^^^^
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
-   Not yet available for 2023
+   ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
 
 WPILib Command Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~
