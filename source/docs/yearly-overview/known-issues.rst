@@ -118,3 +118,10 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
+
+SysId - Robot program crash on startup when using CAN Spark Maxes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** SysId 2023.1.1's deployed robot program crashes on startup if it was configured to use CAN Spark Maxes.
+
+**Workaround:** Download a fixed version for your OS from `here <https://github.com/wpilibsuite/sysid/actions>`__ (see the "Summary" section of the "Build" job).
