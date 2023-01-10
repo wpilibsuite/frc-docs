@@ -27,7 +27,7 @@ For a collection of example projects using the command-based framework, see :ref
 Passing Functions As Parameters
 -------------------------------
 
-In order to provide a concise inline syntax, the command-based library often accepts functions as parameters of constructors, factories, and decorators. Fortunately, both Java and C++ offer users the ability to :ref:`pass functions as objects <docs/software/basic-programming-functions-as-data:Treating Functions as Data>`:
+In order to provide a concise inline syntax, the command-based library often accepts functions as parameters of constructors, factories, and decorators. Fortunately, both Java and C++ offer users the ability to :ref:`pass functions as objects <docs/software/basic-programming/functions-as-data:Treating Functions as Data>`:
 
 Method References (Java)
 ^^^^^^^^^^^^^^^^^^^^^^^^
