@@ -8,20 +8,31 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-WPILib VS Code extension not loaded after creating new project or importing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Driver Station does not detect joysticks at startup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** After creating a new project or importing a project, the WPILib extension doesn't enable and you can't build or deploy code or use any other function of the WPILib extension. This is because the new project isn't trusted by VS Code, but VS Code doesn't prompt to trust the project.
+**Issue:** The Driver Station application does not detect already connected joysticks when it starts up. Connecting joysticks after it is already running works.
 
-.. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
-   :alt: Trusted Workspace dialog in VS Code.
+**Workaround:** Connect joysticks after starting the DS, or use the joystick rescan button or the F1 shortcut to rescan for joysticks.
 
-**Workaround:** There are a few workarounds to have the trust dialog box appear so that the project can be trusted and allow the extension to enable
+Manually flushing a client NetworkTableInstance does not work
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- After using the project creator or importer, choose the :guilabel:`Yes (new window)` option intead of :guilabel:`Yes (current window)`
-- Open another program and then switch back VS Code again. VS Code will then open the dialog box to trust the project
-- Click on the extensions button, then on the WPILib extension and select :guilabel:`Enable (workspace)` then select :guilabel:`Trust Folder & Continue`
-- Click the WPILib extension logo in the upper right corner if it exists. VS Code will then open the dialog box to trust the project
+**Issue:** Calling ``flush()`` on a ``NetworkTableInstance`` does not cause the data to be flushed to remote subscribers immediately. This issue will be fixed in an upcoming WPILib release.
+
+**Workaround:** Set the ``periodic`` option on the NetworkTable publishers that need a faster update rate:
+
+.. tabs::
+
+   .. code-tab:: java
+
+      // Get a DoubleEntry for myTopic and update it with a 10ms period.
+      DoubleEntry myEntry = table.getDoubleTopic("myTopic").getEntry(0, PubSubOption.periodic(0.01));
+
+   .. code-tab:: cpp
+
+      // Get a DoubleEntry for myTopic and update it with a 10ms period.
+      nt::DoubleEntry entry = table.GetDoubleTopic("myTopic").GetEntry(0, { .periodic = 0.01 });
 
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,20 +118,3 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
-
-NetworkTables Interoperability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-There is currently an issue with inter-operating C++/Java :term:`NetworkTables` clients (dashboards or co-processors) with LabVIEW servers (LV robot code). In some scenarios users will see updates from one client fail to be replicated across to other clients (e.g. data from a co-processor will not be properly replicated out to a dashboard). Data still continues to return correctly when accessed by code on the server.
-
-**Workaround**: Write code on the server to mirror any keys you wish to see on other clients (e.g. dashboards) to a separate key. For example, if you have a key named ``targetX`` being published by a co-processor that you want to show up on a dashboard, you could write code on the robot to read the key and re-write it to a key like ``targetXDash``.
-
-LabVIEW Autorun graphics say 2020
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/known-issues/labview-autorun.png
-   :alt: LabVIEW autorun screen showing mismatched versions
-
-**Issue:** If you launch the LabVIEW installer by using the Autorun file, the menu item correctly says 2022, but the graphic says 2020.
-
-**Workaround:** This can be safely ignored, if the menu item says 2022, you are installing the correct software.

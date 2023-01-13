@@ -13,33 +13,37 @@ There are two primary types of ultrasonics supported natively by WPILib:
 Ping-response ultrasonics
 -------------------------
 
-The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_ultrasonic.html>`__) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the name) require separate pins for both sending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
+The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ultrasonic.html>`__) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the name) require separate pins for both sending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        Ultrasonic ultrasonic = new Ultrasonic(1, 2);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+         :language: java
+         :lines: 17-18
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        frc::Ultrasonic ultrasonic{1, 2};
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/Ultrasonic/include/Robot.h
+         :language: cpp
+         :lines: 23-24
 
-It is highly recommended to use ping-response ultrasonics in "automatic mode," as this will allow WPILib to ensure that multiple sensors do not interfere with each other:
+The measurement can then be retrieved in either inches or millimeters in Java; in C++ the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` is used to automatically convert to any desired length unit:
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        // Starts the ultrasonic sensor running in automatic mode
-        Ultrasonic.setAutomaticMode(true);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+         :language: java
+         :lines: 29-32
 
-    .. code-tab:: c++
+   .. group-tab:: C++
 
-        // Starts the ultrasonic sensor running in automatic mode
-        ultrasonic.SetAutomaticMode(true);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+         :language: cpp
+         :lines: 18-22
 
 Analog ultrasonics
 ------------------
@@ -54,93 +58,40 @@ Other ultrasonic sensors offered by third-parties may use more complicated commu
 Using ultrasonics in code
 -------------------------
 
-Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code will drive the robot forward until the ultrasonic measures a distance of 12 inches (~30 cm) to the nearest object, and then stop:
+Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID>`__)will move the robot to 1 meter away from the nearest object the sensor detects:
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        Ultrasonic ultrasonic = new Ultrasonic(1, 2);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
+         :language: java
+         :lines: 18-61, 71-71
 
-        // Initialize motor controllers and drive
-        Spark left1 new Spark(0);
-        Spark left2 = new Spark(1);
+   .. group-tab:: C++ (Header)
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
+         :language: cpp
+         :lines: 19-51
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
+   .. group-tab:: C++ (Source)
 
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-
-        @Override
-        public void robotInit() {
-            // Start the ultrasonic in automatic mode
-            Ultrasonic.setAutomaticMode(true);
-        }
-
-        @Override
-        public void autonomousPeriodic() {
-            if(ultrasonic.GetRangeInches() > 12) {
-                drive.tankDrive(.5, .5);
-            }
-            else {
-                drive.tankDrive(0, 0);
-            }
-        }
-
-    .. code-tab:: c++
-
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        frc::Ultrasonic ultrasonic{1, 2};
-
-        // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
-        frc::Spark right1{2};
-        frc::Spark right2{3};
-
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
-
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
-
-        void Robot::RobotInit() {
-            // Start the ultrasonic in automatic mode
-            ultrasonic.SetAutomaticMode(true);
-        }
-
-        void Robot:AutonomousPeriodic() {
-            if(ultrasonic.GetRangeInches() > 12) {
-                drive.TankDrive(.5, .5);
-            }
-            else {
-                drive.TankDrive(0, 0);
-            }
-        }
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
+         :language: cpp
+         :lines: 7-19
 
 Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`, where they will be displayed with their own widgets:
 
 .. tabs::
 
-    .. code-tab:: java
+   .. group-tab:: Java
 
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        Ultrasonic ultrasonic = new Ultrasonic(1, 2);
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+         :language: java
+         :lines: 22-24
 
-        public void robotInit() {
-            // Places a the ultrasonic on the dashboard
-            Shuffleboard.getTab("Example tab").add(ultrasonic);
-        }
+   .. group-tab:: C++
 
-    .. code-tab:: c++
-
-        // Creates a ping-response Ultrasonic object on DIO 1 and 2.
-        frc::Ultrasonic ultrasonic{1, 2};
-
-        void Robot::RobotInit() {
-            // Places the ultrasonic on the dashboard
-            frc::Shuffleboard.GetTab("Example tab").Add(ultrasonic);
-        }
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+         :language: cpp
+         :lines: 12-14

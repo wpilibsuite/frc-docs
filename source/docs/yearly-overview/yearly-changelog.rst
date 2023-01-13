@@ -17,7 +17,10 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
+- :doc:`NetworkTables </docs/software/networktables/networktables-intro>` has been completely rewritten as version 4.0. This introduces pub/sub semantics to NetworkTables and adds a number of new features, including timestamped updates. Its wire protocol is also now WebSockets-based for easier use by browser applications. While most of the changes should be transparent to users who don't use the new features, there are several breaking changes.
+- Added support for :doc:`on-robot telemetry recording into data logs </docs/software/telemetry/datalog>`
 - ``LiveWindow`` telemetry is now disabled by default. This has been observed as a consistent source of loop overruns. Use ``LiveWindow.enableAllTelemetry`` to restore the previous behavior
+- :doc:`AprilTag </docs/software/vision-processing/apriltag/apriltag-intro>` library has been added
 - Bundled Java version has been bumped to 17 from 11
 - GCC 12.1 with C++ 20 support. Visual Studio 2022 is required for running C++ Simulation on Windows
 
@@ -41,7 +44,7 @@ General Library
 - Added ``unless(BooleanSupplier)`` decorator
 - Added ``ignoringDisable(boolean)`` decorator to set the ``runsWhenDisabled`` property of a command
 - Added ``finallyDo(BooleanConsumer)`` and ``handleInterrupt(Runnable)`` decorators
-- Added static factory methods for Command
+- Added static command factories in Commands
 - Added ``ComputerVisionUtil``
 - Added ``EventLoop`` and ``BooleanEvent``, an expansion of the existing Trigger framework encompassing non-commandbased
 - Added ``BooleanEvent``-returning factory methods to the HID classes
@@ -70,6 +73,13 @@ General Library
 - Added ``getAngle()`` to ``Translation2d``
 - Deprecated ``Compressor.enable()``. Use ``isEnabled`` instead
 - Add missing ``PS4Controller`` triangle methods
+- Add method to disable LW actuator control in test mode
+
+- Enhanced ``Sendable`` representation of commands
+- Deprecated ``CommandGroupBase``; the static factories have been moved to ``Commands``
+- Refactor SelectCommand's `Supplier<Command>` constructor and ProxyScheduleCommand into ProxyCommand
+- Remove `isFinished` check for default commands
+- Add method to remove default commands
 
 - ``Trigger`` and ``Button`` methods were renamed to be consistent and ``Button`` class deprecated.
 
@@ -91,8 +101,10 @@ Breaking Changes
 
 .. danger:: Updated ``DifferentialDrive`` and ``MecanumDrive`` classes to use North-West-Up axis conventions to match the rest of WPILib. The Z-axis (i.e. turning) will need to be inverted to restore the old behavior.
 
+- NetworkTables 4.0 (NT4) introduced several breaking changes. Shuffleboard classes now return ``GenericEntry`` instead of ``NetworkTableEntry``; as ``GenericEntry`` provides nearly all the same methods, a simple textual replacement of the class name should suffice. Also, the ``force`` setters have been removed. See the :doc:`NT4 migration guide </docs/software/networktables/nt4-migration-guide>` for more information.
 - Removed deprecated ``MakeMatrix()`` from ``StateSpaceUtil``
 - Removed deprecated ``KilloughDrive`` class
+- Removed ``Vector2d``, which was an implementation detail of MecanumDrive and KilloughDrive. In Java, use ``Vector<N2>`` (``edu.wpi.first.math.Vector``) or ``Translation2d`` (``edu.wpi.first.math.geometry.Translation2d``) instead. In C++, use ``Eigen::Vector2d`` from ``<Eigen/Core>`` or ``Translation2d`` from ``<frc/geometry/Translation2d.h>`` instead.
 - Removed deprecated ``SpeedController`` and ``SpeedControllerGroup`` classes. Use MotorController and MotorControllerGroup instead
 - Removed deprecated ``MatrixUtils`` class
 - Removed various deprecated overloads that used above mentioned classes
@@ -110,7 +122,6 @@ Breaking Changes
 
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
    - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
-- ``Rotation2d`` now holds the angle using the sine and cosine components so the returned angle value will always be within :math:`\left(-\pi, \pi\right]`
 
 Simulation
 ----------
@@ -155,6 +166,7 @@ cscore
 ------
 
 - Update to opencv 4.6.0
+- Added ArUco module
 
 OutlineViewer
 -------------
@@ -165,15 +177,23 @@ WPILib All in One Installer
 ---------------------------
 
 - Apple Silicon (Arm64) Macs are now supported
-- Update to VS Code 1.73
+- Update to VS Code 1.74
+- Update to use .NET 7
+- Add links to changelog and known issues
 
 Visual Studio Code Extension
 ----------------------------
+
+- Update templates to JUnit 5.8.2
+- Add copy button from project versions dialog
+- Allow importing Romi projects
 
 RobotBuilder
 ------------
 
 .. important:: With the removal of old command-based, the legacy RobotBuilder install has been removed.
+
+.. warning:: Due to project file changes, Robotbuilder will not import yaml save files from 2022 or earlier.
 
 - Add support for ``DoubleSupplier`` and ``std::function<double>`` parameters
 - Add option to put commands tied to Joystick Buttons to SmartDashboard
@@ -182,8 +202,6 @@ RobotBuilder
 
 SysID
 -----
-
-.. important:: SysID is not included with Beta 5. It is planned for future betas.
 
 - Added Pigeon 2 support
 - User can now specify a measurement delay of 0

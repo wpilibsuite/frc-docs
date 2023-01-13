@@ -37,11 +37,11 @@ The easiest and most expressive way to do this is with a ``StartEndCommand``:
 
   .. code-tab:: java
 
-    Command runIntake = new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake);
+    Command runIntake = Commands.startEnd(() -> intake.set(1), () -> intake.set(0), intake);
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake});
 
 This is sufficient for commands that are only used once. However, for a command like this that might get used in many different autonomous routines and button bindings, inline commands everywhere means a lot of repetitive code:
 
@@ -50,49 +50,61 @@ This is sufficient for commands that are only used once. However, for a command 
   .. code-tab:: java
 
     // RobotContainer.java
-    intakeButton.whileTrue(new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake));
+    intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
 
-
-    Command intakeAndShoot = new StartEndCommand(() -> intake.set(1), () -> intake.set(0), intake)
+    Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
         .alongWith(new RunShooter(shooter));
 
-    Command autonomousCommand = new ParallelCommandGroup(
-        new StartEndCommand(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
-        new WaitCommand(3.0),
-        new StartEndCommand(() -> intake.set(1.0), () -> intake.set(0), intake).withTimeout(5.0)
-    )
+    Command autonomousCommand = Commands.sequence(
+        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
+        Commands.waitSeconds(3.0),
+        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
+    );
 
   .. code-tab:: c++
 
-    // TODO
+    intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
+
+    frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
+        .AlongWith(RunShooter(&shooter).ToPtr());
+
+    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s),
+      frc2::cmd::Wait(3.0_s),
+      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s)
+    );
 
 Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.
 
 Instance Command Factory Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using command composition and :ref:`decorators<docs/software/commandbased/convenience-features:Command Decorator Methods>`, a factory method can construct a complex command object with merely a few lines of code.
+One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using :ref:`command composition <docs/software/commandbased/command-compositions:Command Compositions>`, a factory method can construct a complex command object with merely a few lines of code.
 
 For example, a command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``runIntakeCommand`` method as an instance method of the ``Intake`` class:
 
-.. note:: In this document we will name factory methods as ``lowerCamelCaseCommand``, but teams may decide on other conventions.
+.. note:: In this document we will name factory methods as ``lowerCamelCaseCommand``, but teams may decide on other conventions.  In general, it is recommended to end the method name with ``Command`` if it might otherwise be confused with an ordinary method (e.g. ``intake.run`` might be the name of a method that simply turns on the intake).
 
 .. tabs::
 
   .. code-tab:: java
 
-    public class Intake {
+    public class Intake extends SubsystemBase {
         // [code for motor controllers, configuration, etc.]
         // ...
 
         public Command runIntakeCommand() {
-            return new StartEndCommand(() -> this.set(1.0), () -> this.set(0.0), this);
+          // implicitly requires `this`
+          return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
         }
     }
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr Intake::RunIntakeCommand() {
+      // implicitly requires `this`
+      return this->StartEnd([this] { this->Set(1.0); }, [this] { this->Set(0); });
+    }
 
 Notice how since we are in the ``Intake`` class, we no longer refer to ``intake``; instead, we use the ``this`` keyword to refer to the current instance.
 
@@ -106,17 +118,25 @@ Using this new factory method in command groups and button bindings is highly ex
 
     intakeButton.whileTrue(intake.runIntakeCommand());
 
-    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter());
+    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
 
-    Command autonomousCommand = new SequentialCommandGroup(
+    Command autonomousCommand = Commands.sequence(
         intake.runIntakeCommand().withTimeout(5.0),
-        new WaitCommand(3.0),
+        Commands.waitSeconds(3.0),
         intake.runIntakeCommand().withTimeout(5.0)
     );
 
   .. code-tab:: c++
 
-    // TODO
+    intakeButton.WhileTrue(intake.RunIntakeCommand());
+
+    frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
+
+    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+      intake.RunIntakeCommand().WithTimeout(5.0_s),
+      frc2::cmd::Wait(3.0_s),
+      intake.RunIntakeCommand().WithTimeout(5.0_s)
+    );
 
 Adding a parameter to the ``runIntakeCommand`` method to provide the exact percentage to run the intake is easy and allows for even more flexibility.
 
@@ -130,7 +150,10 @@ Adding a parameter to the ``runIntakeCommand`` method to provide the exact perce
 
   .. code-tab:: c++
 
-    // TODO
+    frc2::CommandPtr Intake::RunIntakeCommand() {
+      // implicitly requires `this`
+      return this->StartEnd([this, percent] { this->Set(percent); }, [this] { this->Set(0); });
+    }
 
 For instance, this code creates a command group that runs the intake forwards for two seconds, waits for two seconds, and then runs the intake backwards for five seconds.
 
@@ -139,21 +162,124 @@ For instance, this code creates a command group that runs the intake forwards fo
   .. code-tab:: java
 
     Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
-        .andThen(new WaitCommand(2.0))
+        .andThen(Commands.waitSeconds(2.0))
         .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
+
+  .. code-tab:: c++
+
+    frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
+        .AndThen(frc2::cmd::Wait(2.0_s))
+        .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
+
+
+This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
+
+Static Command Factories
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Instance factory methods work great for single-subsystem commands.  However, complicated robot actions (like the ones often required during the autonomous period) typically need to coordinate multiple subsystems at once.  When we want to define an inline command that uses multiple subsystems, it doesn't make sense for the command factory to live in any single one of those subsystems.  Instead, it can be cleaner to define the command factory methods statically in some external class:
+
+.. note:: The ``sequence`` and ``parallel`` static factories construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more readable. Their use is a matter of personal preference.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    public class AutoRoutines {
+
+        public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
+            return Commands.sequence(
+                Commands.parallel(
+                    drivetrain.driveCommand(0.5, 0.5),
+                    intake.runIntakeCommand(1.0)
+                ).withTimeout(5.0),
+                Commands.parallel(
+                  drivetrain.stopCommand();
+                  intake.stopCommand();
+                )
+            );
+        }
+    }
 
   .. code-tab:: c++
 
     // TODO
 
+If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our `AutoRoutines` class and inject our subsystems through the constructor:
 
-This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
+.. tabs::
 
+  .. code-tab:: java
 
-Subclassing CommandBase
+    public class AutoRoutines {
+
+        private Drivetrain drivetrain;
+
+        private Intake intake;
+
+        public AutoRoutines(Drivetrain drivetrain, Intake intake) {
+          this.drivetrain = drivetrain;
+          this.intake = intake;
+        }
+
+        public Command driveAndIntake() {
+            return Commands.sequence(
+                Commands.parallel(
+                    drivetrain.driveCommand(0.5, 0.5),
+                    intake.runIntakeCommand(1.0)
+                ).withTimeout(5.0),
+                Commands.parallel(
+                  drivetrain.stopCommand();
+                  intake.stopCommand();
+                )
+            );
+        }
+    }
+
+  .. code-tab:: c++
+
+    // TODO
+
+Capturing State in Inline Commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Inline commands are extremely concise and expressive, but do not offer explicit support for commands that have their own internal state (such as a drivetrain trajectory following command, which may encapsulate an entire controller).  This is often accomplished by instead writing a Command class, which will be covered later in this article.
+
+However, it is still possible to ergonomically write a stateful command composition using inline syntax, so long as we are working within a factory method.  To do so, we declare the state as a method local and "capture" it in our inline definition.  For example, consider the following instance command factory to turn a drivetrain to a specific angle with a PID controller:
+
+.. note:: The ``Subsystem.run`` and ``Subsystem.runOnce`` factory methods sugar the creation of a ``RunCommand`` and an ``InstantCommand`` requiring ``this`` subsystem.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    public Command turnToAngle(double targetDegrees) {
+        // Create a controller for the inline command to capture
+        PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
+        // We can do whatever configuration we want on the created state before returning from the factory
+        controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
+
+        // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+        return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
+            .until(controller::atSetpoint)
+            .andThen(runOnce(() -> arcadeDrive(0, 0)));
+    }
+
+  .. code-tab:: c++
+
+    // TODO
+
+This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
+
+Writing Command Classes
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Another possible way to de-duplicate code when constructing commands is creating a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` methods.
+Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``CommandBase`` or one of the ``CommandGroup`` classes.
+
+Subclassing CommandBase
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` methods.
 
 .. tabs::
 
@@ -190,74 +316,10 @@ This, however, is just as cumbersome as the original repetitive code, if not mor
 This approach should be used for commands with internal state (not subsystem state!), as the class can have fields to manage said state. It may also be more intuitive to write commands with complex logic as classes, especially for those less experienced with command composition. As the command is detached from any specific subsystem class and the required subsystem objects are injected through the constructor, this approach deals well with commands involving multiple subsystems.
 
 
-Static Command Factories
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Similar to the instance factory methods presented above, it's possible to define command factory methods as static members of a separate class (or as free functions in C++). For example, the ``runIntakeCommand`` factory can be written as follows:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    public class IntakeCommands {
-        public static Command runIntakeCommand(double percent, Intake intake) {
-            return new StartEndCommand(() -> intake.set(percent), () -> intake.set(0.0), intake);
-        }
-    }
-
-  .. code-tab:: c++
-
-    // TODO
-
-The disadvantage of this is more cumbersome usage code and needing intermediary methods that can be redudant if the factory is inside the subsystem class. Below is what the intake-then-outtake sequence looks like using static factory methods. Notice how ``intake.runIntakeCommand(1.0)`` has been replaced with ``IntakeCommands.runIntakeCommand(1.0, intake)``:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    Command intakeRunSequence = IntakeCommands.runIntakeCommand(1.0, intake).withTimeout(2.0)
-        .andThen(new WaitCommand(2.0))
-        .andThen(IntakeCommands.runIntakeCommand(1.0, intake).withTimeout(5.0));
-
-  .. code-tab:: c++
-
-    // TODO
-
-While static factories are manageable for single-subsystem commands, they excel at multi-subsystem commands -- particularly command groups. With single-subsystem commands defined as instance factory methods, static factories can look like this:
-
-.. tabs::
-
-  .. code-tab:: java
-
-    public class AutoRoutines {
-
-        public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
-            return Commands.parallel(
-                drivetrain.commandDrive(0.5,0.5),
-                intake.runIntakeCommand(1.0)
-            ).withTimeout(5.0);
-        }
-
-        public static Command intakeThenOuttake(Intake intake) {
-            return Commands.sequence(
-                intake.runIntakeCommand(1.0).withTimeout(2.0),
-                new WaitCommand(3.0),
-                intake.runIntakeCommand(-1).withTimeout(2.0)
-            );
-        }
-
-    }
-  .. code-tab:: c++
-
-    // TODO
-
-Also, note the use of static factories to construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more expressive in some cases. Their use is a matter of personal preference.
-
-
 Subclassing Command Groups
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Alternatively to static factory methods, command groups can also be written as a constructor-only subclass of the most exterior group type. For example, the intake-then-outtake sequence (with single-subsystem commands defined as instance factory methods) can look like this:
+If we wish to write composite commands as their own classes, we may write a constructor-only subclass of the most exterior group type. For example, an intake-then-outtake sequence (with single-subsystem commands defined as instance factory methods) can look like this:
 
 .. tabs::
 
@@ -278,6 +340,7 @@ Alternatively to static factory methods, command groups can also be written as a
 
 This is relatively short and minimizes boilerplate. It is also comfortable to use in a purely object-oriented paradigm and may be more acceptable to novice programmers. However, it has some downsides. For one, it is not immediately clear exactly what type of command group this is from the constructor definition: it is better to define this in a more inline and expressive way, particularly when nested command groups start showing up. Additionally, it requires a new file for every single command group, even when the groups are conceptually related.
 
+As with factory methods, state can be defined and captured within the command group subclass constructor, if necessary.
 
 Summary
 ^^^^^^^
@@ -295,7 +358,7 @@ Summary
      - Single-subsystem commands
      - Excels at them
      - No
-     - No, unless the state can be moved to the subsystem.
+     - Yes, but must obey capture rules
      - Yes
    * - Subclassing CommandBase
      - Stateful commands
@@ -307,12 +370,12 @@ Summary
      - Multi-subsystem commands
      - Yes
      - Yes
-     - No
+     - Yes, but must obey capture rules
      - Yes
    * - Subclassing Command Groups
      - Multi-subsystem command groups
      - Yes
      - Yes
-     - No
+     - Yes, but must obey capture rules
      - Yes
 

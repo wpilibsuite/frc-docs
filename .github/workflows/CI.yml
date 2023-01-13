@@ -2,11 +2,14 @@ name: CI
 
 on: [pull_request, push]
 
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
@@ -22,7 +25,7 @@ jobs:
       run: |
         make latexpdf
     - name: Archive PDF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: frc-docs-pdf
         path: build/latex/firstroboticscompetition.pdf
@@ -31,7 +34,7 @@ jobs:
   build-html:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
@@ -47,7 +50,7 @@ jobs:
       run: |
         make html
     - name: Archive HTML
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: frc-docs-html
         path: build/html/
@@ -86,7 +89,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -99,8 +102,8 @@ jobs:
   check-linting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -113,8 +116,8 @@ jobs:
   check-image-size:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -127,7 +130,7 @@ jobs:
   check-spelling:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: misspell
         uses: reviewdog/action-misspell@v1
         with:
@@ -137,11 +140,11 @@ jobs:
   check-redirects:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Checkout main
       run: |
         git fetch origin main --depth=1
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -157,10 +160,10 @@ jobs:
   check-formatting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - uses: psf/black@22.1.0
       with:
-        black_args: ". --check"
+        options: "--check"

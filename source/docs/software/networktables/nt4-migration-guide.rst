@@ -147,6 +147,11 @@ Shuffleboard
 
 In WPILib's Shuffleboard classes, usage of ``NetworkTableEntry`` has been replaced with use of ``GenericEntry``. In C++, since ``GenericEntry`` is non-copyable, return values now return a reference rather than a value.
 
+Force Set Operations
+--------------------
+
+Force set operations have been removed, as it's no longer possible to change a topic's type once it's been published. In most cases calls to ``forceSet`` can simply be replaced with ``set``, but more complex scenarios may require a different design approach (e.g. splitting into different topics).
+
 Listeners
 ---------
 

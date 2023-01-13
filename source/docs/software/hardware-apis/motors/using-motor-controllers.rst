@@ -56,4 +56,4 @@ For information regarding the SPARK MAX CAN Motor Controller, which can be used 
 CTRE CAN Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the third party CTRE documentation on the Phoenix software for more detailed information. The documentation is available `here. <https://docs.ctre-phoenix.com/>`_
+Please refer to the third party CTRE documentation on the Phoenix software for more detailed information. The documentation is available `here. <https://docs.ctr-electronics.com/>`_

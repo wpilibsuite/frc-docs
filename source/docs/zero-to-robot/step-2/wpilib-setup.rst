@@ -7,9 +7,9 @@ Prerequisites
 -------------
 
 Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
+ * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
  * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 11 & 12, Intel and Arm.
+ * macOS 11 or higher, both Intel and Arm.
 
 .. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
@@ -17,6 +17,8 @@ WPILib is designed to install to different folders for different years, so that 
 
 Downloading
 -----------
+
+.. wpilibrelease:: v2023.1.1
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
@@ -52,6 +54,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
 
    .. group-tab:: macOS
+
+      For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 

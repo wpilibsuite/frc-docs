@@ -24,9 +24,9 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2022"
+version = "2023"
 
 
 # -- General configuration ---------------------------------------------------
@@ -36,10 +36,10 @@ version = "2022"
 # ones.
 extensions = [
     "sphinx_tabs.tabs",
+    "sphinx_design",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
-    "sphinxcontrib.ghcontributors",
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
@@ -53,7 +53,6 @@ extensions = [
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
-    "sphinx_panels",
     "sphinx.ext.viewcode",
     "sphinx_tabs.tabs",
     "sphinx-prompt",
@@ -65,6 +64,7 @@ local_extensions = [
     "_extensions.rtd_patch",
     "_extensions.localization",
     "_extensions.controls_js_sim",
+    "_extensions.wpilib_release",
 ]
 
 extensions += local_extensions
@@ -149,6 +149,7 @@ linkcheck_ignore = [
     r".*java.com/en/download/help/locale.xml.*",
     r".*playingwithfusion.com/contactus.php.*",
     r".*github.com/wpilibsuite/BetaTest.*",
+    r".*vexrobotics.com/docs/.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -157,7 +158,7 @@ linkcheck_retries = 3
 linkcheck_workers = 1
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
-user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54"
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -168,7 +169,11 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["docs/yearly-overview/2020-Game-Data.rst"]
+exclude_patterns = [
+    "docs/yearly-overview/2020-Game-Data.rst",
+    "docs/software/wpilib-tools/axon/**",
+    "docs/beta/*",
+]
 
 # Specify the master doc file, AKA our homepage
 master_doc = "index"
@@ -281,3 +286,42 @@ rtl_locale = ["he"]
 
 github_username = ""
 github_repository = ""
+
+
+# Add Github Token to all Github API Requests made by any extension anywhere
+
+import http.client
+
+original_send = http.client.HTTPConnection.send
+
+
+def new_send(self, data):
+    try:
+        headers = dict(
+            (a.lower(), b)
+            for a, b in (
+                header.split(b":", 1) for header in data.strip().split(b"\r\n")[1:]
+            )
+        )
+
+        new_data = data
+        if b"api.github.com" in headers[b"host"]:
+            if b"authorization" not in headers:
+                if github_token := os.environ.get("GITHUB_TOKEN", None):
+                    new_data = (
+                        new_data[:-2]  # Remove the last CRLF
+                        + b"Authorization: Bearer "
+                        + github_token.encode("ascii")
+                        + b"\r\n\r\n"
+                    )
+
+        original_send(self, new_data)
+    except Exception as e:
+        original_send(self, data)
+        print(
+            f"Intercepting a http(s) request failed. Running original request for header: {data}"
+        )
+        print(f"The exception is: {e}")
+
+
+http.client.HTTPConnection.send = new_send

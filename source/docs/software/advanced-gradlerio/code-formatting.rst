@@ -18,7 +18,7 @@ Necessary ``build.gradle`` changes are required to get Spotless functional. In t
    plugins {
       id "java"
       id "edu.wpi.first.GradleRIO" version "2022.1.1"
-      id 'com.diffplug.spotless' version '6.1.0'
+      id 'com.diffplug.spotless' version '6.12.0'
    }
 
 Then ensure you add a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.

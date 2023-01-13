@@ -8,6 +8,8 @@ In an effort to provide information to aid in debugging, the FRC\ |reg| Driver S
 .. image:: images/driver-station-log-viewer/open_ds_log_viewer_from_driver_station.png
    :alt: Showing how to open the Log Viewer screen using the right console icon.
 
+.. note:: Several third-party tools exist that provide similar functionality to the FRC Driver Station Log Viewer, including `AdvantageScope <https://github.com/Mechanical-Advantage/AdvantageScope>`__ and `DSLOG Reader <https://github.com/orangelight/DSLOG-Reader>`__. Note that WPILib offers no support for third-party projects.
+
 Event Logs
 ----------
 
