@@ -268,7 +268,7 @@ Nidec Dynamo BLDC Motor with Controller
   :alt: Nidec Dynamo BLDC Motor with Controller
   :width: 500
 
-The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <hhttps://cdn.andymark.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
+The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <https://cdn.andymark.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
 
 SD540B and SD540C Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
