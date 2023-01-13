@@ -124,4 +124,4 @@ SysId - Robot program crash on startup when using CAN Spark Maxes
 
 **Issue:** SysId 2023.1.1's deployed robot program crashes on startup if it was configured to use CAN Spark Maxes.
 
-**Solution:** Install a newer WPILib release.
+**Solution:** Install WPILib 2023.2.1 or newer.
