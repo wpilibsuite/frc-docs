@@ -19,7 +19,8 @@ but this manual method seems error-prone and tedious.
 
 Instead, we'll use a **data binding approach,** using the
 `Jackson serializer <https://github.com/msgpack/msgpack-java/blob/develop/msgpack-jackson/README.md>`__.
-Jackson supports many different binding methods; we'll just use POJOs.
+Jackson supports many different binding methods; we'll just use unannotated Java objects,
+since it's the simplest approach.
 
 First, for our little dashboard, there's the notion of a target and a container.
 Note there are no annotations or anything like that here, Jackson doesn't need
@@ -44,7 +45,7 @@ them for this simple case.
                 public List<Target> targets = new ArrayList<Target>();
             }
 
-These POJOs are accepted by a consumer, which starts a client, gets a table
+These objects are accepted by a consumer, which starts a client, gets a table
 ("radar") and creates a raw publisher for a topic ("targets").  Each TargetList
 update is serialized to bytes by the ObjectMapper and written to the publisher.
 
