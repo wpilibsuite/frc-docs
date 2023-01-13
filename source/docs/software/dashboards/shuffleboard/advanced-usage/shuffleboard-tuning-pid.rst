@@ -16,7 +16,7 @@ WPILib has a PIDController class that implements the PID algorithm and accepts c
 Tuning the PID Controller
 -------------------------
 
-Tuning the PID Controller consists of adjusting constants for accurate results. Shuffleboard helps this process by displaying the details of a PID subsystem with a user interface for setting constant values and testing how well it operates. This is displayed while the robot is operating in test mode (done by setting "Test" in the driver station).
+Tuning the PID controller consists of adjusting constants for accurate results. Shuffleboard helps this process by displaying the details of a PID subsystem with a user interface for setting constant values and testing how well it operates. This is displayed while the robot is operating in test mode (done by setting "Test" in the driver station).
 
 .. image:: images/shuffleboard-tuning-pid/pid-subsystem.png
   :alt: Covers each section of the PIDController Subsystem widget.
