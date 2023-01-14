@@ -27,5 +27,5 @@ To access the examples either click the ``Support`` tab, then ``Find FRC Example
 Third Party Resources
 ---------------------
 
-`FRC Control and Trajectory Library <https://github.com/jsimpso81/WPIlibMathLabVIEW>`__
-`Secret Book Of FRC LabVIEW 2 <https://github.com/jsimpso81/FRC_Secret_Book_Of_FRC_LabVIEW_2>`__
+- `FRC Control and Trajectory Library <https://github.com/jsimpso81/WPIlibMathLabVIEW>`__
+- `Secret Book Of FRC LabVIEW 2 <https://github.com/jsimpso81/FRC_Secret_Book_Of_FRC_LabVIEW_2>`__
