@@ -161,6 +161,7 @@ GradleRIO
 ---------
 
 - Upgrade to Gradle 7.5.1
+- Fixed issue where start-up scripts could get damaged if roboRIO powered off during deploy
 
 cscore
 ------
