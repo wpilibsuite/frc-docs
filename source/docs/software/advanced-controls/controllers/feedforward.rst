@@ -114,7 +114,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 ElevatorFeedforward
 -------------------
 
-.. note:: In C++, the ``ElevatorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
+.. note:: In C++, the passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
 .. note:: The Java feedforward components will calculate outputs in units determined by the units of the user-provided feedforward gains.  Users *must* take care to keep units consistent, as WPILibJ does not have a type-safe unit system.
 
@@ -135,7 +135,7 @@ To create a ``ElevatorFeedforward``, simply construct it with the required gains
 
     // Create a new ElevatorFeedforward with gains kS, kV, and kA
     // Distance is measured in meters
-    frc::ElevatorFeedforward<units::meters> feedforward(kS, kG, kV, kA);
+    frc::ElevatorFeedforward feedforward(kS, kG, kV, kA);
 
 To calculate the feedforward, simply call the ``calculate()`` method with the desired motor velocity and acceleration:
 
