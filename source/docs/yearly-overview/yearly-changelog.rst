@@ -138,6 +138,8 @@ Shuffleboard
 - Added vertical orientation option to number bar widget
 - Fixed Field2d widget not auto populating
 - Update PowerDistribution Widget to support 24 channels
+- Added 2023 Charged Up field image
+- Update PID widget to remove features no longer supported by PIDController (kF and enable)
 
 SmartDashboard
 --------------
@@ -146,6 +148,7 @@ SmartDashboard
 
 - Update PowerDistribution Widget to support 24 channels
 - Add option to clear all plots
+- Update PID widget to remove features no longer supported by PIDController (kF and enable)
 
 Glass
 -----
@@ -157,7 +160,7 @@ Glass
 PathWeaver
 ----------
 
-- No new changes
+- Added 2023 Charged Up field image
 
 GradleRIO
 ---------
