@@ -123,6 +123,8 @@ Breaking Changes
    - Use ``std::numbers`` instead of ``wpi::numbers`` (include ``<numbers>``)
    - Use ``std::span`` instead of ``wpi::span`` (include ``<span>``)
 
+- Removed template argument from ``ElevatorFeedforward`` in C++.
+
 Simulation
 ----------
 
