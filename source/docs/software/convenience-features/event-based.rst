@@ -3,7 +3,7 @@ Event-Based Programming With EventLoop
 
 Many operations in robot code are driven by certain conditions; buttons are one common example. Conditions can be polled with an :term:`imperative programming` style by using an ``if`` statement in a periodic method. As an alternative, WPILib offers an :term:`event-driven programming` style of API in the shape of the ``EventLoop`` and ``BooleanEvent`` classes.
 
-.. note:: The example code here is taken from the EventLoop example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp>`__).
+.. note:: The example code here is taken from the EventLoop example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp>`__).
 
 EventLoop
 ---------
