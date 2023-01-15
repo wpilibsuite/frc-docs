@@ -211,7 +211,7 @@ Humans can often use lighting or background clues to understand how objects are 
 Resolving which position is "correct" can be done in a few different ways:
 
 1. Use your odometry history from all sensors to pick the pose closest to where you expect the robot to be.
-2. Reject poses which are very unlikely (ex: outside the field perimiter, or up in the air)
+2. Reject poses which are very unlikely (ex: outside the field perimeter, or up in the air)
 3. Ignore pose estimates which are very close together (and hard to differentiate)
 4. Use multiple cameras to look at the same target, such that at least one camera can generate a good pose estimate
 5. Look at many targets at once, using each to generate multiple pose estimates. Discard the outlying estimates, use the ones which are tightly clustered together.
