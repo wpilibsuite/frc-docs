@@ -64,19 +64,19 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
          :language: java
          :lines: 18-61, 71-71
 
    .. group-tab:: C++ (Header)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
          :language: cpp
          :lines: 19-51
 
    .. group-tab:: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/cf2693cd24f0904d201da1398a9708103efdde66/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
          :language: cpp
          :lines: 7-19
 
