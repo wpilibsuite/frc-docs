@@ -59,7 +59,7 @@ class WpilibRelease(SphinxDirective):
         )
 
         generated_rst = f"""
-.. card:: {release["name"]} - {datetime.strptime('2023-01-04T17:53:55Z', '%Y-%m-%dT%H:%M:%SZ').strftime('%B %d, %Y')}
+.. card:: {release["name"]} - {datetime.strptime(release['published_at'], '%Y-%m-%dT%H:%M:%SZ').strftime('%B %d, %Y')}
 
    WPILib Installer
    ^^^
