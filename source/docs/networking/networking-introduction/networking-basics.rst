@@ -93,7 +93,7 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 Available Network Ports
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Please see R704 of the 2022 Game Manual for information regarding available network ports.
+Please see R704 of the 2023 Game Manual for information regarding available network ports.
 
 mDNS
 ----
