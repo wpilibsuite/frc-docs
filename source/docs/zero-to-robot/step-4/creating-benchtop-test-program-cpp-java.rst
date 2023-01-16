@@ -136,7 +136,7 @@ Imports/Includes
 
                   #include <rev/CANSparkMax.h>
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), ``DifferentialDrive`` (for connecting the joystick control to the motors), and ``LiveWindow`` (C++ only).
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
