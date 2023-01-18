@@ -86,7 +86,7 @@ We can convert this equation to state-space notation. We can create a system wit
 .. math::
     \mathbf{\dot{x}} = \begin{bmatrix}\frac{-K_v}{K_a}\end{bmatrix} \mathbf{x} + \begin{bmatrix}\frac{1}{K_a}\end{bmatrix} \mathbf{u}
 
-That's it! That's the state-space model of a system for which we have the `K_v` and `K_a` constants. This same math is use in system identification to model flywheels and drivetrain velocity systems.
+That's it! That's the state-space model of a system for which we have the `K_v` and `K_a` constants. This same math is used in system identification to model flywheels and drivetrain velocity systems.
 
 Visualizing State-Space Responses: Phase Portrait
 -------------------------------------------------
