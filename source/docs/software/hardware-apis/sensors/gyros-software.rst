@@ -17,7 +17,9 @@ All natively-supported gyro objects in WPILib implement the :code:`Gyro` interfa
 ADIS16448
 ^^^^^^^^^
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+
+.. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
 .. tabs::
 
@@ -34,7 +36,9 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class and implements the :code:`Gyr
 ADIS16470
 ^^^^^^^^^
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class and implements the :code:`Gyro` interface.  See the `ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+
+.. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
 .. tabs::
 
