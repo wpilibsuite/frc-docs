@@ -33,8 +33,8 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 - Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to PWM only
 - Nidec Dynamo BLDC Motor with Controller to control integral actuator only (P/N 840205-000, am-3740)
 - SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, SD540Bx4, SD540C)
-- Spark Motor Controller (P/N: REV-11-1200)
-- Spark MAX Motor Controller (P/N: REV-11-2158)
+- Spark Motor Controller (P/N: REV-11-1200, am-4260)
+- Spark MAX Motor Controller (P/N: REV-11-2158, am-4261)
 - Talon FX Motor Controller (P/N: 217-6515, 19-708850, am-6515, am-6515_Short) for controlling integral Falcon 500 only
 - Talon Motor Controller (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)
 - Talon SRX Motor Controller (P/N: 217-8080, am-2854, 14-838288)
