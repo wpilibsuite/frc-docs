@@ -76,6 +76,7 @@ Spotless can be ran using ``./gradlew spotlessApply`` which will apply all forma
 In addition to formatting code, Spotless can also ensure the code is correctly formatted; this can be used by running ``./gradlew spotlessCheck``. Thus, Spotless can be used as a :doc:`CI check <robot-code-ci>`, as shown in the following GitHub Actions workflow:
 
 .. code-block:: yaml
+
    on: [push]
    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
    jobs:
