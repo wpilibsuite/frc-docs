@@ -73,7 +73,26 @@ Running Spotless
 
 Spotless can be ran using ``./gradlew spotlessApply`` which will apply all formatting options. You can also specify a specific task by just adding the name of formatter. An example is ``./gradlew spotlessmiscApply``.
 
-Spotless can also be used as a :doc:`CI check <robot-code-ci>`. The check is ran with ``./gradlew spotlessCheck``.
+In addition to formatting code, Spotless can also ensure the code is correctly formatted; this can be used by running ``./gradlew spotlessCheck``. Thus, Spotless can be used as a :doc:`CI check <robot-code-ci>`, as shown in the following GitHub Actions workflow:
+
+.. code-block:: yaml
+   on: [push]
+   # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+   jobs:
+     spotless:
+       # The type of runner that the job will run on
+       runs-on: ubuntu-latest
+       # Steps represent a sequence of tasks that will be executed as part of the job
+       steps:
+         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+         - uses: actions/checkout@v2
+           with:
+             fetch-depth: 0
+         - uses: actions/setup-java@v3
+           with:
+             distribution: 'zulu'
+             java-version: 17
+         - run: ./gradlew spotlessCheck
 
 Explanation of Options
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -191,31 +210,8 @@ An example styleguide is shown below:
 
 .. note:: Teams can adapt ``.styleguide`` and ``.styleguide-license`` however they wish. It's important that these are not deleted, as they are required to run wpiformat!
 
-You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-format`` configuration file. An example configuration file is provided below.
+You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-Below is an example GitHub Actions check that uses wpiformat
-
-.. code-block:: yaml
-
-   wpiformat:
-    name: "wpiformat"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Fetch all history and metadata
-        run: |
-          git fetch --prune --unshallow
-          git checkout -b pr
-          git branch -f main origin/main
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Install clang-format
-        run: sudo apt-get update -q && sudo apt-get install -y clang-format-12
-      - name: Install wpiformat
-        run: pip3 install wpiformat
-      - name: Run
-        run: wpiformat -clang 12
-      - name: Check Output
-        run: git --no-pager diff --exit-code HEAD
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/.github/workflows/lint-format.yml
+   :language: yaml
+   :lines: 1-5, 12-40
