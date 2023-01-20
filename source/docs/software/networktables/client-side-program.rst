@@ -172,9 +172,10 @@ Then, the dependencies can be added to the ``dependencies`` block. Here, ``VERSI
 
        // Add ntcore-jni for runtime. We are adding all supported platforms
        // so that our application will work on all supported platforms.
-       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86"
        implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:windowsx86-64"
        implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxx86-64"
-       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxraspbian"
-       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxx86-64"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxathena"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxarm64"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:linuxarm32"
+       implementation "edu.wpi.first.ntcore:ntcore-jni:VERSION:osxuniversal"
    }
