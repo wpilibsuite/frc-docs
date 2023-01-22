@@ -69,6 +69,28 @@ NT3 code (was):
               }
             };
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self):
+                    inst = ntcore.NetworkTableInstance.getDefault()
+
+                    # get the subtable called "datatable"
+                    datatable = inst.getTable("datatable")
+
+                    # get the entry in "datatable" called "Y"
+                    self.yEntry = datatable.getEntry("Y")
+
+                    # get the entry in "datatable" called "Out"
+                    self.outEntry = datatable.getEntry("Out")
+
+                def periodic(self):
+                    # read a double value from Y, and set Out to that value multiplied by 2
+                    value = self.yEntry.getDouble(0.0)  # default to 0
+                    self.outEntry.setDouble(value * 2)
+
 
 Recommended NT4 equivalent (should be):
 
@@ -141,6 +163,35 @@ Recommended NT4 equivalent (should be):
               }
             };
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self) -> None:
+                    inst = ntcore.NetworkTableInstance.getDefault()
+
+                    # get the subtable called "datatable"
+                    datatable = inst.getTable("datatable")
+
+                    # subscribe to the topic in "datatable" called "Y"
+                    # default value is 0
+                    self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
+
+                    # publish to the topic in "datatable" called "Out"
+                    self.outPub = datatable.getDoubleTopic("Out").publish()
+
+                def periodic(self):
+                    # read a double value from Y, and set Out to that value multiplied by 2
+                    value = self.ySub.get()
+                    self.outPub.set(value * 2)
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop subscribing
+                def close(self):
+                    self.ySub.close()
+                    self.outPub.close()
 
 Shuffleboard
 ------------

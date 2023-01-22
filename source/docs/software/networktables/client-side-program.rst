@@ -127,6 +127,31 @@ A basic client program looks like the following example.
               }
             }
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            #!/usr/bin/env python3
+
+            import ntcore
+            import time
+
+            if __name__ == "__main__":
+                inst = ntcore.NetworkTableInstance.getDefault()
+                table = inst.getTable("datatable")
+                xSub = table.getDoubleTopic("x").subscribe(0)
+                ySub = table.getDoubleTopic("y").subscribe(0)
+                inst.startClient4("example client")
+                inst.setServerTeam(TEAM) # where TEAM=190, 294, etc, or use inst.setServer("hostname") or similar
+                inst.startDSClient() # recommended if running on DS computer; this gets the robot IP from the DS
+
+                while True:
+                    time.sleep(1)
+
+                    x = xSub.get()
+                    y = ySub.get()
+                    print(f"X: {x} Y: {y}")
+
 
 In this example an instance of NetworkTables is created and subscribers are created to reference the values of "x" and "y" from a table called "datatable".
 
@@ -136,7 +161,7 @@ Then this sample program simply loops once a second and gets the values for x an
 
 Building the program
 --------------------
-When building and running the program you will need some additional libraries to include with your client-side program. These are:
+When building and running the program you will need some additional libraries to include with your client-side program. For Java these are:
 
 https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/ntcore/ntcore-java/ (ntcore Java files)
 
@@ -145,6 +170,8 @@ https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/ntcore/ntcore-jni
 https://frcmaven.wpi.edu/artifactory/development/edu/wpi/first/wpiutil/wpiutil-java/ (wpiutil Java files)
 
 .. note:: The desktop platform jar is for Windows, macOS, and Linux.
+
+For Python, refer to the `RobotPy pyntcore install documentation <https://robotpy.readthedocs.io/en/stable/install/pynetworktables.html>`__.
 
 Building using Gradle
 ^^^^^^^^^^^^^^^^^^^^^
