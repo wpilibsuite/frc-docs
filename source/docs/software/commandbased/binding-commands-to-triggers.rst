@@ -21,12 +21,12 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
 
   .. code-tab:: java
 
-    CommandXboxController exampleCommandController = new CommandXboxController(1); // Creates an CommandXboxController on port 1.
+    CommandXboxController exampleCommandController = new CommandXboxController(1); // Creates a CommandXboxController on port 1.
     Trigger xButton = exampleCommandController.x(); // Creates a new Trigger object for the `X` button on exampleCommandController
 
   .. code-tab:: c++
 
-    frc2::CommandXboxController exampleCommandController{1} // Creates an CommandXboxController on port 1
+    frc2::CommandXboxController exampleCommandController{1} // Creates a CommandXboxController on port 1
     frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
 
 JoystickButton
