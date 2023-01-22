@@ -95,6 +95,8 @@ General Library
     - ``cancelWhenActive``: this is a fairly niche use case which is better described as having the trigger's rising edge (``Trigger.rising()``) as an end condition for the command (using ``Command.until()``).
     - ``whileActiveContinuously``: however common, this relied on the no-op behavior of scheduling an already-scheduled command. The more correct way to repeat the command if it ends before the falling edge is using ``Command.repeatedly``/``RepeatCommand`` or a ``RunCommand`` -- the only difference is if the command is interrupted, but that is more likely to result in two commands perpetually canceling each other than achieve the desired behavior. Manually implementing a blindly-scheduling binding like ``whileActiveContinuously`` is still possible, though might not be intuitive.
 
+- Precompile common template instantiations to improve C++ compile times.
+
 Breaking Changes
 ^^^^^^^^^^^^^^^^
 
