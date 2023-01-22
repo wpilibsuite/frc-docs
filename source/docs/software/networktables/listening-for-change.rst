@@ -129,6 +129,41 @@ There are a few different ways to detect that a topic's value has changed; the e
               }
             };
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self) -> None:
+
+                    # get the default instance of NetworkTables
+                    inst = ntcore.NetworkTableInstance.getDefault()
+
+                    # get the subtable called "datatable"
+                    datatable = inst.getTable("datatable")
+
+                    # subscribe to the topic in "datatable" called "Y"
+                    self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
+
+                    self.prev = 0
+
+                def periodic(self):
+                    # get() can be used with simple change detection to the previous value
+                    value = self.ySub.get()
+                    if value != self.prev:
+                        self.prev = value
+                        # save previous value
+                        print("X changed value: " + value)
+
+                    # readQueue() provides all value changes since the last call;
+                    # this way it's not possible to miss a change by polling too slowly
+                    for tsValue in self.ySub.readQueue():
+                        print(f"X changed value: {tsValue.value} at local time {tsValue.time}")
+
+                # may not be necessary for robot programs if this class lives for
+                # the length of the program
+                def close(self):
+                    self.ySub.close()
 
 With a command-based robot, it's also possible to use ``NetworkBooleanEvent`` to link boolean topic changes to callback actions (e.g. running commands).
 
@@ -306,3 +341,76 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                 inst.RemoveListener(topicListenerHandle);
               }
             };
+
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            import ntcore
+            import threading
+
+            class Example:
+                def __init__(self) -> None:
+
+                    # get the default instance of NetworkTables
+                    inst = ntcore.NetworkTableInstance.getDefault()
+
+                    # Use a mutex to ensure thread safety
+                    self.lock = threading.Lock()
+                    self.yValue = None
+
+                    # add a connection listener; the first parameter will cause the
+                    # callback to be called immediately for any current connections
+                    def _connect_cb(event: ntcore.Event):
+                        if event.is_(ntcore.EventFlags.kConnected):
+                            print("Connected to", event.data.remote_id)
+                        elif event.is_(ntcore.EventFlags.kDisconnected):
+                            print("Disconnected from", event.data.remote_id)
+
+                    self.connListenerHandle = inst.addConnectionListener(True, _connect_cb)
+
+                    # get the subtable called "datatable"
+                    datatable = inst.getTable("datatable")
+
+                    # subscribe to the topic in "datatable" called "Y"
+                    self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
+
+                    # add a listener to only value changes on the Y subscriber
+                    def _on_ysub(event: ntcore.Event):
+                        # can only get doubles because it's a DoubleSubscriber, but
+                        # could check value.isDouble() here too
+                        with self.lock:
+                            self.yValue = event.data.value.getDouble()
+
+                    self.valueListenerHandle = inst.addListener(
+                        self.ySub, ntcore.EventFlags.kValueAll, _on_ysub
+                    )
+
+                    # add a listener to see when new topics are published within datatable
+                    # the string array is an array of topic name prefixes.
+                    def _on_pub(event: ntcore.Event):
+                        if event.is_(ntcore.EventFlags.kPublish):
+                            # topicInfo.name is the full topic name, e.g. "/datatable/X"
+                            print("newly published", event.data.name)
+
+                    self.topicListenerHandle = inst.addListener(
+                        [datatable.getPath() + "/"], ntcore.EventFlags.kTopic, _on_pub
+                    )
+
+                def periodic(self):
+                    # get the latest value by reading the value; set it to null
+                    # when we read to ensure we only get value changes
+                    with self.lock:
+                        value, self.yValue = self.yValue, None
+
+                    if value is not None:
+                        print("got new value", value)
+
+                # may not be needed for robot programs if this class exists for the
+                # lifetime of the program
+                def close(self):
+                    inst = ntcore.NetworkTableInstance.getDefault()
+                    inst.removeListener(self.topicListenerHandle)
+                    inst.removeListener(self.valueListenerHandle)
+                    inst.removeListener(self.connListenerHandle)
+                    self.ySub.close()

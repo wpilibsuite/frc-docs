@@ -6,7 +6,7 @@ Publishing to a Topic
 
 In order to create a :term:`topic` and publish values to it, it's necessary to create a :term:`publisher`.
 
-NetworkTable publishers are represented as type-specific Publisher objects (e.g. ``BooleanPublisher``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_publisher.html>`__). Publishers are only active as long as the Publisher object exists. Typically you want to keep publishing longer than the local scope of a function, so it's necessary to store the Publisher object somewhere longer term, e.g. in an instance variable. In Java, the ``close()`` method needs be called to stop publishing; in C++ this is handled by the destructor. C++ publishers are moveable and non-copyable.
+NetworkTable publishers are represented as type-specific Publisher objects (e.g. ``BooleanPublisher``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_publisher.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/BooleanPublisher.html>`__). Publishers are only active as long as the Publisher object exists. Typically you want to keep publishing longer than the local scope of a function, so it's necessary to store the Publisher object somewhere longer term, e.g. in an instance variable. In Java, the ``close()`` method needs be called to stop publishing; in C++ this is handled by the destructor. C++ publishers are moveable and non-copyable. In Python the ``close()`` method should be called to stop publishing, but it will also be closed when the object is garbage collected.
 
 In the handle-based APIs, there is only the non-type-specific ``NT_Publisher`` handle; the user is responsible for keeping track of the type of the publisher and using the correct type-specific set methods.
 
@@ -186,11 +186,51 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
             // stop publishing
             NT_Unpublish(dblPub);
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self, dblTopic: ntcore.DoubleTopic):
+
+                    # start publishing; the return value must be retained (in this case, via
+                    # an instance variable)
+                    self.dblPub = dblTopic.publish()
+
+                    # publish options may be specified using PubSubOption
+                    self.dblPub = dblTopic.publish(ntcore.PubSubOptions(keepDuplicates=True))
+
+                    # publishEx provides additional options such as setting initial
+                    # properties and using a custom type string. Using a custom type string for
+                    # types other than raw and string is not recommended. The properties string
+                    # must be a JSON map.
+                    self.dblPub = dblTopic.publishEx("double", '{"myprop": 5}')
+
+                def periodic(self):
+                    # publish a default value
+                    self.dblPub.setDefault(0.0)
+
+                    # publish a value with current timestamp
+                    self.dblPub.set(1.0)
+                    self.dblPub.set(2.0, 0)  # 0 = use current time
+
+                    # publish a value with a specific timestamp with microsecond resolution.
+                    # On the roboRIO, this is the same as the FPGA timestamp (e.g.
+                    # RobotController.getFPGATime())
+                    self.dblPub.set(3.0, ntcore._now())
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop publishing
+                def close(self):
+                    # stop publishing
+                    self.dblPub.close()
+
 
 Subscribing to a Topic
 ----------------------
 
-A :term:`subscriber` receives value updates made to a topic. Similar to publishers, NetworkTable subscribers are represented as type-specific Subscriber classes (e.g. ``BooleanSubscriber``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_subscriber.html>`__) that must be stored somewhere to continue subscribing.
+A :term:`subscriber` receives value updates made to a topic. Similar to publishers, NetworkTable subscribers are represented as type-specific Subscriber classes (e.g. ``BooleanSubscriber``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_subscriber.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/BooleanSubscriber.html>`__) that must be stored somewhere to continue subscribing.
 
 Subscribers have a range of different ways to read received values. It's possible to just read the most recent value using ``get()``, read the most recent value, along with its timestamp, using ``getAtomic()``, or get an array of all value changes since the last call using ``readQueue()`` or ``readQueueValues()``.
 
@@ -372,11 +412,53 @@ Subscribers have a range of different ways to read received values. It's possibl
             // stop subscribing
             NT_Unsubscribe(dblSub);
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self, dblTopic: ntcore.DoubleTopic):
+
+                    # start subscribing; the return value must be retained.
+                    # the parameter is the default value if no value is available when get() is called
+                    self.dblSub = dblTopic.subscribe(0.0)
+
+                    # subscribe options may be specified using PubSubOption
+                    self.dblSub = dblTopic.subscribe(
+                        0.0, ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                    )
+
+                    # subscribeEx provides the options of using a custom type string.
+                    # Using a custom type string for types other than raw and string is not recommended.
+                    dblSub = dblTopic.subscribeEx("double", 0.0)
+
+                def periodic(self):
+                    # simple get of most recent value; if no value has been published,
+                    # returns the default value passed to the subscribe() function
+                    val = self.dblSub.get()
+
+                    # get the most recent value; if no value has been published, returns
+                    # the passed-in default value
+                    val = self.dblSub.get(-1.0)
+
+                    # get the most recent value, along with its timestamp
+                    tsVal = self.dblSub.getAtomic()
+
+                    # read all value changes since the last call to readQueue
+                    # readQueue() returns timestamps
+                    tsUpdates = self.dblSub.readQueue()
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop subscribing
+                def close(self):
+                    # stop subscribing
+                    self.dblSub.close()
 
 Using Entry to Both Subscribe and Publish
 -----------------------------------------
 
-An :term:`entry` is a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber. Similar to publishers and subscribers, NetworkTable entries are represented as type-specific Entry classes (e.g. ``BooleanEntry``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_entry.html>`__) that must be retained to continue subscribing (and publishing).
+An :term:`entry` is a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber. Similar to publishers and subscribers, NetworkTable entries are represented as type-specific Entry classes (e.g. ``BooleanEntry``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_entry.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/BooleanEntry.html>`__) that must be retained to continue subscribing (and publishing).
 
 .. tabs::
 
@@ -579,11 +661,58 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
             // stop subscribing
             NT_ReleaseEntry(dblEntry);
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self, dblTopic: ntcore.DoubleTopic):
+
+                    # start subscribing; the return value must be retained.
+                    # the parameter is the default value if no value is available when get() is called
+                    self.dblEntry = dblTopic.getEntry(0.0)
+
+                    # publish and subscribe options may be specified using PubSubOption
+                    self.dblEntry = dblTopic.getEntry(
+                        0.0, ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                    )
+
+                    # getEntryEx provides the options of using a custom type string.
+                    # Using a custom type string for types other than raw and string is not recommended.
+                    self.dblEntry = dblTopic.getEntryEx("double", 0.0)
+
+                def periodic(self):
+                    # entries support all the same methods as subscribers:
+                    val = self.dblEntry.get()
+                    val = self.dblEntry.get(-1.0)
+                    val = self.dblEntry.getAsDouble()
+                    tsVal = self.dblEntry.getAtomic()
+                    tsUpdates = self.dblEntry.readQueue()
+
+                    # entries also support all the same methods as publishers; the first time
+                    # one of these is called, an internal publisher is automatically created
+                    self.dblEntry.setDefault(0.0)
+                    self.dblEntry.set(1.0)
+                    self.dblEntry.set(2.0, 0)  # 0 = use current time
+                    time = ntcore._now()
+                    self.dblEntry.set(3.0, time)
+
+                def unpublish(self):
+                    # you can stop publishing while keeping the subscriber alive
+                    self.dblEntry.unpublish()
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop subscribing
+                def close(self):
+                    # stop subscribing/publishing
+                    self.dblEntry.close()
+
 
 Using GenericEntry, GenericPublisher, and GenericSubscriber
 -----------------------------------------------------------
 
-For the most robust code, using the type-specific Publisher, Subscriber, and Entry classes is recommended, but in some cases it may be easier to write code that uses type-specific get and set function calls instead of having the NetworkTables type be exposed via the class (object) type. The ``GenericPublisher`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_publisher.html>`__), ``GenericSubscriber`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_subscriber.html>`__), and ``GenericEntry`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_entry.html>`__) classes enable this approach.
+For the most robust code, using the type-specific Publisher, Subscriber, and Entry classes is recommended, but in some cases it may be easier to write code that uses type-specific get and set function calls instead of having the NetworkTables type be exposed via the class (object) type. The ``GenericPublisher`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_publisher.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericPublisher.html>`__), ``GenericSubscriber`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_subscriber.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericSubscriber.html>`__), and ``GenericEntry`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/GenericEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_generic_entry.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericEntry.html>`__) classes enable this approach.
 
 .. tabs::
 
@@ -732,6 +861,77 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
               }
             };
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self, topic: ntcore.Topic):
+
+                    # start subscribing; the return value must be retained.
+                    # when publishing, a type string must be provided
+                    self.pub = topic.genericPublish("double")
+
+                    # subscribing can optionally include a type string
+                    # unlike type-specific subscribers, no default value is provided
+                    self.sub = topic.genericSubscribe()
+                    self.sub = topic.genericSubscribe("double")
+
+                    # when getting an entry, the type string is also optional; if not provided
+                    # the publisher data type will be determined by the first publisher-creating call
+                    self.entry = topic.getGenericEntry()
+                    self.entry = topic.getGenericEntry("double")
+
+                    # publish and subscribe options may be specified using PubSubOption
+                    self.pub = topic.genericPublish(
+                        "double", ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                    )
+                    self.sub = topic.genericSubscribe(
+                        ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                    )
+                    self.entry = topic.getGenericEntry(
+                        ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                    )
+
+                    # genericPublishEx provides the option of setting initial properties.
+                    self.pub = topic.genericPublishEx(
+                        "double",
+                        '{"retained": true}',
+                        ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10),
+                    )
+
+                def periodic(self):
+                    # generic subscribers and entries have typed get operations; a default must be provided
+                    val = self.sub.getDouble(-1.0)
+                    val = self.entry.getDouble(-1.0)
+
+                    # they also support an untyped get (also meets Supplier<NetworkTableValue> interface)
+                    val = self.sub.get()
+                    val = self.entry.get()
+
+                    # they also support readQueue
+                    updates = self.sub.readQueue()
+                    updates = self.entry.readQueue()
+
+                    # publishers and entries have typed set operations; these return false if the
+                    # topic already exists with a mismatched type
+                    success = self.pub.setDefaultDouble(1.0)
+                    success = self.pub.setBoolean(True)
+
+                    # they also implement a generic set
+                    success = self.entry.set(ntcore.Value.makeDouble(...))
+
+                def unpublish(self):
+                    # you can stop publishing an entry while keeping the subscriber alive
+                    self.entry.unpublish()
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop subscribing/publishing
+                def close(self):
+                    self.pub.close()
+                    self.sub.close()
+                    self.entry.close()
 
 Subscribing to Multiple Topics
 ------------------------------
@@ -904,6 +1104,42 @@ While in most cases it's only necessary to subscribe to individual topics, it is
             // stop subscribing
             NT_UnsubscribeMultiple(multiSub);
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            class Example:
+                def __init__(self, inst: ntcore.NetworkTableInstance):
+
+                    # start subscribing; the return value must be retained.
+                    # provide an array of topic name prefixes
+                    self.multiSub = ntcore.MultiSubscriber(inst, ["/table1/", "/table2/"])
+
+                    # subscribe options may be specified using PubSubOption
+                    self.multiSub = ntcore.MultiSubscriber(
+                        inst, ["/table1/", "/table2/"], ntcore.PubSubOptions(keepDuplicates=True)
+                    )
+
+                    # to get value updates from a MultiSubscriber, it's necessary to create a listener
+                    # (see the listener documentation for more details)
+                    self.poller = ntcore.NetworkTableListenerPoller(inst)
+                    self.poller.addListener(self.multiSub, ntcore.EventFlags.kValueAlls)
+
+                def periodic(self):
+                    # read value events
+                    events = self.poller.readQueue()
+
+                    for event in events:
+                        value: ntcore.Value = event.data.value
+
+                # often not required in robot code, unless this class doesn't exist for
+                # the lifetime of the entire robot program, in which case close() needs to be
+                # called to stop subscribing
+                def close(self):
+                    # close listener
+                    self.poller.close()
+                    # stop subscribing
+                    self.multiSub.close()
 
 Publish/Subscribe Options
 -------------------------
@@ -937,6 +1173,6 @@ Entry options:
 NetworkTableEntry
 -----------------
 
-``NetworkTableEntry`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/NetworkTableEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_network_table_entry.html>`__) is a class that exists for backwards compatibility. New code should prefer using type-specific Publisher and Subscriber classes, or GenericEntry if non-type-specific access is needed.
+``NetworkTableEntry`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/NetworkTableEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_network_table_entry.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/NetworkTableEntry.html>`__) is a class that exists for backwards compatibility. New code should prefer using type-specific Publisher and Subscriber classes, or GenericEntry if non-type-specific access is needed.
 
 It is similar to ``GenericEntry`` in that it supports both publishing and subscribing in a single object. However, unlike ``GenericEntry``, ``NetworkTableEntry`` is not released (e.g. unsubscribes/unpublishes) if ``close()`` is called (in Java) or the object is destroyed (in C++); instead, it operates similar to ``Topic``, in that only a single ``NetworkTableEntry`` exists for each topic and it lasts for the lifetime of the instance.

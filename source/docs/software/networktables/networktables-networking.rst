@@ -36,6 +36,15 @@ Starting a NetworkTables Server
             NT_Inst inst = NT_GetDefaultInstance();
             NT_StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
 
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            import ntcore
+
+            inst = ntcore.NetworkTableInstance.getDefault()
+            inst.startServer()
+
 
 Starting a NetworkTables Client
 -------------------------------
@@ -113,3 +122,23 @@ Starting a NetworkTables Client
 
             // connect to a specific host/port
             NT_SetServer(inst, "host", NT_DEFAULT_PORT4)
+
+    .. group-tab:: Python
+
+        .. code-block:: python
+
+            import ntcore
+
+            inst = ntcore.NetworkTableInstance.getDefault()
+
+            # start a NT4 client
+            inst.startClient4("example client")
+
+            # connect to a roboRIO with team number TEAM
+            inst.setServerTeam(TEAM)
+
+            # starting a DS client will try to get the roboRIO address from the DS application
+            inst.startDSClient()
+
+            # connect to a specific host/port
+            inst.setServer("host", ntcore.NetworkTableInstance.kDefaultPort4)
