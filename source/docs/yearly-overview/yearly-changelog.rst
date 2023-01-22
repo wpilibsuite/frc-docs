@@ -128,7 +128,6 @@ Breaking Changes
 
 - Removed template argument from ``ElevatorFeedforward`` in C++.
 
-
 Simulation
 ----------
 
