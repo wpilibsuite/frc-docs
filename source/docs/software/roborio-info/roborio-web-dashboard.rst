@@ -4,8 +4,8 @@ roboRIO Web Dashboard
 The roboRIO web dashboard is a webpage built into the roboRIO that can
 be used for checking status and updating settings of the roboRIO.
 
-Users may encounter issues using IE (compatibility)
-or Edge (mDNS site access). Alternate browsers such as Google Chrome or
+Users may encounter issues using IE (compatibility).
+Alternate browsers such as Google Chrome or
 Mozilla Firefox are recommended for the best experience.
 
 Opening the WebDash
