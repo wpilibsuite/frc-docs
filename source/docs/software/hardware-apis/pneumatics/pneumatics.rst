@@ -32,35 +32,47 @@ CAN Devices are identified by their Node ID. The default Node ID for PCMs is 0. 
 Generating and Storing Pressure
 -------------------------------
 
-Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor doesn't necessarily have to be on the robot, but must be powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object.
+Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor doesn't necessarily have to be on the robot, but must be powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object, as shown by the following code from the Solenoid example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Solenoid>`__):
 
 .. note:: The Compressor object is only needed if you want the ability to turn off the compressor, change the pressure sensor (PH only), or query compressor status.
 
 .. tabs::
 
-    .. code-tab:: java
+    .. group-tab:: Java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 47-48
+          :linenos:
+          :lineno-start: 47
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 134-135, 139-140, 143-147, 150-156
+          :linenos:
+          :lineno-start: 134
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 80-83, 94-95, 131-132
+          :linenos:
+          :lineno-start: 80
 
-        Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
-        Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
+    .. group-tab:: C++ (Header)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+          :language: c++
+          :lines: 56-57
+          :linenos:
+          :lineno-start: 56
 
-        pcmCompressor.enableDigital();
-        pcmCompressor.disable();
-
-        boolean enabled = pcmCompressor.enabled();
-        boolean pressureSwitch = pcmCompressor.getPressureSwitchValue();
-        double current = pcmCompressor.getCompressorCurrent();
-
-    .. code-tab:: c++
-
-        frc::Compressor pcmCompressor{0, frc::PneumaticsModuleType::CTREPCM};
-        frc::Compressor phCompressor{1, frc::PneumaticsModuleType::REVPH};
-
-        pcmCompressor.EnableDigital();
-        pcmCompressor.Disable();
-
-        bool enabled = pcmCompressor.Enabled();
-        bool pressureSwitch = pcmCompressor.GetPressureSwitchValue();
-        double current = pcmCompressor.GetCompressorCurrent();
+    .. group-tab:: C++ (Source)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 75-76, 80-82, 85-90, 93-100
+          :linenos:
+          :lineno-start: 75
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 19-23, 31-33, 72-73
+          :linenos:
+          :lineno-start: 19
 
 
 The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor (``enableAnalog`` method).
@@ -79,22 +91,31 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
 
 .. tabs::
 
-    .. code-tab:: java
+    .. group-tab:: Java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 38-40
+          :linenos:
+          :lineno-start: 38
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 112-117
+          :linenos:
+          :lineno-start: 112
 
-        Solenoid exampleSolenoidPCM = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
-        Solenoid exampleSolenoidPH = new Solenoid(PneumaticsModuleType.REVPH, 1);
+    .. group-tab:: C++ (Header)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+          :language: c++
+          :lines: 46-49
+          :linenos:
+          :lineno-start: 46
 
-        exampleSolenoidPCM.set(true);
-        exampleSolenoidPCM.set(false);
-
-    .. code-tab:: c++
-
-        frc::Solenoid exampleSolenoidPCM{frc::PneumaticsModuleType::CTREPCM, 1};
-        frc::Solenoid exampleSolenoidPH{frc::PneumaticsModuleType::REVPH, 1};
-
-        exampleSolenoidPCM.Set(true);
-        exampleSolenoidPCM.Set(false);
-
+    .. group-tab:: C++ (Source)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 52-57
+          :linenos:
+          :lineno-start: 52
 
 
 Double Solenoids in WPILib
@@ -104,29 +125,36 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
 
 .. tabs::
 
-   .. code-tab:: java
+    .. group-tab:: Java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 7-10
+          :linenos:
+          :lineno-start: 7
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 42-45
+          :linenos:
+          :lineno-start: 42
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 124-124, 126-126
+          :linenos:
+          :lineno-start: 124
 
-        // Using "import static an.enum.or.constants.inner.class.*;" helps reduce verbosity
-        // this replaces "DoubleSolenoid.Value.kForward" with just kForward
-        // further reading is available at https://www.geeksforgeeks.org/static-import-java/
-        import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
+    .. group-tab:: C++ (Header)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+          :language: c++
+          :lines: 51-54
+          :linenos:
+          :lineno-start: 51
 
-        DoubleSolenoid exampleDoublePCM = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-        DoubleSolenoid exampleDoublePH = new DoubleSolenoid(9, PneumaticsModuleType.REVPH, 4, 5);
-
-
-        exampleDoublePCM.set(kOff);
-        exampleDoublePCM.set(kForward);
-        exampleDoublePCM.set(kReverse);
-
-   .. code-tab:: c++
-
-        frc::DoubleSolenoid exampleDoublePCM{frc::PneumaticsModuleType::CTREPCM, 1, 2};
-        frc::DoubleSolenoid exampleDoublePH{9, frc::PneumaticsModuleType::REVPH, 4, 5};
-
-        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kOff);
-        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kForward);
-        exampleDoublePCM.Set(frc::DoubleSolenoid::Value::kReverse);
+    .. group-tab:: C++ (Source)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 64-64, 66-66
+          :linenos:
+          :lineno-start: 64
 
 Toggling Solenoids
 ------------------
@@ -176,20 +204,31 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
 
 
 .. tabs::
+    .. group-tab:: Java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 47-48
+          :linenos:
+          :lineno-start: 47
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 80-83
+          :linenos:
+          :lineno-start: 80
 
-    .. code-tab:: java
+    .. group-tab:: C++ (Header)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+          :language: c++
+          :lines: 56-57
+          :linenos:
+          :lineno-start: 56
 
-        Compressor phCompressor = new Compressor(1, PneumaticsModuleType.REVPH);
-
-        double current = phCompressor.getPressure();
-
-    .. code-tab:: c++
-
-        #include <units/pressure.h>
-
-        frc::Compressor phCompressor{1, frc::PneumaticsModuleType::REVPH};
-
-        units::pounds_per_square_inch_t current = phCompressor.GetPressure();
+    .. group-tab:: C++ (Source)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 19-23
+          :linenos:
+          :lineno-start: 19
 
 roboRIO
 ^^^^^^^
@@ -198,29 +237,28 @@ A pressure transducer can be connected to the Analog Input ports on the roboRIO,
 
 .. tabs::
 
-    .. code-tab:: java
+    .. group-tab:: Java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 50-57
+          :linenos:
+          :lineno-start: 50
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :language: java
+          :lines: 88-89
+          :linenos:
+          :lineno-start: 88
 
-        import edu.wpi.first.wpilibj.AnalogInput;
-        import edu.wpi.first.wpilibj.AnalogPotentiometer;
+    .. group-tab:: C++ (Header)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+          :language: c++
+          :lines: 59-67
+          :linenos:
+          :lineno-start: 46
 
-        // product-specific voltage->pressure conversion, see product manual
-        // in this case, 250(V/5)-25
-        // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
-        // so if r is the raw AnalogPotentiometer output, the pressure is 250r-25
-        double scale = 250, offset = -25;
-        AnalogPotentiometer pressureTransducer = new AnalogPotentiometer(/* the AnalogIn port*/ 2, scale, offset);
-
-        // scaled values in psi units
-        double psi = pressureTransducer.get();
-
-    .. code-tab:: c++
-
-        // product-specific voltage->pressure conversion, see product manual
-        // in this case, 250(V/5)-25
-        // the scale parameter in the AnalogPotentiometer constructor is scaled from 1 instead of 5,
-        // so if r is the raw AnalogPotentiometer output, the pressure is 250r-25
-        double scale = 250, offset = -25;
-        frc::AnalogPotentiometer pressureTransducer{/* the AnalogIn port*/ 2, scale, offset};
-
-        // scaled values in psi units
-        double psi = pressureTransducer.Get();
+    .. group-tab:: C++ (Source)
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+          :language: c++
+          :lines: 26-28
+          :linenos:
+          :lineno-start: 26
