@@ -19,6 +19,11 @@
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
       "latestVersion":"v2023.2.1"
+    },
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion":"3b64aadee717c9f0566497a40fd0be7d0eaed96d"
     }
   ],
   "ignoredFiles": []

@@ -182,7 +182,7 @@ Example build.gradle files are provided in the `StandaloneAppSamples Repository 
 
     .. group-tab:: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/main/Java/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/3b64aadee717c9f0566497a40fd0be7d0eaed96d/Java/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 5
@@ -191,7 +191,7 @@ Example build.gradle files are provided in the `StandaloneAppSamples Repository 
 
        Uncomment the appropriate platform as highlighted.
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/main/Cpp/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/3b64aadee717c9f0566497a40fd0be7d0eaed96d/Cpp/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 3, 20-22
