@@ -80,9 +80,10 @@ The returned setpoint might then be used as in the following example:
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
     public void goToPosition(double goalPosition) {
-      double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime)
+      double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
+      double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
       motor.setVoltage(
-          controller.calculate(encoder.getDistance(), goalPosition)
+          pidVal
           + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
       lastSpeed = controller.getSetpoint().velocity;
       lastTime = Timer.getFPGATimestamp();
@@ -96,10 +97,11 @@ The returned setpoint might then be used as in the following example:
     // Controls a simple motor's position using a SimpleMotorFeedforward
     // and a ProfiledPIDController
     void GoToPosition(units::meter_t goalPosition) {
+      auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
       auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
           (frc2::Timer::GetFPGATimestamp() - lastTime);
       motor.SetVoltage(
-          controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition) +
+           pidVal +
           feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
       lastSpeed = controller.GetSetpoint().velocity;
       lastTime = frc2::Timer::GetFPGATimestamp();
