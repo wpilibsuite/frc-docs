@@ -32,47 +32,35 @@ CAN Devices are identified by their Node ID. The default Node ID for PCMs is 0. 
 Generating and Storing Pressure
 -------------------------------
 
-Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor doesn't necessarily have to be on the robot, but must be powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object, as shown by the following code from the Solenoid example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Solenoid>`__):
+Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor must be on the robot and powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object, as shown by the following code from the Solenoid example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Solenoid>`__):
 
 .. note:: The Compressor object is only needed if you want the ability to turn off the compressor, change the pressure sensor (PH only), or query compressor status.
 
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 47-48
-          :linenos:
-          :lineno-start: 47
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lines: 48-49
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 134-135, 139-140, 143-147, 150-156
-          :linenos:
-          :lineno-start: 134
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lines: 138-139, 143-144, 147-151, 154-160
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 80-83, 94-95, 131-132
-          :linenos:
-          :lineno-start: 80
+          :lines: 82-85, 96-97, 135-136
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
-          :lines: 56-57
-          :linenos:
-          :lineno-start: 56
+          :lines: 55-56
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 75-76, 80-82, 85-90, 93-100
-          :linenos:
-          :lineno-start: 75
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 19-23, 31-33, 72-73
-          :linenos:
-          :lineno-start: 19
 
 
 The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor (``enableAnalog`` method).
@@ -92,26 +80,26 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 38-40
+          :lines: 39-41
           :linenos:
           :lineno-start: 38
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 112-117
+          :lines: 116-121
           :linenos:
           :lineno-start: 112
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
-          :lines: 46-49
+          :lines: 45-48
           :linenos:
-          :lineno-start: 46
+          :lineno-start: 45
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 52-57
           :linenos:
@@ -126,31 +114,31 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 7-10
+          :lines: 7-11
           :linenos:
           :lineno-start: 7
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 42-45
+          :lines: 43-46
           :linenos:
-          :lineno-start: 42
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lineno-start: 43
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 124-124, 126-126
+          :lines: 128-128, 130-130
           :linenos:
-          :lineno-start: 124
+          :lineno-start: 128
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
-          :lines: 51-54
+          :lines: 50-53
           :linenos:
-          :lineno-start: 51
+          :lineno-start: 50
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 64-64, 66-66
           :linenos:
@@ -205,30 +193,22 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
 
 .. tabs::
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 47-48
-          :linenos:
-          :lineno-start: 47
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lines: 48-49
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 80-83
-          :linenos:
-          :lineno-start: 80
+          :lines: 82-85
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
-          :lines: 56-57
-          :linenos:
-          :lineno-start: 56
+          :lines: 55-56
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 19-23
-          :linenos:
-          :lineno-start: 19
 
 roboRIO
 ^^^^^^^
@@ -238,27 +218,19 @@ A pressure transducer can be connected to the Analog Input ports on the roboRIO,
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 50-57
-          :linenos:
-          :lineno-start: 50
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lines: 51-59
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 88-89
-          :linenos:
-          :lineno-start: 88
+          :lines: 90-91
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
-          :lines: 59-67
-          :linenos:
-          :lineno-start: 46
+          :lines: 58-66
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a4c2cf00043dbb4f0969b4f3b55fa1bbe008cc24/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/ed7efedd3edce0636b87c22592363a3923cf898e/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 26-28
-          :linenos:
-          :lineno-start: 26
