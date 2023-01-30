@@ -37,7 +37,7 @@ Plugin classes are permitted to have a default constructor but it cannot take an
 Building plugin
 ---------------
 
-The easiest way to build plugins is to utlize the `example-plugins` folder in the shufflebloard source tree. Clone Shuffleboard with ``git clone https://github.com/wpilibsuite/shuffleboard.git``, and checout the version that corresponds to the WPILib version you have installed (e.g. 2022.4.1). ``git checkout v2022.4.1``
+The easiest way to build plugins is to utlize the `example-plugins` folder in the shufflebloard source tree. Clone Shuffleboard with ``git clone https://github.com/wpilibsuite/shuffleboard.git``, and checkout the version that corresponds to the WPILib version you have installed (e.g. 2023.2.1). ``git checkout v2023.2.1``
 
 Put your plugin in the ``example-plugins\PLUGIN-NAME`` directory.
 Copy the ``custom-data-and-widget.gradle`` from ``example-plugins\custom-data-and-widget`` and rename to match your plugin name.
