@@ -75,7 +75,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
             defaultInst = ntcore.NetworkTableInstance.getDefault()
 
             # create a NetworkTable instance
-            inst = NetworkTableInstance.create();
+            inst = ntcore.NetworkTableInstance.create()
 
             # destroy a NetworkTable instance
             ntcore.NetworkTableInstance.destroy(inst)
