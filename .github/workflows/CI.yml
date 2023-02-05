@@ -185,4 +185,4 @@ jobs:
         pip install -r source/requirements.txt
     - name: Format
       run: |
-        black .
+        black --check .
