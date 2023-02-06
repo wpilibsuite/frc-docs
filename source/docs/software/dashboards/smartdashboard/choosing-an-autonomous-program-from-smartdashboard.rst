@@ -88,7 +88,7 @@ In ``RobotContainer``, create a variable to hold a reference to a ``SendableChoo
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
       :language: c++
       :lines: 38-44
 
