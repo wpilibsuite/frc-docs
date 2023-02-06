@@ -27,7 +27,6 @@ FOLDER_INCS = [
 
 
 def mergeAndMinify(out_folder):
-
     if not os.path.isdir(out_folder):
         os.makedirs(out_folder)
 
@@ -35,7 +34,6 @@ def mergeAndMinify(out_folder):
 
     with open(outputFile, "w") as outf:
         for folder in FOLDER_INCS:
-
             jsRoot = os.path.dirname(__file__)
             # find all js files in the specific folder
             inFileNames = glob.glob(os.path.join(jsRoot, folder, "*.js"))
@@ -45,7 +43,6 @@ def mergeAndMinify(out_folder):
             inFileNames.sort()
 
             for inFileName in inFileNames:
-
                 with open(inFileName, "r") as inf:
                     if not debugJS:
                         # Minify each file independently - again, low bar solution for now
@@ -76,7 +73,6 @@ def mergeAndMinify(out_folder):
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
-
     print("Generating and adding controls javascript...")
 
     # Perform controls js setup
