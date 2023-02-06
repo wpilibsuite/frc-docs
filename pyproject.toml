@@ -29,7 +29,7 @@ sphinxcontrib-svg2pdfconverter = "==1.2.1"
 sphinxext-delta = "==0.2.0"
 sphinxext-linkcheckdiff = "==0.1.0"
 sphinxext-mimic = "==0.1.1"
-sphinxext-opengraph = "==0.4.1"
+sphinxext-opengraph = { git = "https://github.com/choldgraf/sphinxext-opengraph.git", branch = "feat-social-card-previews" }
 sphinxext-photofinish = "==0.1.9"
 sphinxext-presentations = "==0.2.2"
 sphinxext-rediraffe = "==0.2.5"

@@ -2034,18 +2034,23 @@ sphinx = ">=3.0"
 
 [[package]]
 name = "sphinxext-opengraph"
-version = "0.4.1"
+version = "0.1.dev68+gdbd27be"
 description = "Sphinx Extension to enable OGP support"
 category = "main"
 optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "sphinxext-opengraph-0.4.1.tar.gz", hash = "sha256:6ce428fc078bf2dfdb46fba035958989a4865180d8b6dbb03892692e95e1e5d8"},
-    {file = "sphinxext_opengraph-0.4.1-py3-none-any.whl", hash = "sha256:ebdfd83535aad4ffe290d5adffe181dae03b59da7fdd25765ee4982e2041bf9e"},
-]
+python-versions = ">=3.7"
+files = []
+develop = false
 
 [package.dependencies]
-sphinx = ">=2.0"
+matplotlib = "*"
+sphinx = ">=4.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/choldgraf/sphinxext-opengraph.git"
+reference = "feat-social-card-previews"
+resolved_reference = "dbd27bee459ba7220d15032ea3a0756de9cd7225"
 
 [[package]]
 name = "sphinxext-photofinish"
@@ -2334,4 +2339,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "473094498b91fb339abcdf261f6cb4b61eec91f4bfe23a6eff0f856dafba6e7d"
+content-hash = "2948b5cc133ab135442f3fdbdb16f674bd6235f7f987d627d4b08fbec03f1740"
