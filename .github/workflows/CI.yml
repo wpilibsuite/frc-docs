@@ -180,6 +180,9 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: 3.9
-    - uses: psf/black@22.1.0
-      with:
-        options: "--check"
+    - name: Install Python Dependencies
+      run: |
+        pip install -r source/requirements.txt
+    - name: Format
+      run: |
+        black --check .

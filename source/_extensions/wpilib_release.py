@@ -19,7 +19,6 @@ class WpilibRelease(SphinxDirective):
     final_argument_whitespace = True
 
     def run(self) -> List[nodes.Node]:
-
         version: str = self.arguments[0]
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
