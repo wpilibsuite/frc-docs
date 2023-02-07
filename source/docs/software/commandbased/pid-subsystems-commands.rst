@@ -26,13 +26,13 @@ getMeasurement()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 84-84
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
          :lines: 79-79
 
@@ -47,13 +47,13 @@ useOutput()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 77-77
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
          :lines: 87-87
 

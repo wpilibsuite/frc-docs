@@ -30,13 +30,13 @@ useState()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
          :language: java
          :lines: 105-105
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
          :language: c++
          :lines: 77-77
 

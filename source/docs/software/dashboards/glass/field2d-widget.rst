@@ -55,7 +55,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
          :language: java
          :lines: 44-61
          :linenos:
