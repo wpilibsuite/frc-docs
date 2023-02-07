@@ -17,11 +17,11 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 46-92
+      :lines: 45-90
       :linenos:
-      :lineno-start: 46
+      :lineno-start: 45
 
 Configuring the Trajectory Constraints
 --------------------------------------
@@ -45,11 +45,11 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 47-51
+      :lines: 46-50
       :linenos:
-      :lineno-start: 47
+      :lineno-start: 46
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -70,11 +70,11 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 53-59
+      :lines: 52-58
       :linenos:
-      :lineno-start: 53
+      :lineno-start: 52
 
 Generating the Trajectory
 -------------------------
@@ -93,11 +93,11 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 61-70
+      :lines: 60-69
       :linenos:
-      :lineno-start: 61
+      :lineno-start: 60
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -118,11 +118,11 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 86-87
+      :lines: 84-85
       :linenos:
-      :lineno-start: 86
+      :lineno-start: 84
 
 
 It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)>`_,  `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
@@ -141,11 +141,11 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 72-84
+      :lines: 71-82
       :linenos:
-      :lineno-start: 72
+      :lineno-start: 71
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 
