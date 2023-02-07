@@ -68,7 +68,7 @@ Running Tests
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.3.2/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 73-76
    :linenos:
