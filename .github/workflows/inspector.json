@@ -26,5 +26,5 @@
       "latestVersion":"3b64aadee717c9f0566497a40fd0be7d0eaed96d"
     }
   ],
-  "ignoredFiles": []
+  "ignoredFiles": ["source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst"]
 }
