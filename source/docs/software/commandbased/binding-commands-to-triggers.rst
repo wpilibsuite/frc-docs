@@ -110,19 +110,19 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
       :language: java
-      :lines: 87-89
+      :lines: 114-116
       :linenos:
-      :lineno-start: 87
+      :lineno-start: 114
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 46-49
+      :lines: 75-78
       :linenos:
-      :lineno-start: 46
+      :lineno-start: 75
 
 The ``whileFalse`` binding is identical, only that it schedules on ``false`` and cancels on ``true``.
 
