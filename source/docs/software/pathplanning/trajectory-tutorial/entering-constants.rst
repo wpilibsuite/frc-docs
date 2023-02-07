@@ -26,11 +26,11 @@ Firstly, we must enter the feedforward and feedback gains which we obtained from
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
-      :lines: 48-58
+      :lines: 47-57
       :linenos:
-      :lineno-start: 48
+      :lineno-start: 47
 
 DifferentialDriveKinematics
 ---------------------------
@@ -72,11 +72,11 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
-      :lines: 62-63
+      :lines: 61-62
       :linenos:
-      :lineno-start: 62
+      :lineno-start: 61
 
 Ramsete Parameters
 ------------------
@@ -95,8 +95,8 @@ Finally, we must include a pair of parameters for the RAMSETE controller.  The v
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
-      :lines: 65-68
+      :lines: 64-67
       :linenos:
-      :lineno-start: 65
+      :lineno-start: 64
