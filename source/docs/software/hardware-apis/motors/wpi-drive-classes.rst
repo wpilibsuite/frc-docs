@@ -262,10 +262,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
+            myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
 
             // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-            myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
+            myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
@@ -275,10 +275,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(-driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
+            myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
         }
 
     .. code-tab:: python
@@ -288,10 +288,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
            self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
 
            # Arcade drive with a given forward and turn rate
-           self.myDrive.arcadeDrive(-self.driveStick.getY(), self.driveStick.getX())
+           self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
 
            # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-           self.myDrive.curvatureDrive(-self.driveStick.getY(), self.driveStick.getX(), self.driveStick.getButton(1))
+           self.myDrive.curvatureDrive(-self.driveStick.getY(), -self.driveStick.getX(), self.driveStick.getButton(1))
 
 Using the MecanumDrive class to control Mecanum Drive robots
 ------------------------------------------------------------
@@ -340,22 +340,22 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
-            m_robotDrive.drivePolar(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
+            m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+            m_robotDrive.drivePolar(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
-            m_robotDrive.drivePolar(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
+            m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
+            m_robotDrive.drivePolar(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
         }
 
     .. code-tab:: python
 
        def teleopPeriodic(self):
-           self.robotDrive.driveCartesian(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
-           self.robotDrive.drivePolar(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
+           self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+           self.robotDrive.drivePolar(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
 
 Field-Oriented Driving
 ^^^^^^^^^^^^^^^^^^^^^^
