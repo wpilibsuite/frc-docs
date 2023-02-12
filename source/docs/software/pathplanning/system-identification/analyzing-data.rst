@@ -21,6 +21,8 @@ In the resulting file dialog, select the JSON file you want to analyze. If the f
 Running Feedforward Analysis
 ----------------------------
 
+.. note:: For information on what the calculated feedback gains mean, see :ref:`docs/software/advanced-controls/introduction/introduction-to-feedforward:The Permanent-Magnet DC Motor Feedforward Equation`.  For information on using the calculated feedback gains in code, see :ref:`feedforward control <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
+
 Click the dropdown arrow on the :guilabel:`Feedforward` Section.
 
 .. note:: If you would like to change units, you will have to press the :guilabel:`Override Units` button and fill out the information on the popup.
