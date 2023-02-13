@@ -91,10 +91,10 @@ The :code:`Encoder` class offers a number of configuration methods:
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
-        encoder.setDistancePerPulse(4./256.);
+        encoder.setDistancePerPulse(4.0/256.0);
 
         // Configures the encoder to consider itself stopped after .1 seconds
-        encoder.setMaxPeriod(.1);
+        encoder.setMaxPeriod(0.1);
 
         // Configures the encoder to consider itself stopped when its rate is below 10
         encoder.setMinRate(10);
@@ -110,10 +110,10 @@ The :code:`Encoder` class offers a number of configuration methods:
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
-        encoder.SetDistancePerPulse(4./256.);
+        encoder.SetDistancePerPulse(4.0/256.0);
 
         // Configures the encoder to consider itself stopped after .1 seconds
-        encoder.SetMaxPeriod(.1);
+        encoder.SetMaxPeriod(0.1);
 
         // Configures the encoder to consider itself stopped when its rate is below 10
         encoder.SetMinRate(10);
@@ -279,12 +279,12 @@ The :code:`DutyCycleEncoder` class offers a number of configuration methods:
     .. code-tab:: java
 
         // Configures the encoder to return a distance of 4 for every rotation
-        encoder.setDistancePerRotation(4.);
+        encoder.setDistancePerRotation(4.0);
 
     .. code-tab:: c++
 
         // Configures the encoder to return a distance of 4 for every rotation
-        encoder.SetDistancePerRotation(4.);
+        encoder.SetDistancePerRotation(4.0);
 
 Reading information from duty cycle encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -380,12 +380,12 @@ The :code:`AnalogEncoder` class offers a number of configuration methods:
     .. code-tab:: java
 
         // Configures the encoder to return a distance of 4 for every rotation
-        encoder.setDistancePerRotation(4.);
+        encoder.setDistancePerRotation(4.0);
 
     .. code-tab:: c++
 
         // Configures the encoder to return a distance of 4 for every rotation
-        encoder.SetDistancePerRotation(4.);
+        encoder.SetDistancePerRotation(4.0);
 
 Reading information from analog encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -485,7 +485,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         public void autonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.getDistance() < 5) {
-                drive.tankDrive(.5, .5);
+                drive.tankDrive(0.5, 0.5);
             } else {
                 drive.tankDrive(0, 0);
             }
@@ -512,13 +512,13 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
-            encoder.SetDistancePerPulse(1./256.);
+            encoder.SetDistancePerPulse(1.0/256.0);
         }
 
         void Robot:AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.GetDistance() < 5) {
-                drive.TankDrive(.5, .5);
+                drive.TankDrive(0.5, 0.5);
             } else {
                 drive.TankDrive(0, 0);
             }
@@ -546,7 +546,7 @@ Since quadrature encoders measure *relative* distance, it is often important to 
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.get()) {
-                spark.set(-.5);
+                spark.set(-0.5);
             } else {
                 spark.set(0);
                 encoder.reset();
@@ -566,7 +566,7 @@ Since quadrature encoders measure *relative* distance, it is often important to 
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.Get()) {
-                spark.Set(-.5);
+                spark.Set(-0.5);
             } else {
                 spark.Set(0);
                 encoder.Reset();
