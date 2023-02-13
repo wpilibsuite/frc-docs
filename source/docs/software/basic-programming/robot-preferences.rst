@@ -13,15 +13,23 @@ Initializing Preferences
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
-         :lines: 35-42, 90-91, 98-105
+         :lines: 15-20
+
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+         :language: java
+         :lines: 28-30, 71-72, 79-82
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
          :language: cpp
-         :lines: 38-45, 85-86, 92-100
+         :lines: 30-34
+
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+         :language: cpp
+         :lines: 12, 18-22
 
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
@@ -36,15 +44,15 @@ Reading Preferences
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
-         :lines: 126-134
+         :lines: 104-111
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
-         :lines: 122-130
+         :lines: 44-52
 
 Reading a preference is easy. The ``getDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
@@ -54,15 +62,21 @@ Depending on the data that is stored in preferences, you can use it when you rea
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
-         :lines: 136-147
+         :lines: 29-38
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+         :language: java
+         :lines: 113-119
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
-         :lines: 132-143
+         :lines: 15-24
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+         :language: cpp
+         :lines: 54-60
 
 Using Preferences in SmartDashboard
 -----------------------------------

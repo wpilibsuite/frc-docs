@@ -43,19 +43,19 @@ In the following example, we simulate an elevator given the mass of the moving c
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 53-64
+         :lines: 47-58
          :linenos:
-         :lineno-start: 53
+         :lineno-start: 47
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.h
          :language: cpp
-         :lines: 61-70
+         :lines: 51-60
          :linenos:
-         :lineno-start: 61
+         :lineno-start: 51
 
 Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID control loop to drive our elevator to a setpoint 30 inches off the ground.
 
@@ -63,21 +63,35 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
-         :lines: 103-113
+         :lines: 31-40
          :linenos:
-         :lineno-start: 103
+         :lineno-start: 31
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+         :language: java
+         :lines: 98-105
+         :linenos:
+         :lineno-start: 98
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
-         :lines: 100-108
+         :lines: 20-28
          :linenos:
-         :lineno-start: 100
+         :lineno-start: 20
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+         :language: cpp
+         :lines: 42-50
+         :linenos:
+         :lineno-start: 42
 
 Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator. We use :code:`SimulationPeriodic` because it runs periodically only for simulated robots. This means that our simulation code will not be run on a real robot.
+
+.. note:: Classes inheriting from command-based's ``Subsystem`` can override the inherited ``simulationPeriodic()`` method. Other classes will need their simulation update methods called from ``Robot``'s ``simulationPeriodic``.
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
 
@@ -85,16 +99,16 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 84-101
+         :lines: 78-91
          :linenos:
-         :lineno-start: 84
+         :lineno-start: 78
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/43975ac7cc1287dc83191a1bda3898c901fa6e31/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: cpp
-         :lines: 91-110
+         :lines: 20-35
          :linenos:
-         :lineno-start: 91
+         :lineno-start: 20
