@@ -32,13 +32,13 @@ This method walks through the following steps:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 202-245
       :linenos:
       :lineno-start: 202
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 181-191
       :linenos:
@@ -46,7 +46,7 @@ This method walks through the following steps:
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 114-159
       :linenos:
@@ -68,7 +68,7 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 278-285
       :linenos:
@@ -76,7 +76,7 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 183-190
       :linenos:
@@ -93,7 +93,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 290-292
       :linenos:
@@ -101,7 +101,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 195-197
       :linenos:
@@ -118,7 +118,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 295-325
       :linenos:
@@ -127,7 +127,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 201-226
       :linenos:
@@ -143,7 +143,7 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 340-346
       :linenos:
@@ -151,7 +151,7 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
       :lines: 240-246
       :linenos:
@@ -186,7 +186,7 @@ A typical use-case for these methods is adding markers in an event log whenever 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
       :language: java
       :lines: 73-88
       :linenos:
@@ -194,7 +194,7 @@ A typical use-case for these methods is adding markers in an event log whenever 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
       :lines: 23-47
       :linenos:

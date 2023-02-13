@@ -20,7 +20,7 @@ As ``Robot`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjE
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 22-31
       :linenos:
@@ -34,7 +34,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 33-47
       :linenos:
@@ -42,7 +42,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 11-22
       :linenos:
@@ -54,7 +54,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 56-65
       :linenos:
@@ -62,7 +62,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 32-42
       :linenos:
@@ -74,7 +74,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
       :language: java
       :lines: 71-80
       :linenos:
@@ -82,7 +82,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
       :language: c++
       :lines: 46-55
       :linenos:
@@ -101,7 +101,7 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExa
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
       :lines: 23
       :linenos:
@@ -109,11 +109,11 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExa
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
       :language: c++
-      :lines: 26-28
+      :lines: 32
       :linenos:
-      :lineno-start: 24
+      :lineno-start: 32
 
 Notice that subsystems are declared as private fields in ``RobotContainer``. This is in stark contrast to the previous incarnation of the command-based framework, but is much more-aligned with agreed-upon object-oriented best-practices. If subsystems are declared as global variables, it allows the user to access them from anywhere in the code. While this can make certain things easier (for example, there would be no need to pass subsystems to commands in order for those commands to access them), it makes the control flow of the program much harder to keep track of as it is not immediately obvious which parts of the code can change or be changed by which other parts of the code. This also circumvents the ability of the resource-management system to do its job, as ease-of-access makes it easy for users to accidentally make conflicting calls to subsystem methods outside of the resource-managed commands.
 
@@ -121,19 +121,19 @@ Notice that subsystems are declared as private fields in ``RobotContainer``. Thi
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
-      :lines: 23
+      :lines: 61
       :linenos:
-      :lineno-start: 23
+      :lineno-start: 61
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 7
+      :lines: 34
       :linenos:
-      :lineno-start: 7
+      :lineno-start: 34
 
 Since subsystems are declared as private members, they must be explicitly passed to commands (a pattern called "dependency injection") in order for those commands to call methods on them.  This is done here with ``ExampleCommand``, which is passed a pointer to an ``ExampleSubsystem``.
 
@@ -141,7 +141,7 @@ Since subsystems are declared as private members, they must be explicitly passed
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
       :lines: 35-52
       :linenos:
@@ -149,7 +149,7 @@ Since subsystems are declared as private members, they must be explicitly passed
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
       :lines: 19-30
       :linenos:
@@ -161,7 +161,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
       :language: java
       :lines: 54-63
       :linenos:
@@ -169,7 +169,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
       :language: c++
       :lines: 32-35
       :linenos:
@@ -189,6 +189,7 @@ For more illustrative examples of what a ``constants`` class should look like in
 * FrisbeeBot (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/Constants.h>`__)
 * GyroDriveCommands (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/Constants.h>`__)
 * Hatchbot (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/Constants.h>`__)
+* RapidReactCommandBot (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/Constants.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/Constants.h>`__)
 
 In Java, it is recommended that the constants be used from other classes by statically importing the necessary inner class. An ``import static`` statement imports the static namespace of a class into the class in which you are working, so that any ``static`` constants can be referenced directly as if they had been defined in that class.  In C++, the same effect can be attained with ``using namespace``:
 

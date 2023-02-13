@@ -151,7 +151,7 @@ The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
        :language: java
        :lines: 20-45
        :linenos:
@@ -159,11 +159,11 @@ The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
        :language: c++
-       :lines: 25-44
+       :lines: 24-43
        :linenos:
-       :lineno-start: 25
+       :lineno-start: 24
 
 The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5>`__), backed by the ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__), is a specialization accepting two commands and a boolean selector function.
 
@@ -241,7 +241,7 @@ Command compositions can also be written as a constructor-only subclass of the m
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
       :language: java
       :lines: 5-
       :linenos:
@@ -249,7 +249,7 @@ Command compositions can also be written as a constructor-only subclass of the m
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -257,7 +257,7 @@ Command compositions can also be written as a constructor-only subclass of the m
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
       :language: c++
       :lines: 5-
       :linenos:
