@@ -248,6 +248,7 @@ Examples of duty cycle encoders:
 - `AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
+- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
 Initializing a duty cycle encoder
@@ -348,6 +349,7 @@ WPILib provides support for analog absolute encoders through the :code:`AnalogEn
 
 Examples of analog encoders:
 
+- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
 - `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/bearings/Thrifty-Absolute-Magnetic-Encoder-p421607500>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
