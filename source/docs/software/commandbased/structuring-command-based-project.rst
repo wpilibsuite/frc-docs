@@ -111,9 +111,9 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExa
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
       :language: c++
-      :lines: 26-28
+      :lines: 32
       :linenos:
-      :lineno-start: 24
+      :lineno-start: 32
 
 Notice that subsystems are declared as private fields in ``RobotContainer``. This is in stark contrast to the previous incarnation of the command-based framework, but is much more-aligned with agreed-upon object-oriented best-practices. If subsystems are declared as global variables, it allows the user to access them from anywhere in the code. While this can make certain things easier (for example, there would be no need to pass subsystems to commands in order for those commands to access them), it makes the control flow of the program much harder to keep track of as it is not immediately obvious which parts of the code can change or be changed by which other parts of the code. This also circumvents the ability of the resource-management system to do its job, as ease-of-access makes it easy for users to accidentally make conflicting calls to subsystem methods outside of the resource-managed commands.
 
