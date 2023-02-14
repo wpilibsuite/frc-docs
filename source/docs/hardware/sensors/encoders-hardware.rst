@@ -24,9 +24,9 @@ There are also three main ways the encoder data is communicated that are typical
 - `Duty Cycle encoders`_
 - `Analog encoders`_
 
-.. note:: some encoders may support more then one communication method
+.. note:: Some encoders may support more then one communication method
 
-Shafted encoders
+Shafted Encoders
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/greyhill-63r-encoder.svg
@@ -40,7 +40,7 @@ Examples of shafted encoders:
 - `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
-On-shaft encoders
+On-shaft Encoders
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/amt10x-encoders.svg
@@ -55,7 +55,7 @@ Examples of On-shaft encoders:
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
 - `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
-Magnetic encoders
+Magnetic Encoders
 ^^^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/ctre-magnetic-encoder.png
@@ -98,7 +98,7 @@ Quadrature Encoder Wiring
   :alt: Wiring the E4T Optical Encoder to two DIO ports.
   :width: 400
 
-Quaderature Encoders, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports as shown above.
+Quadrature Encoders, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports as shown above.
 
 Index
 ~~~~~
@@ -120,7 +120,7 @@ Thus, a resolution stated in edges per revolution has a value four times that of
 
 In general, the resolution of your encoder in edges-per-revolution should be somewhat finer than your smallest acceptable error in positioning.  Thus, if you want to know the mechanism plus-or-minus one degree, you should have an encoder with a resolution somewhat higher than 360 edges per revolution.
 
-Duty Cycle encoders
+Duty Cycle Encoders
 ^^^^^^^^^^^^^^^^^^^
 
 .. image:: /docs/software/hardware-apis/sensors/images/encoders-software/encoding-direction.png
@@ -136,7 +136,7 @@ Examples of duty cycle encoders:
 - `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
-Analog encoders
+Analog Encoders
 ^^^^^^^^^^^^^^^
 
 .. image:: images/encoders-hardware/absolute-encoder-to-roborio.svg
