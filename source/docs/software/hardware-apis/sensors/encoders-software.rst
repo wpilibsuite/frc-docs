@@ -130,8 +130,8 @@ Reading information from Quadrature Encoders
 
 The :code:`Encoder` class provides a wealth of information to the user about the motion of the encoder.
 
-Quadrature Distance
-~~~~~~~~~~~~~~~~~~~
+Distance
+~~~~~~~~
 
 .. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/encoders-software:Resetting a quadrature encoder>`.
 
