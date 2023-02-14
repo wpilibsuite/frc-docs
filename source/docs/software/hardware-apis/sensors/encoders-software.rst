@@ -9,8 +9,8 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft).
 
 .. important:: The classes in this document are only used for encoders that are plugged directly into the roboRIO! Please reference the appropriate vendors' documentation for using encoders plugged into motor controllers.
 
-Quadrature Encoders - The `Encoder`` class
-------------------------------------------
+Quadrature Encoders - The :code:`Encoder` Class
+-----------------------------------------------
 
 WPILib provides support for quadrature encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
 
@@ -32,10 +32,10 @@ Examples of quadrature encoders:
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
 - `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
-Initializing a quadrature encoder
+Initializing a Quadrature Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An encoder can be instantiated as follows:
+A quadrature encoder can be instantiated as follows:
 
 .. tabs::
 
@@ -51,7 +51,7 @@ An encoder can be instantiated as follows:
         // Defaults to 4X decoding and non-inverted
         frc::Encoder encoder{0, 1};
 
-Decoding type
+Decoding Type
 ~~~~~~~~~~~~~
 
 The WPILib :code:`Encoder` class can decode encoder signals in three different modes:
@@ -76,7 +76,7 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
         // 2X encoding and non-inverted
         frc::Encoder encoder{0, 1, false, frc::Encoder::EncodingType::k2X};
 
-Configuring quadrature encoder parameters
+Configuring Quadrature Encoder Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`Encoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
@@ -125,7 +125,7 @@ The :code:`Encoder` class offers a number of configuration methods:
         // Can be between 1 and 127 samples
         encoder.SetSamplesToAverage(5);
 
-Reading information from quadrature encoders
+Reading information from Quadrature Encoders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The :code:`Encoder` class provides a wealth of information to the user about the motion of the encoder.
@@ -219,7 +219,7 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
         // Gets the current period of the encoder
         encoder.GetPeriod();
 
-Resetting a quadrature encoder
+Resetting a Quadrature Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To reset a quadrature encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism>` routine:
@@ -251,7 +251,7 @@ Examples of duty cycle encoders:
 - `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
-Initializing a duty cycle encoder
+Initializing a Duty Cycle Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A duty cycle encoder can be instantiated as follows:
@@ -268,7 +268,7 @@ A duty cycle encoder can be instantiated as follows:
         // Initializes a duty cycle encoder on DIO pins 0
         frc::DutyCycleEncoder encoder{0};
 
-Configuring duty cycle encoder parameters
+Configuring Duty Cycle Encoder Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`DutyCycleEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
@@ -287,13 +287,8 @@ The :code:`DutyCycleEncoder` class offers a number of configuration methods:
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.SetDistancePerRotation(4.0);
 
-Reading information from duty cycle encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The :code:`DutyCycleEncoder` class provides a wealth of information to the user about the motion of the encoder.
-
-Duty Cycle Distance
-~~~~~~~~~~~~~~~~~~~
+Reading Distance from Duty Cycle Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: Duty Cycle encoders measure absolute distance. It does not depend on the starting position of the encoder.
 
@@ -313,7 +308,7 @@ Users can obtain the distance measured by the encoder with the :code:`getDistanc
 
 
 
-Resetting a duty cycle encoder
+Resetting a Duty Cycle Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To reset an encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
@@ -342,7 +337,7 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
         // set the position offset to half a rotation
         encoder.SetPositionOffset(0.5);
 
-Analog Encoders - The :code:`AnalogEncoder` class
+Analog Encoders - The :code:`AnalogEncoder` Class
 -------------------------------------------------
 
 WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
@@ -353,7 +348,7 @@ Examples of analog encoders:
 - `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/bearings/Thrifty-Absolute-Magnetic-Encoder-p421607500>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
-Initializing an analog encoder
+Initializing an Analog Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An analog encoder can be instantiated as follows:
@@ -370,7 +365,7 @@ An analog encoder can be instantiated as follows:
         // Initializes a duty cycle encoder on DIO pins 0
         frc::AnalogEncoder encoder{0};
 
-Configuring analog encoder parameters
+Configuring Analog Encoder Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`AnalogEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
@@ -389,13 +384,8 @@ The :code:`AnalogEncoder` class offers a number of configuration methods:
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.SetDistancePerRotation(4.0);
 
-Reading information from analog encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The :code:`AnalogEncoder` class provides a wealth of information to the user about the motion of the encoder.
-
-Analog Distance
-~~~~~~~~~~~~~~~
+Reading Distance from Analog Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: Analog encoders measure absolute distance. It does not depend on the starting position of the encoder.
 
@@ -415,7 +405,7 @@ Users can obtain the distance measured by the encoder with the :code:`getDistanc
 
 
 
-Resetting an analog encoder
+Resetting an Analog Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To reset an analog encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
@@ -444,17 +434,17 @@ To reset an analog encoder so the current distance is 0, call the :code:`reset()
         // set the position offset to half a rotation
         encoder.SetPositionOffset(0.5);
 
-Using encoders in code
+Using Encoders in Code
 ----------------------
 
 Encoders are some of the most useful sensors in FRC\ |reg|; they are very nearly a requirement to make a robot capable of nontrivially-automated actuations and movement.  The potential applications of encoders in robot code are too numerous to summarize fully here, but an example is provided below:
 
-Driving to a distance
+Driving to a Distance
 ^^^^^^^^^^^^^^^^^^^^^
 
 Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is useful in autonomous mode, but has the disadvantage that the robot's momentum will cause it to overshoot the intended distance. Better methods include using a :doc:`PID Controller </docs/software/advanced-controls/introduction/introduction-to-pid>` or using :doc:`Path Planning </docs/software/pathplanning/index>`
 
-.. note:: the following example uses the `Encoder` class, but is similar if other `DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders are typically better suited for drivetrains since they roll over many times and don't have an absolute position.
+.. note:: The following example uses the `Encoder` class, but is similar if other `DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders are typically better suited for drivetrains since they roll over many times and don't have an absolute position.
 
 .. tabs::
 
@@ -526,12 +516,12 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
             }
         }
 
-Homing a mechanism
+Homing a Mechanism
 ^^^^^^^^^^^^^^^^^^
 
 Since quadrature encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
 
-.. note:: homing is not necessary for absolute encoders like duty cycle encoders and analog encoders.
+.. note:: Homing is not necessary for absolute encoders like duty cycle encoders and analog encoders.
 
 .. tabs::
 
