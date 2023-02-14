@@ -307,6 +307,23 @@ Users can obtain the distance measured by the encoder with the :code:`getDistanc
         encoder.GetDistance();
 
 
+Detecting a Duty Cycle Encoder is Connected
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As duty cycle encoders output a continuous set of pulses, it is possible to detect that the encoder has been unplugged.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Gets if the encoder is connected
+        encoder.isConnected();
+
+    .. code-tab:: c++
+
+        // Gets if the encoder is connected
+        encoder.IsConnected();
+
 
 Resetting a Duty Cycle Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
