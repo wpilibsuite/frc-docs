@@ -23,17 +23,6 @@ As mentioned before, a potentiometer is a voltage divider, as shown in the circu
 
 Since the circuit is symmetric, it is reversible - this allows the user to choose at which end of the travel the measured voltage is zero, and at which end it is 5 volts.  To reverse the directionality of the sensor, it can simply be wired backwards!  Be sure to check the directionality of your potentiometer with a multimeter to be sure it is in the desired orientation before soldering your wires to the contacts.
 
-Absolute encoders
------------------
-
-.. image:: images/analog-potentiometers-hardware/absolute-encoder-to-roborio.svg
-   :alt: Connecting a US Digital MA3 Absolute Encoder to the roboRIO.
-
-An "absolute encoder" is an encoder that measures the absolute position of the encoder shaft, rather than the incremental movement (as a :doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, absolute encoders are more similar to potentiometers than to incremental encoders.  Many absolute encoders offer a simple analog output - these can be used exactly in the same way as a potentiometer, except their wiring is not generally reversible.  Absolute encoders have the advantage of lacking a hard travel limit - the signal will simply reset when the shaft crosses the zero point. The analog potentiometer pictured above can be found at `AndyMark <https://www.andymark.com/products/absolute-encoder-with-cable>`__.
-
-Absolute encoders that do not offer a simple analog output require :doc:`more complicated communications with the RIO <serial-buses>`.
-
-
 Footnotes
 ---------
 

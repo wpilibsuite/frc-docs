@@ -5,27 +5,37 @@ Encoders - Software
 
 .. note:: This section covers encoders in software.  For a hardware guide to encoders, see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`.
 
+Encoders are devices used to measure motion (usually, the rotation of a shaft).
+
+.. important:: The classes in this document are only used for encoders that are plugged directly into the roboRIO! Please reference the appropriate vendors' documentation for using encoders plugged into motor controllers.
+
+Quadrature Encoders - The :code:`Encoder` Class
+-----------------------------------------------
+
+WPILib provides support for quadrature encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+
 .. image:: images/encoders-software/encoding-direction.png
     :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
 
-Encoders are devices used to measure motion (usually, the rotation of a shaft).  The encoders used in FRC\ |reg| are known as "quadrature encoders."  These encoders produce square-wave signals on two channels that are a quarter-period out-of-phase (hence the term, "quadrature").  The pulses are used to measure the rotation, and the direction of motion can be determined from which channel "leads" the other.
+These encoders produce square-wave signals on two channels that are a quarter-period out-of-phase (hence the term, "quadrature").  The pulses are used to measure the rotation, and the direction of motion can be determined from which channel "leads" the other.
 
 .. image:: images/encoders-software/encoder-modules.png
     :alt: A Quadrature Decoder analyzing the A, B, and Index signals.
 
-The FPGA handles encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
+The FPGA handles quadrature encoders either through a counter module or an encoder module, depending on the :ref:`decoding type <docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - the choice is handled automatically by WPILib.  The FPGA contains 8 encoder modules.
 
-The Encoder class
------------------
+Examples of quadrature encoders:
 
-WPILib provides support for encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+- `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
+- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
+- `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
+- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
+- `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
-.. important:: The ``Encoder`` class is only used for encoders that are plugged directly into the roboRIO! Please reference the appropriate vendors' documentation for using encoders plugged into motor controllers.
+Initializing a Quadrature Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Initializing an encoder
-^^^^^^^^^^^^^^^^^^^^^^^
-
-An encoder can be instantiated as follows:
+A quadrature encoder can be instantiated as follows:
 
 .. tabs::
 
@@ -41,7 +51,7 @@ An encoder can be instantiated as follows:
         // Defaults to 4X decoding and non-inverted
         frc::Encoder encoder{0, 1};
 
-Decoding type
+Decoding Type
 ~~~~~~~~~~~~~
 
 The WPILib :code:`Encoder` class can decode encoder signals in three different modes:
@@ -66,8 +76,8 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
         // 2X encoding and non-inverted
         frc::Encoder encoder{0, 1, false, frc::Encoder::EncodingType::k2X};
 
-Configuring encoder parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring Quadrature Encoder Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The :code:`Encoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
@@ -81,10 +91,10 @@ The :code:`Encoder` class offers a number of configuration methods:
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
-        encoder.setDistancePerPulse(4./256.);
+        encoder.setDistancePerPulse(4.0/256.0);
 
         // Configures the encoder to consider itself stopped after .1 seconds
-        encoder.setMaxPeriod(.1);
+        encoder.setMaxPeriod(0.1);
 
         // Configures the encoder to consider itself stopped when its rate is below 10
         encoder.setMinRate(10);
@@ -100,10 +110,10 @@ The :code:`Encoder` class offers a number of configuration methods:
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
-        encoder.SetDistancePerPulse(4./256.);
+        encoder.SetDistancePerPulse(4.0/256.0);
 
         // Configures the encoder to consider itself stopped after .1 seconds
-        encoder.SetMaxPeriod(.1);
+        encoder.SetMaxPeriod(0.1);
 
         // Configures the encoder to consider itself stopped when its rate is below 10
         encoder.SetMinRate(10);
@@ -115,15 +125,15 @@ The :code:`Encoder` class offers a number of configuration methods:
         // Can be between 1 and 127 samples
         encoder.SetSamplesToAverage(5);
 
-Reading information from encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reading information from Quadrature Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The :code:`Encoder` class provides a wealth of information to the user about the motion of the encoder.
 
 Distance
 ~~~~~~~~
 
-.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/encoders-software:Resetting an encoder>`.
+.. note:: Quadrature encoders measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/encoders-software:Resetting a quadrature encoder>`.
 
 Users can obtain the total distance traveled by the encoder with the :code:`getDistance()` method:
 
@@ -209,10 +219,10 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
         // Gets the current period of the encoder
         encoder.GetPeriod();
 
-Resetting an encoder
-^^^^^^^^^^^^^^^^^^^^
+Resetting a Quadrature Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To reset an encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism>` routine:
+To reset a quadrature encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism>` routine:
 
 .. tabs::
 
@@ -226,15 +236,232 @@ To reset an encoder to a distance reading of zero, call the :code:`reset()` meth
         // Resets the encoder to read a distance of zero
         encoder.Reset();
 
-Using encoders in code
+Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
+--------------------------------------------------------
+
+WPILib provides support for duty cycle (also marketed as PWM) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+
+The roboRIO's FPGA handles duty cycle encoders automatically.
+
+Examples of duty cycle encoders:
+
+- `AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__
+- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
+- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
+- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
+- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+
+Initializing a Duty Cycle Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A duty cycle encoder can be instantiated as follows:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Initializes a duty cycle encoder on DIO pins 0
+        DutyCycleEncoder encoder = new DutyCycleEncoder(0);
+
+    .. code-tab:: c++
+
+        // Initializes a duty cycle encoder on DIO pins 0
+        frc::DutyCycleEncoder encoder{0};
+
+Configuring Duty Cycle Encoder Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: The :code:`DutyCycleEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
+
+The :code:`DutyCycleEncoder` class offers a number of configuration methods:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Configures the encoder to return a distance of 4 for every rotation
+        encoder.setDistancePerRotation(4.0);
+
+    .. code-tab:: c++
+
+        // Configures the encoder to return a distance of 4 for every rotation
+        encoder.SetDistancePerRotation(4.0);
+
+Reading Distance from Duty Cycle Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: Duty Cycle encoders measure absolute distance. It does not depend on the starting position of the encoder.
+
+Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Gets the distance traveled
+        encoder.getDistance();
+
+    .. code-tab:: c++
+
+        // Gets the distance traveled
+        encoder.GetDistance();
+
+
+Detecting a Duty Cycle Encoder is Connected
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As duty cycle encoders output a continuous set of pulses, it is possible to detect that the encoder has been unplugged.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Gets if the encoder is connected
+        encoder.isConnected();
+
+    .. code-tab:: c++
+
+        // Gets if the encoder is connected
+        encoder.IsConnected();
+
+
+Resetting a Duty Cycle Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To reset an encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Resets the encoder to read a distance of zero at the current position
+        encoder.reset();
+
+        // get the position offset from when the encoder was reset
+        encoder.getPositionOffset();
+
+        // set the position offset to half a rotation
+        encoder.setPositionOffset(0.5);
+
+    .. code-tab:: c++
+
+        // Resets the encoder to read a distance of zero at the current position
+        encoder.Reset();
+
+        // get the position offset from when the encoder was reset
+        encoder.GetPositionOffset();
+
+        // set the position offset to half a rotation
+        encoder.SetPositionOffset(0.5);
+
+Analog Encoders - The :code:`AnalogEncoder` Class
+-------------------------------------------------
+
+WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+
+Examples of analog encoders:
+
+- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
+- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/bearings/Thrifty-Absolute-Magnetic-Encoder-p421607500>`__
+- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+
+Initializing an Analog Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An analog encoder can be instantiated as follows:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Initializes a duty cycle encoder on Analog Input pins 0
+        AnalogEncoder encoder = new AnalogEncoder(0);
+
+    .. code-tab:: c++
+
+        // Initializes a duty cycle encoder on DIO pins 0
+        frc::AnalogEncoder encoder{0};
+
+Configuring Analog Encoder Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: The :code:`AnalogEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
+
+The :code:`AnalogEncoder` class offers a number of configuration methods:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Configures the encoder to return a distance of 4 for every rotation
+        encoder.setDistancePerRotation(4.0);
+
+    .. code-tab:: c++
+
+        // Configures the encoder to return a distance of 4 for every rotation
+        encoder.SetDistancePerRotation(4.0);
+
+Reading Distance from Analog Encoders
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: Analog encoders measure absolute distance. It does not depend on the starting position of the encoder.
+
+Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Gets the distance measured
+        encoder.getDistance();
+
+    .. code-tab:: c++
+
+        // Gets the distance measured
+        encoder.GetDistance();
+
+
+
+Resetting an Analog Encoder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To reset an analog encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
+
+.. tabs::
+
+    .. code-tab:: java
+
+        // Resets the encoder to read a distance of zero at the current position
+        encoder.reset();
+
+        // get the position offset from when the encoder was reset
+        encoder.getPositionOffset();
+
+        // set the position offset to half a rotation
+        encoder.setPositionOffset(0.5);
+
+    .. code-tab:: c++
+
+        // Resets the encoder to read a distance of zero at the current position
+        encoder.Reset();
+
+        // get the position offset from when the encoder was reset
+        encoder.GetPositionOffset();
+
+        // set the position offset to half a rotation
+        encoder.SetPositionOffset(0.5);
+
+Using Encoders in Code
 ----------------------
 
-Encoders are some of the most useful sensors in FRC; they are very nearly a requirement to make a robot capable of nontrivially-automated actuations and movement.  The potential applications of encoders in robot code are too numerous to summarize fully here, but a few basic examples are provided below:
+Encoders are some of the most useful sensors in FRC\ |reg|; they are very nearly a requirement to make a robot capable of nontrivially-automated actuations and movement.  The potential applications of encoders in robot code are too numerous to summarize fully here, but an example is provided below:
 
-Driving to a distance
+Driving to a Distance
 ^^^^^^^^^^^^^^^^^^^^^
 
-Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is very useful for robot autonomy:
+Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is useful in autonomous mode, but has the disadvantage that the robot's momentum will cause it to overshoot the intended distance. Better methods include using a :doc:`PID Controller </docs/software/advanced-controls/introduction/introduction-to-pid>` or using :doc:`Path Planning </docs/software/pathplanning/index>`
+
+.. note:: The following example uses the `Encoder` class, but is similar if other `DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders are typically better suited for drivetrains since they roll over many times and don't have an absolute position.
 
 .. tabs::
 
@@ -267,7 +494,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         public void autonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.getDistance() < 5) {
-                drive.tankDrive(.5, .5);
+                drive.tankDrive(0.5, 0.5);
             } else {
                 drive.tankDrive(0, 0);
             }
@@ -294,113 +521,24 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
-            encoder.SetDistancePerPulse(1./256.);
+            encoder.SetDistancePerPulse(1.0/256.0);
         }
 
         void Robot:AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.GetDistance() < 5) {
-                drive.TankDrive(.5, .5);
+                drive.TankDrive(0.5, 0.5);
             } else {
                 drive.TankDrive(0, 0);
             }
         }
 
-Stabilizing heading
-^^^^^^^^^^^^^^^^^^^
-
-.. warning:: Like with all control loops, users should be careful to ensure that the sensor direction and the turning direction are consistent.  If they are not, the loop will be unstable and the robot will turn wildly.
-
-Encoders can be used to ensure that a robot drives straight in a manner quite similar to :ref:`how it is done with a gyroscope <docs/software/hardware-apis/sensors/gyros-software:Stabilizing heading while driving>`.  A simple implementation with a P loop is given below:
-
-.. tabs::
-
-    .. code-tab:: java
-
-        // The encoders for the drive
-        Encoder leftEncoder = new Encoder(0,1);
-        Encoder rightEncoder = new Encoder(2,3);
-
-        // The gain for a simple P loop
-        double kP = 1;
-
-        // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
-
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
-
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-
-        @Override
-        public void autonomousInit() {
-            // Configures the encoders' distance-per-pulse
-            // The robot moves forward 1 foot per encoder rotation
-            // There are 256 pulses per encoder rotation
-            leftEncoder.setDistancePerPulse(1./256.);
-            rightEncoder.setDistancePerPulse(1./256.);
-        }
-
-        @Override
-        public void autonomousPeriodic() {
-            // Assuming no wheel slip, the difference in encoder distances is proportional to the heading error
-            double error = leftEncoder.getDistance() - rightEncoder.getDistance();
-
-            // Drives forward continuously at half speed, using the encoders to stabilize the heading
-            drive.tankDrive(.5 + kP * error, .5 - kP * error);
-        }
-
-    .. code-tab:: c++
-
-        // The encoders for the drive
-        frc::Encoder leftEncoder{0,1};
-        frc::Encoder rightEncoder{2,3};
-
-        // The gain for a simple P loop
-        double kP = 1;
-
-        // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
-        frc::Spark right1{2};
-        frc::Spark right2{3};
-
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
-
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
-
-        void Robot::AutonomousInit() {
-            // Configures the encoders' distance-per-pulse
-            // The robot moves forward 1 foot per encoder rotation
-            // There are 256 pulses per encoder rotation
-            leftEncoder.SetDistancePerPulse(1./256.);
-            rightEncoder.SetDistancePerPulse(1./256.);
-        }
-
-        void Robot::AutonomousPeriodic() {
-            // Assuming no wheel slip, the difference in encoder distances is proportional to the heading error
-            double error = leftEncoder.GetDistance() - rightEncoder.GetDistance();
-
-            // Drives forward continuously at half speed, using the encoders to stabilize the heading
-            drive.TankDrive(.5 + kP * error, .5 - kP * error);
-        }
-
-More-advanced implementations can use more-complicated control loops.  Closing a control loop on the encoder difference is roughly analogous to closing it on the heading error, and so PD loops are particularly effective.
-
-PID Control
-^^^^^^^^^^^
-
-Encoders are particularly useful as inputs to PID controllers (the heading stabilization example above is a simple P loop).
-
-Homing a mechanism
+Homing a Mechanism
 ^^^^^^^^^^^^^^^^^^
 
-Since encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
+Since quadrature encoders measure *relative* distance, it is often important to ensure that their "zero-point" is in the right place.  A typical way to do this is a "homing routine," in which a mechanism is moved until it hits a known position (usually accomplished with a limit switch), or "home," and then the encoder is reset.  The following code provides a basic example:
+
+.. note:: Homing is not necessary for absolute encoders like duty cycle encoders and analog encoders.
 
 .. tabs::
 
@@ -417,7 +555,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.get()) {
-                spark.set(-.5);
+                spark.set(-0.5);
             } else {
                 spark.set(0);
                 encoder.reset();
@@ -437,7 +575,7 @@ Since encoders measure *relative* distance, it is often important to ensure that
             // Runs the motor backwards at half speed until the limit switch is pressed
             // then turn off the motor and reset the encoder
             if(!limit.Get()) {
-                spark.Set(-.5);
+                spark.Set(-0.5);
             } else {
                 spark.Set(0);
                 encoder.Reset();
