@@ -78,7 +78,7 @@ It also must include a ``@ParametrizedController`` annotation that points to the
    */
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-   @ParamatrizedController("Point2DWidget.fxml")
+   @ParametrizedController("Point2DWidget.fxml")
    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
    }
@@ -118,7 +118,7 @@ In order to display our pane on our custom widget we need to override the ``getV
    import javafx.fxml.FXML;
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-   @ParamatrizedController("Point2DWidget.fxml")
+   @ParametrizedController("Point2DWidget.fxml")
    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
       @FXML
@@ -153,7 +153,7 @@ A good practice is to set bindings in the ``initialize()`` method tagged with th
    import javafx.fxml.FXML;
 
    @Description(name = "MyPoint2D", dataTypes = MyPoint2D.class)
-   @ParamatrizedController("Point2DWidget.fxml")
+   @ParametrizedController("Point2DWidget.fxml")
    public final class Point2DWidget extends SimpleAnnotatedWidget<MyPoint2D> {
 
       @FXML
