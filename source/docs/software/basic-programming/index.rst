@@ -5,6 +5,7 @@ Basic Programming
    :maxdepth: 1
 
    git-getting-started.rst
+   dimensional-analysis
    cpp-units
    joystick
    robot-preferences
