@@ -55,7 +55,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       After opening the .iso file, launch the installer by opening ``WPILibInstaller.exe``.
 
-      .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click "More info" to reveal a "Run anyway" button that will allow you to run the installer.
+      .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click :guilabel:`More info`, then select :guilabel:`Run anyway` run the installer.
 
    .. group-tab:: macOS
 
