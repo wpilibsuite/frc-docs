@@ -53,7 +53,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
 
-      After opening the .iso file, launch the installer by opening ``WPILibInstaller.exe``.
+      After opening the ``.iso`` file, launch the installer by opening ``WPILibInstaller.exe``.
 
       .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click :guilabel:`More info`, then select :guilabel:`Run anyway` to run the installer.
 
