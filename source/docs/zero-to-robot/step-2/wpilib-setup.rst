@@ -48,10 +48,14 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
+      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
+
+      After opening the .iso file, launch the installer by opening ``WPILibInstaller.exe``.
+
+      .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click "More info" to reveal a "Run anyway" button that will allow you to run the installer.
 
    .. group-tab:: macOS
 
