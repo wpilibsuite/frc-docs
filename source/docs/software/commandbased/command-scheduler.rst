@@ -123,7 +123,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
       :lines: 295-325
       :linenos:
       :lineno-start: 295
-      :emphasize-lines: 15,20-21
+      :emphasize-lines: 16,21-22
 
   .. group-tab:: C++ (Source)
 
@@ -132,7 +132,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
       :lines: 201-226
       :linenos:
       :lineno-start: 201
-      :emphasize-lines: 6,12-13
+      :emphasize-lines: 7,13-14
 
 Step 4: Schedule Default Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
