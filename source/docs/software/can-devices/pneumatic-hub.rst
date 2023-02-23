@@ -11,6 +11,6 @@ The closed loop control of the Compressor and Pressure switch is handled by the 
 
 An additional PH module can be used where the module's corresponding solenoids are differentiated by the module number in the constructors of the Solenoid and Compressor classes.
 
-For more information on controlling the compressor, see :ref:`Operating a Compressor for Pneumatics <docs/software/hardware-apis/pneumatics/pneumatics:Generating and Storing Pressure>`.
+For more information on controlling the compressor, see :ref:`Operating a Compressor for Pneumatics <docs/software/hardware-apis/pneumatics/pressure:Generating and Storing Pressure>`.
 
-For more information on controlling solenoids, see :ref:`Operating Pneumatic Cylinders <docs/software/hardware-apis/pneumatics/pneumatics:Operating pneumatic cylinders>`.
+For more information on controlling solenoids, see :ref:`Operating Pneumatic Cylinders <docs/software/hardware-apis/pneumatics/solenoids:Operating pneumatic cylinders>`.
