@@ -48,7 +48,7 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 Pneumatics
 ----------
 
-Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics/pneumatics`.
+Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics/index`.
 
 FRC Legal Pneumatics controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
