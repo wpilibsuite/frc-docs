@@ -10,74 +10,74 @@ Single acting solenoids apply or vent pressure from a single output port. They a
 Single Solenoids in WPILib
 --------------------------
 
-Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Solenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_solenoid.html>`__). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call set(true) to enable or set(false) to disable the solenoid output.
+Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Solenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_solenoid.html>`__). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call ``set(true)`` to enable or ``set(false)`` to disable the solenoid output.
 
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 39-41
+          :lines: 37-39
           :linenos:
-          :lineno-start: 38
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lineno-start: 37
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 116-121
+          :lines: 95-100
           :linenos:
-          :lineno-start: 112
+          :lineno-start: 95
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 45-48
           :linenos:
           :lineno-start: 45
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
-          :lines: 52-57
+          :lines: 44-49
           :linenos:
-          :lineno-start: 52
+          :lineno-start: 44
 
 
 Double Solenoids in WPILib
 --------------------------
 
-Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to `kOff` (neither output activated), `kForward` (forward channel enabled) or `kReverse` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-standard CAN ID.
+Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to ``kOff`` (neither output activated), ``kForward`` (forward channel enabled) or ``kReverse`` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-default CAN ID.
 
 .. tabs::
 
     .. group-tab:: Java
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 7-11
+          :lines: 7-12
           :linenos:
           :lineno-start: 7
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 43-46
+          :lines: 41-44
           :linenos:
-          :lineno-start: 43
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+          :lineno-start: 41
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
-          :lines: 128-128, 130-130
+          :lines: 107-107, 109-109
           :linenos:
-          :lineno-start: 128
+          :lineno-start: 107
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 50-53
           :linenos:
           :lineno-start: 50
 
     .. group-tab:: C++ (Source)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/03c1a4a01d1ca4dc07849d93955ad69b51f71f8b/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/f1b90fded663c764af81ebf3ff7db07970f03041/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
-          :lines: 64-64, 66-66
+          :lines: 56, 68
           :linenos:
-          :lineno-start: 64
+          :lineno-start: 56
 
 Toggling Solenoids
 ------------------
