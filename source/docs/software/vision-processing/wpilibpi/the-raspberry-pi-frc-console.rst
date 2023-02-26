@@ -75,7 +75,7 @@ Vision Settings
 .. figure:: images/the-raspberry-pi-frc-console/vision-settings-1.png
 
 The Vision Settings are to set the parameters for each camera and whether the rPI should be a NetworkTables client or server.
-There can only be one server on the network and the roboRIO is always a server. Therefor when connected to a roboRIO, the rPI
+There can only be one server on the network and the roboRIO is always a server. Therefore when connected to a roboRIO, the rPI
 should always be in client mode with the team number filled in. If testing on a desktop setup with no roboRIO or anything acting
 as a server then it should be set to Server (Client switch is off).
 
@@ -127,7 +127,7 @@ of programming workflows:
 
 The running application can be changed by selecting one of the choices in the drop-down menu. The choices are:
 
--   Built-in multi camera streaming which steams whatever cameras are plugged into the rPi. The camera configuration including
+-   Built-in multi camera streaming which streams whatever cameras are plugged into the rPi. The camera configuration including
     number of cameras can be set on the "Vision Settings" tab.
 -   Custom application which doesn't upload anything to the rPi and assumes that the developer wants to have a custom program
     and script.

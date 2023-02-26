@@ -67,8 +67,8 @@ Changes to Command
 * Commands no longer handle their own scheduling state; this is now the responsibility of the scheduler.
 * The ``interrupted()`` method has been rolled into the ``end()`` method, which now takes a parameter specifying whether the command was interrupted (``false`` if it ended normally).
 * The ``requires()`` method has been renamed to ``addRequirement()``.
-* ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overrideable :ref:`docs/software/commandbased/commands:runsWhenDisabled` method.
-* ``void setInterruptible(boolean interruptible)`` has been replaced by an overrideable :ref:`docs/software/commandbased/commands:getInterruptionBehavior` method.
+* ``void setRunsWhenDisabled(boolean disabled)`` has been replaced by an overridable :ref:`docs/software/commandbased/commands:runsWhenDisabled` method.
+* ``void setInterruptible(boolean interruptible)`` has been replaced by an overridable :ref:`docs/software/commandbased/commands:getInterruptionBehavior` method.
 * Several :ref:`"decorator" methods <docs/software/commandbased/command-compositions:Command Compositions>` have been added to allow easy inline modification of commands (e.g. adding a timeout).
 * (C++ only) In order to allow the decorators to work with the command ownership model, a :term:`CRTP` is used via the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__.  Any user-defined Command subclass ``Foo`` *must* extend ``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class.
 

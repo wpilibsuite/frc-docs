@@ -177,7 +177,7 @@ Battery Best Practices
 
 - It is a good idea to permanently identify each battery with at least: team number, year, and a unique identifier.
 
-- Teams may also want to use something removeable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data and when the last analyzer test was run.
+- Teams may also want to use something removable (stickers, labeling machine etc.) to identify what that battery should be used for based on its performance data and when the last analyzer test was run.
 
 .. image:: images/robot-battery/battery-flag.jpg
   :alt: A battery flag is just a small piece of plastic that fits in the battery connector.

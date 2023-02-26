@@ -27,7 +27,7 @@ I2C
    :alt: The I2C port on the roboRIO.
 
 .. image:: images/serial-buses/i2c-pinout.png
-   :alt: I2C roboRIO port pin specifcations.
+   :alt: I2C roboRIO port pin specifications.
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
@@ -42,7 +42,7 @@ SPI
    :alt: Show the SPI port on the roboRIO.
 
 .. image:: images/serial-buses/spi-pinout.png
-   :alt: SPI roboRIO port pin specifcations.
+   :alt: SPI roboRIO port pin specifications.
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
 
@@ -55,7 +55,7 @@ RS-232
    :alt: Location of the RS-232 port on the roboRIO.
 
 .. image:: images/serial-buses/rs232-pinout.png
-   :alt: roboRIO RS-232 port pin specifcations.
+   :alt: roboRIO RS-232 port pin specifications.
 
 To communicate to peripheral devices over RS-232, each pin should be wired to its corresponding pin on the device.
 

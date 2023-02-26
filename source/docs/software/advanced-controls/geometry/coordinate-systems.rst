@@ -15,7 +15,7 @@ The field coordinate system (or global coordinate system) is an absolute coordin
 
 .. note:: The axes are shown at the middle of the field for visibility. The origins of the coordinate system for each alliance are shown below.
 
-Below is an example of a field coordinate system overlayed on the 2020 FRC field. The red axes shown are for the red alliance, and the blue axes shown are for the blue alliance.
+Below is an example of a field coordinate system overlaid on the 2020 FRC field. The red axes shown are for the red alliance, and the blue axes shown are for the blue alliance.
 
 .. image:: images/infinite-recharge.jpg
    :alt: Image of the Infinite Recharge field.

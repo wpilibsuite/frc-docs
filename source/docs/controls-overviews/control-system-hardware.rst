@@ -194,7 +194,7 @@ SPARK Motor Controller
 
 .. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
-The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions. For more information, see the `SPARK User's Manaul <https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__.
+The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions. For more information, see the `SPARK User's Manual <https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__.
 
 Victor SP
 ^^^^^^^^^
