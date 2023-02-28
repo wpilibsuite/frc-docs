@@ -1,7 +1,7 @@
 Writing Your Own Sendable Classes
 =================================
 
-Since the ``Sendable`` interface only has one method, writing your own classes that implement ``Sendable`` (and thus automatically log values to and/or consume values from the dashboard) is extremely easy: just provide an implementation for the overrideable ``initSendable`` method, in which setters and getters for your class's fields are declaratively bound to key values (their display names on the dashboard).
+Since the ``Sendable`` interface only has one method, writing your own classes that implement ``Sendable`` (and thus automatically log values to and/or consume values from the dashboard) is extremely easy: just provide an implementation for the overridable ``initSendable`` method, in which setters and getters for your class's fields are declaratively bound to key values (their display names on the dashboard).
 
 For example, here is the implementation of ``initSendable`` from WPILib's ``BangBangController``:
 

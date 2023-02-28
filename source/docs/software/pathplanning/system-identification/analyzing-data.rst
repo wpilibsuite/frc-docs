@@ -1,7 +1,7 @@
 Analyzing Data
 ==============
 
-.. important:: WPILib standarizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
+.. important:: WPILib standardizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
 
 Once we have data from an identification routine, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
 

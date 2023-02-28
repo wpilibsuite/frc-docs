@@ -70,7 +70,7 @@ Click on :guilabel:`Change adapter options`.
 On the left pane, click :guilabel:`Change Adapter Settings`.
 
 .. image:: images/roborio-troubleshooting/disable-network-adapter.png
-   :alt: Righ clicking on the adapter in question and choosing the first option "Disable".
+   :alt: Right clicking on the adapter in question and choosing the first option "Disable".
 
 For each adapter other than the one connected to the radio, right click on the adapter and select :guilabel:`Disable` from the menu.
 

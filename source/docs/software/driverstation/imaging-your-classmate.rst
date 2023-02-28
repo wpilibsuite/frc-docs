@@ -55,7 +55,7 @@ Set Volume Label
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/imaging-your-classmate/set-volume-label.png
-   :alt: Hightlights the "Volume Label" box to the right of the partition size.
+   :alt: Highlights the "Volume Label" box to the right of the partition size.
 
 Set Volume Label to Generic
 
