@@ -69,7 +69,7 @@ The elevator identification tool determines the best-fit parameters for the equa
 
 .. math:: V = kG + kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
-where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is added to correctly account for the effect of gravity.
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the elevator, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is added to correctly account for the effect of gravity.
 
 Arm Identification
 ~~~~~~~~~~~~~~~~~~
