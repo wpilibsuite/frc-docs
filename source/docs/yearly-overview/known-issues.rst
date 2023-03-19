@@ -20,13 +20,6 @@ Several alternatives exist for accessing the REV color sensor without using the 
 - Use a `Raspberry Pi Pico <https://github.com/ThadHouse/picocolorsensor/>`__. Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
 - Use a `Raspberry Pi <https://github.com/PeterJohnson/rpi-colorsensor/>`__. Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
 
-CAN bus utilization is noisy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** CAN bus utilization as reported live by the DS or as shown in the DS log has significant variation or "spikes" in the data. This is due to the RoboRIO occasionally counting CAN packets in the incorrect time period, so one period will have a much lower utilization than reality and the next a much higher utilization than reality.
-
-**Workaround:** Zoom in on the DS log plot and look for time periods when the utilization is stable (the spikes will be both above and below this average). The average utilization is the true utilization.
-
 Updating Properties on roboRIO 2.0 may be slow or hang
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
