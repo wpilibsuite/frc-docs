@@ -39,7 +39,7 @@ The following shows the equations of a discrete-time Kalman filter:
 
 .. math::
     \text{Predict step} \nonumber \\
-    \hat{\mathbf{x}}_{k+1}^- &= \mathbf{A}\hat{\mathbf{x}}_k + \mathbf{B} \mathbf{u}_k \\
+    \hat{\mathbf{x}}_{k+1}^- &= \mathbf{A}\hat{\mathbf{x}}_k^+ + \mathbf{B} \mathbf{u}_k \\
     \mathbf{P}_{k+1}^- &= \mathbf{A} \mathbf{P}_k^- \mathbf{A}^T +
         \mathbf{\Gamma}\mathbf{Q}\mathbf{\Gamma}^T \\
     \text{Update step} \nonumber \\
