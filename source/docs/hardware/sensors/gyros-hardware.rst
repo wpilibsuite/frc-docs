@@ -32,11 +32,13 @@ The `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-p
 Three-axis Gyros
 ^^^^^^^^^^^^^^^^
 
-.. image:: images/gyros-hardware/triple-axis-i2c-gyro-to-roborio.svg
-  :alt: This is the L3GD20H 3-Axis Gyro plugged in to the I2C port.
+.. image:: images/gyros-hardware/adis16470-gyro-to-roborio.jpeg
+  :alt: This is the ADIS16470 IMU plugged in to the SPI port.
   :width: 400
 
 Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
+
+The `Analog Devices ADIS16470 IMU Board for FIRST Robotics <https://www.analog.com/en/landing-pages/001/first.html>`__ that has been in FIRST Choice in recent years is a commonly used three-axis gyro.
 
 .. image:: images/gyros-hardware/drive-yaw-pitch-roll.svg
   :alt: The 3 axis: yaw, pitch, and roll and how they relate to robot movement.
