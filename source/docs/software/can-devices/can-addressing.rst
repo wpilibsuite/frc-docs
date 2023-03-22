@@ -65,7 +65,8 @@ Copperforge           10
 Playing With Fusion   11
 Studica               12
 The Thrifty Bot       13
-Reserved              14-255
+Redux Robotics        14
+Reserved              15-255
 ===================== ==========
 
 API/Message Identifier
