@@ -11,7 +11,7 @@ Open Issues
 Driver Station Reporting No Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** There is a rare occurance in roboRIO 2.0 that causes the roboRIO to not properly start the robot program. This causes the Driver Station to report a successful connection but no code, even though code is deployed on the roboRIO.
+**Issue:** There is a rare occurrence in the roboRIO 2.0 that causes the roboRIO to not properly start the robot program. This causes the Driver Station to report a successful connection but no code, even though code is deployed on the roboRIO.
 
 **Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
 
