@@ -18,7 +18,7 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. wpilibrelease:: v2023.4.2
+.. wpilibrelease:: v2023.4.3
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
