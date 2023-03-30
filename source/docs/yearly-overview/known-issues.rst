@@ -15,6 +15,15 @@ roboRIO 2.0 Ethernet Settings
 
 **Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the ethernet adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
 
+Driver Station Reporting No Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** There is a rare occurrence in the roboRIO 2.0 that causes the roboRIO to not properly start the robot program. This causes the Driver Station to report a successful connection but no code, even though code is deployed on the roboRIO.
+
+**Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
+
+ .. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.e
+
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
