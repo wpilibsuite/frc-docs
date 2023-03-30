@@ -11,9 +11,9 @@ Open Issues
 roboRIO 2.0 Ethernet Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** On the roboRIO 2.0, the ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via ethernet.
+**Issue:** On the roboRIO 2.0, the Ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
 
-**Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the ethernet adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
+**Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the Ethernet Adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
 
 Driver Station Reporting No Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
