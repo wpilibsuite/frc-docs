@@ -8,12 +8,13 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-Radio Second Port Sometimes Fails to Communicate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
+roboRIO 2.0 Ethernet Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch available from `FIRST Choice <https://firstchoicebyandymark.com/fc-cn-9024>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
+**Issue:** On the roboRIO 2.0, the Ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
+
+**Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the Ethernet Adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
 
 Driver Station Reporting No Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -23,6 +24,13 @@ Driver Station Reporting No Code
 **Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
 
  .. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
+
+Radio Second Port Sometimes Fails to Communicate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
+
+**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch available from `FIRST Choice <https://firstchoicebyandymark.com/fc-cn-9024>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
 
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
