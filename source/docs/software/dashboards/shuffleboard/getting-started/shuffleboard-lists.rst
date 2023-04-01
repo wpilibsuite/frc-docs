@@ -24,11 +24,11 @@ A list can be created as follows:
 Note that tiles in lists do not have header labels; their label is at the bottom of their list entry.
 
 Adding tiles to/removing tiles from a list
-----------------------
+------------------------------------------
 
-A tile can be **added** to an existing list as follows: 
+A tile can be **added** to an existing list as follows:
 
-1. Identify the list and the tile to be added. 
+1. Identify the list and the tile to be added.
 2. Drag the new tile onto the list.
 3. The tile will be added to the list. If the current list size is too small to show it, the tile will be added to the list off-screen and a vertical scrollbar will be added if not already present.
 
