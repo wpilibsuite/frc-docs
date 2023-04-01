@@ -8,7 +8,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-
 roboRIO 2.0 Ethernet Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
