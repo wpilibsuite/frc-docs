@@ -50,10 +50,11 @@ Rearranging tiles in a list
 Tiles in a list can be rearranged by right-clicking on the tile and selecting:
 
 - :guilabel:`Move up` moves the tile **towards** the *top* of the list.
--:guilabel`Move down` moves the tile **towards** the *bottom* of the list.
+- :guilabel`Move down` moves the tile **towards** the *bottom* of the list.
 - :guilabel:`Send to top` moves the tile **to** the *top* of a list.
 -::guilabel:`Send to bottom` moves the tile **to** the *bottom* of a list.
 - There are two buttons labeled :guilabel:`Remove`, and each button does:
+
    - The **top** :guilabel:Remove` button (above the pinline; section of dropdown with grayed-out *tile* label) **deletes** the *tile* from the Shuffleboard layout.
    - The **bottom** :guilabel:`Remove` button (below the pinline; section of dropdown with grayed-out *list* label) **deletes** the *list and all tiles inside it* from the Shuffleboard layout.
    - If you want to take an entry out of a list without deleting it, see `Adding tiles to/removing tiles from a list`_.
