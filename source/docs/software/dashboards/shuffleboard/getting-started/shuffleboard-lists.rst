@@ -34,7 +34,7 @@ A tile can be **added** to an existing list as follows:
 
 A tile can be **removed** from a list by following the process in reverse:
 
-1. Identify the list and the tile within it to be removed. 
+1. Identify the list and the tile within it to be removed.
 2. Drag the tile out of the list and place it anywhere with free space.
 3. The tile will be removed from the list and placed at that location.
 
