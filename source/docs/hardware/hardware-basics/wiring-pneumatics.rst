@@ -16,7 +16,7 @@ PCM Power and Control Wiring
 .. image:: images/wiring-pneumatics/pneumatics-subsystem.svg
    :alt: Pneumatics wiring diagram showing all of the connections to the PCM.
 
-The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP. The PCM is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM, see :ref:`docs/zero-to-robot/step-1/how-to-wire-a-robot:Pneumatics Power (Optional)`
+The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP. The PCM is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM, see :ref:`docs/zero-to-robot/step-1/how-to-wire-a-simple-robot:Pneumatics Power (Optional)`
 
 Additional PCMs can be wired to a standard WAGO connector on the side of the PDP and protected with a 20A or smaller circuit breaker. Additional PCMs should also be placed anywhere in the middle of the CAN chain.
 

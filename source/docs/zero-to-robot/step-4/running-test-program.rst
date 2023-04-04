@@ -1,21 +1,21 @@
 .. include:: <isonum.txt>
 
-Running your Benchtop Test Program
-==================================
+Running your Test Program
+=========================
 
 Overview
 --------
 
-You should create and download a Benchtop Test Program as described for your programming language:
+You should create and download a Test Program as described for your programming language:
 
-:ref:`C++/Java <docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java:Creating your Benchtop Test Program (C++/Java)>`
+:doc:`C++/Java </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java>`
 
-:ref:`LabVIEW <docs/zero-to-robot/step-4/creating-benchtop-test-program-labview:Creating your Benchtop Test Program (LabVIEW)>`
+:doc:`LabVIEW </docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview>`
 
 Tethered Operation
 ------------------
 
-Running your benchtop testing program while tethered to the Driver Station via ethernet or USB cable will confirm the program was successfully deployed and that the driver station and roboRIO are properly configured.
+Running your test program while tethered to the Driver Station via ethernet or USB cable will confirm the program was successfully deployed and that the driver station and roboRIO are properly configured.
 
 The roboRIO should be powered on and connected to the PC over Ethernet or USB.
 
@@ -41,11 +41,11 @@ PCs will typically have the correct network settings for the DS to connect to th
 Confirm Connectivity
 --------------------
 
-.. figure:: images/run-benchtop-test/confirm-connectivity-tethered.png
+.. figure:: images/run-test-program/confirm-connectivity-tethered.png
 
     Tethered
 
-.. figure:: images/run-benchtop-test/confirm-connectivity-wireless.png
+.. figure:: images/run-test-program/confirm-connectivity-wireless.png
 
     Wireless
 
@@ -54,7 +54,7 @@ Using the Driver Station software, click Diagnostics and confirm that the Enet L
 Operate the Robot
 -----------------
 
-.. image:: images/run-benchtop-test/run-robot.png
+.. image:: images/run-test-program/run-robot.png
     :alt: Highlights the different sections of the Drive Tab (1st)
 
 Click the Operation Tab
@@ -68,7 +68,7 @@ Click the Operation Tab
 Wireless Operation
 ------------------
 
-Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your benchtop testing program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
+Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your test program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
 
 Configuring the Access Point
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
