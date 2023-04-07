@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
-How to Wire a Simple FRC Robot Drivetrain
-=========================================
+Introduction to FRC Robot Wiring
+================================
 
 .. note::
 
