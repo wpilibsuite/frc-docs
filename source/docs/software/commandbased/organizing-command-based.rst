@@ -207,7 +207,7 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
 Non-Static Command Factories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our `AutoRoutines` class and inject our subsystems through the constructor:
+If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
 .. tabs::
 
