@@ -205,6 +205,8 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
     // TODO
 
+Non-Static Command Factories
+~~~~~~~~~~~~~~~~~~~~~~~~
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our `AutoRoutines` class and inject our subsystems through the constructor:
 
 .. tabs::
@@ -234,6 +236,47 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
                 )
             );
         }
+        
+        public Command driveThenIntake() {
+            return Commands.sequence(
+                drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
+                drivetrain.stopCommand(),
+                intake.runIntakeCommand(1.0).withTimeout(5.0),
+                intake.stopCommand()
+            );
+        }
+    }
+
+  .. code-tab:: c++
+
+    // TODO
+
+Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    public class RobotContainer {
+
+        private Drivetrain drivetrain;
+
+        private Intake intake;
+        
+        private AutoRoutines autoRoutines;
+
+        public RobotContainer(Drivetrain drivetrain, Intake intake) {
+          this.drivetrain = new Drivetrain();
+          this.intake = new Intake();
+          
+          this.autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
+          
+          Command driveAndIntake = autoRoutines.driveAndIntake();
+          Command driveThenIntake = autoRoutines.driveThenIntake();
+        }
+        
+        // [other RobotContainer code]
+
     }
 
   .. code-tab:: c++
@@ -366,7 +409,7 @@ Summary
      - Relatively verbose
      - Excels at them
      - Yes; may be more natural than other approaches
-   * - Static Factory Methods
+   * - Static and Instance Command Factories
      - Multi-subsystem commands
      - Yes
      - Yes
