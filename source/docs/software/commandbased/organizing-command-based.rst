@@ -261,7 +261,7 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
     Command driveAndIntake = autoRoutines.driveAndIntake();
     Command driveThenIntake = autoRoutines.driveThenIntake();
-    
+
     Command drivingAndIntakingSequence = Commands.sequence(
       autoRoutines.driveAndIntake(),
       autoRoutines.driveThenIntake()
