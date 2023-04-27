@@ -1,11 +1,11 @@
 .. include:: <isonum.txt>
 
-How to Wire an FRC Robot
-========================
+Introduction to FRC Robot Wiring
+================================
 
 .. note::
 
-   This document details the wiring of a basic electronics board for bench-top testing.
+   This document details the wiring of a basic electronics board for the kitbot or to allow basic drivetrain testing.
 
    Some images shown in this section reflect the setup for a Robot Control System using SPARK or SPARK MAX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
 
@@ -74,7 +74,7 @@ Locate the following control system components and tools
 Create the Base for the Control System
 --------------------------------------
 
-For a benchtop test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
+For a test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
 Layout the Core Control System Components
 -----------------------------------------
@@ -82,12 +82,12 @@ Layout the Core Control System Components
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/layout-REV.jpg
+      .. image:: images/how-to-wire-a-simple-robot/layout-REV.jpg
         :alt: A basic wiring layout with CTR components.
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/layout.jpg
+      .. image:: images/how-to-wire-a-simple-robot/layout.jpg
         :alt: A basic wiring layout with CTR components.
 
 Lay out the components on the board. An example layout is shown in the image above.
@@ -95,7 +95,7 @@ Lay out the components on the board. An example layout is shown in the image abo
 Fasten Components
 -----------------
 
-.. image:: images/how-to-wire-a-robot/ziptie.png
+.. image:: images/how-to-wire-a-simple-robot/ziptie.png
   :alt: Using zipties to secure components down.
 
 Using the Dual Lock or hardware, fasten all components to the board. Note that in many FRC games robot-to-robot contact may be substantial and Dual Lock alone is unlikely to stand up as a fastener for many electronic components. Teams may wish to use nut and bolt fasteners or (as shown in the image above) cable ties, with or without Dual Lock to secure devices to the board.
@@ -114,7 +114,7 @@ Attach Robot Side Battery Connector
 
       To maximize pullout force and minimize connection resistance wires should not be tinned (and ideally not twisted) before inserting into the Wago connector.
 
-      .. image:: images/how-to-wire-a-robot/terminal-lug-REV.jpg
+      .. image:: images/how-to-wire-a-simple-robot/terminal-lug-REV.jpg
         :alt: Highlights the location of the terminal lugs on the PDH and circuit breaker.
 
       Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 7/16" (11 mm) Box end
@@ -127,7 +127,7 @@ Attach Robot Side Battery Connector
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/terminal-lug.jpg
+      .. image:: images/how-to-wire-a-simple-robot/terminal-lug.jpg
         :alt: Highlights the location of the terminal lugs on the PDP and circuit breaker.
 
       Requires: Battery Connector, 6 AWG (16 :math:`mm^2`) terminal lugs, 1/16" Allen, 5 mm Allen,
@@ -148,7 +148,7 @@ Wire Breaker to Power Distribution
 
    .. group-tab:: REV
 
-         .. image:: images/how-to-wire-a-robot/circuit-breaker-REV.jpg
+         .. image:: images/how-to-wire-a-simple-robot/circuit-breaker-REV.jpg
            :alt: Show the circuit breaker wired to the PDH.
 
 
@@ -162,7 +162,7 @@ Wire Breaker to Power Distribution
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/circuit-breaker.jpg
+      .. image:: images/how-to-wire-a-simple-robot/circuit-breaker.jpg
         :alt: Show the circuit breaker wired to the PDP.
 
 
@@ -182,7 +182,7 @@ Insulate power connections
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/insulate-REV.jpg
+      .. image:: images/how-to-wire-a-simple-robot/insulate-REV.jpg
         :alt: Putting tape around the connectors to insulate them.
 
       Requires: Electrical tape
@@ -191,7 +191,7 @@ Insulate power connections
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/insulate.jpg
+      .. image:: images/how-to-wire-a-simple-robot/insulate.jpg
         :alt: Putting tape around the connectors to insulate them.
 
       Requires: 1/16" Allen, Electrical tape
@@ -207,10 +207,10 @@ Motor Controller Power
 
    .. group-tab:: REV
 
-         .. image:: images/how-to-wire-a-robot/pdh-motor-power.jpg
+         .. image:: images/how-to-wire-a-simple-robot/pdh-motor-power.jpg
            :alt: Wiring power from the PDH to motor controllers.
 
-         .. image:: images/how-to-wire-a-robot/spark-power.jpg
+         .. image:: images/how-to-wire-a-simple-robot/spark-power.jpg
            :alt: Wiring power to a Spark Motor Controller with ring terminals.
 
          Requires: Wire Stripper
@@ -242,10 +242,10 @@ Motor Controller Power
 
       To maximize pullout force and minimize connection resistance wires should not be tinned (and ideally not twisted) before inserting into the Wago connector.
 
-      .. image:: images/how-to-wire-a-robot/pdp-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/pdp-power.jpg
         :alt: Wiring power from the PDP to motor controllers.
 
-      .. image:: images/how-to-wire-a-robot/spark-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/spark-power.jpg
         :alt: Wiring power to a Spark Motor Controller with ring terminals.
 
       Requires: Wire Stripper, Small Flat Screwdriver,
@@ -290,10 +290,10 @@ roboRIO Power
 
    .. group-tab:: REV
 
-         .. image:: images/how-to-wire-a-robot/roborio-power-REV.jpg
+         .. image:: images/how-to-wire-a-simple-robot/roborio-power-REV.jpg
            :alt: Power coming from the PDH to the roboRIO.
 
-         .. image:: images/how-to-wire-a-robot/roborio-power-pdh.jpg
+         .. image:: images/how-to-wire-a-simple-robot/roborio-power-pdh.jpg
            :alt: Power going into the roboRIO.
 
          Requires: 10A mini fuse, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
@@ -306,7 +306,7 @@ roboRIO Power
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/roborio-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/roborio-power.jpg
         :alt: Power coming from the PDP to the roboRIO.
 
       Requires: 10A/20A mini fuses, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
@@ -324,10 +324,10 @@ Radio Power
 
    .. group-tab:: REV
 
-         .. image:: images/how-to-wire-a-robot/rpm-pdh-power.jpg
+         .. image:: images/how-to-wire-a-simple-robot/rpm-pdh-power.jpg
            :alt: Power going from the PDH to the RPM.
 
-         .. image:: images/how-to-wire-a-robot/rpm.jpg
+         .. image:: images/how-to-wire-a-simple-robot/rpm.jpg
            :alt: Power going into the RPM.
 
          Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
@@ -340,7 +340,7 @@ Radio Power
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/vrm-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/vrm-power.jpg
         :alt: Power going from the PDP to the VRM.
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
@@ -353,7 +353,7 @@ Radio Power
 
       .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
 
-      .. image:: images/how-to-wire-a-robot/radio-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/radio-power.jpg
         :alt: Connection power to the robot radio via a PoE cable.
 
       Requires: Small flat screwdriver (optional), Rev radio PoE cable
@@ -369,10 +369,10 @@ Pneumatics Power (Optional)
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/ph-pdh-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
         :alt: Power going from the PDH to the PH.
 
-      .. image:: images/how-to-wire-a-robot/ph.jpg
+      .. image:: images/how-to-wire-a-simple-robot/ph.jpg
         :alt: Power going into the PH.
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
@@ -389,7 +389,7 @@ Pneumatics Power (Optional)
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/pcm-power.jpg
+      .. image:: images/how-to-wire-a-simple-robot/pcm-power.jpg
         :alt: Power going from the PDP to the PCM.
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
@@ -409,10 +409,10 @@ Ethernet Cables
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/rpm.jpg
+      .. image:: images/how-to-wire-a-simple-robot/rpm.jpg
         :alt: Picture of the RPM.
 
-      .. image:: images/how-to-wire-a-robot/radio.jpg
+      .. image:: images/how-to-wire-a-simple-robot/radio.jpg
         :alt: Picture of the radio.
 
       Requires: 2x Ethernet cables
@@ -422,7 +422,7 @@ Ethernet Cables
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/radio-ethernet.jpg
+      .. image:: images/how-to-wire-a-simple-robot/radio-ethernet.jpg
         :alt: Connecting Ethernet from the roboRIO to the PoE cable.
 
       Requires: Ethernet cable
@@ -439,10 +439,10 @@ roboRIO to Pneumatics CAN
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/roborio-can.jpg
+      .. image:: images/how-to-wire-a-simple-robot/roborio-can.jpg
         :alt: roboRIO CAN connection.
 
-      .. image:: images/how-to-wire-a-robot/ph.jpg
+      .. image:: images/how-to-wire-a-simple-robot/ph.jpg
         :alt: PH CAN connection.
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
@@ -456,7 +456,7 @@ roboRIO to Pneumatics CAN
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/pcm-can.jpg
+      .. image:: images/how-to-wire-a-simple-robot/pcm-can.jpg
         :alt: Connecting CAN wire from the roboRIO to the PCM.
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
@@ -475,10 +475,10 @@ Pneumatics to PD CAN
 
    .. group-tab:: REV
 
-         .. image:: images/how-to-wire-a-robot/ph-pdh-power.jpg
+         .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
            :alt: PH CAN connection.
 
-         .. image:: images/how-to-wire-a-robot/ph.jpg
+         .. image:: images/how-to-wire-a-simple-robot/ph.jpg
            :alt: PH CAN connection.
 
          Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
@@ -494,7 +494,7 @@ Pneumatics to PD CAN
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/pdp-can.jpg
+      .. image:: images/how-to-wire-a-simple-robot/pdp-can.jpg
         :alt: Connecting the PCM CAN to the PDP.
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
@@ -516,7 +516,7 @@ Motor Controller Signal Wires
 
    .. group-tab:: PWM
 
-      .. image:: images/how-to-wire-a-robot/pwm.jpg
+      .. image:: images/how-to-wire-a-simple-robot/pwm.jpg
         :alt: PWM Cables going from the roboRIO to the Spark Motor Controller.
 
       This section details how to wire the SPARK MAX controllers using PWM signaling. This is a recommended starting point as it is less complex and easier to troubleshoot than CAN operation. The SPARK MAXs (and many other FRC motor controllers) can also be wired using :ref:`CAN<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` which unlocks easier configuration, advanced functionality, better diagnostic data and reduces the amount of wire needed.
@@ -547,7 +547,7 @@ Motor Controller Signal Wires
 Robot Signal Light
 ------------------
 
-.. image:: images/how-to-wire-a-robot/rsl.jpg
+.. image:: images/how-to-wire-a-simple-robot/rsl.jpg
   :alt: Robot Signal Light (rsl) wiring from roboRIO to RSL
 
 Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`) red wire, very small flat screwdriver
@@ -568,7 +568,7 @@ Circuit Breakers
 
    .. group-tab:: REV
 
-      .. image:: images/how-to-wire-a-robot/40A-breaker-REV.jpg
+      .. image:: images/how-to-wire-a-simple-robot/40A-breaker-REV.jpg
         :alt: Installing 40A breakers in the PDP.
 
       Requires: 4x 40A circuit breakers
@@ -579,7 +579,7 @@ Circuit Breakers
 
    .. group-tab:: CTR
 
-      .. image:: images/how-to-wire-a-robot/40A-breaker.jpg
+      .. image:: images/how-to-wire-a-simple-robot/40A-breaker.jpg
         :alt: Installing 40A breakers in the PDP.
 
       Requires: 4x 40A circuit breakers
@@ -591,7 +591,7 @@ Circuit Breakers
 Motor Power
 -----------
 
-.. image:: images/how-to-wire-a-robot/motor-power.jpg
+.. image:: images/how-to-wire-a-simple-robot/motor-power.jpg
   :alt: Connecting power from the motor to the motor controller.
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
@@ -613,7 +613,7 @@ For the SPARK or other non-integrated-wire controllers (bottom image):
 STOP
 ----
 
-.. image:: images/how-to-wire-a-robot/stop.png
+.. image:: images/how-to-wire-a-simple-robot/stop.png
   :alt: Giant red stop sign.
 
 .. danger:: Before plugging in the battery, make sure all connections have been made with the proper polarity. Ideally have someone that did not wire the robot check to make sure all connections are correct.

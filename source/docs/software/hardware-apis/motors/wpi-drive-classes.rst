@@ -10,7 +10,7 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/layout.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-simple-robot/layout.jpg
    :alt: The wiring of a simple differential drive robot.
    :width: 600
 
