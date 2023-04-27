@@ -257,27 +257,15 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
   .. code-tab:: java
 
-    public class RobotContainer {
+    AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
 
-        private Drivetrain drivetrain;
-
-        private Intake intake;
-
-        private AutoRoutines autoRoutines;
-
-        public RobotContainer(Drivetrain drivetrain, Intake intake) {
-          this.drivetrain = new Drivetrain();
-          this.intake = new Intake();
-
-          this.autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
-
-          Command driveAndIntake = autoRoutines.driveAndIntake();
-          Command driveThenIntake = autoRoutines.driveThenIntake();
-        }
-
-        // [other RobotContainer code]
-
-    }
+    Command driveAndIntake = autoRoutines.driveAndIntake();
+    Command driveThenIntake = autoRoutines.driveThenIntake();
+    
+    Command drivingAndIntakingSequence = Commands.sequence(
+      autoRoutines.driveAndIntake(),
+      autoRoutines.driveThenIntake()
+    );
 
   .. code-tab:: c++
 
