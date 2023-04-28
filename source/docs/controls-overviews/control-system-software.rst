@@ -15,7 +15,7 @@ Many of the tools for C++/Java programming are also supported and tested on macO
 LabVIEW FRC (Windows Only)
 --------------------------
 
-.. image:: /docs/zero-to-robot/step-4/images/creating-benchtop-test-labview/creating-a-project.png
+.. image:: /docs/zero-to-robot/step-4/images/creating-test-program-labview/creating-a-project.png
    :alt: LabVIEW FRC Getting Started screen.
 
 LabVIEW FRC, based on a recent version of LabVIEW Professional, is one of the three officially supported languages for programming an FRC robot. LabVIEW is a graphical, dataflow-driven language. LabVIEW programs consist of a collection of icons, called VIs, wired together with wires which pass data between the VIs. The LabVIEW FRC installer is distributed on a DVD found in the Kickoff Kit of Parts and is also available for download.  A guide to getting started with the LabVIEW FRC software, including installation instructions can be found :ref:`here <docs/zero-to-robot/step-2/labview-setup:Installing LabVIEW for FRC (LabVIEW only)>`.

@@ -3,7 +3,7 @@
 Wiring Best Practices
 ========================
 
-.. tip:: The article :ref:`Wiring the FRC Control System <docs/zero-to-robot/step-1/how-to-wire-a-robot:How to Wire an FRC Robot>` walks through the details of what connects where to wire up the FRC Control System and this article provides some additional "Best Practices" that may increase reliability and make maintenance easier. Take a look at :doc:`Preemptive Troubleshooting <preemptive-troubleshooting>` for more tips and tricks.
+.. tip:: The article :doc:`Intro to FRC Robot Wiring </docs/zero-to-robot/step-1/intro-to-frc-robot-wiring>` walks through the details of what connects where to wire up the FRC Control System and this article provides some additional "Best Practices" that may increase reliability and make maintenance easier. Take a look at :doc:`Preemptive Troubleshooting <preemptive-troubleshooting>` for more tips and tricks.
 
 Vibration/Shock
 ------------------
