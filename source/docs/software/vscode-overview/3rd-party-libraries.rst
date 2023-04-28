@@ -78,12 +78,7 @@ The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpi
 Libraries
 ---------
 
-.. important:: Vendors are in the process of releasing updates compatible with the 2023 version of WPILib. 2022 versions are not compatible.
-
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
-
-`Copperforge LibCu Software Library <https://copperforge.cc/docs/software/libcu/>`__ - Library for all Copperforge devices including the Lasershark
-   Not yet available for 2023
 
 `2023 CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
    Phoenix (v5):         ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2023-latest.json``
@@ -95,9 +90,6 @@ Click these links to visit the vendor site to see whether they offer online inst
    .. note:: To get the 2023 version of the same Phoenix library as previous years, use the first link above (Phoenix v5).  Use one of the other json links if you're using Phoenix Pro.
 
    .. warning:: Only use **ONE** of the above Phoenix vendordep links within a project.  If you need both Phoenix v5 and Phoenix Pro in the same project, use the third option.
-
-`Digilent <https://reference.digilentinc.com/dmc-60c/getting-started>`__ - DMC-60C library
-   Not yet available for 2023
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
    ``https://www.playingwithfusion.com/frc/playingwithfusion2023.json``
