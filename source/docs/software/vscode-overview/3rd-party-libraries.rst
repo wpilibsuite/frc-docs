@@ -116,9 +116,7 @@ Community Libraries
    
 `PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
    ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
-   
-   
-
+ 
 WPILib Command Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
