@@ -76,7 +76,7 @@ We are adding a few arguments here. In order:
 Running VisualVM
 ----------------
 
-Launching VisualVM is done via the commandline with a few parameters. First, we navigate to the directory containing VisualVM, then launch it passing it the WPILib JDK path. On a Windows machine, it looks like the following:
+Launching VisualVM is done via the commandline with a few parameters. First, we navigate to the directory containing VisualVM. Then, launch it with parameters, passing it the WPILib JDK path. On a Windows machine, it looks like the following:
 
 .. code-block:: bash
 
@@ -89,19 +89,19 @@ This should launch VisualVM. Once launched, open the :guilabel:`Add JMX Connecti
 
 .. image:: images/visualvm/visualvm-addconn.png
    :alt: Add visualvm connection menu option
-   :width: 550
+   :width: 700
 
-Once opened, configure the connection detailed and ensure that :guilabel:`Do not require SSL connection` is ticked.
+Once opened, configure the connection details and ensure that :guilabel:`Do not require SSL connection` is ticked.
 
 .. image:: images/visualvm/visualvm-dialog.png
    :alt: VisualVM connection dialog is ticked
-   :width: 550
+   :width: 700
 
 If correctly done, a new menu option in the left-hand sidebar will appear. Clicking on it will show you a detailed dashboard of the running JVM application.
 
 .. image:: images/visualvm/visualvm-dash.png
    :alt: VisualVM diagnostics dashboard
-   :width: 550
+   :width: 700
 
 Creating a Heap Dump
 --------------------
@@ -112,7 +112,7 @@ To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Hea
 
 .. image:: images/visualvm/visualvm-perform-heapdump.png
    :alt: Location of heap dump button in VisualVM
-   :width: 550
+   :width: 700
 
 This heap dump will be stored on the target system (roboRIO) and must be retrieved using SFTP. For this tutorial, `FileZilla <https://filezilla-project.org/>`__ will be the tool of choice. Open FileZilla and connect to the roboRIO with the following parameters
 
@@ -125,7 +125,7 @@ If connected successfully, you'll see a list of files on the roboRIO.
 
 .. image:: images/visualvm/filezilla-connection.png
    :alt: Filezilla list of files
-   :width: 550
+   :width: 700
 
 Navigate to the ``/tmp/`` directory with FileZilla and download it to your machine. Once downloaded, the dump can be analyzed with VisualVM.
 
@@ -136,7 +136,7 @@ Reopen VisualVM if closed using the previous instructions. Then click on :guilab
 
 .. image:: images/visualvm/visualvm-viewing-dump.png
    :alt: Viewing a dump in VisualVM
-   :width: 550
+   :width: 700
 
 Clicking on :guilabel:`Summary` and selecting :guilabel:`Objects` instead will show a breakdown of objects by quantity. The below screenshot showcases a completely empty robot program, and then one that creates an million large ``ArrayList`` of integers.
 
@@ -144,12 +144,12 @@ Blank robot program:
 
 .. image:: images/visualvm/visualvm-objects1.png
    :alt: List of objects in a blank robot program
-   :width: 550
+   :width: 700
 
 with an ``ArrayList`` of ~10000 integers.
 
 .. image:: images/visualvm/visualvm-objects2.png
    :alt: List of objects in a modified robot program
-   :width: 550
+   :width: 700
 
 For more information on VisualVM, check out the `VisualVM documentation pages <https://visualvm.github.io/documentation.html>`__.
