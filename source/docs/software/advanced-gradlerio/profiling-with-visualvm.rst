@@ -13,7 +13,7 @@ Setting up Gradle
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. code-block:: java
+.. code-block:: groovy
 
    deploy {
       targets {
@@ -44,14 +44,14 @@ GradleRIO supports passing JVM launch arguments, and this is what is necessary t
 
 We will be replacing
 
-.. code-block:: java
+.. code-block:: groovy
 
                frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
                }
 
-with 
+with
 
-.. code-block:: java
+.. code-block:: groovy
 
    frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
       // Enable VisualVM connection
@@ -60,7 +60,7 @@ with
       jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number  
+      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number
    }
 
 We are adding a few arguments here. In order:
@@ -69,7 +69,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Lastly, set the hostname to the roboRIOs team number. Be sure to replace this.
+* Set the hostname to the roboRIOs team number. Be sure to replace this.
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
