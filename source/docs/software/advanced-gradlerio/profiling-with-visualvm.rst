@@ -103,6 +103,27 @@ If correctly done, a new menu option in the left-hand sidebar will appear. Click
    :alt: VisualVM diagnostics dashboard
    :width: 700
 
+Analyzing Function Timings
+--------------------------
+
+An important feature of VisualVM is the ability to view how much time a specific function is taking up. This is *without* having a code debugger attached. To begin, click on the :guilabel:`Sampler` tab and then click on :guilabel:`CPU`. This will immediately give a breakdown of what functions are taking CPU time.
+
+.. image:: images/visualvm/visualvm-function-profiling.png
+   :alt: Analyzing the VisualVM function timing tree
+   :width: 700
+
+The above screenshot shows a breakdown of the total time a specific function takes. You can see that ``totallyNotSlowFunction()`` accounts for ``61.9%`` of the robot program CPU time. We can then correlate this to our robot program. In ``totallyNotSlowFunction()``, we have the following code.
+
+.. code-block:: Java
+
+   public static void totallyNotSlowFunction() {
+      for (int i = 0; i < 2000; i++) {
+         System.out.println("HAHAHAHA");
+      }
+   }
+
+In this code snippet, we can identify 2 major causes of concern. A long running ``for`` loop blocks the rest of the robot program from running. Additionally, ``System.out.println()`` calls on the roboRIO are typically quite expensive. We found this information by profiling the Java application on the roboRIO!
+
 Creating a Heap Dump
 --------------------
 
