@@ -1,12 +1,12 @@
 Profiling with VisualVM
 =======================
 
-This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot `build.gradle`. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
+This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot `build.gradle`. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
 Unpacking VisualVM
 ------------------
 
-To begin, `download VisualVM <https://visualvm.github.io/download.html>`__ and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\\users\\public\\wpilib``.
+To begin, `download VisualVM <https://visualvm.github.io/download.html>`__ and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
 
 Setting up Gradle
 -----------------
@@ -91,7 +91,7 @@ This should launch VisualVM. Once launched, open the :guilabel:`Add JMX Connecti
    :alt: Add visualvm connection menu option
    :width: 700
 
-Once opened, configure the connection details and ensure that :guilabel:`Do not require SSL connection` is ticked.
+Once opened, configure the connection details and hostname. Ensure that :guilabel:`Do not require SSL connection` is ticked.
 
 .. image:: images/visualvm/visualvm-dialog.png
    :alt: VisualVM connection dialog is ticked
@@ -135,20 +135,9 @@ To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Hea
    :alt: Location of heap dump button in VisualVM
    :width: 700
 
-This heap dump will be stored on the target system (roboRIO) and must be retrieved using SFTP. For this tutorial, `FileZilla <https://filezilla-project.org/>`__ will be the tool of choice. Open FileZilla and connect to the roboRIO with the following parameters
+This heap dump will be stored on the target system (roboRIO) and must be retrieved using SFTP. See :doc:`this article </docs/software/roborio-info/roborio-ftp>` for information on retrieving the dump from the roboRIO.
 
-- Host: ``sftp://172.22.11.2`` or ``sftp://10.TE.AM.2``
-- Username: ``lvuser``
-- Password: Leave blank
-- Port: Leave blank
-
-If connected successfully, you'll see a list of files on the roboRIO.
-
-.. image:: images/visualvm/filezilla-connection.png
-   :alt: Filezilla list of files
-   :width: 700
-
-Navigate to the ``/tmp/`` directory with FileZilla and download it to your machine. Once downloaded, the dump can be analyzed with VisualVM.
+Once downloaded, the dump can be analyzed with VisualVM.
 
 Analyzing a Heap Dump
 ---------------------
@@ -172,5 +161,8 @@ with an ``ArrayList`` of ~10000 integers.
 .. image:: images/visualvm/visualvm-objects2.png
    :alt: List of objects in a modified robot program
    :width: 700
+
+Additional Info
+---------------
 
 For more information on VisualVM, check out the `VisualVM documentation pages <https://visualvm.github.io/documentation.html>`__.
