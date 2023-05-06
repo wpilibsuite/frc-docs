@@ -1,7 +1,7 @@
 Profiling with VisualVM
 =======================
 
-This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot `build.gradle`. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
+This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
 Unpacking VisualVM
 ------------------
