@@ -340,22 +340,28 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
+            // Drive using the X, Y, and Z axes of the joystick.
             m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
-            m_robotDrive.drivePolar(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.getY(), Rotation2d.fromDegrees(45), 0);
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
+            // Drive using the X, Y, and Z axes of the joystick.
             m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
-            m_robotDrive.drivePolar(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.GetY(), 45_deg, 0);
         }
 
     .. code-tab:: python
 
        def teleopPeriodic(self):
+           // Drive using the X, Y, and Z axes of the joystick.
            self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
-           self.robotDrive.drivePolar(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+           // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+           self.robotDrive.drivePolar(-self.stick.getY(), Rotation2d.fromDegrees(45), 0)
 
 Field-Oriented Driving
 ^^^^^^^^^^^^^^^^^^^^^^
