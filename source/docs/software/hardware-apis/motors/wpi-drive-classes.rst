@@ -113,15 +113,10 @@ By default all Drive objects enable Motor Safety. Depending on the mechanism and
 
 Axis Conventions
 ^^^^^^^^^^^^^^^^
-.. image:: images/drive-axis.png
-   :alt: Show the axis of the robot with X+ going forward.  Y+ to the right and Z+ downward.
-   :width: 600
 
-The drive classes use the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. The rest of the library, and math in general, uses NWU axes convention (North-West-Up). We use NED here because joysticks use NED, and they use NED because the aviation industry does.
+The drive classes use the NWU axes convention (North-West-Up as external reference in the world frame). The positive X axis points ahead, the positive Y axis points left, and the positive Z axis points up. We use NWU here because the rest of the library, and math in general, use NWU axes convention.
 
-Joysticks follow NED convention, but it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
-
-.. warning:: The ``MecanumDrive`` class does not follow this convention. The positive Y axis points ahead, the positive X axis points right. This may change in a future year's WPILib release.
+Joysticks follow NED (North-East-Down) convention, where the positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. However, it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
 
 Using the DifferentialDrive class to control Differential Drive robots
 ----------------------------------------------------------------------
@@ -267,10 +262,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
+            myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
 
             // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-            myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
+            myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
@@ -280,10 +275,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(-driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
+            myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
         }
 
     .. code-tab:: python
@@ -293,10 +288,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
            self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
 
            # Arcade drive with a given forward and turn rate
-           self.myDrive.arcadeDrive(-self.driveStick.getY(), self.driveStick.getX())
+           self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
 
            # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-           self.myDrive.curvatureDrive(-self.driveStick.getY(), self.driveStick.getX(), self.driveStick.getButton(1))
+           self.myDrive.curvatureDrive(-self.driveStick.getY(), -self.driveStick.getX(), self.driveStick.getButton(1))
 
 Using the MecanumDrive class to control Mecanum Drive robots
 ------------------------------------------------------------
@@ -345,22 +340,28 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
-            m_robotDrive.drivePolar(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
+            // Drive using the X, Y, and Z axes of the joystick.
+            m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.getY(), Rotation2d.fromDegrees(45), 0);
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
-            m_robotDrive.drivePolar(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
+            // Drive using the X, Y, and Z axes of the joystick.
+            m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.GetY(), 45_deg, 0);
         }
 
     .. code-tab:: python
 
        def teleopPeriodic(self):
-           self.robotDrive.driveCartesian(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
-           self.robotDrive.drivePolar(-self.stick.getY(), self.stick.getX(), self.stick.getZ())
+           // Drive using the X, Y, and Z axes of the joystick.
+           self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+           // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+           self.robotDrive.drivePolar(-self.stick.getY(), Rotation2d.fromDegrees(45), 0)
 
 Field-Oriented Driving
 ^^^^^^^^^^^^^^^^^^^^^^
