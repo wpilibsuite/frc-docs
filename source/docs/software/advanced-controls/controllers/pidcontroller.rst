@@ -126,7 +126,7 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
     // the total loop output
     pid.SetIntegratorRange(-0.5, 0.5);
 
-Disabling Integral Gain if the Error is Too Far Away
+Disabling Integral Gain if the Error is Too High
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``.
