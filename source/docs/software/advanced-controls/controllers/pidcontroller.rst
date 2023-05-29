@@ -127,9 +127,9 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
     pid.SetIntegratorRange(-0.5, 0.5);
 
 Disabling Integral Gain if the Error is Too High
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``.
+Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``. If the error is more than ``IZone``, the total accumulated error is reset, disabling integral gain. When the error is equal to or less than IZone, integral gain is enabled.
 
 By default, ``IZone`` is disabled.
 
@@ -139,11 +139,16 @@ By default, ``IZone`` is disabled.
 
   .. code-tab:: java
 
+    // Disable IZone
+    pid.setIZone(Double.POSITIVE_INFINITY);
+
     // Integral gain will not be applied if the absolute value of the error is
     // more than 2
     pid.setIZone(2);
 
   .. code-tab:: c++
+    // Disable IZone
+    pid.SetIZone(std::numeric_limits<double>::infinity());
 
     // Integral gain will not be applied if the absolute value of the error is
     // more than 2
