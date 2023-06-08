@@ -191,24 +191,62 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 Universal Heartbeat
 -------------------
 
-The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x062``). It is an 8 byte CAN packet. The important byte in here is byte 5 (index 4). The layout is the following bitfield.
+The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20 ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x062``). It is an 8 byte CAN packet with the following bitfield layout.
 
-+-----------------+-------+
-| Description     | Width |
-+=================+=======+
-| RedAlliance     | 1     |
-+-----------------+-------+
-| Enabled         | 1     |
-+-----------------+-------+
-| Autonomous      | 1     |
-+-----------------+-------+
-| Test            | 1     |
-+-----------------+-------+
-| WatchdogEnabled | 1     |
-+-----------------+-------+
-| Reserved        | 3     |
-+-----------------+-------+
++-----------------------+------+--------------+
+| Description           | Byte | Width (bits) |
++=======================+======+==============+
+| Match time (seconds)  | 8    | 8            |
++-----------------------+------+--------------+
+| Match number          | 6-7  | 10           |
++-----------------------+------+--------------+
+| Replay number         | 6    | 6            |
++-----------------------+------+--------------+
+| Red alliance          | 5    | 1            |
++-----------------------+------+--------------+
+| Enabled               | 5    | 1            |
++-----------------------+------+--------------+
+| Autonomous mode       | 5    | 1            |
++-----------------------+------+--------------+
+| Test mode             | 5    | 1            |
++-----------------------+------+--------------+
+| System watchdog       | 5    | 1            |
++-----------------------+------+--------------+
+| Tournament type       | 5    | 3            |
++-----------------------+------+--------------+
+| Time of day (year)    | 4    | 6            |
++-----------------------+------+--------------+
+| Time of day (month)   | 3-4  | 4            |
++-----------------------+------+--------------+
+| Time of day (day)     | 3    | 5            |
++-----------------------+------+--------------+
+| Time of day (seconds) | 2-3  | 6            |
++-----------------------+------+--------------+
+| Time of day (minutes) | 1-2  | 6            |
++-----------------------+------+--------------+
+| Time of day (hours)   | 1    | 5            |
++-----------------------+------+--------------+
 
-The flag to watch for is ``WatchdogEnabled``. If that flag is set, that means motor controllers are enabled.
+.. code-block:: c++
 
-If 100ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
+   struct [[gnu::packed]] RobotState {
+     uint64_t matchTimeSeconds : 8;
+     uint64_t matchNumber : 10;
+     uint64_t replayNumber : 6;
+     uint64_t redAlliance : 1;
+     uint64_t enabled : 1;
+     uint64_t autonomous : 1;
+     uint64_t testMode : 1;
+     uint64_t systemWatchdog : 1;
+     uint64_t tournamentType : 3;
+     uint64_t timeOfDay_yr : 6;
+     uint64_t timeOfDay_month : 4;
+     uint64_t timeOfDay_day : 5;
+     uint64_t timeOfDay_sec : 6;
+     uint64_t timeOfDay_min : 6;
+     uint64_t timeOfDay_hr : 5;
+   };
+
+If the ``System watchdog`` flag is set, motor controllers are enabled. If 100 ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
+
+Note that all fields except ``Enabled``, ``Autonomous mode``, ``Test mode``, and ``System watchdog`` will contain invalid values until an arbitrary time after the Driver Station connects.
