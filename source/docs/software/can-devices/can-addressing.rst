@@ -191,7 +191,7 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 Universal Heartbeat
 -------------------
 
-The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20 ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x062``). It is an 8 byte CAN packet with the following bitfield layout.
+The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20 ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x061``). It is an 8 byte CAN packet with the following bitfield layout.
 
 +-----------------------+------+--------------+
 | Description           | Byte | Width (bits) |
