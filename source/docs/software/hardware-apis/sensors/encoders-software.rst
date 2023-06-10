@@ -27,6 +27,7 @@ The FPGA handles quadrature encoders either through a counter module or an encod
 Examples of quadrature encoders:
 
 - `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
+- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
 - `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
