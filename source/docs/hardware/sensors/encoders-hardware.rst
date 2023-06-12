@@ -52,6 +52,7 @@ On-shaft encoders couple to a shaft by fitting *around* it, forming a friction c
 Examples of On-shaft encoders:
 
 - `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
+- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
 - `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
@@ -86,6 +87,7 @@ As each square wave pulse is a digital signal, quadrature encoders connect to th
 Examples of quadrature encoders:
 
 - `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
+- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
 - `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
