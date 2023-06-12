@@ -176,9 +176,6 @@ Requirements
 ^^^^^^^^^^^^
 
 - `Python 3.6 or higher <https://www.python.org/>`__
-- clang-format (included with `LLVM <https://releases.llvm.org/download.html>`__)
-
-.. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
 
 You can install `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
@@ -213,6 +210,6 @@ An example styleguide is shown below:
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5fac18ff4ad1db92ec6fcbd437043a38028e99c4/.github/workflows/lint-format.yml
    :language: yaml
-   :lines: 1-5, 12-40
+   :lines: 1-5, 12-34
