@@ -5,7 +5,7 @@ Individual commands are capable of accomplishing a large variety of robot tasks,
 
 As the name suggests, a command composition is a :term:`composition` of one or more commands. This allows code to be kept much cleaner and simpler, as the individual component commands may be written independently of the code that combines them, greatly reducing the amount of complexity at any given step of the process.
 
-Most importantly, however, command compositions are themselves commands - they implement the ``Command`` interface. This allows command compositions to be further composed as a :term:`recursive composition` - that is, a command composition may contain other command compositions as components. This allows very powerful and concise inline expressions:
+Most importantly, however, command compositions are themselves commands - they extend the ``Command`` class. This allows command compositions to be further composed as a :term:`recursive composition` - that is, a command composition may contain other command compositions as components. This allows very powerful and concise inline expressions:
 
 .. tabs::
 

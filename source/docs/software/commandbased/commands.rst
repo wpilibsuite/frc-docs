@@ -1,7 +1,7 @@
 Commands
 ========
 
-**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met.  Commands are represented in the command-based library by the ``Command`` interface (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
+**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met.  Commands are represented in the command-based library by the ``Command`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__).
 
 The Structure of a Command
 --------------------------
@@ -65,7 +65,7 @@ This property can be set either by overriding the ``runsWhenDisabled()`` method 
 
   .. code-tab:: java
 
-    CommandBase mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
+    Command mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
 
   .. code-tab:: c++
 
@@ -86,7 +86,7 @@ This property can be set either by overriding the ``getInterruptionBehavior`` me
 
   .. code-tab:: java
 
-    CommandBase noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
+    Command noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
 
   .. code-tab:: c++
 
@@ -276,7 +276,7 @@ Users may also write custom command classes. As this is significantly more verbo
 
 .. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` `class <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__ when defining their own command classes, as is shown below.
 
-To write a custom command class, subclass the abstract ``CommandBase`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
+To write a custom command class, subclass the abstract ``Command`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
 .. tabs::
 
@@ -295,8 +295,6 @@ To write a custom command class, subclass the abstract ``CommandBase`` class (`J
       :lines: 5-31
       :linenos:
       :lineno-start: 5
-
-Inheriting from ``CommandBase`` rather than ``Command`` provides several convenience features. It automatically overrides the ``getRequirements()`` method for users, returning a list of requirements that is empty by default, but can be added to with the ``addRequirements()`` method. It also implements the ``Sendable`` interface, and so can be sent to the dashboard - this provides a handy way for scheduling commands for testing (via a button on the dashboard) without needing to bind them to buttons on a controller.
 
 Simple Command Example
 ----------------------
