@@ -133,7 +133,7 @@ Another way integral "wind-up" can be alleviated is by limiting the error range 
 
 By default, ``IZone`` is disabled.
 
-``IZone`` may be increased or decreased using the ``setIZone()`` method. To disable it, set it to infinity.
+``IZone`` may be set using the ``setIZone()`` method. To disable it, set it to infinity.
 
 .. tabs::
 
