@@ -131,6 +131,9 @@ FRC Glossary
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
 
+   PWM
+      An acronym which stands for "Pulse Width Modulation", a method for motor controllers, sensors, and other components to transmit or receive their operational status. For motor controllers, PWM is often used to affect the power output to the motor or connected actuator. See `PWM <https://en.wikipedia.org/wiki/Pulse-width_modulation/>` on Wikipedia for more information.
+
    RAII
       Resource Acquisition Is Initialization; a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
 
@@ -178,3 +181,9 @@ FRC Glossary
 
    transitory
       In :term:`NetworkTables`, a :term:`topic` that will disappear after the last :term:`publisher` stops publishing.
+
+   user program
+      In the context of the roboRIO control system, the primary FRC runtime program that handles all communication and robot operations.
+
+   watchdog
+      A timer mechanism often built into embedded devices or software to monitor the runtime status of a program and reset it if crashes or errors occur. The watchdog will reset the main program if the timer itself is not reset, an activity which occurs during normal operations of the program.

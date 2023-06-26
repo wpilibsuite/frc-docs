@@ -385,6 +385,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
+   docs/hardware/hardware-safety/index
    docs/hardware/sensors/index
 
 .. toctree::
