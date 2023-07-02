@@ -30,7 +30,7 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 
-Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
+Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``miktex --verbose packages require --package-id-file miktex-packages.txt``
 
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
