@@ -21,7 +21,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
          :language: cpp
          :lines: 7-8,16-18,20,25-31
 
@@ -43,7 +43,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: cpp
          :lines: 5-20,23-56,58-61,63-64,69-76
 
