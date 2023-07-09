@@ -19,9 +19,9 @@ Windows
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
 - `Python 3.9 <https://www.python.org/downloads/>`__
-- `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
 - `Perl <https://strawberryperl.com/>`__
-- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
+- `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
+- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__ (Only needed for PDF builds)
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 
