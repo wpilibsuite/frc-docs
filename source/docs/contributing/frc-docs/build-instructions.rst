@@ -13,6 +13,14 @@ Text Editors / IDE
 
 For development, we recommend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_. However, any text editor will work.
 
+By default, the reStructuredText extension enables linting with all doc8 features enabled. As frc-docs does not follow the line length lint, add the following to your VS Code ``settings.json`` to disable line length linting.
+
+.. code-block:: json
+
+   "restructuredtext.linter.doc8.extraArgs": [
+      "--ignore D001"
+   ]
+
 Windows
 ^^^^^^^
 
