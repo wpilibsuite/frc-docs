@@ -279,4 +279,4 @@
 "docs/zero-to-robot/step-4/running-benchtop-test.rst" "docs/zero-to-robot/step-4/running-test-program.rst"
 "docs/zero-to-robot/step-1/how-to-wire-a-robot.rst" "docs/zero-to-robot/step-1/intro-to-frc-robot-wiring.rst"
 "docs/hardware/hardware-basics/wiring-pneumatics.rst" "docs/hardware/hardware-basics/wiring-pneumatics-pcm.rst"
-
+"docs/software/commandbased/command-based-changes.rst" "docs/software/commandbased/index.rst"
