@@ -166,7 +166,6 @@ miktex-metapost
 miktex-metapost-bin-x64-2.9
 miktex-mfware-bin-x64-2.9
 miktex-misc
-miktex-mkfntmap-bin-x64-2.9
 miktex-mktex-bin-x64-2.9
 miktex-mo-bin-x64-2.9
 miktex-mpfr-bin-x64-2.9
@@ -256,3 +255,5 @@ zapfchan
 zapfding
 zerohyph
 zhmetrics
+colortbl
+letltxmacro

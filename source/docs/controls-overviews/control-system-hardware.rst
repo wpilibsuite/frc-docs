@@ -116,11 +116,25 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. image:: images/control-system-hardware/robot-signal-light.png
-  :alt: Orange Robot Signal Light
-  :width: 500
+.. tabs::
 
-The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
+   .. tab:: Allen-Bradley
+
+      .. figure:: images/control-system-hardware/rsl-allenbradley.png
+         :alt: Orange Robot Signal Light (Allen-Bradley)
+         :width: 500
+
+         Allen-Bradley 855PB-B12ME522
+
+   .. tab:: AndyMark
+
+      .. figure:: images/control-system-hardware/rsl-andymark.png
+         :alt: Orange Robot Signal Light (AndyMark)
+         :width: 500
+
+         AndyMark am-3583
+
+The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
 
 CTRE Pneumatics Control Module
 ------------------------------
