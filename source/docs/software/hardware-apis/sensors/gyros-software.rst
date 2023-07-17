@@ -5,12 +5,9 @@ Gyroscopes - Software
 
 .. note:: This section covers gyros in software.  For a hardware guide to gyros, see :ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`.
 
-A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class. Most common 3rd party gyros inherit from the :code:`Gyro` interface making them easily usable too!
+A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class.
 
-The Gyro interface
-------------------
-
-All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
+There are getters the current angular rate and heading and functions for zeroing the current heading and calibrating the gyro.
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
@@ -93,7 +90,7 @@ The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/re
 navX
 ^^^^
 
-The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
+The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
 
 .. tabs::
 
@@ -110,7 +107,7 @@ The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface. 
 Pigeon
 ^^^^^^
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
+The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
 
 .. tabs::
 
@@ -138,7 +135,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 Displaying the robot heading on the dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
+:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a gyro in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
 .. tabs::
 
