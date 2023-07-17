@@ -16,7 +16,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
       :language: java
       :lines: 7-
       :linenos:
@@ -24,7 +24,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -39,7 +39,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -47,7 +47,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -55,7 +55,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -69,7 +69,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -77,7 +77,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -85,7 +85,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
