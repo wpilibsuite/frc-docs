@@ -12,7 +12,7 @@ Feedforward and feedback controllers can each be used in isolation, but are most
 Using Feedforward with a PIDController
 --------------------------------------
 
-Users familiar with the old ``PIDController`` class may notice the lack of any feedforward gain in the new controller.  As users are expected to use the controller output themselves, there is no longer any need for the ``PIDController`` to implement feedforward - users may simply add any feedforward they like to the output of the controller before sending it to their motors:
+Users may add any feedforward they like to the output of the controller before sending it to their motors:
 
 .. tabs::
 
