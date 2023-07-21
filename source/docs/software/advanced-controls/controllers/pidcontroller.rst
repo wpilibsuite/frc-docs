@@ -10,8 +10,6 @@ WPILib supports PID control of mechanisms through the ``PIDController`` class (`
 Using the PIDController Class
 -----------------------------
 
-.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``edu.wpi.first.math.controller`` package.
-
 Constructing a PIDController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,8 +35,6 @@ Using the Feedback Loop Output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The ``PIDController`` assumes that the ``calculate()`` method is being called regularly at an interval consistent with the configured period.  Failure to do this will result in unintended loop behavior.
-
-.. warning:: Unlike the old ``PIDController``, the new PIDController does not automatically control an output from its own thread - users are required to call ``calculate()`` and use the resulting output in their own code.
 
 Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method):
 
@@ -180,8 +176,6 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 
 Clamping Controller Output
 --------------------------
-
-Unlike the old ``PIDController``, the new controller does not offer any output clamping features, as the user is expected to use the loop output themselves.  Output clamping can be easily achieved by composing the controller with WPI's ``clamp()`` function (or ``std::clamp`` in c++):
 
 .. tabs::
 
