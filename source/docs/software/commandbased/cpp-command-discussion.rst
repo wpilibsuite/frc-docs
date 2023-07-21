@@ -4,7 +4,7 @@ A Technical Discussion on C++ Commands
 
 This article will help you understand the reasoning behind some of the decisions made in the 2020 command-based framework (such as the use of ``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, etc.).  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
-.. note:: The model was further changed in 2023, as described `below <#2023 Updates>`_.
+.. note:: The model was further changed in 2023, as described :ref:`below <docs/software/commandbased/cpp-command-discussion:2023 Updates>`.
 
 Ownership Model
 ---------------
@@ -187,7 +187,7 @@ After a few years in the new command-based framework, the recommended way to cre
 
 A significant root cause of most pain points was commands being passed by value in a non-polymorphic way. This made object slicing mistakes rather easy, and changes in composition structure could propagate type changes throughout the codebase: for example, if a ``ParallelRaceGroup`` were changed to a ``ParallelDeadlineGroup``, those type changes would propagate through the codebase. Passing around the object as a ``Command`` (as done in Java) would result in object slicing.
 
-Additionally, various decorators weren't supported in C++ due to reasons described `above <#Templating Decorators>`_. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
+Additionally, various decorators weren't supported in C++ due to reasons described :ref:`above <docs/software/commandbased/cpp-command-discussion:Templating Decorators>`. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
 
 ``CommandPtr``
 ^^^^^^^^^^^^^^
