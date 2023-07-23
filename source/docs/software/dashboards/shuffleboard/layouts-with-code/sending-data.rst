@@ -52,6 +52,11 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
        Shuffleboard.getTab("Drive")
             .addPersistent("Max Speed", 1.0);
 
+   .. code-tab:: c++
+
+       Shuffleboard::GetTab("Drive")
+            .AddPersistent("Max Speed", 1.0);
+
 Sending sensors, motors, etc
 ----------------------------
 
@@ -63,3 +68,8 @@ Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, 
 
        Shuffleboard.getTab("Tab Title")
             .add("Sendable Title", mySendable);
+
+   .. code-tab:: c++
+
+       Shuffleboard::GetTab("Tab Title")
+            .Add("Sendable Title", mySendable);
