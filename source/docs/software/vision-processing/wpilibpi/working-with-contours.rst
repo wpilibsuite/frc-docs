@@ -79,19 +79,19 @@ You can use NetworkTables to send these properties to the Driver Station and the
 
    .. code-tab:: py
 
-      from networktables import NetworkTables
+         import ntcore
 
-      nt = NetworkTables.getTable('vision')
-
-      #
-      # Initialization code here
-      #
-
-      while True:
+         nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
 
          #
-         # Image processing code here
+         # Initialization code here
          #
 
-         nt.putNumber('center_x', center_x)
-         nt.putNumber('center_y', center_y)
+         while true:
+
+            #
+            # Image processing code here
+            #
+
+            nt.putNumber('center_x', center_x)
+            nt.putNumber('center_y', center_y)
