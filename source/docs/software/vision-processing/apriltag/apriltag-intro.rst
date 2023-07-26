@@ -8,7 +8,7 @@ What Are AprilTags?
 
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
-Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__ This document attempts to summarize the content for FIRST robotics related purposes.
+Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__. This document attempts to summarize the content for FIRST robotics related purposes.
 
 Application to FRC
 ------------------
