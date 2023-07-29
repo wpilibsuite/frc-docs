@@ -15,7 +15,7 @@ Sending simple data (numbers, strings, booleans, and arrays of these) is done by
 
    .. code-tab:: c++
 
-       Shuffleboard::GetTab("Numbers")
+       frc::Shuffleboard::GetTab("Numbers")
             .Add("Pi", 3.14);
 
 If data needs to be updated (for example, the output of some calculation done on the robot), call ``getEntry()`` after defining the value, then update it when needed or in a ``periodic`` function
@@ -54,7 +54,7 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
 
    .. code-tab:: c++
 
-       Shuffleboard::GetTab("Drive")
+       frc::Shuffleboard::GetTab("Drive")
             .AddPersistent("Max Speed", 1.0);
 
 Sending sensors, motors, etc
@@ -71,5 +71,5 @@ Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, 
 
    .. code-tab:: c++
 
-       Shuffleboard::GetTab("Tab Title")
+       frc::Shuffleboard::GetTab("Tab Title")
             .Add("Sendable Title", mySendable);
