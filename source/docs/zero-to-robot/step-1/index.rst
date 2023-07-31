@@ -6,4 +6,4 @@ An overview of the available control system hardware can be found :doc:`here </d
 .. toctree::
    :maxdepth: 1
 
-   how-to-wire-a-robot
+   intro-to-frc-robot-wiring

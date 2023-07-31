@@ -14,7 +14,7 @@ Parameter Exponential Search
 
 While interacting with the simulations, you will get instructions to "increase" or "decrease" different parameters.
 
-When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it). This is called an term:`exponential search`, and is a very efficient way to find positive values of unknown scale.
+When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it). This is called an :term:`exponential search`, and is a very efficient way to find positive values of unknown scale.
 
 System Noise
 ------------
@@ -32,4 +32,4 @@ Follow the order of tuning presented in the tutorials - it will maximize your ch
 
 Resist checking the tuning solutions until you believe your solution is close to correct. Then check your answer, and try the provided one to compare against your own results.
 
-Furthermore, work from easy to difficult.:ref:`Flywheel mechanisms <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>` are the easiest to tune. After that, look into the :ref:`turret tuning <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`. Then, finish off with the :ref:`vertical arm example<docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`.
+Furthermore, work from easy to difficult. :ref:`Flywheel mechanisms <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>` are the easiest to tune. After that, look into the :ref:`turret tuning <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`. Then, finish off with the :ref:`vertical arm example<docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`.

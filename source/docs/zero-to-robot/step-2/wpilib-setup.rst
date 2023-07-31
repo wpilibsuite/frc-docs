@@ -9,7 +9,7 @@ Prerequisites
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
  * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 11 or higher, both Intel and Arm.
+ * macOS 11 or higher, both Intel and Arm for Java. C++ requires macOS 12 or higher with Xcode 14.
 
 .. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
@@ -18,7 +18,7 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. wpilibrelease:: v2023.4.1
+.. wpilibrelease:: v2023.4.3
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
@@ -157,7 +157,7 @@ Some operating systems require some final action to complete installation.
 Additional C++ Installation for Simulation
 ------------------------------------------
 
-C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 13 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
 
 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 

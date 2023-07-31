@@ -13,15 +13,23 @@ Text Editors / IDE
 
 For development, we recommend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_. However, any text editor will work.
 
+By default, the reStructuredText extension enables linting with all doc8 features enabled. As frc-docs does not follow the line length lint, add the following to your VS Code ``settings.json`` to disable line length linting.
+
+.. code-block:: json
+
+   "restructuredtext.linter.doc8.extraArgs": [
+      "--ignore D001"
+   ]
+
 Windows
 ^^^^^^^
 
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
 - `Python 3.9 <https://www.python.org/downloads/>`__
-- `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
 - `Perl <https://strawberryperl.com/>`__
-- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
+- `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
+- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__ (Only needed for PDF builds)
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 
@@ -30,7 +38,7 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 
-Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
+Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``miktex --verbose packages require --package-id-file miktex-packages.txt``
 
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^

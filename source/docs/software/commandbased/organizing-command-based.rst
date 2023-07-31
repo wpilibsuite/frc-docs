@@ -108,7 +108,7 @@ For example, a command like the intake-running command is conceptually related t
 
 Notice how since we are in the ``Intake`` class, we no longer refer to ``intake``; instead, we use the ``this`` keyword to refer to the current instance.
 
-Since we are inside the ``Intake`` class, technically we can access ``private`` variables and methods directly from within the ``runIntakeCommand`` method, thus not needing intermediary methods. (For example, the ``runIntakeCommand`` method can directly interface with the motor controller objects instead of calling ``set()``.) On the other hand, these intermediary methods can reduce code duplication and increase encaspulation. Like many other choices outlined in this document, this tradeoff is a matter of personal preference on a case-by-case basis.
+Since we are inside the ``Intake`` class, technically we can access ``private`` variables and methods directly from within the ``runIntakeCommand`` method, thus not needing intermediary methods. (For example, the ``runIntakeCommand`` method can directly interface with the motor controller objects instead of calling ``set()``.) On the other hand, these intermediary methods can reduce code duplication and increase encapsulation. Like many other choices outlined in this document, this tradeoff is a matter of personal preference on a case-by-case basis.
 
 Using this new factory method in command groups and button bindings is highly expressive:
 
@@ -205,7 +205,9 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
     // TODO
 
-If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our `AutoRoutines` class and inject our subsystems through the constructor:
+Non-Static Command Factories
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
 .. tabs::
 
@@ -234,7 +236,36 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
                 )
             );
         }
+
+        public Command driveThenIntake() {
+            return Commands.sequence(
+                drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
+                drivetrain.stopCommand(),
+                intake.runIntakeCommand(1.0).withTimeout(5.0),
+                intake.stopCommand()
+            );
+        }
     }
+
+  .. code-tab:: c++
+
+    // TODO
+
+Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
+
+.. tabs::
+
+  .. code-tab:: java
+
+    AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
+
+    Command driveAndIntake = autoRoutines.driveAndIntake();
+    Command driveThenIntake = autoRoutines.driveThenIntake();
+
+    Command drivingAndIntakingSequence = Commands.sequence(
+      autoRoutines.driveAndIntake(),
+      autoRoutines.driveThenIntake()
+    );
 
   .. code-tab:: c++
 
@@ -366,7 +397,7 @@ Summary
      - Relatively verbose
      - Excels at them
      - Yes; may be more natural than other approaches
-   * - Static Factory Methods
+   * - Static and Instance Command Factories
      - Multi-subsystem commands
      - Yes
      - Yes

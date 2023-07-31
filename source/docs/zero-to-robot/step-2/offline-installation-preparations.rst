@@ -20,7 +20,7 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2023 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2023 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ (Note: Click on link for "Individual Offline Installers")
 
 -  `2023 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2.zip>`__ or `2023 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2_IL.zip>`__
 -  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__

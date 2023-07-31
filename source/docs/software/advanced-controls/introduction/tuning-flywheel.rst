@@ -60,7 +60,7 @@ Interact with the simulation below to see how the flywheel system responds when 
 
 The "Bang-Bang" controller is a simple controller which applies a binary (present/not-present) force to a mechanism to try to get it closer to a setpoint.  A more detailed description (and documentation for the corresponding WPILib implementation) can be found :ref:`here. <docs/software/advanced-controls/controllers/bang-bang:Bang-Bang Control with BangBangController>`
 
-There are no tuneable controller parameters for a bang-bang controller - you can only adjust the setpoint. This simplicty is a strength, and also a weakness.
+There are no tuneable controller parameters for a bang-bang controller - you can only adjust the setpoint. This simplicity is a strength, and also a weakness.
 
 Try adjusting the setpoint up and down. You should see that for almost all values, the output converges to be somewhat near the setpoint.
 

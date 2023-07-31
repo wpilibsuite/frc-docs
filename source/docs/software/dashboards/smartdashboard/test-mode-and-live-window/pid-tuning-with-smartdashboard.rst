@@ -7,7 +7,7 @@ Finding the setpoint values with LiveWindow
 -------------------------------------------
 
 .. image:: images/PID-tuning-with-SmartDashboard/finding-setpoint-values.png
-   :alt: Seting a motor's speed with LiveWindow.
+   :alt: Setting a motor's speed with LiveWindow.
 
 Create a PID Subsystem for each mechanism with feedback. The PID Subsystems contain the actuator (motor) and the feedback sensor (potentiometer in this case). You can use Test mode to display the subsystem sensors and actuators. Using the slider manually adjust the actuator to each desired position. Note the sensor values (2) for each of the desired positions. These will become the setpoints for the PID controller.
 
@@ -19,7 +19,7 @@ Viewing the PIDController in LiveWindow
 
 In Test mode, the PID Subsystems display their P, I, and D parameters that are set in the code. The P, I, and D values are the weights applied to the computed error (P), sum of errors over time (I), and the rate of change of errors (D). Each of those terms is multiplied by the weights and added together to form the motor value. Choosing the optimal P, I, and D values can be difficult and requires some amount of experimentation. The Test mode on the robot allows the values to be modified, and the mechanism response observed.
 
-.. important:: The enable option does not affect the `PIDController <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example :ref:`here <docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid:Enable Functionality in the New PIDController>` on how to retain this fuctionality.
+.. important:: The enable option does not affect the `PIDController <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example :ref:`here <docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid:Enable Functionality in the New PIDController>` on how to retain this functionality.
 
 Tuning the PIDController
 ------------------------

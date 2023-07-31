@@ -8,31 +8,47 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-Driver Station does not detect joysticks at startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+LabVIEW installation of RabbitMQ Fails
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** The Driver Station application does not detect already connected joysticks when it starts up. Connecting joysticks after it is already running works.
+**Issue:** Some users have reported the following error during LabVIEW installation: ``An error occurred while installing a package: ni-skyline-rabbitmq-support (20.5.0.49152-0+f0)``.
 
-**Workaround:** Connect joysticks after starting the DS, or use the joystick rescan button or the F1 shortcut to rescan for joysticks.
+**Workaround:** NI has a `support article <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kIbbSAE&l=en-US>`_ with several potential workarounds. Alternately, you can de-select :guilabel:`NI Web Server Development Support for LabVIEW 2020 32-bit` from the :guilabel:`Additional items you may wish to install` page to avoid installing the failing package.
+
+roboRIO 2.0 Ethernet Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** On the roboRIO 2.0, the Ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
+
+**Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the Ethernet Adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
+
+Driver Station Reporting No Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** There is a rare occurrence in the roboRIO 2.0 that causes the roboRIO to not properly start the robot program. This causes the Driver Station to report a successful connection but no code, even though code is deployed on the roboRIO.
+
+**Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
+
+ .. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
+
+Radio Second Port Sometimes Fails to Communicate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
+
+**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch available from `FIRST Choice <https://firstchoicebyandymark.com/fc-cn-9024>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
 
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** Use of the onboard I2C port, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.
+**Issue:** Use of the onboard I2C port on the roboRIO 1 or 2, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.
 
-**Workaround:** The only surefire mitigation is to use the MXP I2C port or another device to read the I2C data. Acessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
+**Workaround:** The only surefire mitigation is to use the MXP I2C port or another device to read the I2C data. Accessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
 Several alternatives exist for accessing the REV color sensor without using the roboRIO I2C port. A similar approach could be used for other I2C sensors.
 
 - Use a `Raspberry Pi Pico <https://github.com/ThadHouse/picocolorsensor/>`__. Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
 - Use a `Raspberry Pi <https://github.com/PeterJohnson/rpi-colorsensor/>`__. Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
-
-CAN bus utilization is noisy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** CAN bus utilization as reported live by the DS or as shown in the DS log has significant variation or "spikes" in the data. This is due to the RoboRIO occasionally counting CAN packets in the incorrect time period, so one period will have a much lower utilization than reality and the next a much higher utilization than reality.
-
-**Workaround:** Zoom in on the DS log plot and look for time periods when the utilization is stable (the spikes will be both above and below this average). The average utilization is the true utilization.
 
 Updating Properties on roboRIO 2.0 may be slow or hang
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,6 +115,16 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
+
+Fixed in Game Tools 2023.1.0
+----------------------------
+
+Driver Station does not detect joysticks at startup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station application does not detect already connected joysticks when it starts up. Connecting joysticks after it is already running works.
+
+**Workaround:** Connect joysticks after starting the DS, or use the joystick rescan button or the F1 shortcut to rescan for joysticks.
 
 Fixed in WPILib 2023.2.1
 ------------------------

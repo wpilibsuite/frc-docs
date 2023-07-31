@@ -10,7 +10,7 @@ Unlike RGB, HSV allows you to not only filter based on the colors of the pixels,
 
 * Hue: Measures the color of the pixel.
 * Saturation: Measures the intensity of color of the pixel.
-* Value: Measures the brighness of the pixel.
+* Value: Measures the brightness of the pixel.
 
 .. image:: images/image-thresholding/hsv-color-wheel.png
    :alt: The effects hue, saturation, and value each have on a color.

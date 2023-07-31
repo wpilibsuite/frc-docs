@@ -1,8 +1,6 @@
 Command-Based Programming
 =========================
 
-.. note:: Old (pre-2020) command-based is no longer available in 2023. Users should migrate to the new command-based framework below. Documentation for old command-based is available `here <https://docs.wpilib.org/en/2021/docs/software/old-commandbased/index.html>`_.
-
 This sequence of articles serves as an introduction to and reference for the WPILib command-based framework.
 
 For a collection of example projects using the command-based framework, see :ref:`docs/software/examples-tutorials/wpilib-examples:Command-Based Examples`.
@@ -22,7 +20,6 @@ For a collection of example projects using the command-based framework, see :ref
    pid-subsystems-commands
    profile-subsystems-commands
    profilepid-subsystems-commands
-   command-based-changes
 
 Passing Functions As Parameters
 -------------------------------
@@ -44,4 +41,4 @@ Lambda Expressions (C++)
 
 .. warning:: Due to complications in C++ semantics, capturing ``this`` in a C++ lambda can cause a null pointer exception if done from a component command of a command composition.  Whenever possible, C++ users should capture relevant command members explicitly and by value.  For more details, see `here <https://github.com/wpilibsuite/allwpilib/issues/3109>`__.
 
-C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly useable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see :ref:`docs/software/basic-programming/functions-as-data:Lambda Expressions in C++`.
+C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly usable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see :ref:`docs/software/basic-programming/functions-as-data:Lambda Expressions in C++`.

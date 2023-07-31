@@ -139,7 +139,7 @@ In order to display our pane on our custom widget we need to override the ``getV
 
 Binding Elements and Adding Listeners
 -------------------------------------
-Binding is a mechanism that allows JavaFX widgets to express direct relationships with the data source. For example, changing a widget will change its related NetworkTableEntry and vise versa.
+Binding is a mechanism that allows JavaFX widgets to express direct relationships with the data source. For example, changing a widget will change its related NetworkTableEntry and vice versa.
 
 An example, in this case, would be changing the X and Y coordinate of our 2D point by changing the values of xSlider and ySlider respectively.
 
@@ -178,7 +178,7 @@ A good practice is to set bindings in the ``initialize()`` method tagged with th
 
     }
 
-The above ``initialize`` method binds the slider's value property to the ``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the slider will change the coordinate and vise versa.
+The above ``initialize`` method binds the slider's value property to the ``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the slider will change the coordinate and vice versa.
 The ``dataOrDefault.map()`` method will get the data source's value, or, if no source is present, will return the default value.
 
 Using a listener is another way to change values when the slider or data source has changed. For example a listener for our slider would be:

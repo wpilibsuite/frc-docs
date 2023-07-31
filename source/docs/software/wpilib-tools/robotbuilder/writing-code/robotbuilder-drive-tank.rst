@@ -336,7 +336,7 @@ Create two parameters (``DoubleSupplier`` for Java or ``std::function<double()>`
 .. image:: images/driving-with-joysticks-command-parameters-presets.png
    :alt: paramet preset dialog box with parameters entered
 
-Create a parameter preset to retrive joystick values. Java: For the left parameter enter ``() -> getJoystick1().getY()`` and for right enter ``() -> getJoystick2().getY()``. C++: For the left parameter enter ``[this] {return getJoystick1()->GetY();}`` and for the right enter ``[this] {return getJoystick2()->GetY();}``
+Create a parameter preset to retrieve joystick values. Java: For the left parameter enter ``() -> getJoystick1().getY()`` and for right enter ``() -> getJoystick2().getY()``. C++: For the left parameter enter ``[this] {return getJoystick1()->GetY();}`` and for the right enter ``[this] {return getJoystick2()->GetY();}``
 
 .. note:: Be sure to export your program to C++ or Java before continuing to the next step.
 

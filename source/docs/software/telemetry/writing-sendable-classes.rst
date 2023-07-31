@@ -1,7 +1,7 @@
 Writing Your Own Sendable Classes
 =================================
 
-Since the ``Sendable`` interface only has one method, writing your own classes that implement ``Sendable`` (and thus automatically log values to and/or consume values from the dashboard) is extremely easy: just provide an implementation for the overrideable ``initSendable`` method, in which setters and getters for your class's fields are declaratively bound to key values (their display names on the dashboard).
+Since the ``Sendable`` interface only has one method, writing your own classes that implement ``Sendable`` (and thus automatically log values to and/or consume values from the dashboard) is extremely easy: just provide an implementation for the overridable ``initSendable`` method, in which setters and getters for your class's fields are declaratively bound to key values (their display names on the dashboard).
 
 For example, here is the implementation of ``initSendable`` from WPILib's ``BangBangController``:
 
@@ -9,7 +9,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
            :language: java
            :lines: 150-158
            :linenos:
@@ -17,7 +17,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/native/cpp/controller/BangBangController.cpp
            :language: cpp
            :lines: 58-72
            :linenos:
@@ -54,7 +54,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
            :language: java
            :lines: 118-124
            :linenos:
@@ -62,10 +62,10 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
            :language: cpp
-           :lines: 54-60
+           :lines: 56-62
            :linenos:
-           :lineno-start: 54
+           :lineno-start: 56
 
 Additionally, users may call ``builder.setActuator(true)`` to mark any mechanism that might move as a result of ``Sendable`` input as an actuator.  Currently, this is used by :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` to disable actuator widgets when not in :ref:`LiveWindow <docs/controls-overviews/control-system-software:LiveWindow>` mode.

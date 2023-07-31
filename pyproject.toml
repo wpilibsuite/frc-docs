@@ -29,14 +29,14 @@ sphinxcontrib-svg2pdfconverter = "==1.2.1"
 sphinxext-delta = "==0.2.0"
 sphinxext-linkcheckdiff = "==0.1.0"
 sphinxext-mimic = "==0.1.1"
-sphinxext-opengraph = "==0.4.1"
+sphinxext-opengraph = "==0.8.2"
 sphinxext-photofinish = "==0.1.9"
 sphinxext-presentations = "==0.2.2"
 sphinxext-rediraffe = "==0.2.5"
 sphinxext-remoteliteralinclude = "==0.3.0"
 sphinxext-toptranslators = "==0.1.2"
 urllib3 = ">=1.26.6, <2.0.0"
-frccontrol = "==2022.14"
+frccontrol = "==2023.28"
 
 [tool.poetry.dev-dependencies]
 
