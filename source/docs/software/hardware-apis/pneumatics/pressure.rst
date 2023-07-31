@@ -11,21 +11,21 @@ Construct a ``Compressor`` object:
     .. group-tab:: REV Pneumatic Hub (PH)
         .. tabs::
             .. group-tab:: Java
-               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a99cfea1b8b515e16a4590fc037362ae34f8feea/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
                   :language: java
                   :lines: 39-40
             .. group-tab:: C++ (Header)
-               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a99cfea1b8b515e16a4590fc037362ae34f8feea/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
                   :language: c++
                   :lines: 54-55
     .. group-tab:: CTRE Pneumatics Control Module (PCM)
         .. tabs::
             .. group-tab:: Java
-               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a99cfea1b8b515e16a4590fc037362ae34f8feea/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Pneumatics.java
+               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Pneumatics.java
                   :language: java
                   :lines: 26-27
             .. group-tab:: C++ (Header)
-               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/a99cfea1b8b515e16a4590fc037362ae34f8feea/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
+               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
                   :language: c++
                   :lines: 41-42
 
