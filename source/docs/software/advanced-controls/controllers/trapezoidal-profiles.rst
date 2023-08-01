@@ -65,7 +65,7 @@ Putting It All Together
 
 .. note:: C++ is often able to infer the type of the inner classes, and thus a simple initializer list (without the class name) can be sent as a parameter.  The full class names are included in the example below for clarity.
 
-Now that we know how to create a set of constraints and the desired start/end states, we are ready to create our motion profile.  The ``TrapezoidProfile`` constructor takes 1 parameter; the constraints.
+Now that we know how to create a set of constraints and the desired start/end states, we are ready to create our motion profile.  The ``TrapezoidProfile`` constructor takes 1 parameter: the constraints.
 
 .. tabs::
 
