@@ -91,6 +91,9 @@ Click these links to visit the vendor site to see whether they offer online inst
 
    .. warning:: Only use **ONE** of the above Phoenix vendordep links within a project.  If you need both Phoenix v5 and Phoenix Pro in the same project, use the third option.
 
+`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder
+   ``https://frcsdk.reduxrobotics.com/ReduxLib_2023.json``
+
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
    ``https://www.playingwithfusion.com/frc/playingwithfusion2023.json``
 

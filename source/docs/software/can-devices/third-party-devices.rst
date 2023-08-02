@@ -109,3 +109,16 @@ PWF Sensors
 
     - API Documentation (`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
     - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7091>`__
+
+Redux Robotics
+--------------
+
+Redux Robotics currently offers the Canandcoder CAN + PWM magnetic encoder.
+
+Redux Sensors
+^^^^^^^^^^^^^
+
+- **Canandcoder**
+
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/CANandcoder.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1CANandcoder.html>`__)
+    - `Technical Manual <https://docs.reduxrobotics.com/canandcoder/index.html>`__
