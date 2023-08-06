@@ -87,7 +87,7 @@ You can use NetworkTables to send these properties to the Driver Station and the
          # Initialization code here
          #
 
-         while true:
+         while True:
 
             #
             # Image processing code here
