@@ -1,5 +1,5 @@
-Placeholder for Safety Writeup
-==============================
+Input/Output Safety Mechanisms Built into the 2015-2026 `FRC` Control System
+============================================================================
 
 roboRIO Control System 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -20,15 +20,8 @@ Software Side:
 - Control \(DS->Robot\) and status \(Robot->DS\) packets have an embedded sequence number. The DS uses these to compute round-trip-time and packet loss. A status packet that\’s returned is marked as “lost” if the RTT is greater than ~250 ms. This does not mean it was actually missing \(no response received\). The DS does keep a separate count of truly missing \(e.g. no response\) packets and disables \(starts sending control packets with enable=false\) after ~10 drops occur \(so I think this works out to ~450 ms, assuming it\’s 250+10*20\).
 - High CPU / GUI delays result in the DS continuing to send packets with enable=true for a period of time until that loop is notified a disable occurs.
 
-Potential Improvements:
-^^^^^^^^^^^^^^^^^^^^^^^
-
-- NetComm \(and the control protocol\) does not currently have a mechanism to detect delayed control packets. \(If it gets a control packet with enable set to true, it will enable the robot and feed the watchdog, even if that packet was sent seconds ago and delayed that much by the network\).
-- DS: keyboard events should be processed at the same (or higher) thread priority as the control packet transmit loop. Or there should be an internal watchdog that tracks when the last keyboard/joystick/gui event check happened, and force disables when that expires.
-- NetComm: Figure out a way to detect delayed control packets and reduce the probability of “stuttering” on sporadic enable packets. This is a hard problem in the general case, will almost certainly require a protocol change, and has some really tricky corner cases. To take one example: a radio reboot on the field will result in the first thing the robot sees being an enable packet after a period of watchdog. There probably needs to be some kind of predict time for receiving a control packet (to discard overly late ones), as well as timestamps and measured RTT provided by the DS to NetComm in control packets to provide a time sync.
-
 Known Issues / Potential Fault Conditions:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - There is no upper limit to control lag. As long as packets keep arriving, they may be several seconds delayed from the DS, so a disable command from the DS would take the same amount of time to be reflected in robot operation. Once it\’s delayed, all controls, including disable/estop, will be delayed. We\’ve all seen delays increase either slowly or quickly\–the robot was controllable until it\’s suddenly much more laggy, or even been laggy from the start.
-- Packet buffering / wifi retransmits of control packets result in sporadic enable packets making it to the robot after some delay. The watchdog would disable after 125 ms, but a single enable packet would re-enable motors for another 125 `ms` at a time.
+- Packet buffering / wifi retransmits of control packets result in sporadic enable packets making it to the robot after some delay. The watchdog would disable after 125 `ms`, but a single enable packet would re-enable motors for another 125 `ms` at a time.

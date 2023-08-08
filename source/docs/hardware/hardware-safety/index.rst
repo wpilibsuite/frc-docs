@@ -6,4 +6,4 @@ This section describes some of the safety features built into the NI roboRIO Con
 .. toctree::
     :maxdepth: 1
 
-    placeholder
+    io_safety
