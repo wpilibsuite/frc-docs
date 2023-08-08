@@ -10,7 +10,7 @@ For information on installing the Driver Station software see :ref:`this documen
 Starting the FRC Driver Station
 -------------------------------
 
-.. image:: images/driver-station/ds-icon.png
+.. image:: images/driver-station/DS_Select.png
   :alt: This is the FRC Driver Station icon.
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
@@ -32,7 +32,7 @@ Driver Station Key Shortcuts
 Setting Up the Driver Station
 -----------------------------
 
-.. image:: images/driver-station/ds-setup.png
+.. image:: images/driver-station/DriverStation_SettingUp.png
   :alt: The team number box on the setup (gear) tab.
 
 The DS should be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
@@ -42,7 +42,7 @@ PCs will typically have the correct network settings for the DS to connect to th
 Status Pane
 -----------
 
-.. image:: images/driver-station/ds-status-pane.png
+.. image:: images/driver-station/DriverStation_Status.png
   :alt: This is the pane in the center of the Driver station that is always visible.
 
 The Status Pane of the Driver Station is located in the center of the display and is always visible regardless of the tab selected. It displays a selection of critical information about the state of the DS and robot:
@@ -55,7 +55,7 @@ The Status Pane of the Driver Station is located in the center of the display an
 Operation Tab
 -------------
 
-.. image:: images/driver-station/ds-operation-tab.png
+.. image:: images/driver-station/DriverStation_Operations.png
   :alt: This is the first tab from the top on the left hand side.
 
 The Operations Tab is used to control the mode of the robot and provide additional key status indicators while the robot is running.
@@ -79,7 +79,7 @@ The Operations Tab is used to control the mode of the robot and provide addition
 Diagnostics Tab
 ---------------
 
-.. image:: images/driver-station/ds-diagnostics-tab.png
+.. image:: images/driver-station/DriverStation_Diagnostics.png
   :alt: This is the second tab from the top on the left hand side.
 
 The Diagnostics Tab contains additional status indicators that teams can use to diagnose issues with their robot:
@@ -109,7 +109,7 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 Setup Tab
 ---------
 
-.. image:: images/driver-station/ds-setup-tab.png
+.. image:: images/driver-station/DriverStation_Setup.png
   :alt: This is the third tab from the top on the left hand side.
 
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
@@ -123,7 +123,7 @@ The Setup Tab contains a number of buttons teams can use to control the operatio
 USB Devices Tab
 ---------------
 
-.. image:: images/driver-station/ds-usb-tab.png
+.. image:: images/driver-station/DriverStation_USBJoysticks.png
   :alt: This is the fourth tab from the top on the left hand side.
 
 The USB Devices tab includes the information about the USB Devices connected to the DS
@@ -136,26 +136,24 @@ The USB Devices tab includes the information about the USB Devices connected to 
 Re-Arranging and Locking Devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: images/driver-station/ds-usb-rearrange.png
+.. image:: images/driver-station/DriverStation_JoystickLock.png
   :alt: USB Order box where you can click and drag to rearrange the joysticks.
 
 The Driver Station has the capability of "locking" a USB device into a specific slot. This is done automatically if the device is dragged to a new position and can also be triggered by double clicking on the device. "Locked" devices will show up with an underline under the device. A locked device will reserve its slot even when the device is not connected to the computer (shown as grayed out and underlined). Devices can be unlocked (and unconnected devices removed) by double clicking on the entry.
 
 .. note:: If you have two or more of the same device, they should maintain their position as long as all devices remain plugged into the computer in the same ports they were locked in. If you switch the ports of two identical devices the lock should follow the port, not the device. If you re-arrange the ports (take one device and plug it into a new port instead of swapping) the behavior is not determinate (the devices may swap slots). If you unplug one or more of the set of devices, the positions of the others may move; they should return to the proper locked slots when all devices are reconnected.
 
-Example: The image above shows 4 devices:
+Example: The image above shows 2 devices:
 
-- A Locked "Logitech Attack 3" joystick. This device will stay in this position unless dragged somewhere else or unlocked
-- An unlocked "Logitech Extreme 3D" joystick
-- An unlocked "Gamepad F310 (Controller)" which is a Logitech F310 gamepad
-- A Locked, but disconnected "MadCatz GamePad (Controller)" which is a MadCatz Xbox 360 Controller
+- A locked, but disconnected "Xbox One for Windows" joystick. This device will stay in this position unless dragged somewhere else or unlocked
+- An unlocked "Bluetooth LE XINPUT" joystick (Xbox One controller, Bluetooth)
 
-In this example, unplugging the Logitech Extreme 3D joystick will result in the F310 Gamepad moving up to slot 1. Plugging in the MadCatz Gamepad (even if the devices in Slots 1 and 2 are removed and those slots are empty) will result in it occupying Slot 3.
+In this example, the Xbox One controller connected over USB (wired) will remain in Slot 0 regardless of it is currently attached to the computer. Plugging in the Xbox One controller connected over Bluetooth (Slot 1) will result in the following image. If it is unplugged and another device is plugged in, that device will occupy Slot 1.
 
 CAN/Power Tab
 --------------
 
-.. image:: images/driver-station/ds-can-power-tab.png
+.. image:: images/driver-station/DriverStation_CANPowerTab.png
   :alt: This is the fifth tab from the top on the left hand side.
 
 The last tab on the left side of the DS is the CAN/Robot Power Tab. This tab contains information about the power status of the roboRIO and the status of the CAN bus:
@@ -171,7 +169,7 @@ If a fault is detected, the indicator for this tab (shown in blue in the image a
 Messages Tab
 ------------
 
-.. image:: images/driver-station/ds-messages-tab.png
+.. image:: images/driver-station/DriverStation_Messages.png
   :alt: This is the first tab from the top on the right hand side.
 
 The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO. The messages are filtered by severity. By default, only Errors are displayed.
@@ -181,7 +179,7 @@ To access settings for the Messages tab, click the Gear icon. This will display 
 Charts Tab
 ----------
 
-.. image:: images/driver-station/ds-charts-tab.png
+.. image:: images/driver-station/DriverStation_ChartsTab.png
   :alt: This is the second tab from the top on the right hand side.
 
 The Charts tab plots and displays advanced indicators of robot status to help teams diagnose robot issues:
