@@ -3,7 +3,6 @@
 
 ### Miscellaneous ###
 .wpilib/
-self_notes/
 
 ### Sphinx ###
 # Build directories
