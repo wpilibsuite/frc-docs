@@ -20,11 +20,6 @@ Software Side:
 - Control \(DS->Robot\) and status \(Robot->DS\) packets have an embedded sequence number. The DS uses these to compute round-trip-time and packet loss. A status packet that\’s returned is marked as “lost” if the RTT is greater than ~250 ms. This does not mean it was actually missing \(no response received\). The DS does keep a separate count of truly missing \(e.g. no response\) packets and disables \(starts sending control packets with enable=false\) after ~10 drops occur \(so I think this works out to ~450 ms, assuming it\’s 250+10*20\).
 - High CPU / GUI delays result in the DS continuing to send packets with enable=true for a period of time until that loop is notified a disable occurs.
 
-Vendor Components:
-^^^^^^^^^^^^^^^^^^
-
-- CTRE uses a custom approach that reads the disable indicator on NetComm and stops motors within 100 `ms` of a disable.
-
 Potential Improvements:
 ^^^^^^^^^^^^^^^^^^^^^^^
 

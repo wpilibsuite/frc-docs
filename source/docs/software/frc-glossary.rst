@@ -138,7 +138,7 @@ FRC Glossary
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
 
    PWM
-      An acronym which stands for "Pulse Width Modulation", a method for motor controllers, sensors, and other components to transmit or receive their operational status. For motor controllers, PWM is often used to affect the power output to the motor or connected actuator. See `PWM <https://en.wikipedia.org/wiki/Pulse-width_modulation/>` on Wikipedia for more information.
+      An acronym which stands for "Pulse Width Modulation", a method for motor controllers, sensors, and other components to transmit or receive their operational status. For motor controllers, PWM is often used to affect the power output to the motor or connected actuator. See :ref:`PWM` for more information.
 
    RAII
       Resource Acquisition Is Initialization; a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
