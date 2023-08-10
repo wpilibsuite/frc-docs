@@ -1,7 +1,7 @@
-Input/Output Safety Mechanisms Built into the 2015-2026 `FRC` Control System
+Input/Output Safety Mechanisms Built into the `FRC` Control System
 ============================================================================
 
-roboRIO Control System 
+roboRIO Control System
 ^^^^^^^^^^^^^^^^^^^^^^
 
 There are multiple safety mechanisms on the robot that handle input / output operations while it is powered on.
