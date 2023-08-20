@@ -21,8 +21,15 @@ In the following examples, you'll see what the screen would look like when there
 Displaying the Scheduler Status
 -------------------------------
 
-.. image:: images/displaying-status-of-commands-and-subsystems/display-scheduler.png
-   :alt: Using SmartDashboard putData to send the scheduler's status.
+.. tabs::
+
+  .. code-tab:: java
+
+    SmartDashboard.putData(CommandScheduler.getInstance());
+
+  .. code-tab:: c++
+
+    frc::SmartDashboard::PutData(frc2::CommandScheduler::GetInstance());
 
 You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``RobotInit`` method in your RobotProgram as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
 
@@ -34,8 +41,15 @@ This is the scheduler status when there are two commands running, ``ExampleComma
 Displaying Subsystem Status
 ---------------------------
 
-.. image:: images/displaying-status-of-commands-and-subsystems/code-subsystem.png
-   :alt: Using code to put a subsystem to SmartDashboard.
+.. tabs::
+
+  .. code-tab:: java
+
+    SmartDashboard.putData(exampleSubsystem);
+
+  .. code-tab:: c++
+
+    frc::SmartDashboard::PutData(&exampleSubsystem);
 
 In this example we are writing the command instance, ``exampleSubsystem`` and instance of the ``ExampleSubsystem`` class to the SmartDashboard. This causes the display shown in the previous image. The text field will either contain a few dashes, ``---`` indicating that no command is current using this subsystem, or the name of the command currently using this subsystem.
 
@@ -47,10 +61,17 @@ Running commands will "require" subsystems. That is the command is reserving the
 Activating Commands with a Button
 ---------------------------------
 
-.. image:: images/displaying-status-of-commands-and-subsystems/code-command-button.png
-   :alt: This code puts a command to the SmartDashboard.
+.. tabs::
 
-This is the code required to create a button for the command on SmartDashboard. RobotBuilder will automatically generate this code for you, but it can easily be done by hand as shown here. Pressing the button will schedule the command. While the command is running, the button label changes from ``start`` to ``cancel`` and pressing the button will cancel the command.
+  .. code-tab:: java
+
+    SmartDashboard.putData("Autonomous Command", exampleCommand);
+
+  .. code-tab:: c++
+
+    frc::SmartDashboard::PutData("Autonomous Command", &exampleCommand);
+
+This is the code required to create a button for the command on SmartDashboard. Pressing the button will schedule the command. While the command is running, the button label changes from ``start`` to ``cancel`` and pressing the button will cancel the command.
 
 .. image:: images/displaying-status-of-commands-and-subsystems/add-command-button.png
    :alt: The command from the previous is shown here runnable by hitting the "start" button.

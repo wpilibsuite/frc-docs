@@ -11,7 +11,7 @@ Shuffleboard is a dashboard for FRC\ |reg| based on newer technologies such as J
 -  Layouts are saved and the previous layout is instantiated by default when you run shuffleboard again.
 -  There is a **record and playback** feature that lets you review the data sent by your robot program after it finishes. That way you can carefully review the actions of the robot if something goes wrong.
 -  **Graph widgets are available for numeric data** and you can drag data onto a graph to see multiple points at the same time and on the same scale.
--  You can extend Shuffleboard by writing your own widgets that are specific to your team's requirements. Documentation on extending it are on the `Shuffleboard GitHub Wiki <https://github.com/wpilibsuite/shuffleboard/wiki>`__.
+-  You can extend Shuffleboard by writing your own widgets that are specific to your team's requirements. Documentation on extending it can be found in :doc:`Custom Widgets</docs/software/dashboards/shuffleboard/custom-widgets/index>`.
 
 .. figure:: images/shuffleboard-tabs.png
    :alt:
@@ -29,9 +29,10 @@ Starting Shuffleboard
 You can start Shuffleboard in one of four ways:
 
 1. You can automatically start it when the Driver Station starts by setting the "Dashboard Type" to Shuffleboard in the settings tab as shown in the picture above.
-2. You can run it by double-clicking the Shuffleboard icon in the WPILib tools folder on the Windows Desktop.
-3. You can run it by double-clicking on the shuffleboard.XXX file (where XXX is ``.vbs`` on Windows and ``.py`` on Linux or macOS) in ``~/WPILib/YYYY/tools/`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is useful on a development system that does not have the Driver Station installed such as a macOS or Linux system.
-4. You can start it from the command line by typing the command: ``shuffleboard`` on Windows or ``python shuffleboard.py`` on macOS or Linux from ``~/WPILib/YYYY/tools`` directory (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is often easiest on a a development system that doesn't have the Driver Station installed.
+2. You can run it by double-clicking the Shuffleboard icon in the `YEAR WPILib tools` folder on the Windows Desktop.
+3. You can start from with Visual Studio Code by pressing :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette.  Select :guilabel:`Start Tool`, then select :guilabel:`Shuffleboard`.
+4. You can run it by double-clicking on the shuffleboard.XXX file (where XXX is ``.vbs`` on Windows and ``.py`` on Linux or macOS) in ``~/WPILib/YYYY/tools/`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is useful on a development system that does not have the Driver Station installed such as a macOS or Linux system.
+5. You can start it from the command line by typing the command: ``shuffleboard`` on Windows or ``python shuffleboard.py`` on macOS or Linux from ``~/WPILib/YYYY/tools`` directory (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is often easiest on a development system that doesn't have the Driver Station installed.
 
 .. note:: The ``.vbs`` (Windows) and ``.py`` (macOS/Linux) scripts help launch the tools using the correct JDK.
 

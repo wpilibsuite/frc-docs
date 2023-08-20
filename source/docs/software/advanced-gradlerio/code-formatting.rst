@@ -18,7 +18,7 @@ Necessary ``build.gradle`` changes are required to get Spotless functional. In t
    plugins {
       id "java"
       id "edu.wpi.first.GradleRIO" version "2022.1.1"
-      id 'com.diffplug.spotless' version '6.1.0'
+      id 'com.diffplug.spotless' version '6.12.0'
    }
 
 Then ensure you add a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.
@@ -73,7 +73,27 @@ Running Spotless
 
 Spotless can be ran using ``./gradlew spotlessApply`` which will apply all formatting options. You can also specify a specific task by just adding the name of formatter. An example is ``./gradlew spotlessmiscApply``.
 
-Spotless can also be used as a :doc:`CI check <robot-code-ci>`. The check is ran with ``./gradlew spotlessCheck``.
+In addition to formatting code, Spotless can also ensure the code is correctly formatted; this can be used by running ``./gradlew spotlessCheck``. Thus, Spotless can be used as a :doc:`CI check <robot-code-ci>`, as shown in the following GitHub Actions workflow:
+
+.. code-block:: yaml
+
+   on: [push]
+   # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+   jobs:
+     spotless:
+       # The type of runner that the job will run on
+       runs-on: ubuntu-latest
+       # Steps represent a sequence of tasks that will be executed as part of the job
+       steps:
+         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+         - uses: actions/checkout@v2
+           with:
+             fetch-depth: 0
+         - uses: actions/setup-java@v3
+           with:
+             distribution: 'zulu'
+             java-version: 17
+         - run: ./gradlew spotlessCheck
 
 Explanation of Options
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -127,7 +147,7 @@ The above example tells spotless where our Java classes are and to exclude the `
    // format:on
 
 - ``googleJavaFormat()`` tells spotless to format according to the `Google Style Guide <https://google.github.io/styleguide/javaguide.html>`__
-- ``removeUnusedImports()`` will remove any unused imports from any of your java classes
+- ``removeUnusedImports()`` will remove any unused imports from any of your Java classes
 - ``trimTrailingWhitespace()`` will remove any extra whitespace at the end of your lines
 - ``endWithNewline()`` will add a newline character to the end of your classes
 
@@ -156,9 +176,6 @@ Requirements
 ^^^^^^^^^^^^
 
 - `Python 3.6 or higher <https://www.python.org/>`__
-- clang-format (included with `LLVM <https://releases.llvm.org/download.html>`__)
-
-.. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
 
 You can install `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
@@ -191,31 +208,8 @@ An example styleguide is shown below:
 
 .. note:: Teams can adapt ``.styleguide`` and ``.styleguide-license`` however they wish. It's important that these are not deleted, as they are required to run wpiformat!
 
-You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-format`` configuration file. An example configuration file is provided below.
+You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-Below is an example GitHub Actions check that uses wpiformat
-
-.. code-block:: yaml
-
-   wpiformat:
-    name: "wpiformat"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Fetch all history and metadata
-        run: |
-          git fetch --prune --unshallow
-          git checkout -b pr
-          git branch -f main origin/main
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Install clang-format
-        run: sudo apt-get update -q && sudo apt-get install -y clang-format-12
-      - name: Install wpiformat
-        run: pip3 install wpiformat
-      - name: Run
-        run: wpiformat -clang 12
-      - name: Check Output
-        run: git --no-pager diff --exit-code HEAD
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/5fac18ff4ad1db92ec6fcbd437043a38028e99c4/.github/workflows/lint-format.yml
+   :language: yaml
+   :lines: 1-5, 12-34

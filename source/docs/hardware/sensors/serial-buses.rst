@@ -5,7 +5,7 @@ Serial Buses
 
 In addition to the :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, the roboRIO also offers several methods of serial communication with peripheral devices.
 
-Both the digital and analog inputs are highly limited in the amount of data that can be send over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
+Both the digital and analog inputs are highly limited in the amount of data that can be sent over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
 
 Types of supported serial buses
 -------------------------------
@@ -27,7 +27,7 @@ I2C
    :alt: The I2C port on the roboRIO.
 
 .. image:: images/serial-buses/i2c-pinout.png
-   :alt: I2C roboRIO port pin specifcations.
+   :alt: I2C roboRIO port pin specifications.
 
 To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
@@ -42,7 +42,7 @@ SPI
    :alt: Show the SPI port on the roboRIO.
 
 .. image:: images/serial-buses/spi-pinout.png
-   :alt: SPI roboRIO port pin specifcations.
+   :alt: SPI roboRIO port pin specifications.
 
 To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
 
@@ -55,15 +55,15 @@ RS-232
    :alt: Location of the RS-232 port on the roboRIO.
 
 .. image:: images/serial-buses/rs232-pinout.png
-   :alt: roboRIO RS-232 port pin specifcations.
+   :alt: roboRIO RS-232 port pin specifications.
 
 To communicate to peripheral devices over RS-232, each pin should be wired to its corresponding pin on the device.
 
 The RS-232 bus can also be used through the `MXP expansion port`_.
 
-The RoboRIO RS-232 serial port uses RS-232 signaling levels (+/- 15v). The MXP serial port uses CMOS signaling levels (+/- 3.3v).
+The roboRIO RS-232 serial port uses RS-232 signaling levels (+/- 15v). The MXP serial port uses CMOS signaling levels (+/- 3.3v).
 
-.. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
+.. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
 
 USB Client
 ----------

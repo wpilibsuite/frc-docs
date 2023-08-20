@@ -7,7 +7,7 @@ A common use for filters in FRC\ |reg| is to soften the behavior of control inpu
 
 A slew rate limiter can be thought of as a sort of primitive motion profile.  In fact, the slew rate limiter is the first-order equivalent of the :ref:`Trapezoidal Motion Profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` supported by WPILib - it is precisely the limiting case of trapezoidal motion when the acceleration constraint is allowed to tend to infinity.  Accordingly, the slew rate limiter is a good choice for applying a de-facto motion profile to a stream of velocity setpoints (or voltages, which are usually approximately proportional to velocity).  For input streams that control positions, it is usually better to use a proper trapezoidal profile.
 
-Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/SlewRateLimiter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_slew_rate_limiter.html>`__).
+Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/SlewRateLimiter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_slew_rate_limiter.html>`__).
 
 Creating a SlewRateLimiter
 --------------------------
@@ -50,7 +50,7 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 Using a SlewRateLimiter with DifferentialDrive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: In the C++ example below, the filter is templated on ``double``, rather than on a unit type, since joystick values are typically dimensionless.
+.. note:: The C++ example below templates the filter on ``units::scalar`` for use with doubles, since joystick values are typically dimensionless.
 
 A typical use of a SlewRateLimiter is to limit the acceleration of a robot's drive.  This can be especially handy for robots that are very top-heavy, or that have very powerful drives.  To do this, apply a SlewRateLimiter to a value passed into your robot drive function:
 

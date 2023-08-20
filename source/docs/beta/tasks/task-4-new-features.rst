@@ -6,19 +6,19 @@ Task: Test any new features or heavily modified code
 Overview
 --------
 
-The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2022 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
+The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2023 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
 
 **All languages**
 
-- REV Robotics Hardware and associated software
-- RoboRIO 2.0, especially the SD card imaging process
-- :ref:`Axon <docs/software/wpilib-tools/axon/index:Axon>`
+- AprilTags
+- NetworkTables v4
 
 **LabVIEW**
 
 **C++/Java**
 
-- :ref:`SysID <docs/software/pathplanning/system-identification/index:System Identification>`
+- 3D Geometry classes & ComputerVisionUtil
+- Linear Time-Varying controllers for unicycles (Ramsete replacement) and differential drives
 
 Desired Feedback
 ----------------

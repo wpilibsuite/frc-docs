@@ -12,11 +12,11 @@ CAN is generally wired with yellow and green wire with yellow acting as the CAN-
 
 CAN wiring from the roboRIO to the PCM.
 
-.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/pcm-can.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-simple-robot/pcm-can.jpg
 
 CAN wiring from the PCM to the PDP.
 
-.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/pdp-can.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-simple-robot/pdp-can.jpg
 
 Termination
 -----------

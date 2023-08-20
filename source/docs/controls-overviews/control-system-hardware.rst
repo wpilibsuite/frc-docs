@@ -5,7 +5,7 @@ Hardware Component Overview
 
 The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function and a link to more documentation.
 
-.. note:: For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System </docs/zero-to-robot/step-1/how-to-wire-a-robot>` document.
+.. note:: For wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System </docs/zero-to-robot/step-1/intro-to-frc-robot-wiring>` document.
 
 Overview of Control System
 --------------------------
@@ -116,11 +116,25 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. image:: images/control-system-hardware/robot-signal-light.png
-  :alt: Orange Robot Signal Light
-  :width: 500
+.. tabs::
 
-The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
+   .. tab:: Allen-Bradley
+
+      .. figure:: images/control-system-hardware/rsl-allenbradley.png
+         :alt: Orange Robot Signal Light (Allen-Bradley)
+         :width: 500
+
+         Allen-Bradley 855PB-B12ME522
+
+   .. tab:: AndyMark
+
+      .. figure:: images/control-system-hardware/rsl-andymark.png
+         :alt: Orange Robot Signal Light (AndyMark)
+         :width: 500
+
+         AndyMark am-3583
+
+The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
 
 CTRE Pneumatics Control Module
 ------------------------------
@@ -194,7 +208,7 @@ SPARK Motor Controller
 
 .. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
 
-The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions. For more information, see the `SPARK User's Manaul <https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__.
+The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ from REV Robotics is an inexpensive brushed DC motor controller. The SPARK is controlled using the PWM interface. Limit switches may be wired directly to the SPARK to limit motor travel in one or both directions. For more information, see the `SPARK User's Manual <https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__.
 
 Victor SP
 ^^^^^^^^^
@@ -268,7 +282,7 @@ Nidec Dynamo BLDC Motor with Controller
   :alt: Nidec Dynamo BLDC Motor with Controller
   :width: 500
 
-The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <https://andymark-weblinc.netdna-ssl.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
+The `Nidec Dynamo BLDC Motor with Controller <https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The `motor data sheet <https://cdn.andymark.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__ provides more device specifics.
 
 SD540B and SD540C Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -306,7 +320,7 @@ Microsoft Lifecam HD3000
   :alt: Microsoft Lifecam HD3000
   :width: 300
 
-The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into the roboRIO. The camera is capable of capturing up to 1280x720 video at 30 FPS. For more information about the camera, see the `Microsoft product page <https://www.microsoft.com/accessories/en-us/business/lifecam-hd-3000-for-business/t4h-00002>`__. For more information about using the camera with the roboRIO, see the :ref:`Vision Processing <docs/software/vision-processing/index:Vision Processing>` section of this documentation.
+The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into the roboRIO. The camera is capable of capturing up to 1280x720 video at 30 FPS. For more information about the camera, see the `Microsoft product page <https://www.microsoft.com/en/accessories/business/lifecam-hd-3000-for-business>`__. For more information about using the camera with the roboRIO, see the :ref:`Vision Processing <docs/software/vision-processing/index:Vision Processing>` section of this documentation.
 
 Image Credits
 -------------

@@ -3,12 +3,19 @@
 Driver Station Log File Viewer
 ==============================
 
-In an effort to provide information to aid in debugging, the FRC\ |reg| Driver Station creates log files of important diagnostic data while running. These logs can be reviewed later using the FRC Driver Station Log Viewer. The Log Viewer can be found via the shortcut installed in the Start menu or in the FRC Driver Station folder in Program Files.
+In an effort to provide information to aid in debugging, the FRC\ |reg| Driver Station creates log files of important diagnostic data while running. These logs can be reviewed later using the FRC Driver Station Log Viewer. The Log Viewer can be found via the shortcut installed in the Start menuin the FRC Driver Station folder in Program Files, or via the Gear icon in the Driver Station.
+
+.. image:: images/driver-station-log-viewer/open_ds_log_viewer_from_driver_station.png
+   :alt: Showing how to open the Log Viewer screen using the right console icon.
+
+.. note:: Several third-party tools exist that provide similar functionality to the FRC Driver Station Log Viewer, including `AdvantageScope <https://github.com/Mechanical-Advantage/AdvantageScope>`__ and `DSLOG Reader <https://github.com/orangelight/DSLOG-Reader>`__. Note that WPILib offers no support for third-party projects.
 
 Event Logs
 ----------
 
 The  Driver Station logs all messages sent to the Messages box on the Diagnostics tab (not the User Messages box on the Operation tab) into a new Event Log file. When viewing Log Files with the Driver Station Log File Viewer, the Event Log and DSLog files are overlaid in a single display.
+
+Log files are stored in ``C:\Users\Public\Documents\FRC\Log Files``. Each log has date and timestamp in the file name and has two files with extension ``.dslog`` and ``.dsevents``.
 
 Log Viewer UI
 -------------

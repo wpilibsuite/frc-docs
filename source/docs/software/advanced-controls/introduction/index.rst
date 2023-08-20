@@ -5,6 +5,12 @@ Advanced Controls Introduction
    :maxdepth: 1
 
    control-system-basics
-   pid-video
+   picking-control-strategy
+   introduction-to-feedforward
    introduction-to-pid
-   tuning-pid-controller
+   pid-video
+   tutorial-intro
+   tuning-flywheel
+   tuning-turret
+   tuning-vertical-arm
+   common-control-issues

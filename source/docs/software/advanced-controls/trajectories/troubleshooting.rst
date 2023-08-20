@@ -95,10 +95,11 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
     }
 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
-3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width identification <docs/software/pathplanning/system-identification/identification-routine:Running Tests>` and use that track width instead of the one from your tape measure.
+3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width--if this is the case then you should :ref:`run the track width identification <docs/software/pathplanning/system-identification/identification-routine:Track Width>` using the "Drivetrain (Angular)" test in SysID and use that track width instead of the one from your tape measure.
 
-.. image:: images/track-width-logger.png
+.. image:: images/sysid-trackwidth.png
   :alt: Highlights the trackwidth section of identification.
+  :width: 350px
 
 Verify Feedforward
 ^^^^^^^^^^^^^^^^^^
@@ -110,19 +111,19 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 122-123
+      :lines: 123-124
       :linenos:
-      :lineno-start: 122
+      :lineno-start: 123
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 80-81
+      :lines: 79-80
       :linenos:
-      :lineno-start: 80
+      :lineno-start: 81
 
 2. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
 

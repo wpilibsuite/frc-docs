@@ -32,7 +32,7 @@ Fill in the name of the new command. The Requires field is the PIDSubsystem that
 2. Select :guilabel:`Add Preset`
 3. Enter a preset name (in this case 'bottom'
 4. Click the dropdown next to the setpoint entry box
-5. Select the Elevator.Bottom constant, that was created in the Elevator subystem previously
+5. Select the Elevator.Bottom constant, that was created in the Elevator subsystem previously
 6. Repeat steps 2-5 for the other setpoints.
 7. Click :guilabel:`Save and close`
 

@@ -12,56 +12,69 @@ libraries, see :ref:`3rd Party Libraries <docs/software/vscode-overview/3rd-part
 
 A list of common third-party CAN devices from various vendors, along with links to corresponding external documentation, is provided below:
 
-Cross-the-Road Electronics
+CTR Electronics
 --------------------------
 
-Cross-the-Road Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include:
+CTR Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include:
 
-- `Phoenix Device Software Documentation <https://docs.ctre-phoenix.com/>`__
-
-- `Phoenix Device Software Examples <https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages>`__
+  `Phoenix Device Software Documentation <https://docs.ctr-electronics.com/>`__
 
 CTRE Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^^
 
 - **Talon FX (with Falcon 500 Motor)**
 
-    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html>`__)
+    - API Documentation (v5: `Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/motorcontrol/can/WPI_TalonFX.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_w_p_i___talon_f_x.html>`__ | Pro: `Java <https://api.ctr-electronics.com/phoenixpro/release/java/com/ctre/phoenixpro/hardware/TalonFX.html>`__, `C++ <https://api.ctr-electronics.com/phoenixpro/release/cpp/classctre_1_1phoenixpro_1_1hardware_1_1_talon_f_x.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Falcon%20500%20User%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch13_MC.html>`__
+    - Software Documentation (`v5 <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__, `Pro <https://pro.docs.ctr-electronics.com/en/stable/docs/api-reference/examples/quickstart.html>`__)
 
 - **Talon SRX**
 
-    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html>`__)
+    - API Documentation (`Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/motorcontrol/can/WPI_TalonSRX.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_w_p_i___talon_s_r_x.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch13_MC.html>`__
+    - `Software Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__
 
 - **Victor SPX**
 
-    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_victor_s_p_x.html>`__)
+    - API Documentation (`Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/motorcontrol/can/WPI_VictorSPX.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_w_p_i___victor_s_p_x.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Victor%20SPX%20User's%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch13_MC.html>`__
+    - `Software Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__
 
 CTRE Sensors
 ^^^^^^^^^^^^
 
 - **CANcoder**
 
-    - API Documentation(`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_c_a_n_coder.html>`__)
+    - API Documentation (v5: `Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/sensors/WPI_CANCoder.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1sensors_1_1_w_p_i___c_a_n_coder.html>`__ | Pro: `Java <https://api.ctr-electronics.com/phoenixpro/release/java/com/ctre/phoenixpro/hardware/CANcoder.html>`__, `C++ <https://api.ctr-electronics.com/phoenixpro/release/cpp/classctre_1_1phoenixpro_1_1hardware_1_1_c_a_ncoder.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/CANCoder%20User's%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch12a_BringUpCANCoder.html>`__
+    - Software Documentation (`v5 <https://v5.docs.ctr-electronics.com/en/stable/ch12a_BringUpCANCoder.html>`__, `Pro <https://pro.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/index.html>`__)
+
+- **Pigeon 2.0**
+
+    - API Documentation (v5: `Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/sensors/WPI_Pigeon2.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1sensors_1_1_w_p_i___pigeon2.html>`__ | Pro: `Java <https://api.ctr-electronics.com/phoenixpro/release/java/com/ctre/phoenixpro/hardware/Pigeon2.html>`__, `C++ <https://api.ctr-electronics.com/phoenixpro/release/cpp/classctre_1_1phoenixpro_1_1hardware_1_1_pigeon2.html>`__)
+    - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Pigeon2%20User's%20Guide.pdf>`__
+    - Software Documentation (`v5 <https://v5.docs.ctr-electronics.com/en/stable/ch11a_BringUpPigeon2.html>`__, `Pro <https://pro.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/index.html>`__)
 
 - **Pigeon IMU**
 
-    - API Documentation(`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1sensors_1_1_pigeon_i_m_u.html>`__)
+    - API Documentation (`Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/sensors/WPI_PigeonIMU.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1sensors_1_1_w_p_i___pigeon_i_m_u.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch11_BringUpPigeon.html>`__
+    - `Software Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch11_BringUpPigeon.html>`__
 
 - **CANifier**
 
-    - API Documentation (`Java <https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1_c_a_nifier.html#ad9a05fae7065d3f39f7bc8a86f15b0a1>`__, `C++ <https://store.ctr-electronics.com/content/api/cpp/html/classctre_1_1phoenix_1_1_c_a_nifier.html#a706308fce1dea96785bf3ac845bafc02>`__)
+    - API Documentation (`Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/CANifier.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1_c_a_nifier.html>`__)
     - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/CANifier%20User%27s%20Guide.pdf>`__
-    - `Software Documentation <https://docs.ctre-phoenix.com/en/stable/ch12_BringUpCANifier.html>`__
+    - `Software Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch12_BringUpCANifier.html>`__
+
+CTRE Other CAN Devices
+^^^^^^^^^^^^^^^^^^^^^^
+
+- **CANdle LED Controller**
+
+    - API Documentation (`Java <https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/led/CANdle.html>`__, `C++ <https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1led_1_1_c_a_ndle.html>`__)
+    - `Hardware User's Manual <https://store.ctr-electronics.com/content/user-manual/CANdle%20User's%20Guide.pdf>`__
+    - `Software Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch12b_BringUpCANdle.html>`__
 
 REV Robotics
 ------------
@@ -94,5 +107,18 @@ PWF Sensors
 
 - **Time of Flight Sensor**
 
-    - API Documentation(`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
+    - API Documentation (`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
     - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7091>`__
+
+Redux Robotics
+--------------
+
+Redux Robotics currently offers the Canandcoder CAN + PWM magnetic encoder.
+
+Redux Sensors
+^^^^^^^^^^^^^
+
+- **Canandcoder**
+
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/CANandcoder.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1CANandcoder.html>`__)
+    - `Technical Manual <https://docs.reduxrobotics.com/canandcoder/index.html>`__

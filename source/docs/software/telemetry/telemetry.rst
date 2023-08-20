@@ -1,7 +1,7 @@
 Telemetry: Recording and Sending Real-Time Data
 ===============================================
 
-`Telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ (literally "measuring remotely") is the process of recording and sending real-time data about the performance of your robot to a real-time readout or log file.  Recording and viewing telemetry data is a crucial part of the engineering process - accurate telemetry data helps you tune your robot to perform optimally, and is indispensable for debugging your robot when it fails to perform as expected.
+Recording and viewing :term:`telemetry` data is a crucial part of the engineering process - accurate telemetry data helps you tune your robot to perform optimally, and is indispensable for debugging your robot when it fails to perform as expected.
 
 By default, no telemetry data is recorded (saved) on the robot.  However, recording data on the robot can provide benefits over recording on a dashboard, namely that more data can be recorded (there are no bandwidth limitations), and all the recorded data can be very accurately timestamped.  WPILib has integrated support for on-robot recording of telemetry data via the ``DataLogManager`` and ``DataLog`` classes and provides a tool for downloading data log files and converting them to CSV.
 
@@ -24,6 +24,6 @@ WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboa
 * ``string[]``
 * ``byte[]``
 
-Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:Writing a simple NetworkTables program>`.
+Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:what is networktables>`.
 
 While NetworkTables does not yet support serialization of complex data types (this is tentatively scheduled for 2023), *mutable* types from user code can be easily extended to interface directly with WPILib dashboards via the ``Sendable`` interface, whose usage is described in the next article.

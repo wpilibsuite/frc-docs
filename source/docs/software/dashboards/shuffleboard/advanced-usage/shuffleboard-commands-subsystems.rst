@@ -40,7 +40,7 @@ More information on tuning PIDSubsystems can be found :doc:`here <shuffleboard-t
 Displaying Commands
 -------------------
 
-Using commands and subsystems makes very modular robot programs that can easily be tested and modified. Part of this is because commands can be written completely independently of other commands and can therefor be easily run from Shuffleboard. To write a command to Shuffleboard use the ``SmartDashboard.putData`` method as shown here:
+Using commands and subsystems makes very modular robot programs that can easily be tested and modified. Part of this is because commands can be written completely independently of other commands and can therefore be easily run from Shuffleboard. To write a command to Shuffleboard use the ``SmartDashboard.putData`` method as shown here:
 
 .. tabs::
 

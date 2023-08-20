@@ -1,7 +1,7 @@
 Analyzing Data
 ==============
 
-.. important:: WPILib standarizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
+.. important:: WPILib standardizes on SI units, so its recommended that the :guilabel:`Units` option is set to **Meters**.
 
 Once we have data from an identification routine, we can analyze it using the :guilabel:`Analyzer` and :guilabel:`Diagnostic Plots` widgets.
 
@@ -20,6 +20,8 @@ In the resulting file dialog, select the JSON file you want to analyze. If the f
 
 Running Feedforward Analysis
 ----------------------------
+
+.. note:: For information on what the calculated feedback gains mean, see :ref:`docs/software/advanced-controls/introduction/introduction-to-feedforward:The Permanent-Magnet DC Motor Feedforward Equation`.  For information on using the calculated feedback gains in code, see :ref:`feedforward control <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
 
 Click the dropdown arrow on the :guilabel:`Feedforward` Section.
 

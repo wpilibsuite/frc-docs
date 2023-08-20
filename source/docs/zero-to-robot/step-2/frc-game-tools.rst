@@ -16,8 +16,9 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 Requirements
 ------------
 
-- Windows 10 or higher (Windows 10, 11). Windows 11 is not officially supported by NI, but has been tested to work.
-- Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html>`__ from NI.
+- Windows 10 or higher (Windows 10, 11).
+
+- Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.
@@ -29,7 +30,7 @@ Uninstall Old Versions (Recommended)
 
 .. important:: LabVIEW teams have already completed this step, do not repeat it. LabVIEW teams should skip to the :ref:`docs/zero-to-robot/step-2/frc-game-tools:installation` section.
 
-Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2022 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "National Instruments Software" or "NI Software", and select :guilabel:`Uninstall`.
+Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2022 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select :guilabel:`Uninstall`.
 
 .. note:: It is only necessary to uninstall previous versions when installing a new year's tools. For example, uninstall the 2021 tools before installing the 2022 tools. It is not necessary to uninstall before upgrading to a new update of the 2022 game tools.
 

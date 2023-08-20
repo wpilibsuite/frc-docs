@@ -5,13 +5,16 @@ on:
   schedule:
     - cron:  '0 4 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   check-links:
     if: github.repository_owner	== 'wpilibsuite'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install Dependencies

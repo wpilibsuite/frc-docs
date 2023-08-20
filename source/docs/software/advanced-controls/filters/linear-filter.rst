@@ -3,7 +3,7 @@ Linear Filters
 
 The first (and most commonly-employed) sort of filter that WPILib supports is a *linear filter* - or, more specifically, a linear time-invariant (LTI) filter.
 
-An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reducible to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  Mathematically, this kind of moving average is known as a `convolution <https://en.wikipedia.org/wiki/Convolution>`__.
+An LTI filter is, put simply, a weighted moving average - the value of the output stream at any given time is a localized, weighted average of the inputs near that time.  The difference between different types of LTI filters is thus reducible to the difference in the choice of the weighting function (also known as a "window function" or an "impulse response") used.  The mathematical term for this operation is :term:`convolution`.
 
 There are two broad "sorts" of impulse responses: infinite impulse responses (IIR), and finite impulse responses (FIR).
 
@@ -11,7 +11,7 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__).
+Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__).
 
 Creating a LinearFilter
 -----------------------
@@ -28,7 +28,7 @@ singlePoleIIR
 .. image:: images/singlepolefilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
 
-The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter (also known as `exponential smoothing <https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of having an exponential impulse response).  This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
+The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter which performs :term:`exponential smoothing`. This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
 
 .. tabs::
 

@@ -4,11 +4,11 @@ Median Filter
 .. image:: images/medianfilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
 
-A `robust <https://en.wikipedia.org/wiki/Robust_statistics>`__ alternative to the :ref:`moving-average filter <docs/software/advanced-controls/filters/linear-filter:movingAverage>` is the *median filter*.  Where a moving average filter takes the arithmetic *mean* of the input over a moving sample window, a median filter (per the name) takes a median instead.
+A `statistically robust` alternative to the :ref:`moving-average filter <docs/software/advanced-controls/filters/linear-filter:movingAverage>` is the *median filter*.  Where a moving average filter takes the arithmetic *mean* of the input over a moving sample window, a median filter (per the name) takes a median instead.
 
 The median filter is most-useful for removing occasional outliers from an input stream.  This makes it particularly well-suited to filtering inputs from distance sensors, which are prone to occasional interference.  Unlike a moving average, the median filter will remain completely unaffected by small numbers of outliers, no matter how extreme.
 
-The median filter is supported in WPILib through the ``MedianFilter`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/MedianFilter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_median_filter.html>`__).
+The median filter is supported in WPILib through the ``MedianFilter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/MedianFilter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_median_filter.html>`__).
 
 Creating a MedianFilter
 -----------------------

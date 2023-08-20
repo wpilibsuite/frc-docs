@@ -4,7 +4,7 @@ Counters
 .. image:: images/counters/counters.png
     :alt: IO Diagram showing the up/down pulses the counter is counting.
 
-The :code:`Counter` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
+The :code:`Counter` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_counter.html>`__) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
 
 .. note:: There are a total of 8 counter units in the roboRIO FPGA, meaning no more than 8 :code:`Counter` objects may be instantiated at any one time, including those contained as resources in other WPILib objects.  For detailed information on when a :code:`Counter` may be used by another object, refer to the official API documentation.
 
@@ -23,7 +23,7 @@ The :code:`Counter` object may be configured to operate in one of four different
 3. `Pulse-length mode`_: Counts up and down based on the edges of one channel, with the direction determined by the duration of the pulse on that channel.
 4. `External direction mode`_: Counts up and down based on the edges of one channel, with a separate channel specifying the direction.
 
-.. note:: In all modes except semi-period mode, the counter can be configured to increment either once per edge (2X decoding), or once per pulse (1X decoding).  By default, counters are set to two-pulse mode, if only one channel is specified, the counter will only count up.
+.. note:: In all modes except semi-period mode, the counter can be configured to increment either once per edge (2X decoding), or once per pulse (1X decoding).  By default, counters are set to two-pulse mode, though if only one channel is specified the counter will only count up.
 
 Two-pulse mode
 ~~~~~~~~~~~~~~
@@ -151,7 +151,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
 External direction mode
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In external direction mode, the counter counts either up or down depending on the level on the second channel. If the direction source is low, the counter will increase, if the direction source is high, the counter will decrease (to reverse this, see the next section). A counter can be initialized in this mode as follows:
+In external direction mode, the counter counts either up or down depending on the level on the second channel. If the direction source is low, the counter will increase; if the direction source is high, the counter will decrease (to reverse this, see the next section). A counter can be initialized in this mode as follows:
 
 .. tabs::
 

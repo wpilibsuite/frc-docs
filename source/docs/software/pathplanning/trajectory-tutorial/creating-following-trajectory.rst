@@ -9,19 +9,19 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 75-137
+      :lines: 74-135
       :linenos:
-      :lineno-start: 75
+      :lineno-start: 74
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 47-92
+      :lines: 45-90
       :linenos:
-      :lineno-start: 47
+      :lineno-start: 45
 
 Configuring the Trajectory Constraints
 --------------------------------------
@@ -37,19 +37,19 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 89-96
+      :lines: 80-88
       :linenos:
-      :lineno-start: 89
+      :lineno-start: 80
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 48-52
+      :lines: 46-50
       :linenos:
-      :lineno-start: 48
+      :lineno-start: 46
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -62,19 +62,19 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 98-105
+      :lines: 90-98
       :linenos:
-      :lineno-start: 98
+      :lineno-start: 90
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 54-60
+      :lines: 52-58
       :linenos:
-      :lineno-start: 54
+      :lineno-start: 52
 
 Generating the Trajectory
 -------------------------
@@ -85,19 +85,19 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 108-120
+      :lines: 100-110
       :linenos:
-      :lineno-start: 108
+      :lineno-start: 100
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 62-71
+      :lines: 60-69
       :linenos:
-      :lineno-start: 62
+      :lineno-start: 60
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -110,53 +110,53 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 137-139
+      :lines: 128-130
       :linenos:
-      :lineno-start: 137
+      :lineno-start: 128
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 86-87
+      :lines: 84-85
       :linenos:
-      :lineno-start: 86
+      :lineno-start: 84
 
 
-It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)>`_,  `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
+It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)>`_,  `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
 
-Now that we have a trajectory, we can create a command that, when executed, will follow that trajectory.  To do this, we use the ``RamseteCommand`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__)
+Now that we have a trajectory, we can create a command that, when executed, will follow that trajectory.  To do this, we use the ``RamseteCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__)
 
 .. tabs::
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2021.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
-      :lines: 122-136
+      :lines: 112-127
       :linenos:
-      :lineno-start: 122
+      :lineno-start: 112
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/1f7c9adeeb148d044e6cccf1505f1512229241bd/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 73-84
+      :lines: 71-82
       :linenos:
-      :lineno-start: 73
+      :lineno-start: 71
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 
 1. The trajectory: This is the trajectory to be followed; accordingly, we pass the command the trajectory we just constructed in our earlier steps.
 2. The pose supplier: This is a method reference (or lambda) to the :ref:`drive subsystem method that returns the pose <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Odometry Accessor Method>`.  The RAMSETE controller needs the current pose measurement to determine the required wheel outputs.
-3. The RAMSETE controller: This is the ``RamseteController`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/RamseteController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_ramsete_controller.html>`__) that will perform the path-following computation that translates the current measured pose and trajectory state into a chassis speed setpoint.
-4. The drive feedforward: This is a ``SimpleMotorFeedforward`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__) that will automatically perform the correct feedforward calculation with the feedforward gains (``kS``, ``kV``, and ``kA``) that we obtained from the drive identification tool.
-5. The drive kinematics: This is the ``DifferentialDriveKinematics`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/DifferentialDriveKinematics.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_differential_drive_kinematics.html>`__) that we constructed earlier in our constants file, and will be used to convert chassis speeds to wheel speeds.
+3. The RAMSETE controller: This is the ``RamseteController`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/RamseteController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ramsete_controller.html>`__) that will perform the path-following computation that translates the current measured pose and trajectory state into a chassis speed setpoint.
+4. The drive feedforward: This is a ``SimpleMotorFeedforward`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__) that will automatically perform the correct feedforward calculation with the feedforward gains (``kS``, ``kV``, and ``kA``) that we obtained from the drive identification tool.
+5. The drive kinematics: This is the ``DifferentialDriveKinematics`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/DifferentialDriveKinematics.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_differential_drive_kinematics.html>`__) that we constructed earlier in our constants file, and will be used to convert chassis speeds to wheel speeds.
 6. The wheel speed supplier: This is a method reference (or lambda) to the :ref:`drive subsystem method that returns the wheel speeds <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Encoder Accessor Method>`
-7. The left-side PIDController: This is the ``PIDController`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__) that will track the left-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
-8. The right-side PIDController: This is the ``PIDController`` object (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__) that will track the right-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
+7. The left-side PIDController: This is the ``PIDController`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__) that will track the left-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
+8. The right-side PIDController: This is the ``PIDController`` object (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__) that will track the right-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
 9. The output consumer: This is a method reference (or lambda) to the :ref:`drive subsystem method that passes the voltage outputs to the drive motors <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Voltage-Based Drive Method>`.
 10. The robot drive: This is the drive subsystem itself, included to ensure the command does not operate on the drive at the same time as any other command that uses the drive.
 

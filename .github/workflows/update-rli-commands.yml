@@ -11,7 +11,7 @@ jobs:
       # ---- Find Trigger States ----
       # Run Inspector autofix on everything
       - name: Trigger-Check
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-check-all
         with:
           trigger: '\inspector check all'
@@ -22,7 +22,7 @@ jobs:
 
       # Run Inspector autofix only on files changed by the PR
       - name: Trigger-Diff
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-diff
         with:
           trigger: '\inspector fix diff'
@@ -33,7 +33,7 @@ jobs:
 
       # Run Inspector autofix on everything
       - name: Trigger-All
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-all
         with:
           trigger: '\inspector fix all'
@@ -48,7 +48,7 @@ jobs:
         run: exit 1
 
       - name: Checkout [Common]
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Checkout PR [Comment]
         run: gh pr checkout $NUMBER
@@ -72,7 +72,7 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: Starlight220/Inspector@v1.0
+        uses: Starlight220/Inspector@v1.8
         id: inspector
         with:
           root: ${{ github.workspace }}
@@ -100,7 +100,7 @@ jobs:
 
       # ---- Common - Post Report ----
       - name: Find Comment
-        uses: peter-evans/find-comment@v1
+        uses: peter-evans/find-comment@v2
         id: fc
         with:
           issue-number: ${{ github.event.issue.number }}
@@ -110,14 +110,14 @@ jobs:
 
       - name: Create comment
         if: ${{ steps.fc.outputs.comment-id == 0 }}
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v2
         with:
           body: ${{ env.REPORT }}
           issue-number: ${{ github.event.issue.number }}
 
       - name: Update comment
         if: ${{ steps.fc.outputs.comment-id != 0 }}
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v2
         with:
           body: |
             ${{ env.REPORT }}

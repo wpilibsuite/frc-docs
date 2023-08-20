@@ -3,25 +3,42 @@
 Introduction to PID
 ===================
 
-The PID controller is a commonly used feedback controller consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each of them behaves.
+.. note:: For a guide on implementing PID control with WPILib, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
-First, we'll get some nomenclature for PID controllers out of the way. The :term:`reference` is called the setpoint (the desired position) and the :term:`output` is called the :term:`process variable` (the measured position). Below are some common variable naming conventions for relevant quantities.
+This page explains the conceptual and mathematical workings of a PID controller. :ref:`A video explanation from WPI is also available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
 
-============ ================ ============ =====================
-:math:`r(t)` :term:`setpoint` :math:`u(t)` :term:`control input`
-:math:`e(t)` :term:`error`    :math:`y(t)` :term:`output`
-============ ================ ============ =====================
+What is a PID Controller?
+-------------------------
 
-The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`.
+The PID controller is a common :ref:`feedback controller<docs/software/advanced-controls/introduction/picking-control-strategy:Feedback Control: Correcting for Errors and Disturbances>` consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each term behaves.
 
-For those already familiar with PID control, this book's interpretation won't be consistent with the classical intuition of "past", "present", and "future" error. We will be approaching it from the viewpoint of modern control theory with proportional controllers applied to different physical quantities we care about. This will provide a more complete explanation of the derivative term's behavior for constant and moving :term:`setpoints <setpoint>`.
+First, we'll get some nomenclature for PID controllers out of the way. In a PID context, we use the term :term:`reference` or :term:`setpoint` to mean the desired state of the mechanism, and the term :term:`output` or :term:`process variable` to refer to the measured state of the mechanism. Below are some common variable naming conventions for relevant quantities.
 
-The proportional term drives the position error to zero, the derivative term drives the velocity error to zero, and the integral term accumulates the area between the :term:`setpoint` and :term:`output` plots over time (the integral of position :term:`error`) and adds the current total to the :term:`control input`. We'll go into more detail on each of these.
+============ =================================== ============ ========================================
+:math:`r(t)` :term:`setpoint`, :term:`reference` :math:`u(t)` :term:`control effort`
+:math:`e(t)` :term:`error`                       :math:`y(t)` :term:`output`, :term:`process variable`
+============ =================================== ============ ========================================
+
+The :term:`error` :math:`e(t)` is the difference between the :term:`reference` and the :term:`output`, :math:`r(t) - y(t)`.
+
+For those already familiar with PID control, this interpretation may not be consistent with the classical explanation of the P, I, and D terms corresponding to response to "past", "present", and "future" errors. While that model has merit, we will instead be approaching PID control from the viewpoint of modern control theory, as proportional controllers applied to different physical quantities we care about. This will provide a more complete explanation of the derivative term's behavior for constant and moving :term:`setpoints <setpoint>`.
+
+Roughly speaking: the proportional term drives the position error to zero, the derivative term drives the velocity error to zero, and the integral term drives the total accumulated error-over-time to zero.  All three terms are added together to produce the :term:`control signal` We'll go into more detail on each of these below.
+
+.. note::
+   Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
+
+   For example, for the proportional gain:
+
+      * :math:`K_p` is the standard math-equation-focused way to notate the constant.
+      * ``kP`` is a common way to see it written as a variable in software.
+
+   Despite the differences in capitalization, the two formats refer to the same concept.
 
 Proportional Term
 -----------------
 
-The *Proportional* term drives the position error to zero.
+The *Proportional* term attempts to drive the position error to zero by contributing to the control signal proportionally to the current position error.  Intuitively, this tries to move the :term:`output` towards the :term:`reference`.
 
 .. math:: u(t) = K_p e(t)
 
@@ -44,7 +61,7 @@ so the "force" with which the proportional controller pulls the :term:`system's 
 Derivative Term
 ---------------
 
-The *Derivative* term drives the velocity error to zero.
+The *Derivative* term attempts to drive the derivative of the error to zero by contributing to the control signal proportionally to the derivative of the error.  Intuitively, this tries to make the :term:`output` move at the same rate as the :term:`reference`.
 
 .. math::
    u(t) = K_p e(t) + K_d \frac{de}{dt}
@@ -62,7 +79,7 @@ A PD controller has a proportional controller for position (:math:`K_p`) and a p
 .. math::
    u_k = K_p e_k + K_d \frac{e_k - e_{k-1}}{dt}
 
-where :math:`u_k` is the :term:`control input` at timestep :math:`k` and :math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is defined as :math:`e_k = r_k - x_k` where :math:`r_k` is the :term:`setpoint` and :math:`x_k` is the current :term:`state` at timestep :math:`k`.
+where :math:`u_k` is the :term:`control effort` at timestep :math:`k` and :math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is defined as :math:`e_k = r_k - x_k` where :math:`r_k` is the :term:`setpoint` and :math:`x_k` is the current :term:`state` at timestep :math:`k`.
 
 .. math::
    u_k &= K_p (r_k - x_k) + K_d \frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\
@@ -79,9 +96,9 @@ If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` is z
 Integral Term
 -------------
 
-.. important:: Integral gain is generally not recommended for FRC\ |reg| use. There are better approaches to fix :term:`steady-state error` like using feedforwards or constraining when the integral control acts using other knowledge of the :term:`system`.
+.. important:: Integral gain is generally not recommended for FRC\ |reg| use. It is almost always better to use a feedforward controller to eliminate steady-state error.  If you do employ integral gain, it is crucial to provide some protection against :ref:`integral windup <docs/software/advanced-controls/introduction/common-control-issues:Integral Term Windup>`.
 
-The *Integral* term accumulates the area between the :term:`setpoint` and :term:`output` plots over time (i.e., the integral of position :term:`error`) and adds the current total to the :term:`control input`. Accumulating the area between two curves is called integration.
+The *Integral* term attempts to drive the total accumulated error to zero by contributing to the control signal proportionally to the sum of all past errors.  Intuitively, this tries to drive the *average* of all past :term:`output` values towards the *average* of all past :term:`reference` values.
 
 .. math::
    u(t) = K_p e(t) + K_i \int_0^t e(\tau) \,d\tau
@@ -102,18 +119,18 @@ When the :term:`system` is close the :term:`setpoint` in steady-state, the propo
    :alt: PI controller with steady-state
    :align: center
 
-A common way of eliminating :term:`steady-state error` is to integrate the :term:`error` and add it to the :term:`control input`. This increases the :term:`control effort` until the :term:`system` converges. Figure 2.4 shows an example of :term:`steady-state error` for a flywheel, and figure 2.5 shows how an integrator added to the flywheel controller eliminates it. However, too high of an integral gain can lead to overshoot, as shown in figure 2.6.
+A common way of eliminating :term:`steady-state error` is to integrate the :term:`error` and add it to the :term:`control effort`. This increases the :term:`control effort` until the :term:`system` converges. Figure 2.4 shows an example of :term:`steady-state error` for a flywheel, and figure 2.5 shows how an integrator added to the flywheel controller eliminates it. However, too high of an integral gain can lead to overshoot, as shown in figure 2.6.
 
 .. image:: images/introduction-to-pid-pi-controller-overshoot.png
    :alt: Figure 2.6 and 2.6 graphs
    :align: center
 
-PID Controller Definition
--------------------------
+Putting It All Together
+-----------------------
 
 .. note:: For information on using the WPILib provided PIDController, see the :ref:`relevant article <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`.
 
-When these terms are combined, one gets the typical definition for a PID controller.
+When these terms are combined by summing them all together, one gets the typical definition for a PID controller.
 
 .. math::
    u(t) = K_p e(t) + K_i \int_0^t e(\tau) \,d\tau + K_d \frac{de}{dt}

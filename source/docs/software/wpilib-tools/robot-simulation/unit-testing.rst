@@ -1,7 +1,7 @@
 Unit Testing
 ============
 
-Unit testing is a method of testing code by dividing the code into the smallest "units" possible and testing each unit. In robot code, this can mean testing the code for each subsystem individually. There are many unit testing frameworks for most languages. Java robot projects have `JUnit 4 <https://junit.org/junit4/>`__ available by default, and C++ robot projects have `Google Test <https://github.com/google/googletest/blob/master/docs/primer.md>`__.
+Unit testing is a method of testing code by dividing the code into the smallest "units" possible and testing each unit. In robot code, this can mean testing the code for each subsystem individually. There are many unit testing frameworks for most languages. Java robot projects have `JUnit 5 <https://junit.org/junit5/>`__ available by default, and C++ robot projects have `Google Test <https://github.com/google/googletest/blob/main/docs/primer.md>`__.
 
 Writing Testable Code
 ^^^^^^^^^^^^^^^^^^^^^
@@ -17,199 +17,47 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 .. tabs::
    .. group-tab:: Java
 
-      .. code-block:: java
-
-         import edu.wpi.first.wpilibj.DoubleSolenoid;
-         import edu.wpi.first.wpilibj.PWMSparkMax;
-         import frc.robot.Constants.IntakeConstants;
-
-         public class Intake implements AutoCloseable {
-           private PWMSparkMax motor;
-           private DoubleSolenoid piston;
-
-           public Intake() {
-             motor = new PWMSparkMax(IntakeConstants.MOTOR_PORT);
-             piston = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV);
-           }
-
-           public void deploy() {
-             piston.set(DoubleSolenoid.Value.kForward);
-           }
-
-           public void retract() {
-             piston.set(DoubleSolenoid.Value.kReverse);
-             motor.set(0); // turn off the motor
-           }
-
-           public void activate(double speed) {
-             if (piston.get() == DoubleSolenoid.Value.kForward) {
-               motor.set(speed);
-             } else { // if piston isn't open, do nothing
-               motor.set(0);
-             }
-           }
-
-           @Override
-           public void close() throws Exception {
-             piston.close();
-             motor.close();
-           }
-         }
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+         :language: java
+         :lines: 7-
 
    .. group-tab:: C++ (Header)
 
-      .. code-block:: cpp
-
-         #include <frc2/command/SubsystemBase.h>
-         #include <frc/DoubleSolenoid.h>
-         #include <frc/PWMSparkMax.h>
-
-         #include "Constants.h"
-
-         class Intake : public frc2::SubsystemBase {
-          public:
-           void Deploy();
-           void Retract();
-           void Activate(double speed);
-
-           private:
-           frc::PWMSparkMax motor{Constants::Intake::MOTOR_PORT};
-           frc::DoubleSolenoid piston{frc::PneumaticsModuleType::CTREPCM, Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV};
-         };
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
+         :language: cpp
+         :lines: 7-
 
    .. group-tab:: C++ (Source)
 
-      .. code-block:: cpp
-
-         #include "subsystems/Intake.h"
-
-         void Intake::Deploy() {
-             piston.Set(frc::DoubleSolenoid::Value::kForward);
-         }
-
-         void Intake::Retract() {
-             piston.Set(frc::DoubleSolenoid::Value::kReverse);
-             motor.Set(0); // turn off the motor
-         }
-
-         void Intake::Activate(double speed) {
-             if (piston.Get() == frc::DoubleSolenoid::Value::kForward) {
-                 motor.Set(speed);
-             } else { // if piston isn't open, do nothing
-                 motor.Set(0);
-             }
-         }
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
+         :language: cpp
+         :lines: 5-
 
 Writing Tests
 ^^^^^^^^^^^^^
 
 .. important:: Tests are placed inside the ``test`` source set: ``/src/test/java/`` and ``/src/test/cpp/`` for Java and C++ tests, respectively. Files outside that source root do not have access to the test framework - this will fail compilation due to unresolved references.
 
-In Java, each test class contains at least one test method marked with ``@org.junit.Test``, each method representing a test case. Additional methods for opening resources (such as our ``Intake`` object) before each test and closing them after are respectively marked with ``@org.junit.Before`` and ``@org.junit.After``. In C++, test fixture classes inheriting from ``testing::Test`` contain our subsystem and simulation hardware objects, and test methods are written using the ``TEST_F(testfixture, testname)`` macro. The ``SetUp()`` and ``TearDown()`` methods can be overridden in the test fixture class and will be run respectively before and after each test.
+In Java, each test class contains at least one test method marked with ``@org.junit.jupiter.api.Test``, each method representing a test case. Additional methods for opening resources (such as our ``Intake`` object) before each test and closing them after are respectively marked with ``@org.junit.jupiter.api.BeforeEach`` and ``@org.junit.jupiter.api.AfterEach``. In C++, test fixture classes inheriting from ``testing::Test`` contain our subsystem and simulation hardware objects, and test methods are written using the ``TEST_F(testfixture, testname)`` macro. The ``SetUp()`` and ``TearDown()`` methods can be overridden in the test fixture class and will be run respectively before and after each test.
 
 Each test method should contain at least one *assertion* (``assert*()`` in Java or ``EXPECT_*()`` in C++). These assertions verify a condition at runtime and fail the test if the condition isn't met. If there is more than one assertion in a test method, the first failed assertion will crash the test - execution won't reach the later assertions.
 
-Both JUnit and GoogleTest have multiple assertion types, but the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given. In JUnit (Java), these assertions are static methods and can be used without qualification by adding the static star import ``import static org.junit.Asssert.*``. In Google Test (C++), assertions are macros from the ``<gtest/gtest.h>`` header.
+Both JUnit and GoogleTest have multiple assertion types; the most common is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, actual)``. When comparing numbers, a third parameter - ``delta``, the acceptable error, can be given. In JUnit (Java), these assertions are static methods and can be used without qualification by adding the static star import ``import static org.junit.jupiter.api.Assertions.*``. In Google Test (C++), assertions are macros from the ``<gtest/gtest.h>`` header.
 
 .. note:: Comparison of floating-point values isn't accurate, so comparing them should be done with an acceptable error parameter (``DELTA``).
 
 .. tabs::
-   .. code-tab:: java
+   .. group-tab:: Java
 
-      import static org.junit.Assert.*;
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
+         :language: java
+         :lines: 7-
 
-      import edu.wpi.first.hal.HAL;
-      import edu.wpi.first.wpilibj.DoubleSolenoid;
-      import edu.wpi.first.wpilibj.simulation.DoubleSolenoidSim;
-      import edu.wpi.first.wpilibj.simulation.PWMSim;
-      import frc.robot.Constants.IntakeConstants;
-      import org.junit.*;
+   .. group-tab:: C++
 
-      public class IntakeTest {
-        public static final double DELTA = 1e-2; // acceptable deviation range
-        Intake intake;
-        PWMSim simMotor;
-        DoubleSolenoidSim simPiston;
-
-        @Before // this method will run before each test
-        public void setup() {
-          assert HAL.initialize(500, 0); // initialize the HAL, crash if failed
-          intake = new Intake(); // create our intake
-          simMotor = new PWMSim(IntakeConstants.MOTOR_PORT); // create our simulation PWM motor controller
-          simPiston = new DoubleSolenoidSim(PneumaticsModuleType.CTREPCM, IntakeConstants.PISTON_FWD, IntakeConstants.PISTON_REV); // create our simulation solenoid
-        }
-
-        @After // this method will run after each test
-        public void shutdown() throws Exception {
-          intake.close(); // destroy our intake object
-        }
-
-        @Test // marks this method as a test
-        public void doesntWorkWhenClosed() {
-          intake.retract(); // close the intake
-          intake.activate(0.5); // try to activate the motor
-          assertEquals(0.0, simMotor.getSpeed(), DELTA); // make sure that the value set to the motor is 0
-        }
-
-        @Test
-        public void worksWhenOpen() {
-          intake.deploy();
-          intake.activate(0.5);
-          assertEquals(0.5, simMotor.getSpeed(), DELTA);
-        }
-
-        @Test
-        public void retractTest() {
-          intake.retract();
-          assertEquals(DoubleSolenoid.Value.kReverse, simPiston.get());
-        }
-
-        @Test
-        public void deployTest() {
-          intake.deploy();
-          assertEquals(DoubleSolenoid.Value.kForward, simPiston.get());
-        }
-      }
-
-   .. code-tab:: cpp
-
-      #include <gtest/gtest.h>
-
-      #include <frc/DoubleSolenoid.h>
-      #include <frc/simulation/DoubleSolenoidSim.h>
-      #include <frc/simulation/PWMSim.h>
-
-      #include "subsystems/Intake.h"
-      #include "Constants.h"
-
-      class IntakeTest : public testing::Test {
-       protected:
-        Intake intake; // create our intake
-        frc::sim::PWMSim simMotor{Constants::Intake::MOTOR_PORT}; // create our simulation PWM
-        frc::sim::DoubleSolenoidSim simPiston{frc::PneumaticsModuleType::CTREPCM, Constants::Intake::PISTON_FWD, Constants::Intake::PISTON_REV}; // create our simulation solenoid
-      };
-
-      TEST_F(IntakeTest, DoesntWorkWhenClosed) {
-        intake.Retract(); // close the intake
-        intake.Activate(0.5); // try to activate the motor
-        EXPECT_DOUBLE_EQ(0.0, simMotor.GetSpeed()); // make sure that the value set to the motor is 0
-      }
-
-      TEST_F(IntakeTest, WorksWhenOpen) {
-        intake.Deploy();
-        intake.Activate(0.5);
-        EXPECT_DOUBLE_EQ(0.5, simMotor.GetSpeed());
-      }
-
-      TEST_F(IntakeTest, RetractTest) {
-        intake.Retract();
-        EXPECT_EQ(frc::DoubleSolenoid::Value::kReverse, simPiston.Get());
-      }
-
-      TEST_F(IntakeTest, DeployTest) {
-        intake.Deploy();
-        EXPECT_EQ(frc::DoubleSolenoid::Value::kForward, simPiston.Get());
-      }
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
+         :language: cpp
+         :lines: 5-
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
 
@@ -220,12 +68,12 @@ Running Tests
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. code-block:: groovy
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.4.3/vscode-wpilib/resources/gradle/java/build.gradle
+   :language: groovy
+   :lines: 73-76
+   :linenos:
+   :lineno-start: 73
 
-  test {
-     useJUnit()
-  }
-
-Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failied test a link to render the document in your browser will be printed in the terminal output.
+Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failed test a link to render the document in your browser will be printed in the terminal output.
 
 By default, Gradle runs the tests whenever robot code is built, including deploys. This will increase deploy time, and failing tests will cause the build and deploy to fail. To prevent this from happening, you can use :guilabel:`Change Skip Tests On Deploy Setting` from the Command Palette to configure whether to run tests when deploying.

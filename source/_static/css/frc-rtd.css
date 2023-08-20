@@ -38,6 +38,10 @@
 	width: 320px;
 }
 
+.document img {
+	margin-bottom: 10px;
+}
+
 .header-bar {
 	background: #003974;
 	min-height: 60px;
@@ -49,6 +53,13 @@
 
 .wy-nav-content {
 	background: #fcfcfc;
+}
+
+/* Tweaks for sphinx panels */
+
+/* Reduces the added margin to card footers due to a conflict in RTD CSS styles */
+.sd-card-footer > p.sd-card-text {
+	margin-bottom: 5px;
 }
 
 /* Tweaks to make sidebar scroll look pretty */
@@ -128,4 +139,19 @@
 
 .sphinx-tab img {
 	margin-bottom: 24px;
+}
+
+/* ======================================== */
+/* ====== START SPHINX DETAILS CSS ======== */
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em;
+    margin: .5em .5em 2em .5em;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
 }

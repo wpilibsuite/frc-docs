@@ -5,7 +5,7 @@ Joysticks
 
 A joystick can be used with the Driver Station program to control the robot.  Almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
-The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
+The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 Driver Station Joysticks
 ------------------------
@@ -43,6 +43,10 @@ When the robot is connected to the Field Management System at competition, the D
 
       Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
+   .. code-tab:: python
+
+      exampleJoystick = wpilib.Joystick(0) # 0 is the USB Port to be used as indicated on the Driver Station
+
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
 
 ``XboxController`` Class
@@ -61,27 +65,11 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
       XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-An example of how to use buttons on the ``XboxController``.
+   .. code-tab:: python
 
-.. tabs::
+      exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. group-tab:: Java
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot/RobotContainer.java
-         :language: java
-         :lines: 39,85-88,96-99
-         :linenos:
-         :lineno-start: 39
-
-   .. group-tab:: C++
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/GearsBot/cpp/RobotContainer.cpp
-         :language: cpp
-         :lines: 41-48
-         :linenos:
-         :lineno-start: 41
-
-The ``XboxController`` class provides named indicies for each of the buttons that you can access with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
 ``PS4Controller`` Class
 -----------------------
@@ -100,7 +88,11 @@ The ``XboxController`` class provides named indicies for each of the buttons tha
 
       PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-The ``PS4Controller`` class provides named indicies for each of the buttons. These buttons can accessed with ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
+   .. code-tab:: python
+
+      examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
+
+The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
 POV
 ---
@@ -109,35 +101,47 @@ POV
    :alt: The angles used by the code of the POV/D-pad with 0 at the top and continuing clockwise.
 
 
-On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
+On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController/PS4Controller D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
 ``GenericHID`` Usage
 --------------------
 
-An axis can be used with ``.getRawAxis(0)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
+An axis can be used with ``.getRawAxis(int index)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
 
 .. tabs::
 
    .. code-tab:: java
 
-      private final PWMSparkMax m_leftMotor = new PWMSparkMax(0);
-      private final PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+      private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
+      private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
       private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
-      private final GenericHID m_stick = new GenericHID(0);
+      private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
 
       m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
 
    .. code-tab:: c++
 
-      frc::PWMVictorSPX m_leftMotor{0};
-      frc::PWMVictorSPX m_rightMotor{1};
+      frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
+      frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
       frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
-      frc::GenericHID m_stick{0};
+      frc::GenericHID m_stick{Constants::kJoystickPort};
 
       m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
 
+   .. code-tab:: python
+
+      leftMotor = wpilib.PWMVictorSPX(LEFT_MOTOR_PORT)
+      rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
+      self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
+      self.stick = wpilib.GenericHID(JOYSTICK_PORT)
+
+      self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
+
+
 Button Usage
 ------------
+
+.. note:: Usage such as the following is for code not using the command-based framework. For button usage in the command-based framework, see :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 Unlike an axis, you will usually want to use the ``pressed`` and ``released`` methods to respond to button input.  These will return true if the button has been activated since the last check.  This is helpful for taking an action once when the event occurs but not having to continuously do it while the button is held down.
 
@@ -177,6 +181,21 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
          turnIntakeOff();
       }
 
+   .. code-tab:: python
+
+      if joystick.getRawButtonPressed(0):
+         turnIntakeOn() # When pressed the intake turns on
+
+      if joystick.getRawButtonReleased(0):
+         turnIntakeOff() # When released the intake turns off
+
+      # OR
+
+      if joystick.getRawButton(0):
+         turnIntakeOn()
+      else:
+         turnIntakeOff()
+
 A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
 
 .. tabs::
@@ -212,3 +231,17 @@ A common request is to toggle something on and off with the press of a button.  
             toggle = true;
          }
       }
+
+   .. code-tab:: python
+
+      toggle = False
+
+      if joystick.getRawButtonPressed(0):
+         if toggle:
+            # current state is True so turn off
+            retractIntake()
+            toggle = False
+         else:
+            # Current state is False so turn on
+            deployIntake()
+            toggle = True

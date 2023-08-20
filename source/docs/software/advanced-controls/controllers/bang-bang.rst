@@ -1,13 +1,13 @@
 Bang-Bang Control with BangBangController
 =========================================
 
-`"Bang-bang" control <https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ is a control strategy that employs only two states: on (when the measurement is below the setpoint) and off (otherwise).  This is roughly equivalent to a proportional loop with infinite gain.
+The :term:`bang-bang control` algorithm is a control strategy that employs only two states: on (when the measurement is below the setpoint) and off (otherwise).  This is roughly equivalent to a proportional loop with infinite gain.
 
 This may initially seem like a poor control strategy, as PID loops are known to become unstable as the gains become large - and indeed, it is a *very bad idea to use a bang-bang controller on anything other than velocity control of a high-inertia mechanism*.
 
 However, when controlling the velocity of high-inertia mechanisms under varying loads (like a shooter flywheel), a bang-bang controller can yield faster recovery time and thus better/more consistent performance than a proportional controller.  Unlike an ordinary P loop, a bang-bang controller is *asymmetric* - that is, the controller turns on when the process variable is below the setpoint, and does nothing otherwise.  This allows the control effort in the forward direction to be made as large as possible without risking destructive oscillations as the control loop tries to correct a resulting overshoot.
 
-Asymmetric bang-bang control is provided in WPILib by the BangBangController class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__).
+Asymmetric bang-bang control is provided in WPILib by the BangBangController class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__).
 
 Constructing a BangBangController
 ---------------------------------
@@ -25,6 +25,11 @@ Since a bang-bang controller does not have any gains, it does not need any const
 
     // Creates a BangBangController
     frc::BangBangController controller;
+
+  .. code-tab:: python
+
+     # Creates a BangBangController
+     controller = wpimath.BangBangController()
 
 Using a BangBangController
 --------------------------
@@ -45,6 +50,11 @@ Using a bang-bang controller is easy:
     // Controls a motor with the output of the BangBang controller
     motor.Set(controller.Calculate(encoder.GetRate(), setpoint));
 
+  .. code-tab:: python
+
+    # Controls a motor with the output of the BangBang controller
+    motor.set(controller.calculate(encoder.getRate(), setpoint))
+
 Combining Bang Bang Control with Feedforward
 --------------------------------------------
 
@@ -63,3 +73,8 @@ Like a PID controller, best results are obtained in conjunction with a :ref:`fee
     // Controls a motor with the output of the BangBang controller and a feedforward
     // Shrinks the feedforward slightly to avoid overspeeding the shooter
     motor.SetVoltage(controller.Calculate(encoder.GetRate(), setpoint) * 12.0 + 0.9 * feedforward.Calculate(setpoint));
+
+  .. code-tab:: python
+
+    # Controls a motor with the output of the BangBang controller and a feedforward
+    motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))

@@ -149,6 +149,6 @@ Generated CloseClaw Class
 RobotBuilder will generate the class files for the `CloseClaw` command. The command represents the behavior of the claw, that is the operation over time. To operate this very simple claw mechanism the motor needs to operate in the close direction,. The `Claw` subsystem has methods to start the motor running in the right direction and to stop it. The commands responsibility is to run the motor for the correct time. The lines of code that are shown in the boxes are added to add this behavior.
 
 1. Start the claw motor moving in the closing direction by calling the ``Close()`` method that was added to the `Claw` subsystem in the `CloseClaw` Initialize method.
-2. This command is finished when the the limit switch in the `Claw` subsystem is tripped.
+2. This command is finished when the limit switch in the `Claw` subsystem is tripped.
 3. The ``End()`` method is called when the command is finished and is a place to clean up. In this case, the motor is stopped since the time has run out.
 

@@ -34,7 +34,7 @@ Required Equipment
 
 To follow this tutorial, you will need ready access to the following materials:
 
-1. A differential-drive robot (such as the `AndyMark AM14U4 <https://www.andymark.com/products/am14u4-kit-of-parts-chassis>`__), equipped with:
+1. A differential-drive robot (such as the `AndyMark AM14U5 <https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis>`__), equipped with:
 
   * Quadrature encoders for measuring the wheel rotation of each side of the drive.
   * A gyroscope for measuring robot heading.

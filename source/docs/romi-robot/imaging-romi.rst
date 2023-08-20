@@ -3,10 +3,10 @@ Imaging your Romi
 
 The Romi has 2 microprocessor boards:
 
-#. A **Raspberry Pi** that handles high level communication with the robot program running on the desktop and
-#. A **Romi 32U4 Control Board** that handles low level motor and sensor operation.
+#. A **Raspberry Pi** that handles high-level communication with the robot program running on the desktop and
+#. A **Romi 32U4 Control Board** that handles low-level motor and sensor operation.
 
-Both boards need to have firmware installed so that the robot operate properly.
+Both boards need to have firmware installed so that the robot operates properly.
 
 Raspberry Pi
 ------------
@@ -49,7 +49,7 @@ Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
 6. Press the :guilabel:`Save` button at the bottom of the page to save changes.
 
-7. Change the network SSID to a unique name if you plan on operating your Romi on wireless network with other Romis.
+7. Change the network SSID to a unique name if you plan on operating your Romi on a wireless network with other Romis.
 
 8. Reconnect to the Romi's WiFi network with the new password you set.
 

@@ -55,7 +55,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
          :language: java
          :lines: 44-61
          :linenos:
@@ -63,7 +63,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
          :language: cpp
          :lines: 18-30
          :linenos:
@@ -90,7 +90,7 @@ Once the widget appears, you can resize and place it on the Glass workspace as y
 
 When selecting :guilabel:`Choose image...` you can choose to either select an image file or a PathWeaver JSON file as long as the image file is in the same directory.  Choosing the JSON file will automatically import the correct location of the field in the image and the correct size of the field.
 
-.. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/PathWeaver/tree/main/src/main/resources/edu/wpi/first/pathweaver>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+.. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/allwpilib/tree/main/fieldImages/src/main/native/resources/edu/wpi/first/fields>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 .. image:: images/field2d-options.png
 
@@ -107,7 +107,7 @@ One usage of customizing the pose style is converting the previously shown ``tra
 .. image:: images/changing-style-line.png
    :alt: Selecting the "style" dropdown and then selecting "line".
 
-Now, uncheck the :guilabel:`Arrows` checkbox. This will cause cause our trajectory to look like a nice and fluid line!
+Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to look like a nice and fluid line!
 
 .. image:: images/unchecked-arrow-trajectory.png
    :alt: Unchecked arrows checkbox to showcase fluid line.

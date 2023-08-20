@@ -19,7 +19,7 @@ EmbeddedTools tasks
 
 ``./gradlew deploy`` - Deploy all artifacts on all targets. This will deploy your robot project to the available targets (IE, roboRIO).
 
-``./gradlew discoverRoborio`` - Determine the address(es) of target RoboRIO. This will print out the IP address of a connected roboRIO.
+``./gradlew discoverRoborio`` - Determine the address(es) of target roboRIO. This will print out the IP address of a connected roboRIO.
 
 GradleRIO tasks
 ---------------
@@ -30,9 +30,7 @@ GradleRIO tasks
 
 ``./gradlew $TOOL$Install`` - Installs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, Shuffleboard, etc)
 
-``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as VSCode. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
-
-``./gradlew riolog`` - Runs a console displaying output from the default RoboRIO (roborio)
+``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as Visual Studio Code. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
 
 ``./gradlew simulateExternalCpp`` - Simulate External Task for native executable. Exports a JSON file for use by editors / tools
 

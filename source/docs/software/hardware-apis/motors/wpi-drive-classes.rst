@@ -10,7 +10,7 @@ Standard drivetrains
 
 Differential Drive Robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-robot/layout.jpg
+.. image:: /docs/zero-to-robot/step-1/images/how-to-wire-a-simple-robot/layout.jpg
    :alt: The wiring of a simple differential drive robot.
    :width: 600
 
@@ -54,6 +54,12 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
          m_motorRight.SetInverted(true);
        }
 
+   .. code-tab:: python
+
+      def robotInit(self):
+          self.motorRight = wpilib.PWMSparkMax(0)
+          self.motorRight.setInverted(True)
+
 Squaring Inputs
 ^^^^^^^^^^^^^^^
 
@@ -74,7 +80,7 @@ Motor Safety
 
 Motor Safety is a mechanism in WPILib that takes the concept of a watchdog and breaks it out into one watchdog (Motor Safety timer) for each individual actuator. Note that this protection mechanism is in addition to the System Watchdog which is controlled by the Network Communications code and the FPGA and will disable all actuator outputs if it does not receive a valid data packet for 125ms.
 
-The purpose of the Motor Safety mechanism is the same as the purpose of a watchdog timer, to disable mechanisms which may cause harm to themselves, people or property if the code locks up and does not properly update the actuator output. Motor Safety breaks this concept out on a per actuator basis so that you can appropriately determine where it is necessary and where it is not. Examples of mechanisms that should have motor safety enabled are systems like drive trains and arms. If these systems get latched on a particular value they could cause damage to their environment or themselves. An example of a mechanism that may not need motor safety is a spinning flywheel for a shooter. If this mechanism gets latched on a particular value it will simply continue spinning until the robot is disabled. By default Motor Safety is enabled for DifferentialDrive, KilloughDrive, and MecanumDrive objects and disabled for all other motor controllers and servos.
+The purpose of the Motor Safety mechanism is the same as the purpose of a watchdog timer, to disable mechanisms which may cause harm to themselves, people or property if the code locks up and does not properly update the actuator output. Motor Safety breaks this concept out on a per actuator basis so that you can appropriately determine where it is necessary and where it is not. Examples of mechanisms that should have motor safety enabled are systems like drive trains and arms. If these systems get latched on a particular value they could cause damage to their environment or themselves. An example of a mechanism that may not need motor safety is a spinning flywheel for a shooter. If this mechanism gets latched on a particular value it will simply continue spinning until the robot is disabled. By default Motor Safety is enabled for DifferentialDrive and MecanumDrive objects and disabled for all other motor controllers and servos.
 
 The Motor Safety feature operates by maintaining a timer that tracks how long it has been since the feed() method has been called for that actuator. Code in the Driver Station class initiates a comparison of these timers to the timeout values for any actuator with safety enabled every 5 received packets (100ms nominal). The set() methods of each motor controller class and the set() and setAngle() methods of the servo class call feed() to indicate that the output of the actuator has been updated.
 
@@ -96,24 +102,26 @@ The Motor Safety interface of motor controllers can be interacted with by the us
         exampleJaguar->SetExpiration(.1);
         exampleJaguar->Feed();
 
+    .. code-tab:: python
+
+       exampleJaguar.setSafetyEnabled(True)
+       exampleJaguar.setSafetyEnabled(False)
+       exampleJaguar.setExpiration(.1)
+       exampleJaguar.feed()
+
 By default all Drive objects enable Motor Safety. Depending on the mechanism and the structure of your program, you may wish to configure the timeout length of the motor safety (in seconds). The timeout length is configured on a per actuator basis and is not a global setting. The default (and minimum useful) value is 100ms.
 
 Axis Conventions
 ^^^^^^^^^^^^^^^^
-.. image:: images/drive-axis.png
-   :alt: Show the axis of the robot with X+ going forward.  Y+ to the right and Z+ downward.
-   :width: 600
 
-The drive classes use the NED axes convention (North-East-Down as external reference in the world frame). The positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. The rest of the library, and math in general, uses NWU axes convention (North-West-Up). We use NED here because joysticks use NED, and they use NED because the aviation industry does.
+The drive classes use the NWU axes convention (North-West-Up as external reference in the world frame). The positive X axis points ahead, the positive Y axis points left, and the positive Z axis points up. We use NWU here because the rest of the library, and math in general, use NWU axes convention.
 
-Joysticks follow NED convention, but it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
-
-.. warning:: The ``MecanumDrive`` class does not follow this convention. The positive Y axis points ahead, the positive X axis points right. This may change in a future year's WPILib release.
+Joysticks follow NED (North-East-Down) convention, where the positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. However, it's important to note that axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value. Pushing forward on the joystick is a CW rotation around the Y axis, so you get a negative value. Pushing to the right is a CCW rotation around the X axis, so you get a positive value.
 
 Using the DifferentialDrive class to control Differential Drive robots
 ----------------------------------------------------------------------
 
-.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential, mecanum, and Killough).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive" (WCD). The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
+.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential and mecanum).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive" (WCD). The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
 DifferentialDrive is a method provided for the control of "skid-steer" or "West Coast" drivetrains, such as the Kit of Parts chassis. Instantiating a DifferentialDrive is as simple as so:
 
@@ -150,6 +158,15 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
                 m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
             }
 
+    .. group-tab:: Python
+
+       .. code-block:: python
+
+          def robotInit(self):
+              left = wpilib.Spark(1)
+              left.setInverted(True) # if you want to invert motor outputs, you can do so here
+              right = wpilib.Spark(2)
+              self.drive = wpilib.drive.DifferentialDrive(left, right)
 
 
 Multi-Motor DifferentialDrive with MotorControllerGroups
@@ -201,6 +218,21 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
                 m_left.SetInverted(true); // if you want to invert the entire side you can do so here
             }
 
+    .. group-tab:: Python
+
+       .. code-block:: python
+
+          def robotInit(self):
+              frontLeft = wpilib.Spark(1)
+              rearLeft = wpilib.Spark(2)
+              left = wpilib.MotorControllerGroup(frontLeft, rearLeft)
+              left.setInverted(True) # if you want to invert the entire side you can do so here
+
+              frontRight = wpilib.Spark(3)
+              rearRight = wpilib.Spark(4)
+              right = wpilib.MotorControllerGroup(frontLeft, rearLeft)
+
+              self.drive = wpilib.drive.DifferentialDrive(left, right)
 
 
 
@@ -230,10 +262,10 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(-driveStick.getY(), driveStick.getX());
+            myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
 
             // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-            myDrive.curvatureDrive(-driveStick.getY(), driveStick.getX(), driveStick.getButton(1));
+            myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
         }
 
     .. code-tab:: c++
@@ -243,11 +275,23 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
 
             // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(-driveStick.GetY(), driveStick.GetX());
+            myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
 
             // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-            myDrive.CurvatureDrive(-driveStick.GetY(), driveStick.GetX(), driveStick.GetButton(1));
+            myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
         }
+
+    .. code-tab:: python
+
+       def teleopPeriodic(self):
+           # Tank drive with a given left and right rates
+           self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
+
+           # Arcade drive with a given forward and turn rate
+           self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
+
+           # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
+           self.myDrive.curvatureDrive(-self.driveStick.getY(), -self.driveStick.getX(), self.driveStick.getButton(1))
 
 Using the MecanumDrive class to control Mecanum Drive robots
 ------------------------------------------------------------
@@ -258,7 +302,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
       :language: java
       :lines: 24-39
       :linenos:
@@ -266,11 +310,19 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2022.4.1/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
       :language: cpp
       :lines: 31-44
       :linenos:
       :lineno-start: 31
+
+  .. tab:: Python
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.1.1.0/mecanum-drive/robot.py
+      :language: python
+      :lines: 21-36
+      :linenos:
+      :lineno-start: 21
 
 Mecanum Drive Modes
 ^^^^^^^^^^^^^^^^^^^
@@ -288,16 +340,28 @@ The MecanumDrive class contains two different default modes of driving your robo
     .. code-tab:: java
 
         public void teleopPeriodic() {
-            m_robotDrive.driveCartesian(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
-            m_robotDrive.drivePolar(-m_stick.getY(), m_stick.getX(), m_stick.getZ());
+            // Drive using the X, Y, and Z axes of the joystick.
+            m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.getY(), Rotation2d.fromDegrees(45), 0);
         }
 
     .. code-tab:: c++
 
         void TeleopPeriodic() override {
-            m_robotDrive.driveCartesian(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
-            m_robotDrive.drivePolar(-m_stick.GetY(), m_stick.GetX(), m_stick.GetZ());
+            // Drive using the X, Y, and Z axes of the joystick.
+            m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
+            // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+            m_robotDrive.drivePolar(-m_stick.GetY(), 45_deg, 0);
         }
+
+    .. code-tab:: python
+
+       def teleopPeriodic(self):
+           // Drive using the X, Y, and Z axes of the joystick.
+           self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+           // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+           self.robotDrive.drivePolar(-self.stick.getY(), Rotation2d.fromDegrees(45), 0)
 
 Field-Oriented Driving
 ^^^^^^^^^^^^^^^^^^^^^^

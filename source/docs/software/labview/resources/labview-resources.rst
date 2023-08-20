@@ -8,7 +8,7 @@ LabVIEW Resources
 LabVIEW Basics
 --------------
 
-NI provides `tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programing model used in LabVIEW.
+NI provides `tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programming model used in LabVIEW.
 
 .. todo:: Add academic videos when link fixed www.ni.com/academic/students/learn-labview/
 
@@ -23,3 +23,9 @@ Installed Tutorials and Examples
 There are also tutorials and examples for all sorts of tasks and components provided as part of your LabVIEW installation. To access the tutorials, from the LabVIEW Splash screen (the screen that appears when the program is first launched) click on the ``Tutorials`` tab on the left side. Note that the tutorials are all in one document, so once it is open you are free to browse to other tutorials without returning to the splash screen.
 
 To access the examples either click the ``Support`` tab, then ``Find FRC Examples`` or anytime you're working on a program open the ``Help`` menu, select ``Find Examples`` and open the ``FRC Robotics`` folder.
+
+Third Party Resources
+---------------------
+
+- `FRC Control and Trajectory Library <https://github.com/jsimpso81/WPIlibMathLabVIEW>`__
+- `Secret Book Of FRC LabVIEW 2 <https://github.com/jsimpso81/FRC_Secret_Book_Of_FRC_LabVIEW_2>`__

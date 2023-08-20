@@ -1,18 +1,14 @@
 PID Control in WPILib
 =====================
 
-.. todo:: Link to conceptual PID article when it's finished
-
-.. note:: This article covers the in-code implementation of PID Control with WPILib's provided library classes.  Documentation describing the involved concepts in more detail is forthcoming.
+.. note:: This article focuses on in-code implementation of PID control in WPILib. For a conceptual explanation of the working of a PIDController, see :ref:`docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID`
 
 .. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 
-WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
+WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 Using the PIDController Class
 -----------------------------
-
-.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``edu.wpi.first.math.controller`` package.
 
 Constructing a PIDController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,8 +35,6 @@ Using the Feedback Loop Output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The ``PIDController`` assumes that the ``calculate()`` method is being called regularly at an interval consistent with the configured period.  Failure to do this will result in unintended loop behavior.
-
-.. warning:: Unlike the old ``PIDController``, the new PIDController does not automatically control an output from its own thread - users are required to call ``calculate()`` and use the resulting output in their own code.
 
 Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method):
 
@@ -128,6 +122,35 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
     // the total loop output
     pid.SetIntegratorRange(-0.5, 0.5);
 
+Disabling Integral Gain if the Error is Too High
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``. If the error is more than ``IZone``, the total accumulated error is reset, disabling integral gain. When the error is equal to or less than IZone, integral gain is enabled.
+
+By default, ``IZone`` is disabled.
+
+``IZone`` may be set using the ``setIZone()`` method. To disable it, set it to infinity.
+
+.. tabs::
+
+  .. code-tab:: java
+
+    // Disable IZone
+    pid.setIZone(Double.POSITIVE_INFINITY);
+
+    // Integral gain will not be applied if the absolute value of the error is
+    // more than 2
+    pid.setIZone(2);
+
+  .. code-tab:: c++
+
+    // Disable IZone
+    pid.SetIZone(std::numeric_limits<double>::infinity());
+
+    // Integral gain will not be applied if the absolute value of the error is
+    // more than 2
+    pid.SetIZone(2);
+
 Setting Continuous Input
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -153,8 +176,6 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 
 Clamping Controller Output
 --------------------------
-
-Unlike the old ``PIDController``, the new controller does not offer any output clamping features, as the user is expected to use the loop output themselves.  Output clamping can be easily achieved by composing the controller with WPI's ``clamp()`` function (or ``std::clamp`` in c++):
 
 .. tabs::
 

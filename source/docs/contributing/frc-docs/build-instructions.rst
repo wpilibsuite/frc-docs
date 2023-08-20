@@ -8,15 +8,28 @@ Prerequisites
 
 Ensure that `Git <https://git-scm.com/>`__ is installed and that the frc-docs repository is cloned by using ``git clone https://github.com/wpilibsuite/frc-docs.git``.
 
+Text Editors / IDE
+^^^^^^^^^^^^^^^^^^
+
+For development, we recommend that you use VS Code along with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_. However, any text editor will work.
+
+By default, the reStructuredText extension enables linting with all doc8 features enabled. As frc-docs does not follow the line length lint, add the following to your VS Code ``settings.json`` to disable line length linting.
+
+.. code-block:: json
+
+   "restructuredtext.linter.doc8.extraArgs": [
+      "--ignore D001"
+   ]
+
 Windows
 ^^^^^^^
 
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
-- `Python 3.9 <https://www.python.org/downloads/>`__ (Python >= 3.10 is incompatible)
+- `Python 3.9 <https://www.python.org/downloads/>`__
+- `Perl <https://strawberryperl.com/>`__
 - `MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)
-- `Perl <http://strawberryperl.com/>`__
-- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__
+- `rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__ (Only needed for PDF builds)
 
 Ensure that Python is in your Path by selecting the **Add Python to PATH** toggle when installing Python.
 
@@ -25,7 +38,7 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 
 Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
 
-Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``mpm --verbose --require=@miktex-packages.txt``
+Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``miktex --verbose packages require --package-id-file miktex-packages.txt``
 
 Linux (Ubuntu)
 ^^^^^^^^^^^^^^
@@ -73,7 +86,7 @@ The link checker makes sure that all links in the documentation resolve. This **
 Image Size Check
 ^^^^^^^^^^^^^^^^
 
-Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check *will* fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
+Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check **will** fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
 Redirect Check
 ^^^^^^^^^^^^^^
@@ -115,19 +128,19 @@ frc-docs uses `Poetry <https://python-poetry.org/>`__ to manage its dependencies
 Installing Poetry
 ^^^^^^^^^^^^^^^^^
 
-Ensure that Poetry is installed. Run the following command: ``pip install poetry``
+Ensure that Poetry is installed. Run the following command: ``pip install poetry``.
 
 Adding a Dependency
 ^^^^^^^^^^^^^^^^^^^
 
-Add the dependency to the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``poetry lock --no-update``
+Add the dependency to the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``poetry lock --no-update``.
 
 Updating a Top-Level Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``
+Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``.
 
 Updating Hidden Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run the following command: ``poetry lock``
+Run the following command: ``poetry lock``.

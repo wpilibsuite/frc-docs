@@ -1,7 +1,30 @@
 {
-  "root": ".",
-  "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
-  "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-  "latestVersion": "v2022.4.1",
-  "ignoredFiles": ["source/docs/software/pathplanning/trajectory-tutorial/"]
+  "sources": [
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion": "v2023.4.3"
+    },
+    {
+      "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion": "v2023.4.3"
+    },
+    {
+      "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
+      "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion": "2023.1.1.0"
+    },
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion":"v2023.4.3"
+    },
+    {
+      "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
+      "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
+      "latestVersion":"3b64aadee717c9f0566497a40fd0be7d0eaed96d"
+    }
+  ],
+  "ignoredFiles": []
 }

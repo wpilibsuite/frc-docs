@@ -6,13 +6,31 @@ This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`l
 Prerequisites
 -------------
 
-You can download the latest release of the installer from `GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__. Ensure that you download the correct binary for your OS and architecture.
+Supported Operating Systems and Architectures:
+ * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
+ * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
+ * macOS 11 or higher, both Intel and Arm for Java. C++ requires macOS 12 or higher with Xcode 14.
 
-.. warning:: Windows 7 users must have an updated system with `this <https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows>`__ update installed. MacOS and Linux require python3 installed.
-
-.. warning:: The following OSes will be unsupported starting 2023: Ubuntu 18.04, Windows 7, Windows 8.1, and any 32-bit Windows. MacOS 10.14 is no longer supported as of 2022.
+.. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
+
+Downloading
+-----------
+
+.. wpilibrelease:: v2023.4.3
+
+`You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
+
+Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
+
+.. image:: images/installer-download/github-release.jpg
+   :alt: Latest WPILib release page on GitHub
+
+Then click on the correct binary for your OS and architecture to begin the download.
+
+.. image:: images/installer-download/github-assets.jpg
+   :alt: Assets at bottom of latest WPILib release page on GitHub
 
 Extracting the Installer
 ------------------------
@@ -22,21 +40,26 @@ When you download the WPILib installer, it is distributed as a disk image file `
 .. tabs::
 
    .. group-tab:: Windows 10+
+
       Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
-      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions in the "Windows 7" tab.
+      .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-   .. group-tab:: Windows 7
-
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Then launch ``WPILibInstaller.exe``
+      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
 
+      After opening the ``.iso`` file, launch the installer by opening ``WPILibInstaller.exe``.
+
+      .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click :guilabel:`More info`, then select :guilabel:`Run anyway` to run the installer.
+
    .. group-tab:: macOS
+
+      For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
@@ -96,7 +119,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
-Go ahead and select :guilabel:`Download VS Code for Single Install`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -129,12 +152,12 @@ Some operating systems require some final action to complete installation.
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
 
-.. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and MacOS.
+.. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 
 Additional C++ Installation for Simulation
 ------------------------------------------
 
-C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 or 2019 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
 
 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 
@@ -169,7 +192,7 @@ WPILib is designed to install to different folders for different years, so that 
 
   .. tab:: Windows
 
-     1. Delete the appropriate wpilib folder (2019: ``c:\Users\Public\frc2019``, 2020 and later: ``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
+     1. Delete the appropriate wpilib folder (``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
      2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
      3. Delete the path environment variables.
 
@@ -185,11 +208,11 @@ WPILib is designed to install to different folders for different years, so that 
 
   .. tab:: macOS
 
-     1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
+     1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
 
   .. tab:: Linux
 
-     1. Delete the appropriate wpilib folder (2019: ``~/frc2019``, 2020 and later: ``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
+     1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
 
 Troubleshooting
 ---------------

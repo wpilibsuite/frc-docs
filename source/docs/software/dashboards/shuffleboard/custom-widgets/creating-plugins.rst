@@ -36,29 +36,21 @@ Plugin classes are permitted to have a default constructor but it cannot take an
 
 Building plugin
 ---------------
-Plugins require the usage of the `Shuffleboard API Library <https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_. These dependencies can be resolved in the ``build.gradle`` file or using maven. The dependencies would be as follows:
 
-For Gradle:
+The easiest way to build plugins is to utlize the `example-plugins` folder in the shufflebloard source tree. Clone Shuffleboard with ``git clone https://github.com/wpilibsuite/shuffleboard.git``, and checkout the version that corresponds to the WPILib version you have installed (e.g. 2023.2.1). ``git checkout v2023.2.1``
 
-.. code-block:: groovy
+Put your plugin in the ``example-plugins\PLUGIN-NAME`` directory.
+Copy the ``custom-data-and-widget.gradle`` from ``example-plugins\custom-data-and-widget`` and rename to match your plugin name.
+Edit ``settings.gradle`` in the shuffleboard root directory to add ``include "example-plugins:PLUGIN-NAME"``
 
-   repositories {
-      mavenCentral()
-      maven{ url "https://frcmaven.wpi.edu:443/artifactory/release" }
-   }
-
-   dependencies {
-      compileOnly 'edu.wpi.first.shuffleboard:api:2020.+'
-      compileOnly 'edu.wpi.first.shuffleboard.plugin:networktables:2020.+'
-   }
-
+.. note::replace ``PLUGIN-NAME`` with the name of your plugin
 
 Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. When a plugin depends on other plugins, it is good practice to define those dependencies so the plugin does not load when the dependencies do not load as well. This can be done using the ``@Requires`` annotation as shown below:
 
 .. code-block:: java
 
    @Requires(group = "com.example", name = "Good Plugin", minVersion = "1.2.3")
-   @Requires(group = "edu.wpi.first.shuffleboard", "Base", minVersion = "1.0.0")
+   @Requires(group = "edu.wpi.first.shuffleboard", name = "Base", minVersion = "1.0.0")
    @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
    public class MyPlugin extends Plugin {
 
@@ -69,32 +61,14 @@ The ``minVersion`` specifies the minimum allowable version of the plugin that ca
 Deploying Plugin To Shuffleboard
 --------------------------------
 In order to load a plugin in Shuffleboard, you will need to generate a jar file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This can be done automatically
-from gradle as noted:
-
-.. code-block::groovy
-
-   task deployPlugin (type: Copy, group: "...", description: "...", dependsOn: "build") {
-      from "build/libs"
-      into "path/to/Shuffleboard/plugins"
-      include "*.jar"
-   }
-
-The path to your Shuffleboard plugin folder will most likely be ``~/Shuffleboard/plugins``.
-
-The ``deployPlugin`` task takes four parameters, the ``type: Copy`` parameter makes the task implement the `CopySpec <https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_ interface
-specifying what to copy. The group and description parameters to specify what the Group ID of the plugin is and a short descriptive description to what the Plugin does.
-
-In the body, the ``from`` field specifies from where the file is to be copied from, followed by the ``into`` field specifying the destination to where the file needs to be copied to.
-Finally, the ``include`` field ensures all files with the ``.jar`` extension is also copied.
+by running from the shuffleboard root ``gradlew :example-plugins:PLUGIN-NAME:installPlugin``
 
 After deploying, Shuffleboard will cache the path of the plugin so it can be automatically loaded the next time Shuffleboard loads. It may be necessary to click on ``Clear Cache`` under the plugins menu to remove a plugin or reload a plugin into Shuffleboard.
 
-By running ``gradle deployPlugin`` from the command line, the jar file will automatically placed into the Shuffleboard plugin folder.
-
 Manually Adding Plugin
 ----------------------
-The other way to add a plugin to Shuffleboard is to compile it to a jar file and add it from Shuffleboard.
-First, compile your plugin into a ``.jar`` file using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
+The other way to add a plugin to Shuffleboard is to compile it to a jar file and add it from Shuffleboard. The jar file is located in ``example-plugins\PLUGIN-NAME\build\libs`` after running ``gradlew build`` in the shuffleboard root
+Open Shuffleboard, click on the file tab in the top left, and choose Plugins from the drop down menu.
 
 .. image:: images/loading-plugin.png
    :alt: Manually adding custom plugins

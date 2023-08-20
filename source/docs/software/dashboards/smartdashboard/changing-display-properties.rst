@@ -1,7 +1,7 @@
 Changing the display properties of a value
 ==========================================
 
-Each value displayed with SmartDashboard has a a set of properties that effect the way it's displayed.
+Each value displayed with SmartDashboard has a set of properties that effect the way it's displayed.
 
 Setting the SmartDashboard display into editing mode
 ----------------------------------------------------
