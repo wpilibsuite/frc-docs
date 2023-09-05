@@ -226,6 +226,8 @@ To access the robot's current computed pose, we include the following method:
       :linenos:
       :lineno-start: 78
 
+.. important:: Before running a ``RamseteCommand``, teams are strongly encouraged to deploy and test the odometry code alone, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry must be correct for a RamseteCommand to successfully work, as sign or unit errors can cause a robot to move at high speeds in unpredictable directions.
+
 Voltage-Based Drive Method
 --------------------------
 
@@ -250,3 +252,5 @@ Finally, we must include one additional method - a method that allows us to set 
       :lineno-start: 43
 
 It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured identification data), this is essential to ensuring their accuracy.
+
+.. warning:: ``RamseteCommand`` itself does not internally enforce any speed or acceleration limits before providing motor voltage parameters to this method.  During initial code development, teams are strongly encouraged to apply both maximum and minimum bounds on the input variables before passing these values to ``setVoltage()`` while ensuring the trajectory velocity and acceleration are achievable. For example, generate a trajectory with a little less than half of the Robot's maximum velocity and limit voltage to 6 volts.
