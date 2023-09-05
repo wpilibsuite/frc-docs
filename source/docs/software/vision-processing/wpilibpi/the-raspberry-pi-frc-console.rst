@@ -39,10 +39,10 @@ System status
 The system status shows what the CPU on the rPI is doing at any time. There are two columns of status values, on being a 1 second
 average and the other a 5 second average. Shown is:
 
--   free and available RAM on the PI
--   CPU usage for user processes and system processes as well as idle time.
--   And network bandwidth - which allows one to determine if the used camera bandwidth is exceeding the maximum bandwidth allowed
-    in the robot rules for any year.
+-   Free and available RAM on the PI
+-   CPU usage for user processes and system processes as well as idle time
+-   Network bandwidth - which allows one to determine if the used camera bandwidth is exceeding the maximum bandwidth allowed
+    in the robot rules for any year
 
 Vision Status
 -------------
