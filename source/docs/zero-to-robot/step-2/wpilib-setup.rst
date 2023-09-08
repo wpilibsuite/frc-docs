@@ -111,11 +111,11 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - Skips installing VS Code. Useful for advanced installations or configurations. Generally not recommended.
 
-- Select existing VS Code zip for offline install on this computer
+- Select existing VS Code archive for offline install on this computer
 
   - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Create VS Code zip to share with other computers/OSes for offline install
+- Create VS Code archives to share with other computers/OSes for offline install
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
