@@ -89,7 +89,7 @@ For example, a command like the intake-running command is conceptually related t
 
   .. code-tab:: java
 
-    public class Intake extends SubsystemBase {
+    public class Intake extends Subsystem {
         // [code for motor controllers, configuration, etc.]
         // ...
 
@@ -305,18 +305,18 @@ This pattern works very well in Java so long as the captured state is "effective
 Writing Command Classes
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``CommandBase`` or one of the ``CommandGroup`` classes.
+Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``Command`` or one of the ``CommandGroup`` classes.
 
-Subclassing CommandBase
+Subclassing Command
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` methods.
+Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``Command`` that implements the necessary ``initialize`` and ``end`` methods.
 
 .. tabs::
 
   .. code-tab:: java
 
-    public class RunIntakeCommand extends CommandBase {
+    public class RunIntakeCommand extends Command {
         private Intake m_intake;
 
         public RunIntakeCommand(Intake intake) {
@@ -391,7 +391,7 @@ Summary
      - No
      - Yes, but must obey capture rules
      - Yes
-   * - Subclassing CommandBase
+   * - Subclassing Command
      - Stateful commands
      - Very verbose
      - Relatively verbose

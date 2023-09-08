@@ -30,7 +30,7 @@ This might sound complicated, but in the context of WPILib we don't really need 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 .. code-block:: java
 
-   public static CommandBase runOnce(Runnable action, Subsystem... requirements)
+   public static Command runOnce(Runnable action, Subsystem... requirements)
 
 ``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the Java term for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a "lambda expression".
 

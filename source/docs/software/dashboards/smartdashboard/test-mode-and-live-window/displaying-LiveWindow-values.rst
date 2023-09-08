@@ -32,7 +32,7 @@ For each sensor or actuator that is created, set the subsystem name and display 
         frc::Victor wrist{2};
         SendableRegistry::SetName(wrist, "Arm", "Wrist");
 
-If your objects are in a ``Subsystem``, this can be simplified using the addChild method of ``SubsystemBase``
+If your objects are in a ``Subsystem``, this can be simplified using the addChild method of ``Subsystem``
 
 .. tabs::
 
