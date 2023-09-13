@@ -3,7 +3,7 @@ Python Installation Guide
 
 This guide is intended for Python teams. LabVIEW teams can skip to :doc:`labview-setup` and Java/C++ teams can skip to :doc:`wpilib-setup`.
 
-From now on, the Python version will be refered to as :guilabel:`RobotPy`
+From now on, the Python version will be referred to as :guilabel:`RobotPy`
 
 Prerequisites
 -------------
@@ -73,7 +73,7 @@ Downloading
 Visual Studio Code Setup
 ------------------------
 
-The prefered editor is Visual Studio Code, due to the ease of use and some usefull Python development tools, such as IntelliSense and Linting.
+The preferred editor is Visual Studio Code, due to the ease of use and some useful Python development tools, such as IntelliSense and Linting.
 Download and install the version for your OS `here <https://code.visualstudio.com/download>`__.
 
 Once installed, access the Extension menu on the left pane. Search for Python and install the official extension from Microsoft. You should restart VS Code once the installation is done.
