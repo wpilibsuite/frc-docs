@@ -6,4 +6,5 @@ Step 4: Programming your Robot
 
     creating-test-drivetrain-program-labview
     creating-test-drivetrain-program-cpp-java
+    creating-test-drivetrain-program-python
     running-test-program

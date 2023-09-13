@@ -30,7 +30,13 @@ LabVIEW
 
 - `NI Learn LabVIEW <https://www.ni.com/getting-started/labview-basics/>`__
 
+
+Python
+^^^^^^
+
+- `W3Schools <https://www.w3schools.com/python/>`__
+
 Zero to Robot
 -------------
 
-The remaining pages in this tutorial are designed to be completed in order to go from zero to a working basic robot. The documents will walk you through wiring your robot, installation of all needed software, configuration of hardware, and loading a basic example program that should allow your robot to operate. When you complete a page, simply click **Next** to navigate to the next page and continue with the process. When you're done, you can click **Next** to continue to an overview of WPILib in C++/Java or jump back to the home page using the logo at the top left to explore the rest of the content.
+The remaining pages in this tutorial are designed to be completed in order to go from zero to a working basic robot. The documents will walk you through wiring your robot, installation of all needed software, configuration of hardware, and loading a basic example program that should allow your robot to operate. When you complete a page, simply click **Next** to navigate to the next page and continue with the process. When you're done, you can click **Next** to continue to an overview of WPILib in C++/Java/Python or jump back to the home page using the logo at the top left to explore the rest of the content.

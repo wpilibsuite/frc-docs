@@ -10,4 +10,5 @@ An overview of the available control system software can be found :doc:`here </d
    labview-setup
    frc-game-tools
    wpilib-setup
+   python-setup
    step-2-next-steps

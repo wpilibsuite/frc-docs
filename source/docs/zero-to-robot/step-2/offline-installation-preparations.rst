@@ -7,7 +7,7 @@ This article contains instructions/links to components you will want to gather i
 
 .. tip:: This document compiles all the download links from the following documents to make it easier to install on offline computers or on multiple computers. If you are you installing on a single computer that is connected to the internet, you can skip this page.
 
-.. note:: The order in which these tools are installed does not matter for Java and C++ teams.  LabVIEW should be installed before the FRC Game Tools or 3rd Party Libraries.
+.. note:: The order in which these tools are installed does not matter for Java, C++ and Python teams.  LabVIEW should be installed before the FRC Game Tools or 3rd Party Libraries.
 
 Documentation
 -------------
@@ -46,6 +46,11 @@ Then click on the correct binary for your OS and architecture to begin the downl
    :alt: Assets at bottom of latest WPILib release page on GitHub
 
 .. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select :guilabel:`Install for this User` then :guilabel:`Create VS Code zip to share with other computers/OSes for offline install` and save the downloaded VS Code zip file for future offline installations.
+
+Python Teams
+^^^^^^^^^^^^
+
+There is no offline installation yet for the Python teams, please skip to :doc:`Installing the FRC Game Tools </docs/zero-to-robot/step-2/frc-game-tools>`.
 
 3rd Party Libraries/Software
 ----------------------------
