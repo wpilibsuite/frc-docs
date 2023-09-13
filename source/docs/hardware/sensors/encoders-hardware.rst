@@ -68,7 +68,7 @@ Magnetic encoders require no mechanical coupling to the shaft at all; rather, th
 Examples of magnetic encoders:
 
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
-- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/bearings/Thrifty-Absolute-Magnetic-Encoder-p421607500>`__
+- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder>`__
 - `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
 
 
@@ -149,5 +149,5 @@ Analog encoders connect to a analog input on the roboRIO. They output a voltage 
 Examples of analog encoders:
 
 - `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
-- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/bearings/Thrifty-Absolute-Magnetic-Encoder-p421607500>`__
+- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
