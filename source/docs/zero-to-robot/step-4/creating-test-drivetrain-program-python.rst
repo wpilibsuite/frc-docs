@@ -53,7 +53,7 @@ Now let's see the various parts of the code
 Imports
 -------
 
-The first lines found in a Python file should be the **import** of the various needed modules. 
+The first lines found in a Python file should be the **import** of the various needed modules.
 
 .. tabs::
 

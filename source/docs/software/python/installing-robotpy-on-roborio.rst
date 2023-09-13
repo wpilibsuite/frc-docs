@@ -25,7 +25,7 @@ Install Python on a roboRIO
 
 .. note:: This step only needs to be done once.
 
-Installing Python and the RobotPy packages are separated into two different steps. Once you are connected to the internet, you can run this to download Python for roboRIO onto your computer.  
+Installing Python and the RobotPy packages are separated into two different steps. Once you are connected to the internet, you can run this to download Python for roboRIO onto your computer.
 
 .. tabs::
 
@@ -96,8 +96,8 @@ Once everything has downloaded, you can switch to your Robot's network, and use 
 
         robotpy-installer install robotpy[all]
 
-.. note:: 
-  
+.. note::
+
   The robotpy installer uses pip to download and install packages, so you can replace robotpy above with the name of a pure python package as published on PyPI.
 
   If you need Python packages that require compilation, the RobotPy project distributes some commonly used packages. See the roborio-wheels project for more details.

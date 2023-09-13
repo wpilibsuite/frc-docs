@@ -28,15 +28,15 @@ Downloading
    .. group-tab:: Windows 10+
 
       .. warning:: On Windows, the `Visual Studio 2019 redistributable package <https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads>`__ is required to be installed.
-      
+
       Run the following command from cmd or Powershell to install RobotPy with all its optional and vendor packages:
-          
+
       .. code-block:: sh
 
          py -3 -m pip install robotpy[all]
 
       To upgrade, you can run this:
-          
+
       .. code-block:: sh
 
          py -3 -m pip install --upgrade robotpy[all]
@@ -50,7 +50,7 @@ Downloading
    .. group-tab:: Linux/macOS
 
       On a Linux or macOS system that has pip installed, just run the following command from the Terminal application (may require admin rights):
-                
+
       .. code-block:: sh
 
          pip3 install robotpy[all]
@@ -58,7 +58,7 @@ Downloading
       This will install RobotPy with all its optional and vendor packages.
 
       To upgrade, you can run this:
-          
+
       .. code-block:: sh
 
          pip3 install --upgrade robotpy[all]
