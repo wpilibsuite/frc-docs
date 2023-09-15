@@ -8,7 +8,7 @@ Overview
 
 You should create and download a Test Program as described for your programming language:
 
-:doc:`C++/Java </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java>`
+:doc:`C++/Java/Python </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java>`
 
 :doc:`LabVIEW </docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview>`
 

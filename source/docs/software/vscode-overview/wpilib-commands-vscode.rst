@@ -2,6 +2,8 @@ WPILib Commands in Visual Studio Code
 =====================================
 This document contains a complete list of the commands provided by the WPILib VS Code Extension and what they do.
 
+.. note:: The current Python integration is not compatible with the WPILib commands in VS Code. Refer to :ref:`Building and Deploying Robot Code<docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>` instead.
+
 To access these commands, press Ctrl+Shift+P to open the Command Palette, then begin typing the command name as shown here to filter the list of commands. Click on the command name to execute it.
 
 - **WPILib: Build Robot Code** - Builds open project using GradleRIO

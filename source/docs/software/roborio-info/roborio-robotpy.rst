@@ -2,13 +2,13 @@
 RobotPy installation on roboRIO
 ===============================
 
-Python libraries are not installed on the roboRIO by default. Each time you format the robotRIO or that you install/update a Python module with :guilabel:`pip install robotpy....`, make sure to run these steps again.
+Python libraries are not installed on the roboRIO by default. Each time you format the robotRIO or that you install/update a Python module with :guilabel:`pip install robotpy...`, make sure to run these steps again.
 
 If you install RobotPy on your roboRIO, you are still able to deploy C++ and Java programs without any conflicts.
 
 .. warning:: This guide assumes that your roboRIO has the current legal roboRIO image installed. If you haven't done this yet, see :ref:`the WPILib documentation <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>` for imaging instructions. To image the roboRIO for RobotPy, you only need to have the latest FRC Game Tools installed.
 
-RobotPy is truly cross platform, and can be installed from Windows, most Linux distributions, and from Mac macOS also. To install/use the installer, you must have Python 3.7+ installed. You should install the installer via pip (requires internet access) by installing the core RobotPy components (see the :ref:`Python Installation Guide <docs/zero-to-robot/step-2/python-setup:Python Installation Guide>` for more details).
+RobotPy is truly cross platform, and can be installed from Windows, most Linux distributions, and from Mac macOS also. To install/use the installer, you must have Python 3.7+ installed. You should install the installer via pip (requires internet access) by installing the core RobotPy components (see the :ref:`WPILib Installation Guide <docs/zero-to-robot/step-2/wpilib-setup:Additional Steps for Python Installation>` for more details).
 
 Install process
 ---------------

@@ -3,6 +3,8 @@ Introduction to Robot Simulation
 
 Often a team may want to test their code without having an actual robot available. WPILib provides teams with the ability to simulate various robot features using simple gradle commands.
 
+If you are using Python, you can skip to :ref:`Running Robot Simulation <docs/software/wpilib-tools/robot-simulation/introduction:Running Robot Simulation>`
+
 Enabling Desktop Support
 ------------------------
 
@@ -38,21 +40,44 @@ Ensure the :guilabel:`Desktop Development with C++` option is checked in the Vis
 Running Robot Simulation
 ------------------------
 
-Basic robot simulation can be run using VS Code. This can be done without using any commands by using VS Code's command palette.
+.. tabs::
 
-.. image:: images/vscode-run-simulation.png
-   :alt: Running robot simulation through VS Code
+   .. group-tab:: Java/C++
 
-Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
+      Basic robot simulation can be run using VS Code. This can be done without using any commands by using VS Code's command palette.
 
-.. code-block:: console
+      .. image:: images/vscode-run-simulation.png
+         :alt: Running robot simulation through VS Code
 
-   ********** Robot program starting **********
-   Default disabledInit() method... Override me!
-   Default disabledPeriodic() method... Override me!
-   Default robotPeriodic() method... Override me!
+      Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
 
-.. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
+      .. code-block:: console
+
+         ********** Robot program starting **********
+         Default disabledInit() method... Override me!
+         Default disabledPeriodic() method... Override me!
+         Default robotPeriodic() method... Override me!
+
+      .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
+
+   .. group-tab:: Python
+
+      To run the GUI simulator, the easiest way is to open your :guilabel:`robot.py` file and start a new terminal by clicking Terminal -> New Terminal from the top menu. You can then execute the code with the :guilabel:`sim` argument.
+
+      .. tabs::
+
+         .. group-tab:: Windows
+
+            .. code-block:: sh
+
+               py -3 robot.py sim
+
+         .. group-tab:: Linux/macOS
+
+               .. code-block:: sh
+
+                  python3 robot.py sim
+
 
 Running Robot Dashboards
 ------------------------

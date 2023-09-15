@@ -13,7 +13,6 @@ Documentation that is useful throughout a team’s programming process.
    /docs/software/vscode-overview/index
    /docs/software/dashboards/index
    /docs/software/labview/index
-   /docs/software/python/index
    /docs/software/hardware-apis/index
    /docs/software/can-devices/index
    /docs/software/basic-programming/index

@@ -220,6 +220,15 @@ Community translations can be found in a variety of languages in the bottom-left
 
          C++
 
+      .. button-link:: https://robotpy.readthedocs.io/projects/wpilib/en/stable/api.html
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         Python
+
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
@@ -331,7 +340,6 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/dashboards/index
    docs/software/telemetry/index
    docs/software/labview/index
-   docs/software/python/index
    docs/software/hardware-apis/index
    docs/software/can-devices/index
    docs/software/basic-programming/index
@@ -345,6 +353,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
+   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/wpilib/en/stable/api.html>
 
 .. toctree::
    :maxdepth: 1

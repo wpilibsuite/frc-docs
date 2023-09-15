@@ -1,7 +1,7 @@
 WPILib Installation Guide
 =========================
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup` and Python teams can skip to  :doc:`python-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide is intended for Java, C++ and Python teams. LabVIEW teams can skip to :doc:`labview-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 Prerequisites
 -------------
@@ -14,6 +14,16 @@ Supported Operating Systems and Architectures:
 .. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
+
+.. note::
+   **For Python users**
+
+   Python 3.8 or higher must be installed
+     * `Python for Windows <https://www.python.org/downloads/windows/>`__
+     * `Python for macOS <https://www.python.org/downloads/macos/>`__
+     * Python should already be installed for Linux users
+
+   All WPILib code is currently accessible through the Python Package :guilabel:`RobotPy`. updating the RobotPy version will overwrite the previously installed one. Consider using `venv <https://docs.python.org/3/library/venv.html>`__ if you want to keep distinct versions.
 
 Downloading
 -----------
@@ -154,6 +164,61 @@ Some operating systems require some final action to complete installation.
 
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 
+
+Additional Steps for Python Installation
+----------------------------------------
+
+.. tabs::
+
+   .. group-tab:: Windows 10+
+
+      Run the following command from cmd or Powershell to install RobotPy with all its optional and vendor packages:
+
+      .. code-block:: sh
+
+         py -3 -m pip install robotpy[all]
+
+      To upgrade, you can run this:
+
+      .. code-block:: sh
+
+         py -3 -m pip install --upgrade robotpy[all]
+
+      If you don't have administrative rights on your computer, either use `venv <https://docs.python.org/3/library/venv.html>`__, or you can install to the user site-packages directory:
+
+      .. code-block:: sh
+
+         py -3 -m pip install --user robotpy
+
+   .. group-tab:: Linux/macOS
+
+      On a Linux or macOS system that has pip installed, just run the following command from the Terminal application (may require admin rights):
+
+      .. code-block:: sh
+
+         pip3 install robotpy[all]
+
+      This will install RobotPy with all its optional and vendor packages.
+
+      To upgrade, you can run this:
+
+      .. code-block:: sh
+
+         pip3 install --upgrade robotpy[all]
+
+      If you don't have administrative rights on your computer, either use `venv <https://docs.python.org/3/library/venv.html>`__, or you can install to the user site-packages directory:
+
+      .. code-block:: sh
+
+         pip3 install --user robotpy
+
+In VS Code, it is highly recommended to install the official Python extension that offers IntelliSense, Linting and more.
+
+Access the extension menu on the left pane. Search for Python and install the official extension from Microsoft.
+
+.. image:: images/wpilib-setup/python-ext.png
+   :alt: Access VS Code Extension menu, search for python and install the official Microsoft Python Extension.
+
 Additional C++ Installation for Simulation
 ------------------------------------------
 
@@ -217,4 +282,4 @@ WPILib is designed to install to different folders for different years, so that 
 Troubleshooting
 ---------------
 
-In case the installer fails, please open an issue on the installer repository. A link is available `here <https://github.com/wpilibsuite/wpilibinstaller-avalonia>`__. The installer should give a message on the cause of the error, please include this in the description of your issue.
+In case the installer fails, please open an issue on the installer repository. Links are available `here (C++/Java) <https://github.com/wpilibsuite/wpilibinstaller-avalonia>`__ and `here (Python) <https://github.com/robotpy/robotpy-wpilib/issues>`__. The installer should give a message on the cause of the error, please include this in the description of your issue.

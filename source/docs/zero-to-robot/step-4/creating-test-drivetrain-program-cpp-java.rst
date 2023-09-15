@@ -1,37 +1,47 @@
-Creating your Test Drivetrain Program (C++/Java)
-================================================
+Creating your Test Drivetrain Program (C++/Java/Python)
+=======================================================
 
-Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
+Once everything is installed, we're ready to create a robot program. WPILib comes with several templates for robot programs. Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
-.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>`  and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ `REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__).
+.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>` (for C++ and Java) and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ `REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__).
 
 Creating a New WPILib Project
 -----------------------------
 
-Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
+.. tabs::
 
-.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
-   :alt: Choose "WPILib: Create a new project".
+   .. group-tab:: C++/Java
 
-This will bring up the "New Project Creator Window:"
+      Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
 
-.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
-   :alt: The different parts of the new project creation window.
+      .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
+         :alt: Choose "WPILib: Create a new project".
 
-The elements of the New Project Creator Window are explained below:
+      This will bring up the "New Project Creator Window:"
 
-1. **Project Type**: The kind of project we wish to create.  For this example, select **Example**
-2. **Language**: This is the language (C++ or Java) that will be used for this project.
-3. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
-4. **Base Folder**: This determines the folder in which the robot project will be located.
-5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
-6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked. project folder will be given if the Create New Folder box is checked.
-7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
+      .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
+         :alt: The different parts of the new project creation window.
 
-Once all the above have been configured, click "Generate Project" and the robot project will be created.
+      The elements of the New Project Creator Window are explained below:
 
-.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+      1. **Project Type**: The kind of project we wish to create.  For this example, select **Example**
+      2. **Language**: This is the language (C++ or Java) that will be used for this project.
+      3. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+      4. **Base Folder**: This determines the folder in which the robot project will be located.
+      5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+      6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked. project folder will be given if the Create New Folder box is checked.
+      7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+      8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
+
+      Once all the above have been configured, click "Generate Project" and the robot project will be created.
+
+      .. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+
+   .. group-tab:: Python
+
+      Create a new folder and in this folder create a file named :guilabel:`robot.py`.
+
+      If you start from a `template <https://github.com/robotpy/examples>`__, replace the robot.py file with the template one and add all other files.
 
 Opening The New Project
 -----------------------
@@ -49,7 +59,7 @@ Click :guilabel:`Yes I trust the authors`.
 Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
-    :alt: The robot.java code shown after opening a new project.
+   :alt: The robot.java code shown after opening a new project.
 
 C++ Configurations (C++ Only)
 -----------------------------
@@ -58,6 +68,33 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/cpp-configurations.png
     :alt: You must choose "Yes" to refresh the C++ configurations.
+
+Basic Drivetrain example
+------------------------
+
+First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :linenos:
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :linenos:
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+         :language: python
+         :linenos:
+
+Now let's look at various parts of the code.
 
 Imports/Includes
 ----------------
@@ -84,6 +121,14 @@ Imports/Includes
                :linenos:
                :lineno-start: 5
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+               :language: python
+               :lines: 8-9
+               :linenos:
+               :lineno-start: 8
+
    .. group-tab:: CTRE
 
          .. tabs::
@@ -107,6 +152,14 @@ Imports/Includes
                   #include <frc/Timer.h>
                   #include <frc/drive/DifferentialDrive.h>
                   #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+
+            .. group-tab:: Python
+
+               .. code-block:: python
+
+                  import wpilib           # Used to get the joysticks
+                  import wpilib.drive     # Used for the DifferentialDrive class
+                  import ctre             # CTRE library
 
    .. group-tab:: REV
 
@@ -136,7 +189,15 @@ Imports/Includes
 
                   #include <rev/CANSparkMax.h>
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
+            .. group-tab:: Python
+
+               .. code-block:: python
+
+                  import wpilib           # Used to get the joysticks
+                  import wpilib.drive     # Used for the DifferentialDrive class
+                  import rev              # REV library
+
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -168,6 +229,14 @@ Defining the variables for our sample robot
                :lines: 47-55
                :linenos:
                :lineno-start: 50
+
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 12-29
+               :lineno-start: 12
 
    .. group-tab:: CTRE
 
@@ -209,6 +278,14 @@ Defining the variables for our sample robot
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/main/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
    .. group-tab:: REV
 
       .. tabs::
@@ -248,6 +325,14 @@ Defining the variables for our sample robot
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/main/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
@@ -268,6 +353,10 @@ Robot Initialization
     .. code-tab:: c++
 
         void RobotInit() {}
+
+    .. code-tab:: python
+
+      def robotInit(self):
 
 
 The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program doesn't do anything. If we wanted to run something here we could provide the code above to override the default).
@@ -292,6 +381,14 @@ Simple Autonomous Example
          :lines: 22-33
          :linenos:
          :lineno-start: 22
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+         :language: python
+         :lines: 31-43
+         :linenos:
+         :lineno-start: 31
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we restart the ``Timer`` in this method.
 
@@ -318,6 +415,14 @@ Joystick Control for Teleoperation
          :linenos:
          :lineno-start: 35
 
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+         :language: python
+         :lines: 45-52
+         :linenos:
+         :lineno-start: 45
+
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 Test Mode
@@ -340,6 +445,14 @@ Test Mode
          :lines: 43-45
          :linenos:
          :lineno-start: 43
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+         :language: python
+         :lines: 54-58
+         :linenos:
+         :lineno-start: 54
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
