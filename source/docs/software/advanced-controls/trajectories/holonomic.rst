@@ -26,7 +26,7 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
    .. code-tab:: c++
 
       frc::HolonomicDriveController controller{
-        frc2::PIDController{1, 0, 0}, frc2::PIDController{1, 0, 0},
+        frc::PIDController{1, 0, 0}, frc::PIDController{1, 0, 0},
         frc::ProfiledPIDController<units::radian>{
           1, 0, 0, frc::TrapezoidProfile<units::radian>::Constraints{
             6.28_rad_per_s, 3.14_rad_per_s / 1_s}}};
