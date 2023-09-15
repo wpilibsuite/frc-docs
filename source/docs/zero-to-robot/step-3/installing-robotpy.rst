@@ -2,13 +2,15 @@
 RobotPy installation on roboRIO
 ===============================
 
+.. note:: Only needed if you plan to program your robot using Python.
+
 Python libraries are not installed on the roboRIO by default. Each time you format the robotRIO or that you install/update a Python module with :guilabel:`pip install robotpy...`, make sure to run these steps again.
 
 If you install RobotPy on your roboRIO, you are still able to deploy C++ and Java programs without any conflicts.
 
-.. warning:: This guide assumes that your roboRIO has the current legal roboRIO image installed. If you haven't done this yet, see :ref:`the WPILib documentation <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>` for imaging instructions. To image the roboRIO for RobotPy, you only need to have the latest FRC Game Tools installed.
+.. warning:: This guide assumes that your roboRIO has the current legal roboRIO image installed. If you haven't done this yet, see the imaging instructions for the :ref:`roboRIO 1 <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>` or :ref:`roboRIO 2 <docs/zero-to-robot/step-3/roborio2-imaging:Imaging your roboRIO 2>`. To image the roboRIO for RobotPy, you only need to have the latest FRC Game Tools installed.
 
-RobotPy is truly cross platform, and can be installed from Windows, most Linux distributions, and from Mac macOS also. To install/use the installer, you must have Python 3.7+ installed. You should install the installer via pip (requires internet access) by installing the core RobotPy components (see the :ref:`WPILib Installation Guide <docs/zero-to-robot/step-2/wpilib-setup:Additional Steps for Python Installation>` for more details).
+RobotPy is truly cross platform, and can be installed from Windows, most Linux distributions, and from Mac macOS also. To install/use the installer, you must have Python 3.8+ installed. You should install the installer via pip (requires internet access) by installing the core RobotPy components (see the :ref:`WPILib Installation Guide <docs/zero-to-robot/step-2/wpilib-setup:Additional Steps for Python Installation>` for more details).
 
 Install process
 ---------------
@@ -25,7 +27,7 @@ Install Python on a roboRIO
 
 .. note:: This step only needs to be done once.
 
-Installing Python and the RobotPy packages are separated into two different steps. Once you are connected to the internet, you can run this to download Python for roboRIO onto your computer.
+When your computer is connected to Internet, run this next step.
 
 .. tabs::
 

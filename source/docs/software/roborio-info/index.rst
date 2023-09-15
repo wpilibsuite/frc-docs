@@ -11,6 +11,5 @@ roboRIO
    roborio-ftp
    roborio-ssh
    roborio-brownouts
-   roborio-robotpy
    recovering-a-roborio-using-safe-mode
    Additional Help <https://www.ni.com/en-us/innovations/white-papers/15/imaging-the-roborio-and-common-troubleshooting-techniques.html>

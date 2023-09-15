@@ -7,3 +7,4 @@ Step 3: Preparing Your Robot
    roborio2-imaging
    imaging-your-roborio
    radio-programming
+   installing-robotpy

@@ -25,7 +25,7 @@ Building and Deploying Robot Code
 
    .. group-tab:: Python
 
-      .. note:: Before deploying the code to your robot, you must start by :ref:`installing RobotPy on your roboRIO <docs/software/roborio-info/roborio-robotpy:RobotPy installation on roboRIO>`
+      .. note:: Before deploying the code to your robot, you must start by :ref:`installing RobotPy on your roboRIO <docs/zero-to-robot/step-3/installing-robotpy:RobotPy installation on roboRIO>`
 
       To deploy code to your robot, you can simply run the following command and it will upload the code and start it immediately.
 

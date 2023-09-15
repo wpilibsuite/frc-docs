@@ -90,7 +90,7 @@ First, here is what a simple code can look like for a Drivetrain with PWM contro
 
    .. group-tab:: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
          :language: python
          :linenos:
 
@@ -123,7 +123,7 @@ Imports/Includes
 
          .. group-tab:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
                :language: python
                :lines: 8-9
                :linenos:
@@ -232,7 +232,7 @@ Defining the variables for our sample robot
 
          .. group-tab:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
                :language: python
                :linenos:
                :lines: 12-29
@@ -280,7 +280,7 @@ Defining the variables for our sample robot
 
          .. group-tab:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/main/examples/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
                :language: python
                :linenos:
                :lines: 13-30
@@ -327,7 +327,7 @@ Defining the variables for our sample robot
 
          .. group-tab:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/main/examples/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
                :language: python
                :linenos:
                :lines: 13-30
@@ -384,7 +384,7 @@ Simple Autonomous Example
 
    .. group-tab:: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
          :language: python
          :lines: 31-43
          :linenos:
@@ -417,7 +417,7 @@ Joystick Control for Teleoperation
 
    .. group-tab:: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
          :language: python
          :lines: 45-52
          :linenos:
@@ -448,7 +448,7 @@ Test Mode
 
    .. group-tab:: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/getting-started/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00/getting-started/robot.py
          :language: python
          :lines: 54-58
          :linenos:
