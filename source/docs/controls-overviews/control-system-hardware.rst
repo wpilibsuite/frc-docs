@@ -100,7 +100,7 @@ Snap Action Circuit Breakers
   :alt: Snap Action Circuit Breakers to be inserted in the PDP.
   :width: 500
 
-The Snap Action circuit breakers, `MX5 series <http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__ and `VB3 Series <http://www.snapaction.net/pdf/vb3.pdf>`__, are used with the Power Distribution Panel to limit current to branch circuits. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
+The Snap Action circuit breakers, `MX5 series <https://www.snapaction.net/assets/img/MX5-Spec-Sheet-Revision-2023.pdf>`__ and `VB3 Series <https://www.snapaction.net/assets/img/VB3-Spec-Sheet-Revision-2023.pdf>`__, are used with the Power Distribution Panel to limit current to branch circuits. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
 
 Robot Battery
 -------------

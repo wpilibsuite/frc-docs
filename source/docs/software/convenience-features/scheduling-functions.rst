@@ -45,7 +45,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
               frc::Joystick m_joystick{0};
               frc::Encoder m_encoder{1, 2};
               frc::Spark m_motor{1};
-              frc2::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
+              frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
 
               Robot();
 
