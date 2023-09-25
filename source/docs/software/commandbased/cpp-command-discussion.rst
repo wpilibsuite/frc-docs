@@ -62,7 +62,7 @@ With ``std::shared_ptr``, there is no clear ownership model because there can be
 
 Use of CRTP
 -----------
-You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::CommandBase``) and the class that you just created. Let's take a look at the reasoning behind this:
+You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
 
 Command Decorators
 ^^^^^^^^^^^^^^^^^^
@@ -88,7 +88,7 @@ Here ``temp`` is storing the vector of commands that we need to pass into the ``
 
    temp.emplace_back(std::make_unique<MyCommand>(std::move(*this));
 
-You might think it would be this straightforward, but that is not the case. Because this decorator code is in the ``Command`` interface, ``*this`` refers to the ``Command`` in the subclass that you are calling the decorator from and has the type of ``Command``. Effectively, you will be trying to move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` pointer to a ``MyCommand*`` and then dereference it but we have no information about the subclass to cast to at compile-time.
+You might think it would be this straightforward, but that is not the case. Because this decorator code is in the ``Command`` class, ``*this`` refers to the ``Command`` in the subclass that you are calling the decorator from and has the type of ``Command``. Effectively, you will be trying to move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` pointer to a ``MyCommand*`` and then dereference it but we have no information about the subclass to cast to at compile-time.
 
 Solutions to the Problem
 ^^^^^^^^^^^^^^^^^^^^^^^^

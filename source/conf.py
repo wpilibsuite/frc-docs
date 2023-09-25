@@ -150,6 +150,7 @@ linkcheck_ignore = [
     r".*playingwithfusion.com/contactus.php.*",
     r".*github.com/wpilibsuite/BetaTest.*",
     r".*vexrobotics.com/docs/.*",
+    r".*forums.firstinspires.org.*",
 ]
 
 # Sets linkcheck timeout in seconds

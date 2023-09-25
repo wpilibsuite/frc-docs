@@ -33,7 +33,7 @@ The widget has two states. When the command is not running, a :guilabel:`Run` bu
 Subsystem Widget
 ----------------
 
-The :guilabel:`Subsystem` widget can be used to see the default command and the currently scheduled command on a specific subsystem. If you are using the ``SubsystemBase`` base class, your subsystem will be automatically sent to NetworkTables over LiveWindow. To view this widget, look under the :guilabel:`LiveWindow` main table name in the :guilabel:`NetworkTables` menu.
+The :guilabel:`Subsystem` widget can be used to see the default command and the currently scheduled command on a specific subsystem. If you are using the ``Subsystem`` base class, your subsystem will be automatically sent to NetworkTables over LiveWindow. To view this widget, look under the :guilabel:`LiveWindow` main table name in the :guilabel:`NetworkTables` menu.
 
 .. image:: images/subsystem.png
    :alt: Subsystem widget showing the state of "DriveSubsystem". Default Command: "DefaultDrive". Current Command: "DriveDistance"

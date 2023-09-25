@@ -200,8 +200,8 @@ If your feedforwards are bad then the P controllers for each side of the robot w
     auto rightRef = table->GetEntry("right_reference");
     auto rightMeas = table->GetEntry("right_measurement");
 
-    frc2::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
-    frc2::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
+    frc::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
+    frc::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
     frc2::RamseteCommand ramseteCommand(
         exampleTrajectory, [this]() { return m_drive.GetPose(); },
         frc::RamseteController(AutoConstants::kRamseteB,

@@ -10,7 +10,7 @@ Using the Command Scheduler
 
 The ``CommandScheduler`` is a *singleton*, meaning that it is a globally-accessible class with only one instance.  Accordingly, in order to access the scheduler, users must call the ``CommandScheduler.getInstance()`` command.
 
-For the most part, users do not have to call scheduler methods directly - almost all important scheduler methods have convenience wrappers elsewhere (e.g. in the ``Command`` and ``Subsystem`` interfaces).
+For the most part, users do not have to call scheduler methods directly - almost all important scheduler methods have convenience wrappers elsewhere (e.g. in the ``Command`` and ``Subsystem`` classes).
 
 However, there is one exception: users *must* call ``CommandScheduler.getInstance().run()`` from the ``robotPeriodic()`` method of their ``Robot`` class.  If this is not done, the scheduler will never run, and the command framework will not work.  The provided command-based project template has this call already included.
 
