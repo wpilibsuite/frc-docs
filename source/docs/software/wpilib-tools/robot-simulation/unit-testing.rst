@@ -6,7 +6,7 @@ Unit testing is a method of testing code by dividing the code into the smallest 
 Writing Testable Code
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``Subsystem``.
+.. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
 Our subsystem will be an Infinite Recharge intake mechanism containing a piston and a motor: the piston deploys/retracts the intake, and the motor will pull the Power Cells inside. We don't want the motor to run if the intake mechanism isn't deployed because it won't do anything.
 

@@ -89,7 +89,7 @@ For example, a command like the intake-running command is conceptually related t
 
   .. code-tab:: java
 
-    public class Intake extends Subsystem {
+    public class Intake extends SubsystemBase {
         // [code for motor controllers, configuration, etc.]
         // ...
 
