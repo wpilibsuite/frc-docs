@@ -38,7 +38,7 @@ getRequirements
 
 Each command should declare any subsystems it controls as requirements. This backs the scheduler's resource management mechanism, ensuring that no more than one command requires a given subsystem at the same time. This prevents situations such as two different pieces of code attempting to set the same motor controller to different output values.
 
-Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / initializer list (C++) parameter at the end of the parameter list of most command constructors and factories in the library:
+Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / ``Requirements`` struct (C++) parameter at the end of the parameter list of most command constructors and factories in the library:
 
 .. tabs::
 
