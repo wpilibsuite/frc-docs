@@ -120,7 +120,7 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
    CommandPtr RunOnce(
     std::function<void()> action,
-    std::initializer_list<Subsystem*> requirements);
+    Requirements requirements);
 
 ``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ type for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
 

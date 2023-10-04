@@ -181,7 +181,7 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
       :language: c++
       :lines: 39-53
       :linenos:

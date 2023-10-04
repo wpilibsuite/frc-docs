@@ -181,7 +181,7 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
       :language: c++
       :lines: 29-43
       :linenos:
