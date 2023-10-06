@@ -20,7 +20,7 @@ Forums
 
 Stuck? Have a question not answered by the documentation? Official Support is provided on these forums:
 
--  `NI FRC Support Forum <https://forums.ni.com/t5/Support/ct-p/Support>`__ (roboRIO, LabVIEW and Driver Station software questions)
+-  `NI FRC Support Forum <https://forums.ni.com/t5/Support/ct-p/Support>`__ (roboRIO, LabVIEW and Driver Station software questions, as well as roboRIO repairs)
 -  `FIRST Inspires Control System Forum <https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/control-system?f=1338>`__ (wiring, hardware and Driver Station questions)
 -  `FIRST Inspires Programming Forum <https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/programming-aa>`__ (programming questions for C++, Java, or LabVIEW)
 
