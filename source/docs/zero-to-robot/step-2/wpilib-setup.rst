@@ -194,17 +194,6 @@ WPILib is designed to install to different folders for different years, so that 
 
      1. Delete the appropriate wpilib folder (``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
      2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
-     3. Delete the path environment variables.
-
-        1. In the start menu, type environment and select "edit the system environment variables"
-        2. Click on the environment variables button (1).
-        3. In the user variables, select path (2) and then click on edit (3).
-        4. Select the path with ``roborio\bin`` (4) and click on delete (5).
-        5. Select the path with ``frccode`` and click on delete (5).
-        6. Repeat steps 3-6 in the Systems Variable pane.
-
-     .. image:: images/wpilib-setup/EnvironmentVariables.png
-      :alt: The "System Properties", "Environment Variables", and "Edit Environment Variables" screens.
 
   .. tab:: macOS
 
