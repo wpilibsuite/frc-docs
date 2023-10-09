@@ -396,6 +396,13 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
+   :caption: XRP Robot
+   :hidden:
+
+   docs/xrp-robot/index
+
+.. toctree::
+   :maxdepth: 1
    :caption: Robot Networking
    :hidden:
 
