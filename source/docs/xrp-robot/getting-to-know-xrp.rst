@@ -1,6 +1,17 @@
 Getting to know your XRP
 ========================
 
+Booting up the XRP
+------------------
+
+Upon start up (when power is applied to the XRP either via battery or USB), the following will happen:
+
+1. The IMU will calibrate itself. This lasts approximately 3-5 seconds, and will be indicated by the green LED blinking rapidly. Ideally, the XRP should be placed on a flat surface prior to power up, and if necessary, users can hit the reset button to restart the firmware and IMU calibration process.
+
+2. The network will be configured, depending on the configuration settings. See the section on :doc:`the Web UI </docs/xrp-robot/web-ui>` for more information on how to configure the network settings. By default the XRP will broadcast its own WiFi Access Point.
+
+3. After this, the XRP is ready for use.
+
 Hardware, Sensors and GPIO
 --------------------------
 
