@@ -17,7 +17,7 @@ Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- Added support for :doc:`XRP robots </docs/xrp-robot>`
+- Added support for :doc:`XRP robots </docs/xrp-robot/index>`
 - Projects now default to supporting Java 17 features
 - Multiple NetworkTables networking improvements for improved reliability and robustness
 - Java now uses the Serial GC by default on the roboRIO; this should improve performance and reduce memory usage for most robot programs
