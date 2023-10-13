@@ -176,11 +176,11 @@ Community translations can be found in a variety of languages in the bottom-left
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **Romi Robot**
+      **Romi and XRP Robots**
 
       ^^^
 
-      The Romi Robot is a low-cost Raspberry Pi based platform for practicing WPILib programming.
+      The Romi and XRP robots are low-cost platforms for practicing WPILib programming.
 
       +++
 
@@ -191,7 +191,16 @@ Community translations can be found in a variety of languages in the bottom-left
          :expand:
          :outline:
 
-         View articles
+         View Romi articles
+
+      .. button-ref:: docs/xrp-robot/index
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         View XRP articles
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -389,10 +398,11 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
-   :caption: Romi Robot
+   :caption: Romi and XRP Support
    :hidden:
 
    docs/romi-robot/index
+   docs/xrp-robot/index
 
 .. toctree::
    :maxdepth: 1
