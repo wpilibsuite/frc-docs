@@ -10,15 +10,11 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **All languages**
 
-- AprilTags
-- NetworkTables v4
-
 **LabVIEW**
 
 **C++/Java**
 
-- 3D Geometry classes & ComputerVisionUtil
-- Linear Time-Varying controllers for unicycles (Ramsete replacement) and differential drives
+- SysID (when available)
 
 Desired Feedback
 ----------------

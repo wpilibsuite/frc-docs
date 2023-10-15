@@ -17,4 +17,6 @@ Please keep the following questions in mind as you complete the task and include
  2. What problems or difficulties did you encounter?
  3. What questions did you have during the process?
  4. Any specific suggestions on improving the documentation? (Were any instructions unclear?)
- 5. Is there anything else you want to tell us related to this task?
+ 5. Compare the Free RAM on the DS diagnostics tab to similar code running on the 2023 image.
+ 6. Is there anything else you want to tell us related to this task?
+
