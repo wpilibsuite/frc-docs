@@ -26,7 +26,7 @@ class WpilibRelease(SphinxDirective):
         release: Dict = release_json.json()
 
         artifactory_folder = f"https://frcmaven.wpi.edu/api/storage/installer/{version}"
-        
+
         win_folder = f"{artifactory_folder}/Win64"
         win_file = requests.get(win_folder).json()["children"][0]["uri"]
         win = requests.get(win_folder + win_file).json()
