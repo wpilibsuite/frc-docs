@@ -23,7 +23,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
          :language: cpp
-         :lines: 7-8,16-18,20,25-31
+         :lines: 7-8, 16-18, 20, 25-31
 
 
 Advanced Camera Server Program
@@ -45,6 +45,6 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: cpp
-         :lines: 5-20,23-56,58-61,63-64,69-76
+         :lines: 5-20, 23-56, 58-61, 63-64, 69-76
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".
