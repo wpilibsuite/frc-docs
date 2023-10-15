@@ -27,21 +27,21 @@ class WpilibRelease(SphinxDirective):
 
         artifactory_folder = f"https://frcmaven.wpi.edu/api/storage/installer/{version}"
         
-        win_folder = f"/{artifactory_folder}/Win64"
+        win_folder = f"{artifactory_folder}/Win64"
         win_file = requests.get(win_folder).json()["children"][0]["uri"]
         win = requests.get(win_folder + win_file).json()
 
         win_size = win["size"]
         win_download_url = win["uri"].replace("/storage/", "/download/")
 
-        mac_intel_folder = f"/{artifactory_folder}/macOS"
+        mac_intel_folder = f"{artifactory_folder}/macOS"
         mac_intel_file = requests.get(mac_intel_folder).json()["children"][0]["uri"]
         mac_intel = requests.get(mac_intel_folder + mac_intel_file).json()
 
         mac_intel_size = mac_intel["size"]
         mac_intel_download_url = mac_intel["uri"].replace("/storage/", "/download/")
 
-        mac_arm_folder = f"/{artifactory_folder}/macOSArm"
+        mac_arm_folder = f"{artifactory_folder}/macOSArm"
         mac_arm_file = requests.get(mac_arm_folder).json()["children"][0]["uri"]
         mac_arm = requests.get(mac_arm_folder + mac_arm_file).json()
 
