@@ -25,7 +25,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2022 to 2023 and the known issues.
+      If you are a returning team, please check out the overview of changes from 2023 to 2024 and the known issues.
 
       +++
 
