@@ -27,7 +27,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
          :language: java
          :lines: 7-55
          :linenos:
@@ -35,7 +35,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
          :language: cpp
          :lines: 5-29
          :linenos:

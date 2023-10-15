@@ -92,7 +92,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -100,7 +100,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -108,7 +108,7 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -120,7 +120,7 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
       :language: java
       :lines: 52-58
       :linenos:
@@ -128,7 +128,7 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
       :language: c++
       :lines: 24-29
       :linenos:

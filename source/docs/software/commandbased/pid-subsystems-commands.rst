@@ -107,7 +107,7 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -115,7 +115,7 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -135,13 +135,13 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
       :language: java
       :lines: 26-27, 80-87
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
       :language: c++
       :lines: 45-49
       :linenos:
@@ -149,7 +149,7 @@ Using a ``PIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
       :language: c++
       :lines: 25-31
       :linenos:
@@ -173,7 +173,7 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
       :language: java
       :lines: 27-41
       :linenos:
@@ -229,7 +229,7 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
       :language: java
       :lines: 5-
       :linenos:
@@ -237,7 +237,7 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -257,7 +257,7 @@ And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:I
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
       :language: java
       :lines: 64-79
       :linenos:

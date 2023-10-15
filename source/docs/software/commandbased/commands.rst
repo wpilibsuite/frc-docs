@@ -110,7 +110,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
       :language: java
       :lines: 25-35
       :linenos:
@@ -118,7 +118,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
       :language: c++
       :lines: 20-28
       :linenos:
@@ -126,7 +126,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
       :lines: 15-25
       :linenos:
@@ -282,7 +282,7 @@ To write a custom command class, subclass the abstract ``Command`` class (`Java 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
       :language: java
       :lines: 7-24
       :linenos:
@@ -290,7 +290,7 @@ To write a custom command class, subclass the abstract ``Command`` class (`Java 
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h
       :language: c++
       :lines: 5-31
       :linenos:
@@ -305,7 +305,7 @@ What might a functional command look like in practice? As before, below is a sim
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
       :language: java
       :lines: 5-
       :linenos:
@@ -313,7 +313,7 @@ What might a functional command look like in practice? As before, below is a sim
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -321,7 +321,7 @@ What might a functional command look like in practice? As before, below is a sim
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -337,7 +337,7 @@ What about a more complicated case? Below is a drive command, from the same exam
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
       :language: java
       :lines: 5-
       :linenos:
@@ -365,7 +365,7 @@ And then usage:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
       :language: java
       :lines: 59-67
       :linenos:
@@ -373,7 +373,7 @@ And then usage:
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
       :language: c++
       :lines: 57-60
       :linenos:
@@ -385,7 +385,7 @@ Notice that this command does not override ``isFinished()``, and thus will never
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
       :language: java
       :lines: 51-60
       :linenos:
@@ -393,7 +393,7 @@ Notice that this command does not override ``isFinished()``, and thus will never
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
       :lines: 52-58
       :linenos:

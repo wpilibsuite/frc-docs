@@ -9,7 +9,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
            :language: java
            :lines: 150-158
            :linenos:
@@ -54,7 +54,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
            :language: java
            :lines: 118-124
            :linenos:
@@ -62,7 +62,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
            :language: cpp
            :lines: 56-62
            :linenos:

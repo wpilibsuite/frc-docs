@@ -16,7 +16,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
       :language: java
       :lines: 7-
       :linenos:
@@ -24,7 +24,7 @@ The recommended method to create a subsystem for most users is to subclass the a
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -43,7 +43,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -51,7 +51,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -59,7 +59,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -73,7 +73,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -81,7 +81,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -89,7 +89,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -108,7 +108,7 @@ Subsystems have a ``periodic`` method that is called once every scheduler iterat
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java
       :language: java
       :lines: 117-125
       :linenos:
@@ -116,7 +116,7 @@ Subsystems have a ``periodic`` method that is called once every scheduler iterat
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/include/subsystems/DriveSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/include/subsystems/DriveSubsystem.h
       :language: c++
       :lines: 30-30
       :linenos:
@@ -124,7 +124,7 @@ Subsystems have a ``periodic`` method that is called once every scheduler iterat
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp
       :language: c++
       :lines: 30-36
       :linenos:

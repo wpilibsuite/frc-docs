@@ -111,7 +111,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
       :language: java
       :lines: 5-
       :linenos:
@@ -119,7 +119,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/include/subsystems/ArmSubsystem.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBot/include/subsystems/ArmSubsystem.h
       :language: c++
       :lines: 5-
       :linenos:
@@ -127,7 +127,7 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
       :lines: 5-
       :linenos:
@@ -139,7 +139,7 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
       :language: java
       :lines: 55-64
       :linenos:
@@ -147,7 +147,7 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
 
   .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
       :language: c++
       :lines: 33-39
       :linenos:
@@ -173,7 +173,7 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
       :language: java
       :lines: 29-44
       :linenos:
@@ -229,7 +229,7 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngleProfiled.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngleProfiled.java
       :language: java
       :lines: 5-
       :linenos:
@@ -237,7 +237,7 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngleProfiled.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngleProfiled.h
       :language: c++
       :lines: 5-
       :linenos:

@@ -13,7 +13,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
          :language: java
          :lines: 7-20
          :linenos:

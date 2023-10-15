@@ -13,7 +13,7 @@ Initializing Preferences
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
          :lines: 15-20
 
@@ -23,11 +23,11 @@ Initializing Preferences
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
          :language: cpp
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 12, 18-22
 
@@ -50,7 +50,7 @@ Reading Preferences
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 44-52
 
@@ -62,7 +62,7 @@ Depending on the data that is stored in preferences, you can use it when you rea
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 29-38
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
@@ -71,10 +71,10 @@ Depending on the data that is stored in preferences, you can use it when you rea
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 54-60
 
