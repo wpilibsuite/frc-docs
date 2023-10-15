@@ -9,7 +9,7 @@ As per the :ref:`standard command-based project structure <docs/software/command
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 74-135
       :linenos:
@@ -37,7 +37,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 80-88
       :linenos:
@@ -45,7 +45,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 46-50
       :linenos:
@@ -62,7 +62,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 90-98
       :linenos:
@@ -70,7 +70,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 52-58
       :linenos:
@@ -85,7 +85,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 100-110
       :linenos:
@@ -93,7 +93,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 60-69
       :linenos:
@@ -110,7 +110,7 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 128-130
       :linenos:
@@ -118,7 +118,7 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
 
   .. group-tab:: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 84-85
       :linenos:
@@ -133,7 +133,7 @@ Now that we have a trajectory, we can create a command that, when executed, will
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 112-127
       :linenos:

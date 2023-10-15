@@ -18,7 +18,7 @@ Firstly, we must enter the feedforward and feedback gains which we obtained from
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
       :lines: 39-49
       :linenos:
@@ -26,7 +26,7 @@ Firstly, we must enter the feedforward and feedback gains which we obtained from
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
       :lines: 47-57
       :linenos:
@@ -41,7 +41,7 @@ Additionally, we must create an instance of the ``DifferentialDriveKinematics`` 
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
       :lines: 29-31
       :linenos:
@@ -49,7 +49,7 @@ Additionally, we must create an instance of the ``DifferentialDriveKinematics`` 
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
       :lines: 38-39
       :linenos:
@@ -66,7 +66,7 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
       :lines: 57-58
       :linenos:
@@ -74,7 +74,7 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
       :lines: 61-62
       :linenos:
@@ -89,7 +89,7 @@ Finally, we must include a pair of parameters for the RAMSETE controller.  The v
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/Constants.java
       :language: java
       :lines: 60-62
       :linenos:
@@ -97,7 +97,7 @@ Finally, we must include a pair of parameters for the RAMSETE controller.  The v
 
   .. group-tab:: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/Constants.h
       :language: c++
       :lines: 64-67
       :linenos:

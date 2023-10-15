@@ -63,7 +63,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
    .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 31-40
          :linenos:
@@ -77,13 +77,13 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 20-28
          :linenos:
          :lineno-start: 20
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: cpp
          :lines: 42-50
          :linenos:
@@ -107,7 +107,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
 
    .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: cpp
          :lines: 20-35
          :linenos:

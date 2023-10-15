@@ -26,7 +26,7 @@ getMeasurement()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 84-84
 
@@ -47,7 +47,7 @@ useOutput()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 77-77
 

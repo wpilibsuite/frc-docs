@@ -17,19 +17,19 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 .. tabs::
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
          :language: java
          :lines: 7-
 
    .. group-tab:: C++ (Header)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
          :language: cpp
          :lines: 7-
 
    .. group-tab:: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
          :language: cpp
          :lines: 5-
 
@@ -49,7 +49,7 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
 .. tabs::
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
          :language: java
          :lines: 7-
 

@@ -212,7 +212,7 @@ There are multiple ways to get a ``CommandPtr`` instance:
 
 For instance, consider the following from the `HatchbotInlined example project <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/>`:
 
-.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
+.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
    :language: c++
    :lines: 33-73
    :linenos:

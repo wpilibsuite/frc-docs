@@ -30,7 +30,7 @@ useState()
 
    .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
          :language: java
          :lines: 105-105
 
