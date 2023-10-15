@@ -104,7 +104,7 @@ Running Actions
 
 The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several factories to be construct commands inline with one or more lambdas to be executed.
 
-The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__) class, creates a command that calls a lambda once, and then finishes.
+The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_instant_command.html>`__) class, creates a command that calls a lambda once, and then finishes.
 
 .. tabs::
 
@@ -132,7 +132,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
       :linenos:
       :lineno-start: 15
 
-The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
+The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_run_command.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
 
 .. tabs::
 
@@ -157,7 +157,7 @@ The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.
       },
       {&m_drive}))
 
-The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
+The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_start_end_command.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
 .. tabs::
 
@@ -183,7 +183,7 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
       {&m_shooter}
     )
 
-``FunctionalCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
+``FunctionalCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_functional_command.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
 
 .. tabs::
 
@@ -217,14 +217,14 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
       {&m_drive}
     )
 
-To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)`` factory, backed by the ``PrintCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__) subclass of ``InstantCommand``.
+To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)`` factory, backed by the ``PrintCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_print_command.html>`__) subclass of ``InstantCommand``.
 
 Waiting
 ^^^^^^^
 
 Waiting for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command composition or between other robot actions.
 
-To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``frc2::cmd::Wait(units::second_t)`` factory, backed by the ``WaitCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__) class.
+To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``frc2::cmd::Wait(units::second_t)`` factory, backed by the ``WaitCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_wait_command.html>`__) class.
 
 .. tabs::
 
@@ -238,7 +238,7 @@ To wait and end after a specified period of time elapses, the library offers the
     // Ends 5 seconds after being scheduled
     frc2::WaitCommand(5.0_s)
 
-To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__).
+To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_wait_until_command.html>`__).
 
 .. tabs::
 
@@ -263,11 +263,11 @@ There are commands for various control setups:
 
 - ``ProfiledPIDCommand`` combines PID control with trapezoid motion profiles. For more info, see :ref:`docs/software/commandbased/profilepid-subsystems-commands:ProfiledPIDCommand`.
 
-- ``MecanumControllerCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_mecanum_controller_command.html>`__) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand>`__) example project for more info.
+- ``MecanumControllerCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_mecanum_controller_command.html>`__) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand>`__) example project for more info.
 
-- ``SwerveControllerCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_swerve_controller_command.html>`__) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand>`__) example project for more info.
+- ``SwerveControllerCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_swerve_controller_command.html>`__) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand>`__) example project for more info.
 
-- ``RamseteCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__) is useful for path following with differential drivetrains ("tank drive"). See API docs and the :ref:`Trajectory Tutorial<docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` for more info.
+- ``RamseteCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_ramsete_command.html>`__) is useful for path following with differential drivetrains ("tank drive"). See API docs and the :ref:`Trajectory Tutorial<docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` for more info.
 
 Custom Command Classes
 ----------------------
