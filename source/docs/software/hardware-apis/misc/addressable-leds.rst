@@ -6,9 +6,9 @@ LED strips have been commonly used by teams for several years for a variety of r
 Instantiating the AddressableLED Object
 ---------------------------------------
 
-You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, with can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
 
-.. important:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
+.. warning:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
 After the length of the strip has been set, you'll have to create an ``AddressableLEDBuffer`` object that takes the number of LEDs as an input. You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set the led output data. Finally, you can call ``myAddressableLed.start()`` to write the output continuously. Below is a full example of the initialization process.
 
@@ -37,6 +37,8 @@ After the length of the strip has been set, you'll have to create an ``Addressab
          :lines: 7-13
          :linenos:
          :lineno-start: 7
+
+.. note:: The roboRIO only supports only 1 ``AddressableLED`` object. As WS2812B LEDs are connected in series, you can drive several strips connected in series from from ``AddressableLED`` object.
 
 Setting the Entire Strip to One Color
 -------------------------------------
