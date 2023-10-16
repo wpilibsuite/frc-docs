@@ -151,6 +151,7 @@ linkcheck_ignore = [
     r".*github.com/wpilibsuite/BetaTest.*",
     r".*vexrobotics.com/docs/.*",
     r".*forums.firstinspires.org.*",
+    r".*digikey.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
