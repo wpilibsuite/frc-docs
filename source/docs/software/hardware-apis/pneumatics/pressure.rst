@@ -119,9 +119,9 @@ A pressure transducer can be connected to the Analog Input ports on the roboRIO,
           :lines: 40-41
 
     .. group-tab:: C++ (Header)
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
           :language: c++
-          :lines: 30-40
+          :lines: 31-40
 
     .. group-tab:: C++ (Source)
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Pneumatics.cpp

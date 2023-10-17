@@ -70,7 +70,7 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
 
    .. group-tab:: C++ (Header)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
          :language: cpp
          :lines: 19-51
 

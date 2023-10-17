@@ -11,11 +11,11 @@ Here's how to initialize a ``DifferentialDrivePoseEstimator``:
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
       :language: java
-      :lines: 87-95
+      :lines: 86-94
       :linenos:
-      :lineno-start: 87
+      :lineno-start: 86
 
   .. group-tab:: C++
 
@@ -33,9 +33,9 @@ Add odometry measurements every loop by calling ``Update()``.
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
       :language: java
-      :lines: 234-235
+      :lines: 227-228
       :linenos:
-      :lineno-start: 234
+      :lineno-start: 227
 
   .. group-tab:: C++
 
@@ -51,11 +51,11 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
   .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
       :language: java
-      :lines: 243-252
+      :lines: 236-241
       :linenos:
-      :lineno-start: 243
+      :lineno-start: 236
 
   .. group-tab:: C++
 
