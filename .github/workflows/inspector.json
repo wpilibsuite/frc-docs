@@ -3,12 +3,12 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2024.1.1-beta-1"
+      "latestVersion": "v2024.1.1-beta-2"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2024.1.1-beta-1"
+      "latestVersion": "v2024.1.1-beta-2"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
@@ -18,7 +18,7 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion":"v2024.1.1-beta-1"
+      "latestVersion":"v2024.1.1-beta-2"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
@@ -26,5 +26,5 @@
       "latestVersion":"3b64aadee717c9f0566497a40fd0be7d0eaed96d"
     }
   ],
-  "ignoredFiles": ["source/docs/software/vision-processing/roborio/", "source/docs/software/networktables/client-side-program.rst"]
+  "ignoredFiles": []
 }
