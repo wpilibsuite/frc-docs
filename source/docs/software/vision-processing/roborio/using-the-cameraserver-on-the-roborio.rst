@@ -13,7 +13,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
          :language: java
          :lines: 7-20
          :linenos:
@@ -21,7 +21,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
          :language: cpp
          :lines: 7-8, 16-18, 20, 25-31
 
@@ -35,7 +35,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
    .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
          :linenos:
@@ -43,7 +43,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
    .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: cpp
          :lines: 5-20, 23-56, 58-61, 63-64, 69-76
 
