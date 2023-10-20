@@ -126,4 +126,11 @@ Romi Library
 
 A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
 
-`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
+`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
+
+XRP Library
+~~~~~~~~~~~
+
+An XRP Library has been created to contain several helper classes that are a part of the ``XRPReference`` example.
+
+`XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.

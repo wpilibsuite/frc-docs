@@ -3,9 +3,7 @@
 Accessing the Beta Project
 ==========================
 
-.. note:: Only accepted Beta Test teams will have access to the Beta project.
-
-The members identified by your team to communicate with *FIRST*\ |reg| technical staff will have access to the Beta Test project on the `<https://github.com/wpilibsuite/BetaTest>`__ site.
+The Beta Test project is located at: `<https://github.com/wpilibsuite/2024Beta>`__.
 
 Signing In
 ----------
@@ -14,8 +12,6 @@ Signing In
    :alt: Logging in to the GitHub site.
 
 Open your web browser and browse to `<https://github.com/wpilibsuite/BetaTest>`__. Near the top right corner of the page, click "Sign In" (if the Sign-In box does not automatically appear), enter your username and password and click  "Sign In". If you have two-factor authenticatio enabled you may need to complete an action on your mobile device to verify your log in attempt.
-
-Using this direct link, the Beta Test project should open as soon as you log in.
 
 The Project Homepage
 --------------------

@@ -177,6 +177,7 @@ Visual Studio Code Extension
 RobotBuilder
 ------------
 
+- Add POVButton
 - Fixed constants aliasing
 - Updated PCM references and wiring export for addition of REV PH
 
