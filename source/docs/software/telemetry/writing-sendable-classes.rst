@@ -17,11 +17,11 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpimath/src/main/native/cpp/controller/BangBangController.cpp
            :language: cpp
-           :lines: 58-72
+           :lines: 55-69
            :linenos:
-           :lineno-start: 58
+           :lineno-start: 55
 
 To enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
 

@@ -32,9 +32,9 @@ getMeasurement()
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
-         :lines: 79-79
+         :lines: 80-80
 
 The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
 
@@ -53,9 +53,9 @@ useOutput()
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
-         :lines: 87-87
+         :lines: 88-88
 
 
 The ``useOutput()`` method consumes the output of the PID controller, and the current setpoint (which is often useful for computing a feedforward).  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the computed output of the control loop.

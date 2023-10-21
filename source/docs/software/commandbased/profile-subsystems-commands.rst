@@ -36,9 +36,9 @@ useState()
 
    .. group-tab:: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
          :language: c++
-         :lines: 77-77
+         :lines: 75-75
 
 
 The ``useState()`` method consumes the current state of the motion profile.  The ``TrapezoidProfileSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the motion profile state corresponding to the subsystem's current progress through the motion profile.
