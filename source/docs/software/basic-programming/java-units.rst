@@ -13,7 +13,7 @@ The units library is intended to reduce the number of unit-related bugs in robot
 Using the Units Library
 -----------------------
 
-The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are ``Units``, which contains a set of predefined units; and ``Measure``, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
+The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are `edu.wpi.first.units.Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units; and `edu.wpi.first.units.Measure <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 
 The library comes with predefined SI and imperial units for distance, angle, time, velocity and acceleration (both linear and angular), mass, voltage, current, power, energy, and temperature.
 
@@ -75,8 +75,8 @@ Revisiting the arm example from above:
 
 .. code-block:: java
 
-   import static edu.wpi.first.units.Measure;
-   import static edu.wpi.first.units.MutableMeasure;
+   import edu.wpi.first.units.Measure;
+   import edu.wpi.first.units.MutableMeasure;
    import static edu.wpi.first.units.Units.*;
 
    public class Arm {
