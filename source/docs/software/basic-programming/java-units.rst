@@ -36,7 +36,7 @@ New ``Measure`` objects can be created by calling the ``Unit#of`` method on the 
      }
    }
 
-Because the ``Measure`` objects are Java objects, arithmetic must be done by calling methods on the objects. Note that each operation will return a new ``Measure`` object
+Because the ``Measure`` objects are Java objects, arithmetic must be done by calling methods on the objects. Note that each operation will return a new ``Measure`` object.
 
 .. code-block:: java
 
@@ -58,6 +58,7 @@ Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type syst
 
    Measure<Velocity<Distance>> kMaxVelocity = FeetPerSecond.of(12.5);
    Measure<Velocity<Velocity<Distance>>> kMaxAcceleration = FeetPerSecond.per(Second).of(22.9);
+
    // The WPILib math libraries use SI metric units, so we have to convert to meters:
    TrapezoidProfile.Constraints kDriveConstraints = new TrapezoidProfile.Constraints(
      maxVelocity.in(MetersPerSecond),
@@ -67,7 +68,7 @@ Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type syst
 Memory Usage and the Garbage Collector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The RoboRIO is a severely memory-constrained runtime environment and the Java garbage collector has to run to keep memory usage to a reasonable level. The garbage collector will have to pause the robot program in order to free unused objects, which manifests as loop overruns and potentially jittery controls. To avoid this issue, allocate as few ``Measure`` objects as possible in areas of code that will run periodically, such as in a Command's ``execute`` or a Subsystem's ``periodic`` method.
+The roboRIO is a severely memory-constrained runtime environment and the Java garbage collector has to run to keep memory usage to a reasonable level. The garbage collector will have to pause the robot program in order to free unused objects, which manifests as loop overruns and potentially jittery controls. To avoid this issue, allocate as few ``Measure`` objects as possible in areas of code that will run periodically, such as in a Command's ``execute`` or a Subsystem's ``periodic`` method.
 If you still want to use units in hot areas of the code, a special ``MutableMeasure`` class is available. ``MutableMeasure`` allows the internal state of the object to be updated (such as with the results arithmetic operations) to avoid allocating new objects. If the object will be exposed as part of a public API method, have that method return a regular ``Measure`` in its signature to prevent other areas of the code (or users, if it's part of a library) from modifying your internal state.
 
 Revisiting the arm example from above:
@@ -145,6 +146,7 @@ Defining New Units
 ------------------
 
 There are four ways to define a new unit that isn't already present in the library:
+
 - Using the ``Unit#per`` or ``Unit#mult`` methods to create a composite of two other units;
 - Using the ``Milli``, ``Micro``, and ``Kilo`` helper methods;
 - Using the ``derive`` method and customizing how the new unit relates to the base unit;
