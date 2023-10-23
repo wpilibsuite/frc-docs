@@ -121,6 +121,7 @@ Breaking Changes
 - Removed 2-argument constructor to ``SlewRateLimiter``
 - Removed ``frc2::PIDController`` alias (``frc::PIDController`` already existed)
 - For ease of use, ``loadAprilTagFieldLayout()`` now throws an unchecked exception instead of a checked exception
+- Add new parameter for ``ElevatorSim`` constructor for starting height
 
 Simulation
 ----------
