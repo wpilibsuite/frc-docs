@@ -1,5 +1,5 @@
 ![Documentation Status](https://readthedocs.org/projects/frc-docs/badge/?version=latest)
-[![CI](https://github.com/wpilibsuite/frc-docs/actions/workflows/CI.yml/badge.svg)](https://github.com/wpilibsuite/frc-docs/actions/workflows/CI.yml)
+[![CI](https://github.com/wpilibsuite/frc-docs/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/wpilibsuite/frc-docs/actions/workflows/CI.yml?query=branch:main)
 [![Link Check](https://github.com/wpilibsuite/frc-docs/actions/workflows/link-check.yml/badge.svg)](https://github.com/wpilibsuite/frc-docs/actions/workflows/link-check.yml)
 
 # frc-docs
