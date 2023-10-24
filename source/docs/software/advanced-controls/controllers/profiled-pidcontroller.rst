@@ -22,9 +22,9 @@ Constructing a ProfiledPIDController
 
 Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PIDController <docs/software/advanced-controls/controllers/pidcontroller:Constructing a PIDController>`.  The only difference is the need to supply a set of :ref:`trapezoidal profile constraints <docs/software/advanced-controls/controllers/trapezoidal-profiles:Constraints>`, which will be automatically forwarded to the internally-generated ``TrapezoidProfile`` instances:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a ProfiledPIDController
     // Max velocity is 5 meters per second
@@ -33,7 +33,7 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
       kP, kI, kD,
       new TrapezoidProfile.Constraints(5, 10));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a ProfiledPIDController
     // Max velocity is 5 meters per second
@@ -47,15 +47,15 @@ Goal vs Setpoint
 
 A major difference between a standard ``PIDController`` and a ``ProfiledPIDController`` is that the actual *setpoint* of the control loop is not directly specified by the user.  Rather, the user specifies a *goal* position or state, and the setpoint for the controller is computed automatically from the generated motion profile between the current state and the goal.  So, while the user-side call looks mostly identical:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
     motor.set(controller.calculate(encoder.getDistance(), goal));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
@@ -70,9 +70,9 @@ Since the ``ProfiledPIDController`` goal differs from the setpoint, is if often 
 
 The returned setpoint might then be used as in the following example:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     double lastSpeed = 0;
     double lastTime = Timer.getFPGATimestamp();
@@ -89,7 +89,7 @@ The returned setpoint might then be used as in the following example:
       lastTime = Timer.getFPGATimestamp();
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     units::meters_per_second_t lastSpeed = 0_mps;
     units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
@@ -112,20 +112,18 @@ Complete Usage Example
 
 A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
+    :language: java
+    :lines: 5-
+    :linenos:
+    :lineno-start: 5
 
-  .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
+    :language: c++
+    :lines: 5-
+    :linenos:
+    :lineno-start: 5

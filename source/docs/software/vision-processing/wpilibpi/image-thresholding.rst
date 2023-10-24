@@ -17,9 +17,9 @@ Unlike RGB, HSV allows you to not only filter based on the colors of the pixels,
 
 You can use OpenCV to convert a BGR image matrix to HSV.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       hsv_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2HSV)
 
@@ -35,9 +35,9 @@ We will use this field image as an example for the whole process of image proces
 
 By thresholding the image using HSV, you can separate the image into the vision target (foreground), and the other things that the camera sees (background). The following code example converts a HSV image into a binary image by thresholding with HSV values.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       binary_img = cv2.inRange(hsv_img, (min_hue, min_sat, min_val), (max_hue, max_sat, max_val))
 

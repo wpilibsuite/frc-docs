@@ -19,9 +19,9 @@ Both of the following examples are extremely simplified programs that just illus
 Writing a Program to Access the Topics
 --------------------------------------
 
-.. tabs::
-
-   .. code-tab:: java
+.. tab-set-code::
+  
+   .. code-block:: java
 
       DoubleArraySubscriber areasSub;
 
@@ -44,7 +44,7 @@ Writing a Program to Access the Topics
           System.out.println();
       }
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       nt::DoubleArraySubscriber areasSub;
 
@@ -65,7 +65,7 @@ Writing a Program to Access the Topics
         std::cout << std::endl;
       }
 
-  .. code-tab:: python
+   .. code-block:: python
 
         def robotInit(self):
             table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")

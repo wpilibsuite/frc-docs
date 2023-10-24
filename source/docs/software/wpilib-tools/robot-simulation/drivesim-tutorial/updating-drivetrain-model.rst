@@ -10,8 +10,8 @@ There are three main steps to updating the model:
  2. Advance the model forward in time by the nominal periodic timestep (Usually 20 ms). This updates all of the drivetrain's states (i.e. pose, encoder positions and velocities) as if 20 ms had passed.
  3. Update simulated sensors with new positions, velocities, and angles to use in other places.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
       private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
@@ -42,7 +42,7 @@ There are three main steps to updating the model:
         m_gyroSim.setAngle(-m_driveSim.getHeading().getDegrees());
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::PWMSparkMax m_leftMotor{0};
       frc::PWMSparkMax m_rightMotor{1};

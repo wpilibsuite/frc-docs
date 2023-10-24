@@ -12,14 +12,14 @@ The ``relativeTo`` method is used to redefine an already existing trajectory in 
 
 For example, a trajectory defined in coordinate system A can be redefined in coordinate system B, whose origin is at (3, 3, 30 degrees) in coordinate system A, using the ``relativeTo`` method.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Pose2d bOrigin = new Pose2d(3, 3, Rotation2d.fromDegrees(30));
       Trajectory bTrajectory = aTrajectory.relativeTo(bOrigin);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::Pose2d bOrigin{3_m, 3_m, frc::Rotation2d(30_deg)};
       frc::Trajectory bTrajectory = aTrajectory.RelativeTo(bOrigin);
@@ -36,14 +36,14 @@ The ``transformBy`` method can be used to move (i.e. translate and rotate) a tra
 
 For example, one may want to transform a trajectory that begins at (2, 2, 30 degrees) to make it begin at (4, 4, 50 degrees) using the ``transformBy`` method.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Transform2d transform = new Pose2d(4, 4, Rotation2d.fromDegrees(50)).minus(trajectory.getInitialPose());
       Trajectory newTrajectory = trajectory.transformBy(transform);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::Transform2d transform = Pose2d(4_m, 4_m, Rotation2d(50_deg)) - trajectory.InitialPose();
       frc::Trajectory newTrajectory = trajectory.TransformBy(transform);

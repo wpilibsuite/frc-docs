@@ -7,63 +7,57 @@ Pose estimators estimate robot position using a state-space system with the stat
 
 Here's how to initialize a ``DifferentialDrivePoseEstimator``:
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
-      :language: java
-      :lines: 87-95
-      :linenos:
-      :lineno-start: 87
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
+    :language: java
+    :lines: 87-95
+    :linenos:
+    :lineno-start: 87
 
-  .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/include/Drivetrain.h
-      :language: c++
-      :lines: 158-165
-      :linenos:
-      :lineno-start: 158
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/include/Drivetrain.h
+    :language: c++
+    :lines: 158-165
+    :linenos:
+    :lineno-start: 158
 
 Add odometry measurements every loop by calling ``Update()``.
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
-      :language: java
-      :lines: 234-235
-      :linenos:
-      :lineno-start: 234
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
+    :language: java
+    :lines: 234-235
+    :linenos:
+    :lineno-start: 234
 
-  .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
-      :language: c++
-      :lines: 84-86
-      :linenos:
-      :lineno-start: 84
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
+    :language: c++
+    :lines: 84-86
+    :linenos:
+    :lineno-start: 84
 
 Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
-      :language: java
-      :lines: 243-252
-      :linenos:
-      :lineno-start: 243
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
+    :language: java
+    :lines: 243-252
+    :linenos:
+    :lineno-start: 243
 
-  .. group-tab:: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
-      :language: c++
-      :lines: 93-106
-      :linenos:
-      :lineno-start: 93
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
+    :language: c++
+    :lines: 93-106
+    :linenos:
+    :lineno-start: 93
 
 Tuning Pose Estimators
 ----------------------

@@ -71,13 +71,13 @@ The NI roboRIO 1.0 does not support custom brownout voltages. It is fixed at 6.3
 
 The NI roboRIO 2.0 adds the option for a software settable brownout level.  The default brownout level (Stage 2) of the roboRIO 2.0 is 6.75V.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     RobotController.setBrownoutVoltage(7.0);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc::RobotController::SetBrownoutVoltage(7_V);
 

@@ -18,15 +18,15 @@ Simulation device object can be constructed in two ways:
 - a constructor that accepts the regular hardware object.
 - a constructor or factory method that accepts the port/index/channel number that the device is connected to. These would be the same number that was used to construct the regular hardware object. This is especially useful for :doc:`unit testing <unit-testing>`.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // create a real encoder object on DIO 2,3
       Encoder encoder = new Encoder(2, 3);
       // create a sim controller for the encoder
       EncoderSim simEncoder = new EncoderSim(encoder);
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
        // create a real encoder object on DIO 2,3
        frc::Encoder encoder{2, 3};
@@ -38,14 +38,14 @@ Reading and Writing Device Data
 
 Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The getter functions will return the same as the getter of the regular device class.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       simEncoder.setCount(100);
       encoder.getCount(); // 100
       simEncoder.getCount(); // 100
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       simEncoder.SetCount(100);
       encoder.GetCount(); // 100
@@ -62,8 +62,8 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
 
 .. warning:: Attempting to retrieve a value of a type from a ``HALValue`` containing a different type is undefined behavior.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       NotifyCallback callback = (String name, HALValue value) -> {
         if (value.getType() == HALValue.kInt) {
@@ -74,7 +74,7 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
 
       store.close(); // cancel the callback
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       HAL_NotifyCallback callback = [](const char* name, void* param, const HALValue* value) {
         if (value->type == HAL_INT) {
@@ -93,25 +93,25 @@ The ``SimDeviceSim`` (**not** ``SimDevice``!) class is a general device simulati
 
 The ``SimDeviceSim`` object is created using a string key identical to the key the vendor used to construct the underlying ``SimDevice`` in their device class. This key is the one that the device shows up with in the :guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device Name[index]``. If the key contains ports/index/channel numbers, they can be passed as separate arguments to the ``SimDeviceSim`` constructor. The key contains a prefix that is hidden by default in the SimGUI, it can be shown by selecting the :guilabel:`Show prefix` option. Not including this prefix in the key passed to ``SimDeviceSim`` will not match the device!
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SimDeviceSim device = new SimDeviceSim(deviceKey, index);
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       frc::sim::SimDeviceSim device{deviceKey, index};
 
 Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object outside of simulation or when either the device or field keys are unmatched will return ``null`` - this can cause ``NullPointerException`` in Java or undefined behavior in C++.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SimDouble field = device.getDouble(fieldKey);
       field.get();
       field.set(value);
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       hal::SimDouble field = device.GetDouble(fieldKey);
       field.Get();

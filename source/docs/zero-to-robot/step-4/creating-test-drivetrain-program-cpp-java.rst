@@ -62,13 +62,15 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 Imports/Includes
 ----------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: PWM
+   .. tab-item:: PWM
+      :sync: pwm
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: Java
+         .. tab-item:: Java
+            :sync: java
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
                :language: java
@@ -76,78 +78,78 @@ Imports/Includes
                :linenos:
                :lineno-start: 7
 
-         .. group-tab:: C++
-
+         .. tab-item:: C++
+            :sync: cpp
+            
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-10
                :linenos:
                :lineno-start: 5
 
-   .. group-tab:: CTRE
+   .. tab-item:: CTRE
+      :sync: ctre
 
-         .. tabs::
+      .. tab-set-code::
 
-            .. group-tab:: Java
 
-               .. code-block:: java
+         .. code-block:: java
 
-                  import edu.wpi.first.wpilibj.Joystick;
-                  import edu.wpi.first.wpilibj.TimedRobot;
-                  import edu.wpi.first.wpilibj.Timer;
-                  import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-                  import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+            import edu.wpi.first.wpilibj.Joystick;
+            import edu.wpi.first.wpilibj.TimedRobot;
+            import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+            import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
-            .. group-tab:: C++
 
-               .. code-block:: cpp
+         .. code-block:: cpp
 
-                  #include <frc/Joystick.h>
-                  #include <frc/TimedRobot.h>
-                  #include <frc/Timer.h>
-                  #include <frc/drive/DifferentialDrive.h>
-                  #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+            #include <frc/Joystick.h>
+            #include <frc/TimedRobot.h>
+            #include <frc/Timer.h>
+            #include <frc/drive/DifferentialDrive.h>
+            #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
-   .. group-tab:: REV
+   .. tab-item:: REV
 
-         .. tabs::
+         .. tab-set-code::
 
-            .. group-tab:: Java
 
-               .. code-block:: java
+            .. code-block:: java
 
-                  import com.revrobotics.CANSparkMax;
-                  import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+               import com.revrobotics.CANSparkMax;
+               import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-                  import edu.wpi.first.wpilibj.TimedRobot;
-                  import edu.wpi.first.wpilibj.Timer;
-                  import edu.wpi.first.wpilibj.XboxController;
-                  import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+               import edu.wpi.first.wpilibj.TimedRobot;
+               import edu.wpi.first.wpilibj.Timer;
+               import edu.wpi.first.wpilibj.XboxController;
+               import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-            .. group-tab:: C++
 
-               .. code-block:: cpp
+            .. code-block:: cpp
 
-                  #include <frc/TimedRobot.h>
-                  #include <frc/Timer.h>
-                  #include <frc/XboxController.h>
-                  #include <frc/drive/DifferentialDrive.h>
-                  #include <frc/motorcontrol/PWMSparkMax.h>
+               #include <frc/TimedRobot.h>
+               #include <frc/Timer.h>
+               #include <frc/XboxController.h>
+               #include <frc/drive/DifferentialDrive.h>
+               #include <frc/motorcontrol/PWMSparkMax.h>
 
-                  #include <rev/CANSparkMax.h>
+               #include <rev/CANSparkMax.h>
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: PWM
+   .. tab-item:: PWM
+      :sync: pwm
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: Java
+         .. tab-item:: Java
+            :sync: java
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
                :language: java
@@ -155,7 +157,8 @@ Defining the variables for our sample robot
                :linenos:
                :lineno-start: 19
 
-         .. group-tab:: C++
+         .. tab-item:: C++
+            :sync: cpp
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
@@ -169,11 +172,13 @@ Defining the variables for our sample robot
                :linenos:
                :lineno-start: 50
 
-   .. group-tab:: CTRE
+   .. tab-item:: CTRE
+      :sync: ctre
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: Java
+         .. tab-item:: Java
+            :sync: java
 
             .. code-block:: java
 
@@ -184,7 +189,8 @@ Defining the variables for our sample robot
                   private final Joystick m_stick = new Joystick(0);
                   private final Timer m_timer = new Timer();
 
-         .. group-tab:: C++
+         .. tab-item:: C++
+            :sync: cpp
 
             .. code-block:: cpp
 
@@ -209,11 +215,13 @@ Defining the variables for our sample robot
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: rev
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: Java
+         .. tab-item:: Java
+            :sync: java
 
             .. code-block:: java
 
@@ -224,7 +232,8 @@ Defining the variables for our sample robot
                  private final XboxController m_controller = new XboxController(0);
                  private final Timer m_timer = new Timer();
 
-         .. group-tab:: C++
+         .. tab-item:: C++
+            :sync: cpp
 
             .. code-block:: cpp
 
@@ -258,14 +267,14 @@ The sample robot in our examples will have a joystick on USB port 0 for arcade d
 Robot Initialization
 --------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
           @Override
           public void robotInit() {}
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         void RobotInit() {}
 
@@ -275,23 +284,21 @@ The ``RobotInit`` method is run when the robot program is starting up, but after
 Simple Autonomous Example
 -------------------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-         :language: java
-         :lines: 38-54
-         :linenos:
-         :lineno-start: 38
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      :language: java
+      :lines: 38-54
+      :linenos:
+      :lineno-start: 38
 
-   .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-         :language: c++
-         :lines: 22-33
-         :linenos:
-         :lineno-start: 22
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      :language: c++
+      :lines: 22-33
+      :linenos:
+      :lineno-start: 22
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we restart the ``Timer`` in this method.
 
@@ -300,46 +307,41 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 Joystick Control for Teleoperation
 ----------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      :language: java
+      :lines: 56-64
+      :linenos:
+      :lineno-start: 56
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-         :language: java
-         :lines: 56-64
-         :linenos:
-         :lineno-start: 56
 
-   .. group-tab:: C++
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-         :language: c++
-         :lines: 35-41
-         :linenos:
-         :lineno-start: 35
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      :language: c++
+      :lines: 35-41
+      :linenos:
+      :lineno-start: 35
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 Test Mode
 ---------
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-         :language: java
-         :lines: 66-72
-         :linenos:
-         :lineno-start: 66
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      :language: java
+      :lines: 66-72
+      :linenos:
+      :lineno-start: 66
 
-   .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-         :language: c++
-         :lines: 43-45
-         :linenos:
-         :lineno-start: 43
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      :language: c++
+      :lines: 43-45
+      :linenos:
+      :lineno-start: 43
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 

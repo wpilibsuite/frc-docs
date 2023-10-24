@@ -27,9 +27,9 @@ Erosion
 
 Erosion in computer vision is similar to erosion on soil. It takes away from the borders of foreground objects. This process can remove noise from the background.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.erode(binary_img, kernel, iterations = 1)
@@ -44,9 +44,9 @@ Dilation
 
 Dilation is opposite of erosion. Instead of taking away from the borders, it adds to them. This process can remove small holes inside a larger region.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.dilate(binary_img, kernel, iterations = 1)
@@ -61,9 +61,9 @@ Opening
 
 Opening is erosion followed by dilation. This process removes noise without affecting the shape of larger features.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_OPEN, kernel)
@@ -78,9 +78,9 @@ Closing
 
 Closing is dilation followed by erosion. This process removes small holes or breaks without affecting the shape of larger features.
 
-.. tabs::
+.. tab-set-block::
 
-   .. code-tab:: py
+   .. code-block:: py
 
       kernel = np.ones((3, 3), np.uint8)
       binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel)

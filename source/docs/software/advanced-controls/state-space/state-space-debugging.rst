@@ -18,16 +18,16 @@ Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s 
 
 .. danger:: This will send extra data (at up to 100hz) over NetworkTables, which can cause lag with both user code and robot dashboards. This will also increase network utilization. It is often a good idea to disable this during competitions.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void robotPeriodic() {
          NetworkTableInstance.getDefault().flush();
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void RobotPeriodic() {
          NetworkTableInstance::GetDefault().Flush();

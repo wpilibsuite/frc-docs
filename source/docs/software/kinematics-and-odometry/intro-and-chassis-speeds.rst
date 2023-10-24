@@ -23,16 +23,16 @@ Constructing a ChassisSpeeds object
 -----------------------------------
 The constructor for the ``ChassisSpeeds`` object is very straightforward, accepting three arguments for ``vx``, ``vy``, and ``omega``. In Java, ``vx`` and ``vy`` must be in meters per second. In C++, the units library may be used to provide a linear velocity using any linear velocity unit.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // The robot is moving at 3 meters per second forward, 2 meters
       // per second to the right, and rotating at half a rotation per
       // second counterclockwise.
       var speeds = new ChassisSpeeds(3.0, -2.0, Math.PI);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // The robot is moving at 3 meters per second forward, 2 meters
       // per second to the right, and rotating at half a rotation per
@@ -47,9 +47,9 @@ A ``ChassisSpeeds`` object can also be created from a set of field-relative spee
 
 The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / ``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) method can be used to generate the ``ChassisSpeeds`` object from field-relative speeds. This method accepts the ``vx`` (relative to the field), ``vy`` (relative to the field), ``omega``, and the robot angle.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -59,7 +59,7 @@ The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / ``ChassisSpeeds::F
       ChassisSpeeds speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
         2.0, 2.0, Math.PI / 2.0, Rotation2d.fromDegrees(45.0));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per

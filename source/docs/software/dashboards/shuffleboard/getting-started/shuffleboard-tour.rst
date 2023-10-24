@@ -41,9 +41,9 @@ Getting robot data onto the dashboard
 
 The easiest way to get data displayed on the dashboard is simply to use methods in the SmartDashboard class. For example to write a number to Shuffleboard write:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
         SmartDashboard.putNumber("Joystick X value", joystick1.getX());
 

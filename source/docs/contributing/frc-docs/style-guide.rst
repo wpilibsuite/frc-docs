@@ -105,25 +105,23 @@ RLI (Remote Literal Include)
 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
-.. code-block:: ReST
+.. tab-set-code:: 
 
-   .. group-tab:: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-         :language: java
-         :lines: 44-61
-         :linenos:
-         :lineno-start: 44
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      :language: java
+      :lines: 44-61
+      :linenos:
+      :lineno-start: 44
 
-   .. group-tab:: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-         :language: cpp
-         :lines: 18-30
-         :linenos:
-         :lineno-start: 18
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+      :language: cpp
+      :lines: 18-30
+      :linenos:
+      :lineno-start: 18
 
-Note that group-tab rather than code-tab needs to be used.  Also make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
+Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
 Admonitions
 -----------

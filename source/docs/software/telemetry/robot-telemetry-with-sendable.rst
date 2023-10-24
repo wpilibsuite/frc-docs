@@ -23,13 +23,13 @@ Sending a Sendable to the Dashboard
 
 To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``putData`` method.  For example, an "arm" class that uses a :ref:`PID Controller <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` can automatically log telemetry from the controller by calling the following in its constructor:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         SmartDashboard.putData("Arm PID", armPIDController);
 
-    .. code-tab:: cpp
+    .. code-block:: cpp
 
         frc::SmartDashboard::PutData("Arm PID", &armPIDController);
 

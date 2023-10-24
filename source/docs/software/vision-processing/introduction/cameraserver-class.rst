@@ -82,9 +82,9 @@ When a new image is captured by the camera, both the CvSink and the MjpegServer 
 
 The above graph is what the following CameraServer snippet creates:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.first.cameraserver.CameraServer;
         import edu.wpi.cscore.CvSink;
@@ -99,7 +99,7 @@ The above graph is what the following CameraServer snippet creates:
         // Creates the CvSource and MjpegServer [2] and connects them
         CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "cameraserver/CameraServer.h"
 
@@ -114,9 +114,9 @@ The above graph is what the following CameraServer snippet creates:
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.cscore.CvSink;
         import edu.wpi.cscore.CvSource;
@@ -137,7 +137,7 @@ The CameraServer implementation effectively does the following at the cscore lev
         MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
         mjpegServer2.setSource(outputStream);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "cscore_oo.h"
 

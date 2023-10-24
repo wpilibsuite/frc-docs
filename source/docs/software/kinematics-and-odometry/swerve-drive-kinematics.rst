@@ -19,9 +19,9 @@ The ``SwerveDriveKinematics`` class accepts a variable number of constructor arg
 
 The locations for the modules must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Locations for the swerve drive modules relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
@@ -34,7 +34,7 @@ The locations for the modules must be relative to the center of the robot. Posit
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
       );
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Locations for the swerve drive modules relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
@@ -53,9 +53,9 @@ The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / ``ToSwerveModuleStat
 
 The elements in the array that is returned by this method are the same order in which the kinematics object was constructed. For example, if the kinematics object was constructed with the front left module location, front right module location, back left module location, and the back right module location in that order, the elements in the array would be the front left module state, front right module state, back left module state, and back right module state in that order.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -77,7 +77,7 @@ The elements in the array that is returned by this method are the same order in 
       // Back right module state
       SwerveModuleState backRight = moduleStates[3];
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -95,13 +95,13 @@ The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / ``Opti
 
 This method takes two parameters: the desired state (usually from the ``toSwerveModuleStates`` method) and the current angle. It will return the new optimized state which you can use as the setpoint in your feedback control loop.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       var frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
          new Rotation2d(m_turningEncoder.getDistance()));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       auto flOptimized = frc::SwerveModuleState::Optimize(fl,
          units::radian_t(m_turningEncoder.GetDistance()));
@@ -110,9 +110,9 @@ Field-oriented drive
 ^^^^^^^^^^^^^^^^^^^^
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -125,7 +125,7 @@ Field-oriented drive
       // Now use this in our kinematics
       SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(speeds);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -150,9 +150,9 @@ Converting module states to chassis speeds
 ------------------------------------------
 One can also use the kinematics object to convert an array of ``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(SwerveModuleState... states)`` (Java) / ``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to achieve this.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example module states
       var frontLeftState = new SwerveModuleState(23.43, Rotation2d.fromDegrees(-140.19));
@@ -169,7 +169,7 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
       double sideways = chassisSpeeds.vyMetersPerSecond;
       double angular = chassisSpeeds.omegaRadiansPerSecond;
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example module States
       frc::SwerveModuleState frontLeftState{23.43_mps, Rotation2d(-140.19_deg)};

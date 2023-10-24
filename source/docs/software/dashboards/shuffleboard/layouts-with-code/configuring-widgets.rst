@@ -8,16 +8,16 @@ Specifying a widget
 
 Call ``withWidget`` after ``add`` in the call chain:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
        Shuffleboard.getTab("Drive")
         .add("Max Speed", 1)
         .withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
         .getEntry();
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
        frc::Shuffleboard::GetTab("Drive")
         .Add("Max Speed", 1)
@@ -33,9 +33,9 @@ Setting widget properties
 -------------------------
 Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to full speed), a slider from -1 to 1 can cause problems if the value drops below zero. Fortunately, we can modify that using the ``withProperties`` method
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
     Shuffleboard.getTab("Drive")
         .add("Max Speed", 1)
@@ -43,7 +43,7 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
         .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
         .getEntry();
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
     frc::Shuffleboard::GetTab("Drive")
         .Add("Max Speed", 1)

@@ -38,15 +38,15 @@ Initializing a Quadrature Encoder
 
 A quadrature encoder can be instantiated as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an encoder on DIO pins 0 and 1
         // Defaults to 4X decoding and non-inverted
         Encoder encoder = new Encoder(0, 1);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an encoder on DIO pins 0 and 1
         // Defaults to 4X decoding and non-inverted
@@ -63,15 +63,15 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
 
 4X decoding offers the greatest precision, but at the potential cost of increased "jitter" in rate measurements.  To use a different decoding type, use the following constructor:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an encoder on DIO pins 0 and 1
         // 2X encoding and non-inverted
         Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an encoder on DIO pins 0 and 1
         // 2X encoding and non-inverted
@@ -86,9 +86,9 @@ Configuring Quadrature Encoder Parameters
 
 The :code:`Encoder` class offers a number of configuration methods:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
@@ -107,7 +107,7 @@ The :code:`Encoder` class offers a number of configuration methods:
         // Can be between 1 and 127 samples
         encoder.setSamplesToAverage(5);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Configures the encoder to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
@@ -138,14 +138,14 @@ Distance
 
 Users can obtain the total distance traveled by the encoder with the :code:`getDistance()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the distance traveled
         encoder.getDistance();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the distance traveled
         encoder.GetDistance();
@@ -157,14 +157,14 @@ Rate
 
 Users can obtain the current rate of change of the encoder with the :code:`getRate()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the current rate of the encoder
         encoder.getRate();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the current rate of the encoder
         encoder.GetRate();
@@ -174,14 +174,14 @@ Stopped
 
 Users can obtain whether the encoder is stationary with the :code:`getStopped()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets whether the encoder is stopped
         encoder.getStopped();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets whether the encoder is stopped
         encoder.GetStopped();
@@ -191,14 +191,14 @@ Direction
 
 Users can obtain the direction in which the encoder last moved with the :code:`getDirection()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the last direction in which the encoder moved
         encoder.getDirection();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the last direction in which the encoder moved
         encoder.GetDirection();
@@ -208,14 +208,14 @@ Period
 
 Users can obtain the period of the encoder pulses (in seconds) with the :code:`getPeriod()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the current period of the encoder
         encoder.getPeriod();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the current period of the encoder
         encoder.GetPeriod();
@@ -225,14 +225,14 @@ Resetting a Quadrature Encoder
 
 To reset a quadrature encoder to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement, and is often called during a :ref:`homing <docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism>` routine:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Resets the encoder to read a distance of zero
         encoder.reset();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Resets the encoder to read a distance of zero
         encoder.Reset();
@@ -257,14 +257,14 @@ Initializing a Duty Cycle Encoder
 
 A duty cycle encoder can be instantiated as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes a duty cycle encoder on DIO pins 0
         DutyCycleEncoder encoder = new DutyCycleEncoder(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes a duty cycle encoder on DIO pins 0
         frc::DutyCycleEncoder encoder{0};
@@ -276,14 +276,14 @@ Configuring Duty Cycle Encoder Parameters
 
 The :code:`DutyCycleEncoder` class offers a number of configuration methods:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.setDistancePerRotation(4.0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.SetDistancePerRotation(4.0);
@@ -295,14 +295,14 @@ Reading Distance from Duty Cycle Encoders
 
 Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the distance traveled
         encoder.getDistance();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the distance traveled
         encoder.GetDistance();
@@ -313,14 +313,14 @@ Detecting a Duty Cycle Encoder is Connected
 
 As duty cycle encoders output a continuous set of pulses, it is possible to detect that the encoder has been unplugged.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets if the encoder is connected
         encoder.isConnected();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets if the encoder is connected
         encoder.IsConnected();
@@ -331,9 +331,9 @@ Resetting a Duty Cycle Encoder
 
 To reset an encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Resets the encoder to read a distance of zero at the current position
         encoder.reset();
@@ -344,7 +344,7 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
         // set the position offset to half a rotation
         encoder.setPositionOffset(0.5);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Resets the encoder to read a distance of zero at the current position
         encoder.Reset();
@@ -371,14 +371,14 @@ Initializing an Analog Encoder
 
 An analog encoder can be instantiated as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes a duty cycle encoder on Analog Input pins 0
         AnalogEncoder encoder = new AnalogEncoder(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes a duty cycle encoder on DIO pins 0
         frc::AnalogEncoder encoder{0};
@@ -390,14 +390,14 @@ Configuring Analog Encoder Parameters
 
 The :code:`AnalogEncoder` class offers a number of configuration methods:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.setDistancePerRotation(4.0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Configures the encoder to return a distance of 4 for every rotation
         encoder.SetDistancePerRotation(4.0);
@@ -409,14 +409,14 @@ Reading Distance from Analog Encoders
 
 Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the distance measured
         encoder.getDistance();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the distance measured
         encoder.GetDistance();
@@ -428,9 +428,9 @@ Resetting an Analog Encoder
 
 To reset an analog encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Resets the encoder to read a distance of zero at the current position
         encoder.reset();
@@ -441,7 +441,7 @@ To reset an analog encoder so the current distance is 0, call the :code:`reset()
         // set the position offset to half a rotation
         encoder.setPositionOffset(0.5);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Resets the encoder to read a distance of zero at the current position
         encoder.Reset();
@@ -464,9 +464,9 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
 .. note:: The following example uses the `Encoder` class, but is similar if other `DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders are typically better suited for drivetrains since they roll over many times and don't have an absolute position.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an encoder on DIO ports 0 and 1
         Encoder encoder = new Encoder(0, 1);
@@ -501,7 +501,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
             }
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an encoder on DIO ports 0 and 1.
         frc::Encoder encoder{0, 1};
@@ -541,9 +541,9 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
 .. note:: Homing is not necessary for absolute encoders like duty cycle encoders and analog encoders.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         Encoder encoder = new Encoder(0, 1);
 
@@ -563,7 +563,7 @@ Since quadrature encoders measure *relative* distance, it is often important to 
             }
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         frc::Encoder encoder{0,1};
 

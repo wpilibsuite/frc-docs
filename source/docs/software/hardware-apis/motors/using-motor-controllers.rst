@@ -10,9 +10,9 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
 .. note:: The ``Spark`` and ``VictorSP`` classes are used here as an example; other PWM motor controller classes have exactly the same API.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Spark spark = new Spark(0); // 0 is the RIO PWM port this is connected to
 
@@ -22,7 +22,7 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
       victor.set(0.6); // the % output of the motor, between -1 and 1
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::Spark spark{0}; // 0 is the RIO PWM port this is connected to
 
@@ -32,7 +32,7 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
       victor.Set(0.6); // the % output of the motor, between -1 and 1
 
-   .. code-tab:: python
+   .. code-block:: python
 
       spark = wpilib.Spark(0) # 0 is the RIO PWM port this is connected to
 

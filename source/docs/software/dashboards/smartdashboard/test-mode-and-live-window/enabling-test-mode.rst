@@ -14,9 +14,9 @@ Enable Test Mode in the Driver Station by clicking on the "Test" button and sett
 Explicitly vs. implicit test mode display
 -----------------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         PWMSparkMax leftDrive;
         PWMSparkMax rightDrive;
@@ -33,7 +33,7 @@ Explicitly vs. implicit test mode display
           SendableRegistry.setName(accel, "SomeSubsystem", "Accelerometer");
         }
 
-    .. code-tab:: cpp
+    .. code-block:: cpp
 
         frc::PWMSparkMax leftDrive{0};
         frc::PWMSparkMax rigthDrive{1};

@@ -21,13 +21,13 @@ In the following examples, you'll see what the screen would look like when there
 Displaying the Scheduler Status
 -------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     SmartDashboard.putData(CommandScheduler.getInstance());
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc::SmartDashboard::PutData(frc2::CommandScheduler::GetInstance());
 
@@ -41,13 +41,13 @@ This is the scheduler status when there are two commands running, ``ExampleComma
 Displaying Subsystem Status
 ---------------------------
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     SmartDashboard.putData(exampleSubsystem);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc::SmartDashboard::PutData(&exampleSubsystem);
 
@@ -61,13 +61,13 @@ Running commands will "require" subsystems. That is the command is reserving the
 Activating Commands with a Button
 ---------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     SmartDashboard.putData("Autonomous Command", exampleCommand);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc::SmartDashboard::PutData("Autonomous Command", &exampleCommand);
 

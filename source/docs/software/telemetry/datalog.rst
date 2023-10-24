@@ -25,16 +25,16 @@ On startup, all existing log files where a DS has not been connected will be del
 
 The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``robotInit``). This will record all NetworkTables changes to the data log.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.first.wpilibj.DataLogManager;
 
         // Starts recording to data log
         DataLogManager.start();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "frc/DataLogManager.h"
 
@@ -52,9 +52,9 @@ Logging Joystick Data
 
 DataLogManager by default does not record joystick data.  The ``DriverStation`` class provides support for logging of DS control and joystick data via the ``startDataLog()`` function:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.first.wpilibj.DataLogManager;
         import edu.wpi.first.wpilibj.DriverStation;
@@ -68,7 +68,7 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
         // (alternatively) Record only DS control data
         DriverStation.startDataLog(DataLogManager.getLog(), false);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "frc/DataLogManager.h"
         #include "frc/DriverStation.h"
@@ -91,9 +91,9 @@ The ``DataLog`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java
 
 The LogEntry classes can be used in conjunction with DataLogManager to record values only to a data log and not to NetworkTables:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.first.util.datalog.BooleanLogEntry;
         import edu.wpi.first.util.datalog.DataLog;
@@ -125,7 +125,7 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
           }
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "frc/DataLogManager.h"
         #include "wpi/DataLog.h"

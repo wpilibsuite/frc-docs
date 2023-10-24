@@ -35,14 +35,14 @@ To create a ``SimpleMotorFeedforward``, simply construct it with the required ga
 
 .. note:: The ``kA`` gain can be omitted, and if it is, will default to a value of zero.  For many mechanisms, especially those with little inertia, it is not necessary.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
     SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(kS, kV, kA);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
     // Distance is measured in meters
@@ -52,15 +52,15 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. note:: The acceleration argument may be omitted from the ``calculate()`` call, and if it is, will default to a value of zero.  This should be done whenever there is not a clearly-defined acceleration setpoint.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the feedforward for a velocity of 10 units/second and an acceleration of 20 units/second^2
     // Units are determined by the units of the gains passed in at construction.
     feedforward.calculate(10, 20);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the feedforward for a velocity of 10 meters/second and an acceleration of 20 meters/second^2
     // Output is in volts
@@ -79,14 +79,14 @@ To create an ``ArmFeedforward``, simply construct it with the required gains:
 
 .. note:: The ``kA`` gain can be omitted, and if it is, will default to a value of zero.  For many mechanisms, especially those with little inertia, it is not necessary.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Create a new ArmFeedforward with gains kS, kG, kV, and kA
     ArmFeedforward feedforward = new ArmFeedforward(kS, kG, kV, kA);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Create a new ArmFeedforward with gains kS, kG, kV, and kA
     frc::ArmFeedforward feedforward(kS, kG, kV, kA);
@@ -95,16 +95,16 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. note:: The acceleration argument may be omitted from the ``calculate()`` call, and if it is, will default to a value of zero.  This should be done whenever there is not a clearly-defined acceleration setpoint.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the feedforward for a position of 1 units, a velocity of 2 units/second, and
     // an acceleration of 3 units/second^2
     // Units are determined by the units of the gains passed in at construction.
     feedforward.calculate(1, 2, 3);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
     // an acceleration of 3 radians/second^2
@@ -124,14 +124,14 @@ To create a ``ElevatorFeedforward``, simply construct it with the required gains
 
 .. note:: The ``kA`` gain can be omitted, and if it is, will default to a value of zero.  For many mechanisms, especially those with little inertia, it is not necessary.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Create a new ElevatorFeedforward with gains kS, kG, kV, and kA
     ElevatorFeedforward feedforward = new ElevatorFeedforward(kS, kG, kV, kA);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Create a new ElevatorFeedforward with gains kS, kV, and kA
     // Distance is measured in meters
@@ -141,16 +141,16 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. note:: The acceleration argument may be omitted from the ``calculate()`` call, and if it is, will default to a value of zero.  This should be done whenever there is not a clearly-defined acceleration setpoint.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the feedforward for a velocity of 20 units/second
     // and an acceleration of 30 units/second^2
     // Units are determined by the units of the gains passed in at construction.
     feedforward.calculate(20, 30);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the feedforward for a velocity of 20 meters/second
     // and an acceleration of 30 meters/second^2
@@ -164,16 +164,16 @@ Using Feedforward to Control Mechanisms
 
 Feedforward control can be used entirely on its own, without a feedback controller.  This is known as "open-loop" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public void tankDriveWithFeedforward(double leftVelocity, double rightVelocity) {
       leftMotor.setVoltage(feedforward.calculate(leftVelocity));
       rightMotor.setVoltage(feedForward.calculate(rightVelocity));
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     void TankDriveWithFeedforward(units::meters_per_second_t leftVelocity,
                                   units::meters_per_second_t rightVelocity) {
