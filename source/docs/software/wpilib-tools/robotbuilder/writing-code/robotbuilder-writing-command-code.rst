@@ -17,9 +17,9 @@ Generated CloseClaw Class
 
 
     .. code-block:: java
-    :linenos:
-    :lineno-start: 11
-    :emphasize-lines: 42, 53, 59
+       :linenos:
+       :lineno-start: 11
+       :emphasize-lines: 42, 53, 59
 
         // ROBOTBUILDER TYPE: Command.
 
@@ -149,4 +149,3 @@ RobotBuilder will generate the class files for the `CloseClaw` command. The comm
 1. Start the claw motor moving in the closing direction by calling the ``Close()`` method that was added to the `Claw` subsystem in the `CloseClaw` Initialize method.
 2. This command is finished when the limit switch in the `Claw` subsystem is tripped.
 3. The ``End()`` method is called when the command is finished and is a place to clean up. In this case, the motor is stopped since the time has run out.
-
