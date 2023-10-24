@@ -324,7 +324,7 @@ For example, consider the following code:
 
 When run, you'll see output that looks like this:
 
-.. tab-set-code::
+.. tab-set::
 
    .. tab-item:: Java
       :sync: tabcode-java
