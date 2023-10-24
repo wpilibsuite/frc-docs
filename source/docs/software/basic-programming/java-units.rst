@@ -18,7 +18,7 @@ The Java units library is available in the ``edu.wpi.first.units`` package. The 
 The library comes with predefined SI and imperial units for distance, angle, time, velocity and acceleration (both linear and angular), mass, voltage, current, power, energy, and temperature.
 
 New ``Measure`` objects can be created by calling the ``Unit#of`` method on the appropriate unit object, such as ``Inches.of(8)`` or ``Volts.of(13.5)``.
-``Measure`` is a generic type that contains what type of unit the measurement uses, such as ``Angle`` or ``Distance``; for example: ``Measure<Distance> wheelDiameter = Inches.of(6)``.
+``Measure`` is a generic type that contains the type of unit the measurement uses, such as ``Angle`` or ``Distance``. For example, ``Measure<Distance> wheelDiameter = Inches.of(6)`` is a measurement object corresponding to a distance of six inches, and ``Measure<Velocity<Angle>> maxRPM = RPM.of(5640)`` is a measurement corresponding to an angular velocity of 5,640 RPM.
 
 .. code-block:: java
 
@@ -52,74 +52,31 @@ Arithmetic can also be performed with multiple ``Measure`` objects together:
    Measure<Distance> endEffectorX = armLength.times(Math.cos(getArmAngle().in(Radians));
    Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians));
 
-Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly!
+Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly! It is strongly recommended to only use unit conversions when interacting with APIs that do not support the units library.
 
 .. code-block:: java
 
    Measure<Velocity<Distance>> kMaxVelocity = FeetPerSecond.of(12.5);
    Measure<Velocity<Velocity<Distance>>> kMaxAcceleration = FeetPerSecond.per(Second).of(22.9);
 
+   kMaxVelocity.in(MetersPerSecond); // => OK! Returns 3.81
+   kMaxVelocity.in(RadiansPerSecond); // => Compile error! Velocity<Angle> cannot be converted to Unit<Velocity<Distance>>
+
    // The WPILib math libraries use SI metric units, so we have to convert to meters:
    TrapezoidProfile.Constraints kDriveConstraints = new TrapezoidProfile.Constraints(
      maxVelocity.in(MetersPerSecond),
-     maxAcceleration.in(MetersPerSecondSquared)
+     maxAcceleration.in(MetersPerSecondPerSecond)
    );
+
+.. note:: Due to restrictions of the Java type system, acceleration is modeled as ``Velocity<Velocity<X>>>`` instead of having its own class.
 
 Memory Usage and the Garbage Collector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The roboRIO is a severely memory-constrained runtime environment and the Java garbage collector has to run to keep memory usage to a reasonable level. The garbage collector will have to pause the robot program in order to free unused objects, which manifests as loop overruns and potentially jittery controls. To avoid this issue, allocate as few ``Measure`` objects as possible in areas of code that will run periodically, such as in a Command's ``execute`` or a Subsystem's ``periodic`` method.
+The roboRIO is a severely memory-constrained runtime environment and the Java garbage collector has to run to keep memory usage to a reasonable level. The garbage collector will have to pause the robot program in order to free unused objects, which manifests as loop overruns and potentially jittery controls. To avoid this issue, allocate as few ``Measure`` objects as possible in areas of code that will run periodically, such as in a Command's ``execute`` or one of TimedRobot's periodic methods.
 If you still want to use units in hot areas of the code, a special ``MutableMeasure`` class is available. ``MutableMeasure`` allows the internal state of the object to be updated (such as with the results arithmetic operations) to avoid allocating new objects. If the object will be exposed as part of a public API method, have that method return a regular ``Measure`` in its signature to prevent other areas of the code (or users, if it's part of a library) from modifying your internal state.
 
-Revisiting the arm example from above:
-
-.. code-block:: java
-
-   import edu.wpi.first.units.Measure;
-   import edu.wpi.first.units.MutableMeasure;
-   import static edu.wpi.first.units.Units.*;
-
-   public class Arm {
-     // Note the two ephemeral object allocations for the Feet.of and Inches.of calls.
-     // Because this is a constant value computed just once, they will easily be garbage collected without
-     // any problems with memory use or loop timing jitter.
-     private static final Measure<Distance> kArmLength = Feet.of(3).plus(Inches.of(4.25));
-
-     // Angle and X/Y locations will likely be called in the main robot loop, let's store them in a MutableMeasure
-     // to avoid allocating lots of short-lived objects
-     private final MutableMeasure<Angle> m_angle = MutableMeasure.zero(Degrees);
-     private final MutableMeasure<Distance> m_endEffectorX = MutableMeasure.zero(Feet);
-     private final MutableMeasure<Distance> m_endEffectorY = MutableMeasure.zero(Feet);
-
-     private final Encoder m_encoder = new Encoder(...);
-
-     public Measure<Angle> getAngle() {
-       double rawAngle = m_encoder.getPosition();
-       m_angle.mut_replace(rawAngle, Degrees); // NOTE: the encoder must be configured with distancePerPulse in terms of degrees!
-       return m_angle;
-     }
-
-     public Measure<Distance> getEndEffectorX() {
-       m_endEffectorX.mut_replace(
-         Math.cos(getAngle().in(Radians)) * kArmLength.in(Feet), // the new magnitude to store
-         Feet // the units of the new magnitude
-       );
-       // Or, if you *really* want to avoid unpacking and repacking the length units:
-       // m_endEffectorX.mut_replace(kArmLength);
-       // m_endEffectorX.mut_times(Math.cos(getAngle().in(Radians));
-       return m_endEffectorX;
-     }
-
-     public Measure<Distance> getEndEffectorY() {
-       m_endEffectorY.mut_replace(
-         Math.sin(getAngle().in(Radians)) * kArmLength.in(Feet),
-         Feet
-       );
-       return m_endEffectorY;
-     }
-   }
-
-Other methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
+Extra methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
 For the full list of methods and API documentation, see `the MutableMeasure API documentation <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/MutableMeasure.html>`__
 
 +-------------------------------+--------------------------------------------------------------------------------------------+
@@ -142,6 +99,50 @@ For the full list of methods and API documentation, see `the MutableMeasure API 
 | ``mut_setMagnitude(double)``  | Overrides the internal value, keeping the internal unit. Be careful when using this!       |
 +-------------------------------+--------------------------------------------------------------------------------------------+
 
+Revisiting the arm example from above, we can use ``mut_replace`` - and, optionally, ``mut_times`` - to calculate the end effector position
+
+.. code-block:: java
+
+   import edu.wpi.first.units.Measure;
+   import edu.wpi.first.units.MutableMeasure;
+   import static edu.wpi.first.units.Units.*;
+
+   public class Arm {
+     // Note the two ephemeral object allocations for the Feet.of and Inches.of calls.
+     // Because this is a constant value computed just once, they will easily be garbage collected without
+     // any problems with memory use or loop timing jitter.
+     private static final Measure<Distance> kArmLength = Feet.of(3).plus(Inches.of(4.25));
+
+     // Angle and X/Y locations will likely be called in the main robot loop, let's store them in a MutableMeasure
+     // to avoid allocating lots of short-lived objects
+     private final MutableMeasure<Angle> m_angle = MutableMeasure.zero(Degrees);
+     private final MutableMeasure<Distance> m_endEffectorX = MutableMeasure.zero(Feet);
+     private final MutableMeasure<Distance> m_endEffectorY = MutableMeasure.zero(Feet);
+
+     private final Encoder m_encoder = new Encoder(...);
+
+     public Measure<Distance> getEndEffectorX() {
+       m_endEffectorX.mut_replace(
+         Math.cos(getAngle().in(Radians)) * kArmLength.in(Feet), // the new magnitude to store
+         Feet // the units of the new magnitude
+       );
+       return m_endEffectorX;
+     }
+
+     public Measure<Distance> getEndEffectorY() {
+       // An alternative approach so we don't have to unpack and repack the units
+       m_endEffectorY.mut_replace(kArmLength);
+       m_endEffectorY.mut_times(Math.sin(getAngle().in(Radians));
+       return m_endEffectorY;
+     }
+
+     public Measure<Angle> getAngle() {
+       double rawAngle = m_encoder.getPosition();
+       m_angle.mut_replace(rawAngle, Degrees); // NOTE: the encoder must be configured with distancePerPulse in terms of degrees!
+       return m_angle;
+     }
+   }
+
 Defining New Units
 ------------------
 
@@ -152,7 +153,7 @@ There are four ways to define a new unit that isn't already present in the libra
 - Using the ``derive`` method and customizing how the new unit relates to the base unit;
 - Subclassing ``Unit`` to define a new type of unit
 
-New units can be defined as combinations of existing units using the ``Unit#mult`` and ``Unit#per`` methods:
+New units can be defined as combinations of existing units using the ``Unit#mult`` and ``Unit#per`` methods.
 
 .. code-block:: java
 
@@ -173,7 +174,7 @@ Using ``mult`` and ``per`` will store the resulting unit. Every call will return
 
 .. note:: Calling ``Unit#per(Time)`` will return a ``Velocity`` unit, which is different from and incompatible with a ``Per`` unit!
 
-New unit types can also be created by subclassing ``Unit`` and implementing the two constructors:
+New unit types can also be created by subclassing ``Unit`` and implementing the two constructors. Note that ``Unit`` is also a parameterized generic type, where the generic type argument is self-referential; ``Distance`` is a ``Unit<Distance>``. This is what allows us to have stronger guarantees in the type system to prevent conversions between unrelated unit types.
 
 .. code-block:: java
 
