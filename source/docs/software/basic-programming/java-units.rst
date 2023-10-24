@@ -13,7 +13,7 @@ The units library is intended to reduce the number of unit-related bugs in robot
 Using the Units Library
 -----------------------
 
-The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are `edu.wpi.first.units.Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units; and `edu.wpi.first.units.Measure <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
+The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are `edu.wpi.first.units.Units <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units; and `edu.wpi.first.units.Measure <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 
 The library comes with predefined SI and imperial units for distance, angle, time, velocity and acceleration (both linear and angular), mass, voltage, current, power, energy, and temperature.
 
@@ -77,7 +77,7 @@ The roboRIO is a severely memory-constrained runtime environment and the Java ga
 If you still want to use units in hot areas of the code, a special ``MutableMeasure`` class is available. ``MutableMeasure`` allows the internal state of the object to be updated (such as with the results arithmetic operations) to avoid allocating new objects. If the object will be exposed as part of a public API method, have that method return a regular ``Measure`` in its signature to prevent other areas of the code (or users, if it's part of a library) from modifying your internal state.
 
 Extra methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
-For the full list of methods and API documentation, see `the MutableMeasure API documentation <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/MutableMeasure.html>`__
+For the full list of methods and API documentation, see `the MutableMeasure API documentation <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/MutableMeasure.html>`__
 
 +-------------------------------+--------------------------------------------------------------------------------------------+
 | ``mut_plus(double)``          | Increments the internal value by a raw number, in terms of the preexisting unit.           |
