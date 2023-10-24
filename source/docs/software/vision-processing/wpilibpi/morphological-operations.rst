@@ -78,7 +78,7 @@ Closing
 
 Closing is dilation followed by erosion. This process removes small holes or breaks without affecting the shape of larger features.
 
-.. tab-set-block::
+.. tab-set-code::
 
    .. code-block:: py
 
