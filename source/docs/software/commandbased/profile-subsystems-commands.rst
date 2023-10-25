@@ -26,15 +26,17 @@ When subclassing ``TrapezoidProfileSubsystem``, users must override a single abs
 useState()
 ~~~~~~~~~~
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+     :sync: Java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
          :language: java
          :lines: 105-105
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+     :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
          :language: c++
@@ -66,14 +68,14 @@ setGoal()
 
 The ``setGoal()`` method can be used to set the goal state of the ``TrapezoidProfileSubsystem``.  The subsystem will automatically execute a profile to the goal, passing the current state at each iteration to the provided `useState()`_ method.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // The subsystem will execute a profile to a position of 5 and a velocity of 3.
     examplePIDSubsystem.setGoal(new TrapezoidProfile.State(5, 3);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // The subsystem will execute a profile to a position of 5 meters and a velocity of 3 mps.
     examplePIDSubsyste.SetGoal({5_m, 3_mps});
@@ -88,9 +90,10 @@ Full TrapezoidProfileSubsystem Example
 
 What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the ArmbotOffobard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
       :language: java
@@ -98,7 +101,8 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
       :language: c++
@@ -106,7 +110,8 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
@@ -116,9 +121,10 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
 Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
       :language: java
@@ -126,7 +132,8 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
       :linenos:
       :lineno-start: 52
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
       :language: c++
@@ -150,9 +157,10 @@ A ``TrapezoidProfileCommand`` can be created two ways - by subclassing the ``Tra
 
 In either case, a ``TrapezoidProfileCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
       :language: java
@@ -160,7 +168,8 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
       :linenos:
       :lineno-start: 28
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileCommand.h
       :language: c++
@@ -198,9 +207,10 @@ Full TrapezoidProfileCommand Example
 
 What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/commands/DriveDistanceProfiled.java
       :language: java
@@ -208,7 +218,8 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/commands/DriveDistanceProfiled.h
       :language: c++
@@ -216,7 +227,8 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/commands/DriveDistanceProfiled.cpp
       :language: c++
@@ -226,9 +238,10 @@ What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The 
 
 And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:Inline Commands>` example:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/RobotContainer.java
       :language: java
@@ -236,7 +249,8 @@ And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:I
       :linenos:
       :lineno-start: 66
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
       :language: c++

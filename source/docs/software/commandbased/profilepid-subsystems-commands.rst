@@ -24,15 +24,17 @@ When subclassing ``ProfiledPIDSubsystem``, users must override two abstract meth
 getMeasurement()
 ~~~~~~~~~~~~~~~~
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+     :sync: Java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.java
          :language: java
          :lines: 85-85
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+     :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
          :language: cpp
@@ -45,15 +47,17 @@ Users should override this method to return whatever sensor reading they wish to
 useOutput()
 ~~~~~~~~~~~
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+     :sync: Java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.java
          :language: java
          :lines: 78-78
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+     :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
          :language: cpp
@@ -83,14 +87,14 @@ setGoal()
 
 The ``setGoal()`` method can be used to set the setpoint of the ``PIDSubsystem``.  The subsystem will automatically track to the setpoint using the defined output:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
     examplePIDSubsystem.setGoal(5, 3);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
     examplePIDSubsystem.SetGoal({5_m, 3_mps});
@@ -107,9 +111,10 @@ Full ProfiledPIDSubsystem Example
 
 What does a PIDSubsystem look like when used in practice? The following examples are taken from the ArmBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ArmBot>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/subsystems/ArmSubsystem.java
       :language: java
@@ -117,7 +122,8 @@ What does a PIDSubsystem look like when used in practice? The following examples
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/include/subsystems/ArmSubsystem.h
       :language: c++
@@ -125,7 +131,8 @@ What does a PIDSubsystem look like when used in practice? The following examples
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/subsystems/ArmSubsystem.cpp
       :language: c++
@@ -135,9 +142,10 @@ What does a PIDSubsystem look like when used in practice? The following examples
 
 Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot/RobotContainer.java
       :language: java
@@ -145,7 +153,8 @@ Using a ``ProfiledPIDSubsystem`` with commands can be very simple:
       :linenos:
       :lineno-start: 55
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmBot/cpp/RobotContainer.cpp
       :language: c++
@@ -169,9 +178,10 @@ A ``ProfiledPIDCommand`` can be created two ways - by subclassing the ``Profiled
 
 In either case, a ``ProfiledPIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.java
       :language: java
@@ -179,7 +189,8 @@ In either case, a ``ProfiledPIDCommand`` is created by passing the necessary par
       :linenos:
       :lineno-start: 29
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDCommand.h
       :language: c++
@@ -225,9 +236,10 @@ Full ProfiledPIDCommand Example
 
 What does a ``ProfiledPIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngleProfiled.java
       :language: java
@@ -235,7 +247,8 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngleProfiled.h
       :language: c++
@@ -243,7 +256,8 @@ What does a ``ProfiledPIDCommand`` look like when used in practice? The followin
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngleProfiled.cpp
       :language: c++

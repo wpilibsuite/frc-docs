@@ -6,37 +6,43 @@ The advantage of the robot program being the server is that it's at a known netw
 Starting a NetworkTables Server
 -------------------------------
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
             NetworkTableInstance inst = NetworkTableInstance.getDefault();
             inst.startServer();
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
             inst.StartServer();
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
             NT_Inst inst = nt::GetDefaultInstance();
             nt::StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
             NT_Inst inst = NT_GetDefaultInstance();
             NT_StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -49,9 +55,10 @@ Starting a NetworkTables Server
 Starting a NetworkTables Client
 -------------------------------
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -69,7 +76,8 @@ Starting a NetworkTables Client
             // connect to a specific host/port
             inst.setServer("host", NetworkTableInstance.kDefaultPort4)
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -87,7 +95,8 @@ Starting a NetworkTables Client
             // connect to a specific host/port
             inst.SetServer("host", NT_DEFAULT_PORT4)
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -105,7 +114,8 @@ Starting a NetworkTables Client
             // connect to a specific host/port
             nt::SetServer(inst, "host", NT_DEFAULT_PORT4)
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -123,7 +133,9 @@ Starting a NetworkTables Client
             // connect to a specific host/port
             NT_SetServer(inst, "host", NT_DEFAULT_PORT4)
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 

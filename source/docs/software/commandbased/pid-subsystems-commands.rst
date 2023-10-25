@@ -22,15 +22,17 @@ When subclassing ``PIDSubsystem``, users must override two abstract methods to p
 getMeasurement()
 ~~~~~~~~~~~~~~~~
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+     :sync: Java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 84-84
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+     :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
@@ -43,15 +45,17 @@ Users should override this method to return whatever sensor reading they wish to
 useOutput()
 ~~~~~~~~~~~
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+     :sync: Java
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
          :lines: 77-77
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+     :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
          :language: cpp
@@ -79,14 +83,14 @@ setSetpoint()
 
 The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsystem``.  The subsystem will automatically track to the setpoint using the defined output:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // The subsystem will track to a setpoint of 5.
     examplePIDSubsystem.setSetpoint(5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // The subsystem will track to a setpoint of 5.
     examplePIDSubsystem.SetSetpoint(5);
@@ -103,9 +107,10 @@ Full PIDSubsystem Example
 
 What does a ``PIDSubsystem`` look like when used in practice? The following examples are taken from the FrisbeeBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
       :language: java
@@ -113,7 +118,8 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
       :language: c++
@@ -121,7 +127,8 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/subsystems/ShooterSubsystem.cpp
       :language: c++
@@ -131,15 +138,17 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
 
 Using a ``PIDSubsystem`` with commands can be very simple:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
       :language: java
       :lines: 26-27, 80-87
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
       :language: c++
@@ -147,7 +156,8 @@ Using a ``PIDSubsystem`` with commands can be very simple:
       :linenos:
       :lineno-start: 45
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
       :language: c++
@@ -169,9 +179,10 @@ A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand`` cla
 
 In either case, a ``PIDCommand`` is created by passing the necessary parameters to its constructor (if defining a subclass, this can be done with a `super()` call):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
       :language: java
@@ -179,7 +190,8 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
       :linenos:
       :lineno-start: 27
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
       :language: c++
@@ -225,9 +237,10 @@ Full PIDCommand Example
 
 What does a ``PIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
       :language: java
@@ -235,7 +248,8 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++
+     :sync: C++ (Header)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
       :language: c++
@@ -243,7 +257,8 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
       :linenos:
       :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngle.cpp
       :language: c++
@@ -253,9 +268,10 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
 
 And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:Inline Commands>`  example:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
       :language: java
@@ -263,7 +279,8 @@ And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:I
       :linenos:
       :lineno-start: 64
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
       :language: c++

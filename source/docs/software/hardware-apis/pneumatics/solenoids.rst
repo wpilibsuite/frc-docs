@@ -12,9 +12,11 @@ Single Solenoids in WPILib
 
 Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Solenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_solenoid.html>`__). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call ``set(true)`` to enable or ``set(false)`` to disable the solenoid output.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 30-32
@@ -26,14 +28,18 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
           :linenos:
           :lineno-start: 88
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+       :sync: C++ (Header)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 44-47
           :linenos:
           :lineno-start: 44
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 42-47
@@ -46,9 +52,11 @@ Double Solenoids in WPILib
 
 Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_double_solenoid.html>`__). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to ``kOff`` (neither output activated), ``kForward`` (forward channel enabled) or ``kReverse`` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-default CAN ID.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 34-37
@@ -60,14 +68,18 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
           :linenos:
           :lineno-start: 100
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+       :sync: C++ (Header)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 49-52
           :linenos:
           :lineno-start: 49
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+      
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 54, 56
@@ -82,9 +94,9 @@ Solenoids can be switched from one output to the other (known as toggling) by us
 .. note::
    Since a DoubleSolenoid defaults to off, you will have to set it before it can be toggled.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Solenoid exampleSingle = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
       DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
@@ -97,7 +109,7 @@ Solenoids can be switched from one output to the other (known as toggling) by us
          exampleDouble.toggle();
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
       frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};

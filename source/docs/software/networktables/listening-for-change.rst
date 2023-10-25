@@ -5,9 +5,10 @@ A common use case for :term:`NetworkTables` is where a coprocessor generates val
 
 There are a few different ways to detect that a topic's value has changed; the easiest way is to periodically call a subscriber's ``get()``, ``readQueue()``, or ``readQueueValues()`` function from the robot's periodic loop, as shown below:
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -54,7 +55,8 @@ There are a few different ways to detect that a topic's value has changed; the e
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -96,7 +98,8 @@ There are a few different ways to detect that a topic's value has changed; the e
               }
             };
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -129,7 +132,9 @@ There are a few different ways to detect that a topic's value has changed; the e
               }
             };
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -185,9 +190,10 @@ The below example listens to various kinds of events using ``NetworkTableInstanc
 
 The ``addListener`` functions in NetworkTableInstance return a listener handle. This can be used to remove the listener later.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -263,7 +269,8 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -342,7 +349,9 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
               }
             };
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 

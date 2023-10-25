@@ -7,39 +7,55 @@ Pressure is created using a pneumatic compressor and stored in pneumatic tanks. 
 
 Construct a ``Compressor`` object:
 
-.. tabs::
-    .. group-tab:: REV Pneumatic Hub (PH)
-        .. tabs::
-            .. group-tab:: Java
+.. tab-set::
+    .. tab-item:: REV Pneumatic Hub (PH)
+      
+        .. tab-set::
+            .. tab-item:: Java
+               :sync: Java
+
                .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
                   :language: java
                   :lines: 39-40
-            .. group-tab:: C++ (Header)
+
+            .. tab-item:: C++ (Header)
+               :sync: C++ (Header)
+
                .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
                   :language: c++
                   :lines: 54-55
-    .. group-tab:: CTRE Pneumatics Control Module (PCM)
-        .. tabs::
-            .. group-tab:: Java
+    .. tab-item:: CTRE Pneumatics Control Module (PCM)
+
+        .. tab-set::
+           .. tab-item:: Java
+               :sync: Java
+
                .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Pneumatics.java
                   :language: java
                   :lines: 26-27
-            .. group-tab:: C++ (Header)
-               .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
-                  :language: c++
-                  :lines: 41-42
+
+           .. tab-item:: C++ (Header)
+              :sync: C++ (Header)
+
+              .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
+                 :language: c++
+                 :lines: 41-42
 
 
 Querying compressor current and state:
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 67-68, 73-74, 79-81
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 26-28, 31-32, 35-37
@@ -47,28 +63,36 @@ Querying compressor current and state:
 
 Enable/disable digital closed-loop compressor control (enabled by default):
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Pneumatics.java
           :language: java
           :lines: 54-55, 58-61
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Pneumatics.cpp
           :language: c++
           :lines: 12-13, 16-19
 
 The Pneumatic Hub also has methods for enabling compressor control using the REV Analog Pressure Sensor:
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 120-124, 127-133
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 76-81, 84-90
@@ -84,8 +108,10 @@ Pneumatic Hub
 
 The Pneumatic Hub has analog inputs that may be used to read a pressure transducer using the Compressor class.
 
-.. tabs::
-    .. group-tab:: Java
+.. tab-set::
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 39-40
@@ -93,12 +119,16 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
           :language: java
           :lines: 59-62
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+       :sync: C++ (Header)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 54-55
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 19-23
@@ -108,9 +138,11 @@ roboRIO
 
 A pressure transducer can be connected to the Analog Input ports on the roboRIO, and can be read by the ``AnalogInput`` or ``AnalogPotentiometer`` classes in WPILib.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Pneumatics.java
           :language: java
           :lines: 16-24
@@ -118,12 +150,16 @@ A pressure transducer can be connected to the Analog Input ports on the roboRIO,
           :language: java
           :lines: 40-41
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+       :sync: C++ (Header)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Pneumatics.h
           :language: c++
           :lines: 30-40
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+       :sync: C++ (Source)
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/c2685629ed0a07016d7ebded3bc8e6f84bd9cdca/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Pneumatics.cpp
           :language: c++
           :lines: 24-26
