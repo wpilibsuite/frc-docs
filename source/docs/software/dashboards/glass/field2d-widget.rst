@@ -8,8 +8,8 @@ Sending Robot Pose from User Code
 
 To send your robot's position (usually obtained by :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>` or a pose estimator), a ``Field2d`` instance must be created in robot code and sent over NetworkTables. The instance must then be updated periodically with the latest robot pose.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       private final Field2d m_field = new Field2d();
 
@@ -25,7 +25,7 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
         m_field.setRobotPose(m_odometry.getPoseMeters());
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/smartdashboard/Field2d.h>
       #include <frc/smartdashboard/SmartDashboard.h>
@@ -51,23 +51,19 @@ Sending Trajectories to Field2d
 
 Visualizing your trajectory is a great debugging step for verifying that your trajectories are created as intended. Trajectories can be easily visualized in :ref:`Field2d <docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` using the ``setTrajectory()``/``SetTrajectory()`` functions.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      :language: java
+      :lines: 44-61
+      :linenos:
+      :lineno-start: 44
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-         :language: java
-         :lines: 44-61
-         :linenos:
-         :lineno-start: 44
-
-   .. group-tab:: C++
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-         :language: cpp
-         :lines: 18-30
-         :linenos:
-         :lineno-start: 18
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+      :language: cpp
+      :lines: 18-30
+      :linenos:
+      :lineno-start: 18
 
 Viewing Trajectories with Glass
 -------------------------------

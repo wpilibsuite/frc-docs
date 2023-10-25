@@ -11,9 +11,9 @@ Often debugging or monitoring the status of a robot involves writing a number of
 Displaying values in normal operating mode (autonomous or teleop)
 -----------------------------------------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         protected void execute() {
             SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());

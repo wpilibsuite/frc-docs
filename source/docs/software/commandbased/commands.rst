@@ -40,13 +40,13 @@ Each command should declare any subsystems it controls as requirements. This bac
 
 Declaring requirements is done by overriding the ``getRequirements()`` method in the relevant command class, by calling ``addRequirements()``, or by using the ``requirements`` vararg (Java) / ``Requirements`` struct (C++) parameter at the end of the parameter list of most command constructors and factories in the library:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Commands.run(intake::activate, intake);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake});
 
@@ -61,13 +61,13 @@ The ``runsWhenDisabled()`` method (`Java <https://github.wpilib.org/allwpilib/do
 
 This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#ignoringDisable(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#acc67b15e71a66aafb7523ccdd0a7a834>`__):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Command mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr mayRunDuringDisabled = frc2::cmd::Run([] { UpdateTelemetry(); }).IgnoringDisable(true);
 
@@ -82,13 +82,13 @@ The ``getInterruptionBehavior()`` method (`Java <https://github.wpilib.org/allwp
 
 This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withInterruptBehavior(edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a6583f966509478a29e7764a72c4bf177>`__):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Command noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr noninterruptible = frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake}).WithInterruptBehavior(Command::InterruptBehavior::kCancelIncoming);
 
@@ -106,37 +106,40 @@ The most basic commands are actions the robot takes: setting voltage to a motor,
 
 The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_instant_command.html>`__) class, creates a command that calls a lambda once, and then finishes.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
-      :language: java
-      :lines: 25-35
-      :linenos:
-      :lineno-start: 25
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+        :language: java
+        :lines: 25-35
+        :linenos:
+        :lineno-start: 25
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+      :sync: tabcode-cpp
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
-      :language: c++
-      :lines: 20-28
-      :linenos:
-      :lineno-start: 20
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
+        :language: c++
+        :lines: 20-28
+        :linenos:
+        :lineno-start: 20
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+      :sync: tabcode-cpp-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
-      :language: c++
-      :lines: 15-25
-      :linenos:
-      :lineno-start: 15
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+        :language: c++
+        :lines: 15-25
+        :linenos:
+        :lineno-start: 15
 
 The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_run_command.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
@@ -145,7 +148,7 @@ The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.
         driverController.getRightX()),
         m_robotDrive)
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // A split-stick arcade command, with forward/backward controlled by the left
     // hand, and turning controlled by the right.
@@ -159,9 +162,9 @@ The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.
 
 The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_start_end_command.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Commands.startEnd(
         // Start a flywheel spinning at 50% power
@@ -172,7 +175,7 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
         m_shooter
     )
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::cmd::StartEnd(
       // Start a flywheel spinning at 50% power
@@ -185,9 +188,9 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
 
 ``FunctionalCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_functional_command.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     new FunctionalCommand(
         // Reset encoders on command start
@@ -202,7 +205,7 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
         m_robotDrive
     )
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::FunctionalCommand(
       // Reset encoders on command start
@@ -226,28 +229,28 @@ Waiting for a certain condition to happen or adding a delay can be useful to syn
 
 To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``frc2::cmd::Wait(units::second_t)`` factory, backed by the ``WaitCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_wait_command.html>`__) class.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Ends 5 seconds after being scheduled
     new WaitCommand(5.0)
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Ends 5 seconds after being scheduled
     frc2::WaitCommand(5.0_s)
 
 To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_wait_until_command.html>`__).
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Ends after m_limitSwitch.get() returns true
     new WaitUntilCommand(m_limitSwitch::get)
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
@@ -278,54 +281,54 @@ Users may also write custom command classes. As this is significantly more verbo
 
 To write a custom command class, subclass the abstract ``Command`` class (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html>`__) or ``CommandHelper`` (`C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h>`__):
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
+    :language: java
+    :lines: 7-24
+    :linenos:
+    :lineno-start: 7
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
-      :language: java
-      :lines: 7-24
-      :linenos:
-      :lineno-start: 7
 
-  .. group-tab:: C++
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h
-      :language: c++
-      :lines: 5-31
-      :linenos:
-      :lineno-start: 5
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/templates/commandbased/include/commands/ExampleCommand.h
+    :language: c++
+    :lines: 5-31
+    :linenos:
+    :lineno-start: 5
 
 Simple Command Example
 ----------------------
 
 What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__) that uses the ``HatchSubsystem``:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
+        :language: java
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: tabcode-cpp
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
+        :language: c++
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: tabcode-cpp-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+        :language: c++
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
 Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called :term:`dependency injection`, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
@@ -333,68 +336,63 @@ Notice also that the above command calls the subsystem method once from initiali
 
 What about a more complicated case? Below is a drive command, from the same example project:
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
+        :language: java
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+  .. tab-item:: C++ (Header)
+     :sync: tabcode-cpp
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
+        :language: c++
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: tabcode-cpp-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/aaea85ff165602a612e57a0e8170eaaa43ceec8f/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
+        :language: c++
+        :lines: 5-
+        :linenos:
+        :lineno-start: 5
 
 And then usage:
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+    :language: java
+    :lines: 59-67
+    :linenos:
+    :lineno-start: 59
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
-      :language: java
-      :lines: 59-67
-      :linenos:
-      :lineno-start: 59
-
-  .. group-tab:: C++
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 57-60
-      :linenos:
-      :lineno-start: 57
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+    :language: c++
+    :lines: 57-60
+    :linenos:
+    :lineno-start: 57
 
 Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands. Once more, this command is rather simple and calls the subsystem method only from one place, and as such, could be more concisely written using factories:
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+    :language: java
+    :lines: 51-60
+    :linenos:
+    :lineno-start: 51
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
-      :language: java
-      :lines: 51-60
-      :linenos:
-      :lineno-start: 51
-
-  .. group-tab:: C++
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 52-58
-      :linenos:
-      :lineno-start: 52
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    :language: c++
+    :lines: 52-58
+    :linenos:
+    :lineno-start: 52
