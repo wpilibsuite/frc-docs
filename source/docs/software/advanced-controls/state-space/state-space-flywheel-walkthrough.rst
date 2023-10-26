@@ -82,13 +82,13 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: cpp
          :lines: 17
-         :linenos: 
+         :linenos:
          :lineno-start: 17
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: cpp
          :lines: 30-46
-         :linenos: 
+         :linenos:
          :lineno-start: 30
 
 

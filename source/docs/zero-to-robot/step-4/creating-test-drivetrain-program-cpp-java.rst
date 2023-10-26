@@ -80,7 +80,7 @@ Imports/Includes
 
          .. tab-item:: C++
             :sync: cpp
-            
+
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-10

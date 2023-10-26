@@ -9,7 +9,7 @@ Construct a ``Compressor`` object:
 
 .. tab-set::
     .. tab-item:: REV Pneumatic Hub (PH)
-      
+
         .. tab-set::
             .. tab-item:: Java
                :sync: Java

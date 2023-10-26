@@ -53,7 +53,7 @@ This method walks through the following steps:
       :lines: 114-159
       :linenos:
       :lineno-start: 114
-      
+
 
 The Scheduler Run Sequence
 --------------------------
@@ -98,7 +98,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
 
   .. tab-item:: Java
     :sync: tabcode-java
-    
+
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
       :language: java
       :lines: 290-292

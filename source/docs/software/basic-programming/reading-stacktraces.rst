@@ -330,7 +330,7 @@ When run, you'll see output that looks like this:
       :sync: tabcode-java
 
       .. code-block:: text
-      
+
 
          ********** Robot program starting **********
          Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero

@@ -45,7 +45,7 @@ Create a Method to Write the Motors on the Subsystem
 
    .. tab-item:: java
       :sync: java
-    
+
       .. code-block:: java
          :linenos:
          :lineno-start: 11

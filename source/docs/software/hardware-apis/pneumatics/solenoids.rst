@@ -79,7 +79,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
 
     .. tab-item:: C++ (Source)
        :sync: C++ (Source)
-      
+
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 54, 56

@@ -20,7 +20,7 @@ Writing a Program to Access the Topics
 --------------------------------------
 
 .. tab-set-code::
-  
+
    .. code-block:: java
 
       DoubleArraySubscriber areasSub;

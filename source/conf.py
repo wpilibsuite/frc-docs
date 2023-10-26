@@ -275,7 +275,6 @@ latex_elements = {
 suppress_warnings = ["epub.unknown_project_files"]
 
 
-
 # Options for translation support -------------------------------------------
 
 gettext_compact = False
