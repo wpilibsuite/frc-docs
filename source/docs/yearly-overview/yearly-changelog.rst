@@ -42,9 +42,10 @@ General Library
     - Added proxy factory to ``Commands``
     - Added ``IdleCommand``
     - Fixed ``RepeatCommand`` calling ``end()`` twice
-    - Added ``onlyWhile()`` and ``onlyIf()``
+    - Added ``onlyWhile()`` and ``onlyIf()`` decorators
     - Implemented ``ConditionalCommand.getInterruptBehavior()``
     - Added interruptor parameter to ``onCommandInterrupt`` callbacks
+    - Added ``DeferredCommand``, ``Commands.defer()``, and ``Subsystem.defer()``
 
 - NetworkTables:
 
