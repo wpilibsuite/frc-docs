@@ -33,7 +33,7 @@ Navigate to the "Settings" tab on the left side of the interface.
 - Click the "Update" button.
 - Make sure your roboRIO has the following static IP address: `10.TE.AM.2`
 - Power-cycle your robot.
-- You will now be able to access your config panel at `10.TE.AM.11:5801`, and your camera stream at `10.TE.AM.11:5800``
+- You will now be able to access your config panel at `10.TE.AM.11:5801`, and your camera stream at `10.TE.AM.11:5800`
   
 Basic Vision Example (AprilTags via Limelight)
 --------------------------------------------------------
