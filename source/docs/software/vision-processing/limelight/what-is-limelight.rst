@@ -53,7 +53,7 @@ Head to your LimeLight's configuration panel to get started.
 - Congrats! You've configured your first pipeline! You'll be able to retrieve `tx` (the horizontal offset), `ty` (the vertical offset), and `ta` (the target area, or how much of the vision area the target is taking up)
 - The Limelight can also predict where it is in 3D space, by using the `botpose` entry from NetworkTables. See [the 3D AprilTags docs on the Limelight website](https://docs.limelightvision.io/docs/docs-limelight/pipeline-apriltag/apriltag-3d) for more information.  
 
-Example code to retrieve targeting data from Limelight is below.
+To retrieve targeting data from the Limelight, you will need to query NetworkTables:
 
 .. tabs::
 
