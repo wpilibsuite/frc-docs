@@ -13,7 +13,7 @@ When you first power on the Limelight, it will need to be configured with your t
 
 Head to [http://limelight.local:5801](http://limelight.local:5801) to go to the Limelight Configuration panel.
 
-.. note::  If the Limelight is unable to connect, you may need to use the [Limelight Finder Tool](https://limelightvision.io/pages/downloads) to find its IP address.
+.. note::  If the Limelight is unable to connect, you may need to use the `Limelight Finder Tool <https://limelightvision.io/pages/downloads>`__ to find its IP address.
 
 Navigate to the "Settings" tab on the left side of the interface.
 
@@ -38,7 +38,6 @@ Navigate to the "Settings" tab on the left side of the interface.
 Basic Vision Example (AprilTags via Limelight)
 --------------------------------------------------------
 Limelight uses NetworkTables to push data to the roboRIO, but you first need to configure a pipeline for it to track.
-If you are tracking multiple tags at once, you may need to use the [JSON Dump](https://docs.limelightvision.io/docs/docs-limelight/apis/json-dump-specification) instead.
 
 Head to your LimeLight's configuration panel to get started.
 
@@ -51,7 +50,7 @@ Head to your LimeLight's configuration panel to get started.
 - Input Tab - For increased range and/or accuracy, increase the capture resolution.
 - If you're seeing spurious tag detections, add the ID's you want to track to the "filter" control or increase the "Quality Threshold" value.
 - You've configured your first pipeline! You'll be able to retrieve `tx` (the horizontal offset), `ty` (the vertical offset), and `ta` (the target area, or how much of the vision area the target is taking up)
-- The Limelight can also predict where it is in 3D space, by using the `botpose` entry from NetworkTables. See [the 3D AprilTags docs on the Limelight website](https://docs.limelightvision.io/docs/docs-limelight/pipeline-apriltag/apriltag-3d) for more information.  
+- The Limelight can also predict where it is in 3D space, by using the `botpose` entry from NetworkTables. See `the 3D AprilTags docs on the Limelight website <https://docs.limelightvision.io/docs/docs-limelight/pipeline-apriltag/apriltag-3d>`__ for more information.  
 
 To retrieve targeting data from the Limelight, you will need to query NetworkTables:
 
