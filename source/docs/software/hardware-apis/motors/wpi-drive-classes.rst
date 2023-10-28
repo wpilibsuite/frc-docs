@@ -318,7 +318,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
   .. tab:: Python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.1.1.0/mecanum-drive/robot.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/mecanum-drive/robot.py
       :language: python
       :lines: 21-36
       :linenos:
