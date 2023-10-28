@@ -26,4 +26,4 @@ WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboa
 
 Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:what is networktables>`.
 
-While NetworkTables does not yet support serialization of complex data types (this is tentatively scheduled for 2023), *mutable* types from user code can be easily extended to interface directly with WPILib dashboards via the ``Sendable`` interface, whose usage is described in the next article.
+While NetworkTables does not yet support serialization of complex data types (this is tentatively scheduled for 2024), *mutable* types from user code can be easily extended to interface directly with WPILib dashboards via the ``Sendable`` interface, whose usage is described in the next article.

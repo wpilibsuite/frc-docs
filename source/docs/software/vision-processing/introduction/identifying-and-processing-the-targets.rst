@@ -5,15 +5,6 @@ Identifying and Processing the Targets
 
 Once an image is captured, the next step is to identify Vision Target(s) in the image. This document will walk through one approach to identifying the 2016 targets. Note that the images used in this section were taken with the camera intentionally set to underexpose the images, producing very dark images with the exception of the lit targets, see the section on Camera Settings for details.
 
-Additional Options
-------------------
-
-This document walks through the approach used by the example code provided in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options teams should be aware of the following alternatives that allow for vision processing on the Driver Station PC or an on-board PC:
-
-1. `RoboRealm <http://www.roborealm.com/>`_
-2. SmartDashboard Camera Extension (programmed in Java, works with any robot language)
-3. `GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_
-
 Original Image
 --------------
 

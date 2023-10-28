@@ -9,7 +9,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
            :language: java
            :lines: 150-158
            :linenos:
@@ -17,18 +17,18 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpimath/src/main/native/cpp/controller/BangBangController.cpp
            :language: cpp
-           :lines: 58-72
+           :lines: 55-69
            :linenos:
-           :lineno-start: 58
+           :lineno-start: 55
 
 To enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
 
 The SendableBuilder Class
 -------------------------
 
-As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html>`__).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
+As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_sendable_builder.html>`__).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
 
 Databinding with addProperty Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,7 +54,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
            :language: java
            :lines: 118-124
            :linenos:
@@ -62,7 +62,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
     .. group-tab:: C++
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
            :language: cpp
            :lines: 56-62
            :linenos:

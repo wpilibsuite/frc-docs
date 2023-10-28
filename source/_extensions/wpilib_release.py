@@ -25,25 +25,28 @@ class WpilibRelease(SphinxDirective):
         release_json = requests.get(release_url)
         release: Dict = release_json.json()
 
-        win = next(
-            (a for a in release["assets"] if "windows" in a["name"].lower()), None
-        )
-        mac_intel = next(
-            (
-                a
-                for a in release["assets"]
-                if "mac" in a["name"].lower() and "intel" in a["name"].lower()
-            ),
-            None,
-        )
-        mac_arm = next(
-            (
-                a
-                for a in release["assets"]
-                if "mac" in a["name"].lower() and "arm" in a["name"].lower()
-            ),
-            None,
-        )
+        artifactory_folder = f"https://frcmaven.wpi.edu/api/storage/installer/{version}"
+
+        win_folder = f"{artifactory_folder}/Win64"
+        win_file = requests.get(win_folder).json()["children"][0]["uri"]
+        win = requests.get(win_folder + win_file).json()
+
+        win_size = int(win["size"])
+        win_download_url = win["uri"].replace("/storage/", "/download/")
+
+        mac_intel_folder = f"{artifactory_folder}/macOS"
+        mac_intel_file = requests.get(mac_intel_folder).json()["children"][0]["uri"]
+        mac_intel = requests.get(mac_intel_folder + mac_intel_file).json()
+
+        mac_intel_size = int(mac_intel["size"])
+        mac_intel_download_url = mac_intel["uri"].replace("/storage/", "/download/")
+
+        mac_arm_folder = f"{artifactory_folder}/macOSArm"
+        mac_arm_file = requests.get(mac_arm_folder).json()["children"][0]["uri"]
+        mac_arm = requests.get(mac_arm_folder + mac_arm_file).json()
+
+        mac_arm_size = int(mac_arm["size"])
+        mac_arm_download_url = mac_arm["uri"].replace("/storage/", "/download/")
 
         # There's something weird going where the hashes are all printed on one line.
         # This works aroung that.
@@ -85,15 +88,15 @@ class WpilibRelease(SphinxDirective):
             let dlbutton = document.getElementsByClassName("wpilibrelease-dl-button")[0];
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
             if (ua['platform'] == 'Windows') {{
-                dlbutton.href = '{win["browser_download_url"]}';
-                dlbutton.text = 'Download for Windows - {win["size"] / 1e9 : .2f} GB';
+                dlbutton.href = '{win_download_url}';
+                dlbutton.text = 'Download for Windows - {win_size / 1e9 : .2f} GB';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
-                    dlbutton.href = '{mac_intel["browser_download_url"]}';
-                    dlbutton.text = 'Download for macOS Intel - {mac_intel["size"] / 1e9 : .2f} GB';
+                    dlbutton.href = '{mac_intel_download_url}';
+                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size / 1e9 : .2f} GB';
                 }} else if (ua['architecture'].includes('arm')) {{
-                    dlbutton.href = '{mac_arm["browser_download_url"]}';
-                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm["size"] / 1e9 : .2f} GB';
+                    dlbutton.href = '{mac_arm_download_url}';
+                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size / 1e9 : .2f} GB';
                 }}
             }}
         }});

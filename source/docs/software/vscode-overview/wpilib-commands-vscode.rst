@@ -24,7 +24,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Debug Robot Code** - Build and deploy robot code to roboRIO in debug mode and start debugging
 - **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
 - **WPILib: Hardware Sim Robot Code** - This builds the current robot code project on your PC and starts it running in simulation using hardware attached to the comupter rather then pure software simulation. Requires vendor support.
-- **WPILib: Import a WPILib 2020/2021/2022 Gradle Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2020-2022. Further documentation is at :doc:`importing gradle project </docs/software/vscode-overview/importing-gradle-project>`
+- **WPILib: Import a WPILib 2020-2023 Gradle Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2020-2022. Further documentation is at :doc:`importing gradle project </docs/software/vscode-overview/importing-gradle-project>`
 - **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. SmartDashboard, Shuffleboard, etc.). Note that this is done by default by the offline installer
 - **WPILib: Manage Vendor Libraries** - Install/update 3rd party libraries
 - **WPILib: Open API Documentation** - Opens either the WPILib Javadocs or C++ Doxygen documentation
