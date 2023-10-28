@@ -1,12 +1,12 @@
-Creating your Test Drivetrain Program (C++/Java)
-================================================
+Creating your Test Drivetrain Program (Java/C++/Python)
+=======================================================
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
 .. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, PWM refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>`  and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ `REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__).
 
-Creating a New WPILib Project
------------------------------
+Creating a New WPILib Project (Java/C++)
+----------------------------------------
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
 
@@ -59,6 +59,35 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/cpp-configurations.png
     :alt: You must choose "Yes" to refresh the C++ configurations.
 
+Basic Drivetrain example
+------------------------
+
+First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
+
+.. note:: the Python example below is from `<https://github.com/robotpy/examples/tree/main/getting-started>`__
+
+.. tabs::
+
+   .. group-tab:: Java
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+         :language: java
+         :linenos:
+
+   .. group-tab:: C++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+         :language: c++
+         :linenos:
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+         :language: python
+         :linenos:
+
+Now let's look at various parts of the code.
+
 Imports/Includes
 ----------------
 
@@ -84,6 +113,14 @@ Imports/Includes
                :linenos:
                :lineno-start: 5
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+               :language: python
+               :lines: 8-9
+               :linenos:
+               :lineno-start: 8
+
    .. group-tab:: CTRE
 
          .. tabs::
@@ -107,6 +144,14 @@ Imports/Includes
                   #include <frc/Timer.h>
                   #include <frc/drive/DifferentialDrive.h>
                   #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+
+            .. group-tab:: Python
+
+               .. code-block:: python
+
+                  import wpilib           # Used to get the joysticks
+                  import wpilib.drive     # Used for the DifferentialDrive class
+                  import ctre             # CTRE library
 
    .. group-tab:: REV
 
@@ -135,6 +180,14 @@ Imports/Includes
                   #include <frc/motorcontrol/PWMSparkMax.h>
 
                   #include <rev/CANSparkMax.h>
+
+            .. group-tab:: Python
+
+               .. code-block:: python
+
+                  import wpilib           # Used to get the joysticks
+                  import wpilib.drive     # Used for the DifferentialDrive class
+                  import rev              # REV library
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
 
@@ -168,6 +221,14 @@ Defining the variables for our sample robot
                :lines: 47-55
                :linenos:
                :lineno-start: 50
+
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 12-29
+               :lineno-start: 12
 
    .. group-tab:: CTRE
 
@@ -209,6 +270,14 @@ Defining the variables for our sample robot
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
    .. group-tab:: REV
 
       .. tabs::
@@ -248,6 +317,14 @@ Defining the variables for our sample robot
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
 
+         .. group-tab:: Python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
 The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
@@ -269,6 +346,9 @@ Robot Initialization
 
         void RobotInit() {}
 
+    .. code-tab:: python
+
+      def robotInit(self):
 
 The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program doesn't do anything. If we wanted to run something here we could provide the code above to override the default).
 
@@ -292,6 +372,14 @@ Simple Autonomous Example
          :lines: 22-33
          :linenos:
          :lineno-start: 22
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+         :language: python
+         :lines: 31-43
+         :linenos:
+         :lineno-start: 31
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we restart the ``Timer`` in this method.
 
@@ -318,6 +406,14 @@ Joystick Control for Teleoperation
          :linenos:
          :lineno-start: 35
 
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+         :language: python
+         :lines: 45-52
+         :linenos:
+         :lineno-start: 45
+
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 Test Mode
@@ -340,6 +436,14 @@ Test Mode
          :lines: 43-45
          :linenos:
          :lineno-start: 43
+
+   .. group-tab:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+         :language: python
+         :lines: 54-58
+         :linenos:
+         :lineno-start: 54
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
