@@ -33,7 +33,7 @@ class DefaultLaTeXImageSettingsTransform(SphinxPostTransform):
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
-    app.add_config_value("default_latex_image_width", "20em", True)
+    app.add_config_value("default_latex_image_width", "25em", True)
     app.add_config_value("default_latex_image_centered", True, True)
     app.add_post_transform(DefaultLaTeXImageSettingsTransform)
 
