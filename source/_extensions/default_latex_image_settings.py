@@ -19,14 +19,14 @@ class DefaultLaTeXImageSettingsTransform(SphinxPostTransform):
         if not self.app.tags.has("latex"):
             return
 
-        width = self.app.config["default_image_width_latex"]
+        width = self.app.config["default_latex_image_width"]
 
         for node in self.document.findall(nodes.image):
             if "width" not in node.attributes:
                 node.attributes["width"] = width
 
             if (
-                self.app.config["default_image_centered"]
+                self.app.config["default_latex_image_centered"]
                 and "align" not in node.attributes
             ):
                 node.attributes["align"] = "center"
