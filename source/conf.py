@@ -65,6 +65,7 @@ local_extensions = [
     "_extensions.localization",
     "_extensions.controls_js_sim",
     "_extensions.wpilib_release",
+    "_extensions.default_latex_image_settings",
 ]
 
 extensions += local_extensions
