@@ -97,7 +97,7 @@ The view can be customized using the "Plots" tab in the upper right hand corner 
 Event List
 ----------
 
-.. image:: images/driver-station-log-viewer/eventlist.png
+.. image:: images/driver-station-log-viewer/DS_LogFileViewer_Events.png
    :alt: Event List that is gotten to by the tab at the top center.
 
 The Event List tab displays a list of events (warnings and errors) recorded by the Driver Station. The events and detail displayed are determined by the currently active filter (images shows "All Events, All Info" filter active).

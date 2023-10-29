@@ -79,8 +79,6 @@ The Operations Tab is used to control the mode of the robot and provide addition
 Diagnostics Tab
 ---------------
 
-.. warning:: This section needs to be corrected/rewritten on account of the new figures added.
-
 .. image:: images/driver-station/ds-diagnostics-tab.png
   :alt: This is the second tab from the top on the left hand side.
 
@@ -181,7 +179,7 @@ To access settings for the Messages tab, click the Gear icon. This will display 
 Charts Tab
 ----------
 
-.. image:: images/driver-station/ds-charts-tab.png
+.. image:: images/driver-station/DriverStation_ChartsTab.png
   :alt: This is the second tab from the top on the right hand side.
 
 The Charts tab plots and displays advanced indicators of robot status to help teams diagnose robot issues:
