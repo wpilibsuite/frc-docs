@@ -8,13 +8,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-LabVIEW installation of RabbitMQ Fails
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Some users have reported the following error during LabVIEW installation: ``An error occurred while installing a package: ni-skyline-rabbitmq-support (20.5.0.49152-0+f0)``.
-
-**Workaround:** NI has a `support article <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kIbbSAE&l=en-US>`_ with several potential workarounds. Alternately, you can de-select :guilabel:`NI Web Server Development Support for LabVIEW 2020 32-bit` from the :guilabel:`Additional items you may wish to install` page to avoid installing the failing package.
-
 roboRIO 2.0 Ethernet Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
