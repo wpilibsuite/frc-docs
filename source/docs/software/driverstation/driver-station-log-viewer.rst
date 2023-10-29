@@ -25,45 +25,84 @@ Log Viewer UI
 
 The Log Viewer contains a number of controls and displays to aid in the analysis of the Driver Station log files:
   
-1.  File Selection Box - This window displays all available log files in the currently selected folder. Click on a log file in the list to select it.
-2.  Path to Log Files - This box displays the current folder the viewer is looking in for log files. This defaults to the folder that the Driver Station stores log files in. Click the folder icon to browse to a different location.
-3.  Message Box - This box displays a summary of all messages from the Event Log. When hovering over an event on the graph this box changes to display the information for that event.
-4.  Scroll Bar - When the graph is zoomed in, this scroll bar allows for horizontal scrolling of the graph.
-5.  Voltage Filter - This control turns the Voltage Filter on and off (defaults to on). The Voltage Filter filters out data such as CPU %, robot mode and trip time when no Battery Voltage is received (indicating that the DS is no in communication with the roboRIO).
-6.  AutoScale - This button zooms the graph out to show all data in the log.
-7.  Match Length - This button scales the graph to approximately the length of an FRC match (2 minutes and 30 seconds shown). It does not automatically locate the start of the match, you will have to scroll using the scroll bar to locate the beginning of the Autonomous mode.
-8.  Graph - This display shows graph data from the DS Log file (voltage, trip time, roboRIO CPU%, Lost Packets, and robot mode) as well as overlaid event data (shown as dots on the graph with select events showing as vertical lines across the entire graph). Hovering over event markers on the graph displays information about the event in the Messages window in the bottom left of the screen.
-9.  Robot Mode Key - Key for the Robot Mode displayed at the top of the screen
-10. Major event key - Key for the major events, displayed as vertical lines on the graph
-11. Graph key - Key for the graph data
-12. Filter Control - Drop-down to select the filter mode (filter modes explained below)
-13. Tab Control - Control to switch between the Graph (Data and Events vs. Time) and Event List displays.
+- **Log File Selection Box** - This window displays all available log files in the currently selected folder (directory). 
+- **Active Log File Directory** - This box displays the current path that the DS is using to locate log files. This defaults to the folder that the Driver Station stores log files in. Click the folder icon to browse to a different location.
+- **Message Box** - This box displays a summary of all messages from the Event Log. When hovering over an event on the graph this box changes to display the information for that event.
+- **Scroll Bar** (Not Pictured) - When the graph is zoomed in, a scroll bar appears for both the corresponding axes, allowing for scrolling of the graph.
+- **Graph Display Modifiers** - These controls, explained below, directly manipulate the current graph display.
+
+   - Voltage Filter - This control turns the Voltage Filter on and off (defaults to on). The Voltage Filter filters out data such as CPU %, robot mode and trip time when no Battery Voltage is received (indicating that the DS is not in communication with the roboRIO).
+   - AutoScale - This button zooms the graph out to show all data in the log.
+   - Match Length - This button scales the graph to approximately the length of an FRC match (2 minutes and 30 seconds shown). It does not automatically locate the start of the match, you will have to scroll using the scroll bar to locate the beginning of the Autonomous mode.
+
+- **Graph Display** - This area shows graph data from the DS Log file (voltage, trip time, roboRIO CPU %, etc.) as well as overlaid event data (shown as dots on the graph with select events showing as vertical lines across the entire graph). Hovering over event markers on the graph displays information about the event in the Message Box window in the bottom left area of the screen.
+
+   - X-Axis: Time Duration of Log in *seconds* (s)
+   - Y-Axis (Left): Latency (ms), Packet Loss (%), roboRIO CPU %, CAN %, Battery Voltage
+   - Y-Axis (Right): :term:`PDP` Amperage
+
+- **Filter Mode** - Drop-down to select the filter mode (see :ref:`filters <filters-1>`).
+- **Tab Control** - Control to switch between the Graph (Data and Events vs. Time) and Event List displays.
 
 Using the Graph Display
 -----------------------
 
-.. image:: images/driver-station-log-viewer/graphdisplay.png
+.. image:: images/driver-station-log-viewer/DS_LogFileViewer_PlotDataExplained.png
    :alt: The different parts of the graph screen and some of the basic signals.
+
+.. note:: The following information was obtained by a robot that was tethered to a DS with no FMS present.
 
 In the default view, the Graph Display contains the following information:
 
-1.  Graphs of Trip Time in ms (green line) and Lost Packets per second (displayed as blue vertical bars). In these example images Trip Time is a flat green line at the bottom of the graph and there are no lost packets
-2.  Graph of Battery voltage displayed as a yellow line.
-3.  Graph of roboRIO CPU % as a red line
-4.  Graph of robot mode and DS mode. The top set of the display shows the mode commanded by the Driver Station. The bottom set shows the mode reported by the robot code. In this example the robot is not reporting it's mode during the disabled and autonomous modes, but is reported during Teleop.
-5.  Event markers will be displayed on the graph indicating the time the event occurred. Errors will display in red; warnings will display in yellow. Hovering over an event marker will display information about the event in the Messages box at the bottom left of the screen.
-6.  Major events are shown as vertical lines across the graph display.
+- **Trip Time** in *ms* (green line, represented as "Network Latency") and Lost Packets per second (displayed as orange vertical bars, "Packets Dropped"). In this above figure, Trip Time can be seen fluctuating at the bottom of the graph and there are lost packets throughout the capture duration of the log.
+- **Battery Voltage** in *volts* displayed as a yellow line.
+- **roboRIO CPU usage** as a *percentage* as a red line.
+- **CAN Utilization** as a *percentage* as a light grey line.
+- **Robot Mode** and **DS Mode**. The top set of the display shows the mode commanded by the Driver Station. The bottom set shows the mode reported by the robot code.
+- **Log Events** (event markers) will be displayed on the graph indicating the time the event occurred. Errors will display in red; warnings will display in yellow; status events will display in green; disconnections will display in orange. Hovering over an event marker will display information about the event in the Messages box at the bottom left of the screen.
+
+   - **Major events** are shown as vertical lines across the graph display (in this example, a disconnection event occurred towards the end of the log).
+
 
 To zoom in on a portion of the graph, click and drag around the desired viewing
 area. You can only zoom the time axis, you cannot zoom vertically.
 
+Customizing the Graph Display
+-----------------------------
+
+It is possible to change which data is being plotted on the graph display at any given time. 
+
+Advancements in the roboRIO control system (particularly resulting from the tight integration of components using CAN) enable teams to communicate with devices within the network using libraries and obtain data using the log viewer. As such, with most modern robot configurations, the following information is available to be visualized:
+
+Default view:
+
+- Trip Time
+- Lost Packets
+- Voltage
+- roboRIO CPU %
+- CAN %
+- Robot Mode / DS Mode
+
+   - Robot/DS Disable
+   - Robot/DS Auto
+   - Robot/DS Tele
+
+The view can be customized using the "Plots" tab in the upper right hand corner of the log viewer. As an example, the following data collected from a robot can graphed:
+
+.. image:: images/driver-station-log-viewer/DriverStation_LogDataSelection.png
+   :alt: Example of data that could be toggled on/off in a graph display.
+
+.. note:: A :term:`PDP` was connected to the robot at the time this log was collected, and as such all 15 channels can be visualized. This will differ compared to a log collected from a robot using a :term:`PDH`, whereas an upper limit of 23 channels exist to be monitored.
+
 Event List
 ----------
 
-.. image:: images/driver-station-log-viewer/eventlist.png
+.. image:: images/driver-station-log-viewer/DS_LogFileViewer_Events.png
    :alt: Event List that is gotten to by the tab at the top center.
 
 The Event List tab displays a list of events (warnings and errors) recorded by the Driver Station. The events and detail displayed are determined by the currently active filter (images shows "All Events, All Info" filter active).
+
+.. _filters-1:
 
 Filters
 -------
