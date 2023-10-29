@@ -116,6 +116,12 @@ FRC Glossary
    mutable
       An object that can be modified after it is created.
 
+   PDH
+      Power Distribution Hub, a *REV Robotics* control system component to provide high & low current power to components on the robot. When compared to the PDP, an on-board LED voltage display, as well as additional channels for more devices, can be found.
+   
+   PDP
+      Power Distribution Panel, a *Cross The Road Electronics* control system component to provide high & low current power to components on the robot.
+   
    permanent-magnet DC motor
       The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on Wikipedia for more info.
 
