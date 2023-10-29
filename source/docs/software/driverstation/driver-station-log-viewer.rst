@@ -5,7 +5,7 @@ Driver Station Log File Viewer
 
 In an effort to provide information to aid in debugging, the FRC\ |reg| Driver Station creates log files of important diagnostic data while running. These logs can be reviewed later using the FRC Driver Station Log Viewer. The Log Viewer can be found via the shortcut installed in the Start menuin the FRC Driver Station folder in Program Files, or via the Gear icon in the Driver Station.
 
-.. image:: images/driver-station-log-viewer/open_ds_log_viewer_from_driver_station.png
+.. image:: images/driver-station-log-viewer/DriverStation_LogSelect.png
    :alt: Showing how to open the Log Viewer screen using the right console icon.
 
 .. note:: Several third-party tools exist that provide similar functionality to the FRC Driver Station Log Viewer, including `AdvantageScope <https://github.com/Mechanical-Advantage/AdvantageScope>`__ and `DSLOG Reader <https://github.com/orangelight/DSLOG-Reader>`__. Note that WPILib offers no support for third-party projects.
@@ -20,11 +20,11 @@ Log files are stored in ``C:\Users\Public\Documents\FRC\Log Files``. Each log ha
 Log Viewer UI
 -------------
 
-.. image:: images/driver-station-log-viewer/logviewer.png
+.. image:: images/driver-station-log-viewer/DS_LogFileViewer_Redux.png
    :alt: Overview of the home Log Viewer screen.
 
 The Log Viewer contains a number of controls and displays to aid in the analysis of the Driver Station log files:
-
+  
 1.  File Selection Box - This window displays all available log files in the currently selected folder. Click on a log file in the list to select it.
 2.  Path to Log Files - This box displays the current folder the viewer is looking in for log files. This defaults to the folder that the Driver Station stores log files in. Click the folder icon to browse to a different location.
 3.  Message Box - This box displays a summary of all messages from the Event Log. When hovering over an event on the graph this box changes to display the information for that event.
@@ -45,7 +45,7 @@ Using the Graph Display
 .. image:: images/driver-station-log-viewer/graphdisplay.png
    :alt: The different parts of the graph screen and some of the basic signals.
 
-The Graph Display contains the following information:
+In the default view, the Graph Display contains the following information:
 
 1.  Graphs of Trip Time in ms (green line) and Lost Packets per second (displayed as blue vertical bars). In these example images Trip Time is a flat green line at the bottom of the graph and there are no lost packets
 2.  Graph of Battery voltage displayed as a yellow line.
