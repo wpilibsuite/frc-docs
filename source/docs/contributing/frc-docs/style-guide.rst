@@ -107,7 +107,6 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 
 .. code-block:: ReST
 
-
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
@@ -122,6 +121,51 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
       :lineno-start: 18
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
+
+Tabs
+----
+To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use ``code-block`` and ``rli`` directives inside. The format is:
+
+.. code-block:: ReST
+
+   .. tab-set-code::
+
+            .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+               :language: java
+               :lines: 44-61
+               :linenos:
+               :lineno-start: 44
+
+
+            .. code-block:: cpp
+               // Start the timer.
+               m_timer.Start();
+
+               // Send Field2d to SmartDashboard.
+               frc::SmartDashboard::PutData(&m_field);
+
+               // Reset the drivetrain's odometry to the starting pose of the trajectory.
+               m_drive.ResetOdometry(m_trajectory.InitialPose());
+
+               // Send our generated trajectory to Field2d.
+               m_field.GetObject("traj")->SetTrajectory(m_trajectory);
+            }
+
+
+If you need to use more than one tab per language, multiple RLIs per language, or text tabs, you can use the ``.. tab-set::`` and ``.. tab-item::`` directive.  The format is:
+
+.. code-block:: ReST
+
+   .. tab-set::
+
+      ..tab-item:: Title
+        :sync: sync-id
+
+            Content
+
+This example uses the sync argument to allow all of the tabs with the same key to be synced together.  This means that when you click on a tab, all of the tabs with the same key will open.
+
+If you have a mix of ``tab-set`` and ``tab-set-code`` directives on a page, you can sync them by setting the sync id on the ``tab-item`` directives to ``tabcode-LANGUAGE``. For example, a java tab would have a sync id of ``tabcode-java``.
 
 Admonitions
 -----------
