@@ -33,6 +33,8 @@ Once all the above have been configured, click "Generate Project" and the robot 
 
 .. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
+.. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
+
 Opening The New Project
 -----------------------
 
