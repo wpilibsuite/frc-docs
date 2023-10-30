@@ -33,6 +33,8 @@ You'll be presented with the WPILib Project Importer window. This is similar to 
 6. **Enable Desktop Support**: If this is checked, simulation and unit test support is enabled. However, there are some cases where this will do some unexpected things. In addition, all vendor libraries need desktop support which not all libraries do.
 7. **Import Romi Project**: If this is checked, the project is imported using the Romi gradle template. This should only be checked for Romi projects.
 
+.. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
+
 Click :guilabel:`Import Project` to begin the upgrade.
 
 The gradle project will be upgraded and copied into the new project directory. You can then either open the new project immediately using the pop-up below or open it later using the :kbd:`Ctrl+O` (or :kbd:`Command+O` for macOS) shortcut.
