@@ -143,13 +143,13 @@ linkcheck_ignore = [
     r".*wpilibpi.local.*",
     r".*andymark.com.*",
     r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
-    r".*wpilibpi.local.*",
     r".*java.com/en/download/help/locale.xml.*",
     r".*playingwithfusion.com/contactus.php.*",
     r".*github.com/wpilibsuite/BetaTest.*",
     r".*vexrobotics.com/docs/.*",
     r".*forums.firstinspires.org.*",
     r".*digikey.com.*",
+    r".*chiefdelphi.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -158,7 +158,7 @@ linkcheck_retries = 3
 linkcheck_workers = 1
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True

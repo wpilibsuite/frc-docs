@@ -33,6 +33,8 @@ Once all the above have been configured, click "Generate Project" and the robot 
 
 .. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
+.. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
+
 Opening The New Project
 -----------------------
 
@@ -112,7 +114,7 @@ Imports/Includes
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
                :language: python
                :lines: 8-9
                :linenos:
@@ -359,14 +361,13 @@ Simple Autonomous Example
       :linenos:
       :lineno-start: 38
 
-
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 22-33
       :linenos:
       :lineno-start: 22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
       :language: python
       :lines: 31-43
       :linenos:
@@ -393,7 +394,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
       :language: python
       :lines: 45-52
       :linenos:
@@ -418,7 +419,7 @@ Test Mode
       :linenos:
       :lineno-start: 43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
       :language: python
       :lines: 54-58
       :linenos:

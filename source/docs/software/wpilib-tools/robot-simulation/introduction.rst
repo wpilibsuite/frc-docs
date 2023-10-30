@@ -54,6 +54,8 @@ Your console output in Visual Studio Code should look like the below. However, t
 
 .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
 
+.. note:: Some vendors support attaching hardware to your PC and using the hardware in desktop simulation (e.g. CANivore). See :doc:`vendor documentation </docs/software/vscode-overview/wpilib-commands-vscode>` for more information about the command `WPILib: Hardware Sim Robot Code`.
+
 Running Robot Dashboards
 ------------------------
 

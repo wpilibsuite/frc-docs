@@ -11,7 +11,7 @@ Signing In
 .. image:: images/accessing-the-beta-project/login.png
    :alt: Logging in to the GitHub site.
 
-Open your web browser and browse to `<https://github.com/wpilibsuite/BetaTest>`__. Near the top right corner of the page, click "Sign In" (if the Sign-In box does not automatically appear), enter your username and password and click  "Sign In". If you have two-factor authenticatio enabled you may need to complete an action on your mobile device to verify your log in attempt.
+Open your web browser and browse to `<https://github.com/wpilibsuite/2024Beta>`__. Near the top right corner of the page, click "Sign In" (if the Sign-In box does not automatically appear), enter your username and password and click  "Sign In". If you have two-factor authenticatio enabled you may need to complete an action on your mobile device to verify your log in attempt.
 
 The Project Homepage
 --------------------

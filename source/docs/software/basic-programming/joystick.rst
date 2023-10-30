@@ -49,6 +49,8 @@ When the robot is connected to the Field Management System at competition, the D
 
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
 
+.. important:: Forward on joysticks is the negative direction. Teams often negate the values when reading joystick axes to account for this.
+
 ``XboxController`` Class
 ------------------------
 
