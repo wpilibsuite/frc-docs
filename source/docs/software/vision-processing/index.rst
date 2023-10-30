@@ -7,5 +7,4 @@ Vision Processing
    introduction/index
    wpilibpi/index
    apriltag/index
-   grip/index
    roborio/index

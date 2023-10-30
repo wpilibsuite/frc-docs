@@ -18,7 +18,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
          :language: java
          :lines: 7-
 
@@ -26,14 +26,14 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
       :sync: C++
 
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
          :language: cpp
          :lines: 7-
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
          :language: cpp
          :lines: 5-
 
@@ -54,14 +54,14 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
          :language: java
          :lines: 7-
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-2/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
          :language: cpp
          :lines: 5-
 
@@ -74,11 +74,11 @@ Running Tests
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.4.3/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.1.1-beta-2/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 73-76
+   :lines: 75-78
    :linenos:
-   :lineno-start: 73
+   :lineno-start: 75
 
 Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failed test a link to render the document in your browser will be printed in the terminal output.
 

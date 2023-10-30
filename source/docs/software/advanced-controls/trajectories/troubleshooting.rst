@@ -109,15 +109,13 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
 .. tab-set-code::
 
-
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
     :language: java
     :lines: 123-124
     :linenos:
     :lineno-start: 123
 
-
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
     :language: c++
     :lines: 79-80
     :linenos:

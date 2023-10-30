@@ -107,14 +107,13 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 
 .. code-block:: ReST
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
       :linenos:
       :lineno-start: 44
 
-
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
       :language: cpp
       :lines: 18-30
       :linenos:

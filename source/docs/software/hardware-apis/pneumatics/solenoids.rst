@@ -17,12 +17,12 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: Java
        :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 30-32
           :linenos:
           :lineno-start: 30
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 88-93
           :linenos:
@@ -31,7 +31,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 44-47
           :linenos:
@@ -40,7 +40,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: C++ (Source)
        :sync: C++ (Source)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 42-47
           :linenos:
@@ -57,12 +57,12 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: Java
        :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 34-37
           :linenos:
           :lineno-start: 37
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 100, 102
           :linenos:
@@ -71,7 +71,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 49-52
           :linenos:
@@ -80,7 +80,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: C++ (Source)
        :sync: C++ (Source)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/e9858c10e900d322c3c03eb170ec76c3bcc3a7e0/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 54, 56
           :linenos:

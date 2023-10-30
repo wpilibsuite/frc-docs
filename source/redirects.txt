@@ -281,4 +281,5 @@
 "docs/hardware/hardware-basics/wiring-pneumatics.rst" "docs/hardware/hardware-basics/wiring-pneumatics-pcm.rst"
 "docs/software/commandbased/command-based-changes.rst" "docs/software/commandbased/index.rst"
 "docs/software/hardware-apis/pneumatics/pneumatics.rst" "docs/software/hardware-apis/pneumatics/index.rst"
+"docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst" "docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst"
 
