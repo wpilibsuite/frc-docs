@@ -115,11 +115,6 @@ License Agreements
 
 Select :guilabel:`I accept…` then click :guilabel:`Next`
 
-.. image:: images/labview/labview_license_2.png
-   :alt: Accept the Silverlight license agreements.
-
-Go ahead and press :guilabel:`I accept…` then click :guilabel:`Next`, confirming that you agree to the NI License agreement.
-
 Review Summary
 ^^^^^^^^^^^^^^
 
