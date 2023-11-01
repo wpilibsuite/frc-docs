@@ -1,12 +1,12 @@
 Including Git Data in Deploy
 ============================
 
-This article will explain how to include metadata from Git in robot code using the `gversion <https://github.com/lessthanoptimal/gversion-plugin>`__ gradle plugin. This generates a file which can be used for accesing Git metadata in robot code. This can be used to track what revision of code is on the robot, such as by printing or logging it.
+This article will explain how to include metadata from Git in robot code using the `gversion <https://github.com/lessthanoptimal/gversion-plugin>`__ Gradle plugin. This generates a file which can be used for accesing Git metadata in robot code. This can be used to track what revision of code is on the robot, such as by printing or logging it.
 
 Installing gversion
 -------------------
 
-To install gversion add the following line to the plugins block of ``build.gradle``. This tells gradle to use gversion in the project.
+To install gversion add the following line to the plugins block of ``build.gradle``. This tells Gradle to use gversion in the project.
 
 .. code-block:: groovy
 
