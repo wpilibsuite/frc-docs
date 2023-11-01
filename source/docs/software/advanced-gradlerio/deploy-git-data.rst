@@ -56,7 +56,7 @@ To test this run a build of your project by clicking the WPILib logo in the top 
     private BuildConstants(){}
   }
 
-``DIRTY`` indicates whether there are uncommitted changes in the project. 0 means it's clean, 1 means it's dirty, and -1 means something went wrong.
+``DIRTY`` indicates whether there are uncommitted changes in the project. A value of 0 indicates a clean repository, a value of 1 indicates that there are uncommitted changes, and a value -1 indicates an error.
 
 Ignoring Generated Files with Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
