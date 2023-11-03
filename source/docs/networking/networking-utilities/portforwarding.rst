@@ -8,22 +8,22 @@ Forwarding a Remote Port
 
 Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/net/PortForwarder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_port_forwarder.html>`__) can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port in Java, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void robotInit() {
          PortForwarder.add(8888, "wpilibpi.local", 80);
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Robot::RobotInit {
          wpi::PortForwarder::GetInstance().Add(8888, "wpilibpi.local", 80);
       }
 
-   .. code-tab:: python
+   .. code-block:: python
 
       wpiutil.PortForwarder.getInstance().add(8888, "wpilibpi.local", 80)
 
@@ -34,21 +34,21 @@ Removing a Forwarded Port
 
 To stop forwarding on a specified port, simply call ``remove(int port)`` with port being the port number. If you call ``remove()`` on a port that is not being forwarded, nothing will happen.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void robotInit() {
          PortForwarder.remove(8888);
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Robot::RobotInit {
          wpi::PortForwarder::GetInstance().Remove(8888);
       }
 
-   .. code-tab:: python
+   .. code-block:: python
 
       wpiutil.PortForwarder.getInstance().remove(8888)

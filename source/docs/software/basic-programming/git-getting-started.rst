@@ -104,9 +104,9 @@ If a directory is empty, a file needs to be created in order for git to have som
 
 .. note:: Replace the filepath ``"C:\Users\ExampleUser9007\Documents\Example Folder"`` with the one you want to create the repo in, and replace the remote URL ``https://github.com/ExampleUser9007/ExampleRepo.git`` with the URL for the repo you created in the previous steps.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Empty Directory
+   .. tab-item:: Empty Directory
 
       .. code-block:: console
 
@@ -122,7 +122,7 @@ If a directory is empty, a file needs to be created in order for git to have som
          > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
          > git push -u origin main
 
-   .. tab:: Existing Project
+   .. tab-item:: Existing Project
 
       .. code-block:: console
 

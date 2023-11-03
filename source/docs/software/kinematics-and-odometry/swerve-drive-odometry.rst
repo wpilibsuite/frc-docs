@@ -18,9 +18,9 @@ The fourth optional argument is the starting pose of your robot on the field (as
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Locations for the swerve drive modules relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
@@ -45,7 +45,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
           m_backRightModule.getPosition()
         }, new Pose2d(5.0, 13.5, new Rotation2d()));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Locations for the swerve drive modules relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
@@ -74,9 +74,9 @@ The ``update`` method of the odometry class updates the robot position on the fi
 
 This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void periodic() {
@@ -91,7 +91,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
           });
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Periodic() override {
         // Get the rotation of the robot from the gyro.

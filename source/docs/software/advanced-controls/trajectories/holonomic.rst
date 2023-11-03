@@ -12,8 +12,8 @@ The 2 PID controllers are controllers that should correct for error in the field
 
 The final parameter is a ``ProfiledPIDController`` for the rotation of the robot. Because the rotation dynamics of a holonomic drivetrain are decoupled from movement in the x and y directions, users can set custom heading references while following a trajectory. These heading references are profiled according to the parameters set in the ``ProfiledPIDController``.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       var controller = new HolonomicDriveController(
         new PIDController(1, 0, 0), new PIDController(1, 0, 0),
@@ -23,7 +23,7 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
       // of 1 rotation per second and a max acceleration of 180 degrees
       // per second squared.
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::HolonomicDriveController controller{
         frc::PIDController{1, 0, 0}, frc::PIDController{1, 0, 0},
@@ -42,8 +42,8 @@ The holonomic drive controller returns "adjusted velocities" such that when the 
 
 The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Sample the trajectory at 3.4 seconds from the beginning.
       Trajectory.State goal = trajectory.sample(3.4);
@@ -53,7 +53,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
       ChassisSpeeds adjustedSpeeds = controller.calculate(
         currentRobotPose, goal, Rotation2d.fromDegrees(70.0));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Sample the trajectoty at 3.4 seconds from the beginning.
       const auto goal = trajectory.Sample(3.4_s);
@@ -69,8 +69,8 @@ The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (
 
 The returned adjusted speeds can be converted into usable speeds using the kinematics classes for your drivetrain type. In the example code below, we will assume a swerve drive robot; however, the kinematics code is exactly the same for a mecanum drive robot except using ``MecanumDriveKinematics``.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(adjustedSpeeds);
 
@@ -79,7 +79,7 @@ The returned adjusted speeds can be converted into usable speeds using the kinem
       SwerveModuleState backLeft = moduleStates[2];
       SwerveModuleState backRight = moduleStates[3];
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(adjustedSpeeds);
 

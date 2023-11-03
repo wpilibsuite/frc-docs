@@ -83,9 +83,9 @@ Determining Simulation from Robot Code
 
 In cases where vendor libraries do not compile when running the robot simulation, you can wrap their content with ``RobotBase.isReal()`` which returns a ``boolean``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       TalonSRX motorLeft;
       TalonSRX motorRight;

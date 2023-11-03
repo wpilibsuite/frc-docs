@@ -15,15 +15,17 @@ Creating SendableChooser Object
 
 In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``SendableChooser`` object. Two or more auto modes can be added by creating strings to send to the chooser. Using the ``SendableChooser``, one can choose between them. In this example, ``Default`` and ``My Auto`` are shown as options. You will also need a variable to store which auto has been chosen, ``m_autoSelected``.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
       :language: java
       :lines: 18-21
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/timed/include/Robot.h
       :language: c++
@@ -34,15 +36,17 @@ Setting Up Options
 
 The chooser allows you to pick from a list of defined elements, in this case the strings we defined above. In ``robotInit``, add your options created as strings above using ``setDefaultOption`` or ``addOption``. ``setDefaultOption`` will be the one selected by default when the dashboard starts. The ``putData`` function will push it to the dashboard on your driver station computer.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
       :language: java
       :lines: 28-32
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
       :language: c++
@@ -53,15 +57,17 @@ Running Autonomous Code
 
 Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoSelected`` variable to read which option was chosen, and change what happens during the autonomous period.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
       :language: java
       :lines: 54-56, 58-73
 
-  .. group-tab:: C++
+  .. tab-item:: C++
+     :sync: C++
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
       :language: c++
@@ -78,21 +84,24 @@ Creating the SendableChooser Object
 
 In ``RobotContainer``, create a variable to hold a reference to a ``SendableChooser`` object. Two or more commands can be created and stored in new variables. Using the ``SendableChooser``, one can choose between them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as options.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
       :language: java
       :lines: 40-49
 
-  .. group-tab:: C++ (using raw pointers)
+  .. tab-item:: C++ (using raw pointers)
+     :sync: C++ (using raw pointers)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
       :language: c++
       :lines: 38-44
 
-  .. group-tab:: C++ (using ``CommandPtr``)
+  .. tab-item:: C++ (using ``CommandPtr``)
+     :sync: C++ (using ``CommandPtr``)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
       :language: c++
@@ -105,21 +114,24 @@ Imagine that you have two autonomous programs to choose between and they are enc
 
 In ``RobotContainer``, create a ``SendableChooser`` object and add instances of the two commands to it. There can be any number of commands, and the one added as a default (``setDefaultOption``), becomes the one that is initially selected. Notice that each command is included in an ``setDefaultOption()`` or ``addOption()`` method call on the ``SendableChooser`` instance.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
       :language: java
       :lines: 69-71
 
-  .. group-tab:: C++ (using raw pointers)
+  .. tab-item:: C++ (using raw pointers)
+     :sync: C++ (using raw pointers)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
       :language: c++
       :lines: 18-20
 
-  .. group-tab:: C++ (using ``CommandPtr``)
+  .. tab-item:: C++ (using ``CommandPtr``)
+     :sync: C++ (using ``CommandPtr``)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
@@ -127,14 +139,14 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
 
 Then, publish the chooser to the dashboard:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
       // Put the chooser on the dashboard
       SmartDashboard.putData(m_chooser);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
       // Put the chooser on the dashboard
       frc::SmartDashboard::PutData(&m_chooser);
@@ -144,9 +156,10 @@ Starting an Autonomous Command
 
 In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` object is polled to get the selected command and that command must be scheduled.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
       :language: java
@@ -156,7 +169,8 @@ In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` ob
       :language: java
       :lines: 67-68,76-81
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
       :language: c++
@@ -173,9 +187,10 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
 
 .. note:: Running the scheduler can occur in the ``autonomousPeriodic()`` function or ``robotPeriodic()``, both will function similarly in autonomous mode.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
       :language: java
@@ -183,7 +198,8 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
       :linenos:
       :lineno-start: 40
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
       :language: c++
@@ -196,9 +212,10 @@ Canceling the Autonomous Command
 
 In ``Robot.java``, when the teleop period begins, the autonomous command will be canceled.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+  .. tab-item:: Java
+     :sync: Java
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
       :language: java
@@ -206,7 +223,8 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
       :linenos:
       :lineno-start: 78
 
-  .. group-tab:: C++ (Source)
+  .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
       :language: c++

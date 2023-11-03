@@ -63,30 +63,30 @@ Processing Technique
 
 While most FRC teams should not have to implement their own code to identify AprilTags in a camera image, it is useful to know the basics of how the underlying libraries function.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Original Image
+   .. tab-item:: Original Image
 
       .. image:: images/orig_img.png
          :alt: Original, unprocessed image
 
       An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel.
 
-   .. tab:: Remove Colors
+   .. tab-item:: Remove Colors
 
       .. image:: images/bw_img.png
          :alt: Image converted to be grey-scale
 
       The first step is to convert the image to a grey-scale (brightness-only) image. Color information is not needed to detect the black-and-white tags.
 
-   .. tab:: Decimate
+   .. tab-item:: Decimate
 
       .. image:: images/decimate.png
          :alt: Image converted to a lower resolution
 
       The next step is to convert the image to a lower resolution. Working with fewer pixels helps the algorithm work faster. The full-resolution image will be used later to refine early estimates.
 
-   .. tab:: Adaptive Threshold
+   .. tab-item:: Adaptive Threshold
 
       .. image:: images/adaptive_threshold.png
          :alt: Image with adaptive threshold algorithm applied
@@ -96,14 +96,14 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
-   .. tab:: Segmentation
+   .. tab-item:: Segmentation
 
       .. image:: images/segmentation.png
          :alt: Adaptive thresholded image, but with clusters of similar pixels grouped together
 
       Next, the known pixels are clumped together. Any clumps which are too small to reasonably be a meaningful part of a tag are discarded.
 
-   .. tab:: Quad Detection
+   .. tab-item:: Quad Detection
 
       .. image:: images/detected_quads.png
          :alt: Image with quadrilateral areas identified and marked
@@ -120,7 +120,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
 
-   .. tab:: Decode ID
+   .. tab-item:: Decode ID
 
       .. image:: images/decode_id.png
          :alt: Image with AprilTag data decoded into a target identification number.
@@ -134,7 +134,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       It is possible there is no valid tag ID which matches the suspect tag. In this case, the decoding process stops.
 
-   .. tab:: Fit External Quad
+   .. tab-item:: Fit External Quad
 
       .. image:: images/fit_ext_quad.png
          :alt: External quadrilateral fitting process applied to each target

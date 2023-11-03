@@ -6,17 +6,17 @@ Servo motors are a type of motor which integrates positional feedback into the m
 Constructing a Servo object
 ---------------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         Servo exampleServo = new Servo(1);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         frc::Servo exampleServo {1};
 
-    .. code-tab:: python
+    .. code-block:: python
 
        exampleServo = wpilib.Servo(1)
 
@@ -25,19 +25,19 @@ A servo object is constructed by passing a channel.
 Setting Servo Values
 --------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         exampleServo.set(.5);
         exampleServo.setAngle(75);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         exampleServo.Set(.5);
         exampleServo.SetAngle(75);
 
-    .. code-tab:: python
+    .. code-block:: python
 
        exampleServo.set(.5)
        exampleServo.setAngle(75)

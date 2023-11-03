@@ -23,37 +23,33 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+      :language: java
+      :lines: 7-55
+      :linenos:
+      :lineno-start: 7
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
-         :language: java
-         :lines: 7-55
-         :linenos:
-         :lineno-start: 7
-
-   .. group-tab:: C++
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
-         :language: cpp
-         :lines: 5-29
-         :linenos:
-         :lineno-start: 5
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+      :language: cpp
+      :lines: 5-29
+      :linenos:
+      :lineno-start: 5
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
 .. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use `Notifiers <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Notifier.html>`__ to schedule methods at a custom rate.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       public Robot() {
         super(0.03); // Periodic methods will now be called every 30 ms.
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       Robot() : frc::TimedRobot(30_ms) {}
 

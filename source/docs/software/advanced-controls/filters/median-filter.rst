@@ -19,14 +19,14 @@ Creating a MedianFilter
 
 Creating a ``MedianFilter`` is simple:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a MedianFilter with a window size of 5 samples
     MedianFilter filter = new MedianFilter(5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a MedianFilter with a window size of 5 samples
     frc::MedianFilter<double> filter(5);
@@ -36,14 +36,14 @@ Using a MedianFilter
 
 Once your filter has been created, using it is easy - simply call the ``calculate()`` method with the most recent input to obtain the filtered output:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the next value of the output
     filter.calculate(input);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the next value of the output
     filter.Calculate(input);

@@ -53,12 +53,12 @@ Installation
 Extraction
 ^^^^^^^^^^
 
-.. tabs::
-   .. tab:: Online
+.. tab-set::
+   .. tab-item:: Online
 
       Run the downloaded executable file to start the install process. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
-   .. tab:: Offline (Windows 10+)
+   .. tab-item:: Offline (Windows 10+)
 
       Right click on the downloaded iso file and select :guilabel:`mount`. Run ``install.exe`` from the mounted iso. Click :guilabel:`Yes` if a Windows Security prompt appears.
 

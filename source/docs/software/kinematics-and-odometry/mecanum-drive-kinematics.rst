@@ -6,9 +6,9 @@ Constructing the Kinematics Object
 ----------------------------------
 The ``MecanumDriveKinematics`` class accepts four constructor arguments, with each argument being the location of a wheel relative to the robot center (as a ``Translation2d``). The order for the arguments is front left, front right, back left, and back right. The locations for the wheels must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Locations of the wheels relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
@@ -22,7 +22,7 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
       );
 
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Locations of the wheels relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
@@ -39,9 +39,9 @@ Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
 The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual wheel speeds.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -57,7 +57,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       double backLeft = wheelSpeeds.rearLeftMetersPerSecond
       double backRight = wheelSpeeds.rearRightMetersPerSecond
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -73,9 +73,9 @@ Field-oriented drive
 ~~~~~~~~~~~~~~~~~~~~
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get wheel speeds from a set of desired field-oriented speeds.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -88,7 +88,7 @@ Field-oriented drive
       // Now use this in our kinematics
       MecanumDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(speeds);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -113,9 +113,9 @@ Converting wheel speeds to chassis speeds
 -----------------------------------------
 One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used to achieve this.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example wheel speeds
       var wheelSpeeds = new MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26);
@@ -128,7 +128,7 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
       double sideways = chassisSpeeds.vyMetersPerSecond;
       double angular = chassisSpeeds.omegaRadiansPerSecond;
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example wheel speeds
       frc::MecanumDriveWheelSpeeds wheelSpeeds{-17.67_mps, 20.51_mps, -13.44_mps, 16.26_mps};

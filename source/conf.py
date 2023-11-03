@@ -35,7 +35,6 @@ version = "2024"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_tabs.tabs",
     "sphinx_design",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
@@ -54,7 +53,6 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx.ext.viewcode",
-    "sphinx_tabs.tabs",
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
 ]
@@ -276,8 +274,6 @@ latex_elements = {
 }
 
 suppress_warnings = ["epub.unknown_project_files"]
-
-sphinx_tabs_valid_builders = ["epub", "linkcheck"]
 
 
 # Options for translation support -------------------------------------------

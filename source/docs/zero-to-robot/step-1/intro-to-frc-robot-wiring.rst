@@ -19,9 +19,10 @@ Overview
 
 ----
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
         :alt: Detailed diagram of all of the components and how they are connected.
@@ -29,7 +30,8 @@ Overview
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
         :alt: Detailed diagram of all of the components and how they are connected.
@@ -86,14 +88,16 @@ For a test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic)
 
 Layout the Core Control System Components
 -----------------------------------------
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/layout-REV.jpg
         :alt: A basic wiring layout with CTR components.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/layout.jpg
         :alt: A basic wiring layout with CTR components.
@@ -111,9 +115,10 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 Attach Robot Side Battery Connector
 ----------------------------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       The next step will involve using the Wago connectors on the PDH. To use the Wago connectors, open the lever, insert the wire, then close the lever. Two sizes of Wago connector are found on the PDH:
 
@@ -133,7 +138,8 @@ Attach Robot Side Battery Connector
 
       Using a 7/16" (11 mm) box end wrench, remove the nut on the "Batt" side of the main breaker and secure the positive terminal of the battery connector
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/terminal-lug.jpg
         :alt: Highlights the location of the terminal lugs on the PDP and circuit breaker.
@@ -152,9 +158,10 @@ Attach Robot Side Battery Connector
 Wire Breaker to Power Distribution
 ----------------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
          .. image:: images/how-to-wire-a-simple-robot/circuit-breaker-REV.jpg
            :alt: Show the circuit breaker wired to the PDH.
@@ -168,7 +175,8 @@ Wire Breaker to Power Distribution
          2. Using the 7/16" (11 mm) wrench, secure the wire to the "AUX" side of the 120A main breaker.
          3. Lift the lever on the positive (red) input terminal of the PDH, insert the wire, then close the terminal.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/circuit-breaker.jpg
         :alt: Show the circuit breaker wired to the PDP.
@@ -186,9 +194,10 @@ Wire Breaker to Power Distribution
 Insulate power connections
 --------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/insulate-REV.jpg
         :alt: Putting tape around the connectors to insulate them.
@@ -197,7 +206,8 @@ Insulate power connections
 
       Using electrical tape, insulate the two connections to the 120A breaker.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/insulate.jpg
         :alt: Putting tape around the connectors to insulate them.
@@ -211,9 +221,10 @@ Insulate power connections
 Motor Controller Power
 ----------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
          .. image:: images/how-to-wire-a-simple-robot/pdh-motor-power.jpg
            :alt: Wiring power from the PDH to motor controllers.
@@ -235,7 +246,8 @@ Motor Controller Power
          3. Strip the other end of each wire, and crimp on a ring or fork terminal
          4. Attach the terminal to the motor controller input terminals (red to +, black to -)
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. raw:: html
 
@@ -294,9 +306,10 @@ After making the connection check to be sure that it is clean and secure:
 
 roboRIO Power
 -------------
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
          .. image:: images/how-to-wire-a-simple-robot/roborio-power-REV.jpg
            :alt: Power coming from the PDH to the roboRIO.
@@ -312,7 +325,8 @@ roboRIO Power
          4. Cut and strip the wire.
          5. Using a very small flat screwdriver connect the wires to the power input connector of the roboRIO (red to V, black to C). Also make sure that the power connector is screwed down securely to the roboRIO.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/roborio-power.jpg
         :alt: Power coming from the PDP to the roboRIO.
@@ -328,9 +342,10 @@ roboRIO Power
 
 Radio Power
 -----------
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
          .. image:: images/how-to-wire-a-simple-robot/rpm-pdh-power.jpg
            :alt: Power going from the PDH to the RPM.
@@ -346,7 +361,8 @@ Radio Power
          4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
          5. Connect the wire to the RPM 12V Input terminals.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/vrm-power.jpg
         :alt: Power going from the PDP to the VRM.
@@ -373,9 +389,10 @@ Radio Power
 Pneumatics Power (Optional)
 ---------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
         :alt: Power going from the PDH to the PH.
@@ -395,7 +412,8 @@ Pneumatics Power (Optional)
       4. Cut and strip ~5/16" (~8 mm) from the other end of the wire.
       5. Connect the wire to the PH input terminals.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/pcm-power.jpg
         :alt: Power going from the PDP to the PCM.
@@ -413,9 +431,10 @@ Pneumatics Power (Optional)
 Ethernet Cables
 ---------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/rpm.jpg
         :alt: Picture of the RPM.
@@ -428,7 +447,8 @@ Ethernet Cables
       1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the Radio Power Module labeled roboRIO.
       2. Connect an Ethernet cable from the RJ45 socket of the radio closest to the barrel connector socket (labeled 18-24v POE) to the socket labeled WiFi Radio on the RPM
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/radio-ethernet.jpg
         :alt: Connecting Ethernet from the roboRIO to the PoE cable.
@@ -443,9 +463,10 @@ CAN Devices
 roboRIO to Pneumatics CAN
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/roborio-can.jpg
         :alt: roboRIO CAN connection.
@@ -462,7 +483,8 @@ roboRIO to Pneumatics CAN
       3. Measure the length required to reach the CAN terminals of the PCM (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
       4. Insert the wires into the appropriate color coded CAN terminals on the PH. You may use either of the Yellow/Green terminal pairs on the PH, there is no defined in or out.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/pcm-can.jpg
         :alt: Connecting CAN wire from the roboRIO to the PCM.
@@ -479,9 +501,10 @@ roboRIO to Pneumatics CAN
 Pneumatics to PD CAN
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
          .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
            :alt: PH CAN connection.
@@ -500,7 +523,8 @@ Pneumatics to PD CAN
 
          .. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/pdp-can.jpg
         :alt: Connecting the PCM CAN to the PDP.
@@ -520,9 +544,10 @@ Pneumatics to PD CAN
 Motor Controller Signal Wires
 -----------------------------
 
-.. tabs ::
+.. tab-set ::
 
-   .. group-tab:: PWM
+   .. tab-item:: PWM
+      :sync: PWM
 
       .. image:: images/how-to-wire-a-simple-robot/pwm.jpg
         :alt: PWM Cables going from the roboRIO to the Spark Motor Controller.
@@ -544,7 +569,8 @@ Motor Controller Signal Wires
       3. Connect 1 PWM Y-cable to the 2 PWM cables for the controllers controlling each side of the robot. The brown wire on the Y-cable should match the black wire on the PWM cable.
       4. Connect the PWM Y-cables to the PWM ports on the roboRIO. The brown wire should be towards the outside of the roboRIO. It is recommended to connect the left side to PWM 0 and the right side to PWM 1 for the most straightforward programming experience, but any channel will work as long as you note which side goes to which channel and adjust the code accordingly.
 
-   .. group-tab:: CAN
+   .. tab-item:: CAN
+      :sync: CAN
 
       The Spark MAX controllers can also be wired using CAN. When wiring CAN the objective is to create a single complete bus running from the roboRIO on one end and running through all CAN devices on the robot. It is recommended to have either Power Distribution device at the other end of the bus because they have built-in termination. If you do not wish to locate one of these devices at the end of the bus see :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:CAN Wiring Basics>` for info about terminating yourself.
 
@@ -572,9 +598,10 @@ Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`
 Circuit Breakers
 ----------------
 
-.. tabs ::
+.. tab-set ::
 
-   .. group-tab:: REV
+   .. tab-item:: REV
+      :sync: REV
 
       .. image:: images/how-to-wire-a-simple-robot/40A-breaker-REV.jpg
         :alt: Installing 40A breakers in the PDP.
@@ -585,7 +612,8 @@ Circuit Breakers
 
       If working on a Robot Quick Build, stop here and insert the board into the robot chassis before continuing.
 
-   .. group-tab:: CTR
+   .. tab-item:: CTR
+      :sync: CTR
 
       .. image:: images/how-to-wire-a-simple-robot/40A-breaker.jpg
         :alt: Installing 40A breakers in the PDP.

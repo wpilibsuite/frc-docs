@@ -14,9 +14,10 @@ After the length of the strip has been set, you'll have to create an ``Addressab
 
 .. note:: C++ does not have an AddressableLEDBuffer, and instead uses an Array.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
@@ -24,7 +25,8 @@ After the length of the strip has been set, you'll have to create an ``Addressab
          :linenos:
          :lineno-start: 17
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: cpp
@@ -50,9 +52,10 @@ Using RGB Values
 
 RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. code-block:: Java
 
@@ -63,7 +66,8 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
 
          m_led.setData(m_ledBuffer);
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. code-block:: C++
 
@@ -83,9 +87,10 @@ HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, satu
 
 LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red (hue of 0).
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. code-block:: Java
 
@@ -96,7 +101,8 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
 
          m_led.setData(m_ledBuffer);
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. code-block:: C++
 
@@ -115,9 +121,10 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
 
 .. note:: It's good robot practice to keep the ``robotPeriodic()`` method as clean as possible, so we'll create a method for handling setting our LED data. We'll call this method ``rainbow()`` and call it from ``robotPeriodic()``.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
@@ -125,7 +132,8 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
          :linenos:
          :lineno-start: 42
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp
@@ -135,9 +143,10 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
 
 Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
@@ -145,7 +154,8 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
          :linenos:
          :lineno-start: 34
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: cpp

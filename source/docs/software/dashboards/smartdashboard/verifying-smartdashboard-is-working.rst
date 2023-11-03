@@ -22,9 +22,9 @@ SmartDashboard includes a connection indicator widget which will turn red or gre
 Robot Program Example
 ---------------------
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
       public class Robot extends TimedRobot {
         double counter = 0.0;
@@ -34,7 +34,7 @@ Robot Program Example
         }
       }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
       #include "Robot.h"
       float counter = 0.0;

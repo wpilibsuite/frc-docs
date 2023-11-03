@@ -6,9 +6,9 @@ Displaying Expressions from a Robot Program
 Writing Values to SmartDashboard
 ------------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         protected void execute() {
           SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
@@ -21,7 +21,7 @@ Writing Values to SmartDashboard
           SmartDashboard.putNumber("RPM", shooter.getRPM());
         }
 
-    .. code-tab:: cpp
+    .. code-block:: cpp
 
         void Command::Execute() {
           frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());

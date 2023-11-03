@@ -17,9 +17,9 @@ The WPILib ``Debouncer`` can be configured in three different modes:
 Usage
 -----
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Initializes a DigitalInput on DIO 0
     DigitalInput input = new DigitalInput(0);
@@ -32,7 +32,7 @@ Usage
         // Do something now that the DI is True.
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Initializes a DigitalInput on DIO 0
     frc::DigitalInput input{0};

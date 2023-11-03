@@ -10,16 +10,16 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
 
 ``withPosition`` sets the row and column of the top-left corner of the widget. Rows and columns are both 0-indexed, so the topmost row is number 0 and the leftmost column is also number 0. If the position of any widget in a tab is specified, every widget should also have its position set to avoid overlapping widgets.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Shuffleboard.getTab("Pre-round")
         .add("Auto Mode", autoModeChooser)
         .withSize(2, 1) // make the widget 2x1
         .withPosition(0, 0); // place it in the top-left corner
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       frc::Shuffleboard::GetTab("Pre-round")
         .Add("Auto Mode", autoModeChooser)
@@ -31,9 +31,9 @@ Adding Widgets to Layouts
 
 If there are many widgets in a tab with related data, it can be useful to place them into smaller subgroups instead of loose in the tab. Much like how the handle to a tab is retrieved with ``Shuffleboard.getTab``, a layout inside a tab (or even in another layout) can be retrieved with ``ShuffleboardTab.getLayout``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       ShuffleboardLayout elevatorCommands = Shuffleboard.getTab("Commands")
         .getLayout("Elevator", BuiltInLayouts.kList)
@@ -44,7 +44,7 @@ If there are many widgets in a tab with related data, it can be useful to place 
       elevatorCommands.add(new ElevatorUpCommand());
       // Similarly for the claw commands
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       wpi::StringMap<std::shared_ptr<nt::Value>> properties{
         std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))

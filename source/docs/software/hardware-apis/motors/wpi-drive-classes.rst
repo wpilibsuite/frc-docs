@@ -34,9 +34,9 @@ Motor Inversion
 
 As of 2022, the right side of the drivetrain is **no longer** inverted by default. It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       PWMSparkMax m_motorRight = new PWMSparkMax(0);
 
@@ -45,7 +45,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
          m_motorRight.setInverted(true);
       }
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       frc::PWMSparkMax m_motorLeft{0};
 
@@ -54,7 +54,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
          m_motorRight.SetInverted(true);
        }
 
-   .. code-tab:: python
+   .. code-block:: python
 
       def robotInit(self):
           self.motorRight = wpilib.PWMSparkMax(0)
@@ -86,23 +86,23 @@ The Motor Safety feature operates by maintaining a timer that tracks how long it
 
 The Motor Safety interface of motor controllers can be interacted with by the user using the following methods:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         exampleJaguar.setSafetyEnabled(true);
         exampleJaguar.setSafetyEnabled(false);
         exampleJaguar.setExpiration(.1);
         exampleJaguar.feed()
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         exampleJaguar->SetSafetyEnabled(true);
         exampleJaguar->SetSafetyEnabled(false);
         exampleJaguar->SetExpiration(.1);
         exampleJaguar->Feed();
 
-    .. code-tab:: python
+    .. code-block:: python
 
        exampleJaguar.setSafetyEnabled(True)
        exampleJaguar.setSafetyEnabled(False)
@@ -125,9 +125,10 @@ Using the DifferentialDrive class to control Differential Drive robots
 
 DifferentialDrive is a method provided for the control of "skid-steer" or "West Coast" drivetrains, such as the Kit of Parts chassis. Instantiating a DifferentialDrive is as simple as so:
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -140,7 +141,8 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
                     m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
                 }
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
         .. code-block:: cpp
 
@@ -150,7 +152,8 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
                     frc::Spark m_right{2};
                     frc::DifferentialDrive m_drive{m_left, m_right};
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
         .. code-block:: cpp
 
@@ -158,7 +161,9 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
                 m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
             }
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
        .. code-block:: python
 
@@ -174,9 +179,10 @@ Multi-Motor DifferentialDrive with MotorControllerGroups
 
 Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single MotorController, using the MotorControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the MotorController group constructor (it takes an arbitrary number of inputs).
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -194,7 +200,8 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
                     m_left.setInverted(true); // if you want to invert the entire side you can do so here
                 }
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+     :sync: C++ (Header)
 
         .. code-block:: c++
 
@@ -210,7 +217,8 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
 
                     frc::DifferentialDrive m_drive{m_left, m_right};
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+     :sync: C++ (Source)
 
         .. code-block:: c++
 
@@ -218,7 +226,9 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use
                 m_left.SetInverted(true); // if you want to invert the entire side you can do so here
             }
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
        .. code-block:: python
 
@@ -253,9 +263,9 @@ The Arcade Drive mode is used to control the drivetrain using speed/throttle and
 
 Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain using speed/throttle and rotation rate. The difference is that the rotation control input controls the radius of curvature instead of rate of heading change, much like the steering wheel of a car. This mode also supports turning in place, which is enabled when the third :code:`boolean` parameter is true.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         public void teleopPeriodic() {
             // Tank drive with a given left and right rates
@@ -268,7 +278,7 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         void TeleopPeriodic() override {
             // Tank drive with a given left and right rates
@@ -281,7 +291,7 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
             myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
         }
 
-    .. code-tab:: python
+    .. code-block:: python
 
        def teleopPeriodic(self):
            # Tank drive with a given left and right rates
@@ -298,25 +308,19 @@ Using the MecanumDrive class to control Mecanum Drive robots
 
 MecanumDrive is a method provided for the control of holonomic drivetrains with Mecanum wheels, such as the Kit of Parts chassis with the mecanum drive upgrade kit, as shown above. Instantiating a MecanumDrive is as simple as so:
 
-.. tabs::
-
-  .. tab:: Java
+.. tab-set-code::
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
-      :language: java
-      :lines: 24-39
-      :linenos:
-      :lineno-start: 24
-
-  .. tab:: C++
+        :language: java
+        :lines: 24-39
+        :linenos:
+        :lineno-start: 24
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
-      :language: cpp
-      :lines: 31-44
-      :linenos:
-      :lineno-start: 31
-
-  .. tab:: Python
+        :language: cpp
+        :lines: 31-44
+        :linenos:
+        :lineno-start: 31
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/mecanum-drive/robot.py
       :language: python
@@ -335,9 +339,9 @@ The MecanumDrive class contains two different default modes of driving your robo
 
   - drivePolar: Angles are measured counter-clockwise from straight ahead. The speed at which the robot drives (translation) is independent from its angle or rotation rate.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         public void teleopPeriodic() {
             // Drive using the X, Y, and Z axes of the joystick.
@@ -346,7 +350,7 @@ The MecanumDrive class contains two different default modes of driving your robo
             m_robotDrive.drivePolar(-m_stick.getY(), Rotation2d.fromDegrees(45), 0);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         void TeleopPeriodic() override {
             // Drive using the X, Y, and Z axes of the joystick.
@@ -355,7 +359,7 @@ The MecanumDrive class contains two different default modes of driving your robo
             m_robotDrive.drivePolar(-m_stick.GetY(), 45_deg, 0);
         }
 
-    .. code-tab:: python
+    .. code-block:: python
 
        def teleopPeriodic(self):
            // Drive using the X, Y, and Z axes of the joystick.

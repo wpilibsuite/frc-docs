@@ -31,12 +31,12 @@ Sendable Chooser Widget
 
 The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instance from robot code. It is often used to select autonomous modes. Like other dashboards, your ``SendableChooser`` instance simply needs to be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SmartDashboard.putData("Auto Selector", m_selector);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::SmartDashboard::PutData("Auto Selector", &m_selector);
 
@@ -51,12 +51,12 @@ PID Controller Widget
 
 The :guilabel:`PID Controller` widget allows you to quickly tune PID values for a certain controller. A ``PIDController`` instance must be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SmartDashboard.putData("Elevator PID Controller", m_elevatorPIDController);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
 

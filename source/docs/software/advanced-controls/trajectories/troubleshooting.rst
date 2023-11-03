@@ -60,9 +60,9 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 
 1. Set up your code to record your robot's position after each odometry update:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
     NetworkTableEntry m_xEntry = NetworkTableInstance.getDefault().getTable("troubleshooting").getEntry("X");
     NetworkTableEntry m_yEntry = NetworkTableInstance.getDefault().getTable("troubleshooting").getEntry("Y");
@@ -78,7 +78,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
         m_yEntry.setNumber(translation.getY());
     }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
     NetworkTableEntry m_xEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("X");
     NetworkTableEntry m_yEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("Y");
@@ -107,29 +107,25 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
 1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0:
 
-.. tabs::
+.. tab-set-code::
 
-  .. group-tab:: Java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
+    :language: java
+    :lines: 123-124
+    :linenos:
+    :lineno-start: 123
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 123-124
-      :linenos:
-      :lineno-start: 123
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
+    :language: c++
+    :lines: 79-80
+    :linenos:
+    :lineno-start: 81
 
-  .. group-tab:: C++
+1. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 79-80
-      :linenos:
-      :lineno-start: 81
+.. tab-set-code::
 
-2. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
-
-.. tabs::
-
-   .. code-tab:: java
+   .. code-block:: java
 
     RamseteController m_disabledRamsete = new RamseteController();
     m_disabledRamsete.setEnabled(false);
@@ -142,7 +138,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         ...
     );
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
     frc::RamseteController m_disabledRamsete;
     m_disabledRamsete.SetEnabled(false);
@@ -157,9 +153,9 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 
 3. Finally, we need to log desired wheel velocity and actual wheel velocity (you should put actual and desired velocities on the same graph if you're using Shuffleboard, or if your graphing software has that capability):
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
     var table = NetworkTableInstance.getDefault().getTable("troubleshooting");
     var leftReference = table.getEntry("left_reference");
@@ -191,7 +187,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
         m_robotDrive
     );
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
     auto table =
         nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting");

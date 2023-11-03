@@ -15,9 +15,9 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Creating my odometry object. Here,
       // our starting pose is 5 meters along the long end of the field and in the
@@ -27,7 +27,7 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
         m_leftEncoder.getDistance(), m_rightEncoder.getDistance(),
         new Pose2d(5.0, 13.5, new Rotation2d()));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Creating my odometry object. Here,
       // our starting pose is 5 meters along the long end of the field and in the
@@ -45,9 +45,9 @@ The ``update`` method can be used to update the robot's position on the field. T
 
 .. note:: If the robot is moving forward in a straight line, **both** distances (left and right) must be increasing positively -- the rate of change must be positive.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void periodic() {
@@ -60,7 +60,7 @@ The ``update`` method can be used to update the robot's position on the field. T
           m_rightEncoder.getDistance());
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Periodic() override {
         // Get the rotation of the robot from the gyro.

@@ -14,14 +14,14 @@ The DigitalInput class
 
 A :code:`DigitalInput` can be initialized as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes a DigitalInput on DIO 0
         DigitalInput input = new DigitalInput(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes a DigitalInput on DIO 0
         frc::DigitalInput input{0};
@@ -31,14 +31,14 @@ Reading the value of the DigitalInput
 
 The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the value of the digital input.  Returns true if the circuit is open.
         input.get();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the value of the digital input.  Returns true if the circuit is open.
         input.Get();
@@ -52,9 +52,9 @@ Sometimes, it is desirable to use an analog input as a digital input.  This can 
 
 An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPotentiometer`, an :code:`AnalogInput` may be passed explicitly if the user wishes to customize the sampling settings:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an AnalogTrigger on port 0
         AnalogTrigger trigger0 = new AnalogTrigger(0);
@@ -66,7 +66,7 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
         // Initializes an AnalogTrigger using the above input
         AnalogTrigger trigger1 = new AnalogTrigger(input);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an AnalogTrigger on port 0
         frc::AnalogTrigger trigger0{0};
@@ -85,9 +85,9 @@ Setting the trigger points
 
 To convert the analog signal to a digital one, it is necessary to specify at what values the trigger will enable and disable.  These values may be different to avoid "dithering" around the transition point:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
         trigger.setLimitsRaw(1000, 3500);
@@ -95,7 +95,7 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
         // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
         trigger.setLimitsVoltage(1.5, 4);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
         trigger.SetLimitsRaw(1000, 3500);
@@ -113,9 +113,9 @@ Limiting the motion of a mechanism
 
 Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         Spark spark = new Spark(0);
 
@@ -131,7 +131,7 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
             }
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Motor for the mechanism
         frc::Spark spark{0};

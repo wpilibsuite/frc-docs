@@ -18,14 +18,14 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // ADIS16448 plugged into the MXP port
         ADIS16448_IMU gyro = new ADIS16448_IMU();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // ADIS16448 plugged into the MXP port
         ADIS16448_IMU gyro;
@@ -37,14 +37,14 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // ADIS16470 plugged into the MXP port
         ADIS16470_IMU gyro = new ADIS16470_IMU();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // ADIS16470 plugged into the MXP port
         ADIS16470_IMU gyro;
@@ -56,14 +56,14 @@ The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an ADXRS450_Gyro object on the onboard SPI port
         ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an ADXRS450_Gyro object on the onboard SPI port
         frc::ADXRS450_Gyro gyro;
@@ -75,14 +75,14 @@ The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/be
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an AnalogGyro object on port 0
         AnalogGyro gyro = new AnalogGyro(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an AnalogGyro object on port 0
         frc::AnalogGyro gyro{0};
@@ -92,14 +92,14 @@ navX
 
 The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // navX MXP using SPI
         AHRS gyro = new AHRS(SPI.Port.kMXP);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // navX MXP using SPI
         AHRS gyro{SPI::Port::kMXP};
@@ -109,16 +109,16 @@ Pigeon
 
 The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         WPI_PigeonIMU gyro = new WPI_PigeonIMU(0); // Pigeon is on CAN Bus with device ID 0
         // OR (choose one or the other based on your connection)
         TalonSRX talon = new TalonSRX(0); // TalonSRX is on CAN Bus with device ID 0
         WPI_PigeonIMU gyro = new WPI_PigeonIMU(talon); // Pigeon uses the talon created above
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         WPI_PigeonIMU gyro{0}; // Pigeon is on CAN Bus with device ID 0
         // OR (choose one or the other based on your connection)
@@ -137,9 +137,9 @@ Displaying the robot heading on the dashboard
 
 :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a gyro in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -148,7 +148,7 @@ Displaying the robot heading on the dashboard
             Shuffleboard.getTab("Example tab").add(gyro);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -171,9 +171,9 @@ Example: Tank drive stabilization using turn rate
 
 The following example shows how to stabilize heading using a simple P loop closed on the turn rate.  Since a robot that is not turning should have a turn rate of zero, the setpoint for the loop is implicitly zero, making this method very simple.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -206,7 +206,7 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.tankDrive(.5 + kP * error, .5 - kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -243,9 +243,9 @@ Example: Tank drive stabilization using heading
 
 The following example shows how to stabilize heading using a simple P loop closed on the heading.  Unlike in the turn rate example, we will need to set the setpoint to the current heading before starting motion, making this method slightly more-complicated.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -286,7 +286,7 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.tankDrive(.5 + kP * error, .5 - kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -332,9 +332,9 @@ Another common and highly-useful application for a gyro is turning a robot to fa
 
 Much like with heading stabilization, this is often accomplished with a PID loop - unlike with stabilization, however, the loop can only be closed on the heading.  The following example code will turn the robot to face 90 degrees with a simple P loop:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -367,7 +367,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
             drive.tankDrive(kP * error, -kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 

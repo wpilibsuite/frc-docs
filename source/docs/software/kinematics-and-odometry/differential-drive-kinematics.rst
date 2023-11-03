@@ -12,9 +12,9 @@ Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
 The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``DifferentialDriveWheelSpeeds`` object. This is useful in situations where you have to convert a linear velocity (``vx``) and an angular velocity (``omega``) to left and right wheel velocities.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Creating my kinematics object: track width of 27 inches
       DifferentialDriveKinematics kinematics =
@@ -33,7 +33,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       // Right velocity
       double rightVelocity = wheelSpeeds.rightMetersPerSecond;
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Creating my kinematics object: track width of 27 inches
       frc::DifferentialDriveKinematics kinematics{27_in};
@@ -51,9 +51,9 @@ Converting Wheel Speeds to Chassis Speeds
 -----------------------------------------
 One can also use the kinematics object to convert individual wheel speeds (left and right) to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (C++) method should be used to achieve this.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Creating my kinematics object: track width of 27 inches
       DifferentialDriveKinematics kinematics =
@@ -72,7 +72,7 @@ One can also use the kinematics object to convert individual wheel speeds (left 
       // Angular velocity
       double angularVelocity = chassisSpeeds.omegaRadiansPerSecond;
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Creating my kinematics object: track width of 27 inches
       frc::DifferentialDriveKinematics kinematics{27_in};

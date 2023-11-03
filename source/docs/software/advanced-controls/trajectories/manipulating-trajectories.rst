@@ -7,14 +7,14 @@ Getting the total duration of the trajectory
 Because all trajectories have timestamps at each point, the amount of time it should take for a robot to traverse the entire trajectory is pre-determined. The ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` (Java) method can be used to determine the time it takes to traverse the trajectory.
 
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Get the total time of the trajectory in seconds
       double duration = trajectory.getTotalTimeSeconds();
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Get the total time of the trajectory
       units::second_t duration = trajectory.TotalTime();
@@ -23,15 +23,15 @@ Sampling the trajectory
 -----------------------
 The trajectory can be sampled at various timesteps to get the pose, velocity, and acceleration at that point. The ``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` (Java) method can be used to sample the trajectory at any timestep. The parameter refers to the amount of time passed since 0 seconds (the starting point of the trajectory). This method returns a ``Trajectory::Sample`` with information about that sample point.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Sample the trajectory at 1.2 seconds. This represents where the robot
       // should be after 1.2 seconds of traversal.
       Trajectory.Sample point = trajectory.sample(1.2);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Sample the trajectory at 1.2 seconds. This represents where the robot
       // should be after 1.2 seconds of traversal.

@@ -28,9 +28,9 @@ C++/Java
 
 In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage method of the DriverStation class. Teams likely want to query the data in a Teleop method such as Teleop Periodic in order to receive the data after it is sent during the match. Make sure to handle the case where the data is an empty string as this is what the data will be until the criteria are reached to enable Position Control for either alliance.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     import edu.wpi.first.wpilibj.DriverStation;
 
@@ -60,7 +60,7 @@ In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage me
       //Code for no data received yet
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     #include <frc/DriverStation.h>
 

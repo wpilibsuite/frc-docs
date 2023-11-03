@@ -10,23 +10,24 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 --------------------------
 
-.. tabs::
+.. tab-set::
+    .. tab-item:: REV
+        :sync: rev
 
-   .. group-tab:: REV
-
-      .. figure:: images/frc-control-system-layout-rev.svg
+        .. figure:: images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
          :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-   .. group-tab:: CTRE
+    .. tab-item:: CTRE
+        :sync: ctre
 
-      .. figure:: images/frc-control-system-layout.svg
-        :alt: Layout of all of the core components of the control system and how they are connected.
-        :width: 500
+        .. figure:: images/frc-control-system-layout.svg
+         :alt: Layout of all of the core components of the control system and how they are connected.
+         :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 NI roboRIO
 ----------
@@ -116,9 +117,9 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Allen-Bradley
+   .. tab-item:: Allen-Bradley
 
       .. figure:: images/control-system-hardware/rsl-allenbradley.png
          :alt: Orange Robot Signal Light (Allen-Bradley)
@@ -126,7 +127,7 @@ Robot Signal Light
 
          Allen-Bradley 855PB-B12ME522
 
-   .. tab:: AndyMark
+   .. tab-item:: AndyMark
 
       .. figure:: images/control-system-hardware/rsl-andymark.png
          :alt: Orange Robot Signal Light (AndyMark)

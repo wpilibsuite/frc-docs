@@ -6,9 +6,9 @@ Switching the Driver Views
 
 If you're interested in just switching what the driver sees, and are using SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option ("Selected Camera Path") that reads the given :term:`NetworkTables` key and changes the "Camera Choice" to that value (displaying that camera). The robot code then just needs to set the :term:`NetworkTables` key to the correct camera name. Assuming "Selected Camera Path" is set to "CameraSelection", the following code uses the joystick 1 trigger button state to show camera1 and camera2.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -34,7 +34,7 @@ If you're interested in just switching what the driver sees, and are using Smart
            }
        }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
@@ -61,9 +61,9 @@ If you're interested in just switching what the driver sees, and are using Smart
 
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -88,7 +88,7 @@ If you're using some other dashboard, you can change the camera used by the came
            }
        }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
@@ -118,9 +118,9 @@ Keeping Streams Open
 
 By default, the cscore library is pretty aggressive in turning off cameras not in use. What this means is that when you switch cameras, it may disconnect from the camera not in use, so switching back will have some delay as it reconnects to the camera. To keep both camera connections open, use the ``SetConnectionStrategy()`` method to tell the library to keep the streams open, even if you aren't using them.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -148,7 +148,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
            }
        }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;

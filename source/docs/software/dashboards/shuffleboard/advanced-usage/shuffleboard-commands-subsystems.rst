@@ -8,13 +8,13 @@ Displaying Subsystems
 
 To see the status of a subsystem while the robot is operating in either autonomous or teleoperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       SmartDashboard.putData(subsystem-reference);
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       SmartDashboard::PutData(subsystem-pointer);
 
@@ -42,13 +42,13 @@ Displaying Commands
 
 Using commands and subsystems makes very modular robot programs that can easily be tested and modified. Part of this is because commands can be written completely independently of other commands and can therefore be easily run from Shuffleboard. To write a command to Shuffleboard use the ``SmartDashboard.putData`` method as shown here:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7));
 
-   .. code-tab:: cpp
+   .. code-block:: cpp
 
       SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7));
 

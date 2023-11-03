@@ -38,9 +38,9 @@ Enable Functionality in the New PIDController
 
 The following example demonstrates how to create a button on your dashboard that will enable/disable the PIDController.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     ShuffleboardTab tab = Shuffleboard.getTab("Shooter");
     NetworkTableEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
@@ -55,7 +55,7 @@ The following example demonstrates how to create a button on your dashboard that
       motor.set(pid.calculate(encoder.getDistance(), setpoint));
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc::ShuffleboardTab& tab = frc::Shuffleboard::GetTab("Shooter");
     nt::NetworkTableEntry shooterEnable = tab.Add("Shooter Enable", false).GetEntry();

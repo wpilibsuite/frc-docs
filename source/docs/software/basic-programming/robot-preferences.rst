@@ -9,9 +9,10 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
 Initializing Preferences
 ------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
@@ -21,7 +22,8 @@ Initializing Preferences
          :language: java
          :lines: 28-30, 73-74, 80-83
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
          :language: cpp
@@ -40,15 +42,17 @@ If using the Command Framework, this type of code could be placed in the constru
 Reading Preferences
 -------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 105-112
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
@@ -58,9 +62,10 @@ Reading a preference is easy. The ``getDouble`` method takes two parameters, the
 
 Depending on the data that is stored in preferences, you can use it when you read it, such as the proportional constant above. Or you can store it in a variable and use it later, such as the setpoint, which is used in ``telopPeriodic`` below.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
@@ -69,7 +74,8 @@ Depending on the data that is stored in preferences, you can use it when you rea
          :language: java
          :lines: 114-120
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp

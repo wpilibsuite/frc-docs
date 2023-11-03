@@ -5,13 +5,13 @@ Shuffleboard is a tabbed interface. Each tab organizes widgets in a logical grou
 
 Creating a new tab
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
         ShuffleboardTab tab = Shuffleboard.getTab("Tab Title");
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
         ShuffleboardTab& tab = Shuffleboard::GetTab("Tab Title");
 
@@ -21,13 +21,13 @@ Creating a new tab is as simple as calling a single method on the Shuffleboard c
 Selecting a tab
 ---------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
         Shuffleboard.selectTab("Tab Title");
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
         Shuffleboard::SelectTab("Tab Title");
 

@@ -33,9 +33,9 @@ Read the Stack Trace
 
 To start, search above the ``unexpected error has occurred`` for the stack trace.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
 
 
       In Java, it should look something like this:
@@ -83,7 +83,7 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       In this case: ``robotInit`` called ``fooInit``, which in turn called ``barInit``, which in turn called ``buggyMethod``. Then, during the execution of ``buggyMethod``, the ``NullPointerException`` occurred.
 
-   .. group-tab:: C++
+   .. tab-item:: C++
 
       Java will usually produce stack traces automatically when programs run into issues. C++ will require more digging to extract the same info. Usually, a single-step debugger will need to be hooked up to the executing robot program.
 
@@ -166,42 +166,41 @@ Manipulating a "null" reference will produce a runtime error.
 
 For example, consider the following code:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
-          :lineno-start: 19
+   .. code-block:: Java
+         :lineno-start: 19
 
-            PWMSparkMax armMotorCtrl;
+         PWMSparkMax armMotorCtrl;
 
-            @Override
-            public void robotInit() {
-                armMotorCtrl.setInverted(true);
+         @Override
+         public void robotInit() {
+               armMotorCtrl.setInverted(true);
+         }
+
+
+   .. code-block:: C++
+      :lineno-start: 17
+
+      class Robot : public frc::TimedRobot {
+         public:
+            void RobotInit() override {
+               motorRef->SetInverted(false);
             }
 
-   .. group-tab:: C++
-
-      .. code-block:: C++
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-               void RobotInit() override {
-                  motorRef->SetInverted(false);
-               }
-
-            private:
-               frc::PWMVictorSPX m_armMotor{0};
-               frc::PWMVictorSPX* motorRef;
-         };
+         private:
+            frc::PWMVictorSPX m_armMotor{0};
+            frc::PWMVictorSPX* motorRef;
+      };
 
 
 When run, you'll see output that looks like this:
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
       .. code-block:: text
 
@@ -225,7 +224,8 @@ When run, you'll see output that looks like this:
 
       Alternatively, you can step through lines of code with the single step debugger, and stop when you hit line 23. Inspecting the ``armMotorCtrl`` object at that point would show that it is null.
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: tabcode-c++
 
       .. code-block:: text
 
@@ -251,37 +251,35 @@ Generally, you will want to ensure each reference has been initialized before us
 
 A functional implementation could look like this:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
-          :lineno-start: 19
+   .. code-block:: Java
+         :lineno-start: 19
 
-            PWMSparkMax armMotorCtrl;
+         PWMSparkMax armMotorCtrl;
 
-            @Override
-            public void robotInit() {
-                armMotorCtrl = new PWMSparkMax(0);
-                armMotorCtrl.setInverted(true);
+         @Override
+         public void robotInit() {
+               armMotorCtrl = new PWMSparkMax(0);
+               armMotorCtrl.setInverted(true);
+         }
+
+
+   .. code-block:: C++
+      :lineno-start: 17
+
+      class Robot : public frc::TimedRobot {
+         public:
+            void RobotInit() override {
+               motorRef = &m_armMotor;
+               motorRef->SetInverted(false);
             }
 
-   .. group-tab:: C++
-
-      .. code-block:: C++
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-               void RobotInit() override {
-                  motorRef = &m_armMotor;
-                  motorRef->SetInverted(false);
-               }
-
-            private:
-               frc::PWMVictorSPX m_armMotor{0};
-               frc::PWMVictorSPX* motorRef;
-         };
+         private:
+            frc::PWMVictorSPX m_armMotor{0};
+            frc::PWMVictorSPX* motorRef;
+      };
 
 
 
@@ -292,47 +290,47 @@ It is not generally possible to divide an integer by zero, and expect reasonable
 
 For example, consider the following code:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
-          :lineno-start: 18
+   .. code-block:: Java
+         :lineno-start: 18
 
-            int armLengthRatio;
-            int elbowToWrist_in = 39;
-            int shoulderToElbow_in = 0; //TODO
+         int armLengthRatio;
+         int elbowToWrist_in = 39;
+         int shoulderToElbow_in = 0; //TODO
 
-            @Override
-            public void robotInit() {
+         @Override
+         public void robotInit() {
+            armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+         }
+
+
+   .. code-block:: C++
+         :lineno-start: 17
+
+         class Robot : public frc::TimedRobot {
+            public:
+            void RobotInit() override {
                armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
             }
 
-   .. group-tab:: C++
+            private:
+               int armLengthRatio;
+               int elbowToWrist_in = 39;
+               int shoulderToElbow_in = 0; //TODO
 
-      .. code-block:: C++
-          :lineno-start: 17
-
-            class Robot : public frc::TimedRobot {
-               public:
-               void RobotInit() override {
-                  armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-               }
-
-               private:
-                  int armLengthRatio;
-                  int elbowToWrist_in = 39;
-                  int shoulderToElbow_in = 0; //TODO
-
-            };
+         };
 
 When run, you'll see output that looks like this:
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
       .. code-block:: text
+
 
          ********** Robot program starting **********
          Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
@@ -351,8 +349,8 @@ When run, you'll see output that looks like this:
 
       Alternatively, by running the single-step debugger and stopping on line 24, you could inspect the value of all variables to discover ``shoulderToElbow_in`` has a value of ``0``.
 
-   .. group-tab:: C++
-
+   .. tab-item:: C++
+      :sync: tabcode-c++
 
       .. code-block:: text
 
@@ -381,42 +379,39 @@ Sometimes, you just need to use a different number other than 0.
 
 A functional implementation could look like this:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. code-block:: Java
+         :lineno-start: 18
 
-      .. code-block:: Java
-          :lineno-start: 18
+         int armLengthRatio;
+         int elbowToWrist_in = 39;
+         int shoulderToElbow_in = 3;
 
-            int armLengthRatio;
-            int elbowToWrist_in = 39;
-            int shoulderToElbow_in = 3;
+         @Override
+         public void robotInit() {
 
-            @Override
-            public void robotInit() {
+            armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
 
+         }
+
+
+
+   .. code-block:: C++
+         :lineno-start: 17
+
+         class Robot : public frc::TimedRobot {
+            public:
+            void RobotInit() override {
                armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-
             }
 
+            private:
+               int armLengthRatio;
+               int elbowToWrist_in = 39;
+               int shoulderToElbow_in = 3
 
-   .. group-tab:: C++
-
-      .. code-block:: C++
-          :lineno-start: 17
-
-            class Robot : public frc::TimedRobot {
-               public:
-               void RobotInit() override {
-                  armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-               }
-
-               private:
-                  int armLengthRatio;
-                  int elbowToWrist_in = 39;
-                  int shoulderToElbow_in = 3
-
-            };
+         };
 
 Alternatively, if zero *is* a valid value, adding ``if/else`` statements around the calculation can help you define alternate behavior to avoid making the processor perform a division by zero.
 
@@ -430,46 +425,45 @@ A very common FRC-specific error occurs when the code attempts to put two hardwa
 
 For example, consider the following code:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
-          :lineno-start: 19
+   .. code-block:: Java
+         :lineno-start: 19
 
-            PWMSparkMax leftFrontMotor;
-            PWMSparkMax leftRearMotor;
+         PWMSparkMax leftFrontMotor;
+         PWMSparkMax leftRearMotor;
 
-            @Override
-            public void robotInit() {
-               leftFrontMotor = new PWMSparkMax(0);
-               leftRearMotor = new PWMSparkMax(0);
+         @Override
+         public void robotInit() {
+            leftFrontMotor = new PWMSparkMax(0);
+            leftRearMotor = new PWMSparkMax(0);
+         }
+
+
+   .. code-block:: C++
+      :lineno-start: 17
+
+      class Robot : public frc::TimedRobot {
+         public:
+            void RobotInit() override {
+               m_frontLeftMotor.Set(0.5);
+               m_rearLeftMotor.Set(0.25);
             }
 
-   .. group-tab:: C++
+         private:
+            frc::PWMVictorSPX m_frontLeftMotor{0};
+            frc::PWMVictorSPX m_rearLeftMotor{0};
 
-      .. code-block:: C++
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-               void RobotInit() override {
-                  m_frontLeftMotor.Set(0.5);
-                  m_rearLeftMotor.Set(0.25);
-               }
-
-            private:
-               frc::PWMVictorSPX m_frontLeftMotor{0};
-               frc::PWMVictorSPX m_rearLeftMotor{0};
-
-            };
+         };
 
 
 When run, you'll see output that looks like this:
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
       .. code-block:: text
 
@@ -505,7 +499,8 @@ When run, you'll see output that looks like this:
 
       Taking a peek at the code, we see line 24 is where the first motor controller is declared and line 25 is where the second motor controller is declared. We can also note that *both* motor controllers are assigned to PWM output ``0``. This doesn't make logical sense, and isn't physically possible. Therefore, WPILib purposely generates a custom error message and exception to alert the software developers of a non-achievable hardware configuration.
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: tabcode-c++
 
       In C++, you won't specifically see a stacktrace from this issue. Instead, you'll get messages which look like the following:
 
@@ -562,42 +557,39 @@ Fixing HAL Resource Already Allocated Issues
 
 In the example, the left motor controllers are plugged into PWM ports ``0`` and ``1``. Therefore, corrected code would look like this:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. code-block:: Java
+         :lineno-start: 19
 
-      .. code-block:: Java
-          :lineno-start: 19
+         PWMSparkMax leftFrontMotor;
+         PWMSparkMax leftRearMotor;
 
-            PWMSparkMax leftFrontMotor;
-            PWMSparkMax leftRearMotor;
+         @Override
+         public void robotInit() {
 
-            @Override
-            public void robotInit() {
+            leftFrontMotor = new PWMSparkMax(0);
+            leftRearMotor = new PWMSparkMax(1);
 
-               leftFrontMotor = new PWMSparkMax(0);
-               leftRearMotor = new PWMSparkMax(1);
+         }
 
+
+   .. code-block:: C++
+
+      :lineno-start: 17
+
+      class Robot : public frc::TimedRobot {
+         public:
+            void RobotInit() override {
+               m_frontLeftMotor.Set(0.5);
+               m_rearLeftMotor.Set(0.25);
             }
 
-   .. group-tab:: C++
+         private:
+            frc::PWMVictorSPX m_frontLeftMotor{0};
+            frc::PWMVictorSPX m_rearLeftMotor{1};
 
-      .. code-block:: C++
-
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-               void RobotInit() override {
-                  m_frontLeftMotor.Set(0.5);
-                  m_rearLeftMotor.Set(0.25);
-               }
-
-            private:
-               frc::PWMVictorSPX m_frontLeftMotor{0};
-               frc::PWMVictorSPX m_rearLeftMotor{1};
-
-            };
+         };
 
 gradlew is not recognized...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

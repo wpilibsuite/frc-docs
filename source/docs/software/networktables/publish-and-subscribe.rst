@@ -12,9 +12,10 @@ In the handle-based APIs, there is only the non-type-specific ``NT_Publisher`` h
 
 Publishing values is done via a ``set()`` operation. By default, this operation uses the current time, but a timestamp may optionally be specified. Specifying a timestamp can be useful when multiple values should have the same update timestamp. The timestamp units are integer microseconds (see example code for how to get a current timestamp that is consistent with the library).
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
@@ -65,7 +66,8 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -105,7 +107,8 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
               }
             };
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -149,7 +152,8 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
               }
             };
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -186,7 +190,9 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
             // stop publishing
             NT_Unpublish(dblPub);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -234,9 +240,10 @@ A :term:`subscriber` receives value updates made to a topic. Similar to publishe
 
 Subscribers have a range of different ways to read received values. It's possible to just read the most recent value using ``get()``, read the most recent value, along with its timestamp, using ``getAtomic()``, or get an array of all value changes since the last call using ``readQueue()`` or ``readQueueValues()``.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -288,7 +295,8 @@ Subscribers have a range of different ways to read received values. It's possibl
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -332,7 +340,8 @@ Subscribers have a range of different ways to read received values. It's possibl
               }
             };
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -372,7 +381,8 @@ Subscribers have a range of different ways to read received values. It's possibl
                 nt::Unsubscribe(dblSub);
               }
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -412,7 +422,9 @@ Subscribers have a range of different ways to read received values. It's possibl
             // stop subscribing
             NT_Unsubscribe(dblSub);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -460,9 +472,10 @@ Using Entry to Both Subscribe and Publish
 
 An :term:`entry` is a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber. Similar to publishers and subscribers, NetworkTable entries are represented as type-specific Entry classes (e.g. ``BooleanEntry``: `Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/BooleanEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_boolean_entry.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/BooleanEntry.html>`__) that must be retained to continue subscribing (and publishing).
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
@@ -517,7 +530,8 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -566,7 +580,8 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
               }
             };
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -613,7 +628,8 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
                 nt::ReleaseEntry(dblEntry);
               }
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -661,7 +677,9 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
             // stop subscribing
             NT_ReleaseEntry(dblEntry);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -714,9 +732,10 @@ Using GenericEntry, GenericPublisher, and GenericSubscriber
 
 For the most robust code, using the type-specific Publisher, Subscriber, and Entry classes is recommended, but in some cases it may be easier to write code that uses type-specific get and set function calls instead of having the NetworkTables type be exposed via the class (object) type. The ``GenericPublisher`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/GenericPublisher.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_generic_publisher.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericPublisher.html>`__), ``GenericSubscriber`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/GenericSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_generic_subscriber.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericSubscriber.html>`__), and ``GenericEntry`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/GenericEntry.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_generic_entry.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/GenericEntry.html>`__) classes enable this approach.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -792,7 +811,8 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -861,7 +881,9 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
               }
             };
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -938,9 +960,10 @@ Subscribing to Multiple Topics
 
 While in most cases it's only necessary to subscribe to individual topics, it is sometimes useful (e.g. in dashboard applications) to subscribe and get value updates for changes to multiple topics. Listeners (see :ref:`docs/software/networktables/listening-for-change:listening for changes`) can be used directly, but creating a ``MultiSubscriber`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/networktables/MultiSubscriber.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classnt_1_1_multi_subscriber.html>`__) allows specifying subscription options and reusing the same subscriber for multiple listeners.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
@@ -984,7 +1007,8 @@ While in most cases it's only necessary to subscribe to individual topics, it is
               }
             }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
         .. code-block:: cpp
 
@@ -1020,7 +1044,8 @@ While in most cases it's only necessary to subscribe to individual topics, it is
               }
             };
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
         .. code-block:: cpp
 
@@ -1062,7 +1087,8 @@ While in most cases it's only necessary to subscribe to individual topics, it is
                 nt::UnsubscribeMultiple(multiSub);
               }
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -1104,7 +1130,9 @@ While in most cases it's only necessary to subscribe to individual topics, it is
             // stop subscribing
             NT_UnsubscribeMultiple(multiSub);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 

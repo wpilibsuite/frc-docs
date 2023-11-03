@@ -7,21 +7,21 @@ WPILib supports a robot programming methodology called "command-based" programmi
 
 The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     new Trigger(condition::get).onTrue(Commands.runOnce(() -> piston.set(DoubleSolenoid.Value.kForward)));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     Trigger([&condition] { return condition.Get()).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward)));
 
 In contrast, without using command-based, the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     if(condition.get()) {
       if(!pressed) {
@@ -32,7 +32,7 @@ In contrast, without using command-based, the user would need to check the butto
       pressed = false;
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     if(condition.Get()) {
       if(!pressed) {
