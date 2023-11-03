@@ -6,6 +6,7 @@ Basic Programming
 
    git-getting-started.rst
    cpp-units
+   java-units
    joystick
    robot-preferences
    using-test-mode
