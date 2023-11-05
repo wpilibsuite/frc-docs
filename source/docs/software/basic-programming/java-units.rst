@@ -79,25 +79,38 @@ If you still want to use units in hot areas of the code, a special ``MutableMeas
 Extra methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
 For the full list of methods and API documentation, see `the MutableMeasure API documentation <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/MutableMeasure.html>`__
 
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_plus(double)``          | Increments the internal value by a raw number, in terms of the preexisting unit.           |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_plus(Measure)``         | Increments the internal value by another measurement. The internal unit will stay the same |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_minus(double)``         | Decrements the internal value by a raw number, in terms of the preexisting unit.           |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_minus(Measure)``        | Decrements the internal value by another measurement. The internal unit will stay the same |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_times(double)``         | Multiplies the internal value by a scalar                                                  |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_divide(double)``        | Divides the internal value by a scalar                                                     |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_replace(double, Unit)`` | Overrides the internal state and sets it to equal the given value and unit                 |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_replace(Measure)``      | Overrides the internal state to make it identical to the given measurement                 |
-+-------------------------------+--------------------------------------------------------------------------------------------+
-| ``mut_setMagnitude(double)``  | Overrides the internal value, keeping the internal unit. Be careful when using this!       |
-+-------------------------------+--------------------------------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_plus(double, Unit)``    | Increments the internal value by an amount in another unit. The internal unit will stay the same |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_plus(Measure)``         | Increments the internal value by another measurement. The internal unit will stay the same       |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_minus(double, Unit)``   | Decrements the internal value by an amount in another unit. The internal unit will stay the same |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_minus(Measure)``        | Decrements the internal value by another measurement. The internal unit will stay the same       |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_times(double)``         | Multiplies the internal value by a scalar                                                        |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_divide(double)``        | Divides the internal value by a scalar                                                           |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_replace(double, Unit)`` | Overrides the internal state and sets it to equal the given value and unit                       |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_replace(Measure)``      | Overrides the internal state to make it identical to the given measurement                       |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+| ``mut_setMagnitude(double)``  | Overrides the internal value, keeping the internal unit. Be careful when using this!             |
++-------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. code-block:: java
+
+   MutableMeasure<Distance> measure = MutableMeasure.zero(Feet);
+   measure.mut_plus(10, Inches);    // 0.8333 feet
+   measure.mut_plus(Inches.of(10)); // 1.6667 feet
+   measure.mut_minus(5, Inches);    // 1.25 feet
+   measure.mut_minus(Inches.of(5)); // 0.8333 feet
+   measure.mut_times(6);            // 0.8333 * 6 = 5 feet
+   measure.mut_divide(5);           // 5 / 5 = 1 foot
+   measure.mut_replace(6.2, Meters) // 6.2 meters - note the unit changed!
+   measure.mut_replace(Millimeters.of(14.2)) // 14.2mm - the unit changed again!
+   measure.mut_setMagnitude(72)     // 72mm
 
 Revisiting the arm example from above, we can use ``mut_replace`` - and, optionally, ``mut_times`` - to calculate the end effector position
 
@@ -142,6 +155,75 @@ Revisiting the arm example from above, we can use ``mut_replace`` - and, optiona
        return m_angle;
      }
    }
+
+.. warning:: ``MutableMeasure`` objects can - by definition - change their values at any time! It is unsafe to keep a stateful reference to them - prefer to extract a value using the ``Measure#in`` method, or create a copy with ``Measure#copy`` that can be safely stored. For the same reason, library authors must also be careful about methods accepting ``Measure``.
+
+Can you spot the bug in this code?
+
+.. code-block:: java
+
+   private Measure<Distance> m_lastDistance;
+
+   public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+     if (m_lastDistance == null) {
+       m_lastDistance = currentDistance;
+       return currentDistance;
+     } else {
+       Measure<Distance> delta = currentDistance.minus(m_lastDistance);
+       m_lastDistance = currentDistance;
+       return delta;
+     }
+   }
+
+If we run the ``calculateDelta`` method a few times, we can see a pattern:
+
+.. code-block:: java
+
+   MutableMeasure<Distance> distance = MutableMeasure.zero(Inches);
+   distance.mut_plus(10, Inches);
+   calculateDelta(distance); // expect 10 inches and get 10 - good!
+
+   distance.mut_plus(2, Inches);
+   calculateDelta(distance); // expect 2 inches, but get 0 instead!
+
+   distance.mut_plus(8, Inches);
+   calculateDelta(distance); // expect 8 inches, but get 0 instead!
+
+This is because the ``m_lastDistance`` field is a reference to the *same* ``MutableMeasure`` object as the input! Effectively, the delta is calculated as (currentDistance - currentDistance) on every call after the first, which naturally always returns zero. One solution would be to track ``m_lastDistance`` as a *copy* of the input measure to take a snapshot; however, this approach does incur one extra object allocation for the copy. If you need to be careful about object allocations, ``m_lastDistance`` could also be stored as a ``MutableMeasure``.
+
+.. tab-set::
+
+   .. tab-item:: Immutable Copies
+
+      .. code-block:: java
+
+         private Measure<Distance> m_lastDistance;
+
+         public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+           if (m_lastDistance == null) {
+             m_lastDistance = currentDistance.copy();
+             return currentDistance;
+           } else {
+             var delta = currentDistance.minus(m_lastDistance);
+             m_lastDistance = currentDistance.copy();
+             return delta;
+           }
+         }
+
+   .. tab-item:: Zero-allocation Mutables
+
+      .. code-block:: java
+
+         private final MutableMeasure<Distance> m_lastDistance = MutableMeasure.zero(Meters);
+         private final MutableMeasure<Distance> m_delta = MutableMeasure.zero(Meters);
+
+         public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+           // m_delta = currentDistance - m_lastDistance
+           m_delta.mut_replace(currentDistance);
+           m_delta.mut_minus(m_lastDistance);
+           m_lastDistance.mut_replace(currentDistance);
+           return m_delta;
+         }
 
 Defining New Units
 ------------------
