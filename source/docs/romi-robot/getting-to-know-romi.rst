@@ -94,7 +94,7 @@ The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are expos
 | DIO 3       | Yellow LED (output only)             |
 +-------------+--------------------------------------+
 
-Writes to DIO 0, 4, 5, 6 and 7 will result in no-ops.
+Writes to DIO 0, 4, 5, 6 and 7 will result in `no-ops <https://www.techtarget.com/whatis/definition/no-op-no-operation>`_.
 
 Configurable GPIO Pins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
