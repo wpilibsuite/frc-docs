@@ -178,3 +178,6 @@ FRC Glossary
 
    transitory
       In :term:`NetworkTables`, a :term:`topic` that will disappear after the last :term:`publisher` stops publishing.
+
+   no-op
+      No op means no operation, which is a computer instruction that specifies no operation but takes up a small amount of storage space. When the computer processor encounters a no op instruction, it simply moves to the next sequential instruction. Read more about no-op on `Wikipedia <https://en.wikipedia.org/wiki/NOP_(code)>`_ .
