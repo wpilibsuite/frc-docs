@@ -19,7 +19,7 @@ These changes contain *some* of the major changes to the library that it's impor
 
 - Added support for :doc:`XRP robots </docs/xrp-robot/index>`
 - Projects now default to supporting Java 17 features
-- Multiple NetworkTables networking improvements for improved reliability and robustness
+- Multiple NetworkTables networking improvements for improved reliability and robustness and structured data support using protobuf
 - Java now uses the Serial GC by default on the roboRIO; this should improve performance and reduce memory usage for most robot programs
 - Performance improvements and reduced worst-case memory usage throughout libraries
 - Added a typesafe unit system for Java (not used by the main part of WPILib yet)
@@ -46,6 +46,10 @@ General Library
     - Implemented ``ConditionalCommand.getInterruptBehavior()``
     - Added interruptor parameter to ``onCommandInterrupt`` callbacks
     - Added ``DeferredCommand``, ``Commands.defer()``, and ``Subsystem.defer()``
+    - Add requirements parameter to ``Commands.idle()``
+    - Fix Java ``CommandXboxController.leftTrigger()`` parameter order
+    - Make Java ``SelectCommand`` generic
+    - Add finallyDo with zero-arg lambda
 
 - NetworkTables:
 
@@ -73,6 +77,7 @@ General Library
     - Added function to read the RSL state
     - Raw PWM now uses microseconds units
     - Fixed REVPH faults bitfield
+    - C++: Fix ``Counter`` default distance per pulse to match Java
 
 - Math:
 
@@ -83,6 +88,10 @@ General Library
     - Improved accuracy of Rotation3d Euler angle calculations (``getX()``, ``getY()``, ``getZ()``, aka roll-pitch-yaw) near gimbal lock
     - Fixed ``CoordinateSystem.convert()`` Transform3d overload
     - Modified ``TrapezoidProfile`` API to not require creating new instances for ``ProfiledPIDController``-like use cases
+    - Added Exponential motion profile support
+    - Add constructor overloads for easier Transform2d and Transform3d creation from X, Y, Z coordinates
+    - Add ``ChassisSpeeds`` ``fromRobotRelativeSpeeds`` to convert from robot relative to field relative
+    - Add method to create a LinearSystem from kA and kV, for example from a characterized mechanism
 
 - Added ``RobotController`` function to get the assigned team number
 - Updated ``GetMatchTime`` docs and units
@@ -90,7 +99,9 @@ General Library
 - Added reflection based cleanup helper
 - Added Java class preloader (no preloading is actually performed yet)
 - Deprecated ``Accelerometer`` and ``Gyro`` interfaces (no replacement is planned)
-- Updated to OpenCV 4.8.0 and EJML 0.42
+- Updated to OpenCV 4.8.0 and EJML 0.43.1 and C++ JSON to 3.11.2
+- Add ``PS5Controller`` class
+- Add accessors for ``AprilTagFieldLayout`` origin and field dimensions
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -161,20 +172,23 @@ GradleRIO
 - Added support for XRP
 - Enforces that vendor dependencies set correct frcYear (prevents using prior year vendor dependencies)
 - Upgraded to Gradle 8.4
+- Check that project isn't in OneDrive, as that causes issues
 
 WPILib All in One Installer
 ---------------------------
 
-- Update to VS Code 1.83.1
+- Update to VS Code 1.84.0
 - VS Code extension updates: cpptools 1.17.5, javaext 1.23.0
 - Use separate zip files for VS Code download/install
 - Update to use .NET 8
+- AdvantageScope is now bundlled by the installer
 
 Visual Studio Code Extension
 ----------------------------
 
 - Java source code is now bundled into the deployed jar file. This makes it possible to recover source code from a deployed robot program.
 - Added XRP support
+- Check that project isn't created in OneDrive, as that causes issues
 
 RobotBuilder
 ------------
