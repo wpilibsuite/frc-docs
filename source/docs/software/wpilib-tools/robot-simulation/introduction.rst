@@ -17,13 +17,9 @@ Use of the Desktop Simulator requires Desktop Support to be enabled. This can be
 
 Desktop support can also be enabled by manually editing your ``build.gradle`` file located at the root of your robot project. Simply change ``includeDesktopSupport = false`` to ``includeDesktopSupport = true``
 
-.. code-block:: text
-
-   def includeDesktopSupport = true
-
 .. important:: It is important to note that enabling desktop/simulation support can have unintended consequences. Not all vendors will support this option, and code that uses their libraries may even crash when attempting to run simulation!
 
-If at any point in time you want to disable Desktop Support, simply re-run the "WPILib: Change Desktop Support Enabled Setting" from the command palette.
+If at any point in time you want to disable Desktop Support, simply re-run the "WPILib: Change Desktop Support Enabled Setting" from the command palette or change ``includeDesktopSupport`` to false in build.gradle.
 
 Additional C++ Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,7 +55,7 @@ Your console output in Visual Studio Code should look like the below. However, t
 Running Robot Dashboards
 ------------------------
 
-Both Shuffleboard and SmartDashboard can be used with WPILib simulation.
+Shuffleboard, SmartDashboard, and Glass can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
 
 Shuffleboard
 ^^^^^^^^^^^^
