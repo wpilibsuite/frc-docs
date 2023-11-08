@@ -27,3 +27,13 @@ We can break this code up step by step. First we use nativeUtils to configure th
 
 Java
 ----
+
+We can configure arguments to the JVM when compiling projects with GradleRIO. We can go into our build.gradle and do something similar to this :
+
+.. code-block:: groovy
+
+  frcJava(getArtifactClass('FRCJavaArtifact')) {
+    jvmArgs.add("DisableExplicitGC")
+  }
+
+Lets go through this step by step. First we enter the FRCJavaArtifact. This is the Java artifact we are deploying to the roboRIO. Here we add an argument to our JVM using jvmArgs.add. 
