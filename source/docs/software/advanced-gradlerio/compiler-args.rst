@@ -10,7 +10,9 @@ Platforms
 ^^^^^^^^^
 
 In order to avoid breaking different platforms with compiler flags we configure everything per platform. The platforms that are supported are :
+
 - windowsx86-64
+- linuxathena
 
 Configuring for a Platform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
