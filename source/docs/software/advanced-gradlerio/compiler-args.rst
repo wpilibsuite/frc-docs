@@ -9,10 +9,16 @@ C++
 Platforms
 ^^^^^^^^^
 
-In order to avoid breaking different platforms with compiler flags we configure everything per platform. The platforms that are supported are :
+Different compilers on different platforms use a variety of different flags so in order to avoid breaking different platforms with compiler flags we configure everything per platform. The platforms that are supported are :
 
 - windowsx86-64
+- windowsx86
+- windowsarm64
 - linuxathena
+- linuxarm32
+- linuxarm64
+- linuxx86-64
+- osxuniversal
 
 Configuring for a Platform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -28,7 +34,7 @@ We can break this code up step by step. First we use nativeUtils to configure th
 Java
 ----
 
-We can configure arguments to the JVM when compiling projects with GradleRIO. We can go into our build.gradle and do something similar to this :
+We can configure arguments to the JVM when compiling projects with GradleRIO. We can go into our build.gradle and do something similar to this(note the FRCJavaArtifact already exists you just need to add into it) :
 
 .. code-block:: groovy
 
