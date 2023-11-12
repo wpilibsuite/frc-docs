@@ -13,7 +13,7 @@ class ReadtheDocsBuilderLocalMedia(StandaloneHTMLBuilder):
     name = "readthedocssinglehtmllocalmedia"
 
     def __init__(self, app: Sphinx, *args, **kwargs) -> None:
-        super().__init__(app,*args, **kwargs)
+        super().__init__(app, *args, **kwargs)
 
         for listeners in app.events.listeners.values():
             for listener in listeners[:]:
