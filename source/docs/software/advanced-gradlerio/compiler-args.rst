@@ -1,7 +1,7 @@
 Using Compiler Arguments
 ============================
 
-Compiler arguments allow us to change the behavior of our compiler. This includes making warnings into errors, ignoring certain warnings and choosing optimization level. Normally we would pass them in as flags when compiling our code but this doesn't work in GradleRIO. Instead we have to modify our build.gradle.
+Compiler arguments allow us to change the behavior of our compiler. This includes making warnings into errors, ignoring certain warnings and choosing optimization level. When you compile your code a variety of flags are already included by default which can be found `here <https://github.com/wpilibsuite/native-utils/blob/0055bc77da9d9d37e0876d04af53b7317b78174f/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L37>`. Normally we would pass them in as flags when compiling our code but this doesn't work in GradleRIO. Instead we have to modify our build.gradle.
 
 C++
 ---
@@ -14,7 +14,7 @@ Different compilers on different platforms use a variety of different flags so i
 - windowsx86-64
 - windowsx86
 - windowsarm64
-- linuxathena
+- linuxathena (roboRIO)
 - linuxarm32
 - linuxarm64
 - linuxx86-64
