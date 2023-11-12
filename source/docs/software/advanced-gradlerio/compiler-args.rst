@@ -39,7 +39,7 @@ We can configure arguments to the JVM when compiling projects with GradleRIO. We
 .. code-block:: groovy
 
   frcJava(getArtifactClass('FRCJavaArtifact')) {
-    jvmArgs.add("DisableExplicitGC")
+    jvmArgs.add("-XX:+DisableExplicitGC")
   }
 
 Lets go through this step by step. First we enter the FRCJavaArtifact. This is the Java artifact we are deploying to the roboRIO. Here we add an argument to our JVM using jvmArgs.add.
