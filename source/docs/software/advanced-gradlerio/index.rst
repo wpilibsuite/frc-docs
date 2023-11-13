@@ -11,3 +11,4 @@ GradleRIO is the mechanism that powers the deployment of robot code to the roboR
    code-formatting
    gradlew-tasks
    deploy-git-data
+   compiler-args
