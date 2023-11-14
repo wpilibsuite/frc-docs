@@ -7,9 +7,9 @@ An added benefit is readability and maintainability, which also reduces bugs. By
 
 The units library has a number of features:
 
-- A set of predefined units, such as Meters, Degrees, and Seconds.
+- A set of predefined units, such as meters, degrees, and seconds.
 - The ability to convert between different units.
-- Support for performing mathematical operations on quantities with units.
+- Support for performing arithmetic and comparisons on quantities with units.
 - Support for displaying quantities with units in a human-readable format.
 
 Using the Units Library
@@ -50,17 +50,17 @@ The library comes with many predefined units:
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | ``Measure<Per<Voltage, Velocity<Distance>>>``          | ``VoltsPerMeterPerSecond``                                                                                             |
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Velocity<Distance>>>`` | ``VoltsPerMeterPerSecondSquared``                                                                                      |
+| ``Measure<Per<Voltage, Velocity<Velocity<Distance>>>>``| ``VoltsPerMeterPerSecondSquared``                                                                                      |
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | ``Measure<Per<Voltage, Velocity<Angle>>>``             | ``VoltsPerRadianPerSecond``                                                                                            |
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Velocity<Angle>>>``    | ``VoltsPerRadianPerSecondSquared``                                                                                     |
+| ``Measure<Per<Voltage, Velocity<Velocity<Angle>>>>``   | ``VoltsPerRadianPerSecondSquared``                                                                                     |
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Creating Measures
 ~~~~~~~~~~~~~~~~~
 
-The ``Measure`` class is a generic type that represents a physical quantity with its corresponding unit of measurement. It provides a consistent and type-safe way to handle different types of measurements, such as distance, angle, velocity, and more. To create a ``Measure`` object, you call the ``Unit.of`` method on the appropriate unit object. For example, to create a ``Measure<Distance>`` object representing a distance of 6 inches, you would write:
+The ``Measure`` class is a generic type that represents a physical quantity with its corresponding unit of measurement. It provides a consistent and type-safe way to handle different types of measurements, such as distance, angle, and velocity, but abstracts away the particular unit of measure (e.g. meter vs. inch). To create a ``Measure`` object, you call the ``Unit.of`` method on the appropriate unit object. For example, to create a ``Measure<Distance>`` object representing a distance of 6 inches, you would write:
 
 .. code-block:: java
 
@@ -88,9 +88,9 @@ The ``Measure`` class also supports arithmetic operations, such as addition, sub
 
   Measure<Distance> totalDistance = distance1.plus(distance2);
 
-This code will automatically convert the units of measurement to the same unit before adding the two distances. The resulting ``totalDistance`` object will be a new ``Measure<Distance>`` object that has a value of 0.508 meters, or 20 inches.
+In this code, the units library will automatically convert the units of measurement to the same unit before adding the two distances. The resulting ``totalDistance`` object will be a new ``Measure<Distance>`` object that has a value of 0.508 meters, or 20 inches.
 
-A more advanced example combines the wheel diameter and gear ratio to calcualate the distance per rotation of the wheel:
+This example combines the wheel diameter and gear ratio to calcualate the distance per rotation of the wheel:
 
 .. code-block:: java
 
@@ -131,9 +131,12 @@ Pulling all of the concepts together, we can create an example that calculates t
 Human-readable Formatting
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Measure`` class has both ``toShortString()`` and ``toLongString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measurement on a dashboard or in logs.
+The ``Measure`` class has both ``toLongString()`` and ``toShortString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measurement on a dashboard or in logs.
 
-Mutibility and Object Creation
+- ``toLongString()`` returns a string representation of this measurement in a longhand form. The name of the backing  unit is used, rather than its symbol, and the magnitude is represented in a full string, no scientific notation. For example, 1234 Volt per Meter
+- ``toShortString()`` returns a string representation of this measurement in a shorthand form. The symbol of the backing unit is used, rather than the full name, and the magnitude is represented in scientific notation. For example, 1.234e+04 V/m
+
+Mutability and Object Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To reduce the number of object instances you create, and reduce memory usage, a special ``MutableMeasure`` class is available. You may want to consider using mutable objects if you are using the units library repeatedly, such as in the robot's periodic loop. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for more discussion on creating a large number of small objects.
