@@ -148,7 +148,7 @@ Human-readable Formatting
 
 The ``Measure`` class has both ``toLongString()`` and ``toShortString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measurement on a dashboard or in logs.
 
-- ``toLongString()`` returns a string representation of this measurement in a longhand form. The name of the backing  unit is used, rather than its symbol, and the magnitude is represented in a full string, no scientific notation. For example, 1234 Volt per Meter
+- ``toLongString()`` returns a string representation of this measurement in a longhand form. The name of the backing unit is used, rather than its symbol, and the magnitude is represented in a full string, not scientific notation. For example, 1234 Volt per Meter
 - ``toShortString()`` returns a string representation of this measurement in a shorthand form. The symbol of the backing unit is used, rather than the full name, and the magnitude is represented in scientific notation. For example, 1.234e+04 V/m
 
 Mutability and Object Creation
