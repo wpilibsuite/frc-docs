@@ -1,42 +1,96 @@
 The Java Units Library
 ======================
 
-The units library is intended to reduce the number of unit-related bugs in robot programs by making all unit conversions explicitly required when units are used. Users can define measurements using values directly from CAD software or physical measuring tools without needing to worry about storing everything in terms of the same unit.
+The units library is a tool that helps programmers avoid mistakes related to units of measurement. It does this by keeping track of the units of measurement, and by ensuring that all operations are performed with the correct units. This can help to prevent errors that can lead to incorrect results, such as adding a distance in inches to a distance in meters.
 
-.. code-block:: java
+An added benefit is readability and maintainability, which also reduces bugs. By making the units of measurement explicit in your code, it becomes easier to read and understand what your code is doing. This can also help to make your code more maintainable, as it is easier to identify and fix errors related to units of measurement.
 
-   Measure<Mass> kArmMass = Kilograms.of(1.423); // value taken from CAD
-   Measure<Distance> kArmLength = Inches.of(32.25); // value taken from physical measurement
-   Measure<Angle> kMinArmAngle = Degrees.of(5);
-   Measure<Angle> kArmMaxTravel = Rotations.of(0.45);
+The units library has a number of features:
+
+- A set of predefined units, such as Meters, Degrees, and Seconds.
+- The ability to convert between different units.
+- Support for performing mathematical operations on quantities with units.
+- Support for displaying quantities with units in a human-readable format.
 
 Using the Units Library
 -----------------------
 
 The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are `edu.wpi.first.units.Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units; and `edu.wpi.first.units.Measure <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 
-The library comes with predefined SI and imperial units for distance, angle, time, velocity and acceleration (both linear and angular), mass, voltage, current, power, energy, and temperature.
+The library comes with many predefined units:
 
-New ``Measure`` objects can be created by calling the ``Unit#of`` method on the appropriate unit object, such as ``Inches.of(8)`` or ``Volts.of(13.5)``.
-``Measure`` is a generic type that contains the type of unit the measurement uses, such as ``Angle`` or ``Distance``. For example, ``Measure<Distance> wheelDiameter = Inches.of(6)`` is a measurement object corresponding to a distance of six inches, and ``Measure<Velocity<Angle>> maxRPM = RPM.of(5640)`` is a measurement corresponding to an angular velocity of 5,640 RPM.
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| Type                                                   | Units                                                                                                                  |
++========================================================+========================================================================================================================+
+| ``Measure<Distance>``                                  | ``Meters``, ``Millimeters``, ``Centimeters``, ``Inches``, ``Feet``                                                     |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Time>``                                      | ``Seconds``, ``Second``, ``Milliseconds``, ``Millisecond``, ``Microseconds``, ``Microsecond``, ``Minutes``, ``Minute`` |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Angle>``                                     | ``Revolutions``, ``Rotations``, ``Radians``, ``Degrees``                                                               |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Velocity<Distance>>``                        | ``MetersPerSecond``, ``FeetPerSecond``, ``InchesPerSecond``                                                            |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Velocity<Angle>>``                           | ``RevolutionsPerSecond``, ``RotationsPerSecond``, ``RPM``, ``RadiansPerSecond``, ``DegreesPerSecond``                  |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Velocity<Velocity<Distance>>>``              | ``MetersPerSecondPerSecond``, ``Gs``                                                                                   |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Mass>``                                      | ``Kilograms``, ``Grams``, ``Pounds``, ``Ounces``                                                                       |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Dimensionless>``                             | ``Value``, ``Percent``                                                                                                 |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Voltage>``                                   | ``Volts``, ``Millivolts``                                                                                              |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Current>``                                   | ``Amps``, ``Milliamps``                                                                                                |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Energy>``                                    | ``Joules``, ``Millijoules``, ``Kilojoules``                                                                            |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Power>``                                     | ``Watts``, ``Milliwatts``, ``Horsepower``                                                                              |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Temperature>``                               | ``Kelvin``, ``Celsius``, ``Fahrenheit``                                                                                |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Per<Voltage, Velocity<Distance>>>``          | ``VoltsPerMeterPerSecond``                                                                                             |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Per<Voltage, Velocity<Velocity<Distance>>>`` | ``VoltsPerMeterPerSecondSquared``                                                                                      |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Per<Voltage, Velocity<Angle>>>``             | ``VoltsPerRadianPerSecond``                                                                                            |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ``Measure<Per<Voltage, Velocity<Velocity<Angle>>>``    | ``VoltsPerRadianPerSecondSquared``                                                                                     |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+
+Creating Measures
+~~~~~~~~~~~~~~~~~
+
+The ``Measure`` class is a generic type that represents a physical quantity with its corresponding unit of measurement. It provides a consistent and type-safe way to handle different types of measurements, such as distance, angle, velocity, and more. To create a ``Measure`` object, you call the ``Unit.of`` method on the appropriate unit object. For example, to create a ``Measure<Distance>`` object representing a distance of 6 inches, you would write:
 
 .. code-block:: java
 
-   import edu.wpi.first.units.Distance;
-   import edu.wpi.first.units.Measure;
-   import static edu.wpi.first.units.Units.*;
+  Measure<Distance> wheelDiameter = Inches.of(6);
 
-   public class Constants {
-     public static class DriveConstants {
-       /** The distance between the front and rear axles. **/
-       public static final Measure<Distance> kWheelBase = Inches.of(28);
+Other measures can also be created using their ``Unit.of`` method:
 
-       /** The distance between left and right wheels. **/
-       public static final Measure<Distance> kTrackWidth = Inches.of(26);
-     }
-   }
+.. code-block:: java
 
-Because the ``Measure`` objects are Java objects, arithmetic must be done by calling methods on the objects. Note that each operation will return a new ``Measure`` object.
+  Measure<Mass> kArmMass = Kilograms.of(1.423);
+  Measure<Distance> kArmLength = Inches.of(32.25);
+  Measure<Angle> kMinArmAngle = Degrees.of(5);
+  Measure<Angle> kArmMaxTravel = Rotations.of(0.45);
+  Measure<Velocity<Distance> kMaxSpeed = MetersPerSecond.of(2.5);
+
+Performing Calculations
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``Measure`` class also supports arithmetic operations, such as addition, subtraction, multiplication, and division. These are done by calling methods on the objects. These operations always ensure that the units of measurement are compatible before performing the calculation, and they return a new ``Measure`` object. For example, you can add two ``Measure<Distance>`` objects together, even if they have different units:
+
+.. code-block:: java
+
+  Measure<Distance> distance1 = Inches.of(10);
+  Measure<Distance> distance2 = Meters.of(0.254);
+
+  Measure<Distance> totalDistance = distance1.plus(distance2);
+
+This code will automatically convert the units of measurement to the same unit before adding the two distances. The resulting ``totalDistance`` object will be a new ``Measure<Distance>`` object that has a value of 0.508 meters, or 20 inches.
+
+A more advanced example combines the wheel diameter and gear ratio to calcualate the distance per rotation of the wheel:
 
 .. code-block:: java
 
@@ -44,15 +98,10 @@ Because the ``Measure`` objects are Java objects, arithmetic must be done by cal
    double gearRatio = 10.48;
    Measure<Distance> distancePerRotation = wheelDiameter.times(Math.PI).divide(gearRatio);
 
-Arithmetic can also be performed with multiple ``Measure`` objects together:
+Converting Units
+~~~~~~~~~~~~~~~~
 
-.. code-block:: java
-
-   Measure<Distance> armLength = Feet.of(3).plus(Inches.of(4.25));
-   Measure<Distance> endEffectorX = armLength.times(Math.cos(getArmAngle().in(Radians));
-   Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians));
-
-Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly! It is strongly recommended to only use unit conversions when interacting with APIs that do not support the units library.
+Unit conversions can be done by calling ``Measure.in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly! It is strongly recommended to only use unit conversions when interacting with APIs that do not support the units library.
 
 .. code-block:: java
 
@@ -68,13 +117,28 @@ Unit conversions can be done by calling ``Measure#in(Unit)``. The Java type syst
      maxAcceleration.in(MetersPerSecondPerSecond)
    );
 
-.. note:: Due to restrictions of the Java type system, acceleration is modeled as ``Velocity<Velocity<X>>>`` instead of having its own class.
+Usage Example
+~~~~~~~~~~~~~
 
-Memory Usage and the Garbage Collector
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Pulling all of the concepts together, we can create an example that calculates the end effector position of an arm mechanism:
 
-The roboRIO is a severely memory-constrained runtime environment and the Java garbage collector has to run to keep memory usage to a reasonable level. The garbage collector will have to pause the robot program in order to free unused objects, which manifests as loop overruns and potentially jittery controls. To avoid this issue, allocate as few ``Measure`` objects as possible in areas of code that will run periodically, such as in a Command's ``execute`` or one of TimedRobot's periodic methods.
-If you still want to use units in hot areas of the code, a special ``MutableMeasure`` class is available. ``MutableMeasure`` allows the internal state of the object to be updated (such as with the results arithmetic operations) to avoid allocating new objects. If the object will be exposed as part of a public API method, have that method return a regular ``Measure`` in its signature to prevent other areas of the code (or users, if it's part of a library) from modifying your internal state.
+.. code-block:: java
+
+  Measure<Distance> armLength = Feet.of(3).plus(Inches.of(4.25));
+  Measure<Distance> endEffectorX = armLength.times(Math.cos(getArmAngle().in(Radians)));
+  Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians)));
+
+Human-readable Formatting
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``Measure`` class has both ``toShortString()`` and ``toLongString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measurement on a dashboard or in logs.
+
+Mutibility and Object Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To reduce the number of object instances you create, and reduce memory usage, a special ``MutableMeasure`` class is available. You may want to consider using mutable objects if you are using the units library repeatedly, such as in the robot's periodic loop.
+
+``MutableMeasure`` allows the internal state of the object to be updated, such as with the results of arithmetic operations, to avoid allocating new objects. Special care needs to be taken when mutating a measure because it will change the value every place that instance is referenced. If the object will be exposed as part of a public method, have that method return a regular ``Measure`` in its signature to prevent the caller from modifying your internal state.
 
 Extra methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
 For the full list of methods and API documentation, see `the MutableMeasure API documentation <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/MutableMeasure.html>`__
@@ -145,7 +209,7 @@ Revisiting the arm example from above, we can use ``mut_replace`` - and, optiona
      public Measure<Distance> getEndEffectorY() {
        // An alternative approach so we don't have to unpack and repack the units
        m_endEffectorY.mut_replace(kArmLength);
-       m_endEffectorY.mut_times(Math.sin(getAngle().in(Radians));
+       m_endEffectorY.mut_times(Math.sin(getAngle().in(Radians)));
        return m_endEffectorY;
      }
 
@@ -156,7 +220,7 @@ Revisiting the arm example from above, we can use ``mut_replace`` - and, optiona
      }
    }
 
-.. warning:: ``MutableMeasure`` objects can - by definition - change their values at any time! It is unsafe to keep a stateful reference to them - prefer to extract a value using the ``Measure#in`` method, or create a copy with ``Measure#copy`` that can be safely stored. For the same reason, library authors must also be careful about methods accepting ``Measure``.
+.. warning:: ``MutableMeasure`` objects can - by definition - change their values at any time! It is unsafe to keep a stateful reference to them - prefer to extract a value using the ``Measure.in`` method, or create a copy with ``Measure.copy`` that can be safely stored. For the same reason, library authors must also be careful about methods accepting ``Measure``.
 
 Can you spot the bug in this code?
 
@@ -230,12 +294,12 @@ Defining New Units
 
 There are four ways to define a new unit that isn't already present in the library:
 
-- Using the ``Unit#per`` or ``Unit#mult`` methods to create a composite of two other units;
+- Using the ``Unit.per`` or ``Unit.mult`` methods to create a composite of two other units;
 - Using the ``Milli``, ``Micro``, and ``Kilo`` helper methods;
 - Using the ``derive`` method and customizing how the new unit relates to the base unit;
 - Subclassing ``Unit`` to define a new type of unit
 
-New units can be defined as combinations of existing units using the ``Unit#mult`` and ``Unit#per`` methods.
+New units can be defined as combinations of existing units using the ``Unit.mult`` and ``Unit.per`` methods.
 
 .. code-block:: java
 
@@ -251,10 +315,10 @@ Using ``mult`` and ``per`` will store the resulting unit. Every call will return
    public void robotPeriodic() {
      // Feet.per(Millisecond) creates a new unit on the first loop,
      // which will be reused on every successive loop
-     SmartDashboard.putNumber("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond));
+     SmartDashboard.putNumber("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond)));
    }
 
-.. note:: Calling ``Unit#per(Time)`` will return a ``Velocity`` unit, which is different from and incompatible with a ``Per`` unit!
+.. note:: Calling ``Unit.per(Time)`` will return a ``Velocity`` unit, which is different from and incompatible with a ``Per`` unit!
 
 New unit types can also be created by subclassing ``Unit`` and implementing the two constructors. Note that ``Unit`` is also a parameterized generic type, where the generic type argument is self-referential; ``Distance`` is a ``Unit<Distance>``. This is what allows us to have stronger guarantees in the type system to prevent conversions between unrelated unit types.
 
