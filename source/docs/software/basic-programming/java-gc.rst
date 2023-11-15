@@ -28,8 +28,6 @@ If you anticipate your application creating a large number of small objects, it 
 
 - Minimize object creation: Carefully evaluate the need for each object creation. If possible, reuse existing objects or use alternative data structures, such as arrays or primitives, to avoid creating new objects.
 
-- Object pooling: Implement object pooling to reuse frequently created objects. This involves creating a pool of objects that are available for use when needed. When an object is no longer needed, it is returned to the pool instead of being destroyed.
-
 - Efficient data structures: Use data structures that are well-suited for the type of data you are working with. For example, if you are dealing with a large number of primitive values, consider using arrays or collections specifically designed for primitives.
 
 In general, it is advisable to avoid creating a large number of small objects in Java unless it is necessary for the application's functionality. By carefully considering design strategies and optimizing object creation, you can minimize the memory and performance impact of creating small objects.
