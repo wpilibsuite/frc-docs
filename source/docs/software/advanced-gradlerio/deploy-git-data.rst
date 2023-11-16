@@ -16,7 +16,7 @@ To install gversion add the following line to the plugins block of ``build.gradl
   }
 
 
-In order to generate the file when building the project, add the following block to the bottom or otherwise at the root of ``build.gradle``.
+In order to generate the file when building the project, add the following block to the bottom of ``build.gradle``.
 
 .. code-block:: groovy
 
@@ -32,7 +32,7 @@ In order to generate the file when building the project, add the following block
 
 The ``srcDir``, ``classPackage``, and ``className`` parameters tell the plugin where to put the manifest file, and what to name it. The ``timeZone`` field can be set to your team's time zone based on `this list of timezone IDs <https://docs.oracle.com/middleware/12211/wcs/tag-ref/MISC/TimeZones.html>`__. The ``dateFormat`` parameter is based on `this Java class <https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html>`__.
 
-To test this run a build of your project by clicking the WPILib logo in the top right of VS Code and selecting the "Build Robot Code" option. Once the code has finished building, there should be a file called ``BuildConstants.java`` in your ``src/main/java`` folder. The following is an example of what this file should look like:
+To test this, run a build of your project through the WPILib menu in the top right. Once the code has finished building, there should be a file called ``BuildConstants.java`` in your ``src/main/java`` folder. The following is an example of what this file should look like:
 
 .. code-block:: Java
 
