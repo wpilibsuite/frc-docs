@@ -1,7 +1,7 @@
 Using Compiler Arguments
-============================
+========================
 
-Compiler arguments allow us to change the behavior of our compiler. This includes making warnings into errors, ignoring certain warnings and choosing optimization level. When you compile your code a variety of flags are already included by default which can be found `here <https://github.com/wpilibsuite/native-utils/blob/0055bc77da9d9d37e0876d04af53b7317b78174f/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L37>`. Normally we would pass them in as flags when compiling our code but this doesn't work in GradleRIO. Instead we have to modify our build.gradle.
+Compiler arguments allow us to change the behavior of our compiler. This includes making warnings into errors, ignoring certain warnings and choosing optimization level. When compiling code a variety of flags are already included by default which can be found `here <https://github.com/wpilibsuite/native-utils/blob/0055bc77da9d9d37e0876d04af53b7317b78174f/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L37>`. Normally it could be proposed that the solution is to pass them in as flags when compiling our code but this doesn't work in GradleRIO. Instead modify the build.gradle. **Warning Modifying arguments is dangerous and can cause unexpected behaviour.**
 
 C++
 ---
@@ -9,7 +9,7 @@ C++
 Platforms
 ^^^^^^^^^
 
-Different compilers on different platforms use a variety of different flags so in order to avoid breaking different platforms with compiler flags we configure everything per platform. The platforms that are supported are :
+Different compilers and different platforms use a variety of different flags. Therefore to avoid breaking different platforms with compiler flags configure all flags per platform. The platforms that are supported are :
 
 - windowsx86-64
 - windowsx86
@@ -29,12 +29,12 @@ Configuring for a Platform
     it.cppCompiler.args.add("/utf-8")
   }
 
-We can break this code up step by step. First we use nativeUtils to configure the platform which here is windowsx86-64, but you can replace for whichever platform you choose to configure. Then we take the C++ compiler and add an argument "/utf-8".
+Lets break this code up step by step. First use nativeUtils to configure the platform which here is windowsx86-64, but can be replaced for whichever platform chosen to configure. Then take the C++ compiler and add an argument eg. "/utf-8".
 
 Java
 ----
 
-We can configure arguments to the JVM when compiling projects with GradleRIO. We can go into our build.gradle and do something similar to this(note the FRCJavaArtifact already exists you just need to add into it) :
+We can configure arguments to the JVM when compiling projects with GradleRIO. These arguments can serve a variety of purposes for example remote debugging or memory analysis. To do this we can go into our build.gradle and do something similar to this(note the FRCJavaArtifact already exists just add to it) :
 
 .. code-block:: groovy
 
@@ -42,4 +42,4 @@ We can configure arguments to the JVM when compiling projects with GradleRIO. We
     jvmArgs.add("-XX:+DisableExplicitGC")
   }
 
-Lets go through this step by step. First we enter the FRCJavaArtifact. This is the Java artifact we are deploying to the roboRIO. Here we add an argument to our JVM using jvmArgs.add.
+Lets go through this step by step. First enter the FRCJavaArtifact. This is the Java artifact deployed to the roboRIO. Here add an argument to our JVM using jvmArgs.add.
