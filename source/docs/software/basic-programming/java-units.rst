@@ -58,7 +58,7 @@ The library comes with many predefined units:
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Java Generics
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 Units of measurement can be complex expressions involving various quantities, such as distance, time, and velocity. Nested `generic type parameters <https://docs.oracle.com/javase/tutorial/java/generics/index.html>`__ allow for the definition of units that can represent such complex expressions. Generics are used to keep the library concise, reusable, and extensible, but it tends to be verbose due to the syntax for Java generics.
 
 For instance, consider the type ``Measure<Velocity<Distance>>``. This type represents a unit of measurement for velocity, where the velocity itself is expressed as a unit of distance per unit of time. This nested structure allows for the representation of units like meters per second or feet per minute. Similarly, the type ``Measure<Per<Voltage, Velocity<Distance>>>`` represents a unit of measurement for a ratio of voltage to velocity. This type is useful for representing quantities like volts per meter per second.
@@ -73,7 +73,7 @@ For local variables, you may choose to use Java's `var` keyword instead of inclu
   var v = VoltsPerMeterPerSecond.of(8);
 
 Creating Measures
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 The ``Measure`` class is a generic type that represents a physical quantity with its corresponding unit of measurement. It provides a consistent and type-safe way to handle different types of measurements, such as distance, angle, and velocity, but abstracts away the particular unit of measure (e.g. meter vs. inch). To create a ``Measure`` object, you call the ``Unit.of`` method on the appropriate unit object. For example, to create a ``Measure<Distance>`` object representing a distance of 6 inches, you would write:
 
@@ -92,7 +92,7 @@ Other measures can also be created using their ``Unit.of`` method:
   Measure<Velocity<Distance> kMaxSpeed = MetersPerSecond.of(2.5);
 
 Performing Calculations
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``Measure`` class also supports arithmetic operations, such as addition, subtraction, multiplication, and division. These are done by calling methods on the objects. These operations always ensure that the units of measurement are compatible before performing the calculation, and they return a new ``Measure`` object. For example, you can add two ``Measure<Distance>`` objects together, even if they have different units:
 
@@ -114,7 +114,7 @@ This example combines the wheel diameter and gear ratio to calcualate the distan
    Measure<Distance> distancePerRotation = wheelDiameter.times(Math.PI).divide(gearRatio);
 
 Converting Units
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Unit conversions can be done by calling ``Measure.in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly! It is strongly recommended to only use unit conversions when interacting with APIs that do not support the units library.
 
@@ -133,7 +133,7 @@ Unit conversions can be done by calling ``Measure.in(Unit)``. The Java type syst
    );
 
 Usage Example
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Pulling all of the concepts together, we can create an example that calculates the end effector position of an arm mechanism:
 
@@ -144,7 +144,7 @@ Pulling all of the concepts together, we can create an example that calculates t
   Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians)));
 
 Human-readable Formatting
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``Measure`` class has both ``toLongString()`` and ``toShortString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measurement on a dashboard or in logs.
 
@@ -152,7 +152,7 @@ The ``Measure`` class has both ``toLongString()`` and ``toShortString()`` method
 - ``toShortString()`` returns a string representation of this measurement in a shorthand form. The symbol of the backing unit is used, rather than the full name, and the magnitude is represented in scientific notation. For example, 1.234e+04 V/m
 
 Mutability and Object Creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 To reduce the number of object instances you create, and reduce memory usage, a special ``MutableMeasure`` class is available. You may want to consider using mutable objects if you are using the units library repeatedly, such as in the robot's periodic loop. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for more discussion on creating a large number of small objects.
 
