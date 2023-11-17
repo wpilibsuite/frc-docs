@@ -92,6 +92,8 @@ This example combines the wheel diameter and gear ratio to calcualate the distan
    double gearRatio = 10.48;
    Measure<Distance> distancePerRotation = wheelDiameter.times(Math.PI).divide(gearRatio);
 
+.. warning:: By default, arithmetic operations create new ``Measure`` instances for their results. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for discussion on creating a large number of short-lived objects. See also, the `Mutability and Object Creation`_ section below for a possible workaround.
+
 Converting Units
 ^^^^^^^^^^^^^^^^
 
@@ -125,15 +127,15 @@ Pulling all of the concepts together, we can create an example that calculates t
 Human-readable Formatting
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``Measure`` class has both ``toLongString()`` and ``toShortString()`` methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measure on a dashboard or in logs.
+The ``Measure`` class has methods that can be used to get a human-readable representation of the measure. This feature is useful to display a measure on a dashboard or in logs.
 
+- ``toString()`` and ``toShortString()`` return a string representation of the measure in a shorthand form. The symbol of the backing unit is used, rather than the full name, and the magnitude is represented in scientific notation. For example, 1.234e+04 V/m
 - ``toLongString()`` returns a string representation of the measure in a longhand form. The name of the backing unit is used, rather than its symbol, and the magnitude is represented in a full string, not scientific notation. For example, 1234 Volt per Meter
-- ``toShortString()`` returns a string representation of the measure in a shorthand form. The symbol of the backing unit is used, rather than the full name, and the magnitude is represented in scientific notation. For example, 1.234e+04 V/m
 
 Mutability and Object Creation
 ------------------------------
 
-To reduce the number of object instances you create, and reduce memory usage, a special ``MutableMeasure`` class is available. You may want to consider using mutable objects if you are using the units library repeatedly, such as in the robot's periodic loop. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for more discussion on creating a large number of small objects.
+To reduce the number of object instances you create, and reduce memory usage, a special ``MutableMeasure`` class is available. You may want to consider using mutable objects if you are using the units library repeatedly, such as in the robot's periodic loop. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for more discussion on creating a large number of short-lived objects.
 
 ``MutableMeasure`` allows the internal state of the object to be updated, such as with the results of arithmetic operations, to avoid allocating new objects. Special care needs to be taken when mutating a measure because it will change the value every place that instance is referenced. If the object will be exposed as part of a public method, have that method return a regular ``Measure`` in its signature to prevent the caller from modifying your internal state.
 
