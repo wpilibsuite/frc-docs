@@ -7,27 +7,25 @@ Java garbage collection is an automatic process, which means that the programmer
 Object Creation
 ---------------
 
-Creating a large number of small objects in Java can lead to memory and performance issues. While the Java Garbage Collector (GC) is designed to handle memory management efficiently, creating too many small objects can overwhelm the GC and cause performance degradation.
+Creating a large number of objects in Java can lead to memory and performance issues. While the Java Garbage Collector (GC) is designed to handle memory management efficiently, creating too many objects can overwhelm the GC and cause performance degradation.
 
 Memory Concerns
 ^^^^^^^^^^^^^^^
 
-When a large number of small objects are created, it increases the overall memory footprint of the application. This is because each object has its own overhead. While the overhead for a single object may be insignificant, it can become substantial when multiplied by a large number of objects.
-
-The GC's job is to periodically identify and reclaim unused objects in memory. However, when the GC has to collect a large number of small objects frequently, it can become a performance bottleneck. This is because the GC has to perform more work to collect and process each object, which can slow down overall application performance.
+When a large number of objects are created, it increases the overall memory footprint of the application. While the overhead for a single object may be insignificant, it can become substantial when multiplied by a large number of objects.
 
 Performance Concerns
 ^^^^^^^^^^^^^^^^^^^^
 
-The performance impact of creating a lot of small objects is not limited to GC overhead. Creating and destroying objects also involves CPU cycles, which can further impact application performance. Additionally, accessing and manipulating large numbers of small objects can lead to cache misses, which can further slow down the application.
+The GC's job is to periodically identify and reclaim unused objects in memory. While garbage collection is running on an FRC robot coded in Java, execution of the robot program is paused. When the GC has to collect a large number of objects, it has to pause the application to run more frequently or for longer periods of time. This is because the GC has to perform more work to collect and process each object.
+
+GC-related performance degradation in robot programs can manifest as occasional pauses, freezes, or loop overruns as the GC works to reclaim memory.
 
 Design Considerations
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you anticipate your application creating a large number of small objects, it is important to consider design strategies to mitigate the potential memory and performance issues. Here are some strategies to consider:
+If you anticipate your application creating a large number of short-lived objects, it is important to consider design strategies to mitigate the potential memory and performance issues. Here are some strategies to consider:
 
 - Minimize object creation: Carefully evaluate the need for each object creation. If possible, reuse existing objects or use alternative data structures, such as arrays or primitives, to avoid creating new objects.
 
 - Efficient data structures: Use data structures that are well-suited for the type of data you are working with. For example, if you are dealing with a large number of primitive values, consider using arrays or collections specifically designed for primitives.
-
-In general, it is advisable to avoid creating a large number of small objects in Java unless it is necessary for the application's functionality. By carefully considering design strategies and optimizing object creation, you can minimize the memory and performance impact of creating small objects.

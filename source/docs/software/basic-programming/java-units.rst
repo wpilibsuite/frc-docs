@@ -28,47 +28,13 @@ These concepts are used within the Units Library. For example, the **measure** *
 Using the Units Library
 -----------------------
 
-The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are `edu.wpi.first.units.Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units; and `edu.wpi.first.units.Measure <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit. It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
+The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are:
 
-The library comes with many predefined units:
+- The various classes for predefined dimensions, such as `Distance <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Distance.html>`__ and `Time <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Time.html>`__
+- `Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__, which contains a set of predefined units. Take a look a the `Units javadoc <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Units.html>`__ to browse the available units and their types.
+- `Measure <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/units/Measure.html>`__, which is used to tag a value with a unit.
 
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| Type                                                   | Units                                                                                                                  |
-+========================================================+========================================================================================================================+
-| ``Measure<Distance>``                                  | ``Meters``, ``Millimeters``, ``Centimeters``, ``Inches``, ``Feet``                                                     |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Time>``                                      | ``Seconds``, ``Second``, ``Milliseconds``, ``Millisecond``, ``Microseconds``, ``Microsecond``, ``Minutes``, ``Minute`` |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Angle>``                                     | ``Revolutions``, ``Rotations``, ``Radians``, ``Degrees``                                                               |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Velocity<Distance>>``                        | ``MetersPerSecond``, ``FeetPerSecond``, ``InchesPerSecond``                                                            |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Velocity<Angle>>``                           | ``RevolutionsPerSecond``, ``RotationsPerSecond``, ``RPM``, ``RadiansPerSecond``, ``DegreesPerSecond``                  |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Velocity<Velocity<Distance>>>``              | ``MetersPerSecondPerSecond``, ``Gs``                                                                                   |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Mass>``                                      | ``Kilograms``, ``Grams``, ``Pounds``, ``Ounces``                                                                       |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Dimensionless>``                             | ``Value``, ``Percent``                                                                                                 |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Voltage>``                                   | ``Volts``, ``Millivolts``                                                                                              |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Current>``                                   | ``Amps``, ``Milliamps``                                                                                                |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Energy>``                                    | ``Joules``, ``Millijoules``, ``Kilojoules``                                                                            |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Power>``                                     | ``Watts``, ``Milliwatts``, ``Horsepower``                                                                              |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Temperature>``                               | ``Kelvin``, ``Celsius``, ``Fahrenheit``                                                                                |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Distance>>>``          | ``VoltsPerMeterPerSecond``                                                                                             |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Velocity<Distance>>>>``| ``VoltsPerMeterPerSecondSquared``                                                                                      |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Angle>>>``             | ``VoltsPerRadianPerSecond``                                                                                            |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| ``Measure<Per<Voltage, Velocity<Velocity<Angle>>>>``   | ``VoltsPerRadianPerSecondSquared``                                                                                     |
-+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+.. note:: It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 
 Java Generics
 ^^^^^^^^^^^^^
@@ -327,8 +293,8 @@ There are four ways to define a new unit that isn't already present in the libra
 
 - Using the ``Unit.per`` or ``Unit.mult`` methods to create a composite of two other units;
 - Using the ``Milli``, ``Micro``, and ``Kilo`` helper methods;
-- Using the ``derive`` method and customizing how the new unit relates to the base unit;
-- Subclassing ``Unit`` to define a new diimension
+- Using the ``derive`` method and customizing how the new unit relates to the base unit; and
+- Subclassing ``Unit`` to define a new dimension.
 
 New units can be defined as combinations of existing units using the ``Unit.mult`` and ``Unit.per`` methods.
 
