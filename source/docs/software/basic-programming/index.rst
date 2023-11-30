@@ -13,3 +13,4 @@ Basic Programming
    reading-stacktraces
    functions-as-data
    driverstation
+   java-gc
