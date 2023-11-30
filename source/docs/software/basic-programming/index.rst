@@ -12,3 +12,4 @@ Basic Programming
    using-test-mode
    reading-stacktraces
    functions-as-data
+   java-gc
