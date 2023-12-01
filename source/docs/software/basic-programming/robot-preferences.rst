@@ -33,6 +33,17 @@ Initializing Preferences
          :language: cpp
          :lines: 12, 18-22
 
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+         :language: python
+         :lines: 18-20,26-29
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+         :language: python
+         :lines: 39-44
+
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
 In ``robotInit``, each key is checked to see if it already exists in the Preferences database. The ``containsKey`` method takes one parameter, the key to check if data for that key already exists in the preferences database. If it doesn't exist, a default value is written. The ``setDouble`` method takes two parameters, the key to write and the data to write. There are similar methods for other data types like booleans, ints, and strings.
@@ -57,6 +68,13 @@ Reading Preferences
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 44-52
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+         :language: python
+         :lines: 46-53
 
 Reading a preference is easy. The ``getDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
@@ -83,6 +101,13 @@ Depending on the data that is stored in preferences, you can use it when you rea
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 54-60
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+         :language: python
+         :lines: 55-65
 
 Using Preferences in SmartDashboard
 -----------------------------------
