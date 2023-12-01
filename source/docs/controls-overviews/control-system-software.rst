@@ -10,7 +10,7 @@ Operating System Compatibility
 
 The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10 & 11.
 
-Many of the tools for C++/Java programming are also supported and tested on macOS and Linux. Teams programming in C++/Java should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
+Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
 
 LabVIEW FRC (Windows Only)
 --------------------------
@@ -26,7 +26,7 @@ Visual Studio Code
 .. image:: images/control-system-software/visual-studio-code.png
    :alt: Welcome screen of Visual Studio Code.
 
-Visual Studio Code is the supported development environment for C++ and Java (the other two supported languages). Both are object-oriented text based programming languages. A guide to getting started with C++ or Java for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
+Visual Studio Code is the supported development environment for C++, Java, and Python (the other supported languages).  A guide to getting started with C++, Java, and Python for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
 
 FRC Driver Station Powered by NI LabVIEW (Windows Only)
 -------------------------------------------------------
@@ -109,7 +109,7 @@ RobotBuilder
 .. image:: images/control-system-software/robot-builder.png
    :alt: RobotBuilder building a robot with two subsystems.
 
-RobotBuilder is a tool designed to aid in setup and structuring of a Command Based robot project for C++ or Java. RobotBuilder allows you to enter in the various components of your robot subsystems and operator interface and define what your commands are in a graphical tree structure.  RobotBuilder will then generate structural template code to get you started.  More information about RobotBuilder can be found :ref:`here <docs/software/wpilib-tools/robotbuilder/index:RobotBuilder>`. More information about the Command Based programming architecture can be found :ref:`here <docs/software/commandbased/index:Command-Based Programming>`.
+RobotBuilder is a tool designed to aid in setup and structuring of a Command Based robot project for C++ or Java (Python not currently supported). RobotBuilder allows you to enter in the various components of your robot subsystems and operator interface and define what your commands are in a graphical tree structure.  RobotBuilder will then generate structural template code to get you started.  More information about RobotBuilder can be found :ref:`here <docs/software/wpilib-tools/robotbuilder/index:RobotBuilder>`. More information about the Command Based programming architecture can be found :ref:`here <docs/software/commandbased/index:Command-Based Programming>`.
 
 Robot Simulation
 ----------------
@@ -117,7 +117,7 @@ Robot Simulation
 .. image:: images/control-system-software/sim-gui.png
    :alt: The Simulation GUI similar to Glass but also has Joysticks and control over the robot state and a few other features.
 
-Robot Simulation offers a way for Java and C++ teams to verify their actual robot code is working in a simulated environment.  This simulation can be launched directly from VS Code and includes a 2D field that users can visualize their robot's movement on.  For more information see the :ref:`Robot Simulation section <docs/software/wpilib-tools/robot-simulation/introduction:Introduction to Robot Simulation>`.
+Robot Simulation offers a way for Java, C++, and Python teams to verify their actual robot code is working in a simulated environment.  This simulation can be launched directly from VS Code and includes a 2D field that users can visualize their robot's movement on.  For more information see the :ref:`Robot Simulation section <docs/software/wpilib-tools/robot-simulation/introduction:Introduction to Robot Simulation>`.
 
 FRC LabVIEW Robot Simulator (Windows Only)
 ------------------------------------------
