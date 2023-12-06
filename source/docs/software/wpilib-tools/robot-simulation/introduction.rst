@@ -55,7 +55,7 @@ Your console output in Visual Studio Code should look like the below. However, t
 Running Robot Dashboards
 ------------------------
 
-Shuffleboard, SmartDashboard, and Glass can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
+Shuffleboard, SmartDashboard, Glass, and AdvantageScope can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
 
 Shuffleboard
 ^^^^^^^^^^^^
@@ -80,3 +80,13 @@ Glass is automatically configured to look for a NetworkTables instance from the 
 
 .. image:: images/glass-networktables.png
    :alt: Glass NetworkTables Preferences showing Team/IP set to localhost.
+
+
+AdvantageScope
+^^^^^^^^^^^^^^
+
+No configuration is required to connect to a NetworkTables instance running on the local computer. To connect to a simulation, click :guilabel:`Connect to Simulator` under the :guilabel:`File` menu or press :kbd:`Ctrl+Shift+K`.
+
+.. image:: images/advantagescope-sim.png
+   :alt: AdvantageScope file menu with the "Connect to Simulator" option highlighted.
+   :height: 300

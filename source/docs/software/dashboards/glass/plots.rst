@@ -24,3 +24,11 @@ If you choose to make secondary and tertiary y axes available, you can drag data
 Then, you can lock certain axes so that their range always remains constant, regardless of panning. In this example, the secondary axis range (with the ``/SmartDashboard/Kp`` entry) was locked between 9 and 12.
 
 .. image:: images/locked-axis.png
+
+Plotting with AdvantageScope
+----------------------------
+
+:ref:`AdvantageScope <docs/software/telemetry/advantagescope:AdvantageScope>` is an alternative option for creating plots, including from data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. See the documentation for the `line graph <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/LINE-GRAPH.md>`__ tab for more details.
+
+.. image:: images/advantagescope-plot.png
+   :alt: Screenshot of an AdvantageScope window displaying a line graph with several numeric and discrete fields.

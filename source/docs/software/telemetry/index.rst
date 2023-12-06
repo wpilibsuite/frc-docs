@@ -7,5 +7,6 @@ Telemetry
    telemetry.rst
    robot-telemetry-with-sendable.rst
    datalog.rst
+   advantagescope.rst
    writing-sendable-classes.rst
    3rd-party-libraries.rst

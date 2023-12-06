@@ -217,14 +217,6 @@ After at least one file is loaded, the "Entries" window displays a tree view of 
 
 The output window is used to specify the output folder (via :guilabel:`Select Output Folder...`) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking :guilabel:`Export CSV` will create a ``.csv`` file in the output folder corresponding to each input file.
 
-Data Log Visualization
---------------------------
-
-`AdvantageScope <https://github.com/Mechanical-Advantage/AdvantageScope>`__ is a third-party tool allowing users to play back and visualize data stored in WPILib data logs, with support for line graphs, field displays, video synchronization, etc. More details are available in the `AdvantageScope documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/INDEX.md>`__. Note that WPILib offers no support for third-party projects.
-
-.. image:: images/advantagescope.png
-   :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
-
 Custom Processing of Data Logs
 ------------------------------
 
