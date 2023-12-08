@@ -326,11 +326,7 @@ def new_send(self, data):
 http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
-    "robotpy": ("https://robotpy.readthedocs.io/en/stable/", None),
-    "wpimath": (
-        f"https://robotpy.readthedocs.io/projects/wpimath/en/stable/",
-        None,
-    ),
+    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/latest/", None),
 }
 
 # We recommend adding the following config value.
