@@ -36,11 +36,11 @@ Initializing Preferences
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/robot.py
          :language: python
          :lines: 18-20,26-29
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/robot.py
          :language: python
          :lines: 39-44
 
@@ -72,7 +72,7 @@ Reading Preferences
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/robot.py
          :language: python
          :lines: 46-53
 
@@ -105,7 +105,7 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/main/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/robot.py
          :language: python
          :lines: 55-65
 
