@@ -106,7 +106,7 @@ General Library
 Breaking Changes
 ^^^^^^^^^^^^^^^^
 
-- Changed ``DriverStation.getAllianceStation()`` to return optional value.  See :doc:`example usage </docs/software/basic-programming/driverstation>`
+- Changed ``DriverStation.getAllianceStation()`` to return optional value.  See :doc:`example usage </docs/software/basic-programming/alliancecolor>`
 - Merged CommandBase into Command (Command is now a base class instead of an interface)
 - Potentially breaking: made command scheduling order consistent
 - Removed various deprecated command classes and functions:
