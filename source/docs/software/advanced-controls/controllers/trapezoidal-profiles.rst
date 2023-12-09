@@ -96,19 +96,19 @@ Once we've created a ``TrapezoidProfile``, using it is very simple: to get the p
 
   .. code-block:: java
 
-    // Profile will end stationary at 5 meters
     // Profile will start stationary at zero position
+    // Profile will end stationary at 5 meters
     // Returns the motion profile state after 5 seconds of motion
-    profile.calculate(5, new TrapezoidProfile.State(5, 0), new TrapezoidProfile.State(0, 0));
+    profile.calculate(5, new TrapezoidProfile.State(0, 0), new TrapezoidProfile.State(5, 0));
 
   .. code-block:: c++
 
-    // Profile will end stationary at 5 meters
     // Profile will start stationary at zero position
+    // Profile will end stationary at 5 meters
     // Returns the motion profile state after 5 seconds of motion
     profile.Calculate(5_s,
-    frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps},
-    frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps});
+    frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
+    frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
 
 Using the State
 ^^^^^^^^^^^^^^^
@@ -119,12 +119,12 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
   .. code-block:: java
 
-    var setpoint = profile.calculate(elapsedTime, goalState, initialState);
+    var setpoint = profile.calculate(elapsedTime, initialState, goalState);
     controller.calculate(encoder.getDistance(), setpoint.position);
 
   .. code-block:: c++
 
-    auto setpoint = profile.Calculate(elapsedTime, goalState, initialState);
+    auto setpoint = profile.Calculate(elapsedTime, initialState, goalState);
     controller.Calculate(encoder.GetDistance(), setpoint.position.value());
 
 Complete Usage Example
