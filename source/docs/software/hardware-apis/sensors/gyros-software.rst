@@ -44,12 +44,12 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib
 
     .. code-tab:: java
 
-        // ADIS16470 plugged into the MXP port
+        // ADIS16470 plugged into the SPI port
         ADIS16470_IMU gyro = new ADIS16470_IMU();
 
     .. code-tab:: c++
 
-        // ADIS16470 plugged into the MXP port
+        // ADIS16470 plugged into the SPI port
         ADIS16470_IMU gyro;
 
 ADXRS450_Gyro
