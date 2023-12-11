@@ -182,3 +182,61 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
       // three components.
       auto [forward, sideways, angular] = kinematics.ToChassisSpeeds(
         frontLeftState, frontRightState, backLeftState, backRightState);
+
+Module state visualization with AdvantageScope
+----------------------------------------------
+By recording a set of swerve module states using :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>` or :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` can be used to visualize the state of a swerve drive. The code below shows how a set of ``SwerveModuleState`` objects can be published to NetworkTables.
+
+.. tab-set-code::
+
+   .. code-block:: java
+
+      public class Example {
+        private final StructArrayPublisher<SwerveModuleState> publisher;
+
+        public Example() {
+          // Start publishing an array of module states with the "/SwerveStates" key
+          publisher = NetworkTableInstance.getDefault()
+            .getStructArrayTopic("/SwerveStates", SwerveModuleState.struct).publish();
+        }
+
+        public void periodic() {
+          // Periodically send a set of module states
+          publisher.set(new SwerveModuleState[] {
+            frontLeftState,
+            frontRightState,
+            backLeftState,
+            backRightState
+          });
+        }
+      }
+
+   .. code-block:: c++
+
+      class Example {
+        nt::StructArrayPublisher<frc::SwerveModuleState> publisher
+
+       public:
+        Example() {
+          // Start publishing an array of module states with the "/SwerveStates" key
+          publisher = nt::NetworkTableInstance::GetDefault()
+            .GetStructArrayTopic<frc::SwerveModuleState>("/SwerveStates").Publish();
+        }
+
+        void Periodic() {
+          // Periodically send a set of module states
+          swervePublisher.Set(
+            std::vector{
+              frontLeftState,
+              frontRightState,
+              backLeftState,
+              backRightState
+            }
+          );
+        }
+      };
+
+See the documentation for the `swerve <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/SWERVE.md>`__ tab for more details on visualizing this data using AdvantageScope.
+
+.. image:: images/advantagescope-swerve.png
+   :alt: Screenshot of an AdvantageScope window displaying a swerve visualization.
