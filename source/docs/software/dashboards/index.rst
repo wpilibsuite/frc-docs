@@ -9,4 +9,5 @@ Click on each dashboard below to get a description of its advantages and disadva
    shuffleboard/index
    smartdashboard/index
    glass/index
+   advantagescope.rst
    labview-dashboard/index
