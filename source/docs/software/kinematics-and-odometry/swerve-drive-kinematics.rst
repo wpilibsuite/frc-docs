@@ -6,7 +6,7 @@ The swerve module state class
 -----------------------------
 The ``SwerveModuleState`` class contains information about the velocity and angle of a singular module of a swerve drive. The constructor for a ``SwerveModuleState`` takes in two arguments, the velocity of the wheel on the module, and the angle of the module.
 
-.. note:: In Java, the velocity of the wheel must be in meters per second. In C++, the units library can be used to provide the velocity using any linear velocity unit.
+.. note:: In Java / Python, the velocity of the wheel must be in meters per second. In C++, the units library can be used to provide the velocity using any linear velocity unit.
 .. note:: An angle of 0 corresponds to the modules facing forward.
 
 Constructing the kinematics object
@@ -47,9 +47,27 @@ The locations for the modules must be relative to the center of the robot. Posit
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
         m_backRightLocation};
 
+   .. code-block:: python
+
+      # Python requires using the right class for the number of modules you have
+
+      from wpimath.geometry import Translation2d
+      from wpimath.kinematics import SwerveDrive4Kinematics
+
+      # Locations for the swerve drive modules relative to the robot center.
+      m_frontLeftLocation = Translation2d(0.381, 0.381)
+      m_frontRightLocation = Translation2d(0.381, -0.381)
+      m_backLeftLocation = Translation2d(-0.381, 0.381)
+      m_backRightLocation = Translation2d(-0.381, -0.381)
+
+      # Creating my kinematics object using the module locations
+      m_kinematics = SwerveDrive4Kinematics(
+        m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
+      )
+
 Converting chassis speeds to module states
 ------------------------------------------
-The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / ``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState`` objects. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual module states.
+The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java / Python) / ``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState`` objects. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual module states.
 
 The elements in the array that is returned by this method are the same order in which the kinematics object was constructed. For example, if the kinematics object was constructed with the front left module location, front right module location, back left module location, and the back right module location in that order, the elements in the array would be the front left module state, front right module state, back left module state, and back right module state in that order.
 
@@ -89,6 +107,18 @@ The elements in the array that is returned by this method are the same order in 
       // individual SwerveModuleState components.
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
 
+   .. code-block:: python
+
+      from wpimath.kinematics import ChassisSpeeds
+
+      # Example chassis speeds: 1 meter per second forward, 3 meters
+      # per second to the left, and rotation at 1.5 radians per second
+      # counterclockwise.
+      speeds = ChassisSpeeds(1.0, 3.0, 1.5)
+
+      # Convert to module states
+      frontLeft, frontRight, backLeft, backRight = kinematics.toSwerveModuleStates(speeds)
+
 Module angle optimization
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / ``Optimize()`` (C++) method that is used to "optimize" the speed and angle setpoint of a given ``SwerveModuleState`` to minimize the change in heading. For example, if the angular setpoint of a certain module from inverse kinematics is 90 degrees, but your current angle is -89 degrees, this method will automatically negate the speed of the module setpoint and make the angular setpoint -90 degrees to reduce the distance the module has to travel.
@@ -105,6 +135,15 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
 
       auto flOptimized = frc::SwerveModuleState::Optimize(fl,
          units::radian_t(m_turningEncoder.GetDistance()));
+
+   .. code-block:: python
+
+      from wpimath.kinematics import SwerveModuleState
+      from wpimath.geometry import Rotation2d
+
+      frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
+         Rotation2d(m_turningEncoder.getDistance()))
+
 
 Field-oriented drive
 ^^^^^^^^^^^^^^^^^^^^
@@ -138,6 +177,23 @@ Field-oriented drive
       // Now use this in our kinematics
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
 
+   .. code-block:: python
+
+      from wpimath.kinematics import ChassisSpeeds
+      import math
+      from wpimath.geometry import Rotation2d
+
+      # The desired field relative speed here is 2 meters per second
+      # toward the opponent's alliance station wall, and 2 meters per
+      # second toward the left field boundary. The desired rotation
+      # is a quarter of a rotation per second counterclockwise. The current
+      # robot angle is 45 degrees.
+      speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
+        2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
+
+      # Now use this in our kinematics
+      moduleStates = kinematics.toSwerveModuleStates(speeds)
+
 Using custom centers of rotation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
@@ -148,7 +204,7 @@ For example, one can set the center of rotation on a certain module and if the p
 
 Converting module states to chassis speeds
 ------------------------------------------
-One can also use the kinematics object to convert an array of ``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(SwerveModuleState... states)`` (Java) / ``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to achieve this.
+One can also use the kinematics object to convert an array of ``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(SwerveModuleState... states)`` (Java / Python) / ``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to achieve this.
 
 .. tab-set-code::
 
@@ -182,3 +238,23 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
       // three components.
       auto [forward, sideways, angular] = kinematics.ToChassisSpeeds(
         frontLeftState, frontRightState, backLeftState, backRightState);
+
+   .. code-block:: python
+
+      from wpimath.kinematics import SwerveModuleState
+      from wpimath.geometry import Rotation2d
+
+      # Example module states
+      frontLeftState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-140.19))
+      frontRightState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-39.81))
+      backLeftState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-109.44))
+      backRightState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-70.56))
+
+      # Convert to chassis speeds
+      chassisSpeeds = kinematics.toChassisSpeeds(
+        frontLeftState, frontRightState, backLeftState, backRightState)
+
+      # Getting individual speeds
+      double forward = chassisSpeeds.vx
+      double sideways = chassisSpeeds.vy
+      double angular = chassisSpeeds.omega
