@@ -1,7 +1,7 @@
 Choosing a Dashboard
 ====================
 
-A dashboard is a program used to retrieve and display information about the operation of your robot.  There are two main types of dashboards that teams may need: driver and programmer dashboards.  Some dashboards will try to accommodate both purposes. 
+A dashboard is a program used to retrieve and display information about the operation of your robot.  There are two main types of dashboards that teams may need: driver and programmer dashboards.  Some dashboards will try to accommodate both purposes.
 
 Driver Dashboard
 ----------------
@@ -39,4 +39,4 @@ Third Party Dashboards
 
 `Elastic <https://github.com/Gold872/elastic-dashboard>`__ (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  Featuring draggable and resizable card widgets and automatic IP retrieval from the FRC Driver Station
 
-`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use up as little resources as possible.  
+`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use up as little resources as possible.
