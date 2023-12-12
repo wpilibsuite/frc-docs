@@ -40,14 +40,14 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
       from wpimath.kinematics import MecanumDriveKinematics
 
       # Locations of the wheels relative to the robot center.
-      m_frontLeftLocation = Translation2d(0.381, 0.381)
-      m_frontRightLocation = Translation2d(0.381, -0.381)
-      m_backLeftLocation = Translation2d(-0.381, 0.381)
-      m_backRightLocation = Translation2d(-0.381, -0.381)
+      frontLeftLocation = Translation2d(0.381, 0.381)
+      frontRightLocation = Translation2d(0.381, -0.381)
+      backLeftLocation = Translation2d(-0.381, 0.381)
+      backRightLocation = Translation2d(-0.381, -0.381)
 
       # Creating my kinematics object using the wheel locations.
-      m_kinematics = MecanumDriveKinematics(
-        m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
+      kinematics = MecanumDriveKinematics(
+        frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
 Converting Chassis Speeds to Wheel Speeds
