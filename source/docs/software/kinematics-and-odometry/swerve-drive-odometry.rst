@@ -78,29 +78,31 @@ The fourth optional argument is the starting pose of your robot on the field (as
       from wpimath.geometry import Pose2d
       from wpimath.geometry import Rotation2d
 
-      # Locations for the swerve drive modules relative to the robot center.
-      m_frontLeftLocation = Translation2d(0.381, 0.381)
-      m_frontRightLocation = Translation2d(0.381, -0.381)
-      m_backLeftLocation = Translation2d(-0.381, 0.381)
-      m_backRightLocation = Translation2d(-0.381, -0.381)
+      class MyRobot:
+        def robotInit(self):
+          # Locations for the swerve drive modules relative to the robot center.
+          self.frontLeftLocation = Translation2d(0.381, 0.381)
+          self.frontRightLocation = Translation2d(0.381, -0.381)
+          self.backLeftLocation = Translation2d(-0.381, 0.381)
+          self.backRightLocation = Translation2d(-0.381, -0.381)
 
-      # Creating my kinematics object using the module locations
-      m_kinematics = SwerveDrive4Kinematics(
-        m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
-      )
+          # Creating my kinematics object using the module locations
+          kinematics = SwerveDrive4Kinematics(
+            frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+          )
 
-      # Creating my odometry object from the kinematics object and the initial wheel positions.
-      # Here, our starting pose is 5 meters along the long end of the field and in the
-      # center of the field along the short end, facing the opposing alliance wall.
-      m_odometry = SwerveDrive4Odometry(
-        m_kinematics, m_gyro.getRotation2d(),
-        (
-          m_frontLeftModule.getPosition(),
-          m_frontRightModule.getPosition(),
-          m_backLeftModule.getPosition(),
-          m_backRightModule.getPosition()
-        ),
-        Pose2d(5.0, 13.5, Rotation2d()))
+          # Creating my odometry object from the kinematics object and the initial wheel positions.
+          # Here, our starting pose is 5 meters along the long end of the field and in the
+          # center of the field along the short end, facing the opposing alliance wall.
+          odometry = SwerveDrive4Odometry(
+            kinematics, gyro.getRotation2d(),
+            (
+              frontLeftModule.getPosition(),
+              frontRightModule.getPosition(),
+              backLeftModule.getPosition(),
+              backRightModule.getPosition()
+            ),
+            Pose2d(5.0, 13.5, Rotation2d()))
 
 Updating the robot pose
 -----------------------
@@ -144,12 +146,12 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
       def periodic(self):
         # Get the rotation of the robot from the gyro.
-        gyroAngle = m_gyro.getRotation2d()
+        gyroAngle = gyro.getRotation2d()
 
         # Update the pose
-        m_pose = m_odometry.update(gyroAngle,
-            m_frontLeftModule.getPosition(), m_frontRightModule.getPosition(),
-            m_backLeftModule.getPosition(), m_backRightModule.getPosition()
+        self.pose = odometry.update(gyroAngle,
+            frontLeftModule.getPosition(), frontRightModule.getPosition(),
+            backLeftModule.getPosition(), backRightModule.getPosition()
         )
 
 Resetting the Robot Pose

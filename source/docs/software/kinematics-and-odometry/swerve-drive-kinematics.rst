@@ -55,14 +55,14 @@ The locations for the modules must be relative to the center of the robot. Posit
       from wpimath.kinematics import SwerveDrive4Kinematics
 
       # Locations for the swerve drive modules relative to the robot center.
-      m_frontLeftLocation = Translation2d(0.381, 0.381)
-      m_frontRightLocation = Translation2d(0.381, -0.381)
-      m_backLeftLocation = Translation2d(-0.381, 0.381)
-      m_backRightLocation = Translation2d(-0.381, -0.381)
+      frontLeftLocation = Translation2d(0.381, 0.381)
+      frontRightLocation = Translation2d(0.381, -0.381)
+      backLeftLocation = Translation2d(-0.381, 0.381)
+      backRightLocation = Translation2d(-0.381, -0.381)
 
       # Creating my kinematics object using the module locations
-      m_kinematics = SwerveDrive4Kinematics(
-        m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
+      kinematics = SwerveDrive4Kinematics(
+        frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
 Converting chassis speeds to module states
@@ -255,6 +255,6 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
         frontLeftState, frontRightState, backLeftState, backRightState)
 
       # Getting individual speeds
-      double forward = chassisSpeeds.vx
-      double sideways = chassisSpeeds.vy
-      double angular = chassisSpeeds.omega
+      forward = chassisSpeeds.vx
+      sideways = chassisSpeeds.vy
+      angular = chassisSpeeds.omega
