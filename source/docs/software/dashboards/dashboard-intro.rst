@@ -6,9 +6,7 @@ A dashboard is a program used to retrieve and display information about the oper
 Driver Dashboard
 ----------------
 
-During competition the drive team will use this dashboard to get information from the robot.  It should focus on conveying key information instantly.  This is often best accomplished by using large, colorful, and easy to understand visual elements.
-
-Most teams will use this dashboard to select their autonomous routine.  It is often helpful to hide this choice after the selection is made as that information is not needed during the match.
+During competition the drive team will use this dashboard to get information from the robot.  It should focus on conveying key information instantly.  This is often best accomplished by using large, colorful, and easy to understand visual elements.  Most teams will also use this dashboard to select their autonomous routine.
 
 Take caution to carefully consider what *needs* to be on this dashboard and if there is another better way of communicating that information.  Any members of the drive team (especially the driver) looking at the dashboard takes their focus away from the match.  Using :ref:`LEDs <docs/software/hardware-apis/misc/addressable-leds:Addressable LEDs>` to indicate the state of your robot is a good example of a way to communicate useful information to the driver without having to take their eyes off the robot.
 
@@ -20,7 +18,7 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 Specific Dashboards (oldest to newest)
 --------------------------------------
 
-.. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they are not currently receiving active updates or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.
+.. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they do not have a person to maintain them so are not receiving bug fixes or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.  PRs from external contributors will be reviewed.
 
 :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/index:LabVIEW Dashboard>` (Driver / Programming) - easy to use and provides a lot of features straight out of the box like: camera streams, autonomous selection, and joystick feedback.  It can be customized using LabVIEW by creating a new Dashboard project.  While it :ref:`can be used <docs/software/dashboards/labview-dashboard/using-the-labview-dashboard-with-c++-java-code:Using the LabVIEW Dashboard with C++/Java Code>` by Java or C++ teams, they generally prefer SmartDashboard or Shuffleboard which can be customized in their respective language.
 
