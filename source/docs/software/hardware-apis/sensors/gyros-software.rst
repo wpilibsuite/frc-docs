@@ -35,7 +35,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib
         from wpilib import ADIS16448_IMU
 
         # ADIS16448 plugged into the MXP port
-        gyro = ADIS16448_IMU()
+        self.gyro = ADIS16448_IMU()
 
 ADIS16470
 ---------
@@ -59,7 +59,7 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib
     .. code-block:: python
 
         # ADIS16470 plugged into the SPI port
-        gyro = ADIS16470_IMU()
+        self.gyro = ADIS16470_IMU()
 
 ADXRS450_Gyro
 -------------
@@ -83,7 +83,7 @@ The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs
     .. code-block:: python
 
         # Creates an ADXRS450_Gyro object on the onboard SPI port
-        gyro = ADXRS450_Gyro()
+        self.gyro = ADXRS450_Gyro()
 
 AnalogGyro
 ----------
@@ -107,7 +107,7 @@ The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/be
     .. code-block:: python
 
         # Creates an AnalogGyro object on port 0
-        gyro = AnalogGyro(0)
+        self.gyro = AnalogGyro(0)
 
 navX
 ----
@@ -128,8 +128,10 @@ The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdoc
 
     .. code-block:: python
 
+        import navx
+
         # navX MXP using SPI
-        gyro = AHRS(SPI.Port.kMXP)
+        self.gyro = navx.AHRS(SPI.Port.kMXP)
 
 Pigeon
 ------
@@ -154,10 +156,13 @@ The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be
 
     .. code-block:: python
 
-        gyro = WPI_PigeonIMU(0); # Pigeon is on CAN Bus with device ID 0
+        import phoenix5
+        import ctre.sensors
+
+        self.gyro = ctre.WPI_PigeonIMU(0); # Pigeon is on CAN Bus with device ID 0
         # OR (choose one or the other based on your connection)
-        talon = TalonSRX(0); # TalonSRX is on CAN Bus with device ID 0
-        gyro = WPI_PigeonIMU(talon) # Pigeon uses the talon created above
+        talon = ctre.TalonSRX(0); # TalonSRX is on CAN Bus with device ID 0
+        self.gyro = ctre.WPI_PigeonIMU(talon) # Pigeon uses the talon created above
 
 Using gyros in code
 -------------------
@@ -195,11 +200,11 @@ Displaying the robot heading on the dashboard
 
         from wpilib.shuffleboard import Shuffleboard
 
-        # Use gyro declaration from above here
-
         def robotInit(self):
+            # Use gyro declaration from above here
+
             # Places a compass indicator for the gyro heading on the dashboard
-            Shuffleboard.getTab("Example tab").add(gyro)
+            Shuffleboard.getTab("Example tab").add(self.gyro)
 
 Stabilizing heading while driving
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -286,31 +291,31 @@ The following example shows how to stabilize heading using a simple P loop close
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        # Use gyro declaration from above here
-
-        # The gain for a simple P loop
-        kP = 1
-
-        # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-
-        drive = DifferentialDrive(leftMotors, rightMotors)
-
         def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 1
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
             rightMotors.setInverted(true)
 
         def autonomousPeriodic(self):
             # Setpoint is implicitly 0, since we don't want the heading to change
-            error = -gyro.getRate()
+            error = -self.gyro.getRate()
 
             # Drives forward continuously at half speed, using the gyro to stabilize the heading
-            drive.tankDrive(.5 + kP * error, .5 - kP * error)
+            self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 
@@ -405,34 +410,34 @@ The following example shows how to stabilize heading using a simple P loop close
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        # Use gyro declaration from above here
-
-        # The gain for a simple P loop
-        kP = 1
-
-        # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-
-        drive = DifferentialDrive(leftMotors, rightMotors)
-
         def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 1
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
             rightMotors.setInverted(true)
 
         def autonomousInit(self):
             # Set setpoint to current heading at start of auto
-            heading = gyro.getAngle()
+            self.heading = self.gyro.getAngle()
 
         def autonomousPeriodic(self):
-            error = heading - gyro.getAngle()
+            error = self.heading - self.gyro.getAngle()
 
             # Drives forward continuously at half speed, using the gyro to stabilize the heading
-            drive.tankDrive(.5 + kP * error, .5 - kP * error)
+            self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the heading for heading stabilization, PD loops are particularly effective.
 
@@ -514,31 +519,31 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        # Use gyro declaration from above here
-
-        # The gain for a simple P loop
-        kP = 0.05
-
-        # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-
-        drive = DifferentialDrive(leftMotors, rightMotors)
-
         def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 0.05
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
             rightMotors.setInverted(true)
 
         def autonomousPeriodic(self):
             # Find the heading error; setpoint is 90
-            double error = 90 - gyro.getAngle()
+            error = 90 - self.gyro.getAngle()
 
             # Drives forward continuously at half speed, using the gyro to stabilize the heading
-            drive.tankDrive(kP * error, -kP * error)
+            self.drive.tankDrive(self.kP * error, -self.kP * error)
 
 As before, more-advanced implementations can use more-complicated control loops.
 
