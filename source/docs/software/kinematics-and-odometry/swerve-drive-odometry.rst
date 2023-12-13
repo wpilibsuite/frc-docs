@@ -81,26 +81,26 @@ The fourth optional argument is the starting pose of your robot on the field (as
       class MyRobot:
         def robotInit(self):
           # Locations for the swerve drive modules relative to the robot center.
-          self.frontLeftLocation = Translation2d(0.381, 0.381)
-          self.frontRightLocation = Translation2d(0.381, -0.381)
-          self.backLeftLocation = Translation2d(-0.381, 0.381)
-          self.backRightLocation = Translation2d(-0.381, -0.381)
+          frontLeftLocation = Translation2d(0.381, 0.381)
+          frontRightLocation = Translation2d(0.381, -0.381)
+          backLeftLocation = Translation2d(-0.381, 0.381)
+          backRightLocation = Translation2d(-0.381, -0.381)
 
           # Creating my kinematics object using the module locations
-          kinematics = SwerveDrive4Kinematics(
+          self.kinematics = SwerveDrive4Kinematics(
             frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
           )
 
           # Creating my odometry object from the kinematics object and the initial wheel positions.
           # Here, our starting pose is 5 meters along the long end of the field and in the
           # center of the field along the short end, facing the opposing alliance wall.
-          odometry = SwerveDrive4Odometry(
-            kinematics, gyro.getRotation2d(),
+          self.odometry = SwerveDrive4Odometry(
+            self.kinematics, self.gyro.getRotation2d(),
             (
-              frontLeftModule.getPosition(),
-              frontRightModule.getPosition(),
-              backLeftModule.getPosition(),
-              backRightModule.getPosition()
+              self.frontLeftModule.getPosition(),
+              self.frontRightModule.getPosition(),
+              self.backLeftModule.getPosition(),
+              self.backRightModule.getPosition()
             ),
             Pose2d(5.0, 13.5, Rotation2d()))
 
@@ -146,12 +146,12 @@ This ``update`` method must be called periodically, preferably in the ``periodic
 
       def periodic(self):
         # Get the rotation of the robot from the gyro.
-        gyroAngle = gyro.getRotation2d()
+        self.gyroAngle = self.gyro.getRotation2d()
 
         # Update the pose
-        self.pose = odometry.update(gyroAngle,
-            frontLeftModule.getPosition(), frontRightModule.getPosition(),
-            backLeftModule.getPosition(), backRightModule.getPosition()
+        self.pose = self.odometry.update(self.gyroAngle,
+            self.frontLeftModule.getPosition(), self.frontRightModule.getPosition(),
+            self.backLeftModule.getPosition(), self.backRightModule.getPosition()
         )
 
 Resetting the Robot Pose

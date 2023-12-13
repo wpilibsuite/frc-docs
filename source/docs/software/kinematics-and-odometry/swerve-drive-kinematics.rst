@@ -61,7 +61,7 @@ The locations for the modules must be relative to the center of the robot. Posit
       backRightLocation = Translation2d(-0.381, -0.381)
 
       # Creating my kinematics object using the module locations
-      kinematics = SwerveDrive4Kinematics(
+      self.kinematics = SwerveDrive4Kinematics(
         frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
@@ -117,7 +117,7 @@ The elements in the array that is returned by this method are the same order in 
       speeds = ChassisSpeeds(1.0, 3.0, 1.5)
 
       # Convert to module states
-      frontLeft, frontRight, backLeft, backRight = kinematics.toSwerveModuleStates(speeds)
+      frontLeft, frontRight, backLeft, backRight = self.kinematics.toSwerveModuleStates(speeds)
 
 Module angle optimization
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -142,7 +142,7 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
       from wpimath.geometry import Rotation2d
 
       frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
-         Rotation2d(m_turningEncoder.getDistance()))
+         Rotation2d(self.m_turningEncoder.getDistance()))
 
 
 Field-oriented drive
@@ -192,7 +192,7 @@ Field-oriented drive
         2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
 
       # Now use this in our kinematics
-      moduleStates = kinematics.toSwerveModuleStates(speeds)
+      self.moduleStates = self.kinematics.toSwerveModuleStates(speeds)
 
 Using custom centers of rotation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -251,7 +251,7 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
       backRightState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-70.56))
 
       # Convert to chassis speeds
-      chassisSpeeds = kinematics.toChassisSpeeds(
+      chassisSpeeds = self.kinematics.toChassisSpeeds(
         frontLeftState, frontRightState, backLeftState, backRightState)
 
       # Getting individual speeds
