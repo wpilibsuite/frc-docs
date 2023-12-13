@@ -46,7 +46,7 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
       backRightLocation = Translation2d(-0.381, -0.381)
 
       # Creating my kinematics object using the wheel locations.
-      kinematics = MecanumDriveKinematics(
+      self.kinematics = MecanumDriveKinematics(
         frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
@@ -94,7 +94,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
       speeds = ChassisSpeeds(1.0, 3.0, 1.5)
 
       # Convert to wheel speeds
-      frontLeft, frontRight, backLeft, backRight = kinematics.toWheelSpeeds(speeds)
+      frontLeft, frontRight, backLeft, backRight = self.kinematics.toWheelSpeeds(speeds)
 
 Field-oriented drive
 ~~~~~~~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@ Field-oriented drive
         2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
 
       # Now use this in our kinematics
-      wheelSpeeds = kinematics.toWheelSpeeds(speeds)
+      wheelSpeeds = self.kinematics.toWheelSpeeds(speeds)
 
 Using custom centers of rotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,9 +190,9 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
       wheelSpeeds = MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26)
 
       # Convert to chassis speeds
-      chassisSpeeds = kinematics.toChassisSpeeds(wheelSpeeds)
+      chassisSpeeds = self.kinematics.toChassisSpeeds(wheelSpeeds)
 
       # Getting individual speeds
-      double forward = chassisSpeeds.vx
-      double sideways = chassisSpeeds.vy
-      double angular = chassisSpeeds.omega
+      forward = chassisSpeeds.vx
+      sideways = chassisSpeeds.vy
+      angular = chassisSpeeds.omega
