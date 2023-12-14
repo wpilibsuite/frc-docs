@@ -87,6 +87,15 @@ Once the widget appears as shown below, you can resize and place it on the Glass
 
 .. image:: images/mechanism2d-widget.png
 
+Viewing the Mechanism2d in AdvantageScope
+-----------------------------------------
+
+:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing a ``Mechanism2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the `mechanism <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/MECHANISM.md>`__ and `3D field <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md>`__ tabs for more details.
+
+.. image:: images/advantagescope-mechanism.png
+   :alt: Screenshot of an AdvantageScope window displaying a robot and mechanism in 3D.
+   :height: 500
+
 Next Steps
 ----------
 
