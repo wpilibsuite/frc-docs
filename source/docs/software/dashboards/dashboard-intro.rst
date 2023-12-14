@@ -13,7 +13,7 @@ Take caution to carefully consider what *needs* to be on this dashboard and if t
 Programming Dashboard
 ---------------------
 
-This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``Datalog`` class simplifies the process.
+This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``DataLog`` class simplifies the process.
 
 Specific Dashboards (oldest to newest)
 --------------------------------------
