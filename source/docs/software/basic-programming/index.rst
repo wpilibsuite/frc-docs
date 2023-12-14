@@ -12,4 +12,5 @@ Basic Programming
    using-test-mode
    reading-stacktraces
    functions-as-data
+   alliancecolor
    java-gc

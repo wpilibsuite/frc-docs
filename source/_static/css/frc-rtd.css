@@ -155,3 +155,7 @@ summary {
     margin: -.5em -.5em 0;
     padding: .5em;
 }
+
+code.py-class {
+    all: unset!important;
+}
