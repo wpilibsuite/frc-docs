@@ -120,7 +120,7 @@ Robot Signal Light
   :alt: Orange Robot Signal Light
   :width: 500
 
-The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
+The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid red disabled.
 
 CTRE Pneumatics Control Module
 ------------------------------
