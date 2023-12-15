@@ -26,6 +26,30 @@ Displaying values in normal operating mode (autonomous or teleop)
             SmartDashboard.putNumber("RPM", shooter.getRPM());
         }
 
+   .. code-block:: cpp
+
+      frc::SmartDashboard::PutBoolean("Bridge Limit", bridgeTipper.atBridge());
+      frc::SmartDashboard::PutNumber("Bridge Angle", bridgeTipper.getPosition());
+      frc::SmartDashboard::PutNumber("Swerve Angle", drivetrain.getSwerveAngle());
+      frc::SmartDashboard::PutNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
+      frc::SmartDashboard::PutNumber("Right Drive Encoder", drivetrain.getRightEncoder());
+      frc::SmartDashboard::PutNumber("Turret Pot", turret.getCurrentAngle());
+      frc::SmartDashboard::PutNumber("Turret Pot Voltage", turret.getAverageVoltage());
+      frc::SmartDashboard::PutNumber("RPM", shooter.getRPM());
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+      
+      SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge())
+      SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition())
+      SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle())
+      SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder())
+      SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder())
+      SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle())
+      SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage())
+      SmartDashboard.putNumber("RPM", shooter.getRPM())
+
 .. figure:: images/display-code-result.png
    :alt:
 
