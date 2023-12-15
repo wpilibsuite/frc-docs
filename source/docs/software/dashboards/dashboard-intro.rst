@@ -37,4 +37,4 @@ Third Party Dashboards
 
 `Elastic <https://github.com/Gold872/elastic-dashboard>`__ (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  Featuring draggable and resizable card widgets and automatic IP retrieval from the FRC Driver Station
 
-`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use up as little resources as possible.
+`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use as few resources as possible.
