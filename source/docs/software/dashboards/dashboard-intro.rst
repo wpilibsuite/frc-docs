@@ -13,7 +13,7 @@ Take caution to carefully consider what *needs* to be on this dashboard and if t
 Programming Dashboard
 ---------------------
 
-This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``Datalog`` class simplifies the process.
+This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``DataLog`` class simplifies the process.
 
 Specific Dashboards (oldest to newest)
 --------------------------------------
@@ -33,8 +33,8 @@ Specific Dashboards (oldest to newest)
 Third Party Dashboards
 ----------------------
 
-`FRC Web Components <https://github.com/frc-web-components/frc-web-components>`__ (Driver) - A web-based dashboard that can be installed as a standalone application, or as a javascript package for custom dashboard solutions.
+`FRC Web Components <https://github.com/frc-web-components/frc-web-components>`__ (Driver) - A web-based dashboard that can be installed as a standalone application, or as a JavaScript package for custom dashboard solutions.
 
 `Elastic <https://github.com/Gold872/elastic-dashboard>`__ (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  Featuring draggable and resizable card widgets and automatic IP retrieval from the FRC Driver Station
 
-`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use up as little resources as possible.
+`QFRCDashboard <https://github.com/binex-dsk/QFRCDashboard>`__ (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use up as little resources as possible.
