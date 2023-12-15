@@ -28,7 +28,7 @@ Specific Dashboards (oldest to newest)
 
 :ref:`Glass <docs/software/dashboards/glass/index:Glass>` (Programming) - robot data visualization tool. Its GUI is extremely similar to that of the :ref:`Simulation GUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation Specific User Interface Elements>`. In its current state, it is meant to be used as a programmer's tool rather than a proper dashboard in a competition environment.
 
-:ref:`AdvantageScope <docs/software/dashboards/glass/index:Glass>` (Programming) - robot diagnostics, log review/analysis, and data visualization application.  It reads logs in WPILOG, DS log, and RLOG file formats, plus live robot data viewing using NT4 or RLOG streaming.
+:ref:`AdvantageScope <docs/software/dashboards/glass/index:Glass>` (Programming) - robot diagnostics, log review/analysis, and data visualization application.  It reads the WPILib Data Log (``.wpilog``) and Driver Station Log (``.dslog`` / ``.dsevents``) file formats, plus live robot data viewing using NT4.
 
 Third Party Dashboards
 ----------------------
