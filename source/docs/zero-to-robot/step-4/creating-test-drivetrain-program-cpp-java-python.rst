@@ -114,7 +114,7 @@ Imports/Includes
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
                :language: python
                :lines: 8-9
                :linenos:
@@ -367,7 +367,7 @@ Simple Autonomous Example
       :linenos:
       :lineno-start: 22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
       :language: python
       :lines: 31-43
       :linenos:
@@ -394,7 +394,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
       :language: python
       :lines: 45-52
       :linenos:
@@ -419,7 +419,7 @@ Test Mode
       :linenos:
       :lineno-start: 43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
       :language: python
       :lines: 54-58
       :linenos:

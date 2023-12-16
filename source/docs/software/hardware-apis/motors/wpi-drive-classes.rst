@@ -322,7 +322,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
         :linenos:
         :lineno-start: 31
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/mecanum-drive/robot.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/mecanum-drive/robot.py
       :language: python
       :lines: 21-36
       :linenos:
