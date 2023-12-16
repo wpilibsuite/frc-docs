@@ -7,11 +7,11 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
         :language: java
-        :lines: 150-158
+        :lines: 151-159
         :linenos:
-        :lineno-start: 150
+        :lineno-start: 151
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/native/cpp/controller/BangBangController.cpp
         :language: cpp
@@ -48,11 +48,11 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
         :language: java
-        :lines: 118-124
+        :lines: 120-126
         :linenos:
-        :lineno-start: 118
+        :lineno-start: 120
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
         :language: cpp

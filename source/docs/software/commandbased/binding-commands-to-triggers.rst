@@ -91,11 +91,11 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
       :lineno-start: 52
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 24-25
+      :lines: 25-26
       :linenos:
-      :lineno-start: 24
+      :lineno-start: 25
 
 The ``onFalse`` binding is identical, only that it schedules on ``false`` instead of on ``true``.
 

@@ -135,11 +135,11 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
   .. tab-item:: C++
      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 24-29
+      :lines: 25-30
       :linenos:
-      :lineno-start: 24
+      :lineno-start: 25
 
 TrapezoidProfileCommand
 -----------------------

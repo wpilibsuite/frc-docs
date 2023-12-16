@@ -27,9 +27,9 @@ getMeasurement()
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
-         :lines: 84-84
+         :lines: 85
 
    .. tab-item:: C++
      :sync: C++
@@ -50,9 +50,9 @@ useOutput()
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
          :language: java
-         :lines: 77-77
+         :lines: 78
 
    .. tab-item:: C++
      :sync: C++

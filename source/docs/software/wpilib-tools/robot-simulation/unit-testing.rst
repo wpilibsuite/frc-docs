@@ -18,7 +18,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
          :language: java
          :lines: 7-
 

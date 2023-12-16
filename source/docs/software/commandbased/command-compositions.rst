@@ -163,11 +163,11 @@ The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/beta/jav
      :sync: C++ (Header)
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
        :language: c++
-       :lines: 24-43
+       :lines: 26-43
        :linenos:
-       :lineno-start: 24
+       :lineno-start: 26
 
 The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5>`__), backed by the ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_conditional_command.html>`__), is a specialization accepting two commands and a boolean selector function.
 
