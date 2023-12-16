@@ -20,6 +20,9 @@ FRC Glossary
    call stack
       A specially-organized region of memory which helps the program keep track of what function it is in. As each function calls another, the call point is recorded and added to the top of the structure, forming a "stack" of references. Additionally, local variables will also be stored in this stack. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on Wikipedia for more info.
 
+   CD
+      Chief Delphi - `FRC team 47 <https://www.thebluealliance.com/team/47>`__ inspired a popular community driven `forum <https://www.chiefdelphi.com/>`__ that today serves as an unofficial discussion hub for all things FRC.
+
    central limit theorem
       A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See `Central Limit Theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`__ on Wikipedia for more info.
 
@@ -27,7 +30,7 @@ FRC Glossary
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on Wikipedia for more info.
 
    COTS
-      Commercial off the shelf, a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
+      Commercial off the shelf - a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
 
    composition
       A formal software term for building (or "composing") software entities out of smaller component entities. See `object composition <https://en.wikipedia.org/wiki/Object_composition>`__ on Wikipedia for more info.
@@ -36,7 +39,7 @@ FRC Glossary
       Continuously Recurring Template Pattern - A software idiom in which a class `X`` derives from a class template instantiation using `X`` itself as a template argument. See `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ on Wikipedia for more info.
 
    C++
-      One of the three officially supported programming languages.
+      One of the four officially supported programming languages.
 
    declarative programming
       A style of software which focuses on describing *what* a program should do, rather than *how* it gets done. See `declarative programming <https://en.wikipedia.org/wiki/Declarative_programming>`__ on Wikipedia for more info.
@@ -51,7 +54,7 @@ FRC Glossary
       A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ on Wikipedia for more info.
 
    DHCP
-      Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addresses to all other devices.
+      Dynamic Host Configuration Protocol - the protocol that allows a central device to assign unique IP addresses to all other devices.
 
    encapsulation
       A software design pattern which uses a class to hide the implementation details of other classes. See `encapsulation <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ on Wikipedia for more info.
@@ -65,14 +68,29 @@ FRC Glossary
    event-driven programming
       A style of programming where certain parts of code generate "events" as a result of some input (sensors, user interaction, etc). Then, other parts of code listen for and respond to "handle" these events. See `event-based <https://en.wikipedia.org/wiki/Event-driven_programming>`__ on Wikipedia for more info.
 
+   FIRST
+      For Inspiration and Recognition of Science and Technology - a global nonprofit organization that prepares young people for the future through a suite of life-changing youth robotics programs that build skills, confidence, and resilience.
+
+   FLL
+      FIRST Lego League - Introduces science, technology, engineering, and math (STEM) to children ages 4-16 through fun, exciting hands-on learning.
+
    floating point
       A method for approximating real numbers in computer-based arithmetic, using a fixed precision integer scaled by an integer exponent. Typically computer systems support both "single" precision (32-bit storage) and "double" precision (64-bit storage) floating point values, as defined by IEEE 754.
 
    FMS
-      Field Management System, the electronics core responsible for sensing and controlling the FIRST Robotics Competition field.
+      Field Management System - the electronics core responsible for sensing and controlling the FIRST Robotics Competition field.
 
    FPGA
        Field-programmable gate array - a specialized integrated circuit consisting of many digital logic elements, which can be configured to act in different patterns. This allows its behavior to be changed after manufacturing. In the context of FRC, National Instruments provides a specific configuration for the RIO's FPGA which allows it to process the electrical inputs and outputs at a very high rate. See `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ on Wikipedia for more info.
+
+   FRC
+      FIRST Robotics Competition - Combining the excitement of sport with the rigors of science and technology.  The ultimate Sport for the Mind inspiring High-school students.
+
+   FTC
+      FIRST Tech Challenge - Grades 7-12 are challenged to design, build, program, and operate robots to compete in a head-to-head challenge in an alliance format.
+
+   GP
+      Gracious Professionalism - part of the ethos of FIRST. It's a way of doing things that encourages high-quality work, emphasizes the value of others, and respects individuals and the community.
 
    GradleRIO
       The mechanism that powers the deployment of robot code to the roboRIO.
@@ -87,22 +105,22 @@ FRC Glossary
       A style of programming that focuses on *what* the code should be doing, step by step, every loop. See `imperative programming <https://en.wikipedia.org/wiki/Imperative_programming>`__ on Wikipedia for more info.
 
    IMU
-      Inertial Measurement Unit, a sensor that combines both an :term:`accelerometer` and a :term:`gyroscope` into a single sensor.
+      Inertial Measurement Unit - a sensor that combines both an :term:`accelerometer` and a :term:`gyroscope` into a single sensor.
 
    Java
-      One of the three officially supported programming languages.
+      One of the four officially supported programming languages.
 
    JSON
-      JavaScript Object Notation. A standardized way of organizing data into named values. The organized data can be easily :term:`serialized`. While the original usage was in Javascript, it can be used and interested by most modern programming languages. See `JSON <https://en.wikipedia.org/wiki/JSON>`__ on Wikipedia for more info.
+      JavaScript Object Notation - A standardized way of organizing data into named values. The organized data can be easily :term:`serialized`. While the original usage was in Javascript, it can be used and interested by most modern programming languages. See `JSON <https://en.wikipedia.org/wiki/JSON>`__ on Wikipedia for more info.
 
    KOP
-      Kit of Parts, the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
+      Kit of Parts - the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
    KOP chassis
       The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2023 season, the KOP chassis is the `AM14U5 <https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis>`__.
 
    LabVIEW
-      One of the three officially supported programming languages.
+      One of the four officially supported programming languages.
 
    NetworkTables
       A publish-subscribe messaging system to communicate data between programs.
@@ -131,8 +149,11 @@ FRC Glossary
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
 
+   Python
+      One of the four officially supported programming languages.
+
    RAII
-      Resource Acquisition Is Initialization; a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
+      Resource Acquisition Is Initialization - a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
 
    retro-reflection
       The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on Wikipedia for more information.
