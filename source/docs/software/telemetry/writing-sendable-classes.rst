@@ -13,7 +13,7 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
         :linenos:
         :lineno-start: 150
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/native/cpp/controller/BangBangController.cpp
         :language: cpp
         :lines: 55-69
         :linenos:
@@ -54,7 +54,7 @@ To help users ensure safety when interfacing with dashboard values, ``SendableBu
         :linenos:
         :lineno-start: 118
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
         :language: cpp
         :lines: 56-62
         :linenos:
