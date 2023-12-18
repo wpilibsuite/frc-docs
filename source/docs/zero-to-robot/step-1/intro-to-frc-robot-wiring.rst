@@ -48,12 +48,12 @@ Locate the following control system components and tools
 
 - Kit Materials:
 
-      - Power Distribution Hub (PH) / Power Distribution Panel (PDP)
+      - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
       - roboRIO
-      - Pneumatics Hub (PH) / Pneumatics Control Module (PCM)
-      - Radio Power Module (RPM) / Voltage Regulator Module (VRM)
+      - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
+      - Radio Power Module (:term:`RPM`) / Voltage Regulator Module (:term:`VRM`)
       - OpenMesh radio (with power cable and Ethernet cable)
-      - Robot Signal Light (RSL)
+      - Robot Signal Light (:term:`RSL`)
       - 4x SPARK MAX or other motor controllers
       - 2x PWM y-cables
       - 120A Circuit breaker
