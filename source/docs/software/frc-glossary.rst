@@ -177,7 +177,7 @@ FRC Glossary
       REV Power Distribution Hub - latest evolution in power distribution for FRC.  With 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel, the PDH gives teams more flexibility for overall power delivery.
 
    PDP
-      CTRE Power Distribution Panel - power distrobution module with 8 high-current (40A max), 8 lower current (20A / 30A), 1 20A protected channel (for :term:`PCM` and :term:`VRM`), and 1 10A protected channel (for the roboRIO).
+      CTRE Power Distribution Panel - power distribution module with 8 high-current (40A max), 8 lower current (20A / 30A), 1 20A protected channel (for :term:`PCM` and :term:`VRM`), and 1 10A protected channel (for the roboRIO).
 
    permanent-magnet DC motor
       The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on Wikipedia for more info.
@@ -187,9 +187,6 @@ FRC Glossary
 
    PH
       Pneumatic Hub - is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types.
-
-   PID
-      Proportional–Integral–Derivative Controller - a control loop mechanism employing feedback that is widely used in industrial control systems and a variety of other applications requiring continuously modulated control.
 
    property
       In :term:`NetworkTables`, named information (metadata) about a :term:`topic` stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
@@ -219,7 +216,7 @@ FRC Glossary
       In :term:`NetworkTables`, a :term:`topic` that is kept alive by the server even after all publishers stop publishing.
 
    REV
-      `REV Robotics <https://www.revrobotics.com/>`__ - 
+      `REV Robotics <https://www.revrobotics.com/>`__ - ``will update when description received``
 
    RPM
       Radio Power Module - is designed to keep one of the most critical system components, the OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.
@@ -250,7 +247,7 @@ FRC Glossary
       In :term:`NetworkTables`, an object that receives timestamped data value updates to one or more :term:`topic`\s.
 
    TBA
-      The Blue Alliance - `Website <https://www.thebluealliance.com/>`__ for looking up :term:`FRC` team statistics and event information. 
+      The Blue Alliance - `Website <https://www.thebluealliance.com/>`__ for looking up :term:`FRC` team statistics and event information.
 
    telemetry
       The process of recording and sending real-time data about the performance of your robot to a real-time readout or log file. For the linguists among us, the word's roots are "tele" (remote) and "metry" (measurement). See `telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ on Wikipedia for more info.
