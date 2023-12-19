@@ -26,6 +26,9 @@ FRC Glossary
    CAD
       Computer-Aided Design - software used to design an accurate model of an object.  For FRC this is often used to design the robot to get accurate measurements and aid construction.
 
+   CAM
+      Computer-Aided Manufacturing - the use of software to control machine tools in the manufacturing of work pieces.
+
    CAN
       Controller Area Network -  message-based protocol designed to allow microcontrollers and devices to communicate with each other's applications without a host computer.
 
@@ -36,7 +39,7 @@ FRC Glossary
       A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See `Central Limit Theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`__ on Wikipedia for more info.
 
    CIM
-      Chiaphua Industries Motor - `Chiaphua Components Limited <https://www.cclmotors.com/website/eng/home>`__ is the company that made by the commonly used, relatively powerful, brushed motor.
+      Chiaphua Industries Motor - `Chiaphua Components Limited <https://www.cclmotors.com/website/eng/home>`__ is the company that made the commonly used, relatively powerful, brushed motor.
 
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on Wikipedia for more info.
@@ -172,7 +175,7 @@ FRC Glossary
 
    PCM
       Pneumatic Control Module - provides an easy all-in-one interface for pneumatic components.
-   
+
    PDH
       REV Power Distribution Hub - latest evolution in power distribution for FRC.  With 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel, the PDH gives teams more flexibility for overall power delivery.
 
