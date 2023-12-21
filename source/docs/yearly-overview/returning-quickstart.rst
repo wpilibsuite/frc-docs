@@ -1,8 +1,7 @@
-
 Quick Start for Returning Teams
 ===============================
 
-This section serves as a launching point for veteran team that needs to update to the current year's SW.
+This section serves as a launching point for veteran teams that need to update to the current year's software.
 
 It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/yearly-changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
 
