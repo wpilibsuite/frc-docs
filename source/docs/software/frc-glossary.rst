@@ -39,7 +39,7 @@ FRC Glossary
       A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See `Central Limit Theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`__ on Wikipedia for more info.
 
    CIM
-      Chiaphua Industries Motor - `Chiaphua Components Limited <https://www.cclmotors.com/website/eng/home>`__ is the company that made the commonly used, relatively powerful, brushed motor.
+      CCL Industrial Motor, Limited - `Chiaphua Components Limited <https://www.cclmotors.com/website/eng/home>`__ is the company that made the commonly used, relatively powerful, brushed motor.
 
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on Wikipedia for more info.
@@ -167,8 +167,14 @@ FRC Glossary
    mutable
       An object that can be modified after it is created.
 
+   MXP
+      myRIO Expansion Port - Port in the center of the roboRIO designed to expand the traditional IO count by offering multiple different IO types through one connector.
+
    NetworkTables
       A publish-subscribe messaging system to communicate data between programs.
+
+   no-op
+      No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on `Wikipedia <https://en.wikipedia.org/wiki/NOP_(code)>`_ .
 
    OPR
       Offensive Power Rating - a system to attempt to deduce the average point contribution of a team to an alliance
@@ -219,7 +225,7 @@ FRC Glossary
       In :term:`NetworkTables`, a :term:`topic` that is kept alive by the server even after all publishers stop publishing.
 
    REV
-      `REV Robotics <https://www.revrobotics.com/>`__ - ``will update when description received``
+      `REV Robotics <https://www.revrobotics.com/>`__ - inspires innovation and creativity within the educational robotics community by offering comprehensive product lines, extensive educational resources, world-class customer service, and specialized sponsorship programs. With a global presence spanning over 190 countries, we empower the next generation of STEM professionals by providing cutting-edge solutions and essential tools for success. Founded in 2014 by robotics enthusiasts Greg Needel and David Yanoshak, REV Robotics is driven by the mission to inspire and support students as they explore the exciting world of robotics and unlock their full robotic design potential. A majority of our employees are FIRST Alumni who remain actively involved, serving as volunteers and mentors for the local FIRST Community. This deep engagement reflects our commitment to supporting and inspiring the next generation of STEM enthusiasts.
 
    RPM
       Radio Power Module - is designed to keep one of the most critical system components, the OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.

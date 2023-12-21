@@ -27,7 +27,7 @@ Driver Station Key Shortcuts
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 
-.. warning:: When connected to FMS in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
+.. warning:: When connected to :term:`FMS` in a match, teams must press the Team Station E-Stop button to emergency stop their robot as the DS enable/disable and E-Stop key shortcuts are ignored.
 
 Setting Up the Driver Station
 -----------------------------
@@ -37,7 +37,7 @@ Setting Up the Driver Station
 
 The DS should be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
 
-PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to DHCP.
+PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to :term:`DHCP`.
 
 Status Pane
 -----------
@@ -87,7 +87,7 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 1. DS Version - Indicates the Driver Station Version number.
 2. roboRIO Image Version - String indicating the version of the roboRIO Image.
 3. WPILib Version - String indicating the version of WPILib in use.
-4. CAN Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the CTRE Phoenix Framework has not been loaded.
+4. :term:`CAN` Device Versions - String indicating the firmware version of devices connected to the CAN bus. These items may not be present if the CTRE Phoenix Framework has not been loaded.
 5. Memory Stats - This section shows stats about the roboRIO memory.
 6. Connection Indicators - The top half of these indicators show connection status to various components.
 

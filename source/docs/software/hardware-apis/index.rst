@@ -16,7 +16,7 @@ This section discusses the control of motors and pneumatics through motor contro
 Motor Controllers
 -----------------
 
-A motor controller is responsible on your robot for making motors move. For brushed DC motors such as CIMs or 775s, the motor controller regulates the voltage that the motor receives, much like a light bulb. For brushless motor controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
+A motor controller is responsible on your robot for making motors move. For brushed DC motors such as the :term:`CIM` or 775, the motor controller regulates the voltage that the motor receives, much like a light bulb. For brushless motor controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
 
 .. note:: Another name for a motor controller is a speed controller.
 
@@ -30,7 +30,7 @@ FRC Legal Motor Controllers
 Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2023:
 
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
-- Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to PWM only
+- Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to :term:`PWM` only
 - Nidec Dynamo BLDC Motor with Controller to control integral actuator only (P/N 840205-000, am-3740)
 - SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, SD540Bx4, SD540C)
 - Spark Motor Controller (P/N: REV-11-1200, am-4260)

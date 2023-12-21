@@ -3,7 +3,7 @@
 Programming Radios for FMS Offseason
 ====================================
 
-When using the FMS Offseason software, the typical networking setup is to use a single access point with a single SSID and WPA key. This means that the radios should all be programmed to connect to this network, but with different IPs for each team. The Team version of the FRC\ |reg| Bridge Configuration Utility has an FMS Offseason mode that can be used to do this configuration.
+When using the :term:`FMS` Offseason software, the typical networking setup is to use a single access point with a single SSID and WPA key. This means that the radios should all be programmed to connect to this network, but with different IPs for each team. The Team version of the FRC\ |reg| Bridge Configuration Utility has an FMS Offseason mode that can be used to do this configuration.
 
 Pre-Requisites
 --------------
@@ -31,7 +31,7 @@ The Radio Configuration Utility programs a number of configuration settings into
   - Robot TCP & :term:`NetworkTables` (TCP ``1735``, ``1740``)
   - Bulk (All other traffic). (disabled if BW limit is disabled)
 
-- DHCP server enabled. Serves out:
+- :term:`DHCP` server enabled. Serves out:
 
   - ``10.TE.AM.11`` - ``10.TE.AM.111`` on the wired side
   - ``10.TE.AM.138`` - ``10.TE.AM.237`` on the wireless side
