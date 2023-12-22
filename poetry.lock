@@ -1160,13 +1160,12 @@ python-dateutil = ">=2.7"
 
 [[package]]
 name = "modern-sphinx-version-warning"
-version = "1.1.4"
+version = "1.1.6"
 description = "Sphinx extension to add a warning banner"
 optional = false
 python-versions = "*"
 files = [
-    {file = "modern-sphinx-version-warning-1.1.4.tar.gz", hash = "sha256:946e364b8544d85be8f7182468e06ce153cd9b16404cfb5c5e0804b52a2f1816"},
-    {file = "modern_sphinx_version_warning-1.1.4-py3-none-any.whl", hash = "sha256:4503501f7d174966bc196b1326bd7824ba950a431ce535ea0c3f649d91ec399a"},
+    {file = "modern_sphinx_version_warning-1.1.6-py3-none-any.whl", hash = "sha256:59e7b47e7af929363f7395c1de88f305c09d93bdc2c874d9a654adbd74d788c2"},
 ]
 
 [package.dependencies]

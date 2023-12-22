@@ -20,14 +20,14 @@ The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/be
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 17-18
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Ultrasonic/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/include/Robot.h
          :language: cpp
          :lines: 23-24
 
@@ -38,14 +38,14 @@ The measurement can then be retrieved in either inches or millimeters in Java; i
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 29-32
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
          :language: cpp
          :lines: 18-22
 
@@ -69,21 +69,21 @@ Ultrasonic sensors are very useful for determining spacing during autonomous rou
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
          :language: java
          :lines: 18-61, 71-71
 
    .. tab-item:: C++ (Header)
      :sync: C++ (Header)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
          :language: cpp
          :lines: 19-51
 
    .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
          :language: cpp
          :lines: 7-19
 
@@ -94,13 +94,13 @@ Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 22-24
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
          :language: cpp
          :lines: 12-14
