@@ -74,7 +74,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
         },
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
-  .. code-block:: python
+   .. code-block:: python
 
       from wpimath.geometry import Translation2d
       from wpimath.kinematics import MecanumDriveKinematics
@@ -146,7 +146,7 @@ The ``update`` method of the odometry class updates the robot position on the fi
         m_pose = m_odometry.Update(gyroAngle, wheelPositions);
       }
 
-  .. code-block:: python
+   .. code-block:: python
 
       from wpimath.kinematics import MecanumDriveWheelPositions
 
@@ -168,6 +168,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel positions.
 
-.. note:: A full example of a mecanum drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot>`_ / `Python <>`_
+.. note:: A full example of a mecanum drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot>`_ / `Python <https://github.com/robotpy/examples/tree/main/MecanumBot>`_
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.
