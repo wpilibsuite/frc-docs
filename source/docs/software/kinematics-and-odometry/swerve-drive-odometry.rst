@@ -67,7 +67,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
         m_backLeft.GetPosition(), m_backRight.GetPosition()},
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
-  .. code-block:: python
+   .. code-block:: python
 
       # Python requires using the right class for the number of modules you have
       # For both the Kinematics and Odometry classes
@@ -142,7 +142,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
         )
       }
 
-  .. code-block:: python
+   .. code-block:: python
 
       def periodic(self):
         # Get the rotation of the robot from the gyro.
