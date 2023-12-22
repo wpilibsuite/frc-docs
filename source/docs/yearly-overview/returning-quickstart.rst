@@ -5,7 +5,7 @@ This section serves as a launching point for veteran teams that need to update t
 
 It is advised that **all** teams read through the :doc:`changelog </docs/yearly-overview/yearly-changelog>` and :doc:`known issues </docs/yearly-overview/known-issues>` for the season.
 
-1. :doc:`Install Labview </docs/zero-to-robot/step-2/labview-setup>` (LabVIEW teams only)
+1. :doc:`Install LabVIEW </docs/zero-to-robot/step-2/labview-setup>` (LabVIEW teams only)
 2. :doc:`Install Game Tools </docs/zero-to-robot/step-2/frc-game-tools>`
 3. :doc:`Install WPILib </docs/zero-to-robot/step-2/wpilib-setup>` (Java / C++ teams only)
 4. :doc:`Update third party libraries </docs/software/vscode-overview/3rd-party-libraries>`
