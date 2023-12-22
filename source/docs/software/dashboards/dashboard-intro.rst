@@ -26,7 +26,7 @@ Specific Dashboards (oldest to newest)
 
 :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/index:Shuffleboard>` (Driver) - straightforward and easily customizable dashboard. It displays network tables data using a variety of widgets that can be positioned and controlled with robot code. It includes many extra features like: tabs, recording / playback, and advanced custom widgets.
 
-:ref:`Glass <docs/software/dashboards/glass/index:Glass>` (Programming) - robot data visualization tool. Its GUI is extremely similar to that of the :ref:`Simulation GUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation Specific User Interface Elements>`. In its current state, it is meant to be used as a programmer's tool rather than a proper dashboard in a competition environment.
+:ref:`Glass <docs/software/dashboards/glass/index:Glass>` (Programming) - robot data visualization tool. Its GUI is extremely similar to that of the :ref:`Simulation GUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation Specific User Interface Elements>`. In its current state, it is meant to be used as a programmer's tool rather than a proper dashboard in a competition environment, with a focus on high performance real time plotting.
 
 :ref:`AdvantageScope <docs/software/dashboards/glass/index:Glass>` (Programming) - robot diagnostics, log review/analysis, and data visualization application.  It reads the WPILib Data Log (``.wpilog``) and Driver Station Log (``.dslog`` / ``.dsevents``) file formats, plus live robot data viewing using NT4.
 
