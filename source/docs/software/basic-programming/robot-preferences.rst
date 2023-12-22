@@ -14,33 +14,33 @@ Initializing Preferences
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
          :lines: 15-20
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 28-30, 73-74, 80-83
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
          :language: cpp
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 12, 18-22
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/constants.py
          :language: python
          :lines: 16-21
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
          :language: python
          :lines: 18-21,35-39
 
@@ -58,21 +58,21 @@ Reading Preferences
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 105-112
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 44-52
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
          :language: python
          :lines: 41-48
 
@@ -85,30 +85,30 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 29-38
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 114-120
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: cpp
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: cpp
          :lines: 54-60
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/robot.py
          :language: python
          :lines: 21-27
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/7a03f44e977af11c842a898afbab886d3e23d8ba/arm-simulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
          :language: python
          :lines: 50-55
 
