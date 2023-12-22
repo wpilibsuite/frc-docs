@@ -3,22 +3,22 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2024.1.1-beta-3"
+      "latestVersion": "v2024.1.1-beta-4"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2024.1.1-beta-3"
+      "latestVersion": "v2024.1.1-beta-4"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "2023.4.3.0"
+      "latestVersion": "411d9b02dfa1c4ec5d35410a40f88be796f82f70"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion":"v2024.1.1-beta-2"
+      "latestVersion":"v2024.1.1-beta-4"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
@@ -26,5 +26,5 @@
       "latestVersion":"3b64aadee717c9f0566497a40fd0be7d0eaed96d"
     }
   ],
-  "ignoredFiles": ["source/docs/software/commandbased/command-scheduler.rst"]
+  "ignoredFiles": ["source/docs/software/commandbased/command-scheduler.rst", "source/docs/software/hardware-apis/pneumatics/pressure.rst", "source/docs/software/hardware-apis/pneumatics/solenoids.rst", "source/docs/software/advanced-gradlerio/code-formatting.rst"]
 }
