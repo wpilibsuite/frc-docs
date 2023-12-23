@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Any, Dict, Iterable, List
 
 import markdown2
+from bs4 import BeautifulSoup
 from docutils import nodes
 from docutils.parsers.rst import directives
 from docutils.statemachine import StringList
@@ -25,28 +26,20 @@ class WpilibRelease(SphinxDirective):
         release_json = requests.get(release_url)
         release: Dict = release_json.json()
 
-        artifactory_folder = f"https://frcmaven.wpi.edu/api/storage/installer/{version}"
+        cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
 
-        win_folder = f"{artifactory_folder}/Win64"
-        win_file = requests.get(win_folder).json()["children"][0]["uri"]
-        win = requests.get(win_folder + win_file).json()
+        def get_url_size(osname):
+            soup = BeautifulSoup(
+                requests.get(f"{cf_folder}/{osname}/").text, "html.parser"
+            )
+            file = str(soup.find_all("tr")[-1].contents[0].string)
+            size = str(soup.find_all("tr")[-1].contents[2].string)
+            url = f"{cf_folder}/{osname}/{file}"
+            return url, size
 
-        win_size = int(win["size"])
-        win_download_url = win["uri"].replace("/storage/", "/download/")
-
-        mac_intel_folder = f"{artifactory_folder}/macOS"
-        mac_intel_file = requests.get(mac_intel_folder).json()["children"][0]["uri"]
-        mac_intel = requests.get(mac_intel_folder + mac_intel_file).json()
-
-        mac_intel_size = int(mac_intel["size"])
-        mac_intel_download_url = mac_intel["uri"].replace("/storage/", "/download/")
-
-        mac_arm_folder = f"{artifactory_folder}/macOSArm"
-        mac_arm_file = requests.get(mac_arm_folder).json()["children"][0]["uri"]
-        mac_arm = requests.get(mac_arm_folder + mac_arm_file).json()
-
-        mac_arm_size = int(mac_arm["size"])
-        mac_arm_download_url = mac_arm["uri"].replace("/storage/", "/download/")
+        win_download_url, win_size = get_url_size("Win64")
+        mac_intel_download_url, mac_intel_size = get_url_size("macOS")
+        mac_arm_download_url, mac_arm_size = get_url_size("macOSArm")
 
         # There's something weird going where the hashes are all printed on one line.
         # This works aroung that.
@@ -89,14 +82,14 @@ class WpilibRelease(SphinxDirective):
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
             if (ua['platform'] == 'Windows') {{
                 dlbutton.href = '{win_download_url}';
-                dlbutton.text = 'Download for Windows - {win_size / 1e9 : .2f} GB';
+                dlbutton.text = 'Download for Windows - {win_size} GB';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
                     dlbutton.href = '{mac_intel_download_url}';
-                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size / 1e9 : .2f} GB';
+                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size} GB';
                 }} else if (ua['architecture'].includes('arm')) {{
                     dlbutton.href = '{mac_arm_download_url}';
-                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size / 1e9 : .2f} GB';
+                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size} GB';
                 }}
             }}
         }});
