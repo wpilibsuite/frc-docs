@@ -4,10 +4,6 @@ roboRIO Web Dashboard
 The roboRIO web dashboard is a webpage built into the roboRIO that can
 be used for checking status and updating settings of the roboRIO.
 
-Users may encounter issues using IE (compatibility).
-Alternate browsers such as Google Chrome or
-Mozilla Firefox are recommended for the best experience.
-
 Opening the WebDash
 -------------------
 
@@ -53,21 +49,15 @@ Startup Settings
    use the Reset button on the roboRIO to put the device into Safe Mode
    instead (with power already applied, hold the rest button for 5
    seconds). **Default is unchecked.**
--  Enable Console Out - This enables the on-board RS232 port to be used
-   as a Console output. It is recommended to leave this enabled unless
-   you are using this port to talk to a serial device (note that this
-   port uses RS232 levels and should not be connected to many
-   microcontrollers which use TTL levels). **Default is checked.**
+-  Enable Console Out - This enables the on-board RS232 port to be used as a
+   Console output. This port uses RS232 levels and should not be connected to
+   many microcontrollers which use TTL levels). **Default is unchecked.**
 -  Disable RT Startup App - Checking this box disables code from running
    at startup. This may be used for troubleshooting if you find the
    roboRIO is unresponsive to new program download. Default is unchecked
 -  Disable FPGA Startup App - **This box should not be checked.**
--  Enable Secure Shell Server (sshd) - **It is recommended to leave this
-   box checked.** This setting enables SSH which is a way to remotely
-   access a console on the roboRIO. Unchecking this box will prevent C++
-   and Java teams from loading code onto the roboRIO.
--  LabVIEW Project Access -\*\* It is recommended to leave this box
-   checked.\*\* This setting allows LabVIEW projects to access the
+-  LabVIEW Project Access - **It is recommended to leave this box
+   checked. **This setting allows LabVIEW projects to access the
    roboRIO.
 
 Network Configuration
