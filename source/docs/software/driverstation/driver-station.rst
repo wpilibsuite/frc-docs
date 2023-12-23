@@ -13,17 +13,17 @@ Starting the FRC Driver Station
 .. image:: images/driver-station/ds-icon.png
   :alt: This is the FRC Driver Station icon.
 
-The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
+The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Apps->FRC Driver Station.
 
 .. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/dashboards/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use SmartDashboard and Shuffleboard.
 
 Driver Station Key Shortcuts
 ----------------------------
 
-  * `F1` - Force a Joystick refresh.
-  * `[` + `]` + `\\` - Enable the robot (the 3 keys above Enter on most keyboards)
-  * `Enter` - Disable the Robot
-  * `Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+  * :kbd:`F1` - Force a Joystick refresh.
+  * :kbd:`[` + :kbd:`]` + :kbd:`\\` - Enable the robot (the 3 keys above Enter on most keyboards)
+  * :kbd:`Enter` - Disable the Robot
+  * :kbd:`Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 
@@ -103,8 +103,8 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
     - "USB" indicates if a roboRIO USB connection has been detected
     - "Firewall" indicates if any firewalls are detected as enabled. Enabled firewalls will show in orange (Dom = Domain, Pub = Public, Prv = Private)
 
-8. Reboot roboRIO - This button attempts to perform a remote reboot of the roboRIO (after clicking through a confirmation dialog).
-9. Restart Robot Code - This button attempts to restart the code running on the robot (but not restart the OS).
+8. :guilabel:`Reboot roboRIO` - This button attempts to perform a remote reboot of the roboRIO (after clicking through a confirmation dialog).
+9. :guilabel:`Restart Robot Code` - This button attempts to restart the code running on the robot (but not restart the OS).
 
 Setup Tab
 ---------
@@ -114,9 +114,9 @@ Setup Tab
 
 The Setup Tab contains a number of buttons teams can use to control the operation of the Driver Station:
 
-1. Team Number - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
-2. Dashboard Type - Controls what Dashboard is launched by the Driver Station. :guilabel:`Default` launches the file pointed to by the "FRC DS Data Storage.ini" (for more information about setting a :ref:`custom dashboard <docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard:Manually Setting the Driver Station to Start Custom Dashboard>`). By default this is Dashboard.exe in the Program Files (x86)\\FRC Dashboard folder. :guilabel:`LabVIEW` attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. :guilabel:`SmartDashboard` and :guilabel:`Shuffleboard` launch the respective dashboards included with the C++ and Java WPILib installation.  :guilabel:`Remote` forwards LabVIEW dashboard data to the IP specified in :guilabel:`Dashboard IP` field.
-3. Game Data - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
+1. :guilabel:`Team Number` - Should contain your FRC Team Number. This controls the mDNS name that the DS expects the robot to be at. Shift clicking on the dropdown arrow will show all roboRIO names detected on the network for troubleshooting purposes.
+2. :guilabel:`Dashboard Type` - Controls what Dashboard is launched by the Driver Station. :guilabel:`Default` launches the file pointed to by the "FRC DS Data Storage.ini" (for more information about setting a :ref:`custom dashboard <docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard:Manually Setting the Driver Station to Start Custom Dashboard>`). By default this is Dashboard.exe in the Program Files (x86)\\FRC Dashboard folder. :guilabel:`LabVIEW` attempts to launch a dashboard at the default location for a custom built LabVIEW dashboard, but will fall back to the default if no dashboard is found. :guilabel:`SmartDashboard` and :guilabel:`Shuffleboard` launch the respective dashboards included with the C++ and Java WPILib installation.  :guilabel:`Remote` forwards LabVIEW dashboard data to the IP specified in :guilabel:`Dashboard IP` field.
+3. :guilabel:`Game Data` - This box can be used for at home testing of the Game Data API. Text entered into this box will appear in the Game Data API on the Robot Side. When connected to FMS, this data will be populated by the field automatically.
 4. Practice Mode Timing - These boxes control the timing of each portion of the practice mode sequence. When the robot is enabled in practice mode the DS automatically proceeds through the modes indicated from top to bottom.
 5. Audio Control - This button controls whether audio tones are sounded when the Practice Mode is used.
 
@@ -129,7 +129,7 @@ USB Devices Tab
 The USB Devices tab includes the information about the USB Devices connected to the DS
 
 1. USB Setup List - This contains a list of all compatible USB devices connected to the DS. Pressing a button on a device will highlight the name in green and put 2 \*s before the device name
-2. Rescan - This button will force a Rescan of the USB devices. While the robot is disabled, the DS will automatically scan for new devices and add them to the list. To force a complete re-scan or to re-scan while the robot is Enabled (such as when connected to FMS during a match) press F1 or use this button.
+2. :guilabel:`Rescan` - This button will force a Rescan of the USB devices. While the robot is disabled, the DS will automatically scan for new devices and add them to the list. To force a complete re-scan or to re-scan while the robot is Enabled (such as when connected to FMS during a match) press F1 or use this button.
 3. Device indicators - These indicators show the current status of the Axes, buttons and POV of the joystick.
 4. Rumble - For XInput devices (such as X-Box controllers) the Rumble control will appear. This can be used to test the rumble functionality of the device. The top bar is "Right Rumble" and the bottom bar is "Left Rumble". Clicking and holding anywhere along the bar will activate the rumble proportionally (left is no rumble = 0, right is full rumble = 1). This is a control only and will not indicate the Rumble value set in robot code.
 
@@ -174,9 +174,9 @@ Messages Tab
 .. image:: images/driver-station/ds-messages-tab.png
   :alt: This is the first tab from the top on the right hand side.
 
-The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO. The messages are filtered by severity. By default, only Errors are displayed.
+The Messages tab displays diagnostic messages from the DS, WPILib, User Code, and/or the roboRIO.
 
-To access settings for the Messages tab, click the Gear icon. This will display a menu that will allow you to select the detail level (Errors, Errors+Warnings or Errors+Warnings+Prints), clear the box, launch a larger Console window for viewing messages, or launch the DS Log Viewer.
+To access settings for the Messages tab, click the Gear icon. This will display a menu that will allow you to clear the box, launch a larger Console window for viewing messages, launch the DS Log Viewer, launch a viewer for program timing, or download log files from the robot.
 
 Charts Tab
 ----------
