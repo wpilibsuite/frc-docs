@@ -82,14 +82,14 @@ class WpilibRelease(SphinxDirective):
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
             if (ua['platform'] == 'Windows') {{
                 dlbutton.href = '{win_download_url}';
-                dlbutton.text = 'Download for Windows - {win_size} GB';
+                dlbutton.text = 'Download for Windows - {win_size}';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
                     dlbutton.href = '{mac_intel_download_url}';
-                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size} GB';
+                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
                 }} else if (ua['architecture'].includes('arm')) {{
                     dlbutton.href = '{mac_arm_download_url}';
-                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size} GB';
+                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
             }}
         }});
