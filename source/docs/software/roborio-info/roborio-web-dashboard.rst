@@ -56,9 +56,8 @@ Startup Settings
    at startup. This may be used for troubleshooting if you find the
    roboRIO is unresponsive to new program download. Default is unchecked
 -  Disable FPGA Startup App - **This box should not be checked.**
--  LabVIEW Project Access - **It is recommended to leave this box
-   checked. **This setting allows LabVIEW projects to access the
-   roboRIO.
+-  LabVIEW Project Access - **It is recommended to leave this box checked.**
+   This setting allows LabVIEW projects to access the roboRIO.
 
 Network Configuration
 ---------------------
