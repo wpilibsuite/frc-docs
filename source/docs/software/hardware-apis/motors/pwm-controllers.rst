@@ -1,5 +1,7 @@
 .. include:: <isonum.txt>
 
+.. _PWM:
+
 PWM Motor Controllers in Depth
 ==============================
 

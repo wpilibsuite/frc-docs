@@ -53,6 +53,9 @@ FRC Glossary
    DHCP
       Dynamic Host Configuration Protocol, the protocol that allows a central device to assign unique IP addresses to all other devices.
 
+   DLL
+      An acronym which stands for "Dynamic-Link Library", a shared library or resource used for programs or files within the Microsoft Windows operating system. See `Dynamic-link library <https://en.wikipedia.org/wiki/Dynamic-link_library/>` for more information.
+
    encapsulation
       A software design pattern which uses a class to hide the implementation details of other classes. See `encapsulation <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ on Wikipedia for more info.
 
@@ -116,6 +119,9 @@ FRC Glossary
    mutable
       An object that can be modified after it is created.
 
+   NetComm
+      A software daemon running on the NI roboRIO controller to maintain communications with the Driver Station, :term:`FPGA`, and user program.
+
    permanent-magnet DC motor
       The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on Wikipedia for more info.
 
@@ -130,6 +136,9 @@ FRC Glossary
 
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
+
+   PWM
+      An acronym which stands for "Pulse Width Modulation", a method for motor controllers, sensors, and other components to transmit or receive their operational status. For motor controllers, PWM is often used to affect the power output to the motor or connected actuator. See :ref:`PWM` for more information.
 
    RAII
       Resource Acquisition Is Initialization; a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
@@ -178,3 +187,9 @@ FRC Glossary
 
    transitory
       In :term:`NetworkTables`, a :term:`topic` that will disappear after the last :term:`publisher` stops publishing.
+
+   user program
+      In the context of the roboRIO control system, the primary FRC runtime program that handles all communication and robot operations.
+
+   watchdog
+      A timer mechanism often built into embedded devices or software to monitor the runtime status of a program and reset it if crashes or errors occur. The watchdog will reset the main program if the timer itself is not reset, an activity which occurs during normal operations of the program.
