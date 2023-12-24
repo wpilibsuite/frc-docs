@@ -21,6 +21,6 @@ Adding test mode can be as painless as calling your already written Teleop metho
 LiveWindow in Test Mode
 -----------------------
 
-.. important:: Since 2024, LiveWindow in Test Mode is not disabled by default! See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
+.. important:: Since 2024, LiveWindow in Test Mode is disabled by default! See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
 
 With LiveWindow, all actuator outputs can be controlled on the Dashboard and all sensor values can be seen. PID Controllers can also be tuned. The sensors and actuators are added automatically, no code is necessary. See :doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-window/index` for more details.
