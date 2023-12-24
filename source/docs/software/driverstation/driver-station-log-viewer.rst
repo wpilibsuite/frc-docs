@@ -13,7 +13,7 @@ In an effort to provide information to aid in debugging, the FRC\ |reg| Driver S
 Event Logs
 ----------
 
-The  Driver Station logs all messages sent to the Messages box on the Diagnostics tab (not the User Messages box on the Operation tab) into a new Event Log file. When viewing Log Files with the Driver Station Log File Viewer, the Event Log and DSLog files are overlaid in a single display.
+The  Driver Station logs all messages sent to the Messages box on the Diagnostics tab (not the User Messages box on the Operation tab) into a new Event Log file. When viewing Log Files with the Driver Station Log File Viewer, the Event Log and Driver Station Log files are overlaid in a single display.
 
 Log files are stored in ``C:\Users\Public\Documents\FRC\Log Files``. Each log has date and timestamp in the file name and has two files with extension ``.dslog`` and ``.dsevents``.
 
