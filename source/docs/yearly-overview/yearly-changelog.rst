@@ -23,6 +23,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - Java now uses the Serial GC by default on the roboRIO; this should improve performance and reduce memory usage for most robot programs
 - Performance improvements and reduced worst-case memory usage throughout libraries
 - Added a typesafe unit system for Java (not used by the main part of WPILib yet)
+- Disabled LiveWindow in Test Mode by default. See See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
