@@ -177,7 +177,7 @@ FRC Glossary
       No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on `Wikipedia <https://en.wikipedia.org/wiki/NOP_(code)>`_ .
 
    OPR
-      Offensive Power Rating - a system to attempt to deduce the average point contribution of a team to an alliance
+      `Offensive Power Rating <https://blog.thebluealliance.com/2017/10/05/the-math-behind-opr-an-introduction/>`__ - a system to attempt to deduce the average point contribution of a team to an alliance
 
    PCM
       Pneumatic Control Module - provides an easy all-in-one interface for pneumatic components.
