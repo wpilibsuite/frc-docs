@@ -33,10 +33,10 @@ My Computer
   The items that define operation on the computer that the project was loaded on. For a robot project, this is used as a simulation target and is populated with simulation files.
 
 Sim Support Files
-  The folder containing 3D CAD models and description files for the simulated robot.
+  The folder containing 3D :term:`CAD` models and description files for the simulated robot.
 
 Robot Simulation Readme.html
-  Documents the PWM channels and robot info you will need in order to write robot code that matches the wiring of the simulated robot.
+  Documents the :term:`PWM` channels and robot info you will need in order to write robot code that matches the wiring of the simulated robot.
 
 Dependencies
   Shows the files used by the simulated robot’s code. This will populate when you designate the code for the simulated robot target.

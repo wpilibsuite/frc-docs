@@ -6,11 +6,11 @@ In order to accurately determine how your physical drivetrain will respond to gi
 Creating a ``DifferentialDrivetrainSim`` from Physical Measurements
 -------------------------------------------------------------------
 
-One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through CAD software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
+One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through :term:`CAD` software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
  - The type and number of motors on one side of the drivetrain.
  - The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
- - The moment of inertia of the drivetrain (this can be obtained from a CAD model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
+ - The moment of inertia of the drivetrain (this can be obtained from a :term:`CAD` model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
  - The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
  - The radius of the drive wheels.
  - The track width (distance between left and right wheels).

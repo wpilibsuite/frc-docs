@@ -1723,6 +1723,24 @@ numpy = ["nptyping (>=2.5)"]
 testing = ["covdefaults (>=2.3)", "coverage (>=7.3)", "diff-cover (>=7.7)", "pytest (>=7.4)", "pytest-cov (>=4.1)", "sphobjinv (>=2.3.1)", "typing-extensions (>=4.7.1)"]
 
 [[package]]
+name = "sphinx-copybutton"
+version = "0.5.2"
+description = "Add a copy button to each of your code cells."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx-copybutton-0.5.2.tar.gz", hash = "sha256:4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd"},
+    {file = "sphinx_copybutton-0.5.2-py3-none-any.whl", hash = "sha256:fb543fd386d917746c9a2c50360c7905b605726b9355cd26e9974857afeae06e"},
+]
+
+[package.dependencies]
+sphinx = ">=1.8"
+
+[package.extras]
+code-style = ["pre-commit (==2.12.1)"]
+rtd = ["ipython", "myst-nb", "sphinx", "sphinx-book-theme", "sphinx-examples"]
+
+[[package]]
 name = "sphinx-design"
 version = "0.5.0"
 description = "A sphinx extension for designing beautiful, view size responsive web components."
@@ -1815,13 +1833,13 @@ Sphinx = ">=7.0.0,<8.0.0"
 
 [[package]]
 name = "sphinx-rtd-theme"
-version = "2.0.0rc2"
+version = "2.0.0"
 description = "Read the Docs theme for Sphinx"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "sphinx_rtd_theme-2.0.0rc2-py2.py3-none-any.whl", hash = "sha256:f04df9213acf421c3b42f4f39005c8bc68fc4696c5b4ed4ef13d1678369713f7"},
-    {file = "sphinx_rtd_theme-2.0.0rc2.tar.gz", hash = "sha256:d1270effe620df9164b1cd2d617909472a63531e21a716fd22d0fbcedf9d24ff"},
+    {file = "sphinx_rtd_theme-2.0.0-py2.py3-none-any.whl", hash = "sha256:ec93d0856dc280cf3aee9a4c9807c60e027c7f7b461b77aeffed682e68f0e586"},
+    {file = "sphinx_rtd_theme-2.0.0.tar.gz", hash = "sha256:bd5d7b80622406762073a04ef8fadc5f9151261563d47027de09910ce03afe6b"},
 ]
 
 [package.dependencies]
@@ -2081,18 +2099,18 @@ sphinx = ">=4.0"
 
 [[package]]
 name = "sphinxext-photofinish"
-version = "0.1.9"
+version = "0.1.10"
 description = "Sphinx Extension that creates responsive images."
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "sphinxext-photofinish-0.1.9.tar.gz", hash = "sha256:d84b98b9b255e73ce7e421222877c791a12aa60a176ca93bcabadb3e0da4f278"},
-    {file = "sphinxext_photofinish-0.1.9-py3-none-any.whl", hash = "sha256:e0fe74c935b3ebaaed25b7d77987cd45b021322252798535632d2b6acec3aff9"},
+    {file = "sphinxext-photofinish-0.1.10.tar.gz", hash = "sha256:7e8230a8a98ebeec74537b69187f9cd0225cb0aac60ad90333be65c62cdbb51c"},
+    {file = "sphinxext_photofinish-0.1.10-py3-none-any.whl", hash = "sha256:29832aadc56b997c5d2b30a48211e19c2cff50c799e94b395724c9e46fd63f02"},
 ]
 
 [package.dependencies]
 beautifulsoup4 = ">=4"
-pillow = ">=8"
+pillow = ">=10.0.1"
 sphinx = ">=2.0"
 tinycss2 = ">=1.1.1"
 
@@ -2350,4 +2368,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "9104c5fa2a5759df436f73ee9f43e313802616e263a2bcc69a09ae506562a3c3"
+content-hash = "1cfc1286c9abf90104f5749c067e124b1e8d0c480bd244ecaa50a5f4bbf181ba"

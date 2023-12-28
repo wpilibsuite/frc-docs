@@ -81,7 +81,7 @@ Modeling: How do you expect your system to behave?
 
 It's easiest to control a system if we have some prior knowledge of how the system responds to inputs.  Even the "pure feedback" strategy described above implicitly assumes things about the system response (e.g. that it is approximately linear), and consequently won't work in cases where the system does not respond in the expected way.  To control our system *optimally*, we need some way to reliably predict how it will respond to inputs.
 
-This can be done by combining several concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard equations of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
+This can be done by combining several concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your :term:`CAD` models, applying standard equations of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
 
 The act of creating a consistent mathematical description of your system is called *modeling* your system's behavior. The resulting set of equations are called a *model* of how you expect the system to behave.  Not every system requires an explicit model to be controlled (we will see in the turret tutorial that a pure, manually-tuned feedback controller is satisfactory *in some cases*), but an explicit model is *always* helpful.
 

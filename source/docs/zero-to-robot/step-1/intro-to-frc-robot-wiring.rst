@@ -48,20 +48,20 @@ Locate the following control system components and tools
 
 - Kit Materials:
 
-      - Power Distribution Hub (PH) / Power Distribution Panel (PDP)
+      - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
       - roboRIO
-      - Pneumatics Hub (PH) / Pneumatics Control Module (PCM)
-      - Radio Power Module (RPM) / Voltage Regulator Module (VRM)
+      - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
+      - Radio Power Module (:term:`RPM`) / Voltage Regulator Module (:term:`VRM`)
       - OpenMesh radio (with power cable and Ethernet cable)
-      - Robot Signal Light (RSL)
+      - Robot Signal Light (:term:`RSL`)
       - 4x SPARK MAX or other motor controllers
-      - 2x PWM y-cables
+      - 2x :term:`PWM` y-cables
       - 120A Circuit breaker
       - 4x 40A Circuit breaker
       - 6 AWG (16 :math:`mm^2`) Red wire
       - 10 AWG (6 :math:`mm^2`) Red/Black wire
       - 18 AWG (1 :math:`mm^2`) Red/Black wire
-      - 22 AWG (0.5 :math:`mm^2`) Yellow/Green twisted CAN cable
+      - 22 AWG (0.5 :math:`mm^2`) Yellow/Green twisted :term:`CAN` cable
       - 8x Pairs of 10-12 AWG (4 - 6 :math:`mm^2`) (Yellow) quick disconnect terminals (16x ring terminals if using integrated wire controllers)
       - 2x Anderson SB50 battery connectors
       - 6 AWG (16 :math:`mm^2`) Terminal lugs
@@ -632,7 +632,7 @@ Motor Power
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
 
-For each CIM motor:
+For each :term:`CIM` motor:
 
 - Strip the ends of the red and black wires from the CIM
 
