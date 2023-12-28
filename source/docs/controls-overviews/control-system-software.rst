@@ -26,7 +26,7 @@ Visual Studio Code
 .. image:: images/control-system-software/visual-studio-code.png
    :alt: Welcome screen of Visual Studio Code.
 
-Visual Studio Code is the supported development environment for C++, Java, and Python (the other supported languages).  A guide to getting started with C++, Java, and Python for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
+Visual Studio Code is the supported development environment for C++, Java.  A guide to getting started with Java and C++ for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
 
 FRC Driver Station Powered by NI LabVIEW (Windows Only)
 -------------------------------------------------------
