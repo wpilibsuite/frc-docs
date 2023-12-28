@@ -1833,13 +1833,13 @@ Sphinx = ">=7.0.0,<8.0.0"
 
 [[package]]
 name = "sphinx-rtd-theme"
-version = "2.0.0rc2"
+version = "2.0.0"
 description = "Read the Docs theme for Sphinx"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "sphinx_rtd_theme-2.0.0rc2-py2.py3-none-any.whl", hash = "sha256:f04df9213acf421c3b42f4f39005c8bc68fc4696c5b4ed4ef13d1678369713f7"},
-    {file = "sphinx_rtd_theme-2.0.0rc2.tar.gz", hash = "sha256:d1270effe620df9164b1cd2d617909472a63531e21a716fd22d0fbcedf9d24ff"},
+    {file = "sphinx_rtd_theme-2.0.0-py2.py3-none-any.whl", hash = "sha256:ec93d0856dc280cf3aee9a4c9807c60e027c7f7b461b77aeffed682e68f0e586"},
+    {file = "sphinx_rtd_theme-2.0.0.tar.gz", hash = "sha256:bd5d7b80622406762073a04ef8fadc5f9151261563d47027de09910ce03afe6b"},
 ]
 
 [package.dependencies]
@@ -2368,4 +2368,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "c9bfb301e4371ff1eacc9dab5d308b8e6d2ca2f2d4393994fc51d15a591f69a1"
+content-hash = "1cfc1286c9abf90104f5749c067e124b1e8d0c480bd244ecaa50a5f4bbf181ba"
