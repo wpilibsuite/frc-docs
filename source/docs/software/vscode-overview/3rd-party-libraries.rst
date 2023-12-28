@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies.
+Teams that are using non-:term:`PWM` motor controllers or advanced sensors will most likely need to install external vendor dependencies.
 
 What Are Vendor Dependencies?
 -----------------------------

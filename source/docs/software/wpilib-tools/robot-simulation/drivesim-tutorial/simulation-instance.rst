@@ -46,7 +46,7 @@ Simulating Gyroscopes
 ---------------------
 Similar to the ``EncoderSim`` class, simulated gyroscope classes also exist for commonly used WPILib gyros -- ``AnalogGyroSim`` and ``ADXRS450_GyroSim``. These are also constructed in the same manner.
 
-.. note:: It is not possible to simulate certain vendor gyros (i.e. Pigeon IMU and NavX) using WPILib classes. Please read the respective vendors' documentation for information on their simulation support.
+.. note:: It is not possible to simulate certain vendor gyros (i.e. Pigeon :term:`IMU` and NavX) using WPILib classes. Please read the respective vendors' documentation for information on their simulation support.
 
 .. tab-set-code::
    .. code-block:: java

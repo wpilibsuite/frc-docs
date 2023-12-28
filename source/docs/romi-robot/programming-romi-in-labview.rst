@@ -10,7 +10,7 @@ Creating a Romi Project
 
 Creating a new program for a Romi is no different than creating a normal FRC \|reg| program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps. Initially, you may wish to create a separate project for use on just the Romi as the Romi hardware may be connected to different ports than on your roboRIO robot.
 
-The Romi Robot used PWM ports 0 and 1 for left and right side respectively.
+The Romi Robot used :term:`PWM` ports 0 and 1 for left and right side respectively.
 
 .. todo:: add information on romi gyro and encoders
 

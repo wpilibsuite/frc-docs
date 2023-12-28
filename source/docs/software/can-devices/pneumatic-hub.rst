@@ -5,7 +5,7 @@ Pneumatic Hub
     :alt: The Pneumatic Hub (PH)
     :width: 400
 
-The Pneumatic Hub (PH) is a CAN-based device that provides complete control over the compressor and up to 16 solenoids per module. The PH is integrated into WPILib through a series of classes that make it simple to use.
+The Pneumatic Hub (:term:`PH`) is a :term:`CAN`-based device that provides complete control over the compressor and up to 16 solenoids per module. The PH is integrated into WPILib through a series of classes that make it simple to use.
 
 The closed loop control of the Compressor and Pressure switch is handled by the :code:`Compressor` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Compressor.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_compressor.html>`__), and the Solenoids are handled by the :code:`Solenoid` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Solenoid.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_solenoid.html>`__) and :code:`DoubleSolenoid` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_double_solenoid.html>`__) classes.
 

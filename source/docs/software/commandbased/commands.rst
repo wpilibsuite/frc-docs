@@ -57,7 +57,7 @@ runsWhenDisabled
 
 The ``runsWhenDisabled()`` method (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#runsWhenDisabled()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#a5113cbf3655ce8679dd48bf22700b2f4>`__) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
 
-.. important::  When the robot is disabled, PWM outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
+.. important::  When the robot is disabled, :term:`PWM` outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
 
 This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#ignoringDisable(boolean)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command.html#acc67b15e71a66aafb7523ccdd0a7a834>`__):
 
