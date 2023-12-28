@@ -1,7 +1,7 @@
 Wiring Pneumatics - REV Pneumatic Hub
 =====================================
 
-This page describes wiring pneumatics with the REV Pneumatic Hub (PH). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (PCM) see :doc:`this page <wiring-pneumatics-pcm>`.
+This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (:term:`PCM`) see :doc:`this page <wiring-pneumatics-pcm>`.
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here <https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf>`__
 
@@ -16,7 +16,7 @@ This page describes wiring pneumatics with the REV Pneumatic Hub (PH). For instr
 Wiring Overview
 ---------------
 
-A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the CAN bus and powered via 12V from the PDP/PDH.
+A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :term:`CAN` bus and powered via 12V from the PDP/PDH.
 
 For complicated robot designs requiring more channels or multiple solenoid voltages, additional PHs or PCMs can be added to the control system.
 

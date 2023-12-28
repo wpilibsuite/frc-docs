@@ -9,7 +9,7 @@ Compatible Hardware
 In general, the Romi is compatible with the following:
 
 - Simple Digital Input/Output devices (e.g. bumper switches, single LEDs)
-- Standard RC-style PWM output devices (e.g. servos, PWM based motor controllers)
+- Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
 - Analog Input sensors (e.g distance sensors that report distance as a voltage)
 
 Incompatible Hardware

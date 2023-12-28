@@ -3,7 +3,7 @@
 Third-Party CAN Devices
 =======================
 
-A number of FRC\ |reg| vendors offer their own CAN peripherals.  As CAN devices
+A number of FRC\ |reg| vendors offer their own :term:`CAN` peripherals.  As CAN devices
 offer expansive feature-sets, vendor CAN devices require similarly
 expansive code libraries to operate.  As a result, these libraries are
 not maintained as an official part of WPILib, but are instead maintained
@@ -113,7 +113,7 @@ PWF Sensors
 Redux Robotics
 --------------
 
-Redux Robotics currently offers the Canandcoder CAN + PWM magnetic encoder.
+Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder.
 
 Redux Sensors
 ^^^^^^^^^^^^^

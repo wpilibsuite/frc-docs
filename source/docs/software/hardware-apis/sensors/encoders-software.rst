@@ -29,7 +29,7 @@ Examples of quadrature encoders:
 - `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
 - `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
-- `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
+- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
 - `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
@@ -240,7 +240,7 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 --------------------------------------------------------
 
-WPILib provides support for duty cycle (also marketed as PWM) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 

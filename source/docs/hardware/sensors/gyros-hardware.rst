@@ -33,7 +33,7 @@ Three-axis Gyros
 ^^^^^^^^^^^^^^^^
 
 .. image:: images/gyros-hardware/adis16470-gyro-to-roborio.jpeg
-  :alt: This is the ADIS16470 IMU plugged in to the SPI port.
+  :alt: This is the ADIS16470 :term:`IMU` plugged in to the SPI port.
   :width: 400
 
 Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.

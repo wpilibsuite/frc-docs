@@ -15,7 +15,7 @@ Stage 1 - 6v output drop
 
 **Voltage Trigger - 6.8V**
 
-When the voltage drops below 6.8V, the 6V output on the PWM pins will start to drop.
+When the voltage drops below 6.8V, the 6V output on the :term:`PWM` pins will start to drop.
 
 Stage 2 - Output Disable
 ~~~~~~~~~~~~~~~~~~~~~~~~
