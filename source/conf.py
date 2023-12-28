@@ -39,6 +39,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
+    "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
@@ -55,6 +56,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
+    "sphinx_copybutton",
 ]
 
 local_extensions = [
@@ -63,6 +65,7 @@ local_extensions = [
     "_extensions.localization",
     "_extensions.controls_js_sim",
     "_extensions.wpilib_release",
+    "_extensions.default_latex_image_settings",
 ]
 
 extensions += local_extensions
@@ -323,3 +326,15 @@ def new_send(self, data):
 
 
 http.client.HTTPConnection.send = new_send
+
+intersphinx_mapping = {
+    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/latest/", None),
+}
+
+# We recommend adding the following config value.
+# Sphinx defaults to automatically resolve *unresolved* labels using all your Intersphinx mappings.
+# This behavior has unintended side-effects, namely that documentations local references can
+# suddenly resolve to an external location.
+# See also:
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
+intersphinx_disabled_reftypes = ["*"]

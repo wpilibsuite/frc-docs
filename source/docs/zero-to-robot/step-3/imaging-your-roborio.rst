@@ -35,7 +35,7 @@ Launching the Imaging Tool
 
 The roboRIO imaging tool and latest image are installed with the NI FRC\ |reg| Game Tools. Launch the imaging tool by double clicking on the shortcut on the Desktop. If you have difficulties imaging your roboRIO, you may need to try right-clicking on the icon and selecting Run as Administrator instead.
 
-.. note:: The roboRIO imaging tool is also located at ``C:\Program Files (x86)\National Instruments\LabVIEW 2020\project\roboRIO Tool``
+.. note:: The roboRIO imaging tool is also located at ``C:\Program Files (x86)\National Instruments\LabVIEW 2023\project\roboRIO Tool``
 
 roboRIO Imaging Tool
 ^^^^^^^^^^^^^^^^^^^^
@@ -106,3 +106,4 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
 - Try a different USB Cable
 - Try a different PC
+- If the status LED is constantly flashing, and imaging in safe mode failed, follow the `roboRIO recovery instructions <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000kOHkCAM&l=en-US>`__

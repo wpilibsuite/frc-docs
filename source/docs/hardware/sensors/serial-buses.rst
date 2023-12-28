@@ -18,7 +18,7 @@ The roboRIO supports many basic types of serial communications:
 - `USB Host`_
 - `CAN Bus`_
 
-Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
+Additionally, the roboRIO supports communications with peripheral devices over the :term:`CAN` bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
 I2C
 ---
@@ -29,9 +29,9 @@ I2C
 .. image:: images/serial-buses/i2c-pinout.png
    :alt: I2C roboRIO port pin specifications.
 
-To communicate to peripheral devices over I2C, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
+To communicate to peripheral devices over :term:`I2C`, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
-The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on the MXP is independent. For example, a device on the main bus can have the same ID as a device on the MXP bus.
+The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on the :term:`MXP` is independent. For example, a device on the main bus can have the same ID as a device on the MXP bus.
 
 .. warning:: Be sure to familiarize yourself on the following known issue before using the onboard I2C port: :ref:`docs/yearly-overview/known-issues:Onboard I2C Causing System Lockups`
 
@@ -44,7 +44,7 @@ SPI
 .. image:: images/serial-buses/spi-pinout.png
    :alt: SPI roboRIO port pin specifications.
 
-To communicate to peripheral devices over SPI, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
+To communicate to peripheral devices over :term:`SPI`, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
 
 The SPI bus can also be used through the `MXP expansion port`_. The MXP port provides independent clock, and input/output lines and an additional CS.
 
@@ -88,7 +88,7 @@ MXP Expansion Port
 .. image:: images/serial-buses/mxp-pinout.png
    :alt: MXP pinout.
 
-Several of the serial buses are also available for use through the roboRIO's MXP Expansion Port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
+Several of the serial buses are also available for use through the roboRIO's :term:`MXP` Expansion Port.  This port allows users to make use of many additional :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, as well as the various serial buses.
 
 Many peripheral devices attach directly to the MXP port for convenience, requiring no wiring on the part of the user.
 

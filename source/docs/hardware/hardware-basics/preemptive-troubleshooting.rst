@@ -109,7 +109,7 @@ Swarf is fine chips or filings of stone, metal, or other material produced by a 
 Radio Barrel Jack
 -----------------
 
-Make sure the correct barrel jack is used, not one that is too small and falls out for no reason.  This isn’t common, but ask an FTA and every once in awhile a team will use some random barrel jack that is not sized correctly, and it falls out in a match on first contact.
+Make sure the correct barrel jack is used, not one that is too small and falls out for no reason.  This isn’t common, but ask an :term:`FTA` and every once in awhile a team will use some random barrel jack that is not sized correctly, and it falls out in a match on first contact.
 
 Ethernet Cable
 --------------

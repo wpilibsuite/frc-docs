@@ -555,7 +555,7 @@ Fixing HAL Resource Already Allocated Issues
 
 ``HAL: Resource already allocated`` are some of the most straightforward errors to fix. Just spend a bit of time looking at the electrical wiring on the robot, and compare that to what's in code.
 
-In the example, the left motor controllers are plugged into PWM ports ``0`` and ``1``. Therefore, corrected code would look like this:
+In the example, the left motor controllers are plugged into :term:`PWM` ports ``0`` and ``1``. Therefore, corrected code would look like this:
 
 .. tab-set-code::
 

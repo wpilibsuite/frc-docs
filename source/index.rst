@@ -25,7 +25,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2023 to 2024 and the known issues.
+      If you are a returning team, please check out the overview of changes from 2023 to 2024, known issues, and quick start guide for updating.
 
       +++
 
@@ -47,6 +47,15 @@ Community translations can be found in a variety of languages in the bottom-left
          :outline:
 
          Known Issues
+
+      .. button-ref:: /docs/yearly-overview/returning-quickstart
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         Quick Start
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -209,7 +218,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      Java and C++ class documentation.
+      Java, C++, and Python class documentation.
 
       .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/java/index.html
          :color: primary
@@ -228,6 +237,15 @@ Community translations can be found in a variety of languages in the bottom-left
          :outline:
 
          C++
+
+      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/latest/
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         Python
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -362,6 +380,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>
+   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/latest/>
 
 .. toctree::
    :maxdepth: 1
