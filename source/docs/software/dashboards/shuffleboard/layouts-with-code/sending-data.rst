@@ -79,8 +79,8 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
 
       from wpilib.shuffleboard import Shuffleboard
 
-      Shuffleboard.getTab("Drive")
-         .addPersistent("Max Speed", 1.0)
+      (Shuffleboard.getTab("Drive")
+            .addPersistent("Max Speed", 1.0))
 
 Sending sensors, motors, etc
 ----------------------------
@@ -103,5 +103,5 @@ Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, 
       
       from wpilib.shuffleboard import Shuffleboard
 
-      Shuffleboard.getTab("Tab Title")
-         .add("Sendable Title", mySendable)
+      (Shuffleboard.getTab("Tab Title")
+            .add("Sendable Title", mySendable))

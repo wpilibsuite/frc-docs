@@ -19,12 +19,21 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
         .withSize(2, 1) // make the widget 2x1
         .withPosition(0, 0); // place it in the top-left corner
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       frc::Shuffleboard::GetTab("Pre-round")
         .Add("Auto Mode", autoModeChooser)
         .WithSize(2, 1)
         .WithPosition(0,0);
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      (Shuffleboard.getTab("Pre-round")
+        .add("Auto Mode", autoModeChooser)
+        .withSize(2, 1) # make the widget 2x1
+        .withPosition(0, 0)) # place it in the top-left corner
 
 Adding Widgets to Layouts
 -------------------------
@@ -42,9 +51,8 @@ If there are many widgets in a tab with related data, it can be useful to place 
 
       elevatorCommands.add(new ElevatorDownCommand());
       elevatorCommands.add(new ElevatorUpCommand());
-      // Similarly for the claw commands
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       wpi::StringMap<std::shared_ptr<nt::Value>> properties{
         std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))
@@ -60,6 +68,19 @@ If there are many widgets in a tab with related data, it can be useful to place 
 
       elevatorCommands.Add("Elevator Down", elevatorDown);
       elevatorCommands.Add("Elevator Up", elevatorUp);
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+      from wpilib.shuffleboard import BuiltInLayouts
+
+      (elevatorCommands = Shuffleboard.getTab("Commands")
+        .getLayout("Elevator", BuiltInLayouts.kList)
+        .withSize(2, 2)
+        .withProperties(map("Label position", "HIDDEN"))) # hide labels for commands
+
+      elevatorCommands.add(ElevatorDownCommand())
+      elevatorCommands.add(ElevatorUpCommand())
 
 .. image:: images/organizing-widgets/organized.png
   :alt: Commands buttons organized by the order they are added for the Elevator and Claw subsystems.
