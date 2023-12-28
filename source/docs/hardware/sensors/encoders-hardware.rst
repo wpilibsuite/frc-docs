@@ -37,7 +37,7 @@ Shafted encoders have a sealed body with a shaft protruding out of it that must 
 
 Examples of shafted encoders:
 
-- `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
+- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
 - `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
 
 On-shaft Encoders
@@ -89,7 +89,7 @@ Examples of quadrature encoders:
 - `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
 - `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
-- `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__
+- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
 - `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
 - `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
 
