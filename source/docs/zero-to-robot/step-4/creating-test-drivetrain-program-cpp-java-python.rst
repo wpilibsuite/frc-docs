@@ -66,7 +66,7 @@ Basic Drivetrain example
 
 First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
 
-.. note:: the Python example below is from `<https://github.com/robotpy/examples/tree/main/gettingstarted>`__
+.. note:: the Python example below is from `<https://github.com/robotpy/examples/tree/main/GettingStarted>`__
 
 .. tab-set-code::
 

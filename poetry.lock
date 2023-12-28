@@ -2099,18 +2099,18 @@ sphinx = ">=4.0"
 
 [[package]]
 name = "sphinxext-photofinish"
-version = "0.1.9"
+version = "0.1.10"
 description = "Sphinx Extension that creates responsive images."
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "sphinxext-photofinish-0.1.9.tar.gz", hash = "sha256:d84b98b9b255e73ce7e421222877c791a12aa60a176ca93bcabadb3e0da4f278"},
-    {file = "sphinxext_photofinish-0.1.9-py3-none-any.whl", hash = "sha256:e0fe74c935b3ebaaed25b7d77987cd45b021322252798535632d2b6acec3aff9"},
+    {file = "sphinxext-photofinish-0.1.10.tar.gz", hash = "sha256:7e8230a8a98ebeec74537b69187f9cd0225cb0aac60ad90333be65c62cdbb51c"},
+    {file = "sphinxext_photofinish-0.1.10-py3-none-any.whl", hash = "sha256:29832aadc56b997c5d2b30a48211e19c2cff50c799e94b395724c9e46fd63f02"},
 ]
 
 [package.dependencies]
 beautifulsoup4 = ">=4"
-pillow = ">=8"
+pillow = ">=10.0.1"
 sphinx = ">=2.0"
 tinycss2 = ">=1.1.1"
 
@@ -2368,4 +2368,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "522273f10fcafcc7554afff43145757f35646f4cd3429363c247eb9520b3f404"
+content-hash = "c9bfb301e4371ff1eacc9dab5d308b8e6d2ca2f2d4393994fc51d15a591f69a1"
