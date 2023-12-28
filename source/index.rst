@@ -229,7 +229,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          C++
 
-      .. button-link:: https://robotpy.readthedocs.io/projects/wpilib/en/stable/api.html
+      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/latest/
          :color: primary
          :shadow:
          :align: center
