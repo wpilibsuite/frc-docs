@@ -371,7 +371,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>
-   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/wpilib/en/stable/api.html>
+   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/latest/>
 
 .. toctree::
    :maxdepth: 1
