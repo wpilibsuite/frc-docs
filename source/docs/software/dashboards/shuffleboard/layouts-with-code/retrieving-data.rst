@@ -30,7 +30,7 @@ Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboa
       class DriveSubsystem(commands2.SubsystemBase):
          def __init__(self) -> None:
             super().__init__()
-         
+
             tab = Shuffleboard.getTab("Drive")
             self.maxSpeed = tab.add("Max Speed", 1).getEntry()
 

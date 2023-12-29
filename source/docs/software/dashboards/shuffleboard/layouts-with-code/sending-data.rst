@@ -100,7 +100,7 @@ Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, 
             .Add("Sendable Title", mySendable);
 
    .. code-block:: python
-      
+
       from wpilib.shuffleboard import Shuffleboard
 
       (Shuffleboard.getTab("Tab Title")
