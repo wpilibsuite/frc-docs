@@ -49,7 +49,7 @@ Your Romi code is now running! The program will automatically attempt to connect
 
 It is recommended to run the Driver Station software on the same computer as the LabVIEW code. Once your program successfully connects to the Driver Station, it will automatically notify the Driver Station that the code is running on the Desktop, allowing the Driver Station to connect without you changing any information inside the Driver Station. Next, you'll need to point the Driver Station to your Romi. This is done by setting the team number to ``127.0.0.1``. You can then use the controls in the Driver Station to set the robot mode and enable/disable as normal.
 
-.. note: If your robot code is unable to connect to the Romi, the Driver Station will also show no connectivity.
+.. note:: If your robot code is unable to connect to the Romi, the Driver Station will also show no connectivity.
 
 Using the Gyro or Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^

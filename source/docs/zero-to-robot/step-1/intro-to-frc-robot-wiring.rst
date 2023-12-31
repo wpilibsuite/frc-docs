@@ -402,7 +402,7 @@ Pneumatics Power (Optional)
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
 
-      .. note: The Pneumatics Hub is an optional component used for controlling pneumatics on the robot.
+      .. note:: The Pneumatics Hub is an optional component used for controlling pneumatics on the robot.
 
       The Pneumatics Hub can be wired to either a non-switchable fused port on the PDH with a 15A or smaller fuse or to a circuit breaker protected port with a breaker up to 20A.
 
@@ -420,7 +420,7 @@ Pneumatics Power (Optional)
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire
 
-      .. note: The PCM is an optional component used for controlling pneumatics on the robot.
+      .. note:: The PCM is an optional component used for controlling pneumatics on the robot.
 
       1. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
       2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
@@ -476,7 +476,7 @@ roboRIO to Pneumatics CAN
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-      .. note: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in this step) to the PDH (shown in the next step).
+      .. note:: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in this step) to the PDH (shown in the next step).
 
       1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
       2. Insert the wires into the appropriate CAN terminals on the roboRIO (Yellow->YEL, Green->GRN).
@@ -491,7 +491,7 @@ roboRIO to Pneumatics CAN
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-      .. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (shown in the next step).
+      .. note:: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in this step) to the PDP (shown in the next step).
 
       1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
       2. Insert the wires into the appropriate CAN terminals on the roboRIO (Yellow->YEL, Green->GRN).
@@ -514,14 +514,14 @@ Pneumatics to PD CAN
 
          Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-         .. note: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDH (shown in this step).
+         .. note:: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDH (shown in this step).
 
          1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
          2. Insert the wires into the appropriate CAN terminals on the PH.
          3. Measure the length required to reach the CAN terminals of the PDH (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
          4. Insert the wires into the appropriate color coded CAN terminals on the PDH. You may use either of the Yellow/Green terminal pairs on the PDH, there is no defined in or out.
 
-         .. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
+         .. note:: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
    .. tab-item:: CTR
       :sync: CTR
@@ -531,14 +531,14 @@ Pneumatics to PD CAN
 
       Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-      .. note: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (shown in this step).
+      .. note:: The PCM is an optional component used for controlling pneumatics on the robot. If you are not using the PCM, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDP (shown in this step).
 
       1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
       2. Insert the wires into the appropriate CAN terminals on the PCM.
       3. Measure the length required to reach the CAN terminals of the PDP (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
       4. Insert the wires into the appropriate color coded CAN terminals on the PDP. You may use either of the Yellow/Green terminal pairs on the PDP, there is no defined in or out.
 
-      .. note: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
+      .. note:: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
 
 Motor Controller Signal Wires
