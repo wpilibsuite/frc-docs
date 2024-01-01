@@ -47,7 +47,7 @@ The easiest way to get data displayed on the dashboard is simply to use methods 
 
       SmartDashboard.putNumber("Joystick X value", joystick1.getX());
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       frc::SmartDashboard::PutNumber("Joystick X value", joystick1.getX());
 

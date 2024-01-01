@@ -26,16 +26,16 @@ Displaying values in normal operating mode (autonomous or teleop)
          SmartDashboard.putNumber("RPM", shooter.getRPM());
       }
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
-      frc::SmartDashboard::PutBoolean("Bridge Limit", bridgeTipper.atBridge());
-      frc::SmartDashboard::PutNumber("Bridge Angle", bridgeTipper.getPosition());
-      frc::SmartDashboard::PutNumber("Swerve Angle", drivetrain.getSwerveAngle());
-      frc::SmartDashboard::PutNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
-      frc::SmartDashboard::PutNumber("Right Drive Encoder", drivetrain.getRightEncoder());
-      frc::SmartDashboard::PutNumber("Turret Pot", turret.getCurrentAngle());
-      frc::SmartDashboard::PutNumber("Turret Pot Voltage", turret.getAverageVoltage());
-      frc::SmartDashboard::PutNumber("RPM", shooter.getRPM());
+      frc::SmartDashboard::PutBoolean("Bridge Limit", bridgeTipper.AtBridge());
+      frc::SmartDashboard::PutNumber("Bridge Angle", bridgeTipper.GetPosition());
+      frc::SmartDashboard::PutNumber("Swerve Angle", drivetrain.GetSwerveAngle());
+      frc::SmartDashboard::PutNumber("Left Drive Encoder", drivetrain.GetLeftEncoder());
+      frc::SmartDashboard::PutNumber("Right Drive Encoder", drivetrain.GetRightEncoder());
+      frc::SmartDashboard::PutNumber("Turret Pot", turret.GetCurrentAngle());
+      frc::SmartDashboard::PutNumber("Turret Pot Voltage", turret.GetAverageVoltage());
+      frc::SmartDashboard::PutNumber("RPM", shooter.GetRPM());
 
    .. code-block:: python
 
