@@ -250,7 +250,7 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
 
       def periodic(self):
         # Periodically send a set of module states
-        self.pub.set(SwerveModuleState(frontLeftState,frontRightState,backLeftState,backRightState))
+        self.pub.set([frontLeftState,frontRightState,backLeftState,backRightState])
 
 See the documentation for the `swerve <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/SWERVE.md>`__ tab for more details on visualizing this data using AdvantageScope.
 
