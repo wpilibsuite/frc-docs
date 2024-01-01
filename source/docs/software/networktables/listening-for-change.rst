@@ -58,7 +58,7 @@ There are a few different ways to detect that a topic's value has changed; the e
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               nt::DoubleSubscriber ySub;
@@ -101,7 +101,7 @@ There are a few different ways to detect that a topic's value has changed; the e
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               NT_Subscriber ySub;
@@ -272,7 +272,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               nt::DoubleSubscriber ySub;

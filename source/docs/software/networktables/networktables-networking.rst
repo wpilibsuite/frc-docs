@@ -19,7 +19,7 @@ Starting a NetworkTables Server
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
             inst.StartServer();
@@ -27,7 +27,7 @@ Starting a NetworkTables Server
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             NT_Inst inst = nt::GetDefaultInstance();
             nt::StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
@@ -79,7 +79,7 @@ Starting a NetworkTables Client
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
 
@@ -98,7 +98,7 @@ Starting a NetworkTables Client
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             NT_Inst inst = nt::GetDefaultInstance();
 

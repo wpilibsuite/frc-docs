@@ -26,7 +26,7 @@ Simulation device object can be constructed in two ways:
       // create a sim controller for the encoder
       EncoderSim simEncoder = new EncoderSim(encoder);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
        // create a real encoder object on DIO 2,3
        frc::Encoder encoder{2, 3};
@@ -45,7 +45,7 @@ Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXx
       encoder.getCount(); // 100
       simEncoder.getCount(); // 100
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       simEncoder.SetCount(100);
       encoder.GetCount(); // 100
@@ -74,7 +74,7 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
 
       store.close(); // cancel the callback
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       HAL_NotifyCallback callback = [](const char* name, void* param, const HALValue* value) {
         if (value->type == HAL_INT) {
@@ -98,7 +98,7 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
 
       SimDeviceSim device = new SimDeviceSim(deviceKey, index);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       frc::sim::SimDeviceSim device{deviceKey, index};
 
@@ -111,7 +111,7 @@ Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing 
       field.get();
       field.set(value);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       hal::SimDouble field = device.GetDouble(fieldKey);
       field.Get();

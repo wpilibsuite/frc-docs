@@ -44,7 +44,7 @@ Writing a Program to Access the Topics
           System.out.println();
       }
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       nt::DoubleArraySubscriber areasSub;
 

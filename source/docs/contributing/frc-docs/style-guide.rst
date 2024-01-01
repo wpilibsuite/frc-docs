@@ -136,7 +136,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
                :lineno-start: 44
 
 
-            .. code-block:: cpp
+            .. code-block:: c++
                // Start the timer.
                m_timer.Start();
 

@@ -136,7 +136,7 @@ Imports/Includes
             import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 
-         .. code-block:: cpp
+         .. code-block:: c++
 
             #include <frc/Joystick.h>
             #include <frc/TimedRobot.h>
@@ -166,7 +166,7 @@ Imports/Includes
                import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                #include <frc/TimedRobot.h>
                #include <frc/Timer.h>
@@ -245,7 +245,7 @@ Defining the variables for our sample robot
          .. tab-item:: C++
             :sync: cpp
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                public:
                 Robot() {
@@ -257,7 +257,7 @@ Defining the variables for our sample robot
                    m_timer.Start();
                 }
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                private:
                 // Robot drive system
@@ -295,7 +295,7 @@ Defining the variables for our sample robot
          .. tab-item:: C++
             :sync: cpp
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                Robot() {
                  // We need to invert one side of the drivetrain so that positive voltages
@@ -306,7 +306,7 @@ Defining the variables for our sample robot
                  m_timer.Start();
                }
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                private:
                 // Robot drive system

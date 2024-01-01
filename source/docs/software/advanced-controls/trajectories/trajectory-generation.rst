@@ -90,7 +90,7 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
       var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       auto trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
          frc::Pose2d(0_m, 0_m, 0_rad),

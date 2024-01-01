@@ -69,7 +69,7 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the publisher is an instance variable so its lifetime matches that of the class
@@ -110,7 +110,7 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the publisher is an instance variable, but since it's a handle, it's
@@ -298,7 +298,7 @@ Subscribers have a range of different ways to read received values. It's possibl
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the subscriber is an instance variable so its lifetime matches that of the class
@@ -343,7 +343,7 @@ Subscribers have a range of different ways to read received values. It's possibl
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the subscriber is an instance variable, but since it's a handle, it's
@@ -533,7 +533,7 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the entry is an instance variable so its lifetime matches that of the class
@@ -583,7 +583,7 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the entry is an instance variable, but since it's a handle, it's
@@ -814,7 +814,7 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the entry is an instance variable so its lifetime matches that of the class
@@ -1010,7 +1010,7 @@ While in most cases it's only necessary to subscribe to individual topics, it is
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the subscriber is an instance variable so its lifetime matches that of the class
@@ -1047,7 +1047,7 @@ While in most cases it's only necessary to subscribe to individual topics, it is
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Example {
               // the subscriber is an instance variable, but since it's a handle, it's

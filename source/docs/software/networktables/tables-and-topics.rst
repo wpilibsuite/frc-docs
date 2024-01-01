@@ -39,7 +39,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
             std::shared_ptr<nt::NetworkTable> table = inst.GetTable("datatable");
@@ -60,7 +60,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             NT_Instance inst = nt::GetDefaultInstance();
 

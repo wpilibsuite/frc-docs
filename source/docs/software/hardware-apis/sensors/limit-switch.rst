@@ -42,7 +42,7 @@ Controlling a Motor with Two Limit Switches
          }
      }
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
      frc::DigitalInput toplimitSwitch {0};
      frc::DigitalInput bottomlimitSwitch {1};

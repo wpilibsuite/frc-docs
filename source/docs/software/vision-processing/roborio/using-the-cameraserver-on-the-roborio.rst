@@ -43,7 +43,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
          :linenos:
          :lineno-start: 7
 
-   .. tab-item:: CPP
+   .. tab-item:: c++
       :sync: tabcode-cpp
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp

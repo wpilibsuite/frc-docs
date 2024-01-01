@@ -20,7 +20,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
           enableLiveWindowInTest(true);
         }
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         void Robot::RobotInit() {
           EnableLiveWindowInTest(true);
@@ -49,7 +49,7 @@ Explicitly vs. implicit test mode display
           SendableRegistry.setName(accel, "SomeSubsystem", "Accelerometer");
         }
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         frc::PWMSparkMax leftDrive{0};
         frc::PWMSparkMax rigthDrive{1};

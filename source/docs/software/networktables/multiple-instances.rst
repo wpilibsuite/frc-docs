@@ -30,7 +30,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             // get the default NetworkTable instance
             nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
@@ -44,7 +44,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             // get the default NetworkTable instance
             NT_Instance defaultInst = nt::GetDefaultInstance();

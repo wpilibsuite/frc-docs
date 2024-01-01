@@ -40,7 +40,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Robot : public frc::TimedRobot {
              private:
@@ -57,7 +57,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
     .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             void Robot::Robot() {
               AddPeriodic([&] {

@@ -19,7 +19,7 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
         .withSize(2, 1) // make the widget 2x1
         .withPosition(0, 0); // place it in the top-left corner
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       frc::Shuffleboard::GetTab("Pre-round")
         .Add("Auto Mode", autoModeChooser)
@@ -44,7 +44,7 @@ If there are many widgets in a tab with related data, it can be useful to place 
       elevatorCommands.add(new ElevatorUpCommand());
       // Similarly for the claw commands
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       wpi::StringMap<std::shared_ptr<nt::Value>> properties{
         std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))

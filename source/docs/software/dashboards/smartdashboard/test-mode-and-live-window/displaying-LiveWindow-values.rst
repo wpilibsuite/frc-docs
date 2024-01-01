@@ -21,7 +21,7 @@ For each sensor or actuator that is created, set the subsystem name and display 
         Victor wrist = new Victor(2);
         SendableRegistry.setName(wrist, "Arm", "Wrist");
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         frc::Ultrasonic ultrasonic{1, 2};
         SendableRegistry::SetName(ultrasonic, "Arm", "Ultrasonic");
@@ -47,7 +47,7 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
         Victor wrist = new Victor(2);
         addChild("Wrist", wrist);
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         frc::Ultrasonic ultrasonic{1, 2};
         AddChild("Ultrasonic", ultrasonic);

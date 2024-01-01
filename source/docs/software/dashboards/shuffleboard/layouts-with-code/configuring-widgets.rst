@@ -17,7 +17,7 @@ Call ``withWidget`` after ``add`` in the call chain:
         .withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
         .getEntry();
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
        frc::Shuffleboard::GetTab("Drive")
         .Add("Max Speed", 1)
@@ -43,7 +43,7 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
         .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
         .getEntry();
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
     frc::Shuffleboard::GetTab("Drive")
         .Add("Max Speed", 1)
