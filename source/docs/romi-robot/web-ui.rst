@@ -50,7 +50,7 @@ This section allows users to configure the 5 external GPIO channels on the Romi.
 
 .. note:: The Raspberry Pi must be in **Writable** mode for this section to work.
 
-To change the configuration of a GPIO channel, select an appropriate option from the dropdown lists. All channels (with the exception of EXT 0) support Digital IO, Analog In and PWM as channel types. Once the appropriate selections are made, click on :guilabel:`Save External IO Configuration`. The web service will then restart and pick up the new IO configuration.
+To change the configuration of a GPIO channel, select an appropriate option from the dropdown lists. All channels (with the exception of EXT 0) support Digital IO, Analog In and :term:`PWM` as channel types. Once the appropriate selections are made, click on :guilabel:`Save External IO Configuration`. The web service will then restart and pick up the new IO configuration.
 
 The "Robot Port" row provides the appropriate WPILib mapping for each configured GPIO channel. For example, EXT 0 is configured as a Digital IO channel, and will be accessible in WPILib as a DigitalInput (or DigitalOutput) channel 8.
 

@@ -12,13 +12,13 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
       :language: java
       :lines: 43-46
       :linenos:
       :lineno-start: 43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: cpp
       :lines: 59-62
       :linenos:
@@ -30,13 +30,13 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
 .. tab-set-code::
 
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
       :language: java
       :lines: 48-53
       :linenos:
       :lineno-start: 48
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: cpp
       :lines: 63-69
       :linenos:
@@ -46,13 +46,13 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
       :language: java
       :lines: 55-56
       :linenos:
       :lineno-start: 55
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: cpp
       :lines: 36-37
       :linenos:
@@ -64,13 +64,13 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
       :language: java
       :lines: 59-64
       :linenos:
       :lineno-start: 59
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: cpp
       :lines: 40-45
       :linenos:
@@ -86,6 +86,15 @@ After sending the ``Mechanism2d`` instance over NetworkTables, the :guilabel:`Me
 Once the widget appears as shown below, you can resize and place it on the Glass workspace as you desire. Right-clicking the top of the widget will allow you to customize the name of the widget. As the wrist potentiometer and elevator encoder changes, the mechanism will update in the widget.
 
 .. image:: images/mechanism2d-widget.png
+
+Viewing the Mechanism2d in AdvantageScope
+-----------------------------------------
+
+:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing a ``Mechanism2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the `mechanism <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/MECHANISM.md>`__ and `3D field <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md>`__ tabs for more details.
+
+.. image:: images/advantagescope-mechanism.png
+   :alt: Screenshot of an AdvantageScope window displaying a robot and mechanism in 3D.
+   :height: 500
 
 Next Steps
 ----------

@@ -6,11 +6,11 @@ Constructing the Kinematics Object
 ----------------------------------
 The ``DifferentialDriveKinematics`` object accepts one constructor argument, which is the track width of the robot. This represents the distance between the two sets of wheels on a differential drive.
 
-.. note:: In Java, the track width must be in meters. In C++, the units library can be used to pass in the track width using any length unit.
+.. note:: In Java and Python, the track width must be in meters. In C++, the units library can be used to pass in the track width using any length unit.
 
 Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
-The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``DifferentialDriveWheelSpeeds`` object. This is useful in situations where you have to convert a linear velocity (``vx``) and an angular velocity (``omega``) to left and right wheel velocities.
+The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``DifferentialDriveWheelSpeeds`` object. This is useful in situations where you have to convert a linear velocity (``vx``) and an angular velocity (``omega``) to left and right wheel velocities.
 
 .. tab-set-code::
 
@@ -47,9 +47,30 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       // struct into left and right velocities.
       auto [left, right] = kinematics.ToWheelSpeeds(chassisSpeeds);
 
+   .. code-block:: python
+
+      from wpimath.kinematics import DifferentialDriveKinematics
+      from wpimath.kinematics import ChassisSpeeds
+      from wpimath.units import inchesToMeters
+
+      # Creating my kinematics object: track width of 27 inches
+      kinematics = DifferentialDriveKinematics(Units.inchesToMeters(27.0))
+
+      # Example chassis speeds: 2 meters per second linear velocity,
+      # 1 radian per second angular velocity.
+      chassisSpeeds = ChassisSpeeds(2.0, 0, 1.0)
+
+      # Convert to wheel speeds
+      wheelSpeeds = kinematics.toWheelSpeeds(chassisSpeeds)
+
+      # Left velocity
+      leftVelocity = wheelSpeeds.left
+      # Right velocity
+      rightVelocity = wheelSpeeds.right
+
 Converting Wheel Speeds to Chassis Speeds
 -----------------------------------------
-One can also use the kinematics object to convert individual wheel speeds (left and right) to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (C++) method should be used to achieve this.
+One can also use the kinematics object to convert individual wheel speeds (left and right) to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (Java / Python) / ``ToChassisSpeeds(DifferentialDriveWheelSpeeds speeds)`` (C++) method should be used to achieve this.
 
 .. tab-set-code::
 
@@ -86,3 +107,25 @@ One can also use the kinematics object to convert individual wheel speeds (left 
       // Note that because a differential drive is non-holonomic, the vy variable
       // will be equal to zero.
       auto [linearVelocity, vy, angularVelocity] = kinematics.ToChassisSpeeds(wheelSpeeds);
+
+   .. code-block:: python
+
+      from wpimath.kinematics import DifferentialDriveKinematics
+      from wpimath.kinematics import DifferentialDriveWheelSpeeds
+      from wpimath.units import inchesToMeters
+
+      # Creating my kinematics object: track width of 27 inches
+      kinematics = DifferentialDriveKinematics(inchesToMeters(27.0))
+
+      # Example differential drive wheel speeds: 2 meters per second
+      # for the left side, 3 meters per second for the right side.
+      wheelSpeeds = DifferentialDriveWheelSpeeds(2.0, 3.0)
+
+      # Convert to chassis speeds.
+      chassisSpeeds = kinematics.toChassisSpeeds(wheelSpeeds)
+
+      # Linear velocity
+      linearVelocity = chassisSpeeds.vx
+
+      # Angular velocity
+      angularVelocity = chassisSpeeds.omega

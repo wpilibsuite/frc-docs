@@ -9,7 +9,7 @@ Compatible Hardware
 In general, the XRP is compatible with the following:
 
 - Hobby DC motors with built-in encoders (6-pin connector)
-- Standard RC-style PWM output devices (e.g. servos, PWM based motor controllers)
+- Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
 - "Ping" style ultrasonic sensors (only when connected to the RANGE port)
 
 Incompatible Hardware

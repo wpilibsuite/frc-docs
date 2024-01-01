@@ -3,7 +3,7 @@
 Operating Pneumatic Cylinders
 =============================
 
-FRC teams can use a :term:`solenoid valve` as part of performing a variety of tasks, including shifting gearboxes and moving robot mechanisms. A solenoid valve is used to electronically switch a pressurized air line "on" or "off". Solenoids are controlled by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn connected to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is via the LEDs on the PCM or PH (which indicates if the valve is "on" or not). When un-powered, solenoids can be manually actuated with the small button on the valve body.
+FRC teams can use a :term:`solenoid valve` as part of performing a variety of tasks, including shifting gearboxes and moving robot mechanisms. A solenoid valve is used to electronically switch a pressurized air line "on" or "off". Solenoids are controlled by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn connected to the robot's roboRIO via :term:`CAN`. The easiest way to see a solenoid's state is via the LEDs on the PCM or PH (which indicates if the valve is "on" or not). When un-powered, solenoids can be manually actuated with the small button on the valve body.
 
 Single acting solenoids apply or vent pressure from a single output port. They are typically used either when an external force will provide the return action of the cylinder (spring, gravity, separate mechanism) or in pairs to act as a double solenoid. A double solenoid switches air flow between two output ports (many also have a center position where neither output is vented or connected to the input). Double solenoid valves are commonly used when you wish to control both the extend and retract actions of a cylinder using air pressure. Double solenoid valves have two electrical inputs which connect back to two separate channels on the solenoid breakout.
 
@@ -17,7 +17,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: Java
        :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 30-32
           :linenos:
@@ -31,7 +31,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 44-47
           :linenos:
@@ -40,7 +40,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class (`Java <h
     .. tab-item:: C++ (Source)
        :sync: C++ (Source)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 42-47
           :linenos:
@@ -57,7 +57,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: Java
        :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 34-37
           :linenos:
@@ -71,7 +71,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Solenoid/include/Robot.h
           :language: c++
           :lines: 49-52
           :linenos:
@@ -80,7 +80,7 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib (`Java
     .. tab-item:: C++ (Source)
        :sync: C++ (Source)
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 54, 56
           :linenos:
