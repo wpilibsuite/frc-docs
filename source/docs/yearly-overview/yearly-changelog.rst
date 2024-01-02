@@ -67,7 +67,6 @@ General Library
     - Improved file rename functionality to only use system time after it is updated by DS
     - NT publishers created before the log is started are now captured
     - Add delete without download functionality to DataLogTool
-    - Changed default log location to logs subdirectory for better organization
 
 - Hardware interfaces:
 
@@ -94,8 +93,6 @@ General Library
     - Add constructor overloads for easier Transform2d and Transform3d creation from X, Y, Z coordinates
     - Add ``ChassisSpeeds`` ``fromRobotRelativeSpeeds`` to convert from robot relative to field relative
     - Add method to create a LinearSystem from kA and kV, for example from a characterized mechanism
-    - Add ``SimulatedAnnealing`` class
-    - Fixed MecanumDriveWheelSpeeds desaturate()
 
 - Added ``RobotController`` function to get the assigned team number
 - Updated ``GetMatchTime`` docs and units
@@ -106,9 +103,6 @@ General Library
 - Updated to OpenCV 4.8.0 and EJML 0.43.1 and C++ JSON to 3.11.2
 - Add ``PS5Controller`` class
 - Add accessors for ``AprilTagFieldLayout`` origin and field dimensions
-- ArcadeDrive: Fix max output handling
-- Add ``PWMSparkFlex`` Motor Controller
-- ADIS16470: allow accessing all three axes
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -141,7 +135,6 @@ Breaking Changes
 - Removed ``frc2::PIDController`` alias (``frc::PIDController`` already existed)
 - For ease of use, ``loadAprilTagFieldLayout()`` now throws an unchecked exception instead of a checked exception
 - Add new parameter for ``ElevatorSim`` constructor for starting height
-- Report error on negative PID gains
 
 Simulation
 ----------
@@ -171,7 +164,6 @@ Glass / OutlineViewer / Simulation GUI
 - Fixed loading a maximized window on second monitor
 - Fixed crash when clearing existing workspace
 - Fixed file dialogs not closing after window closes
-- add ProfiledPIDController support
 
 GradleRIO
 ---------
