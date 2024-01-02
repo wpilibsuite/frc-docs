@@ -36,13 +36,13 @@ Initializing Preferences
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/arm-simulation/constants.py
          :language: python
-         :lines: 16-21
+         :lines: 18-23
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/arm-simulation/subsytems/arm.py
          :language: python
-         :lines: 18-21,35-39
+         :lines: 20-23,37-41
 
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
@@ -72,9 +72,9 @@ Reading Preferences
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/arm-simulation/subsytems/arm.py
          :language: python
-         :lines: 41-48
+         :lines: 43-50
 
 Reading a preference is easy. The ``getDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
@@ -105,12 +105,12 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/arm-simulation/robot.py
          :language: python
-         :lines: 21-27
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/arm-simulation/subsytems/arm.py
+         :lines: 22-28
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/arm-simulation/subsytems/arm.py
          :language: python
-         :lines: 50-55
+         :lines: 52-57
 
 Using Preferences in SmartDashboard
 -----------------------------------
