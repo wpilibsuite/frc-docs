@@ -13,7 +13,7 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "411d9b02dfa1c4ec5d35410a40f88be796f82f70"
+      "latestVersion": "4cfe0b1ea9cef182e2bd81692746dfe3ae13a337"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",

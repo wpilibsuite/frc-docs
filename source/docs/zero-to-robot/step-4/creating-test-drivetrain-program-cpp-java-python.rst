@@ -114,7 +114,7 @@ Imports/Includes
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/getting-started/robot.py
                :language: python
                :lines: 8-9
                :linenos:
@@ -219,6 +219,9 @@ Defining the variables for our sample robot
                :linenos:
                :lineno-start: 50
 
+         .. tab-item:: Python
+            :sync: python
+
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
                :language: python
                :linenos:
@@ -268,6 +271,8 @@ Defining the variables for our sample robot
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
+         .. tab-item:: Python
+            :sync: python
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
                :language: python
@@ -316,6 +321,9 @@ Defining the variables for our sample robot
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
+
+         .. tab-item:: Python
+            :sync: python
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
                :language: python
@@ -367,7 +375,7 @@ Simple Autonomous Example
       :linenos:
       :lineno-start: 22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/getting-started/robot.py
       :language: python
       :lines: 31-43
       :linenos:
@@ -394,7 +402,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/getting-started/robot.py
       :language: python
       :lines: 45-52
       :linenos:
@@ -419,7 +427,7 @@ Test Mode
       :linenos:
       :lineno-start: 43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4cfe0b1ea9cef182e2bd81692746dfe3ae13a337/getting-started/robot.py
       :language: python
       :lines: 54-58
       :linenos:
