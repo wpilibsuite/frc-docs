@@ -15,7 +15,7 @@ Getting your Alliance Color and Doing an Action
         if (ally.get() == Alliance.Red) {
             <RED ACTION>
         }
-        if (ally.Get() == Alliance.Blue) {
+        if (ally.get() == Alliance.Blue) {
             <BLUE ACTION>
         }
     }
