@@ -17,19 +17,19 @@ In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``Se
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
-      :language: java
-      :lines: 18-21
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
+         :language: java
+         :lines: 18-21
 
-  .. tab-item:: C++
-     :sync: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/include/Robot.h
-      :language: c++
-      :lines: 28-31
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/include/Robot.h
+         :language: c++
+         :lines: 28-31
 
 Setting Up Options
 ^^^^^^^^^^^^^^^^^^
@@ -38,19 +38,19 @@ The chooser allows you to pick from a list of defined elements, in this case the
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
-      :language: java
-      :lines: 28-32
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
+         :language: java
+         :lines: 28-32
 
-  .. tab-item:: C++
-     :sync: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
-      :language: c++
-      :lines: 10-14
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
+         :language: c++
+         :lines: 10-14
 
 Running Autonomous Code
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,20 +59,19 @@ Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoS
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
-      :language: java
-      :lines: 54-56, 58-73
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed/Robot.java
+         :language: java
+         :lines: 54-56, 58-73
 
-  .. tab-item:: C++
-     :sync: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
-      :language: c++
-      :lines: 37-38, 41-57
-
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timed/cpp/Robot.cpp
+         :language: c++
+         :lines: 37-38, 41-57
 
 Command-Based
 -------------
@@ -86,26 +85,26 @@ In ``RobotContainer``, create a variable to hold a reference to a ``SendableChoo
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
-      :language: java
-      :lines: 40-49
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+         :language: java
+         :lines: 40-49
 
-  .. tab-item:: C++ (using raw pointers)
-     :sync: C++ (using raw pointers)
+   .. tab-item:: C++ (using raw pointers)
+      :sync: C++ (using raw pointers)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
-      :language: c++
-      :lines: 38-44
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/RobotContainer.h
+         :language: c++
+         :lines: 38-44
 
-  .. tab-item:: C++ (using ``CommandPtr``)
-     :sync: C++ (using ``CommandPtr``)
+   .. tab-item:: C++ (using ``CommandPtr``)
+      :sync: C++ (using ``CommandPtr``)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
-      :language: c++
-      :lines: 45-50
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/RobotContainer.h
+         :language: c++
+         :lines: 45-50
 
 Setting up SendableChooser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -116,37 +115,37 @@ In ``RobotContainer``, create a ``SendableChooser`` object and add instances of 
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
-      :language: java
-      :lines: 69-71
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+         :language: java
+         :lines: 69-71
 
-  .. tab-item:: C++ (using raw pointers)
-     :sync: C++ (using raw pointers)
+   .. tab-item:: C++ (using raw pointers)
+      :sync: C++ (using raw pointers)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 18-20
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 18-20
 
-  .. tab-item:: C++ (using ``CommandPtr``)
-     :sync: C++ (using ``CommandPtr``)
+   .. tab-item:: C++ (using ``CommandPtr``)
+      :sync: C++ (using ``CommandPtr``)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 12-15
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 12-15
 
 Then, publish the chooser to the dashboard:
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
       // Put the chooser on the dashboard
       SmartDashboard.putData(m_chooser);
 
-  .. code-block:: c++
+   .. code-block:: c++
 
       // Put the chooser on the dashboard
       frc::SmartDashboard::PutData(&m_chooser);
@@ -158,27 +157,27 @@ In ``Robot.java``, when the autonomous period starts, the ``SendableChooser`` ob
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
-      :language: java
-      :lines: 124-126
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+         :language: java
+         :lines: 124-126
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
-      :language: java
-      :lines: 67-68,76-81
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+         :language: java
+         :lines: 67-68,76-81
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 81-84
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 81-84
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
-      :language: c++
-      :lines: 46-52
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+         :language: c++
+         :lines: 46-52
 
 Running the Scheduler during Autonomous
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -189,23 +188,23 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
-      :language: java
-      :lines: 49-50,55-56
-      :linenos:
-      :lineno-start: 40
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+         :language: java
+         :lines: 49-50,55-56
+         :linenos:
+         :lineno-start: 40
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
-      :language: c++
-      :lines: 29-31
-      :linenos:
-      :lineno-start: 29
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+         :language: c++
+         :lines: 29-31
+         :linenos:
+         :lineno-start: 29
 
 Canceling the Autonomous Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -214,24 +213,23 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
-      :language: java
-      :lines: 87-96
-      :linenos:
-      :lineno-start: 78
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
+         :language: java
+         :lines: 87-96
+         :linenos:
+         :lineno-start: 78
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
-      :language: c++
-      :lines: 56-65
-      :linenos:
-      :lineno-start: 56
-
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
+         :language: c++
+         :lines: 56-65
+         :linenos:
+         :lineno-start: 56
 
 SmartDashboard Display
 ^^^^^^^^^^^^^^^^^^^^^^

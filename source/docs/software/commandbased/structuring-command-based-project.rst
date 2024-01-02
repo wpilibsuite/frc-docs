@@ -18,14 +18,14 @@ As ``Robot`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjE
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
-      :language: java
-      :lines: 22-31
-      :linenos:
-      :lineno-start: 22
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+         :language: java
+         :lines: 22-31
+         :linenos:
+         :lineno-start: 22
 
 In Java, an instance of ``RobotContainer`` should be constructed during the ``robotInit()`` method - this is important, as most of the declarative robot setup will be called from the ``RobotContainer`` constructor.
 
@@ -33,67 +33,67 @@ In C++, this is not needed as RobotContainer is a value member and will be const
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
-      :language: java
-      :lines: 33-47
-      :linenos:
-      :lineno-start: 33
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+         :language: java
+         :lines: 33-47
+         :linenos:
+         :lineno-start: 33
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
-      :language: c++
-      :lines: 11-22
-      :linenos:
-      :lineno-start: 11
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+         :language: c++
+         :lines: 11-22
+         :linenos:
+         :lineno-start: 11
 
 The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robotPeriodic()`` method is essential; without this call, the scheduler will not execute any scheduled commands. Since ``TimedRobot`` runs with a default main loop frequency of 50Hz, this is the frequency with which periodic command and subsystem methods will be called. It is not recommended for new users to call this method from anywhere else in their code.
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
-      :language: java
-      :lines: 56-65
-      :linenos:
-      :lineno-start: 56
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+         :language: java
+         :lines: 56-65
+         :linenos:
+         :lineno-start: 56
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
-      :language: c++
-      :lines: 32-42
-      :linenos:
-      :lineno-start: 33
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+         :language: c++
+         :lines: 32-42
+         :linenos:
+         :lineno-start: 33
 
 The ``autonomousInit()`` method schedules an autonomous command returned by the ``RobotContainer`` instance. The logic for selecting which autonomous command to run can be handled inside of ``RobotContainer``.
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
-      :language: java
-      :lines: 71-80
-      :linenos:
-      :lineno-start: 71
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+         :language: java
+         :lines: 71-80
+         :linenos:
+         :lineno-start: 71
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
-      :language: c++
-      :lines: 46-55
-      :linenos:
-      :lineno-start: 46
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+         :language: c++
+         :lines: 46-55
+         :linenos:
+         :lineno-start: 46
 
 The ``teleopInit()`` method cancels any still-running autonomous commands. This is generally good practice.
 
@@ -106,89 +106,89 @@ This class (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExa
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
-      :language: java
-      :lines: 23
-      :linenos:
-      :lineno-start: 23
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+         :language: java
+         :lines: 23
+         :linenos:
+         :lineno-start: 23
 
-  .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
-      :language: c++
-      :lines: 32
-      :linenos:
-      :lineno-start: 32
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h
+         :language: c++
+         :lines: 32
+         :linenos:
+         :lineno-start: 32
 
 Notice that subsystems are declared as private fields in ``RobotContainer``. This is in stark contrast to the previous incarnation of the command-based framework, but is much more-aligned with agreed-upon object-oriented best-practices. If subsystems are declared as global variables, it allows the user to access them from anywhere in the code. While this can make certain things easier (for example, there would be no need to pass subsystems to commands in order for those commands to access them), it makes the control flow of the program much harder to keep track of as it is not immediately obvious which parts of the code can change or be changed by which other parts of the code. This also circumvents the ability of the resource-management system to do its job, as ease-of-access makes it easy for users to accidentally make conflicting calls to subsystem methods outside of the resource-managed commands.
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
-      :language: java
-      :lines: 61
-      :linenos:
-      :lineno-start: 61
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+         :language: java
+         :lines: 61
+         :linenos:
+         :lineno-start: 61
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 34
-      :linenos:
-      :lineno-start: 34
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 34
+         :linenos:
+         :lineno-start: 34
 
 Since subsystems are declared as private members, they must be explicitly passed to commands (a pattern called "dependency injection") in order for those commands to call methods on them.  This is done here with ``ExampleCommand``, which is passed a pointer to an ``ExampleSubsystem``.
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
-      :language: java
-      :lines: 35-52
-      :linenos:
-      :lineno-start: 35
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+         :language: java
+         :lines: 35-52
+         :linenos:
+         :lineno-start: 35
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 19-30
-      :linenos:
-      :lineno-start: 19
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 19-30
+         :linenos:
+         :lineno-start: 19
 
 As mentioned before, the ``RobotContainer()`` constructor is where most of the declarative setup for the robot should take place, including button bindings, configuring autonomous selectors, etc. If the constructor gets too "busy," users are encouraged to migrate code into separate subroutines (such as the ``configureBindings()`` method included by default) which are called from the constructor.
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
-      :language: java
-      :lines: 54-63
-      :linenos:
-      :lineno-start: 54
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
+         :language: java
+         :lines: 54-63
+         :linenos:
+         :lineno-start: 54
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 32-35
-      :linenos:
-      :lineno-start: 32
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 32-35
+         :linenos:
+         :lineno-start: 32
 
 Finally, the ``getAutonomousCommand()`` method provides a convenient way for users to send their selected autonomous command to the main ``Robot`` class (which needs access to it to schedule it when autonomous starts).
 
@@ -210,13 +210,13 @@ In Java, it is recommended that the constants be used from other classes by stat
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
+      import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    using namespace OIConstants;
+      using namespace OIConstants;
 
 Subsystems
 ----------

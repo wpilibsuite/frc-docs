@@ -25,18 +25,18 @@ getMeasurement()
 .. tab-set::
 
    .. tab-item:: Java
-     :sync: Java
+      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
-         :language: java
-         :lines: 85
+         .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.java
+            :language: java
+            :lines: 85
 
    .. tab-item:: C++
-     :sync: C++
+      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
-         :language: c++
-         :lines: 80-80
+         .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/PIDSubsystem.h
+            :language: c++
+            :lines: 80-80
 
 The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
 
@@ -85,15 +85,15 @@ The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsyst
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // The subsystem will track to a setpoint of 5.
-    examplePIDSubsystem.setSetpoint(5);
+      // The subsystem will track to a setpoint of 5.
+      examplePIDSubsystem.setSetpoint(5);
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // The subsystem will track to a setpoint of 5.
-    examplePIDSubsystem.SetSetpoint(5);
+      // The subsystem will track to a setpoint of 5.
+      examplePIDSubsystem.SetSetpoint(5);
 
 enable() and disable()
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -109,61 +109,61 @@ What does a ``PIDSubsystem`` look like when used in practice? The following exam
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/subsystems/ShooterSubsystem.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++
-     :sync: C++ (Header)
+   .. tab-item:: C++
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/subsystems/ShooterSubsystem.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/subsystems/ShooterSubsystem.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/subsystems/ShooterSubsystem.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 Using a ``PIDSubsystem`` with commands can be very simple:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
-      :language: java
-      :lines: 26-27, 80-87
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/RobotContainer.java
+         :language: java
+         :lines: 26-27, 80-87
 
-  .. tab-item:: C++
-     :sync: C++ (Header)
+   .. tab-item:: C++
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
-      :language: c++
-      :lines: 45-49
-      :linenos:
-      :lineno-start: 45
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/RobotContainer.h
+         :language: c++
+         :lines: 45-49
+         :linenos:
+         :lineno-start: 45
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 25-31
-      :linenos:
-      :lineno-start: 25
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Frisbeebot/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 25-31
+         :linenos:
+         :lineno-start: 25
 
 PIDCommand
 ----------
@@ -181,23 +181,23 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
-      :language: java
-      :lines: 27-41
-      :linenos:
-      :lineno-start: 27
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/PIDCommand.java
+         :language: java
+         :lines: 27-41
+         :linenos:
+         :lineno-start: 27
 
-  .. tab-item:: C++
-     :sync: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
-      :language: c++
-      :lines: 28-42
-      :linenos:
-      :lineno-start: 28
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/PIDCommand.h
+         :language: c++
+         :lines: 28-42
+         :linenos:
+         :lineno-start: 28
 
 controller
 ~~~~~~~~~~
@@ -239,51 +239,51 @@ What does a ``PIDCommand`` look like when used in practice? The following exampl
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/commands/TurnToAngle.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++
-     :sync: C++ (Header)
+   .. tab-item:: C++
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/commands/TurnToAngle.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngle.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/commands/TurnToAngle.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:Inline Commands>`  example:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
-      :language: java
-      :lines: 64-79
-      :linenos:
-      :lineno-start: 64
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/RobotContainer.java
+         :language: java
+         :lines: 64-79
+         :linenos:
+         :lineno-start: 64
 
-  .. tab-item:: C++
-     :sync: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 34-49
-      :linenos:
-      :lineno-start: 34
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 34-49
+         :linenos:
+         :lineno-start: 34
