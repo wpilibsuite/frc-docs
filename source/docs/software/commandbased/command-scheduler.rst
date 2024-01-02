@@ -46,7 +46,7 @@ This method walks through the following steps:
       :lineno-start: 181
 
   .. tab-item:: C++ (Source)
-     :sync: tabcode-cpp
+    :sync: tabcode-cpp
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
@@ -79,7 +79,7 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
       :lineno-start: 278
 
   .. tab-item:: C++ (Source)
-      :sync: tabcode-cpp
+    :sync: tabcode-cpp
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
@@ -106,7 +106,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
       :lineno-start: 290
 
   .. tab-item:: C++ (Source)
-      :sync: tabcode-cpp
+    :sync: tabcode-cpp
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
@@ -134,7 +134,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
       :emphasize-lines: 16,21-22
 
   .. tab-item:: C++ (Source)
-      :sync: tabcode-cpp
+    :sync: tabcode-cpp
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
       :language: c++
