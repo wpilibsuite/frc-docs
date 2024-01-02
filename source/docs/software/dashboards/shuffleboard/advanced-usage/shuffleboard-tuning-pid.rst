@@ -69,3 +69,19 @@ The following example demonstrates how to create a button on your dashboard that
       // and sends it to a motor
       motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
     }
+
+  .. code-block:: python
+
+    from wpilib.shuffleboard import Shuffleboard
+
+    tab = Shuffleboard.getTab("Shooter")
+    shooterEnable = tab.add("Shooter Enable", false).getEntry()
+
+    # Command Example assumed to be in a PIDSubsystem
+    NetworkButton(shooterEnable).onTrue(InstantCommand(m_shooter.enable()))
+
+    # Timed Robot Example
+    if (shooterEnable.getBoolean()):
+      # Calculates the output of the PID algorithm based on the sensor reading
+      # and sends it to a motor
+      motor.set(pid.calculate(encoder.getDistance(), setpoint))
