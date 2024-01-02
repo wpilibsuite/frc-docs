@@ -78,7 +78,7 @@ First, here is what a simple code can look like for a Drivetrain with PWM contro
       :language: c++
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
       :language: python
       :linenos:
 
@@ -114,7 +114,7 @@ Imports/Includes
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
                :language: python
                :lines: 8-9
                :linenos:
@@ -219,7 +219,7 @@ Defining the variables for our sample robot
                :linenos:
                :lineno-start: 50
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
                :language: python
                :linenos:
                :lines: 12-29
@@ -367,7 +367,7 @@ Simple Autonomous Example
       :linenos:
       :lineno-start: 22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
       :language: python
       :lines: 31-43
       :linenos:
@@ -394,7 +394,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
       :language: python
       :lines: 45-52
       :linenos:
@@ -419,7 +419,7 @@ Test Mode
       :linenos:
       :lineno-start: 43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/411d9b02dfa1c4ec5d35410a40f88be796f82f70/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
       :language: python
       :lines: 54-58
       :linenos:
