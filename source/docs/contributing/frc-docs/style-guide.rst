@@ -129,27 +129,25 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
    .. tab-set-code::
 
-            .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-               :language: java
-               :lines: 44-61
-               :linenos:
-               :lineno-start: 44
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+         :language: java
+         :lines: 44-61
+         :linenos:
+         :lineno-start: 44
 
 
-            .. code-block:: c++
-               // Start the timer.
-               m_timer.Start();
+      .. code-block:: c++
+         // Start the timer.
+         m_timer.Start();
 
-               // Send Field2d to SmartDashboard.
-               frc::SmartDashboard::PutData(&m_field);
+         // Send Field2d to SmartDashboard.
+         frc::SmartDashboard::PutData(&m_field);
 
-               // Reset the drivetrain's odometry to the starting pose of the trajectory.
-               m_drive.ResetOdometry(m_trajectory.InitialPose());
+         // Reset the drivetrain's odometry to the starting pose of the trajectory.
+         m_drive.ResetOdometry(m_trajectory.InitialPose());
 
-               // Send our generated trajectory to Field2d.
-               m_field.GetObject("traj")->SetTrajectory(m_trajectory);
-            }
-
+         // Send our generated trajectory to Field2d.
+         m_field.GetObject("traj")->SetTrajectory(m_trajectory);
 
 If you need to use more than one tab per language, multiple RLIs per language, or text tabs, you can use the ``.. tab-set::`` and ``.. tab-item::`` directive.  The format is:
 
@@ -157,8 +155,8 @@ If you need to use more than one tab per language, multiple RLIs per language, o
 
    .. tab-set::
 
-      ..tab-item:: Title
-        :sync: sync-id
+      .. tab-item:: Title
+         :sync: sync-id
 
             Content
 
@@ -242,10 +240,10 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 
 .. note:: Accessibility is important! Images should be marked with a ``:alt:`` directive.
 
-          .. code-block:: ReST
+   .. code-block:: ReST
 
-             .. image:: images/my-document/my-image.png
-                :alt: An example image
+      .. image:: images/my-document/my-image.png
+         :alt: An example image
 
 Vector Images
 ^^^^^^^^^^^^^
