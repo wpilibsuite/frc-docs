@@ -32,7 +32,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
       :lineno-start: 7
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 5-29
       :linenos:
       :lineno-start: 5

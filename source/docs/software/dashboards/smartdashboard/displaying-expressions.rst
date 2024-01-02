@@ -21,7 +21,7 @@ Writing Values to SmartDashboard
           SmartDashboard.putNumber("RPM", shooter.getRPM());
         }
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         void Command::Execute() {
           frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());

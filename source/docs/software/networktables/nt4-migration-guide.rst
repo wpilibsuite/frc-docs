@@ -39,7 +39,7 @@ NT3 code (was):
           }
 
 
-      .. code-block:: cpp
+      .. code-block:: c++
 
           class Example {
             nt::NetworkTableEntry yEntry;
@@ -128,7 +128,7 @@ Recommended NT4 equivalent (should be):
           }
 
 
-      .. code-block:: cpp
+      .. code-block:: c++
 
           class Example {
             nt::DoubleSubscriber ySub;

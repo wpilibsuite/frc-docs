@@ -93,7 +93,7 @@ Generated CloseClaw Class
 
 
 
-    .. code-block:: cpp
+    .. code-block:: c++
         :linenos:
         :lineno-start: 11
         :emphasize-lines: 21, 31, 36

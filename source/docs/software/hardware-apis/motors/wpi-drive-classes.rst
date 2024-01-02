@@ -45,7 +45,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
          m_motorRight.setInverted(true);
       }
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       frc::PWMSparkMax m_motorLeft{0};
 
@@ -144,7 +144,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
     .. tab-item:: C++ (Header)
      :sync: C++ (Header)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Robot {
                 private:
@@ -155,7 +155,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
     .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             void Robot::RobotInit() {
                 m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
@@ -317,7 +317,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
         :lineno-start: 24
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
-        :language: cpp
+        :language: c++
         :lines: 31-44
         :linenos:
         :lineno-start: 31

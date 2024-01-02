@@ -14,7 +14,7 @@ To see the status of a subsystem while the robot is operating in either autonomo
 
       SmartDashboard.putData(subsystem-reference);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       SmartDashboard::PutData(subsystem-pointer);
 
@@ -48,7 +48,7 @@ Using commands and subsystems makes very modular robot programs that can easily 
 
       SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7));
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7));
 

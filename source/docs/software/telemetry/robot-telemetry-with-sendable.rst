@@ -29,7 +29,7 @@ To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``put
 
         SmartDashboard.putData("Arm PID", armPIDController);
 
-    .. code-block:: cpp
+    .. code-block:: c++
 
         frc::SmartDashboard::PutData("Arm PID", &armPIDController);
 

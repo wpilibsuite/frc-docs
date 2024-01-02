@@ -29,13 +29,13 @@ After the length of the strip has been set, you'll have to create an ``Addressab
       :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
-         :language: cpp
+         :language: c++
          :lines: 12-12, 18-27
          :linenos:
          :lineno-start: 11
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 7-13
          :linenos:
          :lineno-start: 7
@@ -136,7 +136,7 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
       :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 22-35
          :linenos:
          :lineno-start: 22
@@ -158,7 +158,7 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
       :sync: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 15-20
          :linenos:
          :lineno-start: 15

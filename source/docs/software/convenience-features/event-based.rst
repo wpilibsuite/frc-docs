@@ -17,7 +17,7 @@ The ``EventLoop`` class is a "container" for pairs of conditions and actions, wh
       :lines: 33-33, 87-91
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 94-94, 81-81
 
 .. warning:: The ``EventLoop``'s ``poll()`` method should be called consistently in a ``*Periodic()`` method. Failure to do this will result in unintended loop behavior.
@@ -36,7 +36,7 @@ To bind a callback action to the condition, use ``ifHigh()``/``IfHigh()``:
       :lines: 72-78
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 64-72
 
 Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
@@ -58,7 +58,7 @@ The ``and()``/``&&`` composes two ``BooleanEvent`` conditions into a third condi
       :lines: 44-49
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 35-40
 
 or() / ||
@@ -73,7 +73,7 @@ The ``or()``/``||`` composes two ``BooleanEvent`` conditions into a third condit
       :lines: 51-57
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 42-47
 
 negate() / !
@@ -88,7 +88,7 @@ The ``negate()``/``!`` composes one ``BooleanEvent`` condition into another cond
       :lines: 46-47
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 37-38
 
 debounce() / Debounce()
@@ -104,7 +104,7 @@ To avoid rapid repeated activation, conditions (especially those originating fro
       :lines: 71-75
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 64-69
 
 rising(), falling()
@@ -121,7 +121,7 @@ Often times it is desired to bind an action not to the *current* state of a cond
       :lines: 79-84
 
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 74-78
 
 Downcasting ``BooleanEvent`` Objects

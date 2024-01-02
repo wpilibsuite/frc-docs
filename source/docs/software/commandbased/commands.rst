@@ -118,7 +118,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
         :lineno-start: 25
 
   .. tab-item:: C++ (Header)
-      :sync: tabcode-cpp
+      :sync: tabcode-c++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
         :language: c++
@@ -127,7 +127,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
         :lineno-start: 20
 
   .. tab-item:: C++ (Source)
-      :sync: tabcode-cpp-source
+      :sync: tabcode-c++-source
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
         :language: c++
@@ -312,7 +312,7 @@ What might a functional command look like in practice? As before, below is a sim
         :lineno-start: 5
 
   .. tab-item:: C++ (Header)
-     :sync: tabcode-cpp
+     :sync: tabcode-c++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
         :language: c++
@@ -321,7 +321,7 @@ What might a functional command look like in practice? As before, below is a sim
         :lineno-start: 5
 
   .. tab-item:: C++ (Source)
-     :sync: tabcode-cpp-source
+     :sync: tabcode-c++-source
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
         :language: c++
@@ -347,7 +347,7 @@ What about a more complicated case? Below is a drive command, from the same exam
         :lineno-start: 5
 
   .. tab-item:: C++ (Header)
-     :sync: tabcode-cpp
+     :sync: tabcode-c++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
         :language: c++
@@ -356,7 +356,7 @@ What about a more complicated case? Below is a drive command, from the same exam
         :lineno-start: 5
 
   .. tab-item:: C++ (Source)
-     :sync: tabcode-cpp-source
+     :sync: tabcode-c++-source
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
         :language: c++

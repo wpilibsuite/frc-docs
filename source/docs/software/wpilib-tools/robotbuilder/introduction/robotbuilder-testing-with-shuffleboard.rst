@@ -32,7 +32,7 @@ Adding Commands Manually
       SmartDashboard.putData("Open Claw", new OpenClaw(m_claw);
       SmartDashboard.putData("Close Claw", new CloseClaw(m_claw));
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());
       SmartDashboard::PutData("Open Claw", new OpenClaw(&m_claw));

@@ -64,7 +64,7 @@ A basic client program looks like the following example.
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             #include <chrono>
             #include <thread>
@@ -93,7 +93,7 @@ A basic client program looks like the following example.
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             #include <chrono>
             #include <thread>

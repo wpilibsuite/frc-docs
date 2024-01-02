@@ -67,7 +67,7 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
       double left = wheelSpeeds.leftMetersPerSecond;
       double right = wheelSpeeds.rightMetersPerSecond;
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
       DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.ToWheelSpeeds(adjustedSpeeds);

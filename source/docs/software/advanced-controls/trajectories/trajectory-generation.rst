@@ -56,7 +56,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
    .. tab-item:: C++
 
       .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
-         :language: cpp
+         :language: c++
          :lines: 8-22
 
 .. note:: The Java code utilizes the `Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/util/Units.html>`_ utility, for easy unit conversions.
@@ -90,7 +90,7 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
       var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
 
-   .. code-block:: cpp
+   .. code-block:: c++
 
       auto trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
          frc::Pose2d(0_m, 0_m, 0_rad),

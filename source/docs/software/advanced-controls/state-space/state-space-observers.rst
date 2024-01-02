@@ -108,13 +108,13 @@ WPILib's Kalman Filter classes' constructors take a linear system, a vector of p
    .. tab-item:: C++
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 5-18
          :linenos:
          :lineno-start: 5
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 48-53
          :linenos:
          :lineno-start: 48

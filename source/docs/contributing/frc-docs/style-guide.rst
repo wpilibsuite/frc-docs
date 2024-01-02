@@ -114,7 +114,7 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
       :lineno-start: 44
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 18-30
       :linenos:
       :lineno-start: 18
@@ -136,7 +136,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
                :lineno-start: 44
 
 
-            .. code-block:: cpp
+            .. code-block:: c++
                // Start the timer.
                m_timer.Start();
 

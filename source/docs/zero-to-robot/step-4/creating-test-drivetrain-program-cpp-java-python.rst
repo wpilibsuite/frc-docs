@@ -104,7 +104,7 @@ Imports/Includes
                :lineno-start: 7
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
@@ -136,7 +136,7 @@ Imports/Includes
             import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 
-         .. code-block:: cpp
+         .. code-block:: c++
 
             #include <frc/Joystick.h>
             #include <frc/TimedRobot.h>
@@ -166,7 +166,7 @@ Imports/Includes
                import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                #include <frc/TimedRobot.h>
                #include <frc/Timer.h>
@@ -205,7 +205,7 @@ Defining the variables for our sample robot
                :lineno-start: 19
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
@@ -246,9 +246,9 @@ Defining the variables for our sample robot
                   private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                public:
                 Robot() {
@@ -260,7 +260,7 @@ Defining the variables for our sample robot
                    m_timer.Start();
                 }
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                private:
                 // Robot drive system
@@ -298,9 +298,9 @@ Defining the variables for our sample robot
                  private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                Robot() {
                  // We need to invert one side of the drivetrain so that positive voltages
@@ -311,7 +311,7 @@ Defining the variables for our sample robot
                  m_timer.Start();
                }
 
-            .. code-block:: cpp
+            .. code-block:: c++
 
                private:
                 // Robot drive system

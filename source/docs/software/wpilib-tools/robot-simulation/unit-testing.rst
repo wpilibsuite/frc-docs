@@ -27,14 +27,14 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
-         :language: cpp
+         :language: c++
          :lines: 7-
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
-         :language: cpp
+         :language: c++
          :lines: 5-
 
 Writing Tests
@@ -62,7 +62,7 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
       :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
-         :language: cpp
+         :language: c++
          :lines: 5-
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
