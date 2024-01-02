@@ -219,6 +219,9 @@ Defining the variables for our sample robot
                :linenos:
                :lineno-start: 50
 
+         .. tab-item:: Python
+            :sync: python
+
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
                :language: python
                :linenos:
@@ -268,6 +271,8 @@ Defining the variables for our sample robot
                 frc::Joystick m_stick{0};
                 frc::Timer m_timer;
 
+         .. tab-item:: Python
+            :sync: python
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
                :language: python
@@ -316,6 +321,9 @@ Defining the variables for our sample robot
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
+
+         .. tab-item:: Python
+            :sync: python
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
                :language: python
