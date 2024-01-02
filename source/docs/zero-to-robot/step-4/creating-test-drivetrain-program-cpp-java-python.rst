@@ -104,7 +104,7 @@ Imports/Includes
                :lineno-start: 7
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
@@ -205,7 +205,7 @@ Defining the variables for our sample robot
                :lineno-start: 19
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
@@ -243,7 +243,7 @@ Defining the variables for our sample robot
                   private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. code-block:: c++
 
@@ -293,7 +293,7 @@ Defining the variables for our sample robot
                  private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
-            :sync: cpp
+            :sync: c++
 
             .. code-block:: c++
 

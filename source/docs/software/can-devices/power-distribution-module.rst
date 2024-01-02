@@ -40,7 +40,7 @@ Reading the Bus Voltage
 
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 28-31
          :linenos:
          :lineno-start: 28
@@ -59,7 +59,7 @@ Reading the Temperature
       :lineno-start: 37
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 33-35
       :linenos:
       :lineno-start: 33
@@ -78,7 +78,7 @@ Reading the Total Current, Power, and Energy
       :lineno-start: 41
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 37-49
       :linenos:
       :lineno-start: 37
@@ -99,7 +99,7 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
       :lineno-start: 26
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 22-26
       :linenos:
       :lineno-start: 22

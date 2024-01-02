@@ -37,7 +37,7 @@ getMeasurement()
      :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
-         :language: cpp
+         :language: c++
          :lines: 103-103
 
 The ``getMeasurement`` method returns the current measurement of the process variable.  The ``PIDSubsystem`` will automatically call this method from its ``periodic()`` block, and pass its value to the control loop.
@@ -60,7 +60,7 @@ useOutput()
      :sync: C++
 
       .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibNewCommands/src/main/native/include/frc2/command/ProfiledPIDSubsystem.h
-         :language: cpp
+         :language: c++
          :lines: 112-112
 
 

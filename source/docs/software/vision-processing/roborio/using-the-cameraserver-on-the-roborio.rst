@@ -18,7 +18,7 @@ The following program starts automatic capture of a USB camera like the Microsof
       :lineno-start: 7
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
    .. rli:: https://raw.githubusercontent.com/robotpy/examples/2023.4.3.0/cscore-quick-vision/robot.py
@@ -44,10 +44,10 @@ In the following example a thread created in robotInit() gets the Camera Server 
          :lineno-start: 7
 
    .. tab-item:: c++
-      :sync: tabcode-cpp
+      :sync: tabcode-c++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 5-20, 23-56, 58-61, 63-64, 69-76
 
    .. tab-item:: PYTHON

@@ -26,11 +26,11 @@ Initializing Preferences
       :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
-         :language: cpp
+         :language: c++
          :lines: 30-34
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+         :language: c++
          :lines: 12, 18-22
 
    .. tab-item:: Python
@@ -66,7 +66,7 @@ Reading Preferences
       :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+         :language: c++
          :lines: 44-52
 
    .. tab-item:: Python
@@ -96,10 +96,10 @@ Depending on the data that is stored in preferences, you can use it when you rea
       :sync: C++
 
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
-         :language: cpp
+         :language: c++
          :lines: 15-24
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+         :language: c++
          :lines: 54-60
 
    .. tab-item:: Python

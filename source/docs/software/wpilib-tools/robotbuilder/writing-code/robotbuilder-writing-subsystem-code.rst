@@ -104,7 +104,7 @@ Adding Subsystem Capabilities
         }
 
    .. tab-item:: C++
-      :sync: cpp
+      :sync: c++
 
       .. code-block:: c++
          :linenos:
@@ -176,7 +176,7 @@ Adding the Method Declarations to the Header File (C++ Only)
 .. tab-set::
 
    .. tab-item:: C++
-      :sync: cpp
+      :sync: c++
 
       .. code-block:: c++
          :linenos:

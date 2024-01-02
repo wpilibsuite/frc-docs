@@ -56,7 +56,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
    .. tab-item:: C++
 
       .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
-         :language: cpp
+         :language: c++
          :lines: 8-22
 
 .. note:: The Java code utilizes the `Units <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/util/Units.html>`_ utility, for easy unit conversions.

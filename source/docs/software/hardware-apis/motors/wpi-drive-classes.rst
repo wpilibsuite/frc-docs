@@ -317,7 +317,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
         :lineno-start: 24
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
-        :language: cpp
+        :language: c++
         :lines: 31-44
         :linenos:
         :lineno-start: 31

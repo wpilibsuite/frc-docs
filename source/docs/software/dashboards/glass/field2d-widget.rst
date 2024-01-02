@@ -60,7 +60,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
       :lineno-start: 44
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-      :language: cpp
+      :language: c++
       :lines: 18-30
       :linenos:
       :lineno-start: 18
