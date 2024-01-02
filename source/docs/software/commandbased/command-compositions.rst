@@ -9,15 +9,15 @@ Most importantly, however, command compositions are themselves commands - they e
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-   // Will run fooCommand, and then a race between barCommand and bazCommand
-   button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)));
+      // Will run fooCommand, and then a race between barCommand and bazCommand
+      button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)));
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-   // Will run fooCommand, and then a race between barCommand and bazCommand
-   button.OnTrue(std::move(fooCommand).AndThen(std::move(barCommand).RaceWith(std::move(bazCommand))));
+      // Will run fooCommand, and then a race between barCommand and bazCommand
+      button.OnTrue(std::move(fooCommand).AndThen(std::move(barCommand).RaceWith(std::move(bazCommand))));
 
 As a rule, command compositions require all subsystems their components require, may run when disabled if all their component set ``runsWhenDisabled`` as ``true``, and are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
@@ -37,15 +37,15 @@ The ``repeatedly()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // Will run forever unless externally interrupted, restarting every time command.isFinished() returns true
-    Command repeats = command.repeatedly();
+      // Will run forever unless externally interrupted, restarting every time command.isFinished() returns true
+      Command repeats = command.repeatedly();
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
-    frc2::CommandPtr repeats = std::move(command).Repeatedly();
+      // Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
+      frc2::CommandPtr repeats = std::move(command).Repeatedly();
 
 Sequence
 ^^^^^^^^
@@ -58,11 +58,11 @@ The ``andThen()`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu
 
    .. code-block:: java
 
-    fooCommand.andThen(barCommand)
+      fooCommand.andThen(barCommand)
 
    .. code-block:: c++
 
-    std::move(fooCommand).AndThen(std::move(barCommand))
+      std::move(fooCommand).AndThen(std::move(barCommand))
 
 Repeating Sequence
 ^^^^^^^^^^^^^^^^^^
@@ -80,27 +80,27 @@ There are three types of parallel compositions, differing based on when the comp
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-   // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
-   button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
+      // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+      button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
 
-   // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
-   button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
+      // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+      button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
 
-   // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-   button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
+      // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+      button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-   // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
-   button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
+      // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+      button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
-   // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
-   button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
+      // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+      button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
-   // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-   button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
+      // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+      button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
 Adding Command End Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,29 +109,29 @@ The ``until()`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/w
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // Will be interrupted if m_limitSwitch.get() returns true
-    button.onTrue(command.until(m_limitSwitch::get));
+      // Will be interrupted if m_limitSwitch.get() returns true
+      button.onTrue(command.until(m_limitSwitch::get));
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // Will be interrupted if m_limitSwitch.get() returns true
-    button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+      // Will be interrupted if m_limitSwitch.get() returns true
+      button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
 The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_ptr.html#ac6b2e1e4f55ed905ec7d189b9288e3d0>`__) is a specialization of ``until`` that uses a timeout as the additional end condition.
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // Will time out 5 seconds after being scheduled, and be interrupted
-    button.onTrue(command.withTimeout(5));
+      // Will time out 5 seconds after being scheduled, and be interrupted
+      button.onTrue(command.withTimeout(5));
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // Will time out 5 seconds after being scheduled, and be interrupted
-    button.OnTrue(command.WithTimeout(5.0_s));
+      // Will time out 5 seconds after being scheduled, and be interrupted
+      button.OnTrue(command.WithTimeout(5.0_s));
 
 Adding End Behavior
 ^^^^^^^^^^^^^^^^^^^
@@ -149,53 +149,51 @@ The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/beta/jav
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
+         :language: java
+         :lines: 20-45
+         :linenos:
+         :lineno-start: 20
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
-       :language: java
-       :lines: 20-45
-       :linenos:
-       :lineno-start: 20
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-  .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
-       :language: c++
-       :lines: 26-43
-       :linenos:
-       :lineno-start: 26
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
+         :language: c++
+         :lines: 26-43
+         :linenos:
+         :lineno-start: 26
 
 The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5>`__), backed by the ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_conditional_command.html>`__), is a specialization accepting two commands and a boolean selector function.
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
-    new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
+      // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
+      new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
-    frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
+      // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
+      frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
 
 The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93>`__) composes a command with a condition that will prevent it from running.
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-    button.onTrue(command.unless(() -> !intake.isDeployed()));
+      // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+      button.onTrue(command.unless(() -> !intake.isDeployed()));
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-    button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
+      // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+      button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
 
 ``ProxyCommand`` described below also has a constructor overload (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_proxy_command.html>`__) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
 
@@ -208,33 +206,33 @@ By default, composition members are run through the command composition, and are
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // The sequence continues only after the proxied command ends
-    Commands.waitSeconds(5.0).asProxy()
-        .andThen(Commands.print("This will only be printed after the 5-second delay elapses!"))
+      // The sequence continues only after the proxied command ends
+      Commands.waitSeconds(5.0).asProxy()
+         .andThen(Commands.print("This will only be printed after the 5-second delay elapses!"))
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // The sequence continues only after the proxied command ends
-    frc2::cmd::Wait(5.0_s).AsProxy()
-        .AndThen(frc2::cmd::Print("This will only be printed after the 5-second delay elapses!"))
+      // The sequence continues only after the proxied command ends
+      frc2::cmd::Wait(5.0_s).AsProxy()
+         .AndThen(frc2::cmd::Print("This will only be printed after the 5-second delay elapses!"))
 
 For cases that don't need to track the proxied command, ``ScheduleCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command and ends instantly.
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    // ScheduleCommand ends immediately, so the sequence continues
-    new ScheduleCommand(Commands.waitSeconds(5.0))
-        .andThen(Commands.print("This will be printed immediately!"))
+      // ScheduleCommand ends immediately, so the sequence continues
+      new ScheduleCommand(Commands.waitSeconds(5.0))
+         .andThen(Commands.print("This will be printed immediately!"))
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    // ScheduleCommand ends immediately, so the sequence continues
-    frc2::ScheduleCommand(frc2::cmd::Wait(5.0_s))
-        .AndThen(frc2::cmd::Print("This will be printed immediately!"))
+      // ScheduleCommand ends immediately, so the sequence continues
+      frc2::ScheduleCommand(frc2::cmd::Wait(5.0_s))
+         .AndThen(frc2::cmd::Print("This will be printed immediately!"))
 
 Subclassing Compositions
 ------------------------
@@ -243,31 +241,31 @@ Command compositions can also be written as a constructor-only subclass of the m
 
 .. tab-set::
 
-  .. tab-item:: Java
-    :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Header)
-    :sync: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
-       :language: c++
-       :lines: 5-
-       :linenos:
-       :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 The advantages and disadvantages of this subclassing approach in comparison to others are discussed in :ref:`docs/software/commandbased/organizing-command-based:Subclassing Command Groups`.

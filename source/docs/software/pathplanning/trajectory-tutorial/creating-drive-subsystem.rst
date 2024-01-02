@@ -7,32 +7,32 @@ The full drive class from the RamseteCommand Example Project (`Java <https://git
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 Configuring the Drive Encoders
 ------------------------------
@@ -46,23 +46,23 @@ The encoder ports are specified in the encoder's constructor, like so:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 34-46
-      :linenos:
-      :lineno-start: 34
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 34-46
+         :linenos:
+         :lineno-start: 34
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 17-18
-      :linenos:
-      :lineno-start: 17
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 17-18
+         :linenos:
+         :lineno-start: 17
 
 Encoder Distance per Pulse
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,23 +71,23 @@ The distance per pulse is specified by calling the encoder's ``setDistancePerPul
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 62-63
-      :linenos:
-      :lineno-start: 62
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 62-63
+         :linenos:
+         :lineno-start: 62
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 26-27
-      :linenos:
-      :lineno-start: 26
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 26-27
+         :linenos:
+         :lineno-start: 26
 
 Encoder Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -98,23 +98,23 @@ To access the values measured by the encoders, we include the following method:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 87-94
-      :linenos:
-      :lineno-start: 87
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 87-94
+         :linenos:
+         :lineno-start: 87
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 82-85
-      :linenos:
-      :lineno-start: 82
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 82-85
+         :linenos:
+         :lineno-start: 82
 
 We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object for easier integration with the ``RamseteCommand`` class later on.
 
@@ -125,23 +125,23 @@ The gyroscope measures the rate of change of the robot's heading (which can then
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 49-50
-      :linenos:
-      :lineno-start: 49
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 49-50
+         :linenos:
+         :lineno-start: 49
 
-  .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
-      :language: c++
-      :lines: 140-141
-      :linenos:
-      :lineno-start: 140
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+         :language: c++
+         :lines: 140-141
+         :linenos:
+         :lineno-start: 140
 
 Gyroscope Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,23 +150,23 @@ To access the current heading measured by the gyroscope, we include the followin
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 176-183
-      :linenos:
-      :lineno-start: 176
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 176-183
+         :linenos:
+         :lineno-start: 176
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 70-72
-      :linenos:
-      :lineno-start: 70
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 70-72
+         :linenos:
+         :lineno-start: 70
 
 Configuring the Odometry
 ------------------------
@@ -177,23 +177,23 @@ First, we create a member instance of the ``DifferentialDriveOdometry`` class:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 51-52
-      :linenos:
-      :lineno-start: 51
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 51-52
+         :linenos:
+         :lineno-start: 51
 
-  .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
-      :language: c++
-      :lines: 143-144
-      :linenos:
-      :lineno-start: 143
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+         :language: c++
+         :lines: 143-144
+         :linenos:
+         :lineno-start: 143
 
 Updating the Odometry
 ^^^^^^^^^^^^^^^^^^^^^
@@ -202,23 +202,23 @@ The odometry class must be regularly updated to incorporate new readings from th
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 71-76
-      :linenos:
-      :lineno-start: 71
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 71-76
+         :linenos:
+         :lineno-start: 71
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 32-37
-      :linenos:
-      :lineno-start: 32
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 32-37
+         :linenos:
+         :lineno-start: 32
 
 Odometry Accessor Method
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -227,23 +227,23 @@ To access the robot's current computed pose, we include the following method:
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 78-85
-      :linenos:
-      :lineno-start: 78
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 78-85
+         :linenos:
+         :lineno-start: 78
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 78-80
-      :linenos:
-      :lineno-start: 78
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 78-80
+         :linenos:
+         :lineno-start: 78
 
 .. important:: Before running a ``RamseteCommand``, teams are strongly encouraged to deploy and test the odometry code alone, with values sent to the SmartDashboard or Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry must be correct for a RamseteCommand to successfully work, as sign or unit errors can cause a robot to move at high speeds in unpredictable directions.
 
@@ -254,23 +254,23 @@ Finally, we must include one additional method - a method that allows us to set 
 
 .. tab-set::
 
-  .. tab-item:: Java
-     :sync: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 117-127
-      :linenos:
-      :lineno-start: 117
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 117-127
+         :linenos:
+         :lineno-start: 117
 
-  .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 43-47
-      :linenos:
-      :lineno-start: 43
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 43-47
+         :linenos:
+         :lineno-start: 43
 
 It is very important to use the ``setVoltage()`` method rather than the ordinary ``set()`` method, as this will automatically compensate for battery "voltage sag" during operation.  Since our feedforward voltages are physically-meaningful (as they are based on measured identification data), this is essential to ensuring their accuracy.
 
