@@ -10,14 +10,14 @@ Similar to NetworkTables, data logs have the concept of entries with string iden
 
 Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the RoboRIO, the FPGA timestamp is used (the same timestamp returned by ``Timer.getFPGATimestamp()``).
 
-.. note: For more information on the details of the data log file format, see the `WPILib Data Log File Format Specification <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__.
+.. note:: For more information on the details of the data log file format, see the `WPILib Data Log File Format Specification <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__.
 
 Standard Data Logging using DataLogManager
 ------------------------------------------
 
-The ``DataLogManager`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive if one is attached, or to ``/home/lvuser`` otherwise.
+The ``DataLogManager`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
 
-.. note: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work.
+.. note:: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work.
 
 Log files are initially named ``FRC_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``FRC_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the :term:`FMS` is connected and provides a match number, the log file is renamed to ``FRC_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
 
@@ -87,7 +87,7 @@ Custom Data Logging using DataLog
 
 The ``DataLog`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
-.. note: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
+.. note:: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
 The LogEntry classes can be used in conjunction with DataLogManager to record values only to a data log and not to NetworkTables:
 

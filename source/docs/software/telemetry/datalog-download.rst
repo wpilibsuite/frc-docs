@@ -44,7 +44,7 @@ Downloading Files
 
 After the connection is successfully established, a simplified file browser will be displayed.  This is used to navigate the remote filesystem and select which files to download.  The first text box shows the current directory.  A specific directory can be navigated to by typing it in this text box and pressing Enter.  Alternatively, directory navigation can be performed by clicking on one of the directories that are listed below the remote dir textbox.  Following the list of directories is a table of files.  Only files with a ``.wpilog`` extension are shown, so the table will be empty if there are no log files in the current directory.  The checkbox next to each data log file indicates whether the file should be downloaded.
 
-.. note: On the roboRIO, log files are typically saved to either ``/home/lvuser`` or ``/u`` (USB stick location).
+.. note:: On the roboRIO, log files are typically saved to either ``/home/lvuser/logs`` or ``/u/logs`` (USB stick location).
 
 .. image:: images/datalogtool/download-file-selection.png
    :alt: Remote file browser showing remote directory, list of directories, and list of files with checkboxes next to each one.
